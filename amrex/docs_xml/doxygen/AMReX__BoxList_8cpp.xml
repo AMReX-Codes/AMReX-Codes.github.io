@@ -656,19 +656,19 @@
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>chop_boxes<sp/>(Box*<sp/>bxv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>chop_boxes<sp/>(Box*<sp/>bxv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes)</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nboxes<sp/>==<sp/>1)</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*bxv<sp/>=<sp/>bx;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*bxv<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>longdir;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>longlen<sp/>=<sp/>bx.longside(longdir);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chop_pnt<sp/>=<sp/>bx.smallEnd(longdir)<sp/>+<sp/>longlen/2;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxleft<sp/>=<sp/>bx;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxright<sp/>=<sp/>bxleft.chop(longdir,<sp/>chop_pnt);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>longlen<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1ae6e14e48e772090cdeabaf106a537c86" kindref="member">longside</ref>(longdir);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chop_pnt<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1a500e159391a7508f43c2595e9eb3c7b0" kindref="member">smallEnd</ref>(longdir)<sp/>+<sp/>longlen/2;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxleft<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxright<sp/>=<sp/>bxleft.<ref refid="classamrex_1_1Box_1af3a6ade5162dd1ba7ef55798d03a335c" kindref="member">chop</ref>(longdir,<sp/>chop_pnt);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nleft<sp/>=<sp/>nboxes<sp/>/<sp/>2;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chop_boxes(bxv,<sp/>bxleft,<sp/>nleft);</highlight></codeline>
@@ -678,17 +678,17 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>chop_boxes_dir<sp/>(Box*<sp/>bxv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>chop_boxes_dir<sp/>(Box*<sp/>bxv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir)</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nboxes<sp/>==<sp/>1)</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*bxv<sp/>=<sp/>bx;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*bxv<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chop_pnt<sp/>=<sp/>bx.smallEnd(idir)<sp/>+<sp/>bx.length(idir)/2;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxleft<sp/>=<sp/>bx;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxright<sp/>=<sp/>bxleft.chop(idir,<sp/>chop_pnt);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chop_pnt<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1a500e159391a7508f43c2595e9eb3c7b0" kindref="member">smallEnd</ref>(idir)<sp/>+<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(idir)/2;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxleft<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxright<sp/>=<sp/>bxleft.<ref refid="classamrex_1_1Box_1af3a6ade5162dd1ba7ef55798d03a335c" kindref="member">chop</ref>(idir,<sp/>chop_pnt);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nleft<sp/>=<sp/>nboxes<sp/>/<sp/>2;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chop_boxes_dir(bxv,<sp/>bxleft,<sp/>nleft,<sp/>idir);</highlight></codeline>
@@ -790,10 +790,10 @@
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>btype(IndexType::TheCellType())</highlight></codeline>
 <codeline lineno="152"><highlight class="normal">{}</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox(1,bx),</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>btype(bx.ixType())</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox(1,<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>),</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>btype(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType())</highlight></codeline>
 <codeline lineno="158"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="159"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
@@ -819,13 +819,13 @@
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="181"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>tilesize)</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(bx.ixType())</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>tilesize)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType())</highlight></codeline>
 <codeline lineno="185"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ntiles<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>nt;</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d=0;<sp/>d&lt;AMREX_SPACEDIM;<sp/>d++)<sp/>{</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nt[d]<sp/>=<sp/>(bx.length(d)+tilesize[d]-1)/tilesize[d];</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nt[d]<sp/>=<sp/>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.length(d)+tilesize[d]-1)/tilesize[d];</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ntiles<sp/>*=<sp/>nt[d];</highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
@@ -843,35 +843,35 @@
 <codeline lineno="204"><highlight class="normal"></highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d=0;<sp/>d&lt;AMREX_SPACEDIM;<sp/>d++)<sp/>{</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>small[d]<sp/>=<sp/>ijk[d]*tilesize[d];</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>big[d]<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(small[d]+tilesize[d]-1,<sp/>bx.length(d)-1);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>big[d]<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(small[d]+tilesize[d]-1,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.length(d)-1);</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"></highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>tbx(small,<sp/>big,<sp/>btype);</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tbx.shift(bx.smallEnd());</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tbx.shift(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.smallEnd());</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>push_back(tbx);</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="214"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes)</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(bx.ixType())</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType())</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nboxes<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(bx.numPts()<sp/>&gt;=<sp/>nboxes);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.numPts()<sp/>&gt;=<sp/>nboxes);</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.resize(nboxes);</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>chop_boxes(m_lbox.data(),<sp/>bx,<sp/>nboxes);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>chop_boxes(m_lbox.data(),<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>nboxes);</highlight></codeline>
 <codeline lineno="224"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref><sp/>dir)</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(bx.ixType())</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a31584546393b5ff7f420e6bffd8486bd" kindref="member">BoxList::BoxList</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType())</highlight></codeline>
 <codeline lineno="228"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dir);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>);</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"></highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nboxes<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(bx.length(idir)<sp/>&gt;=<sp/>nboxes);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.length(idir)<sp/>&gt;=<sp/>nboxes);</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.resize(nboxes);</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>chop_boxes_dir(m_lbox.data(),<sp/>bx,<sp/>nboxes,<sp/>idir);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>chop_boxes_dir(m_lbox.data(),<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>nboxes,<sp/>idir);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
 <codeline lineno="238"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
@@ -902,8 +902,8 @@
 <codeline lineno="263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="265"><highlight class="normal"></highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>:<sp/>bl)<sp/>{</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ba.contains(bx))<sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/>bl)<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ba.contains(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>))<sp/>{</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -916,16 +916,16 @@
 <codeline lineno="277"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(<ref refid="classamrex_1_1BoxList_1a25986c43e3bd0e8b7043955680879e16" kindref="member">ixType</ref>()<sp/>==<sp/>b.<ref refid="classamrex_1_1IndexType_1a3ddfa522c3996c79af3aa5985c8af10a" kindref="member">ixType</ref>());</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Box&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/>b;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>&amp;<sp/>b;</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/>isect;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>isect;</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/>Box();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>Box();</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight></codeline>
@@ -1152,9 +1152,9 @@
 <codeline lineno="513"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a905d974544cd60c9b72314cb6135e17b" kindref="member">BoxList::refine</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio)</highlight></codeline>
 <codeline lineno="515"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a905d974544cd60c9b72314cb6135e17b" kindref="member">refine</ref>(ratio);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.refine(ratio);</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="521"><highlight class="normal">}</highlight></codeline>
@@ -1162,9 +1162,9 @@
 <codeline lineno="523"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a905d974544cd60c9b72314cb6135e17b" kindref="member">BoxList::refine</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio)</highlight></codeline>
 <codeline lineno="525"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a905d974544cd60c9b72314cb6135e17b" kindref="member">refine</ref>(ratio);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.refine(ratio);</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="531"><highlight class="normal">}</highlight></codeline>
@@ -1172,9 +1172,9 @@
 <codeline lineno="533"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="534"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a3b14d38ee9c592394f4465c5e48e8e38" kindref="member">BoxList::coarsen</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio)</highlight></codeline>
 <codeline lineno="535"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a3b14d38ee9c592394f4465c5e48e8e38" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.coarsen(ratio);</highlight></codeline>
 <codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="541"><highlight class="normal">}</highlight></codeline>
@@ -1182,9 +1182,9 @@
 <codeline lineno="543"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="544"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a3b14d38ee9c592394f4465c5e48e8e38" kindref="member">BoxList::coarsen</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio)</highlight></codeline>
 <codeline lineno="545"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a3b14d38ee9c592394f4465c5e48e8e38" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.coarsen(ratio);</highlight></codeline>
 <codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="551"><highlight class="normal">}</highlight></codeline>
@@ -1192,9 +1192,9 @@
 <codeline lineno="553"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="554"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a3b3222b65efa7cdc1944106dbb07d6ae" kindref="member">BoxList::accrete</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sz)</highlight></codeline>
 <codeline lineno="555"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.grow(sz);</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.grow(sz);</highlight></codeline>
 <codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="561"><highlight class="normal">}</highlight></codeline>
@@ -1202,29 +1202,29 @@
 <codeline lineno="563"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="564"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a3b3222b65efa7cdc1944106dbb07d6ae" kindref="member">BoxList::accrete</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>sz)</highlight></codeline>
 <codeline lineno="565"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.grow(sz);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.grow(sz);</highlight></codeline>
 <codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="571"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"></highlight></codeline>
 <codeline lineno="573"><highlight class="normal">BoxList&amp;</highlight></codeline>
-<codeline lineno="574"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a724c4380dbcdc0d514cf18d029a49f92" kindref="member">BoxList::shift</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nzones)</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a724c4380dbcdc0d514cf18d029a49f92" kindref="member">BoxList::shift</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nzones)</highlight></codeline>
 <codeline lineno="575"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a724c4380dbcdc0d514cf18d029a49f92" kindref="member">shift</ref>(dir,<sp/>nzones);</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.shift(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>nzones);</highlight></codeline>
 <codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="581"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="582"><highlight class="normal"></highlight></codeline>
 <codeline lineno="583"><highlight class="normal">BoxList&amp;</highlight></codeline>
-<codeline lineno="584"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1abf9737ea9ecdf7a57adbe55f6215219f" kindref="member">BoxList::shiftHalf</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_halfs)</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1abf9737ea9ecdf7a57adbe55f6215219f" kindref="member">BoxList::shiftHalf</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_halfs)</highlight></codeline>
 <codeline lineno="585"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1abf9737ea9ecdf7a57adbe55f6215219f" kindref="member">shiftHalf</ref>(dir,<sp/>num_halfs);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.shiftHalf(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>num_halfs);</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="591"><highlight class="normal">}</highlight></codeline>
@@ -1232,9 +1232,9 @@
 <codeline lineno="593"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="594"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1abf9737ea9ecdf7a57adbe55f6215219f" kindref="member">BoxList::shiftHalf</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>iv)</highlight></codeline>
 <codeline lineno="595"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1abf9737ea9ecdf7a57adbe55f6215219f" kindref="member">shiftHalf</ref>(iv);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.shiftHalf(iv);</highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="601"><highlight class="normal">}</highlight></codeline>
@@ -1413,9 +1413,9 @@
 <codeline lineno="774"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a954f12195603d5493ca2251e0147c4e5" kindref="member">BoxList::maxSize</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>chunk)</highlight></codeline>
 <codeline lineno="775"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>new_boxes;</highlight></codeline>
-<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect<sp/>boxlen<sp/>=<sp/><ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">amrex::enclosedCells</ref>(bx).<ref refid="classamrex_1_1Box_1a14c1e4a7eebae64a3e3724fc9c747e1c" kindref="member">size</ref>();</highlight></codeline>
-<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect<sp/>boxlo<sp/>=<sp/>bx.smallEnd();</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect<sp/>boxlen<sp/>=<sp/><ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">amrex::enclosedCells</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>).<ref refid="classamrex_1_1Box_1a14c1e4a7eebae64a3e3724fc9c747e1c" kindref="member">size</ref>();</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect<sp/>boxlo<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.smallEnd();</highlight></codeline>
 <codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>ratio{1},<sp/>numblk{1},<sp/>extra{0};</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>sz<sp/>=<sp/>boxlen;</highlight></codeline>
 <codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
@@ -1433,7 +1433,7 @@
 <codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numblk<sp/>==<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_boxes.push_back(bx);</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_boxes.push_back(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
 <codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="799"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>numblk[2];<sp/>++k)<sp/>{</highlight></codeline>
@@ -1474,19 +1474,19 @@
 <codeline lineno="835"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a1407ab0108776da8d7fe9a05381f5041" kindref="member">BoxList::surroundingNodes</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="837"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a1407ab0108776da8d7fe9a05381f5041" kindref="member">surroundingNodes</ref>();</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.surroundingNodes();</highlight></codeline>
 <codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="843"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="844"><highlight class="normal"></highlight></codeline>
 <codeline lineno="845"><highlight class="normal">BoxList&amp;</highlight></codeline>
-<codeline lineno="846"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a1407ab0108776da8d7fe9a05381f5041" kindref="member">BoxList::surroundingNodes</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir)<sp/>noexcept</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a1407ab0108776da8d7fe9a05381f5041" kindref="member">BoxList::surroundingNodes</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>)<sp/>noexcept</highlight></codeline>
 <codeline lineno="847"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/>m_lbox)</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/>m_lbox)</highlight></codeline>
 <codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a1407ab0108776da8d7fe9a05381f5041" kindref="member">surroundingNodes</ref>(dir);</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1a03f85bbf6bb509deb7614715d02856d6" kindref="member">surroundingNodes</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>);</highlight></codeline>
 <codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="853"><highlight class="normal">}</highlight></codeline>
@@ -1494,19 +1494,19 @@
 <codeline lineno="855"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="856"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a9ed198bd9ceb2268f1219c2e0375bdbb" kindref="member">BoxList::enclosedCells</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="857"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/><ref refid="classamrex_1_1BoxList_1adeadcf55bf1de6d0a14007817795bfbf" kindref="member">m_lbox</ref>)</highlight></codeline>
 <codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a9ed198bd9ceb2268f1219c2e0375bdbb" kindref="member">enclosedCells</ref>();</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.enclosedCells();</highlight></codeline>
 <codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="863"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="864"><highlight class="normal"></highlight></codeline>
 <codeline lineno="865"><highlight class="normal">BoxList&amp;</highlight></codeline>
-<codeline lineno="866"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a9ed198bd9ceb2268f1219c2e0375bdbb" kindref="member">BoxList::enclosedCells</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir)<sp/>noexcept</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a9ed198bd9ceb2268f1219c2e0375bdbb" kindref="member">BoxList::enclosedCells</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>)<sp/>noexcept</highlight></codeline>
 <codeline lineno="867"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/>m_lbox)</highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/>m_lbox)</highlight></codeline>
 <codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a9ed198bd9ceb2268f1219c2e0375bdbb" kindref="member">enclosedCells</ref>(dir);</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1ae17168bdeb2aab35fdffc69ac0e21bce" kindref="member">enclosedCells</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>);</highlight></codeline>
 <codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="873"><highlight class="normal">}</highlight></codeline>
@@ -1515,9 +1515,9 @@
 <codeline lineno="876"><highlight class="normal"><ref refid="classamrex_1_1BoxList_1a533a896b5397ca253658e34bdb05e538" kindref="member">BoxList::convert</ref><sp/>(IndexType<sp/>typ)<sp/>noexcept</highlight></codeline>
 <codeline lineno="877"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/>btype<sp/>=<sp/>typ;</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/>m_lbox)</highlight></codeline>
+<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/>m_lbox)</highlight></codeline>
 <codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1BoxList_1a533a896b5397ca253658e34bdb05e538" kindref="member">convert</ref>(typ);</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.<ref refid="classamrex_1_1Box_1a5499f2bb3ff92ef3951332fa6b390b73" kindref="member">convert</ref>(typ);</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="884"><highlight class="normal">}</highlight></codeline>

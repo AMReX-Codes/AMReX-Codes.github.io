@@ -144,8 +144,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = tile.GetArrayOfStructs();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> pstruct = aos().dataPtr();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">auto</span>&amp; fab = (*mf_pointer)[pti];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">auto</span> fabarr = fab.array();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">auto</span>&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a> = (*mf_pointer)[pti];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">auto</span> fabarr = <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a>.array();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = tile.GetArrayOfStructs();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> pstruct = aos().dataPtr();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">auto</span>&amp; fab = (*mf_pointer)[pti];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">auto</span>&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a> = (*mf_pointer)[pti];</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <a class="code" href="classamrex_1_1Box.html">Box</a> tile_box = pti.tilebox();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                tile_box.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(mf_pointer-&gt;nGrowVect());</div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <a class="code" href="namespaceamrex_1_1particle__detail.html#aeefdb393afef57732439f230e1b53578">particle_detail::call_f</a>(f, pstruct[i], fabarr, plo, dxi);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                });</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                fab.template atomicAdd&lt;RunOn::Host&gt;(local_fab, tile_box, tile_box,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a>.template atomicAdd&lt;RunOn::Host&gt;(local_fab, tile_box, tile_box,</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                    0, 0, mf_pointer-&gt;nComp());</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
@@ -224,8 +224,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">auto</span>&amp; aos = tile.GetArrayOfStructs();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">auto</span> pstruct = aos().dataPtr();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; fab = (*mf_pointer)[pti];</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">auto</span> fabarr = fab.array();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a> = (*mf_pointer)[pti];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">auto</span> fabarr = <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a>.array();</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        {</div>
@@ -241,6 +241,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
+<div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a0555045efe3506ffa446042caacaccc0"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a></div><div class="ttdeci">Array4&lt; Real &gt; fab</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:15</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html_a61b9a1d5eda39765d1db9b9b936558c7"><div class="ttname"><a href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">amrex::MFIter::isValid</a></div><div class="ttdeci">bool isValid() const noexcept</div><div class="ttdoc">Is the iterator valid i.e. is it associated with a FAB?</div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:138</div></div>
 <div class="ttc" id="aclassamrex_1_1ParIterBase_html_a118abe9490a5ad60844d3880904c125d"><div class="ttname"><a href="classamrex_1_1ParIterBase.html#a118abe9490a5ad60844d3880904c125d">amrex::ParIterBase::GetParticleTile</a></div><div class="ttdeci">ParticleTileRef GetParticleTile() const</div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:70</div></div>
 <div class="ttc" id="aAMReX__MultiFab_8H_html"><div class="ttname"><a href="AMReX__MultiFab_8H.html">AMReX_MultiFab.H</a></div></div>
