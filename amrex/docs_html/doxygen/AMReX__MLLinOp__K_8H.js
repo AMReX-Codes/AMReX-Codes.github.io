@@ -15,6 +15,9 @@ var AMReX__MLLinOp__K_8H =
     [ "mllinop_apply_innu_zhi", "AMReX__MLLinOp__K_8H.html#ad871869aad35c3f731e4dc3ddc387331", null ],
     [ "mllinop_apply_innu_zlo", "AMReX__MLLinOp__K_8H.html#a31a261bd82af8b186634c0e2b0c898c8", null ],
     [ "mllinop_comp_interp_coef0_x", "AMReX__MLLinOp__K_8H.html#a162e36f07a37bdde15db1f5652f5ae27", null ],
+    [ "mllinop_comp_interp_coef0_x", "AMReX__MLLinOp__K_8H.html#a00dd03c59799512b311d067a83660042", null ],
     [ "mllinop_comp_interp_coef0_y", "AMReX__MLLinOp__K_8H.html#ab2ad3fe61966bb70146cacf202fe8390", null ],
-    [ "mllinop_comp_interp_coef0_z", "AMReX__MLLinOp__K_8H.html#af10b31c09ea16d19bf78bc9aa661287f", null ]
+    [ "mllinop_comp_interp_coef0_y", "AMReX__MLLinOp__K_8H.html#aaf854a04cb48a6f7eecfedbfd9228c53", null ],
+    [ "mllinop_comp_interp_coef0_z", "AMReX__MLLinOp__K_8H.html#af10b31c09ea16d19bf78bc9aa661287f", null ],
+    [ "mllinop_comp_interp_coef0_z", "AMReX__MLLinOp__K_8H.html#ab9f04c48eff10210c8ec7fc45b848277", null ]
 ];

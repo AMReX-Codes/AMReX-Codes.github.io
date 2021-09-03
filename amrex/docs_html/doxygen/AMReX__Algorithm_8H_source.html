@@ -208,13 +208,13 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>(hi &gt; lo,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="stringliteral">&quot;Error - calling bisect but lo and hi don&#39;t describe a reasonable interval.&quot;</span>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        T flo = f(lo);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        T fhi = f(hi);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        T <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a> = f(lo);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        T <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a7386f334588074d7e03fe47bbe183b54">fhi</a> = f(hi);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (flo == T(0)) <span class="keywordflow">return</span> flo;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (fhi == T(0)) <span class="keywordflow">return</span> fhi;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a> == T(0)) <span class="keywordflow">return</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a7386f334588074d7e03fe47bbe183b54">fhi</a> == T(0)) <span class="keywordflow">return</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a7386f334588074d7e03fe47bbe183b54">fhi</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>(flo * fhi &lt;= T(0),</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a> * <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a7386f334588074d7e03fe47bbe183b54">fhi</a> &lt;= T(0),</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="stringliteral">&quot;Error - calling bisect but lo and hi don&#39;t bracket a root.&quot;</span>);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        T mi = (lo + hi) / T(2);</div>
@@ -226,9 +226,9 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            mi = (lo + hi) / T(2);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            fmi = f(mi);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">if</span> (fmi == T(0)) <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            fmi*flo &lt; T(0) ? hi = mi : lo = mi;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            flo = f(lo);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            fhi = f(hi);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            fmi*<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a> &lt; T(0) ? hi = mi : lo = mi;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a> = f(lo);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a7386f334588074d7e03fe47bbe183b54">fhi</a> = f(hi);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            ++n;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
@@ -379,6 +379,7 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="ttc" id="astructamrex_1_1detail_1_1clzl__tag_html"><div class="ttname"><a href="structamrex_1_1detail_1_1clzl__tag.html">amrex::detail::clzl_tag</a></div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:163</div></div>
 <div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayCommI.H:851</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a8013eb3b1fc596632383f1bb7c40e92c"><div class="ttname"><a href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:37</div></div>
+<div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a7386f334588074d7e03fe47bbe183b54"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a7386f334588074d7e03fe47bbe183b54">fhi</a></div><div class="ttdeci">Array4&lt; Real &gt; fhi</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:35</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:14</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:110</div></div>
 <div class="ttc" id="anamespaceamrex_html_a48b44d4cce9eeb8129350d8a67e5a0e9"><div class="ttname"><a href="namespaceamrex.html#a48b44d4cce9eeb8129350d8a67e5a0e9">amrex::clz</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int clz(std::uint8_t x) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:212</div></div>
@@ -395,6 +396,7 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_html_ade77dcb5e477e7ac0e7e969c51dfcdd2"><div class="ttname"><a href="namespaceamrex.html#ade77dcb5e477e7ac0e7e969c51dfcdd2">amrex::Clamp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; Clamp(const T &amp;v, const T &amp;lo, const T &amp;hi)</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:84</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>
+<div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a5b86bd2bbd4fd2d77c343c1afe89ab3e"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a5b86bd2bbd4fd2d77c343c1afe89ab3e">flo</a></div><div class="ttdeci">Array4&lt; Real &gt; flo</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:34</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
