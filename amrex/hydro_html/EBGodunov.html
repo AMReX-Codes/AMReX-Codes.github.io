@@ -198,26 +198,26 @@ in space and time. For each face with a non-zero area fraction, we extrapolate t
 component from the centroids of the cells on either side to the face centroid, creating left (L)
 and right (R) states. For face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> this gives</p>
 <div class="math notranslate nohighlight" id="equation-eq1-ebg">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq1-ebg" title="Permalink to this equation">¶</a></span>\[\tilde{u}_{i+\half,j,k}^{L,\nph} = \hat{u}_{i+\half,j,k}^{L} +
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq1-ebg" title="Permalink to this equation">¶</a></span>\[\tilde{u}_{i+\frac{1}{2},j,k}^{L,\nph} = \hat{u}_{i+\frac{1}{2},j,k}^{L} +
 \frac{dt}{2} \; (-(\widehat{v u_y})_{i,j,k} - (\widehat{w u_z})_{i,j,k} + f_{x,i,j,k}^n)\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, where</p>
 <div class="math notranslate nohighlight" id="equation-eq1-ebg2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq1-ebg2" title="Permalink to this equation">¶</a></span>\[\hat{u}_{i+\half,j,k}^{L} = u_{i,j,k}^n +
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq1-ebg2" title="Permalink to this equation">¶</a></span>\[\hat{u}_{i+\frac{1}{2},j,k}^{L} = u_{i,j,k}^n +
 \left( \delta x - \frac{dt}{2} u_{i,j,k}^n \right)
 \; {u^x}_{i,j,k} +  \delta y \; {u^y}_{i,j,k} + \delta z \; {u^z}_{i,j,k}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq2-ebg">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq2-ebg" title="Permalink to this equation">¶</a></span>\[\tilde{u}_{i+\half,j,k}^{R,\nph} = \hat{u}_{i+\half,j,k}^{R} +
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq2-ebg" title="Permalink to this equation">¶</a></span>\[\tilde{u}_{i+\frac{1}{2},j,k}^{R,\nph} = \hat{u}_{i+\frac{1}{2},j,k}^{R} +
 \frac{dt}{2} (-(\widehat{v u_y})_{i+1,j,k} - (\widehat{w u_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k),\)</span> where</p>
 <div class="math notranslate nohighlight" id="equation-eq2-ebg2">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eq2-ebg2" title="Permalink to this equation">¶</a></span>\[\hat{u}_{i+\half,j,k}^{R} = u_{i+1,j,k}^n +
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq2-ebg2" title="Permalink to this equation">¶</a></span>\[\hat{u}_{i+\frac{1}{2},j,k}^{R} = u_{i+1,j,k}^n +
 \left(\delta_x  - \frac{dt}{2} u_{i,j,k}^n \right)
 \; {u^x}_{i+1,j,k} +  \delta y \; {u^y}_{i+1,j,k} + \delta z \; {u^z}_{i+1,j,k}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
 <p>Here the slopes $(u^x,u^y,u^z)$ are calculated using a least-squares fit to available data and
 <span class="math notranslate nohighlight">\(\delta_x,\)</span> <span class="math notranslate nohighlight">\(\delta_y\)</span> and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector
-from the cell centroid to the face centroid of the <span class="math notranslate nohighlight">\(x\)</span>-face at <span class="math notranslate nohighlight">\((i-\half,j,k)\)</span>.
+from the cell centroid to the face centroid of the <span class="math notranslate nohighlight">\(x\)</span>-face at <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k)\)</span>.
 These slopes are limited with a Barth-Jesperson type of limiter that enforces no new maxima or minima
 when the state is predicted to the face centroids. (If sufficient data is available for cells
 with unit volume fraction, this computation instead uses a standard second- or fourth-order
