@@ -9,8 +9,8 @@ var structamrex_1_1Array1D =
     [ "lo", "structamrex_1_1Array1D.html#a3f19e3370115f627c98dd50500dcbae9", null ],
     [ "operator()", "structamrex_1_1Array1D.html#a6cc5eb8244b9470ef4e9f3c5a0ce1716", null ],
     [ "operator()", "structamrex_1_1Array1D.html#ae9cf5dcb6f1457ab4fd18d97efd91be2", null ],
-    [ "product", "structamrex_1_1Array1D.html#a2d6b36503219f7a1103a49a9c641e625", null ],
+    [ "product", "structamrex_1_1Array1D.html#afd1c8361929cdf3d8d4f928263113fac", null ],
     [ "size", "structamrex_1_1Array1D.html#adde36e9756eb2859617a63cc2513b08b", null ],
-    [ "sum", "structamrex_1_1Array1D.html#ab99e4da2f03d0cf562130f8798b76823", null ],
+    [ "sum", "structamrex_1_1Array1D.html#ad937d10f88d93f07604c7c9c2daae3ec", null ],
     [ "arr", "structamrex_1_1Array1D.html#a3fbb7068c4f65f7830c903a57e3df5a7", null ]
 ];
