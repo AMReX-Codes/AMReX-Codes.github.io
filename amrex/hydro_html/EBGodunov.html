@@ -344,10 +344,10 @@ on an outflow face is inflowing, the normal velocity component must be
 outflowing or zero.</p>
 <p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u^{MAC}_{i-\frac{1}{2},j,k}\)</span></p>
 <div class="math notranslate nohighlight">
-\[\begin{split}s_{i-\frac{1}{2},j,k}^{{n+\frac{1}{2}}} =
+\[\begin{split}s_{i+\frac{1}{2},j,k}^{{n+\frac{1}{2}}} =
 \begin{cases}
-s_L, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
-s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
+s_L, &amp; \mathrm{if} \; u^{MAC}_{i+\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
+s_R, &amp; \mathrm{if} \; u^{MAC}_{i+\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
 \frac{1}{2}(s_L + s_R),
 \end{cases}\end{split}\]</div>
 </section>
@@ -362,7 +362,7 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 <p>on all y-faces with non-zero area fraction, and</p>
 <div class="math notranslate nohighlight">
 \[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}}\]</div>
-<p>on all z-face with non-zero area fraction.</p>
+<p>on all z-faces with non-zero area fraction.</p>
 </section>
 <section id="constructing-the-update">
 <h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
