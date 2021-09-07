@@ -190,8 +190,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
       [ "Elixir", "classamrex_1_1Gpu_1_1Elixir.html", "classamrex_1_1Gpu_1_1Elixir" ]
     ] ],
     [ "AMReX_GpuError.H", "AMReX__GpuError_8H.html", "AMReX__GpuError_8H" ],
-    [ "AMReX_GpuFuse.cpp", "AMReX__GpuFuse_8cpp.html", "AMReX__GpuFuse_8cpp" ],
-    [ "AMReX_GpuFuse.H", "AMReX__GpuFuse_8H.html", "AMReX__GpuFuse_8H" ],
     [ "AMReX_GpuKernelInfo.H", "AMReX__GpuKernelInfo_8H.html", [
       [ "KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", "classamrex_1_1Gpu_1_1KernelInfo" ]
     ] ],

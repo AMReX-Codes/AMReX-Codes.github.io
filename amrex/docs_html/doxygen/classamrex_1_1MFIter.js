@@ -47,7 +47,6 @@ var classamrex_1_1MFIter =
     [ "endIndex", "classamrex_1_1MFIter.html#a427faab13c7d1f9d72b476452df519e1", null ],
     [ "fabArray", "classamrex_1_1MFIter.html#a198baf9d7f4a208f217569a0c6f02183", null ],
     [ "flags", "classamrex_1_1MFIter.html#a1184620f493f560be355cf02e5a0e619", null ],
-    [ "gpu_fsg", "classamrex_1_1MFIter.html#a8287b68401c494c261f0ad45f9b6b5ed", null ],
     [ "index_map", "classamrex_1_1MFIter.html#ac482cbbf5ecee6f2593a3e4437623082", null ],
     [ "local_index_map", "classamrex_1_1MFIter.html#a8a8cdb1fbae0dace9fcc0dc622c3409d", null ],
     [ "local_tile_index_map", "classamrex_1_1MFIter.html#a72828c9a333be0dfff3e89e350fd0e11", null ],
