@@ -222,24 +222,18 @@ These slopes are limited with a Barth-Jesperson type of limiter that enforces no
 when the state is predicted to the face centroids. (If sufficient data is available for cells
 with unit volume fraction, this computation instead uses a standard second- or fourth-order
 slope calculation with limiting as described in REF.)</p>
-<p>The transverse derivative terms (<span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and
-<span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
+<p>The transverse derivative terms ( <span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and <span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
 are evaluated by first extrapolating all velocity components
-to the transverse faces from the cell centers on either side,
+to the face centroids of the transverse faces from the cell centers on either side,
 then choosing between these states using the upwinding procedure
-defined below.  In particular, in the <span class="math notranslate nohighlight">\(y\)</span> direction we define</p>
-<div class="math notranslate nohighlight">
-\[\hat{\boldsymbol{U}}^F_{i,j+\frac{1}{2},k} =  \boldsymbol{U}_{i,j,k}^n +
-\left( \frac{dy}{2} - \frac{dt}{2} v_{i,j,k}^n \right)
-(\boldsymbol{U}^{n,lim}_y)_{i,j,k}  \;\;\;\]</div>
-<div class="math notranslate nohighlight">
-\[\hat{\boldsymbol{U}}^B_{i,j+\frac{1}{2},k} =  \boldsymbol{U}_{i,j+1,k}^n -
-\left( \frac{dy}{2} + \frac{dt}{2} v_{i,j+1,k}^n \right)
-(\boldsymbol{U}^{n,lim}_y)_{i,j+1,k} \;\;\;\]</div>
-<p>Values are similarly traced from <span class="math notranslate nohighlight">\((i,j,k)\)</span> and <span class="math notranslate nohighlight">\((i,j,k+1)\)</span>
+defined below.  In particular, in the <span class="math notranslate nohighlight">\(y\)</span> direction we define
+<span class="math notranslate nohighlight">\(\hat{\U}^F_{i,j+\frac{1}{2},k}\)</span> and <span class="math notranslate nohighlight">\(\hat{\U}^T_{i,j+\frac{1}{2},k}\)</span>
+analogously to how we defined
+<span class="math notranslate nohighlight">\(\hat{u}_{i+\frac{1}{2},j,k}^{R}\)</span> and <span class="math notranslate nohighlight">\(\hat{u}_{i+\frac{1}{2},j,k}^{L}\)</span>,
+but here on the y-faces and including all three velocity components.
+Values are similarly traced from <span class="math notranslate nohighlight">\((i,j,k)\)</span> and <span class="math notranslate nohighlight">\((i,j,k+1)\)</span>
 to the <span class="math notranslate nohighlight">\((i,j,k+\frac{1}{2})\)</span> faces to define
-<span class="math notranslate nohighlight">\(\hat{\boldsymbol{U}}^D_{i,j,k+\frac{1}{2}}\)</span> and
-<span class="math notranslate nohighlight">\(\hat{\boldsymbol{U}}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
+<span class="math notranslate nohighlight">\(\hat{\U}^D_{i,j,k+\frac{1}{2}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\U}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
 <p>In this upwinding procedure we first define a normal advective
 velocity on the face
 (suppressing the <span class="math notranslate nohighlight">\(({i,j+\frac{1}{2},k})\)</span> spatial indices on front and back
