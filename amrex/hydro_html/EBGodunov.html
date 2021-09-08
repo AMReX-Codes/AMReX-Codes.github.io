@@ -227,13 +227,15 @@ are evaluated by first extrapolating all velocity components
 to the face centroids of the transverse faces from the cell centers on either side,
 then choosing between these states using the upwinding procedure
 defined below.  In particular, in the <span class="math notranslate nohighlight">\(y\)</span> direction we define
-<span class="math notranslate nohighlight">\(\hat{\U}^F_{i,j+\frac{1}{2},k}\)</span> and <span class="math notranslate nohighlight">\(\hat{\U}^T_{i,j+\frac{1}{2},k}\)</span>
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^F_{i,j+\frac{1}{2},k}\)</span> and
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^T_{i,j+\frac{1}{2},k}\)</span>
 analogously to how we defined
 <span class="math notranslate nohighlight">\(\hat{u}_{i+\frac{1}{2},j,k}^{R}\)</span> and <span class="math notranslate nohighlight">\(\hat{u}_{i+\frac{1}{2},j,k}^{L}\)</span>,
 but here on the y-faces and including all three velocity components.
 Values are similarly traced from <span class="math notranslate nohighlight">\((i,j,k)\)</span> and <span class="math notranslate nohighlight">\((i,j,k+1)\)</span>
 to the <span class="math notranslate nohighlight">\((i,j,k+\frac{1}{2})\)</span> faces to define
-<span class="math notranslate nohighlight">\(\hat{\U}^D_{i,j,k+\frac{1}{2}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\U}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^D_{i,j,k+\frac{1}{2}}\)</span> and
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
 <p>In this upwinding procedure we first define a normal advective
 velocity on the face
 (suppressing the <span class="math notranslate nohighlight">\(({i,j+\frac{1}{2},k})\)</span> spatial indices on front and back
