@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1algoim_1_1PsiCode.html#a791226bc3dff2637e4a5dacb30c25ec0":[2,0,0,0,5,2],
+"structamrex_1_1algoim_1_1PsiCode.html#a80ddd826639ec72c71ba72a3c6dfc09a":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1PsiCode.html#ac85d103050ea6acd04b2a2b4e55ee8d4":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1QuadratureRule.html":[2,0,0,0,6],
 "structamrex_1_1algoim_1_1QuadratureRule.html#a93e5266e3de3f1d636f081e118526ea2":[2,0,0,0,6,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "unionamrex_1_1parser__nvp.html":[2,0,0,333],
 "unionamrex_1_1parser__nvp.html#a8156aeb22a88a0cbd45ac0dc3bc5f21e":[2,0,0,333,1],
 "unionamrex_1_1parser__nvp.html#a9bd472dd6c6532b9eebab697171ee49d":[2,0,0,333,0],
-"unionamrex_1_1parser__nvp.html#af8c66404e93e68b90e7d7abb9f2ad344":[2,0,0,333,2],
-"unionyyalloc.html":[2,0,30],
-"unionyyalloc.html#a9326f4fdc6f737a929444427836d8928":[2,0,30,1]
+"unionamrex_1_1parser__nvp.html#af8c66404e93e68b90e7d7abb9f2ad344":[2,0,0,333,2]
 };
