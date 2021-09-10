@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Overview of AMReX GPU Strategy &mdash; amrex 21.10-dev documentation</title>
@@ -230,7 +229,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="overview-of-amrex-gpu-strategy">
+  <div class="section" id="overview-of-amrex-gpu-strategy">
 <span id="sec-gpu-overview"></span><h1>Overview of AMReX GPU Strategy<a class="headerlink" href="#overview-of-amrex-gpu-strategy" title="Permalink to this headline">¶</a></h1>
 <p>AMReX’s GPU strategy focuses on providing performant GPU support
 with minimal changes and maximum flexibility.  This allows
@@ -330,18 +329,16 @@ to complete before continuing.</p>
 <li><p>The Fortran interface of AMReX does not currently have GPU support.  AMReX recommends
 porting Fortran code to C++ when coding for GPUs.</p></li>
 </ul>
-<figure class="align-default" id="id2">
+<div class="figure align-default" id="id2">
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
 ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="building-gpu-support">
+</div>
+</div>
+<div class="section" id="building-gpu-support">
 <span id="sec-gpu-build"></span><h1>Building GPU Support<a class="headerlink" href="#building-gpu-support" title="Permalink to this headline">¶</a></h1>
-<section id="building-with-gnu-make">
+<div class="section" id="building-with-gnu-make">
 <h2>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this headline">¶</a></h2>
 <p>To build AMReX with GPU support, add <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP=TRUE</span></code> or
 <code class="docutils literal notranslate"><span class="pre">USE_DPCPP=TRUE</span></code> to the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> or as a command line argument.</p>
@@ -379,10 +376,10 @@ can run it and that will generate results like:</p>
 <span class="go">AMReX (19.06-404-g0455b168b69c-dirty) finalized</span>
 </pre></div>
 </div>
-</section>
-<section id="building-with-cmake">
+</div>
+<div class="section" id="building-with-cmake">
 <h2>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline">¶</a></h2>
-<section id="enabling-cuda-support">
+<div class="section" id="enabling-cuda-support">
 <h3>Enabling CUDA support<a class="headerlink" href="#enabling-cuda-support" title="Permalink to this headline">¶</a></h3>
 <p>To build AMReX with CUDA support in CMake, add <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation. For a full list of CUDA-specific configuration options,
@@ -539,8 +536,8 @@ we provide the helper function <code class="docutils literal notranslate"><span 
 <span class="go">target_link_libraries(my_target AMReX::amrex)</span>
 </pre></div>
 </div>
-</section>
-<section id="enabling-hip-support-experimental">
+</div>
+<div class="section" id="enabling-hip-support-experimental">
 <h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline">¶</a></h3>
 <p>To build AMReX with HIP support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=HIP</span> <span class="pre">-DAMReX_AMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code>
@@ -562,8 +559,8 @@ Below is an example configuration for HIP on Tulip:</p>
 <span class="go">cmake --build build -j 6</span>
 </pre></div>
 </div>
-</section>
-<section id="enabling-sycl-support-experimental">
+</div>
+<div class="section" id="enabling-sycl-support-experimental">
 <h3>Enabling SYCL support (experimental)<a class="headerlink" href="#enabling-sycl-support-experimental" title="Permalink to this headline">¶</a></h3>
 <p>To build AMReX with SYCL support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=SYCL</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-sycl-compiler&gt;</span></code>
@@ -614,10 +611,10 @@ Below is an example configuration for SYCL:</p>
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-</section>
-<section id="gpu-namespace-and-macros">
+</div>
+</div>
+</div>
+<div class="section" id="gpu-namespace-and-macros">
 <span id="sec-gpu-namespace"></span><h1>Gpu Namespace and Macros<a class="headerlink" href="#gpu-namespace-and-macros" title="Permalink to this headline">¶</a></h1>
 <p>Most GPU related classes and functions are in <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">Gpu</span></code>,
 which is inside <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">amrex</span></code>. For example, the GPU configuration
@@ -643,8 +640,8 @@ defined.</p>
 <code class="docutils literal notranslate"><span class="pre">__CUDA_ARCH__</span></code> macro which is only defined when in device code.
 <code class="docutils literal notranslate"><span class="pre">__CUDA_ARCH__</span></code> should be used when a <code class="docutils literal notranslate"><span class="pre">__host__</span> <span class="pre">__device__</span></code>
 function requires separate code for the CPU and GPU implementations.</p>
-</section>
-<section id="memory-allocation">
+</div>
+<div class="section" id="memory-allocation">
 <span id="sec-gpu-memory"></span><h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">¶</a></h1>
 <p>To provide portability and improve memory allocation performance,
 AMReX provides a number of memory pools.  When compiled without
@@ -700,8 +697,8 @@ SUNDIALS CUDA vector:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">N_Vector</span> <span class="n">x</span> <span class="o">=</span> <span class="n">N_VNewWithMemHelp_Cuda</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">use_managed_memory</span><span class="p">,</span> <span class="o">*</span><span class="n">The_SUNMemory_Helper</span><span class="p">());</span>
 </pre></div>
 </div>
-</section>
-<section id="gpu-safe-classes-and-functions">
+</div>
+<div class="section" id="gpu-safe-classes-and-functions">
 <span id="sec-gpu-classes"></span><h1>GPU Safe Classes and Functions<a class="headerlink" href="#gpu-safe-classes-and-functions" title="Permalink to this headline">¶</a></h1>
 <p>AMReX GPU work takes place inside of MFIter and particle loops.
 Therefore, there are two ways classes and functions have been modified
@@ -720,7 +717,7 @@ CPU will launch GPU kernels if AMReX is compiled with GPU support.</p>
 version and/or device access.</p>
 <p>In this section, we discuss some examples of AMReX device classes and functions
 that are important for programming GPUs.</p>
-<section id="gpuarray-array1d-array2d-and-array3d">
+<div class="section" id="gpuarray-array1d-array2d-and-array3d">
 <h2>GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#gpuarray-array1d-array2d-and-array3d" title="Permalink to this headline">¶</a></h2>
 <p>As we have mentioned in <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code>
 cannot be used in device code, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>,
@@ -731,8 +728,8 @@ functions in AMReX return <code class="code cpp c++ docutils literal notranslate
 lambda-captured to GPU code. For example,
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">CellSizeArray</span></span><span class="punctuation"><span class="pre">()</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">InvCellSizeArray</span></span><span class="punctuation"><span class="pre">()</span></span></code>
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">length3d</span></span><span class="punctuation"><span class="pre">()</span></span></code> all return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>s.</p>
-</section>
-<section id="asyncarray">
+</div>
+<div class="section" id="asyncarray">
 <span id="sec-gpu-classes-asyncarray"></span><h2>AsyncArray<a class="headerlink" href="#asyncarray" title="Permalink to this headline">¶</a></h2>
 <p>Where the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> is a statically-sized array designed to be
 passed by value onto the device, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AsyncArray</span></span></code> is a
@@ -785,8 +782,8 @@ object only stores and handles the CPU version of the data.</p>
 <span class="n">aa_s</span><span class="p">.</span><span class="n">copyToHost</span><span class="p">(</span><span class="o">&amp;</span><span class="n">h_s</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Copy the value back to host</span>
 </pre></div>
 </div>
-</section>
-<section id="gpu-vectors">
+</div>
+<div class="section" id="gpu-vectors">
 <h2>Gpu Vectors<a class="headerlink" href="#gpu-vectors" title="Permalink to this headline">¶</a></h2>
 <p>AMReX also provides a number of dynamic vectors for use with GPU kernels.
 These are configured to use the different AMReX memory Arenas, as
@@ -832,8 +829,8 @@ race conditions with concurrent GPU kernels.</p>
 constructed inside of an MFIter loop with GPU kernels and great care should
 be used when accessing <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code> data on GPUs to avoid race
 conditions.</p>
-</section>
-<section id="amrex-min-and-amrex-max">
+</div>
+<div class="section" id="amrex-min-and-amrex-max">
 <h2>amrex::min and amrex::max<a class="headerlink" href="#amrex-min-and-amrex-max" title="Permalink to this headline">¶</a></h2>
 <p>GPU versions of <code class="docutils literal notranslate"><span class="pre">std::min</span></code> and <code class="docutils literal notranslate"><span class="pre">std::max</span></code> are not provided in CUDA.
 So, AMReX provides a templated <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">min</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max</span></span></code> with host and
@@ -841,8 +838,8 @@ device versions to allow functionality on GPUs. Invoke the explicitly
 namespaced <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">min</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">B</span></span><span class="punctuation"><span class="pre">)</span></span></code> or <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">max</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">x</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">y</span></span><span class="punctuation"><span class="pre">)</span></span></code> to use the
 GPU safe implementations. These functions are variadic, so they can take
 any number of arguments and can be invoked with any standard data type.</p>
-</section>
-<section id="multifab-reductions">
+</div>
+<div class="section" id="multifab-reductions">
 <h2>MultiFab Reductions<a class="headerlink" href="#multifab-reductions" title="Permalink to this headline">¶</a></h2>
 <p>AMReX provides functions for performing standard reduction operations on
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code>, including <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">sum</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">max</span></span></code>.
@@ -884,16 +881,16 @@ reductions.  The <code class="code cpp c++ docutils literal notranslate"><span c
 that take either one, two or three :<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s.
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceMin</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceMax</span></span></code> can take either one
 or two.</p>
-</section>
-<section id="box-intvect-and-indextype">
+</div>
+<div class="section" id="box-intvect-and-indextype">
 <h2>Box, IntVect and IndexType<a class="headerlink" href="#box-intvect-and-indextype" title="Permalink to this headline">¶</a></h2>
 <p>In AMReX, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVect</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IndexType</span></span></code>
 are classes for representing indices.  These classes and most of
 their member functions, including constructors and destructors,
 have both host and device versions.  They can be used freely
 in device code.</p>
-</section>
-<section id="geometry">
+</div>
+<div class="section" id="geometry">
 <h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
 <p>AMReX’s <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code> class is not a GPU safe class.  However, we often need
 to use geometric information such as cell size and physical coordinates
@@ -911,8 +908,8 @@ passed by value to GPU kernels. This class is called
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span></code>, which is created by calling
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">()</span></span></code>.  The accessor functions of
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span></code> are identical to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code>.</p>
-</section>
-<section id="basefab-farraybox-iarraybox">
+</div>
+<div class="section" id="basefab-farraybox-iarraybox">
 <span id="sec-gpu-classes-basefab"></span><h2>BaseFab, FArrayBox, IArrayBox<a class="headerlink" href="#basefab-farraybox-iarraybox" title="Permalink to this headline">¶</a></h2>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">T</span></span><span class="operator"><span class="pre">&gt;</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IArrayBox</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code> have some GPU
 support.  They cannot be constructed in device code unless they are
@@ -939,8 +936,8 @@ or, if necessary, we can make an alias <code class="code cpp c++ docutils litera
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="elixir">
+</div>
+<div class="section" id="elixir">
 <span id="sec-gpu-classes-elixir"></span><h2>Elixir<a class="headerlink" href="#elixir" title="Permalink to this headline">¶</a></h2>
 <p>We often have temporary <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code>es in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loops.
 These objects go out of scope at the end of each iteration.  Because
@@ -962,8 +959,8 @@ because the temporary <code class="code cpp c++ docutils literal notranslate"><s
 gpu kernels use its memory.  With <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>, the ownership of the
 memory is transferred to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code> that is guaranteed to be
 async-safe.</p>
-</section>
-<section id="async-arena">
+</div>
+<div class="section" id="async-arena">
 <h2>Async Arena<a class="headerlink" href="#async-arena" title="Permalink to this headline">¶</a></h2>
 <p>CUDA 11.2 has introduced a new feature, stream-ordered CUDA memory
 allocator.  This feature enables AMReX to solve the temporary memory
@@ -986,9 +983,9 @@ and DPC++ as well, and it’s equivalent to using <code class="code cpp c++ docu
 cases.  By default, the release threshold for the memory pool is unlimited.
 One can adjust it with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> parameter,
 <code class="docutils literal notranslate"><span class="pre">amrex.the_async_arena_release_threshold</span></code>.</p>
-</section>
-</section>
-<section id="kernel-launch">
+</div>
+</div>
+<div class="section" id="kernel-launch">
 <span id="sec-gpu-launch"></span><h1>Kernel Launch<a class="headerlink" href="#kernel-launch" title="Permalink to this headline">¶</a></h1>
 <p>In this section, how to offload work to the GPU will be demonstrated.
 AMReX supports offloading work with CUDA, OpenACC, or OpenMP.</p>
@@ -1014,7 +1011,7 @@ in C++ using AMReX’s <code class="code cpp c++ docutils literal notranslate"><
 multi-dimensional array syntax, similar in appearance to Fortran,
 while maintaining performance.  The details can be found in
 <a class="reference internal" href="Basics.html#sec-basics-array4"><span class="std std-ref">Array4</span></a> and <a class="reference internal" href="Basics.html#sec-basics-cppkernel"><span class="std std-ref">C++ Kernel</span></a>.</p>
-<section id="launching-c-nested-loops">
+<div class="section" id="launching-c-nested-loops">
 <span id="sec-gpu-for"></span><h2>Launching C++ nested loops<a class="headerlink" href="#launching-c-nested-loops" title="Permalink to this headline">¶</a></h2>
 <p>The most common AMReX work construct is a set of nested loops over
 the cells in a box. AMReX provides C++ functions and macro equivalents to port nested
@@ -1160,8 +1157,8 @@ bounds, a <code class="code cpp c++ docutils literal notranslate"><span class="k
 <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop.  This construct can be used to work on any contiguous set of memory by
 passing the number of elements to work on and indexing the pointer to the starting
 element: <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">p</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">idx</span></span> <span class="operator"><span class="pre">+</span></span> <span class="literal number integer"><span class="pre">15</span></span><span class="punctuation"><span class="pre">]</span></span></code>.</p>
-</section>
-<section id="launching-general-kernels">
+</div>
+<div class="section" id="launching-general-kernels">
 <h2>Launching general kernels<a class="headerlink" href="#launching-general-kernels" title="Permalink to this headline">¶</a></h2>
 <p>To launch more general work on the GPU, AMReX provides a standard launch function:
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">launch</span></span></code>.  Instead of creating nested loops, this function
@@ -1202,8 +1199,8 @@ GPU case to turn off tiling and maximize the amount of work given to
 the GPU in each launch, which substantially improves performance.
 When tiling is off, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">tilebox</span></span><span class="punctuation"><span class="pre">()</span></span></code> returns the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">validbox</span></span><span class="punctuation"><span class="pre">()</span></span></code> of
 the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code> for that iteration.</p>
-</section>
-<section id="offloading-work-using-openacc-or-openmp-pragmas">
+</div>
+<div class="section" id="offloading-work-using-openacc-or-openmp-pragmas">
 <h2>Offloading work using OpenACC or OpenMP pragmas<a class="headerlink" href="#offloading-work-using-openacc-or-openmp-pragmas" title="Permalink to this headline">¶</a></h2>
 <p>When using OpenACC or OpenMP with AMReX, the GPU offloading work is done
 with pragmas placed on the nested loops. This leaves the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop
@@ -1262,8 +1259,8 @@ OpenMP labelled version of this loop is:</p>
 <p>In this case, <code class="docutils literal notranslate"><span class="pre">is_device_ptr</span></code> is used to indicate that <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">dat</span></span></code>
 is available in device memory. For further details about programming
 with OpenMP for GPU offloading, consult the OpenMP user’s guide.</p>
-</section>
-<section id="kernel-launch-details">
+</div>
+<div class="section" id="kernel-launch-details">
 <h2>Kernel launch details<a class="headerlink" href="#kernel-launch-details" title="Permalink to this headline">¶</a></h2>
 <p>CUDA kernel calls are asynchronous and they return before the kernel
 is finished on the GPU. So the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop finishes iterating on
@@ -1358,9 +1355,9 @@ off using the conditional pragma and <code class="code cpp c++ docutils literal 
 will show little improvement or even perform worse. So, this conditional statement
 should be added to MFIter loops that contain GPU work, unless users specifically test
 the performance or are designing more complex workflows that require OpenMP.</p>
-</section>
-</section>
-<section id="an-example-of-migrating-to-gpu">
+</div>
+</div>
+<div class="section" id="an-example-of-migrating-to-gpu">
 <span id="sec-gpu-example"></span><h1>An Example of Migrating to GPU<a class="headerlink" href="#an-example-of-migrating-to-gpu" title="Permalink to this headline">¶</a></h1>
 <p>The nature of GPU programming poses difficulties for a number
 of common AMReX patterns, such as the one below:</p>
@@ -1438,8 +1435,8 @@ portable way.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="assertions-error-checking-and-synchronization">
+</div>
+<div class="section" id="assertions-error-checking-and-synchronization">
 <span id="sec-gpu-assertion"></span><h1>Assertions, Error Checking and Synchronization<a class="headerlink" href="#assertions-error-checking-and-synchronization" title="Permalink to this headline">¶</a></h1>
 <p>To help debugging, we often use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Assert</span></span></code> and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Abort</span></span></code>.  These functions are GPU safe and can be used in
@@ -1464,8 +1461,8 @@ launch error, <code class="code cpp c++ docutils literal notranslate"><span clas
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code> can be used to synchronize
 the device or the CUDA stream, respectively, and track down the specific
 launch that causes the error.</p>
-</section>
-<section id="particle-support">
+</div>
+<div class="section" id="particle-support">
 <h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this headline">¶</a></h1>
 <p id="sec-gpu-particle">As with <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, particle data stored in AMReX <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> classes are
 stored in unified memory when AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>. This means that the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">dataPtr</span></span></code> associated with particles
@@ -1511,8 +1508,8 @@ platforms. This includes <code class="code cpp c++ docutils literal notranslate"
 have changed, as well as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fillNeighbors</span></span><span class="punctuation"><span class="pre">()</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">updateNeighbors</span></span><span class="punctuation"><span class="pre">()</span></span></code>, which are used to exchange halo particles.
 As with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> data, these have been designed to minimize host / device traffic as much as possible, and can
 take advantage of the Cuda-aware MPI implementations available on platforms such as ORNL’s Summit.</p>
-</section>
-<section id="profiling-with-gpus">
+</div>
+<div class="section" id="profiling-with-gpus">
 <h1>Profiling with GPUs<a class="headerlink" href="#profiling-with-gpus" title="Permalink to this headline">¶</a></h1>
 <p id="sec-gpu-profiling">When profiling for GPUs, AMReX recommends <code class="docutils literal notranslate"><span class="pre">nvprof</span></code>, NVIDIA’s visual
 profiler.  <code class="docutils literal notranslate"><span class="pre">nvprof</span></code> returns data on how long each kernel launch lasted on
@@ -1540,8 +1537,8 @@ example:</p>
 </div>
 <p>For now, this is the best way to profile GPU codes using <code class="docutils literal notranslate"><span class="pre">TinyProfiler</span></code>.
 If you require further profiling detail, use <code class="docutils literal notranslate"><span class="pre">nvprof</span></code>.</p>
-</section>
-<section id="performance-tips">
+</div>
+<div class="section" id="performance-tips">
 <h1>Performance Tips<a class="headerlink" href="#performance-tips" title="Permalink to this headline">¶</a></h1>
 <p id="sec-gpu-performance">Here are some helpful performance tips to keep in mind when working with
 AMReX for GPUs:</p>
@@ -1589,8 +1586,8 @@ Then AMReX can ensure that each MPI rank selects a GPU on the same socket as
 that rank (assuming your MPI implementation supports MPI 3.)</p>
 </li>
 </ul>
-</section>
-<section id="inputs-parameters">
+</div>
+<div class="section" id="inputs-parameters">
 <h1>Inputs Parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline">¶</a></h1>
 <p id="sec-gpu-parameters">The following inputs parameters control the behavior of amrex when running on GPUs. They should be prefaced
 by “amrex” in your <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span></code> file.</p>
@@ -1626,8 +1623,8 @@ describing how much free memory there is and what was requested.</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="basic-gpu-debugging">
+</div>
+<div class="section" id="basic-gpu-debugging">
 <h1>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Turn off GPU offloading for some part of the code with</p></li>
@@ -1640,7 +1637,7 @@ describing how much free memory there is and what was requested.</p></td>
 <p>Note that functions, <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> and <code class="docutils literal notranslate"><span class="pre">amrex::ParallelFor</span></code>, do
 not respect the launch region flag.  Only the macros (e.g.,
 <code class="docutils literal notranslate"><span class="pre">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</span></code> and <code class="docutils literal notranslate"><span class="pre">AMREX_HOST_DEVICE_FOR_*D</span></code>) do.</p>
-<section id="cuda-specific-tests">
+<div class="section" id="cuda-specific-tests">
 <h2>Cuda-specific tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>To test if your kernels have launched, run</p></li>
@@ -1657,8 +1654,8 @@ a small problem and examine page faults using nvvp</p></li>
 kernel will run at a time.  This can help identify if there are race
 conditions.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

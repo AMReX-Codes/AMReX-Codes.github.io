@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Dimensionality &mdash; amrex 21.10-dev documentation</title>
@@ -229,7 +228,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="dimensionality">
+  <div class="section" id="dimensionality">
 <span id="sec-basics-dim"></span><h1>Dimensionality<a class="headerlink" href="#dimensionality" title="Permalink to this headline">¶</a></h1>
 <p>As we have mentioned in <a class="reference internal" href="BuildingAMReX_Chapter.html#chap-buildingamrex"><span class="std std-ref">Building AMReX</span></a>, the dimensionality of
 AMReX must be set at compile time. A macro, <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>, is defined to
@@ -240,8 +239,8 @@ preprocessing or do</p>
 </pre></div>
 </div>
 <p>The coordinate directions are zero based.</p>
-</section>
-<section id="vector-array-gpuarray-array1d-array2d-and-array3d">
+</div>
+<div class="section" id="vector-array-gpuarray-array1d-array2d-and-array3d">
 <span id="sec-basics-vecandarr"></span><h1>Vector, Array, GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#vector-array-gpuarray-array1d-array2d-and-array3d" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vector</span></span></code> class in <code class="docutils literal notranslate"><span class="pre">AMReX_Vector.H</span></code> is derived from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">vector</span></span></code>. The
 main difference between <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vector</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">vector</span></span></code> is that
@@ -255,8 +254,8 @@ when compiled just for CPU.  Besides <code class="code cpp c++ docutils literal 
 provides GPU safe <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array1D</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array2D</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array3D</span></span></code> that are
 1, 2 and 3-dimensional fixed size arrays, respectively.  These three
 class templates can have non-zero based indexing.</p>
-</section>
-<section id="real">
+</div>
+<div class="section" id="real">
 <h1>Real<a class="headerlink" href="#real" title="Permalink to this headline">¶</a></h1>
 <p>AMReX can be compiled to use either double precision (which is the default) or
 single precision. <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Real</span></span></code> is typedef’d to either <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">double</span></span></code> or
@@ -267,15 +266,15 @@ single precision. <code class="code cpp c++ docutils literal notranslate"><span 
 </div>
 <p>In C++, AMReX also provides a user literal <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">_rt</span></span></code> so that one can
 have a proper type for constants (e.g., <code class="code cpp c++ docutils literal notranslate"><span class="literal number float"><span class="pre">2.7</span></span><span class="name"><span class="pre">_rt</span></span></code>).</p>
-</section>
-<section id="long">
+</div>
+<div class="section" id="long">
 <h1>Long<a class="headerlink" href="#long" title="Permalink to this headline">¶</a></h1>
 <p>AMReX defines a 64 bit integer type <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Long</span></span></code> that is an alias to
 <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">long</span></span></code> on Unix-like systems and <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">long</span></span> <span class="keyword type"><span class="pre">long</span></span></code> on Windows.  In
 C, the type alias is <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex_long</span></span></code>.  In Fortran, one can use
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex_long</span></span></code> defined in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex_fort_module</span></span></code>.</p>
-</section>
-<section id="paralleldescriptor">
+</div>
+<div class="section" id="paralleldescriptor">
 <span id="sec-basics-paralleldescriptor"></span><h1>ParallelDescriptor<a class="headerlink" href="#paralleldescriptor" title="Permalink to this headline">¶</a></h1>
 <p>AMReX users do not need to use MPI directly. Parallel communication is often
 handled by the data abstraction classes (e.g.,MultiFab; section on
@@ -306,8 +305,8 @@ used functions are</p>
 <p>Additionally, <code class="docutils literal notranslate"><span class="pre">amrex_paralleldescriptor_module</span></code> in
 <code class="docutils literal notranslate"><span class="pre">Src/Base/AMReX_ParallelDescriptor_F.F90</span></code> provides a number of
 functions for Fortran.</p>
-</section>
-<section id="parallelcontext">
+</div>
+<div class="section" id="parallelcontext">
 <h1>ParallelContext<a class="headerlink" href="#parallelcontext" title="Permalink to this headline">¶</a></h1>
 <p>Users can also use groups of MPI subcommunicators to perform
 simultaneous physics calculations.  These comms are managed by AMReX’s
@@ -361,8 +360,8 @@ a full listing of the available functions.</p>
 <span class="n">ParallelContext</span><span class="o">::</span><span class="n">pop</span><span class="p">();</span>
 </pre></div>
 </div>
-</section>
-<section id="print">
+</div>
+<div class="section" id="print">
 <span id="sec-basics-print"></span><h1>Print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h1>
 <p>AMReX provides classes in <code class="docutils literal notranslate"><span class="pre">AMReX_Print.H</span></code> for printing messages to standard
 output or any C++ <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ostream</span></span></code>. The main reason one should use them instead
@@ -391,8 +390,8 @@ get mixed up. Below are some examples.</p>
 prints on the I/O process.  A common mistake in using it for debug
 printing is one forgets that for non-I/O processes to print we should
 use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AllPrint</span></span><span class="punctuation"><span class="pre">()</span></span></code> or <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Print</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">rank</span></span><span class="punctuation"><span class="pre">)</span></span></code>.</p>
-</section>
-<section id="parmparse">
+</div>
+<div class="section" id="parmparse">
 <span id="sec-basics-parmparse"></span><h1>ParmParse<a class="headerlink" href="#parmparse" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> in AMReX_ParmParse.H is a class providing a database for the
 storage and retrieval of command-line and input-file arguments. When
@@ -475,8 +474,8 @@ to false if it hasn’t already been set in the inputs file.</p>
 </div>
 <p>This value replaces the current default value of true in AMReX itself, but
 can still be over-written by setting a value in the inputs file.</p>
-</section>
-<section id="parser">
+</div>
+<div class="section" id="parser">
 <span id="sec-basics-parser"></span><h1>Parser<a class="headerlink" href="#parser" title="Permalink to this headline">¶</a></h1>
 <p>AMReX provides a parser in <code class="docutils literal notranslate"><span class="pre">AMReX_Parser.H</span></code> that can be used at runtime to evaluate mathematical
 expressions given in the form of string.  It supports <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>,
@@ -527,8 +526,8 @@ similarity, but floating point number specific functions (e.g., <code class="doc
 <code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.) are not supported in <code class="docutils literal notranslate"><span class="pre">IParser</span></code>.  In addition to <code class="docutils literal notranslate"><span class="pre">/</span></code> whose
 result truncates towards zero, the integer parser also supports <code class="docutils literal notranslate"><span class="pre">//</span></code> whose
 result truncates towards negative infinity.</p>
-</section>
-<section id="initialize-and-finalize">
+</div>
+<div class="section" id="initialize-and-finalize">
 <span id="sec-basics-initialize"></span><h1>Initialize and Finalize<a class="headerlink" href="#initialize-and-finalize" title="Permalink to this headline">¶</a></h1>
 <p>As we have mentioned, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Initialize</span></span></code> must be called to initialize
 the execution environment for AMReX and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Finalize</span></span></code> must be paired
@@ -570,7 +569,7 @@ inserted by the compiler) do not function properly after
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Finalize</span></span></code> into its scope
 (e.g., a pair of curly braces or a separate function) to make sure
 resources are properly freed.</p>
-<section id="sharing-the-command-line">
+<div class="section" id="sharing-the-command-line">
 <h2>Sharing the Command Line<a class="headerlink" href="#sharing-the-command-line" title="Permalink to this headline">¶</a></h2>
 <p>In some cases we want AMReX to only read part of the command line – this happens, for example, when we
 are going to use AMReX in cooperation with another code package and that code also takes command-line
@@ -580,9 +579,9 @@ arguments.</p>
 </div>
 <p>then AMReX will parse the inputs file and the optional AMReX’s command
 line arguments, but will ignore everything after the double dashes.</p>
-</section>
-</section>
-<section id="example-of-amr-grids">
+</div>
+</div>
+<div class="section" id="example-of-amr-grids">
 <span id="sec-basics-amrgrids"></span><h1>Example of AMR Grids<a class="headerlink" href="#example-of-amr-grids" title="Permalink to this headline">¶</a></h1>
 <p>In block-structured AMR, there is a hierarchy of logically rectangular grids.
 The computational domain on each AMR level is decomposed into a union of
@@ -595,15 +594,13 @@ two finer than those at level 0. The two finest grids (<em>red</em>) are at leve
 and the cells are a factor of two finer than the level 1 cells. There are 1, 2
 and 2 Boxes on levels 0, 1, and 2, respectively. Note that there is no direct
 parent-child connection. In this chapter, we will focus on single levels.</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <span id="fig-basics-amrgrids"></span><a class="reference internal image-reference" href="_images/amrgrids.png"><img alt="_images/amrgrids.png" src="_images/amrgrids.png" style="width: 3in;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of AMR grids. There are three levels in total.
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of AMR grids. There are three levels in total.
 There are 1, 2 and 2 Boxes on levels 0, 1, and 2, respectively.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="box-intvect-and-indextype">
+</div>
+</div>
+<div class="section" id="box-intvect-and-indextype">
 <span id="sec-basics-box"></span><h1>Box, IntVect and IndexType<a class="headerlink" href="#box-intvect-and-indextype" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> in AMReX_Box.H is the data structure for representing a rectangular
 domain in indexing space.  In <a class="reference internal" href="#fig-basics-amrgrids"><span class="std std-numref">Fig. 1</span></a>, there are 1, 2 and
@@ -611,7 +608,7 @@ domain in indexing space.  In <a class="reference internal" href="#fig-basics-am
 dimension-dependent class. It has lower and upper corners (represented by
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVect</span></span></code>) and an index type (represented by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IndexType</span></span></code>). A
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> contains no floating-point data.</p>
-<section id="intvect">
+<div class="section" id="intvect">
 <h2>IntVect<a class="headerlink" href="#intvect" title="Permalink to this headline">¶</a></h2>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVec</span></span></code> is a dimension-dependent class representing an integer vector in
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMREX_SPACEDIM</span></span></code>-dimensional space. An <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVect</span></span></code> can be constructed
@@ -665,8 +662,8 @@ therefore one can call</p>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">iv</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-</section>
-<section id="indextype">
+</div>
+<div class="section" id="indextype">
 <h2>IndexType<a class="headerlink" href="#indextype" title="Permalink to this headline">¶</a></h2>
 <p>This class defines an index as being cell based or node based in each
 dimension. The default constructor defines a cell based type in all directions.
@@ -693,8 +690,8 @@ one representing cell and node, respectively.</p>
 </div>
 <p>Index type is a very important concept in AMReX. It is a way of representing
 the notion of indices <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1/2\)</span>.</p>
-</section>
-<section id="box">
+</div>
+<div class="section" id="box">
 <h2>Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">Box</span></code> is an abstraction for defining discrete regions of
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMREX_SPACEDIM</span></span></code>-dimensional indexing space. Boxes have an
@@ -725,14 +722,12 @@ lower side of a cell has the same integer value as the cell centered index.
 That is if we consider a cell based index represent <span class="math notranslate nohighlight">\(i\)</span>, the nodal index
 with the same integer value represents <span class="math notranslate nohighlight">\(i-1/2\)</span>.
 <a class="reference internal" href="#fig-basics-indextypes"><span class="std std-numref">Fig. 2</span></a> shows some of the different index types for 2D.</p>
-<figure class="align-default" id="id2">
+<div class="figure align-default" id="id2">
 <span id="fig-basics-indextypes"></span><a class="reference internal image-reference" href="_images/indextypes.png"><img alt="_images/indextypes.png" src="_images/indextypes.png" style="width: 5in;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Some of the different index types in two dimensions: (a) cell-centered, (b) <span class="math notranslate nohighlight">\(x\)</span>-face-centered
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Some of the different index types in two dimensions: (a) cell-centered, (b) <span class="math notranslate nohighlight">\(x\)</span>-face-centered
 (i.e., nodal in <span class="math notranslate nohighlight">\(x\)</span>-direction only), and (c) corner/nodal,
 i.e., nodal in all dimensions.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+</div>
 <p>There are a number of ways of converting a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> from one type to another.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span> <span class="nf">b0</span> <span class="p">({</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">},</span> <span class="p">{</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">});</span> <span class="c1">// Index type: (cell, cell, cell)</span>
 
@@ -825,9 +820,9 @@ following examples.</p>
 <span class="n">b0</span> <span class="o">&amp;=</span> <span class="n">b3</span><span class="p">;</span>             <span class="c1">// Runtime error because of type mismatch!</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="dim3-and-xdim3">
+</div>
+</div>
+<div class="section" id="dim3-and-xdim3">
 <span id="sec-basics-dim3"></span><h1>Dim3 and XDim3<a class="headerlink" href="#dim3-and-xdim3" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Dim3</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">XDim3</span></span></code> are plain structs with three fields,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">Dim3</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span> <span class="kt">int</span> <span class="n">z</span><span class="p">;</span> <span class="p">};</span>
@@ -855,8 +850,8 @@ write dimension agnostic loops.</p>
 </pre></div>
 </div>
 <p>One can also call function <code class="docutils literal notranslate"><span class="pre">Dim3</span> <span class="pre">length(Box</span> <span class="pre">const&amp;)</span></code> to return the length of a Box.</p>
-</section>
-<section id="realbox-and-geometry">
+</div>
+<div class="section" id="realbox-and-geometry">
 <span id="sec-basics-geom"></span><h1>RealBox and Geometry<a class="headerlink" href="#realbox-and-geometry" title="Permalink to this headline">¶</a></h1>
 <p>A <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">RealBox</span></span></code> stores the physical location in floating-point numbers of the
 lower and upper corners of a rectangular domain.</p>
@@ -925,8 +920,8 @@ and the indexing space domain. For example,</p>
 <span class="k">if</span> <span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">isAnyPeriodic</span><span class="p">())</span> <span class="p">{}</span>            <span class="c1">// Periodic in any direction?</span>
 </pre></div>
 </div>
-</section>
-<section id="boxarray">
+</div>
+<div class="section" id="boxarray">
 <span id="sec-basics-ba"></span><h1>BoxArray<a class="headerlink" href="#boxarray" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> is a class in <code class="docutils literal notranslate"><span class="pre">AMReX_BoxArray.H</span></code> for storing a collection of
 Boxes on a single AMR level. One can make a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> out of a single
@@ -1011,8 +1006,8 @@ implementation of performing intersection of the Box with each Box in the
 BoxArray. If one needs to perform those intersections, functions
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">intersect</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">intersects</span></span></code> and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">intersections</span></span></code> should be used.</p>
-</section>
-<section id="distributionmapping">
+</div>
+<div class="section" id="distributionmapping">
 <span id="sec-basics-dm"></span><h1>DistributionMapping<a class="headerlink" href="#distributionmapping" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMapping</span></span></code> is a class in <code class="docutils literal notranslate"><span class="pre">AMReX_DistributionMapping.H</span></code> that
 describes which process owns the data living on the domains specified by the
@@ -1043,8 +1038,8 @@ mapping of grids to processes.</p>
 <span class="n">dm</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">pmap</span><span class="p">);</span>  <span class="c1">// Build DistributionMapping given an array of process IDs.</span>
 </pre></div>
 </div>
-</section>
-<section id="basefab-farraybox-iarraybox-and-array4">
+</div>
+<div class="section" id="basefab-farraybox-iarraybox-and-array4">
 <span id="sec-basics-fab"></span><h1>BaseFab, FArrayBox, IArrayBox, and Array4<a class="headerlink" href="#basefab-farraybox-iarraybox-and-array4" title="Permalink to this headline">¶</a></h1>
 <p>AMReX is a block-structured AMR framework. Although AMR introduces irregularity
 to the data and algorithms, there is regularity at the block/Box level because
@@ -1220,8 +1215,8 @@ alias <code class="code cpp c++ docutils literal notranslate"><span class="name"
 <span class="n">FArrayBox</span> <span class="nf">alias_fab</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="fabarray-multifab-and-imultifab">
+</div>
+<div class="section" id="fabarray-multifab-and-imultifab">
 <span id="sec-basics-multifab"></span><h1>FabArray, MultiFab and iMultiFab<a class="headerlink" href="#fabarray-multifab-and-imultifab" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FabArray</span></span><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">FAB</span></span><span class="operator"><span class="pre">&gt;</span></span></code> is a class template in AMReX_FabArray.H for a collection
 of FABs on the same AMR level associated with a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> (see the
@@ -1446,13 +1441,13 @@ parameters, as the required data is stored during <cite>nowait</cite> and retrie
 choose to use non-blocking calls must ensure the calls are properly used to avoid race
 conditions, which typically means not interacting with the MultiFab between the
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">_nowait</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">_finish</span></span></code> calls.</p>
-</section>
-<section id="mfiter-and-tiling">
+</div>
+<div class="section" id="mfiter-and-tiling">
 <span id="sec-basics-mfiter"></span><h1>MFIter and Tiling<a class="headerlink" href="#mfiter-and-tiling" title="Permalink to this headline">¶</a></h1>
 <p>In this section, we will first show how <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> works without tiling.
 Then we will introduce the concept of logical tiling.  Finally we will show how
 logical tiling can be launched via <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code>.</p>
-<section id="mfiter-without-tiling">
+<div class="section" id="mfiter-without-tiling">
 <span id="sec-basics-mfiter-notiling"></span><h2>MFIter without Tiling<a class="headerlink" href="#mfiter-without-tiling" title="Permalink to this headline">¶</a></h2>
 <p>In the section on <a class="reference internal" href="#sec-basics-multifab"><span class="std std-ref">FabArray, MultiFab and iMultiFab</span></a>, we have shown some of the
 arithmetic functionalities of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>, such as adding two MultiFabs
@@ -1539,8 +1534,8 @@ they are different due to index types).</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="mfiter-with-tiling">
+</div>
+<div class="section" id="mfiter-with-tiling">
 <span id="sec-basics-mfiter-tiling"></span><h2>MFIter with Tiling<a class="headerlink" href="#mfiter-with-tiling" title="Permalink to this headline">¶</a></h2>
 <p>Tiling, also known as cache blocking, is a well known loop transformation
 technique for improving data locality.  This is often done by transforming the
@@ -1813,8 +1808,8 @@ value. There are three ways of using these functions.</p>
 <p>But <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span><span class="operator"><span class="pre">&amp;</span></span> <span class="name"><span class="pre">bx</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">mfi</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">validbox</span></span><span class="punctuation"><span class="pre">()</span></span></code> is not legal and will not compile.</p>
 <p>Finally it should be emphasized that tiling should not be used when
 running on GPUs because of kernel launch overhead.</p>
-</section>
-<section id="multiple-mfiters">
+</div>
+<div class="section" id="multiple-mfiters">
 <h2>Multiple MFIters<a class="headerlink" href="#multiple-mfiters" title="Permalink to this headline">¶</a></h2>
 <p>To avoid some common bugs, it is not allowed to have multiple active
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> objects like below by default.</p>
@@ -1837,9 +1832,9 @@ assertion, one could call</p>
 <span class="n">old_flag</span> <span class="o">=</span> <span class="n">amrex_mfiter_allow_multiple</span><span class="p">(.</span><span class="n">true</span><span class="p">.)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="fortran-and-c-kernels">
+</div>
+</div>
+<div class="section" id="fortran-and-c-kernels">
 <span id="sec-basics-fortran"></span><h1>Fortran and C++ Kernels<a class="headerlink" href="#fortran-and-c-kernels" title="Permalink to this headline">¶</a></h1>
 <p>In the section on <a class="reference internal" href="#sec-basics-mfiter"><span class="std std-ref">MFIter and Tiling</span></a>, we have shown that a typical
 pattern for working with MultiFabs is to use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> to iterate over the
@@ -2071,8 +2066,8 @@ loop, test and verify before adding the macro.</p>
 <p>These loops should usually use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">i</span></span> <span class="operator"><span class="pre">&lt;=</span></span> <span class="name"><span class="pre">hi</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">x</span></span></code>, not <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">i</span></span> <span class="operator"><span class="pre">&lt;</span></span> <span class="name"><span class="pre">hi</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">x</span></span></code>, when
 defining the loop bounds. If not, the highest index cells will be left out
 of the calculation.</p>
-</section>
-<section id="parallelfor">
+</div>
+<div class="section" id="parallelfor">
 <span id="sec-basics-parallelfor"></span><h1>ParallelFor<a class="headerlink" href="#parallelfor" title="Permalink to this headline">¶</a></h1>
 <p>In the examples so far, we have explicitly written out the for loops
 when we iterate over a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code>.  AMReX also provides function
@@ -2120,8 +2115,8 @@ Also note that when tiling is off, <code class="code cpp c++ docutils literal no
             <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
 </pre></div>
 </div>
-</section>
-<section id="ghost-cells">
+</div>
+<div class="section" id="ghost-cells">
 <h1>Ghost Cells<a class="headerlink" href="#ghost-cells" title="Permalink to this headline">¶</a></h1>
 <p>AMReX uses a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> as a container for floating point data on
 multiple Boxes at a single level of refinement. Each rectangular Box has its own boundaries
@@ -2157,8 +2152,8 @@ cells at the physical boundary. However, AMReX does provide support for some
 common operations.  See the section on <a class="reference internal" href="#sec-basics-boundary"><span class="std std-ref">Boundary Conditions</span></a> for a
 discussion on domain boundary conditions in general, including how to implement
 physical (non-periodic) boundary conditions.</p>
-</section>
-<section id="boundary-conditions">
+</div>
+<div class="section" id="boundary-conditions">
 <span id="sec-basics-boundary"></span><h1>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h1>
 <p>This section describes how to implement domain boundary conditions in AMReX.  A
 ghost cell that is outside of the valid region can be thought of as either
@@ -2266,8 +2261,8 @@ to fill the ghost cells on each grid.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="memory-allocation">
+</div>
+<div class="section" id="memory-allocation">
 <h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">¶</a></h1>
 <p>Some constructors of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code>, etc. can take
 an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code> argument for memory allocation.  This is usually not
@@ -2298,8 +2293,8 @@ examples of using the module.</p>
 <code class="code fortran docutils literal notranslate"><span class="keyword"><span class="pre">contiguous</span></span></code> for performance reason.  Also, we often
 pass the Fortran pointer to a procedure with explicit array argument
 to get rid of the pointerness completely.</p>
-</section>
-<section id="abort-assertion-and-backtrace">
+</div>
+<div class="section" id="abort-assertion-and-backtrace">
 <h1>Abort, Assertion and Backtrace<a class="headerlink" href="#abort-assertion-and-backtrace" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Abort</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword"><span class="pre">const</span></span> <span class="keyword type"><span class="pre">char</span></span> <span class="operator"><span class="pre">*</span></span> <span class="name"><span class="pre">message</span></span><span class="punctuation"><span class="pre">)</span></span></code> is used to terminate a run usually
 when something goes wrong. This function takes a message and writes it to
@@ -2335,8 +2330,8 @@ message when assertion fails.  For example,</p>
 segfault occurs or <code class="docutils literal notranslate"><span class="pre">Abort</span></code> is called.  If the application does not
 want AMReX to handle this, <code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> parameter
 <cite>amrex.signal_handling=0</cite> can be used to disable it.</p>
-</section>
-<section id="debugging">
+</div>
+<div class="section" id="debugging">
 <span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
 <p>Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.</p>
@@ -2397,8 +2392,8 @@ For example,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 valgrind --leak-check=yes --track-origins=yes --log-file=vallog.%p ./foo.exe ...</span>
 </pre></div>
 </div>
-</section>
-<section id="breaking-into-debuggers">
+</div>
+<div class="section" id="breaking-into-debuggers">
 <h1>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this headline">¶</a></h1>
 <p>In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be disabled.</p>
 <p>The following runtime options need to be set in order to prevent AMReX from catching the break signals before a debugger can attach to a crashing process:</p>
@@ -2407,20 +2402,18 @@ For example,</p>
 </pre></div>
 </div>
 <p>This default behavior can also be modified by applications, see for example <a class="reference external" href="https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21">this custom application initializer</a>.</p>
-</section>
-<section id="example-heatequation-ex1-c">
+</div>
+<div class="section" id="example-heatequation-ex1-c">
 <span id="sec-basics-heat1"></span><h1>Example: HeatEquation_EX1_C<a class="headerlink" href="#example-heatequation-ex1-c" title="Permalink to this headline">¶</a></h1>
 <p>We now present an example of solving the heat equation.  The source
 code tree for the heat equation example is simple, as shown in
 <a class="reference internal" href="#fig-basics-heat-flowchart"><span class="std std-numref">Fig. 3</span></a>. We recommend you study
 <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">advance.cpp</span></code> to see some of the classes described
 below in action.</p>
-<figure class="align-default" id="id6">
+<div class="figure align-default" id="id6">
 <span id="fig-basics-heat-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart1.png"><img alt="_images/flowchart1.png" src="_images/flowchart1.png" style="width: 4in;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Diagram of the source code structure for the HeatEquation_EX1_C example.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Diagram of the source code structure for the HeatEquation_EX1_C example.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 <p>Source code tree for the HeatEquation_EX1_C example</p>
 <blockquote>
 <div><dl class="simple">
@@ -2554,7 +2547,7 @@ also marked with <cite>AMREX_FORCE_INLINE</cite> for inlining.</p>
 <span class="n">phi_old</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
 </pre></div>
 </div>
-</section>
+</div>
 
 
            </div>

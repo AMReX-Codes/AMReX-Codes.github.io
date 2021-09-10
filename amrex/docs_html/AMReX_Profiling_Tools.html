@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Types of Profiling &mdash; amrex 21.10-dev documentation</title>
@@ -200,11 +199,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="types-of-profiling">
+  <div class="section" id="types-of-profiling">
 <h1>Types of Profiling<a class="headerlink" href="#types-of-profiling" title="Permalink to this headline">¶</a></h1>
 <p>Currently you have two options for AMReX-specific profiling:
 <a class="reference internal" href="#sec-tiny-profiling"><span class="std std-ref">Tiny Profiling</span></a> and <a class="reference internal" href="#sec-full-profiling"><span class="std std-ref">Full Profiling</span></a>.</p>
-<section id="tiny-profiling">
+<div class="section" id="tiny-profiling">
 <span id="sec-tiny-profiling"></span><h2>Tiny Profiling<a class="headerlink" href="#tiny-profiling" title="Permalink to this headline">¶</a></h2>
 <p>To enable “Tiny Profiling”, if using GNU Make then set</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TINY_PROFILE</span> <span class="o">=</span> <span class="n">TRUE</span>
@@ -241,14 +240,14 @@ timers as possible, such as immediately before or after writing a checkpoint.</p
 it is also recommended to wrap any <code class="docutils literal notranslate"><span class="pre">BL_PROFILE_TINY_FLUSH();</span></code> calls in
 informative <code class="docutils literal notranslate"><span class="pre">amrex::Print()</span></code> lines to ensure accurate identification of each
 set of timers.</p>
-</section>
-<section id="full-profiling">
+</div>
+<div class="section" id="full-profiling">
 <span id="sec-full-profiling"></span><h2>Full Profiling<a class="headerlink" href="#full-profiling" title="Permalink to this headline">¶</a></h2>
 <p>If you set <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> then a <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> directory will be written that
 contains detailed per-task timings for each processor.  This will be written in
 <code class="docutils literal notranslate"><span class="pre">nfiles</span></code> files (where <code class="docutils literal notranslate"><span class="pre">nfiles</span></code> is specified by the user).  In addition, an
 exclusive-only set of function timings will be written to stdout.</p>
-<section id="trace-profiling">
+<div class="section" id="trace-profiling">
 <h3>Trace Profiling<a class="headerlink" href="#trace-profiling" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>If, in addition to <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, you set <code class="docutils literal notranslate"><span class="pre">TRACE_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>,
@@ -259,8 +258,8 @@ called from many different regions of the code. Part of the trace profiling
 is the ability to set regions in the code which can be analyzed for
 profiling information independently from other regions.</p>
 </div></blockquote>
-</section>
-<section id="communication-profiling">
+</div>
+<div class="section" id="communication-profiling">
 <h3>Communication Profiling<a class="headerlink" href="#communication-profiling" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>If, in addition to <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, you set <code class="docutils literal notranslate"><span class="pre">COMM_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, then
@@ -271,10 +270,10 @@ together.</p>
 </div></blockquote>
 <p>The AMReX-specific profiling tools are currently under development and this
 documentation will reflect the latest status in the development branch.</p>
-</section>
-</section>
-</section>
-<section id="instrumenting-c-code">
+</div>
+</div>
+</div>
+<div class="section" id="instrumenting-c-code">
 <h1>Instrumenting C++ Code<a class="headerlink" href="#instrumenting-c-code" title="Permalink to this headline">¶</a></h1>
 <p>You must at least instrument main(), i.e</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(...)</span>
@@ -328,8 +327,8 @@ go out of scope at the end of the function.</p>
 <span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">myfuncs</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="instrumenting-fortran90-code">
+</div>
+<div class="section" id="instrumenting-fortran90-code">
 <h1>Instrumenting Fortran90 Code<a class="headerlink" href="#instrumenting-fortran90-code" title="Permalink to this headline">¶</a></h1>
 <p>When using the full profiler, Fortran90 functions can also be instrumented
 with the following calls:</p>
@@ -359,8 +358,8 @@ in the <code class="docutils literal notranslate"><span class="pre">bl_proffortf
 <p>Be aware: Fortran functions cannot be profiled when using the Tiny Profiler.
 You will need to turn on the full profiler to receive the results from
 fortran instrumentation.</p>
-</section>
-<section id="sample-output-from-tiny-profile">
+</div>
+<div class="section" id="sample-output-from-tiny-profile">
 <span id="sec-sample-tiny"></span><h1>Sample Output From Tiny Profile<a class="headerlink" href="#sample-output-from-tiny-profile" title="Permalink to this headline">¶</a></h1>
 <p>Sample output using <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> can look like the following:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TinyProfiler total time across processes [min...avg...max]: 1.765...1.765...1.765</span>
@@ -382,8 +381,8 @@ fortran instrumentation.</p>
 <span class="go">FabArrayBase::getFB()         22162    0.02031     0.02149    0.02275       1.29%</span>
 </pre></div>
 </div>
-</section>
-<section id="amrprofparser">
+</div>
+<div class="section" id="amrprofparser">
 <h1>AMRProfParser<a class="headerlink" href="#amrprofparser" title="Permalink to this headline">¶</a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMRProfParser</span></span></code> is a tool for processing and analyzing the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code>
 database. It is a command line application that can create performance
@@ -396,7 +395,7 @@ parser itself. It has been integrated into Amrvis for visual interpretation of
 the data allowing Amrvis to open the bl_prof database like a plotfile but with
 interfaces appropriate to profiling data. AMRProfParser and Amrvis can be run
 in parallel both interactively and in batch mode.</p>
-</section>
+</div>
 
 
            </div>
