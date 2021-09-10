@@ -197,7 +197,7 @@ var searchData=
   ['getneighbortags_10919',['getNeighborTags',['../classamrex_1_1NeighborParticleContainer.html#a06c94b36af8bed58f1c6c0b4ad62e182',1,'amrex::NeighborParticleContainer::getNeighborTags(Vector&lt; NeighborCopyTag &gt; &amp;tags, const ParticleType &amp;p, const int nGrow, const NeighborCopyTag &amp;src_tag, const MyParIter &amp;pti)'],['../classamrex_1_1NeighborParticleContainer.html#a98b93307f7df6a29e8e1b84bfdcda458',1,'amrex::NeighborParticleContainer::getNeighborTags(Vector&lt; NeighborCopyTag &gt; &amp;tags, const ParticleType &amp;p, const IntVect &amp;nGrow, const NeighborCopyTag &amp;src_tag, const MyParIter &amp;pti)']]],
   ['getnewcapacity_10920',['GetNewCapacity',['../classamrex_1_1PODVector.html#aef1641f59137b10682b3c6a6e563fecc',1,'amrex::PODVector']]],
   ['getnghost_10921',['getNGhost',['../classamrex_1_1MLCGSolver.html#af93609cb8e561d2d8417549844fcdf53',1,'amrex::MLCGSolver']]],
-  ['getngrow_10922',['getNGrow',['../classamrex_1_1MLLinOp.html#a53fabf0ebd4dd86e92a3c7e5a161f5a6',1,'amrex::MLLinOp']]],
+  ['getngrow_10922',['getNGrow',['../classamrex_1_1MLLinOp.html#aea3bbedd2e663d88f153e88ce06a59c3',1,'amrex::MLLinOp']]],
   ['getnodalboxarray_10923',['getNodalBoxArray',['../classamrex_1_1AmrLevel.html#a5f0a9f5d2c0e0733ad3cbbda47912480',1,'amrex::AmrLevel']]],
   ['getnodalsum_10924',['getNodalSum',['../classamrex_1_1MLMG.html#a0a5c73d611e9e8b1fd1995d9bcf79086',1,'amrex::MLMG']]],
   ['getnonzerobinsptr_10925',['getNonZeroBinsPtr',['../classamrex_1_1SparseBins.html#a20ea0ea6dcb1b42a55b691060c1cffaa',1,'amrex::SparseBins::getNonZeroBinsPtr() noexcept'],['../classamrex_1_1SparseBins.html#a54c4ce654739bc4d76a7e8c4859a7be6',1,'amrex::SparseBins::getNonZeroBinsPtr() const noexcept']]],

@@ -56,7 +56,7 @@ var classamrex_1_1MLLinOp =
     [ "getFluxes", "classamrex_1_1MLLinOp.html#ac495d1d722cbb68c31af46b2e860fa9f", null ],
     [ "getMaxOrder", "classamrex_1_1MLLinOp.html#a1189e4016e7757083343a93649f102aa", null ],
     [ "getNComp", "classamrex_1_1MLLinOp.html#a525b102eb592e2b44a864c62e64e9566", null ],
-    [ "getNGrow", "classamrex_1_1MLLinOp.html#a53fabf0ebd4dd86e92a3c7e5a161f5a6", null ],
+    [ "getNGrow", "classamrex_1_1MLLinOp.html#aea3bbedd2e663d88f153e88ce06a59c3", null ],
     [ "hasHiddenDimension", "classamrex_1_1MLLinOp.html#a6d7b1e0e21fd61d71bbe342df0f1a5d4", null ],
     [ "hasInhomogNeumannBC", "classamrex_1_1MLLinOp.html#a4910f22e3c63b572ef364cdf8177e392", null ],
     [ "hasRobinBC", "classamrex_1_1MLLinOp.html#a4b2636d8115debeeefa38b4b34186ecc", null ],
