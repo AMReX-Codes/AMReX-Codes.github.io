@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Tutorials/Basic &mdash; amrex 21.10-dev documentation</title>
+  <title>Tutorials/ML &mdash; amrex 21.10-dev documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials/Blueprint" href="Blueprint_Tutorial.html" />
-    <link rel="prev" title="Tutorials/Amr" href="AMR_Tutorial.html" /> 
+    <link rel="next" title="Tutorials/MUI" href="MUI_Tutorial.html" />
+    <link rel="prev" title="Tutorials/LinearSolvers" href="LinearSolvers_Tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,19 +96,13 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/Basic</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#helloworld"><strong>HelloWorld</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#main"><strong>main</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-with-libamrex"><strong>Build_with_libamrex</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#heatequation"><strong>HeatEquation</strong></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">Tutorials/GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">Tutorials/ML</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/ML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
@@ -162,13 +156,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Tutorials/Basic</li>
+      <li>Tutorials/ML</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/Basic_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/ML_Tutorial.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -181,64 +175,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="tutorials-basic">
-<h1>Tutorials/Basic<a class="headerlink" href="#tutorials-basic" title="Permalink to this headline">¶</a></h1>
-<p>The tutorials in amrex/Tutorials/Basic demonstrate the most fundamental
-operations supported by AMReX.</p>
-<section id="helloworld">
-<h2><strong>HelloWorld</strong><a class="headerlink" href="#helloworld" title="Permalink to this headline">¶</a></h2>
-<p>HelloWorld_C and HelloWorld_F demonstrate the GNU Make system – with
-a sample Make.package and GNUmakefile – and the amrex::Initialize
-and amrex::Finalize functions.</p>
-<p>In addition, in HelloWorld_C, the amrex::Print() operation,
-which only prints from the I/O processor, is used to print out
-the AMReX version (as defined by amrex::Version()) being used.</p>
-<p>HelloWorld_F is a simple example of how to use the F_Interface routines,
-which are Fortran wrappers for the underlying C++ data strutures and
-iterators.  Here, for example, rather than calling amrex::Print() in C++, we
-test on whether amrex_parallel_ioprocessor() is true, and if so, invoke
-the usual Fortran print call.</p>
-</section>
-<section id="main">
-<h2><strong>main</strong><a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
-<p>main_C and main_F introduce the following:</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>By default, AMReX initializes MPI and uses MPI_COMM_WORLD as its communicator.
-However, applications could choose to initialize MPI themselves and pass in an
-existing communicator.</p></li>
-<li><p>By default, AMReX treats command line arguments as inputs parameters.  The expected
-format of argv is</p>
-<blockquote>
-<div><p><em>executable inputs_file parm=value</em></p>
-</div></blockquote>
-<p>Here, <cite>executable</cite> is the filename of the executable, <cite>inputs_file</cite> is the file containing
-runtime parameters used to build AMReX ParmParse database, and <cite>parm=value</cite> is an input
-parameter that will override its value in <cite>inputs_file</cite>.  Both <cite>inputs_file</cite> and
-<cite>parm=value</cite> are optional.  At most one <cite>inputs_file</cite> is allowed. Howeer, there can be
-multiple <cite>parm=value</cite> s.</p>
-<p>The parsing of the command line arguments is performed in amrex::Initialize.  Applications
-can choose to skip command line parsing.  Applications can also provide a function that
-adds parameters to AMReX ParmParse database.</p>
-</li>
-</ol>
-</div></blockquote>
-</section>
-<section id="build-with-libamrex">
-<h2><strong>Build_with_libamrex</strong><a class="headerlink" href="#build-with-libamrex" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial builds on the main_C example and demonstrates how to build the executable when we
-want to link local files with the pre-built amrex library (libamrex.a) that has been installed elsewhere.
-We separate main.cpp from the main_C example into two separate files (main.cpp and
-test_parameters.cpp), replace MyAmr.H by MyParams.H and add a Fortran file my_func.f90.
-The GNUmakefile here assumes that you have already built the AMReX library; for instructions on how to do
-that see the Building_libamrex chapter of the amrex docs here. <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX.html">here</a>.</p>
-</section>
-<section id="heatequation">
-<h2><strong>HeatEquation</strong><a class="headerlink" href="#heatequation" title="Permalink to this headline">¶</a></h2>
-<p>The HeatEquation examples solve a 2D or 3D (determined by how you set DIM in the GNUmakefile)
-heat equation explicitly on a domain-decomposed mesh.  This example is described in detail in
-the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html">Basics</a> chapter of the amrex Documentation</p>
-</section>
+  <section id="tutorials-ml">
+<h1>Tutorials/ML<a class="headerlink" href="#tutorials-ml" title="Permalink to this headline">¶</a></h1>
+<p>In ML/PYTORCH there is an example of using a pre-trained PyTorch model in the
+AMReX framework.  In this example we initialize data on a MultiFab, copy
+the data into a PyTorch tensor, call the model, and load the result back
+into a MultiFab.  The example works on both the host and GPU.
+A model is included as an example (<code class="docutils literal notranslate"><span class="pre">/Exec/model.pt</span></code>).
+See <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/README.md</span></code> for <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> download instructions.</p>
 </section>
 
 
@@ -247,8 +191,8 @@ the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Blueprint_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/Blueprint" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="AMR_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/Amr" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MUI_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/MUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="LinearSolvers_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/LinearSolvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
