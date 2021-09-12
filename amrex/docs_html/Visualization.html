@@ -219,51 +219,94 @@
   <div class="section" id="amrvis">
 <span id="sec-amrvis"></span><h1>Amrvis<a class="headerlink" href="#amrvis" title="Permalink to this headline">¶</a></h1>
 <p>Our favorite visualization tool is Amrvis. We heartily encourage you to build
-the <code class="docutils literal notranslate"><span class="pre">amrvis1d</span></code>, <code class="docutils literal notranslate"><span class="pre">amrvis2d</span></code>, and <code class="docutils literal notranslate"><span class="pre">amrvis3d</span></code> executables, and to try using
-them to visualize your data. A very useful feature is View/Dataset, which
-allows you to actually view the numbers in a spreadsheet that is nested to
-reflect the AMR hierarchy – this can be handy for debugging. You can modify how
-many levels of data you want to see, whether you want to see the grid boxes or
-not, what palette you use, etc. Below are some instructions and tips for using
-Amrvis; you can find additional information in Amrvis/Docs/Amrvis.tex (which
-you can build into a pdf using pdflatex).</p>
+the <code class="docutils literal notranslate"><span class="pre">amrvis1d</span></code>, <code class="docutils literal notranslate"><span class="pre">amrvis2d</span></code>, and <code class="docutils literal notranslate"><span class="pre">amrvis3d</span></code> executables, and use
+them to visualize your data. A useful feature is <code class="docutils literal notranslate"><span class="pre">View/Dataset</span></code>, which
+allows you to view data in a nested spreadsheet that
+reflects the AMR hierarchy – this can be handy for debugging.
+Other display options include: the ability to select the number of levels of data to show,
+whether to display grid boxes, and to specify the color palette.
+Below are instructions and tips for using
+Amrvis. Additional information is contained in the document
+<code class="docutils literal notranslate"><span class="pre">Amrvis/Docs/Amrvis.tex</span></code> (which can built into a <code class="docutils literal notranslate"><span class="pre">pdf</span></code> using <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code>).</p>
 <ol class="arabic">
-<li><p>Download and build :</p>
+<li><p><strong>Download and Build</strong>:</p>
+<p>Amrvis is available for download from the <code class="docutils literal notranslate"><span class="pre">AMReX-Codes/Amrvis</span></code> GitHub
+repository. To download use,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/AMReX-Codes/Amrvis</span>
 </pre></div>
 </div>
-<p>Then cd into Amrvis/, edit the GNUmakefile by setting <code class="docutils literal notranslate"><span class="pre">COMP</span></code> to the
-compiler suite you have.</p>
-<p>Type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=1</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=2</span></code>, or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=3</span></code> to build, resulting
-in an executable that looks like amrvis2d…ex.</p>
-<p>If you want to build amrvis with <code class="docutils literal notranslate"><span class="pre">DIM=3</span></code>, you must first download and build
-<code class="docutils literal notranslate"><span class="pre">volpack</span></code>:</p>
+<p>To build, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">Amrvis/</span></code>, and edit <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> by setting the variable
+<code class="docutils literal notranslate"><span class="pre">COMP</span></code> to your compiler suite.</p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=1</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=2</span></code>, or <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=3</span></code> to build. The result is
+an executable that looks like <code class="docutils literal notranslate"><span class="pre">amrvis2d.&lt;ver&gt;.ex</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><em>3D Data Visualization with Volpack</em></p>
+<p>If you want to build Amrvis with <code class="docutils literal notranslate"><span class="pre">DIM=3</span></code> for display of 3-dimensional data,
+you must first download and build <code class="docutils literal notranslate"><span class="pre">volpack</span></code>. This can be done by cloning
+the repository:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://ccse.lbl.gov/pub/Downloads/volpack.git</span>
 </pre></div>
 </div>
-<p>Then cd into volpack/ and type <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
-<p>Note: Amrvis requires the OSF/Motif libraries and headers. If you don’t have
+<p>After downloading, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">volpack/</span></code> and type <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Amrvis requires the OSF/Motif libraries and headers. If you don’t have
 these you will need to install the development version of motif through your
 package manager.  <code class="docutils literal notranslate"><span class="pre">lesstif</span></code> gives some functionality and will allow you to
-build the amrvis executable, but Amrvis may exhibit subtle anomalies.</p>
+build the Amrvis executable, but Amrvis may exhibit subtle anomalies.</p>
 <p>On most Linux distributions, the motif library is provided by the
-<code class="docutils literal notranslate"><span class="pre">openmotif</span></code> package, and its header files (like Xm.h) are provided by
+<code class="docutils literal notranslate"><span class="pre">openmotif</span></code> package, and its header files (like <code class="docutils literal notranslate"><span class="pre">Xm.h</span></code>) are provided by
 <code class="docutils literal notranslate"><span class="pre">openmotif-devel</span></code>. If those packages are not installed, then use the
 OS-specific package management tool to install them.</p>
-<p>You may then want to create an alias to amrvis2d, for example</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">alias amrvis2d /tmp/Amrvis/amrvis2d...ex</span>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These instructions assume that the install directories
+for Amrvis and volpack share the same parent directory. To install volpack
+in a different location specify the location of volpack in Amrvis’s
+<code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> by changing the variable <code class="docutils literal notranslate"><span class="pre">VOLPACKDIR</span></code> to the desired location.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>After building you may want to create an alias for convenience.
+To do this type,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">alias amrvis2d /tmp/Amrvis/amrvis2d.&lt;ver&gt;.ex</span>
 </pre></div>
 </div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </li>
-<li><p>Run the command <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">Amrvis/amrvis.defaults</span> <span class="pre">~/.amrvis.defaults</span></code>.  Then, in
-your copy, edit the line containing “palette” line to point to, e.g.,
-“palette /home/username/Amrvis/Palette”. The other lines control options
-such as the initial field to display, the number format, widow size, etc.
+<li><p><strong>Configure</strong>:</p>
+<p>The settings for Amrvis are saved in the configuration file <code class="docutils literal notranslate"><span class="pre">.amrvis.defaults</span></code> in
+your home directory. A default version of this file is available in the parent directory of the
+Amrvis repo. Run the command <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">Amrvis/amrvis.defaults</span> <span class="pre">~/.amrvis.defaults</span></code> to
+copy it to your home directory. A color pallete is also available in the Amrvis directory as a file
+named <code class="docutils literal notranslate"><span class="pre">Palette</span></code>.
+To configure Amrvis to use this pallete you can open the <code class="docutils literal notranslate"><span class="pre">.amrvis.defaults</span></code> file
+in your home directory and edit the line containing <code class="docutils literal notranslate"><span class="pre">palette</span></code> to point to the
+location of this file. For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">palette</span>     <span class="o">~/</span><span class="n">Amrvis</span><span class="o">/</span><span class="n">Palette</span>
+</pre></div>
+</div>
+<p>Other lines in <code class="docutils literal notranslate"><span class="pre">.amrvis.defaults</span></code> control options
+such as the initial field to display, the number format, window size, etc.
 If there are multiple instances of the same option, the last option takes
-precedence.</p></li>
-<li><p>Generally the plotfiles have the form pltXXXXX (the plt prefix can be
-changed), where XXXXX is a number corresponding to the timestep the file was
-output. <code class="docutils literal notranslate"><span class="pre">amrvis2d</span> <span class="pre">&lt;filename&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">amrvis3d</span> <span class="pre">&lt;filename&gt;</span></code> to see a single
+precedence.</p>
+</li>
+<li><p><strong>Run</strong>:</p>
+<p>By default, the plotfiles are directories that have the form pltXXXXX,
+where XXXXX is a number corresponding to the timestep that the file was
+created. Use <code class="docutils literal notranslate"><span class="pre">amrvis2d</span> <span class="pre">&lt;filename&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">amrvis3d</span> <span class="pre">&lt;filename&gt;</span></code> to see a single
 plotfile, or for 2D data sets, <code class="docutils literal notranslate"><span class="pre">amrvis2d</span> <span class="pre">-a</span> <span class="pre">plt*</span></code>, which will animate the
 sequence of plotfiles. FArrayBoxes and MultiFabs can also be viewed with the
 <code class="docutils literal notranslate"><span class="pre">-fab</span></code> and <code class="docutils literal notranslate"><span class="pre">-mf</span></code> options. When opening MultiFabs, use the name of the
@@ -273,19 +316,22 @@ You can left-click drag a box around a region and click “View”
 <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Dataset” in order to look at the actual numerical
 values (see <a class="reference internal" href="#fig-amrvis"><span class="std std-numref">Table 15</span></a>).  Or you can simply left
 click on a point to obtain the numerical value.  You can also export the
-pictures in several different formats under “File/Export”.  In 2D you can
-right and center click to get line-out plots.  In 3D you can right and
-center click to change the planes, and the hold shift+(right or center)
+pictures in several different formats under <code class="docutils literal notranslate"><span class="pre">File/Export</span></code>.  In 2D you can
+right or center click to get line-out plots.  In 3D you can right or
+center click to change the planes, and hold shift+(right or center)
 click to get line-out plots.</p>
-<p>We have created a number of routines to convert AMReX plotfile data other
-formats (such as matlab), but in order to properly interpret the
-hierarchical AMR data, each tends to have its own idiosyncrasies. If you
-would like to display the data in another format, please contact Marc Day
-(<a class="reference external" href="mailto:MSDay&#37;&#52;&#48;lbl&#46;gov">MSDay<span>&#64;</span>lbl<span>&#46;</span>gov</a>) and we will point you to whatever we have that can help.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>We have created a number of routines to convert AMReX plotfile data to other
+formats (such as Matlab), but in order to properly interpret the
+hierarchical AMR data, each tends to require its own idiosyncrasies. If you
+would like to display the data in another format, please leave a
+message on <a class="reference external" href="https://github.com/AMReX-Codes/amrex/discussions">AMReX’s GitHub Discussions page</a>.</p>
 </li>
 </ol>
 <span id="fig-amrvis"></span><table class="docutils align-center" id="id3">
-<caption><span class="caption-number">Table 15 </span><span class="caption-text">2D and 3D images generated using Amrvis</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 15 </span><span class="caption-text">. 2D and 3D images generated using Amrvis.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -319,8 +365,8 @@ first heat equation tutorial code (see the section on <a class="reference intern
 <p>Next, download and install VisIt from
 <a class="reference external" href="https://wci.llnl.gov/simulation/computer-codes/visit">https://wci.llnl.gov/simulation/computer-codes/visit</a>.  To open a single
 plotfile, run VisIt, then select “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open file …”,
-then select the Header file associated the the plotfile of interest (e.g.,
-plt00000/Header).  Assuming you ran the simulation in 2D, here are instructions
+then select the Header file associated with the plotfile of interest (e.g.,
+<code class="docutils literal notranslate"><span class="pre">plt00000/Header</span></code>).  Assuming you ran the simulation in 2D, here are instructions
 for making a simple plot:</p>
 <ul class="simple">
 <li><p>To view the data, select “Add” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Pseudocolor”
@@ -373,15 +419,17 @@ then select movie.visit. Create an image to your liking and press the
 “play”  button on the VCR-like control panel to preview all the frames. To save
 the movie, choose “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Save movie …”, and follow the
 on-screen instructions.</p>
-<p>Caveat:</p>
-<p>The Visit reader determines “Cycle” from the name of the plotfile (directory),
-specifically from the integer that follows the string “plt” in the plotfile name.</p>
-<p>So … if you call it plt00100 or myplt00100 or this_is_my_plt00100 then it will
-correctly recognize and print Cycle: 100.</p>
-<p>If you call it plt00100_old it will also correctly recognize and print Cycle: 100</p>
-<p>But, if you do not have “plt” followed immediately by the number,
-e.g. you name it pltx00100, then VisIt will not be able to correctly recognize
-and print the value for “Cycle”.  (It will still read and display the data itself.)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Visit reader determines the value of <code class="docutils literal notranslate"><span class="pre">Cycle</span></code> from the name of the plotfile (directory),
+specifically from the integer that follows the string “plt” in the plotfile name.
+So if you call it <code class="docutils literal notranslate"><span class="pre">plt00100</span></code>, <code class="docutils literal notranslate"><span class="pre">myplt00100</span></code> or <code class="docutils literal notranslate"><span class="pre">this_is_my_plt00100</span></code> then it will
+correctly recognize and print <code class="docutils literal notranslate"><span class="pre">Cycle:</span> <span class="pre">100</span></code>.
+If you call it <code class="docutils literal notranslate"><span class="pre">plt00100_old</span></code> it will also correctly recognize and print <code class="docutils literal notranslate"><span class="pre">Cycle:</span> <span class="pre">100</span></code>.</p>
+<p>However, if you do not have <code class="docutils literal notranslate"><span class="pre">plt</span></code> followed immediately by the number,
+e.g. you name it <code class="docutils literal notranslate"><span class="pre">pltx00100</span></code>, then VisIt will not be able to correctly recognize
+and print the value for <code class="docutils literal notranslate"><span class="pre">Cycle</span></code>.  (It will still read and display the data itself.)</p>
+</div>
 </div>
 <div class="section" id="paraview">
 <span id="section-1"></span><h1>ParaView<a class="headerlink" href="#paraview" title="Permalink to this headline">¶</a></h1>
