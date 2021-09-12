@@ -1415,12 +1415,12 @@ variants, in which the periodicity and operation type are also optional.</p>
 <p>Here the number of ghost cells involved is zero, and the copy is performed on
 all components if unspecified (assuming the two MultiFabs have the same number
 of components).</p>
-<p>Both <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelCopy</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FillBoundary</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> are blocking calls. They
+<p>Both <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelCopy</span></span><span class="punctuation"><span class="pre">(...)</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FillBoundary</span></span><span class="punctuation"><span class="pre">(...)</span></span></code> are blocking calls. They
 will only return when the communication is completed and the destination MultiFab is
 guaranteed to be properly updated.  AMReX also provides non-blocking versions of
 these calls to allow users to overlap communication with calculation and potentially
 improve overall application performance.</p>
-<p>The non-blocking calls are used by calling the <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">***</span></span><span class="name"><span class="pre">_nowait</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> function
+<p>The non-blocking calls are used by calling the <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">***</span></span><span class="name"><span class="pre">_nowait</span></span><span class="punctuation"><span class="pre">(...)</span></span></code> function
 to begin the comm operation, followed by the <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">***</span></span><span class="name"><span class="pre">_finish</span></span><span class="punctuation"><span class="pre">()</span></span></code> function at a later
 time to complete it. For example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mfA</span><span class="p">.</span><span class="n">ParallelCopy_nowait</span><span class="p">(</span><span class="n">mfsrc</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">op</span><span class="p">);</span>
@@ -1998,7 +1998,7 @@ must be in the <code class="docutils literal notranslate"><span class="pre">CEXE
 preprocessed first by cpp as C language, and is then parsed by
 pycparser (<a class="reference external" href="https://pypi.python.org/pypi/pycparser">https://pypi.python.org/pypi/pycparser</a>) that needs to be
 installed on your system.  Because pycparser is a C parser, C++ parts
-of the headers (e.g., <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">extern</span></span> <span class="literal string"><span class="pre">“C”</span></span> <span class="punctuation"><span class="pre">{</span></span></code>) need to be hidden with
+of the headers (e.g., <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">extern</span></span> <span class="literal string"><span class="pre">&quot;C&quot;</span></span> <span class="punctuation"><span class="pre">{</span></span></code>) need to be hidden with
 macro <code class="code cpp c++ docutils literal notranslate"><span class="comment preproc"><span class="pre">#ifdef</span> <span class="pre">__cplusplus</span></span></code>.  Headers like <code class="docutils literal notranslate"><span class="pre">AMReX_BLFort.H</span></code> can
 be used as a C header, but most other AMReX headers cannot and should
 be hidden by <code class="code cpp c++ docutils literal notranslate"><span class="comment preproc"><span class="pre">#ifdef</span> <span class="pre">__cplusplus</span></span></code> if they are included.  More
