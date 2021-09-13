@@ -1,78 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Building with GNU Make &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Basics" href="Basics_Chapter.html" />
     <link rel="prev" title="Building AMReX" href="BuildingAMReX_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -136,87 +84,45 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="BuildingAMReX_Chapter.html">Building AMReX</a> &raquo;</li>
-        
       <li>Building with GNU Make</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/BuildingAMReX.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="building-with-gnu-make">
-<span id="sec-build-make"></span><h1>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this headline">¶</a></h1>
+<span id="sec-build-make"></span><h1>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this headline"></a></h1>
 <p>In this build approach, you write your own make files defining a number of
 variables and rules. Then you invoke  <code class="docutils literal notranslate"><span class="pre">make</span></code> to start the building process.
 This will result in an executable upon successful completion. The temporary
 files generated in the building process are stored in a temporary directory
 named  <code class="docutils literal notranslate"><span class="pre">tmp_build_dir</span></code>.</p>
 <div class="section" id="dissecting-a-simple-make-file">
-<h2>Dissecting a Simple Make File<a class="headerlink" href="#dissecting-a-simple-make-file" title="Permalink to this headline">¶</a></h2>
+<h2>Dissecting a Simple Make File<a class="headerlink" href="#dissecting-a-simple-make-file" title="Permalink to this headline"></a></h2>
 <p>An example of building with GNU Make can be found in
 <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C</span></code>.  <a class="reference internal" href="#tab-makevars"><span class="std std-numref">Table 1</span></a> below shows a
 list of important variables.</p>
 <span id="tab-makevars"></span><table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Important make variables</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Important make variables</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 50%" />
@@ -402,7 +308,7 @@ following to <code class="docutils literal notranslate"><span class="pre">Make.p
 source and header files, respectively.</p>
 </div>
 <div class="section" id="tweaking-the-make-system">
-<h2>Tweaking the Make System<a class="headerlink" href="#tweaking-the-make-system" title="Permalink to this headline">¶</a></h2>
+<h2>Tweaking the Make System<a class="headerlink" href="#tweaking-the-make-system" title="Permalink to this headline"></a></h2>
 <p>The GNU Make build system is located at <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake</span></code>.  You can read
 <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and the make files there for more information. Here we will give
 a brief overview.</p>
@@ -450,7 +356,7 @@ following to your make file before the line that includes AMReX’s
 </div>
 </div>
 <div class="section" id="specifying-your-own-compiler">
-<span id="sec-build-local"></span><h2>Specifying your own compiler<a class="headerlink" href="#specifying-your-own-compiler" title="Permalink to this headline">¶</a></h2>
+<span id="sec-build-local"></span><h2>Specifying your own compiler<a class="headerlink" href="#specifying-your-own-compiler" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/Make.local</span></code> file can also specify your own compile
 commands by setting the variables <code class="docutils literal notranslate"><span class="pre">CXX</span></code>, <code class="docutils literal notranslate"><span class="pre">CC</span></code>, <code class="docutils literal notranslate"><span class="pre">FC</span></code>, and <code class="docutils literal notranslate"><span class="pre">F90</span></code>. This
 might be necessary if your systems contains non-standard names for compiler
@@ -476,7 +382,7 @@ endif
 the correct underlying compilers.</p>
 </div>
 <div class="section" id="gcc-on-macos">
-<span id="sec-build-macos"></span><h2>GCC on macOS<a class="headerlink" href="#gcc-on-macos" title="Permalink to this headline">¶</a></h2>
+<span id="sec-build-macos"></span><h2>GCC on macOS<a class="headerlink" href="#gcc-on-macos" title="Permalink to this headline"></a></h2>
 <p>The example configuration above should also run on the latest macOS. On macOS
 the default cxx compiler is clang, whereas the default Fortran compiler is
 gfortran. Sometimes it is good to avoid mixing compilers, in that case we can
@@ -502,17 +408,17 @@ use homebrew’s mpich. Normally it is fine to simply install its binaries:
 building mpich using homebrew’s gcc: <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">mpich</span> <span class="pre">--cc=gcc-8</span></code>.</p>
 </div>
 <div class="section" id="fortran">
-<h2>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h2>
+<h2>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline"></a></h2>
 <p>If your code does not use Fortran, you can add <code class="docutils literal notranslate"><span class="pre">BL_NO_FORT=TRUE</span></code> to
 your makefile to disable Fortran.</p>
 </div>
 <div class="section" id="ccache">
-<h2>ccache<a class="headerlink" href="#ccache" title="Permalink to this headline">¶</a></h2>
+<h2>ccache<a class="headerlink" href="#ccache" title="Permalink to this headline"></a></h2>
 <p>If you use ccache, you can add <code class="docutils literal notranslate"><span class="pre">USE_CCACHE=TRUE</span></code> to your makefile.</p>
 </div>
 </div>
 <div class="section" id="building-libamrex">
-<span id="sec-build-lib"></span><h1>Building libamrex<a class="headerlink" href="#building-libamrex" title="Permalink to this headline">¶</a></h1>
+<span id="sec-build-lib"></span><h1>Building libamrex<a class="headerlink" href="#building-libamrex" title="Permalink to this headline"></a></h1>
 <p>If an application code already has its own elaborated build system and wants to
 use AMReX, an external AMReX library can be created instead. In this approach, one
 runs <code class="docutils literal notranslate"><span class="pre">./configure</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">make</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>.
@@ -553,7 +459,7 @@ all:
 </div>
 </div>
 <div class="section" id="building-with-cmake">
-<span id="sec-build-cmake"></span><h1>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline">¶</a></h1>
+<span id="sec-build-cmake"></span><h1>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline"></a></h1>
 <p>An alternative to the approach described in the section on <a class="reference internal" href="#sec-build-lib"><span class="std std-ref">Building libamrex</span></a>
 is to install AMReX as an external library by using the CMake build system.  A
 CMake build is a two-step process. First <code class="docutils literal notranslate"><span class="pre">cmake</span></code> is invoked to create
@@ -578,7 +484,7 @@ customization of the build, as described in the subsection on
 build directory, we advise against doing so.  After the installation is
 complete, <code class="docutils literal notranslate"><span class="pre">builddir</span></code> can be removed.</p>
 <div class="section" id="customization-options">
-<span id="sec-build-cmake-options"></span><h2>Customization options<a class="headerlink" href="#customization-options" title="Permalink to this headline">¶</a></h2>
+<span id="sec-build-cmake-options"></span><h2>Customization options<a class="headerlink" href="#customization-options" title="Permalink to this headline"></a></h2>
 <p>AMReX build can be customized  by setting the value of suitable configuration variables
 on the command line via the <code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">&lt;var&gt;=&lt;value&gt;</span></code> syntax, where <code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span></code> is the
 variable to set and <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code> its desired value.
@@ -593,7 +499,7 @@ if they are assigned a value of <code class="docutils literal notranslate"><span
 Boolean configuration variables are case-insensitive.
 The list of available options is reported in the <a class="reference internal" href="#tab-cmakevar"><span class="std std-ref">table</span></a> below.</p>
 <span id="tab-cmakevar"></span><table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">AMReX build options (refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a> for GPU-related options).</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">AMReX build options (refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a> for GPU-related options).</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 24%" />
 <col style="width: 39%" />
@@ -860,7 +766,7 @@ are defined, AMReX default flags are used.</p>
 <p>For a detailed explanation of GPU support in AMReX CMake, refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a>.</p>
 </div>
 <div class="section" id="cmake-and-macos">
-<h2>CMake and macOS<a class="headerlink" href="#cmake-and-macos" title="Permalink to this headline">¶</a></h2>
+<h2>CMake and macOS<a class="headerlink" href="#cmake-and-macos" title="Permalink to this headline"></a></h2>
 <p>While not strictly necessary when using homebrew on macOS, it is highly
 recommended that the user specifies <code class="docutils literal notranslate"><span class="pre">-DCMAKE_C_COMPILER=$(which</span> <span class="pre">gcc-X)</span> <span class="pre">-DCMAKE_CXX_COMPILER=$(which</span>
 <span class="pre">g++-X)</span></code> (where X is the GCC version installed by homebrew) when using
@@ -869,7 +775,7 @@ compiler. Normally Clang plays well with gfortran, but if there are some issues,
 we recommend telling CMake to use gcc for C/C++ also.</p>
 </div>
 <div class="section" id="importing-amrex-into-your-cmake-project">
-<span id="sec-build-cmake-config"></span><h2>Importing AMReX into your CMake project<a class="headerlink" href="#importing-amrex-into-your-cmake-project" title="Permalink to this headline">¶</a></h2>
+<span id="sec-build-cmake-config"></span><h2>Importing AMReX into your CMake project<a class="headerlink" href="#importing-amrex-into-your-cmake-project" title="Permalink to this headline"></a></h2>
 <p>In order to import AMReX into your CMake project, you need
 to include the following line in the appropriate CMakeLists.txt file:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span><span class="p">)</span>
@@ -885,7 +791,7 @@ the following line in the appropriate CMakeLists.txt file:</p>
 </div>
 <p>In the above snippet, <code class="docutils literal notranslate"><span class="pre">&lt;amrex-target-name&gt;</span></code> is any of the targets listed in the table below.</p>
 <span id="tab-cmaketargets"></span><table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">AMReX targets available for import.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">AMReX targets available for import.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 32%" />
 <col style="width: 68%" />
@@ -921,7 +827,7 @@ Your CMake project can check which component is included in the AMReX library vi
 if it is found but the components listed in <code class="docutils literal notranslate"><span class="pre">&lt;components-list&gt;</span></code> are not include in the installation.
 A list of AMReX component names and related configure options are shown in the table below.</p>
 <span id="tab-cmakecomponents"></span><table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">AMReX components.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">AMReX components.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 64%" />
 <col style="width: 36%" />
@@ -1032,7 +938,7 @@ More details on <code class="docutils literal notranslate"><span class="pre">fin
 </div>
 </div>
 <div class="section" id="amrex-on-windows">
-<span id="sec-build-windows"></span><h1>AMReX on Windows<a class="headerlink" href="#amrex-on-windows" title="Permalink to this headline">¶</a></h1>
+<span id="sec-build-windows"></span><h1>AMReX on Windows<a class="headerlink" href="#amrex-on-windows" title="Permalink to this headline"></a></h1>
 <p>The AMReX team does development on Linux machines, from laptops to supercomputers. Many people also use AMReX on Macs without issues.</p>
 <p>We do not officially support AMReX on Windows, and many of us do not have access to any Windows
 machines.  However, we believe there are no fundamental issues for it to work on Windows.</p>
@@ -1049,50 +955,33 @@ supported on Windows.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Basics_Chapter.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="BuildingAMReX_Chapter.html" class="btn btn-neutral float-left" title="Building AMReX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Basics_Chapter.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

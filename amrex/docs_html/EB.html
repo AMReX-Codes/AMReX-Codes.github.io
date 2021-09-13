@@ -1,79 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Overview of Embedded Boundary Description &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GPU" href="GPU_Chapter.html" />
     <link rel="prev" title="Embedded Boundaries" href="EB_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -134,75 +82,33 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="EB_Chapter.html">Embedded Boundaries</a> &raquo;</li>
-        
       <li>Overview of Embedded Boundary Description</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/EB.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="overview-of-embedded-boundary-description">
-<span id="sec-eb-eboverview"></span><h1>Overview of Embedded Boundary Description<a class="headerlink" href="#overview-of-embedded-boundary-description" title="Permalink to this headline">¶</a></h1>
+<span id="sec-eb-eboverview"></span><h1>Overview of Embedded Boundary Description<a class="headerlink" href="#overview-of-embedded-boundary-description" title="Permalink to this headline"></a></h1>
 <p>For computations with complex geometries, AMReX provides data structures and
 algorithms to employ an embedded boundary (EB) approach to PDE discretizations.
 In this approach, the underlying computational mesh is uniform and
@@ -215,7 +121,7 @@ cell shapes. See <a class="reference internal" href="#fig-ebexample"><span class
 <span id="fig-ebexample"></span><a class="reference internal image-reference" href="_images/EB_example.png"><img alt="_images/EB_example.png" src="_images/EB_example.png" style="width: 50.0%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
 rectangular mesh is cut by the irregular shape of the computational domain.
-The cells in the mesh are label as regular, cut or covered.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+The cells in the mesh are label as regular, cut or covered.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </div>
 <p>Because this is a relatively simple grid generation technique, computational
 meshes for rather complex geometries can be generated quickly and robustly.
@@ -241,7 +147,7 @@ structures and access them to build the numerical difference
 operators.  Finally we present EB support of linear solvers.</p>
 </div>
 <div class="section" id="initializing-the-geometric-database">
-<span id="sec-eb-ebinit"></span><h1>Initializing the Geometric Database<a class="headerlink" href="#initializing-the-geometric-database" title="Permalink to this headline">¶</a></h1>
+<span id="sec-eb-ebinit"></span><h1>Initializing the Geometric Database<a class="headerlink" href="#initializing-the-geometric-database" title="Permalink to this headline"></a></h1>
 <p>In AMReX geometric information is stored in a distributed database
 class that must be initialized at the start of the calculation. The
 procedure for this goes as follows:</p>
@@ -274,7 +180,7 @@ mesh.</p></li>
 </pre></div>
 </div>
 <div class="section" id="implicit-function">
-<span id="sec-eb-ebinit-if"></span><h2>Implicit Function<a class="headerlink" href="#implicit-function" title="Permalink to this headline">¶</a></h2>
+<span id="sec-eb-ebinit-if"></span><h2>Implicit Function<a class="headerlink" href="#implicit-function" title="Permalink to this headline"></a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">amrex/Src/EB/</span></code>, there are a number of predefined implicit function classes
 for basic shapes. One can use these directly or as template for their own
 classes.</p>
@@ -318,7 +224,7 @@ outside becomes a sphere with fluid inside.</p></li>
 </div>
 </div>
 <div class="section" id="eb2-geometryshop">
-<h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">GeometryShop</span></span></code><a class="headerlink" href="#eb2-geometryshop" title="Permalink to this headline">¶</a></h2>
+<h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">GeometryShop</span></span></code><a class="headerlink" href="#eb2-geometryshop" title="Permalink to this headline"></a></h2>
 <p>Given an implicit function object, say <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">f</span></span></code>, we can make a
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryShop</span></span></code> object with</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">shop</span> <span class="o">=</span> <span class="n">EB2</span><span class="o">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
@@ -326,7 +232,7 @@ outside becomes a sphere with fluid inside.</p></li>
 </div>
 </div>
 <div class="section" id="eb2-indexspace">
-<h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IndexSpace</span></span></code><a class="headerlink" href="#eb2-indexspace" title="Permalink to this headline">¶</a></h2>
+<h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IndexSpace</span></span></code><a class="headerlink" href="#eb2-indexspace" title="Permalink to this headline"></a></h2>
 <p>We build <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IndexSpace</span></span></code> with a template function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">G</span><span class="o">&gt;</span>
 <span class="kt">void</span> <span class="n">EB2</span><span class="o">::</span><span class="n">Build</span> <span class="p">(</span><span class="k">const</span> <span class="n">G</span><span class="o">&amp;</span> <span class="n">gshop</span><span class="p">,</span> <span class="k">const</span> <span class="n">Geometry</span><span class="o">&amp;</span> <span class="n">geom</span><span class="p">,</span>
@@ -364,7 +270,7 @@ this chapter.</p>
 </div>
 </div>
 <div class="section" id="ebfarrayboxfactory">
-<h1>EBFArrayBoxFactory<a class="headerlink" href="#ebfarrayboxfactory" title="Permalink to this headline">¶</a></h1>
+<h1>EBFArrayBoxFactory<a class="headerlink" href="#ebfarrayboxfactory" title="Permalink to this headline"></a></h1>
 <p>After the EB database is initialized, the next thing we build is
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBFArrayBoxFactory</span></span></code>. This object provides access to the EB database in the
 format of basic AMReX objects such as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code>,
@@ -416,7 +322,7 @@ building the <code class="code cpp c++ docutils literal notranslate"><span class
 </div>
 </div>
 <div class="section" id="eb-data">
-<h1>EB Data<a class="headerlink" href="#eb-data" title="Permalink to this headline">¶</a></h1>
+<h1>EB Data<a class="headerlink" href="#eb-data" title="Permalink to this headline"></a></h1>
 <p>Through member functions of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBFArrayBoxFactory</span></span></code>, we have access to the
 following data:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// see section on EBCellFlagFab</span>
@@ -463,7 +369,7 @@ example, for <span class="math notranslate nohighlight">\(y\)</span> face, the c
 for <span class="math notranslate nohighlight">\(z\)</span>. The coordinates are in each face’s local frame normalized to the
 range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>.</p>
 <div class="section" id="ebcellflagfab">
-<span id="sec-eb-flag"></span><h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBCellFlagFab</span></span></code><a class="headerlink" href="#ebcellflagfab" title="Permalink to this headline">¶</a></h2>
+<span id="sec-eb-flag"></span><h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBCellFlagFab</span></span></code><a class="headerlink" href="#ebcellflagfab" title="Permalink to this headline"></a></h2>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBCellFlagFab</span></span></code> contains information on cell types.  We can use
 it to determine if a box contains cut cells.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">factory</span><span class="o">-&gt;</span><span class="n">getMultiEBCellFlagFab</span><span class="p">();</span>
@@ -513,7 +419,7 @@ testing cell types and getting neighbor information. For example</p>
 </div>
 </div>
 <div class="section" id="linear-solvers">
-<h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this headline">¶</a></h1>
+<h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this headline"></a></h1>
 <p>Linear solvers for the canonical form (equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>)
 have been discussed in chapter <a class="reference internal" href="LinearSolvers_Chapter.html#chap-linearsolvers"><span class="std std-ref">Linear Solvers</span></a>.</p>
 <p>AMReX supports multi-level
@@ -562,7 +468,7 @@ as living at face centroids, modify the setBCoeffs command to be</p>
 </div>
 </div>
 <div class="section" id="tutorials">
-<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline"></a></h1>
 <p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/CNS</a> is an AMR code for solving compressible
 Navier-Stokes equations with the embedded boundary approach.</p>
 <p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/EB_Tutorial.html">EB/Poisson</a> is a single-level code that is a proxy for
@@ -575,50 +481,33 @@ field of (1,0,0).</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="GPU_Chapter.html" class="btn btn-neutral float-right" title="GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="EB_Chapter.html" class="btn btn-neutral float-left" title="Embedded Boundaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GPU_Chapter.html" class="btn btn-neutral float-right" title="GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

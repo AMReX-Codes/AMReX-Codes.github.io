@@ -1,79 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>The Particle &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Fortran Interface" href="Fortran_Chapter.html" />
     <link rel="prev" title="Particles" href="Particle_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -137,75 +85,33 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="Particle_Chapter.html">Particles</a> &raquo;</li>
-        
       <li>The Particle</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/Particle.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="the-particle">
-<span id="sec-particles-particle"></span><h1>The Particle<a class="headerlink" href="#the-particle" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-particle"></span><h1>The Particle<a class="headerlink" href="#the-particle" title="Permalink to this headline"></a></h1>
 <p>The particle classes can be used by including the header AMReX_Particles.H. The
 most basic particle data structure is the particle itself:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">;</span>
@@ -232,7 +138,7 @@ flags. Our particle struct would be set up like:</p>
 <p>and the order of the particle components in would be (assuming <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_SPACEDIM</span></span></code> is 3):
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">x</span></span> <span class="name"><span class="pre">y</span></span> <span class="name"><span class="pre">z</span></span> <span class="name"><span class="pre">m</span></span> <span class="name"><span class="pre">vx</span></span> <span class="name"><span class="pre">vy</span></span> <span class="name"><span class="pre">vz</span></span> <span class="name"><span class="pre">id</span></span> <span class="name"><span class="pre">cpu</span></span> <span class="name"><span class="pre">flag1</span></span> <span class="name"><span class="pre">flag2</span></span></code>.  <a class="footnote-reference brackets" href="#id6" id="id3">3</a></p>
 <div class="section" id="setting-particle-data">
-<h2>Setting Particle data<a class="headerlink" href="#setting-particle-data" title="Permalink to this headline">¶</a></h2>
+<h2>Setting Particle data<a class="headerlink" href="#setting-particle-data" title="Permalink to this headline"></a></h2>
 <p>The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Particle</span></span></code> struct provides a number of methods for getting and setting
 a particle’s data. For the required particle components, there are special,
 named methods. For the “extra” real and integer data, you can use the
@@ -258,7 +164,7 @@ named methods. For the “extra” real and integer data, you can use the
 </div>
 </div>
 <div class="section" id="the-particlecontainer">
-<span id="sec-particles-particlecontainer"></span><h1>The ParticleContainer<a class="headerlink" href="#the-particlecontainer" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-particlecontainer"></span><h1>The ParticleContainer<a class="headerlink" href="#the-particlecontainer" title="Permalink to this headline"></a></h1>
 <p>One particle by itself is not very useful. To do real calculations, a
 collection of particles needs to be defined, and the location of the particles
 within the AMR hierarchy (and the corresponding MPI process) needs to be
@@ -268,7 +174,7 @@ tracked as the particle positions change. To do this, we provide the
 </pre></div>
 </div>
 <div class="section" id="arrays-of-structs-and-structs-of-arrays">
-<h2>Arrays-of-Structs and Structs-of-Arrays<a class="headerlink" href="#arrays-of-structs-and-structs-of-arrays" title="Permalink to this headline">¶</a></h2>
+<h2>Arrays-of-Structs and Structs-of-Arrays<a class="headerlink" href="#arrays-of-structs-and-structs-of-arrays" title="Permalink to this headline"></a></h2>
 <p>Like the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Particle</span></span></code> class itself, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code>
 class is templated. The first two template parameters have the same meaning as
 before: they define the number of each type of variables that the particles in
@@ -298,7 +204,7 @@ labelled the extra real data member of the particle struct to be
 labeled <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">p</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">s</span></span></code>, for “phase” and “state”. The variables in
 the real and integer arrays are labelled <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">foo</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">bar</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">l</span></span></code>,
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">n</span></span></code>, respectively. We have assumed that the particles are double
-precision.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+precision.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </div>
 <p>To see why the distinction between AoS and SoA data is important, consider the
 following extreme case. Say you have particles that carry 100 different
@@ -319,7 +225,7 @@ internally by AMReX to assign the particles to grids and to mark particles as
 valid or invalid, respectively.</p>
 </div>
 <div class="section" id="constructing-particlecontainers">
-<h2>Constructing ParticleContainers<a class="headerlink" href="#constructing-particlecontainers" title="Permalink to this headline">¶</a></h2>
+<h2>Constructing ParticleContainers<a class="headerlink" href="#constructing-particlecontainers" title="Permalink to this headline"></a></h2>
 <p>A particle container is always associated with a particular set of AMR grids
 and a particular set of DistributionMaps that describes which MPI processes
 those grids live on.  For example, if you only have one level, you can define a
@@ -377,7 +283,7 @@ particles, etc. See the <a class="reference external" href="https://amrex-codes.
 </div>
 </div>
 <div class="section" id="initializing-particle-data">
-<span id="sec-particles-initializing"></span><h1>Initializing Particle Data<a class="headerlink" href="#initializing-particle-data" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-initializing"></span><h1>Initializing Particle Data<a class="headerlink" href="#initializing-particle-data" title="Permalink to this headline"></a></h1>
 <p>In the following code snippet, we demonstrate how to set particle initial
 conditions for both SoA and AoS data. We loop over all the tiles using
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code>, and add as many particles as we want to each one.</p>
@@ -427,7 +333,7 @@ the particle positions are perturbed from the cell centers and thus end up
 outside their parent grid).</p>
 </div>
 <div class="section" id="adding-particle-components-at-runtime">
-<span id="sec-particles-runtime"></span><h1>Adding particle components at runtime<a class="headerlink" href="#adding-particle-components-at-runtime" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-runtime"></span><h1>Adding particle components at runtime<a class="headerlink" href="#adding-particle-components-at-runtime" title="Permalink to this headline"></a></h1>
 <p>In addition to the components specified as template parameters, you can also
 add additional <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Real</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span></code> components at runtime. These components
 will be stored in Struct-of-Array style. To add a runtime component, use the
@@ -467,7 +373,7 @@ are used, <code class="code cpp c++ docutils literal notranslate"><span class="n
 </div>
 </div>
 <div class="section" id="iterating-over-particles">
-<span id="sec-particles-iterating"></span><h1>Iterating over Particles<a class="headerlink" href="#iterating-over-particles" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-iterating"></span><h1>Iterating over Particles<a class="headerlink" href="#iterating-over-particles" title="Permalink to this headline"></a></h1>
 <p>To iterate over the particles on a given level in your container, you can use
 the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParIter</span></span></code> class, which comes in both const and non-const flavors. For
 example, to iterate over all the AoS data:</p>
@@ -496,7 +402,7 @@ skipped. You can also access the SoA data using the <span class="math notranslat
 </div>
 </div>
 <div class="section" id="passing-particle-data-into-fortran-routines">
-<span id="sec-particles-fortran"></span><h1>Passing particle data into Fortran routines<a class="headerlink" href="#passing-particle-data-into-fortran-routines" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-fortran"></span><h1>Passing particle data into Fortran routines<a class="headerlink" href="#passing-particle-data-into-fortran-routines" title="Permalink to this headline"></a></h1>
 <p>Because the AMReX particle struct is a Plain-Old-Data type, it is interoperable
 with Fortran when the <code class="code fortran docutils literal notranslate"><span class="keyword"><span class="pre">bind</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">C</span></span><span class="punctuation"><span class="pre">)</span></span></code> attribute is used. It is therefore
 possible to pass a grid or tile worth of particles into fortran routines for
@@ -522,7 +428,7 @@ always using this type in Fortran routines that work on particle data to avoid
 hard-to-debug incompatibilities between floating point types.</p>
 </div>
 <div class="section" id="interacting-with-mesh-data">
-<span id="sec-particles-interacting"></span><h1>Interacting with Mesh Data<a class="headerlink" href="#interacting-with-mesh-data" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-interacting"></span><h1>Interacting with Mesh Data<a class="headerlink" href="#interacting-with-mesh-data" title="Permalink to this headline"></a></h1>
 <p>It is common to want to have the mesh communicate information to the particles
 and vice versa. For example, in Particle-in-Cell calculations, the particles
 deposit their charges onto the mesh, and later, the electric fields computed on
@@ -590,7 +496,7 @@ the ghost cells surrounding each Fab into the corresponding valid cells.</p>
 mesh refinement, please see the <cite>Electrostatic PIC tutorial</cite>.</p>
 </div>
 <div class="section" id="short-range-forces">
-<span id="sec-particles-shortrange"></span><h1>Short Range Forces<a class="headerlink" href="#short-range-forces" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-shortrange"></span><h1>Short Range Forces<a class="headerlink" href="#short-range-forces" title="Permalink to this headline"></a></h1>
 <p>In a PIC calculation, the particles don’t interact with each other directly;
 they only see each other through the mesh. An alternative use case is particles
 that exert short-range forces on each other. In this case, beyond some cut-off
@@ -615,7 +521,7 @@ neighbor buffer. These particles can then be included in the force
 calculation. If the domain is periodic, particles in the grown region for
 the blue tile that lie on the other side of the domain will also be copied,
 and their positions will modified so that a naive distance calculation
-between valid particles and neighbors will be correct.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+between valid particles and neighbors will be correct.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </div>
 <p>For a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code> that does this neighbor finding, please see
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborParticleContainer</span></span></code> in
@@ -692,7 +598,7 @@ collision partners for the first particle on this tile, while the second is
 the number of collision partners from nearby tiles in the neighbor buffer.
 Based on the number of collision partners, the next several entries are the
 indices of the collision partners in the real and neighbor particle arrays,
-respectively. This pattern continues for all the particles on this tile.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+respectively. This pattern continues for all the particles on this tile.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </div>
 <p>This array can then be used to compute the forces on all the particles in one
 scan. Users can define their own <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborParticleContainer</span></span></code> subclasses
@@ -700,7 +606,7 @@ that have their own collision criteria by overloading the virtual
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">check_pair</span></span></code> function.</p>
 </div>
 <div class="section" id="particle-io">
-<span id="sec-particles-io"></span><h1>Particle IO<a class="headerlink" href="#particle-io" title="Permalink to this headline">¶</a></h1>
+<span id="sec-particles-io"></span><h1>Particle IO<a class="headerlink" href="#particle-io" title="Permalink to this headline"></a></h1>
 <p>AMReX provides routines for writing particle data to disk for analysis,
 visualization, and for checkpoint / restart. The most important methods are the
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WritePlotFile</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Checkpoint</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Restart</span></span></code> methods of
@@ -719,7 +625,7 @@ mesh data IO. For example:</p>
 format readable by Paraview. See the chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a> for more information on visualizing AMReX datasets, including those with particles.</p>
 </div>
 <div class="section" id="inputs-parameters">
-<h1>Inputs parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline">¶</a></h1>
+<h1>Inputs parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline"></a></h1>
 <p id="sec-particles-parameters">There are several runtime parameters users can set in their <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span></code> files that control the
 behavior of the AMReX particle classes. These are summarized below. They should be preceded by
 “particles” in your inputs deck.</p>
@@ -858,50 +764,33 @@ see <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Fortran_Chapter.html" class="btn btn-neutral float-right" title="Fortran Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Particle_Chapter.html" class="btn btn-neutral float-left" title="Particles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Fortran_Chapter.html" class="btn btn-neutral float-right" title="Fortran Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

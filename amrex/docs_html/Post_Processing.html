@@ -1,78 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Post-Processing &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Run-time Inputs" href="Inputs_Chapter.html" />
     <link rel="prev" title="Post-Processing" href="Post_Processing_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -131,79 +79,37 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="Post_Processing_Chapter.html">Post-Processing</a> &raquo;</li>
-        
       <li>Post-Processing</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/Post_Processing.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="post-processing">
-<span id="sec-postprocessing"></span><h1>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h1>
+<span id="sec-postprocessing"></span><h1>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline"></a></h1>
 <p>The following is a list of tools you may find useful for processing
 plotfile data generated by AMReX codes.</p>
 <div class="section" id="writeplotfiletoascii">
-<h2>WritePlotfileToASCII<a class="headerlink" href="#writeplotfiletoascii" title="Permalink to this headline">¶</a></h2>
+<h2>WritePlotfileToASCII<a class="headerlink" href="#writeplotfiletoascii" title="Permalink to this headline"></a></h2>
 <p>This basic routine reads in a single-level plotfile and writes the entire contents
 to the standard output, one line at a time for each data value.
 After reading in the plotfile to a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>, the program copies the data
@@ -219,7 +125,7 @@ row/column formatting, etc.</p>
 </div>
 </div>
 <div class="section" id="fextract">
-<h2>fextract<a class="headerlink" href="#fextract" title="Permalink to this headline">¶</a></h2>
+<h2>fextract<a class="headerlink" href="#fextract" title="Permalink to this headline"></a></h2>
 <p>This basic routine reads in a single-level plotfile and extracts selected contents
 along a 1-D axis to an ascii file.</p>
 <p><strong>How to build and run</strong></p>
@@ -253,7 +159,7 @@ A generic ASCII file is generated by default, which contains many details of the
 </div>
 </div>
 <div class="section" id="fcompare">
-<h2>fcompare<a class="headerlink" href="#fcompare" title="Permalink to this headline">¶</a></h2>
+<h2>fcompare<a class="headerlink" href="#fcompare" title="Permalink to this headline"></a></h2>
 <p>Compares two plotfiles, zone by zone, to machine precision
 and reports the maximum absolute and relative errors for each
 variable.</p>
@@ -288,7 +194,7 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fextract.g
 </div>
 </div>
 <div class="section" id="fboxinfo">
-<h2>fboxinfo<a class="headerlink" href="#fboxinfo" title="Permalink to this headline">¶</a></h2>
+<h2>fboxinfo<a class="headerlink" href="#fboxinfo" title="Permalink to this headline"></a></h2>
 <p>Displays information about AMR levels and boxes. Works with
 1-, 2- or 3-dimensional datasets.</p>
 <p><strong>How to build and run</strong></p>
@@ -308,7 +214,7 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fboxinfo.g
 </div>
 </div>
 <div class="section" id="fvarnames">
-<h2>fvarnames<a class="headerlink" href="#fvarnames" title="Permalink to this headline">¶</a></h2>
+<h2>fvarnames<a class="headerlink" href="#fvarnames" title="Permalink to this headline"></a></h2>
 <p>Takes a single plotfile and displays a list of the variables present.</p>
 <p><strong>How to build and run</strong></p>
 <p>In <code class="docutils literal notranslate"><span class="pre">amrex/Tools/Plotfile</span></code>, type <code class="docutils literal notranslate"><span class="pre">make</span></code> and then <code class="docutils literal notranslate"><span class="pre">./fvarnames.gnu.ex</span></code> to run.
@@ -335,7 +241,7 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fvarnames.
 </div>
 </div>
 <div class="section" id="ftime">
-<h2>ftime<a class="headerlink" href="#ftime" title="Permalink to this headline">¶</a></h2>
+<h2>ftime<a class="headerlink" href="#ftime" title="Permalink to this headline"></a></h2>
 <p>Takes a whitespace separated list of plotfiles and returns the time
 for each plotfile.</p>
 <p><strong>How to build and run</strong></p>
@@ -359,7 +265,7 @@ Typing <code class="docutils literal notranslate"><span class="pre">./ftime.gnu.
 </div>
 </div>
 <div class="section" id="fsnapshot">
-<h2>fsnapshot<a class="headerlink" href="#fsnapshot" title="Permalink to this headline">¶</a></h2>
+<h2>fsnapshot<a class="headerlink" href="#fsnapshot" title="Permalink to this headline"></a></h2>
 <p>Produces an image of a 2-d plotfile, or a slice of a 3-d plotfile.</p>
 <p><strong>How to build and run</strong></p>
 <p>In <code class="docutils literal notranslate"><span class="pre">amrex/Tools/Plotfile</span></code>, type <code class="docutils literal notranslate"><span class="pre">make</span></code> and then <code class="docutils literal notranslate"><span class="pre">./fsnapshot.gnu.ex</span></code> to run.
@@ -392,7 +298,7 @@ the command <code class="docutils literal notranslate"><span class="pre">display
 </div>
 </div>
 <div class="section" id="fnan">
-<h2>fnan<a class="headerlink" href="#fnan" title="Permalink to this headline">¶</a></h2>
+<h2>fnan<a class="headerlink" href="#fnan" title="Permalink to this headline"></a></h2>
 <p>Takes a single plot file and reports whether each variable contains
 NaN values.</p>
 <p><strong>How to build and run</strong></p>
@@ -421,7 +327,7 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fnan.gnu.e
 </div>
 </div>
 <div class="section" id="fextrema">
-<h2>fextrema<a class="headerlink" href="#fextrema" title="Permalink to this headline">¶</a></h2>
+<h2>fextrema<a class="headerlink" href="#fextrema" title="Permalink to this headline"></a></h2>
 <p>Report the extrema (min/max) for each variable in a plotfile.</p>
 <p><strong>How to build and run</strong></p>
 <p>In <code class="docutils literal notranslate"><span class="pre">amrex/Tools/Plotfile</span></code>, type <code class="docutils literal notranslate"><span class="pre">make</span></code> and then <code class="docutils literal notranslate"><span class="pre">./fextrema.gnu.ex</span></code> to run.
@@ -441,50 +347,33 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fextrema.g
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Inputs_Chapter.html" class="btn btn-neutral float-right" title="Run-time Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Post_Processing_Chapter.html" class="btn btn-neutral float-left" title="Post-Processing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Inputs_Chapter.html" class="btn btn-neutral float-right" title="Run-time Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

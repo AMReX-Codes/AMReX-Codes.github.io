@@ -1,78 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Types of Profiling &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="External Profiling Tools" href="External_Profiling_Tools_Chapter.html" />
     <link rel="prev" title="AMReX-based Profiling Tools" href="AMReX_Profiling_Tools_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -144,75 +92,33 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a> &raquo;</li>
-        
       <li>Types of Profiling</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/AMReX_Profiling_Tools.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="types-of-profiling">
-<h1>Types of Profiling<a class="headerlink" href="#types-of-profiling" title="Permalink to this headline">¶</a></h1>
+<h1>Types of Profiling<a class="headerlink" href="#types-of-profiling" title="Permalink to this headline"></a></h1>
 <p>AMReX’s built-in profiling works through objects that start and stop timers
 based on user-placed macros or an object’s constructor and destructor.
 The results from these timers are stored in a global list that is consolidated
@@ -220,7 +126,7 @@ and printed during finalization, or at a user-defined flush point.</p>
 <p>Currently, AMReX has two options for built-in profiling:
 <a class="reference internal" href="#sec-tiny-profiling"><span class="std std-ref">Tiny Profiling</span></a> and <a class="reference internal" href="#sec-full-profiling"><span class="std std-ref">Full Profiling</span></a>.</p>
 <div class="section" id="tiny-profiling">
-<span id="sec-tiny-profiling"></span><h2>Tiny Profiling<a class="headerlink" href="#tiny-profiling" title="Permalink to this headline">¶</a></h2>
+<span id="sec-tiny-profiling"></span><h2>Tiny Profiling<a class="headerlink" href="#tiny-profiling" title="Permalink to this headline"></a></h2>
 <p>To enable “Tiny Profiling” with GNU Make edit the options in the file <code class="docutils literal notranslate"><span class="pre">GNUMakefile</span></code>
 to show,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TINY_PROFILE</span> <span class="o">=</span> <span class="n">TRUE</span>
@@ -239,7 +145,7 @@ to show,</p>
 and tiny profiling will be disabled.</p>
 </div>
 <div class="section" id="output">
-<h3>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
+<h3>Output<a class="headerlink" href="#output" title="Permalink to this headline"></a></h3>
 <p>At the end of a run, a summary of exclusive and inclusive function times will
 be written to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>. This output includes the minimum and maximum (over
 processes) time spent in each routine as well as the average and the maximum
@@ -284,7 +190,7 @@ set of timers.</p>
 </div>
 </div>
 <div class="section" id="full-profiling">
-<span id="sec-full-profiling"></span><h2>Full Profiling<a class="headerlink" href="#full-profiling" title="Permalink to this headline">¶</a></h2>
+<span id="sec-full-profiling"></span><h2>Full Profiling<a class="headerlink" href="#full-profiling" title="Permalink to this headline"></a></h2>
 <p>If you set <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> then a <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> directory will be written that
 contains detailed per-task timings for each processor.  This will be written in
 <code class="docutils literal notranslate"><span class="pre">nfiles</span></code> files (where <code class="docutils literal notranslate"><span class="pre">nfiles</span></code> is specified by the user). The information
@@ -292,7 +198,7 @@ in the directory can be analyzed by the <a class="reference internal" href="#sec
 within <a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>. In addition, an
 exclusive-only set of function timings will be written to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.</p>
 <div class="section" id="trace-profiling">
-<h3>Trace Profiling<a class="headerlink" href="#trace-profiling" title="Permalink to this headline">¶</a></h3>
+<h3>Trace Profiling<a class="headerlink" href="#trace-profiling" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>If you set <code class="docutils literal notranslate"><span class="pre">TRACE_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> in addition to <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>,
 then the profiler keeps track of when each profiled function is called and
@@ -304,7 +210,7 @@ profiling information independently from other regions.</p>
 </div></blockquote>
 </div>
 <div class="section" id="communication-profiling">
-<h3>Communication Profiling<a class="headerlink" href="#communication-profiling" title="Permalink to this headline">¶</a></h3>
+<h3>Communication Profiling<a class="headerlink" href="#communication-profiling" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>If you set <code class="docutils literal notranslate"><span class="pre">COMM_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> in addition to <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, then
 the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> directory will contain additional information about MPI
@@ -318,7 +224,7 @@ documentation will reflect the latest status in the development branch.</p>
 </div>
 </div>
 <div class="section" id="instrumenting-c-code">
-<h1>Instrumenting C++ Code<a class="headerlink" href="#instrumenting-c-code" title="Permalink to this headline">¶</a></h1>
+<h1>Instrumenting C++ Code<a class="headerlink" href="#instrumenting-c-code" title="Permalink to this headline"></a></h1>
 <p>AMReX profiler objects are created and managed through <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROF</span></span></code> macros.</p>
 <p>To start, you must at least instrument main(), i.e.:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(...)</span>
@@ -352,7 +258,7 @@ documentation will reflect the latest status in the development branch.</p>
 <p>You can then instrument any of your functions, or code blocks. There are four general
 profiler macro types available:</p>
 <div class="section" id="a-scoped-timer-bl-profile">
-<h2>1) A scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE</span></span></code>:<a class="headerlink" href="#a-scoped-timer-bl-profile" title="Permalink to this headline">¶</a></h2>
+<h2>1) A scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE</span></span></code>:<a class="headerlink" href="#a-scoped-timer-bl-profile" title="Permalink to this headline"></a></h2>
 <p>These timers generate their own object names, so they can’t be controlled after being defined.
 However, they are the cleanest and easiest to work with in many situations. They time from
 the point where the macro is called until the end of the enclosing scope. This macro is ideal
@@ -370,7 +276,7 @@ for timing an entire function. For example:</p>
 This macro is unique because it can <em>only</em> stop when it goes out of scope.</p>
 </div>
 <div class="section" id="a-named-scoped-timer-bl-profile-var">
-<h2>2) A named, scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR</span></span></code>:<a class="headerlink" href="#a-named-scoped-timer-bl-profile-var" title="Permalink to this headline">¶</a></h2>
+<h2>2) A named, scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR</span></span></code>:<a class="headerlink" href="#a-named-scoped-timer-bl-profile-var" title="Permalink to this headline"></a></h2>
 <p>In some cases, using scopes to control a timer is not ideal. In such cases, you can use the
 <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> macros to create a named timer that can be controlled through <code class="docutils literal notranslate"><span class="pre">_START_</span></code> and <code class="docutils literal notranslate"><span class="pre">_STOP_</span></code> macros.
 <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> signifies that the macro takes a variable name. For example, to time a function without scoping:</p>
@@ -405,7 +311,7 @@ timers by just using the <code class="code cpp c++ docutils literal notranslate"
 </div>
 </div>
 <div class="section" id="a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns">
-<h2>3) A named, scoped timer that doesn’t auto-start, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR_NS</span></span></code>:<a class="headerlink" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns" title="Permalink to this headline">¶</a></h2>
+<h2>3) A named, scoped timer that doesn’t auto-start, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR_NS</span></span></code>:<a class="headerlink" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns" title="Permalink to this headline"></a></h2>
 <p>Sometimes, a complicated scoping may mean the profiling object needs to be defined before it’s
 started. To create a named AMReX timer that doesn’t start automatically, use the <code class="docutils literal notranslate"><span class="pre">_NS_</span></code> macros.
 (“NS” stands for “no start”). For example, this implementation times <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MyFunc0</span></span></code>
@@ -441,7 +347,7 @@ able to turn the timer on!</p>
 </div>
 </div>
 <div class="section" id="designate-a-sub-region-to-profile-bl-profile-region">
-<h2>4) Designate a sub-region to profile, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_REGION</span></span></code>:<a class="headerlink" href="#designate-a-sub-region-to-profile-bl-profile-region" title="Permalink to this headline">¶</a></h2>
+<h2>4) Designate a sub-region to profile, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_REGION</span></span></code>:<a class="headerlink" href="#designate-a-sub-region-to-profile-bl-profile-region" title="Permalink to this headline"></a></h2>
 <p>Often, it’s helpful to look at a subset of timers separately from the complete profile. For
 example, you may want to view the timing of a specific time step or isolate everything inside the “Chemistry”
 part of the code. This can be accomplished by designating profile regions. All timers within a
@@ -449,7 +355,7 @@ named region will be included both in the full analysis, as well as in a separat
 <p>Regions are meant to be large contiguous blocks of code, and should be used sparingly and purposefully
 to produce useful profiling reports. As such, the possible region options are purposefully limited.</p>
 <div class="section" id="scoped-regions">
-<h3>Scoped Regions<a class="headerlink" href="#scoped-regions" title="Permalink to this headline">¶</a></h3>
+<h3>Scoped Regions<a class="headerlink" href="#scoped-regions" title="Permalink to this headline"></a></h3>
 <p>When using the Tiny Profiler, the only available region macro is the scoped macro. To create a region
 that profiles the <cite>MyFuncs</cite> code block, including all timers in the “Additional Code” regions, add
 macros in the following way:</p>
@@ -501,7 +407,7 @@ indicated by <code class="docutils literal notranslate"><span class="pre">REG::M
 </div>
 </div>
 <div class="section" id="named-regions">
-<h3>Named Regions<a class="headerlink" href="#named-regions" title="Permalink to this headline">¶</a></h3>
+<h3>Named Regions<a class="headerlink" href="#named-regions" title="Permalink to this headline"></a></h3>
 <p>If using the Full Profiler, named region objects are also available.
 Named regions allow control of start and stop points without relying on scope.
 These macros use slightly modified
@@ -544,7 +450,7 @@ region groupings.</p>
 </div>
 </div>
 <div class="section" id="instrumenting-fortran90-code">
-<h1>Instrumenting Fortran90 Code<a class="headerlink" href="#instrumenting-fortran90-code" title="Permalink to this headline">¶</a></h1>
+<h1>Instrumenting Fortran90 Code<a class="headerlink" href="#instrumenting-fortran90-code" title="Permalink to this headline"></a></h1>
 <p>When using the full profiler, Fortran90 functions can also be instrumented
 with the following calls:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">bl_proffortfuncstart</span><span class="p">(</span><span class="s2">&quot;my_function&quot;</span><span class="p">)</span>
@@ -580,7 +486,7 @@ fortran instrumentation.</p>
 </div>
 </div>
 <div class="section" id="amrprofparser">
-<span id="sec-amrprofparse"></span><h1>AMRProfParser<a class="headerlink" href="#amrprofparser" title="Permalink to this headline">¶</a></h1>
+<span id="sec-amrprofparse"></span><h1>AMRProfParser<a class="headerlink" href="#amrprofparser" title="Permalink to this headline"></a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMRProfParser</span></span></code> is a tool for processing and analyzing the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code>
 database. It is a command line application that can create performance
 summaries, plotfiles showing point-to-point communication and timelines, HTML
@@ -596,50 +502,33 @@ in parallel both interactively and in batch mode.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="External_Profiling_Tools_Chapter.html" class="btn btn-neutral float-right" title="External Profiling Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="AMReX_Profiling_Tools_Chapter.html" class="btn btn-neutral float-left" title="AMReX-based Profiling Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="External_Profiling_Tools_Chapter.html" class="btn btn-neutral float-right" title="External Profiling Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

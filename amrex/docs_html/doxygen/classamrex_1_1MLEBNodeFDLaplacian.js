@@ -21,7 +21,7 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "prepareForSolve", "classamrex_1_1MLEBNodeFDLaplacian.html#a31d3fbddab89750d2dc6212d4fe6fc9a", null ],
     [ "reflux", "classamrex_1_1MLEBNodeFDLaplacian.html#ab24f43cada8f1a1daa112e1c17ea635d", null ],
     [ "restriction", "classamrex_1_1MLEBNodeFDLaplacian.html#a79f111ea6c182c3ca749babb56729051", null ],
-    [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#addd0c91c53d2097103f32918237a65b5", null ],
+    [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#ad844fd69a263d811444e4be2aef4d795", null ],
     [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#a4620fd82574c119b58c63e9a84ecd3d1", null ],
     [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ab81f654708d4756a07160c7eaa343d48", null ],
     [ "m_a_huge", "classamrex_1_1MLEBNodeFDLaplacian.html#a824178034487842a323be9ae255c249c", null ],

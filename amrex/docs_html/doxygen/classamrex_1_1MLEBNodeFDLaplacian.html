@@ -136,9 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab81f654708d4756a07160c7eaa343d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4620fd82574c119b58c63e9a84ecd3d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a4620fd82574c119b58c63e9a84ecd3d1">setEBDirichlet</a> (Real a_phi_eb)</td></tr>
 <tr class="separator:a4620fd82574c119b58c63e9a84ecd3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addd0c91c53d2097103f32918237a65b5"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:addd0c91c53d2097103f32918237a65b5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same&lt; std::decay_t&lt; decltype(std::declval&lt; F &gt;)(AMREX_D_DECL(Real(0.), Real(0.), Real(0.))))&gt;, Real &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#addd0c91c53d2097103f32918237a65b5">setEBDirichlet</a> (F &amp;&amp;f)</td></tr>
-<tr class="separator:addd0c91c53d2097103f32918237a65b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad844fd69a263d811444e4be2aef4d795"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ad844fd69a263d811444e4be2aef4d795"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&lt; Real, F, AMREX_D_DECL(Real, Real, Real)&gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ad844fd69a263d811444e4be2aef4d795">setEBDirichlet</a> (F &amp;&amp;f)</td></tr>
+<tr class="separator:ad844fd69a263d811444e4be2aef4d795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e002699c92b9ddb2d980dea04bd4311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a8e002699c92b9ddb2d980dea04bd4311">define</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;a_geom, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt; &amp;a_grids, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &gt; &amp;a_dmap, const <a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;a_info, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> const * &gt; &amp;a_factory)</td></tr>
 <tr class="separator:a8e002699c92b9ddb2d980dea04bd4311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7c91e7540b34a1ac3b805c34b7e355e"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#aa7c91e7540b34a1ac3b805c34b7e355e">makeFactory</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev) const final override</td></tr>
@@ -1303,8 +1303,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="addd0c91c53d2097103f32918237a65b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addd0c91c53d2097103f32918237a65b5">&#9670;&nbsp;</a></span>setEBDirichlet() <span class="overload">[1/2]</span></h2>
+<a id="ad844fd69a263d811444e4be2aef4d795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad844fd69a263d811444e4be2aef4d795">&#9670;&nbsp;</a></span>setEBDirichlet() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1312,7 +1312,7 @@ Additional Inherited Members</h2></td></tr>
 template&lt;typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if_t&lt; std::is_same&lt; std::decay_t&lt; decltype(std::declval&lt; F &gt;)(AMREX_D_DECL(Real(0.), Real(0.), Real(0.))))&gt;, Real &gt;::value &gt; amrex::MLEBNodeFDLaplacian::setEBDirichlet </td>
+          <td class="memname">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsCallableR.html">IsCallableR</a>&lt; Real, F, AMREX_D_DECL(Real, Real, Real)&gt;::value &gt; amrex::MLEBNodeFDLaplacian::setEBDirichlet </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>

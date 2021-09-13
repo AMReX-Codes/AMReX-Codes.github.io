@@ -1,79 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>AmrCore Source Code: Details &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Amr Source Code" href="AmrLevel_Chapter.html" />
     <link rel="prev" title="AmrCore Source Code" href="AmrCore_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -137,75 +85,33 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="AmrCore_Chapter.html">AmrCore Source Code</a> &raquo;</li>
-        
       <li>AmrCore Source Code: Details</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/AmrCore.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <span id="fig-adv"></span><table class="docutils align-center" id="id1">
-<caption><span class="caption-number">Table 8 </span><span class="caption-text">Time sequence (<span class="math notranslate nohighlight">\(t=0,0.5,1,1.5,2\)</span> s) of advection of a Gaussian profile using the SingleVortex tutorial. The analytic velocity field distorts the profile, and then restores the profile to the original configuration.  The red, green, and blue boxes indicate grids at AMR levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Time sequence (<span class="math notranslate nohighlight">\(t=0,0.5,1,1.5,2\)</span> s) of advection of a Gaussian profile using the SingleVortex tutorial. The analytic velocity field distorts the profile, and then restores the profile to the original configuration.  The red, green, and blue boxes indicate grids at AMR levels <span class="math notranslate nohighlight">\(\ell=0,1\)</span>, and <span class="math notranslate nohighlight">\(2\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -223,10 +129,10 @@
 </tbody>
 </table>
 <div class="section" id="amrcore-source-code-details">
-<span id="ss-amrcore"></span><h1>AmrCore Source Code: Details<a class="headerlink" href="#amrcore-source-code-details" title="Permalink to this headline">¶</a></h1>
+<span id="ss-amrcore"></span><h1>AmrCore Source Code: Details<a class="headerlink" href="#amrcore-source-code-details" title="Permalink to this headline"></a></h1>
 <p>Here we provide more information about the source code in <code class="docutils literal notranslate"><span class="pre">amrex/Src/AmrCore</span></code>.</p>
 <div class="section" id="amrmesh-and-amrcore">
-<h2>AmrMesh and AmrCore<a class="headerlink" href="#amrmesh-and-amrcore" title="Permalink to this headline">¶</a></h2>
+<h2>AmrMesh and AmrCore<a class="headerlink" href="#amrmesh-and-amrcore" title="Permalink to this headline"></a></h2>
 <p>For single-level simulations
 (see e.g., <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX1_C/main.cpp</span></code>)
 the user needs to build <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMapping</span></span></code>,
@@ -263,7 +169,7 @@ The protected data members are:</p>
 <p>The following parameters are frequently set via the inputs file or the command line.
 Their usage is described in the section on <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a></p>
 <span id="tab-makevarimp"></span><table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text">AmrCore parameters</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">AmrCore parameters</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 46%" />
 <col style="width: 13%" />
@@ -347,7 +253,7 @@ class <code class="code cpp c++ docutils literal notranslate"><span class="name"
 code for a sample implementation.</p>
 </div>
 <div class="section" id="tagbox-and-cluster">
-<h2>TagBox, and Cluster<a class="headerlink" href="#tagbox-and-cluster" title="Permalink to this headline">¶</a></h2>
+<h2>TagBox, and Cluster<a class="headerlink" href="#tagbox-and-cluster" title="Permalink to this headline"></a></h2>
 <p>These classes are used in the grid generation process.
 The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">TagBox</span></span></code> class is essentially a data structure that marks which
 cells are “tagged” for refinement.
@@ -358,7 +264,7 @@ hidden from any application codes through simple interfaces
 such as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">regrid</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ErrorEst</span></span></code> (a routine for tagging cells for refinement).</p>
 </div>
 <div class="section" id="fillpatchutil-and-interpolater">
-<span id="sec-amrcore-fillpatch"></span><h2>FillPatchUtil and Interpolater<a class="headerlink" href="#fillpatchutil-and-interpolater" title="Permalink to this headline">¶</a></h2>
+<span id="sec-amrcore-fillpatch"></span><h2>FillPatchUtil and Interpolater<a class="headerlink" href="#fillpatchutil-and-interpolater" title="Permalink to this headline"></a></h2>
 <p>Many codes, including the Advection_AmrCore example, contain an array of MultiFabs
 (one for each level of refinement), and then use “fillpatch” operations to fill temporary
 MultiFabs that may include a different number of ghost cells. Fillpatch operations fill
@@ -401,7 +307,7 @@ Within AMReX_Interpolater.cpp/H are the derived classes:</p>
 contained in the files AMReX_INTERP_F.H and AMReX_INTERP_xD.F.</p>
 </div>
 <div class="section" id="using-fluxregisters">
-<span id="sec-amrcore-fluxreg"></span><h2>Using FluxRegisters<a class="headerlink" href="#using-fluxregisters" title="Permalink to this headline">¶</a></h2>
+<span id="sec-amrcore-fluxreg"></span><h2>Using FluxRegisters<a class="headerlink" href="#using-fluxregisters" title="Permalink to this headline"></a></h2>
 <p>AMReX_FluxRegister.cpp/H contains the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FluxRegister</span></span></code>, which is
 derived from the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BndryRegister</span></span></code> (in <code class="docutils literal notranslate"><span class="pre">amrex/Src/Boundary/AMReX_BndryRegister</span></code>).
 In the most general terms, a FluxRegister is a special type of BndryRegister
@@ -434,7 +340,7 @@ incrementing data in a <code class="code cpp c++ docutils literal notranslate"><
 AMReX_FLUXREG_F.H and AMReX_FLUXREG_xD.F.</p>
 </div>
 <div class="section" id="amrparticles-and-amrpargdb">
-<h2>AmrParticles and AmrParGDB<a class="headerlink" href="#amrparticles-and-amrpargdb" title="Permalink to this headline">¶</a></h2>
+<h2>AmrParticles and AmrParGDB<a class="headerlink" href="#amrparticles-and-amrpargdb" title="Permalink to this headline"></a></h2>
 <p>The AmrCore/ directory contains derived classes for dealing with particles
 in a multi-level framework. The description of the base classes
 are given in the chapter on <a class="reference internal" href="Particle_Chapter.html#chap-particles"><span class="std std-ref">Particles</span></a>.</p>
@@ -447,9 +353,9 @@ the class <code class="code cpp c++ docutils literal notranslate"><span class="n
 </div>
 </div>
 <div class="section" id="example-advection-amrcore">
-<h1>Example: Advection_AmrCore<a class="headerlink" href="#example-advection-amrcore" title="Permalink to this headline">¶</a></h1>
+<h1>Example: Advection_AmrCore<a class="headerlink" href="#example-advection-amrcore" title="Permalink to this headline"></a></h1>
 <div class="section" id="the-advection-equation">
-<h2>The Advection Equation<a class="headerlink" href="#the-advection-equation" title="Permalink to this headline">¶</a></h2>
+<h2>The Advection Equation<a class="headerlink" href="#the-advection-equation" title="Permalink to this headline"></a></h2>
 <p>We seek to solve the advection equation on a multi-level, adaptive grid structure:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial\phi}{\partial t} = -\nabla\cdot(\phi{\bf U}).\]</div>
@@ -479,7 +385,7 @@ using space- and time-interpolated data from the grids at <span class="math notr
 </ul>
 <div class="figure align-default" id="id3">
 <span id="fig-subcycling"></span><a class="reference internal image-reference" href="_images/subcycling.png"><img alt="_images/subcycling.png" src="_images/subcycling.png" style="width: 4in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Schematic of subcycling-in-time algorithm.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Schematic of subcycling-in-time algorithm.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </div>
 <p>Specifically, for a 3-level simulation, depicted graphically in the figure
 showing the <a class="reference internal" href="#fig-subcycling"><span class="std std-ref">Schematic of subcycling-in-time algorithm.</span></a> above:</p>
@@ -516,10 +422,10 @@ flux register data).</p></li>
 </ol>
 </div>
 <div class="section" id="code-structure">
-<h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
+<h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline"></a></h2>
 <div class="figure align-default" id="id4">
 <span id="fig-amradvection-amrcore-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" src="_images/flowchart.png" style="width: 4in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Source code tree for the AmrAdvection_AmrCore example.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Source code tree for the AmrAdvection_AmrCore example.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </div>
 <p>The figure shows the <a class="reference internal" href="#fig-amradvection-amrcore-flowchart"><span class="std std-ref">Source code tree for the AmrAdvection_AmrCore example.</span></a></p>
 <ul class="simple">
@@ -582,13 +488,13 @@ simulation.</p></li>
 </div>
 </div>
 <div class="section" id="the-amrcoreadv-class">
-<h2>The AmrCoreAdv Class<a class="headerlink" href="#the-amrcoreadv-class" title="Permalink to this headline">¶</a></h2>
+<h2>The AmrCoreAdv Class<a class="headerlink" href="#the-amrcoreadv-class" title="Permalink to this headline"></a></h2>
 <p>This example uses the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span></code>, which is derived from the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code>
 (which is derived from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrMesh</span></span></code>). The function definitions/implementations
 are given in AmrCoreAdv.H/cpp.</p>
 </div>
 <div class="section" id="fluxregisters">
-<h2>FluxRegisters<a class="headerlink" href="#fluxregisters" title="Permalink to this headline">¶</a></h2>
+<h2>FluxRegisters<a class="headerlink" href="#fluxregisters" title="Permalink to this headline"></a></h2>
 <p>The function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Advance</span></span><span class="punctuation"><span class="pre">()</span></span></code> calls the Fortran
 subroutine, <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">advect</span></span></code> (in <code class="docutils literal notranslate"><span class="pre">./Src_xd/Adv_xd.f90</span></code>). <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">advect</span></span></code> computes
 and returns the time-advanced state as well as the fluxes used to update the state.
@@ -628,7 +534,7 @@ These fluxes are used to set or increment the flux registers.</p>
 </div>
 </div>
 <div class="section" id="regridding">
-<span id="ss-regridding"></span><h2>Regridding<a class="headerlink" href="#regridding" title="Permalink to this headline">¶</a></h2>
+<span id="ss-regridding"></span><h2>Regridding<a class="headerlink" href="#regridding" title="Permalink to this headline"></a></h2>
 <p>The regrid function belongs to the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code> class (it is virtual – in this
 tutorial we use the instance in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code>).</p>
 <p>At the beginning of each time step, we check whether we need to regrid.
@@ -778,7 +684,7 @@ is simple:</p>
 </div>
 </div>
 <div class="section" id="fillpatch">
-<span id="ss-fillpatch"></span><h2>FillPatch<a class="headerlink" href="#fillpatch" title="Permalink to this headline">¶</a></h2>
+<span id="ss-fillpatch"></span><h2>FillPatch<a class="headerlink" href="#fillpatch" title="Permalink to this headline"></a></h2>
 <p>This example has two functions, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">FillPatch</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">CoarseFillPatch</span></span></code>,
 that make use of functions in AmrCore/AMReX_FillPatchUtil.</p>
 <p>In <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Advance</span></span></code>, we create a temporary <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> called <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Sborder</span></span></code>, which
@@ -796,50 +702,33 @@ neighboring grids at the same level, or domain boundary conditions
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="AmrLevel_Chapter.html" class="btn btn-neutral float-right" title="Amr Source Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="AmrCore_Chapter.html" class="btn btn-neutral float-left" title="AmrCore Source Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AmrLevel_Chapter.html" class="btn btn-neutral float-right" title="Amr Source Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

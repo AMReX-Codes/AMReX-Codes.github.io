@@ -1,78 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Overview of AMReX GPU Strategy &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualization" href="Visualization_Chapter.html" />
     <link rel="prev" title="GPU" href="GPU_Chapter.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
@@ -162,75 +110,33 @@
 <li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="GPU_Chapter.html">GPU</a> &raquo;</li>
-        
       <li>Overview of AMReX GPU Strategy</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/GPU.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="overview-of-amrex-gpu-strategy">
-<span id="sec-gpu-overview"></span><h1>Overview of AMReX GPU Strategy<a class="headerlink" href="#overview-of-amrex-gpu-strategy" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-overview"></span><h1>Overview of AMReX GPU Strategy<a class="headerlink" href="#overview-of-amrex-gpu-strategy" title="Permalink to this headline"></a></h1>
 <p>AMReX’s GPU strategy focuses on providing performant GPU support
 with minimal changes and maximum flexibility.  This allows
 application teams to get running on GPUs quickly while allowing
@@ -269,7 +175,7 @@ a large number GPU threads that only work on a few cells each. This work
 distribution is illustrated in <a class="reference internal" href="#fig-gpu-threads"><span class="std std-numref">Table 10</span></a>.</p></li>
 </ul>
 <span id="fig-gpu-threads"></span><table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 10 </span><span class="caption-text">Comparison of OpenMP and GPU work distribution. Pictures provided by Mike Zingale and the CASTRO team.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Comparison of OpenMP and GPU work distribution. Pictures provided by Mike Zingale and the CASTRO team.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -333,13 +239,13 @@ porting Fortran code to C++ when coding for GPUs.</p></li>
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
 <p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
-ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="building-gpu-support">
-<span id="sec-gpu-build"></span><h1>Building GPU Support<a class="headerlink" href="#building-gpu-support" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-build"></span><h1>Building GPU Support<a class="headerlink" href="#building-gpu-support" title="Permalink to this headline"></a></h1>
 <div class="section" id="building-with-gnu-make">
-<h2>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this headline">¶</a></h2>
+<h2>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this headline"></a></h2>
 <p>To build AMReX with GPU support, add <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP=TRUE</span></code> or
 <code class="docutils literal notranslate"><span class="pre">USE_DPCPP=TRUE</span></code> to the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> or as a command line argument.</p>
 <p>AMReX does not require OpenACC, but application codes
@@ -378,14 +284,14 @@ can run it and that will generate results like:</p>
 </div>
 </div>
 <div class="section" id="building-with-cmake">
-<h2>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline">¶</a></h2>
+<h2>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline"></a></h2>
 <div class="section" id="enabling-cuda-support">
-<h3>Enabling CUDA support<a class="headerlink" href="#enabling-cuda-support" title="Permalink to this headline">¶</a></h3>
+<h3>Enabling CUDA support<a class="headerlink" href="#enabling-cuda-support" title="Permalink to this headline"></a></h3>
 <p>To build AMReX with CUDA support in CMake, add <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation. For a full list of CUDA-specific configuration options,
 check the <a class="reference internal" href="#tab-cmakecudavar"><span class="std std-ref">table</span></a> below.</p>
 <span id="tab-cmakecudavar"></span><table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 11 </span><span class="caption-text">AMReX CUDA-specific build options</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">AMReX CUDA-specific build options</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 28%" />
 <col style="width: 45%" />
@@ -538,7 +444,7 @@ we provide the helper function <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="section" id="enabling-hip-support-experimental">
-<h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline">¶</a></h3>
+<h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline"></a></h3>
 <p>To build AMReX with HIP support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=HIP</span> <span class="pre">-DAMReX_AMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code>
 to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
@@ -561,7 +467,7 @@ Below is an example configuration for HIP on Tulip:</p>
 </div>
 </div>
 <div class="section" id="enabling-sycl-support-experimental">
-<h3>Enabling SYCL support (experimental)<a class="headerlink" href="#enabling-sycl-support-experimental" title="Permalink to this headline">¶</a></h3>
+<h3>Enabling SYCL support (experimental)<a class="headerlink" href="#enabling-sycl-support-experimental" title="Permalink to this headline"></a></h3>
 <p>To build AMReX with SYCL support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=SYCL</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-sycl-compiler&gt;</span></code>
 to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
@@ -579,7 +485,7 @@ Below is an example configuration for SYCL:</p>
 </pre></div>
 </div>
 <span id="tab-cmakesyclvar"></span><table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 12 </span><span class="caption-text">AMReX SYCL-specific build options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">AMReX SYCL-specific build options</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 28%" />
 <col style="width: 45%" />
@@ -615,7 +521,7 @@ Below is an example configuration for SYCL:</p>
 </div>
 </div>
 <div class="section" id="gpu-namespace-and-macros">
-<span id="sec-gpu-namespace"></span><h1>Gpu Namespace and Macros<a class="headerlink" href="#gpu-namespace-and-macros" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-namespace"></span><h1>Gpu Namespace and Macros<a class="headerlink" href="#gpu-namespace-and-macros" title="Permalink to this headline"></a></h1>
 <p>Most GPU related classes and functions are in <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">Gpu</span></code>,
 which is inside <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">amrex</span></code>. For example, the GPU configuration
 class <code class="docutils literal notranslate"><span class="pre">Device</span></code> can be referenced to at <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::Device</span></code>.</p>
@@ -642,14 +548,14 @@ defined.</p>
 function requires separate code for the CPU and GPU implementations.</p>
 </div>
 <div class="section" id="memory-allocation">
-<span id="sec-gpu-memory"></span><h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-memory"></span><h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline"></a></h1>
 <p>To provide portability and improve memory allocation performance,
 AMReX provides a number of memory pools.  When compiled without
 CUDA, all <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s use standard <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">new</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">delete</span></span></code>
 operators. With CUDA, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s each allocate with a
 specific type of GPU memory:</p>
 <span id="tab-gpu-arena"></span><table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 13 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 43%" />
 <col style="width: 57%" />
@@ -699,7 +605,7 @@ SUNDIALS CUDA vector:</p>
 </div>
 </div>
 <div class="section" id="gpu-safe-classes-and-functions">
-<span id="sec-gpu-classes"></span><h1>GPU Safe Classes and Functions<a class="headerlink" href="#gpu-safe-classes-and-functions" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-classes"></span><h1>GPU Safe Classes and Functions<a class="headerlink" href="#gpu-safe-classes-and-functions" title="Permalink to this headline"></a></h1>
 <p>AMReX GPU work takes place inside of MFIter and particle loops.
 Therefore, there are two ways classes and functions have been modified
 to interact with the GPU:</p>
@@ -718,7 +624,7 @@ version and/or device access.</p>
 <p>In this section, we discuss some examples of AMReX device classes and functions
 that are important for programming GPUs.</p>
 <div class="section" id="gpuarray-array1d-array2d-and-array3d">
-<h2>GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#gpuarray-array1d-array2d-and-array3d" title="Permalink to this headline">¶</a></h2>
+<h2>GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#gpuarray-array1d-array2d-and-array3d" title="Permalink to this headline"></a></h2>
 <p>As we have mentioned in <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code>
 cannot be used in device code, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>,
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array1D</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array2D</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array3D</span></span></code> are trivial types
@@ -730,7 +636,7 @@ lambda-captured to GPU code. For example,
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">length3d</span></span><span class="punctuation"><span class="pre">()</span></span></code> all return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>s.</p>
 </div>
 <div class="section" id="asyncarray">
-<span id="sec-gpu-classes-asyncarray"></span><h2>AsyncArray<a class="headerlink" href="#asyncarray" title="Permalink to this headline">¶</a></h2>
+<span id="sec-gpu-classes-asyncarray"></span><h2>AsyncArray<a class="headerlink" href="#asyncarray" title="Permalink to this headline"></a></h2>
 <p>Where the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> is a statically-sized array designed to be
 passed by value onto the device, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AsyncArray</span></span></code> is a
 dynamically-sized array container designed to work between the CPU and
@@ -784,13 +690,13 @@ object only stores and handles the CPU version of the data.</p>
 </div>
 </div>
 <div class="section" id="gpu-vectors">
-<h2>Gpu Vectors<a class="headerlink" href="#gpu-vectors" title="Permalink to this headline">¶</a></h2>
+<h2>Gpu Vectors<a class="headerlink" href="#gpu-vectors" title="Permalink to this headline"></a></h2>
 <p>AMReX also provides a number of dynamic vectors for use with GPU kernels.
 These are configured to use the different AMReX memory Arenas, as
 summarized below. By using the memory Arenas, we can avoid expensive
 allocations and deallocations when (for example) resizing vectors.</p>
 <span id="tab-gpu-gpuvectors"></span><table class="docutils align-default" id="id6">
-<caption><span class="caption-number">Table 14 </span><span class="caption-text">Memory Arenas Associated with each Gpu Vector</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 14 </span><span class="caption-text">Memory Arenas Associated with each Gpu Vector</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 42%" />
 <col style="width: 58%" />
@@ -831,7 +737,7 @@ be used when accessing <code class="code cpp c++ docutils literal notranslate"><
 conditions.</p>
 </div>
 <div class="section" id="amrex-min-and-amrex-max">
-<h2>amrex::min and amrex::max<a class="headerlink" href="#amrex-min-and-amrex-max" title="Permalink to this headline">¶</a></h2>
+<h2>amrex::min and amrex::max<a class="headerlink" href="#amrex-min-and-amrex-max" title="Permalink to this headline"></a></h2>
 <p>GPU versions of <code class="docutils literal notranslate"><span class="pre">std::min</span></code> and <code class="docutils literal notranslate"><span class="pre">std::max</span></code> are not provided in CUDA.
 So, AMReX provides a templated <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">min</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max</span></span></code> with host and
 device versions to allow functionality on GPUs. Invoke the explicitly
@@ -840,7 +746,7 @@ GPU safe implementations. These functions are variadic, so they can take
 any number of arguments and can be invoked with any standard data type.</p>
 </div>
 <div class="section" id="multifab-reductions">
-<h2>MultiFab Reductions<a class="headerlink" href="#multifab-reductions" title="Permalink to this headline">¶</a></h2>
+<h2>MultiFab Reductions<a class="headerlink" href="#multifab-reductions" title="Permalink to this headline"></a></h2>
 <p>AMReX provides functions for performing standard reduction operations on
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code>, including <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">sum</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">max</span></span></code>.
 When <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, these functions automatically implement the
@@ -883,7 +789,7 @@ that take either one, two or three :<code class="code cpp c++ docutils literal n
 or two.</p>
 </div>
 <div class="section" id="box-intvect-and-indextype">
-<h2>Box, IntVect and IndexType<a class="headerlink" href="#box-intvect-and-indextype" title="Permalink to this headline">¶</a></h2>
+<h2>Box, IntVect and IndexType<a class="headerlink" href="#box-intvect-and-indextype" title="Permalink to this headline"></a></h2>
 <p>In AMReX, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVect</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IndexType</span></span></code>
 are classes for representing indices.  These classes and most of
 their member functions, including constructors and destructors,
@@ -891,7 +797,7 @@ have both host and device versions.  They can be used freely
 in device code.</p>
 </div>
 <div class="section" id="geometry">
-<h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline"></a></h2>
 <p>AMReX’s <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code> class is not a GPU safe class.  However, we often need
 to use geometric information such as cell size and physical coordinates
 in GPU kernels.  We can use the following member functions and pass
@@ -910,7 +816,7 @@ passed by value to GPU kernels. This class is called
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span></code> are identical to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code>.</p>
 </div>
 <div class="section" id="basefab-farraybox-iarraybox">
-<span id="sec-gpu-classes-basefab"></span><h2>BaseFab, FArrayBox, IArrayBox<a class="headerlink" href="#basefab-farraybox-iarraybox" title="Permalink to this headline">¶</a></h2>
+<span id="sec-gpu-classes-basefab"></span><h2>BaseFab, FArrayBox, IArrayBox<a class="headerlink" href="#basefab-farraybox-iarraybox" title="Permalink to this headline"></a></h2>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">T</span></span><span class="operator"><span class="pre">&gt;</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IArrayBox</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code> have some GPU
 support.  They cannot be constructed in device code unless they are
 constructed as an alias to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array4</span></span></code>.  Many of their member
@@ -938,7 +844,7 @@ or, if necessary, we can make an alias <code class="code cpp c++ docutils litera
 </div>
 </div>
 <div class="section" id="elixir">
-<span id="sec-gpu-classes-elixir"></span><h2>Elixir<a class="headerlink" href="#elixir" title="Permalink to this headline">¶</a></h2>
+<span id="sec-gpu-classes-elixir"></span><h2>Elixir<a class="headerlink" href="#elixir" title="Permalink to this headline"></a></h2>
 <p>We often have temporary <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code>es in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loops.
 These objects go out of scope at the end of each iteration.  Because
 of the asynchronous nature of GPU kernel execution, their destructors
@@ -961,7 +867,7 @@ memory is transferred to <code class="code cpp c++ docutils literal notranslate"
 async-safe.</p>
 </div>
 <div class="section" id="async-arena">
-<h2>Async Arena<a class="headerlink" href="#async-arena" title="Permalink to this headline">¶</a></h2>
+<h2>Async Arena<a class="headerlink" href="#async-arena" title="Permalink to this headline"></a></h2>
 <p>CUDA 11.2 has introduced a new feature, stream-ordered CUDA memory
 allocator.  This feature enables AMReX to solve the temporary memory
 allocation and deallocation issue discussed above using a memory pool.
@@ -986,7 +892,7 @@ One can adjust it with <code class="code cpp c++ docutils literal notranslate"><
 </div>
 </div>
 <div class="section" id="kernel-launch">
-<span id="sec-gpu-launch"></span><h1>Kernel Launch<a class="headerlink" href="#kernel-launch" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-launch"></span><h1>Kernel Launch<a class="headerlink" href="#kernel-launch" title="Permalink to this headline"></a></h1>
 <p>In this section, how to offload work to the GPU will be demonstrated.
 AMReX supports offloading work with CUDA, OpenACC, or OpenMP.</p>
 <p>When using CUDA, AMReX provides users with portable C++ function calls or
@@ -1012,7 +918,7 @@ multi-dimensional array syntax, similar in appearance to Fortran,
 while maintaining performance.  The details can be found in
 <a class="reference internal" href="Basics.html#sec-basics-array4"><span class="std std-ref">Array4</span></a> and <a class="reference internal" href="Basics.html#sec-basics-cppkernel"><span class="std std-ref">C++ Kernel</span></a>.</p>
 <div class="section" id="launching-c-nested-loops">
-<span id="sec-gpu-for"></span><h2>Launching C++ nested loops<a class="headerlink" href="#launching-c-nested-loops" title="Permalink to this headline">¶</a></h2>
+<span id="sec-gpu-for"></span><h2>Launching C++ nested loops<a class="headerlink" href="#launching-c-nested-loops" title="Permalink to this headline"></a></h2>
 <p>The most common AMReX work construct is a set of nested loops over
 the cells in a box. AMReX provides C++ functions and macro equivalents to port nested
 loops efficiently onto the GPU.  There are 3 different nested loop GPU
@@ -1159,7 +1065,7 @@ passing the number of elements to work on and indexing the pointer to the starti
 element: <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">p</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">idx</span></span> <span class="operator"><span class="pre">+</span></span> <span class="literal number integer"><span class="pre">15</span></span><span class="punctuation"><span class="pre">]</span></span></code>.</p>
 </div>
 <div class="section" id="launching-general-kernels">
-<h2>Launching general kernels<a class="headerlink" href="#launching-general-kernels" title="Permalink to this headline">¶</a></h2>
+<h2>Launching general kernels<a class="headerlink" href="#launching-general-kernels" title="Permalink to this headline"></a></h2>
 <p>To launch more general work on the GPU, AMReX provides a standard launch function:
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">launch</span></span></code>.  Instead of creating nested loops, this function
 prepares the device launch based on a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code>, launches with an appropriate sized
@@ -1201,7 +1107,7 @@ When tiling is off, <code class="code cpp c++ docutils literal notranslate"><spa
 the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code> for that iteration.</p>
 </div>
 <div class="section" id="offloading-work-using-openacc-or-openmp-pragmas">
-<h2>Offloading work using OpenACC or OpenMP pragmas<a class="headerlink" href="#offloading-work-using-openacc-or-openmp-pragmas" title="Permalink to this headline">¶</a></h2>
+<h2>Offloading work using OpenACC or OpenMP pragmas<a class="headerlink" href="#offloading-work-using-openacc-or-openmp-pragmas" title="Permalink to this headline"></a></h2>
 <p>When using OpenACC or OpenMP with AMReX, the GPU offloading work is done
 with pragmas placed on the nested loops. This leaves the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop
 largely unchanged.  An example GPU pragma based <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop that calls
@@ -1261,7 +1167,7 @@ is available in device memory. For further details about programming
 with OpenMP for GPU offloading, consult the OpenMP user’s guide.</p>
 </div>
 <div class="section" id="kernel-launch-details">
-<h2>Kernel launch details<a class="headerlink" href="#kernel-launch-details" title="Permalink to this headline">¶</a></h2>
+<h2>Kernel launch details<a class="headerlink" href="#kernel-launch-details" title="Permalink to this headline"></a></h2>
 <p>CUDA kernel calls are asynchronous and they return before the kernel
 is finished on the GPU. So the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop finishes iterating on
 the CPU and is ready to move on to the next work before the actual
@@ -1358,7 +1264,7 @@ the performance or are designing more complex workflows that require OpenMP.</p>
 </div>
 </div>
 <div class="section" id="an-example-of-migrating-to-gpu">
-<span id="sec-gpu-example"></span><h1>An Example of Migrating to GPU<a class="headerlink" href="#an-example-of-migrating-to-gpu" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-example"></span><h1>An Example of Migrating to GPU<a class="headerlink" href="#an-example-of-migrating-to-gpu" title="Permalink to this headline"></a></h1>
 <p>The nature of GPU programming poses difficulties for a number
 of common AMReX patterns, such as the one below:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Given MultiFab uin and uout</span>
@@ -1437,7 +1343,7 @@ portable way.</p>
 </div>
 </div>
 <div class="section" id="assertions-error-checking-and-synchronization">
-<span id="sec-gpu-assertion"></span><h1>Assertions, Error Checking and Synchronization<a class="headerlink" href="#assertions-error-checking-and-synchronization" title="Permalink to this headline">¶</a></h1>
+<span id="sec-gpu-assertion"></span><h1>Assertions, Error Checking and Synchronization<a class="headerlink" href="#assertions-error-checking-and-synchronization" title="Permalink to this headline"></a></h1>
 <p>To help debugging, we often use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Assert</span></span></code> and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Abort</span></span></code>.  These functions are GPU safe and can be used in
 GPU kernels.  However, implementing these functions requires additional
@@ -1463,7 +1369,7 @@ the device or the CUDA stream, respectively, and track down the specific
 launch that causes the error.</p>
 </div>
 <div class="section" id="particle-support">
-<h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this headline">¶</a></h1>
+<h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this headline"></a></h1>
 <p id="sec-gpu-particle">As with <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, particle data stored in AMReX <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> classes are
 stored in unified memory when AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>. This means that the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">dataPtr</span></span></code> associated with particles
 is managed and can be passed into GPU kernels. These kernels can be launched with a variety of approaches,
@@ -1510,7 +1416,7 @@ As with <code class="code cpp c++ docutils literal notranslate"><span class="nam
 take advantage of the Cuda-aware MPI implementations available on platforms such as ORNL’s Summit.</p>
 </div>
 <div class="section" id="profiling-with-gpus">
-<h1>Profiling with GPUs<a class="headerlink" href="#profiling-with-gpus" title="Permalink to this headline">¶</a></h1>
+<h1>Profiling with GPUs<a class="headerlink" href="#profiling-with-gpus" title="Permalink to this headline"></a></h1>
 <p id="sec-gpu-profiling">When profiling for GPUs, AMReX recommends <code class="docutils literal notranslate"><span class="pre">nvprof</span></code>, NVIDIA’s visual
 profiler.  <code class="docutils literal notranslate"><span class="pre">nvprof</span></code> returns data on how long each kernel launch lasted on
 the GPU, the number of threads and registers used, the occupancy of the GPU
@@ -1539,7 +1445,7 @@ example:</p>
 If you require further profiling detail, use <code class="docutils literal notranslate"><span class="pre">nvprof</span></code>.</p>
 </div>
 <div class="section" id="performance-tips">
-<h1>Performance Tips<a class="headerlink" href="#performance-tips" title="Permalink to this headline">¶</a></h1>
+<h1>Performance Tips<a class="headerlink" href="#performance-tips" title="Permalink to this headline"></a></h1>
 <p id="sec-gpu-performance">Here are some helpful performance tips to keep in mind when working with
 AMReX for GPUs:</p>
 <ul class="simple">
@@ -1588,7 +1494,7 @@ that rank (assuming your MPI implementation supports MPI 3.)</p>
 </ul>
 </div>
 <div class="section" id="inputs-parameters">
-<h1>Inputs Parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline">¶</a></h1>
+<h1>Inputs Parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline"></a></h1>
 <p id="sec-gpu-parameters">The following inputs parameters control the behavior of amrex when running on GPUs. They should be prefaced
 by “amrex” in your <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span></code> file.</p>
 <table class="docutils align-default">
@@ -1625,7 +1531,7 @@ describing how much free memory there is and what was requested.</p></td>
 </table>
 </div>
 <div class="section" id="basic-gpu-debugging">
-<h1>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline">¶</a></h1>
+<h1>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline"></a></h1>
 <ul class="simple">
 <li><p>Turn off GPU offloading for some part of the code with</p></li>
 </ul>
@@ -1638,7 +1544,7 @@ describing how much free memory there is and what was requested.</p></td>
 not respect the launch region flag.  Only the macros (e.g.,
 <code class="docutils literal notranslate"><span class="pre">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</span></code> and <code class="docutils literal notranslate"><span class="pre">AMREX_HOST_DEVICE_FOR_*D</span></code>) do.</p>
 <div class="section" id="cuda-specific-tests">
-<h2>Cuda-specific tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Cuda-specific tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>To test if your kernels have launched, run</p></li>
 </ul>
@@ -1659,50 +1565,33 @@ conditions.</p></li>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Visualization_Chapter.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="GPU_Chapter.html" class="btn btn-neutral float-left" title="GPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Visualization_Chapter.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
