@@ -81,6 +81,18 @@
       <node id="71">
         <label>atomic</label>
       </node>
+      <node id="121">
+        <label>AMReX_Periodicity.H</label>
+        <link refid="AMReX__Periodicity_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
       <node id="4">
         <label>AMReX_Algorithm.H</label>
         <link refid="AMReX__Algorithm_8H"/>
@@ -204,7 +216,7 @@
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="118" relation="include">
+        <childnode refid="122" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
@@ -216,6 +228,32 @@
         <label>AMReX_GpuLaunchFunctsG.H</label>
         <link refid="AMReX__GpuLaunchFunctsG_8H"/>
         <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>AMReX_FabArrayBase.H</label>
+        <link refid="AMReX__FabArrayBase_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
         </childnode>
       </node>
       <node id="11">
@@ -706,6 +744,8 @@
         </childnode>
         <childnode refid="90" relation="include">
         </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
         <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
@@ -877,6 +917,16 @@
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>AMReX_MFIter.H</label>
+        <link refid="AMReX__MFIter_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="115">
@@ -1274,7 +1324,7 @@
       <node id="72">
         <label>csignal</label>
       </node>
-      <node id="118">
+      <node id="122">
         <label>AMReX_FabFactory.H</label>
         <link refid="AMReX__FabFactory_8H"/>
         <childnode refid="2" relation="include">
@@ -1288,6 +1338,22 @@
         <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>AMReX_ParallelReduce.H</label>
+        <link refid="AMReX__ParallelReduce_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
       <node id="24">
@@ -3864,7 +3930,7 @@
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpLogicalOr&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;int&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(n,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(n,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(Long<sp/>i)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1Gpu_1ae593bd821798e21aa2e404559d59ae2a" kindref="member">amrex::isnan</ref>(<ref refid="namespacesdcquadrature__mod_1a8e53936d3fd7c9e7c1870a499156cd87" kindref="member">dp</ref>[i]))<sp/>};</highlight></codeline>
@@ -3900,7 +3966,7 @@
 <codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpLogicalOr&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;int&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>t<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
@@ -4008,7 +4074,7 @@
 <codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpLogicalOr&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;int&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(n,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(n,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(Long<sp/>i)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1Gpu_1a0b47b234df50714368217dfb8703aaab" kindref="member">amrex::isinf</ref>(<ref refid="namespacesdcquadrature__mod_1a8e53936d3fd7c9e7c1870a499156cd87" kindref="member">dp</ref>[i]))<sp/>};</highlight></codeline>
@@ -4044,7 +4110,7 @@
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpLogicalOr&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;int&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;ReduceTuple</highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>t<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>

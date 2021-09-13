@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1PlotFileDataImpl.html#a54da839203de93e062dbff05377d999b":[2,0,0,396,8],
 "classamrex_1_1PlotFileDataImpl.html#a5bb55222551fb231e12941d2d47c82ee":[2,0,0,396,27],
 "classamrex_1_1PlotFileDataImpl.html#a5dcb296f4bcc59a183bba8f18210753b":[2,0,0,396,33],
 "classamrex_1_1PlotFileDataImpl.html#a67448031bad4b668d4208c53c1b5056a":[2,0,0,396,40],
@@ -213,10 +214,13 @@ var NAVTREEINDEX48 =
 "classamrex_1_1ReduceData.html#aeee26c66dbe6bda07476f5f1997ac833":[2,0,0,408,4],
 "classamrex_1_1ReduceData.html#af9d4fe0e27411855af7fc9f1c5da7f14":[2,0,0,408,11],
 "classamrex_1_1ReduceOps.html":[2,0,0,413],
-"classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434":[2,0,0,413,3],
+"classamrex_1_1ReduceOps.html#a00463980dfb637a0c8f867ed55fa99b8":[2,0,0,413,2],
+"classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434":[2,0,0,413,6],
 "classamrex_1_1ReduceOps.html#a0b2c2b761a373ac5a95273721a8ae1fd":[2,0,0,413,1],
-"classamrex_1_1ReduceOps.html#a65284f038ea29beb80b99c1a5f246f04":[2,0,0,413,2],
+"classamrex_1_1ReduceOps.html#a65284f038ea29beb80b99c1a5f246f04":[2,0,0,413,4],
 "classamrex_1_1ReduceOps.html#a6bed424b9a455d76e42d8061aef71b3e":[2,0,0,413,0],
+"classamrex_1_1ReduceOps.html#ab6d0e3293d5341c89aad5b8acc8abd47":[2,0,0,413,3],
+"classamrex_1_1ReduceOps.html#ad63e04436117908210c3ddd0e16973d4":[2,0,0,413,5],
 "classamrex_1_1STLtools.html":[2,0,0,430],
 "classamrex_1_1STLtools.html#a02713b3bdf5197301486a78cca290534":[2,0,0,430,6],
 "classamrex_1_1STLtools.html#a0ab5ffb5e73a4e47293d27e9dd0ee8d2":[2,0,0,430,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX48 =
 "classamrex_1_1SparseBins.html#a898e7cfb013cd418f1155abb6b8e472d":[2,0,0,424,14],
 "classamrex_1_1SparseBins.html#a9abeaeccc7e4edeec7e68b7676a406f2":[2,0,0,424,10],
 "classamrex_1_1SparseBins.html#aacee8f0ffcd3fbd6c14e58c08460d232":[2,0,0,424,7],
-"classamrex_1_1SparseBins.html#ac0aaa09ba1072de338218d95211970ac":[2,0,0,424,3],
-"classamrex_1_1SparseBins.html#acd6d4073c186417cb25f04de695363d0":[2,0,0,424,2],
-"classamrex_1_1SparseBins.html#afaba6cf4d3a98c920b0ba530d461c94f":[2,0,0,424,13],
-"classamrex_1_1SplineDistFcnElement2d.html":[2,0,0,425],
-"classamrex_1_1SplineDistFcnElement2d.html#a0f6b387cfd46f49845c6739bf394bd83":[2,0,0,425,8]
+"classamrex_1_1SparseBins.html#ac0aaa09ba1072de338218d95211970ac":[2,0,0,424,3]
 };

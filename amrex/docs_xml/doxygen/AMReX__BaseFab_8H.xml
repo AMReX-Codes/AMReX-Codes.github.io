@@ -44,6 +44,18 @@
       <node id="70">
         <label>atomic</label>
       </node>
+      <node id="120">
+        <label>AMReX_Periodicity.H</label>
+        <link refid="AMReX__Periodicity_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
       <node id="3">
         <label>AMReX_Algorithm.H</label>
         <link refid="AMReX__Algorithm_8H"/>
@@ -161,6 +173,32 @@
         <label>AMReX_GpuLaunchFunctsG.H</label>
         <link refid="AMReX__GpuLaunchFunctsG_8H"/>
         <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>AMReX_FabArrayBase.H</label>
+        <link refid="AMReX__FabArrayBase_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="10">
@@ -651,6 +689,8 @@
         </childnode>
         <childnode refid="89" relation="include">
         </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
         <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
@@ -822,6 +862,16 @@
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>AMReX_MFIter.H</label>
+        <link refid="AMReX__MFIter_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="114">
@@ -1218,6 +1268,22 @@
       </node>
       <node id="71">
         <label>csignal</label>
+      </node>
+      <node id="119">
+        <label>AMReX_ParallelReduce.H</label>
+        <link refid="AMReX__ParallelReduce_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
       <node id="23">
         <label>AMReX_Math.H</label>
@@ -5666,7 +5732,7 @@
 <codeline lineno="2282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpMax&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;Real&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;Real&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="2285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>t<sp/>=<sp/>0.0;</highlight></codeline>
@@ -5717,7 +5783,7 @@
 <codeline lineno="2333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpMax&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;Real&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;Real&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="2336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>t<sp/>=<sp/>0.0;</highlight></codeline>
@@ -5732,7 +5798,7 @@
 <codeline lineno="2348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;Real&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;Real&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="2351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>t<sp/>=<sp/>0.0;</highlight></codeline>
@@ -5747,7 +5813,7 @@
 <codeline lineno="2363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;Real&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">ReduceData&lt;Real&gt;::Type</ref>;</highlight></codeline>
-<codeline lineno="2366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>t<sp/>=<sp/>0.0;</highlight></codeline>
@@ -5807,7 +5873,7 @@
 <codeline lineno="2423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpMin&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>a(i,j,k)<sp/>};</highlight></codeline>
@@ -5845,7 +5911,7 @@
 <codeline lineno="2461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpMax&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/>a(i,j,k)<sp/>};</highlight></codeline>
@@ -5883,7 +5949,7 @@
 <codeline lineno="2499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpMin,ReduceOpMax&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T,T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>a(i,j,k);</highlight></codeline>
@@ -5925,7 +5991,7 @@
 <codeline lineno="2541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpMax&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(subbox,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">amrex::Math::abs</ref>(a(i,j,k))<sp/>};</highlight></codeline>
@@ -6050,7 +6116,7 @@
 <codeline lineno="2666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
@@ -6096,7 +6162,7 @@
 <codeline lineno="2712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2717"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
@@ -6142,7 +6208,7 @@
 <codeline lineno="2758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
@@ -6188,7 +6254,7 @@
 <codeline lineno="2804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2805"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
@@ -6234,7 +6300,7 @@
 <codeline lineno="2850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="2851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;int&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="2852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="2853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="2853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(this-&gt;domain,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="2854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="2855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
@@ -6429,7 +6495,7 @@
 <codeline lineno="3045"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="3046"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="3047"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="3048"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(xbx,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="3048"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(xbx,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="3049"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="3050"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="3051"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>t<sp/>=<sp/>0;</highlight></codeline>
@@ -6481,7 +6547,7 @@
 <codeline lineno="3097"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="3098"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="3099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="3100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(xbx,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="3100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(xbx,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="3101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="3102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="3103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ma(i,j,k)));</highlight></codeline>
@@ -7386,7 +7452,7 @@
 <codeline lineno="4013"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="4014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="4015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="4016"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="4016"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="4017"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="4018"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="4019"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>t<sp/>=<sp/>0;</highlight></codeline>
@@ -7426,7 +7492,7 @@
 <codeline lineno="4053"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="4054"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="4055"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="4056"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="4056"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="4057"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="4058"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="4059"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>t<sp/>=<sp/>0;</highlight></codeline>
@@ -7472,7 +7538,7 @@
 <codeline lineno="4099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="4100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="4101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="4102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="4102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="4103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="4104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="4105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>t<sp/>=<sp/>0;</highlight></codeline>
@@ -7515,7 +7581,7 @@
 <codeline lineno="4142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps&lt;ReduceOpSum&gt;</ref><sp/>reduce_op;</highlight></codeline>
 <codeline lineno="4143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ReduceData" kindref="compound">ReduceData&lt;T&gt;</ref><sp/>reduce_data(reduce_op);</highlight></codeline>
 <codeline lineno="4144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ReduceTuple<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>decltype(reduce_data)::Type;</highlight></codeline>
-<codeline lineno="4145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
+<codeline lineno="4145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce_op.<ref refid="classamrex_1_1ReduceOps_1a00463980dfb637a0c8f867ed55fa99b8" kindref="member">eval</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>reduce_data,</highlight></codeline>
 <codeline lineno="4146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>-&gt;<sp/>ReduceTuple</highlight></codeline>
 <codeline lineno="4147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="4148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>t<sp/>=<sp/>0;</highlight></codeline>

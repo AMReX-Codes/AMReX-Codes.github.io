@@ -306,6 +306,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_ParmParse.H", "AMReX__ParmParse_8H.html", "AMReX__ParmParse_8H" ],
     [ "AMReX_parmparse_fi.cpp", "AMReX__parmparse__fi_8cpp.html", "AMReX__parmparse__fi_8cpp" ],
     [ "AMReX_parmparse_mod.F90", "AMReX__parmparse__mod_8F90.html", "AMReX__parmparse__mod_8F90" ],
+    [ "AMReX_ParReduce.H", "AMReX__ParReduce_8H.html", "AMReX__ParReduce_8H" ],
     [ "AMReX_parstream.cpp", "AMReX__parstream_8cpp.html", "AMReX__parstream_8cpp" ],
     [ "AMReX_parstream.H", "AMReX__parstream_8H.html", "AMReX__parstream_8H" ],
     [ "AMReX_Partition.H", "AMReX__Partition_8H.html", "AMReX__Partition_8H" ],

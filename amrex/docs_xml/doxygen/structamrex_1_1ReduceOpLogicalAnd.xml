@@ -4,17 +4,22 @@
     <compoundname>amrex::ReduceOpLogicalAnd</compoundname>
     <includes refid="AMReX__Reduce_8H" local="no">AMReX_Reduce.H</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ReduceOpLogicalAnd_1a644182e552bf0d1f5cca4d18a7e6ebaf" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::ReduceOpLogicalAnd::parallel_update</definition>
-        <argsstring>(int &amp;d, int s) const noexcept</argsstring>
+      <memberdef kind="function" id="structamrex_1_1ReduceOpLogicalAnd_1a6165dd9de8a059c0ff66c4c2affa1b11" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ReduceOpLogicalAnd::parallel_update</definition>
+        <argsstring>(T &amp;d, T s) const noexcept</argsstring>
         <name>parallel_update</name>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <type>T &amp;</type>
           <declname>d</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>T</type>
           <declname>s</declname>
         </param>
         <briefdescription>
@@ -23,19 +28,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="177" bodyend="180"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="182" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="182" bodyend="185"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ReduceOpLogicalAnd_1ab5ad43412cb40defe985c30b5a8c5f66" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::ReduceOpLogicalAnd::local_update</definition>
-        <argsstring>(int &amp;d, int s) const noexcept</argsstring>
+      <memberdef kind="function" id="structamrex_1_1ReduceOpLogicalAnd_1a8e979dc39b9c4f12519cc52c7ce0f9ec" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ReduceOpLogicalAnd::local_update</definition>
+        <argsstring>(T &amp;d, T s) const noexcept</argsstring>
         <name>local_update</name>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <type>T &amp;</type>
           <declname>d</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type>T</type>
           <declname>s</declname>
         </param>
         <briefdescription>
@@ -44,15 +54,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="185" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="185" bodyend="185"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="192" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="192" bodyend="192"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ReduceOpLogicalAnd_1ae649455f23c3eb76a5ee36c17fb13630" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr void</type>
-        <definition>constexpr void amrex::ReduceOpLogicalAnd::init</definition>
-        <argsstring>(int &amp;t) const noexcept</argsstring>
+      <memberdef kind="function" id="structamrex_1_1ReduceOpLogicalAnd_1a18be9b2403fd9d77004b01b32e26f523" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>constexpr std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ReduceOpLogicalAnd::init</definition>
+        <argsstring>(T &amp;t) const noexcept</argsstring>
         <name>init</name>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <type>T &amp;</type>
           <declname>t</declname>
         </param>
         <briefdescription>
@@ -61,18 +76,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="187" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="187" bodyend="187"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="196" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="196" bodyend="196"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="167" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="166" bodyend="188"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="168" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="167" bodyend="197"/>
     <listofallmembers>
-      <member refid="structamrex_1_1ReduceOpLogicalAnd_1ae649455f23c3eb76a5ee36c17fb13630" prot="public" virt="non-virtual"><scope>amrex::ReduceOpLogicalAnd</scope><name>init</name></member>
-      <member refid="structamrex_1_1ReduceOpLogicalAnd_1ab5ad43412cb40defe985c30b5a8c5f66" prot="public" virt="non-virtual"><scope>amrex::ReduceOpLogicalAnd</scope><name>local_update</name></member>
-      <member refid="structamrex_1_1ReduceOpLogicalAnd_1a644182e552bf0d1f5cca4d18a7e6ebaf" prot="public" virt="non-virtual"><scope>amrex::ReduceOpLogicalAnd</scope><name>parallel_update</name></member>
+      <member refid="structamrex_1_1ReduceOpLogicalAnd_1a18be9b2403fd9d77004b01b32e26f523" prot="public" virt="non-virtual"><scope>amrex::ReduceOpLogicalAnd</scope><name>init</name></member>
+      <member refid="structamrex_1_1ReduceOpLogicalAnd_1a8e979dc39b9c4f12519cc52c7ce0f9ec" prot="public" virt="non-virtual"><scope>amrex::ReduceOpLogicalAnd</scope><name>local_update</name></member>
+      <member refid="structamrex_1_1ReduceOpLogicalAnd_1a6165dd9de8a059c0ff66c4c2affa1b11" prot="public" virt="non-virtual"><scope>amrex::ReduceOpLogicalAnd</scope><name>parallel_update</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

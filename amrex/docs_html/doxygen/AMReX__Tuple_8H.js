@@ -1,5 +1,6 @@
 var AMReX__Tuple_8H =
 [
+    [ "TypeList", "structamrex_1_1TypeList.html", null ],
     [ "gpu_tuple_element", "structamrex_1_1detail_1_1gpu__tuple__element.html", "structamrex_1_1detail_1_1gpu__tuple__element" ],
     [ "gpu_tuple_impl", "structamrex_1_1detail_1_1gpu__tuple__impl.html", null ],
     [ "gpu_tuple_impl< I, Head, Tail... >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4" ],
