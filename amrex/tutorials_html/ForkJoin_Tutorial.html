@@ -1,79 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Tutorials/Forkjoin &mdash; amrex 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tutorials/GPU" href="GPU_Tutorial.html" />
     <link rel="prev" title="Tutorials/EB" href="EB_Tutorial.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -81,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
@@ -115,73 +63,32 @@
 <li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Tutorials/Forkjoin</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/ForkJoin_Tutorial.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="tutorials-forkjoin">
-<h1>Tutorials/Forkjoin<a class="headerlink" href="#tutorials-forkjoin" title="Permalink to this headline">¶</a></h1>
+<h1>Tutorials/Forkjoin<a class="headerlink" href="#tutorials-forkjoin" title="Permalink to this headline"></a></h1>
 <p>There are two examples in the Tutorials/ForkJoin directory.</p>
 <p><strong>ForkJoin/Simple</strong>: demonstrates how to construct a <code class="docutils literal notranslate"><span class="pre">ForkJoin</span></code> object, specify
 configuration parameters, register MultiFabs with different access
@@ -191,7 +98,7 @@ including nested fork-joins, heterogeneous tasks, customized MultiFab
 component splitting, and reusing <code class="docutils literal notranslate"><span class="pre">ForkJoin</span></code> objects for multiple
 invocations.</p>
 <section id="general-concepts">
-<h2><strong>General Concepts</strong><a class="headerlink" href="#general-concepts" title="Permalink to this headline">¶</a></h2>
+<h2><strong>General Concepts</strong><a class="headerlink" href="#general-concepts" title="Permalink to this headline"></a></h2>
 <p>An AMReX program consists of a set of MPI ranks cooperating together on
 distributed data.
 Typically, all of the ranks in a job compute in a bulk-synchronous,
@@ -207,7 +114,7 @@ After all of the forked child tasks complete, they synchronize
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of a fork-join operation where the parent task’s MPI processes (ranks) are
 split into two independent child tasks that execute in parallel and
-then join to resume execution of the parent task.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+then join to resume execution of the parent task.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The fork-join operation can also be invoked in a nested fashion,
@@ -220,7 +127,7 @@ large communication overheads.</p>
 <a class="reference internal image-reference" href="_images/nested_fork_join_tasks.png"><img alt="Nested Fork-Join Tasks" src="_images/nested_fork_join_tasks.png" style="width: 436.8px; height: 589.6px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Example of nested fork-join operations where a child task is further
-split into more subtasks.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+split into more subtasks.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The fork-join operation is accomplished by:</p>
@@ -237,7 +144,7 @@ other during subtask collectives (e.g. for <code class="docutils literal notrans
 in the root task.</p>
 </section>
 <section id="forkjoin-simple">
-<h2><strong>ForkJoin/Simple</strong><a class="headerlink" href="#forkjoin-simple" title="Permalink to this headline">¶</a></h2>
+<h2><strong>ForkJoin/Simple</strong><a class="headerlink" href="#forkjoin-simple" title="Permalink to this headline"></a></h2>
 <p>The main function in this tutorial is in <code class="docutils literal notranslate"><span class="pre">MyTest.cpp:runTest()</span></code>.
 It does the following things:</p>
 <p>1. Create a <code class="docutils literal notranslate"><span class="pre">ForkJoin</span></code> object: the constructor takes the number of
@@ -269,7 +176,7 @@ of the subtask from the calling task.</p>
 <a class="reference internal image-reference" href="_images/mf_remap_hires.png"><img alt="Examples of how to register MultiFabs" src="_images/mf_remap_hires.png" style="width: 840.0000000000001px; height: 350.07000000000005px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Examples of how a MultiFab can be registered for a fork-join operation
-with varying Strategy and Intent.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+with varying Strategy and Intent.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>During registration, the number of ghost cells in each dimension is
@@ -287,7 +194,7 @@ component bounds of a registered MultiFab.
 The tutorial’s <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> demonstrates these capabilities.</p>
 </section>
 <section id="forkjoin-mlmg">
-<h2><strong>ForkJoin/MLMG</strong><a class="headerlink" href="#forkjoin-mlmg" title="Permalink to this headline">¶</a></h2>
+<h2><strong>ForkJoin/MLMG</strong><a class="headerlink" href="#forkjoin-mlmg" title="Permalink to this headline"></a></h2>
 <p>This tutorial demonstrates some more advanced fork-join usage:</p>
 <ol class="arabic simple">
 <li><p>Nested fork-join: <code class="docutils literal notranslate"><span class="pre">top_fork()</span></code> invokes the first level fork-join,
@@ -326,50 +233,33 @@ The <code class="docutils literal notranslate"><span class="pre">fork_solve()</s
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="GPU_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="EB_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/EB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GPU_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
