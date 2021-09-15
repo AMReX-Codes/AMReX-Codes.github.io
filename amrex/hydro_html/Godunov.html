@@ -1,80 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Godunov &mdash; amrex-hydro 21.10-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="MOL" href="MOL.html" />
     <link rel="prev" title="EBMOL" href="EBMOL.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> amrex-hydro
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 21.10-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +41,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
@@ -113,71 +61,30 @@
 <li class="toctree-l1"><a class="reference internal" href="Slopes.html">Slopes</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex-hydro</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Godunov</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/Godunov.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="math notranslate nohighlight">
 \[\newcommand{\half}{\frac{1}{2}}
 \newcommand{\nph}{{n + \half}}
@@ -205,23 +112,23 @@
 \newcommand{\U}{\boldsymbol{U}}
 \newcommand{\F}{\boldsymbol{F}}\]</div>
 <section id="godunov">
-<h1>Godunov<a class="headerlink" href="#godunov" title="Permalink to this headline">¶</a></h1>
+<h1>Godunov<a class="headerlink" href="#godunov" title="Permalink to this headline"></a></h1>
 <p>All slope computations use second-order limited slopes as described in
 <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>.</p>
 <p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/group__Utilities.html#ga57d5ce9bc3bca16e249c611342f3c550">hydro_constants.H</a></p>
 <section id="pre-mac-extrapveltofaces">
-<h2>Pre-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#a1c1dcedd6781260bd8322588e1290d94">ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-extrapveltofaces" title="Permalink to this headline">¶</a></h2>
+<h2>Pre-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#a1c1dcedd6781260bd8322588e1290d94">ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-extrapveltofaces" title="Permalink to this headline"></a></h2>
 <p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
 in space and time. For each face with a non-zero area fraction, we extrapolate the normal velocity
 component from the centroids of the cells on either side to the face centroid, creating left (L)
 and right (R) states. For face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> this gives</p>
 <div class="math notranslate nohighlight" id="equation-eq1">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eq1" title="Permalink to this equation">¶</a></span>\[\begin{split}\tilde{u}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx u_{i,j,k}^n + \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq1" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{u}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx u_{i,j,k}^n + \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
  &amp; = u_{i,j,k}^n + \left( \frac{dx}{2} - u^n_{i,j,k} \frac{dt}{2} \right) (u_x^{n,lim})_{i,j,k} \\
  &amp; + \frac{dt}{2} (-(\widehat{v u_y})_{i,j,k} - (\widehat{w u_z})_{i,j,k} + f_{x,i,j,k}^n)\end{split}\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, and</p>
 <div class="math notranslate nohighlight" id="equation-eq2">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation">¶</a></span>\[\begin{split} \tilde{u}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx u_{i+1,j,k}^n - \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation"></a></span>\[\begin{split} \tilde{u}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx u_{i+1,j,k}^n - \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
  &amp; = u_{i+1,j,k}^n - \left( \frac{dx}{2} + u^n_{i+1,j,k} \frac{dt}{2} \right)(u^{n,lim}_x)_{i+1,j,k} \\
  &amp; + \frac{dt}{2} (-(\widehat{v u_y})_{i+1,j,k} - (\widehat{w u_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\end{split}\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
@@ -296,7 +203,7 @@ procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n
 and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to this unique value of
 normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
 <section id="boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">
-<h3>Boundary conditions (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a">SetXEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab">SetYEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a19ddc5ac50e9a6b9a98bc17f3815a62e">SetZEdgeBCs</a>)<a class="headerlink" href="#boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs" title="Permalink to this headline">¶</a></h3>
+<h3>Boundary conditions (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a">SetXEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab">SetYEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a19ddc5ac50e9a6b9a98bc17f3815a62e">SetZEdgeBCs</a>)<a class="headerlink" href="#boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs" title="Permalink to this headline"></a></h3>
 <p>Domain boundary conditions affect the above in three ways.</p>
 <p>(1) First, they potentially impact the slope computation in cells
 adjacent to the domain boundary (see <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>).</p>
@@ -317,16 +224,16 @@ described above.</p>
 </section>
 </section>
 <section id="post-mac-computeedgestate">
-<h2>Post-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222">ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-computeedgestate" title="Permalink to this headline">¶</a></h2>
+<h2>Post-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222">ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-computeedgestate" title="Permalink to this headline"></a></h2>
 <p>Once we have the MAC-projected velocities, we project all quantities to
 faces as above:</p>
 <div class="math notranslate nohighlight" id="equation-eq3">
-<span class="eqno">(11)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation">¶</a></span>\[\begin{split}\tilde{s}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx s_{i,j,k}^n + \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{s}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx s_{i,j,k}^n + \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
  &amp; = s_{i,j,k}^n + \left( \frac{dx}{2} - s^n_{i,j,k} \frac{dt}{2} \right) (s_x^{n,lim})_{i,j,k} \\
  &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\end{split}\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, and</p>
 <div class="math notranslate nohighlight" id="equation-eq4">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation">¶</a></span>\[\begin{split} \tilde{s}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx s_{i+1,j,k}^n - \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation"></a></span>\[\begin{split} \tilde{s}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx s_{i+1,j,k}^n - \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
  &amp; = s_{i+1,j,k}^n - \left( \frac{dx}{2} + s^n_{i+1,j,k} \frac{dt}{2} \right)(s^{n,lim}_x)_{i+1,j,k} \\
  &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\end{split}\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
@@ -351,7 +258,7 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 \end{cases}\end{split}\]</div>
 </section>
 <section id="computing-the-fluxes-computefluxes">
-<h2>Computing the Fluxes (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>)<a class="headerlink" href="#computing-the-fluxes-computefluxes" title="Permalink to this headline">¶</a></h2>
+<h2>Computing the Fluxes (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>)<a class="headerlink" href="#computing-the-fluxes-computefluxes" title="Permalink to this headline"></a></h2>
 <p>The fluxes are computed from the edge states above by defining, e.g.</p>
 <div class="math notranslate nohighlight">
 \[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}}\]</div>
@@ -364,7 +271,7 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 <p>on all z-faces.</p>
 </section>
 <section id="constructing-the-update">
-<h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
+<h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline"></a></h2>
 <p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, we construct</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla \cdot ({\bf u} s)^{n+\frac{1}{2}}
@@ -397,50 +304,33 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="MOL.html" class="btn btn-neutral float-right" title="MOL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="EBMOL.html" class="btn btn-neutral float-left" title="EBMOL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MOL.html" class="btn btn-neutral float-right" title="MOL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX-Hydro Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX-Hydro Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
