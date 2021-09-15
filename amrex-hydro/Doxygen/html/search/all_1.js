@@ -5,7 +5,7 @@ var searchData=
   ['computedivergence_13',['ComputeDivergence',['../namespaceHydroUtils.html#a0f59801cda64952e4b63910b1f42c455',1,'HydroUtils']]],
   ['computeedgestate_14',['ComputeEdgeState',['../namespaceEBMOL.html#a94df1b279b45eac5141dfe0dff0a79bc',1,'EBMOL::ComputeEdgeState()'],['../namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4',1,'EBGodunov::ComputeEdgeState()'],['../namespaceMOL.html#a52c37e57c6f658058bac4bc5232824fa',1,'MOL::ComputeEdgeState()'],['../namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222',1,'Godunov::ComputeEdgeState()']]],
   ['computefluxes_15',['ComputeFluxes',['../namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7',1,'HydroUtils']]],
-  ['computefluxesonboxfromstate_16',['ComputeFluxesOnBoxFromState',['../namespaceHydroUtils.html#a7e89c7d05b0b38b2829c82c198cdf052',1,'HydroUtils']]],
+  ['computefluxesonboxfromstate_16',['ComputeFluxesOnBoxFromState',['../namespaceHydroUtils.html#a8d3b669aa84b8b43a44e4a9fbf957c7f',1,'HydroUtils']]],
   ['computesyncaofs_17',['ComputeSyncAofs',['../namespaceEBMOL.html#ac54f6704caf6ebfd145eb45c6e341eff',1,'EBMOL::ComputeSyncAofs()'],['../namespaceEBGodunov.html#a23f99047da7b06589fe28aeb2a4cc074',1,'EBGodunov::ComputeSyncAofs()'],['../namespaceMOL.html#a7d498da8117ccbcbb7860d0d0b8ecf85',1,'MOL::ComputeSyncAofs()'],['../namespaceGodunov.html#a247270eeafbb48a02c1362a7eb609c72',1,'Godunov::ComputeSyncAofs()']]],
   ['covered_5fval_18',['covered_val',['../group__Utilities.html#ga57d5bf2dbf1d028238521f2f93f80f14',1,'hydro_constants.H']]],
   ['create_5fconstrained_5fumac_5fgrown_19',['create_constrained_umac_grown',['../namespaceHydroUtils.html#a05a5360d1cb9ecb9e74fcb70e8f4112e',1,'HydroUtils']]],
