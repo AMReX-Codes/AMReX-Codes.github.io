@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('hydro__slope__limiter__K_8H_source.htm
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;amrex::Real</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="group__Redistribution.html#ga4c88167e720aa00f46b8ea2b7f9c9665">   12</a></span>&#160;<a class="code" href="group__Redistribution.html#ga4c88167e720aa00f46b8ea2b7f9c9665">amrex_calc_alpha_stencil</a>(Real q_hat, Real q_max, Real q_min, Real state) noexcept</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Real small = 1.0e-12*std::abs(q_max);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Real small = 1.0e-12*amrex::Math::abs(q_max);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Real alpha;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> ((q_hat-state) &gt; small) {</div>
@@ -125,10 +125,10 @@ $(document).ready(function(){initNavTree('hydro__slope__limiter__K_8H_source.htm
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187">   29</a></span>&#160;<a class="code" href="group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187">amrex_calc_centroid_limiter</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                         amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; state,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                         amrex::Array4&lt;amrex::EBCellFlag const&gt; <span class="keyword">const</span>&amp; flag,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                         <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;&amp; slopes,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                         amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; ccent) noexcept</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                            amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; state,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            amrex::Array4&lt;amrex::EBCellFlag const&gt; <span class="keyword">const</span>&amp; flag,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;&amp; slopes,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; ccent) noexcept</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    amrex::Real alpha = 1.0;</div>
