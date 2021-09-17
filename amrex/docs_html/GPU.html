@@ -96,7 +96,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#performance-tips">Performance Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inputs-parameters">Inputs Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#basic-gpu-debugging">Basic Gpu Debugging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cuda-specific-tests">Cuda-specific tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debuggers-and-related-tools">Debuggers and Related Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-specific-tests">CUDA-Specific Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amd-rocm-specific-tests">AMD ROCm-Specific Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intel-gpu-specific-tests">Intel GPU Specific Tests</a></li>
 </ul>
 </li>
 </ul>
@@ -751,42 +754,51 @@ any number of arguments and can be invoked with any standard data type.</p>
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code>, including <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">sum</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">max</span></span></code>.
 When <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, these functions automatically implement the
 corresponding reductions on GPUs in an efficient manner.</p>
-<p>Function templates <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceSum</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceMin</span></span></code> and
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceMax</span></span></code> can be used to implement user-defined reduction
-functions over <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s. These same templates are implemented
-in the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> functions, so they can be used as a reference to
-build a custom reduction. For example, the <code class="code cpp c++ docutils literal notranslate"><span class="name label"><span class="pre">MultiFab</span></span><span class="punctuation"><span class="pre">:</span></span><span class="name"><span class="pre">Dot</span></span></code>
-implementation is reproduced here:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span> <span class="n">MultiFab</span><span class="o">::</span><span class="n">Dot</span> <span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">xcomp</span><span class="p">,</span>
-                    <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ycomp</span><span class="p">,</span>
-                    <span class="kt">int</span> <span class="n">numcomp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nghost</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">local</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Real</span> <span class="n">sm</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">ReduceSum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span>
-    <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_HOST_DEVICE</span> <span class="p">(</span><span class="n">Box</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">bx</span><span class="p">,</span> <span class="n">FArrayBox</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">xfab</span><span class="p">,</span> <span class="n">FArrayBox</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">yfab</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Real</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">xfab</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="n">xcomp</span><span class="p">,</span><span class="n">yfab</span><span class="p">,</span><span class="n">bx</span><span class="p">,</span><span class="n">ycomp</span><span class="p">,</span><span class="n">numcomp</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">local</span><span class="p">)</span> <span class="n">ParallelAllReduce</span><span class="o">::</span><span class="n">Sum</span><span class="p">(</span><span class="n">sm</span><span class="p">,</span> <span class="n">ParallelContext</span><span class="o">::</span><span class="n">CommunicatorSub</span><span class="p">());</span>
-
-    <span class="k">return</span> <span class="n">sm</span><span class="p">;</span>
+<p>Function template <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> can be used to implement user-defined
+reduction functions over <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s.  For example, the following
+function computes the sum of total kinetic energy using the data in a
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> storing the mass and momentum density.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span> <span class="nf">compute_ek</span> <span class="p">(</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">ma</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">ParallelFor</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="c1">// zero ghost cells</span>
+           <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span> <span class="p">(</span><span class="kt">int</span> <span class="n">box_no</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+               <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span>
+           <span class="p">{</span>
+               <span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span> <span class="k">const</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">ma</span><span class="p">[</span><span class="n">box_no</span><span class="p">];</span>
+               <span class="n">Real</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+               <span class="n">Real</span> <span class="n">rhovx</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+               <span class="n">Real</span> <span class="n">rhovy</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+               <span class="n">Real</span> <span class="n">rhovz</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+               <span class="n">Real</span> <span class="n">ek</span> <span class="o">=</span> <span class="p">(</span><span class="n">rhovx</span><span class="o">*</span><span class="n">rhovx</span><span class="o">+</span><span class="n">rhovy</span><span class="o">*</span><span class="n">rhovy</span><span class="o">+</span><span class="n">rhovz</span><span class="o">*</span><span class="n">rhovz</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">rho</span><span class="p">);</span>
+               <span class="k">return</span> <span class="p">{</span> <span class="n">ek</span> <span class="p">};</span>
+           <span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceSum</span></span></code> takes two <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> and
-returns the sum of the value returned from the given lambda function.
-In this case, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">dot</span></span></code> is returned, yielding a sum of the
-dot product of each local pair of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span></code>s. Finally,
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelAllReduce</span></span></code> is used to sum the dot products across all
-MPI ranks and return the total dot product of the two
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s.</p>
-<p>To implement a different reduction, replace the code block inside the
-lambda function with the operation that should be applied, being sure
-to return the value to be summed, minimized, or maximized.  The reduction
-templates have a few different interfaces to accommodate a variety of
-reductions.  The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceSum</span></span></code> reduction template has varieties
-that take either one, two or three :<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s.
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceMin</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ReduceMax</span></span></code> can take either one
-or two.</p>
+<p>As another example, the following function computes the max- and 1-norm of a
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> in the masked region specified by an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">iMultiFab</span></span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span> <span class="n">compute_norms</span> <span class="p">(</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span>
+                                   <span class="n">iMulitiFab</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mask</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">data_ma</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mask_ma</span> <span class="o">=</span> <span class="n">mask</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nf">ParallelFor</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="c1">// zero ghost cells</span>
+           <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span> <span class="p">(</span><span class="kt">int</span> <span class="n">box_no</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+               <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span>
+           <span class="p">{</span>
+               <span class="k">if</span> <span class="p">(</span><span class="n">mask_ma</span><span class="p">[</span><span class="n">box_no</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span> <span class="p">{</span>
+                   <span class="n">Real</span> <span class="n">a</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">Math</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">data_ma</span><span class="p">[</span><span class="n">box_no</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">));</span>
+                   <span class="k">return</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span> <span class="p">};</span>
+               <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                   <span class="k">return</span> <span class="p">{</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span> <span class="p">};</span>
+               <span class="p">}</span>
+           <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It should be noted that the reduction result of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> is local
+and it is the user’s responsibility if MPI communication is needed.</p>
 </div>
 <div class="section" id="box-intvect-and-indextype">
 <h2>Box, IntVect and IndexType<a class="headerlink" href="#box-intvect-and-indextype" title="Permalink to this headline"></a></h2>
@@ -1532,33 +1544,68 @@ describing how much free memory there is and what was requested.</p></td>
 </div>
 <div class="section" id="basic-gpu-debugging">
 <h1>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline"></a></h1>
-<ul class="simple">
-<li><p>Turn off GPU offloading for some part of the code with</p></li>
-</ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Gpu</span><span class="o">::</span><span class="n">setLaunchRegion</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="p">...</span> <span class="p">;</span>
-<span class="n">Gpu</span><span class="o">::</span><span class="n">setLaunchRegion</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</pre></div>
+<p>The asynchronous nature of GPU execution can make tracking down bugs complex.
+The relative timing of improperly coded functions can cause variations in output and the timing of error messages
+may not linearly relate to a place in the code.
+One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> type call.
+These synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished processing all previously requested tasks, thereby making it easier to locate and identify sources of error.</p>
+<div class="section" id="debuggers-and-related-tools">
+<h2>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this headline"></a></h2>
+<p>Users may also find debuggers useful. Architecture agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and the Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
+Usage of several of these variations are described in the following sections.</p>
+<p>For advance debugging topics and tools, refer to system-specific documentation (e.g. <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
 </div>
-<p>Note that functions, <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> and <code class="docutils literal notranslate"><span class="pre">amrex::ParallelFor</span></code>, do
-not respect the launch region flag.  Only the macros (e.g.,
-<code class="docutils literal notranslate"><span class="pre">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</span></code> and <code class="docutils literal notranslate"><span class="pre">AMREX_HOST_DEVICE_FOR_*D</span></code>) do.</p>
 <div class="section" id="cuda-specific-tests">
-<h2>Cuda-specific tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline"></a></h2>
-<ul class="simple">
-<li><p>To test if your kernels have launched, run</p></li>
-</ul>
+<h2>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline"></a></h2>
+<ul>
+<li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">nvprof</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">nvprof</span> <span class="pre">-o</span> <span class="pre">profile%p.nvvp</span> <span class="pre">./main3d.xxxx</span></code> for
-a small problem and examine page faults using nvvp</p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code></p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code></p></li>
-<li><p>Run with <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code>.  This means that only one
-kernel will run at a time.  This can help identify if there are race
-conditions.</p></li>
+<p>If using NVIDIA Nsight Compute instead, access <code class="docutils literal notranslate"><span class="pre">nvprof</span></code> functionality with:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">nsys</span> <span class="n">nvprof</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">nvprof</span> <span class="pre">-o</span> <span class="pre">profile%p.nvvp</span> <span class="pre">./main3d.xxxx</span></code> or
+<code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">-o</span> <span class="pre">nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID}</span> <span class="pre">./main3d.xxx</span></code> for
+a small problem and examine page faults using <code class="docutils literal notranslate"><span class="pre">nvvp</span></code> or <code class="docutils literal notranslate"><span class="pre">nsight-sys</span> <span class="pre">$(pwd)/nsys_out.#.######.qdrep</span></code>.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code> to identify memory errors.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code> to identify kernel errors.</p></li>
+<li><p>To help identify race conditions, globally disable asynchronicity of kernel launches for all
+CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment variables. This
+will ensure that only one CUDA kernel will run at a time.</p></li>
+</ul>
+</div>
+<div class="section" id="amd-rocm-specific-tests">
+<h2>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Permalink to this headline"></a></h2>
+<ul>
+<li><p>To test if your kernels have launched, run:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">rocprof</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rocprof</span>&#160; <span class="pre">--hsa-trace</span> <span class="pre">--stats</span> <span class="pre">--timestamp</span> <span class="pre">on</span> <span class="pre">--roctx-trace</span> <span class="pre">./main3d.xxxx</span></code> for
+a small problem and examine tracing using <code class="docutils literal notranslate"><span class="pre">chrome://tracing</span></code>.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code> for source-level debugging.</p></li>
+<li><p>To help identify if there are race conditions, globally disable asynchronicity of kernel launches by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> or <code class="docutils literal notranslate"><span class="pre">HIP_LAUNCH_BLOCKING=1</span></code>
+in your environment variables. This will ensure only one kernel will run at a time.
+See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/Programming_Guides/HIP_Debugging.html#chicken-bits">AMD ROCm docs’ chicken bits section</a> for more debugging environment variables.</p></li>
+</ul>
+</div>
+<div class="section" id="intel-gpu-specific-tests">
+<h2>Intel GPU Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this headline"></a></h2>
+<ul>
+<li><p>To test if your kernels have launched, run:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">ze_tracer</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run Intel Advisor,
+<code class="docutils literal notranslate"><span class="pre">advisor</span> <span class="pre">--collect=survey</span> <span class="pre">./main3d.xxx</span></code> for
+a small problem with 1 MPI process and examine metrics.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">gdb</span></code> with the <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/distribution-for-gdb.html">Intel Distribution for GDB</a>.</p></li>
+<li><p>To report back-end information, set <code class="docutils literal notranslate"><span class="pre">ZE_DEBUG=1</span></code> in your environment variables.</p></li>
 </ul>
 </div>
 </div>
