@@ -794,7 +794,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__2D__K_8H_sour
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*phi_val;</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                        is_eb_dirichlet &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow)){</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                        is_eb_dirichlet &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow) != Real(0.0)){</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                      rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    }</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                }</div>
