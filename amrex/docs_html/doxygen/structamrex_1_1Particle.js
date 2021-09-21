@@ -1,6 +1,7 @@
 var structamrex_1_1Particle =
 [
     [ "RealType", "structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26", null ],
+    [ "atomicSetID", "structamrex_1_1Particle.html#aee07d2004dda8bc468e3310ccd7eacb1", null ],
     [ "cpu", "structamrex_1_1Particle.html#ae42faee1dffc3e271f04bebfd70235ce", null ],
     [ "cpu", "structamrex_1_1Particle.html#ab0e3d47b1fe618f1438aaa2167875b9b", null ],
     [ "id", "structamrex_1_1Particle.html#a1b1f1b307acf1e1762ee8aa31a1a6938", null ],
