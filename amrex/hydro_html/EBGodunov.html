@@ -87,7 +87,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ebgodunov">
+  <div class="math notranslate nohighlight">
+\[\newcommand{\half}{\frac{1}{2}}
+\newcommand{\nph}{{n + \half}}
+\newcommand{\nmh}{{n - \frac{1}{2}}}
+\newcommand{\iphj}{{i+\frac{1}{2},j,k}}
+\newcommand{\ijph}{{i,j+\frac{1}{2}},k}
+\newcommand{\imhj}{{i-\frac{1}{2},j,k}}
+\newcommand{\ijmh}{{i,j-\frac{1}{2}},k}
+\newcommand{\ijkmh}{{i,j,k-\frac{1}{2}}}
+\newcommand{\ijkph}{{i,j,k+\frac{1}{2}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\del}{\nabla}
+\newcommand{\AN}{[(U \cdot \nabla)U]^{n+\frac{1}{2}}}
+\newcommand{\npk}{{n + \frac{p+\half}{R}}}
+\newcommand{\nak}{{n + \frac{p}{R}}}
+\newcommand{\nmk}{{n + \frac{p-\half}{R}}}
+\newcommand{\iph}{i+\half}
+\newcommand{\imh}{i-\half}
+\newcommand{\ipmh}{i\pm\half}
+\newcommand{\jph}{j+\half}
+\newcommand{\jmh}{j-\half}
+\newcommand{\jpmh}{j\pm\half}
+\newcommand{\kph}{k+\half}
+\newcommand{\kmh}{k-\half}
+\newcommand{\GMAC}{C \rightarrow E}
+\newcommand{\DMAC}{E \rightarrow C}
+\newcommand{\U}{\boldsymbol{U}}
+\newcommand{\F}{\boldsymbol{F}}\]</div>
+<section id="ebgodunov">
 <h1>EBGodunov<a class="headerlink" href="#ebgodunov" title="Permalink to this headline"></a></h1>
 <p>All slope computations use fourth-order limited slopes as described in <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a> for cells for which
 this calculation would not use any information in cut or covered cells; otherwise the slope computations
@@ -100,7 +128,7 @@ and <span class="math notranslate nohighlight">\(V\)</span> is the volume fracti
 and less than or equal to 1.</p>
 </section>
 <section id="pre-mac-extrapveltofaces">
-<h2>Pre-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#abea06da38cd7e2c6a6ed94d761c4e996">ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-extrapveltofaces" title="Permalink to this headline"></a></h2>
+<span id="pre-mac"></span><h2>Pre-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#abea06da38cd7e2c6a6ed94d761c4e996">ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-extrapveltofaces" title="Permalink to this headline"></a></h2>
 <p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
 in space and time. For each face with a non-zero area fraction, we extrapolate the normal velocity
 component from the centroids of the cells on either side to the face centroid, creating left (L)
@@ -216,56 +244,48 @@ described above.</p>
 </section>
 <section id="post-mac-computeedgestate">
 <h2>Post-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4">ComputeEdgestate</a>)<a class="headerlink" href="#post-mac-computeedgestate" title="Permalink to this headline"></a></h2>
-<p>Once we have the MAC-projected velocities, we project all quantities, including
-advected quantities and all velocity components, to faces as above:</p>
-<div class="math notranslate nohighlight" id="equation-eq3-ebg">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eq3-ebg" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\frac{1}{2},j,k}^{L,\frac{1}{2}} = \hat{s}_{i+\frac{1}{2},j,k}^{L} +
-\frac{dt}{2} \; (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\]</div>
+<p>Once we have the MAC-projected velocities, we project all quantities to faces. Let the scalar <span class="math notranslate nohighlight">\(s\)</span> represent any advected quantities as well as all three velocity components.  We now extrapolate <span class="math notranslate nohighlight">\(s\)</span> from cell centroids to face centroids as described in Sec. <a class="reference internal" href="#pre-mac"><span class="std std-ref">Pre-MAC (ExtrapVelToFaces)</span></a>. For example, on face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> we define</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq1">
+<span class="eqno">(5)<a class="headerlink" href="#equation-postebg-eq1" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}
+ + \frac{dt}{2} \; (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, where</p>
-<div class="math notranslate nohighlight" id="equation-eq3-ebg2">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eq3-ebg2" title="Permalink to this equation"></a></span>\[\hat{s}_{i+\frac{1}{2},j,k}^{L} = s_{i,j,k}^n +
-\left( \delta x - \frac{dt}{2} s_{i,j,k}^n \right)
-\; {s^x}_{i,j,k} +  \delta y \; {s^y}_{i,j,k} + \delta z \; {s^z}_{i,j,k}\]</div>
+<div class="math notranslate nohighlight" id="equation-postebg-eq2">
+<span class="eqno">(6)<a class="headerlink" href="#equation-postebg-eq2" title="Permalink to this equation"></a></span>\[\hat{s}_{i+\half,j,k}^{L} = s_{i,j,k}^n +
+ \left( \delta_x - \frac{dt}{2} u_{i,j,k}^n \right)
+ \; {s^x}_{i,j,k} +  \delta_y \; {s^y}_{i,j,k} + \delta_z \; {s^z}_{i,j,k}\]</div>
 <p>and</p>
-<div class="math notranslate nohighlight" id="equation-eq4-ebg">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eq4-ebg" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\frac{1}{2},j,k}^{R,\frac{1}{2}} = \hat{s}_{i+\frac{1}{2},j,k}^{R} +
-\frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\]</div>
-<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k),\)</span> where</p>
-<div class="math notranslate nohighlight" id="equation-eq4-ebg2">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq4-ebg2" title="Permalink to this equation"></a></span>\[\hat{s}_{i+\frac{1}{2},j,k}^{R} = s_{i+1,j,k}^n +
-\left(\delta_x  - \frac{dt}{2} s_{i,j,k}^n \right)
-\; {s^x}_{i+1,j,k} +  \delta y \; {s^y}_{i+1,j,k} + \delta z \; {s^z}_{i+1,j,k}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
-<p>The domain boundary conditions affect the solution as described above in
-(1) and (2) for the pre-MAC step. We do not impose the
-no-outflow-at-inflow condition quite as described in (3); instead we
-impose that if, on the low side, <span class="math notranslate nohighlight">\(u^{MAC}\ge 0\)</span> (i.e the flow is
-coming in at an outflow face) and <span class="math notranslate nohighlight">\(s\)</span> is the x-velocity, then
-<span class="math notranslate nohighlight">\(s_L = s_R = \min(s_R,0).\)</span> On the high side, if
-<span class="math notranslate nohighlight">\(u^{MAC}&lt;= 0\)</span> on the domain face, then
-<span class="math notranslate nohighlight">\(s_L = s_R = \max(s_L,0).\)</span> This enforces that if <span class="math notranslate nohighlight">\(u^{MAC}\)</span>
-on an outflow face is inflowing, the normal velocity component must be
-outflowing or zero.</p>
-<p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u^{MAC}_{i-\frac{1}{2},j,k}\)</span></p>
 <div class="math notranslate nohighlight">
-\[\begin{split}s_{i+\frac{1}{2},j,k}^{{n+\frac{1}{2}}} =
-\begin{cases}
-s_L, &amp; \mathrm{if} \; u^{MAC}_{i+\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
-s_R, &amp; \mathrm{if} \; u^{MAC}_{i+\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
-\frac{1}{2}(s_L + s_R),
-\end{cases}\end{split}\]</div>
+\[\tilde{s}_{i+\half,j,k}^{R,\nph} = \hat{s}_{i+\half,j,k}^{R}
++ \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k),\)</span> where</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq3">
+<span class="eqno">(7)<a class="headerlink" href="#equation-postebg-eq3" title="Permalink to this equation"></a></span>\[\hat{u}_{i+\half,j,k}^{R} = u_{i+1,j,k}^n +
+     \left(\delta_x  - \frac{dt}{2} u_{i,j,k}^n \right)
+  \; {s^x}_{i+1,j,k} +  \delta_y \; {s^y}_{i+1,j,k} + \delta_z \; {s^z}_{i+1,j,k}\]</div>
+<p>Here again the slopes <span class="math notranslate nohighlight">\((s^x,s^y,s^z)\)</span> are calculated using a least-squares fit to available data and
+<span class="math notranslate nohighlight">\(\delta_x,\)</span> <span class="math notranslate nohighlight">\(\delta_y\)</span> and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from the cell centroid to the face centroid of the <span class="math notranslate nohighlight">\(x\)</span>-face at <span class="math notranslate nohighlight">\((i-\half,j,k).\)</span>  The transverse terms are computed exactly as described earlier except for the upwinding process; where we previously used the predicted states themselves to upwind, we now use the component of <span class="math notranslate nohighlight">\(\U^{MAC}\)</span> normal to the face in question.</p>
+<p>We note again that if any of the four faces that contribute to the transverse derivatives for a particular cell have zero area, all of the transverse {it and} forcing terms are identically set to 0.  For example, when constructing <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span>, if any of the areas <span class="math notranslate nohighlight">\(a_{i,\jph,k}, a_{i,\jmh,k}, a_{i,j,\kmh}\)</span> or <span class="math notranslate nohighlight">\(a_{i,j,\kph}\)</span> are zero, then we simply define</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq4">
+<span class="eqno">(8)<a class="headerlink" href="#equation-postebg-eq4" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}\]</div>
+<p>We upwind <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span> and <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span> using the normal component of <span class="math notranslate nohighlight">\(\U^{MAC}\)</span> to define <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{\nph}.\)</span>  Again, suppressing the subscripts, we define</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq5">
+<span class="eqno">(9)<a class="headerlink" href="#equation-postebg-eq5" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{s}^{\nph} = \left\{\begin{array}{lll}
+  \tilde{s}^{L,\nph}              &amp; \mbox{if $u^{MAC} &gt; 0$}  \\
+\frac{1}{2} (\tilde{s}^{L,\nph} + \tilde{s}^{R,\nph}) &amp; \mbox{if $u^{MAC} = 0$}  \\
+  \tilde{s}^{R,\nph}  &amp; \mbox{if $u^{MAC} &lt; 0$}
+\end{array} \right.\end{split}\]</div>
 </section>
 <section id="computing-the-fluxes-computefluxes">
 <h2>Computing the Fluxes (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>)<a class="headerlink" href="#computing-the-fluxes-computefluxes" title="Permalink to this headline"></a></h2>
 <p>The fluxes are computed from the edge states above by defining, e.g.,</p>
-<div class="math notranslate nohighlight">
-\[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k} \; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}}\]</div>
+<div class="math notranslate nohighlight" id="equation-fluxebg-eq1">
+<span class="eqno">(10)<a class="headerlink" href="#equation-fluxebg-eq1" title="Permalink to this equation"></a></span>\[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k} \; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}} \; \Delta_y \; \Delta_z\]</div>
 <p>on all x-faces with non-zero area fraction,</p>
-<div class="math notranslate nohighlight">
-\[F_{i,j-\frac{1}{2},k}^{y,n+\frac{1}{2}} = a_{i,j-\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k} \; s_{i,j-\frac{1}{2},k}^{n+\frac{1}{2}}\]</div>
+<div class="math notranslate nohighlight" id="equation-fluxebg-eq2">
+<span class="eqno">(11)<a class="headerlink" href="#equation-fluxebg-eq2" title="Permalink to this equation"></a></span>\[F_{i,j-\frac{1}{2},k}^{y,n+\frac{1}{2}} = a_{i,j-\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k} \; s_{i,j-\frac{1}{2},k}^{n+\frac{1}{2}} \; \Delta_x \; \Delta_z\]</div>
 <p>on all y-faces with non-zero area fraction, and</p>
-<div class="math notranslate nohighlight">
-\[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}}\]</div>
+<div class="math notranslate nohighlight" id="equation-fluxebg-eq3">
+<span class="eqno">(12)<a class="headerlink" href="#equation-fluxebg-eq3" title="Permalink to this equation"></a></span>\[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}} \; \Delta_x \; \Delta_y\]</div>
 <p>on all z-faces with non-zero area fraction.</p>
 </section>
 <section id="constructing-the-update">
@@ -273,9 +293,9 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i+\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 <p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, on all cells with <span class="math notranslate nohighlight">\(V_{i,j,k} &gt; 0\)</span> we construct</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla \cdot ({\bf u}s)^{n+\frac{1}{2}} = (
-                        &amp; ( F_{i+\frac{1}{2},j,k}^{{x,n+\frac{1}{2}}} -F_{i-\frac{1}{2},j,k}^{{x,n+\frac{1}{2}}}) + \\
-                        &amp; ( F_{i,j+\frac{1}{2},k}^{{y,n+\frac{1}{2}}} -F_{i,j-\frac{1}{2},k}^{{y,n+\frac{1}{2}}}) + \\
-                        &amp; ( F_{i,j,k+\frac{1}{2}}^{{z,n+\frac{1}{2}}} -F_{i,j,k-\frac{1}{2}}^{{z,n+\frac{1}{2}}}) ) / V_{i,j,k}\end{split}\]</div>
+                       &amp; ( F_{i+\frac{1}{2},j,k}^{{x,n+\frac{1}{2}}} -F_{i-\frac{1}{2},j,k}^{{x,n+\frac{1}{2}}}) + \\
+                       &amp; ( F_{i,j+\frac{1}{2},k}^{{y,n+\frac{1}{2}}} -F_{i,j-\frac{1}{2},k}^{{y,n+\frac{1}{2}}}) + \\
+                       &amp; ( F_{i,j,k+\frac{1}{2}}^{{z,n+\frac{1}{2}}} -F_{i,j,k-\frac{1}{2}}^{{z,n+\frac{1}{2}}}) ) / (V_{i,j,k} \Delta_x \Delta_y \Delta_z)\end{split}\]</div>
 <p>while if <span class="math notranslate nohighlight">\(s\)</span> is to be updated in convective form, we construct</p>
 <div class="math notranslate nohighlight">
 \[({\bf u}\cdot \nabla s)^{n+\frac{1}{2}} = \nabla \cdot ({\bf u}s)^{n+\frac{1}{2}} - s_{i,j,k}^{{n+\frac{1}{2}}} (DU)^{MAC}\]</div>
