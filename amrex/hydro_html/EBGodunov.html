@@ -157,7 +157,10 @@ from the cell centroid to the face centroid of the <span class="math notranslate
 These slopes are limited with a Barth-Jesperson type of limiter that enforces no new maxima or minima
 when the state is predicted to the face centroids. (If sufficient data is available for cells
 with unit volume fraction, this computation instead uses a standard second- or fourth-order
-slope calculation with limiting as described in REF.)</p>
+slope calculation with limiting as described in Colella (1985).)</p>
+<p>We note that if any of the four faces that contribute to the transverse derivatives for a particular cell have zero area, all of the transverse <em>and</em> forcing terms are identically set to 0.  For example, when constructing <span class="math notranslate nohighlight">\(\tilde{u}_{i+\half,j,k}^{L,\nph}\)</span>, if any of the areas <span class="math notranslate nohighlight">\(a_{i,\jph,k}, a_{i,\jmh,k}, a_{i,j,\kmh}\)</span> or <span class="math notranslate nohighlight">\(a_{i,j,\kph}\)</span> are zero, then we simply define</p>
+<div class="math notranslate nohighlight" id="equation-eq2-ebg3">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq2-ebg3" title="Permalink to this equation"></a></span>\[\tilde{u}_{i+\half,j,k}^{L,\nph} = \hat{u}_{i+\half,j,k}^{L}\]</div>
 <p>The transverse derivative terms ( <span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and <span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
 are evaluated by first extrapolating all velocity components
 to the face centroids of the transverse faces from the cell centers on either side,
@@ -246,11 +249,11 @@ described above.</p>
 <h2>Post-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4">ComputeEdgestate</a>)<a class="headerlink" href="#post-mac-computeedgestate" title="Permalink to this headline"></a></h2>
 <p>Once we have the MAC-projected velocities, we project all quantities to faces. Let the scalar <span class="math notranslate nohighlight">\(s\)</span> represent any advected quantities as well as all three velocity components.  We now extrapolate <span class="math notranslate nohighlight">\(s\)</span> from cell centroids to face centroids as described in Sec. <a class="reference internal" href="#pre-mac"><span class="std std-ref">Pre-MAC (ExtrapVelToFaces)</span></a>. For example, on face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> we define</p>
 <div class="math notranslate nohighlight" id="equation-postebg-eq1">
-<span class="eqno">(5)<a class="headerlink" href="#equation-postebg-eq1" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}
+<span class="eqno">(6)<a class="headerlink" href="#equation-postebg-eq1" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}
  + \frac{dt}{2} \; (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, where</p>
 <div class="math notranslate nohighlight" id="equation-postebg-eq2">
-<span class="eqno">(6)<a class="headerlink" href="#equation-postebg-eq2" title="Permalink to this equation"></a></span>\[\hat{s}_{i+\half,j,k}^{L} = s_{i,j,k}^n +
+<span class="eqno">(7)<a class="headerlink" href="#equation-postebg-eq2" title="Permalink to this equation"></a></span>\[\hat{s}_{i+\half,j,k}^{L} = s_{i,j,k}^n +
  \left( \delta_x - \frac{dt}{2} u_{i,j,k}^n \right)
  \; {s^x}_{i,j,k} +  \delta_y \; {s^y}_{i,j,k} + \delta_z \; {s^z}_{i,j,k}\]</div>
 <p>and</p>
@@ -259,17 +262,17 @@ described above.</p>
 + \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k),\)</span> where</p>
 <div class="math notranslate nohighlight" id="equation-postebg-eq3">
-<span class="eqno">(7)<a class="headerlink" href="#equation-postebg-eq3" title="Permalink to this equation"></a></span>\[\hat{u}_{i+\half,j,k}^{R} = u_{i+1,j,k}^n +
+<span class="eqno">(8)<a class="headerlink" href="#equation-postebg-eq3" title="Permalink to this equation"></a></span>\[\hat{u}_{i+\half,j,k}^{R} = u_{i+1,j,k}^n +
      \left(\delta_x  - \frac{dt}{2} u_{i,j,k}^n \right)
   \; {s^x}_{i+1,j,k} +  \delta_y \; {s^y}_{i+1,j,k} + \delta_z \; {s^z}_{i+1,j,k}\]</div>
 <p>Here again the slopes <span class="math notranslate nohighlight">\((s^x,s^y,s^z)\)</span> are calculated using a least-squares fit to available data and
 <span class="math notranslate nohighlight">\(\delta_x,\)</span> <span class="math notranslate nohighlight">\(\delta_y\)</span> and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from the cell centroid to the face centroid of the <span class="math notranslate nohighlight">\(x\)</span>-face at <span class="math notranslate nohighlight">\((i-\half,j,k).\)</span>  The transverse terms are computed exactly as described earlier except for the upwinding process; where we previously used the predicted states themselves to upwind, we now use the component of <span class="math notranslate nohighlight">\(\U^{MAC}\)</span> normal to the face in question.</p>
-<p>We note again that if any of the four faces that contribute to the transverse derivatives for a particular cell have zero area, all of the transverse {it and} forcing terms are identically set to 0.  For example, when constructing <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span>, if any of the areas <span class="math notranslate nohighlight">\(a_{i,\jph,k}, a_{i,\jmh,k}, a_{i,j,\kmh}\)</span> or <span class="math notranslate nohighlight">\(a_{i,j,\kph}\)</span> are zero, then we simply define</p>
+<p>We note again that if any of the four faces that contribute to the transverse derivatives for a particular cell have zero area, all of the transverse <em>and</em> forcing terms are identically set to 0.  For example, when constructing <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span>, if any of the areas <span class="math notranslate nohighlight">\(a_{i,\jph,k}, a_{i,\jmh,k}, a_{i,j,\kmh}\)</span> or <span class="math notranslate nohighlight">\(a_{i,j,\kph}\)</span> are zero, then we simply define</p>
 <div class="math notranslate nohighlight" id="equation-postebg-eq4">
-<span class="eqno">(8)<a class="headerlink" href="#equation-postebg-eq4" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-postebg-eq4" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}\]</div>
 <p>We upwind <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span> and <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span> using the normal component of <span class="math notranslate nohighlight">\(\U^{MAC}\)</span> to define <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{\nph}.\)</span>  Again, suppressing the subscripts, we define</p>
 <div class="math notranslate nohighlight" id="equation-postebg-eq5">
-<span class="eqno">(9)<a class="headerlink" href="#equation-postebg-eq5" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{s}^{\nph} = \left\{\begin{array}{lll}
+<span class="eqno">(10)<a class="headerlink" href="#equation-postebg-eq5" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{s}^{\nph} = \left\{\begin{array}{lll}
   \tilde{s}^{L,\nph}              &amp; \mbox{if $u^{MAC} &gt; 0$}  \\
 \frac{1}{2} (\tilde{s}^{L,\nph} + \tilde{s}^{R,\nph}) &amp; \mbox{if $u^{MAC} = 0$}  \\
   \tilde{s}^{R,\nph}  &amp; \mbox{if $u^{MAC} &lt; 0$}
@@ -279,14 +282,15 @@ described above.</p>
 <h2>Computing the Fluxes (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>)<a class="headerlink" href="#computing-the-fluxes-computefluxes" title="Permalink to this headline"></a></h2>
 <p>The fluxes are computed from the edge states above by defining, e.g.,</p>
 <div class="math notranslate nohighlight" id="equation-fluxebg-eq1">
-<span class="eqno">(10)<a class="headerlink" href="#equation-fluxebg-eq1" title="Permalink to this equation"></a></span>\[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k} \; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}} \; \Delta_y \; \Delta_z\]</div>
+<span class="eqno">(11)<a class="headerlink" href="#equation-fluxebg-eq1" title="Permalink to this equation"></a></span>\[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k} \; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}} \; \Delta_y \; \Delta_z\]</div>
 <p>on all x-faces with non-zero area fraction,</p>
 <div class="math notranslate nohighlight" id="equation-fluxebg-eq2">
-<span class="eqno">(11)<a class="headerlink" href="#equation-fluxebg-eq2" title="Permalink to this equation"></a></span>\[F_{i,j-\frac{1}{2},k}^{y,n+\frac{1}{2}} = a_{i,j-\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k} \; s_{i,j-\frac{1}{2},k}^{n+\frac{1}{2}} \; \Delta_x \; \Delta_z\]</div>
+<span class="eqno">(12)<a class="headerlink" href="#equation-fluxebg-eq2" title="Permalink to this equation"></a></span>\[F_{i,j-\frac{1}{2},k}^{y,n+\frac{1}{2}} = a_{i,j-\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k} \; s_{i,j-\frac{1}{2},k}^{n+\frac{1}{2}} \; \Delta_x \; \Delta_z\]</div>
 <p>on all y-faces with non-zero area fraction, and</p>
 <div class="math notranslate nohighlight" id="equation-fluxebg-eq3">
-<span class="eqno">(12)<a class="headerlink" href="#equation-fluxebg-eq3" title="Permalink to this equation"></a></span>\[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}} \; \Delta_x \; \Delta_y\]</div>
+<span class="eqno">(13)<a class="headerlink" href="#equation-fluxebg-eq3" title="Permalink to this equation"></a></span>\[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}} \; \Delta_x \; \Delta_y\]</div>
 <p>on all z-faces with non-zero area fraction.</p>
+<p>Here <span class="math notranslate nohighlight">\(\Delta_x, \Delta_y,\)</span> and <span class="math notranslate nohighlight">\(\Delta_z\)</span> are the cell sizes in the 3 directions.</p>
 </section>
 <section id="constructing-the-update">
 <h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline"></a></h2>
