@@ -165,6 +165,7 @@ var classamrex_1_1FabArray =
     [ "m_factory", "classamrex_1_1FabArray.html#a9172b400e374666d6100fa61ccc586db", null ],
     [ "m_hp_arrays", "classamrex_1_1FabArray.html#abbe02ae23186064d6bae686374657674", null ],
     [ "m_tags", "classamrex_1_1FabArray.html#a5ea249e7b897909f9d01b4fed851d7af", null ],
+    [ "os_temp", "classamrex_1_1FabArray.html#a11346c64d84d261c3766c76a0b09a032", null ],
     [ "pcd", "classamrex_1_1FabArray.html#a4a22bada553ad3ff929d91be1b8bfc9f", null ],
     [ "shmem", "classamrex_1_1FabArray.html#abc3985ed98ddaf530bde81076c0295de", null ]
 ];

@@ -14,6 +14,8 @@ var AMReX__FabArrayUtility_8H =
     [ "Multiply", "AMReX__FabArrayUtility_8H.html#a71808e748d2cf6ea301231f278269b70", null ],
     [ "Multiply", "AMReX__FabArrayUtility_8H.html#aec148f53c2d7fcc3b00c9e91999d4058", null ],
     [ "OverrideSync", "AMReX__FabArrayUtility_8H.html#a5821b989454c54f92dd1f2312e95b5b6", null ],
+    [ "OverrideSync_finish", "AMReX__FabArrayUtility_8H.html#ad81d4975698feb7461d8ad18c21c7951", null ],
+    [ "OverrideSync_nowait", "AMReX__FabArrayUtility_8H.html#af6d31b25633d781cd8fe931951889e6c", null ],
     [ "prefetchToDevice", "AMReX__FabArrayUtility_8H.html#a4db8bcd1f50c790aba6b81860143cc96", null ],
     [ "prefetchToHost", "AMReX__FabArrayUtility_8H.html#ab02b05e2eb3282f8df33e5cbc655b2a3", null ],
     [ "printCell", "AMReX__FabArrayUtility_8H.html#a376ff66b5e6a76d195cace00df41d05e", null ],

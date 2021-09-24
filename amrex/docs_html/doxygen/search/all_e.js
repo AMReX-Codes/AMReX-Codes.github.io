@@ -194,7 +194,7 @@ var searchData=
   ['nspots_5237',['nspots',['../structamrex_1_1AsyncOut_1_1WriteInfo.html#a2045644553fcef06b1a6c80ebbe3603c',1,'amrex::AsyncOut::WriteInfo']]],
   ['nsr_5238',['nsr',['../classamrex_1_1DeriveRec.html#a5dd47ecd89eca47c1a2da2a3cee0675f',1,'amrex::DeriveRec']]],
   ['nstep_5239',['nStep',['../classamrex_1_1AmrLevel.html#ac66753a2ff2df956a5df08dd6cb9f81a',1,'amrex::AmrLevel']]],
-  ['nstreamerrors_5240',['NStreamErrors',['../classamrex_1_1StreamRetry.html#ae894808026adb5099b7b36f193f39f7c',1,'amrex::StreamRetry::NStreamErrors()'],['../classamrex_1_1StreamRetry.html#a56fbf590918f701816c5567f4869c6de',1,'amrex::StreamRetry::nStreamErrors()']]],
+  ['nstreamerrors_5240',['nStreamErrors',['../classamrex_1_1StreamRetry.html#a56fbf590918f701816c5567f4869c6de',1,'amrex::StreamRetry::nStreamErrors()'],['../classamrex_1_1StreamRetry.html#ae894808026adb5099b7b36f193f39f7c',1,'amrex::StreamRetry::NStreamErrors()']]],
   ['nstride_5241',['nstride',['../structamrex_1_1Array4.html#af34de268f8d40135be4374144dd2b34a',1,'amrex::Array4']]],
   ['nstructint_5242',['NStructInt',['../classamrex_1_1ParticleContainer.html#a0126c339846650d2b30069c08da01fce',1,'amrex::ParticleContainer']]],
   ['nstructreal_5243',['NStructReal',['../classamrex_1_1ParticleContainer.html#ae71c7d35ab833b43cef08cf6aa9944b2',1,'amrex::ParticleContainer']]],
