@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amr &mdash; amrex 21.10-dev documentation</title>
+  <title>Guided Tutorials &mdash; amrex 21.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic" href="Basic_Tutorial.html" />
-    <link rel="prev" title="Guided Tutorials" href="GuidedTutorials.html" /> 
+    <link rel="next" title="Amr" href="AMR_Tutorial.html" />
+    <link rel="prev" title="AMReX Guided Tutorials and Example Codes" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,17 +41,17 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Amr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#advection-amrcore"><strong>Advection_AmrCore</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advection-amrlevel"><strong>Advection_AmrLevel</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advection-f"><strong>Advection_F</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advection-octree-f"><strong>Advection_octree_F</strong></a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guided Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world"><span class="xref std std-ref">Hello World</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heat-equation-simple"><span class="xref std std-ref">Heat Equation – Simple</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heat-equation"><span class="xref std std-ref">Heat Equation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorials-from-the-2021-ecp-annual-meeting">Tutorials from the 2021 ECP Annual Meeting</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
@@ -80,9 +80,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Amr</li>
+      <li>Guided Tutorials</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/AMR_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/GuidedTutorials.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,52 +90,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="amr">
-<span id="tutorials-amr"></span><h1>Amr<a class="headerlink" href="#amr" title="Permalink to this headline"></a></h1>
-<p>For each of these tutorials,
-plotfiles are generated that can be viewed with amrvis2d / amrvis3d
-(CCSE’s native vis / spreadsheet tool, downloadable separately from ccse.lbl.gov)
-or with VisIt.</p>
-<section id="advection-amrcore">
-<h2><strong>Advection_AmrCore</strong><a class="headerlink" href="#advection-amrcore" title="Permalink to this headline"></a></h2>
-<p>Advection_AmrCore: This tutorial contains an AMR advection code that advects
-a single scalar field with a velocity field that is specified on faces.
-It is written entirely in C++, can be built in 2D or 3D and run with the same
-inputs file,</p>
-<p>It is an AMReX-based code designed to run in parallel using MPI+X, where X
-may be OMP for multicore machines and CUDA for hybrid CPU/GPU architectures.</p>
-<p>This example uses source code from the amrex/Src/Base, Boundary, and AmrCore
-directories.</p>
-<p>Notably, this example does not use source code from amrex/Src/Amr
-(see the tutorial Advection_AmrLevel).</p>
-<p>The directory Exec includes a makefile and a sample inputs file.</p>
+  <section id="guided-tutorials">
+<h1>Guided Tutorials<a class="headerlink" href="#guided-tutorials" title="Permalink to this headline"></a></h1>
+<p>The source code for these tutorials can be found in the <code class="docutils literal notranslate"><span class="pre">AMReX-Codes/amrex-tutorials</span></code>
+repo, under the parent directory <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/GuidedTutorials</span></code>.</p>
+<section id="hello-world">
+<h2><a class="reference internal" href="HelloWorld.html#guided-hello-world"><span class="std std-ref">Hello World</span></a><a class="headerlink" href="#hello-world" title="Permalink to this headline"></a></h2>
+<p>This tutorial explains how to build AMReX HelloWorld.</p>
 </section>
-<section id="advection-amrlevel">
-<h2><strong>Advection_AmrLevel</strong><a class="headerlink" href="#advection-amrlevel" title="Permalink to this headline"></a></h2>
-<p>Advection_AmrLevel: This tutorial contains an AMR advection code that advects
-a single scalar field with a velocity field that is specified on faces.</p>
-<p>It is an AMReX based code designed to run in parallel using MPI/OMP.</p>
-<p>This example uses source code from the amrex/Src/Base, Boundary, AmrCore, and
-Amr directories.</p>
-<p>The directories Exec/SingleVortex and Exec/UniformVelocity each include
-a makefile and a sample inputs file.</p>
+<hr class="docutils" />
+<section id="heat-equation-simple">
+<h2><a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Heat Equation – Simple</span></a><a class="headerlink" href="#heat-equation-simple" title="Permalink to this headline"></a></h2>
+<p>A complete build-run-visualize workflow walk-through. This simplified introduction
+covers several basic components of AMReX while minimizing required knowledge of C++
+syntax.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
-<section id="advection-f">
-<h2><strong>Advection_F</strong><a class="headerlink" href="#advection-f" title="Permalink to this headline"></a></h2>
-<p>This code advects a single scalar field with a velocity
-field that is specified on faces.</p>
-<p>It is a AMReX based code designed to run in parallel using MPI/OMP.
-It uses the Fortran interfaces of AMReX.</p>
-<p>The directory Exec/SingleVortex includes a makefile and a sample inputs file.</p>
+<section id="heat-equation">
+<h2><a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Heat Equation</span></a><a class="headerlink" href="#heat-equation" title="Permalink to this headline"></a></h2>
+<p>This tutorial revisits AMReX’s approach to heat equation in additional detail with
+preprocessor variables, scoped namespaces, and multiple source files
+to demonstrate additional convenience and functionality.</p>
 </section>
-<section id="advection-octree-f">
-<h2><strong>Advection_octree_F</strong><a class="headerlink" href="#advection-octree-f" title="Permalink to this headline"></a></h2>
-<p>This code advects a single scalar field with a velocity
-field that is specified on faces.</p>
-<p>It is a AMReX based code designed to run in parallel using MPI/OMP.
-It uses the Fortran interfaces of AMReX.  The grids have an octree
-structure with a grid size of 8.  No subcycling is used.</p>
-<p>The directory Exec/SingleVortex includes a makefile and a sample inputs file.</p>
+<hr class="docutils" />
+<section id="tutorials-from-the-2021-ecp-annual-meeting">
+<h2><a class="reference external" href="https://github.com/atmyers/ecp-tutorials">Tutorials from the 2021 ECP Annual Meeting</a><a class="headerlink" href="#tutorials-from-the-2021-ecp-annual-meeting" title="Permalink to this headline"></a></h2>
+<p>It’s also possible to work through several tutorials on AMReX that were presented
+at the 2021 ECP Annual Meeting without needing to install any dependencies or
+download any code to your local machine. The tutorials are available in the GitHub repo,
+<a class="reference external" href="https://github.com/atmyers/ecp-tutorials">ECP-Tutorials</a> and use the GitPod
+cloud dev environment. For accompanying slides, see
+<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorial_slides.pdf">tutorial_slides.pdf</a>.</p>
 </section>
 </section>
 
@@ -143,8 +130,8 @@ structure with a grid size of 8.  No subcycling is used.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="GuidedTutorials.html" class="btn btn-neutral float-left" title="Guided Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Basic_Tutorial.html" class="btn btn-neutral float-right" title="Basic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="AMReX Guided Tutorials and Example Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AMR_Tutorial.html" class="btn btn-neutral float-right" title="Amr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

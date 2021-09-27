@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorials/GPU &mdash; amrex 21.10-dev documentation</title>
+  <title>GPU &mdash; amrex 21.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials/LinearSolvers" href="LinearSolvers_Tutorial.html" />
-    <link rel="prev" title="Tutorials/Forkjoin" href="ForkJoin_Tutorial.html" /> 
+    <link rel="next" title="LinearSolvers" href="LinearSolvers_Tutorial.html" />
+    <link rel="prev" title="Forkjoin" href="ForkJoin_Tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,27 +41,29 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/GPU</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GPU</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#your-first-amrex-gpu-application"><strong>Your first AMReX GPU application</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#launch"><strong>Launch</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cns"><strong>CNS</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#amrcore"><strong>AmrCore</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">Tutorials/ML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">Tutorials/SENSEI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
 </ul>
 
         </div>
@@ -78,7 +80,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tutorials/GPU</li>
+      <li>GPU</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/GPU_Tutorial.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -88,9 +90,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="tutorials-gpu">
-<h1>Tutorials/GPU<a class="headerlink" href="#tutorials-gpu" title="Permalink to this headline"></a></h1>
-<p>The tutorials in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/GPU</span></code> demonstrate the implementation
+  <section id="gpu">
+<span id="tutorials-gpu"></span><h1>GPU<a class="headerlink" href="#gpu" title="Permalink to this headline"></a></h1>
+<p>The tutorials in <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/GPU</span></code> demonstrate the implementation
 of AMReX’s GPU toolkit as well as provide GPU ported versions of CPU
 tutorials to help applications convert to GPUs.</p>
 <section id="your-first-amrex-gpu-application">
@@ -130,11 +132,11 @@ preferred GPU launch methodologies.</p>
 </section>
 <section id="cns">
 <h2><strong>CNS</strong><a class="headerlink" href="#cns" title="Permalink to this headline"></a></h2>
-<p>CNS is a direct GPU port of the <code class="docutils literal notranslate"><span class="pre">Tutorials/EB/CNS</span></code> tutorial.</p>
+<p>CNS is a direct GPU port of the <code class="docutils literal notranslate"><span class="pre">ExampleCodes/EB/CNS</span></code> example.</p>
 </section>
 <section id="amrcore">
 <h2><strong>AmrCore</strong><a class="headerlink" href="#amrcore" title="Permalink to this headline"></a></h2>
-<p>AmrCore is a direct GPU port of the <code class="docutils literal notranslate"><span class="pre">Tutorials/Amr/Advection_AmrCore</span></code> tutorial
+<p>AmrCore is a direct GPU port of the <code class="docutils literal notranslate"><span class="pre">ExampleCodes/Amr/Advection_AmrCore</span></code> tutorial
 that advects a single scalar field with a velocity field specified on faces, using
 strategies similar to HeatEquation and CNS.</p>
 </section>
@@ -144,8 +146,8 @@ strategies similar to HeatEquation and CNS.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ForkJoin_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/Forkjoin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="LinearSolvers_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/LinearSolvers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ForkJoin_Tutorial.html" class="btn btn-neutral float-left" title="Forkjoin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="LinearSolvers_Tutorial.html" class="btn btn-neutral float-right" title="LinearSolvers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

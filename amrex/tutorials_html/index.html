@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMReX Tutorials &mdash; amrex 21.10-dev documentation</title>
+  <title>AMReX Guided Tutorials and Example Codes &mdash; amrex 21.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials/Amr" href="AMR_Tutorial.html" /> 
+    <link rel="next" title="Guided Tutorials" href="GuidedTutorials.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,21 +40,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">Tutorials/GPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">Tutorials/ML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">Tutorials/SENSEI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
 </ul>
 
         </div>
@@ -71,7 +73,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>AMReX Tutorials</li>
+      <li>AMReX Guided Tutorials and Example Codes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -81,58 +83,75 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="amrex-tutorials">
-<span id="amrex-tut-indx"></span><h1>AMReX Tutorials<a class="headerlink" href="#amrex-tutorials" title="Permalink to this headline"></a></h1>
-<p>AMReX is a software framework library containing all the functionality to write
-massively parallel, block-structured adaptive mesh refinement (AMR)
-applications. AMReX is freely available at <a class="reference external" href="https://github.com/AMReX-Codes/amrex">https://github.com/AMReX-Codes/amrex</a>.</p>
-<p>There is extensive documentation for AMReX at <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/index.html#amrex-doc-indx" title="(in amrex v21.10-dev)"><span>Welcome to AMReX’s documentation</span></a></p>
-<p>AMReX Tutorials are a set of small stand-alone example codes that demonstrate how
-to use different parts of the AMReX functionality. You can also work through a set
-of AMReX tutorials online <a class="reference external" href="https://github.com/atmyers/ecp-tutorials">here</a>, without
-needing to install any dependencies or download any code to your local machine. For
-accompanying slides, see <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorial_slides.pdf">here</a>.</p>
-<p>We are always happy to have users contribute to AMReX Tutorials as well as
-the AMReX source code. To contribute, issue a pull request against the development branch
-(details at <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request/">https://help.github.com/articles/creating-a-pull-request/</a>).</p>
-<p>The amrex/Tutorials directory is broken into the following categories:</p>
+  <section id="amrex-guided-tutorials-and-example-codes">
+<h1>AMReX Guided Tutorials and Example Codes<a class="headerlink" href="#amrex-guided-tutorials-and-example-codes" title="Permalink to this headline"></a></h1>
+<p>Welcome to AMReX Tutorials and Example Codes. Here you will find
+a progression of hands on demonstrations and useful stand-alone examples
+designed to assist users in learning and writing their own AMReX code.
+For additional details on the topics presented here, please see the
+<a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/">AMReX Source Documentation</a>. The resources are divided into two categories:</p>
+<section id="guided-tutorials">
+<h2>Guided Tutorials<a class="headerlink" href="#guided-tutorials" title="Permalink to this headline"></a></h2>
+<p>Guided tutorials provide a gentle introduction to AMReX
+features by focusing on key concepts in a progressive way. They are designed
+to be followed from start to finish. They will focus on a few specific goals
+of larger importance to using AMReX rather than comment on every line of code.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">Tutorials/GPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">Tutorials/ML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">Tutorials/SENSEI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
 </ul>
 </div>
 </section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<section id="example-codes">
+<h2>Example Codes<a class="headerlink" href="#example-codes" title="Permalink to this headline"></a></h2>
+<p>Example codes are stand-alone examples that demonstrate how to use
+different parts of the AMReX functionality. They are aimed at
+users who are comfortable with the basics of AMReX.
+They present a straightforward application of AMReX features, and
+provide a starting place for user’s to develop their unique applications.</p>
+<p>The example codes listed below are provided in the <code class="docutils literal notranslate"><span class="pre">AMReX-Codes/amrex-tutorials</span></code> repo,
+under the directory <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes</span></code>. The examples are
+sorted by the following categories:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<li><p><a class="reference internal" href="AMR_Tutorial.html#tutorials-amr"><span class="std std-ref">AMR</span></a> – Examples of adaptive mesh refinement.</p></li>
+<li><p><a class="reference internal" href="Basic_Tutorial.html#tutorials-basic"><span class="std std-ref">Basic</span></a> – Fundamental operations supported by AMReX.</p></li>
+<li><p><a class="reference internal" href="Blueprint_Tutorial.html#tutorials-blueprint"><span class="std std-ref">Blueprint</span></a> – Convert AMReX mesh data into an in-memory
+Conduit Mesh Blueprint for use with the ALPINE Ascent in situ visualization
+and analysis tool.</p></li>
+<li><p><a class="reference internal" href="EB_Tutorial.html#tutorials-eb"><span class="std std-ref">EB</span></a>  – Examples of embedded boundaries.</p></li>
+<li><p><a class="reference internal" href="ForkJoin_Tutorial.html#tutorials-forkjoin"><span class="std std-ref">ForkJoin</span></a> – Parallel execution and subgrouping of MPI ranks.</p></li>
+<li><p><a class="reference internal" href="GPU_Tutorial.html#tutorials-gpu"><span class="std std-ref">GPU</span></a>  – Offload work to the GPUs using AMReX tools.</p></li>
+<li><p><a class="reference internal" href="LinearSolvers_Tutorial.html#tutorials-linearsolvers"><span class="std std-ref">Linear Solvers</span></a>  – Examples of several linear solvers.</p></li>
+<li><p><a class="reference internal" href="MUI_Tutorial.html#tutorials-mui"><span class="std std-ref">MUI</span></a>  – Incorporates the MxUI/MUI (Multiscale Universal interface) frame into AMReX.</p></li>
+<li><p><a class="reference internal" href="Particles_Tutorial.html#tutorials-particles"><span class="std std-ref">Particles</span></a>  – Basic usage of AMReX’s particle data structures.</p></li>
+<li><p><a class="reference internal" href="SDC_Tutorial.html#tutorials-sdc"><span class="std std-ref">SDC</span></a>  – Example usage of a “Multi-Implicit” Spectral Deferred Corrections (MISDC) integrator
+to solve a scalar advection-diffusion-reaction equation.</p></li>
+<li><p><a class="reference internal" href="SENSEI_Tutorial.html#tutorials-sensei"><span class="std std-ref">SENSEI</span></a>  – In situ data analysis and visualization through a unified interface.</p></li>
+<li><p><a class="reference internal" href="SWFFT_Tutorial.html#tutorials-swfft"><span class="std std-ref">SWFFT</span></a>  – Demonstrates how to call the SWFFT wrapper to the FFTW3 (A distributed memory
+implementation of the discrete Fourier transform) solver.</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="additional-questions-and-help">
+<h2>Additional Questions and Help<a class="headerlink" href="#additional-questions-and-help" title="Permalink to this headline"></a></h2>
+<p>Didn’t find what you were looking for? Have questions we didn’t answer?
+Please let us know how we can improve by posting on <a class="reference external" href="https://github.com/AMReX-Codes/amrex/discussions">AMReX’s GitHub Discussions</a>.</p>
 <p>The copyright notice of AMReX is included in the AMReX home directory as README.md.</p>
 <p>Your use of this software is under the 3-clause BSD license – the license agreement is included in the
 AMReX home directory as license.txt.</p>
-<p>For a pdf version of this documentation, click <a class="reference download internal" download="" href="_downloads/008eb6dbfab802633dff40122ece848c/amrex.pdf"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="AMR_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/Amr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GuidedTutorials.html" class="btn btn-neutral float-right" title="Guided Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
