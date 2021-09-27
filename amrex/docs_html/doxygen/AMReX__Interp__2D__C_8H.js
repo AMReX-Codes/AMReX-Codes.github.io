@@ -1,5 +1,6 @@
 var AMReX__Interp__2D__C_8H =
 [
+    [ "ccprotect_2d", "AMReX__Interp__2D__C_8H.html#a04162d26a94b7b09087daf1af31a1f2b", null ],
     [ "face_linear_interp_x", "AMReX__Interp__2D__C_8H.html#aa143e23e7784eca50c904ce19588d503", null ],
     [ "face_linear_interp_y", "AMReX__Interp__2D__C_8H.html#ab63986fd67f0c644685048e13e3c0475", null ],
     [ "facediv_face_interp", "AMReX__Interp__2D__C_8H.html#a749ef3bbd2184e2931cb0a63f54aa73a", null ],
