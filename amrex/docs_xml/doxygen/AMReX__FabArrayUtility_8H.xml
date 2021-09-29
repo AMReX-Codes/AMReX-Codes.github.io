@@ -4715,27 +4715,28 @@
 <codeline lineno="1540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>old;</highlight></codeline>
 <codeline lineno="1541"><highlight class="normal"></highlight><highlight class="comment">//<sp/>we<sp/>should<sp/>be<sp/>able<sp/>to<sp/>test<sp/>on<sp/>_OPENMP<sp/>&lt;<sp/>201107<sp/>for<sp/>capture<sp/>(version<sp/>3.1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1542"><highlight class="normal"></highlight><highlight class="comment">//<sp/>but<sp/>we<sp/>must<sp/>work<sp/>around<sp/>a<sp/>bug<sp/>in<sp/>gcc<sp/>&lt;<sp/>4.9</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1543"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_OMP)<sp/>&amp;&amp;<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>_OPENMP<sp/>&lt;<sp/>201307<sp/>//<sp/>OpenMP<sp/>4.0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1544"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(amrex_indexfromvalue)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1545"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1546"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>atomic<sp/>capture</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1547"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>old<sp/>=<sp/>f;</highlight></codeline>
-<codeline lineno="1550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1552"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(old<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>loc<sp/>=<sp/>priv_loc;</highlight></codeline>
-<codeline lineno="1554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1556"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1557"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1558"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>loc;</highlight></codeline>
-<codeline lineno="1559"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1560"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1561"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1562"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1563"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1543"><highlight class="normal"></highlight><highlight class="comment">//<sp/>And,<sp/>with<sp/>NVHPC<sp/>21.9,<sp/>we<sp/>see<sp/>an<sp/>ICE<sp/>with<sp/>the<sp/>atomic<sp/>capture<sp/>(NV<sp/>bug:<sp/>#3390723)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1544"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_OMP)<sp/>&amp;&amp;<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>(_OPENMP<sp/>&lt;<sp/>201307<sp/>||<sp/>defined(__NVCOMPILER))<sp/>//<sp/>OpenMP<sp/>4.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1545"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(amrex_indexfromvalue)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1546"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1547"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>atomic<sp/>capture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1548"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>old<sp/>=<sp/>f;</highlight></codeline>
+<codeline lineno="1551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1553"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(old<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>loc<sp/>=<sp/>priv_loc;</highlight></codeline>
+<codeline lineno="1555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1557"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1558"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1559"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>loc;</highlight></codeline>
+<codeline lineno="1560"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1561"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1562"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1564"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H"/>
   </compounddef>
