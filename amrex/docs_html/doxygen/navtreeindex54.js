@@ -1,6 +1,5 @@
 var NAVTREEINDEX54 =
 {
-"namespacemembers_func_m.html":[1,1,1,12],
 "namespacemembers_func_n.html":[1,1,1,13],
 "namespacemembers_func_o.html":[1,1,1,14],
 "namespacemembers_func_p.html":[1,1,1,15],
@@ -59,8 +58,8 @@ var NAVTREEINDEX54 =
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,22],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[1,0,23],
 "namespacesdcquadrature__mod.html":[2,0,11],
+"namespacesdcquadrature__mod.html":[1,0,23],
 "pages.html":[],
 "structAssignGridFilter.html":[2,0,14],
 "structAssignGridFilter.html#a067cf16cb382b143e8c1891468548937":[2,0,14,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX54 =
 "structamrex_1_1ArenaInfo.html#a17188b136da5e99440f925f648366292":[2,0,0,42,4],
 "structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81":[2,0,0,42,8],
 "structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc":[2,0,0,42,10],
-"structamrex_1_1ArenaInfo.html#a65b5aebfacd9fcffe1532a1f0a4968df":[2,0,0,42,5]
+"structamrex_1_1ArenaInfo.html#a65b5aebfacd9fcffe1532a1f0a4968df":[2,0,0,42,5],
+"structamrex_1_1ArenaInfo.html#a6e2b5fae851f0abc6f11b3b60b41a515":[2,0,0,42,1]
 };
