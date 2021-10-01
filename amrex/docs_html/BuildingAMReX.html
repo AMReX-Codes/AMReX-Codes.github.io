@@ -651,7 +651,8 @@ The list of available options is reported in the <a class="reference internal" h
 <td><p>YES, NO</p></td>
 </tr>
 <tr class="row-odd"><td><p>AMReX_TESTING</p></td>
-<td><p>Build for testing (CI)</p></td>
+<td><p>Build for testing –sets MultiFab initial data
+to NaN</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
@@ -759,7 +760,7 @@ invoking CMake.</p>
 are used to tell CMake which compiler to use for the compilation of C, C++, and Fortran sources
 respectively. If those options are not set by the user, CMake will use the system default compilers.</p>
 <p>The options <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code> and <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> allow the user to
-set his own compilation flags for Fortran and C++ source files respectively.
+set their own compilation flags for Fortran and C++ source files respectively.
 If <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code> are not set by the user,
 they will be initialized with the value of the environmental variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/
 <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code>. If neither <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> nor <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>
@@ -927,7 +928,7 @@ A list of AMReX component names and related configure options are shown in the t
 <span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">Foo</span>  <span class="s">AMReX::amrex</span> <span class="s">AMReX::Flags_CXX</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>The code in the snippet above checks wheather an AMReX installation with 3D and Embedded Boundary support
+<p>The code in the snippet above checks whether an AMReX installation with 3D and Embedded Boundary support
 is available on the system. If so, AMReX is linked to target <code class="docutils literal notranslate"><span class="pre">Foo</span></code> and AMReX flags preset is used
 to compile <code class="docutils literal notranslate"><span class="pre">Foo</span></code>’s C++ sources. If no AMReX installation is found or if the available one was built without
 3D or Embedded Boundary support, a fatal error is issued.</p>
