@@ -3960,6 +3960,7 @@
       </node>
     </invincdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <innernamespace refid="namespaceamrex_1_1detail">amrex::detail</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -4074,23 +4075,30 @@
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>ULong<sp/><ref refid="namespaceamrex_1a83b723afb07da54500bc1dc47a43f636" kindref="member">Random_long</ref><sp/>(ULong<sp/>n);<sp/></highlight><highlight class="comment">//<sp/>[0,n-1]</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ae9f820f5a65928568f3751fd584fa5ed" kindref="member">InitRandom</ref><sp/>(ULong<sp/>seed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs=<ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>());</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a113534c1251300931774c81dbf2fcbae" kindref="member">ResetRandomSeed</ref><sp/>(ULong<sp/>seed);</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad1b283df95b292f478597bc503170459" kindref="member">SaveRandomState</ref><sp/>(std::ostream&amp;<sp/>os);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" kindref="member">RestoreRandomState</ref><sp/>(std::istream&amp;<sp/>is,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads_old,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstep_old);</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" kindref="member">UniqueRandomSubset</ref><sp/>(Vector&lt;int&gt;<sp/>&amp;uSet,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>poolSize,</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printSet<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aaf97cdbc0db387b57d9641d57cce591e" kindref="member">NItemsPerBin</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalItems,<sp/>Vector&lt;int&gt;<sp/>&amp;binCounts);</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" kindref="member">DeallocateRandomSeedDevArray</ref><sp/>();</highlight></codeline>
-<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedetail" kindref="compound">detail</ref><sp/>{</highlight></codeline>
+<codeline lineno="148" refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>ULong<sp/><ref refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kindref="member">DefaultGpuSeed</ref><sp/>()<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>()*1234567ULL<sp/>+<sp/>12345ULL;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">InitRandom</ref><sp/>(ULong<sp/>cpu_seed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs=<ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>(),</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>gpu_seed<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kindref="member">detail::DefaultGpuSeed</ref>());</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a9c394bace9eaa26498dcec51122b8237" kindref="member">ResetRandomSeed</ref><sp/>(ULong<sp/>cpu_seed,<sp/>ULong<sp/>gpu_seed<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kindref="member">detail::DefaultGpuSeed</ref>());</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad1b283df95b292f478597bc503170459" kindref="member">SaveRandomState</ref><sp/>(std::ostream&amp;<sp/>os);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" kindref="member">RestoreRandomState</ref><sp/>(std::istream&amp;<sp/>is,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads_old,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstep_old);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" kindref="member">UniqueRandomSubset</ref><sp/>(Vector&lt;int&gt;<sp/>&amp;uSet,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>poolSize,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printSet<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aaf97cdbc0db387b57d9641d57cce591e" kindref="member">NItemsPerBin</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalItems,<sp/>Vector&lt;int&gt;<sp/>&amp;binCounts);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" kindref="member">DeallocateRandomSeedDevArray</ref><sp/>();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H"/>
   </compounddef>

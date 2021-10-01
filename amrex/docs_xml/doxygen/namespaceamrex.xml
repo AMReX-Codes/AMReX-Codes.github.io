@@ -25115,7 +25115,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="21" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="92" bodyend="97" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="21" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="21" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="91" bodyend="96" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="21" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a65fcc9ad910569bc247b330997d5ed52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> Real</type>
@@ -25239,7 +25239,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="114" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="106" bodyend="111" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="114" declcolumn="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="114" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="105" bodyend="110" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="114" declcolumn="18"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3768023f2b8cf90a47c693514b97d579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -25281,19 +25281,24 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="145" column="11" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="145" declcolumn="11"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae9f820f5a65928568f3751fd584fa5ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::InitRandom</definition>
-        <argsstring>(ULong seed, int nprocs=ParallelDescriptor::NProcs())</argsstring>
+        <argsstring>(ULong cpu_seed, int nprocs=ParallelDescriptor::NProcs(), ULong gpu_seed=detail::DefaultGpuSeed())</argsstring>
         <name>InitRandom</name>
         <param>
           <type>ULong</type>
-          <declname>seed</declname>
+          <declname>cpu_seed</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>nprocs</declname>
           <defval><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>()</defval>
+        </param>
+        <param>
+          <type>ULong</type>
+          <declname>gpu_seed</declname>
+          <defval><ref refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kindref="member">detail::DefaultGpuSeed</ref>()</defval>
         </param>
         <briefdescription>
 <para>Set the seed of the random number generator. </para>
@@ -25306,16 +25311,21 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="159" column="10" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="159" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="165" column="10" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="165" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a113534c1251300931774c81dbf2fcbae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a9c394bace9eaa26498dcec51122b8237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::ResetRandomSeed</definition>
-        <argsstring>(ULong seed)</argsstring>
+        <argsstring>(ULong cpu_seed, ULong gpu_seed=detail::DefaultGpuSeed())</argsstring>
         <name>ResetRandomSeed</name>
         <param>
           <type>ULong</type>
-          <declname>seed</declname>
+          <declname>cpu_seed</declname>
+        </param>
+        <param>
+          <type>ULong</type>
+          <declname>gpu_seed</declname>
+          <defval><ref refid="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" kindref="member">detail::DefaultGpuSeed</ref>()</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -25323,7 +25333,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="161" column="10" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="161" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="168" column="10" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="168" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad1b283df95b292f478597bc503170459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -25341,7 +25351,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="167" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="121" bodyend="126" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="167" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="174" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="120" bodyend="125" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="174" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -25366,7 +25376,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="169" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="129" bodyend="148" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="169" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="176" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="128" bodyend="147" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="176" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -25397,7 +25407,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="180" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="151" bodyend="172" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="180" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="187" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="150" bodyend="171" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="187" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aaf97cdbc0db387b57d9641d57cce591e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -25419,7 +25429,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="187" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="200" bodyend="223" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="187" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="194" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="199" bodyend="222" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="194" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -25432,7 +25442,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="189" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="180" bodyend="197" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="189" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" line="196" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="179" bodyend="196" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.H" declline="196" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7e167f3e07e0a0a021294e79676891db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1abbea0a87a768d8f4e8112b9cd673b124" kindref="member">randState_t</ref> *</type>
