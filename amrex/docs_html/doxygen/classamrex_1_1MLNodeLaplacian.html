@@ -159,6 +159,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2d7beea7bc93f71c8970977613d2ff08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af44fe2628228f69789874df4dbcab755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#af44fe2628228f69789874df4dbcab755">setCoarseningStrategy</a> (<a class="el" href="classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82">CoarseningStrategy</a> cs) noexcept</td></tr>
 <tr class="separator:af44fe2628228f69789874df4dbcab755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57edd583b6861bbf48d34a52aae4cbfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a57edd583b6861bbf48d34a52aae4cbfe">setSmoothNumSweeps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nsweeps) noexcept</td></tr>
+<tr class="separator:a57edd583b6861bbf48d34a52aae4cbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6733cc0185bbfe0f1a5430b961ac84d7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">BottomSolver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#a6733cc0185bbfe0f1a5430b961ac84d7">getDefaultBottomSolver</a> () const final override</td></tr>
 <tr class="separator:a6733cc0185bbfe0f1a5430b961ac84d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfa34733af6c1ade7b084ee4519c3851"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLaplacian.html#adfa34733af6c1ade7b084ee4519c3851">restriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cmglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine) const final override</td></tr>
@@ -446,6 +448,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a2bb5e031c87b6bdf67618f9c25dc6945 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0bb3eeb87e33f76c055d78e1e68df2 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a7c0bb3eeb87e33f76c055d78e1e68df2">m_overset_dirichlet_mask</a> = false</td></tr>
 <tr class="separator:a7c0bb3eeb87e33f76c055d78e1e68df2 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b6c523511d1ccca7263730a75019f9 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#ab0b6c523511d1ccca7263730a75019f9">m_smooth_num_sweeps</a> = 4</td></tr>
+<tr class="separator:ab0b6c523511d1ccca7263730a75019f9 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28e2b90709541cf46d64d3d382e6ade7 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a28e2b90709541cf46d64d3d382e6ade7">m_in_solution_mode</a> = true</td></tr>
 <tr class="separator:a28e2b90709541cf46d64d3d382e6ade7 inherit pro_attribs_classamrex_1_1MLNodeLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1MLLinOp"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1MLLinOp')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1MLLinOp.html">amrex::MLLinOp</a></td></tr>
@@ -1907,6 +1911,32 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57edd583b6861bbf48d34a52aae4cbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57edd583b6861bbf48d34a52aae4cbfe">&#9670;&nbsp;</a></span>setSmoothNumSweeps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLaplacian::setSmoothNumSweeps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nsweeps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

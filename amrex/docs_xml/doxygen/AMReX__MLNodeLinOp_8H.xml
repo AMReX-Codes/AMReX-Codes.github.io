@@ -2313,13 +2313,17 @@
 <codeline lineno="142" refid="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" kindref="member">m_is_bottom_singular</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="143" refid="classamrex_1_1MLNodeLinOp_1a2bb5e031c87b6bdf67618f9c25dc6945" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a2bb5e031c87b6bdf67618f9c25dc6945" kindref="member">m_masks_built</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="144" refid="classamrex_1_1MLNodeLinOp_1a7c0bb3eeb87e33f76c055d78e1e68df2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a7c0bb3eeb87e33f76c055d78e1e68df2" kindref="member">m_overset_dirichlet_mask</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146" refid="classamrex_1_1MLNodeLinOp_1a28e2b90709541cf46d64d3d382e6ade7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a28e2b90709541cf46d64d3d382e6ade7" kindref="member">m_in_solution_mode</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classamrex_1_1MLNodeLinOp_1ab0b6c523511d1ccca7263730a75019f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1ab0b6c523511d1ccca7263730a75019f9" kindref="member">m_smooth_num_sweeps</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1ab0b6c523511d1ccca7263730a75019f9" kindref="member">m_smooth_num_sweeps</ref><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classamrex_1_1MLNodeLinOp_1a28e2b90709541cf46d64d3d382e6ade7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a28e2b90709541cf46d64d3d382e6ade7" kindref="member">m_in_solution_mode</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H"/>
   </compounddef>

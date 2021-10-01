@@ -47,5 +47,6 @@ var classamrex_1_1MLNodeLinOp =
     [ "m_masks_built", "classamrex_1_1MLNodeLinOp.html#a2bb5e031c87b6bdf67618f9c25dc6945", null ],
     [ "m_nd_fine_mask", "classamrex_1_1MLNodeLinOp.html#a034b72948cecb00630515b6a2de77109", null ],
     [ "m_overset_dirichlet_mask", "classamrex_1_1MLNodeLinOp.html#a7c0bb3eeb87e33f76c055d78e1e68df2", null ],
-    [ "m_owner_mask", "classamrex_1_1MLNodeLinOp.html#a192598f12e56d51e8f952913e8fdf72c", null ]
+    [ "m_owner_mask", "classamrex_1_1MLNodeLinOp.html#a192598f12e56d51e8f952913e8fdf72c", null ],
+    [ "m_smooth_num_sweeps", "classamrex_1_1MLNodeLinOp.html#ab0b6c523511d1ccca7263730a75019f9", null ]
 ];
