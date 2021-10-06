@@ -24,6 +24,8 @@ var AMReX__Parser__Y_8H =
       [ "PARSER_COSH", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589a1c44c6c982e5f5394b02f66a59cbcbf0", null ],
       [ "PARSER_TANH", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589a0e8b5d96d71e43edef0273b7e86277ee", null ],
       [ "PARSER_ABS", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589ae01afc57c89c498c5363a6be1fd64eab", null ],
+      [ "PARSER_FLOOR", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589af4ebc6b2c539f7e888d719bab325461d", null ],
+      [ "PARSER_CEIL", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589abacc88377d1f207fe9d1aab1cdfbbaa5", null ],
       [ "PARSER_POW_M3", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589a694d2e1b1cd6961ea07b123547a0f88d", null ],
       [ "PARSER_POW_M2", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589af3809c32926c5365d39bd5264042e3ae", null ],
       [ "PARSER_POW_M1", "AMReX__Parser__Y_8H.html#a3a7f6659e1b5842a0322fcdd8ad89589a6959884c4754748c098c6cf1e1d7f15e", null ],
