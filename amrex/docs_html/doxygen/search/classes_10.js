@@ -20,7 +20,7 @@ var searchData=
   ['reductionentry_8605',['ReductionEntry',['../structCommProfStats_1_1ReductionEntry.html',1,'CommProfStats']]],
   ['ref_8606',['Ref',['../structamrex_1_1DistributionMapping_1_1Ref.html',1,'amrex::DistributionMapping']]],
   ['ref_5fwrapper_8607',['ref_wrapper',['../classamrex_1_1ref__wrapper.html',1,'amrex']]],
-  ['refid_8608',['RefID',['../structamrex_1_1BoxArray_1_1RefID.html',1,'amrex::BoxArray::RefID'],['../structamrex_1_1DistributionMapping_1_1RefID.html',1,'amrex::DistributionMapping::RefID']]],
+  ['refid_8608',['RefID',['../structamrex_1_1DistributionMapping_1_1RefID.html',1,'amrex::DistributionMapping::RefID'],['../structamrex_1_1BoxArray_1_1RefID.html',1,'amrex::BoxArray::RefID']]],
   ['regionsprofstats_8609',['RegionsProfStats',['../classRegionsProfStats.html',1,'']]],
   ['regiontag_8610',['RegionTag',['../structamrex_1_1FabArrayBase_1_1RegionTag.html',1,'amrex::FabArrayBase']]],
   ['retsum_8611',['RetSum',['../structamrex_1_1Scan_1_1RetSum.html',1,'amrex::Scan']]],

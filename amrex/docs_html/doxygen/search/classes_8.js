@@ -97,5 +97,5 @@ var searchData=
   ['isstoreatomic_3c_20ebcellflag_20_3e_8354',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
   ['iterate_5fbox_8355',['iterate_box',['../structamrex_1_1Reduce_1_1detail_1_1iterate__box.html',1,'amrex::Reduce::detail']]],
   ['iterate_5fbox_5fcomp_8356',['iterate_box_comp',['../structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html',1,'amrex::Reduce::detail']]],
-  ['iterator_8357',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator&lt; T &gt;::iterator'],['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors&lt; ParticleType &gt;::iterator'],['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl&lt; T &gt;::iterator']]]
+  ['iterator_8357',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors&lt; ParticleType &gt;::iterator'],['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator&lt; T &gt;::iterator'],['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl&lt; T &gt;::iterator']]]
 ];
