@@ -1,5 +1,9 @@
 var NAVTREEINDEX43 =
 {
+"classamrex_1_1MacProjector.html#af840b40728ddf5e917768b8d91c5f80c":[2,0,0,267,8],
+"classamrex_1_1MacProjector.html#afd2720d0228305f0b4a55598a7b2d489":[2,0,0,267,40],
+"classamrex_1_1MacProjector.html#aff77bdcacb89380c3866da77e2e69ea8":[2,0,0,267,14],
+"classamrex_1_1ManagedArenaAllocator.html":[2,0,0,268],
 "classamrex_1_1ManagedArenaAllocator.html#a70abcf89cdc2c54a0b93f939a26fec14":[2,0,0,268,1],
 "classamrex_1_1ManagedArenaAllocator.html#a9833726cef563b59b1d494273c697be1":[2,0,0,268,0],
 "classamrex_1_1ManagedArenaAllocator.html#adb788f18c122780c2d29f125ed70d0aa":[2,0,0,268,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX43 =
 "classamrex_1_1NFilesIter.html#a8ac006de5caf3cfd0e6456dd6c3b3f2a":[2,0,0,311,60],
 "classamrex_1_1NFilesIter.html#a9138f1bb7d077d7d1cd043715ecb7d74":[2,0,0,311,18],
 "classamrex_1_1NFilesIter.html#a971648481cfcbc77ebd0258b2ea03538":[2,0,0,311,11],
-"classamrex_1_1NFilesIter.html#a97ff46c50d110eeeacfcb90f5c001bd0":[2,0,0,311,61],
-"classamrex_1_1NFilesIter.html#a9ef9f0f0fd1029ffd3024da64c841c9a":[2,0,0,311,28],
-"classamrex_1_1NFilesIter.html#a9fad70f99318130bf5c883b3cbd20650":[2,0,0,311,8],
-"classamrex_1_1NFilesIter.html#aa0c0e9a50f259bef6b3a1f2a932c65bc":[2,0,0,311,6],
-"classamrex_1_1NFilesIter.html#aa46825b65b950336cbbdf7fdad5bd4d0":[2,0,0,311,58]
+"classamrex_1_1NFilesIter.html#a97ff46c50d110eeeacfcb90f5c001bd0":[2,0,0,311,61]
 };

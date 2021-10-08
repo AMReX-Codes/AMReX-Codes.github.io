@@ -28,6 +28,7 @@ var classamrex_1_1MLNodeLinOp =
     [ "operator=", "classamrex_1_1MLNodeLinOp.html#a1f11eab31e2487056a5befd79c8a22a0", null ],
     [ "operator=", "classamrex_1_1MLNodeLinOp.html#a8dcf3f92d3ef1932e03ad470e29d1517", null ],
     [ "prepareForSolve", "classamrex_1_1MLNodeLinOp.html#ac604e9b47938e183cd38f8f9ad400668", null ],
+    [ "resizeMultiGrid", "classamrex_1_1MLNodeLinOp.html#abe8255742bf5756e6659344cfa6ef5c4", null ],
     [ "setLevelBC", "classamrex_1_1MLNodeLinOp.html#a9c212333d250c722b7c8ff2d21f19073", null ],
     [ "setOversetMask", "classamrex_1_1MLNodeLinOp.html#a2566fb073888a16ec6c6242c5a9b47a3", null ],
     [ "smooth", "classamrex_1_1MLNodeLinOp.html#ae280045164562bc4e371043d97d73d2e", null ],

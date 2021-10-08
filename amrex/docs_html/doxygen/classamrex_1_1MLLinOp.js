@@ -87,6 +87,7 @@ var classamrex_1_1MLLinOp =
     [ "prepareForSolve", "classamrex_1_1MLLinOp.html#a431d85bffa7e9bbcd36a10ae82fe3683", null ],
     [ "reflux", "classamrex_1_1MLLinOp.html#a0c9c6f136cf005be3ce2c797b4b67537", null ],
     [ "remapNeighborhoods", "classamrex_1_1MLLinOp.html#a62f7495893309fa4f4805bbea9b59b3b", null ],
+    [ "resizeMultiGrid", "classamrex_1_1MLLinOp.html#ae80c21d0f29e6878cf478dfeef8dd4f2", null ],
     [ "restriction", "classamrex_1_1MLLinOp.html#a5a1bffd08a85405f9a9fbeed7c20fd97", null ],
     [ "setCoarseFineBC", "classamrex_1_1MLLinOp.html#ac161f1d53e925b82ba5defeb9b0efe70", null ],
     [ "setCoarseFineBCLocation", "classamrex_1_1MLLinOp.html#ac0c0882eb6092218dc09c5d60555ffed", null ],

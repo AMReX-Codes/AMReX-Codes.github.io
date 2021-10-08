@@ -3108,16 +3108,33 @@
 <codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1000"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1001"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1002"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_PETSC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1003"><highlight class="normal">std::unique_ptr&lt;PETScABecLap&gt;</highlight></codeline>
-<codeline lineno="1004"><highlight class="normal">MLLinOp::makePETSc<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1005"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;MLLinOp::makePETSc:<sp/>How<sp/>did<sp/>we<sp/>get<sp/>here?&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
-<codeline lineno="1008"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1009"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1010"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1011"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1003"><highlight class="normal"><ref refid="classamrex_1_1MLLinOp_1ae80c21d0f29e6878cf478dfeef8dd4f2" kindref="member">MLLinOp::resizeMultiGrid</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_size)</highlight></codeline>
+<codeline lineno="1004"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_size<sp/>&lt;=<sp/>0<sp/>||<sp/>new_size<sp/>&gt;=<sp/><ref refid="classamrex_1_1MLLinOp_1ababf1d5df3da022563dc90ee2c81ad75" kindref="member">m_num_mg_levels</ref>[0])<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="1006"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1ababf1d5df3da022563dc90ee2c81ad75" kindref="member">m_num_mg_levels</ref>[0]<sp/>=<sp/>new_size;</highlight></codeline>
+<codeline lineno="1008"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[0].resize(new_size);</highlight></codeline>
+<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[0].resize(new_size);</highlight></codeline>
+<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[0].resize(new_size);</highlight></codeline>
+<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1aca26a5ef5d68cae3dcabea0a5d8c2493" kindref="member">m_factory</ref>[0].resize(new_size);</highlight></codeline>
+<codeline lineno="1013"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a06ea1608702e52d38c0eceaa180bad7e" kindref="member">m_bottom_comm</ref><sp/>!=<sp/><ref refid="classamrex_1_1MLLinOp_1addb42fac68158f49c2508cf47d3b8d9d" kindref="member">m_default_comm</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1a06ea1608702e52d38c0eceaa180bad7e" kindref="member">m_bottom_comm</ref><sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a0aa88871d9875a2436ed23ff882516e4" kindref="member">makeSubCommunicator</ref>(<ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[0].back());</highlight></codeline>
+<codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1017"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1018"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1019"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_PETSC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1020"><highlight class="normal">std::unique_ptr&lt;PETScABecLap&gt;</highlight></codeline>
+<codeline lineno="1021"><highlight class="normal">MLLinOp::makePETSc<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1022"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1023"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;MLLinOp::makePETSc:<sp/>How<sp/>did<sp/>we<sp/>get<sp/>here?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1025"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1026"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1027"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1028"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.cpp"/>
   </compounddef>
