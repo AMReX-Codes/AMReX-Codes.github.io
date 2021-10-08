@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"distribution_8c.html#aef1f38cbc79ab4714fac1b0e24ec8de6":[3,0,0,5,8,5,10],
+"distribution_8c.html#af311497240c534b99258fcc520c8eebe":[3,0,0,5,8,5,7],
 "distribution_8c.html#afb8f9207619beb1a7f574954c83ea890":[3,0,0,5,8,5,18],
 "distribution_8c.html#afc28f1bd3535d90cb0c2fbe9693adf32":[3,0,0,5,8,5,12],
 "distribution__c_8h.html":[3,0,0,5,8,7],
@@ -31,8 +33,8 @@ var NAVTREEINDEX52 =
 "distribution__c_8h.html#afc2e25bc33f0263abbac9ef713b67345":[3,0,0,5,8,7,8],
 "distribution__c_8h_source.html":[3,0,0,5,8,7],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -84,8 +86,8 @@ var NAVTREEINDEX52 =
 "functions_rela.html":[2,3,6],
 "functions_s.html":[2,3,0,19],
 "functions_t.html":[2,3,0,20],
-"functions_type.html":[2,3,3],
 "functions_type.html":[2,3,3,0],
+"functions_type.html":[2,3,3],
 "functions_type_b.html":[2,3,3,1],
 "functions_type_c.html":[2,3,3,2],
 "functions_type_d.html":[2,3,3,3],
@@ -136,8 +138,8 @@ var NAVTREEINDEX52 =
 "functions_y.html":[2,3,0,25],
 "functions_z.html":[2,3,0,26],
 "functions_~.html":[2,3,0,27],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#a328c584a18240b86b60fd91796f2d74b":[2,0,5,0,11],
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#a4a19a125194118a2f3d594c048d727dd":[2,0,5,0,10],
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#a4db4ef84aec0a796bece72050cd31397":[2,0,5,0,8],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#a6981412d8a38668123444398651c906a":[2,0,5,0,9],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#a6cb21970e68d3e48dbc7d8ecfdf6283f":[2,0,5,0,4],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#a8a6154f6bc163e49b81e1fa496ccd703":[2,0,5,0,6]
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#a6981412d8a38668123444398651c906a":[2,0,5,0,9]
 };

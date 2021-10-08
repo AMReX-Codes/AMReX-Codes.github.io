@@ -1,13 +1,15 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a13134ba4058f5552958fee4a6fdc0870":[2,0,0,0,2,8],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a203aaaa3e85ca58ba28e40f548b2187d":[2,0,0,0,2,11],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a34411c4dfd852959acaf447507c352ed":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a34d771a65448161c411faaf972a6484f":[2,0,0,0,2,12],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4c3a229f570e434e2c56fdf8bee3425d":[2,0,0,0,2,4],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a8e63fff308a2667a803639c70fce0b3b":[2,0,0,0,2,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aa572c858d18a32a5834232222e0de86c":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ab0b0d21b0436db3368df308ac574a8ec":[2,0,0,0,2,2],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac3aa0501b0844da98bbe89d033795500":[2,0,0,0,2,10],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#afeff1f944e669f66896bdc7b76eccc88":[2,0,0,0,2,9],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aff95bdf7c30770f6021900c9eedaad6b":[2,0,0,0,2,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "unionamrex_1_1BATransformer_1_1BATOp.html#a08b7befe0d3be3fd7cec0fc17832f89a":[2,0,0,65,0,1],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a221948cf931ebf7ae97fd6cbc80a7d61":[2,0,0,65,0,0],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a3834e9c9445ec289b6d868f29f4ebfd4":[2,0,0,65,0,2],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39":[2,0,0,65,0,9],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf":[2,0,0,65,0,5],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360":[2,0,0,65,0,8]
+"unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39":[2,0,0,65,0,9]
 };

@@ -17,6 +17,7 @@ var classamrex_1_1Arena =
     [ "isManaged", "classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909", null ],
     [ "isPinned", "classamrex_1_1Arena.html#a336e271c5a07296e4c2866d194111784", null ],
     [ "PrintUsage", "classamrex_1_1Arena.html#a506a68384da30629323d0839f13812c2", null ],
+    [ "PrintUsageToFiles", "classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402", null ],
     [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
     [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ]
 ];

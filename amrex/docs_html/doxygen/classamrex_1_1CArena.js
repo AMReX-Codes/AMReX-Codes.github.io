@@ -12,6 +12,7 @@ var classamrex_1_1CArena =
     [ "heap_space_actually_used", "classamrex_1_1CArena.html#a52c8024bd12299f84f2362c0547c533d", null ],
     [ "heap_space_used", "classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f", null ],
     [ "operator=", "classamrex_1_1CArena.html#ae491fc24a9163b864bc798acc7518852", null ],
+    [ "PrintUsage", "classamrex_1_1CArena.html#a220453b0ec3b2de0df5cd94cb08dab03", null ],
     [ "PrintUsage", "classamrex_1_1CArena.html#aa73ded7161a0649ccd1103491034632a", null ],
     [ "sizeOf", "classamrex_1_1CArena.html#a1aefcfca2b595c0f7ddac3e351f6e8a3", null ],
     [ "carena_mutex", "classamrex_1_1CArena.html#a445be9f2ccca25ca4d2c8db026400136", null ],
