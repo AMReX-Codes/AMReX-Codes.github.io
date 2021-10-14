@@ -33,14 +33,10 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
     [ "AMReX_FluxRegister.H", "AMReX__FluxRegister_8H.html", [
       [ "FluxRegister", "classamrex_1_1FluxRegister.html", "classamrex_1_1FluxRegister" ]
     ] ],
-    [ "AMReX_INTERP_1D.F90", "AMReX__INTERP__1D_8F90.html", null ],
     [ "AMReX_Interp_1D_C.H", "AMReX__Interp__1D__C_8H.html", "AMReX__Interp__1D__C_8H" ],
-    [ "AMReX_INTERP_2D.F90", "AMReX__INTERP__2D_8F90.html", "AMReX__INTERP__2D_8F90" ],
     [ "AMReX_Interp_2D_C.H", "AMReX__Interp__2D__C_8H.html", "AMReX__Interp__2D__C_8H" ],
-    [ "AMReX_INTERP_3D.F90", "AMReX__INTERP__3D_8F90.html", "AMReX__INTERP__3D_8F90" ],
     [ "AMReX_Interp_3D_C.H", "AMReX__Interp__3D__C_8H.html", "AMReX__Interp__3D__C_8H" ],
     [ "AMReX_Interp_C.H", "AMReX__Interp__C_8H.html", null ],
-    [ "AMReX_INTERP_F.H", "AMReX__INTERP__F_8H.html", "AMReX__INTERP__F_8H" ],
     [ "AMReX_InterpBase.cpp", "AMReX__InterpBase_8cpp.html", null ],
     [ "AMReX_InterpBase.H", "AMReX__InterpBase_8H.html", [
       [ "InterpolaterBoxCoarsener", "classamrex_1_1InterpolaterBoxCoarsener.html", "classamrex_1_1InterpolaterBoxCoarsener" ],

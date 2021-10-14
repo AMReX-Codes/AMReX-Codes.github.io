@@ -130,8 +130,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a03235199d4d7140b2b814f6ec2a91605">mlndlap_set_dirichlet_mask</a> (Box <span class="keyword">const</span>&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>, Array4&lt;int&gt; <span class="keyword">const</span>&amp; dmsk,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                 Array4&lt;int const&gt; <span class="keyword">const</span>&amp; omsk, Box <span class="keyword">const</span>&amp; dom,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                 GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                 GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                 GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                 GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>);</div>
@@ -150,21 +150,21 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> domlo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(dom);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> domhi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(dom);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Dirichlet &amp;&amp; lo.x == domlo.x) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (bclo[0] == LinOpBCType::Dirichlet &amp;&amp; lo.x == domlo.x) {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            dmsk(lo.x,j,k) = 1;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Dirichlet &amp;&amp; hi.x == domhi.x) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (bchi[0] == LinOpBCType::Dirichlet &amp;&amp; hi.x == domhi.x) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            dmsk(hi.x,j,k) = 1;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Dirichlet &amp;&amp; lo.y == domlo.y) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (bclo[1] == LinOpBCType::Dirichlet &amp;&amp; lo.y == domlo.y) {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Dirichlet &amp;&amp; hi.y == domhi.y) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (bchi[1] == LinOpBCType::Dirichlet &amp;&amp; hi.y == domhi.y) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Dirichlet &amp;&amp; lo.z == domlo.z) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (bclo[2] == LinOpBCType::Dirichlet &amp;&amp; lo.z == domlo.z) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }}</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Dirichlet &amp;&amp; hi.z == domhi.z) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (bchi[2] == LinOpBCType::Dirichlet &amp;&amp; hi.z == domhi.z) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
@@ -200,8 +200,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a9c58e1a97a7d3c0eb90d98fd9b022b05">mlndlap_set_dot_mask</a> (Box <span class="keyword">const</span>&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; dmsk,</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                           Array4&lt;int const&gt; <span class="keyword">const</span>&amp; omsk, Box <span class="keyword">const</span>&amp; dom,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                           GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                           GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                           GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                           GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>);</div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> domlo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(dom);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> domhi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(dom);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ((bclo[0] == LinOpBCType::Neumann || bclo[0] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        &amp;&amp; lo.x == domlo.x)</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
@@ -224,7 +224,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> ((bchi[0] == LinOpBCType::Neumann || bchi[0] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        &amp;&amp; hi.x == domhi.x)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
@@ -233,7 +233,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }}</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> ((bclo[1] == LinOpBCType::Neumann || bclo[1] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        &amp;&amp; lo.y == domlo.y)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }}</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> ((bchi[1] == LinOpBCType::Neumann || bchi[1] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        &amp;&amp; hi.y == domhi.y)</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k) {</div>
@@ -253,7 +253,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }}</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> ((bclo[2] == LinOpBCType::Neumann || bclo[2] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        &amp;&amp; lo.z == domlo.z)</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
@@ -263,7 +263,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }}</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> ((bchi[2] == LinOpBCType::Neumann || bchi[2] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        &amp;&amp; hi.z == domhi.z)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
@@ -1720,8 +1720,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#aeb305780def1f6842fdde70599dff49a">mlndlap_restriction</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; crse,</div>
 <div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;                          Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; fine, Array4&lt;int const&gt; <span class="keyword">const</span>&amp; msk,</div>
 <div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;                          Box <span class="keyword">const</span>&amp; fdom,</div>
-<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;                          GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;                          GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;                          GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;                          GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;{</div>
 <div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ii = i*rr;</div>
 <div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jj = j*rr;</div>
@@ -1741,22 +1741,22 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;                    <span class="keywordtype">int</span> itmp = ii + ioff;</div>
 <div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;                    <span class="keywordtype">int</span> jtmp = jj + joff;</div>
 <div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;                    <span class="keywordtype">int</span> ktmp = kk + koff;</div>
-<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;                    <span class="keywordflow">if</span> ((itmp &lt; ndlo.x &amp;&amp; (<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;                                           <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::inflow)) ||</div>
-<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;                        (itmp &gt; ndhi.x &amp;&amp; (<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;                                           <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::inflow))) {</div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;                    <span class="keywordflow">if</span> ((itmp &lt; ndlo.x &amp;&amp; (bclo[0] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;                                           bclo[0] == LinOpBCType::inflow)) ||</div>
+<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;                        (itmp &gt; ndhi.x &amp;&amp; (bchi[0] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;                                           bchi[0] == LinOpBCType::inflow))) {</div>
 <div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;                        itmp = ii - ioff;</div>
 <div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;                    }</div>
-<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;                    <span class="keywordflow">if</span> ((jtmp &lt; ndlo.y &amp;&amp; (<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;                                           <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::inflow)) ||</div>
-<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;                        (jtmp &gt; ndhi.y &amp;&amp; (<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;                                           <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::inflow))) {</div>
+<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;                    <span class="keywordflow">if</span> ((jtmp &lt; ndlo.y &amp;&amp; (bclo[1] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;                                           bclo[1] == LinOpBCType::inflow)) ||</div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;                        (jtmp &gt; ndhi.y &amp;&amp; (bchi[1] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;                                           bchi[1] == LinOpBCType::inflow))) {</div>
 <div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;                        jtmp = jj - joff;</div>
 <div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;                    }</div>
-<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;                    <span class="keywordflow">if</span> ((ktmp &lt; ndlo.z &amp;&amp; (<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;                                           <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::inflow)) ||</div>
-<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;                        (ktmp &gt; ndhi.z &amp;&amp; (<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;                                           <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::inflow))) {</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;                    <span class="keywordflow">if</span> ((ktmp &lt; ndlo.z &amp;&amp; (bclo[2] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;                                           bclo[2] == LinOpBCType::inflow)) ||</div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;                        (ktmp &gt; ndhi.z &amp;&amp; (bchi[2] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;                                           bchi[2] == LinOpBCType::inflow))) {</div>
 <div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;                        ktmp = kk - koff;</div>
 <div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;                    }</div>
 <div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;                    tmp += wx*wy*wz*fine(itmp,jtmp,ktmp);</div>
@@ -2180,8 +2180,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02079"></a><span class="lineno"> 2079</span>&#160;                   Array4&lt;int const&gt; <span class="keyword">const</span>&amp; msk,</div>
 <div class="line"><a name="l02080"></a><span class="lineno"> 2080</span>&#160;                   GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; dxinv,</div>
 <div class="line"><a name="l02081"></a><span class="lineno"> 2081</span>&#160;                   Box <span class="keyword">const</span>&amp; nodal_domain,</div>
-<div class="line"><a name="l02082"></a><span class="lineno"> 2082</span>&#160;                   GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l02083"></a><span class="lineno"> 2083</span>&#160;                   GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l02082"></a><span class="lineno"> 2082</span>&#160;                   GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l02083"></a><span class="lineno"> 2083</span>&#160;                   GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l02084"></a><span class="lineno"> 2084</span>&#160;{</div>
 <div class="line"><a name="l02085"></a><span class="lineno"> 2085</span>&#160;    Real facx = Real(0.25)*dxinv[0];</div>
 <div class="line"><a name="l02086"></a><span class="lineno"> 2086</span>&#160;    Real facy = Real(0.25)*dxinv[1];</div>
@@ -2203,17 +2203,17 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02102"></a><span class="lineno"> 2102</span>&#160; </div>
 <div class="line"><a name="l02103"></a><span class="lineno"> 2103</span>&#160;        <span class="comment">// The nodal divergence operator should not see the tangential velocity</span></div>
 <div class="line"><a name="l02104"></a><span class="lineno"> 2104</span>&#160;        <span class="comment">//     at an inflow face</span></div>
-<div class="line"><a name="l02105"></a><span class="lineno"> 2105</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l02105"></a><span class="lineno"> 2105</span>&#160;        <span class="keywordflow">if</span> ((bclo[0] == LinOpBCType::Neumann || bclo[0] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l02106"></a><span class="lineno"> 2106</span>&#160;            &amp;&amp; i == domlo.x) zero_ilo = Real(0.0);</div>
-<div class="line"><a name="l02107"></a><span class="lineno"> 2107</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l02107"></a><span class="lineno"> 2107</span>&#160;        <span class="keywordflow">if</span> ((bchi[0] == LinOpBCType::Neumann || bchi[0] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l02108"></a><span class="lineno"> 2108</span>&#160;            &amp;&amp; i == domhi.x) zero_ihi = Real(0.0);</div>
-<div class="line"><a name="l02109"></a><span class="lineno"> 2109</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l02109"></a><span class="lineno"> 2109</span>&#160;        <span class="keywordflow">if</span> ((bclo[1] == LinOpBCType::Neumann || bclo[1] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l02110"></a><span class="lineno"> 2110</span>&#160;            &amp;&amp; j == domlo.y) zero_jlo = Real(0.0);</div>
-<div class="line"><a name="l02111"></a><span class="lineno"> 2111</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l02111"></a><span class="lineno"> 2111</span>&#160;        <span class="keywordflow">if</span> ((bchi[1] == LinOpBCType::Neumann || bchi[1] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l02112"></a><span class="lineno"> 2112</span>&#160;            &amp;&amp; j == domhi.y) zero_jhi = Real(0.0);</div>
-<div class="line"><a name="l02113"></a><span class="lineno"> 2113</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l02113"></a><span class="lineno"> 2113</span>&#160;        <span class="keywordflow">if</span> ((bclo[2] == LinOpBCType::Neumann || bclo[2] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l02114"></a><span class="lineno"> 2114</span>&#160;            &amp;&amp; k == domlo.z) zero_klo = Real(0.0);</div>
-<div class="line"><a name="l02115"></a><span class="lineno"> 2115</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l02115"></a><span class="lineno"> 2115</span>&#160;        <span class="keywordflow">if</span> ((bchi[2] == LinOpBCType::Neumann || bchi[2] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l02116"></a><span class="lineno"> 2116</span>&#160;            &amp;&amp; k == domhi.z) zero_khi = Real(0.0);</div>
 <div class="line"><a name="l02117"></a><span class="lineno"> 2117</span>&#160; </div>
 <div class="line"><a name="l02118"></a><span class="lineno"> 2118</span>&#160;        rhs(i,j,k) = facx*(-vel(i-1,j-1,k-1,0)*zero_jlo*zero_klo+vel(i,j-1,k-1,0)*zero_jlo*zero_klo</div>
@@ -2395,35 +2395,35 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;<span class="keyword">namespace </span>{</div>
 <div class="line"><a name="l02295"></a><span class="lineno"> 2295</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l02296"></a><span class="lineno"> 2296</span>&#160;    Real neumann_scale (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Box <span class="keyword">const</span>&amp; nddom,</div>
-<div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160;                        GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160;                        GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160;                        GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160;                        GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l02299"></a><span class="lineno"> 2299</span>&#160;    {</div>
 <div class="line"><a name="l02300"></a><span class="lineno"> 2300</span>&#160;        Real val = Real(1.0);</div>
 <div class="line"><a name="l02301"></a><span class="lineno"> 2301</span>&#160; </div>
 <div class="line"><a name="l02302"></a><span class="lineno"> 2302</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ndlo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(nddom);</div>
 <div class="line"><a name="l02303"></a><span class="lineno"> 2303</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ndhi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(nddom);</div>
 <div class="line"><a name="l02304"></a><span class="lineno"> 2304</span>&#160; </div>
-<div class="line"><a name="l02305"></a><span class="lineno"> 2305</span>&#160;        <span class="keywordflow">if</span> (i == ndlo.x &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02306"></a><span class="lineno"> 2306</span>&#160;                             <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02305"></a><span class="lineno"> 2305</span>&#160;        <span class="keywordflow">if</span> (i == ndlo.x &amp;&amp; ( bclo[0] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02306"></a><span class="lineno"> 2306</span>&#160;                             bclo[0] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02307"></a><span class="lineno"> 2307</span>&#160;            val *= Real(2.);</div>
-<div class="line"><a name="l02308"></a><span class="lineno"> 2308</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i== ndhi.x &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02309"></a><span class="lineno"> 2309</span>&#160;                                   <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02308"></a><span class="lineno"> 2308</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i== ndhi.x &amp;&amp; ( bchi[0] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02309"></a><span class="lineno"> 2309</span>&#160;                                   bchi[0] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;            val *= Real(2.);</div>
 <div class="line"><a name="l02311"></a><span class="lineno"> 2311</span>&#160;        }</div>
 <div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160; </div>
-<div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;        <span class="keywordflow">if</span> (j == ndlo.y &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02314"></a><span class="lineno"> 2314</span>&#160;                             <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;        <span class="keywordflow">if</span> (j == ndlo.y &amp;&amp; ( bclo[1] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02314"></a><span class="lineno"> 2314</span>&#160;                             bclo[1] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160;            val *= Real(2.);</div>
-<div class="line"><a name="l02316"></a><span class="lineno"> 2316</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == ndhi.y &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160;                                    <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02316"></a><span class="lineno"> 2316</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == ndhi.y &amp;&amp; ( bchi[1] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160;                                    bchi[1] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02318"></a><span class="lineno"> 2318</span>&#160;            val *= Real(2.);</div>
 <div class="line"><a name="l02319"></a><span class="lineno"> 2319</span>&#160;        }</div>
 <div class="line"><a name="l02320"></a><span class="lineno"> 2320</span>&#160; </div>
-<div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;        <span class="keywordflow">if</span> (k == ndlo.z &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02322"></a><span class="lineno"> 2322</span>&#160;                             <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;        <span class="keywordflow">if</span> (k == ndlo.z &amp;&amp; ( bclo[2] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02322"></a><span class="lineno"> 2322</span>&#160;                             bclo[2] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02323"></a><span class="lineno"> 2323</span>&#160;            val *= Real(2.);</div>
-<div class="line"><a name="l02324"></a><span class="lineno"> 2324</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == ndhi.z &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02325"></a><span class="lineno"> 2325</span>&#160;                                    <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02324"></a><span class="lineno"> 2324</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == ndhi.z &amp;&amp; ( bchi[2] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02325"></a><span class="lineno"> 2325</span>&#160;                                    bchi[2] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02326"></a><span class="lineno"> 2326</span>&#160;            val *= Real(2.);</div>
 <div class="line"><a name="l02327"></a><span class="lineno"> 2327</span>&#160;        }</div>
 <div class="line"><a name="l02328"></a><span class="lineno"> 2328</span>&#160; </div>
@@ -2438,8 +2438,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;                              <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; ndmsk, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; ccmsk,</div>
 <div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160;                              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxinv,</div>
 <div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160;                              <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; ccdom_p, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; veldom, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; nddom,</div>
-<div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;                              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l02341"></a><span class="lineno"> 2341</span>&#160;                              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;                              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l02341"></a><span class="lineno"> 2341</span>&#160;                              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l02342"></a><span class="lineno"> 2342</span>&#160;{</div>
 <div class="line"><a name="l02343"></a><span class="lineno"> 2343</span>&#160;    <span class="keywordflow">if</span> (!dmsk(i,j,k) &amp;&amp; ndmsk(i,j,k) == crse_fine_node) {</div>
 <div class="line"><a name="l02344"></a><span class="lineno"> 2344</span>&#160;        Real facx = Real(0.25) * dxinv[0];</div>
@@ -2506,7 +2506,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;            }</div>
 <div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;        }</div>
 <div class="line"><a name="l02407"></a><span class="lineno"> 2407</span>&#160; </div>
-<div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;        rhs(i,j,k) = tmp * neumann_scale(i, j, k, nddom, <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>, <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>);</div>
+<div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;        rhs(i,j,k) = tmp * neumann_scale(i, j, k, nddom, bclo, bchi);</div>
 <div class="line"><a name="l02409"></a><span class="lineno"> 2409</span>&#160;    }</div>
 <div class="line"><a name="l02410"></a><span class="lineno"> 2410</span>&#160;}</div>
 <div class="line"><a name="l02411"></a><span class="lineno"> 2411</span>&#160; </div>
@@ -2517,8 +2517,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02416"></a><span class="lineno"> 2416</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l02417"></a><span class="lineno"> 2417</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ad31ca7c577662afe5ea03ed3d21d8a57">mlndlap_crse_resid</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; resid,</div>
 <div class="line"><a name="l02418"></a><span class="lineno"> 2418</span>&#160;                         Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; rhs, Array4&lt;int const&gt; <span class="keyword">const</span>&amp; msk,</div>
-<div class="line"><a name="l02419"></a><span class="lineno"> 2419</span>&#160;                         Box <span class="keyword">const</span>&amp; nddom, GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l02420"></a><span class="lineno"> 2420</span>&#160;                         GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>,</div>
+<div class="line"><a name="l02419"></a><span class="lineno"> 2419</span>&#160;                         Box <span class="keyword">const</span>&amp; nddom, GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l02420"></a><span class="lineno"> 2420</span>&#160;                         GpuArray&lt;LinOpBCType,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi,</div>
 <div class="line"><a name="l02421"></a><span class="lineno"> 2421</span>&#160;                         <span class="keywordtype">bool</span> neumann_doubling) noexcept</div>
 <div class="line"><a name="l02422"></a><span class="lineno"> 2422</span>&#160;{</div>
 <div class="line"><a name="l02423"></a><span class="lineno"> 2423</span>&#160;    <span class="keywordflow">if</span> ((msk(i-1,j-1,k-1) == 0 ||</div>
@@ -2542,25 +2542,25 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;        <span class="keywordflow">if</span> (neumann_doubling) {</div>
 <div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> ndlo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(nddom);</div>
 <div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> ndhi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(nddom);</div>
-<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;            <span class="keywordflow">if</span> (i == ndlo.x &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;                                  <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;            <span class="keywordflow">if</span> (i == ndlo.x &amp;&amp; ( bclo[0] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;                                  bclo[0] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02446"></a><span class="lineno"> 2446</span>&#160;                fac *= Real(2.);</div>
-<div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i== ndhi.x &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;                                        <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i== ndhi.x &amp;&amp; ( bchi[0] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;                                        bchi[0] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;                fac *= Real(2.);</div>
 <div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;            }</div>
-<div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;            <span class="keywordflow">if</span> (j == ndlo.y &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;                                  <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;            <span class="keywordflow">if</span> (j == ndlo.y &amp;&amp; ( bclo[1] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;                                  bclo[1] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02453"></a><span class="lineno"> 2453</span>&#160;                fac *= Real(2.);</div>
-<div class="line"><a name="l02454"></a><span class="lineno"> 2454</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == ndhi.y &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02455"></a><span class="lineno"> 2455</span>&#160;                                         <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02454"></a><span class="lineno"> 2454</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == ndhi.y &amp;&amp; ( bchi[1] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02455"></a><span class="lineno"> 2455</span>&#160;                                         bchi[1] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02456"></a><span class="lineno"> 2456</span>&#160;                fac *= Real(2.);</div>
 <div class="line"><a name="l02457"></a><span class="lineno"> 2457</span>&#160;            }</div>
-<div class="line"><a name="l02458"></a><span class="lineno"> 2458</span>&#160;            <span class="keywordflow">if</span> (k == ndlo.z &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02459"></a><span class="lineno"> 2459</span>&#160;                                  <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02458"></a><span class="lineno"> 2458</span>&#160;            <span class="keywordflow">if</span> (k == ndlo.z &amp;&amp; ( bclo[2] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02459"></a><span class="lineno"> 2459</span>&#160;                                  bclo[2] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02460"></a><span class="lineno"> 2460</span>&#160;                fac *= Real(2.);</div>
-<div class="line"><a name="l02461"></a><span class="lineno"> 2461</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == ndhi.z &amp;&amp; ( <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Neumann ||</div>
-<div class="line"><a name="l02462"></a><span class="lineno"> 2462</span>&#160;                                         <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::inflow)) {</div>
+<div class="line"><a name="l02461"></a><span class="lineno"> 2461</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == ndhi.z &amp;&amp; ( bchi[2] == LinOpBCType::Neumann ||</div>
+<div class="line"><a name="l02462"></a><span class="lineno"> 2462</span>&#160;                                         bchi[2] == LinOpBCType::inflow)) {</div>
 <div class="line"><a name="l02463"></a><span class="lineno"> 2463</span>&#160;                fac *= Real(2.);</div>
 <div class="line"><a name="l02464"></a><span class="lineno"> 2464</span>&#160;            }</div>
 <div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;        }</div>
@@ -2783,8 +2783,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02682"></a><span class="lineno"> 2682</span>&#160;                             <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fc,</div>
 <div class="line"><a name="l02683"></a><span class="lineno"> 2683</span>&#160;                             <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxinv,</div>
 <div class="line"><a name="l02684"></a><span class="lineno"> 2684</span>&#160;                             <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; ccdom_p, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; nddom,</div>
-<div class="line"><a name="l02685"></a><span class="lineno"> 2685</span>&#160;                             <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l02686"></a><span class="lineno"> 2686</span>&#160;                             <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>,</div>
+<div class="line"><a name="l02685"></a><span class="lineno"> 2685</span>&#160;                             <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l02686"></a><span class="lineno"> 2686</span>&#160;                             <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bchi,</div>
 <div class="line"><a name="l02687"></a><span class="lineno"> 2687</span>&#160;                             <span class="keywordtype">bool</span> neumann_doubling) noexcept</div>
 <div class="line"><a name="l02688"></a><span class="lineno"> 2688</span>&#160;{</div>
 <div class="line"><a name="l02689"></a><span class="lineno"> 2689</span>&#160;    <span class="keywordflow">if</span> (!dmsk(i,j,k) &amp;&amp; ndmsk(i,j,k) == crse_fine_node) {</div>
@@ -2803,7 +2803,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02702"></a><span class="lineno"> 2702</span>&#160;                                 },</div>
 <div class="line"><a name="l02703"></a><span class="lineno"> 2703</span>&#160;                                 i, j, k, facx, facy, facz, phi);</div>
 <div class="line"><a name="l02704"></a><span class="lineno"> 2704</span>&#160;        Ax += fc(i,j,k);</div>
-<div class="line"><a name="l02705"></a><span class="lineno"> 2705</span>&#160;        Real <span class="keyword">const</span> ns = (neumann_doubling) ? neumann_scale(i,j,k,nddom,<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) : Real(1.0);</div>
+<div class="line"><a name="l02705"></a><span class="lineno"> 2705</span>&#160;        Real <span class="keyword">const</span> ns = (neumann_doubling) ? neumann_scale(i,j,k,nddom,bclo,bchi) : Real(1.0);</div>
 <div class="line"><a name="l02706"></a><span class="lineno"> 2706</span>&#160;        res(i,j,k) = rhs(i,j,k) - Ax*ns;</div>
 <div class="line"><a name="l02707"></a><span class="lineno"> 2707</span>&#160;    }</div>
 <div class="line"><a name="l02708"></a><span class="lineno"> 2708</span>&#160;}</div>
@@ -2816,8 +2816,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02715"></a><span class="lineno"> 2715</span>&#160;                                <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fc,</div>
 <div class="line"><a name="l02716"></a><span class="lineno"> 2716</span>&#160;                                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxinv,</div>
 <div class="line"><a name="l02717"></a><span class="lineno"> 2717</span>&#160;                                <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; ccdom_p, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; nddom,</div>
-<div class="line"><a name="l02718"></a><span class="lineno"> 2718</span>&#160;                                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l02719"></a><span class="lineno"> 2719</span>&#160;                                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>,</div>
+<div class="line"><a name="l02718"></a><span class="lineno"> 2718</span>&#160;                                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l02719"></a><span class="lineno"> 2719</span>&#160;                                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bchi,</div>
 <div class="line"><a name="l02720"></a><span class="lineno"> 2720</span>&#160;                                <span class="keywordtype">bool</span> neumann_doubling) noexcept</div>
 <div class="line"><a name="l02721"></a><span class="lineno"> 2721</span>&#160;{</div>
 <div class="line"><a name="l02722"></a><span class="lineno"> 2722</span>&#160;    <span class="keywordflow">if</span> (!dmsk(i,j,k) &amp;&amp; ndmsk(i,j,k) == crse_fine_node) {</div>
@@ -2836,7 +2836,7 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l02735"></a><span class="lineno"> 2735</span>&#160;                                 },</div>
 <div class="line"><a name="l02736"></a><span class="lineno"> 2736</span>&#160;                                 i, j, k, facx, facy, facz, phi);</div>
 <div class="line"><a name="l02737"></a><span class="lineno"> 2737</span>&#160;        Ax += fc(i,j,k);</div>
-<div class="line"><a name="l02738"></a><span class="lineno"> 2738</span>&#160;        Real <span class="keyword">const</span> ns = (neumann_doubling) ? neumann_scale(i,j,k,nddom,<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) : Real(1.0);</div>
+<div class="line"><a name="l02738"></a><span class="lineno"> 2738</span>&#160;        Real <span class="keyword">const</span> ns = (neumann_doubling) ? neumann_scale(i,j,k,nddom,bclo,bchi) : Real(1.0);</div>
 <div class="line"><a name="l02739"></a><span class="lineno"> 2739</span>&#160;        res(i,j,k) = rhs(i,j,k) - Ax*ns;</div>
 <div class="line"><a name="l02740"></a><span class="lineno"> 2740</span>&#160;    }</div>
 <div class="line"><a name="l02741"></a><span class="lineno"> 2741</span>&#160;}</div>
@@ -6765,8 +6765,8 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l06664"></a><span class="lineno"> 6664</span>&#160;                      Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; vfrac, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; intg,</div>
 <div class="line"><a name="l06665"></a><span class="lineno"> 6665</span>&#160;                      Array4&lt;int const&gt; <span class="keyword">const</span>&amp; msk, GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; dxinv,</div>
 <div class="line"><a name="l06666"></a><span class="lineno"> 6666</span>&#160;                      Box <span class="keyword">const</span>&amp; nodal_domain,</div>
-<div class="line"><a name="l06667"></a><span class="lineno"> 6667</span>&#160;                      GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>,</div>
-<div class="line"><a name="l06668"></a><span class="lineno"> 6668</span>&#160;                      GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>) noexcept</div>
+<div class="line"><a name="l06667"></a><span class="lineno"> 6667</span>&#160;                      GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bclo,</div>
+<div class="line"><a name="l06668"></a><span class="lineno"> 6668</span>&#160;                      GpuArray&lt;LinOpBCType, AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; bchi) noexcept</div>
 <div class="line"><a name="l06669"></a><span class="lineno"> 6669</span>&#160;{</div>
 <div class="line"><a name="l06670"></a><span class="lineno"> 6670</span>&#160;    Real facx = Real(0.25)*dxinv[0];</div>
 <div class="line"><a name="l06671"></a><span class="lineno"> 6671</span>&#160;    Real facy = Real(0.25)*dxinv[1];</div>
@@ -6786,17 +6786,17 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="line"><a name="l06685"></a><span class="lineno"> 6685</span>&#160; </div>
 <div class="line"><a name="l06686"></a><span class="lineno"> 6686</span>&#160;        <span class="comment">// The nodal divergence operator should not see the tangential velocity</span></div>
 <div class="line"><a name="l06687"></a><span class="lineno"> 6687</span>&#160;        <span class="comment">//     at an inflow face</span></div>
-<div class="line"><a name="l06688"></a><span class="lineno"> 6688</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[0] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l06688"></a><span class="lineno"> 6688</span>&#160;        <span class="keywordflow">if</span> ((bclo[0] == LinOpBCType::Neumann || bclo[0] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l06689"></a><span class="lineno"> 6689</span>&#160;            &amp;&amp; i == domlo.x) zero_ilo = Real(0.0);</div>
-<div class="line"><a name="l06690"></a><span class="lineno"> 6690</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[0] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l06690"></a><span class="lineno"> 6690</span>&#160;        <span class="keywordflow">if</span> ((bchi[0] == LinOpBCType::Neumann || bchi[0] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l06691"></a><span class="lineno"> 6691</span>&#160;            &amp;&amp; i == domhi.x) zero_ihi = Real(0.0);</div>
-<div class="line"><a name="l06692"></a><span class="lineno"> 6692</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[1] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l06692"></a><span class="lineno"> 6692</span>&#160;        <span class="keywordflow">if</span> ((bclo[1] == LinOpBCType::Neumann || bclo[1] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l06693"></a><span class="lineno"> 6693</span>&#160;            &amp;&amp; j == domlo.y) zero_jlo = Real(0.0);</div>
-<div class="line"><a name="l06694"></a><span class="lineno"> 6694</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[1] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l06694"></a><span class="lineno"> 6694</span>&#160;        <span class="keywordflow">if</span> ((bchi[1] == LinOpBCType::Neumann || bchi[1] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l06695"></a><span class="lineno"> 6695</span>&#160;            &amp;&amp; j == domhi.y) zero_jhi = Real(0.0);</div>
-<div class="line"><a name="l06696"></a><span class="lineno"> 6696</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a>[2] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l06696"></a><span class="lineno"> 6696</span>&#160;        <span class="keywordflow">if</span> ((bclo[2] == LinOpBCType::Neumann || bclo[2] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l06697"></a><span class="lineno"> 6697</span>&#160;            &amp;&amp; k == domlo.z) zero_klo = Real(0.0);</div>
-<div class="line"><a name="l06698"></a><span class="lineno"> 6698</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::Neumann || <a class="code" href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a>[2] == LinOpBCType::inflow)</div>
+<div class="line"><a name="l06698"></a><span class="lineno"> 6698</span>&#160;        <span class="keywordflow">if</span> ((bchi[2] == LinOpBCType::Neumann || bchi[2] == LinOpBCType::inflow)</div>
 <div class="line"><a name="l06699"></a><span class="lineno"> 6699</span>&#160;            &amp;&amp; k == domhi.z) zero_khi = Real(0.0);</div>
 <div class="line"><a name="l06700"></a><span class="lineno"> 6700</span>&#160; </div>
 <div class="line"><a name="l06701"></a><span class="lineno"> 6701</span>&#160;        rhs(i,j,k) = facx*(</div>
@@ -10852,7 +10852,6 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="ttc" id="anamespaceamrex_html_a70d0526f5c183c5731c0f08ba27670cc"><div class="ttname"><a href="namespaceamrex.html#a70d0526f5c183c5731c0f08ba27670cc">amrex::mlndlap_semi_interpadd_aa</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlndlap_semi_interpadd_aa(int, int, int, Array4&lt; Real &gt; const &amp;, Array4&lt; Real const &gt; const &amp;, Array4&lt; Real const &gt; const &amp;, Array4&lt; int const &gt; const &amp;, int) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLNodeLap_1D_K.H:168</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2d2bb7bdafe91906c966d8e75d540bea"><div class="ttname"><a href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:21</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6b9c125d08bef873a0aaf1f9bbddf260"><div class="ttname"><a href="namespaceamrex.html#a6b9c125d08bef873a0aaf1f9bbddf260">amrex::mlndlap_avgdown_coeff_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlndlap_avgdown_coeff_x(int, int, int, Array4&lt; Real &gt; const &amp;, Array4&lt; Real const &gt; const &amp;) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLNodeLap_1D_K.H:32</div></div>
-<div class="ttc" id="aAMReX__INTERP__2D_8F90_html_ae04db59d278a778f5a7e0d91ccaa00be"><div class="ttname"><a href="AMReX__INTERP__2D_8F90.html#ae04db59d278a778f5a7e0d91ccaa00be">bclo</a></div><div class="ttdeci">#define bclo(i, n)</div></div>
 <div class="ttc" id="anamespaceamrex_html_a99eb26c72f67ead31e003e2a5131d08b"><div class="ttname"><a href="namespaceamrex.html#a99eb26c72f67ead31e003e2a5131d08b">amrex::mlndlap_set_nodal_mask</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlndlap_set_nodal_mask(int, int, int, Array4&lt; int &gt; const &amp;, Array4&lt; int const &gt; const &amp;) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLNodeLap_1D_K.H:8</div></div>
 <div class="ttc" id="anamespaceamrex_1_1algoim_html_ad4374cfcd9fd0dcc582d0b7221c7d699"><div class="ttname"><a href="namespaceamrex_1_1algoim.html#ad4374cfcd9fd0dcc582d0b7221c7d699">amrex::algoim::i_S_x_z2</a></div><div class="ttdeci">static constexpr int i_S_x_z2</div><div class="ttdef"><b>Definition:</b> AMReX_algoim.H:25</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad31ca7c577662afe5ea03ed3d21d8a57"><div class="ttname"><a href="namespaceamrex.html#ad31ca7c577662afe5ea03ed3d21d8a57">amrex::mlndlap_crse_resid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlndlap_crse_resid(int, int, int, Array4&lt; Real &gt; const &amp;, Array4&lt; Real const &gt; const &amp;, Array4&lt; int const &gt; const &amp;, Box const &amp;, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;, bool) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLNodeLap_1D_K.H:222</div></div>
@@ -10870,7 +10869,6 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__3D__K_8H_source.html
 <div class="ttc" id="anamespaceamrex_html_a72d8b9352d99ebca0a7eba07dadbdfa5"><div class="ttname"><a href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:35</div></div>
 <div class="ttc" id="anamespaceamrex_html_afee333c49bcfdf12a3ccc051cd2f7406"><div class="ttname"><a href="namespaceamrex.html#afee333c49bcfdf12a3ccc051cd2f7406">amrex::Loop</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void Loop(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:11</div></div>
 <div class="ttc" id="anamespaceamrex_1_1algoim_html_a1563d162ff7c724b049f407982b9376a"><div class="ttname"><a href="namespaceamrex_1_1algoim.html#a1563d162ff7c724b049f407982b9376a">amrex::algoim::i_S_x_y</a></div><div class="ttdeci">static constexpr int i_S_x_y</div><div class="ttdef"><b>Definition:</b> AMReX_algoim.H:18</div></div>
-<div class="ttc" id="aAMReX__INTERP__2D_8F90_html_a91923ed602bb1cda4b0ae536d76baab0"><div class="ttname"><a href="AMReX__INTERP__2D_8F90.html#a91923ed602bb1cda4b0ae536d76baab0">bchi</a></div><div class="ttdeci">#define bchi(i, n)</div></div>
 <div class="ttc" id="anamespaceamrex_html_aedb1ce8af83d1d6323271203b7168bcc"><div class="ttname"><a href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box grow(const Box &amp;b, int i) noexcept</div><div class="ttdoc">Grow Box in all directions by given amount.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1133</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9d2e38bd2809143536efe0db90492957"><div class="ttname"><a href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a></div><div class="ttdeci">void LoopOnCpu(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:119</div></div>
 <div class="ttc" id="anamespaceamrex_html_a010d8fce8129d1003ad1f45512b89b15"><div class="ttname"><a href="namespaceamrex.html#a010d8fce8129d1003ad1f45512b89b15">amrex::mlndlap_adotx_aa</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real mlndlap_adotx_aa(int, int, int, Array4&lt; Real const &gt; const &amp;, Array4&lt; Real const &gt; const &amp;, Array4&lt; int const &gt; const &amp;, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLNodeLap_1D_K.H:60</div></div>

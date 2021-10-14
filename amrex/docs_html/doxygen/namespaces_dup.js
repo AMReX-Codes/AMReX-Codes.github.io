@@ -9,7 +9,6 @@ var namespaces_dup =
     [ "amrex_error_module", "namespaceamrex__error__module.html", null ],
     [ "amrex_filcc_module", "namespaceamrex__filcc__module.html", null ],
     [ "amrex_fort_module", "namespaceamrex__fort__module.html", null ],
-    [ "amrex_interp_module", "namespaceamrex__interp__module.html", null ],
     [ "amrex_io_module", "namespaceamrex__io__module.html", null ],
     [ "amrex_lo_bctypes_module", "namespaceamrex__lo__bctypes__module.html", null ],
     [ "amrex_lo_util_module", "namespaceamrex__lo__util__module.html", null ],

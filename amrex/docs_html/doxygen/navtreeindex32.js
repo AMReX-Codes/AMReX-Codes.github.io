@@ -1,11 +1,5 @@
 var NAVTREEINDEX32 =
 {
-"classamrex_1_1EB2_1_1AllRegularIF.html#afe65b0a23a8c6a2c423aba19003ea70e":[2,0,0,4,0,1],
-"classamrex_1_1EB2_1_1BoxIF.html":[2,0,0,4,1],
-"classamrex_1_1EB2_1_1BoxIF.html#a13836ae745cdf1ef18c14cc11e386afd":[2,0,0,4,1,7],
-"classamrex_1_1EB2_1_1BoxIF.html#a18e83b3403884afdd28e389235427917":[2,0,0,4,1,6],
-"classamrex_1_1EB2_1_1BoxIF.html#a1b6692cc97dd6bccc694ddcb3ab8830d":[2,0,0,4,1,5],
-"classamrex_1_1EB2_1_1BoxIF.html#a22bbb9f61e5ec1f1e7086880b73e2c39":[2,0,0,4,1,8],
 "classamrex_1_1EB2_1_1BoxIF.html#a3b02a8674dd81501122d702f0048cfe1":[2,0,0,4,1,4],
 "classamrex_1_1EB2_1_1BoxIF.html#a6c14c8dcc7891cad84090d91bf781158":[2,0,0,4,1,1],
 "classamrex_1_1EB2_1_1BoxIF.html#a84095f8c7b235812724ab2d33c8d9130":[2,0,0,4,1,9],
@@ -249,5 +243,11 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1PolyIF.html#aa6101e99f628dfb33b9304d7288417d2":[2,0,0,4,35,1],
 "classamrex_1_1EB2_1_1PolyIF.html#aaa660becce2b6d314003918489a6c426":[2,0,0,4,35,3],
 "classamrex_1_1EB2_1_1PolyIF.html#ae25262d67072428f2cad3d6efb2f5877":[2,0,0,4,35,0],
-"classamrex_1_1EB2_1_1PolyTerm.html":[2,0,0,4,37]
+"classamrex_1_1EB2_1_1PolyTerm.html":[2,0,0,4,37],
+"classamrex_1_1EB2_1_1PolyTerm.html#a6dc84f6fbab25f3b4c48b9bea8dd15bc":[2,0,0,4,37,0],
+"classamrex_1_1EB2_1_1PolyTerm.html#ad3d79d5eb417ba4996db8180e4590492":[2,0,0,4,37,1],
+"classamrex_1_1EB2_1_1PolynomialIF.html":[2,0,0,4,36],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a18f10f3de6a91418664b73f1c86d7461":[2,0,0,4,36,2],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a1a226866e5efa7580c4f117e1c45e386":[2,0,0,4,36,10],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a2e3ae065305b661cde39900314db8a26":[2,0,0,4,36,4]
 };

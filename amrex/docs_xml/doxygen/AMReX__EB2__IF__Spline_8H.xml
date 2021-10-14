@@ -1374,24 +1374,23 @@
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1distFcnElement2d" kindref="compound">distFcnElement2d</ref><sp/>*<sp/>closesetGeomElement;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>dist;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>dist<sp/>=<sp/>1.0e29;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealVect" kindref="compound">amrex::RealVect</ref><sp/>x;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>x[0]<sp/>=<sp/>p[0];x[1]<sp/>=<sp/>p[1];<sp/>x[2]<sp/>=<sp/>p[2];</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*<sp/>geom<sp/>:<sp/><ref refid="classamrex_1_1EB2_1_1SplineIF_1aa2fa17ff2ba083371845090960b56abc" kindref="member">geomElements</ref><sp/>)<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>d<sp/>=<sp/>geom-&gt;cpdist(x,<sp/>cp);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d<sp/>&lt;<sp/>dist)<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dist<sp/>=<sp/>d;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closesetGeomElement<sp/>=<sp/>geom;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>side<sp/>=<sp/>closesetGeomElement-&gt;<ref refid="classamrex_1_1distFcnElement2d_1adf53d0ff573fc7bb5d59ede162b78efd" kindref="member">cpside</ref>(x,cp);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dist*side;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56" refid="classamrex_1_1EB2_1_1SplineIF_1aa2fa17ff2ba083371845090960b56abc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector&lt;distFcnElement2d*&gt;</ref><sp/><ref refid="classamrex_1_1EB2_1_1SplineIF_1aa2fa17ff2ba083371845090960b56abc" kindref="member">geomElements</ref>;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal">}}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealVect" kindref="compound">amrex::RealVect</ref><sp/>x(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(p[0],<sp/>p[1],<sp/>p[2]));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*<sp/>geom<sp/>:<sp/><ref refid="classamrex_1_1EB2_1_1SplineIF_1aa2fa17ff2ba083371845090960b56abc" kindref="member">geomElements</ref><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>d<sp/>=<sp/>geom-&gt;cpdist(x,<sp/>cp);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d<sp/>&lt;<sp/>dist)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dist<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closesetGeomElement<sp/>=<sp/>geom;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>side<sp/>=<sp/>closesetGeomElement-&gt;<ref refid="classamrex_1_1distFcnElement2d_1adf53d0ff573fc7bb5d59ede162b78efd" kindref="member">cpside</ref>(x,cp);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dist*side;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classamrex_1_1EB2_1_1SplineIF_1aa2fa17ff2ba083371845090960b56abc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector&lt;distFcnElement2d*&gt;</ref><sp/><ref refid="classamrex_1_1EB2_1_1SplineIF_1aa2fa17ff2ba083371845090960b56abc" kindref="member">geomElements</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IF_Spline.H"/>
   </compounddef>
