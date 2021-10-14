@@ -54,12 +54,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#paralleldescriptor">ParallelDescriptor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parallelcontext">ParallelContext</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#print">Print</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initialize-and-finalize">Initialize and Finalize</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inputs-file">Inputs File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overriding-parameters-with-command-line-arguments">Overriding Parameters with Command-Line Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-parameter-values-inside-functions">Setting Parameter Values Inside Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-flags">Command Line Flags</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-and-finalize">Initialize and Finalize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-of-amr-grids">Example of AMR Grids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#box-intvect-and-indextype">Box, IntVect and IndexType</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#intvect">IntVect</a></li>
@@ -302,11 +306,17 @@ use <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <span id="sec-basics-parmparse"></span><h1>ParmParse<a class="headerlink" href="#parmparse" title="Permalink to this headline"></a></h1>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> in AMReX_ParmParse.H is a class providing a database for the
 storage and retrieval of command-line and input-file arguments. When
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="operator"><span class="pre">&amp;</span></span> <span class="name"><span class="pre">argc</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="keyword type"><span class="pre">char</span></span><span class="operator"><span class="pre">**&amp;</span></span> <span class="name"><span class="pre">argv</span></span><span class="punctuation"><span class="pre">)</span></span></code> is called, the first command-line argument after the
-executable name (if there is one and it does not contain character =) is taken
-to be the inputs file, and the contents in the file are used to initialize the
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="operator"><span class="pre">&amp;</span></span> <span class="name"><span class="pre">argc</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="keyword type"><span class="pre">char</span></span><span class="operator"><span class="pre">**&amp;</span></span> <span class="name"><span class="pre">argv</span></span><span class="punctuation"><span class="pre">)</span></span></code> is called, the first command-line
+argument after the executable name (if there is one, and it does not contain the character
+‘=’ or start with ‘-’) is taken
+to be the inputs file, and the contents of the file are used to initialize the
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> database. The rest of the command-line arguments are also
-parsed by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code>. The format of the inputs file is a series of
+parsed by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code>, with the exception of those following a ‘--’ which signals
+command line sharing (see section <a class="reference internal" href="#sec-basics-parmparse-sharingcl"><span class="std std-ref">Sharing the Command Line</span></a> ).</p>
+<div class="section" id="inputs-file">
+<h2>Inputs File<a class="headerlink" href="#inputs-file" title="Permalink to this headline"></a></h2>
+<p>The format of the inputs
+file is a series of
 definitions in the form of <code class="docutils literal notranslate"><span class="pre">prefix.name</span> <span class="pre">=</span> <span class="pre">value</span> <span class="pre">value</span> <span class="pre">....</span></code> For each line,
 text after # are comments. Here is an example inputs file.</p>
 <blockquote>
@@ -353,15 +363,22 @@ text after # are comments. Here is an example inputs file.</p>
 by default returns the last one. The difference between <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">query</span></span></code> and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">get</span></span></code> should also be noted. It is a runtime error if <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">get</span></span></code> fails to
 get the value, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">query</span></span></code> returns an error code without generating a
-runtime error that will abort the run.  It is sometimes convenient to
+runtime error that will abort the run.</p>
+</div>
+<div class="section" id="overriding-parameters-with-command-line-arguments">
+<h2>Overriding Parameters with Command-Line Arguments<a class="headerlink" href="#overriding-parameters-with-command-line-arguments" title="Permalink to this headline"></a></h2>
+<p>It is sometimes convenient to
 override parameters with command-line arguments without modifying the inputs
 file. The command-line arguments after the inputs file are added later than the
-file to the database and are therefore used by default. For example, one can
-run with</p>
+file to the database and are therefore used by default. For example,
+to change the value of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ncells</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">hydro</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span></code>, one can
+run with:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">myexecutable myinputsfile ncells=&quot;64 32 16&quot; hydro.cfl=0.9</span>
 </pre></div>
 </div>
-<p>to change the value of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ncells</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">hydro</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cfl</span></span></code>.</p>
+</div>
+<div class="section" id="setting-parameter-values-inside-functions">
+<h2>Setting Parameter Values Inside Functions<a class="headerlink" href="#setting-parameter-values-inside-functions" title="Permalink to this headline"></a></h2>
 <p>Sometimes an application code may want to set a default that differs from the
 default in AMReX.  In this case, it is often convenient to define a function that
 sets the variable(s), and pass the name of that function to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code>.
@@ -379,8 +396,64 @@ to false if it hasn’t already been set in the inputs file.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="n">add_par</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This value replaces the current default value of true in AMReX itself, but
-can still be over-written by setting a value in the inputs file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although this value replaces the current default value of true in AMReX itself, it
+will still be over-written by setting a value in the inputs file.</p>
+</div>
+</div>
+<div class="section" id="sharing-the-command-line">
+<span id="sec-basics-parmparse-sharingcl"></span><h2>Sharing the Command Line<a class="headerlink" href="#sharing-the-command-line" title="Permalink to this headline"></a></h2>
+<p>In some cases we want AMReX to only read some of the command line
+arguments – this happens, for example, when we are going to use AMReX
+in cooperation with another code package and that code also takes arguments.</p>
+<p>Consider:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">main2d.gnu.exe inputs amrex.v=1 amrex.fpe_trap_invalid=1 -- -tao_monitor</span>
+</pre></div>
+</div>
+<p>In this example, AMReX will parse the inputs file and the optional AMReX
+command line arguments, but will ignore arguments after the double dashes.</p>
+</div>
+<div class="section" id="command-line-flags">
+<h2>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Permalink to this headline"></a></h2>
+<p>AMReX allows application codes to parse flags such as <code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code>
+while still making use of ParmParse for parsing other runtime parameters but only
+if it is the first argument after the executable. If the first argument following
+the executable name begins with a dash, AMReX will initialize without reading
+any parameters and the application code may then parse the command line and
+handle those cases. Several built in functions are available to help do this.
+They are briefly introduced in the table below.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">AMReX functions for parsing the command line.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 9%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amrex::get_command()</span></code></p></td>
+<td><p>String</p></td>
+<td><p>Get the entire command line.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">amrex::get_argument_count()</span></code></p></td>
+<td><p>Int</p></td>
+<td><p>Get the number of command line arguments
+after the executable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amrex:get_command_argument(int</span> <span class="pre">n)</span></code></p></td>
+<td><p>String</p></td>
+<td><p>Returns the n-th argument after
+the exectuable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="parser">
 <span id="sec-basics-parser"></span><h1>Parser<a class="headerlink" href="#parser" title="Permalink to this headline"></a></h1>
@@ -401,29 +474,29 @@ comparison can be combined by <code class="docutils literal notranslate"><span c
 for true and <code class="docutils literal notranslate"><span class="pre">0</span></code> for false.  The precedence of the operators follows the
 convention of the C and C++ programming languages.  Here is an example of using
 the parser.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span> <span class="nf">parser</span><span class="p">(</span><span class="s">&quot;if(x&gt;a and x&lt;b, sin(x)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="k">if</span><span class="p">(</span><span class="n">z</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)),</span> <span class="mf">.3</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="s">&quot;)</span><span class="p">;</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">...);</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="p">...);</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="p">...);</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
-<span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// 3 because there are three variables.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;if(x&gt;a and x&lt;b, sin(x)*cos(y)*if(z&lt;0, 1.0, exp(-z)), .3*c**2)&quot;);</span>
+<span class="go">parser.setConstant(a, ...);</span>
+<span class="go">parser.setConstant(b, ...);</span>
+<span class="go">parser.setConstant(c, ...);</span>
+<span class="go">parser.registerVariables({&quot;x&quot;,&quot;y&quot;,&quot;z&quot;});</span>
+<span class="go">auto f = parser.compile&lt;3&gt;();  // 3 because there are three variables.</span>
 
-<span class="c1">// f can be used in both host and device code.  It takes 3 arguments in</span>
-<span class="c1">// this example.  The parser object must be alive for f to be valid.</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
-      <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">j</span><span class="o">*</span><span class="n">dy</span><span class="p">,</span> <span class="n">k</span><span class="o">*</span><span class="n">dz</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="go">// f can be used in both host and device code.  It takes 3 arguments in</span>
+<span class="go">// this example.  The parser object must be alive for f to be valid.</span>
+<span class="go">for (int k = 0; ...) {</span>
+<span class="go">  for (int j = 0; ...) {</span>
+<span class="go">    for (int i = 0; ...) {</span>
+<span class="go">      a(i,j,k) = f(i*dx, j*dy, k*dz);</span>
+<span class="go">    }</span>
+<span class="go">  }</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 <p>Local automatic variables can be defined in the expression.  For example,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span> <span class="n">parser</span><span class="p">(</span><span class="s">&quot;r2=x*x+y*y; r=sqrt(r2); cos(a+r2)*log(r)&quot;</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">...);</span>
-<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">});</span>
-<span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// 2 because there are two variables.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Parser parser(&quot;r2=x*x+y*y; r=sqrt(r2); cos(a+r2)*log(r)&quot;</span>
+<span class="go">parser.setConstant(a, ...);</span>
+<span class="go">parser.registerVariables({&quot;x&quot;,&quot;y&quot;});</span>
+<span class="go">auto f = parser.compile&lt;2&gt;();  // 2 because there are two variables.</span>
 </pre></div>
 </div>
 <p>Note that an assignment to an automatic variable must be terminated with
@@ -479,17 +552,6 @@ inserted by the compiler) do not function properly after
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Finalize</span></span></code> into its scope
 (e.g., a pair of curly braces or a separate function) to make sure
 resources are properly freed.</p>
-<div class="section" id="sharing-the-command-line">
-<h2>Sharing the Command Line<a class="headerlink" href="#sharing-the-command-line" title="Permalink to this headline"></a></h2>
-<p>In some cases we want AMReX to only read part of the command line – this happens, for example, when we
-are going to use AMReX in cooperation with another code package and that code also takes command-line
-arguments.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">main2d*.exe inputs amrex.v=1 amrex.fpe_trap_invalid=1 -- -tao_monitor</span>
-</pre></div>
-</div>
-<p>then AMReX will parse the inputs file and the optional AMReX’s command
-line arguments, but will ignore everything after the double dashes.</p>
-</div>
 </div>
 <div class="section" id="example-of-amr-grids">
 <span id="sec-basics-amrgrids"></span><h1>Example of AMR Grids<a class="headerlink" href="#example-of-amr-grids" title="Permalink to this headline"></a></h1>
@@ -504,10 +566,10 @@ two finer than those at level 0. The two finest grids (<em>red</em>) are at leve
 and the cells are a factor of two finer than the level 1 cells. There are 1, 2
 and 2 Boxes on levels 0, 1, and 2, respectively. Note that there is no direct
 parent-child connection. In this chapter, we will focus on single levels.</p>
-<div class="figure align-default" id="id1">
+<div class="figure align-default" id="id2">
 <span id="fig-basics-amrgrids"></span><a class="reference internal image-reference" href="_images/amrgrids.png"><img alt="_images/amrgrids.png" src="_images/amrgrids.png" style="width: 3in;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of AMR grids. There are three levels in total.
-There are 1, 2 and 2 Boxes on levels 0, 1, and 2, respectively.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+There are 1, 2 and 2 Boxes on levels 0, 1, and 2, respectively.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="box-intvect-and-indextype">
@@ -632,11 +694,11 @@ lower side of a cell has the same integer value as the cell centered index.
 That is if we consider a cell based index represent <span class="math notranslate nohighlight">\(i\)</span>, the nodal index
 with the same integer value represents <span class="math notranslate nohighlight">\(i-1/2\)</span>.
 <a class="reference internal" href="#fig-basics-indextypes"><span class="std std-numref">Fig. 2</span></a> shows some of the different index types for 2D.</p>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id3">
 <span id="fig-basics-indextypes"></span><a class="reference internal image-reference" href="_images/indextypes.png"><img alt="_images/indextypes.png" src="_images/indextypes.png" style="width: 5in;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Some of the different index types in two dimensions: (a) cell-centered, (b) <span class="math notranslate nohighlight">\(x\)</span>-face-centered
 (i.e., nodal in <span class="math notranslate nohighlight">\(x\)</span>-direction only), and (c) corner/nodal,
-i.e., nodal in all dimensions.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+i.e., nodal in all dimensions.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </div>
 <p>There are a number of ways of converting a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> from one type to another.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span> <span class="nf">b0</span> <span class="p">({</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">},</span> <span class="p">{</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">127</span><span class="p">});</span> <span class="c1">// Index type: (cell, cell, cell)</span>
@@ -1522,8 +1584,8 @@ also requires only two minor changes.</p>
 </div>
 <p>The kernels functions like <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">f1</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">f2</span></span></code> in the two examples here
 usually require very little changes.</p>
-<span id="fig-basics-cc-comparison"></span><table class="docutils align-center" id="id3">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Comparison of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> with (right) and without (left) tiling.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<span id="fig-basics-cc-comparison"></span><table class="docutils align-center" id="id4">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Comparison of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> with (right) and without (left) tiling.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1547,7 +1609,7 @@ usually require very little changes.</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#fig-basics-cc-comparison"><span class="std std-numref">Table 5</span></a> shows an example of the difference between
+<p><a class="reference internal" href="#fig-basics-cc-comparison"><span class="std std-numref">Table 6</span></a> shows an example of the difference between
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">validbox</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">tilebox</span></span></code>. In this example, there are two grids of
 cell-centered index type. The function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">validbox</span></span></code> always returns a
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> for the valid region of an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FArrayBox</span></span></code> no matter whether or not
@@ -1578,8 +1640,8 @@ direction. AMReX has a default tile size <code class="code cpp c++ docutils lite
 no tiling in 2D. This is used when tile size is not explicitly set but the
 tiling flag is on. One can change the default size using <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code>
 (section <a class="reference internal" href="#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>) parameter <code class="docutils literal notranslate"><span class="pre">fabarray.mfiter_tile_size.</span></code></p>
-<span id="fig-basics-ec-comparison"></span><table class="docutils align-center" id="id4">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Comparison of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> with (right) and without (left) tiling, for face-centered nodal indexing.</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<span id="fig-basics-ec-comparison"></span><table class="docutils align-center" id="id5">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Comparison of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> with (right) and without (left) tiling, for face-centered nodal indexing.</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1650,7 +1712,7 @@ example, <code class="code cpp c++ docutils literal notranslate"><span class="na
 <span class="math notranslate nohighlight">\(x\)</span>-direction and cell in other directions. The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">validbox</span></span></code>
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">tilebox</span></span></code> functions return Boxes of the same type as the
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> used in defining the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> (<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">F</span></span></code> in this example).
-<a class="reference internal" href="#fig-basics-ec-comparison"><span class="std std-numref">Table 6</span></a> illustrates an example of non-cell-centered
+<a class="reference internal" href="#fig-basics-ec-comparison"><span class="std std-numref">Table 7</span></a> illustrates an example of non-cell-centered
 valid and tile boxes. Besides <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">validbox</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">tilebox</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code>
 has a number of functions returning various Boxes.  Examples include,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span> <span class="nf">fabbox</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>       <span class="c1">// Return the Box of the FArrayBox</span>
@@ -1672,8 +1734,8 @@ same grid do not overlap. This is the basic design principle of these various
 tiling functions. Tiling is a way of domain decomposition for work sharing.
 Overlapping tiles is undesirable because work would be wasted and for
 multi-threaded codes race conditions could occur.</p>
-<span id="fig-basics-growbox-comparison"></span><table class="docutils align-center" id="id5">
-<caption><span class="caption-number">Table 7 </span><span class="caption-text">Comparing growing cell-type and face-type tile boxes.</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<span id="fig-basics-growbox-comparison"></span><table class="docutils align-center" id="id6">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Comparing growing cell-type and face-type tile boxes.</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1701,7 +1763,7 @@ multi-threaded codes race conditions could occur.</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#fig-basics-growbox-comparison"><span class="std std-numref">Table 7</span></a> illustrates an example of
+<p><a class="reference internal" href="#fig-basics-growbox-comparison"><span class="std std-numref">Table 8</span></a> illustrates an example of
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">growntilebox</span></span></code>. These functions in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> by
 value. There are three ways of using these functions.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">Box</span><span class="o">&amp;</span> <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>  <span class="c1">// const&amp; to temporary object is legal</span>
@@ -2320,9 +2382,9 @@ code tree for the heat equation example is simple, as shown in
 <a class="reference internal" href="#fig-basics-heat-flowchart"><span class="std std-numref">Fig. 3</span></a>. We recommend you study
 <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">advance.cpp</span></code> to see some of the classes described
 below in action.</p>
-<div class="figure align-default" id="id6">
+<div class="figure align-default" id="id7">
 <span id="fig-basics-heat-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart1.png"><img alt="_images/flowchart1.png" src="_images/flowchart1.png" style="width: 4in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Diagram of the source code structure for the HeatEquation_EX1_C example.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Diagram of the source code structure for the HeatEquation_EX1_C example.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </div>
 <p>Source code tree for the HeatEquation_EX1_C example</p>
 <blockquote>
