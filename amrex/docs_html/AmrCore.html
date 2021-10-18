@@ -300,12 +300,19 @@ Within AMReX_Interpolater.cpp/H are the derived classes:</p>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellBilinear</span></span></code></p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellConservativeLinear</span></span></code></p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellConservativeProtected</span></span></code></p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellConservativeQuartic</span></span></code></p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellQuadratic</span></span></code></p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">PCInterp</span></span></code></p></li>
-<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellConservativeQuartic</span></span></code></p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FaceLinear</span></span></code></p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FaceDivFree</span></span></code></p></li>
 </ul>
-<p>The Fortran routines that perform the actual work associated with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Interpolater</span></span></code> are
-contained in the files AMReX_INTERP_F.H and AMReX_INTERP_xD.F.</p>
+<p>These Interpolaters can be executed on CPU or GPU, with certain limitations:</p>
+<ul class="simple">
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellConservativeProtected</span></span></code> only works in 2D and 3D.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellQuadratic</span></span></code> only works in 2D.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">CellConservativeQuartic</span></span></code> only works with a refinement ratio of 2.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FaceDivFree</span></span></code> only works in 2D and 3D and with a refinement ratio of 2.</p></li>
+</ul>
 </div>
 <div class="section" id="using-fluxregisters">
 <span id="sec-amrcore-fluxreg"></span><h2>Using FluxRegisters<a class="headerlink" href="#using-fluxregisters" title="Permalink to this headline"></a></h2>
