@@ -47,6 +47,7 @@ var classamrex_1_1ParticleContainerBase =
     [ "m_gdb_object", "classamrex_1_1ParticleContainerBase.html#a2377d6db2ff1c36ebbb5424d391ada41", null ],
     [ "m_particle_locator", "classamrex_1_1ParticleContainerBase.html#aa9bbd6752d478b3a24e66f2caa11196b", null ],
     [ "m_verbose", "classamrex_1_1ParticleContainerBase.html#a89f6fb84fb7e73fc185ae5d8f45818ab", null ],
+    [ "memEfficientSort", "classamrex_1_1ParticleContainerBase.html#a5a0a39b2da4b85ad599ea7fc51fba940", null ],
     [ "neighbor_procs", "classamrex_1_1ParticleContainerBase.html#a0e1a0dcc5bf3f405f40ad020f18389bc", null ],
     [ "redistribute_mask_nghost", "classamrex_1_1ParticleContainerBase.html#ac6b4b306d8f0399657b3884f51ea569e", null ],
     [ "redistribute_mask_ptr", "classamrex_1_1ParticleContainerBase.html#a18183e85d5ae22c27721996b3c5bfead", null ],
