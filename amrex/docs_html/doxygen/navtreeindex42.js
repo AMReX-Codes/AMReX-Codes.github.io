@@ -1,6 +1,5 @@
 var NAVTREEINDEX42 =
 {
-"classamrex_1_1MLMG.html#ae5f98b72769ed94a44f850aa8aa1e1ba":[2,0,0,292,38],
 "classamrex_1_1MLMG.html#ae8120b974758c572d1463ee286204e10":[2,0,0,292,102],
 "classamrex_1_1MLMG.html#aeb5b459a58233233b7546e3cef9e928f":[2,0,0,292,72],
 "classamrex_1_1MLMG.html#aed64acecaae43cecb817b689d1da5e54":[2,0,0,292,97],
@@ -249,5 +248,6 @@ var NAVTREEINDEX42 =
 "classamrex_1_1MacProjector.html#aa260668b917216512f5e47a64f5ad60b":[2,0,0,267,25],
 "classamrex_1_1MacProjector.html#ac21ccd4081f20e018bd02689b363a35e":[2,0,0,267,42],
 "classamrex_1_1MacProjector.html#ac881c6b599a99ab3994488ea2cbe4f92":[2,0,0,267,1],
-"classamrex_1_1MacProjector.html#acaa4061613e27a1666415db843c11a1c":[2,0,0,267,6]
+"classamrex_1_1MacProjector.html#acaa4061613e27a1666415db843c11a1c":[2,0,0,267,6],
+"classamrex_1_1MacProjector.html#accaac7cfdc71e38df9e27629453110d6":[2,0,0,267,2]
 };

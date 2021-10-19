@@ -1,6 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"AMReX__TypeTraits_8H.html#a8690d4c6386d001b328b07257fe628a0":[3,0,0,2,239,39],
 "AMReX__TypeTraits_8H.html#abe72f840d81a1ce49a3811fe8295b222":[3,0,0,2,239,38],
 "AMReX__TypeTraits_8H.html#ad9ffd55042a6573c492b8fc107951d12":[3,0,0,2,239,36],
 "AMReX__TypeTraits_8H.html#adc50ea9983407ec975c6c594c92bae5d":[3,0,0,2,239,34],
@@ -249,5 +248,6 @@ var NAVTREEINDEX17 =
 "AMReX__constants__mod_8f90.html#a83c308d92e3f50a4417ffa2eff4fc09c":[3,0,0,2,53,16],
 "AMReX__constants__mod_8f90.html#a884b54aef39c5c0ccba71be9614da8ea":[3,0,0,2,53,8],
 "AMReX__constants__mod_8f90.html#a92568c3e1a4aca2cda4c4d024be1c584":[3,0,0,2,53,29],
-"AMReX__constants__mod_8f90.html#a92c54ddd1e792991bf2ffb06ab3397e2":[3,0,0,2,53,18]
+"AMReX__constants__mod_8f90.html#a92c54ddd1e792991bf2ffb06ab3397e2":[3,0,0,2,53,18],
+"AMReX__constants__mod_8f90.html#a92ecbb61cf990c72d4d745f36c45eb2b":[3,0,0,2,53,31]
 };

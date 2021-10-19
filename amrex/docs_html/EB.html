@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview of Embedded Boundary Description &mdash; amrex 21.11-dev documentation</title>
+  <title>Initializing the Geometric Database &mdash; amrex 21.11-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -56,15 +56,15 @@
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview of Embedded Boundary Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initializing-the-geometric-database">Initializing the Geometric Database</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Initializing the Geometric Database</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#implicit-function">Implicit Function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#eb2-geometryshop"><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">GeometryShop</span></span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#eb2-indexspace"><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IndexSpace</span></span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ebfarrayboxfactory">EBFArrayBoxFactory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#eb-data">EB Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#embedded-boundary-data">Embedded Boundary Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedded-boundary-data-structures">Embedded Boundary Data Structures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ebcellflagfab"><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBCellFlagFab</span></span></code></a></li>
 </ul>
 </li>
@@ -98,7 +98,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="EB_Chapter.html">Embedded Boundaries</a> &raquo;</li>
-      <li>Overview of Embedded Boundary Description</li>
+      <li>Initializing the Geometric Database</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/EB.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -108,46 +108,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="overview-of-embedded-boundary-description">
-<span id="sec-eb-eboverview"></span><h1>Overview of Embedded Boundary Description<a class="headerlink" href="#overview-of-embedded-boundary-description" title="Permalink to this headline"></a></h1>
-<p>For computations with complex geometries, AMReX provides data structures and
-algorithms to employ an embedded boundary (EB) approach to PDE discretizations.
-In this approach, the underlying computational mesh is uniform and
-block-structured, but the boundary of the irregular-shaped computational domain
-conceptually cuts through this mesh. Each cell in the mesh becomes labeled as
-regular, cut or covered, and the finite-volume based discretization methods
-traditionally used in AMReX applications can be modified to incorporate these
-cell shapes. See <a class="reference internal" href="#fig-ebexample"><span class="std std-numref">Fig. 12</span></a> for an illustration.</p>
-<div class="figure align-default" id="id1">
-<span id="fig-ebexample"></span><a class="reference internal image-reference" href="_images/EB_example.png"><img alt="_images/EB_example.png" src="_images/EB_example.png" style="width: 50.0%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
-rectangular mesh is cut by the irregular shape of the computational domain.
-The cells in the mesh are label as regular, cut or covered.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-<p>Because this is a relatively simple grid generation technique, computational
-meshes for rather complex geometries can be generated quickly and robustly.
-However, the technique can produce arbitrarily small cut cells in the domain.
-In practice such small cells can have significant impact on the robustness and
-stability of traditional finite volume methods. In this chapter we overview a
-class of approaches to deal with this “small cell” problem in a robust and
-efficient way, and discuss the tools and data that AMReX provides in order to
-implement them.</p>
-<p>Note that in a completely general implementation of the EB approach, there
-would be no restrictions on the shape or complexity of the EB surface.  With
-this generality comes the possibility that the process of “cutting” the cells
-results in a single <span class="math notranslate nohighlight">\((i,j,k)\)</span> cell being broken into multiple cell
-fragments.  The current release of AMReX does not support multi-valued cells,
-thus there is a practical restriction on the complexity of domains (and
-numerical algorithms) supported.</p>
-<p>This chapter discusses the EB tools, data structures and algorithms currently
-supported by AMReX to enable the construction of discretizations of
-conservation law systems. The discussion will focus on general requirements
-associated with building fluxes and taking divergences of them to advance such
-systems. We also give examples of how to initialize the geometry data
-structures and access them to build the numerical difference
-operators.  Finally we present EB support of linear solvers.</p>
-</div>
-<div class="section" id="initializing-the-geometric-database">
+  <div class="section" id="initializing-the-geometric-database">
 <span id="sec-eb-ebinit"></span><h1>Initializing the Geometric Database<a class="headerlink" href="#initializing-the-geometric-database" title="Permalink to this headline"></a></h1>
 <p>In AMReX geometric information is stored in a distributed database
 class that must be initialized at the start of the calculation. The
@@ -322,8 +283,8 @@ building the <code class="code cpp c++ docutils literal notranslate"><span class
 </pre></div>
 </div>
 </div>
-<div class="section" id="eb-data">
-<h1>EB Data<a class="headerlink" href="#eb-data" title="Permalink to this headline"></a></h1>
+<div class="section" id="embedded-boundary-data">
+<h1>Embedded Boundary Data<a class="headerlink" href="#embedded-boundary-data" title="Permalink to this headline"></a></h1>
 <p>Through member functions of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBFArrayBoxFactory</span></span></code>, we have access to the
 following data:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// see section on EBCellFlagFab</span>
@@ -345,12 +306,36 @@ following data:</p>
 <span class="n">Array</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiCutFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="n">getFaceCent</span> <span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Volume fraction is in a single-component <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>, and it is zero for
-covered cells, one for regular cells, and in between for cut cells. Centroid is
-in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components with each component
-of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>. The centroid is based on each
-cell’s local coordinates with respect to the embedded boundary. A
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> is very similar to a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>. Its data can be
+<ul class="simple">
+<li><p><strong>Volume fraction</strong> is in a single-component <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>. Data are in the range
+of <span class="math notranslate nohighlight">\([0,1]\)</span> with zero representing covered cells and one for regular
+cells.</p></li>
+<li><p><strong>Volume centroid</strong> (also called cell centroid) is
+in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components. Each component
+of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on each
+cell’s local coordinates with respect to the regular cell’s center.</p></li>
+<li><p><strong>Boundary centroid</strong> is also in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> with
+<code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components.  Each component
+of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on each
+cell’s local coordinates with respect to the regular cell’s center.</p></li>
+<li><p><strong>Face centroid</strong> is in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> with <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components.
+Each component of the data is in the range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>, based on
+each cell’s local coordinates with respect to the embedded boundary.</p></li>
+<li><p><strong>Area fractions</strong> are returned in an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array</span></span></code> of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code>
+pointers. For each direction, area fraction is for the face of that direction.
+Data are in the range of <span class="math notranslate nohighlight">\([0,1]\)</span> with zero representing a covered face
+and one an un-cut face.</p></li>
+<li><p><strong>Face centroids</strong> are returned in an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array</span></span></code> of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code>
+pointers. There are two components for each direction and the
+ordering is always the same as the original ordering of the coordinates. For
+example, for <span class="math notranslate nohighlight">\(y\)</span> face, the component 0 is for <span class="math notranslate nohighlight">\(x\)</span> coordinate and 1
+for <span class="math notranslate nohighlight">\(z\)</span>. The coordinates are in each face’s local frame normalized to the
+range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="embedded-boundary-data-structures">
+<h1>Embedded Boundary Data Structures<a class="headerlink" href="#embedded-boundary-data-structures" title="Permalink to this headline"></a></h1>
+<p>A <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> is very similar to a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>. Its data can be
 accessed with subscript operator</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">CutFab</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[]</span> <span class="p">(</span><span class="k">const</span> <span class="n">MFIter</span><span class="o">&amp;</span> <span class="n">mfi</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
@@ -360,15 +345,7 @@ just like <code class="code cpp c++ docutils literal notranslate"><span class="n
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> is that to save memory <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> only has data on boxes
 that contain cut cells. It is an error to call <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">operator</span></span><span class="punctuation"><span class="pre">[]</span></span></code> if that box
 does not have cut cells. Thus the call must be in a <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">if</span></span></code> test block (see
-section <a class="reference internal" href="#sec-eb-flag"><span class="std std-ref">EBCellFlagFab</span></a>). Boundary centroid is also a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code> with
-<code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> components, and it uses each cell’s local coordinates. Area
-fractions and face centroids are returned in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array</span></span></code> of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiCutFab</span></span></code>
-pointers. For each direction, area fraction is for the face of that direction.
-As for face centroids, there are two components for each direction and the
-ordering is always the same as the original ordering of the coordinates. For
-example, for <span class="math notranslate nohighlight">\(y\)</span> face, the component 0 is for <span class="math notranslate nohighlight">\(x\)</span> coordinate and 1
-for <span class="math notranslate nohighlight">\(z\)</span>. The coordinates are in each face’s local frame normalized to the
-range of <span class="math notranslate nohighlight">\([-0.5,0.5]\)</span>.</p>
+section <a class="reference internal" href="#sec-eb-flag"><span class="std std-ref">EBCellFlagFab</span></a>).</p>
 <div class="section" id="ebcellflagfab">
 <span id="sec-eb-flag"></span><h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBCellFlagFab</span></span></code><a class="headerlink" href="#ebcellflagfab" title="Permalink to this headline"></a></h2>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBCellFlagFab</span></span></code> contains information on cell types.  We can use

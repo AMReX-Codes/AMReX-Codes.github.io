@@ -15,10 +15,11 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview of Embedded Boundary Description" href="EB.html" />
+    <link rel="next" title="Initializing the Geometric Database" href="EB.html" />
     <link rel="prev" title="Getting Started" href="Fortran.html" /> 
 </head>
 
@@ -55,10 +56,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Embedded Boundaries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="EB.html">Overview of Embedded Boundary Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EB.html#initializing-the-geometric-database">Initializing the Geometric Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EB.html">Initializing the Geometric Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EB.html#ebfarrayboxfactory">EBFArrayBoxFactory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EB.html#eb-data">EB Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EB.html#embedded-boundary-data">Embedded Boundary Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EB.html#embedded-boundary-data-structures">Embedded Boundary Data Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EB.html#linear-solvers">Linear Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EB.html#tutorials">Tutorials</a></li>
 </ul>
@@ -99,13 +100,50 @@
            <div itemprop="articleBody">
              
   <div class="section" id="embedded-boundaries">
-<span id="chap-eb"></span><h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline"></a></h1>
+<span id="sec-eb-eboverview"></span><span id="chap-eb"></span><h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline"></a></h1>
+<p>For computations with complex geometries, AMReX provides data structures and
+algorithms to employ an embedded boundary (EB) approach to PDE discretizations.
+In this approach, the underlying computational mesh is uniform and
+block-structured, but the boundary of the irregular-shaped computational domain
+conceptually cuts through this mesh. Each cell in the mesh becomes labeled as
+regular, cut or covered, and the finite-volume based discretization methods
+traditionally used in AMReX applications can be modified to incorporate these
+cell shapes. See <a class="reference internal" href="#fig-ebexample"><span class="std std-numref">Fig. 12</span></a> for an illustration.</p>
+<div class="figure align-default" id="id1">
+<span id="fig-ebexample"></span><a class="reference internal image-reference" href="_images/EB_example.png"><img alt="_images/EB_example.png" src="_images/EB_example.png" style="width: 50.0%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
+rectangular mesh is cut by the irregular shape of the computational domain.
+The cells in the mesh are label as regular, cut or covered.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>Note that in a completely general implementation of the EB approach, there
+would be no restrictions on the shape or complexity of the EB surface.  With
+this generality comes the possibility that the process of “cutting” the cells
+results in a single <span class="math notranslate nohighlight">\((i,j,k)\)</span> cell being broken into multiple cell
+fragments.  The current release of AMReX does not support multi-valued cells,
+thus there is a practical restriction on the complexity of domains (and
+numerical algorithms) supported.</p>
+<p>AMReX’s relatively simple grid generation technique allows computational
+meshes for rather complex geometries to be generated quickly and robustly.
+However, the technique can produce arbitrarily small cut cells in the domain.
+In practice such small cells can have significant impact on the robustness and
+stability of traditional finite volume methods. Section
+<a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Redistribution.html#sec-redistribution" title="(in amrex-hydro v21.11-dev)"><span>Redistribution</span></a> in AMReX-Hydro’s documentation overviews the
+finite volume discretization in an embedded boundary cell and a
+class of approaches to deal with this “small cell” problem in a robust and
+efficient way.</p>
+<p>This chapter discusses the EB tools, data structures and algorithms currently
+supported by AMReX to enable the construction of discretizations of
+conservation law systems. The discussion will focus on general requirements
+associated with building fluxes and taking divergences of them to advance such
+systems. We also give examples of how to initialize the geometry data
+structures and access them to build the numerical difference
+operators.  Finally we present EB support of linear solvers.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="EB.html">Overview of Embedded Boundary Description</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html#initializing-the-geometric-database">Initializing the Geometric Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html">Initializing the Geometric Database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB.html#ebfarrayboxfactory">EBFArrayBoxFactory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EB.html#eb-data">EB Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html#embedded-boundary-data">Embedded Boundary Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB.html#embedded-boundary-data-structures">Embedded Boundary Data Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB.html#linear-solvers">Linear Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB.html#tutorials">Tutorials</a></li>
 </ul>
@@ -117,7 +155,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Fortran.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="EB.html" class="btn btn-neutral float-right" title="Overview of Embedded Boundary Description" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="EB.html" class="btn btn-neutral float-right" title="Initializing the Geometric Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
