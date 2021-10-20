@@ -1,7 +1,7 @@
 var searchData=
 [
   ['computeadvectivevel_212',['ComputeAdvectiveVel',['../namespaceEBGodunov.html#a6e2ba5616ba9119c5bb121aab68079ae',1,'EBGodunov::ComputeAdvectiveVel()'],['../namespaceGodunov.html#aea3d7e45ff84f43669b4c624673291c8',1,'Godunov::ComputeAdvectiveVel()']]],
-  ['computeaofs_213',['ComputeAofs',['../namespaceEBMOL.html#aba44b59f6a3b433b34884a7265a7d575',1,'EBMOL::ComputeAofs()'],['../namespaceEBGodunov.html#a9253aa6eee4f4740b25e3a44a6bac8de',1,'EBGodunov::ComputeAofs()'],['../namespaceMOL.html#a5faadc1a35e816f7acc88eb769edbb55',1,'MOL::ComputeAofs()'],['../namespaceGodunov.html#a4a51a30be0f1916b4253c8201edcf5d3',1,'Godunov::ComputeAofs()']]],
+  ['computeaofs_213',['ComputeAofs',['../namespaceEBMOL.html#aba44b59f6a3b433b34884a7265a7d575',1,'EBMOL::ComputeAofs()'],['../namespaceEBGodunov.html#adfab094510ce70d4f1b46fb30b313cea',1,'EBGodunov::ComputeAofs()'],['../namespaceMOL.html#a5faadc1a35e816f7acc88eb769edbb55',1,'MOL::ComputeAofs()'],['../namespaceGodunov.html#a01641f1f9acd1de79710d39237a338f8',1,'Godunov::ComputeAofs()']]],
   ['computedivergence_214',['ComputeDivergence',['../namespaceHydroUtils.html#a0f59801cda64952e4b63910b1f42c455',1,'HydroUtils']]],
   ['computeedgestate_215',['ComputeEdgeState',['../namespaceEBMOL.html#a94df1b279b45eac5141dfe0dff0a79bc',1,'EBMOL::ComputeEdgeState()'],['../namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4',1,'EBGodunov::ComputeEdgeState()'],['../namespaceMOL.html#a52c37e57c6f658058bac4bc5232824fa',1,'MOL::ComputeEdgeState()'],['../namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222',1,'Godunov::ComputeEdgeState()']]],
   ['computefluxes_216',['ComputeFluxes',['../namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7',1,'HydroUtils']]],
