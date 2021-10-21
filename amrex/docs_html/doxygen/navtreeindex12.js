@@ -1,10 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"AMReX__MemPool_8cpp.html#ac5945e956f410432b6b174d888dd6dce":[3,0,0,2,163,0],
-"AMReX__MemProfiler_8H.html":[3,0,0,2,167],
-"AMReX__MemProfiler_8H_source.html":[3,0,0,2,167],
-"AMReX__MemProfiler_8cpp.html":[3,0,0,2,166],
-"AMReX__MemProfiler_8cpp.html#a92b62b2e393693e759cc2c4fec860c06":[3,0,0,2,166,1],
 "AMReX__MemProfiler_8cpp.html#ac3c395681af12cfb805dd6eb440b68cf":[3,0,0,2,166,0],
 "AMReX__Morton_8H.html":[3,0,0,2,175],
 "AMReX__Morton_8H.html#a16988bc3300f11fdee381c8ef8bc80f6":[3,0,0,2,175,4],
@@ -249,5 +244,10 @@ var NAVTREEINDEX12 =
 "AMReX__NonLocalBC_8H.html#ad604544d2fd60b6d9fb7a8b75f95ffe0":[3,0,0,2,189,61],
 "AMReX__NonLocalBC_8H.html#ad6afa903ade1682dd13aecc08cb7b629":[3,0,0,2,189,53],
 "AMReX__NonLocalBC_8H.html#adc23e3a1b040b4f68b4429a2a40e00d6":[3,0,0,2,189,18],
-"AMReX__NonLocalBC_8H.html#ae5f39fd429a1bfa804335a7504378c42":[3,0,0,2,189,31]
+"AMReX__NonLocalBC_8H.html#ae5f39fd429a1bfa804335a7504378c42":[3,0,0,2,189,31],
+"AMReX__NonLocalBC_8H_source.html":[3,0,0,2,189],
+"AMReX__NonLocalBC_8cpp.html":[3,0,0,2,188],
+"AMReX__NonLocalBC_8cpp.html#a303b8c034244500930c9f5ead86a22bf":[3,0,0,2,188,3],
+"AMReX__NonLocalBC_8cpp.html#a34a28ebeabdd6a92596cb786799a5046":[3,0,0,2,188,1],
+"AMReX__NonLocalBC_8cpp.html#abf909fc012a4354b2f2411d36eedc26a":[3,0,0,2,188,2]
 };

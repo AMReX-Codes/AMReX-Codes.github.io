@@ -7052,7 +7052,7 @@
     <member refid="classamrex_1_1MLNodeLinOp_1a2032ea2a9fd37bb9179bc442d4949514" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a9c212333d250c722b7c8ff2d21f19073" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a3bcbe4767274ef89df6f5eaaacded060" kind="function"><name>apply</name></member>
-    <member refid="classamrex_1_1MLNodeLinOp_1ae280045164562bc4e371043d97d73d2e" kind="function"><name>smooth</name></member>
+    <member refid="classamrex_1_1MLNodeLinOp_1aa6f77ffd080d73ac9346cc408ee7a6d8" kind="function"><name>smooth</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a9577a87ff76e6c9406e3cbe716d26746" kind="function"><name>solutionResidual</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a2018b943fdab7019461dc9580b04177c" kind="function"><name>correctionResidual</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1ad4308a8cc2e4cb0ee8850640a80ca2a2" kind="function"><name>compFlux</name></member>
@@ -7078,6 +7078,7 @@
   <compound refid="classamrex_1_1MLNodeTensorLaplacian" kind="class"><name>amrex::MLNodeTensorLaplacian</name>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1a0607bbf4e032f81bfd48d64cfca15cda" kind="variable"><name>nelems</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1a84d4e74b64ef41514492203039ea9d31" kind="variable"><name>m_sigma</name></member>
+    <member refid="classamrex_1_1MLNodeTensorLaplacian_1a32694ef00d37d519168801799c4b90e1" kind="variable"><name>m_redblack</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1aa626d5b8ace890b7e6bea033957f2618" kind="function"><name>MLNodeTensorLaplacian</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1ad8c26ff67ae05f0dcdf8b886d856209a" kind="function"><name>MLNodeTensorLaplacian</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1aeab3e4177d4f9c42b7735fa1fc4f53c8" kind="function"><name>~MLNodeTensorLaplacian</name></member>
@@ -7093,11 +7094,13 @@
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1ad886e81a6fbce7dda6d9a8cf569fb707" kind="function"><name>interpolation</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1aa8b834ce4429f552256ed5e1aae9be74" kind="function"><name>averageDownSolutionRHS</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1a011f0b17c95908e2eb6f61483229b6f3" kind="function"><name>reflux</name></member>
+    <member refid="classamrex_1_1MLNodeTensorLaplacian_1a241a70e73822570252d889e7e7bd6110" kind="function"><name>smooth</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1af3750449862fc251b642c8105e748fc9" kind="function"><name>prepareForSolve</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1a71767222be343d1669e4bc2644909320" kind="function"><name>Fapply</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1abd50cf2d38f371563d7522b97c700903" kind="function"><name>Fsmooth</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1a895ef13fc5b9a48796e5a704768eceee" kind="function"><name>normalize</name></member>
     <member refid="classamrex_1_1MLNodeTensorLaplacian_1a9c5ab123d700922d2483e3e09d66cdbf" kind="function"><name>fixUpResidualMask</name></member>
+    <member refid="classamrex_1_1MLNodeTensorLaplacian_1afc61f3c4438ad57fb202dcd0b4417498" kind="function"><name>scaledSigma</name></member>
   </compound>
   <compound refid="classamrex_1_1MLPoisson" kind="class"><name>amrex::MLPoisson</name>
     <member refid="classamrex_1_1MLPoisson_1afffef821b522beac6e041bd1f4ca424f" kind="variable"><name>m_is_singular</name></member>
@@ -12024,12 +12027,10 @@
     <member refid="namespaceamrex_1ad804c9fcd8b74d9d8d9477fe5637e0f1" kind="function"><name>mlndlap_jacobi_sten</name></member>
     <member refid="namespaceamrex_1a6dac73b981a4a840ea27018fdb17d6a2" kind="function"><name>mlndlap_any_fine_sync_cells</name></member>
     <member refid="namespaceamrex_1ac7e03fbccf0d29fad0597554a3abf2a2" kind="function"><name>mlndtslap_interpadd</name></member>
-    <member refid="namespaceamrex_1a25442c3c36fff26f4ff7435468f856e4" kind="function"><name>mlndtslap_adotx</name></member>
-    <member refid="namespaceamrex_1a793ed31acd5f14d952eba37759273e9b" kind="function"><name>mlndtslap_gauss_seidel</name></member>
-    <member refid="namespaceamrex_1a1412469d4e1d2d9dfa24417caca5bd0e" kind="function"><name>mlndtslap_normalize</name></member>
-    <member refid="namespaceamrex_1aab4e7e12e6c1572b8c6ddbff9429e00f" kind="function"><name>mlndtslap_adotx</name></member>
-    <member refid="namespaceamrex_1aeb97b30cc1d2f209245e7624fb369e93" kind="function"><name>mlndtslap_gauss_seidel</name></member>
-    <member refid="namespaceamrex_1a7dd14d39cc4e8c7901b5152ee458f6a0" kind="function"><name>mlndtslap_normalize</name></member>
+    <member refid="namespaceamrex_1a53370b735fdd3cf1ef91f247b59fa59a" kind="function"><name>mlndtslap_adotx</name></member>
+    <member refid="namespaceamrex_1a7f03c49565fe408f76ae7aa2ca26dc99" kind="function"><name>mlndtslap_gauss_seidel</name></member>
+    <member refid="namespaceamrex_1aa1536ebc938e56df4e34d2a480de5887" kind="function"><name>mlndtslap_adotx</name></member>
+    <member refid="namespaceamrex_1a278a64e576981a2a11e821afe9ebf758" kind="function"><name>mlndtslap_gauss_seidel</name></member>
     <member refid="namespaceamrex_1a6a70e0f53cf779275eab518f6e11e184" kind="function"><name>mlpoisson_adotx</name></member>
     <member refid="namespaceamrex_1a80ebb0cc1dd59707e6caf3b1623c9ae2" kind="function"><name>mlpoisson_adotx_os</name></member>
     <member refid="namespaceamrex_1a614625fade07c93188a447ded90afec4" kind="function"><name>mlpoisson_adotx_m</name></member>
