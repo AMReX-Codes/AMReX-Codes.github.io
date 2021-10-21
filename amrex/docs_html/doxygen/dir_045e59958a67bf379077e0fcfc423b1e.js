@@ -87,22 +87,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_CudaGraph.H", "AMReX__CudaGraph_8H.html", null ],
     [ "AMReX_CuptiTrace.cpp", "AMReX__CuptiTrace_8cpp.html", null ],
     [ "AMReX_CuptiTrace.H", "AMReX__CuptiTrace_8H.html", null ],
-    [ "AMReX_DArena.cpp", "AMReX__DArena_8cpp.html", null ],
-    [ "AMReX_DArena.H", "AMReX__DArena_8H.html", [
-      [ "DArena", "classamrex_1_1DArena.html", "classamrex_1_1DArena" ]
-    ] ],
     [ "AMReX_Dim3.H", "AMReX__Dim3_8H.html", "AMReX__Dim3_8H" ],
     [ "AMReX_DistributionMapping.cpp", "AMReX__DistributionMapping_8cpp.html", "AMReX__DistributionMapping_8cpp" ],
     [ "AMReX_DistributionMapping.H", "AMReX__DistributionMapping_8H.html", "AMReX__DistributionMapping_8H" ],
-    [ "AMReX_EArena.cpp", "AMReX__EArena_8cpp.html", null ],
-    [ "AMReX_EArena.H", "AMReX__EArena_8H.html", [
-      [ "EArena", "classamrex_1_1EArena.html", "classamrex_1_1EArena" ],
-      [ "Node", "structamrex_1_1EArena_1_1Node.html", "structamrex_1_1EArena_1_1Node" ],
-      [ "CompareSize", "structamrex_1_1EArena_1_1Node_1_1CompareSize.html", "structamrex_1_1EArena_1_1Node_1_1CompareSize" ],
-      [ "CompareAddr", "structamrex_1_1EArena_1_1Node_1_1CompareAddr.html", "structamrex_1_1EArena_1_1Node_1_1CompareAddr" ],
-      [ "hash", "structamrex_1_1EArena_1_1Node_1_1hash.html", "structamrex_1_1EArena_1_1Node_1_1hash" ],
-      [ "equal", "structamrex_1_1EArena_1_1Node_1_1equal.html", "structamrex_1_1EArena_1_1Node_1_1equal" ]
-    ] ],
     [ "AMReX_error_fi.cpp", "AMReX__error__fi_8cpp.html", "AMReX__error__fi_8cpp" ],
     [ "AMReX_error_mod.F90", "AMReX__error__mod_8F90.html", "AMReX__error__mod_8F90" ],
     [ "AMReX_Exception.H", "AMReX__Exception_8H.html", "AMReX__Exception_8H" ],
