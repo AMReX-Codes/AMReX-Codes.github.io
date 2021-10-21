@@ -147,8 +147,11 @@
 <para>Key for unique combination of <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> Note both <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> are reference counted. Objects with the same references have the same key. </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6">
+      <node id="8">
         <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="4">
         <label>amrex::IntVect</label>
@@ -158,10 +161,22 @@
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="11">
+      <node id="9">
+        <label>T</label>
+      </node>
+      <node id="5">
+        <label>std::unordered_map&lt; IntVect, std::vector&lt; int &gt;, IntVect::shift_hasher &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -171,43 +186,52 @@
           <edgelabel>crsn</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>m_abox</edgelabel>
+          <edgelabel>hash</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
+          <edgelabel>m_abox</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
           <edgelabel>bbox</edgelabel>
         </childnode>
       </node>
-      <node id="12">
+      <node id="15">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
-      <node id="7">
+      <node id="10">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
         <childnode refid="4" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="9">
+      <node id="12">
         <label>amrex::DistributionMapping::RefID</label>
         <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
-        <childnode refid="10" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="11">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="10">
+      <node id="13">
         <label>amrex::DistributionMapping::Ref</label>
         <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="11" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>m_index_array</edgelabel>
           <edgelabel>m_pmap</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_ownership</edgelabel>
         </childnode>
       </node>
       <node id="1">
@@ -216,9 +240,12 @@
         <childnode refid="2" relation="usage">
           <edgelabel>m_ba_id</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>m_dm_id</edgelabel>
         </childnode>
+      </node>
+      <node id="16">
+        <label>std::vector&lt; bool &gt;</label>
       </node>
       <node id="2">
         <label>amrex::BoxArray::RefID</label>
@@ -227,11 +254,14 @@
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="7">
         <label>amrex::Vector&lt; amrex::Box &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; int &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="222" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="222" bodyend="240"/>

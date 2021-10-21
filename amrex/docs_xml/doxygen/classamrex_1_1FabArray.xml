@@ -4574,9 +4574,12 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="7">
+      <node id="8">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="13">
+        <label>T</label>
       </node>
       <node id="1">
         <label>amrex::FabArray&lt; FAB &gt;</label>
@@ -4585,35 +4588,53 @@
           <edgelabel>m_const_arrays</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
+          <edgelabel>m_fabs_v</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
           <edgelabel>m_dallocator</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>m_tags</edgelabel>
+        <childnode refid="9" relation="usage">
+          <edgelabel>pcd</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
-          <edgelabel>shmem</edgelabel>
+          <edgelabel>os_temp</edgelabel>
         </childnode>
         <childnode refid="11" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
           <edgelabel>m_arrays</edgelabel>
         </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_factory</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>fbd</edgelabel>
+        </childnode>
       </node>
-      <node id="11">
+      <node id="15">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
-        <childnode refid="12" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>hp</edgelabel>
           <edgelabel>dp</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>amrex::DataAllocator</label>
         <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
-      <node id="9">
+      <node id="12">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+        <childnode refid="13" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="2">
         <label>amrex::MultiArray4&lt; value_type const &gt;</label>
@@ -4623,7 +4644,7 @@
           <edgelabel>dp</edgelabel>
         </childnode>
       </node>
-      <node id="12">
+      <node id="16">
         <label>amrex::Array4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1Array4"/>
         <childnode refid="4" relation="usage">
@@ -4631,14 +4652,20 @@
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="5">
+        <label>std::vector&lt; FAB * &gt;</label>
+      </node>
+      <node id="18">
+        <label>std::unique_ptr&lt; amrex::FBData&lt; FAB &gt; &gt;</label>
+      </node>
+      <node id="14">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
@@ -4654,11 +4681,20 @@
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="10">
+        <label>std::unique_ptr&lt; amrex::FabArray&lt; FAB &gt; &gt;</label>
+      </node>
+      <node id="11">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="12" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="17">
+        <label>std::unique_ptr&lt; amrex::FabFactory&lt; FAB &gt; &gt;</label>
+      </node>
+      <node id="9">
+        <label>std::unique_ptr&lt; amrex::PCData&lt; FAB &gt; &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="8" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="8" bodyend="-1"/>

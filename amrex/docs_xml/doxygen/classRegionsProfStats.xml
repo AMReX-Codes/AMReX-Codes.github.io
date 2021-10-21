@@ -983,21 +983,36 @@
         <label>BLProfStats</label>
         <link refid="classBLProfStats"/>
         <childnode refid="3" relation="usage">
+          <edgelabel>blpDataFileNames</edgelabel>
+          <edgelabel>regionNames</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
           <edgelabel>filterTimeRanges</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>regionTimeRanges</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="11" relation="usage">
+          <edgelabel>excludeSet</edgelabel>
+          <edgelabel>includeSet</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
           <edgelabel>blpFNames</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="4" relation="usage">
+          <edgelabel>dirName</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
           <edgelabel>blpDataBlocks</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>blpDataStreams</edgelabel>
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="18" relation="usage">
+          <edgelabel>barrierNumbersToNames</edgelabel>
+          <edgelabel>regionNumbers</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
           <edgelabel>gPercent</edgelabel>
           <edgelabel>minRegionTime</edgelabel>
           <edgelabel>calcEndTime</edgelabel>
@@ -1009,97 +1024,163 @@
         <link refid="classRegionsProfStats"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>mFNameNumbersLocal</edgelabel>
+          <edgelabel>regDataFileNames</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>mTimersTotalsSorted</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
           <edgelabel>numbersToFName</edgelabel>
           <edgelabel>regHeaderFileNames</edgelabel>
         </childnode>
-        <childnode refid="14" relation="usage">
+        <childnode refid="21" relation="usage">
           <edgelabel>fnameRemap</edgelabel>
         </childnode>
-        <childnode refid="16" relation="usage">
+        <childnode refid="23" relation="usage">
           <edgelabel>dataBlocks</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>regDataStreams</edgelabel>
         </childnode>
-        <childnode refid="18" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>mFNameNumbersPerProc</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="11">
+        <label>std::set&lt; int &gt;</label>
+      </node>
+      <node id="10">
         <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt; &gt; &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
-      <node id="4">
+      <node id="8">
+        <label>T</label>
+      </node>
+      <node id="7">
         <label>std::vector&lt; std::list&lt; BLProfStats::TimeRange &gt;, std::allocator&lt; std::list&lt; BLProfStats::TimeRange &gt; &gt; &gt;</label>
-      </node>
-      <node id="13">
-        <label>Real</label>
-      </node>
-      <node id="5">
-        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="19">
-        <label>std::vector&lt; std::map&lt; std::string, int &gt;, std::allocator&lt; std::map&lt; std::string, int &gt; &gt; &gt;</label>
-      </node>
-      <node id="8">
-        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
-      </node>
-      <node id="14">
-        <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
+        <label>Real</label>
       </node>
       <node id="9">
-        <label>amrex::Vector&lt; BLProfStats::BLPDataBlock &gt;</label>
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="16">
+      <node id="26">
+        <label>std::vector&lt; std::map&lt; std::string, int &gt;, std::allocator&lt; std::map&lt; std::string, int &gt; &gt; &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>std::map&lt; Real, std::string, std::greater&lt; Real &gt; &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>amrex::Vector&lt; BLProfStats::BLPDataBlock &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>std::map&lt; int, std::string &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
         <label>amrex::Vector&lt; RegionsProfStats::DataBlock &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::Vector&lt; std::list&lt; BLProfStats::TimeRange &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="25">
+        <label>amrex::Vector&lt; std::map&lt; std::string, int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>amrex::Vector&lt; std::ifstream * &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="17" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>amrex::Vector&lt; std::list&lt; BLProfStats::TimeRange &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>amrex::Vector&lt; std::map&lt; std::string, int &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="19" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>amrex::Vector&lt; std::ifstream * &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
+      <node id="17">
         <label>std::vector&lt; std::ifstream *, std::allocator&lt; std::ifstream * &gt; &gt;</label>
-      </node>
-      <node id="10">
-        <label>std::vector&lt; BLProfStats::BLPDataBlock, std::allocator&lt; BLProfStats::BLPDataBlock &gt; &gt;</label>
-      </node>
-      <node id="7">
-        <label>amrex::Vector&lt; std::string &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="15">
-        <label>std::vector&lt; amrex::Vector&lt; int &gt;, std::allocator&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
+        <label>std::vector&lt; BLProfStats::BLPDataBlock, std::allocator&lt; BLProfStats::BLPDataBlock &gt; &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
-      <node id="17">
+      <node id="12">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::map&lt; std::string, int &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>std::vector&lt; amrex::Vector&lt; int &gt;, std::allocator&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
         <label>std::vector&lt; RegionsProfStats::DataBlock, std::allocator&lt; RegionsProfStats::DataBlock &gt; &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_RegionsProfStats.H" line="38" column="42" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_RegionsProfStats.H" bodystart="38" bodyend="150"/>

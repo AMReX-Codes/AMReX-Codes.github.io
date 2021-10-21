@@ -103,15 +103,24 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
+      <node id="3">
         <label>Real</label>
       </node>
       <node id="1">
         <label>BLProfStats::CallTreeNode</label>
         <link refid="structBLProfStats_1_1CallTreeNode"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>calledFunctions</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
           <edgelabel>stackTime</edgelabel>
           <edgelabel>totalTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::map&lt; int, BLProfStats::CallTreeNode &gt;</label>
+        <childnode refid="1" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

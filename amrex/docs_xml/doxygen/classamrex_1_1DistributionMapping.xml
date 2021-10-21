@@ -1643,6 +1643,50 @@
     <detaileddescription>
 <para>This class calculates the distribution of FABs to MPI processes in a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> in a multi-processor environment. By distribution is meant what MPI process in the multi-processor environment owns what FAB. Only the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on which the <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> is built is used in determining the distribution. The three types of distributions supported are round-robin, knapsack, and SFC. In the round-robin distribution FAB i is owned by CPU iN where N is total number of CPUs. In the knapsack distribution the FABs are partitioned across CPUs such that the total volume of the Boxes in the underlying <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> are as equal across CPUs as is possible. The SFC distribution is based on a space filling curve. </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>T</label>
+      </node>
+      <node id="4">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; amrex::DistributionMapping::Ref &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_ownership</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_ref</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; bool &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" bodystart="41" bodyend="369"/>
     <listofallmembers>
       <member refid="classamrex_1_1DistributionMapping_1ae88ca91d12a18c9eae7c36348e7c99fd" prot="public" virt="non-virtual"><scope>amrex::DistributionMapping</scope><name>capacity</name></member>

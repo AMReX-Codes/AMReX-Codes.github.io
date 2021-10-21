@@ -397,10 +397,44 @@
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
+      <node id="6">
+        <label>std::set&lt; Node &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::mutex</label>
+      </node>
+      <node id="7">
+        <label>amrex::CArena::Node</label>
+        <link refid="classamrex_1_1CArena_1_1Node"/>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;</label>
+      </node>
+      <node id="8">
+        <label>std::unordered_set&lt; amrex::CArena::Node, amrex::CArena::Node::hash &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::CArena</label>
         <link refid="classamrex_1_1CArena"/>
         <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_alloc</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>carena_mutex</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_freelist</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_busylist</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

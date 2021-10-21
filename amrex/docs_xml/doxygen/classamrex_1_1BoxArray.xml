@@ -1779,69 +1779,113 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="9">
+      <node id="13">
+        <label>amrex::BoxList</label>
+        <link refid="classamrex_1_1BoxList"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_lbox</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
         <label>amrex::BATindexType</label>
         <link refid="structamrex_1_1BATindexType"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="11">
+      <node id="8">
+        <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
         <label>amrex::BATindexType_coarsenRatio</label>
         <link refid="structamrex_1_1BATindexType__coarsenRatio"/>
-        <childnode refid="5" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="20">
         <label>amrex::BATnull</label>
         <link refid="structamrex_1_1BATnull"/>
       </node>
-      <node id="5">
+      <node id="4">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="5" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="9">
+        <label>T</label>
+      </node>
+      <node id="5">
+        <label>std::unordered_map&lt; IntVect, std::vector&lt; int &gt;, IntVect::shift_hasher &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
         <label>amrex::Orientation</label>
         <link refid="classamrex_1_1Orientation"/>
       </node>
-      <node id="2">
+      <node id="3">
+        <label>amrex::BARef</label>
+        <link refid="structamrex_1_1BARef"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>crsn</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>hash</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_abox</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>bbox</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
         <label>amrex::BATransformer</label>
         <link refid="structamrex_1_1BATransformer"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>m_op</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="18">
         <label>amrex::BATcoarsenRatio</label>
         <link refid="structamrex_1_1BATcoarsenRatio"/>
-        <childnode refid="5" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
       </node>
-      <node id="3">
+      <node id="15">
         <label>amrex::BATransformer::BATOp</label>
         <link refid="unionamrex_1_1BATransformer_1_1BATOp"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>m_bndryReg</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>m_coarsenRatio</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="19" relation="usage">
           <edgelabel>m_indexType</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>m_null</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="21" relation="usage">
           <edgelabel>m_indexType_coarsenRatio</edgelabel>
         </childnode>
       </node>
@@ -1849,29 +1893,67 @@
         <label>amrex::BoxArray</label>
         <link refid="classamrex_1_1BoxArray"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>m_ref</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_simplified_list</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
           <edgelabel>m_bat</edgelabel>
         </childnode>
       </node>
-      <node id="4">
+      <node id="10">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; amrex::BARef &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
         <label>amrex::BATbndryReg</label>
         <link refid="structamrex_1_1BATbndryReg"/>
-        <childnode refid="5" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>m_doihi</edgelabel>
           <edgelabel>m_doilo</edgelabel>
           <edgelabel>m_hishft</edgelabel>
           <edgelabel>m_crse_ratio</edgelabel>
           <edgelabel>m_loshft</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="17" relation="usage">
           <edgelabel>m_face</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="11">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="12">
+        <label>std::shared_ptr&lt; amrex::BoxList &gt;</label>
+        <childnode refid="13" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>amrex::Vector&lt; amrex::Box &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; int &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" line="526" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" bodystart="525" bodyend="830"/>

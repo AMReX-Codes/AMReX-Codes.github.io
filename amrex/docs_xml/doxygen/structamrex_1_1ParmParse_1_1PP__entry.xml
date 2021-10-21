@@ -187,15 +187,41 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="3">
+        <label>T</label>
+      </node>
       <node id="1">
         <label>amrex::ParmParse::PP_entry</label>
         <link refid="structamrex_1_1ParmParse_1_1PP__entry"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>m_table</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
           <edgelabel>m_name</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_vals</edgelabel>
         </childnode>
       </node>
       <node id="2">
-        <label>string</label>
+        <label>std::list&lt; T &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="1007" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="1006" bodyend="1023"/>

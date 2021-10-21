@@ -43,15 +43,54 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="3">
+        <label>std::ostringstream</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::AllPrint</label>
         <link refid="classamrex_1_1AllPrint"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>std::basic_ostringstream&lt; char &gt;</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_ostream&lt; Char &gt;</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::basic_ios&lt; Char &gt;</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::ios_base</label>
+      </node>
+      <node id="8">
+        <label>std::ostream</label>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::basic_ostream&lt; char &gt;</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>amrex::Print</label>
         <link refid="classamrex_1_1Print"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ss</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>os</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Print.H" line="111" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Print.H" bodystart="109" bodyend="118"/>

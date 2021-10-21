@@ -278,8 +278,11 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="10">
+      <node id="12">
         <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="2">
         <label>amrex::EB2::IndexSpace</label>
@@ -288,39 +291,57 @@
           <edgelabel>m_instance</edgelabel>
         </childnode>
       </node>
-      <node id="12">
-        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+      <node id="5">
+        <label>T</label>
       </node>
-      <node id="7">
+      <node id="14">
+        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::EB2::IndexSpace &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::EB2::IndexSpace &gt; &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>std::vector&lt; amrex::EB2::GShopLevel&lt; G &gt;, std::allocator&lt; amrex::EB2::GShopLevel&lt; G &gt; &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
-      <node id="8">
+      <node id="10">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>amrex::EB2::IndexSpaceImp&lt; G &gt;</label>
         <link refid="classamrex_1_1EB2_1_1IndexSpaceImp"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>m_gslevel</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_ngrow</edgelabel>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_impfunc</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
-          <edgelabel>m_domain</edgelabel>
+          <edgelabel>m_ngrow</edgelabel>
         </childnode>
         <childnode refid="11" relation="usage">
+          <edgelabel>m_domain</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
       </node>
@@ -330,22 +351,25 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>amrex::Vector&lt; amrex::EB2::GShopLevel&lt; G &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::unique_ptr&lt; F &gt;</label>
+      </node>
+      <node id="13">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="14" relation="public-inheritance">
         </childnode>
       </node>
       <node id="11">
-        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
         <label>amrex::Vector&lt; amrex::Box &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="12" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

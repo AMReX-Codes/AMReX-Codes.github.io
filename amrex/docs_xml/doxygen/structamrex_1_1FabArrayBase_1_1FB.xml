@@ -232,22 +232,50 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
+      <node id="5">
+        <label>K</label>
+      </node>
+      <node id="9">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
+      <node id="6">
+        <label>T</label>
+      </node>
       <node id="2">
         <label>amrex::FabArrayBase::CommMetaData</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CommMetaData"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_RcvTags</edgelabel>
+          <edgelabel>m_SndTags</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_LocTags</edgelabel>
+        </childnode>
       </node>
-      <node id="5">
+      <node id="8">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::map&lt; K, T &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>period</edgelabel>
         </childnode>
       </node>
@@ -256,20 +284,32 @@
         <link refid="structamrex_1_1FabArrayBase_1_1FB"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>m_ngrow</edgelabel>
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
-      <node id="4">
+      <node id="3">
+        <label>std::unique_ptr&lt; MapOfCopyComTagContainers &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="7">
+        <label>std::unique_ptr&lt; CopyComTagsContainer &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="489" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="487" bodyend="515"/>

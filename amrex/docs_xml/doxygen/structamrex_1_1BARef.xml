@@ -464,8 +464,11 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
+      <node id="6">
         <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="2">
         <label>amrex::IntVect</label>
@@ -475,6 +478,18 @@
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
+      <node id="7">
+        <label>T</label>
+      </node>
+      <node id="3">
+        <label>std::unordered_map&lt; IntVect, std::vector&lt; int &gt;, IntVect::shift_hasher &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::BARef</label>
         <link refid="structamrex_1_1BARef"/>
@@ -482,32 +497,38 @@
           <edgelabel>crsn</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
-          <edgelabel>m_abox</edgelabel>
+          <edgelabel>hash</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
+          <edgelabel>m_abox</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
           <edgelabel>bbox</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="8">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
         <childnode refid="2" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="9">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="3">
+      <node id="5">
         <label>amrex::Vector&lt; amrex::Box &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; int &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" line="56" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" bodystart="55" bodyend="114"/>

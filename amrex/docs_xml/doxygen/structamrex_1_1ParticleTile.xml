@@ -875,6 +875,9 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="20">
+        <label>T</label>
+      </node>
       <node id="5">
         <label>amrex::PODVector&lt; const ParticleReal *, DefaultAllocator&lt; const ParticleReal * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
@@ -886,6 +889,12 @@
         <link refid="classamrex_1_1ArrayOfStructs"/>
         <childnode refid="8" relation="usage">
           <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>amrex::PODVector&lt; T, Allocator &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="19" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
@@ -950,6 +959,18 @@
         <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="22">
+        <label>std::array&lt; amrex::PODVector, NReal &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>std::allocator&lt; T &gt;</label>
+        <childnode refid="20" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="11">
         <label>amrex::ParticleBase&lt; ParticleReal, T_NReal, 0 &gt;</label>
         <link refid="structamrex_1_1ParticleBase"/>
@@ -975,6 +996,28 @@
       <node id="16">
         <label>amrex::StructOfArrays&lt; NArrayReal, NArrayInt, DefaultAllocator &gt;</label>
         <link refid="structamrex_1_1StructOfArrays"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_idata</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>m_runtime_idata</edgelabel>
+          <edgelabel>m_runtime_rdata</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_rdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>std::array&lt; amrex::PODVector, NInt &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>std::vector&lt; amrex::PODVector &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="8">
         <label>amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</label>

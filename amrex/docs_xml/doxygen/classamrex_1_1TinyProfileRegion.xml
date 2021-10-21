@@ -85,14 +85,39 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
-        <label>string</label>
+      <node id="5">
+        <label>std::deque&lt; std::tuple&lt; double, double, std::string * &gt; &gt;</label>
       </node>
-      <node id="3">
+      <node id="4">
         <label>amrex::TinyProfiler</label>
         <link refid="classamrex_1_1TinyProfiler"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ttstack</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>stats</edgelabel>
+        </childnode>
         <childnode refid="2" relation="usage">
           <edgelabel>fname</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>statsmap</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>regionstack</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="7">
+        <label>amrex::TinyProfiler::Stats</label>
+        <link refid="structamrex_1_1TinyProfiler_1_1Stats"/>
+      </node>
+      <node id="9">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="1">
@@ -101,8 +126,25 @@
         <childnode refid="2" relation="usage">
           <edgelabel>regname</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>tprof</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::map&lt; std::string, std::map&lt; std::string, amrex::TinyProfiler::Stats &gt; &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; amrex::TinyProfiler::Stats * &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
