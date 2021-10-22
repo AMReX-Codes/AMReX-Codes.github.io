@@ -251,14 +251,14 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pc.NumIntComps() + PC::NStructInt; ++i)</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">if</span> (write_int_comp[i]) ++num_output_int;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> iChunkSize = 2 + num_output_int;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">const</span> Long iChunkSize = 2 + num_output_int;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    idata.resize(np*iChunkSize);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">int</span> num_output_real = 0;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pc.NumRealComps() + PC::NStructReal; ++i)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">if</span> (write_real_comp[i]) ++num_output_real;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rChunkSize = AMREX_SPACEDIM + num_output_real;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> Long rChunkSize = AMREX_SPACEDIM + num_output_real;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    rdata.resize(np*rChunkSize);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">typename</span> PC::IntVector  idata_d(idata.size());</div>
@@ -342,14 +342,14 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pc.NumIntComps() + PC::NStructInt; ++i)</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">if</span> (write_int_comp[i]) ++num_output_int;</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> iChunkSize = 2 + num_output_int;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">const</span> Long iChunkSize = 2 + num_output_int;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    idata.resize(np*iChunkSize);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">int</span> num_output_real = 0;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pc.NumRealComps() + PC::NStructReal; ++i)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">if</span> (write_real_comp[i]) ++num_output_real;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rChunkSize = AMREX_SPACEDIM + num_output_real;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">const</span> Long rChunkSize = AMREX_SPACEDIM + num_output_real;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    rdata.resize(np*rChunkSize);</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">int</span>* iptr = idata.dataPtr();</div>
@@ -983,7 +983,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nic + NStructInt; ++i)</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                    <span class="keywordflow">if</span> (write_int_comp[i]) ++num_output_int;</div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> iChunkSize = 2 + num_output_int;</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                <span class="keyword">const</span> Long iChunkSize = 2 + num_output_int;</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                Vector&lt;int&gt; istuff(np_per_grid_local[lev][grid]*iChunkSize);</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                <span class="keywordtype">int</span>* iptr = istuff.dataPtr();</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160; </div>
@@ -1032,7 +1032,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrc + NStructReal; ++i)</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                    <span class="keywordflow">if</span> (write_real_comp[i]) ++num_output_real;</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> rChunkSize = AMREX_SPACEDIM + num_output_real;</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                <span class="keyword">const</span> Long rChunkSize = AMREX_SPACEDIM + num_output_real;</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                Vector&lt;typename PC::ParticleType::RealType&gt; rstuff(np_per_grid_local[lev][grid]*rChunkSize);</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                <span class="keyword">typename</span> PC::ParticleType::RealType* rptr = rstuff.dataPtr();</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160; </div>

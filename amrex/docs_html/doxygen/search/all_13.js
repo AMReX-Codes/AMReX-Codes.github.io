@@ -514,7 +514,7 @@ var searchData=
   ['statemap_6803',['StateMap',['../classamrex_1_1InSituUtils_1_1StateMap.html',1,'amrex::InSituUtils']]],
   ['statemetadata_6804',['StateMetadata',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a786f177417b2aff2c65612249af325af',1,'amrex::AmrMeshDataAdaptor::InternalsType']]],
   ['statemode_6805',['StateMode',['../classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3',1,'amrex::MLLinOp']]],
-  ['statenumber_6806',['StateNumber',['../classamrex_1_1AmrData.html#a9e8054caac18640e426be5e01291c252',1,'amrex::AmrData']]],
+  ['statenumber_6806',['StateNumber',['../classamrex_1_1AmrData.html#a9123a637a2bcb30632bd253a7f0705eb',1,'amrex::AmrData']]],
   ['stateplotvars_6807',['statePlotVars',['../classamrex_1_1Amr.html#a026e3576e84968fb18a32fc46f1cc21a',1,'amrex::Amr']]],
   ['staterange_6808',['StateRange',['../structamrex_1_1DeriveRec_1_1StateRange.html',1,'amrex::DeriveRec']]],
   ['states_6809',['States',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a0765f0ebcbf2472c5229c18dc941432d',1,'amrex::AmrMeshDataAdaptor::InternalsType']]],

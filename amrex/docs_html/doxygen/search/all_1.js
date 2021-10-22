@@ -41,7 +41,7 @@ var searchData=
   ['adddescriptor_46',['addDescriptor',['../classamrex_1_1DescriptorList.html#ac71d9f76b2abaf307653d0dc8bfe01e1',1,'amrex::DescriptorList']]],
   ['addedisonpid_47',['AddEdisonPID',['../classBLProfStats.html#a9d8d6c9a3921f1bc2b66cd986ff97577',1,'BLProfStats::AddEdisonPID()'],['../classCommProfStats.html#a8cd21057d82e32887fa0b13f4394061b',1,'CommProfStats::AddEdisonPID()']]],
   ['addfabghostindicatorfield_48',['AddFabGhostIndicatorField',['../namespaceamrex.html#af70ff73cf1857e1a859a1fbac9ef10b0',1,'amrex']]],
-  ['addfarraybox_49',['AddFArrayBox',['../classamrex_1_1XYPlotDataList.html#af02dbba129ed55c816b3fa35237df539',1,'amrex::XYPlotDataList']]],
+  ['addfarraybox_49',['AddFArrayBox',['../classamrex_1_1XYPlotDataList.html#a9ea4cf951957098f5fa36fe181899f41',1,'amrex::XYPlotDataList']]],
   ['addfinestlevel_50',['AddFinestLevel',['../classBLProfStats.html#a94afb7c365d9ffd6aef3cfc0ab7dd4e9',1,'BLProfStats::AddFinestLevel()'],['../classCommProfStats.html#a954eca05e31eef7bdacb57873cde234f',1,'CommProfStats::AddFinestLevel()']]],
   ['addfrommem_51',['addFromMem',['../classamrex_1_1BaseFab.html#a24d42c66b16642a5aee1a390b1b0c39a',1,'amrex::BaseFab']]],
   ['addfunctionname_52',['AddFunctionName',['../classBLProfStats.html#a90d25f083cc1467c695b5bc6793a86b0',1,'BLProfStats::AddFunctionName(const std::string &amp;fname)'],['../classBLProfStats.html#a4f2ff7ba2bdfbdc8ea0ef3c412751591',1,'BLProfStats::AddFunctionName(const std::string &amp;, int)'],['../classRegionsProfStats.html#af08b6b193a5e59bf550ec57f4a8dc52c',1,'RegionsProfStats::AddFunctionName(const std::string &amp;)'],['../classRegionsProfStats.html#a082150afc9266718ad59d318c5fc21e2',1,'RegionsProfStats::AddFunctionName(const std::string &amp;fname, int fnumber)']]],

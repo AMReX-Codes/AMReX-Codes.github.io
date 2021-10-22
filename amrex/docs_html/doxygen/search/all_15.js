@@ -60,7 +60,7 @@ var searchData=
   ['updatepatch_7116',['UpdatePatch',['../namespaceamrex_1_1InSituUtils.html#aa55a8198c3168709333964b78c796a6a',1,'amrex::InSituUtils']]],
   ['updatesingularflag_7117',['updateSingularFlag',['../classamrex_1_1MLALaplacian.html#a3e661876f3c45102e3269e301537962f',1,'amrex::MLALaplacian']]],
   ['updatesolbc_7118',['updateSolBC',['../classamrex_1_1MLCellLinOp.html#aec26fa3ea4e35bd1a02b8972fc392493',1,'amrex::MLCellLinOp']]],
-  ['updatestats_7119',['UpdateStats',['../classamrex_1_1XYPlotDataList.html#a13965931a2c87a53677beb03c429a496',1,'amrex::XYPlotDataList']]],
+  ['updatestats_7119',['UpdateStats',['../classamrex_1_1XYPlotDataList.html#a613fe181c09a5abcd497c827b17c3bbb',1,'amrex::XYPlotDataList']]],
   ['updatevelocity_7120',['updateVelocity',['../classamrex_1_1MLNodeLaplacian.html#a6bf02dee201be3491d55e71b1e98b72c',1,'amrex::MLNodeLaplacian']]],
   ['uplus_7121',['UPLUS',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fdaf8182d551cf57debc5fead16a93ec46a',1,'UPLUS():&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1af8182d551cf57debc5fead16a93ec46a',1,'UPLUS():&#160;amrex_parser.tab.h']]],
   ['upperindex_7122',['UpperIndex',['../classamrex_1_1CoordSys.html#a74cecde9e2041a58b0d9b81b8ed00c22',1,'amrex::CoordSys']]],

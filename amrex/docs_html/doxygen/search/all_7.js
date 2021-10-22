@@ -138,7 +138,7 @@ var searchData=
   ['getfacecent_2988',['getFaceCent',['../classamrex_1_1EBDataCollection.html#ad0ed659e56764e900bd11fa12ec33eeb',1,'amrex::EBDataCollection::getFaceCent()'],['../classamrex_1_1EBFArrayBoxFactory.html#a08787037eac1cfa94bc3c220dbcff764',1,'amrex::EBFArrayBoxFactory::getFaceCent()']]],
   ['getfacetype_2989',['getFaceType',['../classamrex_1_1EB2_1_1GFab.html#af9797a5116b69e9eb6668727518fd88f',1,'amrex::EB2::GFab::getFaceType() const'],['../classamrex_1_1EB2_1_1GFab.html#afe9842c5d2fff8d3701db43a0a8762ab',1,'amrex::EB2::GFab::getFaceType()']]],
   ['getfb_2990',['getFB',['../classamrex_1_1FabArrayBase.html#a51995e07a57bf9f0fde79fbf20f91616',1,'amrex::FabArrayBase']]],
-  ['getfilename_2991',['GetFileName',['../classamrex_1_1AmrData.html#adb1ac58cc21a826976f579b16edf2d01',1,'amrex::AmrData::GetFileName()'],['../classamrex_1_1DataServices.html#a65c2ef1423d24491b009094769a0e72c',1,'amrex::DataServices::GetFileName()']]],
+  ['getfilename_2991',['GetFileName',['../classamrex_1_1AmrData.html#aae6972ddc9fa4b14594680e841fcf19e',1,'amrex::AmrData::GetFileName()'],['../classamrex_1_1DataServices.html#a1b9e7f339c8c6accfea0ae44925bd623',1,'amrex::DataServices::GetFileName()']]],
   ['getfiletype_2992',['GetFileType',['../classamrex_1_1AmrData.html#a567e2aa9690d270dbf95dfda84f909f6',1,'amrex::AmrData::GetFileType()'],['../classamrex_1_1DataServices.html#a05851a0d04e99fa67cb2ff71d1fbf9b9',1,'amrex::DataServices::GetFileType()']]],
   ['getfiltertimeranges_2993',['GetFilterTimeRanges',['../classBLProfStats.html#ab39f9a76dccad3eb8c8f952ccf3437fc',1,'BLProfStats']]],
   ['getfinalresidual_2994',['getFinalResidual',['../classamrex_1_1MLMG.html#a3f7c16fa32591e6ca66a72d9b998f071',1,'amrex::MLMG']]],
