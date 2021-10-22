@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1PolymorphicAllocator.html#a17194831c5f2740968428a41f16a41fc":[2,0,0,397,6],
 "classamrex_1_1PolymorphicAllocator.html#a48ec36e08b0ded236d50c15c54194cc5":[2,0,0,397,3],
 "classamrex_1_1PolymorphicAllocator.html#a683ae339e0bad414c7683ee7478c6ad0":[2,0,0,397,4],
 "classamrex_1_1PolymorphicAllocator.html#a72355f37a3018d8871f4f997c9180a22":[2,0,0,397,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "classamrex_1_1StateData.html#a087e0bdda15383b06555eaf5e942d726":[2,0,0,425,35],
 "classamrex_1_1StateData.html#a08b05c680ad59e2ac04f8178d52cf3a0":[2,0,0,425,65],
 "classamrex_1_1StateData.html#a0a6ffa5747a2c044f456d77adf50f338":[2,0,0,425,40],
-"classamrex_1_1StateData.html#a0ae8938d03e0425949acee6bfdf003af":[2,0,0,425,50],
-"classamrex_1_1StateData.html#a19585d569e94bd3e15d5c6a0f4c969c6":[2,0,0,425,42]
+"classamrex_1_1StateData.html#a0ae8938d03e0425949acee6bfdf003af":[2,0,0,425,50]
 };

@@ -1,17 +1,18 @@
 var NAVTREEINDEX42 =
 {
-"classamrex_1_1MLNodeLaplacian.html#ad6fc7d27c22cd096b77b9bb7d2b4f66d":[2,0,0,292,38],
+"classamrex_1_1MLNodeLaplacian.html#ad6fc7d27c22cd096b77b9bb7d2b4f66d":[2,0,0,292,39],
 "classamrex_1_1MLNodeLaplacian.html#ad798a370022ba9766ddc8423c8c3cdf6":[2,0,0,292,10],
 "classamrex_1_1MLNodeLaplacian.html#adb3e623e86459b1e9a9c14492961d759":[2,0,0,292,11],
 "classamrex_1_1MLNodeLaplacian.html#adce212d6785b5cedafa7b823adbc582e":[2,0,0,292,25],
-"classamrex_1_1MLNodeLaplacian.html#adfa34733af6c1ade7b084ee4519c3851":[2,0,0,292,33],
+"classamrex_1_1MLNodeLaplacian.html#adfa34733af6c1ade7b084ee4519c3851":[2,0,0,292,34],
 "classamrex_1_1MLNodeLaplacian.html#ae306b7b6eb65f5d7a9f1ce779b7e6f71":[2,0,0,292,7],
-"classamrex_1_1MLNodeLaplacian.html#ae971fa5b7d9a948b3b8b778bb9540064":[2,0,0,292,48],
+"classamrex_1_1MLNodeLaplacian.html#ae30f379cc649f0136c1da5771e1f5ae4":[2,0,0,292,32],
+"classamrex_1_1MLNodeLaplacian.html#ae971fa5b7d9a948b3b8b778bb9540064":[2,0,0,292,49],
 "classamrex_1_1MLNodeLaplacian.html#aeba4557ed8cd5a660c5925f4ebc0e271":[2,0,0,292,2],
 "classamrex_1_1MLNodeLaplacian.html#aec78f58fa749e98da726f5a64e91874a":[2,0,0,292,26],
 "classamrex_1_1MLNodeLaplacian.html#af07a158131d2bb5078c0840365cea305":[2,0,0,292,31],
 "classamrex_1_1MLNodeLaplacian.html#af318d231f400caaa9271c6fddee26815":[2,0,0,292,20],
-"classamrex_1_1MLNodeLaplacian.html#af44fe2628228f69789874df4dbcab755":[2,0,0,292,34],
+"classamrex_1_1MLNodeLaplacian.html#af44fe2628228f69789874df4dbcab755":[2,0,0,292,35],
 "classamrex_1_1MLNodeLaplacian.html#af5fc5382f4bff5cbeec42c320d033b77":[2,0,0,292,28],
 "classamrex_1_1MLNodeLaplacian.html#afc701712c658d0f67bef6a07bbf323b9":[2,0,0,292,15],
 "classamrex_1_1MLNodeLaplacian.html#aff6d8e0b4352ae92de5b24f380497820":[2,0,0,292,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX42 =
 "classamrex_1_1MemProfiler.html#a2b1473094731fadfe3fb624993cf2b65":[2,0,0,271,6],
 "classamrex_1_1MemProfiler.html#a30a2f79d4632035a2ad21fc81e47071a":[2,0,0,271,20],
 "classamrex_1_1MemProfiler.html#a40ba66fec50cd477016a8ce11568f4ac":[2,0,0,271,18],
-"classamrex_1_1MemProfiler.html#a4de3370fe39ada9432b7c7736f00fd90":[2,0,0,271,10],
-"classamrex_1_1MemProfiler.html#a54c7c8dd45cada5e8bfd707f5df76349":[2,0,0,271,11]
+"classamrex_1_1MemProfiler.html#a4de3370fe39ada9432b7c7736f00fd90":[2,0,0,271,10]
 };

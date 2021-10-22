@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1detail_1_1clzll__tag.html":[2,0,0,3,4],
 "structamrex_1_1detail_1_1gpu__tuple__element.html":[2,0,0,3,7],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a173fd40f6e1643b310b699177737307f":[2,0,0,3,7,2],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a22c363abb743a01c6fe3a000cb31a915":[2,0,0,3,7,0],

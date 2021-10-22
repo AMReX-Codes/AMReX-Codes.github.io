@@ -1,5 +1,6 @@
 var NAVTREEINDEX56 =
 {
+"structamrex_1_1BlockMutex.html#ab5a49fbd49c206ff3f03ee616e60b990":[2,0,0,70,9],
 "structamrex_1_1BlockMutex.html#abd55deb11f6e1a89fa7e6ba517c581ff":[2,0,0,70,7],
 "structamrex_1_1BlockMutex.html#ad0e65d9bf77725b6bad2a6794d6e2fee":[2,0,0,70,5],
 "structamrex_1_1BlockMutex.html#adbef3193b3d4efdeacc00a4c0bf0d396":[2,0,0,70,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX56 =
 "structamrex_1_1FabArrayBase_1_1CacheStats.html#a2f46bd7a63228d43ce04420ce9191204":[2,0,0,139,1,12],
 "structamrex_1_1FabArrayBase_1_1CacheStats.html#a32e4b2ea70635b8caa88bb5a43e2d5b0":[2,0,0,139,1,5],
 "structamrex_1_1FabArrayBase_1_1CacheStats.html#a3ecc000d62df91bdbdd6ee43745cb2d0":[2,0,0,139,1,7],
-"structamrex_1_1FabArrayBase_1_1CacheStats.html#a5cb9d8eee911caa7c6b42f7cdd176083":[2,0,0,139,1,3],
-"structamrex_1_1FabArrayBase_1_1CacheStats.html#a66050f0c470418cb4ab408bc117f3e63":[2,0,0,139,1,9]
+"structamrex_1_1FabArrayBase_1_1CacheStats.html#a5cb9d8eee911caa7c6b42f7cdd176083":[2,0,0,139,1,3]
 };

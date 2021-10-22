@@ -32,6 +32,7 @@ var classamrex_1_1MLNodeLaplacian =
     [ "operator=", "classamrex_1_1MLNodeLaplacian.html#a2f0797012b11f58024e0789f7acc26dc", null ],
     [ "prepareForSolve", "classamrex_1_1MLNodeLaplacian.html#a87443891a5437af65f59dc9a02c72d35", null ],
     [ "reflux", "classamrex_1_1MLNodeLaplacian.html#af07a158131d2bb5078c0840365cea305", null ],
+    [ "resizeMultiGrid", "classamrex_1_1MLNodeLaplacian.html#ae30f379cc649f0136c1da5771e1f5ae4", null ],
     [ "restrictInteriorNodes", "classamrex_1_1MLNodeLaplacian.html#a1610ae549068808823c0013dfac50897", null ],
     [ "restriction", "classamrex_1_1MLNodeLaplacian.html#adfa34733af6c1ade7b084ee4519c3851", null ],
     [ "setCoarseningStrategy", "classamrex_1_1MLNodeLaplacian.html#af44fe2628228f69789874df4dbcab755", null ],

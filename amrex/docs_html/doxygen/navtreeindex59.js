@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"structamrex_1_1IParserExeSUB__VP.html#a966257aaecf0f2636c83519c448fec6f":[2,0,0,245,1],
 "structamrex_1_1IParserExeSUB__VP.html#ad9bb9a64729c932a1099c21275870135":[2,0,0,245,0],
 "structamrex_1_1IParserExeSymbol.html":[2,0,0,246],
 "structamrex_1_1IParserExeSymbol.html#a77a8c69fe7be49888aa242f357be0b1e":[2,0,0,246,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "structamrex_1_1NonLocalBC_1_1CommHandler.html":[2,0,0,10,3],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#a18b34e7c60c895b063c694f7745190ae":[2,0,0,10,3,2],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#aa8135050d54b2e8cf0216b9038c4ab8b":[2,0,0,10,3,0],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,10,3,1],
-"structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[2,0,0,10,4]
+"structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,10,3,1]
 };
