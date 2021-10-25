@@ -153,6 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac78cd13e2533f566292aed726e19f7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab24f43cada8f1a1daa112e1c17ea635d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ab24f43cada8f1a1daa112e1c17ea635d">reflux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;res, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_rhs, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_res, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_rhs) const final override</td></tr>
 <tr class="separator:ab24f43cada8f1a1daa112e1c17ea635d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84ae225f559966296f419f89ab8c5c73"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a84ae225f559966296f419f89ab8c5c73">scaleRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const final</td></tr>
+<tr class="separator:a84ae225f559966296f419f89ab8c5c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31d3fbddab89750d2dc6212d4fe6fc9a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a31d3fbddab89750d2dc6212d4fe6fc9a">prepareForSolve</a> () final override</td></tr>
 <tr class="separator:a31d3fbddab89750d2dc6212d4fe6fc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a846a760756357f5040395e50249cbe9d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a846a760756357f5040395e50249cbe9d">Fapply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in) const final override</td></tr>
@@ -286,10 +288,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad48c24f09145f008fdbfce5f08f02351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac77fee4af067d987c117ae62a73d9ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#aac77fee4af067d987c117ae62a73d9ce">m_phi_eb</a></td></tr>
 <tr class="separator:aac77fee4af067d987c117ae62a73d9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1946437fba75854321fa1b73beedd58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#aa1946437fba75854321fa1b73beedd58">m_acoef</a></td></tr>
-<tr class="separator:aa1946437fba75854321fa1b73beedd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824178034487842a323be9ae255c249c"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a824178034487842a323be9ae255c249c">m_a_huge</a> = 1.0</td></tr>
-<tr class="separator:a824178034487842a323be9ae255c249c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1308,6 +1306,44 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a84ae225f559966296f419f89ab8c5c73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ae225f559966296f419f89ab8c5c73">&#9670;&nbsp;</a></span>scaleRHS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLEBNodeFDLaplacian::scaleRHS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOp.html#a10fa03f772bb4d863bfef6d20fd8de28">amrex::MLLinOp</a>.</p>
+
+</div>
+</div>
 <a id="ad844fd69a263d811444e4be2aef4d795"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad844fd69a263d811444e4be2aef4d795">&#9670;&nbsp;</a></span>setEBDirichlet() <span class="overload">[1/2]</span></h2>
 
@@ -1373,50 +1409,6 @@ template&lt;typename F &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a824178034487842a323be9ae255c249c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a824178034487842a323be9ae255c249c">&#9670;&nbsp;</a></span>m_a_huge</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Real amrex::MLEBNodeFDLaplacian::m_a_huge = 1.0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa1946437fba75854321fa1b73beedd58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1946437fba75854321fa1b73beedd58">&#9670;&nbsp;</a></span>m_acoef</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>&gt; amrex::MLEBNodeFDLaplacian::m_acoef</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aac77fee4af067d987c117ae62a73d9ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac77fee4af067d987c117ae62a73d9ce">&#9670;&nbsp;</a></span>m_phi_eb</h2>
 

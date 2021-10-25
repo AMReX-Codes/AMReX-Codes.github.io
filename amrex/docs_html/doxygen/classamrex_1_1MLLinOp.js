@@ -89,6 +89,7 @@ var classamrex_1_1MLLinOp =
     [ "remapNeighborhoods", "classamrex_1_1MLLinOp.html#a62f7495893309fa4f4805bbea9b59b3b", null ],
     [ "resizeMultiGrid", "classamrex_1_1MLLinOp.html#ae80c21d0f29e6878cf478dfeef8dd4f2", null ],
     [ "restriction", "classamrex_1_1MLLinOp.html#a5a1bffd08a85405f9a9fbeed7c20fd97", null ],
+    [ "scaleRHS", "classamrex_1_1MLLinOp.html#a10fa03f772bb4d863bfef6d20fd8de28", null ],
     [ "setCoarseFineBC", "classamrex_1_1MLLinOp.html#ac161f1d53e925b82ba5defeb9b0efe70", null ],
     [ "setCoarseFineBCLocation", "classamrex_1_1MLLinOp.html#ac0c0882eb6092218dc09c5d60555ffed", null ],
     [ "setDomainBC", "classamrex_1_1MLLinOp.html#aa034da35bd05e1fb93b8d876a9840ce3", null ],

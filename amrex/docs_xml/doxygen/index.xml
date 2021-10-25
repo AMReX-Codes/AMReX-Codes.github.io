@@ -6570,8 +6570,6 @@
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kind="variable"><name>m_sigma</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1ad48c24f09145f008fdbfce5f08f02351" kind="variable"><name>m_s_phi_eb</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1aac77fee4af067d987c117ae62a73d9ce" kind="variable"><name>m_phi_eb</name></member>
-    <member refid="classamrex_1_1MLEBNodeFDLaplacian_1aa1946437fba75854321fa1b73beedd58" kind="variable"><name>m_acoef</name></member>
-    <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a824178034487842a323be9ae255c249c" kind="variable"><name>m_a_huge</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a6a37b89b81d888d0d30755a2b21449b7" kind="function"><name>MLEBNodeFDLaplacian</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a113bbbc7b506ed3317fae98364062a77" kind="function"><name>MLEBNodeFDLaplacian</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a251fdcde4525e545fad25663d3bc31d1" kind="function"><name>~MLEBNodeFDLaplacian</name></member>
@@ -6589,6 +6587,7 @@
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1af8a22ae6d414c1b98b3229132f35d539" kind="function"><name>interpolation</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1ac78cd13e2533f566292aed726e19f7c5" kind="function"><name>averageDownSolutionRHS</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1ab24f43cada8f1a1daa112e1c17ea635d" kind="function"><name>reflux</name></member>
+    <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a84ae225f559966296f419f89ab8c5c73" kind="function"><name>scaleRHS</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a31d3fbddab89750d2dc6212d4fe6fc9a" kind="function"><name>prepareForSolve</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a846a760756357f5040395e50249cbe9d" kind="function"><name>Fapply</name></member>
     <member refid="classamrex_1_1MLEBNodeFDLaplacian_1a4c82d05fb5f0114b96fec9850a13940b" kind="function"><name>Fsmooth</name></member>
@@ -6731,6 +6730,7 @@
     <member refid="classamrex_1_1MLLinOp_1ac62698656785dd3261f05e9dc76cd8fa" kind="function"><name>unimposeNeumannBC</name></member>
     <member refid="classamrex_1_1MLLinOp_1ac0b572b22f065860af22a6451bc43706" kind="function"><name>applyInhomogNeumannTerm</name></member>
     <member refid="classamrex_1_1MLLinOp_1af43ce113549e125050df7b81c1e6feca" kind="function"><name>applyOverset</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a10fa03f772bb4d863bfef6d20fd8de28" kind="function"><name>scaleRHS</name></member>
     <member refid="classamrex_1_1MLLinOp_1a431d85bffa7e9bbcd36a10ae82fe3683" kind="function"><name>prepareForSolve</name></member>
     <member refid="classamrex_1_1MLLinOp_1aa8d6ef9e77180f9076ef5cb83f48bb50" kind="function"><name>isSingular</name></member>
     <member refid="classamrex_1_1MLLinOp_1aa6ff4935f1246d7c94ac38dc65c25d7d" kind="function"><name>isBottomSingular</name></member>
@@ -11823,19 +11823,20 @@
     <member refid="namespaceamrex_1ae651916b2a04b9033825d343fe244b3f" kind="function"><name>mlebabeclap_apply_bc_x</name></member>
     <member refid="namespaceamrex_1a268bac202eeb66c4da6dd4d271d5656e" kind="function"><name>mlebabeclap_apply_bc_y</name></member>
     <member refid="namespaceamrex_1a04cedf52619400ba12317eb179625198" kind="function"><name>mlebabeclap_apply_bc_z</name></member>
+    <member refid="namespaceamrex_1ad73858e6b1f3507fe107fdef1fbd7492" kind="function"><name>mlebndfdlap_scale_rhs</name></member>
     <member refid="namespaceamrex_1a4264b6bd0ca1d7d410a3c4efa768a294" kind="function"><name>mlebndfdlap_adotx_eb_doit</name></member>
     <member refid="namespaceamrex_1ad826217c6259539e7a7c065b87802d2b" kind="function"><name>mlebndfdlap_adotx_eb</name></member>
     <member refid="namespaceamrex_1a55fedf7a60582050d0ef56035e6782c5" kind="function"><name>mlebndfdlap_adotx_eb</name></member>
-    <member refid="namespaceamrex_1a324d7128240ad69a1b18571911c52fad" kind="function"><name>mlebndfdlap_adotx</name></member>
+    <member refid="namespaceamrex_1a91e9157204259b13b72b493e055e1153" kind="function"><name>mlebndfdlap_adotx</name></member>
     <member refid="namespaceamrex_1ad94a4ba40208e14d758f518409c40e98" kind="function"><name>mlebndfdlap_gsrb_eb</name></member>
-    <member refid="namespaceamrex_1aead8d968578f04dca8eaede635562931" kind="function"><name>mlebndfdlap_gsrb</name></member>
-    <member refid="namespaceamrex_1acf635cd20c6bfd477e86530ed52a01ed" kind="function"><name>mlebndfdlap_check_coarsening</name></member>
+    <member refid="namespaceamrex_1aafcb488daced3785ab547cc4dc92d42a" kind="function"><name>mlebndfdlap_gsrb</name></member>
+    <member refid="namespaceamrex_1afac29ac384d86c8826755d6771bcb33b" kind="function"><name>mlebndfdlap_scale_rhs</name></member>
     <member refid="namespaceamrex_1ae3282ca4357077dfa8ca4358b213aca6" kind="function"><name>mlebndfdlap_adotx_eb_doit</name></member>
     <member refid="namespaceamrex_1ab4e7a1ea30e7350fd94711450cd88299" kind="function"><name>mlebndfdlap_adotx_eb</name></member>
     <member refid="namespaceamrex_1ad22660bde94f8894ee74d8c48de47828" kind="function"><name>mlebndfdlap_adotx_eb</name></member>
-    <member refid="namespaceamrex_1a3eb5e18642912eb408d2331207fd7b39" kind="function"><name>mlebndfdlap_adotx</name></member>
+    <member refid="namespaceamrex_1af56fb224090e9c697a5d3cf50006fcb5" kind="function"><name>mlebndfdlap_adotx</name></member>
     <member refid="namespaceamrex_1aa2bb1961a449c1eaad785b488ac26c28" kind="function"><name>mlebndfdlap_gsrb_eb</name></member>
-    <member refid="namespaceamrex_1a02a2cfaa930f87c0c052ecb85da8c65b" kind="function"><name>mlebndfdlap_gsrb</name></member>
+    <member refid="namespaceamrex_1ac15ff367e9fac919b2de0d05dda579cc" kind="function"><name>mlebndfdlap_gsrb</name></member>
     <member refid="namespaceamrex_1a8223f9586a129d73d65d41a9e4d897ee" kind="function"><name>mlebndfdlap_grad_x_doit</name></member>
     <member refid="namespaceamrex_1a5745254de8b0dd8183a3f6cbfad7b561" kind="function"><name>mlebndfdlap_grad_y_doit</name></member>
     <member refid="namespaceamrex_1a35dae2a69371a09a272b492d47a4e856" kind="function"><name>mlebndfdlap_grad_x</name></member>
@@ -12334,7 +12335,7 @@
     <member refid="namespaceamrex_1_1EB2_1a8657bbc9716937bceeb228dd5dc58cd1" kind="function"><name>build_cells</name></member>
     <member refid="namespaceamrex_1_1EB2_1aefdb7b36e49b26a7d9d6c13f381bf5ea" kind="function"><name>amrex_eb2_build_types</name></member>
     <member refid="namespaceamrex_1_1EB2_1af82727cbe02923f0e85c79498083ac33" kind="function"><name>check_mvmc</name></member>
-    <member refid="namespaceamrex_1_1EB2_1ada2f9abbf01c676f2f699784f3077a01" kind="function"><name>coarsen_from_fine</name></member>
+    <member refid="namespaceamrex_1_1EB2_1a1f2e881daa9ff0a537137a2e09129db9" kind="function"><name>coarsen_from_fine</name></member>
     <member refid="namespaceamrex_1_1EB2_1a97bb46ef943ca61f6c69345a636c8f91" kind="function"><name>build_cellflag_from_ap</name></member>
     <member refid="namespaceamrex_1_1EB2_1aceb9b2336e3a1251dca7ab15420dbfcd" kind="function"><name>build_faces</name></member>
     <member refid="namespaceamrex_1_1EB2_1a59797158a927c845d25e376431b795ee" kind="function"><name>build_cells</name></member>
