@@ -32,9 +32,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
       [ "FabFactory", "classamrex_1_1FabFactory.html", "classamrex_1_1FabFactory" ],
       [ "ParserExecutor", "structamrex_1_1ParserExecutor.html", "structamrex_1_1ParserExecutor" ]
     ] ],
-    [ "AMReX_BaseUmap.H", "AMReX__BaseUmap_8H.html", "AMReX__BaseUmap_8H" ],
-    [ "AMReX_BaseUmap_f.H", "AMReX__BaseUmap__f_8H.html", "AMReX__BaseUmap__f_8H" ],
-    [ "AMReX_BaseUmap_nd.f90", "AMReX__BaseUmap__nd_8f90.html", "AMReX__BaseUmap__nd_8f90" ],
     [ "AMReX_BC_TYPES.H", "AMReX__BC__TYPES_8H.html", "AMReX__BC__TYPES_8H" ],
     [ "AMReX_bc_types_mod.F90", "AMReX__bc__types__mod_8F90.html", "AMReX__bc__types__mod_8F90" ],
     [ "AMReX_BCRec.cpp", "AMReX__BCRec_8cpp.html", "AMReX__BCRec_8cpp" ],

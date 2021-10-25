@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['particle_5fdetail_8974',['particle_detail',['../namespaceparticle__detail.html',1,'']]]
+  ['sdcquadrature_5fmod_8952',['sdcquadrature_mod',['../namespacesdcquadrature__mod.html',1,'']]]
 ];

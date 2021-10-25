@@ -140,7 +140,6 @@ var hierarchy =
     [ "amrex::BackgroundThread", "classamrex_1_1BackgroundThread.html", null ],
     [ "amrex::BARef", "structamrex_1_1BARef.html", null ],
     [ "CommProfStats::BarrierEntry", "structCommProfStats_1_1BarrierEntry.html", null ],
-    [ "amrex::BaseUmap< T >", "classamrex_1_1BaseUmap.html", null ],
     [ "amrex::BATbndryReg", "structamrex_1_1BATbndryReg.html", null ],
     [ "amrex::BATcoarsenRatio", "structamrex_1_1BATcoarsenRatio.html", null ],
     [ "amrex::BATindexType", "structamrex_1_1BATindexType.html", null ],
@@ -226,7 +225,6 @@ var hierarchy =
       [ "amrex::Conjunction< B1, Bn... >", "structamrex_1_1Conjunction_3_01B1_00_01Bn_8_8_8_01_4.html", null ],
       [ "amrex::Disjunction< B1, Bn... >", "structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4.html", null ]
     ] ],
-    [ "amrex::BaseUmap< T >::const_iterator", "structamrex_1_1BaseUmap_1_1const__iterator.html", null ],
     [ "amrex::Neighbors< ParticleType >::const_iterator", "structamrex_1_1Neighbors_1_1const__iterator.html", null ],
     [ "amrex::ConstParticleCPUWrapper", "structamrex_1_1ConstParticleCPUWrapper.html", null ],
     [ "amrex::ConstParticleIDWrapper", "structamrex_1_1ConstParticleIDWrapper.html", null ],
@@ -839,8 +837,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
+    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],
@@ -947,7 +945,6 @@ var hierarchy =
         [ "amrex::NonLocalBC::IsDataPacking< DP, FAB >", "structamrex_1_1NonLocalBC_1_1IsDataPacking.html", null ]
       ] ]
     ] ],
-    [ "amrex::BaseUmap< T >::Tuple", "structamrex_1_1BaseUmap_1_1Tuple.html", null ],
     [ "amrex::detail::tuple_cat_result<... >", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],

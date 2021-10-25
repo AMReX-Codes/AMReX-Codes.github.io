@@ -59,7 +59,6 @@ var namespaceamrex =
     [ "BARef", "structamrex_1_1BARef.html", "structamrex_1_1BARef" ],
     [ "BArena", "classamrex_1_1BArena.html", "classamrex_1_1BArena" ],
     [ "BaseFab", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
-    [ "BaseUmap", "classamrex_1_1BaseUmap.html", "classamrex_1_1BaseUmap" ],
     [ "BATbndryReg", "structamrex_1_1BATbndryReg.html", "structamrex_1_1BATbndryReg" ],
     [ "BATcoarsenRatio", "structamrex_1_1BATcoarsenRatio.html", "structamrex_1_1BATcoarsenRatio" ],
     [ "BATindexType", "structamrex_1_1BATindexType.html", "structamrex_1_1BATindexType" ],

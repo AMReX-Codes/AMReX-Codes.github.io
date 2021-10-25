@@ -1,15 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"AMReX__EB2_8cpp.html#a2258b3042676370ae01a2968e6962765":[3,0,0,4,5,1],
-"AMReX__EB2_8cpp.html#a24ca6e81d1f15a678a6cb8ecb82de63e":[3,0,0,4,5,4],
-"AMReX__EB2_8cpp.html#a44d269eae8c3bc0c9c0aff8961ed61be":[3,0,0,4,5,3],
-"AMReX__EB2_8cpp.html#a900c8b65fe13dca2d107ec8ae396b7b7":[3,0,0,4,5,7],
-"AMReX__EB2_8cpp.html#ab08bb163ec9d566ce748dd6c4a7f0385":[3,0,0,4,5,6],
-"AMReX__EB2_8cpp.html#acb02398d0c8b02dae840acf4f35b886c":[3,0,0,4,5,5],
-"AMReX__EB2_8cpp.html#aeeef7d74ebd0fb0d36133366a68e4126":[3,0,0,4,5,0],
-"AMReX__EB2_8cpp.html#afd3e2ed9a69b9e53f5b68eca49ee6fe6":[3,0,0,4,5,2],
-"AMReX__EB2__2D__C_8H.html":[3,0,0,4,8],
-"AMReX__EB2__2D__C_8H.html#a1f2e881daa9ff0a537137a2e09129db9":[3,0,0,4,8,3],
 "AMReX__EB2__2D__C_8H.html#a97bb46ef943ca61f6c69345a636c8f91":[3,0,0,4,8,1],
 "AMReX__EB2__2D__C_8H.html#aefdb7b36e49b26a7d9d6c13f381bf5ea":[3,0,0,4,8,0],
 "AMReX__EB2__2D__C_8H.html#af82727cbe02923f0e85c79498083ac33":[3,0,0,4,8,2],
@@ -249,5 +239,15 @@ var NAVTREEINDEX3 =
 "AMReX__EBMultiFabUtil__2D__C_8H.html#acb2c690637db28c101b2fafe2ea346e7":[3,0,0,4,71,14],
 "AMReX__EBMultiFabUtil__2D__C_8H.html#adc1ea19abb66c0912bd6b989b80c5f98":[3,0,0,4,71,7],
 "AMReX__EBMultiFabUtil__2D__C_8H.html#af64d03e8a7ef3fe431ad37a22d8da69e":[3,0,0,4,71,10],
-"AMReX__EBMultiFabUtil__2D__C_8H.html#afbe495de221a8edcb3e8566f047353be":[3,0,0,4,71,12]
+"AMReX__EBMultiFabUtil__2D__C_8H.html#afbe495de221a8edcb3e8566f047353be":[3,0,0,4,71,12],
+"AMReX__EBMultiFabUtil__2D__C_8H_source.html":[3,0,0,4,71],
+"AMReX__EBMultiFabUtil__3D__C_8H.html":[3,0,0,4,72],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a161acc43339f8040a3b3d85822ccba68":[3,0,0,4,72,4],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a20f22656c1c33ddd41b9bf6ff16ce05a":[3,0,0,4,72,16],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a300e308bc865c0b06a1955edbf787019":[3,0,0,4,72,5],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a380b65228c4871b5d99c5ea571dcc589":[3,0,0,4,72,3],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a538016b8eefb9144d408402eec36d390":[3,0,0,4,72,2],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a658f71f1a20f1c31976ad401e53e28cd":[3,0,0,4,72,1],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a6623c7b82f9de6404f5b9fe0d27a0fd7":[3,0,0,4,72,6],
+"AMReX__EBMultiFabUtil__3D__C_8H.html#a7ca548557a81e714b0e5aa66407d548a":[3,0,0,4,72,0]
 };
