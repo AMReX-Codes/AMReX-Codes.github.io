@@ -4,6 +4,7 @@
     <compoundname>amrex::EBCellFlagFab</compoundname>
     <basecompoundref refid="classamrex_1_1BaseFab" prot="public" virt="non-virtual">amrex::BaseFab&lt; EBCellFlag &gt;</basecompoundref>
     <includes refid="AMReX__EBCellFlag_8H" local="no">AMReX_EBCellFlag.H</includes>
+    <innerclass refid="structamrex_1_1EBCellFlagFab_1_1NumCells" prot="public">amrex::EBCellFlagFab::NumCells</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1EBCellFlagFab_1a625c1eeed8e477ce6df628fdf55059a9" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87a" kindref="member">FabType</ref></type>
@@ -17,11 +18,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="319" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="319" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="348" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="348" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1EBCellFlagFab_1a978db62963e6e2b6ea0472b063d250c6" prot="private" static="no" mutable="yes">
-        <type>std::map&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>, <ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87a" kindref="member">FabType</ref> &gt;</type>
-        <definition>std::map&lt;Box,FabType&gt; amrex::EBCellFlagFab::m_typemap</definition>
+      <memberdef kind="variable" id="classamrex_1_1EBCellFlagFab_1a914a481cd7a1365cd6e02ebdf629131d" prot="private" static="no" mutable="yes">
+        <type>std::map&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>, <ref refid="structamrex_1_1EBCellFlagFab_1_1NumCells" kindref="compound">NumCells</ref> &gt;</type>
+        <definition>std::map&lt;Box,NumCells&gt; amrex::EBCellFlagFab::m_typemap</definition>
         <argsstring></argsstring>
         <name>m_typemap</name>
         <briefdescription>
@@ -30,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="320" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="320" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="349" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="349" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -239,12 +240,13 @@
         <argsstring>() const noexcept</argsstring>
         <name>getType</name>
         <briefdescription>
+<para>Returns FabType of the whole <ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="312" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="312" bodyend="312"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="315" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="315" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBCellFlagFab_1a5fbbd6cfac2268f9286c156e7ecd7ea6" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87a" kindref="member">FabType</ref></type>
@@ -256,12 +258,67 @@
           <declname>bx</declname>
         </param>
         <briefdescription>
+<para>Returns FabType in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> of this <ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="314" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.cpp" bodystart="25" bodyend="120"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="320" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.cpp" bodystart="92" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EBCellFlagFab_1a5543ed9a9e620af529ce92b82b6498f3" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::EBCellFlagFab::getNumRegularCells</definition>
+        <argsstring>(const Box &amp;bx) const noexcept</argsstring>
+        <name>getNumRegularCells</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of regular cells in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="325" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.cpp" bodystart="132" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EBCellFlagFab_1abfc0c19edd24b4583d39b256c3916364" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::EBCellFlagFab::getNumCutCells</definition>
+        <argsstring>(const Box &amp;bx) const noexcept</argsstring>
+        <name>getNumCutCells</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of cut cells in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="330" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.cpp" bodystart="173" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EBCellFlagFab_1accfba3397c54fc70f5355fe72e53aef5" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::EBCellFlagFab::getNumCoveredCells</definition>
+        <argsstring>(const Box &amp;bx) const noexcept</argsstring>
+        <name>getNumCoveredCells</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of covered cells in the given <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="335" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.cpp" bodystart="214" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EBCellFlagFab_1a57d4f25c01e84b842b1456dee7985600" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -278,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="316" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="316" bodyend="316"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="337" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="337" bodyend="337"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -316,6 +373,10 @@
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
+      <node id="11">
+        <label>amrex::EBCellFlagFab::NumCells</label>
+        <link refid="structamrex_1_1EBCellFlagFab_1_1NumCells"/>
+      </node>
       <node id="3">
         <label>amrex::DataAllocator</label>
         <link refid="structamrex_1_1DataAllocator"/>
@@ -339,6 +400,15 @@
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::map&lt; amrex::Box, amrex::EBCellFlagFab::NumCells &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>keys</edgelabel>
         </childnode>
       </node>
       <node id="6">
@@ -370,14 +440,8 @@
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
-      <node id="10">
-        <label>std::map&lt; amrex::Box, FabType &gt;</label>
-        <childnode refid="7" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="289" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="287" bodyend="321"/>
+    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" line="289" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBCellFlag.H" bodystart="287" bodyend="350"/>
     <listofallmembers>
       <member refid="classamrex_1_1BaseFab_1af827e9a5df2baf21d45239e49567f4c6" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>abs</name></member>
       <member refid="classamrex_1_1BaseFab_1ae730734f6c370cc53bdfb51efe618033" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>abs</name></member>
@@ -458,6 +522,9 @@
       <member refid="classamrex_1_1BaseFab_1ac5a36d719054f74a00bfc52e10ec9918" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>elixir</name></member>
       <member refid="classamrex_1_1BaseFab_1a4b42e2b61ac6d8050def0a5e9bde849f" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>Finalize</name></member>
       <member refid="structamrex_1_1DataAllocator_1a5fa328945c30133a9b9c7f93ccf6e78f" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>free</name></member>
+      <member refid="classamrex_1_1EBCellFlagFab_1accfba3397c54fc70f5355fe72e53aef5" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>getNumCoveredCells</name></member>
+      <member refid="classamrex_1_1EBCellFlagFab_1abfc0c19edd24b4583d39b256c3916364" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>getNumCutCells</name></member>
+      <member refid="classamrex_1_1EBCellFlagFab_1a5543ed9a9e620af529ce92b82b6498f3" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>getNumRegularCells</name></member>
       <member refid="classamrex_1_1EBCellFlagFab_1ad195d2769922a7376a690010b7cc569a" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>getType</name></member>
       <member refid="classamrex_1_1EBCellFlagFab_1a5fbbd6cfac2268f9286c156e7ecd7ea6" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>getType</name></member>
       <member refid="classamrex_1_1BaseFab_1ac195a2bbff03a7f02e30788342473d18" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>getVal</name></member>
@@ -477,7 +544,7 @@
       <member refid="classamrex_1_1BaseFab_1a5598302356ad5c6af7482fc392c8bb8b" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>loVect</name></member>
       <member refid="structamrex_1_1DataAllocator_1a901b7f1e68950afc823ebc10c093cb94" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>m_arena</name></member>
       <member refid="classamrex_1_1EBCellFlagFab_1a625c1eeed8e477ce6df628fdf55059a9" prot="private" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>m_type</name></member>
-      <member refid="classamrex_1_1EBCellFlagFab_1a978db62963e6e2b6ea0472b063d250c6" prot="private" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>m_typemap</name></member>
+      <member refid="classamrex_1_1EBCellFlagFab_1a914a481cd7a1365cd6e02ebdf629131d" prot="private" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>m_typemap</name></member>
       <member refid="classamrex_1_1BaseFab_1a3e4a9401acaa07ed7747907ccaa18a8e" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>maskEQ</name></member>
       <member refid="classamrex_1_1BaseFab_1a02d3c8e98d8d4b237eabc0ce1756fc33" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>maskGE</name></member>
       <member refid="classamrex_1_1BaseFab_1ae1a6b0d582503d0257d5927534619526" prot="public" virt="non-virtual"><scope>amrex::EBCellFlagFab</scope><name>maskGT</name></member>

@@ -111,7 +111,7 @@ var NAVTREEINDEX3 =
 "AMReX__EBAmrUtil_8cpp.html#aca824ed9a83373a83533e948d2175dee":[3,0,0,4,48,0],
 "AMReX__EBAmrUtil_8cpp.html#ae146edcedfbd7eb8509f8c334b764d84":[3,0,0,4,48,1],
 "AMReX__EBCellFlag_8H.html":[3,0,0,4,51],
-"AMReX__EBCellFlag_8H.html#ac45d936bf5764d4fc75c7d483c93afaa":[3,0,0,4,51,3],
+"AMReX__EBCellFlag_8H.html#ac45d936bf5764d4fc75c7d483c93afaa":[3,0,0,4,51,4],
 "AMReX__EBCellFlag_8H_source.html":[3,0,0,4,51],
 "AMReX__EBCellFlag_8cpp.html":[3,0,0,4,50],
 "AMReX__EBCellFlag_8cpp.html#ac45d936bf5764d4fc75c7d483c93afaa":[3,0,0,4,50,0],
