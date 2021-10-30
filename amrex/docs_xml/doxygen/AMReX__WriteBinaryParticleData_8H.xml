@@ -3971,158 +3971,164 @@
 <codeline lineno="1293"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>level_name[128];</highlight></codeline>
 <codeline lineno="1295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ngrids;</highlight></codeline>
-<codeline lineno="1296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;=<sp/>finest_level;<sp/>++lev)<sp/>{</highlight></codeline>
-<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(level_name,<sp/></highlight><highlight class="stringliteral">&quot;level_%d&quot;</highlight><highlight class="normal">,<sp/>lev);</highlight></codeline>
-<codeline lineno="1298"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grp<sp/>=<sp/>H5Gcreate(fid,<sp/>level_name,<sp/>H5P_DEFAULT,<sp/>H5P_DEFAULT,<sp/>H5P_DEFAULT);</highlight></codeline>
-<codeline lineno="1300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grp<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;H5Gcreate<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>level_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>failed!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="1302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1304"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Then<sp/>the<sp/>number<sp/>of<sp/>grids<sp/>at<sp/>each<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ngrids<sp/>=<sp/>pc.ParticleBoxArray(lev).size();</highlight></codeline>
-<codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateWriteHDF5Attr(grp,<sp/></highlight><highlight class="stringliteral">&quot;ngrids&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>&amp;ngrids,<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="1296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>dcpl_id<sp/>=<sp/>H5Pcreate(H5P_DATASET_CREATE);</highlight></codeline>
+<codeline lineno="1298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Pset_fill_time(dcpl_id,<sp/>H5D_FILL_TIME_NEVER);</highlight></codeline>
+<codeline lineno="1299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;=<sp/>finest_level;<sp/>++lev)<sp/>{</highlight></codeline>
+<codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(level_name,<sp/></highlight><highlight class="stringliteral">&quot;level_%d&quot;</highlight><highlight class="normal">,<sp/>lev);</highlight></codeline>
+<codeline lineno="1302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grp<sp/>=<sp/>H5Gcreate(fid,<sp/>level_name,<sp/>H5P_DEFAULT,<sp/>H5P_DEFAULT,<sp/>H5P_DEFAULT);</highlight></codeline>
+<codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(grp<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;H5Gcreate<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>level_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>failed!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1308"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>int<sp/>ratio<sp/>=<sp/>1;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>CreateWriteHDF5Attr(grp,<sp/>&quot;ref_ratio&quot;,<sp/>1,<sp/>&amp;ratio);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1311"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mfs_size<sp/>=<sp/>2<sp/>*<sp/>AMREX_SPACEDIM;</highlight></codeline>
-<codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hsize_t<sp/>mfs_dim<sp/>=<sp/>(hsize_t)ngrids;</highlight></codeline>
-<codeline lineno="1314"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>mfs_dset_space<sp/>=<sp/>H5Screate_simple(1,<sp/>&amp;mfs_dim,<sp/>NULL);</highlight></codeline>
-<codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>mfs_dset=<sp/>H5Dcreate(grp,<sp/></highlight><highlight class="stringliteral">&quot;boxes&quot;</highlight><highlight class="normal">,<sp/>comp_dtype,<sp/>mfs_dset_space,<sp/>H5P_DEFAULT,<sp/>H5P_DEFAULT,<sp/>H5P_DEFAULT);</highlight></codeline>
-<codeline lineno="1317"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>vbox(ngrids<sp/>*<sp/>mfs_size);</highlight></codeline>
-<codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>pc.ParticleBoxArray(lev).<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();<sp/>++j)<sp/>{</highlight></codeline>
-<codeline lineno="1320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox[(j<sp/>*<sp/>mfs_size)<sp/>+<sp/>i]<sp/>=<sp/>pc.ParticleBoxArray(lev)[j].smallEnd(i);</highlight></codeline>
-<codeline lineno="1322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox[(j<sp/>*<sp/>mfs_size)<sp/>+<sp/>i<sp/>+<sp/>AMREX_SPACEDIM]<sp/>=<sp/>pc.ParticleBoxArray(lev)[j].bigEnd(i);</highlight></codeline>
-<codeline lineno="1323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1325"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>H5Dwrite(mfs_dset,<sp/>comp_dtype,<sp/>H5S_ALL,<sp/>H5S_ALL,<sp/>H5P_DEFAULT,<sp/>&amp;(vbox[0]));</highlight></codeline>
-<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::WriteHDF5ParticleDataSync():<sp/>unable<sp/>to<sp/>write<sp/>boxes<sp/>dataset&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(msg.c_str());</highlight></codeline>
+<codeline lineno="1309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Then<sp/>the<sp/>number<sp/>of<sp/>grids<sp/>at<sp/>each<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ngrids<sp/>=<sp/>pc.ParticleBoxArray(lev).size();</highlight></codeline>
+<codeline lineno="1311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateWriteHDF5Attr(grp,<sp/></highlight><highlight class="stringliteral">&quot;ngrids&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>&amp;ngrids,<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="1312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>int<sp/>ratio<sp/>=<sp/>1;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>CreateWriteHDF5Attr(grp,<sp/>&quot;ref_ratio&quot;,<sp/>1,<sp/>&amp;ratio);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mfs_size<sp/>=<sp/>2<sp/>*<sp/>AMREX_SPACEDIM;</highlight></codeline>
+<codeline lineno="1317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hsize_t<sp/>mfs_dim<sp/>=<sp/>(hsize_t)ngrids;</highlight></codeline>
+<codeline lineno="1318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>mfs_dset_space<sp/>=<sp/>H5Screate_simple(1,<sp/>&amp;mfs_dim,<sp/>NULL);</highlight></codeline>
+<codeline lineno="1320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>mfs_dset=<sp/>H5Dcreate(grp,<sp/></highlight><highlight class="stringliteral">&quot;boxes&quot;</highlight><highlight class="normal">,<sp/>comp_dtype,<sp/>mfs_dset_space,<sp/>H5P_DEFAULT,<sp/>dcpl_id,<sp/>H5P_DEFAULT);</highlight></codeline>
+<codeline lineno="1323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>vbox(ngrids<sp/>*<sp/>mfs_size);</highlight></codeline>
+<codeline lineno="1325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>pc.ParticleBoxArray(lev).<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox[(j<sp/>*<sp/>mfs_size)<sp/>+<sp/>i]<sp/>=<sp/>pc.ParticleBoxArray(lev)[j].smallEnd(i);</highlight></codeline>
+<codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox[(j<sp/>*<sp/>mfs_size)<sp/>+<sp/>i<sp/>+<sp/>AMREX_SPACEDIM]<sp/>=<sp/>pc.ParticleBoxArray(lev)[j].bigEnd(i);</highlight></codeline>
+<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1331"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Sclose(mfs_dset_space);</highlight></codeline>
-<codeline lineno="1333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Dclose(mfs_dset);</highlight></codeline>
-<codeline lineno="1334"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Gclose(grp);</highlight></codeline>
-<codeline lineno="1336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>H5Dwrite(mfs_dset,<sp/>comp_dtype,<sp/>H5S_ALL,<sp/>H5S_ALL,<sp/>H5P_DEFAULT,<sp/>&amp;(vbox[0]));</highlight></codeline>
+<codeline lineno="1333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::WriteHDF5ParticleDataSync():<sp/>unable<sp/>to<sp/>write<sp/>boxes<sp/>dataset&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(msg.c_str());</highlight></codeline>
+<codeline lineno="1336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1337"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Fclose(fid);</highlight></codeline>
-<codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Sclose(mfs_dset_space);</highlight></codeline>
+<codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Dclose(mfs_dset);</highlight></codeline>
 <codeline lineno="1340"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>();</highlight></codeline>
-<codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a82c334c787872a6bbacabe9a38389224" kindref="member">BL_PROFILE_VAR_STOP</ref>(h5fg);</highlight></codeline>
-<codeline lineno="1343"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>want<sp/>to<sp/>write<sp/>the<sp/>data<sp/>out<sp/>in<sp/>parallel.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We&apos;ll<sp/>allow<sp/>up<sp/>to<sp/>nOutFiles<sp/>active<sp/>writers<sp/>at<sp/>a<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nOutFiles(-1);</highlight></codeline>
-<codeline lineno="1347"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1348"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse<sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;particles&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1349"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1aa98ab18bc26692876f9590316af5b1fa" kindref="member">query</ref>(</highlight><highlight class="stringliteral">&quot;particles_nfiles&quot;</highlight><highlight class="normal">,nOutFiles);</highlight></codeline>
-<codeline lineno="1350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nOutFiles<sp/>==<sp/>-1)<sp/>nOutFiles<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">NProcs</ref>;</highlight></codeline>
-<codeline lineno="1351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nOutFiles<sp/>=<sp/>std::max(1,<sp/>std::min(nOutFiles,NProcs));<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/>pc.nOutFilesPrePost<sp/>=<sp/>nOutFiles;</highlight></codeline>
+<codeline lineno="1341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Gclose(grp);</highlight></codeline>
+<codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Pclose(dcpl_id);</highlight></codeline>
+<codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Fclose(fid);</highlight></codeline>
+<codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1347"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>();</highlight></codeline>
+<codeline lineno="1348"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a82c334c787872a6bbacabe9a38389224" kindref="member">BL_PROFILE_VAR_STOP</ref>(h5fg);</highlight></codeline>
+<codeline lineno="1349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>want<sp/>to<sp/>write<sp/>the<sp/>data<sp/>out<sp/>in<sp/>parallel.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We&apos;ll<sp/>allow<sp/>up<sp/>to<sp/>nOutFiles<sp/>active<sp/>writers<sp/>at<sp/>a<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nOutFiles(-1);</highlight></codeline>
 <codeline lineno="1353"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1354"><highlight class="normal"><sp/><sp/><sp/><sp/>fapl<sp/>=<sp/>H5Pcreate<sp/>(H5P_FILE_ACCESS);</highlight></codeline>
-<codeline lineno="1355"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1356"><highlight class="normal"><sp/><sp/><sp/><sp/>SetHDF5fapl(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
-<codeline lineno="1357"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1358"><highlight class="normal"><sp/><sp/><sp/><sp/>SetHDF5fapl(fapl);</highlight></codeline>
-<codeline lineno="1359"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1360"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1361"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>HDF5<sp/>async<sp/>VOL,<sp/>block<sp/>and<sp/>wait<sp/>previous<sp/>tasks<sp/>have<sp/>all<sp/>completed</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(es_par_g<sp/>!=<sp/>0)</highlight></codeline>
-<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>async_vol_es_wait_particle();</highlight></codeline>
-<codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aec8ceac1148bd8331f3a51572068f8a0" kindref="member">ExecOnFinalize</ref>(async_vol_es_wait_close_particle);</highlight></codeline>
-<codeline lineno="1367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>es_par_g<sp/>=<sp/>H5EScreate();</highlight></codeline>
-<codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1369"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1370"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1371"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1372"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen_async(HDF5FileName.c_str(),<sp/>H5F_ACC_RDWR,<sp/>fapl,<sp/>es_par_g);</highlight></codeline>
-<codeline lineno="1373"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1374"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen(HDF5FileName.c_str(),<sp/>H5F_ACC_RDWR,<sp/>fapl);</highlight></codeline>
+<codeline lineno="1354"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse<sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;particles&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1355"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1aa98ab18bc26692876f9590316af5b1fa" kindref="member">query</ref>(</highlight><highlight class="stringliteral">&quot;particles_nfiles&quot;</highlight><highlight class="normal">,nOutFiles);</highlight></codeline>
+<codeline lineno="1356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nOutFiles<sp/>==<sp/>-1)<sp/>nOutFiles<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">NProcs</ref>;</highlight></codeline>
+<codeline lineno="1357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>nOutFiles<sp/>=<sp/>std::max(1,<sp/>std::min(nOutFiles,NProcs));<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1358"><highlight class="normal"><sp/><sp/><sp/><sp/>pc.nOutFilesPrePost<sp/>=<sp/>nOutFiles;</highlight></codeline>
+<codeline lineno="1359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1360"><highlight class="normal"><sp/><sp/><sp/><sp/>fapl<sp/>=<sp/>H5Pcreate<sp/>(H5P_FILE_ACCESS);</highlight></codeline>
+<codeline lineno="1361"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/>SetHDF5fapl(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="1363"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/>SetHDF5fapl(fapl);</highlight></codeline>
+<codeline lineno="1365"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1367"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>HDF5<sp/>async<sp/>VOL,<sp/>block<sp/>and<sp/>wait<sp/>previous<sp/>tasks<sp/>have<sp/>all<sp/>completed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1369"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(es_par_g<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="1370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>async_vol_es_wait_particle();</highlight></codeline>
+<codeline lineno="1371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aec8ceac1148bd8331f3a51572068f8a0" kindref="member">ExecOnFinalize</ref>(async_vol_es_wait_close_particle);</highlight></codeline>
+<codeline lineno="1373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>es_par_g<sp/>=<sp/>H5EScreate();</highlight></codeline>
+<codeline lineno="1374"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1375"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fid<sp/>&lt;<sp/>0)</highlight></codeline>
-<codeline lineno="1377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac40a8be1926370de761ddd49c765d971" kindref="member">FileOpenFailed</ref>(HDF5FileName.c_str());</highlight></codeline>
-<codeline lineno="1378"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>level_name[64];</highlight></codeline>
-<codeline lineno="1380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;=<sp/>pc.finestLevel();<sp/>lev++)</highlight></codeline>
-<codeline lineno="1381"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(level_name,<sp/></highlight><highlight class="stringliteral">&quot;level_%d&quot;</highlight><highlight class="normal">,<sp/>lev);</highlight></codeline>
-<codeline lineno="1383"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grp<sp/>=<sp/>H5Gopen_async(fid,<sp/>level_name,<sp/>H5P_DEFAULT,<sp/>es_par_g);</highlight></codeline>
-<codeline lineno="1385"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grp<sp/>=<sp/>H5Gopen(fid,<sp/>level_name,<sp/>H5P_DEFAULT);</highlight></codeline>
-<codeline lineno="1387"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1388"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gotsome;</highlight></codeline>
-<codeline lineno="1390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.usePrePost)</highlight></codeline>
-<codeline lineno="1391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gotsome<sp/>=<sp/>(pc.nParticlesAtLevelPrePost[lev]<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gotsome<sp/>=<sp/>(pc.NumberOfParticlesAtLevel(lev)<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1377"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1378"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen_async(HDF5FileName.c_str(),<sp/>H5F_ACC_RDWR,<sp/>fapl,<sp/>es_par_g);</highlight></codeline>
+<codeline lineno="1379"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1380"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen(HDF5FileName.c_str(),<sp/>H5F_ACC_RDWR,<sp/>fapl);</highlight></codeline>
+<codeline lineno="1381"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fid<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="1383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac40a8be1926370de761ddd49c765d971" kindref="member">FileOpenFailed</ref>(HDF5FileName.c_str());</highlight></codeline>
+<codeline lineno="1384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>level_name[64];</highlight></codeline>
+<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;=<sp/>pc.finestLevel();<sp/>lev++)</highlight></codeline>
+<codeline lineno="1387"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(level_name,<sp/></highlight><highlight class="stringliteral">&quot;level_%d&quot;</highlight><highlight class="normal">,<sp/>lev);</highlight></codeline>
+<codeline lineno="1389"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grp<sp/>=<sp/>H5Gopen_async(fid,<sp/>level_name,<sp/>H5P_DEFAULT,<sp/>es_par_g);</highlight></codeline>
+<codeline lineno="1391"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grp<sp/>=<sp/>H5Gopen(fid,<sp/>level_name,<sp/>H5P_DEFAULT);</highlight></codeline>
+<codeline lineno="1393"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1394"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo<sp/>info;</highlight></codeline>
-<codeline lineno="1396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info.SetAlloc(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab<sp/>state(pc.ParticleBoxArray(lev),</highlight></codeline>
-<codeline lineno="1398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.ParticleDistributionMap(lev),</highlight></codeline>
-<codeline lineno="1399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,0,info);</highlight></codeline>
+<codeline lineno="1395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>gotsome;</highlight></codeline>
+<codeline lineno="1396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.usePrePost)</highlight></codeline>
+<codeline lineno="1397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gotsome<sp/>=<sp/>(pc.nParticlesAtLevelPrePost[lev]<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gotsome<sp/>=<sp/>(pc.NumberOfParticlesAtLevel(lev)<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="1400"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>eventually<sp/>want<sp/>to<sp/>write<sp/>out<sp/>the<sp/>file<sp/>name<sp/>and<sp/>the<sp/>offset</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>into<sp/>that<sp/>file<sp/>into<sp/>which<sp/>each<sp/>grid<sp/>of<sp/>particles<sp/>is<sp/>written.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/><sp/>which(state.size(),0);</highlight></codeline>
-<codeline lineno="1404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int<sp/>&gt;<sp/>count(state.size(),0);</highlight></codeline>
-<codeline lineno="1405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>where(state.size(),0);</highlight></codeline>
+<codeline lineno="1401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo<sp/>info;</highlight></codeline>
+<codeline lineno="1402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info.SetAlloc(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab<sp/>state(pc.ParticleBoxArray(lev),</highlight></codeline>
+<codeline lineno="1404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.ParticleDistributionMap(lev),</highlight></codeline>
+<codeline lineno="1405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,0,info);</highlight></codeline>
 <codeline lineno="1406"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.usePrePost)</highlight></codeline>
-<codeline lineno="1408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.filePrefixPrePost[lev]<sp/>=<sp/>HDF5FileName;</highlight></codeline>
-<codeline lineno="1409"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>groupSets(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),<sp/>setBuf(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1411"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gotsome)</highlight></codeline>
-<codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.WriteParticlesHDF5(lev,<sp/>grp,<sp/>which,<sp/>count,<sp/>where,</highlight></codeline>
-<codeline lineno="1415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,<sp/>particle_io_flags);</highlight></codeline>
-<codeline lineno="1416"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.usePrePost)<sp/>{</highlight></codeline>
-<codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.whichPrePost[lev]<sp/>=<sp/>which;</highlight></codeline>
-<codeline lineno="1419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.countPrePost[lev]<sp/>=<sp/>count;</highlight></codeline>
-<codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.wherePrePost[lev]<sp/>=<sp/>where;</highlight></codeline>
-<codeline lineno="1421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a132abb9498b1ed2f491583c1f7719afb" kindref="member">ParallelDescriptor::ReduceIntSum</ref><sp/>(which.dataPtr(),<sp/>which.size(),<sp/>IOProcNumber);</highlight></codeline>
-<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a132abb9498b1ed2f491583c1f7719afb" kindref="member">ParallelDescriptor::ReduceIntSum</ref><sp/>(count.dataPtr(),<sp/>count.size(),<sp/>IOProcNumber);</highlight></codeline>
-<codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(where.dataPtr(),<sp/>where.size(),<sp/>IOProcNumber);</highlight></codeline>
-<codeline lineno="1425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1427"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1428"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Gclose_async(grp,<sp/>es_par_g);</highlight></codeline>
-<codeline lineno="1430"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Gclose(grp);</highlight></codeline>
-<codeline lineno="1432"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1433"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>for<sp/>(lev...)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1434"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1435"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Tclose(comp_dtype);</highlight></codeline>
-<codeline lineno="1436"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Pclose(fapl);</highlight></codeline>
-<codeline lineno="1437"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1438"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1439"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Fclose_async(fid,<sp/>es_par_g);</highlight></codeline>
-<codeline lineno="1440"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1441"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Fclose(fid);</highlight></codeline>
-<codeline lineno="1442"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>eventually<sp/>want<sp/>to<sp/>write<sp/>out<sp/>the<sp/>file<sp/>name<sp/>and<sp/>the<sp/>offset</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>into<sp/>that<sp/>file<sp/>into<sp/>which<sp/>each<sp/>grid<sp/>of<sp/>particles<sp/>is<sp/>written.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/><sp/>which(state.size(),0);</highlight></codeline>
+<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int<sp/>&gt;<sp/>count(state.size(),0);</highlight></codeline>
+<codeline lineno="1411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>where(state.size(),0);</highlight></codeline>
+<codeline lineno="1412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.usePrePost)</highlight></codeline>
+<codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.filePrefixPrePost[lev]<sp/>=<sp/>HDF5FileName;</highlight></codeline>
+<codeline lineno="1415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>groupSets(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),<sp/>setBuf(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gotsome)</highlight></codeline>
+<codeline lineno="1419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.WriteParticlesHDF5(lev,<sp/>grp,<sp/>which,<sp/>count,<sp/>where,</highlight></codeline>
+<codeline lineno="1421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,<sp/>particle_io_flags);</highlight></codeline>
+<codeline lineno="1422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.usePrePost)<sp/>{</highlight></codeline>
+<codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.whichPrePost[lev]<sp/>=<sp/>which;</highlight></codeline>
+<codeline lineno="1425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.countPrePost[lev]<sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="1426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc.wherePrePost[lev]<sp/>=<sp/>where;</highlight></codeline>
+<codeline lineno="1427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a132abb9498b1ed2f491583c1f7719afb" kindref="member">ParallelDescriptor::ReduceIntSum</ref><sp/>(which.dataPtr(),<sp/>which.size(),<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="1429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a132abb9498b1ed2f491583c1f7719afb" kindref="member">ParallelDescriptor::ReduceIntSum</ref><sp/>(count.dataPtr(),<sp/>count.size(),<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="1430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(where.dataPtr(),<sp/>where.size(),<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="1431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1434"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Gclose_async(grp,<sp/>es_par_g);</highlight></codeline>
+<codeline lineno="1436"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H5Gclose(grp);</highlight></codeline>
+<codeline lineno="1438"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1439"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>end<sp/>for<sp/>(lev...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1441"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Tclose(comp_dtype);</highlight></codeline>
+<codeline lineno="1442"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Pclose(fapl);</highlight></codeline>
 <codeline lineno="1443"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1444"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1445"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1446"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_USE_HDF5*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1447"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_WRITE_BINARY_PARTICLE_DATA_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="1444"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1445"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Fclose_async(fid,<sp/>es_par_g);</highlight></codeline>
+<codeline lineno="1446"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1447"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Fclose(fid);</highlight></codeline>
+<codeline lineno="1448"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1449"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1450"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1451"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1452"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_USE_HDF5*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1453"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_WRITE_BINARY_PARTICLE_DATA_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H"/>
   </compounddef>
