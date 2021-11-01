@@ -42,6 +42,14 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
       [ "InterpolaterBoxCoarsener", "classamrex_1_1InterpolaterBoxCoarsener.html", "classamrex_1_1InterpolaterBoxCoarsener" ],
       [ "InterpBase", "classamrex_1_1InterpBase.html", "classamrex_1_1InterpBase" ]
     ] ],
+    [ "AMReX_InterpFaceReg_1D_C.H", "AMReX__InterpFaceReg__1D__C_8H.html", null ],
+    [ "AMReX_InterpFaceReg_2D_C.H", "AMReX__InterpFaceReg__2D__C_8H.html", "AMReX__InterpFaceReg__2D__C_8H" ],
+    [ "AMReX_InterpFaceReg_3D_C.H", "AMReX__InterpFaceReg__3D__C_8H.html", "AMReX__InterpFaceReg__3D__C_8H" ],
+    [ "AMReX_InterpFaceReg_C.H", "AMReX__InterpFaceReg__C_8H.html", null ],
+    [ "AMReX_InterpFaceRegister.cpp", "AMReX__InterpFaceRegister_8cpp.html", "AMReX__InterpFaceRegister_8cpp" ],
+    [ "AMReX_InterpFaceRegister.H", "AMReX__InterpFaceRegister_8H.html", [
+      [ "InterpFaceRegister", "classamrex_1_1InterpFaceRegister.html", "classamrex_1_1InterpFaceRegister" ]
+    ] ],
     [ "AMReX_Interpolater.cpp", "AMReX__Interpolater_8cpp.html", "AMReX__Interpolater_8cpp" ],
     [ "AMReX_Interpolater.H", "AMReX__Interpolater_8H.html", [
       [ "Interpolater", "classamrex_1_1Interpolater.html", "classamrex_1_1Interpolater" ],

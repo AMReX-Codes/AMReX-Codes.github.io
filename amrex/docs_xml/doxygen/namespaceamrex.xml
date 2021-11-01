@@ -185,6 +185,7 @@
     <innerclass refid="classamrex_1_1IntDescriptor" prot="public">amrex::IntDescriptor</innerclass>
     <innerclass refid="classamrex_1_1InterpBase" prot="public">amrex::InterpBase</innerclass>
     <innerclass refid="classamrex_1_1InterpBndryData" prot="public">amrex::InterpBndryData</innerclass>
+    <innerclass refid="classamrex_1_1InterpFaceRegister" prot="public">amrex::InterpFaceRegister</innerclass>
     <innerclass refid="classamrex_1_1Interpolater" prot="public">amrex::Interpolater</innerclass>
     <innerclass refid="classamrex_1_1InterpolaterBoxCoarsener" prot="public">amrex::InterpolaterBoxCoarsener</innerclass>
     <innerclass refid="classamrex_1_1IntVect" prot="public">amrex::IntVect</innerclass>
@@ -2810,7 +2811,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" line="513" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" bodystart="513" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" line="527" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" bodystart="527" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1ac3aaf3d47b0fc6e69f9405fcebcdc4fe" prot="public" static="no">
         <type>std::runtime_error</type>
@@ -6706,6 +6707,116 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interp_3D_C.H" line="387" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interp_3D_C.H" bodystart="387" bodyend="619"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aed91a03099231a70cb9d3fbf02d95081" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::interp_face_reg</definition>
+        <argsstring>(int i, int j, IntVect const &amp;rr, Array4&lt; Real &gt; const &amp;fine, int scomp, Array4&lt; Real const &gt; const &amp;crse, Array4&lt; Real &gt; const &amp;slope, int ncomp, Box const &amp;domface, int idim)</argsstring>
+        <name>interp_face_reg</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>rr</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <declname>crse</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>slope</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>domface</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>idim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpFaceReg_2D_C.H" line="7" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpFaceReg_2D_C.H" bodystart="7" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a78a68acf45501af596b096939b49995c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::interp_face_reg</definition>
+        <argsstring>(int i, int j, int k, IntVect const &amp;rr, Array4&lt; Real &gt; const &amp;fine, int scomp, Array4&lt; Real const &gt; const &amp;crse, Array4&lt; Real &gt; const &amp;slope, int ncomp, Box const &amp;domface, int idim)</argsstring>
+        <name>interp_face_reg</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>rr</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>fine</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <declname>crse</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>slope</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>domface</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>idim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpFaceReg_3D_C.H" line="7" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpFaceReg_3D_C.H" bodystart="7" bodyend="147"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a589b224d06c74e31215a36825605ba04" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mf_cell_cons_lin_interp_llslope</definition>
@@ -10382,7 +10493,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1582" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1583" bodyend="1604" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" declline="833" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1582" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1583" bodyend="1604" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" declline="847" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
@@ -10738,7 +10849,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1846" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1847" bodyend="1851" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" declline="835" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1846" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1847" bodyend="1851" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" declline="849" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3fb0e9220f2aa85a365f7ec254f2e3d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

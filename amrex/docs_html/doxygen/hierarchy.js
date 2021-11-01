@@ -524,6 +524,7 @@ var hierarchy =
         [ "amrex::MFPCInterp", "classamrex_1_1MFPCInterp.html", null ]
       ] ]
     ] ],
+    [ "amrex::InterpFaceRegister", "classamrex_1_1InterpFaceRegister.html", null ],
     [ "amrex::algoim::Interval", "structamrex_1_1algoim_1_1Interval.html", null ],
     [ "amrex::IntVect", "classamrex_1_1IntVect.html", null ],
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::InverseCopyTag", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html", null ],

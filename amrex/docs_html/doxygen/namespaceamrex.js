@@ -202,6 +202,7 @@ var namespaceamrex =
     [ "IntDescriptor", "classamrex_1_1IntDescriptor.html", "classamrex_1_1IntDescriptor" ],
     [ "InterpBase", "classamrex_1_1InterpBase.html", "classamrex_1_1InterpBase" ],
     [ "InterpBndryData", "classamrex_1_1InterpBndryData.html", "classamrex_1_1InterpBndryData" ],
+    [ "InterpFaceRegister", "classamrex_1_1InterpFaceRegister.html", "classamrex_1_1InterpFaceRegister" ],
     [ "Interpolater", "classamrex_1_1Interpolater.html", "classamrex_1_1Interpolater" ],
     [ "InterpolaterBoxCoarsener", "classamrex_1_1InterpolaterBoxCoarsener.html", "classamrex_1_1InterpolaterBoxCoarsener" ],
     [ "IntVect", "classamrex_1_1IntVect.html", "classamrex_1_1IntVect" ],
