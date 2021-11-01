@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                   <span class="keyword">const</span> amrex::IntVect&amp; crse_ratio);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<a class="code" href="namespaceHydroUtils.html#a05a5360d1cb9ecb9e74fcb70e8f4112e">create_constrained_umac_grown</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> nGrow, amrex::BoxArray&amp; fine_grids, </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<a class="code" href="namespaceHydroUtils.html#a05a5360d1cb9ecb9e74fcb70e8f4112e">create_constrained_umac_grown</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> nGrow, amrex::BoxArray&amp; fine_grids,</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                               <span class="keyword">const</span> amrex::Geometry* crse_geom, <span class="keyword">const</span> amrex::Geometry* fine_geom,</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                               <span class="keyword">const</span> amrex::Array&lt;amrex::MultiFab*,AMREX_SPACEDIM&gt; u_mac_crse,</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                               <span class="keyword">const</span> amrex::Array&lt;amrex::MultiFab*,AMREX_SPACEDIM&gt; u_mac_fine,</div>
@@ -284,12 +284,12 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;       <span class="keyword">const</span> <span class="keywordtype">int</span> bcomp,</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;       <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/*orig_comp*/</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">// Abort if an calling this function was supposed to fill an ext_dir BC. </span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">// Abort if an calling this function was supposed to fill an ext_dir BC.</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = bcomp; n &lt; bcomp+numcomp; ++n) {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keyword">const</span> amrex::BCRec&amp; bc = bcr[n];</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">if</span> ( AMREX_D_TERM(   bc.lo(0) == amrex::BCType::ext_dir || bc.hi(0) == amrex::BCType::ext_dir,</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                              || bc.lo(1) == amrex::BCType::ext_dir || bc.hi(1) == amrex::BCType::ext_dir,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                              || bc.lo(2) == amrex::BCType::ext_dir || bc.hi(2) == amrex::BCType::ext_dir ) ) { </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                              || bc.lo(2) == amrex::BCType::ext_dir || bc.hi(2) == amrex::BCType::ext_dir ) ) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;               amrex::Abort(<span class="stringliteral">&quot;FCFillExtDirDummy is a dummy placeholder and should not be used in combination with BCType::ext_dir&quot;</span>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
