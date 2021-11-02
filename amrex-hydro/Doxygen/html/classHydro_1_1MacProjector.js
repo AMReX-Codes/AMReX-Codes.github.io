@@ -10,7 +10,7 @@ var classHydro_1_1MacProjector =
     [ "getFluxes", "classHydro_1_1MacProjector.html#a5af2a8c4c1da1def1a08e66393f8d741", null ],
     [ "getLinOp", "classHydro_1_1MacProjector.html#a42c8aa2abe57b3e125b879da367eafa4", null ],
     [ "getMLMG", "classHydro_1_1MacProjector.html#a6f96afe62390bf84e4f3023dfc43aa21", null ],
-    [ "initProjector", "classHydro_1_1MacProjector.html#a44f1aa6d5058dfaf5455e4bfd1f65490", null ],
+    [ "initProjector", "classHydro_1_1MacProjector.html#a2ee546093718414ede2c81d993f52fdf", null ],
     [ "initProjector", "classHydro_1_1MacProjector.html#aa24fe4bfe04b7198572e2c16a21d43aa", null ],
     [ "needInitialization", "classHydro_1_1MacProjector.html#a810a7a05b1bcc6729b3bd68022073e70", null ],
     [ "project", "classHydro_1_1MacProjector.html#a8a7f09aa7edb1a831bceefd74a729619", null ],
