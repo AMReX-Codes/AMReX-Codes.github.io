@@ -10,6 +10,6 @@ var searchData=
   ['amrex_5fcalc_5fcentroid_5flimiter_286',['amrex_calc_centroid_limiter',['../group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187',1,'hydro_slope_limiter_K.H']]],
   ['apply_287',['Apply',['../namespaceRedistribution.html#a496336a7f843ce35f36ddb8be3aa68ba',1,'Redistribution']]],
   ['applytoinitialdata_288',['ApplyToInitialData',['../namespaceRedistribution.html#a563d1cc650b816911ba0c00e17e07d09',1,'Redistribution']]],
-  ['averagedown_289',['averageDown',['../classamrex_1_1NodalProjector.html#a0ffd6b9d9cccf9d8f2d4ba671ed0e559',1,'amrex::NodalProjector']]],
-  ['averagedownvelocity_290',['averageDownVelocity',['../classamrex_1_1MacProjector.html#acaa4061613e27a1666415db843c11a1c',1,'amrex::MacProjector']]]
+  ['averagedown_289',['averageDown',['../classHydro_1_1NodalProjector.html#a25c4a42881b0f5b720107096994cb181',1,'Hydro::NodalProjector']]],
+  ['averagedownvelocity_290',['averageDownVelocity',['../classHydro_1_1MacProjector.html#a83161a0efc231e4581212321fdbeac8f',1,'Hydro::MacProjector']]]
 ];

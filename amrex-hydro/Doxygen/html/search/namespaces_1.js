@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['ebgodunov_209',['EBGodunov',['../namespaceEBGodunov.html',1,'']]],
-  ['ebgodunovcornercouple_210',['EBGodunovCornerCouple',['../namespaceEBGodunovCornerCouple.html',1,'']]],
-  ['ebmol_211',['EBMOL',['../namespaceEBMOL.html',1,'']]],
-  ['ebplm_212',['EBPLM',['../namespaceEBPLM.html',1,'']]]
+  ['godunov_212',['Godunov',['../namespaceGodunov.html',1,'']]],
+  ['godunovcornercouple_213',['GodunovCornerCouple',['../namespaceGodunovCornerCouple.html',1,'']]],
+  ['godunovtransbc_214',['GodunovTransBC',['../namespaceGodunovTransBC.html',1,'']]]
 ];

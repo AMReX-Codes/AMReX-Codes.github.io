@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['getfluxes_320',['getFluxes',['../classamrex_1_1MacProjector.html#a7bc2979592e00db0821a012b396eec18',1,'amrex::MacProjector']]],
-  ['getgradphi_321',['getGradPhi',['../classamrex_1_1NodalProjector.html#a14ffe4a8ba58aeec47d5c94baec63ab5',1,'amrex::NodalProjector']]],
-  ['getgradphiconst_322',['getGradPhiConst',['../classamrex_1_1NodalProjector.html#a090526966c6971c2ad57aa64eaa0d975',1,'amrex::NodalProjector']]],
-  ['getlinop_323',['getLinOp',['../classamrex_1_1MacProjector.html#af840b40728ddf5e917768b8d91c5f80c',1,'amrex::MacProjector::getLinOp()'],['../classamrex_1_1NodalProjector.html#aff308ccaf74926d2a4b1e222827e0da6',1,'amrex::NodalProjector::getLinOp()']]],
-  ['getmlmg_324',['getMLMG',['../classamrex_1_1MacProjector.html#a2cefa0fe04a61276974e2059e72e865a',1,'amrex::MacProjector::getMLMG()'],['../classamrex_1_1NodalProjector.html#a2b5f697ec3e33875a8784dc463ad4d6b',1,'amrex::NodalProjector::getMLMG()']]],
-  ['getphi_325',['getPhi',['../classamrex_1_1NodalProjector.html#a95235b814e4a08c61cd9efc76d0f6309',1,'amrex::NodalProjector']]],
-  ['getphiconst_326',['getPhiConst',['../classamrex_1_1NodalProjector.html#a5b850f548a5941900edb5c45c1e2d875',1,'amrex::NodalProjector']]]
+  ['getfluxes_320',['getFluxes',['../classHydro_1_1MacProjector.html#a5af2a8c4c1da1def1a08e66393f8d741',1,'Hydro::MacProjector']]],
+  ['getgradphi_321',['getGradPhi',['../classHydro_1_1NodalProjector.html#af3361a156b0aa6ac7c3f84403eb5e016',1,'Hydro::NodalProjector']]],
+  ['getgradphiconst_322',['getGradPhiConst',['../classHydro_1_1NodalProjector.html#ad6484c98f8ebd60a65b9d680cf28b5a6',1,'Hydro::NodalProjector']]],
+  ['getlinop_323',['getLinOp',['../classHydro_1_1MacProjector.html#a42c8aa2abe57b3e125b879da367eafa4',1,'Hydro::MacProjector::getLinOp()'],['../classHydro_1_1NodalProjector.html#ad5928e251dfec8718bf03192b2d6ca91',1,'Hydro::NodalProjector::getLinOp()']]],
+  ['getmlmg_324',['getMLMG',['../classHydro_1_1MacProjector.html#a6f96afe62390bf84e4f3023dfc43aa21',1,'Hydro::MacProjector::getMLMG()'],['../classHydro_1_1NodalProjector.html#a51aa99d9c270fa9daa5af5f471d47997',1,'Hydro::NodalProjector::getMLMG()']]],
+  ['getphi_325',['getPhi',['../classHydro_1_1NodalProjector.html#a0882ef5d09dc4bab7163a3cdbf688f62',1,'Hydro::NodalProjector']]],
+  ['getphiconst_326',['getPhiConst',['../classHydro_1_1NodalProjector.html#ae3b328450fab7fc3828a1bb3a1e889fc',1,'Hydro::NodalProjector']]]
 ];

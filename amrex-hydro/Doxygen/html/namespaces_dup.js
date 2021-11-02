@@ -1,6 +1,5 @@
 var namespaces_dup =
 [
-    [ "amrex", "namespaceamrex.html", null ],
     [ "EBGodunov", "namespaceEBGodunov.html", null ],
     [ "EBGodunovCornerCouple", "namespaceEBGodunovCornerCouple.html", null ],
     [ "EBMOL", "namespaceEBMOL.html", null ],
@@ -8,6 +7,7 @@ var namespaces_dup =
     [ "Godunov", "namespaceGodunov.html", null ],
     [ "GodunovCornerCouple", "namespaceGodunovCornerCouple.html", null ],
     [ "GodunovTransBC", "namespaceGodunovTransBC.html", null ],
+    [ "Hydro", "namespaceHydro.html", null ],
     [ "HydroBC", "namespaceHydroBC.html", null ],
     [ "HydroUtils", "namespaceHydroUtils.html", null ],
     [ "MOL", "namespaceMOL.html", null ],
