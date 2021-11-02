@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['settranstermxbcs_257',['SetTransTermXBCs',['../namespaceGodunovTransBC.html#ad1d1c84bdcd9788ec367c1ed785f4718',1,'GodunovTransBC']]],
-  ['settranstermybcs_258',['SetTransTermYBCs',['../namespaceGodunovTransBC.html#ad68ded92e84089c0b7617590b2c0bc0d',1,'GodunovTransBC']]],
-  ['setxbcs_259',['SetXBCs',['../namespacePPM.html#ad85420c7eb91daa7c5191645dc9df8af',1,'PPM']]],
-  ['setxedgebcs_260',['SetXEdgeBCs',['../namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a',1,'HydroBC']]],
-  ['setybcs_261',['SetYBCs',['../namespacePPM.html#a3f213383b8b4ef5c55827c34cd162869',1,'PPM']]],
-  ['setyedgebcs_262',['SetYEdgeBCs',['../namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab',1,'HydroBC']]],
-  ['stateredistribute_263',['StateRedistribute',['../namespaceRedistribution.html#a026ee49b3fcf1ce9266af274abe4cb72',1,'Redistribution']]]
+  ['needinitialization_341',['needInitialization',['../classamrex_1_1MacProjector.html#a37f6358dbc29e858ea5c74be8da7df93',1,'amrex::MacProjector']]],
+  ['newstateredistribute_342',['NewStateRedistribute',['../namespaceRedistribution.html#ad177d672727d7b076c4bf150ac988a88',1,'Redistribution']]],
+  ['nodalprojector_343',['NodalProjector',['../classamrex_1_1NodalProjector.html#a53072cc9425269b990cef344a198e2d5',1,'amrex::NodalProjector::NodalProjector(const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;a_vel, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;a_sigma, const Vector&lt; Geometry &gt; &amp;a_geom, const LPInfo &amp;a_lpinfo, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;a_S_cc={}, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;a_S_nd={})'],['../classamrex_1_1NodalProjector.html#a4a19684749f6340e4d3bbe0fc30cbce5',1,'amrex::NodalProjector::NodalProjector(const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;a_vel, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;a_sigma, const Vector&lt; Geometry &gt; &amp;a_geom, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;a_S_cc={}, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;a_S_nd={})'],['../classamrex_1_1NodalProjector.html#a4ea85e14731732c7507d8badceae7f34',1,'amrex::NodalProjector::NodalProjector(const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;a_vel, const amrex::Real a_const_sigma, const Vector&lt; Geometry &gt; &amp;a_geom, const LPInfo &amp;a_lpinfo, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;a_S_cc={}, const amrex::Vector&lt; const amrex::MultiFab * &gt; &amp;a_S_nd={})']]]
 ];

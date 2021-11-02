@@ -1,5 +1,6 @@
 var namespaces_dup =
 [
+    [ "amrex", "namespaceamrex.html", null ],
     [ "EBGodunov", "namespaceEBGodunov.html", null ],
     [ "EBGodunovCornerCouple", "namespaceEBGodunovCornerCouple.html", null ],
     [ "EBMOL", "namespaceEBMOL.html", null ],
