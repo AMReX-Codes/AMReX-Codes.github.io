@@ -4,7 +4,6 @@
     <compoundname>AMReX_ParticleHDF5.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <includes refid="AMReX__WriteBinaryParticleData_8H" local="no">AMReX_WriteBinaryParticleData.H</includes>
-    <includedby refid="AMReX__Particles_8H" local="yes">/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particles.H</includedby>
     <incdepgraph>
       <node id="149">
         <label>list</label>
@@ -681,6 +680,14 @@
       <node id="92">
         <label>unordered_set</label>
       </node>
+      <node id="1">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticleHDF5.H</label>
+        <link refid="AMReX__ParticleHDF5_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="88">
         <label>AMReX_Arena.H</label>
         <link refid="AMReX__Arena_8H"/>
@@ -1116,14 +1123,6 @@
       <node id="143">
         <label>AMReX_PCI.H</label>
         <link refid="AMReX__PCI_8H"/>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleHDF5.H</label>
-        <link refid="AMReX__ParticleHDF5_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
       </node>
       <node id="110">
         <label>tuple</label>
@@ -2229,8 +2228,6 @@
         </childnode>
         <childnode refid="183" relation="include">
         </childnode>
-        <childnode refid="1" relation="include">
-        </childnode>
       </node>
       <node id="140">
         <label>AMReX_ParReduce.H</label>
@@ -2474,84 +2471,6 @@
         </childnode>
       </node>
     </incdepgraph>
-    <invincdepgraph>
-      <node id="3">
-        <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParticles.H</label>
-        <link refid="AMReX__AmrParticles_8H"/>
-      </node>
-      <node id="8">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H</label>
-        <link refid="AMReX__TracerParticle__mod__K_8H"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H</label>
-        <link refid="AMReX__NeighborList_8H"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleHDF5.H</label>
-        <link refid="AMReX__ParticleHDF5_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle_mod_K.H</label>
-        <link refid="AMReX__Particle__mod__K_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticles.cpp</label>
-        <link refid="AMReX__TracerParticles_8cpp"/>
-      </node>
-      <node id="7">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticles.H</label>
-        <link refid="AMReX__TracerParticles_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H</label>
-        <link refid="AMReX__WriteBinaryParticleData_8H"/>
-        <childnode refid="1" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particles.H</label>
-        <link refid="AMReX__Particles_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleIO.H</label>
-        <link refid="AMReX__ParticleIO_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H</label>
-        <link refid="AMReX__NeighborParticles_8H"/>
-      </node>
-    </invincdepgraph>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -2574,8 +2493,8 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal">::CheckpointHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ab6de00ee0d69f2adcf9217197ddd41c7" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ab6de00ee0d69f2adcf9217197ddd41c7" kindref="member">::CheckpointHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*is_checkpoint*/</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>int_comp_names)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
@@ -2614,7 +2533,7 @@
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_real_comp_names,<sp/>tmp_int_comp_names,</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SuperParticleType&amp;<sp/>p)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2625,8 +2544,8 @@
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">::CheckpointHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ab6de00ee0d69f2adcf9217197ddd41c7" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ab6de00ee0d69f2adcf9217197ddd41c7" kindref="member">::CheckpointHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>write_real_comp;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;std::string&gt;<sp/>real_comp_names;</highlight></codeline>
@@ -2648,7 +2567,7 @@
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SuperParticleType&amp;<sp/>p)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2659,8 +2578,8 @@
 <codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="105"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>write_real_comp;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;std::string&gt;<sp/>real_comp_names;</highlight></codeline>
@@ -2682,7 +2601,7 @@
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SuperParticleType&amp;<sp/>p)</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2693,8 +2612,8 @@
 <codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="138"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>int_comp_names)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="141"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
@@ -2707,7 +2626,7 @@
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>write_int_comp;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NStructInt<sp/>+<sp/>NumIntComps();<sp/>++i)<sp/>write_int_comp.push_back(1);</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SuperParticleType&amp;<sp/>p)</highlight></codeline>
@@ -2719,8 +2638,8 @@
 <codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="164"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="166"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(real_comp_names.size()<sp/>==<sp/>NStructReal<sp/>+<sp/>NumRealComps());</highlight></codeline>
@@ -2739,7 +2658,7 @@
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ParticleType&amp;<sp/>p)</highlight></codeline>
@@ -2751,8 +2670,8 @@
 <codeline lineno="192"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="196"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
@@ -2776,7 +2695,7 @@
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SuperParticleType&amp;<sp/>p)</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2787,8 +2706,8 @@
 <codeline lineno="228"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="231"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;::</highlight></codeline>
-<codeline lineno="232"><highlight class="normal">WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;::</ref></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
@@ -2796,7 +2715,7 @@
 <codeline lineno="237"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;ParticleContainer::WritePlotFile()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SuperParticleType&amp;<sp/>p)</highlight></codeline>
@@ -2809,8 +2728,8 @@
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::enable_if&lt;!std::is_same&lt;F,<sp/>Vector&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;&gt;::value&gt;::type*&gt;</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="253"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="254"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>F&amp;&amp;<sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>F&amp;&amp;<sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="255"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>write_real_comp;</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;std::string&gt;<sp/>real_comp_names;</highlight></codeline>
@@ -2832,7 +2751,7 @@
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
 <codeline lineno="279"><highlight class="normal">}</highlight></codeline>
@@ -2841,8 +2760,8 @@
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="285"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="286"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>int_comp_names,<sp/>F&amp;&amp;<sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="289"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
@@ -2855,7 +2774,7 @@
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>write_int_comp;</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NStructInt<sp/>+<sp/>NumIntComps();<sp/>++i)<sp/>write_int_comp.push_back(1);</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
@@ -2865,8 +2784,8 @@
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::enable_if&lt;!std::is_same&lt;F,<sp/>Vector&lt;std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;&gt;::value&gt;::type*&gt;</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="309"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="310"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,<sp/>F&amp;&amp;<sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="312"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(real_comp_names.size()<sp/>==<sp/>NStructReal<sp/>+<sp/>NumRealComps());</highlight></codeline>
@@ -2885,7 +2804,7 @@
 <codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"></highlight></codeline>
-<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
@@ -2895,8 +2814,8 @@
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="337"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
 <codeline lineno="338"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="339"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="340"><highlight class="normal">::WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">::WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,<sp/>F&amp;&amp;<sp/>f)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
@@ -2920,7 +2839,7 @@
 <codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int_comp_names.push_back(ss.str());</highlight></codeline>
 <codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="363"><highlight class="normal"></highlight></codeline>
-<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,<sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
 <codeline lineno="367"><highlight class="normal">}</highlight></codeline>
@@ -2929,8 +2848,8 @@
 <codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="371"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
 <codeline lineno="372"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="373"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;::</highlight></codeline>
-<codeline lineno="374"><highlight class="normal">WritePlotFileHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;::</ref></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a0efe44e22b6f6e711c39bb8e0b7ab386" kindref="member">WritePlotFileHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
@@ -2939,7 +2858,7 @@
 <codeline lineno="380"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;ParticleContainer::WritePlotFile()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="382"><highlight class="normal"></highlight></codeline>
-<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>WriteHDF5ParticleData(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
@@ -2949,8 +2868,8 @@
 <codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="391"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
 <codeline lineno="392"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="393"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="394"><highlight class="normal">::WriteHDF5ParticleData<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">::WriteHDF5ParticleData</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
@@ -2963,7 +2882,7 @@
 <codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>}<sp/>else<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>{<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WriteHDF5ParticleDataSync(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1afec0f3e905aba85133c5bf766b0f2be1" kindref="member">WriteHDF5ParticleDataSync</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>name,</highlight></codeline>
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp,<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>real_comp_names,<sp/>int_comp_names,</highlight></codeline>
 <codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
@@ -2973,8 +2892,8 @@
 <codeline lineno="414"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="416"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="417"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="418"><highlight class="normal">::CheckpointPreHDF5<sp/>()</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a538fea67623e9ea45e61df3b3293fb95" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a538fea67623e9ea45e61df3b3293fb95" kindref="member">::CheckpointPreHDF5</ref><sp/>()</highlight></codeline>
 <codeline lineno="419"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/>usePrePost)<sp/>{</highlight></codeline>
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
@@ -3030,8 +2949,8 @@
 <codeline lineno="471"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="473"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="474"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="475"><highlight class="normal">::CheckpointPostHDF5<sp/>()</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ae596f242e9a476a0fed5359ac59d0111" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ae596f242e9a476a0fed5359ac59d0111" kindref="member">::CheckpointPostHDF5</ref><sp/>()</highlight></codeline>
 <codeline lineno="476"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>!<sp/>usePrePost)<sp/>{</highlight></codeline>
 <codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
@@ -3086,28 +3005,28 @@
 <codeline lineno="527"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="530"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="531"><highlight class="normal">::WritePlotFilePreHDF5<sp/>()</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a2e6bcd377495fdf5589eebc60e2f20ad" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a2e6bcd377495fdf5589eebc60e2f20ad" kindref="member">::WritePlotFilePreHDF5</ref><sp/>()</highlight></codeline>
 <codeline lineno="532"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/>CheckpointPreHDF5();</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1a538fea67623e9ea45e61df3b3293fb95" kindref="member">CheckpointPreHDF5</ref>();</highlight></codeline>
 <codeline lineno="534"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="535"><highlight class="normal"></highlight></codeline>
 <codeline lineno="536"><highlight class="normal"></highlight></codeline>
 <codeline lineno="537"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="539"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="540"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="541"><highlight class="normal">::WritePlotFilePostHDF5<sp/>()</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a62123365ed5b3ff068ec4dd495c137f1" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a62123365ed5b3ff068ec4dd495c137f1" kindref="member">::WritePlotFilePostHDF5</ref><sp/>()</highlight></codeline>
 <codeline lineno="542"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>CheckpointPostHDF5();</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ae596f242e9a476a0fed5359ac59d0111" kindref="member">CheckpointPostHDF5</ref>();</highlight></codeline>
 <codeline lineno="544"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="545"><highlight class="normal"></highlight></codeline>
 <codeline lineno="546"><highlight class="normal"></highlight></codeline>
 <codeline lineno="547"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="549"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="550"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="551"><highlight class="normal">::WriteParticlesHDF5<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev,<sp/>hid_t<sp/>grp,</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a87df9fb67cb7c80b249dacab3830d77d" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1a87df9fb67cb7c80b249dacab3830d77d" kindref="member">::WriteParticlesHDF5</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev,<sp/>hid_t<sp/>grp,</highlight></codeline>
 <codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;&amp;<sp/>which,<sp/>Vector&lt;int&gt;&amp;<sp/>count,<sp/>Vector&lt;Long&gt;&amp;<sp/>where,</highlight></codeline>
 <codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,</highlight></codeline>
@@ -3432,17 +3351,17 @@
 <codeline lineno="873"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="875"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="876"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="877"><highlight class="normal">::RestartHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>file,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*is_checkpoint*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ad215e5a3a39493b1e5600d87f0188b28" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="877"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ad215e5a3a39493b1e5600d87f0188b28" kindref="member">::RestartHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>file,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*is_checkpoint*/</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="878"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/>RestartHDF5(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>file);</highlight></codeline>
+<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ad215e5a3a39493b1e5600d87f0188b28" kindref="member">RestartHDF5</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>file);</highlight></codeline>
 <codeline lineno="880"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="881"><highlight class="normal"></highlight></codeline>
 <codeline lineno="882"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NArrayInt,</highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="884"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="885"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="886"><highlight class="normal">::RestartHDF5<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>file)</highlight></codeline>
+<codeline lineno="885"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ad215e5a3a39493b1e5600d87f0188b28" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1ad215e5a3a39493b1e5600d87f0188b28" kindref="member">::RestartHDF5</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>file)</highlight></codeline>
 <codeline lineno="887"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(!<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>.empty());</highlight></codeline>
@@ -3462,9 +3381,9 @@
 <codeline lineno="903"><highlight class="normal"></highlight></codeline>
 <codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/>fapl<sp/>=<sp/>H5Pcreate<sp/>(H5P_FILE_ACCESS);</highlight></codeline>
 <codeline lineno="905"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/>SetHDF5fapl(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
 <codeline lineno="907"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/>SetHDF5fapl(fapl);</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(fapl);</highlight></codeline>
 <codeline lineno="909"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="910"><highlight class="normal"></highlight></codeline>
 <codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen(fullname.c_str(),<sp/>H5F_ACC_RDONLY,<sp/>fapl);</highlight></codeline>
@@ -3521,7 +3440,7 @@
 <codeline lineno="962"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>gname;</highlight></codeline>
 <codeline lineno="963"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(msg.c_str());</highlight></codeline>
 <codeline lineno="964"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="965"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(grp,<sp/>aname.c_str(),<sp/>&amp;dm,<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="965"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(grp,<sp/>aname.c_str(),<sp/>&amp;dm,<sp/>H5T_NATIVE_INT);</highlight></codeline>
 <codeline lineno="966"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="967"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3531,7 +3450,7 @@
 <codeline lineno="972"><highlight class="normal"></highlight></codeline>
 <codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;num_component_real&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nr;</highlight></codeline>
-<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(fid,<sp/>aname.c_str(),<sp/>&amp;nr,<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(fid,<sp/>aname.c_str(),<sp/>&amp;nr,<sp/>H5T_NATIVE_INT);</highlight></codeline>
 <codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3542,7 +3461,7 @@
 <codeline lineno="983"><highlight class="normal"></highlight></codeline>
 <codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;num_component_int&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ni;</highlight></codeline>
-<codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(fid,<sp/>aname.c_str(),<sp/>&amp;ni,<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(fid,<sp/>aname.c_str(),<sp/>&amp;ni,<sp/>H5T_NATIVE_INT);</highlight></codeline>
 <codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="988"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3553,7 +3472,7 @@
 <codeline lineno="994"><highlight class="normal"></highlight></codeline>
 <codeline lineno="995"><highlight class="normal"><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;nparticles&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>nparticles;</highlight></codeline>
-<codeline lineno="997"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(fid,<sp/>aname.c_str(),<sp/>&amp;nparticles,<sp/>H5T_NATIVE_LLONG);</highlight></codeline>
+<codeline lineno="997"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(fid,<sp/>aname.c_str(),<sp/>&amp;nparticles,<sp/>H5T_NATIVE_LLONG);</highlight></codeline>
 <codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1000"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3563,7 +3482,7 @@
 <codeline lineno="1004"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;maxnextid&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>maxnextid;</highlight></codeline>
-<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(fid,<sp/>aname.c_str(),<sp/>&amp;maxnextid,<sp/>H5T_NATIVE_LLONG);</highlight></codeline>
+<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(fid,<sp/>aname.c_str(),<sp/>&amp;maxnextid,<sp/>H5T_NATIVE_LLONG);</highlight></codeline>
 <codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3574,7 +3493,7 @@
 <codeline lineno="1015"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;finest_level&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1017"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>finest_level_in_file;</highlight></codeline>
-<codeline lineno="1018"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(fid,<sp/>aname.c_str(),<sp/>&amp;finest_level_in_file,<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="1018"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(fid,<sp/>aname.c_str(),<sp/>&amp;finest_level_in_file,<sp/>H5T_NATIVE_INT);</highlight></codeline>
 <codeline lineno="1019"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1020"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1021"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3639,7 +3558,7 @@
 <codeline lineno="1080"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1081"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>particle_box_arrays[lev].readFrom(phdr_file);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1082"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>particle_box_arrays[lev]<sp/>=<sp/>ParticleBoxArray(lev);</highlight></codeline>
-<codeline lineno="1083"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>ngrid;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="1083"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>)ngrid;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="1084"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>tmp<sp/>({<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(boxes[i*AMREX_SPACEDIM],<sp/>boxes[i*AMREX_SPACEDIM+1],<sp/>boxes[i*AMREX_SPACEDIM+2])},<sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(boxes[i*AMREX_SPACEDIM*2],<sp/>boxes[i*AMREX_SPACEDIM*2+1],<sp/>boxes[i*AMREX_SPACEDIM*2+2])});</highlight></codeline>
 <codeline lineno="1085"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>particle_box_arrays[lev][i]<sp/>=<sp/>tmp;</highlight></codeline>
 <codeline lineno="1086"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3667,7 +3586,7 @@
 <codeline lineno="1108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1109"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;ngrids&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5Attr(grp,<sp/>aname.c_str(),<sp/>&amp;ngrids[lev],<sp/>H5T_NATIVE_INT);</highlight></codeline>
+<codeline lineno="1111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1aad63ab7770ca222d4e42f2cd5ddcf0bb" kindref="member">ReadHDF5Attr</ref>(grp,<sp/>aname.c_str(),<sp/>&amp;ngrids[lev],<sp/>H5T_NATIVE_INT);</highlight></codeline>
 <codeline lineno="1112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>
@@ -3795,8 +3714,8 @@
 <codeline lineno="1236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Allocator&gt;</highlight></codeline>
 <codeline lineno="1237"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>RTYPE&gt;</highlight></codeline>
 <codeline lineno="1238"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1239"><highlight class="normal">ParticleContainer&lt;NStructReal,<sp/>NStructInt,<sp/>NArrayReal,<sp/>NArrayInt,<sp/>Allocator&gt;</highlight></codeline>
-<codeline lineno="1240"><highlight class="normal">::ReadParticlesHDF5<sp/>(hsize_t<sp/>offset,<sp/>hsize_t<sp/>cnt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev,</highlight></codeline>
+<codeline lineno="1239"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1acf9b30276f0faaa9503b8d9c08aa379a" kindref="member">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</ref></highlight></codeline>
+<codeline lineno="1240"><highlight class="normal"><ref refid="AMReX__ParticlesHDF5_8H_1acf9b30276f0faaa9503b8d9c08aa379a" kindref="member">::ReadParticlesHDF5</ref><sp/>(hsize_t<sp/>offset,<sp/>hsize_t<sp/>cnt,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev,</highlight></codeline>
 <codeline lineno="1241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hid_t<sp/>int_dset,<sp/>hid_t<sp/>real_dset,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>finest_level_in_file)</highlight></codeline>
 <codeline lineno="1242"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;ParticleContainer::ReadParticlesHDF5()&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -3857,7 +3776,7 @@
 <codeline lineno="1298"><highlight class="normal"><sp/><sp/><sp/><sp/>host_int_attribs.reserve(15);</highlight></codeline>
 <codeline lineno="1299"><highlight class="normal"><sp/><sp/><sp/><sp/>host_int_attribs.resize(finest_level_in_file+1);</highlight></codeline>
 <codeline lineno="1300"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>cnt;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(hsize_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>cnt;<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="1302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.id()<sp/><sp/><sp/>=<sp/>iptr[0];</highlight></codeline>
 <codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.cpu()<sp/><sp/>=<sp/>iptr[1];</highlight></codeline>
 <codeline lineno="1304"><highlight class="normal"></highlight></codeline>
@@ -3943,6 +3862,6 @@
 <codeline lineno="1384"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_USE_HDF5*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1385"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_PARTICLEHDF5_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleHDF5.H"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticleHDF5.H"/>
   </compounddef>
 </doxygen>

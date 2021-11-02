@@ -1088,470 +1088,10 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;}</div>
 <div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160; </div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5</span></div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> CreateWriteHDF5Attr(hid_t loc, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, hsize_t n, <span class="keywordtype">void</span> *data, hid_t dtype)</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;{</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;    herr_t ret;</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;    hid_t attr, attr_space;</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    hsize_t dims = n;</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160; </div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    attr_space = H5Screate_simple(1, &amp;dims, NULL);</div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160; </div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;    attr = H5Acreate(loc, name, dtype, attr_space, H5P_DEFAULT, H5P_DEFAULT);</div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="keywordflow">if</span> (attr &lt; 0) {</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot; Error with H5Acreate [&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    }</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160; </div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;    ret  = H5Awrite(attr, dtype, (<span class="keywordtype">void</span>*)data);</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0) {</div>
-<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot; Error with H5Awrite [&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    }</div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;    H5Sclose(attr_space);</div>
-<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;    H5Aclose(attr);</div>
-<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;}</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160; </div>
-<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> CreateWriteHDF5AttrString(hid_t loc, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span>* str)</div>
-<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;{</div>
-<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;    hid_t attr, atype, space;</div>
-<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;    herr_t ret;</div>
-<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160; </div>
-<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(name);</div>
-<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(str);</div>
-<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160; </div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;    space = H5Screate(H5S_SCALAR);</div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    atype = H5Tcopy(H5T_C_S1);</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    H5Tset_size(atype, strlen(str)+1);</div>
-<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;    H5Tset_strpad(atype,H5T_STR_NULLTERM);</div>
-<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    attr = H5Acreate(loc, name, atype, space, H5P_DEFAULT, H5P_DEFAULT);</div>
-<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;    <span class="keywordflow">if</span> (attr &lt; 0) {</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot; Error with H5Acreate [&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;    }</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160; </div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;    ret = H5Awrite(attr, atype, str);</div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0) {</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot; Error with H5Awrite [&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;    }</div>
-<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160; </div>
-<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;    H5Tclose(atype);</div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;    H5Sclose(space);</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;    H5Aclose(attr);</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160; </div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;}</div>
-<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160; </div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ReadHDF5Attr(hid_t loc, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">void</span> *data, hid_t dtype)</div>
-<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;{</div>
-<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;    herr_t ret;</div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;    hid_t attr;</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160; </div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;    attr = H5Aopen(loc, name, H5P_DEFAULT);</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;    <span class="keywordflow">if</span> (attr &lt; 0) {</div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot; Error with H5Aopen [&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;    }</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160; </div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;    ret  = H5Aread(attr, dtype, data);</div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0) {</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot; Error with H5Aread [&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    }</div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    H5Aclose(attr);</div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;}</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> SetHDF5fapl(hid_t fapl, <a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> SetHDF5fapl(hid_t fapl)</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;{</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    H5Pset_fapl_mpio(fapl, comm, MPI_INFO_NULL);</div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160; </div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    <span class="comment">// Alignment and metadata block size</span></div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    <span class="keywordtype">int</span> alignment = 16 * 1024 * 1024;</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="keywordtype">int</span> blocksize =  4 * 1024 * 1024;</div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;    H5Pset_alignment(fapl, alignment, alignment);</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    H5Pset_meta_block_size(fapl, blocksize);</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160; </div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;    <span class="comment">// Collective metadata ops</span></div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    H5Pset_coll_metadata_write(fapl, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    H5Pset_all_coll_metadata_ops(fapl, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160; </div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    <span class="comment">// Defer cache flush</span></div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;    H5AC_cache_config_t cache_config;</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;    cache_config.version = H5AC__CURR_CACHE_CONFIG_VERSION;</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;    H5Pget_mdc_config(fapl, &amp;cache_config);</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    cache_config.set_initial_size = 1;</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    cache_config.initial_size = 16 * 1024 * 1024;</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    cache_config.evictions_enabled = 0;</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;    cache_config.incr_mode = H5C_incr__off;</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;    cache_config.flash_incr_mode = H5C_flash_incr__off;</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;    cache_config.decr_mode = H5C_decr__off;</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    H5Pset_mdc_config (fapl, &amp;cache_config);</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;    H5Pset_fapl_sec2(fapl);</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160; </div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;}</div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;template &lt;class PC, class F, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;<span class="keywordtype">void</span> WriteHDF5ParticleDataSync (PC <span class="keyword">const</span>&amp; pc,</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;                                  <span class="keyword">const</span> std::string&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;                                  <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_real_comp,</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;                                  <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_int_comp,</div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;                                  <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; real_comp_names,</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                                  <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; int_comp_names,</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                                  F&amp;&amp; f)</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;{</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;WriteHDF5ParticleDataSync()&quot;</span>);</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(pc.OK());</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160; </div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<span class="keyword">sizeof</span>(<span class="keyword">typename</span> PC::ParticleType::RealType) == 4 ||</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;                 <span class="keyword">sizeof</span>(<span class="keyword">typename</span> PC::ParticleType::RealType) == 8);</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160; </div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;    constexpr <span class="keywordtype">int</span> NStructReal = PC::NStructReal;</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    constexpr <span class="keywordtype">int</span> NStructInt  = PC::NStructInt;</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160; </div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2">NProcs</a> = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2">ParallelDescriptor::NProcs</a>();</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> IOProcNumber = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a">ParallelDescriptor::IOProcessorNumber</a>();</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160; </div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(real_comp_names.size() == pc.NumRealComps() + NStructReal);</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>( int_comp_names.size() == pc.NumIntComps() + NStructInt);</div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160; </div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;    std::string pdir = <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>;</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    <span class="keywordflow">if</span> ( ! pdir.empty() &amp;&amp; pdir[pdir.size()-1] != <span class="charliteral">&#39;/&#39;</span>) pdir += <span class="charliteral">&#39;/&#39;</span>;</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;    pdir += name;</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160; </div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;    <span class="keywordflow">if</span> ( ! pc.GetLevelDirectoriesCreated()) {</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac7fb3467af4aabf15e61cb9c27e916d9">ParallelDescriptor::IOProcessor</a>())</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;        {</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;            <span class="keywordflow">if</span> ( ! <a class="code" href="namespaceamrex.html#a913fd7ccf7cab45bc7d8e2a09ddd2824">amrex::UtilCreateDirectory</a>(pdir, 0755))</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;            {</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;                <a class="code" href="namespaceamrex.html#a894a812531d6362ce4ac5065c3224699">amrex::CreateDirectoryFailed</a>(pdir);</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;            }</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        }</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac0861548eabcd3f4b4c72a8826f83f8e">ParallelDescriptor::Barrier</a>();</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;    }</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160; </div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    <span class="comment">/* std::ofstream HdrFile; */</span></div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    hid_t fid, grp, fapl, dxpl, comp_dtype;</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;    <span class="keywordtype">int</span> status;</div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160; </div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    Long nparticles = 0;</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    Long maxnextid;</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160; </div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;    comp_dtype = H5Tcreate (H5T_COMPOUND, 2 * AMREX_SPACEDIM * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    <span class="keywordflow">if</span> (1 == AMREX_SPACEDIM) {</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;lo_i&quot;</span>, 0 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;hi_i&quot;</span>, 1 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    }</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (2 == AMREX_SPACEDIM) {</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;lo_i&quot;</span>, 0 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;lo_j&quot;</span>, 1 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;hi_i&quot;</span>, 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;hi_j&quot;</span>, 3 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    }</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (3 == AMREX_SPACEDIM) {</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;lo_i&quot;</span>, 0 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;lo_j&quot;</span>, 1 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;lo_k&quot;</span>, 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;hi_i&quot;</span>, 3 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;hi_j&quot;</span>, 4 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;        H5Tinsert (comp_dtype, <span class="stringliteral">&quot;hi_k&quot;</span>, 5 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    }</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160; </div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    <span class="comment">// evaluate f for every particle to determine which ones to output</span></div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;, <span class="keyword">typename</span> PC::IntVector &gt; &gt;</div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;        particle_io_flags(pc.GetParticles().size());</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; pc.GetParticles().<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();  lev++)</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    {</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pmap = pc.GetParticles(lev);</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : pmap)</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;        {</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;            <span class="keyword">auto</span>&amp; flags = particle_io_flags[lev][kv.first];</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;            <a class="code" href="namespaceparticle__detail.html#ac8fa5307957d3b3b7ebea9e83b344da8">particle_detail::fillFlags</a>(flags, kv.second, std::forward&lt;F&gt;(f));</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;        }</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;    }</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160; </div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25">Gpu::Device::synchronize</a>();</div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160; </div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    <span class="keywordflow">if</span>(pc.GetUsePrePost())</div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;    {</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;        nparticles = pc.GetNParticlesPrePost();</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;        maxnextid  = pc.GetMaxNextIDPrePost();</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    }</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;    {</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        nparticles = <a class="code" href="namespaceparticle__detail.html#afbe110320582b7ce557067081c94c949">particle_detail::countFlags</a>(particle_io_flags, pc);</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;        maxnextid  = PC::ParticleType::NextID();</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a98c9e67e17bd55e681d9e790611a1289">ParallelDescriptor::ReduceLongSum</a>(nparticles, IOProcNumber);</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;        PC::ParticleType::NextID(maxnextid);</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a72761a0aff0775f8f6943062a34fca31">ParallelDescriptor::ReduceLongMax</a>(maxnextid, IOProcNumber);</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;    }</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160; </div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;    std::string HDF5FileName = pdir;</div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;    <span class="keywordflow">if</span> ( ! HDF5FileName.empty() &amp;&amp; HDF5FileName[HDF5FileName.size()-1] != <span class="charliteral">&#39;/&#39;</span>)</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;        HDF5FileName += <span class="charliteral">&#39;/&#39;</span>;</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160; </div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    HDF5FileName += name;</div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    HDF5FileName += <span class="stringliteral">&quot;.h5&quot;</span>;</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    pc.HdrFileNamePrePost = HDF5FileName;</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160; </div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#aa23714eb98f31ba71d565390dae2a7d2">BL_PROFILE_VAR</a>(<span class="stringliteral">&quot;H5FileCreate&quot;</span>, h5fg);</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160; </div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac7fb3467af4aabf15e61cb9c27e916d9">ParallelDescriptor::IOProcessor</a>())</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    {</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;        <span class="keywordtype">int</span> set_stripe = 0;</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;        <span class="keywordtype">char</span> setstripe[1024];</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;        <span class="keywordtype">int</span> stripe_count = 128;</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;        <span class="keywordtype">int</span> stripe_size = 1;</div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;        <span class="keywordtype">char</span> *stripe_count_str = getenv(<span class="stringliteral">&quot;HDF5_STRIPE_COUNT&quot;</span>);</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;        <span class="keywordtype">char</span> *stripe_size_str  = getenv(<span class="stringliteral">&quot;HDF5_STRIPE_SIZE&quot;</span>);</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        <span class="keywordflow">if</span> (stripe_count_str) {</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            stripe_count = atoi(stripe_count_str);</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            set_stripe = 1;</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;        }</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;        <span class="keywordflow">if</span> (stripe_size_str) {</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;            stripe_size = atoi(stripe_size_str);</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;            set_stripe = 1;</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;        }</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;        <span class="keywordflow">if</span> (set_stripe == 1) {</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;            sprintf(setstripe, <span class="stringliteral">&quot;lfs setstripe -c %d -S %dm %s&quot;</span>, stripe_count, stripe_size, pdir.c_str());</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Setting stripe parameters for HDF5 output: &quot;</span> &lt;&lt; setstripe &lt;&lt; std::endl;</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;            <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(std::system(setstripe));</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;        }</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160; </div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        fid = H5Fcreate(HDF5FileName.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT, H5P_DEFAULT);</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        <span class="keywordflow">if</span> (fid &lt; 0) <a class="code" href="namespaceamrex.html#ac40a8be1926370de761ddd49c765d971">amrex::FileOpenFailed</a>(HDF5FileName.c_str());</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160; </div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        <span class="comment">// First thing written is our Checkpoint/Restart version string.</span></div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        <span class="comment">// We append &quot;_single&quot; or &quot;_double&quot; to the version string indicating</span></div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;        <span class="comment">// whether we&#39;re using &quot;float&quot; or &quot;double&quot; floating point data in the</span></div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;        <span class="comment">// particles so that we can Restart from the checkpoint files.</span></div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        std::string versionName = <a class="code" href="namespaceamrex.html#ad4158723bb78d3d5f19e396a20c0ce2d">Version</a>();</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(<span class="keyword">typename</span> PC::ParticleType::RealType) == 4)</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;            versionName += <span class="stringliteral">&quot;_single&quot;</span>;</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;            versionName += <span class="stringliteral">&quot;_double&quot;</span>;</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160; </div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;        CreateWriteHDF5AttrString(fid, <span class="stringliteral">&quot;version_name&quot;</span>, versionName.c_str());</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        <span class="keywordtype">int</span> num_output_real = 0;</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pc.NumRealComps() + NStructReal; ++i)</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;            <span class="keywordflow">if</span> (write_real_comp[i]) ++num_output_real;</div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160; </div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;        <span class="keywordtype">int</span> num_output_int = 0;</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pc.NumIntComps() + NStructInt; ++i)</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;            <span class="keywordflow">if</span> (write_int_comp[i]) ++num_output_int;</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160; </div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        <span class="comment">// AMREX_SPACEDIM and N for sanity checking.</span></div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;        <span class="keywordtype">int</span> ndim = AMREX_SPACEDIM;</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        grp = H5Gcreate(fid, <span class="stringliteral">&quot;Chombo_global&quot;</span>, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;        CreateWriteHDF5Attr(grp, <span class="stringliteral">&quot;SpaceDim&quot;</span>, 1, &amp;ndim, H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        H5Gclose(grp);</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160; </div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;        <span class="comment">// The number of extra real parameters</span></div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;        <span class="keywordtype">int</span> ncomp = num_output_real + num_output_int;</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;        CreateWriteHDF5Attr(fid, <span class="stringliteral">&quot;num_component&quot;</span>, 1, &amp;ncomp, H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        CreateWriteHDF5Attr(fid, <span class="stringliteral">&quot;num_component_real&quot;</span>, 1, &amp;num_output_real, H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160; </div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;        <span class="keywordtype">char</span> comp_name[128];</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        <span class="comment">// Real component names</span></div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NStructReal + pc.NumRealComps(); ++i ) {</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;            <span class="keywordflow">if</span> (write_real_comp[i]) {</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;                <span class="comment">/* HdrFile &lt;&lt; real_comp_names[i] &lt;&lt; &#39;\n&#39;; */</span></div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;                sprintf(comp_name, <span class="stringliteral">&quot;real_component_%d&quot;</span>, i);</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                CreateWriteHDF5AttrString(fid, comp_name, real_comp_names[i].c_str());</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;            }</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;        }</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160; </div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        <span class="comment">// The number of extra int parameters</span></div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;        CreateWriteHDF5Attr(fid, <span class="stringliteral">&quot;num_component_int&quot;</span>, 1, &amp;num_output_int, H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160; </div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;        <span class="comment">// int component names</span></div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NStructInt + pc.NumIntComps(); ++i ) {</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;            <span class="keywordflow">if</span> (write_int_comp[i]) {</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;                sprintf(comp_name, <span class="stringliteral">&quot;int_component_%d&quot;</span>, i);</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;                CreateWriteHDF5AttrString(fid, comp_name, int_comp_names[i].c_str());</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;            }</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;        }</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160; </div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;        <span class="comment">// The total number of particles.</span></div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;        CreateWriteHDF5Attr(fid, <span class="stringliteral">&quot;nparticles&quot;</span>, 1, &amp;nparticles, H5T_NATIVE_LLONG);</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160; </div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;        <span class="comment">// The value of nextid that we need to restore on restart.</span></div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;        CreateWriteHDF5Attr(fid, <span class="stringliteral">&quot;maxnextid&quot;</span>, 1, &amp;maxnextid, H5T_NATIVE_LLONG);</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160; </div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;        <span class="comment">// Then the finest level of the AMR hierarchy.</span></div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;        <span class="keywordtype">int</span> finest_level = pc.finestLevel();</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;        CreateWriteHDF5Attr(fid, <span class="stringliteral">&quot;finest_level&quot;</span>, 1, &amp;finest_level, H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160; </div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;        <span class="keywordtype">char</span> level_name[128];</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;        <span class="keywordtype">int</span> ngrids;</div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160; </div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;        hid_t dcpl_id = H5Pcreate(H5P_DATASET_CREATE);</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;        H5Pset_fill_time(dcpl_id, H5D_FILL_TIME_NEVER);</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160; </div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;            sprintf(level_name, <span class="stringliteral">&quot;level_%d&quot;</span>, lev);</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160; </div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;            grp = H5Gcreate(fid, level_name, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;            <span class="keywordflow">if</span> (grp &lt; 0) {</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;H5Gcreate [&quot;</span> &lt;&lt; level_name &lt;&lt; <span class="stringliteral">&quot;] failed!&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;            }</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160; </div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            <span class="comment">// Then the number of grids at each level.</span></div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;            ngrids = pc.ParticleBoxArray(lev).size();</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;            CreateWriteHDF5Attr(grp, <span class="stringliteral">&quot;ngrids&quot;</span>, 1, &amp;ngrids, H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160; </div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;            <span class="comment">/* int ratio = 1; */</span></div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            <span class="comment">/* CreateWriteHDF5Attr(grp, &quot;ref_ratio&quot;, 1, &amp;ratio); */</span></div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160; </div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;            <span class="keywordtype">int</span> mfs_size = 2 * AMREX_SPACEDIM;</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;            hsize_t mfs_dim = (hsize_t)ngrids;</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;            hid_t mfs_dset_space = H5Screate_simple(1, &amp;mfs_dim, NULL);</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160; </div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160; </div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;            hid_t mfs_dset= H5Dcreate(grp, <span class="stringliteral">&quot;boxes&quot;</span>, comp_dtype, mfs_dset_space, H5P_DEFAULT, dcpl_id, H5P_DEFAULT);</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160; </div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            Vector&lt;int&gt; vbox(ngrids * mfs_size);</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; pc.ParticleBoxArray(lev).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>(); ++j) {</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                    vbox[(j * mfs_size) + i] = pc.ParticleBoxArray(lev)[j].smallEnd(i);</div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                    vbox[(j * mfs_size) + i + AMREX_SPACEDIM] = pc.ParticleBoxArray(lev)[j].bigEnd(i);</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                }</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            }</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160; </div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            status = H5Dwrite(mfs_dset, comp_dtype, H5S_ALL, H5S_ALL, H5P_DEFAULT, &amp;(vbox[0]));</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            <span class="keywordflow">if</span> (status &lt; 0) {</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;                std::string msg(<span class="stringliteral">&quot;ParticleContainer::WriteHDF5ParticleDataSync(): unable to write boxes dataset&quot;</span>);</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;                <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;            }</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160; </div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;            H5Sclose(mfs_dset_space);</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;            H5Dclose(mfs_dset);</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160; </div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            H5Gclose(grp);</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;        }</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        H5Pclose(dcpl_id);</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;        H5Fclose(fid);</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    }</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160; </div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac0861548eabcd3f4b4c72a8826f83f8e">ParallelDescriptor::Barrier</a>();</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224">BL_PROFILE_VAR_STOP</a>(h5fg);</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160; </div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    <span class="comment">// We want to write the data out in parallel.</span></div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    <span class="comment">// We&#39;ll allow up to nOutFiles active writers at a time.</span></div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    <span class="keywordtype">int</span> nOutFiles(-1);</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160; </div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    ParmParse <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>(<span class="stringliteral">&quot;particles&quot;</span>);</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;    <a class="code" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>.<a class="code" href="classamrex_1_1ParmParse.html#aa98ab18bc26692876f9590316af5b1fa">query</a>(<span class="stringliteral">&quot;particles_nfiles&quot;</span>,nOutFiles);</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;    <span class="keywordflow">if</span>(nOutFiles == -1) nOutFiles = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2">NProcs</a>;</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;    <span class="comment">/* nOutFiles = std::max(1, std::min(nOutFiles,NProcs)); */</span></div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    pc.nOutFilesPrePost = nOutFiles;</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160; </div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;    fapl = H5Pcreate (H5P_FILE_ACCESS);</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    SetHDF5fapl(fapl, <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>());</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    SetHDF5fapl(fapl);</div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160; </div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    <span class="comment">// For HDF5 async VOL, block and wait previous tasks have all completed</span></div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    <span class="keywordflow">if</span> (es_par_g != 0)</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;        async_vol_es_wait_particle();</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;        <a class="code" href="namespaceamrex.html#aec8ceac1148bd8331f3a51572068f8a0">ExecOnFinalize</a>(async_vol_es_wait_close_particle);</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        es_par_g = H5EScreate();</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    }</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160; </div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    fid = H5Fopen_async(HDF5FileName.c_str(), H5F_ACC_RDWR, fapl, es_par_g);</div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    fid = H5Fopen(HDF5FileName.c_str(), H5F_ACC_RDWR, fapl);</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    <span class="keywordflow">if</span> (fid &lt; 0)</div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;        <a class="code" href="namespaceamrex.html#ac40a8be1926370de761ddd49c765d971">FileOpenFailed</a>(HDF5FileName.c_str());</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160; </div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keywordtype">char</span> level_name[64];</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= pc.finestLevel(); lev++)</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    {</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;        sprintf(level_name, <span class="stringliteral">&quot;level_%d&quot;</span>, lev);</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;        grp = H5Gopen_async(fid, level_name, H5P_DEFAULT, es_par_g);</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;        grp = H5Gopen(fid, level_name, H5P_DEFAULT);</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160; </div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;        <span class="keywordtype">bool</span> gotsome;</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;        <span class="keywordflow">if</span>(pc.usePrePost)</div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;            gotsome = (pc.nParticlesAtLevelPrePost[lev] &gt; 0);</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            gotsome = (pc.NumberOfParticlesAtLevel(lev) &gt; 0);</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160; </div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;        MFInfo info;</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        info.SetAlloc(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        MultiFab state(pc.ParticleBoxArray(lev),</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;                       pc.ParticleDistributionMap(lev),</div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;                       1,0,info);</div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160; </div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;        <span class="comment">// We eventually want to write out the file name and the offset</span></div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;        <span class="comment">// into that file into which each grid of particles is written.</span></div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;        Vector&lt;int&gt;  which(state.size(),0);</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;        Vector&lt;int &gt; count(state.size(),0);</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;        Vector&lt;Long&gt; where(state.size(),0);</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160; </div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;        <span class="keywordflow">if</span>(pc.usePrePost)</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;            pc.filePrefixPrePost[lev] = HDF5FileName;</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160; </div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        <span class="keywordtype">bool</span> groupSets(<span class="keyword">false</span>), setBuf(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160; </div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;        <span class="keywordflow">if</span> (gotsome)</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;        {</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;            pc.WriteParticlesHDF5(lev, grp, which, count, where,</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;                                  write_real_comp, write_int_comp, particle_io_flags);</div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160; </div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;            <span class="keywordflow">if</span>(pc.usePrePost) {</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;                pc.whichPrePost[lev] = which;</div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;                pc.countPrePost[lev] = count;</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;                pc.wherePrePost[lev] = where;</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;                <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a132abb9498b1ed2f491583c1f7719afb">ParallelDescriptor::ReduceIntSum</a> (which.dataPtr(), which.size(), IOProcNumber);</div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;                <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a132abb9498b1ed2f491583c1f7719afb">ParallelDescriptor::ReduceIntSum</a> (count.dataPtr(), count.size(), IOProcNumber);</div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;                <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a98c9e67e17bd55e681d9e790611a1289">ParallelDescriptor::ReduceLongSum</a>(where.dataPtr(), where.size(), IOProcNumber);</div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;            }</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;        }</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160; </div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;        H5Gclose_async(grp, es_par_g);</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;        H5Gclose(grp);</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;    } <span class="comment">// end for (lev...)</span></div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160; </div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;    H5Tclose(comp_dtype);</div>
-<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    H5Pclose(fapl);</div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160; </div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;    H5Fclose_async(fid, es_par_g);</div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    H5Fclose(fid);</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160; </div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;}</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_USE_HDF5*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_WRITE_BINARY_PARTICLE_DATA_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html">AMReX_WriteBinaryParticleDataHDF5.H</a>&gt;</span></div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160; </div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_WRITE_BINARY_PARTICLE_DATA_H*/</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
@@ -1567,6 +1107,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="aAMReX__Particles_8H_html"><div class="ttname"><a href="AMReX__Particles_8H.html">AMReX_Particles.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1Scan_html_a375a3f04c8c0b11c577d168dbff3c9fd"><div class="ttname"><a href="namespaceamrex_1_1Scan.html#a375a3f04c8c0b11c577d168dbff3c9fd">amrex::Scan::ExclusiveSum</a></div><div class="ttdeci">T ExclusiveSum(N n, T const *in, T *out, RetSum a_ret_sum=retSum)</div><div class="ttdef"><b>Definition:</b> AMReX_Scan.H:1030</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_aaa8e2b582c52d43645acae3099cbaf4e"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#aaa8e2b582c52d43645acae3099cbaf4e">amrex::ParallelDescriptor::GatherLayoutDataToVector</a></div><div class="ttdeci">void GatherLayoutDataToVector(const LayoutData&lt; T &gt; &amp;sendbuf, Vector&lt; T &gt; &amp;recvbuf, int root)</div><div class="ttdoc">Gather LayoutData values to a vector on root.</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:1172</div></div>
+<div class="ttc" id="aAMReX__WriteBinaryParticleDataHDF5_8H_html"><div class="ttname"><a href="AMReX__WriteBinaryParticleDataHDF5_8H.html">AMReX_WriteBinaryParticleDataHDF5.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a0040af3e7783b853140a6e13c755fc25"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25">amrex::Gpu::synchronize</a></div><div class="ttdeci">void synchronize() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:216</div></div>
 <div class="ttc" id="anamespaceamrex_html_a894a812531d6362ce4ac5065c3224699"><div class="ttname"><a href="namespaceamrex.html#a894a812531d6362ce4ac5065c3224699">amrex::CreateDirectoryFailed</a></div><div class="ttdeci">void CreateDirectoryFailed(const std::string &amp;dir)</div><div class="ttdoc">Output a message and abort when couldn't create the directory.</div><div class="ttdef"><b>Definition:</b> AMReX_Utility.cpp:157</div></div>
 <div class="ttc" id="anamespaceamrex_1_1AsyncOut_html_a9b651e401d0a75620501243cc1171a63"><div class="ttname"><a href="namespaceamrex_1_1AsyncOut.html#a9b651e401d0a75620501243cc1171a63">amrex::AsyncOut::Notify</a></div><div class="ttdeci">void Notify()</div><div class="ttdef"><b>Definition:</b> AMReX_AsyncOut.cpp:132</div></div>
@@ -1576,7 +1117,6 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a72761a0aff0775f8f6943062a34fca31"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a72761a0aff0775f8f6943062a34fca31">amrex::ParallelDescriptor::ReduceLongMax</a></div><div class="ttdeci">void ReduceLongMax(Long &amp;)</div><div class="ttdoc">Long max reduction.</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.cpp:1157</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4ffc2b3090d34803c0b78ee6f53d22a9"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">amrex::Gpu::hostToDevice</a></div><div class="ttdeci">static constexpr HostToDevice hostToDevice</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:105</div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleData_8H_html_a08ed7f65d7bd308974da547953f67f82"><div class="ttname"><a href="AMReX__WriteBinaryParticleData_8H.html#a08ed7f65d7bd308974da547953f67f82">WriteBinaryParticleDataAsync</a></div><div class="ttdeci">void WriteBinaryParticleDataAsync(PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:583</div></div>
-<div class="ttc" id="aAMReX__BLProfiler_8H_html_a82c334c787872a6bbacabe9a38389224"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224">BL_PROFILE_VAR_STOP</a></div><div class="ttdeci">#define BL_PROFILE_VAR_STOP(vname)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:561</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6e3a82e54e91d8c7543596b2c2476250"><div class="ttname"><a href="namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250">amrex::Concatenate</a></div><div class="ttdeci">std::string Concatenate(const std::string &amp;root, int num, int mindigits=5)</div><div class="ttdoc">Returns rootNNNN where NNNN == num.</div><div class="ttdef"><b>Definition:</b> AMReX_Utility.cpp:138</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdoc">return the rank number local to the current Parallel Context</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:127</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:14</div></div>
@@ -1588,7 +1128,6 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="anamespaceparticle__detail_html_afbe110320582b7ce557067081c94c949"><div class="ttname"><a href="namespaceparticle__detail.html#afbe110320582b7ce557067081c94c949">particle_detail::countFlags</a></div><div class="ttdeci">std::enable_if&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, amrex::Long &gt;::type countFlags(const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, Container&lt; int, Allocator &gt;&gt;&gt; &amp;particle_io_flags, const PC &amp;pc)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:68</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_aa191723b5d24ceaf64e9d49f542cfcc2"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2">amrex::ParallelDescriptor::NProcs</a></div><div class="ttdeci">int NProcs() noexcept</div><div class="ttdoc">return the number of MPI ranks local to the current Parallel Context</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:216</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">amrex::detail::min</a></div><div class="ttdeci">@ min</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:17</div></div>
-<div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a0f53686fc6a6b7dca69c230fd1336e44"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">amrex::ParallelDescriptor::Communicator</a></div><div class="ttdeci">MPI_Comm Communicator() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:212</div></div>
 <div class="ttc" id="aAMReX__HypreIJIface_8cpp_html_a0f759ac05320ca5b06c49fd9501b9135"><div class="ttname"><a href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a></div><div class="ttdeci">amrex::ParmParse pp</div><div class="ttdoc">Input file parser instance for the given namespace.</div><div class="ttdef"><b>Definition:</b> AMReX_HypreIJIface.cpp:15</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_ac0861548eabcd3f4b4c72a8826f83f8e"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#ac0861548eabcd3f4b4c72a8826f83f8e">amrex::ParallelDescriptor::Barrier</a></div><div class="ttdeci">void Barrier(const std::string &amp;)</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.cpp:1135</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad4158723bb78d3d5f19e396a20c0ce2d"><div class="ttname"><a href="namespaceamrex.html#ad4158723bb78d3d5f19e396a20c0ce2d">amrex::Version</a></div><div class="ttdeci">std::string Version()</div><div class="ttdef"><b>Definition:</b> AMReX.cpp:129</div></div>
@@ -1596,14 +1135,11 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1range__detail_html_a57949ca6008ad4fe7edb4e00741b1906"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">amrex::Gpu::range_detail::size</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE Long size(T const &amp;b) noexcept</div><div class="ttdoc">integer version</div><div class="ttdef"><b>Definition:</b> AMReX_GpuRange.H:25</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="anamespaceamrex_html_aff9b2ebd167a621c7784769618bda4c6"><div class="ttname"><a href="namespaceamrex.html#aff9b2ebd167a621c7784769618bda4c6">amrex::ParallelFor</a></div><div class="ttdeci">void ParallelFor(T n, L &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsC.H:78</div></div>
-<div class="ttc" id="anamespaceamrex_html_aec8ceac1148bd8331f3a51572068f8a0"><div class="ttname"><a href="namespaceamrex.html#aec8ceac1148bd8331f3a51572068f8a0">amrex::ExecOnFinalize</a></div><div class="ttdeci">void ExecOnFinalize(PTR_TO_VOID_FUNC)</div><div class="ttdoc">We maintain a stack of functions that need to be called in Finalize(). The functions are called in LI...</div><div class="ttdef"><b>Definition:</b> AMReX.cpp:292</div></div>
-<div class="ttc" id="aAMReX__BLProfiler_8H_html_aa23714eb98f31ba71d565390dae2a7d2"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#aa23714eb98f31ba71d565390dae2a7d2">BL_PROFILE_VAR</a></div><div class="ttdeci">#define BL_PROFILE_VAR(fname, vname)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:558</div></div>
 <div class="ttc" id="anamespaceamrex_html_a43103621a410a27f2e8b9607f4ae6f34"><div class="ttname"><a href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">amrex::begin</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 begin(Box const &amp;box) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1577</div></div>
 <div class="ttc" id="aAMReX__ParticleUtil_8H_html"><div class="ttname"><a href="AMReX__ParticleUtil_8H.html">AMReX_ParticleUtil.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:549</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Scan_html_a86dfa385e0f0d6f8597f8225a6db63d9"><div class="ttname"><a href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">amrex::Scan::retSum</a></div><div class="ttdeci">static constexpr RetSum retSum</div><div class="ttdef"><b>Definition:</b> AMReX_Scan.H:29</div></div>
-<div class="ttc" id="aAMReX__ccse-mpi_8H_html_a68c509d4adb3f4a1d6fe3a9b0b87c7b9"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a></div><div class="ttdeci">int MPI_Comm</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:49</div></div>
 <div class="ttc" id="anamespaceamrex_1_1AsyncOut_html_aa1f51f051314b9228d4e287292937139"><div class="ttname"><a href="namespaceamrex_1_1AsyncOut.html#aa1f51f051314b9228d4e287292937139">amrex::AsyncOut::Submit</a></div><div class="ttdeci">void Submit(std::function&lt; void()&gt; &amp;&amp;a_f)</div><div class="ttdef"><b>Definition:</b> AMReX_AsyncOut.cpp:102</div></div>
 <div class="ttc" id="astructamrex_1_1RandomEngine_html"><div class="ttname"><a href="structamrex_1_1RandomEngine.html">amrex::RandomEngine</a></div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:52</div></div>
 <div class="ttc" id="anamespaceparticle__detail_html_ac8fa5307957d3b3b7ebea9e83b344da8"><div class="ttname"><a href="namespaceparticle__detail.html#ac8fa5307957d3b3b7ebea9e83b344da8">particle_detail::fillFlags</a></div><div class="ttdeci">std::enable_if&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value &gt;::type fillFlags(Container&lt; int, Allocator &gt; &amp;pflags, const PTile &amp;ptile, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:35</div></div>
@@ -1611,7 +1147,6 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="anamespaceamrex_html_a199ea36f687fd4271b73c72b56fd3279"><div class="ttname"><a href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">amrex::end</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 end(Box const &amp;box) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1590</div></div>
 <div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a851cf68c8f607573c1a5e987784c83f6"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a></div><div class="ttdeci">int dir</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:27</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0718da697f64bda3be2152538b70d4c5"><div class="ttname"><a href="namespaceamrex.html#a0718da697f64bda3be2152538b70d4c5">amrex::writeIntData</a></div><div class="ttdeci">void writeIntData(const From *data, std::size_t size, std::ostream &amp;os, const amrex::IntDescriptor &amp;id)</div><div class="ttdef"><b>Definition:</b> AMReX_IntConv.H:23</div></div>
-<div class="ttc" id="anamespaceamrex_html_a95b1159ba3a5494abd49dc9b3d34eacf"><div class="ttname"><a href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables.</div><div class="ttdef"><b>Definition:</b> AMReX.H:93</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a132abb9498b1ed2f491583c1f7719afb"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a132abb9498b1ed2f491583c1f7719afb">amrex::ParallelDescriptor::ReduceIntSum</a></div><div class="ttdeci">void ReduceIntSum(int &amp;)</div><div class="ttdoc">Integer sum reduction.</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.cpp:1185</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4cb810463e0c04bdea932a011e77b548"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">amrex::Gpu::deviceToHost</a></div><div class="ttdeci">static constexpr DeviceToHost deviceToHost</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:106</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9cb2d187853bfabaaf7d74de8c950c25"><div class="ttname"><a href="namespaceamrex.html#a9cb2d187853bfabaaf7d74de8c950c25">amrex::writeDoubleData</a></div><div class="ttdeci">void writeDoubleData(const double *data, std::size_t size, std::ostream &amp;os, const RealDescriptor &amp;rd=FPC::Native64RealDescriptor())</div><div class="ttdef"><b>Definition:</b> AMReX_VectorIO.cpp:126</div></div>
@@ -1619,7 +1154,6 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:16</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a2c1110b22670288daa9e2a01cbb70fbb"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">amrex::Gpu::copy</a></div><div class="ttdeci">void copy(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</div><div class="ttdoc">A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous st...</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:128</div></div>
 <div class="ttc" id="anamespaceparticle__detail_html_a3ce80a3e2c2fea8e6036ec4d9f89dc9c"><div class="ttname"><a href="namespaceparticle__detail.html#a3ce80a3e2c2fea8e6036ec4d9f89dc9c">particle_detail::packIOData</a></div><div class="ttdeci">std::enable_if&lt; RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;::type packIOData(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:144</div></div>
-<div class="ttc" id="aclassamrex_1_1Print_html"><div class="ttname"><a href="classamrex_1_1Print.html">amrex::Print</a></div><div class="ttdoc">This class provides the user with a few print options.</div><div class="ttdef"><b>Definition:</b> AMReX_Print.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_1_1AsyncOut_html_a98b17038c0286de4668a2bed1102d3b6"><div class="ttname"><a href="namespaceamrex_1_1AsyncOut.html#a98b17038c0286de4668a2bed1102d3b6">amrex::AsyncOut::Wait</a></div><div class="ttdeci">void Wait()</div><div class="ttdef"><b>Definition:</b> AMReX_AsyncOut.cpp:117</div></div>
 <div class="ttc" id="anamespaceparticle__detail_html"><div class="ttname"><a href="namespaceparticle__detail.html">particle_detail</a></div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:20</div></div>
 <div class="ttc" id="anamespaceparticle__detail_html_afbe88249b244a942b7d7d41b6b176abd"><div class="ttname"><a href="namespaceparticle__detail.html#afbe88249b244a942b7d7d41b6b176abd">particle_detail::PSizeInFile</a></div><div class="ttdeci">std::size_t PSizeInFile(const Vector&lt; int &gt; &amp;wrc, const Vector&lt; int &gt; &amp;wic)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:23</div></div>
