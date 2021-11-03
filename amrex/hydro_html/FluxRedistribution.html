@@ -92,7 +92,7 @@
 </div>
 <p>Consider a conservative update in the form:</p>
 <div class="math notranslate nohighlight">
-\[( \phi)_t + \nabla \cdot ( \phi u) = RHS\]</div>
+\[(\rho \phi)_t + \nabla \cdot ( \rho \phi u) = RHS\]</div>
 <p>For each valid cell in the domain, compute the conservative divergence, <span class="math notranslate nohighlight">\((\nabla \cdot F)^c\)</span> ,
 of the convective fluxes, <span class="math notranslate nohighlight">\(F\)</span></p>
 <div class="math notranslate nohighlight">
@@ -110,9 +110,7 @@ and <span class="math notranslate nohighlight">\(\mathcal{V}_i\)</span> is the v
 <div class="math notranslate nohighlight">
 \[\nabla\cdot{F}^{nc}_i = \dfrac{\sum\limits_{j\in N(i) } \mathcal{K}_j\nabla \cdot {F}^c_j} {\sum\limits_{j\in N(i) } {\mathcal{K}}_j}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N(i)\)</span> is the index set of cell <span class="math notranslate nohighlight">\(i\)</span> and its neighbors.</p>
-<blockquote>
-<div><p>For each cell cut by the EB geometry, compute the convective update <span class="math notranslate nohighlight">\(\nabla \cdot{F}^{EB}\)</span> follows:</p>
-</div></blockquote>
+<p>For each cell cut by the EB geometry, compute the convective update <span class="math notranslate nohighlight">\(\nabla \cdot{F}^{EB}\)</span> follows:</p>
 <div class="math notranslate nohighlight">
 \[\nabla \cdot{F}^{EB}_i = \mathcal{K}_i\nabla \cdot{F}^{c}_i +(1-\mathcal{K}_i)\mathcal{F}^{nc}_i\]</div>
 <p>For each cell cut by the EB geometry, redistribute its mass loss, <span class="math notranslate nohighlight">\(\delta M_i\)</span> , to its neighbors:</p>
@@ -126,7 +124,18 @@ and <span class="math notranslate nohighlight">\(\mathcal{V}_i\)</span> is the v
 \[w_{ij} = \dfrac{1}{\sum\limits_{j\in N(i)\setminus i}  \mathcal{K}_j}\]</div>
 <p>Note that <span class="math notranslate nohighlight">\(\nabla \cdot{F}_i^{EB}\)</span> gives an update for <span class="math notranslate nohighlight">\(\rho \phi\)</span> ; i.e.,</p>
 <div class="math notranslate nohighlight">
-\[\frac{\phi_i^{n+1} - \phi_i^{n} }{\Delta t} = - \nabla \cdot{F}^{EB}_i\]</div>
+\[\frac{(\rho \phi_i)^{n+1} - (\rho \phi_i)^{n} }{\Delta t} = - \nabla \cdot{F}^{EB}_i\]</div>
+<p>Typically, the redistribution neighborhood for each cell is one that can be
+reached via a monotonic path in each coordinate direction of unit length (see,
+e.g., <a class="reference internal" href="#fig-redistribution"><span class="std std-numref">Fig. 1</span></a>)</p>
+<figure class="align-default" id="id1">
+<span id="fig-redistribution"></span><a class="reference internal image-reference" href="_images/redist.png"><img alt="_images/redist.png" src="_images/redist.png" style="width: 50.0%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">: Redistribution illustration. Excess mass due to using a hybrid divergence
+<span class="math notranslate nohighlight">\(D^H\)</span> instead of the conservative divergence <span class="math notranslate nohighlight">\(D^C\)</span> is
+distributed to neighbor cells.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 
 
