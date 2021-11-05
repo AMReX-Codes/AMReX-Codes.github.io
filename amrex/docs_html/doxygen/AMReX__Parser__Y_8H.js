@@ -46,7 +46,8 @@ var AMReX__Parser__Y_8H =
       [ "PARSER_HEAVISIDE", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcacb0b84f852fe36fbb6ffafd2455f9644", null ],
       [ "PARSER_JN", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcaace05cc3a245149a82643a976e7e139a", null ],
       [ "PARSER_MIN", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcab15097a6b28d7658374164aa5eabf155", null ],
-      [ "PARSER_MAX", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcabc0c26e39e66ba16b2fa97b76c9dae35", null ]
+      [ "PARSER_MAX", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcabc0c26e39e66ba16b2fa97b76c9dae35", null ],
+      [ "PARSER_FMOD", "AMReX__Parser__Y_8H.html#a0075507273391e5967b9d869daed98bcac75e51f4689c58f1e203db343bf3fdd8", null ]
     ] ],
     [ "parser_f3_t", "AMReX__Parser__Y_8H.html#a2a6ee79bf3b5c5b67de8ef46a663051b", [
       [ "PARSER_IF", "AMReX__Parser__Y_8H.html#a2a6ee79bf3b5c5b67de8ef46a663051ba8ecdd6c594b2624b8d56c95e2e48d836", null ]

@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"classamrex_1_1AmrLevel.html#a0d63aa23ccf6091e7af223a9b91569e9":[2,0,0,31,18],
 "classamrex_1_1AmrLevel.html#a0d87c01c6118a83ca5707b4d0ccd3bc0":[2,0,0,31,14],
 "classamrex_1_1AmrLevel.html#a109f988dd098fdb2a6b854a742015397":[2,0,0,31,92],
 "classamrex_1_1AmrLevel.html#a13fac03f8f84f602aea857521063b4b0":[2,0,0,31,40],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "classamrex_1_1AmrParticleContainer.html#af13b0cc062559cc122d03223f4fea7c2":[2,0,0,36,6],
 "classamrex_1_1AmrParticleLocator.html":[2,0,0,37],
 "classamrex_1_1AmrParticleLocator.html#a0545b0fdaadd8f5deedff78cbb39d41f":[2,0,0,37,4],
-"classamrex_1_1AmrParticleLocator.html#a06d216fc9cf978fc5c842675468b2ca5":[2,0,0,37,3],
-"classamrex_1_1AmrParticleLocator.html#a095e51d1001dbc1f5923c5b00606b1b3":[2,0,0,37,11]
+"classamrex_1_1AmrParticleLocator.html#a06d216fc9cf978fc5c842675468b2ca5":[2,0,0,37,3]
 };

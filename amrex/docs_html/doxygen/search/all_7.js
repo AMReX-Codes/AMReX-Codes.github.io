@@ -305,7 +305,7 @@ var searchData=
   ['glsizemap_3167',['glSizeMap',['../classCommProfStats.html#ab58dec894c1338d3e1691e0770507811',1,'CommProfStats::glSizeMap()'],['../classCommProfStats.html#a0e56e7a8c3e51ab493d8a9b55472d761',1,'CommProfStats::GLSizeMap() const']]],
   ['gmres_5fsolver_5fconfigure_3168',['gmres_solver_configure',['../classamrex_1_1HypreIJIface.html#a27bb5a9047943afd18cf194c141d20ea',1,'amrex::HypreIJIface']]],
   ['gpercent_3169',['gPercent',['../classBLProfStats.html#aa9cbfb5bc0b3ad413e06060864eed0f8',1,'BLProfStats']]],
-  ['gpu_3170',['Gpu',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu()'],['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU()']]],
+  ['gpu_3170',['GPU',['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU()'],['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu()']]],
   ['gpu_5fdefault_5fstream_3171',['gpu_default_stream',['../classamrex_1_1Gpu_1_1Device.html#ad584078f0787df001af05bfe9c8d0356',1,'amrex::Gpu::Device']]],
   ['gpu_5frand_5fstate_3172',['gpu_rand_state',['../namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866',1,'amrex']]],
   ['gpu_5fstream_3173',['gpu_stream',['../classamrex_1_1Gpu_1_1Device.html#a44b4d2d558f0b94c682dcc9a26f7e666',1,'amrex::Gpu::Device']]],
