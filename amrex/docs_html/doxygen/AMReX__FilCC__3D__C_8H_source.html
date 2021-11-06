@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('AMReX__FilCC__3D__C_8H_source.html',''
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">case</span> (BCType::hoextrapcc):</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    q(i,j,k,n) = Real(2.)*q(i+1,j,k,n) - q(i+2,j,k,n);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    q(i,j,k,n) = Real(ilo-i)*(q(ilo,j,k,n) - q(ilo+1,j,k,n)) + q(ilo,j,k,n);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">case</span> (BCType::reflect_even):</div>
@@ -203,7 +203,7 @@ $(document).ready(function(){initNavTree('AMReX__FilCC__3D__C_8H_source.html',''
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">case</span> (BCType::hoextrapcc):</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    q(i,j,k,n) = Real(2.)*q(i-1,j,k,n) - q(i-2,j,k,n);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    q(i,j,k,n) = Real(i-ihi)*(q(ihi,j,k,n) - q(ihi-1,j,k,n)) + q(ihi,j,k,n);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">case</span> (BCType::reflect_even):</div>
@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('AMReX__FilCC__3D__C_8H_source.html',''
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                }</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <span class="keywordflow">case</span> (BCType::hoextrapcc):</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    q(i,j,k,n) = Real(2.)*q(i,j+1,k,n) - q(i,j+2,k,n);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    q(i,j,k,n) = Real(jlo-j)*(q(i,jlo,k,n) - q(i,jlo+1,k,n)) + q(i,jlo,k,n);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">case</span> (BCType::reflect_even):</div>
@@ -288,7 +288,7 @@ $(document).ready(function(){initNavTree('AMReX__FilCC__3D__C_8H_source.html',''
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="keywordflow">case</span> (BCType::hoextrapcc):</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    q(i,j,k,n) = Real(2.)*q(i,j-1,k,n) - q(i,j-2,k,n);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    q(i,j,k,n) = Real(j-jhi)*(q(i,jhi,k,n) - q(i,jhi-1,k,n)) + q(i,jhi,k,n);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                }</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">case</span> (BCType::reflect_even):</div>
@@ -331,7 +331,7 @@ $(document).ready(function(){initNavTree('AMReX__FilCC__3D__C_8H_source.html',''
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keywordflow">case</span> (BCType::hoextrapcc):</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    q(i,j,k,n) = Real(2.)*q(i,j,k+1,n) - q(i,j,k+2,n);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    q(i,j,k,n) = Real(klo-k)*(q(i,j,klo,n) - q(i,j,klo+1,n)) + q(i,j,klo,n);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">case</span> (BCType::reflect_even):</div>
@@ -373,7 +373,7 @@ $(document).ready(function(){initNavTree('AMReX__FilCC__3D__C_8H_source.html',''
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keywordflow">case</span> (BCType::hoextrapcc):</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    q(i,j,k,n) = Real(2.)*q(i,j,k-1,n) - q(i,j,k-2,n);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    q(i,j,k,n) = Real(k-khi)*(q(i,j,khi,n) - q(i,j,khi-1,n)) + q(i,j,khi,n);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">case</span> (BCType::reflect_even):</div>
