@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['covered_5fval_372',['covered_val',['../group__Utilities.html#ga57d5bf2dbf1d028238521f2f93f80f14',1,'hydro_constants.H']]]
+  ['_5fptr_12873',['_ptr',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1ref__wrapper.html#ad6587c3974bf67afc32e7d313432b20e',1,'amrex::ref_wrapper']]]
 ];

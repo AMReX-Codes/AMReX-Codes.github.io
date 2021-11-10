@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['godunov_212',['Godunov',['../namespaceGodunov.html',1,'']]],
-  ['godunovcornercouple_213',['GodunovCornerCouple',['../namespaceGodunovCornerCouple.html',1,'']]],
-  ['godunovtransbc_214',['GodunovTransBC',['../namespaceGodunovTransBC.html',1,'']]]
+  ['blprofstats_8468',['BLProfStats',['https://amrex-codes.github.io/amrex/doxygen/structBLProfStats_1_1BLPDataBlock.html',1,'']]]
 ];

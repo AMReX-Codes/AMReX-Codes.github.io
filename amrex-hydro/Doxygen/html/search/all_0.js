@@ -1,16 +1,11 @@
 var searchData=
 [
-  ['addcornercoupletermxy_0',['AddCornerCoupleTermXY',['../namespaceGodunovCornerCouple.html#a17e90a76c6bd319162c4e472c99e614f',1,'GodunovCornerCouple']]],
-  ['addcornercoupletermxz_1',['AddCornerCoupleTermXZ',['../namespaceGodunovCornerCouple.html#a3c193564941652647bc7b75799ad75b5',1,'GodunovCornerCouple']]],
-  ['addcornercoupletermyx_2',['AddCornerCoupleTermYX',['../namespaceGodunovCornerCouple.html#a980d762c37d4265cc7ac891b41a26a46',1,'GodunovCornerCouple']]],
-  ['addcornercoupletermyz_3',['AddCornerCoupleTermYZ',['../namespaceGodunovCornerCouple.html#ad96a0321a2022027f3d0f821bc225666',1,'GodunovCornerCouple']]],
-  ['addcornercoupletermzx_4',['AddCornerCoupleTermZX',['../namespaceGodunovCornerCouple.html#aecdc5855798cbfb5732a6966d861172e',1,'GodunovCornerCouple']]],
-  ['addcornercoupletermzy_5',['AddCornerCoupleTermZY',['../namespaceGodunovCornerCouple.html#a02d4572ecd6d3f7d31f4534389a68585',1,'GodunovCornerCouple']]],
-  ['amrex_5fcalc_5falpha_5fstencil_6',['amrex_calc_alpha_stencil',['../group__Redistribution.html#ga4c88167e720aa00f46b8ea2b7f9c9665',1,'hydro_slope_limiter_K.H']]],
-  ['amrex_5fcalc_5fcentroid_5flimiter_7',['amrex_calc_centroid_limiter',['../group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187',1,'hydro_slope_limiter_K.H']]],
-  ['apply_8',['Apply',['../namespaceRedistribution.html#a496336a7f843ce35f36ddb8be3aa68ba',1,'Redistribution']]],
-  ['applytoinitialdata_9',['ApplyToInitialData',['../namespaceRedistribution.html#a563d1cc650b816911ba0c00e17e07d09',1,'Redistribution']]],
-  ['averagedown_10',['averageDown',['../classHydro_1_1NodalProjector.html#a25c4a42881b0f5b720107096994cb181',1,'Hydro::NodalProjector']]],
-  ['averagedownvelocity_11',['averageDownVelocity',['../classHydro_1_1MacProjector.html#a83161a0efc231e4581212321fdbeac8f',1,'Hydro::MacProjector']]],
-  ['amrex_2dhydro_3a_20technical_20reference_12',['AMReX-Hydro: Technical Reference',['../index.html',1,'']]]
+  ['_5f_5flaunch_5fbounds_5f_5f_0',['__launch_bounds__',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a4a765bc79483affb715df32cc1d6d121',1,'amrex']]],
+  ['_5fpd_5fbtrvout_1',['_pd_btrvout',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ada9b5baa188f1327eaca505cdede7296',1,'amrex']]],
+  ['_5fpd_5fextract_5ffield_2',['_pd_extract_field',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a7189a895a6c3a44b843bd452bf5b7556',1,'amrex']]],
+  ['_5fpd_5fget_5fbit_3',['_pd_get_bit',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a58afbef5c92433b70e81edcb63d2b15f',1,'amrex']]],
+  ['_5fpd_5finsert_5ffield_4',['_pd_insert_field',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ab6d5efa978936e2c7fc647d49be1210c',1,'amrex']]],
+  ['_5fpd_5freorder_5',['_pd_reorder',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a96267bb2ea2c5fdf894b2c9c0622c30b',1,'amrex']]],
+  ['_5fpd_5fset_5fbit_6',['_pd_set_bit',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ac3daae71af784ea861908589aa58b9e9',1,'amrex']]],
+  ['_5fptr_7',['_ptr',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1ref__wrapper.html#ad6587c3974bf67afc32e7d313432b20e',1,'amrex::ref_wrapper']]]
 ];

@@ -103,13 +103,13 @@ $(document).ready(function(){initNavTree('hydro__slope__limiter__K_8H_source.htm
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>amrex;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html">amrex</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  constexpr Real epsilon = 1.e-12;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;amrex::Real</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="group__Redistribution.html#ga4c88167e720aa00f46b8ea2b7f9c9665">   16</a></span>&#160;<a class="code" href="group__Redistribution.html#ga4c88167e720aa00f46b8ea2b7f9c9665">amrex_calc_alpha_stencil</a>(Real q_hat, Real q_max, Real q_min, Real state) noexcept</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
@@ -126,15 +126,15 @@ $(document).ready(function(){initNavTree('hydro__slope__limiter__K_8H_source.htm
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> alpha;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187">   33</a></span>&#160;<a class="code" href="group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187">amrex_calc_centroid_limiter</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; state,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            amrex::Array4&lt;amrex::EBCellFlag const&gt; <span class="keyword">const</span>&amp; flag,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                            <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;&amp; slopes,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                            amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; ccent) noexcept</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a> <span class="keyword">const</span>&amp; state,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Array4.html">amrex::Array4&lt;amrex::EBCellFlag const&gt;</a> <span class="keyword">const</span>&amp; flag,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                            <span class="keyword">const</span> <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a>&amp; slopes,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                            <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a> <span class="keyword">const</span>&amp; ccent) noexcept</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    AMREX_D_TERM(amrex::Real xalpha = 1.0;,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(amrex::Real xalpha = 1.0;,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                 amrex::Real yalpha = 1.0;,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                 amrex::Real zalpha = 1.0;);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
@@ -153,11 +153,11 @@ $(document).ready(function(){initNavTree('hydro__slope__limiter__K_8H_source.htm
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (flag(i,j,k).isConnected(ii,jj,kk) &amp;&amp; alpha &gt; 0.0)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            AMREX_D_TERM(Real delta_x = ccent(i+ii,j+jj,k+kk,0) -  ccent(i,j,k,0) + <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii);,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(Real delta_x = ccent(i+ii,j+jj,k+kk,0) -  ccent(i,j,k,0) + <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii);,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                         Real delta_y = ccent(i+ii,j+jj,k+kk,1) -  ccent(i,j,k,1) + <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj);,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                         Real delta_z = ccent(i+ii,j+jj,k+kk,2) -  ccent(i,j,k,2) + <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk););</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Real q_hat = state(i,j,k,n) + AMREX_D_TERM(  delta_x * slopes[0],</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Real q_hat = state(i,j,k,n) + <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(  delta_x * slopes[0],</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                       + delta_y * slopes[1],</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                       + delta_z * slopes[2]);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
@@ -179,13 +179,20 @@ $(document).ready(function(){initNavTree('hydro__slope__limiter__K_8H_source.htm
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;     }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> {AMREX_D_DECL(xalpha,yalpha,zalpha)};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> {<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(xalpha,yalpha,zalpha)};</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}<span class="comment"></span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/** @} */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="agroup__Redistribution_html_ga4c88167e720aa00f46b8ea2b7f9c9665"><div class="ttname"><a href="group__Redistribution.html#ga4c88167e720aa00f46b8ea2b7f9c9665">amrex_calc_alpha_stencil</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real amrex_calc_alpha_stencil(Real q_hat, Real q_max, Real q_min, Real state) noexcept</div><div class="ttdef"><b>Definition:</b> hydro_slope_limiter_K.H:16</div></div>
+<div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div></div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div></div>
+<div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div></div>
 <div class="ttc" id="agroup__Redistribution_html_ga779369cb5a1b71130d6c37fcce533187"><div class="ttname"><a href="group__Redistribution.html#ga779369cb5a1b71130d6c37fcce533187">amrex_calc_centroid_limiter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; amrex_calc_centroid_limiter(int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;state, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;slopes, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent) noexcept</div><div class="ttdef"><b>Definition:</b> hydro_slope_limiter_K.H:33</div></div>
+<div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1GpuArray.html">amrex::GpuArray</a></div></div>
+<div class="ttc" id="astructamrex_1_1Array4_html"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Array4.html">amrex::Array4</a></div></div>
+<div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html">amrex</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

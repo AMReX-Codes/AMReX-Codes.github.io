@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2edox_278',['main.dox',['../main_8dox.html',1,'']]]
+  ['bl_5fhpgmg_2ecpp_9134',['BL_HPGMG.cpp',['https://amrex-codes.github.io/amrex/doxygen/BL__HPGMG_8cpp.html.html',1,'']]],
+  ['bl_5fhpgmg_2eh_9135',['BL_HPGMG.H',['https://amrex-codes.github.io/amrex/doxygen/BL__HPGMG_8H.html.html',1,'']]]
 ];

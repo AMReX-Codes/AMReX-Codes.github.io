@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mol_218',['MOL',['../namespaceMOL.html',1,'']]]
+  ['detail_8470',['detail',['https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html',1,'']]]
 ];
