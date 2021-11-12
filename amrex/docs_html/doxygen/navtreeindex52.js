@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"distribution_8c.html#adc29c2ff13d900c2f185ee95427fb06cadb2db6e983734128c679d2d6f9660d0a":[3,0,0,5,9,5,2],
 "distribution_8c.html#aded4467e42dceba52684818433848ae8":[3,0,0,5,9,5,17],
 "distribution_8c.html#ae4c86ea9f91153635f20d44b9de912aa":[3,0,0,5,9,5,6],
 "distribution_8c.html#aef1f38cbc79ab4714fac1b0e24ec8de6":[3,0,0,5,9,5,10],
@@ -35,8 +36,8 @@ var NAVTREEINDEX52 =
 "distribution__c_8h.html#afc2e25bc33f0263abbac9ef713b67345":[3,0,0,5,9,7,8],
 "distribution__c_8h_source.html":[3,0,0,5,9,7],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -211,8 +212,8 @@ var NAVTREEINDEX52 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "interfaceamrex__mempool__module_1_1amrex__allocate.html":[2,0,5,0],
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#a25c875a21585500c704ef18c300f7b88":[2,0,5,0,13],
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#a28590a3427c6eeb3ff0c320395b36e69":[2,0,5,0,12],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#a328c584a18240b86b60fd91796f2d74b":[2,0,5,0,11],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#a4a19a125194118a2f3d594c048d727dd":[2,0,5,0,10]
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#a328c584a18240b86b60fd91796f2d74b":[2,0,5,0,11]
 };

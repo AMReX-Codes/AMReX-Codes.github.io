@@ -47,6 +47,7 @@ var classamrex_1_1MLNodeLaplacian =
     [ "m_const_sigma", "classamrex_1_1MLNodeLaplacian.html#a48fe991cb1c369e8fd56fda63ff27e43", null ],
     [ "m_is_rz", "classamrex_1_1MLNodeLaplacian.html#a6e9813d42ab7f38861a4b0a0d88f6080", null ],
     [ "m_normalization_threshold", "classamrex_1_1MLNodeLaplacian.html#a0797df73e7c6a1283fd31748aa6f12e5", null ],
+    [ "m_nosigma_stencil", "classamrex_1_1MLNodeLaplacian.html#ad3c3c020157daad724a6fff640529913", null ],
     [ "m_s0_norm0", "classamrex_1_1MLNodeLaplacian.html#a587789b33e8a1da29ce868daeb003995", null ],
     [ "m_sigma", "classamrex_1_1MLNodeLaplacian.html#a8a183b518f95b79420fa95a4400b3a4f", null ],
     [ "m_stencil", "classamrex_1_1MLNodeLaplacian.html#ae971fa5b7d9a948b3b8b778bb9540064", null ],
