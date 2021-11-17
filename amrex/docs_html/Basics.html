@@ -89,9 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#memory-allocation">Memory Allocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#abort-assertion-and-backtrace">Abort, Assertion and Backtrace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#breaking-into-debuggers">Breaking into Debuggers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-heatequation-ex1-c">Example: HeatEquation_EX1_C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
@@ -106,6 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
@@ -2303,222 +2302,12 @@ segfault occurs or <code class="docutils literal notranslate"><span class="pre">
 want AMReX to handle this, <code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> parameter
 <cite>amrex.signal_handling=0</cite> can be used to disable it.</p>
 </div>
-<div class="section" id="debugging">
-<span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline"></a></h1>
-<p>Debugging is an art.  Everyone has their own favorite method.  Here we
-offer a few tips we have found to be useful.</p>
-<p>To help debugging, AMReX handles various signals in the C standard
-library raised in the runs.  This gives us a chance to print out more
-information using Linux/Unix backtrace capability.  The signals
-include seg fault, interruption by the user (control-c), assertion
-errors, and floating point exceptions (NaNs, divided by zero and
-overflow).  The handling of seg fault, assertion errors and
-interruption by control-C are enabled by default.  Note that
-<code class="docutils literal notranslate"><span class="pre">AMREX_ASSERT()</span></code> is only on when compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> or
-<code class="docutils literal notranslate"><span class="pre">USE_ASSERTION=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or
-<code class="docutils literal notranslate"><span class="pre">-DAMReX_ASSERTIONS=YES</span></code> in CMake.  The trapping of floating point exceptions is not
-enabled by default unless the code is compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with
-<code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or <code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=YES</span></code> in CMake to turn on compiler flags
-if supported.  Alternatively, one can always use runtime parameters to control the
-handling of floating point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
-NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code> for division by zero and
-<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow.  To more effectively trap the
-use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>s in
-<code class="docutils literal notranslate"><span class="pre">MulitFab</span></code>s and arrays allocated by <code class="docutils literal notranslate"><span class="pre">bl_allocate</span></code> to signaling NaNs when it is compiled
-with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
-One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.</p>
-<p>One can get more information than the backtrace of the call stack by
-instrumenting the code.  Here is an example.
-You know the line <code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">rho</span> <span class="pre">=</span> <span class="pre">state(cell,0);</span></code> is causing a segfault.  You
-could add a print statement before that.  But it might print out
-thousands (or even millions) of line before it hits the segfault.  What
-you could do is the following,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_BLBackTrace.H&gt;</span><span class="cp"></span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">ss</span><span class="p">;</span>
-<span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;state.box() = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">state</span><span class="p">.</span><span class="n">box</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; cell = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cell</span><span class="p">;</span>
-<span class="n">BL_BACKTRACE_PUSH</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span> <span class="c1">// PUSH takes std::string</span>
-
-<span class="n">Real</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// state is a Fab, and cell is an IntVect.</span>
-
-<span class="n">BL_BACKTRACE_POP</span><span class="p">();</span> <span class="c1">// One can omit this line.  In that case,</span>
-                    <span class="c1">// there is an implicit POP when &quot;PUSH&quot; is</span>
-                    <span class="c1">// out of scope.</span>
-</pre></div>
-</div>
-<p>When it hits the segfault, you will only see the last pint out.</p>
-<p>Writing a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> to disk with</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span> <span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>in <code class="docutils literal notranslate"><span class="pre">AMReX_VisMF.H</span></code> and examining it with <code class="docutils literal notranslate"><span class="pre">Amrvis</span></code> (section
-<a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>) can be helpful as well.  In
-<code class="docutils literal notranslate"><span class="pre">AMReX_MultiFabUtil.H</span></code>, function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>can output the data for a single cell.</p>
-<p>Valgrind is one of our favorite debugging tools.  For MPI runs, one can
-tell valgrind to output to different files for different processes.
-For example,</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 valgrind --leak-check=yes --track-origins=yes --log-file=vallog.%p ./foo.exe ...</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="breaking-into-debuggers">
-<h1>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this headline"></a></h1>
-<p>In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be disabled.</p>
-<p>The following runtime options need to be set in order to prevent AMReX from catching the break signals before a debugger can attach to a crashing process:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amrex.throw_exception = 1</span>
-<span class="go">amrex.signal_handling = 0</span>
-</pre></div>
-</div>
-<p>This default behavior can also be modified by applications, see for example <a class="reference external" href="https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21">this custom application initializer</a>.</p>
-</div>
-<div class="section" id="example-heatequation-ex1-c">
-<span id="sec-basics-heat1"></span><h1>Example: HeatEquation_EX1_C<a class="headerlink" href="#example-heatequation-ex1-c" title="Permalink to this headline"></a></h1>
-<p>We now present an example of solving the heat equation.  The source
-code tree for the heat equation example is simple, as shown in
-<a class="reference internal" href="#fig-basics-heat-flowchart"><span class="std std-numref">Fig. 3</span></a>. We recommend you study
-<code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">advance.cpp</span></code> to see some of the classes described
-below in action.</p>
-<div class="figure align-default" id="id7">
-<span id="fig-basics-heat-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart1.png"><img alt="_images/flowchart1.png" src="_images/flowchart1.png" style="width: 4in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Diagram of the source code structure for the HeatEquation_EX1_C example.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
-</div>
-<p>Source code tree for the HeatEquation_EX1_C example</p>
-<blockquote>
-<div><dl class="simple">
-<dt>amrex/Src/Base</dt><dd><p>Contains source code for single-level simulations.  Note that in
-<code class="docutils literal notranslate"><span class="pre">amrex/Src</span></code> there are many sub-directories, e.g., <code class="docutils literal notranslate"><span class="pre">Base</span></code>, <code class="docutils literal notranslate"><span class="pre">Amr</span></code>,
-<code class="docutils literal notranslate"><span class="pre">AmrCore</span></code>, <code class="docutils literal notranslate"><span class="pre">LinearSolvers</span></code>, etc.  In this tutorial the only source
-code directory we need is <code class="docutils literal notranslate"><span class="pre">Base</span></code>.</p>
-</dd>
-<dt>amrex/Tutorials/HeatEquation_EX1_C/Source</dt><dd><p>Contains the following source code specific to this tutorial:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Make.package</span></code>: lists the source code files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>: contains the C++ <code class="docutils literal notranslate"><span class="pre">main</span></code> function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">myfunc.cpp</span></code>: contains function <code class="docutils literal notranslate"><span class="pre">advance</span></code> that advances
-the solution by a time step, and function <code class="docutils literal notranslate"><span class="pre">init_phi</span></code> that
-initializes the initial solution.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">myfunc.H</span></code>: header file for C++ functions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mykernel.H</span></code>: kernels functions called by <code class="docutils literal notranslate"><span class="pre">advance</span></code> and <code class="docutils literal notranslate"><span class="pre">init_phi</span></code>.</p></li>
-</ol>
-</dd>
-<dt>amrex/Tutorials/HeatEquation_EX1_C/Exec</dt><dd><p>This is where you build the code with make.  There is a GNUmakefile
-and inputs file.</p>
-</dd>
-</dl>
-</div></blockquote>
-<p>Now we highlight a few key sections of the code.  In <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> we
-demonstrate how to read in parameters from the inputs file:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// inputs parameters</span>
-<span class="p">{</span>
-    <span class="c1">// ParmParse is way of reading inputs from the inputs file</span>
-    <span class="n">ParmParse</span> <span class="n">pp</span><span class="p">;</span>
-
-    <span class="c1">// We need to get n_cell from the inputs file - this is the number of cells on each side of</span>
-    <span class="c1">//   a square (or cubic) domain.</span>
-    <span class="n">pp</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;n_cell&quot;</span><span class="p">,</span><span class="n">n_cell</span><span class="p">);</span>
-
-    <span class="c1">// The domain is broken into boxes of size max_grid_size</span>
-    <span class="n">pp</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;max_grid_size&quot;</span><span class="p">,</span><span class="n">max_grid_size</span><span class="p">);</span>
-
-    <span class="c1">// Default plot_int to -1, allow us to set it to something else in the inputs file</span>
-    <span class="c1">//  If plot_int &lt; 0 then no plot files will be writtenq</span>
-    <span class="n">plot_int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;plot_int&quot;</span><span class="p">,</span><span class="n">plot_int</span><span class="p">);</span>
-
-    <span class="c1">// Default nsteps to 10, allow us to set it to something else in the inputs file</span>
-    <span class="n">nsteps</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">pp</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;nsteps&quot;</span><span class="p">,</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>In <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> we demonstrate how to define a <code class="docutils literal notranslate"><span class="pre">Box</span></code> for the problem domain,
-and then how to chop that <code class="docutils literal notranslate"><span class="pre">Box</span></code> up into multiple boxes that define a
-<code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>  We also define a <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> object that knows about the problem
-domain, the physical coordinates of the box, and the periodicity:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// make BoxArray and Geometry</span>
-<span class="n">BoxArray</span> <span class="n">ba</span><span class="p">;</span>
-<span class="n">Geometry</span> <span class="n">geom</span><span class="p">;</span>
-<span class="p">{</span>
-    <span class="n">IntVect</span> <span class="n">dom_lo</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span>       <span class="mi">0</span><span class="p">,</span>        <span class="mi">0</span><span class="p">,</span>        <span class="mi">0</span><span class="p">));</span>
-    <span class="n">IntVect</span> <span class="nf">dom_hi</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
-    <span class="n">Box</span> <span class="nf">domain</span><span class="p">(</span><span class="n">dom_lo</span><span class="p">,</span> <span class="n">dom_hi</span><span class="p">);</span>
-
-    <span class="c1">// Initialize the boxarray &quot;ba&quot; from the single box &quot;domain&quot;</span>
-    <span class="n">ba</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">domain</span><span class="p">);</span>
-    <span class="c1">// Break up boxarray &quot;ba&quot; into chunks no larger than &quot;max_grid_size&quot; along a direction</span>
-    <span class="n">ba</span><span class="p">.</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">);</span>
-
-   <span class="c1">// This defines the physical box, [-1,1] in each direction.</span>
-    <span class="n">RealBox</span> <span class="nf">real_box</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)},</span>
-                     <span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)});</span>
-
-    <span class="c1">// periodic in all direction by default</span>
-    <span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="n">is_periodic</span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)};</span>
-
-    <span class="c1">// This defines a Geometry object</span>
-    <span class="n">geom</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="n">real_box</span><span class="p">,</span><span class="n">CoordSys</span><span class="o">::</span><span class="n">cartesian</span><span class="p">,</span><span class="n">is_periodic</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>In <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> we demonstrate how to build a <code class="docutils literal notranslate"><span class="pre">DistributionMapping</span></code> from the
-<code class="docutils literal notranslate"><span class="pre">BoxArray</span></code>, and then build <code class="docutils literal notranslate"><span class="pre">MultiFabs</span></code> with a desired number of components
-and ghost cells associated with each grid:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Nghost = number of ghost cells for each array</span>
-<span class="kt">int</span> <span class="n">Nghost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="c1">// Ncomp = number of components for each array</span>
-<span class="kt">int</span> <span class="n">Ncomp</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="c1">// How Boxes are distributed among MPI processes</span>
-<span class="n">DistributionMapping</span> <span class="nf">dm</span><span class="p">(</span><span class="n">ba</span><span class="p">);</span>
-
-<span class="c1">// we allocate two phi multifabs; one will store the old state, the other the new.</span>
-<span class="n">MultiFab</span> <span class="nf">phi_old</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">Ncomp</span><span class="p">,</span> <span class="n">Nghost</span><span class="p">);</span>
-<span class="n">MultiFab</span> <span class="nf">phi_new</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">Ncomp</span><span class="p">,</span> <span class="n">Nghost</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>We demonstrate how to build an array of face-based <code class="docutils literal notranslate"><span class="pre">MultiFabs</span></code> :</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// build the flux multifabs</span>
-<span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="p">,</span> <span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="n">flux</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">dir</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dir</span> <span class="o">&lt;</span> <span class="n">AMREX_SPACEDIM</span><span class="p">;</span> <span class="n">dir</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// flux(dir) has one component, zero ghost cells, and is nodal in direction dir</span>
-    <span class="n">BoxArray</span> <span class="n">edge_ba</span> <span class="o">=</span> <span class="n">ba</span><span class="p">;</span>
-    <span class="n">edge_ba</span><span class="p">.</span><span class="n">surroundingNodes</span><span class="p">(</span><span class="n">dir</span><span class="p">);</span>
-    <span class="n">flux</span><span class="p">[</span><span class="n">dir</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">edge_ba</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>To access and/or modify data in a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> we use the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, where each
-processor loops over grids it owns to access and/or modify data on that grid:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize phi_new by calling a Fortran routine.</span>
-<span class="c1">// MFIter = MultiFab Iterator</span>
-<span class="k">for</span> <span class="p">(</span> <span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">phi_new</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="n">Box</span><span class="o">&amp;</span> <span class="n">vbx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
-    <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">phiNew</span> <span class="o">=</span> <span class="n">phi_new</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
-    <span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">vbx</span><span class="p">,</span>
-    <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">init_phi</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">phiNew</span><span class="p">,</span><span class="n">dx</span><span class="p">,</span><span class="n">prob_lo</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Note that the kernel function <code class="docutils literal notranslate"><span class="pre">init_phi</span></code> for initializing a single
-cell is is <code class="docutils literal notranslate"><span class="pre">mykernel.H</span></code>.  It’s marked with <cite>AMREX_GPU_DEVICE</cite> to
-make it a GPU device function, if it built with GPU support.  It’s
-also marked with <cite>AMREX_FORCE_INLINE</cite> for inlining.</p>
-<p>Ghost cells are filled using the <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> function:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Fill the ghost cells of each grid from the other grids</span>
-<span class="c1">// includes periodic domain boundaries</span>
-<span class="n">phi_old</span><span class="p">.</span><span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span>
-</pre></div>
-</div>
+<div class="section" id="tutorials">
+<span id="sec-basics-heat1"></span><h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline"></a></h1>
+<p>To assist users we have multiple tutorials introducing AMReX functionality.
+They range from HelloWorld walk-thrus to stand-alone examples of complex
+features in practice. To access the available tutorials, please see
+<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/">AMReX Guided Tutorials and Example Codes</a>.</p>
 </div>
 
 

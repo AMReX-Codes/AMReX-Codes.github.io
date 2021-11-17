@@ -95,17 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#profiling-with-gpus">Profiling with GPUs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance-tips">Performance Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inputs-parameters">Inputs Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-gpu-debugging">Basic Gpu Debugging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#debuggers-and-related-tools">Debuggers and Related Tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cuda-specific-tests">CUDA-Specific Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#amd-rocm-specific-tests">AMD ROCm-Specific Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#intel-gpu-specific-tests">Intel GPU Specific Tests</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
@@ -226,7 +220,7 @@ Streams guarantee execution order of kernels within the same stream, while
 allowing different streams to run simultaneously. AMReX places each iteration
 of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loops on separate streams, allowing each independent
 iteration to be run simultaneously and sequentially, while maximizing GPU usage.</p>
-<p>The AMReX implementation of streams is illustrated in <a class="reference internal" href="#fig-gpu-streams"><span class="std std-numref">Fig. 13</span></a>.
+<p>The AMReX implementation of streams is illustrated in <a class="reference internal" href="#fig-gpu-streams"><span class="std std-numref">Fig. 12</span></a>.
 The CPU runs the first iteration of the MFIter loop (blue), which contains three
 GPU kernels.  The kernels begin immediately in GPU Stream 1 and run in the same
 order they were added. The second (red) and third (green) iterations are similarly
@@ -241,7 +235,7 @@ porting Fortran code to C++ when coding for GPUs.</p></li>
 </ul>
 <div class="figure align-default" id="id2">
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
 ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
@@ -1571,73 +1565,6 @@ describing how much free memory there is and what was requested.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="basic-gpu-debugging">
-<h1>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline"></a></h1>
-<p>The asynchronous nature of GPU execution can make tracking down bugs complex.
-The relative timing of improperly coded functions can cause variations in output and the timing of error messages
-may not linearly relate to a place in the code.
-One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> type call.
-These synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished processing all previously requested tasks, thereby making it easier to locate and identify sources of error.</p>
-<div class="section" id="debuggers-and-related-tools">
-<h2>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this headline"></a></h2>
-<p>Users may also find debuggers useful. Architecture agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and the Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
-Usage of several of these variations are described in the following sections.</p>
-<p>For advance debugging topics and tools, refer to system-specific documentation (e.g. <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
-</div>
-<div class="section" id="cuda-specific-tests">
-<h2>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline"></a></h2>
-<ul>
-<li><p>To test if your kernels have launched, run:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">nvprof</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
-</pre></div>
-</div>
-<p>If using NVIDIA Nsight Compute instead, access <code class="docutils literal notranslate"><span class="pre">nvprof</span></code> functionality with:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">nsys</span> <span class="n">nvprof</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
-</pre></div>
-</div>
-</li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">nvprof</span> <span class="pre">-o</span> <span class="pre">profile%p.nvvp</span> <span class="pre">./main3d.xxxx</span></code> or
-<code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">-o</span> <span class="pre">nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID}</span> <span class="pre">./main3d.xxx</span></code> for
-a small problem and examine page faults using <code class="docutils literal notranslate"><span class="pre">nvvp</span></code> or <code class="docutils literal notranslate"><span class="pre">nsight-sys</span> <span class="pre">$(pwd)/nsys_out.#.######.qdrep</span></code>.</p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code> to identify memory errors.</p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code> to identify kernel errors.</p></li>
-<li><p>To help identify race conditions, globally disable asynchronicity of kernel launches for all
-CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment variables. This
-will ensure that only one CUDA kernel will run at a time.</p></li>
-</ul>
-</div>
-<div class="section" id="amd-rocm-specific-tests">
-<h2>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Permalink to this headline"></a></h2>
-<ul>
-<li><p>To test if your kernels have launched, run:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">rocprof</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
-</pre></div>
-</div>
-</li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">rocprof</span>&#160; <span class="pre">--hsa-trace</span> <span class="pre">--stats</span> <span class="pre">--timestamp</span> <span class="pre">on</span> <span class="pre">--roctx-trace</span> <span class="pre">./main3d.xxxx</span></code> for
-a small problem and examine tracing using <code class="docutils literal notranslate"><span class="pre">chrome://tracing</span></code>.</p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code> for source-level debugging.</p></li>
-<li><p>To help identify if there are race conditions, globally disable asynchronicity of kernel launches by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> or <code class="docutils literal notranslate"><span class="pre">HIP_LAUNCH_BLOCKING=1</span></code>
-in your environment variables. This will ensure only one kernel will run at a time.
-See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/Programming_Guides/HIP_Debugging.html#chicken-bits">AMD ROCm docs’ chicken bits section</a> for more debugging environment variables.</p></li>
-</ul>
-</div>
-<div class="section" id="intel-gpu-specific-tests">
-<h2>Intel GPU Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this headline"></a></h2>
-<ul>
-<li><p>To test if your kernels have launched, run:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">ze_tracer</span> <span class="p">.</span><span class="o">/</span><span class="n">main3d</span><span class="p">.</span><span class="n">xxx</span>
-</pre></div>
-</div>
-</li>
-<li><p>Run Intel Advisor,
-<code class="docutils literal notranslate"><span class="pre">advisor</span> <span class="pre">--collect=survey</span> <span class="pre">./main3d.xxx</span></code> for
-a small problem with 1 MPI process and examine metrics.</p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">gdb</span></code> with the <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/distribution-for-gdb.html">Intel Distribution for GDB</a>.</p></li>
-<li><p>To report back-end information, set <code class="docutils literal notranslate"><span class="pre">ZE_DEBUG=1</span></code> in your environment variables.</p></li>
-</ul>
-</div>
 </div>
 
 

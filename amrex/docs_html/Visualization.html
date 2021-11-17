@@ -90,6 +90,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
@@ -350,7 +351,7 @@ plotfiles, as well as particles data. Download the package at
 <li><p>Navigate to your run directory, and select the fluid or particle plotfile.
 Note that you can either open single/multiple plotfile(s) at once by selecting
 them one by one or select an ensemble of file, labelled as <code class="docutils literal notranslate"><span class="pre">plt..</span></code> and indicated
-as a Group in the “Type” column of the file explorer (see <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 15</span></a>).
+as a Group in the “Type” column of the file explorer (see <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 14</span></a>).
 In the later case, Paraview will load the plotfiles as a time series.
 ParaView will ask you about the file type – choose “AMReX/BoxLib Grid Reader” or
 “AMReX/BoxLib Particles Reader”.</p></li>
@@ -363,11 +364,11 @@ Change to the required number of AMR level before clicking “Apply”.</p></li>
 slicing through it. If you hover your mouse over it, it will say “Slice”.
 Click that button.</p></li>
 <li><p>You can play with the Plane Parameters to define a plane of data to view, as
-shown in <a class="reference internal" href="#fig-paraview"><span class="std std-numref">Fig. 14</span></a>.</p></li>
+shown in <a class="reference internal" href="#fig-paraview"><span class="std std-numref">Fig. 13</span></a>.</p></li>
 </ol>
 <div class="figure align-default" id="id5">
 <span id="fig-paraview"></span><a class="reference internal image-reference" href="_images/ParaView.png"><img alt="_images/ParaView.png" src="_images/ParaView.png" style="width: 3.1in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">: Plotfile image generated with ParaView</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">: Plotfile image generated with ParaView</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </div>
 <p>Note that Paraview is not able to generate iso-surfaces from cell centered data. To build an iso-surface (or iso-line in 2D):</p>
 <ol class="arabic simple">
@@ -379,25 +380,25 @@ values and click “Apply”.</p></li>
 run the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#neighborlist">NeighborList</a> example in <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html">Tutorials/Particles</a>):</p>
 <div class="figure align-default" id="id6">
 <span id="fig-paraview-filegroup"></span><a class="reference internal image-reference" href="_images/ParaView_filegroup.png"><img alt="_images/ParaView_filegroup.png" src="_images/ParaView_filegroup.png" style="width: 3.1in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">: File dialog in ParaView showing a group of plotfile directories selected</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">: File dialog in ParaView showing a group of plotfile directories selected</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </div>
 <ol class="arabic simple">
 <li><p>Run ParaView v5.7, and select  then  “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open”. You
 will see a combined “plt..” group. Click on “+” to expand the group, if you
 want inspect the files in the group. You can select an individual plotfile
 directory or select a group of directories to read them a time series, as
-shown in <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 15</span></a>, and click OK. ParaView will ask you about the file type – choose “AMReX/BoxLib Particles Reader”.</p></li>
+shown in <a class="reference internal" href="#fig-paraview-filegroup"><span class="std std-numref">Fig. 14</span></a>, and click OK. ParaView will ask you about the file type – choose “AMReX/BoxLib Particles Reader”.</p></li>
 <li><p>The “Properties” panel in ParaView allows you to specify the “Particle
 Type”, which defaults to “particles”. Using the “Properties” panel, you can
 also choose which point arrays to read.</p></li>
 <li><p>Click “Apply” and under “Representation” select “Point Gaussian”.</p></li>
 <li><p>Change the Gaussian Radius if you like. You can scroll through the frames
 with the VCR-like controls at the top, as shown in
-<a class="reference internal" href="#fig-paraview-particles"><span class="std std-numref">Fig. 16</span></a>.</p></li>
+<a class="reference internal" href="#fig-paraview-particles"><span class="std std-numref">Fig. 15</span></a>.</p></li>
 </ol>
 <div class="figure align-default" id="id7">
 <span id="fig-paraview-particles"></span><a class="reference internal image-reference" href="_images/ParaView_particles.png"><img alt="_images/ParaView_particles.png" src="_images/ParaView_particles.png" style="width: 3.1in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">: Particle image generated with ParaView</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">: Particle image generated with ParaView</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </div>
 <p>Following these instructions, you can open fluid and/or particles plotfiles and visualize them together on the same Panel View.</p>
 <p>Once you have loaded an AMReX plotfile time series (fluid and/or particles), you can generate a movie following these instructions:</p>
@@ -472,11 +473,11 @@ the slice plot feature is shown below:</p>
 <span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;plt00401_Slice_z_density.png&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The resulting image is <a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 17</span></a>. One can also make
+<p>The resulting image is <a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 16</span></a>. One can also make
 volume renderings with ; an example is show below:</p>
 <div class="figure align-default" id="id8">
 <span id="fig-yt-nyx-slice-plot"></span><img alt="_images/yt_Nyx_density_slice.png" src="_images/yt_Nyx_density_slice.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">: Slice plot of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">: Slice plot of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="s2">&quot;perspective&quot;</span><span class="p">)</span>
 
@@ -513,12 +514,12 @@ volume renderings with ; an example is show below:</p>
 <span class="n">yt</span> <span class="p">:</span> <span class="p">[</span><span class="n">INFO</span>     <span class="p">]</span> <span class="mi">2017</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="mi">471</span> <span class="n">Saving</span> <span class="n">render</span> <span class="n">plt00401_Render_density</span><span class="o">.</span><span class="n">png</span>
 </pre></div>
 </div>
-<p>The output of this is <a class="reference internal" href="#fig-yt-nyx-vol-rend"><span class="std std-numref">Fig. 18</span></a>.</p>
+<p>The output of this is <a class="reference internal" href="#fig-yt-nyx-vol-rend"><span class="std std-numref">Fig. 17</span></a>.</p>
 <div class="figure align-default" id="id9">
 <span id="fig-yt-nyx-vol-rend"></span><img alt="_images/yt_Nyx_density_vol_rend.png" src="_images/yt_Nyx_density_vol_rend.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Volume rendering of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt. This corresponds
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Volume rendering of <span class="math notranslate nohighlight">\(128^3\)</span> Nyx simulation using yt. This corresponds
 to the same plot file used to generate the slice plot in
-<a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 17</span></a>.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<a class="reference internal" href="#fig-yt-nyx-slice-plot"><span class="std std-numref">Fig. 16</span></a>.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="using-yt-at-nersc-under-development">
@@ -712,7 +713,7 @@ Catalyst, VTK-m, Ascent, ADIOS, Yt, and Python.</p>
 <h2>System Architecture<a class="headerlink" href="#system-architecture" title="Permalink to this headline"></a></h2>
 <div class="figure align-default" id="id10">
 <span id="sensei-arch"></span><img alt="_images/sensei_amrex_arch_sm_824.png" src="_images/sensei_amrex_arch_sm_824.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">SENSEI’s in situ architecture enables use of a diverse of back ends which
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">SENSEI’s in situ architecture enables use of a diverse of back ends which
 can be selected at run time via an XML configuration file</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </div>
 <p>The three major architectural components in SENSEI are <em>data adaptors</em> which
@@ -727,7 +728,7 @@ and bridge code making it easy to use in AMReX based simulation codes.</p>
 select and configure one or more back ends at run time. Run time selection of
 the back end via XML means one user can access Catalyst, another Libsim, yet
 another Python with no changes to the code.  This is depicted in figure
-<a class="reference internal" href="#sensei-arch"><span class="std std-numref">Fig. 19</span></a>. On the left side of the figure AMReX produces data, the
+<a class="reference internal" href="#sensei-arch"><span class="std std-numref">Fig. 18</span></a>. On the left side of the figure AMReX produces data, the
 bridge code pushes the data through the configurable analysis adaptor to the
 back end that was selected at run time.</p>
 </div>
@@ -794,7 +795,7 @@ SENSEI processing.</p>
 The XML sets parameters specific to SENSEI and to the chosen back end. Many of
 the back ends have sophisticated configuration mechanisms which SENSEI makes
 use of.  For example the following XML configuration was used on NERSC’s Cori
-with IAMR to render 10 iso surfaces, shown in figure <a class="reference internal" href="#rt-visit"><span class="std std-numref">Fig. 20</span></a>, using
+with IAMR to render 10 iso surfaces, shown in figure <a class="reference internal" href="#rt-visit"><span class="std std-numref">Fig. 19</span></a>, using
 VisIt Libsim.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sensei&gt;</span>
   <span class="nt">&lt;analysis</span> <span class="na">type=</span><span class="s">&quot;libsim&quot;</span> <span class="na">frequency=</span><span class="s">&quot;1&quot;</span> <span class="na">mode=</span><span class="s">&quot;batch&quot;</span>
@@ -811,11 +812,11 @@ representative dataset. Usually this data set is generated in a low resolution
 run of the desired simulation.</p>
 <div class="figure align-default" id="id11">
 <span id="rt-visit"></span><img alt="_images/rt_2048_visit_000500.png" src="_images/rt_2048_visit_000500.png" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">SENSEI-Libsim in situ visualization of a Raleigh-Taylor instability computed
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">SENSEI-Libsim in situ visualization of a Raleigh-Taylor instability computed
 by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </div>
 <p>The same run and visualization was repeated using ParaView Catalyst, shown in
-figure <a class="reference internal" href="#rt-pv"><span class="std std-numref">Fig. 21</span></a>, by providing the following XML configuration.</p>
+figure <a class="reference internal" href="#rt-pv"><span class="std std-numref">Fig. 20</span></a>, by providing the following XML configuration.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sensei&gt;</span>
   <span class="nt">&lt;analysis</span> <span class="na">type=</span><span class="s">&quot;catalyst&quot;</span> <span class="na">pipeline=</span><span class="s">&quot;pythonscript&quot;</span>
     <span class="na">filename=</span><span class="s">&quot;rt_sensei_configs/rt_contour.py&quot;</span> <span class="na">enabled=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
@@ -827,7 +828,7 @@ configuration that was generated using the ParaView GUI on a representative
 dataset.</p>
 <div class="figure align-default" id="id12">
 <span id="rt-pv"></span><img alt="_images/rt_2048_paraview_000500.png" src="_images/rt_2048_paraview_000500.png" />
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">SENSEI-Catalyst in situ visualization of a Raleigh-Taylor instability
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">SENSEI-Catalyst in situ visualization of a Raleigh-Taylor instability
 computed by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </div>
 </div>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debugging &mdash; amrex 21.00-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Run-time Inputs" href="Inputs_Chapter.html" />
+    <link rel="prev" title="Post-Processing" href="Post_Processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> amrex
+          </a>
+              <div class="version">
+                21.00-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#breaking-into-debuggers">Breaking into Debuggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-gpu-debugging">Basic Gpu Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#debuggers-and-related-tools">Debuggers and Related Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cuda-specific-tests">CUDA-Specific Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amd-rocm-specific-tests">AMD ROCm-Specific Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#intel-gpu-specific-tests">Intel GPU Specific Tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Debugging</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Debugging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="debugging">
+<span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline"></a></h1>
+<p>Debugging is an art.  Everyone has their own favorite method.  Here we
+offer a few tips we have found to be useful.</p>
+<p>To help debugging, AMReX handles various signals in the C standard
+library raised in the runs.  This gives us a chance to print out more
+information using Linux/Unix backtrace capability.  The signals
+include segmentation fault (or “segfault”), interruption by the user (control-c), assertion
+errors, and floating point exceptions (NaNs, divided by zero and
+overflow).  The handling of segfault, assertion errors and
+interruption by control-C are enabled by default.  Note that
+<code class="docutils literal notranslate"><span class="pre">AMREX_ASSERT()</span></code> is only on when compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> or
+<code class="docutils literal notranslate"><span class="pre">USE_ASSERTION=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_ASSERTIONS=YES</span></code> in CMake.  The trapping of floating point exceptions is not
+enabled by default unless the code is compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with
+<code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or <code class="docutils literal notranslate"><span class="pre">-DAMReX_FPE=YES</span></code> in CMake to turn on compiler flags
+if supported.  Alternatively, one can always use runtime parameters to control the
+handling of floating point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
+NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code> for division by zero and
+<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow.  To more effectively trap the
+use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>s in
+<code class="docutils literal notranslate"><span class="pre">MulitFab</span></code>s and arrays allocated by <code class="docutils literal notranslate"><span class="pre">bl_allocate</span></code> to signaling NaNs when it is compiled
+with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
+One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.</p>
+<p>One can get more information than the backtrace of the call stack by
+instrumenting the code.  Here is an example.
+You know the line <code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">rho</span> <span class="pre">=</span> <span class="pre">state(cell,0);</span></code> is causing a segfault.  You
+could add a print statement before that.  But it might print out
+thousands (or even millions) of line before it hits the segfault.  What
+you could do is the following,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_BLBackTrace.H&gt;</span><span class="cp"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">ss</span><span class="p">;</span>
+<span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;state.box() = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">state</span><span class="p">.</span><span class="n">box</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; cell = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cell</span><span class="p">;</span>
+<span class="n">BL_BACKTRACE_PUSH</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span> <span class="c1">// PUSH takes std::string</span>
+
+<span class="n">Real</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// state is a Fab, and cell is an IntVect.</span>
+
+<span class="n">BL_BACKTRACE_POP</span><span class="p">();</span> <span class="c1">// One can omit this line.  In that case,</span>
+                    <span class="c1">// there is an implicit POP when &quot;PUSH&quot; is</span>
+                    <span class="c1">// out of scope.</span>
+</pre></div>
+</div>
+<p>When it hits the segfault, you will only see the last pint out.</p>
+<p>Writing a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> to disk with</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span> <span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>in <code class="docutils literal notranslate"><span class="pre">AMReX_VisMF.H</span></code> and examining it with <code class="docutils literal notranslate"><span class="pre">Amrvis</span></code> (section
+<a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>) can be helpful as well.  In
+<code class="docutils literal notranslate"><span class="pre">AMReX_MultiFabUtil.H</span></code>, function</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>can output the data for a single cell.</p>
+<p>Valgrind is one of our favorite debugging tools.  For MPI runs, one can
+tell Valgrind to output to different files for different processes.
+For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 valgrind --leak-check=yes --track-origins=yes --log-file=vallog.%p ./foo.exe ...</span>
+</pre></div>
+</div>
+<div class="section" id="breaking-into-debuggers">
+<h2>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this headline"></a></h2>
+<p>In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be disabled.</p>
+<p>The following runtime options need to be set in order to prevent AMReX from catching the break signals before a debugger can attach to a crashing process:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amrex.throw_exception = 1</span>
+<span class="go">amrex.signal_handling = 0</span>
+</pre></div>
+</div>
+<p>This default behavior can also be modified by applications, see for example <a class="reference external" href="https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21">this custom application initializer</a>.</p>
+</div>
+<div class="section" id="basic-gpu-debugging">
+<span id="sec-gpu-debugging"></span><h2>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline"></a></h2>
+<p>The asynchronous nature of GPU execution can make tracking down bugs complex.
+The relative timing of improperly coded functions can cause variations in output and the timing of error messages
+may not linearly relate to a place in the code.
+One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> type call.
+These synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished processing all previously requested tasks, thereby making it easier to locate and identify sources of error.</p>
+<div class="section" id="debuggers-and-related-tools">
+<h3>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this headline"></a></h3>
+<p>Users may also find debuggers useful. Architecture agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and the Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
+Usage of several of these variations are described in the following sections.</p>
+<p>For advance debugging topics and tools, refer to system-specific documentation (e.g. <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
+</div>
+<div class="section" id="cuda-specific-tests">
+<h3>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p>To test if your kernels have launched, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nvprof ./main3d.xxx</span>
+</pre></div>
+</div>
+<p>If using NVIDIA Nsight Compute instead, access <code class="docutils literal notranslate"><span class="pre">nvprof</span></code> functionality with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nsys nvprof ./main3d.xxx</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">nvprof</span> <span class="pre">-o</span> <span class="pre">profile%p.nvvp</span> <span class="pre">./main3d.xxxx</span></code> or
+<code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">-o</span> <span class="pre">nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID}</span> <span class="pre">./main3d.xxx</span></code> for
+a small problem and examine page faults using <code class="docutils literal notranslate"><span class="pre">nvvp</span></code> or <code class="docutils literal notranslate"><span class="pre">nsight-sys</span> <span class="pre">$(pwd)/nsys_out.#.######.qdrep</span></code>.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code> to identify memory errors.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code> to identify kernel errors.</p></li>
+<li><p>To help identify race conditions, globally disable asynchronicity of kernel launches for all
+CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment variables. This
+will ensure that only one CUDA kernel will run at a time.</p></li>
+</ul>
+</div>
+<div class="section" id="amd-rocm-specific-tests">
+<h3>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p>To test if your kernels have launched, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rocprof ./main3d.xxx</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rocprof</span>&#160; <span class="pre">--hsa-trace</span> <span class="pre">--stats</span> <span class="pre">--timestamp</span> <span class="pre">on</span> <span class="pre">--roctx-trace</span> <span class="pre">./main3d.xxxx</span></code> for
+a small problem and examine tracing using <code class="docutils literal notranslate"><span class="pre">chrome://tracing</span></code>.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code> for source-level debugging.</p></li>
+<li><p>To help identify if there are race conditions, globally disable asynchronicity of kernel launches by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> or <code class="docutils literal notranslate"><span class="pre">HIP_LAUNCH_BLOCKING=1</span></code>
+in your environment variables. This will ensure only one kernel will run at a time.
+See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/Programming_Guides/HIP_Debugging.html#chicken-bits">AMD ROCm docs’ chicken bits section</a> for more debugging environment variables.</p></li>
+</ul>
+</div>
+<div class="section" id="intel-gpu-specific-tests">
+<h3>Intel GPU Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p>To test if your kernels have launched, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./ze_tracer ./main3d.xxx</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run Intel Advisor,
+<code class="docutils literal notranslate"><span class="pre">advisor</span> <span class="pre">--collect=survey</span> <span class="pre">./main3d.xxx</span></code> for
+a small problem with 1 MPI process and examine metrics.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">gdb</span></code> with the <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/distribution-for-gdb.html">Intel Distribution for GDB</a>.</p></li>
+<li><p>To report back-end information, set <code class="docutils literal notranslate"><span class="pre">ZE_DEBUG=1</span></code> in your environment variables.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Post_Processing.html" class="btn btn-neutral float-left" title="Post-Processing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Inputs_Chapter.html" class="btn btn-neutral float-right" title="Run-time Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

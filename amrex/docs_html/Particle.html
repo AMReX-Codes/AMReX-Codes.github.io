@@ -78,6 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
@@ -194,7 +195,7 @@ Struct-of-Arrays as particle <em>attributes</em>. See the figure
 <a class="reference internal" href="#fig-particles-particle-arrays"><span class="std std-ref">below</span></a> for an illustration.</p>
 <div class="figure align-default" id="id7">
 <span id="fig-particles-particle-arrays"></span><img alt="_images/particle_arrays.png" src="_images/particle_arrays.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">An illustration of how the particle data for a single tile is arranged in
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">An illustration of how the particle data for a single tile is arranged in
 memory. This particle container has been defined with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NStructReal</span></span> <span class="operator"><span class="pre">=</span></span>
 <span class="literal number integer"><span class="pre">1</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NStructInt</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">2</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NArrayReal</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">2</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NArrayInt</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">2</span></span></code>.
 In this case, each tile in the particle container has five arrays: one with
@@ -505,7 +506,7 @@ distance, the particles don’t interact with each other and therefore don’t n
 to be included in the force calculation. Our approach to these kind of
 particles is to fill “neighbor buffers” on each tile that contain copies of the
 particles on neighboring tiles that are within some number of cells <span class="math notranslate nohighlight">\(N_g\)</span>
-of the tile boundaries. See <a class="reference internal" href="#fig-particles-neighbor-particles"><span class="std std-numref">Fig. 10</span></a>, below
+of the tile boundaries. See <a class="reference internal" href="#fig-particles-neighbor-particles"><span class="std std-numref">Fig. 9</span></a>, below
 for an illustration. By choosing the number of ghost cells to match the
 interaction radius of the particles, you can capture all of the neighbors that
 can possibly influence the particles in the valid region of the tile. The
@@ -513,7 +514,7 @@ forces on the particles on different tiles can then be computed independently
 of each other using a variety of methods.</p>
 <div class="figure align-default" id="id8">
 <span id="fig-particles-neighbor-particles"></span><a class="reference internal image-reference" href="_images/neighbor_particles.png"><img alt="_images/neighbor_particles.png" src="_images/neighbor_particles.png" style="width: 75.0%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">: An illustration of filling neighbor particles for short-range force
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">: An illustration of filling neighbor particles for short-range force
 calculations. Here, we have a domain consisting of one <span class="math notranslate nohighlight">\(32 \times 32\)</span>
 grid, broken up into <span class="math notranslate nohighlight">\(8 \times 8\)</span> tiles. The number of ghost cells is
 taken to be <span class="math notranslate nohighlight">\(1\)</span>.  For the tile in green, particles on other tiles in
@@ -589,10 +590,10 @@ and neighbor particles, as follows:</p>
 <p>Doing a direct <span class="math notranslate nohighlight">\(N^2\)</span> summation over the
 particles on a tile is avoided by binning the particles by cell and building a neighbor
 list.  The data structure used to represent
-the neighbor lists is illustrated in <a class="reference internal" href="#fig-particles-neighbor-list"><span class="std std-numref">Fig. 11</span></a>.</p>
+the neighbor lists is illustrated in <a class="reference internal" href="#fig-particles-neighbor-list"><span class="std std-numref">Fig. 10</span></a>.</p>
 <div class="figure align-default" id="id9">
 <span id="fig-particles-neighbor-list"></span><img alt="_images/neighbor_list.png" src="_images/neighbor_list.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">: An illustration of the neighbor list data structure used by AMReX. The
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">: An illustration of the neighbor list data structure used by AMReX. The
 list for each tile is represented by an array of integers. The first number
 in the array is the number of real (i.e., not in the neighbor buffers)
 collision partners for the first particle on this tile, while the second is
