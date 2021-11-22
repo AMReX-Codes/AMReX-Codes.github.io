@@ -1079,6 +1079,7 @@ var hierarchy =
       [ "amrex::Vector< std::map< PairIndex, IntVector > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, ParticleTile > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< std::pair< int, int >, amrex::NeighborList< ParticleType > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::map< std::pair< int, int >, amrex::PODVector< int > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< std::string, int > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< int, int > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< void *, amrex::Arena * > >", "classamrex_1_1Vector.html", null ],
