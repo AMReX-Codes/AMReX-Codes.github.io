@@ -32006,6 +32006,126 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_LeastSquares_3D_K.H" line="1073" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_LeastSquares_3D_K.H" bodystart="1073" bodyend="1208"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae21d913402ed0c78cccf9819ea8a69c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FillSignedDistance</definition>
+        <argsstring>(MultiFab &amp;mf, bool fluid_has_positive_sign=true)</argsstring>
+        <name>FillSignedDistance</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fluid_has_positive_sign</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Fill <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with signed distance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function fills the nodal <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with signed distance. Note that the distance is valid only if it&apos;s within a few cells to the EB. The <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> must have been built with an <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a nodal <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> built with <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fluid_has_positive_sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>determines the sign of the fluid. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp" line="278" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp" bodystart="278" bodyend="286" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H" declline="107" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae734f341bd7b27e7d150b1187c28c9ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FillSignedDistance</definition>
+        <argsstring>(MultiFab &amp;mf, EB2::Level const  &amp;ls_lev, EBFArrayBoxFactory const  &amp;eb_fac, int refratio, bool fluid_has_positive_sign=true)</argsstring>
+        <name>FillSignedDistance</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1EB2_1_1Level" kindref="compound">EB2::Level</ref> const &amp;</type>
+          <declname>ls_lev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> const &amp;</type>
+          <declname>eb_fac</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>refratio</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fluid_has_positive_sign</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Fill <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with signed distance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function fills the nodal <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with signed distance. Note that the distance is valid only if it&apos;s within a few cells to the EB.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a nodal <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ls_lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is an <ref refid="classamrex_1_1EB2_1_1Level" kindref="compound">EB2::Level</ref> obejct with an implicit function. This is at the same level as mf. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eb_fac</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is an <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> object containing EB informaiton. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>refratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the refinement ratio of mf to eb_fac. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fluid_has_positive_sign</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>determines the sign of the fluid. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp" line="482" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp" bodystart="482" bodyend="696" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H" declline="93" declcolumn="10"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a432c3b4f5a385efd93de62c6402e2b0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -32029,12 +32149,49 @@ Returns the index of the first element for which f is 0. </para>
           <declname>geom</declname>
         </param>
         <briefdescription>
+<para>Fill <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with implicit function. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function fills the nodal <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with the implicit function in GeometryShop. Note that an implicit function is not necessarily a signed distance function.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the GeometryShop type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a nodal <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gshop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a GeometryShop object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H" line="46" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H" bodystart="46" bodyend="65"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H" line="59" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H" bodystart="59" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aca824ed9a83373a83533e948d2175dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
