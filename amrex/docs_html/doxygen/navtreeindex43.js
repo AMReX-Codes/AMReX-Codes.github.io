@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"classamrex_1_1MacProjector.html#ac881c6b599a99ab3994488ea2cbe4f92":[2,0,0,265,1],
 "classamrex_1_1MacProjector.html#acaa4061613e27a1666415db843c11a1c":[2,0,0,265,6],
 "classamrex_1_1MacProjector.html#accaac7cfdc71e38df9e27629453110d6":[2,0,0,265,2],
 "classamrex_1_1MacProjector.html#ad0bba3cdb810fd7e1858bf4cc65e3341":[2,0,0,265,28],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "classamrex_1_1NFilesIter.html#a66c78163b811ad78cb91330d0100cc54":[2,0,0,309,22],
 "classamrex_1_1NFilesIter.html#a6c012f15ef5b8e7438a88bc794766143":[2,0,0,309,21],
 "classamrex_1_1NFilesIter.html#a7491b9b7bee6d89900b7948670ea6425":[2,0,0,309,37],
-"classamrex_1_1NFilesIter.html#a78880a4ba0c24b3fe3ee88bc7a10e71b":[2,0,0,309,52],
-"classamrex_1_1NFilesIter.html#a7ea5dbf41c762d6e8e90def0b878ea8d":[2,0,0,309,57]
+"classamrex_1_1NFilesIter.html#a78880a4ba0c24b3fe3ee88bc7a10e71b":[2,0,0,309,52]
 };

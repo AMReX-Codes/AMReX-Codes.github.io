@@ -23,6 +23,7 @@ var AMReX_8H =
     [ "ignore_unused", "AMReX_8H.html#a95b1159ba3a5494abd49dc9b3d34eacf", null ],
     [ "Initialize", "AMReX_8H.html#aad973f86fbf0a5ecec671bb067f11499", null ],
     [ "Initialize", "AMReX_8H.html#a187cdb4f4273fdf9bcad01ac8e3fcc4d", null ],
+    [ "Initialized", "AMReX_8H.html#afdedd4a55eb147e0e27194b9e06f68e0", null ],
     [ "OutStream", "AMReX_8H.html#add2f0f36ce80f2f3934e3a8ec2a966df", null ],
     [ "SetErrorHandler", "AMReX_8H.html#ae82a731c021b58a742101a3d5f803438", null ],
     [ "SetVerbose", "AMReX_8H.html#a125dcbb8afa7e676566242972a5b7757", null ],

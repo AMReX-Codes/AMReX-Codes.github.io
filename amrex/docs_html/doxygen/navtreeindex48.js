@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1PlotFileData.html#a6006d7b7736ddff7fda093ec7a633570":[2,0,0,393,0],
 "classamrex_1_1PlotFileData.html#a64b61a21bf164a8ce959ba06b3ed2a30":[2,0,0,393,10],
 "classamrex_1_1PlotFileData.html#a686e711350524cacaaeb3177337742c8":[2,0,0,393,18],
 "classamrex_1_1PlotFileData.html#a744ac8dee3b12454af52e51ad541b9df":[2,0,0,393,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "classamrex_1_1ReduceOps.html#a6bed424b9a455d76e42d8061aef71b3e":[2,0,0,411,0],
 "classamrex_1_1ReduceOps.html#ab6d0e3293d5341c89aad5b8acc8abd47":[2,0,0,411,3],
 "classamrex_1_1ReduceOps.html#ad63e04436117908210c3ddd0e16973d4":[2,0,0,411,5],
-"classamrex_1_1STLtools.html":[2,0,0,428],
-"classamrex_1_1STLtools.html#a02713b3bdf5197301486a78cca290534":[2,0,0,428,6]
+"classamrex_1_1STLtools.html":[2,0,0,428]
 };
