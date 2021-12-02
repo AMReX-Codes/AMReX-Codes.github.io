@@ -61,6 +61,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-particlecontainer">The ParticleContainer</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#arrays-of-structs-and-structs-of-arrays">Arrays-of-Structs and Structs-of-Arrays</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#constructing-particlecontainers">Constructing ParticleContainers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-particletile">The ParticleTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#redistribute">Redistribute</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#initializing-particle-data">Initializing Particle Data</a></li>
@@ -258,20 +260,40 @@ pointer to your AmrCore derived class, instead:</p>
 <p>In this case, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vector</span></span><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">BoxArray</span></span><span class="operator"><span class="pre">&gt;</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vector</span></span><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">DistributionMap</span></span><span class="operator"><span class="pre">&gt;</span></span></code>
 used by your <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code> will be updated automatically to match
 those in your <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code>.</p>
+</div>
+<div class="section" id="the-particletile">
+<h2>The ParticleTile<a class="headerlink" href="#the-particletile" title="Permalink to this headline"></a></h2>
 <p>The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code> stores the particle data in a manner prescribed by
-the set of AMR grids used to define it. If tiling is turned off, then every
-grid has its own Array-of-Structs and Struct-of-Arrays. Which AMR grid a
-particle is assigned to is determined by examining its position and binning it,
-using the domain left edge as an offset.  By default, a particle is assigned to
+the set of AMR grids used to define it. Local particle data is always stored in
+a data structure called a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleTile</span></span></code>, which contains a mixture of AoS
+and SoA components as described above. The tiling behavior of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleTile</span></span></code>
+is determined by the parameter, <code class="docutils literal notranslate"><span class="pre">particle.do_tiling</span></code>:</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">particles.do_tiling=0</span></code>, then there is always exactly one
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleTile</span></span></code> per grid. This is equivalent to setting a very large
+<code class="docutils literal notranslate"><span class="pre">particles.tile_size</span></code> in each direction.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">particles.do_tiling=1</span></code>, then each grid can have multiple
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleTile</span></span></code> objects associated with it based on the
+<code class="docutils literal notranslate"><span class="pre">particles.tile_size</span></code> parameter.</p></li>
+</ul>
+<p>The AMR grid to which a particle is assigned, is determined by examining its
+position and binning it, using the domain left edge as an offset. By default,
+a particle is assigned to
 the finest level that contains its position, although this behavior can be
-tweaked if desired.  When tiling is enabled, then each <em>tile</em> gets its own
-Struct-of-Arrays and Array-of-Structs instead. Note that this is different than
-what happens with mesh data. With mesh data, the tiling is strictly logical;
-the data is laid out in memory the same whether tiling is turned on or off.
+tweaked if desired.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleTile</span></span></code> data tiling with <a class="reference internal" href="Basics.html#sec-basics-mfiter"><span class="std std-ref">MFIter</span></a> behaves differently than mesh
+data. With mesh data, the tiling is strictly logical –the data is laid out in
+memory the same way whether tiling is turned on or off.
 With particle data, however, the particles are actually stored in different
 arrays when tiling is enabled. As with mesh data, the particle tile size can be
 tuned so that an entire tile’s worth of particles will fit into a cache line at
 once.</p>
+</div>
+</div>
+<div class="section" id="redistribute">
+<h2>Redistribute<a class="headerlink" href="#redistribute" title="Permalink to this headline"></a></h2>
 <p>Once the particles move, their data may no longer be in the right place in the
 container. They can be reassigned by calling the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Redistribute</span></span><span class="punctuation"><span class="pre">()</span></span></code> method
 of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code>.  After calling this method, all the particles will
@@ -281,7 +303,8 @@ needed to do this happens automatically.</p>
 <p>Application codes will likely want to create their own derived
 ParticleContainer class that specializes the template parameters and adds
 additional functionality, like setting the initial conditions, moving the
-particles, etc. See the <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html">particle tutorials</a> for examples of this.</p>
+particles, etc. See the <a class="reference internal" href="#particle-tutorials">particle tutorials</a> for examples of this.
+.. <span class="target" id="particle-tutorials">particle tutorials</span>: <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html">https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html</a></p>
 </div>
 </div>
 <div class="section" id="initializing-particle-data">
