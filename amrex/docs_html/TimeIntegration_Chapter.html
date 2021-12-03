@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Integration &mdash; amrex 21.01-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GPU" href="GPU_Chapter.html" />
+    <link rel="prev" title="Initializing the Geometric Database" href="EB.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> amrex
+          </a>
+              <div class="version">
+                21.01-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Time Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-time-integrator-setup">A Simple Time Integrator Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#picking-a-time-integration-method">Picking A Time Integration Method</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Post_Processing_Chapter.html">Post-Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Time Integration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/TimeIntegration_Chapter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="time-integration">
+<span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this headline"></a></h1>
+<p>AMReX provides a basic explicit time integrator capable of Forward Euler or
+both predefined and custom Runge-Kutta schemes designed to advance data on a
+particular AMR level by a timestep. This integrator is designed to be flexible,
+requiring the user to supply a right-hand side function taking a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>
+of state data and filling a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> of the corresponding right hand side
+data. The user simply needs to supply a C++ lambda function to implement
+whatever right hand side operations they need.</p>
+<div class="section" id="a-simple-time-integrator-setup">
+<h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Permalink to this headline"></a></h2>
+<p>This is best shown with some sample code that sets up a time integrator and
+asks it to step forwards by some interval <code class="docutils literal notranslate"><span class="pre">dt</span></code>. The user needs to supply at
+minimum, the right-hand side function using the <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code>
+function. By using the <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_post_update()</span></code> function, a user
+can also supply a post update function which is called on state data immediately
+before evaluating the right-hand side. This post update function is a good
+opportunity to fill boundary conditions for Runge-Kutta stage solution data so that
+ghost cells are filled when the right hand side function is called on that solution data.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_TimeIntegrator.H&gt;</span><span class="cp"></span>
+
+<span class="n">MultiFab</span> <span class="n">Sborder</span><span class="p">;</span> <span class="c1">// MultiFab containing old-time state data and ghost cells</span>
+<span class="n">MultiFab</span> <span class="n">Snew</span><span class="p">;</span>    <span class="c1">// MultiFab where we want new-time state data</span>
+<span class="n">Geometry</span> <span class="n">geom</span><span class="p">;</span>    <span class="c1">// The domain (or level) geometry</span>
+
+<span class="c1">// [Fill Sborder here]</span>
+
+<span class="c1">// Create a time integrator that will work with</span>
+<span class="c1">// MultiFabs with the same BoxArray, DistributionMapping,</span>
+<span class="c1">// and number of components as the state_data MultiFab.</span>
+<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">integrator</span><span class="p">(</span><span class="n">Sborder</span><span class="p">);</span>
+
+<span class="c1">// Create a RHS source function we will integrate</span>
+<span class="k">auto</span> <span class="n">source_fun</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">){</span>
+    <span class="c1">// User function to calculate the rhs MultiFab given the state MultiFab</span>
+    <span class="n">fill_rhs</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Create a function to call after updating a state</span>
+<span class="k">auto</span> <span class="n">post_update_fun</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">S_data</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Call user function to update state MultiFab, e.g. fill BCs</span>
+    <span class="n">post_update</span><span class="p">(</span><span class="n">S_data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">geom</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Attach the right hand side and post-update functions</span>
+<span class="c1">// to the integrator</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">source_fun</span><span class="p">);</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_post_update</span><span class="p">(</span><span class="n">post_update_fun</span><span class="p">);</span>
+
+<span class="c1">// integrate forward one step from `time` by `dt` to fill S_new</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sborder</span><span class="p">,</span> <span class="n">S_new</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="picking-a-time-integration-method">
+<h2>Picking A Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this headline"></a></h2>
+<p>The user can customize which integration method they wish to use with a set of
+runtime parameters that allow choosing between a simple Forward Euler method or
+a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the
+user can choose which of a set of predefined Butcher Tables to use, or can
+choose to use a custom table and supply it manually. The options are detailed as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION</span>
+<span class="cp">## integration.type can take on the following values:</span>
+<span class="cp">## 0 = Forward Euler</span>
+<span class="cp">## 1 = Explicit Runge Kutta</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="cp">## Explicit Runge-Kutta parameters</span>
+<span class="cp">#</span>
+<span class="cp">## integration.rk.type can take the following values:</span>
+<span class="cp">### 0 = User-specified Butcher Tableau</span>
+<span class="cp">### 1 = Forward Euler</span>
+<span class="cp">### 2 = Trapezoid Method</span>
+<span class="cp">### 3 = SSPRK3 Method</span>
+<span class="cp">### 4 = RK4 Method</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="cp">## If using a user-specified Butcher Tableau, then</span>
+<span class="cp">## set nodes, weights, and table entries here:</span>
+<span class="cp">#</span>
+<span class="cp">## The Butcher Tableau is read as a flattened,</span>
+<span class="cp">## lower triangular matrix (but including the diagonal)</span>
+<span class="cp">## in row major format.</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">weights</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">tableau</span> <span class="o">=</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="EB.html" class="btn btn-neutral float-left" title="Initializing the Geometric Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GPU_Chapter.html" class="btn btn-neutral float-right" title="GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -407,8 +407,8 @@ var hierarchy =
     [ "amrex::ForkJoin", "classamrex_1_1ForkJoin.html", null ],
     [ "amrex::FPC", "classamrex_1_1FPC.html", null ],
     [ "amrex::FabArrayBase::FPinfo", "structamrex_1_1FabArrayBase_1_1FPinfo.html", null ],
-    [ "amrex::ParmParse::Frame", "classamrex_1_1ParmParse_1_1Frame.html", null ],
     [ "amrex::ParallelContext::Frame", "classamrex_1_1ParallelContext_1_1Frame.html", null ],
+    [ "amrex::ParmParse::Frame", "classamrex_1_1ParmParse_1_1Frame.html", null ],
     [ "BLProfStats::FuncStat", "structBLProfStats_1_1FuncStat.html", null ],
     [ "amrex::GeometryData", "structamrex_1_1GeometryData.html", null ],
     [ "amrex::EB2::GeometryShop< F, R >", "classamrex_1_1EB2_1_1GeometryShop.html", null ],
@@ -499,6 +499,13 @@ var hierarchy =
     [ "integral_constant", null, [
       [ "amrex::GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ]
     ] ],
+    [ "amrex::IntegratorBase< T >", "classamrex_1_1IntegratorBase.html", [
+      [ "amrex::FEIntegrator< T >", "classamrex_1_1FEIntegrator.html", null ],
+      [ "amrex::RKIntegrator< T >", "classamrex_1_1RKIntegrator.html", null ]
+    ] ],
+    [ "amrex::IntegratorOps< T, Tv >", "structamrex_1_1IntegratorOps.html", null ],
+    [ "amrex::IntegratorOps< T, typename std::enable_if< std::is_same< amrex::MultiFab, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html", null ],
+    [ "amrex::IntegratorOps< T, typename std::enable_if< std::is_same< amrex::Vector< amrex::MultiFab >, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html", null ],
     [ "amrex::AmrDataAdaptor::InternalsType", "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html", null ],
     [ "amrex::AmrMeshDataAdaptor::InternalsType", "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html", null ],
     [ "amrex::InterpBase", "classamrex_1_1InterpBase.html", [
@@ -903,6 +910,7 @@ var hierarchy =
     [ "amrex::TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", null ],
     [ "amrex::FabArrayBase::TileArray", "structamrex_1_1FabArrayBase_1_1TileArray.html", null ],
     [ "amrex::TileSize", "structamrex_1_1TileSize.html", null ],
+    [ "amrex::TimeIntegrator< T >", "classamrex_1_1TimeIntegrator.html", null ],
     [ "amrex::StateData::TimeInterval", "structamrex_1_1StateData_1_1TimeInterval.html", null ],
     [ "BLProfStats::TimeRange", "structBLProfStats_1_1TimeRange.html", null ],
     [ "BLProfStats::TimeRangeCompare", "structBLProfStats_1_1TimeRangeCompare.html", null ],
@@ -993,6 +1001,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::ParticleLocator< amrex::DenseBins< amrex::Box > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::ParticleLocator< Bins > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::PODVector< Int > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Real >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::StateData >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BndryRegister > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoundCond > >", "classamrex_1_1Vector.html", null ],
@@ -1007,6 +1016,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< amrex::MultiFab * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::MultiFab > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::NeighborParticleContainer::NeighborCopyTag > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< amrex::Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< amrex::BoundCond > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< amrex::FillBoxId > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< BLProfStats::TimeRange > > >", "classamrex_1_1Vector.html", null ],
@@ -1100,6 +1110,7 @@ var hierarchy =
       [ "amrex::Vector< std::unique_ptr< amrex::StateDescriptor::BndryFunc > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::VisMF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< std::fstream > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::unique_ptr< T > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::vector< bool > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< T >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vector< MultiFab > >", "classamrex_1_1Vector.html", null ],
