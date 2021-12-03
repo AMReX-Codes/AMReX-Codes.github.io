@@ -5,6 +5,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX.H", "AMReX_8H.html", "AMReX_8H" ],
     [ "AMReX_acc_mod.F90", "AMReX__acc__mod_8F90.html", "AMReX__acc__mod_8F90" ],
     [ "AMReX_Algorithm.H", "AMReX__Algorithm_8H.html", "AMReX__Algorithm_8H" ],
+    [ "AMReX_ANSIEscCode.H", "AMReX__ANSIEscCode_8H.html", "AMReX__ANSIEscCode_8H" ],
     [ "AMReX_Arena.cpp", "AMReX__Arena_8cpp.html", "AMReX__Arena_8cpp" ],
     [ "AMReX_Arena.H", "AMReX__Arena_8H.html", "AMReX__Arena_8H" ],
     [ "AMReX_Array.H", "AMReX__Array_8H.html", "AMReX__Array_8H" ],
