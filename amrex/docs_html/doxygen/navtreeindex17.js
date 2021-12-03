@@ -1,5 +1,11 @@
 var NAVTREEINDEX17 =
 {
+"AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4":[3,0,0,2,226,6],
+"AMReX__SPACE_8H.html#a77f15e151840a3da118ccaf779cd1cc7":[3,0,0,2,226,11],
+"AMReX__SPACE_8H.html#a7bbcd17d07219dbb83965cea3a98b282":[3,0,0,2,226,8],
+"AMReX__SPACE_8H.html#abcf04d652fe7dbc2835a996ab2d71325":[3,0,0,2,226,5],
+"AMReX__SPACE_8H.html#ace5015048a0d507f58e59f3cef9c332c":[3,0,0,2,226,9],
+"AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0":[3,0,0,2,226,3],
 "AMReX__SPACE_8H.html#af66ac7d7c04dad9fd54778fe5a4e816f":[3,0,0,2,226,7],
 "AMReX__SPACE_8H_source.html":[3,0,0,2,226],
 "AMReX__SUNMemory_8H.html":[3,0,0,5,8,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX17 =
 "AMReX__XYPlotDataList_8cpp.html":[3,0,0,5,0,10],
 "AMReX__YAFluxRegister_8H.html":[3,0,0,3,26],
 "AMReX__YAFluxRegister_8H_source.html":[3,0,0,3,26],
-"AMReX__YAFluxRegister_8cpp.html":[3,0,0,3,25],
-"AMReX__YAFluxRegister__1D__K_8H.html":[3,0,0,3,27],
-"AMReX__YAFluxRegister__1D__K_8H.html#a6c9d6af79aab749f067cbf51533ab31a":[3,0,0,3,27,1],
-"AMReX__YAFluxRegister__1D__K_8H.html#ad75cd67f1791f528fbba104045280e6e":[3,0,0,3,27,0],
-"AMReX__YAFluxRegister__1D__K_8H_source.html":[3,0,0,3,27],
-"AMReX__YAFluxRegister__2D__K_8H.html":[3,0,0,3,28],
-"AMReX__YAFluxRegister__2D__K_8H.html#a61c2415c625485ccfed2f1c7e9b9db8b":[3,0,0,3,28,0]
+"AMReX__YAFluxRegister_8cpp.html":[3,0,0,3,25]
 };

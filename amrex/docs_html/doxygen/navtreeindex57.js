@@ -1,5 +1,11 @@
 var NAVTREEINDEX57 =
 {
+"structamrex_1_1EB2_1_1IsGPUable_3_01TranslationIF_3_01F_01_4_00_01typename_01std_1_1enable__if_399859b540a9f6f2c562d54bd4e0f45b9.html":[2,0,0,4,26],
+"structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG689753bc6f6f97a7132aea5fbd359250.html":[2,0,0,4,27],
+"structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01typename_01std_1_0106a99ebe3263da4342cdd68c621473.html":[2,0,0,4,28],
+"structamrex_1_1EB2_1_1Neighbor.html":[2,0,0,4,32],
+"structamrex_1_1EB2_1_1Neighbor.html#a02795942f0ecd9ff232334b4c4ccdb20":[2,0,0,4,32,12],
+"structamrex_1_1EB2_1_1Neighbor.html#a05e914a9bdd59ee8d460a558677634c2":[2,0,0,4,32,2],
 "structamrex_1_1EB2_1_1Neighbor.html#a15177e28ba78da4e2702cfb18837eeae":[2,0,0,4,32,3],
 "structamrex_1_1EB2_1_1Neighbor.html#a1843a704d7f13b09cfcf6c606b0a995e":[2,0,0,4,32,1],
 "structamrex_1_1EB2_1_1Neighbor.html#a212ed5915d00323dcbcaeb9c017cf79f":[2,0,0,4,32,8],
@@ -243,11 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1FabCopyDescriptor.html#a164510f57c480c98b19458a1516ba6dd":[2,0,0,141,7],
 "structamrex_1_1FabCopyDescriptor.html#a339ecf32165d5528efe85cd26bdcb9ff":[2,0,0,141,5],
 "structamrex_1_1FabCopyDescriptor.html#a3d6e218f177ba9156deff887f2356d67":[2,0,0,141,0],
-"structamrex_1_1FabCopyDescriptor.html#a3e2bb26a42b27ca072324f9bdfb0e1cf":[2,0,0,141,11],
-"structamrex_1_1FabCopyDescriptor.html#a405adb5266b8deb2c2e18cea095eee45":[2,0,0,141,4],
-"structamrex_1_1FabCopyDescriptor.html#a466957334ed9625a7a6ffb97e52d07bc":[2,0,0,141,2],
-"structamrex_1_1FabCopyDescriptor.html#a49a660fc34d5de5bbd5d8fb8b49580e8":[2,0,0,141,10],
-"structamrex_1_1FabCopyDescriptor.html#a6e30fe02dbe114cb1cd4d49fe2b1c45b":[2,0,0,141,3],
-"structamrex_1_1FabCopyDescriptor.html#a75c15143e48c0f0f2961f94a3a2b0c29":[2,0,0,141,1],
-"structamrex_1_1FabCopyDescriptor.html#a799a901c3f374cb4499799fce9b67d2e":[2,0,0,141,14]
+"structamrex_1_1FabCopyDescriptor.html#a3e2bb26a42b27ca072324f9bdfb0e1cf":[2,0,0,141,11]
 };

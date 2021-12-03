@@ -1,5 +1,11 @@
 var NAVTREEINDEX64 =
 {
+"structprocess__topology__t.html#a34fd641ec3073c157da173359feb99e6":[2,0,22,1],
+"structprocess__topology__t.html#a5fa8fdbcfe943816e8c19862dffddeaa":[2,0,22,2],
+"structprocess__topology__t.html#ad76559fb8c453075eeb9fa02032160b3":[2,0,22,3],
+"structprocess__topology__t.html#adba2e61f59319e9965761531fd4e9535":[2,0,22,0],
+"structyy__buffer__state.html":[2,0,28],
+"structyy__buffer__state.html#a06406208824817acfec2183b79080945":[2,0,28,11],
 "structyy__buffer__state.html#a0d25458e69eb22207fc633a1255d099d":[2,0,28,6],
 "structyy__buffer__state.html#a10c4fcd8be759e6bf11e6d3e8cdb0307":[2,0,28,1],
 "structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda":[2,0,28,8],
