@@ -140,6 +140,13 @@ var hierarchy =
     [ "amrex::BackgroundThread", "classamrex_1_1BackgroundThread.html", null ],
     [ "amrex::BARef", "structamrex_1_1BARef.html", null ],
     [ "CommProfStats::BarrierEntry", "structCommProfStats_1_1BarrierEntry.html", null ],
+    [ "amrex::ParticleInterpolator::Base< Derived, WeightType >", "structamrex_1_1ParticleInterpolator_1_1Base.html", null ],
+    [ "amrex::ParticleInterpolator::Base< Linear, amrex::Real >", "structamrex_1_1ParticleInterpolator_1_1Base.html", [
+      [ "amrex::ParticleInterpolator::Linear", "structamrex_1_1ParticleInterpolator_1_1Linear.html", null ]
+    ] ],
+    [ "amrex::ParticleInterpolator::Base< Nearest, int >", "structamrex_1_1ParticleInterpolator_1_1Base.html", [
+      [ "amrex::ParticleInterpolator::Nearest", "structamrex_1_1ParticleInterpolator_1_1Nearest.html", null ]
+    ] ],
     [ "amrex::BATbndryReg", "structamrex_1_1BATbndryReg.html", null ],
     [ "amrex::BATcoarsenRatio", "structamrex_1_1BATcoarsenRatio.html", null ],
     [ "amrex::BATindexType", "structamrex_1_1BATindexType.html", null ],

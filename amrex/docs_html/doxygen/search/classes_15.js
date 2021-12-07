@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['warpreduce_9035',['warpReduce',['../structamrex_1_1Gpu_1_1warpReduce.html',1,'amrex::Gpu']]],
-  ['weightedbox_9036',['WeightedBox',['../classamrex_1_1WeightedBox.html',1,'amrex']]],
-  ['weightedboxlist_9037',['WeightedBoxList',['../classamrex_1_1WeightedBoxList.html',1,'amrex']]],
-  ['writeinfo_9038',['WriteInfo',['../structamrex_1_1AsyncOut_1_1WriteInfo.html',1,'amrex::AsyncOut']]]
+  ['warpreduce_9050',['warpReduce',['../structamrex_1_1Gpu_1_1warpReduce.html',1,'amrex::Gpu']]],
+  ['weightedbox_9051',['WeightedBox',['../classamrex_1_1WeightedBox.html',1,'amrex']]],
+  ['weightedboxlist_9052',['WeightedBoxList',['../classamrex_1_1WeightedBoxList.html',1,'amrex']]],
+  ['writeinfo_9053',['WriteInfo',['../structamrex_1_1AsyncOut_1_1WriteInfo.html',1,'amrex::AsyncOut']]]
 ];
