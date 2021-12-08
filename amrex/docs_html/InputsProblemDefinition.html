@@ -101,7 +101,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="problem-definition">
-<h1>Problem Definition<a class="headerlink" href="#problem-definition" title="Permalink to this headline"></a></h1>
+<span id="sec-inputs-pd"></span><h1>Problem Definition<a class="headerlink" href="#problem-definition" title="Permalink to this headline"></a></h1>
 <p>The following inputs must be preceded by “amr.”</p>
 <table class="docutils align-default">
 <colgroup>
@@ -159,15 +159,29 @@
 <tr class="row-even"><td><p>prob_lo</p></td>
 <td><p>Low corner of physical domain (physical not index space)</p></td>
 <td><p>Reals</p></td>
-<td><p>None</p></td>
+<td><p>0 0 0</p></td>
 </tr>
 <tr class="row-odd"><td><p>prob_hi</p></td>
 <td><p>High corner of physical domain (physical not index space)</p></td>
 <td><p>Reals</p></td>
 <td><p>None</p></td>
 </tr>
+<tr class="row-even"><td><p>prob_extent</p></td>
+<td><p>Extent of physical domain (physical not index space)</p></td>
+<td><p>Reals</p></td>
+<td><p>None</p></td>
+</tr>
 </tbody>
 </table>
+<p>Note that internally <code class="docutils literal notranslate"><span class="pre">prob_lo</span></code> and <code class="docutils literal notranslate"><span class="pre">prob_hi</span></code> are the variables carried by the <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> class.
+In the inputs file (or command line), one can specify
+1) <code class="docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code> only or
+2) <code class="docutils literal notranslate"><span class="pre">geometry.prob_extent</span></code> only or
+3) <code class="docutils literal notranslate"><span class="pre">geometry.prob_lo</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code> or
+4) <code class="docutils literal notranslate"><span class="pre">geometry.prob_lo</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry.prob_extent</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">geometry.prob_lo</span></code> is not specified then it will be 0 in each coordinate direction.
+If <code class="docutils literal notranslate"><span class="pre">geometry.prob_extent</span></code> is specified (and <code class="docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code> is not) then internally
+“prob_hi” will be set to “prob_lo” + “prob_extent”.</p>
 </div>
 
 

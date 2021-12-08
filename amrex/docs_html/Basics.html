@@ -844,14 +844,16 @@ space domain, a <code class="code cpp c++ docutils literal notranslate"><span cl
 physical domain, an <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span></code> specifying coordinate system type, and
 an <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span></code> pointer or array specifying periodicity. If a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">RealBox</span></span></code> is not
 given in the first constructor, AMReX  will construct one based on <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> parameters,
-<code class="docutils literal notranslate"><span class="pre">geometry.prob_lo</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code>, where each of the parameter is
-an array of <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> real numbers. It’s a runtime error if this
-fails. The argument for coordinate system is an integer type with
+<code class="docutils literal notranslate"><span class="pre">geometry.prob_lo</span></code> / <code class="docutils literal notranslate"><span class="pre">geometry.prob_hi</span></code> / <code class="docutils literal notranslate"><span class="pre">geometry.prob_extent</span></code>,
+where each of the parameter is an array of <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> real numbers.
+See the section on <a class="reference internal" href="InputsProblemDefinition.html#sec-inputs-pd"><span class="std std-ref">Problem Definition</span></a> for more details about how to specify these.</p>
+<p>The argument for coordinate system is an integer type with
 valid values being 0 (Cartesian), or 1 (cylindrical), or 2 (spherical). If it
 is invalid as in the case of the default argument value of the first constructor, AMReX will query the
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> database for <code class="docutils literal notranslate"><span class="pre">geometry.coord_sys</span></code> and use it if one is
 found. If it cannot find the parameter, the coordinate system is set to 0
-(i.e., Cartesian coordinates). The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code> class has the concept of
+(i.e., Cartesian coordinates).</p>
+<p>The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code> class has the concept of
 periodicity.  An argument can be passed specifying periodicity in each
 dimension. If it is not given in the first constructor, the domain is assumed to be non-periodic unless
 there is the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> integer array parameter <code class="docutils literal notranslate"><span class="pre">geometry.is_periodic</span></code>
