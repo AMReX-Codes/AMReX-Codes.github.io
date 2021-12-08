@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('structamrex_1_1ParticleInterpolator_1_
 </div><!--header-->
 <div class="contents">
 
+<p>A class the implements nearest grid point particle/mesh interpolation.  
+ <a href="structamrex_1_1ParticleInterpolator_1_1Nearest.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__ParticleInterpolators_8H_source.html">AMReX_ParticleInterpolators.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for amrex::ParticleInterpolator::Nearest:</div>
@@ -123,8 +126,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acba181eace70e13912251e82d7b76745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structamrex_1_1ParticleInterpolator_1_1Base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structamrex_1_1ParticleInterpolator_1_1Base.html">amrex::ParticleInterpolator::Base&lt; Nearest, int &gt;</a></td></tr>
 <tr class="memitem:abd57af3626e49f7b62f78a6d40117439 inherit pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleInterpolator_1_1Base.html#abd57af3626e49f7b62f78a6d40117439">ParticleToMesh</a> (const P &amp;p, <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; V &gt; const &amp;arr, int src_comp, int dst_comp, int num_comps, F &amp;&amp;f)</td></tr>
+<tr class="memdesc:abd57af3626e49f7b62f78a6d40117439 inherit pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general function for doing particle-to-mesh interpolation for one particle.  <a href="structamrex_1_1ParticleInterpolator_1_1Base.html#abd57af3626e49f7b62f78a6d40117439">More...</a><br /></td></tr>
 <tr class="separator:abd57af3626e49f7b62f78a6d40117439 inherit pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16ffb6a02e08b69ed20ea248aaca4fcf inherit pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleInterpolator_1_1Base.html#a16ffb6a02e08b69ed20ea248aaca4fcf">MeshToParticle</a> (P &amp;p, <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; const V &gt; const &amp;arr, int src_comp, int dst_comp, int num_comps, F &amp;&amp;f, G &amp;&amp;g)</td></tr>
+<tr class="memdesc:a16ffb6a02e08b69ed20ea248aaca4fcf inherit pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general function for doing mesh-to-particle interpolation for one particle.  <a href="structamrex_1_1ParticleInterpolator_1_1Base.html#a16ffb6a02e08b69ed20ea248aaca4fcf">More...</a><br /></td></tr>
 <tr class="separator:a16ffb6a02e08b69ed20ea248aaca4fcf inherit pub_methods_structamrex_1_1ParticleInterpolator_1_1Base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -148,7 +153,11 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a7fb3f62585e84012a047d81ab68809fe"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleInterpolator_1_1Nearest.html#a7fb3f62585e84012a047d81ab68809fe">nz</a> = (AMREX_SPACEDIM &gt;= 3) ? <a class="el" href="structamrex_1_1ParticleInterpolator_1_1Nearest.html#af95b5b093ce12502507d13ac8fe96254">stencil_width</a> - 1 : 0</td></tr>
 <tr class="separator:a7fb3f62585e84012a047d81ab68809fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class the implements nearest grid point particle/mesh interpolation. </p>
+<p>Usage: <a class="el" href="structamrex_1_1ParticleInterpolator_1_1Nearest.html" title="A class the implements nearest grid point particle/mesh interpolation.">ParticleInterpolator::Nearest</a> interp(p, plo, dxi);</p>
+<p>interp.MeshToParticle(p, count, 0, 0, 1, [=] AMREX_GPU_DEVICE (amrex::Array4&lt;const int&gt; const&amp; arr, int i, int j, int k, int comp) { return arr(i, j, k, comp); // no weighting }, [=] AMREX_GPU_DEVICE (MyParticleContainer::ParticleType&amp; part, int comp, int val) { part.idata(comp) = val; }); </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acba181eace70e13912251e82d7b76745"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acba181eace70e13912251e82d7b76745">&#9670;&nbsp;</a></span>Nearest()</h2>
 

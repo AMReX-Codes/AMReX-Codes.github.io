@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="95" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="95" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="209" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a064dd3c6107b296a915aedcd0f2f1826" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="97" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="97" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="211" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="211" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1a0e0af124579f9ad5fec3710bb83ee821" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="98" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="98" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="212" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Linear_1ad178c7e8f42426ab5b0eb3bd45ce8bd0" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="99" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="99" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="213" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="213" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="101" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="101" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="215" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="215" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -106,12 +106,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="105" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="105" bodyend="122"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="219" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="219" bodyend="236"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A class the implements linear (CIC) particle/mesh interpolation. </para>
     </briefdescription>
     <detaileddescription>
+<para>Usage: <ref refid="structamrex_1_1ParticleInterpolator_1_1Linear" kindref="compound">ParticleInterpolator::Linear</ref> interp(p, plo, dxi);</para>
+<para>interp.ParticleToMesh(p, rho, 0, 0, 1, [=] AMREX_GPU_DEVICE (const MyPC::ParticleType&amp; part, int comp) { return part.rdata(comp); // no weighting }); </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -143,7 +146,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="94" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="93" bodyend="123"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="208" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="207" bodyend="237"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a9e34ea4216c47905ed5b9e44cf7f9822" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>index</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Linear_1a1fc7379baaa9b4132c2ce77840f89272" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Linear</scope><name>Linear</name></member>

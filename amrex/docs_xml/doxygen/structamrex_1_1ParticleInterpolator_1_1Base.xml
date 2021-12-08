@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="17" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="22" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Base_1a5e658795689d17cacf75bdb7c46675ac" prot="public" static="no" mutable="no">
         <type>WeightType *</type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="18" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="18" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="23" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -81,12 +81,90 @@
           <declname>f</declname>
         </param>
         <briefdescription>
+<para>A general function for doing particle-to-mesh interpolation for one particle. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that you don&apos;t call the base class version of this, you call one of the derived versions below that implement specific interpolations.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mesh data type (i.e. float, double, int) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable that generates the particle quantity to interpolate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle to interpolate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref> to interpolat to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle component to start at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dst_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mesh component to start at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_comps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of components to interpolate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function for computing the particle quantity to interpolate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Usage: Interpolate particle comp 0 to mesh comp 0 with no weighting: interp.ParticleToMesh(p, rho, 0, 0, 1, [=] AMREX_GPU_DEVICE (const MyPC::ParticleType&amp; part, int comp) { return part.rdata(comp); // no weighting });</para>
+<para>Usage: Interpolate 3 particle components 1-3 to mesh components 1-3, weighting by particle comp 0: interp.ParticleToMesh(p, rho, 1, 1, 3, [=] AMREX_GPU_DEVICE (const MyPC::ParticleType&amp; part, int comp) { return part.rdata(0)*part.rdata(comp); // weight by comp0 }); </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="22" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="22" bodyend="40"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="60" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="60" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ParticleInterpolator_1_1Base_1a16ffb6a02e08b69ed20ea248aaca4fcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -136,19 +214,116 @@
           <declname>g</declname>
         </param>
         <briefdescription>
+<para>A general function for doing mesh-to-particle interpolation for one particle. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that you don&apos;t call the base class version of this, you call one of the derived versions below that implement specific interpolations.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mesh data type (i.e. float, double, int) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable that generates the mesh quantity to interpolate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callable that updates the particle given the mesh value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle to interpolate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref> to interpolat to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle component to start at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dst_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mesh component to start at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_comps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of components to interpolate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function for computing the particle quantity to interpolate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function that updates the particle given the mesh value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Usage: Interpolate mesh comps 0-2 to particle comps 4-6 with no weighting using addition: interp.MeshToParticle(p, acc, 0, 4, 3, [=] AMREX_GPU_DEVICE (amrex::Array4&lt;const amrex::Real&gt; const&amp; arr, int i, int j, int k, int comp) { return arr(i, j, k, comp); // no weighting }, [=] AMREX_GPU_DEVICE (MyParticleContainer::ParticleType&amp; part, int comp, amrex::Real val) { part.rdata(comp) += val; });</para>
+<para>Usage: Interpolate mesh comp 0 to particle comp 0, simply setting the value for the result instead of adding: interp.MeshToParticle(p, count, 0, 0, 1, [=] AMREX_GPU_DEVICE (amrex::Array4&lt;const int&gt; const&amp; arr, int i, int j, int k, int comp) { return arr(i, j, k, comp); // no weighting }, [=] AMREX_GPU_DEVICE (MyParticleContainer::ParticleType&amp; part, int comp, int val) { part.idata(comp) = val; }); </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="44" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="44" bodyend="62"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="130" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="130" bodyend="148"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A base class for doing general particle/mesh interpolation operations. </para>
     </briefdescription>
     <detaileddescription>
+<para>Note that you don&apos;t call use the base class version of this directly, you use one of the derived versions below that implement specific interpolations. </para>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="16" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="15" bodyend="63"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="20" bodyend="149"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a9e34ea4216c47905ed5b9e44cf7f9822" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>index</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a16ffb6a02e08b69ed20ea248aaca4fcf" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Base</scope><name>MeshToParticle</name></member>

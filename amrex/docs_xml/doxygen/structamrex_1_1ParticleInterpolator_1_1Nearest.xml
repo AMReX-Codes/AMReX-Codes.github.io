@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="67" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="67" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="170" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Nearest_1ac7df25b566023957e86f793a39e27e00" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="70" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="70" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="173" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="173" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Nearest_1ab45ca8466ebed9c2334ae6ea7e92bd58" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="71" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="71" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="174" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="174" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ParticleInterpolator_1_1Nearest_1a7fb3f62585e84012a047d81ab68809fe" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="72" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="72" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="175" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="175" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="68" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="68" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="171" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="171" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -106,12 +106,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="76" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="76" bodyend="90"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="179" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="179" bodyend="193"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A class the implements nearest grid point particle/mesh interpolation. </para>
     </briefdescription>
     <detaileddescription>
+<para>Usage: <ref refid="structamrex_1_1ParticleInterpolator_1_1Nearest" kindref="compound">ParticleInterpolator::Nearest</ref> interp(p, plo, dxi);</para>
+<para>interp.MeshToParticle(p, count, 0, 0, 1, [=] AMREX_GPU_DEVICE (amrex::Array4&lt;const int&gt; const&amp; arr, int i, int j, int k, int comp) { return arr(i, j, k, comp); // no weighting }, [=] AMREX_GPU_DEVICE (MyParticleContainer::ParticleType&amp; part, int comp, int val) { part.idata(comp) = val; }); </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -137,7 +140,7 @@
         <link refid="structamrex_1_1ParticleInterpolator_1_1Base"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="66" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="65" bodyend="91"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" line="169" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleInterpolators.H" bodystart="168" bodyend="194"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a9e34ea4216c47905ed5b9e44cf7f9822" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Nearest</scope><name>index</name></member>
       <member refid="structamrex_1_1ParticleInterpolator_1_1Base_1a16ffb6a02e08b69ed20ea248aaca4fcf" prot="public" virt="non-virtual"><scope>amrex::ParticleInterpolator::Nearest</scope><name>MeshToParticle</name></member>
