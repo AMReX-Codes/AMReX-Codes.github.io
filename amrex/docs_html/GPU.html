@@ -62,8 +62,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#building-with-gnu-make">Building with GNU Make</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-with-cmake">Building with CMake</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-cuda-support">Enabling CUDA support</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enabling-hip-support-experimental">Enabling HIP support (experimental)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enabling-sycl-support-experimental">Enabling SYCL support (experimental)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-hip-support">Enabling HIP Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-sycl-support">Enabling SYCL Support</a></li>
 </ul>
 </li>
 </ul>
@@ -442,8 +442,8 @@ we provide the helper function <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 </div>
-<div class="section" id="enabling-hip-support-experimental">
-<h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline"></a></h3>
+<div class="section" id="enabling-hip-support">
+<h3>Enabling HIP Support<a class="headerlink" href="#enabling-hip-support" title="Permalink to this headline"></a></h3>
 <p>To build AMReX with HIP support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=HIP</span> <span class="pre">-DAMReX_AMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code>
 to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
@@ -465,8 +465,8 @@ Below is an example configuration for HIP on Tulip:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="enabling-sycl-support-experimental">
-<h3>Enabling SYCL support (experimental)<a class="headerlink" href="#enabling-sycl-support-experimental" title="Permalink to this headline"></a></h3>
+<div class="section" id="enabling-sycl-support">
+<h3>Enabling SYCL Support<a class="headerlink" href="#enabling-sycl-support" title="Permalink to this headline"></a></h3>
 <p>To build AMReX with SYCL support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=SYCL</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-sycl-compiler&gt;</span></code>
 to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
@@ -504,12 +504,17 @@ Below is an example configuration for SYCL:</p>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_DPCPP_SPLIT_KERNEL</p></td>
+<tr class="row-odd"><td><p>AMREX_INTEL_ARCH</p></td>
+<td><p>Specify target if AOT is enabled</p></td>
+<td><p>None</p></td>
+<td><p>Gen9, etc.</p></td>
+</tr>
+<tr class="row-even"><td><p>AMReX_DPCPP_SPLIT_KERNEL</p></td>
 <td><p>Enable DPCPP kernel splitting</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_DPCPP_ONEDPL</p></td>
+<tr class="row-odd"><td><p>AMReX_DPCPP_ONEDPL</p></td>
 <td><p>Enable DPCPP’s oneDPL algorithms</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
