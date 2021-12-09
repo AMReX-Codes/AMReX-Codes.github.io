@@ -155,9 +155,14 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class the implements linear (CIC) particle/mesh interpolation. </p>
-<p>Usage: <a class="el" href="structamrex_1_1ParticleInterpolator_1_1Linear.html" title="A class the implements linear (CIC) particle/mesh interpolation.">ParticleInterpolator::Linear</a> interp(p, plo, dxi);</p>
-<p>interp.ParticleToMesh(p, rho, 0, 0, 1, [=] AMREX_GPU_DEVICE (const MyPC::ParticleType&amp; part, int comp) { return part.rdata(comp); // no weighting }); </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>Usage: </p><div class="fragment"><div class="line">ParticleInterpolator::Linear interp(p, plo, dxi);</div>
+<div class="line"> </div>
+<div class="line">interp.ParticleToMesh(p, rho, 0, 0, 1,</div>
+<div class="line">            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> MyPC::ParticleType&amp; part, <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>)</div>
+<div class="line">            {</div>
+<div class="line">                <span class="keywordflow">return</span> part.rdata(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>);  <span class="comment">// no weighting</span></div>
+<div class="line">            });</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1fc7379baaa9b4132c2ce77840f89272"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1fc7379baaa9b4132c2ce77840f89272">&#9670;&nbsp;</a></span>Linear()</h2>
 
@@ -310,6 +315,8 @@ template&lt;typename P &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
+<div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a1b3f06ddcdb29e455759b0afa41793a5"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a></div><div class="ttdeci">int comp</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:26</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

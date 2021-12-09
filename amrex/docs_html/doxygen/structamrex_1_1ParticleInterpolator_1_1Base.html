@@ -132,7 +132,7 @@ Public Attributes</h2></td></tr>
 struct amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;</h3>
 
 <p>A base class for doing general particle/mesh interpolation operations. </p>
-<p>Note that you don't call use the base class version of this directly, you use one of the derived versions below that implement specific interpolations. </p>
+<p>Note that you don't call the base class version of this directly, you use one of the derived versions below that implement specific interpolations. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a16ffb6a02e08b69ed20ea248aaca4fcf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16ffb6a02e08b69ed20ea248aaca4fcf">&#9670;&nbsp;</a></span>MeshToParticle()</h2>
@@ -216,7 +216,7 @@ template&lt;typename P , typename V , typename F , typename G &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>the particle to interpolate </td></tr>
-    <tr><td class="paramname">arr</td><td>the <a class="el" href="structamrex_1_1Array4.html">Array4</a> to interpolat to </td></tr>
+    <tr><td class="paramname">arr</td><td>the <a class="el" href="structamrex_1_1Array4.html">Array4</a> to interpolate to </td></tr>
     <tr><td class="paramname">src_comp</td><td>the particle component to start at </td></tr>
     <tr><td class="paramname">dst_comp</td><td>the mesh component to start at </td></tr>
     <tr><td class="paramname">num_comps</td><td>the number of components to interpolate </td></tr>
@@ -230,9 +230,31 @@ template&lt;typename P , typename V , typename F , typename G &gt; </div>
   </table>
   </dd>
 </dl>
-<p>Usage: Interpolate mesh comps 0-2 to particle comps 4-6 with no weighting using addition: interp.MeshToParticle(p, acc, 0, 4, 3, [=] AMREX_GPU_DEVICE (amrex::Array4&lt;const amrex::Real&gt; const&amp; arr, int i, int j, int k, int comp) { return arr(i, j, k, comp); // no weighting }, [=] AMREX_GPU_DEVICE (MyParticleContainer::ParticleType&amp; part, int comp, amrex::Real val) { part.rdata(comp) += val; });</p>
-<p>Usage: Interpolate mesh comp 0 to particle comp 0, simply setting the value for the result instead of adding: interp.MeshToParticle(p, count, 0, 0, 1, [=] AMREX_GPU_DEVICE (amrex::Array4&lt;const int&gt; const&amp; arr, int i, int j, int k, int comp) { return arr(i, j, k, comp); // no weighting }, [=] AMREX_GPU_DEVICE (MyParticleContainer::ParticleType&amp; part, int comp, int val) { part.idata(comp) = val; }); </p>
-
+<p>Usage:</p>
+<p>Interpolate mesh comps 0-2 to particle comps 4-6 with no weighting using addition: </p><div class="fragment"><div class="line">interp.MeshToParticle(p, acc, 0, 4, 3,</div>
+<div class="line">        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;const amrex::Real&gt;</a> <span class="keyword">const</span>&amp; arr,</div>
+<div class="line">                              <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> arr(i, j, k, <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>);  <span class="comment">// no weighting</span></div>
+<div class="line">        },</div>
+<div class="line">        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (MyParticleContainer::ParticleType&amp; part,</div>
+<div class="line">                              <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, amrex::Real val)</div>
+<div class="line">        {</div>
+<div class="line">            part.rdata(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>) += val;</div>
+<div class="line">        });</div>
+</div><!-- fragment --><p>Usage:</p>
+<p>Interpolate mesh comp 0 to particle comp 0, simply setting the value for the result instead of adding: </p><div class="fragment"><div class="line">interp.MeshToParticle(p, count, 0, 0, 1,</div>
+<div class="line">    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;const int&gt;</a> <span class="keyword">const</span>&amp; arr,</div>
+<div class="line">                          <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> arr(i, j, k, <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>);  <span class="comment">// no weighting</span></div>
+<div class="line">    },</div>
+<div class="line">    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (MyParticleContainer::ParticleType&amp; part,</div>
+<div class="line">                          <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, <span class="keywordtype">int</span> val)</div>
+<div class="line">    {</div>
+<div class="line">        part.idata(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>) = val;</div>
+<div class="line">    });</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="abd57af3626e49f7b62f78a6d40117439"></a>
@@ -310,7 +332,7 @@ template&lt;typename P , typename V , typename F &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>the particle to interpolate </td></tr>
-    <tr><td class="paramname">arr</td><td>the <a class="el" href="structamrex_1_1Array4.html">Array4</a> to interpolat to </td></tr>
+    <tr><td class="paramname">arr</td><td>the <a class="el" href="structamrex_1_1Array4.html">Array4</a> to interpolate to </td></tr>
     <tr><td class="paramname">src_comp</td><td>the particle component to start at </td></tr>
     <tr><td class="paramname">dst_comp</td><td>the mesh component to start at </td></tr>
     <tr><td class="paramname">num_comps</td><td>the number of components to interpolate </td></tr>
@@ -318,9 +340,19 @@ template&lt;typename P , typename V , typename F &gt; </div>
   </table>
   </dd>
 </dl>
-<p>Usage: Interpolate particle comp 0 to mesh comp 0 with no weighting: interp.ParticleToMesh(p, rho, 0, 0, 1, [=] AMREX_GPU_DEVICE (const MyPC::ParticleType&amp; part, int comp) { return part.rdata(comp); // no weighting });</p>
-<p>Usage: Interpolate 3 particle components 1-3 to mesh components 1-3, weighting by particle comp 0: interp.ParticleToMesh(p, rho, 1, 1, 3, [=] AMREX_GPU_DEVICE (const MyPC::ParticleType&amp; part, int comp) { return part.rdata(0)*part.rdata(comp); // weight by comp0 }); </p>
-
+<p>Usage:</p>
+<p>Interpolate particle comp 0 to mesh comp 0 with no weighting: </p><div class="fragment"><div class="line">interp.ParticleToMesh(p, rho, 0, 0, 1,</div>
+<div class="line">        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> MyPC::ParticleType&amp; part, <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>)</div>
+<div class="line">        {</div>
+<div class="line">             <span class="keywordflow">return</span> part.rdata(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>);  <span class="comment">// no weighting</span></div>
+<div class="line">         });</div>
+</div><!-- fragment --><p>Usage:</p>
+<p>Interpolate 3 particle components 1-3 to mesh components 1-3, weighting by particle comp 0: </p><div class="fragment"><div class="line">interp.ParticleToMesh(p, rho, 1, 1, 3,</div>
+<div class="line">        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> MyPC::ParticleType&amp; part, <span class="keywordtype">int</span> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>)</div>
+<div class="line">        {</div>
+<div class="line">             <span class="keywordflow">return</span> part.rdata(0)*part.rdata(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>);  <span class="comment">// weight by comp0</span></div>
+<div class="line">         });</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -361,6 +393,9 @@ template&lt;class Derived , class WeightType &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
+<div class="ttc" id="astructamrex_1_1Array4_html"><div class="ttname"><a href="structamrex_1_1Array4.html">amrex::Array4</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:15</div></div>
+<div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a1b3f06ddcdb29e455759b0afa41793a5"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a></div><div class="ttdeci">int comp</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:26</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
