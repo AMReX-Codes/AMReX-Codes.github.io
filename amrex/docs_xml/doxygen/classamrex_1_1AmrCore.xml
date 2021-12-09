@@ -463,21 +463,29 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="11">
+      <node id="12">
         <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>T</label>
+      <node id="4">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
       </node>
       <node id="7">
+        <label>T</label>
+      </node>
+      <node id="8">
         <label>Real</label>
       </node>
-      <node id="13">
+      <node id="14">
         <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -487,53 +495,56 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="12" relation="public-inheritance">
         </childnode>
       </node>
       <node id="10">
-        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
         <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5" relation="public-inheritance">
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
         <label>amrex::AmrInfo</label>
         <link refid="structamrex_1_1AmrInfo"/>
         <childnode refid="4" relation="usage">
+          <edgelabel>refine_grid_layout_dims</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
           <edgelabel>blocking_factor</edgelabel>
           <edgelabel>n_error_buf</edgelabel>
           <edgelabel>max_grid_size</edgelabel>
           <edgelabel>ref_ratio</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>grid_eff</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="12">
+      <node id="13">
         <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="14" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -541,13 +552,13 @@
         <link refid="classamrex_1_1AmrMesh"/>
         <childnode refid="3" relation="protected-inheritance">
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>grids</edgelabel>
         </childnode>
-        <childnode refid="12" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>geom</edgelabel>
         </childnode>
       </node>
@@ -628,6 +639,7 @@
       <member refid="classamrex_1_1AmrMesh_1ad19790bf442a1ba0eccd5246f905e3bb" prot="private" virt="non-virtual"><scope>amrex::AmrCore</scope><name>ProjPeriodic</name></member>
       <member refid="structamrex_1_1AmrInfo_1a73a3b38cadf1943503cf77622ea6a3ae" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>ref_ratio</name></member>
       <member refid="structamrex_1_1AmrInfo_1a4494b1f6c76612d4af30d18d62dd410c" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>refine_grid_layout</name></member>
+      <member refid="structamrex_1_1AmrInfo_1ac92498a911f4e98692efdba9005f492f" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>refine_grid_layout_dims</name></member>
       <member refid="classamrex_1_1AmrMesh_1a848a89635a0f509800a5d912ef7b4f0b" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>refRatio</name></member>
       <member refid="classamrex_1_1AmrMesh_1a3e96de11d4a8b2cababa14d116b61958" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>refRatio</name></member>
       <member refid="classamrex_1_1AmrCore_1ae80fa713b669de0f235d3ef0792e7200" prot="public" virt="virtual"><scope>amrex::AmrCore</scope><name>regrid</name></member>
@@ -653,8 +665,8 @@
       <member refid="structamrex_1_1AmrInfo_1a7caf591556b0da33b2a44a7726706395" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>use_new_chop</name></member>
       <member refid="classamrex_1_1AmrMesh_1aee758e772b5c854d121923686d1d3949" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>useFixedCoarseGrids</name></member>
       <member refid="classamrex_1_1AmrMesh_1a6ff4a09f169c29d17327aa37b49d3e5a" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>useFixedUpToLevel</name></member>
-      <member refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>verbose</name></member>
       <member refid="classamrex_1_1AmrMesh_1a9b78b807755b822ba0c46ec0e3150089" prot="public" virt="non-virtual"><scope>amrex::AmrCore</scope><name>Verbose</name></member>
+      <member refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" prot="protected" virt="non-virtual"><scope>amrex::AmrCore</scope><name>verbose</name></member>
       <member refid="classamrex_1_1AmrCore_1aa826ec39007a18c0002a14d9a53863af" prot="public" virt="virtual"><scope>amrex::AmrCore</scope><name>~AmrCore</name></member>
       <member refid="classamrex_1_1AmrMesh_1a8fb2fefeadc3653f3f263d32fd195460" prot="public" virt="virtual"><scope>amrex::AmrCore</scope><name>~AmrMesh</name></member>
     </listofallmembers>

@@ -10,6 +10,7 @@ var structamrex_1_1AmrInfo =
     [ "n_proper", "structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf", null ],
     [ "ref_ratio", "structamrex_1_1AmrInfo.html#a73a3b38cadf1943503cf77622ea6a3ae", null ],
     [ "refine_grid_layout", "structamrex_1_1AmrInfo.html#a4494b1f6c76612d4af30d18d62dd410c", null ],
+    [ "refine_grid_layout_dims", "structamrex_1_1AmrInfo.html#ac92498a911f4e98692efdba9005f492f", null ],
     [ "use_fixed_coarse_grids", "structamrex_1_1AmrInfo.html#a6a665ee4c81c3b28e36775d7e94ab261", null ],
     [ "use_fixed_upto_level", "structamrex_1_1AmrInfo.html#ad9000321def17faf06f9fef5ea304163", null ],
     [ "use_new_chop", "structamrex_1_1AmrInfo.html#a7caf591556b0da33b2a44a7726706395", null ],
