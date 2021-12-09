@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volume_15291',['volume',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c',1,'amrex']]]
+  ['trapezoid_15498',['Trapezoid',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a7e7dd435b4cc7ba2b020d5a97856dc80',1,'amrex']]]
 ];

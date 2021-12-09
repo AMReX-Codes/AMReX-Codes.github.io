@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['ij_15268',['ij',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa7bed657a775c37c2570786d0cbeefd88',1,'amrex::Hypre']]],
-  ['in_15269',['in',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a13b5bfe96f3e2fe411c9f66f4a582adf',1,'amrex::ForkJoin']]],
-  ['indextype_15270',['indexType',['https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4febaa83af96ce0bc256deeb3ce660dcebacc',1,'amrex::BATransformer']]],
-  ['indextype_5fcoarsenratio_15271',['indexType_coarsenRatio',['https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feba3e10d52c08b4ae924eb9c9c4c42386b6',1,'amrex::BATransformer']]],
-  ['inhomogeneous_15272',['Inhomogeneous',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884ae9990b3a39151b6f2175caa7621e0c4b',1,'amrex::MLLinOp']]],
-  ['inout_15273',['inout',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a54c9ccb45f5ee60133cca31fca024432',1,'amrex::ForkJoin']]]
+  ['homogeneous_15470',['Homogeneous',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884a548465e8241b26162c8e0a7b0cdfc5e7',1,'amrex::MLLinOp']]],
+  ['host_15471',['Host',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2',1,'amrex']]],
+  ['hypre_15472',['hypre',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex']]]
 ];

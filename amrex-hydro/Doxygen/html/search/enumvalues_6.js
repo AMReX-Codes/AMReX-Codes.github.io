@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['homogeneous_15265',['Homogeneous',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884a548465e8241b26162c8e0a7b0cdfc5e7',1,'amrex::MLLinOp']]],
-  ['host_15266',['Host',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2',1,'amrex']]],
-  ['hypre_15267',['hypre',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex']]]
+  ['ghostnodes_15468',['ghostnodes',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLMG.html#a318536fe822c58660f772ef85c0ef1ddabddf1f772a4b8a67379933a3664a17c2',1,'amrex::MLMG']]],
+  ['gpu_15469',['Gpu',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex']]]
 ];
