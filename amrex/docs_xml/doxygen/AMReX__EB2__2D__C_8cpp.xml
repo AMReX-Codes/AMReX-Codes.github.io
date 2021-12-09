@@ -1647,7 +1647,7 @@
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>axp<sp/>=<sp/>apx(i+1,j<sp/><sp/>,0);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>aym<sp/>=<sp/>apy(i<sp/><sp/>,j<sp/><sp/>,0);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>ayp<sp/>=<sp/>apy(i<sp/><sp/>,j+1,0);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>apnorm<sp/>=<sp/>std::hypot(axm-axp,aym-ayp);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>apnorm<sp/>=<sp/>std::hypot(axm-axp,aym-ayp)<sp/>+<sp/>1.e-30;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>nx<sp/>=<sp/>(axm-axp)<sp/>*<sp/>(1.0/apnorm);</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>ny<sp/>=<sp/>(aym-ayp)<sp/>*<sp/>(1.0/apnorm);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
