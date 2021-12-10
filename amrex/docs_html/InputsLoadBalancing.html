@@ -105,13 +105,13 @@
 <p>The following inputs must be preceded by “amr” and determine how we create the grids and how often we regrid.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 62%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 <col style="width: 11%" />
-<col style="width: 10%" />
+<col style="width: 9%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"></th>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Type</p></th>
 <th class="head"><p>Default</p></th>
@@ -157,9 +157,34 @@ if regrid_int = -1 then no regridding will occur</p></td>
 <td><p>Int</p></td>
 <td><p>8</p></td>
 </tr>
+<tr class="row-odd"><td><p>refine_grid_layout</p></td>
+<td><p>Split grids in half until the number of grids is no less than the
+number of procs. (Will be overridden if refine_grid_layout_[x,y,z]
+is specified)</p></td>
+<td><p>Bool</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>refine_grid_layout_x</p></td>
+<td><p>Allow grids to be split in the x-dimension when refining the layout.
+(1 to allow or 0 to disallow)</p></td>
+<td><p>Int</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>refine_grid_layout_y</p></td>
+<td><p>Allow grids to be split in the y-dimension when refining the layout.
+(1 to allow or 0 to disallow)</p></td>
+<td><p>Int</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>refine_grid_layout_z</p></td>
+<td><p>Allow grids to be split in the z-dimension when refining the layout.
+(1 to allow or 0 to disallow)</p></td>
+<td><p>Int</p></td>
+<td><p>1</p></td>
+</tr>
 </tbody>
 </table>
-<p>The following inputs must be preceded by “particles”</p>
+<p>The following inputs must be preceded by “particles”.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -168,7 +193,7 @@ if regrid_int = -1 then no regridding will occur</p></td>
 <col style="width: 10%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"></th>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Type</p></th>
 <th class="head"><p>Default</p></th>
