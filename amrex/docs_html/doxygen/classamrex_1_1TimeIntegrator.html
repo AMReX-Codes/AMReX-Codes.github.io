@@ -125,6 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a962f126a294b86b3ac2e7bb4e4fae742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16747791ab03ecd41284a2c31635290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#ae16747791ab03ecd41284a2c31635290">set_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt; F)</td></tr>
 <tr class="separator:ae16747791ab03ecd41284a2c31635290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d43ab3d17503622732e869da0e6370"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a81d43ab3d17503622732e869da0e6370">get_post_timestep</a> ()</td></tr>
+<tr class="separator:a81d43ab3d17503622732e869da0e6370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fac54e653196aeb3f5768352adb27ba"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a2fac54e653196aeb3f5768352adb27ba">get_post_update</a> ()</td></tr>
+<tr class="separator:a2fac54e653196aeb3f5768352adb27ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71d4be9cc12ef21b19c77b9dad686fc4"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a71d4be9cc12ef21b19c77b9dad686fc4">get_rhs</a> ()</td></tr>
+<tr class="separator:a71d4be9cc12ef21b19c77b9dad686fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcd895166e8c1a7f2bb9b1d65feeb505"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#adcd895166e8c1a7f2bb9b1d65feeb505">advance</a> (T &amp;S_old, T &amp;S_new, amrex::Real time, const amrex::Real timestep)</td></tr>
 <tr class="separator:adcd895166e8c1a7f2bb9b1d65feeb505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a592c42e4a2d86455e26944e2747be9eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TimeIntegrator.html#a592c42e4a2d86455e26944e2747be9eb">integrate</a> (T &amp;S_old, T &amp;S_new, amrex::Real start_time, const amrex::Real start_timestep, const amrex::Real end_time, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nsteps)</td></tr>
@@ -309,6 +315,87 @@ template&lt;class T &gt; </div>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81d43ab3d17503622732e869da0e6370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d43ab3d17503622732e869da0e6370">&#9670;&nbsp;</a></span>get_post_timestep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void ()&gt; <a class="el" href="classamrex_1_1TimeIntegrator.html">amrex::TimeIntegrator</a>&lt; T &gt;::get_post_timestep </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fac54e653196aeb3f5768352adb27ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fac54e653196aeb3f5768352adb27ba">&#9670;&nbsp;</a></span>get_post_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void (T&amp;, amrex::Real)&gt; <a class="el" href="classamrex_1_1TimeIntegrator.html">amrex::TimeIntegrator</a>&lt; T &gt;::get_post_update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71d4be9cc12ef21b19c77b9dad686fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71d4be9cc12ef21b19c77b9dad686fc4">&#9670;&nbsp;</a></span>get_rhs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(T&amp;, const T&amp;, const amrex::Real)&gt; <a class="el" href="classamrex_1_1TimeIntegrator.html">amrex::TimeIntegrator</a>&lt; T &gt;::get_rhs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>

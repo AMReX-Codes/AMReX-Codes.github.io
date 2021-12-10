@@ -1,5 +1,10 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html#a81dc4abe9ba0c404026f43e1fdc3da90":[2,0,0,3,18,0],
+"structamrex_1_1iparser__assign.html":[2,0,0,211],
+"structamrex_1_1iparser__assign.html#a1bd41de7b1cdd468450f00757d5ee7b9":[2,0,0,211,2],
+"structamrex_1_1iparser__assign.html#a809b74ddfbffcd70511e5e20825922e8":[2,0,0,211,1],
+"structamrex_1_1iparser__assign.html#af27d7bf4df42d8910cc787d006ec42ce":[2,0,0,211,0],
 "structamrex_1_1iparser__f1.html":[2,0,0,212],
 "structamrex_1_1iparser__f1.html#a6c15d096fef998fd70fbd4ce5083c67a":[2,0,0,212,1],
 "structamrex_1_1iparser__f1.html#ae6489e0fb7a5a08fe269c3d428baacaf":[2,0,0,212,0],
