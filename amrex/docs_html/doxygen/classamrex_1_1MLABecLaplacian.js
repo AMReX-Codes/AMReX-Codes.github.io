@@ -41,6 +41,7 @@ var classamrex_1_1MLABecLaplacian =
     [ "supportNSolve", "classamrex_1_1MLABecLaplacian.html#ab8725018ab20ba9130eccd4b9eb82e17", null ],
     [ "supportRobinBC", "classamrex_1_1MLABecLaplacian.html#a9d739e672638ca44112f3c6729ffc23e", null ],
     [ "update", "classamrex_1_1MLABecLaplacian.html#a7e612906bd561e6b5db7ce47ea0e7d14", null ],
+    [ "update_singular_flags", "classamrex_1_1MLABecLaplacian.html#a3a3c0c555f4798abb65ca579b2526742", null ],
     [ "m_a_coeffs", "classamrex_1_1MLABecLaplacian.html#a4f2dd2fecc4cbd8df8cdf264330b6cee", null ],
     [ "m_a_scalar", "classamrex_1_1MLABecLaplacian.html#a56c309c11b2dfa0ae7b4153cbf352329", null ],
     [ "m_b_coeffs", "classamrex_1_1MLABecLaplacian.html#a690294478b3f4e211d738879fcc2d487", null ],
