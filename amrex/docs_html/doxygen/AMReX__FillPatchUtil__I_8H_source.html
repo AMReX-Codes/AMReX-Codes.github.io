@@ -674,449 +674,459 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                {</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    mf[d]-&gt;ParallelCopy(mf_refined_patch[d], 0, dcomp, ncomp, IntVect{0}, nghost);</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                }</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            }</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        }</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        {</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            Vector&lt;MF*&gt; fmf_time;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> ffab : fmf)</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                 { fmf_time.push_back(ffab[d]); }</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <a class="code" href="namespaceamrex.html#a3cf973090fa613c635340a08df7ecd38">FillPatchSingleLevel</a>(*mf[d], nghost, time, fmf_time, ft, scomp, dcomp, ncomp,</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                                 fgeom, fbc[d], fbccomp);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    <span class="keywordtype">bool</span> aliasing = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; fmf_a : fmf) {</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                        aliasing = aliasing || (mf[d] == fmf_a[d]);</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    }</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                    <span class="keywordflow">if</span> (aliasing) {</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                        mf[d]-&gt;ParallelCopyToGhost(mf_refined_patch[d], 0, dcomp, ncomp,</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                                                   IntVect{0}, nghost);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                        mf[d]-&gt;ParallelCopy(mf_refined_patch[d], 0, dcomp, ncomp,</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                                            IntVect{0}, nghost);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                    }</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                }</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;            }</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        }</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    }</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;} <span class="comment">// Anonymous namespace</span></div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00596"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">  596</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                    Interp* mapper,</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;{</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    FillPatchTwoLevels_doit(mf,nghost,time,cmf,ct,fmf,ft,</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                            pre_interp,post_interp,index_space);</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;}</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00622"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a3f8f5f13146586dfaa0fb8d082132f12">  622</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, Real time,</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                    Interp* mapper,</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;{</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    FillPatchTwoLevels_doit(mf,mf.nGrowVect(),time,cmf,ct,fmf,ft,</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                            pre_interp,post_interp,index_space);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;}</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00649"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ae7fdce34557bf398e68e173045b5498a">  649</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                    Interp* mapper,</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                    <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;{</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    FillPatchTwoLevels_doit(mf,nghost,time,cmf,ct,fmf,ft,</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                            pre_interp,post_interp,index_space);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;}</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00676"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a760ab1490c5580a3d640bd43b73a2ccc">  676</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, Real time,</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                    Interp* mapper,</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                    <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;{</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    FillPatchTwoLevels_doit(mf,mf[0]-&gt;nGrowVect(),time,cmf,ct,fmf,ft,</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                            pre_interp,post_interp,index_space);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;}</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, IntVect <span class="keyword">const</span>&amp; nghost, Real time,</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                    <span class="keyword">const</span> EB2::IndexSpace&amp; index_space,</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; cmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ct,</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; fmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ft,</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                    <span class="keyword">const</span> Geometry&amp; cgeom, <span class="keyword">const</span> Geometry&amp; fgeom,</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                    <span class="keyword">const</span> IntVect&amp; ratio,</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                    Interp* mapper,</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                    <span class="keyword">const</span> Vector&lt;BCRec&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;{</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    FillPatchTwoLevels_doit(mf,nghost,time,cmf,ct,fmf,ft,</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                            pre_interp,post_interp,&amp;index_space);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;}</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, Real time,</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                    <span class="keyword">const</span> EB2::IndexSpace&amp; index_space,</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; cmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ct,</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; fmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ft,</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                    <span class="keyword">const</span> Geometry&amp; cgeom, <span class="keyword">const</span> Geometry&amp; fgeom,</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                    <span class="keyword">const</span> IntVect&amp; ratio,</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                    Interp* mapper,</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                    <span class="keyword">const</span> Vector&lt;BCRec&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;{</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    FillPatchTwoLevels_doit(mf,mf.nGrowVect(),time,cmf,ct,fmf,ft,</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                            pre_interp,post_interp,&amp;index_space);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;}</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00749"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">  749</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (MF&amp; mf, Real time,</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                       <span class="keyword">const</span> MF&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                       BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                       BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                       Interp* mapper,</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;{</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a>(mf,mf.nGrowVect(),time,cmf,scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                          cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                          pre_interp,post_interp);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;}</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00767"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abed62fa77c3def575a20c8c9efa33805">  767</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, Real time,</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a>&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                       Interp* mapper,</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;{</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a>(mf,mf[0]-&gt;nGrowVect(),time,cmf,scomp,dcomp,ncomp,cgeom,fgeom,</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                          cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                          pre_interp,post_interp);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;}</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00785"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa081e015e8252796d1f7675189020446">  785</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (MF&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                       <span class="keyword">const</span> MF&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                       BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                       BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                       Interp* mapper,</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;{</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a> = <span class="keyword">typename</span> MF::FABType::value_type;</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html">InterpolaterBoxCoarsener</a>&amp; coarsener = mapper-&gt;BoxCoarsener(ratio);</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a>&amp; ba = mf.boxArray();</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&amp; dm = mf.DistributionMap();</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IndexType.html">IndexType</a>&amp; typ = ba.<a class="code" href="classamrex_1_1BoxArray.html#a0005742d49b95bea045b6f46edb75714">ixType</a>();</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160; </div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(typ == cmf.boxArray().<a class="code" href="classamrex_1_1IndexType.html#a3ddfa522c3996c79af3aa5985c8af10a">ixType</a>());</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> fdomain_g( <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(),mf.<a class="code" href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">ixType</a>()) );</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keywordflow">if</span> (fgeom.<a class="code" href="classamrex_1_1Geometry.html#aed68387cf6235047891119eb57ee878e">isPeriodic</a>(i)) {</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            fdomain_g.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(i,nghost[i]);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        }</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    }</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a> ba_crse_patch(ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>());</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    {  <span class="comment">// TODO: later we might want to cache this</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>(); i &lt; N; ++i)</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        {</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(<a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(ba[i],nghost), typ);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> &amp;= fdomain_g;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            ba_crse_patch.<a class="code" href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">set</a>(i, coarsener.<a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html#a7ebac92d32c9d7157c6bc47c0c8eb33c">doit</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>));</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            Vector&lt;MF*&gt; fmf_time;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; ffab : fmf)</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                 { fmf_time.push_back(ffab[d]); }</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            <a class="code" href="namespaceamrex.html#a3cf973090fa613c635340a08df7ecd38">FillPatchSingleLevel</a>(*mf[d], nghost, time, fmf_time, ft, scomp, dcomp, ncomp,</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                 fgeom, fbc[d], fbccomp);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        }</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    }</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;} <span class="comment">// Anonymous namespace</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00606"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">  606</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                    Interp* mapper,</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;{</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    FillPatchTwoLevels_doit(mf,nghost,time,cmf,ct,fmf,ft,</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                            pre_interp,post_interp,index_space);</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;}</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00632"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a3f8f5f13146586dfaa0fb8d082132f12">  632</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, Real time,</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF*&gt;</a>&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                    Interp* mapper,</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;{</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    FillPatchTwoLevels_doit(mf,mf.nGrowVect(),time,cmf,ct,fmf,ft,</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                            pre_interp,post_interp,index_space);</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;}</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00659"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ae7fdce34557bf398e68e173045b5498a">  659</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                    Interp* mapper,</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                    <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;{</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    FillPatchTwoLevels_doit(mf,nghost,time,cmf,ct,fmf,ft,</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                            pre_interp,post_interp,index_space);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;}</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00686"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a760ab1490c5580a3d640bd43b73a2ccc">  686</a></span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, Real time,</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; cmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ct,</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> &gt;&amp; fmf, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Real&gt;</a>&amp; ft,</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    Interp* mapper,</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                    <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;{</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>();</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <a class="code" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> <span class="keyword">const</span>* index_space = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    FillPatchTwoLevels_doit(mf,mf[0]-&gt;nGrowVect(),time,cmf,ct,fmf,ft,</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                            pre_interp,post_interp,index_space);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;}</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, IntVect <span class="keyword">const</span>&amp; nghost, Real time,</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    <span class="keyword">const</span> EB2::IndexSpace&amp; index_space,</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; cmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ct,</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; fmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ft,</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                    <span class="keyword">const</span> Geometry&amp; cgeom, <span class="keyword">const</span> Geometry&amp; fgeom,</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                    <span class="keyword">const</span> IntVect&amp; ratio,</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                    Interp* mapper,</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                    <span class="keyword">const</span> Vector&lt;BCRec&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;{</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    FillPatchTwoLevels_doit(mf,nghost,time,cmf,ct,fmf,ft,</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                            pre_interp,post_interp,&amp;index_space);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;}</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;<a class="code" href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">FillPatchTwoLevels</a> (MF&amp; mf, Real time,</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                    <span class="keyword">const</span> EB2::IndexSpace&amp; index_space,</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; cmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ct,</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                    <span class="keyword">const</span> Vector&lt;MF*&gt;&amp; fmf, <span class="keyword">const</span> Vector&lt;Real&gt;&amp; ft,</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    <span class="keyword">const</span> Geometry&amp; cgeom, <span class="keyword">const</span> Geometry&amp; fgeom,</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                    BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                    BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    <span class="keyword">const</span> IntVect&amp; ratio,</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    Interp* mapper,</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    <span class="keyword">const</span> Vector&lt;BCRec&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                    <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                    <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;{</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    FillPatchTwoLevels_doit(mf,mf.nGrowVect(),time,cmf,ct,fmf,ft,</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                            scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                            cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                            pre_interp,post_interp,&amp;index_space);</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;}</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00759"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">  759</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (MF&amp; mf, Real time,</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                       <span class="keyword">const</span> MF&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                       BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                       BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                       Interp* mapper,</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;{</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a>(mf,mf.nGrowVect(),time,cmf,scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                          cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                          pre_interp,post_interp);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;}</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00777"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abed62fa77c3def575a20c8c9efa33805">  777</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, Real time,</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a>&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                       Interp* mapper,</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;{</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a>(mf,mf[0]-&gt;nGrowVect(),time,cmf,scomp,dcomp,ncomp,cgeom,fgeom,</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                          cbc,cbccomp,fbc,fbccomp,ratio,mapper,bcs,bcscomp,</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                          pre_interp,post_interp);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;}</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00795"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa081e015e8252796d1f7675189020446">  795</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (MF&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                       <span class="keyword">const</span> MF&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                       BC&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                       BC&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                       Interp* mapper,</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;{</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a> = <span class="keyword">typename</span> MF::FABType::value_type;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html">InterpolaterBoxCoarsener</a>&amp; coarsener = mapper-&gt;BoxCoarsener(ratio);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a>&amp; ba = mf.boxArray();</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&amp; dm = mf.DistributionMap();</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IndexType.html">IndexType</a>&amp; typ = ba.<a class="code" href="classamrex_1_1BoxArray.html#a0005742d49b95bea045b6f46edb75714">ixType</a>();</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(typ == cmf.boxArray().<a class="code" href="classamrex_1_1IndexType.html#a3ddfa522c3996c79af3aa5985c8af10a">ixType</a>());</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> fdomain_g( <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(),mf.<a class="code" href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">ixType</a>()) );</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        <span class="keywordflow">if</span> (fgeom.<a class="code" href="classamrex_1_1Geometry.html#aed68387cf6235047891119eb57ee878e">isPeriodic</a>(i)) {</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            fdomain_g.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(i,nghost[i]);</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        }</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    }</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160; </div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    MF mf_crse_patch;</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>()) {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="keyword">auto</span> factory = <a class="code" href="namespaceamrex.html#ad3c5c0681fda33ffa62120cefe254379">makeEBFabFactory</a>(cgeom, ba_crse_patch, dm, {0,0,0}, <a class="code" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2">EBSupport::basic</a>);</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        mf_crse_patch.define(ba_crse_patch, dm, ncomp, 0, <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(), *factory);</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    {</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        mf_crse_patch.define(ba_crse_patch, dm, ncomp, 0);</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    }</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    mf_set_domain_bndry (mf_crse_patch, cgeom);</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160; </div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    mf_crse_patch.ParallelCopy(cmf, scomp, 0, ncomp, cgeom.<a class="code" href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">periodicity</a>());</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    cbc(mf_crse_patch, 0, ncomp, mf_crse_patch.nGrowVect(), time, cbccomp);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf_crse_patch); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    {</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp; sfab   = mf_crse_patch[mfi];</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        pre_interp(sfab, sfab.box(), 0, ncomp);</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    }</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(mf, dcomp, mf_crse_patch, 0, ncomp, nghost, cgeom, fgeom, fdomain_g,</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                    ratio, mapper, bcs, bcscomp);</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    {</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp; dfab   = mf[mfi];</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <a class="code" href="classamrex_1_1Box.html">Box</a> dfab_bx = dfab.box();</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        dfab_bx.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(nghost-mf.nGrowVect());</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; dbx = dfab_bx &amp; fdomain_g;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a> ba_crse_patch(ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>());</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    {  <span class="comment">// TODO: later we might want to cache this</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>(); i &lt; N; ++i)</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        {</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(<a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(ba[i],nghost), typ);</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> &amp;= fdomain_g;</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;            ba_crse_patch.<a class="code" href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">set</a>(i, coarsener.<a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html#a7ebac92d32c9d7157c6bc47c0c8eb33c">doit</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>));</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        }</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    }</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    MF mf_crse_patch;</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385">EB2::TopIndexSpaceIfPresent</a>()) {</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        <span class="keyword">auto</span> factory = <a class="code" href="namespaceamrex.html#ad3c5c0681fda33ffa62120cefe254379">makeEBFabFactory</a>(cgeom, ba_crse_patch, dm, {0,0,0}, <a class="code" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2">EBSupport::basic</a>);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        mf_crse_patch.define(ba_crse_patch, dm, ncomp, 0, <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(), *factory);</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    {</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        mf_crse_patch.define(ba_crse_patch, dm, ncomp, 0);</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    }</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    mf_set_domain_bndry (mf_crse_patch, cgeom);</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    mf_crse_patch.ParallelCopy(cmf, scomp, 0, ncomp, cgeom.<a class="code" href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">periodicity</a>());</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    cbc(mf_crse_patch, 0, ncomp, mf_crse_patch.nGrowVect(), time, cbccomp);</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160; </div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf_crse_patch); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    {</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp; sfab   = mf_crse_patch[mfi];</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        pre_interp(sfab, sfab.box(), 0, ncomp);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    }</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(mf, dcomp, mf_crse_patch, 0, ncomp, nghost, cgeom, fgeom, fdomain_g,</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                    ratio, mapper, bcs, bcscomp);</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160; </div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        post_interp(dfab, dbx, dcomp, ncomp);</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    }</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160; </div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    fbc(mf, dcomp, ncomp, nghost, time, fbccomp);</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;}</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00870"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a665aff71f29d05e954c3cb414b5e9349">  870</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a>&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                       Interp* mapper,</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;{</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a> = <span class="keyword">typename</span> MF::FABType::value_type;</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <span class="keyword">using</span> iFAB = <span class="keyword">typename</span> iMultiFab::FABType::value_type;</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html">InterpolaterBoxCoarsener</a>&amp; coarsener = mapper-&gt;BoxCoarsener(ratio);</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a>&amp; ba = mf[0]-&gt;boxArray();</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&amp; dm = mf[0]-&gt;DistributionMap();</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(mf[0]-&gt;ixType().nodeCentered(0),</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                           &amp;&amp; mf[1]-&gt;ixType().nodeCentered(1),</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                           &amp;&amp; mf[2]-&gt;ixType().nodeCentered(2)));</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    <span class="comment">// These need to be true: (ba[0] == ba[1] == ba[2]) &amp; (dm[0] == dm[1] == dm[2]).</span></div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;    <span class="comment">// Debatable whether these are required, or will be enforced elsewhere prior to this func.</span></div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keyword">true</span>,</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                           &amp;&amp; <a class="code" href="classamrex_1_1BoxArray.html#a93718ee84062758c5256a2792939c6f7">BoxArray::SameRefs</a>(mf[0]-&gt;boxArray(), mf[1]-&gt;boxArray()),</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                           &amp;&amp; <a class="code" href="classamrex_1_1BoxArray.html#a93718ee84062758c5256a2792939c6f7">BoxArray::SameRefs</a>(mf[0]-&gt;boxArray(), mf[2]-&gt;boxArray())));</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;<span class="comment">    AMREX_ASSERT(AMREX_D_TERM(true,</span></div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="comment">                           &amp;&amp; DistributionMapping::SameRefs(mf[0]-&gt;DistributionMap(), mf[1]-&gt;DistributionMap()),</span></div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;<span class="comment">                           &amp;&amp; DistributionMapping::SameRefs(mf[0]-&gt;DistributionMap(), mf[2]-&gt;DistributionMap())));</span></div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    <span class="comment">// If needed, adjust to fully overlap the coarse cells.</span></div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost_adj = nghost;</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d) {</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;        <span class="keywordflow">if</span> (nghost[d] % ratio[d] != 0) {</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;            nghost_adj[d] += ratio[d] - (nghost[d] % ratio[d]);</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;        }</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    }</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160; </div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> mf_local = mf;</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;    <span class="keywordtype">int</span> dcomp_adj = dcomp;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;std::unique_ptr&lt;MF&gt;</a>, AMREX_SPACEDIM&gt; mf_temp;</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    <span class="keywordflow">if</span> (! nghost.<a class="code" href="classamrex_1_1IntVect.html#ae3c7940850b880ae2d83dab12e73434a">allGE</a>(nghost_adj)) {</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d) {</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            mf_temp[d] = std::make_unique&lt;MF&gt;(mf[d]-&gt;boxArray(),</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;                                              mf[d]-&gt;DistributionMap(), ncomp, nghost_adj);</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            mf_local[d] = mf_temp[d].get();</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;        }</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        dcomp_adj = 0;</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    }</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160; </div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    <span class="comment">// Create a cell-centered boxArray of the region to interp.</span></div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    <span class="comment">// Convert this boxArray and domain as needed.</span></div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> fdomain = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> fdomain_g(fdomain);</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        <span class="keywordflow">if</span> (fgeom.<a class="code" href="classamrex_1_1Geometry.html#aed68387cf6235047891119eb57ee878e">isPeriodic</a>(d)) {</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;            fdomain_g.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(d,nghost_adj[d]);</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;        }</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    {</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;        <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp; dfab   = mf[mfi];</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        <a class="code" href="classamrex_1_1Box.html">Box</a> dfab_bx = dfab.box();</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        dfab_bx.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(nghost-mf.nGrowVect());</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; dbx = dfab_bx &amp; fdomain_g;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        post_interp(dfab, dbx, dcomp, ncomp);</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    }</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    fbc(mf, dcomp, ncomp, nghost, time, fbccomp);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;}</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> BC, <span class="keyword">typename</span> Interp, <span class="keyword">typename</span> PreInterpHook, <span class="keyword">typename</span> PostInterpHook&gt;</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
+<div class="line"><a name="l00880"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a665aff71f29d05e954c3cb414b5e9349">  880</a></span>&#160;<a class="code" href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">InterpFromCoarseLevel</a> (<a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; mf, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; nghost, Real time,</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a>&amp; cmf, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; cbc, <span class="keywordtype">int</span> cbccomp,</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                       <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;BC, AMREX_SPACEDIM&gt;</a>&amp; fbc, <span class="keywordtype">int</span> fbccomp,</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                       Interp* mapper,</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                       <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;<a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>, AMREX_SPACEDIM&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp,</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                       <span class="keyword">const</span> PreInterpHook&amp; pre_interp,</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                       <span class="keyword">const</span> PostInterpHook&amp; post_interp)</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;{</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a> = <span class="keyword">typename</span> MF::FABType::value_type;</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    <span class="keyword">using</span> iFAB = <span class="keyword">typename</span> iMultiFab::FABType::value_type;</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html">InterpolaterBoxCoarsener</a>&amp; coarsener = mapper-&gt;BoxCoarsener(ratio);</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a>&amp; ba = mf[0]-&gt;boxArray();</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&amp; dm = mf[0]-&gt;DistributionMap();</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160; </div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(mf[0]-&gt;ixType().nodeCentered(0),</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                           &amp;&amp; mf[1]-&gt;ixType().nodeCentered(1),</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                           &amp;&amp; mf[2]-&gt;ixType().nodeCentered(2)));</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160; </div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <span class="comment">// These need to be true: (ba[0] == ba[1] == ba[2]) &amp; (dm[0] == dm[1] == dm[2]).</span></div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    <span class="comment">// Debatable whether these are required, or will be enforced elsewhere prior to this func.</span></div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keyword">true</span>,</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                           &amp;&amp; <a class="code" href="classamrex_1_1BoxArray.html#a93718ee84062758c5256a2792939c6f7">BoxArray::SameRefs</a>(mf[0]-&gt;boxArray(), mf[1]-&gt;boxArray()),</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                           &amp;&amp; <a class="code" href="classamrex_1_1BoxArray.html#a93718ee84062758c5256a2792939c6f7">BoxArray::SameRefs</a>(mf[0]-&gt;boxArray(), mf[2]-&gt;boxArray())));</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;<span class="comment">    AMREX_ASSERT(AMREX_D_TERM(true,</span></div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;<span class="comment">                           &amp;&amp; DistributionMapping::SameRefs(mf[0]-&gt;DistributionMap(), mf[1]-&gt;DistributionMap()),</span></div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;<span class="comment">                           &amp;&amp; DistributionMapping::SameRefs(mf[0]-&gt;DistributionMap(), mf[2]-&gt;DistributionMap())));</span></div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    <span class="comment">// If needed, adjust to fully overlap the coarse cells.</span></div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost_adj = nghost;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d) {</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        <span class="keywordflow">if</span> (nghost[d] % ratio[d] != 0) {</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            nghost_adj[d] += ratio[d] - (nghost[d] % ratio[d]);</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        }</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    }</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160; </div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF*, AMREX_SPACEDIM&gt;</a> mf_local = mf;</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <span class="keywordtype">int</span> dcomp_adj = dcomp;</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;std::unique_ptr&lt;MF&gt;</a>, AMREX_SPACEDIM&gt; mf_temp;</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    <span class="keywordflow">if</span> (! nghost.<a class="code" href="classamrex_1_1IntVect.html#ae3c7940850b880ae2d83dab12e73434a">allGE</a>(nghost_adj)) {</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d) {</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;            mf_temp[d] = std::make_unique&lt;MF&gt;(mf[d]-&gt;boxArray(),</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                                              mf[d]-&gt;DistributionMap(), ncomp, nghost_adj);</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;            mf_local[d] = mf_temp[d].get();</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        }</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;        dcomp_adj = 0;</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;    }</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160; </div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    <span class="comment">// Build patches, using domain to account for periodic bcs.</span></div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a> ba_crse_patch(ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>());</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    {  <span class="comment">// TODO: later we might want to cache this</span></div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>(); i &lt; N; ++i)</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        {</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(<a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(ba[i], nghost_adj), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;            <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> &amp;= fdomain_g;</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;            ba_crse_patch.<a class="code" href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">set</a>(i, coarsener.<a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html#a7ebac92d32c9d7157c6bc47c0c8eb33c">doit</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>));</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        }</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    }</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160; </div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF, AMREX_SPACEDIM&gt;</a> mf_crse_patch;</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d&lt;AMREX_SPACEDIM; ++d)</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    {</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        <a class="code" href="classamrex_1_1IndexType.html">IndexType</a> typ = mf[d]-&gt;boxArray().ixType();</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;        <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a> ba_crse_idxed = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(ba_crse_patch, typ);</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160; </div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        <span class="keyword">auto</span> crse_factory = <a class="code" href="namespaceamrex.html#ad3c5c0681fda33ffa62120cefe254379">makeEBFabFactory</a>(cgeom, ba_crse_idxed, dm, {0,0,0}, <a class="code" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2">EBSupport::basic</a>);</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        mf_crse_patch[d].define(ba_crse_idxed, dm, ncomp, 0, <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(), *crse_factory);</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;        mf_crse_patch[d].define(ba_crse_idxed, dm, ncomp, 0);</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;        mf_set_domain_bndry(mf_crse_patch[d], cgeom);</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160; </div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        mf_crse_patch[d].ParallelCopy(*(cmf[d]), scomp, 0, ncomp, cgeom.<a class="code" href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">periodicity</a>());</div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;        cbc[d](mf_crse_patch[d], 0, ncomp, mf_crse_patch[d].nGrowVect(), time, cbccomp);</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    }</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160; </div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="keywordtype">int</span> idummy1=0, idummy2=0;</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    <span class="comment">// Create a cell-centered boxArray of the region to interp.</span></div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="comment">// Convert this boxArray and domain as needed.</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> fdomain = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> fdomain_g(fdomain);</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; AMREX_SPACEDIM; ++d) {</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        <span class="keywordflow">if</span> (fgeom.<a class="code" href="classamrex_1_1Geometry.html#aed68387cf6235047891119eb57ee878e">isPeriodic</a>(d)) {</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;            fdomain_g.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(d,nghost_adj[d]);</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        }</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    }</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <span class="comment">// Build patches, using domain to account for periodic bcs.</span></div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a> ba_crse_patch(ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>());</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    {  <span class="comment">// TODO: later we might want to cache this</span></div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = ba.<a class="code" href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">size</a>(); i &lt; N; ++i)</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        {</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(<a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(ba[i], nghost_adj), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a> &amp;= fdomain_g;</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;            ba_crse_patch.<a class="code" href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">set</a>(i, coarsener.<a class="code" href="classamrex_1_1InterpolaterBoxCoarsener.html#a7ebac92d32c9d7157c6bc47c0c8eb33c">doit</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>));</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        }</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;    }</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160; </div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;    <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF, AMREX_SPACEDIM&gt;</a> mf_crse_patch;</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d&lt;AMREX_SPACEDIM; ++d)</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    {</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;        <a class="code" href="classamrex_1_1IndexType.html">IndexType</a> typ = mf[d]-&gt;boxArray().ixType();</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a> ba_crse_idxed = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(ba_crse_patch, typ);</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160; </div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_EB</span></div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;        <span class="keyword">auto</span> crse_factory = <a class="code" href="namespaceamrex.html#ad3c5c0681fda33ffa62120cefe254379">makeEBFabFactory</a>(cgeom, ba_crse_idxed, dm, {0,0,0}, <a class="code" href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2">EBSupport::basic</a>);</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        mf_crse_patch[d].define(ba_crse_idxed, dm, ncomp, 0, <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(), *crse_factory);</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        mf_crse_patch[d].define(ba_crse_idxed, dm, ncomp, 0);</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;    {</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Array&lt;BCRec, AMREX_SPACEDIM&gt;</a> &gt; bcr(ncomp);</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160; </div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        <span class="comment">// Empty containers describing that all points must be solved (no mask).</span></div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;        <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;iFAB*, AMREX_SPACEDIM&gt;</a> mfab{ <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>( <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span> ) };</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;        mf_set_domain_bndry(mf_crse_patch[d], cgeom);</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160; </div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        mf_crse_patch[d].ParallelCopy(*(cmf[d]), scomp, 0, ncomp, cgeom.<a class="code" href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">periodicity</a>());</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        cbc[d](mf_crse_patch[d], 0, ncomp, mf_crse_patch[d].nGrowVect(), time, cbccomp);</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;    }</div>
 <div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160; </div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf_crse_patch[0]); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;        {</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;            <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;FAB*, AMREX_SPACEDIM&gt;</a>  sfab{ <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>( &amp;(mf_crse_patch[0][mfi]),</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;                                                             &amp;(mf_crse_patch[1][mfi]),</div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;                                                             &amp;(mf_crse_patch[2][mfi]) )};</div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;            <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;FAB*, AMREX_SPACEDIM&gt;</a>  dfab{ <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>( &amp;(*mf_local[0])[mfi],</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;                                                             &amp;(*mf_local[1])[mfi],</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;                                                             &amp;(*mf_local[2])[mfi] )};</div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160; </div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; sbx_cc = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(sfab[0]-&gt;box(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> dfab_cc = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(dfab[0]-&gt;box(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; dbx_cc = dfab_cc &amp; fdomain_g;</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160; </div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;            {</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;                <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> bcr_d(ncomp);</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160; </div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;                <a class="code" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a>(sfab[d]-&gt;box(),</div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;                             <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(cgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(), sfab[d]-&gt;box().<a class="code" href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">ixType</a>()),</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                             bcscomp,0,ncomp,bcs[d],bcr_d);</div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160; </div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;ncomp; ++n)</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;                    { bcr[n][d] = bcr_d[n]; }</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;            }</div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160; </div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;            pre_interp(sfab, sbx_cc, 0, ncomp);</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;    <span class="keywordtype">int</span> idummy1=0, idummy2=0;</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    {</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Array&lt;BCRec, AMREX_SPACEDIM&gt;</a> &gt; bcr(ncomp);</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160; </div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        <span class="comment">// Empty containers describing that all points must be solved (no mask).</span></div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;        <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;iFAB*, AMREX_SPACEDIM&gt;</a> mfab{ <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>( <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span> ) };</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160; </div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf_crse_patch[0]); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;        {</div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;            <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;FAB*, AMREX_SPACEDIM&gt;</a>  sfab{ <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>( &amp;(mf_crse_patch[0][mfi]),</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;                                                             &amp;(mf_crse_patch[1][mfi]),</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;                                                             &amp;(mf_crse_patch[2][mfi]) )};</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;            <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;FAB*, AMREX_SPACEDIM&gt;</a>  dfab{ <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>( &amp;(*mf_local[0])[mfi],</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;                                                             &amp;(*mf_local[1])[mfi],</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;                                                             &amp;(*mf_local[2])[mfi] )};</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160; </div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; sbx_cc = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(sfab[0]-&gt;box(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> dfab_cc = <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(dfab[0]-&gt;box(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>());</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; dbx_cc = dfab_cc &amp; fdomain_g;</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160; </div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;            {</div>
+<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;                <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> bcr_d(ncomp);</div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160; </div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;            mapper-&gt;interp_arr(sfab, 0, dfab, 0, ncomp, dbx_cc, ratio, mfab,</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;                               cgeom, fgeom, bcr, idummy1, idummy2, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>);</div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160; </div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;            post_interp(dfab, dbx_cc, 0, ncomp);</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;        }</div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;    }</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160; </div>
-<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
-<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;    {</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;        <span class="keywordflow">if</span> (mf[d] != mf_local[d]) {</div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;            <a class="code" href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a>(*mf[d], *mf_local[d], 0, dcomp_adj, ncomp, nghost);</div>
-<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;        }</div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;                <a class="code" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a>(sfab[d]-&gt;box(),</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;                             <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(cgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(), sfab[d]-&gt;box().<a class="code" href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">ixType</a>()),</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;                             bcscomp,0,ncomp,bcs[d],bcr_d);</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160; </div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;ncomp; ++n)</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;                    { bcr[n][d] = bcr_d[n]; }</div>
+<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;            }</div>
+<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160; </div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;            pre_interp(sfab, sbx_cc, 0, ncomp);</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160; </div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;            mapper-&gt;interp_arr(sfab, 0, dfab, 0, ncomp, dbx_cc, ratio, mfab,</div>
+<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;                               cgeom, fgeom, bcr, idummy1, idummy2, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>);</div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160; </div>
-<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;        fbc[d](*mf[d], dcomp, ncomp, nghost, time, fbccomp);</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;    }</div>
-<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;}</div>
+<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;            post_interp(dfab, dbx_cc, 0, ncomp);</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        }</div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;    }</div>
 <div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160; </div>
-<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;}</div>
-<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160; </div>
-<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
+<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;    {</div>
+<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;        <span class="keywordflow">if</span> (mf[d] != mf_local[d]) {</div>
+<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;            <a class="code" href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a>(*mf[d], *mf_local[d], 0, dcomp_adj, ncomp, nghost);</div>
+<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;        }</div>
+<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160; </div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;        fbc[d](*mf[d], dcomp, ncomp, nghost, time, fbccomp);</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    }</div>
+<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;}</div>
+<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160; </div>
+<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;}</div>
+<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160; </div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:51</div></div>
@@ -1143,9 +1153,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="ttc" id="anamespaceamrex_1_1Amrvis_html_abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390"><div class="ttname"><a href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">amrex::Amrvis::FAB</a></div><div class="ttdeci">@ FAB</div><div class="ttdef"><b>Definition:</b> AMReX_AmrvisConstants.H:86</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html_a23dbfc6bba6b19b28a0d893bb760494c"><div class="ttname"><a href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">amrex::Box::ixType</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE IndexType ixType() const noexcept</div><div class="ttdoc">Returns the indexing type.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:121</div></div>
 <div class="ttc" id="aclassamrex_1_1Interpolater_html"><div class="ttname"><a href="classamrex_1_1Interpolater.html">amrex::Interpolater</a></div><div class="ttdoc">Virtual base class for interpolaters.</div><div class="ttdef"><b>Definition:</b> AMReX_Interpolater.H:21</div></div>
-<div class="ttc" id="anamespaceamrex_html_a6fa430e1648835f9dea38b7568d79506"><div class="ttname"><a href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">amrex::InterpFromCoarseLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; InterpFromCoarseLevel(MF &amp;mf, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:749</div></div>
+<div class="ttc" id="anamespaceamrex_html_a6fa430e1648835f9dea38b7568d79506"><div class="ttname"><a href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">amrex::InterpFromCoarseLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; InterpFromCoarseLevel(MF &amp;mf, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:759</div></div>
 <div class="ttc" id="anamespaceamrex_html_a93b8e270e0c8360ed35815598a5b7f46"><div class="ttname"><a href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">amrex::FillPatchInterp</a></div><div class="ttdeci">void FillPatchInterp(MultiFab &amp;mf_fine_patch, int fcomp, MultiFab const &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const &amp;dest_domain, const IntVect &amp;ratio, MFInterpolater *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil.cpp:140</div></div>
-<div class="ttc" id="anamespaceamrex_html_a1036d99710a96586826f090a3266f5da"><div class="ttname"><a href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:223</div></div>
+<div class="ttc" id="anamespaceamrex_html_a1036d99710a96586826f090a3266f5da"><div class="ttname"><a href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:221</div></div>
 <div class="ttc" id="aclassamrex_1_1EB2_1_1IndexSpace_html"><div class="ttname"><a href="classamrex_1_1EB2_1_1IndexSpace.html">amrex::EB2::IndexSpace</a></div><div class="ttdef"><b>Definition:</b> AMReX_EB2.H:25</div></div>
 <div class="ttc" id="aclassamrex_1_1InterpBase_html"><div class="ttname"><a href="classamrex_1_1InterpBase.html">amrex::InterpBase</a></div><div class="ttdef"><b>Definition:</b> AMReX_InterpBase.H:26</div></div>
 <div class="ttc" id="anamespaceamrex_html_abb7cbdfb8c8ec3d94bec38fcf10b92db"><div class="ttname"><a href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box refine(const Box &amp;b, int ref_ratio) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1244</div></div>
@@ -1167,7 +1177,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_ac492bfeacfc03ff2dcb5375e5422d417"><div class="ttname"><a href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">amrex::BoxArray::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdoc">Return the number of boxes in the BoxArray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.H:595</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:104</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9314c1849b946e44ddd246d9c0562e72"><div class="ttname"><a href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, bool &gt;::type almostEqual(T x, T y, int ulp=2)</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:93</div></div>
-<div class="ttc" id="anamespaceamrex_html_a5b5440802e0895fcba37e6b295116585"><div class="ttname"><a href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">amrex::FillPatchTwoLevels</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillPatchTwoLevels(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:596</div></div>
+<div class="ttc" id="anamespaceamrex_html_a5b5440802e0895fcba37e6b295116585"><div class="ttname"><a href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">amrex::FillPatchTwoLevels</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillPatchTwoLevels(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:606</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_accbf2c73a258ba522542ac1ad13f9ca8"><div class="ttname"><a href="classamrex_1_1BoxArray.html#accbf2c73a258ba522542ac1ad13f9ca8">amrex::BoxArray::set</a></div><div class="ttdeci">void set(int i, const Box &amp;ibox)</div><div class="ttdoc">Set element i in this BoxArray to Box ibox.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:859</div></div>
 <div class="ttc" id="aclassamrex_1_1IntVect_html_a9bfc5b4da499c3d53789bd0a3ceb2eda"><div class="ttname"><a href="classamrex_1_1IntVect.html#a9bfc5b4da499c3d53789bd0a3ceb2eda">amrex::IntVect::allLE</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool allLE(const IntVect &amp;rhs) const noexcept</div><div class="ttdoc">Returns true if this is less than or equal to argument for all components. NOTE: This is NOT a strict...</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:305</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:39</div></div>

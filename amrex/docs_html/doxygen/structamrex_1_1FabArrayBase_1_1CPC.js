@@ -1,6 +1,6 @@
 var structamrex_1_1FabArrayBase_1_1CPC =
 [
-    [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#a40e6f166da5f2d045cdbe945f0b40878", null ],
+    [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#acd2bded35632a96fc6dd4e5938d624d6", null ],
     [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#a354b679a17210c1815e5313618091e0e", null ],
     [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#aa0e09825745457d0931b3c5d1110794b", null ],
     [ "~CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#a97655cd5ccd143f3ab9c2a154d4d4f2f", null ],
@@ -13,5 +13,6 @@ var structamrex_1_1FabArrayBase_1_1CPC =
     [ "m_period", "structamrex_1_1FabArrayBase_1_1CPC.html#ae5ff0f4d1aea7da43378472739eae7d2", null ],
     [ "m_srcba", "structamrex_1_1FabArrayBase_1_1CPC.html#a0731da1aa60b01a75a86c66a1e49a82c", null ],
     [ "m_srcbdk", "structamrex_1_1FabArrayBase_1_1CPC.html#a786fb125f0c7e03c58115eaddeb7c159", null ],
-    [ "m_srcng", "structamrex_1_1FabArrayBase_1_1CPC.html#a368567f75989319e5002e2ec870d82b6", null ]
+    [ "m_srcng", "structamrex_1_1FabArrayBase_1_1CPC.html#a368567f75989319e5002e2ec870d82b6", null ],
+    [ "m_tgco", "structamrex_1_1FabArrayBase_1_1CPC.html#a56625fa335515114f136cf0aa8488fec", null ]
 ];

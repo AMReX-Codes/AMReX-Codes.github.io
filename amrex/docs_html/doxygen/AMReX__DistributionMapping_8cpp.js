@@ -4,6 +4,7 @@ var AMReX__DistributionMapping_8cpp =
     [ "WeightedBoxList", "classamrex_1_1WeightedBoxList.html", "classamrex_1_1WeightedBoxList" ],
     [ "Distribute", "AMReX__DistributionMapping_8cpp.html#ac6467048b1487ee7b78edf0bbcbfd2bb", null ],
     [ "knapsack", "AMReX__DistributionMapping_8cpp.html#a7c149cd13c0bd6bcd97464f0406a600b", null ],
+    [ "MakeSimilarDM", "AMReX__DistributionMapping_8cpp.html#aca8ca3ed7e01a5c954d6c70cae7b94a0", null ],
     [ "operator<<", "AMReX__DistributionMapping_8cpp.html#a6e9865ac3868b0b19a46f021f2db2421", null ],
     [ "operator<<", "AMReX__DistributionMapping_8cpp.html#a2a1640fc2ba97306ea4b3546daa1e6b5", null ],
     [ "initialized", "AMReX__DistributionMapping_8cpp.html#a4f43e2df85d0db8585e437a05c9c6a81", null ],
