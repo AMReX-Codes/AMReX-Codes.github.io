@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1IsMultiFabIterator.html":[2,0,0,260],
+"structamrex_1_1IsStoreAtomic.html":[2,0,0,261],
 "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,262],
 "structamrex_1_1LPInfo.html":[2,0,0,269],
 "structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,269,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#abb3db0e8e5221ee3116e277385c87bc5":[2,0,0,10,15,1],
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#adae8c23737504d11978f812f253631a0":[2,0,0,10,15,2],
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#ae95ad91feedc2a0b50fb7093090bb78d":[2,0,0,10,15,0],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html":[2,0,0,10,16],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a1302ef1e60c9888f4d6c6bfbec335e83":[2,0,0,10,16,0],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a2cb01b1486ad5c3e09971e6d552cc26a":[2,0,0,10,16,3]
+"structamrex_1_1NonLocalBC_1_1PolarFn2.html":[2,0,0,10,16]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structamrex_1_1Array4.html#a80b7a0c3a54daeee59f711fc97011a83":[2,0,0,47,17],
+"structamrex_1_1Array4.html#a866f2c12eb3e3d6a26399866f355e088":[2,0,0,47,18],
 "structamrex_1_1Array4.html#a8ce3c58d917a4c14dce99d84097756cd":[2,0,0,47,3],
 "structamrex_1_1Array4.html#a92996beac4532d45d7ac4be41b1ff439":[2,0,0,47,6],
 "structamrex_1_1Array4.html#aa9104074135ab3db54cf3224f7dcc4aa":[2,0,0,47,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[2,0,0,101,1],
 "structamrex_1_1DataDeleter.html#a3daee94cbf63696956b6e349478448dc":[2,0,0,101,2],
 "structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f":[2,0,0,101,4],
-"structamrex_1_1DataDeleter.html#a6538f3e7403c1630f1f101ce2b8a6e16":[2,0,0,101,0],
-"structamrex_1_1DataLayoutPolicy.html":[2,0,0,102],
-"structamrex_1_1DataLayoutPolicyRaw.html":[2,0,0,105]
+"structamrex_1_1DataDeleter.html#a6538f3e7403c1630f1f101ce2b8a6e16":[2,0,0,101,0]
 };

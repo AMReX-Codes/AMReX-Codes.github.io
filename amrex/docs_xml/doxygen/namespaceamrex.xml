@@ -11772,7 +11772,74 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1889" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1889" bodyend="1920" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" declline="389" declcolumn="21"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1889" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1889" bodyend="1894" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" declline="389" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1adc0569d3487d998596b2a11392bddaca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref></type>
+        <definition>DistributionMapping amrex::MakeSimilarDM</definition>
+        <argsstring>(const BoxArray &amp;ba, const BoxArray &amp;src_ba, const DistributionMapping &amp;src_dm, const IntVect &amp;ng)</argsstring>
+        <name>MakeSimilarDM</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>src_ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>src_dm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ng</declname>
+        </param>
+        <briefdescription>
+<para>Function that creates a <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &quot;similar&quot; to that of a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>&quot;Similar&quot; means that, if a box in &quot;ba&quot; intersects with any of the boxes in the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> associated with &quot;mf&quot;, taking &quot;ngrow&quot; ghost cells into account, then that box will be assigned to the proc owning the one it has the maximum amount of overlap with.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> we want to generate a <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> for. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src_ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> associatied with the src <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src_dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> we want the output to be similar to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of grow cells to use when computing intersection / overlap </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The computed <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1896" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1896" bodyend="1928" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.H" declline="405" declcolumn="21"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a68d95d50ed271feafbd28018aa0e8d96" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>

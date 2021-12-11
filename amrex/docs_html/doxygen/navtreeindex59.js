@@ -1,5 +1,7 @@
 var NAVTREEINDEX59 =
 {
+"structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[2,0,0,6,12,1],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#ac7995253d4db738ff6283ab41aaf67c8":[2,0,0,6,12,6],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[2,0,0,6,12,3],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,6,12,4],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[2,0,0,6,12,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX59 =
 "structamrex_1_1IsCallable.html":[2,0,0,256],
 "structamrex_1_1IsCallableR.html":[2,0,0,257],
 "structamrex_1_1IsFabArray.html":[2,0,0,258],
-"structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,259],
-"structamrex_1_1IsMultiFabIterator.html":[2,0,0,260],
-"structamrex_1_1IsStoreAtomic.html":[2,0,0,261]
+"structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,259]
 };

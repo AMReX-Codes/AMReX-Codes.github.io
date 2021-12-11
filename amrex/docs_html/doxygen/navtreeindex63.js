@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1Scan_1_1detail_1_1BlockStatus.html":[2,0,0,16,0,0],
+"structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html":[2,0,0,16,0,1],
 "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#a027e4f65499e79da7007b5f9507c4e4a":[2,0,0,16,0,1,6],
 "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#a1dd8da9718af7532585529b16332b092":[2,0,0,16,0,1,5],
 "structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#a2192c0c39126608c6d0d3803dd9e0544":[2,0,0,16,0,1,4],
@@ -171,8 +173,8 @@ var NAVTREEINDEX63 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a8e63fff308a2667a803639c70fce0b3b":[2,0,0,0,2,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aa572c858d18a32a5834232222e0de86c":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ab0b0d21b0436db3368df308ac574a8ec":[2,0,0,0,2,2],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac3aa0501b0844da98bbe89d033795500":[2,0,0,0,2,10],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#afeff1f944e669f66896bdc7b76eccc88":[2,0,0,0,2,9],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aff95bdf7c30770f6021900c9eedaad6b":[2,0,0,0,2,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#aa86d70758c7267b714f7e84b0aa84f6c":[2,0,0,3,15,0],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,3,16],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ad3adafe44d04fd011602994a46bd459e":[2,0,0,3,16,0],
-"structamrex_1_1detail_1_1unwrap.html":[2,0,0,3,17],
-"structamrex_1_1detail_1_1unwrap.html#a79b4bca3c8ca101115685fbcd2aec734":[2,0,0,3,17,0],
-"structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html":[2,0,0,3,18]
+"structamrex_1_1detail_1_1unwrap.html":[2,0,0,3,17]
 };

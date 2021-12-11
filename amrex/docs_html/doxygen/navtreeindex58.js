@@ -1,5 +1,7 @@
 var NAVTREEINDEX58 =
 {
+"structamrex_1_1FabArrayBase_1_1FPinfo.html#ae2df1732b4308e11bd499e945c34c75f":[2,0,0,139,9,11],
+"structamrex_1_1FabArrayBase_1_1FPinfo.html#ae49fab0f0511c1fdf00502b40eecf615":[2,0,0,139,9,12],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#ae69c1f14ad7fca5c0c13a230a1e25b0f":[2,0,0,139,9,9],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#af6fcea43716595c028ab06b5ca6e57c0":[2,0,0,139,9,4],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html":[2,0,0,139,6],
@@ -117,9 +119,9 @@ var NAVTREEINDEX58 =
 "structamrex_1_1FabInfo.html#ab455e0f8529af58aa33685251d0f736a":[2,0,0,144,0],
 "structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec":[2,0,0,144,4],
 "structamrex_1_1FilccCell.html":[2,0,0,156],
-"structamrex_1_1FilccCell.html#aeb45f987c2b3697e49b68ce8aff78e46":[2,0,0,156,2],
-"structamrex_1_1FilccCell.html#aeb45f987c2b3697e49b68ce8aff78e46":[2,0,0,156,0],
 "structamrex_1_1FilccCell.html#aeb45f987c2b3697e49b68ce8aff78e46":[2,0,0,156,1],
+"structamrex_1_1FilccCell.html#aeb45f987c2b3697e49b68ce8aff78e46":[2,0,0,156,0],
+"structamrex_1_1FilccCell.html#aeb45f987c2b3697e49b68ce8aff78e46":[2,0,0,156,2],
 "structamrex_1_1FilfcFace.html":[2,0,0,157],
 "structamrex_1_1FilfcFace.html#a9f660cef46adb5cc1708b3dd59217850":[2,0,0,157,1],
 "structamrex_1_1FilfcFace.html#a9f660cef46adb5cc1708b3dd59217850":[2,0,0,157,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX58 =
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989":[2,0,0,6,12,7],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178":[2,0,0,6,12,9],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[2,0,0,6,12,0],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504":[2,0,0,6,12,5],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[2,0,0,6,12,1],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ac7995253d4db738ff6283ab41aaf67c8":[2,0,0,6,12,6]
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504":[2,0,0,6,12,5]
 };
