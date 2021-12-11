@@ -34,6 +34,8 @@ var AMReX__MultiFabUtil_8H =
     [ "makeFineMask", "AMReX__MultiFabUtil_8H.html#a78142d53611f8627f6d68afd0779ef54", null ],
     [ "makeFineMask", "AMReX__MultiFabUtil_8H.html#a478148eaeebd74ddc7956806c55fa2cb", null ],
     [ "makeFineMask", "AMReX__MultiFabUtil_8H.html#af559f21584872566541db61cbacf7470", null ],
+    [ "NormHelper", "AMReX__MultiFabUtil_8H.html#acb97a3146147b46c55e4aacdbba0dc77", null ],
+    [ "NormHelper", "AMReX__MultiFabUtil_8H.html#ac69a4b4233f10007191d780450271dd2", null ],
     [ "periodicShift", "AMReX__MultiFabUtil_8H.html#a48b0e0bc9bd17bdcba18aa237718737f", null ],
     [ "print_state", "AMReX__MultiFabUtil_8H.html#af9853b376b9431740468fdf9e549553d", null ],
     [ "sum_fine_to_coarse", "AMReX__MultiFabUtil_8H.html#ab67331acff75bf2840f409750b1ada66", null ],

@@ -22255,6 +22255,122 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="197" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="197" bodyend="215"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ac69a4b4233f10007191d780450271dd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>Real</type>
+        <definition>Real amrex::NormHelper</definition>
+        <argsstring>(const MultiFab &amp;x, int xcomp, const MultiFab &amp;y, int ycomp, F &amp;&amp;f, int numcomp, IntVect nghost, bool local)</argsstring>
+        <name>NormHelper</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>xcomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ycomp</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+        </param>
+        <briefdescription>
+<para>Returns part of a norm based on two MultiFabs The MultiFabs MUST have the same underlying <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. The function f is applied elementwise as f(x(i,j,k,n)*y(i,j,k,n)) inside the summation (subject to a valid mask entry pf(mask(i,j,k,n) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="341" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="341" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1acb97a3146147b46c55e4aacdbba0dc77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename MMF</type>
+          </param>
+          <param>
+            <type>typename Pred</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>Real</type>
+        <definition>Real amrex::NormHelper</definition>
+        <argsstring>(const MMF &amp;mask, const MultiFab &amp;x, int xcomp, const MultiFab &amp;y, int ycomp, Pred &amp;&amp;pf, F &amp;&amp;f, int numcomp, IntVect nghost, bool local)</argsstring>
+        <name>NormHelper</name>
+        <param>
+          <type>const MMF &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>xcomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ycomp</declname>
+        </param>
+        <param>
+          <type>Pred &amp;&amp;</type>
+          <declname>pf</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+        </param>
+        <briefdescription>
+<para>Returns part of a norm based on three MultiFabs The MultiFabs MUST have the same underlying <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. The Predicate pf is used to test the mask The function f is applied elementwise as f(x(i,j,k,n)*y(i,j,k,n)) inside the summation (subject to a valid mask entry pf(mask(i,j,k,n) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="401" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="401" bodyend="460"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9904cb709f0cc1096942b2799924eec4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::amrex_avg_nd_to_cc</definition>

@@ -3,7 +3,753 @@
   <compounddef id="namespaceamrex_1_1sundials" kind="namespace" language="C++">
     <compoundname>amrex::sundials</compoundname>
     <innerclass refid="classamrex_1_1sundials_1_1MemoryHelper" prot="public">amrex::sundials::MemoryHelper</innerclass>
+    <innerclass refid="structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr" prot="public">amrex::sundials::N_VectorContent_MultiFab_notptr</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceamrex_1_1sundials_1a607310c321189e2684a48fabdf0e1b14" prot="public" static="no">
+        <type>struct <ref refid="structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr" kindref="compound">N_VectorContent_MultiFab_notptr</ref> *</type>
+        <definition>typedef struct N_VectorContent_MultiFab_notptr* amrex::sundials::N_VectorContent_MultiFab</definition>
+        <argsstring></argsstring>
+        <name>N_VectorContent_MultiFab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" line="44" column="46" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1aee7366769d48970d2c4460b6f96d8504" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>N_Vector</type>
+        <definition>N_Vector amrex::sundials::N_VNewEmpty_MultiFab</definition>
+        <argsstring>(sunindextype length)</argsstring>
+        <name>N_VNewEmpty_MultiFab</name>
+        <param>
+          <type>sunindextype</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="34" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="34" bodyend="108" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="50" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a9c8a94dbf42d193d2d559d128e0e66cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>N_Vector</type>
+        <definition>N_Vector amrex::sundials::N_VNew_MultiFab</definition>
+        <argsstring>(sunindextype length, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, sunindextype nComp, sunindextype nGhost)</argsstring>
+        <name>N_VNew_MultiFab</name>
+        <param>
+          <type>sunindextype</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">amrex::BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">amrex::DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <param>
+          <type>sunindextype</type>
+          <declname>nComp</declname>
+        </param>
+        <param>
+          <type>sunindextype</type>
+          <declname>nGhost</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="114" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="114" bodyend="135" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="51" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1aceec8efc0387451add043de594e2db80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>N_Vector</type>
+        <definition>N_Vector amrex::sundials::N_VMake_MultiFab</definition>
+        <argsstring>(sunindextype length, amrex::MultiFab *v_mf)</argsstring>
+        <name>N_VMake_MultiFab</name>
+        <param>
+          <type>sunindextype</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref> *</type>
+          <declname>v_mf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="141" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="141" bodyend="157" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="56" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a48461856ef0250658c5a2ebf41d98edc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>sunindextype</type>
+        <definition>sunindextype amrex::sundials::N_VGetLength_MultiFab</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>N_VGetLength_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="162" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="162" bodyend="167" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="58" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a83ab40ea0b031a6e4bd372e4eb2ee2f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::sundials::N_VGetOwnMF_MultiFab</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>N_VGetOwnMF_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="172" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="172" bodyend="177" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="59" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ae60dd0ee3c2077eebc0dc19ca19eca74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VSetOwnMF_MultiFab</definition>
+        <argsstring>(N_Vector v, int own_mf_in)</argsstring>
+        <name>N_VSetOwnMF_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>own_mf_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="182" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="182" bodyend="187" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a60ae513faa57f10e9b4aa46cf655b832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>N_Vector</type>
+        <definition>N_Vector amrex::sundials::N_VCloneEmpty_MultiFab</definition>
+        <argsstring>(N_Vector w)</argsstring>
+        <name>N_VCloneEmpty_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="195" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="195" bodyend="271" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="61" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a1ca520b2e907a435625fdb9c78e78d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>N_Vector</type>
+        <definition>N_Vector amrex::sundials::N_VClone_MultiFab</definition>
+        <argsstring>(N_Vector w)</argsstring>
+        <name>N_VClone_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="273" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="273" bodyend="300" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="62" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1abffe63203970e83625b191d35d5b1cd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VDestroy_MultiFab</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>N_VDestroy_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="302" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="302" bodyend="314" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a3a01eaa5b7064ea2a584a244a1579de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VSpace_MultiFab</definition>
+        <argsstring>(N_Vector v, sunindextype *lrw, sunindextype *liw)</argsstring>
+        <name>N_VSpace_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>sunindextype *</type>
+          <declname>lrw</declname>
+        </param>
+        <param>
+          <type>sunindextype *</type>
+          <declname>liw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="316" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="316" bodyend="322" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="64" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6bfd29fc821ae740836f40595e8479b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1_1sundials_1a607310c321189e2684a48fabdf0e1b14" kindref="member">N_VectorContent_MultiFab</ref></type>
+        <definition>N_VectorContent_MultiFab amrex::sundials::N_VGetContent_MultiFab</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>N_VGetContent_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="324" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="324" bodyend="327" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="66" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1acfd06e00bdb48e5a55e6f585199928dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref> *&amp;</type>
+        <definition>MultiFab *&amp; amrex::sundials::getMFptr</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>getMFptr</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="332" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="332" bodyend="335" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="67" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1aee3c17f9cf73b54b6c7a15015904efa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref> *</type>
+        <definition>MultiFab * amrex::sundials::N_VGetVectorPointer_MultiFab</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>N_VGetVectorPointer_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="337" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="337" bodyend="340" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="68" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ac836c3a3e47d698c5e113184aaf3e0dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref></type>
+        <definition>MultiFab amrex::sundials::N_VGetVectorAlias_MultiFab</definition>
+        <argsstring>(N_Vector v)</argsstring>
+        <name>N_VGetVectorAlias_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="346" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="346" bodyend="349" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="69" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a7dbf86dc6e019c767f280831b7acabaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VLinearSum_MultiFab</definition>
+        <argsstring>(amrex::Real a, N_Vector x, amrex::Real b, N_Vector y, N_Vector z)</argsstring>
+        <name>N_VLinearSum_MultiFab</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="351" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="351" bodyend="363" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="72" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a25656fdc3baa82f76e32e6ccd3f97e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VConst_MultiFab</definition>
+        <argsstring>(amrex::Real c, N_Vector z)</argsstring>
+        <name>N_VConst_MultiFab</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="365" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="365" bodyend="370" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="74" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ab1fe429fc9c7083c5712e6c614ebb1fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VProd_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector y, N_Vector z)</argsstring>
+        <name>N_VProd_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="372" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="372" bodyend="384" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="75" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a9cc44df35cea73c4b2b2e39544d523a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VDiv_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector y, N_Vector z)</argsstring>
+        <name>N_VDiv_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="386" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="386" bodyend="398" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="76" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6828b2d4856afe42b3c8ff58f46951c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VScale_MultiFab</definition>
+        <argsstring>(amrex::Real c, N_Vector x, N_Vector z)</argsstring>
+        <name>N_VScale_MultiFab</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="400" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="400" bodyend="411" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="77" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a3adcad5ac518df241183684b9d8eb0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VAbs_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector z)</argsstring>
+        <name>N_VAbs_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="413" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="413" bodyend="434" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="78" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1aba2fa6d2aa9b8cd855d83759e3ed65dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VInv_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector z)</argsstring>
+        <name>N_VInv_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="436" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="436" bodyend="447" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="79" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a63e923f8d464b3ebd97acf0ca3ee309d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VAddConst_MultiFab</definition>
+        <argsstring>(N_Vector x, amrex::Real b, N_Vector z)</argsstring>
+        <name>N_VAddConst_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="449" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="449" bodyend="460" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="80" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a44dbf995b982e15d613de85f44e2d371" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VDotProd_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector y)</argsstring>
+        <name>N_VDotProd_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="462" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="462" bodyend="475" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="81" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6f2b1de2ee6a9a463d5dddf7d8a8b4aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VMaxNorm_MultiFab</definition>
+        <argsstring>(N_Vector x)</argsstring>
+        <name>N_VMaxNorm_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="477" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="477" bodyend="500" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="82" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1ac991138d8a2fb1081eed07c3d8b502e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VWrmsNorm_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector w)</argsstring>
+        <name>N_VWrmsNorm_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="502" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="502" bodyend="508" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="83" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a8b09801267db73e9db73b38a4fa21ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VWrmsNormMask_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector w, N_Vector id)</argsstring>
+        <name>N_VWrmsNormMask_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="510" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="510" bodyend="515" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="84" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a6eb54c25311d23f5de6f482181502046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VMin_MultiFab</definition>
+        <argsstring>(N_Vector x)</argsstring>
+        <name>N_VMin_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="517" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="517" bodyend="539" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="86" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a82afd25966eea065b08bfa369e185331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::NormHelper_NVector_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector w, N_Vector id, int use_id, bool rms)</argsstring>
+        <name>NormHelper_NVector_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>use_id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="541" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="541" bodyend="573" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="70" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1af676ec963a035867b028dbf81e6fb1bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VWL2Norm_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector w)</argsstring>
+        <name>N_VWL2Norm_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="575" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="575" bodyend="580" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="87" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1abed0b53c3ca780e46a31fe986d659ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VL1Norm_MultiFab</definition>
+        <argsstring>(N_Vector x)</argsstring>
+        <name>N_VL1Norm_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="582" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="582" bodyend="601" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="88" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a3da84796fd6b4469437479e1a0d96d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::sundials::N_VCompare_MultiFab</definition>
+        <argsstring>(amrex::Real a, N_Vector x, N_Vector z)</argsstring>
+        <name>N_VCompare_MultiFab</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="603" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="603" bodyend="628" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="89" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1aa8f8163d4f0f443bbe7e99756b2c39d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::sundials::N_VInvTest_MultiFab</definition>
+        <argsstring>(N_Vector x, N_Vector z)</argsstring>
+        <name>N_VInvTest_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="630" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="630" bodyend="663" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="90" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a9ff9c751c491574da834181b250ace54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::sundials::N_VConstrMask_MultiFab</definition>
+        <argsstring>(N_Vector a, N_Vector x, N_Vector m)</argsstring>
+        <name>N_VConstrMask_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="665" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="665" bodyend="708" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="91" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1sundials_1a792949f4dc374c3605bd054721593b60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>amrex::Real</type>
+        <definition>amrex::Real amrex::sundials::N_VMinQuotient_MultiFab</definition>
+        <argsstring>(N_Vector num, N_Vector denom)</argsstring>
+        <name>N_VMinQuotient_MultiFab</name>
+        <param>
+          <type>N_Vector</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>N_Vector</type>
+          <declname>denom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="710" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" bodystart="710" bodyend="751" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="93" declcolumn="13"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1sundials_1a639862e3065829c696b41eef33c4e877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::sundials::Initialize</definition>
@@ -65,6 +811,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_SUNMemory.cpp" line="13" column="18"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.cpp" line="21" column="18"/>
   </compounddef>
 </doxygen>
