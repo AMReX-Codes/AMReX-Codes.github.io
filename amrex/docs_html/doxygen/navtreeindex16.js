@@ -1,11 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"AMReX__ParticleUtil_8H.html#ae1c3a3e9f6d98db25c5fb304fef91d6a":[3,0,0,7,32,21],
-"AMReX__ParticleUtil_8H.html#ae8a815a03dd199d4f0a63a1ea9618ce8":[3,0,0,7,32,18],
-"AMReX__ParticleUtil_8H.html#aece8b1e2716e84a5261e988b9e9b1ef2":[3,0,0,7,32,2],
-"AMReX__ParticleUtil_8H.html#aed116413a6322280140b323ed321ca88":[3,0,0,7,32,16],
-"AMReX__ParticleUtil_8H.html#aede00a5fe66df6418eb44590a33296a2":[3,0,0,7,32,8],
-"AMReX__ParticleUtil_8H.html#aeefdb393afef57732439f230e1b53578":[3,0,0,7,32,1],
 "AMReX__ParticleUtil_8H.html#af026262a284dc45b1a535e1d2c3da3d5":[3,0,0,7,32,11],
 "AMReX__ParticleUtil_8H.html#af1a0333c4222e4b0817845fdef5f20bd":[3,0,0,7,32,19],
 "AMReX__ParticleUtil_8H_source.html":[3,0,0,7,32],
@@ -249,5 +243,11 @@ var NAVTREEINDEX16 =
 "AMReX__SDCquadrature_8F90.html#a857950373cee003a6d5ead3236e70584":[3,0,0,8,0,13],
 "AMReX__SDCquadrature_8F90.html#a874a5cd63196132c18272439ac22d430":[3,0,0,8,0,6],
 "AMReX__SDCquadrature_8F90.html#a8926569834e03ad73326955f04c8f3eb":[3,0,0,8,0,23],
-"AMReX__SDCquadrature_8F90.html#a8e53936d3fd7c9e7c1870a499156cd87":[3,0,0,8,0,14]
+"AMReX__SDCquadrature_8F90.html#a8e53936d3fd7c9e7c1870a499156cd87":[3,0,0,8,0,14],
+"AMReX__SDCquadrature_8F90.html#a95aa940d0fc9d580c3facf460de23d21":[3,0,0,8,0,22],
+"AMReX__SDCquadrature_8F90.html#aa7cccac0d6dc3b28a4dc2a329214a698":[3,0,0,8,0,20],
+"AMReX__SDCquadrature_8F90.html#aac87ed7a643061e124406a48d5ac55c1":[3,0,0,8,0,24],
+"AMReX__SDCquadrature_8F90.html#ab0462ece2c230549e39bb8d8b7cd205c":[3,0,0,8,0,18],
+"AMReX__SDCquadrature_8F90.html#ac65c67a741f829888ad21000351c137b":[3,0,0,8,0,7],
+"AMReX__SDCquadrature_8F90.html#aca3c8a3144793139f180db29ce39153c":[3,0,0,8,0,17]
 };
