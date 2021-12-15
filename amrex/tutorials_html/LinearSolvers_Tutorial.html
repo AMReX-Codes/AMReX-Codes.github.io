@@ -97,6 +97,9 @@ with the rhs and solution data on nodes.</p>
 <p><code class="docutils literal notranslate"><span class="pre">MultiComponent</span></code> demonstrates how to solve using a multi-component operator with nodal data.
 The operator is of the form <span class="math notranslate nohighlight">\(D(\mathbf{\phi})_i = \alpha_{ij}\nabla^2\phi_j\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> is the multi-component solution variable and <span class="math notranslate nohighlight">\(\alpha_{ij}\)</span> is a matrix of coefficients.
 The operator (<code class="docutils literal notranslate"><span class="pre">MCNodalLinOp</span></code>) is implemented using the “reflux-free” method.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NodeTensorLap</span></code> solves the equation <span class="math notranslate nohighlight">\(\nabla \cdot ( \sigma \nabla \phi ) = \text{RHS}\)</span>, where
+<span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\text{RHS}\)</span> are nodal MultiFabs and <span class="math notranslate nohighlight">\(\sigma\)</span> is a tensor constant. It is
+assumed that the tensor is symmetric with rank equal to <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>.</p>
 </section>
 
 
