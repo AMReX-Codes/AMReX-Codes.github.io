@@ -91,7 +91,13 @@
              
   <section id="ml-pytorch">
 <h1>ML/PYTORCH<a class="headerlink" href="#ml-pytorch" title="Permalink to this headline"></a></h1>
-<p>This code demonstrates usage of a pre-trained PyTorch model within the AMReX framework. PyTorch is a commonly used machine learning package with a C++ API library called LibTorch. Located in the directory <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/ML/PYTORCH</span></code>, this example uses a machine learning model to solve a radioactive beta decay problem. It begins by initializing data on a MultiFab, then that data is copied into a PyTorch tensor, then we call the pre-trained model to evolve the data, and finally we load the result back into a MultiFab. The program runs on either only the CPU or both the CPU and GPU.</p>
+<p>The overall goal of machine learning models in this context is to accelerate computationally expensive kernels/routines as part of an AMReX simulation.
+This tutorial demonstrates how to interface a pre-trained PyTorch machine learning model to an AMReX simulation by querying inputs from and supplying outputs to an AMReX MultiFab.
+Here we use a 1-input, 2-output model to illustrate the interface between the PyTorch model and a MultiFab.</p>
+<p>PyTorch is a commonly used machine learning package with a C++ API library called LibTorch.
+Located in the directory <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/ML/PYTORCH</span></code>, this example uses a machine learning model to solve a radioactive beta decay problem.
+To begin, we initialize data on a MultiFab, then copy the data into a PyTorch tensor, then we call the pre-trained model to compute the outputs, and finally we load the result back into a MultiFab.
+The program runs on either only the CPU or both the CPU and GPU.</p>
 <section id="running-an-amrex-application-with-a-pytorch-model">
 <h2><strong>Running an AMReX application with a PyTorch model</strong><a class="headerlink" href="#running-an-amrex-application-with-a-pytorch-model" title="Permalink to this headline"></a></h2>
 <p>Below is a step-by-step guide to successfully run an AMReX program that uses a PyTorch model. It is based on <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/README.md</span></code> and will require the model to have been saved as a TorchScript. In this example the TorchScript file is <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>. For more information on TorchScript, please see their <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">intro tutorial</a>.</p>
