@@ -100,10 +100,16 @@ To begin, we initialize data on a MultiFab, then copy the data into a PyTorch te
 The program runs on either only the CPU or both the CPU and GPU.</p>
 <section id="running-an-amrex-application-with-a-pytorch-model">
 <h2><strong>Running an AMReX application with a PyTorch model</strong><a class="headerlink" href="#running-an-amrex-application-with-a-pytorch-model" title="Permalink to this headline"></a></h2>
-<p>Below is a step-by-step guide to successfully run an AMReX program that uses a PyTorch model. It is based on <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/README.md</span></code> and will require the model to have been saved as a TorchScript. In this example the TorchScript file is <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>. For more information on TorchScript, please see their <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">intro tutorial</a>.</p>
+<p>Below is a step-by-step guide to successfully run an AMReX program that uses a PyTorch model. It will require the model to have been saved as a TorchScript. In this example the TorchScript file is <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>. For more information on TorchScript, please see their <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">intro tutorial</a>.</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p>Before compiling, either a CPU or GPU version of LibTorch (PyTorch C++ library) must be downloaded into <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/</span></code>. An example of downloading the CUDA 11.1 version of <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> and renaming it to <code class="docutils literal notranslate"><span class="pre">libtorch_cuda</span></code> is shown here:</p>
+<li><p>Before compiling, either a CPU or CUDA version of LibTorch (PyTorch C++ library) must be downloaded into <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/</span></code>. To download the CPU-only version of <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> and rename it to <code class="docutils literal notranslate"><span class="pre">libtorch_cpu</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.9.0%2Bcpu.zip</span>
+<span class="go">unzip libtorch-cxx11-abi-shared-with-deps-1.9.0+cpu.zip</span>
+<span class="go">mv libtorch libtorch_cpu</span>
+</pre></div>
+</div>
+<p>Similarly, the CUDA 11.1 version of <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> can be downloaded and renamed to <code class="docutils literal notranslate"><span class="pre">libtorch_cuda</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget https://download.pytorch.org/libtorch/cu111/libtorch-cxx11-abi-shared-with-deps-1.9.0%2Bcu111.zip</span>
 <span class="go">unzip libtorch-cxx11-abi-shared-with-deps-1.9.0+cu111.zip</span>
 <span class="go">mv libtorch libtorch_cuda</span>
