@@ -1,5 +1,16 @@
 var NAVTREEINDEX38 =
 {
+"classamrex_1_1Gpu_1_1Device.html#ae53661945fe0e36f109401055a3d87cf":[2,0,0,6,11,10],
+"classamrex_1_1Gpu_1_1Device.html#ae88f180144c332b3c64ce46584484b10":[2,0,0,6,11,18],
+"classamrex_1_1Gpu_1_1Device.html#aea19aa89a556ee88fe67f6067c0abacd":[2,0,0,6,11,11],
+"classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e":[2,0,0,6,11,44],
+"classamrex_1_1Gpu_1_1Device.html#aff182b0690355fc54cde1842964fc7db":[2,0,0,6,11,5],
+"classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4":[2,0,0,6,11,39],
+"classamrex_1_1Gpu_1_1Elixir.html":[2,0,0,6,15],
+"classamrex_1_1Gpu_1_1Elixir.html#a310bb8d80cc54cfd15e1d7dfca67dd66":[2,0,0,6,15,5],
+"classamrex_1_1Gpu_1_1Elixir.html#a62d8be14e66b536bcadc7689658054db":[2,0,0,6,15,1],
+"classamrex_1_1Gpu_1_1Elixir.html#a6b4d08e1329afbce2ced6dd65acd9bec":[2,0,0,6,15,6],
+"classamrex_1_1Gpu_1_1Elixir.html#a73116015261623afc75de5846c536d60":[2,0,0,6,15,3],
 "classamrex_1_1Gpu_1_1Elixir.html#a7ec3927c67b784fb0c2ef24751468766":[2,0,0,6,15,8],
 "classamrex_1_1Gpu_1_1Elixir.html#a804749719bfa9c68aedcdd7ab6b8978d":[2,0,0,6,15,0],
 "classamrex_1_1Gpu_1_1Elixir.html#a87affdf01557cac536e54b52e606783d":[2,0,0,6,15,9],
@@ -238,16 +249,5 @@ var NAVTREEINDEX38 =
 "classamrex_1_1IParser.html#a83c2c6f433576ffb3e36dc221fbb230d":[2,0,0,210,7],
 "classamrex_1_1IParser.html#a9c7208c68ce87b4647f80a2354780d74":[2,0,0,210,6],
 "classamrex_1_1IParser.html#aa09937d7246ba1774e216bf9c1367332":[2,0,0,210,15],
-"classamrex_1_1IParser.html#ac4ce16b2a7b27e417a149740858b3482":[2,0,0,210,2],
-"classamrex_1_1IParser.html#ac7dbdbff476753fbfa9fdb49e27fb9f6":[2,0,0,210,9],
-"classamrex_1_1IParser.html#aec5f0bb22e4084d50b12adbda2cc56ff":[2,0,0,210,1],
-"classamrex_1_1InSituBridge.html":[2,0,0,198],
-"classamrex_1_1InSituBridge.html#a093ff6109c501d8b6fd3fa102e0710d4":[2,0,0,198,8],
-"classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2":[2,0,0,198,11],
-"classamrex_1_1InSituBridge.html#a1f8a76f22bde94cbfc3c495aa50877e7":[2,0,0,198,14],
-"classamrex_1_1InSituBridge.html#a3cf163ea993bb9ab3a642bb0b16e9d90":[2,0,0,198,15],
-"classamrex_1_1InSituBridge.html#a479b95e65f876998b375cdbaba5ed658":[2,0,0,198,13],
-"classamrex_1_1InSituBridge.html#a55fdcf41da1a393096135db7674b777e":[2,0,0,198,2],
-"classamrex_1_1InSituBridge.html#a6c866fc3219625267ae1e50ba7bec240":[2,0,0,198,0],
-"classamrex_1_1InSituBridge.html#a826dc660a178377d78530da110fb8eed":[2,0,0,198,1]
+"classamrex_1_1IParser.html#ac4ce16b2a7b27e417a149740858b3482":[2,0,0,210,2]
 };
