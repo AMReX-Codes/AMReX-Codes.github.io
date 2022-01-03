@@ -219,6 +219,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_GpuUtility.H", "AMReX__GpuUtility_8H.html", "AMReX__GpuUtility_8H" ],
     [ "AMReX_IArrayBox.cpp", "AMReX__IArrayBox_8cpp.html", null ],
     [ "AMReX_IArrayBox.H", "AMReX__IArrayBox_8H.html", [
+      [ "IFABio", "classamrex_1_1IFABio.html", "classamrex_1_1IFABio" ],
       [ "IArrayBox", "classamrex_1_1IArrayBox.html", "classamrex_1_1IArrayBox" ]
     ] ],
     [ "AMReX_iMultiFab.cpp", "AMReX__iMultiFab_8cpp.html", "AMReX__iMultiFab_8cpp" ],
@@ -351,5 +352,8 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_VectorIO.cpp", "AMReX__VectorIO_8cpp.html", null ],
     [ "AMReX_VectorIO.H", "AMReX__VectorIO_8H.html", "AMReX__VectorIO_8H" ],
     [ "AMReX_VisMF.cpp", "AMReX__VisMF_8cpp.html", "AMReX__VisMF_8cpp" ],
-    [ "AMReX_VisMF.H", "AMReX__VisMF_8H.html", "AMReX__VisMF_8H" ]
+    [ "AMReX_VisMF.H", "AMReX__VisMF_8H.html", "AMReX__VisMF_8H" ],
+    [ "AMReX_VisMFBuffer.H", "AMReX__VisMFBuffer_8H.html", [
+      [ "VisMFBuffer", "classamrex_1_1VisMFBuffer.html", "classamrex_1_1VisMFBuffer" ]
+    ] ]
 ];

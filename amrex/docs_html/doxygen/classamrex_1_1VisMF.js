@@ -4,9 +4,6 @@ var classamrex_1_1VisMF =
     [ "FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html", "structamrex_1_1VisMF_1_1FabReadLink" ],
     [ "Header", "structamrex_1_1VisMF_1_1Header.html", "structamrex_1_1VisMF_1_1Header" ],
     [ "PersistentIFStream", "structamrex_1_1VisMF_1_1PersistentIFStream.html", "structamrex_1_1VisMF_1_1PersistentIFStream" ],
-    [ "IO_Buffer", "classamrex_1_1VisMF.html#a0027a67a36ec8d1b6eca3e2377c9c050", null ],
-    [ "Setbuf_Char_Type", "classamrex_1_1VisMF.html#ad0a5e71e7eafe2b4f3f23ea91a56f4b0", null ],
-    [ "IO_Buffer_Size", "classamrex_1_1VisMF.html#a8d42e2d701538071d3522ce0272e5795ac67ac04832d2bbe370aa12c6ca513e85", null ],
     [ "How", "classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156", [
       [ "OneFilePerCPU", "classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156a93fcd009ee92168a4e419161fc19635b", null ],
       [ "NFiles", "classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1", null ]
@@ -35,7 +32,6 @@ var classamrex_1_1VisMF =
     [ "GetFab", "classamrex_1_1VisMF.html#a6849db338a0e6174a0b39b5e483b74b9", null ],
     [ "GetGroupSets", "classamrex_1_1VisMF.html#a8645f0e85a9ccda7b565b6fbabb5bac3", null ],
     [ "GetHeaderVersion", "classamrex_1_1VisMF.html#a5be9ce5dc3ed0083f7959e63528de583", null ],
-    [ "GetIOBufferSize", "classamrex_1_1VisMF.html#ab282227d4bfb63e964c0e404f5175af5", null ],
     [ "GetMFFileInStreams", "classamrex_1_1VisMF.html#a738d789073dd1072ac3a0c640429574c", null ],
     [ "GetNOutFiles", "classamrex_1_1VisMF.html#a73b516dcb8729a411f75eaa5d7fc1b54", null ],
     [ "GetSetBuf", "classamrex_1_1VisMF.html#a260347a951d2b4a4669cb4dc79956450", null ],
@@ -66,7 +62,6 @@ var classamrex_1_1VisMF =
     [ "SetCheckFilePositions", "classamrex_1_1VisMF.html#a5fa42d848c0d0dc397ddf05fd16c5e16", null ],
     [ "SetGroupSets", "classamrex_1_1VisMF.html#a0e5c0555decdea8a4d09c7eabff1a07d", null ],
     [ "SetHeaderVersion", "classamrex_1_1VisMF.html#a2ce0e613077c3ec9c4c687628154c5ce", null ],
-    [ "SetIOBufferSize", "classamrex_1_1VisMF.html#ae58b8cefb7f917ce5a819a08d2386d70", null ],
     [ "SetMFFileInStreams", "classamrex_1_1VisMF.html#abda03b733e4f5e0b9f005f764f1a5b65", null ],
     [ "SetNOutFiles", "classamrex_1_1VisMF.html#aeea445c6cb42961bb091d40ee7545607", null ],
     [ "SetSetBuf", "classamrex_1_1VisMF.html#af73ff9fbd9a91c471bfbe750de045fb9", null ],
@@ -86,7 +81,6 @@ var classamrex_1_1VisMF =
     [ "checkFilePositions", "classamrex_1_1VisMF.html#a174cc2335d85746e4c0c05c71c0a816b", null ],
     [ "currentVersion", "classamrex_1_1VisMF.html#a7f4058d4117af92e70d889263657e9f8", null ],
     [ "groupSets", "classamrex_1_1VisMF.html#a51fdeeea196eac049978076bf6671720", null ],
-    [ "ioBufferSize", "classamrex_1_1VisMF.html#a1f60977c11c2c87df32b47debd813b9e", null ],
     [ "m_fafabname", "classamrex_1_1VisMF.html#a3e29beee8db471f8b5cca2c5ab03e1c8", null ],
     [ "m_hdr", "classamrex_1_1VisMF.html#a8b04406fcfdbec77eba187d3ceb9b2dc", null ],
     [ "m_pa", "classamrex_1_1VisMF.html#a6e7c0f5fc1401ba1497916e015b8591c", null ],

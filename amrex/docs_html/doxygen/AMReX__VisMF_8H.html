@@ -104,18 +104,22 @@ $(document).ready(function(){initNavTree('AMReX__VisMF_8H.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__Extension_8H_source.html">AMReX_Extension.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__REAL_8H_source.html">AMReX_REAL.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__AsyncOut_8H_source.html">AMReX_AsyncOut.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__BLProfiler_8H_source.html">AMReX_BLProfiler.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__FabArray_8H_source.html">AMReX_FabArray.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__FArrayBox_8H_source.html">AMReX_FArrayBox.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__FabConv_8H_source.html">AMReX_FabConv.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__AsyncOut_8H_source.html">AMReX_AsyncOut.H</a>&gt;</code><br />
-<code>#include &lt;cstdint&gt;</code><br />
-<code>#include &lt;iosfwd&gt;</code><br />
-<code>#include &lt;queue&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__NFiles_8H_source.html">AMReX_NFiles.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__ParallelDescriptor_8H_source.html">AMReX_ParallelDescriptor.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__VisMFBuffer_8H_source.html">AMReX_VisMFBuffer.H</a>&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;thread&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="AMReX__VisMF_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -141,6 +145,8 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamrex_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html">amrex::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -162,6 +168,17 @@ Functions</h2></td></tr>
 <tr class="memitem:abd04f69e01ce3c15f6788670823386e5"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#abd04f69e01ce3c15f6788670823386e5">amrex::operator&gt;&gt;</a> (std::istream &amp;is, VisMF::Header &amp;hd)</td></tr>
 <tr class="memdesc:abd04f69e01ce3c15f6788670823386e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <a class="el" href="structamrex_1_1VisMF_1_1Header.html" title="An on-disk FabArray&lt;FArrayBox&gt; contains this info in a header file.">VisMF::Header</a> from an istream.  <a href="namespaceamrex.html#abd04f69e01ce3c15f6788670823386e5">More...</a><br /></td></tr>
 <tr class="separator:abd04f69e01ce3c15f6788670823386e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5838751a7a525b60158ebdae7e8919f"><td class="memTemplParams" colspan="2">template&lt;typename FAB &gt; </td></tr>
+<tr class="memitem:aa5838751a7a525b60158ebdae7e8919f"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same&lt; FAB, IArrayBox &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa5838751a7a525b60158ebdae7e8919f">amrex::Write</a> (const FabArray&lt; FAB &gt; &amp;fa, const std::string &amp;name)</td></tr>
+<tr class="memdesc:aa5838751a7a525b60158ebdae7e8919f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write iMultiFab/FabArray&lt;IArrayBox&gt;  <a href="namespaceamrex.html#aa5838751a7a525b60158ebdae7e8919f">More...</a><br /></td></tr>
+<tr class="separator:aa5838751a7a525b60158ebdae7e8919f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3870bf45fd14f87c3674a996cae2752"><td class="memTemplParams" colspan="2">template&lt;typename FAB &gt; </td></tr>
+<tr class="memitem:aa3870bf45fd14f87c3674a996cae2752"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">amrex::detail::read_fab</a> (FAB &amp;<a class="el" href="AMReX__MLCellLinOp_8cpp.html#a0555045efe3506ffa446042caacaccc0">fab</a>, VisMF::FabOnDisk const &amp;fod, std::string const &amp;name)</td></tr>
+<tr class="separator:aa3870bf45fd14f87c3674a996cae2752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7c4906fd7d4c6640ae4954b1ed33a12"><td class="memTemplParams" colspan="2">template&lt;typename FAB &gt; </td></tr>
+<tr class="memitem:ad7c4906fd7d4c6640ae4954b1ed33a12"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same&lt; FAB, IArrayBox &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad7c4906fd7d4c6640ae4954b1ed33a12">amrex::Read</a> (FabArray&lt; FAB &gt; &amp;fa, const std::string &amp;name)</td></tr>
+<tr class="memdesc:ad7c4906fd7d4c6640ae4954b1ed33a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read iMultiFab/FabArray&lt;IArrayBox&gt;  <a href="namespaceamrex.html#ad7c4906fd7d4c6640ae4954b1ed33a12">More...</a><br /></td></tr>
+<tr class="separator:ad7c4906fd7d4c6640ae4954b1ed33a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

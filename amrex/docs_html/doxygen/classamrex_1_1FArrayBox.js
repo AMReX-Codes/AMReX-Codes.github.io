@@ -25,6 +25,8 @@ var classamrex_1_1FArrayBox =
     [ "Finalize", "classamrex_1_1FArrayBox.html#a0e43c0beef959593d4253805a22b6abc", null ],
     [ "get_do_initval", "classamrex_1_1FArrayBox.html#af073981013bb7c213dd103b9935f9809", null ],
     [ "get_initval", "classamrex_1_1FArrayBox.html#aab5bd155e6cda0d5f6b61d1820ae5a8f", null ],
+    [ "getClassName", "classamrex_1_1FArrayBox.html#a2d03e4cd237ad307255e8959098eef66", null ],
+    [ "getDataDescriptor", "classamrex_1_1FArrayBox.html#aa4e648cc663a2a1cdf7aa465caf19579", null ],
     [ "getFABio", "classamrex_1_1FArrayBox.html#a67fb916342e7c929641dbde731b8aa1b", null ],
     [ "getFormat", "classamrex_1_1FArrayBox.html#aba9fe48668a79af0c5805d77472c467d", null ],
     [ "getOrdering", "classamrex_1_1FArrayBox.html#aaa904e14fc1335783b62f47ad001348e", null ],

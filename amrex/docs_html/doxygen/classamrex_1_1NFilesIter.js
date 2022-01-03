@@ -44,7 +44,7 @@ var classamrex_1_1NFilesIter =
     [ "fullFileName", "classamrex_1_1NFilesIter.html#a153902641555fc709b3befb6a4c6e881", null ],
     [ "groupSets", "classamrex_1_1NFilesIter.html#ae979bf2ecefe688126ee3f348ea609ce", null ],
     [ "indexUndefined", "classamrex_1_1NFilesIter.html#abde8301fcb9fb91f30cb12abc376bbc1", null ],
-    [ "io_buffer", "classamrex_1_1NFilesIter.html#ac9b6223bf489ebe24b22ae01e1c16652", null ],
+    [ "io_buffer", "classamrex_1_1NFilesIter.html#a72265d22f478a8f599486c0dad93f7d7", null ],
     [ "isReading", "classamrex_1_1NFilesIter.html#afcf233d4914d8cb31a987d6d3283ada4", null ],
     [ "minDigits", "classamrex_1_1NFilesIter.html#a0a8c15566295f7f51ea956a8abed24ed", null ],
     [ "myProc", "classamrex_1_1NFilesIter.html#a0ce6d467be8a3cc0a59bdf0a4a84c18a", null ],

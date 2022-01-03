@@ -13,10 +13,16 @@ var classamrex_1_1IArrayBox =
     [ "IArrayBox", "classamrex_1_1IArrayBox.html#aeba2de0a08ff8906f30a58a9cf04270c", null ],
     [ "IArrayBox", "classamrex_1_1IArrayBox.html#a2d392519e9ba2d0c847e4d0005edb1e3", null ],
     [ "Finalize", "classamrex_1_1IArrayBox.html#a9fe8b1d3b2da351d3701dd7c44ca1139", null ],
+    [ "getClassName", "classamrex_1_1IArrayBox.html#a6f7c8097795d9d1c63359cba22b9e798", null ],
+    [ "getDataDescriptor", "classamrex_1_1IArrayBox.html#a3868fb3093c1460b818c0a41c9b20f4a", null ],
+    [ "getFABio", "classamrex_1_1IArrayBox.html#aceb0eff246538d984578232e27f82045", null ],
     [ "Initialize", "classamrex_1_1IArrayBox.html#aff085ec8097788fc08d663f81062154e", null ],
     [ "operator=", "classamrex_1_1IArrayBox.html#a1f15c661d9fa23250901595a7e7e2179", null ],
     [ "operator=", "classamrex_1_1IArrayBox.html#a684c32bf8f70f624272652284da549c4", null ],
     [ "operator=", "classamrex_1_1IArrayBox.html#a1fbfd1676ed945234f965e4c44a8823c", null ],
+    [ "readFrom", "classamrex_1_1IArrayBox.html#a3a19e0c558360ae380fba44e0aec9086", null ],
     [ "resize", "classamrex_1_1IArrayBox.html#aa3b1edf0b241a6c722dea0ceced6b102", null ],
-    [ "do_initval", "classamrex_1_1IArrayBox.html#a775df7bf092a1173c172bd7ec7dd3f37", null ]
+    [ "IFABio", "classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd", null ],
+    [ "do_initval", "classamrex_1_1IArrayBox.html#a775df7bf092a1173c172bd7ec7dd3f37", null ],
+    [ "ifabio", "classamrex_1_1IArrayBox.html#aebc54540f561b7e5cdb0a92a14ead5ba", null ]
 ];
