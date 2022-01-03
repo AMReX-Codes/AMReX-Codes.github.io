@@ -134,7 +134,8 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_FilFC_3D_C.H", "AMReX__FilFC__3D__C_8H.html", [
       [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ]
     ] ],
-    [ "AMReX_FilFC_C.H", "AMReX__FilFC__C_8H.html", null ],
+    [ "AMReX_FilFC_C.cpp", "AMReX__FilFC__C_8cpp.html", "AMReX__FilFC__C_8cpp" ],
+    [ "AMReX_FilFC_C.H", "AMReX__FilFC__C_8H.html", "AMReX__FilFC__C_8H" ],
     [ "AMReX_FilND_C.cpp", "AMReX__FilND__C_8cpp.html", "AMReX__FilND__C_8cpp" ],
     [ "AMReX_FilND_C.H", "AMReX__FilND__C_8H.html", "AMReX__FilND__C_8H" ],
     [ "AMReX_ForkJoin.cpp", "AMReX__ForkJoin_8cpp.html", null ],
