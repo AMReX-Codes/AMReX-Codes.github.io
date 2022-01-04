@@ -1,11 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"structamrex_1_1InSituUtils_1_1assignOp.html":[2,0,0,8,1],
-"structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[2,0,0,8,1,0],
-"structamrex_1_1InSituUtils_1_1orOp.html":[2,0,0,8,4],
-"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[2,0,0,8,4,0],
-"structamrex_1_1IntegratorOps.html":[2,0,0,202],
-"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html":[2,0,0,203],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#a47993e638b098a95bcfdfaca47058eb0":[2,0,0,203,1],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#ad0a20ed2967f5654590f09308b379be2":[2,0,0,203,2],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#ad2577132a90ec5ee95abeac9bca03bcd":[2,0,0,203,0],
@@ -249,5 +243,11 @@ var NAVTREEINDEX60 =
 "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html#a6ea96cd111bb2309d963623079b2c870":[2,0,0,10,11,0],
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html":[2,0,0,10,12],
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a2b43db01447bc941d865e495da9c568f":[2,0,0,10,12,3],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b":[2,0,0,10,12,6]
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a3a8fe25b0375f175a86024aef70cd49b":[2,0,0,10,12,6],
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a57d71866cb674a85f1cc645bfdc0bd06":[2,0,0,10,12,4],
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a73c39a5e51dab2870165da88688306d7":[2,0,0,10,12,2],
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a874f4d4d95984b6d53a10e76a5a7d27a":[2,0,0,10,12,5],
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a952e8acf8b0d5176442546ca16c789ee":[2,0,0,10,12,1],
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#af8970386ed97a77fdb26348c6ae02871":[2,0,0,10,12,0],
+"structamrex_1_1NonLocalBC_1_1NoLocalCopy.html":[2,0,0,10,13]
 };
