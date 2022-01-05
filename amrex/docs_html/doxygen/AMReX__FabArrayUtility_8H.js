@@ -2,8 +2,6 @@ var AMReX__FabArrayUtility_8H =
 [
     [ "Abs", "AMReX__FabArrayUtility_8H.html#a76eee97924f5b2d883d161eb976b2cad", null ],
     [ "Abs", "AMReX__FabArrayUtility_8H.html#a3f0f44b09d21b49d00d3d1b12e9e2489", null ],
-    [ "Add", "AMReX__FabArrayUtility_8H.html#ae53cc004fbab26533ec33294445a4d5c", null ],
-    [ "Add", "AMReX__FabArrayUtility_8H.html#ab72e53672887ede3d7ddc5f65002700e", null ],
     [ "Divide", "AMReX__FabArrayUtility_8H.html#a98b5b165f2a8926b40da786a678ed7af", null ],
     [ "Divide", "AMReX__FabArrayUtility_8H.html#aa9f3bb9afb6e1fdfc272654ee6923492", null ],
     [ "dtoh_memcpy", "AMReX__FabArrayUtility_8H.html#a8531953b8fba66482d81cad6c5dc3e73", null ],
