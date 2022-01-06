@@ -1,5 +1,8 @@
 var NAVTREEINDEX59 =
 {
+"structamrex_1_1Gpu_1_1AtomicMin.html#a57fa34f46bd220567f9aa55376e8dd01":[2,0,0,6,7,0],
+"structamrex_1_1Gpu_1_1ComponentBox.html":[2,0,0,6,9],
+"structamrex_1_1Gpu_1_1ComponentBox.html#a7f54503bdcb3580672d1f0adc860b3ac":[2,0,0,6,9,0],
 "structamrex_1_1Gpu_1_1ComponentBox.html#a99986b3406a40b454717360c972a5725":[2,0,0,6,9,1],
 "structamrex_1_1Gpu_1_1ComponentBox.html#ab9685b37a78a8a607d5cd932fedf4a30":[2,0,0,6,9,2],
 "structamrex_1_1Gpu_1_1Deleter.html":[2,0,0,6,10],
@@ -246,8 +249,5 @@ var NAVTREEINDEX59 =
 "structamrex_1_1InSituUtils_1_1amrex__tt.html":[2,0,0,8,0],
 "structamrex_1_1InSituUtils_1_1assignOp.html":[2,0,0,8,1],
 "structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[2,0,0,8,1,0],
-"structamrex_1_1InSituUtils_1_1orOp.html":[2,0,0,8,4],
-"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[2,0,0,8,4,0],
-"structamrex_1_1IntegratorOps.html":[2,0,0,202],
-"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html":[2,0,0,203]
+"structamrex_1_1InSituUtils_1_1orOp.html":[2,0,0,8,4]
 };

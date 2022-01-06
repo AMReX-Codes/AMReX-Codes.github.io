@@ -36,7 +36,7 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
     [ "AMReX_Interp_1D_C.H", "AMReX__Interp__1D__C_8H.html", "AMReX__Interp__1D__C_8H" ],
     [ "AMReX_Interp_2D_C.H", "AMReX__Interp__2D__C_8H.html", "AMReX__Interp__2D__C_8H" ],
     [ "AMReX_Interp_3D_C.H", "AMReX__Interp__3D__C_8H.html", "AMReX__Interp__3D__C_8H" ],
-    [ "AMReX_Interp_C.H", "AMReX__Interp__C_8H.html", null ],
+    [ "AMReX_Interp_C.H", "AMReX__Interp__C_8H.html", "AMReX__Interp__C_8H" ],
     [ "AMReX_InterpBase.cpp", "AMReX__InterpBase_8cpp.html", null ],
     [ "AMReX_InterpBase.H", "AMReX__InterpBase_8H.html", [
       [ "InterpolaterBoxCoarsener", "classamrex_1_1InterpolaterBoxCoarsener.html", "classamrex_1_1InterpolaterBoxCoarsener" ],
