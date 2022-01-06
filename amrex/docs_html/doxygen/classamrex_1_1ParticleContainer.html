@@ -223,9 +223,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4ca25205b38289b99635bca7322ec408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2363a1d5e37bd0c82e95173e378534f"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ae2363a1d5e37bd0c82e95173e378534f">IncrementWithTotal</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> level, bool local=false)</td></tr>
 <tr class="separator:ae2363a1d5e37bd0c82e95173e378534f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea99ce62b897124161c455fb9c6e9e99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99">Redistribute</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0)</td></tr>
-<tr class="memdesc:aea99ce62b897124161c455fb9c6e9e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redistribute puts all the particles back in the right places (for some value of right)  <a href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99">More...</a><br /></td></tr>
-<tr class="separator:aea99ce62b897124161c455fb9c6e9e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac966982633d558c1421d83b5b64e07db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db">Redistribute</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0, bool remove_negative=true)</td></tr>
+<tr class="memdesc:ac966982633d558c1421d83b5b64e07db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redistribute puts all the particles back in the right places (for some value of right)  <a href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db">More...</a><br /></td></tr>
+<tr class="separator:ac966982633d558c1421d83b5b64e07db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7af39cfe3a9d135aa624798a31762da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a7af39cfe3a9d135aa624798a31762da7">SortParticlesByCell</a> ()</td></tr>
 <tr class="memdesc:a7af39cfe3a9d135aa624798a31762da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the particles on each tile by cell, using Fortran ordering.  <a href="classamrex_1_1ParticleContainer.html#a7af39cfe3a9d135aa624798a31762da7">More...</a><br /></td></tr>
 <tr class="separator:a7af39cfe3a9d135aa624798a31762da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,7 +277,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae3e43a24a2d123987dff0e247386eca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa439adf0d7c6d4d2b0ab1e69b3f953f2"><td class="memTemplParams" colspan="2">template&lt;class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:aa439adf0d7c6d4d2b0ab1e69b3f953f2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#aa439adf0d7c6d4d2b0ab1e69b3f953f2">copyParticles</a> (const PCType &amp;other, bool local=false)</td></tr>
-<tr class="memdesc:aa439adf0d7c6d4d2b0ab1e69b3f953f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#aa439adf0d7c6d4d2b0ab1e69b3f953f2">More...</a><br /></td></tr>
+<tr class="memdesc:aa439adf0d7c6d4d2b0ab1e69b3f953f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#aa439adf0d7c6d4d2b0ab1e69b3f953f2">More...</a><br /></td></tr>
 <tr class="separator:aa439adf0d7c6d4d2b0ab1e69b3f953f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a0822c8e9ab7e6e1c81fd57945b2e1"><td class="memTemplParams" colspan="2">template&lt;class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a15a0822c8e9ab7e6e1c81fd57945b2e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a15a0822c8e9ab7e6e1c81fd57945b2e1">addParticles</a> (const PCType &amp;other, bool local=false)</td></tr>
@@ -285,7 +285,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a15a0822c8e9ab7e6e1c81fd57945b2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </td></tr>
 <tr class="memitem:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0c78636f51794b4a1278b7ec2fb228d4">copyParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local=false)</td></tr>
-<tr class="memdesc:a0c78636f51794b4a1278b7ec2fb228d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#a0c78636f51794b4a1278b7ec2fb228d4">More...</a><br /></td></tr>
+<tr class="memdesc:a0c78636f51794b4a1278b7ec2fb228d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#a0c78636f51794b4a1278b7ec2fb228d4">More...</a><br /></td></tr>
 <tr class="separator:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a690524574f10b59f9171c7c71f9f0896"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </td></tr>
 <tr class="memitem:a690524574f10b59f9171c7c71f9f0896"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a690524574f10b59f9171c7c71f9f0896">addParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local=false)</td></tr>
@@ -425,10 +425,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a37a5b5b9403a813c8a62dae4dc47ed7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ad5cf3e3f03e384ff513c2637416266"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a8ad5cf3e3f03e384ff513c2637416266">GetUseUnlink</a> () const</td></tr>
 <tr class="separator:a8ad5cf3e3f03e384ff513c2637416266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a608866ea3932dc93e6d1d0e629f0bf81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a608866ea3932dc93e6d1d0e629f0bf81">RedistributeCPU</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0)</td></tr>
-<tr class="separator:a608866ea3932dc93e6d1d0e629f0bf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a440139963a1346242883b0c779b6debc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a440139963a1346242883b0c779b6debc">RedistributeGPU</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0)</td></tr>
-<tr class="separator:a440139963a1346242883b0c779b6debc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41747ca45a65246f359f816a356bcef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ae41747ca45a65246f359f816a356bcef">RedistributeCPU</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0, bool remove_negative=true)</td></tr>
+<tr class="separator:ae41747ca45a65246f359f816a356bcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e703dcee10b09d0bcee9b7b9ca783dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a8e703dcee10b09d0bcee9b7b9ca783dd">RedistributeGPU</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0, bool remove_negative=true)</td></tr>
+<tr class="separator:a8e703dcee10b09d0bcee9b7b9ca783dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a963f1148018a102d01095f71d4a0e65b"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a963f1148018a102d01095f71d4a0e65b">superParticleSize</a> () const</td></tr>
 <tr class="separator:a963f1148018a102d01095f71d4a0e65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0065dfdfbad7e4b0c690b5c9156ce6c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, int &gt;::type  = 0&gt; </td></tr>
@@ -1908,7 +1908,7 @@ template&lt;class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &
       </table>
 </div><div class="memdoc">
 
-<p>Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles. </p>
+<p>Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the other pc to copy from </td></tr>
@@ -1993,7 +1993,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
       </table>
 </div><div class="memdoc">
 
-<p>Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles. </p>
+<p>Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles. </p>
 <p>This version conditionally copies based on a predicate function applied to each particle.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -4217,8 +4217,8 @@ template&lt;class RTYPE &gt; </div>
 
 </div>
 </div>
-<a id="aea99ce62b897124161c455fb9c6e9e99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea99ce62b897124161c455fb9c6e9e99">&#9670;&nbsp;</a></span>Redistribute()</h2>
+<a id="ac966982633d558c1421d83b5b64e07db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac966982633d558c1421d83b5b64e07db">&#9670;&nbsp;</a></span>Redistribute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4247,7 +4247,13 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>local</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>local</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>remove_negative</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -4261,21 +4267,21 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
 <p>Assigns particles to the levels, grids, and tiles that contain their current positions. If periodic boundary conditions are used, those will be enforced here.</p>
 <p>If Redistribute is called with default arguments, all particles will be placed on the finest level that covers their current positions.</p>
 <p>The lev_min, lev_max, and nGrow flags are used to do proper checking for subcycling particles. The default values are fine for non-subcycling methods</p>
-<p>The local flag controls whether this is <code>local</code> or <code>global</code> Redistribute. In a local Redistribute, particles can only have moved a certain distance since the last time <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> was called. Thus, communication only needs to happen between neighboring ranks. In a global Redistribute, the particles can potentially go from any rank to any rank. This usually happens after initialization or when doing dynamic load balancing.</p>
+<p>The local flag controls whether this is <code>local</code> or <code>global</code> Redistribute. In a local Redistribute, particles can only have moved a certain distance since the last time <a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> was called. Thus, communication only needs to happen between neighboring ranks. In a global Redistribute, the particles can potentially go from any rank to any rank. This usually happens after initialization or when doing dynamic load balancing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lev_min</td><td>The minimum level consider. Particles on levels less than this will not be touched, and particles on finer levels will not be assigned to levels less than this, either. Default: 0. </td></tr>
     <tr><td class="paramname">lev_max</td><td>The maximum level consider. Particles on levels greater than this will not be touched, and particles on coarser levels will not be assigned to levels greater than this, either. If negative, will use the finest level in the hierarchy. Default: -1. </td></tr>
     <tr><td class="paramname">nGrow</td><td>If particles are within nGrow cells of their current box, they will not moved. This is useful for subcycling methods, when fine level particles need to be redistributed but are not necessarily at the same time as those on the coarse level. Default: 0 </td></tr>
-    <tr><td class="paramname">local</td><td>If 0, this will be a non-local redistribute, meaning that particle can potentially go to any other box in the simulation. If &gt; 0, this is the maximum number of cells a particle can have moved since the last <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> call. Knowing this number allows an optimized MPI communication pattern to be used. </td></tr>
+    <tr><td class="paramname">local</td><td>If 0, this will be a non-local redistribute, meaning that particle can potentially go to any other box in the simulation. If &gt; 0, this is the maximum number of cells a particle can have moved since the last <a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> call. Knowing this number allows an optimized MPI communication pattern to be used. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a608866ea3932dc93e6d1d0e629f0bf81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a608866ea3932dc93e6d1d0e629f0bf81">&#9670;&nbsp;</a></span>RedistributeCPU()</h2>
+<a id="ae41747ca45a65246f359f816a356bcef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41747ca45a65246f359f816a356bcef">&#9670;&nbsp;</a></span>RedistributeCPU()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4304,7 +4310,13 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>local</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>local</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>remove_negative</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -4316,8 +4328,8 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
 
 </div>
 </div>
-<a id="a440139963a1346242883b0c779b6debc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a440139963a1346242883b0c779b6debc">&#9670;&nbsp;</a></span>RedistributeGPU()</h2>
+<a id="a8e703dcee10b09d0bcee9b7b9ca783dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e703dcee10b09d0bcee9b7b9ca783dd">&#9670;&nbsp;</a></span>RedistributeGPU()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4346,7 +4358,13 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>local</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>local</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>remove_negative</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

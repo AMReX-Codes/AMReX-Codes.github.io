@@ -490,9 +490,9 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> PTile, <span class="keyword">typename</span> PLocator&gt;</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00464"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aed116413a6322280140b323ed321ca88">  464</a></span>&#160;<a class="code" href="namespaceamrex.html#aed116413a6322280140b323ed321ca88">partitionParticlesByDest</a> (PTile&amp; ptile, <span class="keyword">const</span> PLocator&amp; ploc, <span class="keyword">const</span> <a class="code" href="classamrex_1_1ParticleBufferMap.html">ParticleBufferMap</a>&amp; pmap,</div>
+<div class="line"><a name="l00464"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af9369351a33ba2efb75cb82f57aadff2">  464</a></span>&#160;<a class="code" href="namespaceamrex.html#af9369351a33ba2efb75cb82f57aadff2">partitionParticlesByDest</a> (PTile&amp; ptile, <span class="keyword">const</span> PLocator&amp; ploc, <span class="keyword">const</span> <a class="code" href="classamrex_1_1ParticleBufferMap.html">ParticleBufferMap</a>&amp; pmap,</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; geom, <span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> gid, <span class="keywordtype">int</span> <span class="comment">/*tid*/</span>,</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                          <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, <span class="keywordtype">int</span> nGrow)</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                          <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, <span class="keywordtype">int</span> nGrow, <span class="keywordtype">bool</span> remove_negative)</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;{</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> plo    = geom.<a class="code" href="classamrex_1_1Geometry.html#a2cbf2a8943849597fdcb06608416d0db">ProbLoArray</a>();</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> phi    = geom.<a class="code" href="classamrex_1_1Geometry.html#a8de19f13c63f4cb2759207cb725581ed">ProbHiArray</a>();</div>
@@ -558,77 +558,81 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                    }</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                }</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                <span class="keywordflow">return</span> ((assigned_grid == gid) &amp;&amp; (assigned_lev == lev) &amp;&amp; (getPID(lev, gid) == pid));</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            };</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            num_stay = Scan::PrefixSum&lt;int&gt; (this_chunk_size,</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                          [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i) -&gt; <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                          {</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                              <span class="keywordflow">return</span> particle_stays(i);</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                          },</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                          [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> <span class="keyword">const</span>&amp; s)</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                <span class="keywordflow">if</span> ((remove_negative == <span class="keyword">false</span>) &amp;&amp; (p.id() &lt; 0)) {</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                <span class="keywordflow">return</span> ((assigned_grid == gid) &amp;&amp; (assigned_lev == lev) &amp;&amp; (getPID(lev, gid) == pid));</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            };</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            num_stay = Scan::PrefixSum&lt;int&gt; (this_chunk_size,</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                          [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i) -&gt; <span class="keywordtype">int</span></div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                          {</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                              <span class="keywordtype">int</span> src_i = i + this_offset;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                              <span class="keywordtype">int</span> dst_i = particle_stays(i) ? s : this_chunk_size-1-(i-s);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                              <a class="code" href="namespaceamrex.html#a9f2c65531307840edc2c376e273a2dcd">copyParticle</a>(dst_data, src_data, src_i, dst_i);</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                          },</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                          <a class="code" href="namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc">Scan::Type::exclusive</a>);</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        }</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <span class="keywordflow">if</span> (num_chunks == 1)</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        {</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;            ptile.swap(ptile_tmp);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        }</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                              <span class="keywordflow">return</span> particle_stays(i);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                          },</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                          [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> <span class="keyword">const</span>&amp; s)</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                          {</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                              <span class="keywordtype">int</span> src_i = i + this_offset;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                              <span class="keywordtype">int</span> dst_i = particle_stays(i) ? s : this_chunk_size-1-(i-s);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                              <a class="code" href="namespaceamrex.html#a9f2c65531307840edc2c376e273a2dcd">copyParticle</a>(dst_data, src_data, src_i, dst_i);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                          },</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                          <a class="code" href="namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc">Scan::Type::exclusive</a>);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordflow">if</span> (num_chunks == 1)</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        {</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>(this_chunk_size, i,</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                         {</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                             <a class="code" href="namespaceamrex.html#a9f2c65531307840edc2c376e273a2dcd">copyParticle</a>(src_data, dst_data, i, i + this_offset);</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                         });</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        }</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <span class="keywordflow">if</span> ( ichunk &gt; 0 )</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        {</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            <span class="keywordtype">int</span> num_swap = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(this_offset - last_offset, num_stay);</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( num_swap, i,</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            {</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                <a class="code" href="namespaceamrex.html#a65613a845224d7424cd18dfd602f1f49">swapParticle</a>(src_data, src_data, last_offset + i,</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                             this_offset + num_stay - 1 - i);</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            });</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        }</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        last_offset += num_stay;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    }</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordflow">return</span> last_offset;</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;}</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;IntVect <a class="code" href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">computeRefFac</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> src_lev, <span class="keywordtype">int</span> lev);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            ptile.swap(ptile_tmp);</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        }</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>(this_chunk_size, i,</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                         {</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                             <a class="code" href="namespaceamrex.html#a9f2c65531307840edc2c376e273a2dcd">copyParticle</a>(src_data, dst_data, i, i + this_offset);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                         });</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        }</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="keywordflow">if</span> ( ichunk &gt; 0 )</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        {</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <span class="keywordtype">int</span> num_swap = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(this_offset - last_offset, num_stay);</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( num_swap, i,</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            {</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                <a class="code" href="namespaceamrex.html#a65613a845224d7424cd18dfd602f1f49">swapParticle</a>(src_data, src_data, last_offset + i,</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                             this_offset + num_stay - 1 - i);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            });</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        }</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        last_offset += num_stay;</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    }</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="keywordflow">return</span> last_offset;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;}</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;Vector&lt;int&gt; <a class="code" href="namespaceamrex.html#ac6d35da48f520c8ae3f429aee03601c9">computeNeighborProcs</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> ngrow);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceparticle__detail.html">particle_detail</a></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;{</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> C&gt;</div>
-<div class="line"><a name="l00586"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">  586</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">clearEmptyEntries</a> (C&amp; c)</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;{</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c_it = c.begin(); c_it != c.end(); <span class="comment">/* no ++ */</span>)</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    {</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="keywordflow">if</span> (c_it-&gt;second.empty()) { c.erase(c_it++); }</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <span class="keywordflow">else</span> { ++c_it; }</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    }</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;}</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;}</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;}</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="preprocessor">#endif // include guard</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;IntVect <a class="code" href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">computeRefFac</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> src_lev, <span class="keywordtype">int</span> lev);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;Vector&lt;int&gt; <a class="code" href="namespaceamrex.html#ac6d35da48f520c8ae3f429aee03601c9">computeNeighborProcs</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> ngrow);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceparticle__detail.html">particle_detail</a></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;{</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> C&gt;</div>
+<div class="line"><a name="l00590"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">  590</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">clearEmptyEntries</a> (C&amp; c)</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;{</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c_it = c.begin(); c_it != c.end(); <span class="comment">/* no ++ */</span>)</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    {</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <span class="keywordflow">if</span> (c_it-&gt;second.empty()) { c.erase(c_it++); }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <span class="keywordflow">else</span> { ++c_it; }</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    }</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;}</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;}</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="preprocessor">#endif // include guard</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__Gpu_8H_html"><div class="ttname"><a href="AMReX__Gpu_8H.html">AMReX_Gpu.H</a></div></div>
@@ -688,6 +692,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="ttc" id="aclassamrex_1_1ParIter_html"><div class="ttname"><a href="classamrex_1_1ParIter.html">amrex::ParIter</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:99</div></div>
 <div class="ttc" id="astructamrex_1_1RandomEngine_html"><div class="ttname"><a href="structamrex_1_1RandomEngine.html">amrex::RandomEngine</a></div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:52</div></div>
 <div class="ttc" id="anamespaceamrex_html_aede00a5fe66df6418eb44590a33296a2"><div class="ttname"><a href="namespaceamrex.html#aede00a5fe66df6418eb44590a33296a2">amrex::getTileIndex</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int getTileIndex(const IntVect &amp;iv, const Box &amp;box, const bool a_do_tiling, const IntVect &amp;a_tile_size, Box &amp;tbx)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:307</div></div>
+<div class="ttc" id="anamespaceamrex_html_af9369351a33ba2efb75cb82f57aadff2"><div class="ttname"><a href="namespaceamrex.html#af9369351a33ba2efb75cb82f57aadff2">amrex::partitionParticlesByDest</a></div><div class="ttdeci">int partitionParticlesByDest(PTile &amp;ptile, const PLocator &amp;ploc, const ParticleBufferMap &amp;pmap, const Geometry &amp;geom, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:464</div></div>
 <div class="ttc" id="aAMReX__MFIter_8H_html"><div class="ttname"><a href="AMReX__MFIter_8H.html">AMReX_MFIter.H</a></div></div>
 <div class="ttc" id="aAMReX__Math_8H_html"><div class="ttname"><a href="AMReX__Math_8H.html">AMReX_Math.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1particle__detail_html_aeefdb393afef57732439f230e1b53578"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#aeefdb393afef57732439f230e1b53578">amrex::particle_detail::call_f</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto call_f(F const &amp;f, P const &amp;p, amrex::RandomEngine const &amp;engine) noexcept -&gt; decltype(f(P</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:26</div></div>
@@ -699,9 +704,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_ac7dd72556ee6bd9c3b9372523e9e7082"><div class="ttname"><a href="namespaceamrex.html#ac7dd72556ee6bd9c3b9372523e9e7082">amrex::enforcePeriodic</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool enforcePeriodic(P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;phi, amrex::GpuArray&lt; int, AMREX_SPACEDIM &gt; const &amp;is_per) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:428</div></div>
 <div class="ttc" id="aAMReX__IntVect_8H_html"><div class="ttname"><a href="AMReX__IntVect_8H.html">AMReX_IntVect.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:16</div></div>
-<div class="ttc" id="anamespaceamrex_html_aed116413a6322280140b323ed321ca88"><div class="ttname"><a href="namespaceamrex.html#aed116413a6322280140b323ed321ca88">amrex::partitionParticlesByDest</a></div><div class="ttdeci">int partitionParticlesByDest(PTile &amp;ptile, const PLocator &amp;ploc, const ParticleBufferMap &amp;pmap, const Geometry &amp;geom, int lev, int gid, int, int lev_min, int lev_max, int nGrow)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:464</div></div>
 <div class="ttc" id="aAMReX__ParticleBufferMap_8H_html"><div class="ttname"><a href="AMReX__ParticleBufferMap_8H.html">AMReX_ParticleBufferMap.H</a></div></div>
-<div class="ttc" id="anamespaceamrex_1_1particle__detail_html_aece8b1e2716e84a5261e988b9e9b1ef2"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">amrex::particle_detail::clearEmptyEntries</a></div><div class="ttdeci">void clearEmptyEntries(C &amp;c)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:586</div></div>
+<div class="ttc" id="anamespaceamrex_1_1particle__detail_html_aece8b1e2716e84a5261e988b9e9b1ef2"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">amrex::particle_detail::clearEmptyEntries</a></div><div class="ttdeci">void clearEmptyEntries(C &amp;c)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:590</div></div>
 <div class="ttc" id="aAMReX__Box_8H_html"><div class="ttname"><a href="AMReX__Box_8H.html">AMReX_Box.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1particle__detail_html_ae8a815a03dd199d4f0a63a1ea9618ce8"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#ae8a815a03dd199d4f0a63a1ea9618ce8">amrex::particle_detail::NAR</a></div><div class="ttdeci">int int int int NAR</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:125</div></div>
 <div class="ttc" id="aclassamrex_1_1ReduceData_html_a2d7733b7adfa9401fdc90202486d2b54"><div class="ttname"><a href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">amrex::ReduceData::value</a></div><div class="ttdeci">Type value()</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:268</div></div>
