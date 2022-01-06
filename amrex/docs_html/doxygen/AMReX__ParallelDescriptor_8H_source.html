@@ -958,12 +958,12 @@ $(document).ready(function(){initNavTree('AMReX__ParallelDescriptor_8H_source.ht
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#ad36a49fcf88e6919a7f5f875492df9c8">BL_PROFILE_T_S</a>(<span class="stringliteral">&quot;ParallelDescriptor::Gather(Ti)&quot;</span>, <a class="code" href="namespaceamrex_1_1particle__detail.html#aceba454a9f927277cf07006dd5a60081">T</a>);</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a5e661a1af9130dd8449e7f730864271c">BL_COMM_PROFILE</a>(BLProfiler::GatherTi, BLProfiler::BeforeCall(), root, BLProfiler::NoTag());</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    std::vector&lt;T&gt; resl(1);</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    std::vector&lt;T&gt; resl;</div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <span class="keywordflow">if</span> ( root == <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#adc6941c4330302993547bfb867a1df31">MyProc</a>() ) resl.resize(<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a7fe765fcc8bfc4c409483424a83fccf8">NProcs</a>());</div>
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    BL_MPI_REQUIRE( MPI_Gather(<span class="keyword">const_cast&lt;</span><a class="code" href="namespaceamrex_1_1particle__detail.html#aceba454a9f927277cf07006dd5a60081">T</a>*<span class="keyword">&gt;</span>(&amp;t),</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                               1,</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                               Mpi_typemap&lt;T&gt;::type(),</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                               &amp;resl[0],</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                               resl.data(),</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                               1,</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                               Mpi_typemap&lt;T&gt;::type(),</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                               root,</div>
