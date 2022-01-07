@@ -22,6 +22,7 @@ var annotated_dup =
     [ "FilterVirt", "structFilterVirt.html", "structFilterVirt" ],
     [ "KeepValidFilter", "structKeepValidFilter.html", "structKeepValidFilter" ],
     [ "MPI_Status", "structMPI__Status.html", null ],
+    [ "N_VectorContent_MultiFab_notptr", "structN__VectorContent__MultiFab__notptr.html", "structN__VectorContent__MultiFab__notptr" ],
     [ "process_topology_t", "structprocess__topology__t.html", "structprocess__topology__t" ],
     [ "RegionsProfStats", "classRegionsProfStats.html", "classRegionsProfStats" ],
     [ "SDCstruct", "classSDCstruct.html", "classSDCstruct" ],

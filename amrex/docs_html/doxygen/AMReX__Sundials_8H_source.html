@@ -102,15 +102,36 @@ $(document).ready(function(){initNavTree('AMReX__Sundials_8H_source.html',''); i
 <a href="AMReX__Sundials_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AMREX_SUNDIALS_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AMREX_SUNDIALS_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__SUNMemory_8H.html">AMReX_SUNMemory.H</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__NVector__MultiFab_8H.html">AMReX_NVector_MultiFab.H</a>&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;static_assert(std::is_same&lt;amrex::Real,realtype&gt;::value, <span class="stringliteral">&quot;amrex::Real must be the same as SUNDIALS realtype&quot;</span>);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX_8H.html">AMReX.H</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__Arena_8H.html">AMReX_Arena.H</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__NVector__MultiFab_8H.html">AMReX_NVector_MultiFab.H</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;static_assert(std::is_same&lt;amrex::Real,realtype&gt;::value, <span class="stringliteral">&quot;amrex::Real must be the same as SUNDIALS realtype&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__SUNMemory_8H.html">AMReX_SUNMemory.H</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>sundials {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d">Initialize</a>(<span class="keywordtype">int</span> nthreads);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18">Finalize</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;::sundials::Context* <a class="code" href="namespaceamrex_1_1sundials.html#a9073bde66b70bda0c4d46655775c684d">The_Sundials_Context</a>(<span class="keywordtype">int</span> i = <a class="code" href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a>());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}<span class="comment">//sundials</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}<span class="comment">//amrex</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__NVector__MultiFab_8H_html"><div class="ttname"><a href="AMReX__NVector__MultiFab_8H.html">AMReX_NVector_MultiFab.H</a></div></div>
+<div class="ttc" id="anamespaceamrex_1_1OpenMP_html_a27ed6354b68b2bd8721658a8779af032"><div class="ttname"><a href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a></div><div class="ttdeci">constexpr int get_thread_num()</div><div class="ttdef"><b>Definition:</b> AMReX_OpenMP.H:25</div></div>
+<div class="ttc" id="anamespaceamrex_1_1sundials_html_ab2ee62c0a1b082b5f9438f56b0146c9d"><div class="ttname"><a href="namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d">amrex::sundials::Initialize</a></div><div class="ttdeci">void Initialize(int nthreads)</div><div class="ttdoc">Initialize the AMReX-SUNDIALS interface.</div><div class="ttdef"><b>Definition:</b> AMReX_Sundials.cpp:11</div></div>
+<div class="ttc" id="anamespaceamrex_1_1sundials_html_a9073bde66b70bda0c4d46655775c684d"><div class="ttname"><a href="namespaceamrex_1_1sundials.html#a9073bde66b70bda0c4d46655775c684d">amrex::sundials::The_Sundials_Context</a></div><div class="ttdeci">::sundials::Context * The_Sundials_Context(int i)</div><div class="ttdoc">Get the i-th SUNDIALS context instance.</div><div class="ttdef"><b>Definition:</b> AMReX_Sundials.cpp:48</div></div>
+<div class="ttc" id="aAMReX__Arena_8H_html"><div class="ttname"><a href="AMReX__Arena_8H.html">AMReX_Arena.H</a></div></div>
+<div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__SUNMemory_8H_html"><div class="ttname"><a href="AMReX__SUNMemory_8H.html">AMReX_SUNMemory.H</a></div></div>
+<div class="ttc" id="anamespaceamrex_1_1sundials_html_abf6b47f72923c8ef9f360c6a93289a18"><div class="ttname"><a href="namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18">amrex::sundials::Finalize</a></div><div class="ttdeci">void Finalize()</div><div class="ttdoc">Cleanup everything allocated for the AMReX-SUNDIALS interface.</div><div class="ttdef"><b>Definition:</b> AMReX_Sundials.cpp:35</div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

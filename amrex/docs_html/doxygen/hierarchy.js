@@ -685,7 +685,7 @@ var hierarchy =
     [ "amrex::NonLocalBC::MultiBlockIndexMapping", "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html", null ],
     [ "amrex::MultiCutFab", "classamrex_1_1MultiCutFab.html", null ],
     [ "amrex::MultiMask", "classamrex_1_1MultiMask.html", null ],
-    [ "amrex::sundials::N_VectorContent_MultiFab_notptr", "structamrex_1_1sundials_1_1N__VectorContent__MultiFab__notptr.html", null ],
+    [ "N_VectorContent_MultiFab_notptr", "structN__VectorContent__MultiFab__notptr.html", null ],
     [ "CommProfStats::NameTagEntry", "structCommProfStats_1_1NameTagEntry.html", null ],
     [ "amrex::MemProfiler::NBuildsInfo", "structamrex_1_1MemProfiler_1_1NBuildsInfo.html", null ],
     [ "amrex::EB2::Neighbor", "structamrex_1_1EB2_1_1Neighbor.html", null ],

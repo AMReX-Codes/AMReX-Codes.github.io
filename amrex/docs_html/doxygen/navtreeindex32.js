@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"classamrex_1_1DeriveRec.html#a2cc67c5168b67d6772586e58d5e2c5a3":[2,0,0,115,40],
 "classamrex_1_1DeriveRec.html#a2f2f5266239ba77171d507d0e86f4ca3":[2,0,0,115,20],
 "classamrex_1_1DeriveRec.html#a30dee5f69d1f9f479880f9c3ed5e4b82":[2,0,0,115,7],
 "classamrex_1_1DeriveRec.html#a34c2f0068a7832ca670a0476cea011fc":[2,0,0,115,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1GeometryShop.html#afdb3f4220acfb2353d91feed84482169":[2,0,0,4,10,26],
 "classamrex_1_1EB2_1_1GeometryShop.html#afdf3128bd79e6622dafc14a254d1b04a":[2,0,0,4,10,5],
 "classamrex_1_1EB2_1_1GeometryShop.html#afe2e9993f74d508cf7aeb7150b610fd5":[2,0,0,4,10,10],
-"classamrex_1_1EB2_1_1IndexSpace.html":[2,0,0,4,13],
-"classamrex_1_1EB2_1_1IndexSpace.html#a45b714be9d0d45f3ecb339085a73c6ec":[2,0,0,4,13,7]
+"classamrex_1_1EB2_1_1IndexSpace.html":[2,0,0,4,13]
 };
