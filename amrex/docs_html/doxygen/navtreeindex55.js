@@ -1,12 +1,14 @@
 var NAVTREEINDEX55 =
 {
+"namespacemembers_vars_z.html":[1,1,2,23],
+"namespacemembers_w.html":[1,1,0,22],
 "namespacemembers_x.html":[1,1,0,23],
 "namespacemembers_y.html":[1,1,0,24],
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,20],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[2,0,11],
 "namespacesdcquadrature__mod.html":[1,0,21],
+"namespacesdcquadrature__mod.html":[2,0,11],
 "pages.html":[],
 "structAssignGridFilter.html":[2,0,14],
 "structAssignGridFilter.html#a067cf16cb382b143e8c1891468548937":[2,0,14,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structamrex_1_1Array3D.html#a2d1ef1b7c2e47b29c305b9d5854ee1c9":[2,0,0,46,3],
 "structamrex_1_1Array3D.html#a2d2bf97e6c6e441f18ded1e2b04fb9e4":[2,0,0,46,12],
 "structamrex_1_1Array3D.html#a4591024556e60d0af381be737fdd32c2":[2,0,0,46,14],
-"structamrex_1_1Array3D.html#a474a15544b00cfb42f2ffc71e2528b1b":[2,0,0,46,20],
-"structamrex_1_1Array3D.html#a48e290c0fdea914bbfad33952558da6c":[2,0,0,46,19],
-"structamrex_1_1Array3D.html#a4a46d0e6678b986c89dc8bfa94a3a849":[2,0,0,46,10]
+"structamrex_1_1Array3D.html#a474a15544b00cfb42f2ffc71e2528b1b":[2,0,0,46,20]
 };

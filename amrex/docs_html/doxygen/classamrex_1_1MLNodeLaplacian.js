@@ -38,6 +38,7 @@ var classamrex_1_1MLNodeLaplacian =
     [ "setCoarseningStrategy", "classamrex_1_1MLNodeLaplacian.html#af44fe2628228f69789874df4dbcab755", null ],
     [ "setGaussSeidel", "classamrex_1_1MLNodeLaplacian.html#aaa74c5ed1094317d719bffbe89f016c9", null ],
     [ "setHarmonicAverage", "classamrex_1_1MLNodeLaplacian.html#a2d7beea7bc93f71c8970977613d2ff08", null ],
+    [ "setMapped", "classamrex_1_1MLNodeLaplacian.html#aa9baddb5a30572ac9597f98e6037b801", null ],
     [ "setNormalizationThreshold", "classamrex_1_1MLNodeLaplacian.html#a5184c0395e2b615863f958c9a057f6d2", null ],
     [ "setRZCorrection", "classamrex_1_1MLNodeLaplacian.html#ad6fc7d27c22cd096b77b9bb7d2b4f66d", null ],
     [ "setSigma", "classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470", null ],
@@ -52,5 +53,6 @@ var classamrex_1_1MLNodeLaplacian =
     [ "m_sigma", "classamrex_1_1MLNodeLaplacian.html#a8a183b518f95b79420fa95a4400b3a4f", null ],
     [ "m_stencil", "classamrex_1_1MLNodeLaplacian.html#ae971fa5b7d9a948b3b8b778bb9540064", null ],
     [ "m_use_gauss_seidel", "classamrex_1_1MLNodeLaplacian.html#a1dd0f2250ddf96f66c4163f0f99e1f1d", null ],
-    [ "m_use_harmonic_average", "classamrex_1_1MLNodeLaplacian.html#ac1b3d5d3a2cde86e476ffb95f17b0fef", null ]
+    [ "m_use_harmonic_average", "classamrex_1_1MLNodeLaplacian.html#ac1b3d5d3a2cde86e476ffb95f17b0fef", null ],
+    [ "m_use_mapped", "classamrex_1_1MLNodeLaplacian.html#a2cb5c874294fca6f5552906493d6987f", null ]
 ];

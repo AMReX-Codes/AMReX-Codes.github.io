@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1detail_1_1Nonesuch.html#ac31cc5ce552668f79bbc820c8d7998e0":[2,0,0,3,13,0],
+"structamrex_1_1detail_1_1apply__result.html":[2,0,0,3,0],
 "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,3,1],
 "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#a876b1f53550354a1232af41bf92aed97":[2,0,0,3,1,0],
 "structamrex_1_1detail_1_1clz__tag.html":[2,0,0,3,2],

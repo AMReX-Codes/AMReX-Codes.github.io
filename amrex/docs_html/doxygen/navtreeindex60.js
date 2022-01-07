@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1IParserStack.html#af48a7aa2e427fa54e5aca98aca113111":[2,0,0,254,2],
+"structamrex_1_1IParser_1_1Data.html":[2,0,0,211,0],
 "structamrex_1_1IParser_1_1Data.html#a1c4d044550c8a47002f221aeead2c6a4":[2,0,0,211,0,2],
 "structamrex_1_1IParser_1_1Data.html#a7ba706756f6d9f4806511c613a16596f":[2,0,0,211,0,0],
 "structamrex_1_1IParser_1_1Data.html#a8f3166649cf29c5c3292bfb4eee475ec":[2,0,0,211,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1NonLocalBC_1_1Identity.html#ae1ac0e6d45d64ff668824d1b1180900a":[2,0,0,10,6,0],
 "structamrex_1_1NonLocalBC_1_1IsDataPacking.html":[2,0,0,10,7],
 "structamrex_1_1NonLocalBC_1_1IsFabProjection.html":[2,0,0,10,8],
-"structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[2,0,0,10,9],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html":[2,0,0,10,10],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[2,0,0,10,10,1]
+"structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[2,0,0,10,9]
 };
