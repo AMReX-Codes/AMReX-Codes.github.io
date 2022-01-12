@@ -1,5 +1,10 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1IParserStack.html":[2,0,0,254],
+"structamrex_1_1IParserStack.html#a3951bf73fe4dbac7f4c1ccef7bbbcb34":[2,0,0,254,1],
+"structamrex_1_1IParserStack.html#a40f7519b4e3633b56bf1b8e222dc3d28":[2,0,0,254,5],
+"structamrex_1_1IParserStack.html#a61b50c1e4b1a9ae178034bf0bb29f5b8":[2,0,0,254,6],
+"structamrex_1_1IParserStack.html#a8f2d6b01186dda49d525b32b50fb0a54":[2,0,0,254,0],
 "structamrex_1_1IParserStack.html#aa6f45ea78886ea7b34d6151a8514008c":[2,0,0,254,4],
 "structamrex_1_1IParserStack.html#accdd1fb9c87fe33046d566ee6f8aab56":[2,0,0,254,3],
 "structamrex_1_1IParserStack.html#af48a7aa2e427fa54e5aca98aca113111":[2,0,0,254,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,10,3,1],
 "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[2,0,0,10,4],
 "structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[2,0,0,10,5],
-"structamrex_1_1NonLocalBC_1_1Identity.html":[2,0,0,10,6],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a0a03a9cf27f2ed969f918c7946e68659":[2,0,0,10,6,2],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a2be194ea3baaf9a996c82b946bf54803":[2,0,0,10,6,1],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a3319c4ea6b55bcbf4790af653e33257a":[2,0,0,10,6,3],
-"structamrex_1_1NonLocalBC_1_1Identity.html#ae1ac0e6d45d64ff668824d1b1180900a":[2,0,0,10,6,0],
-"structamrex_1_1NonLocalBC_1_1IsDataPacking.html":[2,0,0,10,7]
+"structamrex_1_1NonLocalBC_1_1Identity.html":[2,0,0,10,6]
 };
