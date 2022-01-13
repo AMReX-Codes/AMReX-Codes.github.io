@@ -309,7 +309,7 @@ image to rotate the image to generate something similar to right side of
 <p>To make a movie, you must first create a text file named <code class="docutils literal notranslate"><span class="pre">movie.visit</span></code> with a
 list of the Header files for the individual frames. This can most easily be
 done using the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~/amrex/Tutorials/Basic/HeatEquation_EX1_C&gt; ls -1 plt*/Header | tee movie.visit</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~/amrex-tutorials/ExampleCodes/Basic/HeatEquation_EX1_C&gt; ls -1 plt*/Header | tee movie.visit</span>
 <span class="go">plt00000/Header</span>
 <span class="go">plt01000/Header</span>
 <span class="go">plt02000/Header</span>
@@ -858,7 +858,8 @@ simulation will periodically write images during the run.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh cori.nersc.gov
 <span class="nb">cd</span> <span class="nv">$SCRATCH</span>
 git clone https://github.com/AMReX-Codes/amrex.git
-<span class="nb">cd</span> amrex/Tutorials/Amr/Advection_AmrLevel/Exec/SingleVortex
+git clone https://github.com/AMReX-Codes/amrex-tutorials.git
+<span class="nb">cd</span> amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
 module use /usr/common/software/sensei/modulefiles
 module load sensei/2.1.0-catalyst-shared
 <span class="nb">source</span> sensei_config
@@ -869,7 +870,7 @@ vim inputs
 <span class="c1"># sensei.enabled=1</span>
 <span class="c1"># sensei.config=sensei/render_iso_catalyst_2d.xml</span>
 salloc -C haswell -N <span class="m">1</span> -t <span class="m">00</span>:30:00 -q debug
-<span class="nb">cd</span> <span class="nv">$SCRATCH</span>/amrex/Tutorials/Amr/Advection_AmrLevel/Exec/SingleVortex
+<span class="nb">cd</span> <span class="nv">$SCRATCH</span>/amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
 ./main2d.gnu.haswell.MPI.ex inputs
 </pre></div>
 </div>
@@ -881,7 +882,8 @@ simulation will periodically write images during the run.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh cori.nersc.gov
 <span class="nb">cd</span> <span class="nv">$SCRATCH</span>
 git clone https://github.com/AMReX-Codes/amrex.git
-<span class="nb">cd</span> amrex/Tutorials/Amr/Advection_AmrLevel/Exec/SingleVortex
+git clone https://github.com/AMReX-Codes/amrex-tutorials.git
+<span class="nb">cd</span> amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
 module use /usr/common/software/sensei/modulefiles
 module load sensei/2.1.0-libsim-shared
 <span class="nb">source</span> sensei_config
@@ -892,6 +894,7 @@ vim inputs
 <span class="c1"># sensei.enabled=1</span>
 <span class="c1"># sensei.config=sensei/render_iso_libsim_2d.xml</span>
 salloc -C haswell -N <span class="m">1</span> -t <span class="m">00</span>:30:00 -q debug
+<span class="nb">cd</span> <span class="nv">$SCRATCH</span>/amrex-tutorials/ExampleCodes/Amr/Advection_AmrLevel/Exec/SingleVortex
 ./main2d.gnu.haswell.MPI.ex inputs
 </pre></div>
 </div>
