@@ -379,28 +379,42 @@ run with:</p>
 </div>
 <div class="section" id="setting-parameter-values-inside-functions">
 <h2>Setting Parameter Values Inside Functions<a class="headerlink" href="#setting-parameter-values-inside-functions" title="Permalink to this headline"></a></h2>
-<p>Sometimes an application code may want to set a default that differs from the
-default in AMReX.  In this case, it is often convenient to define a function that
-sets the variable(s), and pass the name of that function to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code>.
-As an example, we may define <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">add_par</span></span></code> to set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">extend_domain_face</span></span></code>
-to false if it hasn’t already been set in the inputs file.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">add_par</span> <span class="p">()</span> <span class="p">{</span>
+<p>An application code may want to set values or defaults that differ from the
+those in AMReX in a function. This is accomplished in two steps:</p>
+<ul class="simple">
+<li><p>First, define a function that sets the variable(s).</p></li>
+<li><p>Second, pass the name of that function to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code>.</p></li>
+</ul>
+<p>The example function below sets variable values using two different
+approaches to highlight subtle differences in implementation:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">add_par</span> <span class="p">()</span> <span class="p">{</span>
    <span class="n">ParmParse</span> <span class="n">pp</span><span class="p">(</span><span class="s">&quot;eb2&quot;</span><span class="p">);</span>
-   <span class="k">if</span><span class="p">(</span><span class="n">not</span> <span class="n">pp</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&quot;extend_domain_face&quot;</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;extend_domain_face&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
+
+   <span class="c1">// `variable_one` can be overridden by an inputs file and/or command line argument.</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">not</span> <span class="n">pp</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&quot;variable_one&quot;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;variable_one&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
    <span class="p">}</span>
+
+   <span class="c1">// The inputs file or command line arguments for `variable_two` are ignored.</span>
+   <span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;variable_two&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>Then we would pass <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">add_par</span></span></code> into <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="n">add_par</span><span class="p">);</span>
+<p>First this function, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">add_par</span></span></code>, declares a <code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> object that will be
+used to set variables. In the next section of code, we check if the value for
+<code class="docutils literal notranslate"><span class="pre">variable_one</span></code> has already been set elsewhere before writing to it. This
+approach prevents the function
+from overriding a value set in the inputs file or at the command line.
+In the next section, we write a value to <code class="docutils literal notranslate"><span class="pre">variable_two</span></code> without a conditional
+statement. In this case, we will ignore values for <code class="docutils literal notranslate"><span class="pre">variable_two</span></code> set in the
+inputs file or as a command line argument —effectively overriding them with
+the value set here in the function.</p>
+<p>In the second step, we pass the name of the function we defined to <code class="docutils literal notranslate"><span class="pre">amrex::Initialize</span></code>.
+In the example above the function was called <code class="docutils literal notranslate"><span class="pre">add_par</span></code>, and therefore we write,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="n">add_par</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Although this value replaces the current default value of true in AMReX itself, it
-will still be over-written by setting a value in the inputs file.</p>
-</div>
+<p>Now AMReX will use the user defined function to appropriately set the desired values.</p>
 </div>
 <div class="section" id="sharing-the-command-line">
 <span id="sec-basics-parmparse-sharingcl"></span><h2>Sharing the Command Line<a class="headerlink" href="#sharing-the-command-line" title="Permalink to this headline"></a></h2>
