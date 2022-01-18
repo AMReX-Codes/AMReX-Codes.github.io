@@ -1,6 +1,7 @@
 var classamrex_1_1iMultiFab =
 [
-    [ "iMultiFab", "classamrex_1_1iMultiFab.html#a5556632537bbfc0c8d88666c424a7a3f", null ],
+    [ "iMultiFab", "classamrex_1_1iMultiFab.html#a1fbf79ee76e382985c26d5d5f93444fb", null ],
+    [ "iMultiFab", "classamrex_1_1iMultiFab.html#aad5326a4a82790720a17b4d811d96089", null ],
     [ "iMultiFab", "classamrex_1_1iMultiFab.html#aeefd313bef0b68e0b94442b78afb22a4", null ],
     [ "iMultiFab", "classamrex_1_1iMultiFab.html#aac15b662883bbb087b1e7013d7869000", null ],
     [ "iMultiFab", "classamrex_1_1iMultiFab.html#a815bfdbfd6938b044ed23ac96d55a7c0", null ],

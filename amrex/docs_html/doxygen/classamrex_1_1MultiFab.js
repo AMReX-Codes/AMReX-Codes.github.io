@@ -3,6 +3,7 @@ var classamrex_1_1MultiFab =
     [ "CopyComTagsContainer", "classamrex_1_1MultiFab.html#a0945ab26050100412261a7e5e51e65bc", null ],
     [ "MapOfCopyComTagContainers", "classamrex_1_1MultiFab.html#a9abff4a4be6d566975e62a4682960b96", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#abcce72db937ae8e326d2cb14cb114e7d", null ],
+    [ "MultiFab", "classamrex_1_1MultiFab.html#a19ec88a3ec56e2af03e7d127f8edb79e", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#aa1755894827d2615b5a8ed4b7c88c6d4", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#a3492b44e82f5711a3eec0be435c6dc20", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#ab61f9da32d4aad58172e8871dc992e45", null ],

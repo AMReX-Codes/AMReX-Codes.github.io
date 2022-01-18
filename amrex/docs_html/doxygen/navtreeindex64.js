@@ -1,5 +1,8 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1detail_1_1Detector.html":[2,0,0,3,5],
+"structamrex_1_1detail_1_1Detector.html#a5a2159bb93f523660e17cfa0cda89054":[2,0,0,3,5,1],
+"structamrex_1_1detail_1_1Detector.html#a9a3f9ffd7c901fad20e8fae84feb5eb0":[2,0,0,3,5,0],
 "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html":[2,0,0,3,6],
 "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html#a4714bed5510035711488467ea4927ad8":[2,0,0,3,6,1],
 "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html#afaec2ae94e980097c6c81764725820f2":[2,0,0,3,6,0],
