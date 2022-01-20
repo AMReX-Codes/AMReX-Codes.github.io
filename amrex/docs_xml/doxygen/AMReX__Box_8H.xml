@@ -2397,8 +2397,6 @@
         <link refid="AMReX__Reduce_8H"/>
         <childnode refid="44" relation="include">
         </childnode>
-        <childnode refid="48" relation="include">
-        </childnode>
         <childnode refid="337" relation="include">
         </childnode>
         <childnode refid="315" relation="include">
@@ -4170,6 +4168,8 @@
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_ParReduce.H</label>
         <link refid="AMReX__ParReduce_8H"/>
         <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
         </childnode>
       </node>
       <node id="298">
@@ -6139,9 +6139,21 @@
 <codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="1768"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1769"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1770"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1771"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*BL_BOX_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="1770"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1772" refid="namespaceamrex_1a6979a9a48d8e468954ffe6aa2b9c807a" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/><ref refid="namespaceamrex_1a6979a9a48d8e468954ffe6aa2b9c807a" kindref="member">makeSingleCellBox</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref><sp/>typ<sp/>=<sp/><ref refid="classamrex_1_1IndexType_1ac1c886c163b3eabab06602c8649a5bd2" kindref="member">IndexType::TheCellType</ref>())</highlight></codeline>
+<codeline lineno="1773"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1774"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(j,k);</highlight></codeline>
+<codeline lineno="1776"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1777"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(k);</highlight></codeline>
+<codeline lineno="1778"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1779"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box_1a7b7132bf22d2192fc74ca4eea1957908" kindref="member">Box</ref>(<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k)),<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k)),typ);</highlight></codeline>
+<codeline lineno="1780"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1781"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1782"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1783"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1784"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_BOX_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H"/>
   </compounddef>

@@ -33,6 +33,7 @@ var AMReX__Box_8H =
     [ "growLo", "AMReX__Box_8H.html#a83482f38d773ec79abbd74b9fa084436", null ],
     [ "lbound", "AMReX__Box_8H.html#a38527c39e1b07777c6b7390f77db95e3", null ],
     [ "length", "AMReX__Box_8H.html#a346de71b0a8301172fc1cc6df227037a", null ],
+    [ "makeSingleCellBox", "AMReX__Box_8H.html#a6979a9a48d8e468954ffe6aa2b9c807a", null ],
     [ "makeSlab", "AMReX__Box_8H.html#a0fd13ebbd8053059b57a7e2010704b07", null ],
     [ "max_lbound", "AMReX__Box_8H.html#a10613950f73e309724a256c28d4849e1", null ],
     [ "max_lbound", "AMReX__Box_8H.html#a222afb2258b39f24134caf1142f66181", null ],

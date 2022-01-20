@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"classamrex_1_1ParticleContainer.html#ae41747ca45a65246f359f816a356bcef":[2,0,0,380,101],
 "classamrex_1_1ParticleContainer.html#ae4ec7278685f0bdc307a4a5119f3768d":[2,0,0,380,52],
 "classamrex_1_1ParticleContainer.html#ae64034c43f4202075731759389a07202":[2,0,0,380,24],
 "classamrex_1_1ParticleContainer.html#ae6b5ae78b3e63e7e8437e4ac42126b2e":[2,0,0,380,135],
@@ -248,6 +249,5 @@ var NAVTREEINDEX48 =
 "classamrex_1_1RKIntegrator.html#aff544c0ff17bffff837a639774d02cc4":[2,0,0,419,1],
 "classamrex_1_1RealBox.html":[2,0,0,407],
 "classamrex_1_1RealBox.html#a0133f0708ca052eb1eb7a7753169bb75":[2,0,0,407,4],
-"classamrex_1_1RealBox.html#a06a08fc2ff5eb243e5b56ad66734fd55":[2,0,0,407,23],
-"classamrex_1_1RealBox.html#a08455d95f7a26778ba42b5d023d16eec":[2,0,0,407,1]
+"classamrex_1_1RealBox.html#a06a08fc2ff5eb243e5b56ad66734fd55":[2,0,0,407,23]
 };
