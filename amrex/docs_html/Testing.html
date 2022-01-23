@@ -108,7 +108,7 @@ quickly on every commit. For more extensive testing, we rely on the nightly regr
 </div>
 <div class="section" id="nightly-regression-testing">
 <h1>Nightly Regression Testing<a class="headerlink" href="#nightly-regression-testing" title="Permalink to this headline"></a></h1>
-<p>Each night, we automically run a suite of tests, both on AMReX itself, and on a most of the major
+<p>Each night, we automatically run a suite of tests, both on AMReX itself, and on a most of the major
 application codes that use it as a framework. We use an in-house test runner script to manage this
 operation, originally developed by Michael Zingale for the Castro code, and later expanded to other
 application codes as well. The results for each night are collected and stored on a web page; see
@@ -117,12 +117,14 @@ application codes as well. The results for each night are collected and stored o
 <div class="section" id="running-the-test-suite-locally">
 <h1>Running the test suite locally<a class="headerlink" href="#running-the-test-suite-locally" title="Permalink to this headline"></a></h1>
 <p>The test suite is mostly used internally by AMReX developers. However,
-f you are making a pull request to AMReX, it can be useful to run the test suite
-on your local machine, to reduce the liklihood that your changes break some existing functionality.
-To run the test suite on locally, you must first obtain a copy of the test runner source, available
+if you are making a pull request to AMReX, it can be useful to run the test suite
+on your local machine to reduce the liklihood that your changes break some existing functionality.
+To run the test suite locally, you must first obtain a copy of the test runner source, available
 on Github here: <a class="reference external" href="https://github.com/AMReX-Codes/regression_testing">https://github.com/AMReX-Codes/regression_testing</a>. The test runner requires Python
-version 2.7 or greater.</p>
-<p>Next, you need a configuration file that defines which tests to run, which amrex repository to test,
+version 2.7 or greater. Additional information on the test suite software can be found at,
+<a class="reference external" href="https://amrex-codes.github.io/regression_testing/">https://amrex-codes.github.io/regression_testing/</a>.</p>
+<p>After obtaining the code, you will need a configuration file that defines which tests to run, which
+amrex repository to test,
 which branch to use, etc. A sample configuration file for AMReX is distributed with the amrex source
 code at <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">/</span></span><span class="name"><span class="pre">Tools</span></span><span class="operator"><span class="pre">/</span></span><span class="name"><span class="pre">RegressionTesting</span></span><span class="operator"><span class="pre">/</span></span><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code>. You will need to modify a few of the entries
 to, for example, point the test runner to the clone of amrex on your local machine. Entries you will
@@ -139,41 +141,41 @@ likely want to change include:</p>
 </div>
 <p>to control which repository and branch to test.</p>
 <p>The test runner is a Python script and can be invoked like so:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py &lt;options&gt; AMReX-Tests.ini
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py &lt;options&gt; AMReX-tests.ini
 </pre></div>
 </div>
 <p>Before you can use it, you must first generate a set of “benchmarks” - i.e. known “good” answers to the
 tests that will be run. If you are testing a pull request, you can generate these by running the script
-with the a recent version of the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">development</span></span></code> branch of AMReX. You can generate the benchmarks like so:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --make_benchmarks <span class="s1">&#39;generating initial benchmarks&#39;</span> AMReX-Tests.ini
+with a recent version of the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">development</span></span></code> branch of AMReX. You can generate the benchmarks like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --make_benchmarks <span class="s1">&#39;generating initial benchmarks&#39;</span> AMReX-tests.ini
 </pre></div>
 </div>
-<p>Once that is finished, you can switch over to the branch you want to test in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">Tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code>, and then
+<p>Once that is finished, you can switch over to the branch you want to test in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code>, and then
 re-run the script without the <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">--</span></span><span class="name"><span class="pre">make_benchmarks</span></span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --make_benchmarks <span class="s1">&#39;generating initial benchmarks&#39;</span> AMReX-Tests.ini
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --make_benchmarks <span class="s1">&#39;generating initial benchmarks&#39;</span> AMReX-tests.ini
 </pre></div>
 </div>
-<p>The script will generate a set of html pages in the directory specified in your <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">Tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code>
+<p>The script will generate a set of html pages in the directory specified in your <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code>
 file that you can examine using the browser of your choice.</p>
 <p>For a complete set of script options, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --help
 </pre></div>
 </div>
 <p>A particularly useful option lets you run just a subset of the complete test suite. To run only one test, you can do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --single_test &lt;TestName&gt; AMReX-Tests.ini
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --single_test &lt;TestName&gt; AMReX-tests.ini
 </pre></div>
 </div>
 <p>To run an enumerated list of tests, do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --tests <span class="s1">&#39;&lt;TestName1&gt; &lt;TestName2&gt; &lt;TestName3&gt;&#39;</span> AMReX-Tests.ini
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --tests <span class="s1">&#39;&lt;TestName1&gt; &lt;TestName2&gt; &lt;TestName3&gt;&#39;</span> AMReX-tests.ini
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-a-new-test">
 <h1>Adding a new test<a class="headerlink" href="#adding-a-new-test" title="Permalink to this headline"></a></h1>
-<p>New tests can be added to the suite by modifying the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">Tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code> file. The easiest thing to
+<p>New tests can be added to the suite by modifying the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMReX</span></span><span class="operator"><span class="pre">-</span></span><span class="name"><span class="pre">tests</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">ini</span></span></code> file. The easiest thing to
 do is start from an existing test and modify it. For example, this entry:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>MLMG_FI_PoisCom<span class="o">]</span>
-<span class="nv">buildDir</span> <span class="o">=</span> Tutorials/LinearSolvers/ABecLaplacian_F
+<span class="nv">buildDir</span> <span class="o">=</span> Tests/LinearSolvers/ABecLaplacian_F
 <span class="nv">inputFile</span> <span class="o">=</span> inputs-rt-poisson-com
 <span class="nv">dim</span> <span class="o">=</span> <span class="m">3</span>
 <span class="nv">restartTest</span> <span class="o">=</span> <span class="m">0</span>
