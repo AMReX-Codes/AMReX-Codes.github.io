@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['detail_8655',['detail',['https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html',1,'']]]
+  ['detail_8656',['detail',['https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html',1,'']]]
 ];
