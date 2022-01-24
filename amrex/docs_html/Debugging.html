@@ -153,10 +153,12 @@ you could do is the following,</p>
 <p>in <code class="docutils literal notranslate"><span class="pre">AMReX_VisMF.H</span></code> and examining it with <code class="docutils literal notranslate"><span class="pre">Amrvis</span></code> (section
 <a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>) can be helpful as well.  In
 <code class="docutils literal notranslate"><span class="pre">AMReX_MultiFabUtil.H</span></code>, function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">ng</span> <span class="o">=</span> <span class="n">IntVect</span><span class="o">::</span><span class="n">TheZeroVector</span><span class="p">());</span>
 </pre></div>
 </div>
-<p>can output the data for a single cell.</p>
+<p>can output the data for a single cell. <code class="docutils literal notranslate"><span class="pre">n</span></code> is the component, with the default being
+to print all components. <code class="docutils literal notranslate"><span class="pre">ng</span></code> is the number of ghost cells to include.</p>
 <p>Valgrind is one of our favorite debugging tools.  For MPI runs, one can
 tell Valgrind to output to different files for different processes.
 For example,</p>
