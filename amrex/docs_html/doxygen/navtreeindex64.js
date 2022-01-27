@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1amrex__parser.html#a9f312ddc4d9aa46a1bf3856152d01b16":[2,0,0,29,1],
+"structamrex_1_1amrex__parser.html#af0acb0644812be5dc5a7c0d1a116e8f3":[2,0,0,29,3],
 "structamrex_1_1amrex__parser.html#afc9a6bd1b3b65c88f2ff997308922b16":[2,0,0,29,0],
 "structamrex_1_1detail_1_1Detector.html":[2,0,0,3,5],
 "structamrex_1_1detail_1_1Detector.html#a5a2159bb93f523660e17cfa0cda89054":[2,0,0,3,5,1],

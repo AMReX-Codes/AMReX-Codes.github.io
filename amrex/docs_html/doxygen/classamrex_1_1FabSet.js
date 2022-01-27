@@ -25,6 +25,8 @@ var classamrex_1_1FabSet =
     [ "fabbox", "classamrex_1_1FabSet.html#a00af168b5073955cfd6e80fe4dbb48c2", null ],
     [ "linComb", "classamrex_1_1FabSet.html#a9a76863d5b17027b20d663cd2968c790", null ],
     [ "linComb", "classamrex_1_1FabSet.html#ae4057548b7e1b8f66f5c340ec4c5f088", null ],
+    [ "multiFab", "classamrex_1_1FabSet.html#a5fc0ae648f8b2ca864c7c9cd034bbddb", null ],
+    [ "multiFab", "classamrex_1_1FabSet.html#a06a8e8b0934fc2971692f0567383a2a2", null ],
     [ "nComp", "classamrex_1_1FabSet.html#acf7b80e8600bf44c00c6bf420536b69e", null ],
     [ "operator=", "classamrex_1_1FabSet.html#a5f606dfdb767ad78b61c72a9da1c378f", null ],
     [ "operator=", "classamrex_1_1FabSet.html#a320a46748e6a027a5fdf198a1ac1358d", null ],
