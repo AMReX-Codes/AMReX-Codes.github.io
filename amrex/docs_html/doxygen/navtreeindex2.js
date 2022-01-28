@@ -1,11 +1,11 @@
 var NAVTREEINDEX2 =
 {
-"AMReX__BaseFab_8H.html#a95a2c5251b0bc8cc9f28f6384738404a":[3,0,0,2,18,16],
-"AMReX__BaseFab_8H.html#aa85143ea71ce835e3a64ce8551b726b4":[3,0,0,2,18,18],
-"AMReX__BaseFab_8H.html#aa9ed510cedd140658efd18542d9479c7":[3,0,0,2,18,17],
-"AMReX__BaseFab_8H.html#aad9c01992bb029868be5de579b7317ad":[3,0,0,2,18,12],
-"AMReX__BaseFab_8H.html#aee305735e81ee2d836ea3043c2e5baa1":[3,0,0,2,18,10],
-"AMReX__BaseFab_8H.html#af6da468471baec434494c96d522891b3":[3,0,0,2,18,9],
+"AMReX__BaseFab_8H.html#a95a2c5251b0bc8cc9f28f6384738404a":[3,0,0,2,18,14],
+"AMReX__BaseFab_8H.html#aa85143ea71ce835e3a64ce8551b726b4":[3,0,0,2,18,16],
+"AMReX__BaseFab_8H.html#aa9ed510cedd140658efd18542d9479c7":[3,0,0,2,18,15],
+"AMReX__BaseFab_8H.html#aad9c01992bb029868be5de579b7317ad":[3,0,0,2,18,10],
+"AMReX__BaseFab_8H.html#aee305735e81ee2d836ea3043c2e5baa1":[3,0,0,2,18,8],
+"AMReX__BaseFab_8H.html#af6da468471baec434494c96d522891b3":[3,0,0,2,18,7],
 "AMReX__BaseFab_8H_source.html":[3,0,0,2,18],
 "AMReX__BaseFab_8cpp.html":[3,0,0,2,17],
 "AMReX__BaseFab_8cpp.html#a05893af4b8f7c472a5f0d5afe9fddcde":[3,0,0,2,17,9],
@@ -236,6 +236,8 @@ var NAVTREEINDEX2 =
 "AMReX__CuptiTrace_8H.html":[3,0,0,2,60],
 "AMReX__CuptiTrace_8H_source.html":[3,0,0,2,60],
 "AMReX__CuptiTrace_8cpp.html":[3,0,0,2,59],
+"AMReX__DataAllocator_8H.html":[3,0,0,2,61],
+"AMReX__DataAllocator_8H_source.html":[3,0,0,2,61],
 "AMReX__DataServices_8H.html":[3,0,0,5,0,4],
 "AMReX__DataServices_8H_source.html":[3,0,0,5,0,4],
 "AMReX__DataServices_8cpp.html":[3,0,0,5,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "AMReX__DenseBins_8H.html#afa152e4ccd5f35d821d3fa5ec76d6c78":[3,0,0,7,2,6],
 "AMReX__DenseBins_8H_source.html":[3,0,0,7,2],
 "AMReX__Derive_8H.html":[3,0,0,0,8],
-"AMReX__Derive_8H.html#a046a83e139b61c9ec447bd89eed50967":[3,0,0,0,8,3],
-"AMReX__Derive_8H.html#a83e8cbe20f4d807987849da5431ba2c5":[3,0,0,0,8,5],
-"AMReX__Derive_8H.html#abf838b25d605cefbf6150bc883f4741d":[3,0,0,0,8,4]
+"AMReX__Derive_8H.html#a046a83e139b61c9ec447bd89eed50967":[3,0,0,0,8,3]
 };

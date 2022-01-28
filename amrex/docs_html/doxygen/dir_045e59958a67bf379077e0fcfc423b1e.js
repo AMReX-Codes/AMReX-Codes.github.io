@@ -85,6 +85,10 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_CudaGraph.H", "AMReX__CudaGraph_8H.html", null ],
     [ "AMReX_CuptiTrace.cpp", "AMReX__CuptiTrace_8cpp.html", null ],
     [ "AMReX_CuptiTrace.H", "AMReX__CuptiTrace_8H.html", null ],
+    [ "AMReX_DataAllocator.H", "AMReX__DataAllocator_8H.html", [
+      [ "DataAllocator", "structamrex_1_1DataAllocator.html", "structamrex_1_1DataAllocator" ],
+      [ "DataDeleter", "structamrex_1_1DataDeleter.html", "structamrex_1_1DataDeleter" ]
+    ] ],
     [ "AMReX_Dim3.H", "AMReX__Dim3_8H.html", "AMReX__Dim3_8H" ],
     [ "AMReX_DistributionMapping.cpp", "AMReX__DistributionMapping_8cpp.html", "AMReX__DistributionMapping_8cpp" ],
     [ "AMReX_DistributionMapping.H", "AMReX__DistributionMapping_8H.html", "AMReX__DistributionMapping_8H" ],
@@ -334,6 +338,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_Scan.H", "AMReX__Scan_8H.html", "AMReX__Scan_8H" ],
     [ "AMReX_SPACE.H", "AMReX__SPACE_8H.html", "AMReX__SPACE_8H" ],
     [ "AMReX_string_mod.F90", "AMReX__string__mod_8F90.html", "AMReX__string__mod_8F90" ],
+    [ "AMReX_TableData.H", "AMReX__TableData_8H.html", "AMReX__TableData_8H" ],
     [ "AMReX_TagParallelFor.H", "AMReX__TagParallelFor_8H.html", "AMReX__TagParallelFor_8H" ],
     [ "AMReX_ThirdPartyProfiling.H", "AMReX__ThirdPartyProfiling_8H.html", null ],
     [ "AMReX_TimeIntegrator.H", "AMReX__TimeIntegrator_8H.html", "AMReX__TimeIntegrator_8H" ],
