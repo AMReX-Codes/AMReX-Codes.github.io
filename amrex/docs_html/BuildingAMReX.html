@@ -62,6 +62,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#amrex-on-windows">AMReX on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spack">Spack</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
@@ -955,6 +956,30 @@ This capability is not supported on Windows.</p>
 <p>(3) Memory profiling is an optional feature in AMReX that is not enabled by default.  It reads
 memory system information from the OS to give us a summary of our memory usage.  This is not
 supported on Windows.</p>
+</div>
+<div class="section" id="spack">
+<span id="sec-build-spack"></span><h1>Spack<a class="headerlink" href="#spack" title="Permalink to this headline"></a></h1>
+<p>AMReX can be installed using the scientific software package manager Spack. Spack
+supports multiple versions and configurations of AMReX across a wide variety of platforms
+and environments. To learn more about Spack visit <a class="reference external" href="http://www.spack.io">http://www.spack.io</a>. For system requirements and
+installation instructions please see <a class="reference external" href="https://spack.readthedocs.io/">https://spack.readthedocs.io/</a>.</p>
+<p>Once Spack has been downloaded and the Spack environment enabled, AMReX can be
+installed with the command,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack install amrex
+</pre></div>
+</div>
+<p>This will install the latest release of AMReX and required dependencies if needed.</p>
+<p>AMReX can be built in several combinations of versions and configurations. Available options can
+be viewed by typing,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack info amrex
+</pre></div>
+</div>
+<p>For example, suppose we want to install the development version of AMReX for a two dimensional
+simulation with Cuda support for Cuda Architecture <code class="docutils literal notranslate"><span class="pre">sm_60</span></code>. Then we would
+use the install commands,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack install amrex@develop <span class="nv">dimensions</span><span class="o">=</span><span class="m">2</span> +cuda <span class="nv">cuda_arch</span><span class="o">=</span><span class="m">60</span>
+</pre></div>
+</div>
 </div>
 
 
