@@ -440,6 +440,8 @@ var namespaceamrex =
     [ "STLtools", "classamrex_1_1STLtools.html", "classamrex_1_1STLtools" ],
     [ "StreamRetry", "classamrex_1_1StreamRetry.html", "classamrex_1_1StreamRetry" ],
     [ "StructOfArrays", "structamrex_1_1StructOfArrays.html", "structamrex_1_1StructOfArrays" ],
+    [ "SundialsIntegrator", "classamrex_1_1SundialsIntegrator.html", "classamrex_1_1SundialsIntegrator" ],
+    [ "SundialsUserData", "structamrex_1_1SundialsUserData.html", "structamrex_1_1SundialsUserData" ],
     [ "Table1D", "structamrex_1_1Table1D.html", "structamrex_1_1Table1D" ],
     [ "Table2D", "structamrex_1_1Table2D.html", "structamrex_1_1Table2D" ],
     [ "Table3D", "structamrex_1_1Table3D.html", "structamrex_1_1Table3D" ],

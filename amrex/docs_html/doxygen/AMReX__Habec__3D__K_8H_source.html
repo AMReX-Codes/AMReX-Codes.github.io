@@ -474,7 +474,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        {</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="keywordtype">int</span> joff, koff, jj, kk;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            Real fracy, fracz;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            Real f = fac[0];</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            Real <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = fac[0];</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordflow">if</span> (area != Real(1.0)) {</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                joff = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::copysign(Real(1.0), fcx(i,j,k,0)));</div>
@@ -510,24 +510,24 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            Real tmp = (Real(1.0)-fracy)*(1.0-fracz)*area*b[0](i,j,k);</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="comment">// cell(i-1,j,k) is not covered because area &gt; 0</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="keywordflow">if</span> (cell_id(i-1,j,k) &gt;= 0) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                mat_tmp( 0,0,0) += tmp*f;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                mat_tmp(-1,0,0) -= tmp*f;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                mat_tmp( 0,0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                mat_tmp(-1,0,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i+1,j,k) &lt; 0 || apx(i+1,j,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                mat_tmp(1,0,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            }</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="keywordflow">if</span> (fracy &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                tmp = fracy*(Real(1.0)-fracz)*area*b[0](i,jj,k);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                <span class="keywordflow">if</span> (cell_id(i-1,jj,k) &gt;= 0 &amp;&amp; cell_id(i,jj,k) &gt;= 0) {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                    mat_tmp(-1,joff,0) -= tmp*f;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                    mat_tmp( 0,joff,0) += tmp*f;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                    mat_tmp(-1,joff,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                    mat_tmp( 0,joff,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i+1,jj,k) &lt; 0 || apx(i+1,jj,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                    mat_tmp( 0,joff,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                    mat_tmp( 0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    mat_tmp( 0,joff,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    mat_tmp( 0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    mat_tmp( 1,joff,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            }</div>
@@ -535,12 +535,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <span class="keywordflow">if</span> (fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                tmp = fracz*(Real(1.0)-fracy)*area*b[0](i,j,kk);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                <span class="keywordflow">if</span> (cell_id(i-1,j,kk) &gt;= 0 &amp;&amp; cell_id(i,j,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    mat_tmp(-1,0,koff) -= tmp*f;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    mat_tmp( 0,0,koff) += tmp*f;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    mat_tmp(-1,0,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    mat_tmp( 0,0,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i+1,j,kk) &lt; 0 || apx(i+1,j,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    mat_tmp( 0,0,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    mat_tmp( 0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    mat_tmp( 0,0,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    mat_tmp( 0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                    mat_tmp( 1,0,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                }</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            }</div>
@@ -548,12 +548,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            <span class="keywordflow">if</span> (fracy &gt; Real(0.0) &amp;&amp; fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                tmp = fracy*fracz*area*b[0](i,jj,kk);</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                <span class="keywordflow">if</span> (cell_id(i-1,jj,kk) &gt;= 0 &amp;&amp; cell_id(i,jj,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                    mat_tmp(-1,joff,koff) -= tmp*f;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*f;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                    mat_tmp(-1,joff,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i+1,jj,kk) &lt; 0 || apx(i+1,jj,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    mat_tmp( 1,joff,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                }</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            }</div>
@@ -566,7 +566,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <span class="keywordtype">int</span> joff, koff, jj, kk;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            Real fracy, fracz;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            Real f = fac[0];</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            Real <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = fac[0];</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160; </div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            <span class="keywordflow">if</span> (area != Real(1.0)) {</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                joff = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::copysign(Real(1.0), fcx(i+1,j,k,0)));</div>
@@ -601,24 +601,24 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            Real tmp = (Real(1.0)-fracy)*(Real(1.0)-fracz)*area*b[0](i+1,j,k);</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            <span class="keywordflow">if</span> (cell_id(i+1,j,k) &gt;= 0) {</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                mat_tmp(0,0,0) += tmp*f;</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                mat_tmp(1,0,0) -= tmp*f;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                mat_tmp(0,0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                mat_tmp(1,0,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i-1,j,k) &lt; 0 || apx(i-1,j,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                mat_tmp( 0,0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                mat_tmp( 0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                mat_tmp(-1,0,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            }</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;            <span class="keywordflow">if</span> (fracy &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                tmp = fracy*(Real(1.0)-fracz)*area*b[0](i+1,jj,k);</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,jj,k) &gt;= 0 &amp;&amp; cell_id(i+1,jj,k) &gt;= 0) {</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                    mat_tmp(0,joff,0) += tmp*f;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                    mat_tmp(1,joff,0) -= tmp*f;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                    mat_tmp(0,joff,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                    mat_tmp(1,joff,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i-1,jj,k) &lt; 0 || apx(i-1,jj,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    mat_tmp(0,joff,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    mat_tmp(0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    mat_tmp( 0,joff,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    mat_tmp( 0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    mat_tmp(-1,joff,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                }</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            }</div>
@@ -626,12 +626,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            <span class="keywordflow">if</span> (fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                tmp = fracz*(Real(1.0)-fracy)*area*b[0](i+1,j,kk);</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,j,kk) &gt;= 0 &amp;&amp; cell_id(i+1,j,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                    mat_tmp(0,0,koff) += tmp*f;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                    mat_tmp(1,0,koff) -= tmp*f;</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                    mat_tmp(0,0,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                    mat_tmp(1,0,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i-1,j,kk) &lt; 0 || apx(i-1,j,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                    mat_tmp(0,0,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                    mat_tmp(0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                    mat_tmp( 0,0,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                    mat_tmp( 0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                    mat_tmp(-1,0,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                }</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            }</div>
@@ -639,12 +639,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            <span class="keywordflow">if</span> (fracy &gt; Real(0.0) &amp;&amp; fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                tmp = fracy*fracz*area*b[0](i+1,jj,kk);</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,jj,kk) &gt;= 0 &amp;&amp; cell_id(i+1,jj,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                    mat_tmp(0,joff,koff) += tmp*f;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                    mat_tmp(1,joff,koff) -= tmp*f;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                    mat_tmp(0,joff,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                    mat_tmp(1,joff,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i-1,jj,kk) &lt; 0 || apx(i-1,jj,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                    mat_tmp(0,joff,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                    mat_tmp(0,joff,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                    mat_tmp( 0,joff,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                    mat_tmp(-1,joff,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                }</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            }</div>
@@ -657,7 +657,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        {</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="keywordtype">int</span> ioff, koff, ii, kk;</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            Real fracx, fracz;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            Real f = fac[1];</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            Real <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = fac[1];</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="keywordflow">if</span> (area != Real(1.0)) {</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                ioff = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::copysign(Real(1.0), fcy(i,j,k,0)));</div>
@@ -692,24 +692,24 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            Real tmp = (Real(1.0)-fracx)*(Real(1.0)-fracz)*area*b[1](i,j,k);</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            <span class="keywordflow">if</span> (cell_id(i,j-1,k) &gt;= 0) {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                mat_tmp(0, 0,0) += tmp*f;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                mat_tmp(0,-1,0) -= tmp*f;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                mat_tmp(0, 0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                mat_tmp(0,-1,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,j+1,k) &lt; 0 || apy(i,j+1,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                mat_tmp(0,1,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            }</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                tmp = fracx*(Real(1.0)-fracz)*area*b[1](ii,j,k);</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,j-1,k) &gt;= 0 &amp;&amp; cell_id(ii,j,k) &gt;= 0) {</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                    mat_tmp(ioff,-1,0) -= tmp*f;</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                    mat_tmp(ioff, 0,0) += tmp*f;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                    mat_tmp(ioff,-1,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                    mat_tmp(ioff, 0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,j+1,k) &lt; 0 || apy(ii,j+1,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                    mat_tmp(ioff,1,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                }</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;            }</div>
@@ -717,12 +717,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;            <span class="keywordflow">if</span> (fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                tmp = fracz*(Real(1.0)-fracx)*area*b[1](i,j,kk);</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,j-1,kk) &gt;= 0 &amp;&amp; cell_id(i,j,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                    mat_tmp(0,-1,koff) -= tmp*f;</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                    mat_tmp(0, 0,koff) += tmp*f;</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                    mat_tmp(0,-1,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                    mat_tmp(0, 0,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,j+1,kk) &lt; 0 || apy(i,j+1,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                    mat_tmp(0,0,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                    mat_tmp(0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                    mat_tmp(0,0,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                    mat_tmp(0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                    mat_tmp(0,1,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                }</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            }</div>
@@ -730,12 +730,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0) &amp;&amp; fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                tmp = fracx*fracz*area*b[1](ii,j,kk);</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,j-1,kk) &gt;= 0 &amp;&amp; cell_id(ii,j,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                    mat_tmp(ioff,-1,koff) -= tmp*f;</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                    mat_tmp(ioff, 0,koff) += tmp*f;</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                    mat_tmp(ioff,-1,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                    mat_tmp(ioff, 0,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,j+1,kk) &lt; 0 || apy(ii,j+1,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                    mat_tmp(ioff,1,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                }</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            }</div>
@@ -748,7 +748,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        {</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="keywordtype">int</span> ioff, koff, ii, kk;</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            Real fracx, fracz;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            Real f = fac[1];</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            Real <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = fac[1];</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;            <span class="keywordflow">if</span> (area != Real(1.0)) {</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                ioff = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::copysign(Real(1.0), fcy(i,j+1,k,0)));</div>
@@ -783,24 +783,24 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            Real tmp = (Real(1.0)-fracx)*(Real(1.0)-fracz)*area*b[1](i,j+1,k);</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            <span class="keywordflow">if</span> (cell_id(i,j+1,k) &gt;= 0) {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                mat_tmp(0,0,0) += tmp*f;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                mat_tmp(0,1,0) -= tmp*f;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                mat_tmp(0,0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                mat_tmp(0,1,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,j-1,k) &lt; 0 || apy(i,j-1,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                mat_tmp(0, 0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                mat_tmp(0, 0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                mat_tmp(0,-1,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            }</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                tmp = fracx*(Real(1.0)-fracz)*area*b[1](ii,j+1,k);</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,j,k) &gt;= 0 &amp;&amp; cell_id(ii,j+1,k) &gt;= 0) {</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    mat_tmp(ioff,0,0) += tmp*f;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    mat_tmp(ioff,1,0) -= tmp*f;</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    mat_tmp(ioff,0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    mat_tmp(ioff,1,0) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,j-1,k) &lt; 0 || apy(ii,j-1,k) == Real(0.0)) {</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                    mat_tmp(ioff, 0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                    mat_tmp(ioff, 0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                    mat_tmp(ioff,-1,0) += tmp*   bf2;</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                }</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            }</div>
@@ -808,12 +808,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            <span class="keywordflow">if</span> (fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                tmp = fracz*(Real(1.0)-fracx)*area*b[1](i,j+1,kk);</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,j,kk) &gt;= 0 &amp;&amp; cell_id(i,j+1,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    mat_tmp(0,0,koff) += tmp*f;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                    mat_tmp(0,1,koff) -= tmp*f;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    mat_tmp(0,0,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                    mat_tmp(0,1,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,j-1,kk) &lt; 0 || apy(i,j-1,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                    mat_tmp(0,0,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                    mat_tmp(0,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    mat_tmp(0, 0,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    mat_tmp(0, 0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                    mat_tmp(0,-1,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                }</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;            }</div>
@@ -821,12 +821,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0) &amp;&amp; fracz &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                tmp = fracx*fracz*area*b[1](ii,j+1,kk);</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,j,kk) &gt;= 0 &amp;&amp; cell_id(ii,j+1,kk) &gt;= 0) {</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                    mat_tmp(ioff,1,koff) -= tmp*f;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*f;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                    mat_tmp(ioff,1,koff) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,j-1,kk) &lt; 0 || apy(ii,j-1,kk) == Real(0.0)) {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                    mat_tmp(ioff,0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    mat_tmp(ioff, 0,koff) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    mat_tmp(ioff, 0,koff) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                    mat_tmp(ioff,-1,koff) += tmp*   bf2;</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                }</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            }</div>
@@ -839,7 +839,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        {</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            <span class="keywordtype">int</span> ioff, joff, ii, jj;</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            Real fracx, fracy;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            Real f = fac[2];</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            Real <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = fac[2];</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <span class="keywordflow">if</span> (area != Real(1.0)) {</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                ioff = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::copysign(Real(1.0), fcz(i,j,k,0)));</div>
@@ -874,24 +874,24 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;            Real tmp = (Real(1.0)-fracx)*(Real(1.0)-fracy)*area*b[2](i,j,k);</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            <span class="keywordflow">if</span> (cell_id(i,j,k-1) &gt;= 0) {</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                mat_tmp(0,0, 0) += tmp*f;</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                mat_tmp(0,0,-1) -= tmp*f;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                mat_tmp(0,0, 0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                mat_tmp(0,0,-1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,j,k+1) &lt; 0 || apz(i,j,k+1) == Real(0.0)) {</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                mat_tmp(0,0,1) += tmp*   bf2;</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            }</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                tmp = fracx*(Real(1.0)-fracy)*area*b[2](ii,j,k);</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,j,k-1) &gt;= 0 &amp;&amp; cell_id(ii,j,k) &gt;= 0) {</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                    mat_tmp(ioff,0,-1) -= tmp*f;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                    mat_tmp(ioff,0, 0) += tmp*f;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                    mat_tmp(ioff,0,-1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                    mat_tmp(ioff,0, 0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,j,k+1) &lt; 0 || apz(ii,j,k+1) == Real(0.0)) {</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                    mat_tmp(ioff,0,1) += tmp*   bf2;</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                }</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            }</div>
@@ -899,12 +899,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <span class="keywordflow">if</span> (fracy &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                tmp = fracy*(Real(1.0)-fracx)*area*b[2](i,jj,k);</div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,jj,k-1) &gt;= 0 &amp;&amp; cell_id(i,jj,k) &gt;= 0) {</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                    mat_tmp(0,joff,-1) -= tmp*f;</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                    mat_tmp(0,joff, 0) += tmp*f;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                    mat_tmp(0,joff,-1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                    mat_tmp(0,joff, 0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,jj,k+1) &lt; 0 || apz(i,jj,k+1) == Real(0.0)) {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                    mat_tmp(0,joff,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                    mat_tmp(0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    mat_tmp(0,joff,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    mat_tmp(0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                    mat_tmp(0,joff,1) += tmp*   bf2;</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                }</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            }</div>
@@ -912,12 +912,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0) &amp;&amp; fracy &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                tmp = fracx*fracy*area*b[2](ii,jj,k);</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,jj,k-1) &gt;= 0 &amp;&amp; cell_id(ii,jj,k) &gt;= 0) {</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                    mat_tmp(ioff,joff,-1) -= tmp*f;</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                    mat_tmp(ioff,joff, 0) += tmp*f;</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                    mat_tmp(ioff,joff,-1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                    mat_tmp(ioff,joff, 0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,jj,k+1) &lt; 0 || apz(ii,jj,k+1) == Real(0.0)) {</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                    mat_tmp(ioff,joff,1) += tmp*   bf2;</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                }</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            }</div>
@@ -930,7 +930,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        {</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;            <span class="keywordtype">int</span> ioff, joff, ii, jj;</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;            Real fracx, fracy;</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            Real f = fac[2];</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            Real <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = fac[2];</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            <span class="keywordflow">if</span> (area != Real(1.0)) {</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                ioff = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::copysign(Real(1.0), fcz(i,j,k+1,0)));</div>
@@ -965,24 +965,24 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160; </div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;            Real tmp = (Real(1.0)-fracx)*(Real(1.0)-fracy)*area*b[2](i,j,k+1);</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            <span class="keywordflow">if</span> (cell_id(i,j,k+1) &gt;= 0) {</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                mat_tmp(0,0,0) += tmp*f;</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;                mat_tmp(0,0,1) -= tmp*f;</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                mat_tmp(0,0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;                mat_tmp(0,0,1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,j,k-1) &lt; 0 || apz(i,j,k-1) == Real(0.0)) {</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                mat_tmp(0,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                mat_tmp(0,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                mat_tmp(0,0, 0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                mat_tmp(0,0, 0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                mat_tmp(0,0,-1) += tmp*   bf2;</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            }</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160; </div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                tmp = fracx*(Real(1.0)-fracy)*area*b[2](ii,j,k+1);</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,j,k) &gt;= 0 &amp;&amp; cell_id(ii,j,k+1) &gt;= 0) {</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                    mat_tmp(ioff,0,0) += tmp*f;</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                    mat_tmp(ioff,0,1) -= tmp*f;</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                    mat_tmp(ioff,0,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                    mat_tmp(ioff,0,1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,j,k-1) &lt; 0 || apz(ii,j,k-1) == Real(0.0)) {</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                    mat_tmp(ioff,0,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                    mat_tmp(ioff,0, 0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                    mat_tmp(ioff,0, 0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                    mat_tmp(ioff,0,-1) += tmp*   bf2;</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                }</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            }</div>
@@ -990,12 +990,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            <span class="keywordflow">if</span> (fracy &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                tmp = fracy*(Real(1.0)-fracx)*area*b[2](i,jj,k+1);</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;                <span class="keywordflow">if</span> (cell_id(i,jj,k) &gt;= 0 &amp;&amp; cell_id(i,jj,k+1) &gt;= 0) {</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                    mat_tmp(0,joff,0) += tmp*f;</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                    mat_tmp(0,joff,1) -= tmp*f;</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                    mat_tmp(0,joff,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                    mat_tmp(0,joff,1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(i,jj,k-1) &lt; 0 || apz(i,jj,k-1) == Real(0.0)) {</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                    mat_tmp(0,joff,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                    mat_tmp(0,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                    mat_tmp(0,joff, 0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                    mat_tmp(0,joff, 0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                    mat_tmp(0,joff,-1) += tmp*   bf2;</div>
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                }</div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            }</div>
@@ -1003,12 +1003,12 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;            <span class="keywordflow">if</span> (fracx &gt; Real(0.0) &amp;&amp; fracy &gt; Real(0.0)) {</div>
 <div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                tmp = fracx*fracy*area*b[2](ii,jj,k+1);</div>
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                <span class="keywordflow">if</span> (cell_id(ii,jj,k+1) &gt;= 0 &amp;&amp; cell_id(ii,jj,k) &gt;= 0) {</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                    mat_tmp(ioff,joff,1) -= tmp*f;</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*f;</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                    mat_tmp(ioff,joff,1) -= tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>;</div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell_id(ii,jj,k-1) &lt; 0 || apz(ii,jj,k-1) == Real(0.0)) {</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*(f+bflo);</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                    mat_tmp(ioff,joff,0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bflo);</div>
 <div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                    mat_tmp(ioff,joff, 0) += tmp*(f+bf1);</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                    mat_tmp(ioff,joff, 0) += tmp*(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>+bf1);</div>
 <div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;                    mat_tmp(ioff,joff,-1) += tmp*   bf2;</div>
 <div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;                }</div>
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            }</div>
@@ -1110,6 +1110,7 @@ $(document).ready(function(){initNavTree('AMReX__Habec__3D__K_8H_source.html',''
 <div class="ttc" id="aAMReX__MLEBABecLap__K_8H_html"><div class="ttname"><a href="AMReX__MLEBABecLap__K_8H.html">AMReX_MLEBABecLap_K.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html_a72d8b9352d99ebca0a7eba07dadbdfa5"><div class="ttname"><a href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:35</div></div>
 <div class="ttc" id="aclassamrex_1_1Orientation_html_a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8"><div class="ttname"><a href="classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8">amrex::Orientation::high</a></div><div class="ttdeci">@ high</div><div class="ttdef"><b>Definition:</b> AMReX_Orientation.H:35</div></div>
+<div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_acc0c2cceab5a58cafa4ae6e68be50d24"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">amrex::SundialsUserFun::f</a></div><div class="ttdeci">static int f(realtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:40</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:14</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:118</div></div>
 <div class="ttc" id="anamespaceamrex_html_abebd70eafbd522c54911f746d423884f"><div class="ttname"><a href="namespaceamrex.html#abebd70eafbd522c54911f746d423884f">amrex::habec_cols</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void habec_cols(GpuArray&lt; Int, 2 *AMREX_SPACEDIM+1 &gt; &amp;sten, int i, int j, int, Array4&lt; Int const &gt; const &amp;cell_id)</div><div class="ttdef"><b>Definition:</b> AMReX_Habec_2D_K.H:171</div></div>

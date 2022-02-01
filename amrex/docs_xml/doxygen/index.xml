@@ -5418,17 +5418,24 @@
   </compound>
   <compound refid="classamrex_1_1IntegratorBase" kind="class"><name>amrex::IntegratorBase</name>
     <member refid="classamrex_1_1IntegratorBase_1a26bec4822130d973d323ec22ce38e71a" kind="variable"><name>Fun</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1a23632d8a36a1af5671c02d51a69a5785" kind="variable"><name>FastFun</name></member>
     <member refid="classamrex_1_1IntegratorBase_1ae09b7963b36e9cba661e6e64c3d67159" kind="variable"><name>timestep</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1af8b9b0ced6670ce184422a8223b57b63" kind="variable"><name>slow_fast_timestep_ratio</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a093f10915c880670f78fcc8cbc763dd6" kind="variable"><name>post_update</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a8960e06411e4dac4bd0a99f5be3b489e" kind="function"><name>IntegratorBase</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a33e59ff0c3058f32e4c28ab13369f211" kind="function"><name>IntegratorBase</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a9bcad149736f2fc82ca342a2e0f24fc6" kind="function"><name>~IntegratorBase</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a776b334c903b6275ea792b4e7cca5a88" kind="function"><name>initialize</name></member>
     <member refid="classamrex_1_1IntegratorBase_1ad6bd9eb8cc13ac9e2a120c9018f529aa" kind="function"><name>set_rhs</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1a8c488010a33a199738095676417424ae" kind="function"><name>set_fast_rhs</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1a2c28fc76c5cdf2fceab4b2c06b07074c" kind="function"><name>set_slow_fast_timestep_ratio</name></member>
     <member refid="classamrex_1_1IntegratorBase_1ab844bc357c2ad282e111b0f3e965864e" kind="function"><name>set_post_update</name></member>
-    <member refid="classamrex_1_1IntegratorBase_1a273aca91ddf7ee9e5de270e7f6c02a21" kind="function"><name>get_rhs</name></member>
     <member refid="classamrex_1_1IntegratorBase_1af961f09393e62d6a09749da90d0b9016" kind="function"><name>get_post_update</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1a273aca91ddf7ee9e5de270e7f6c02a21" kind="function"><name>get_rhs</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1a1295d3faece00c625a70ab996fc9fa99" kind="function"><name>get_fast_rhs</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1aedf790cb6391c0861069d8c358f65ddf" kind="function"><name>get_slow_fast_timestep_ratio</name></member>
     <member refid="classamrex_1_1IntegratorBase_1ae03ee5e425bef0111005514d81fdf5e4" kind="function"><name>rhs</name></member>
+    <member refid="classamrex_1_1IntegratorBase_1abb21d3ddf233718bd7d828471c1bb91d" kind="function"><name>fast_rhs</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a0b820091c0cdc69c24149eb97b5cb0b7" kind="function"><name>advance</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a3dc1f86935271c9b053b9d6a60911739" kind="function"><name>time_interpolate</name></member>
     <member refid="classamrex_1_1IntegratorBase_1a9a0b2271de694f1ea0903339931578ec" kind="function"><name>map_data</name></member>
@@ -10040,6 +10047,50 @@
     <member refid="structamrex_1_1Scan_1_1detail_1_1STVA_1a5a2e4baacb91eac373043018ffabd1fe" kind="variable"><name>status</name></member>
     <member refid="structamrex_1_1Scan_1_1detail_1_1STVA_1aa76259f63fc8b37f35274e568f69f0cd" kind="variable"><name>value</name></member>
   </compound>
+  <compound refid="classamrex_1_1SundialsIntegrator" kind="class"><name>amrex::SundialsIntegrator</name>
+    <member refid="classamrex_1_1SundialsIntegrator_1a551b379b8d153f1e80342ce6803fca2c" kind="typedef"><name>BaseT</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1ae0ce7b5d30da9447a3734166bc8cd41f" kind="variable"><name>timestep</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a931f12473d4c9ff5194a42e7560b87a0" kind="variable"><name>use_erk_strategy</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a259e167849dc040148505e8a2bea504d" kind="variable"><name>use_mri_strategy</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a22720e2c074c7e0f6449d8fbc75620bc" kind="variable"><name>use_mri_strategy_test</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a0dd50fc21030f7b640138089cce401d7" kind="variable"><name>NLS</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1ad774ef92ba17a6baff2d36023f33b87f" kind="variable"><name>LS</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a5517e10d207516410fc8c47821199574" kind="variable"><name>arkode_mem</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a733cb29fa69d1df694f4481292b32644" kind="variable"><name>NLSf</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1adc40e275ad9f22f598f1ce11f7dd667d" kind="variable"><name>LSf</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a5c4ae34fa9d6ae829a0681baa924e76c" kind="variable"><name>inner_mem</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1acaf06c656b7a49d832f5a1deda67c6c4" kind="variable"><name>mristep_mem</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a9e2a6925e89dabd666bfe6d700f8c638" kind="variable"><name>mpi_comm</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1afbff179c20dc2bbf74941d02247d1d7c" kind="variable"><name>sunctx</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a77f09fefa547050a3c4ab8e1504465ce" kind="variable"><name>reltol</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a0855b2e653511753c1e569c7b87c9ca5" kind="variable"><name>abstol</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a655ce00ada90ca303246e448fd9a37e7" kind="variable"><name>t</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a07150223c7502907d0f86a58993f9751" kind="variable"><name>tout</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a31cc728355cd6c45dda548cb02230689" kind="variable"><name>hfixed</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1af5f0fff01cffc816095e63fe90133042" kind="variable"><name>hfixed_mri</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a6001354f5d925662cf0de25a29190e9d" kind="variable"><name>NVar</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a418b59c318ed0316d241cf9231314544" kind="variable"><name>nv_many_arr</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a687e9886c4eb70e069cf198a1fca2ff5" kind="variable"><name>nv_S</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1af5b7ed750c2c37f312159cfeef26f7dd" kind="variable"><name>nv_stage_data</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1aac86414cf938aa7161d833cfd1a3c518" kind="function"><name>initialize_parameters</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a073132be2c807a20aaddee85783c35fa" kind="function"><name>SundialsIntegrator</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1ac125b08d518cbe4a008797ef1d77f8b8" kind="function"><name>SundialsIntegrator</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1ae8d921e3d4623e8bdbcc0bba9d01c9ce" kind="function"><name>initialize</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1afe4ff75148b281c8bc636403af8e09ef" kind="function"><name>initialize</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a8d368e32b7b9d20965c609d459d1e498" kind="function"><name>~SundialsIntegrator</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1ab4f216e84ab18e6e0adeff7789c51df1" kind="function"><name>advance</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a5911130e427adff73793b828f614f6f2" kind="function"><name>advance_erk</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1aa8e3082aac4fab68a3b6541af7e57878" kind="function"><name>advance_mri</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a81a73e66047a16b9f667e29ad37cc064" kind="function"><name>time_interpolate</name></member>
+    <member refid="classamrex_1_1SundialsIntegrator_1a26b244c6f1809e0f32d38c5a6717818e" kind="function"><name>map_data</name></member>
+  </compound>
+  <compound refid="structamrex_1_1SundialsUserData" kind="struct"><name>amrex::SundialsUserData</name>
+    <member refid="structamrex_1_1SundialsUserData_1a4e825ce3a349ec2e2d02cbf6c53cd646" kind="variable"><name>f0</name></member>
+    <member refid="structamrex_1_1SundialsUserData_1a659bc01817a51dcbd4f3b159ec298ecb" kind="variable"><name>f_fast</name></member>
+    <member refid="structamrex_1_1SundialsUserData_1ad012b5f651c04796b616c1d6acb9bd37" kind="variable"><name>f</name></member>
+    <member refid="structamrex_1_1SundialsUserData_1adc1b98b0ff96a1d59029a733e759a05c" kind="variable"><name>ProcessStage</name></member>
+    <member refid="structamrex_1_1SundialsUserData_1a6f226e577fbfe837757b90314de5d263" kind="variable"><name>PostStoreStage</name></member>
+  </compound>
   <compound refid="structamrex_1_1NonLocalBC_1_1SwapComponents" kind="struct"><name>amrex::NonLocalBC::SwapComponents</name>
     <member refid="structamrex_1_1NonLocalBC_1_1SwapComponents_1a3e790daff54f3ef4a93edc593eba1a58" kind="function"><name>operator()</name></member>
   </compound>
@@ -10209,9 +10260,12 @@
     <member refid="classamrex_1_1TimeIntegrator_1ab90a96cb3bf5b4520083fe611528d3d6" kind="function"><name>set_post_timestep</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1a962f126a294b86b3ac2e7bb4e4fae742" kind="function"><name>set_post_update</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1ae16747791ab03ecd41284a2c31635290" kind="function"><name>set_rhs</name></member>
+    <member refid="classamrex_1_1TimeIntegrator_1afc937a9662d8f6ea1c438b00f18bb4e7" kind="function"><name>set_fast_rhs</name></member>
+    <member refid="classamrex_1_1TimeIntegrator_1a7e16927ca77f3f9bfcb707caccdc4197" kind="function"><name>set_slow_fast_timestep_ratio</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1a81d43ab3d17503622732e869da0e6370" kind="function"><name>get_post_timestep</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1a2fac54e653196aeb3f5768352adb27ba" kind="function"><name>get_post_update</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1a71d4be9cc12ef21b19c77b9dad686fc4" kind="function"><name>get_rhs</name></member>
+    <member refid="classamrex_1_1TimeIntegrator_1ab89a2fee31db25cb3f86dd3e15bffb12" kind="function"><name>get_fast_rhs</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1adcd895166e8c1a7f2bb9b1d65feeb505" kind="function"><name>advance</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1a592c42e4a2d86455e26944e2747be9eb" kind="function"><name>integrate</name></member>
     <member refid="classamrex_1_1TimeIntegrator_1a7cae24606fd9c92a44f4ae163bab5a3b" kind="function"><name>time_interpolate</name></member>
@@ -10663,6 +10717,7 @@
     <member refid="namespaceamrex_1aad80b9cf2bc799f2905cc9a77e3a599e" kind="enum"><name>IntegratorTypes</name></member>
     <member refid="namespaceamrex_1aad80b9cf2bc799f2905cc9a77e3a599ea779b3131986acb907c287cdaf371d578" kind="enumvalue"><name>ForwardEuler</name></member>
     <member refid="namespaceamrex_1aad80b9cf2bc799f2905cc9a77e3a599ea0e3b15fe691c25fd194f13af33980845" kind="enumvalue"><name>ExplicitRungeKutta</name></member>
+    <member refid="namespaceamrex_1aad80b9cf2bc799f2905cc9a77e3a599eafd3bfec7c5048bfbd7655f7999c26f3d" kind="enumvalue"><name>Sundials</name></member>
     <member refid="namespaceamrex_1a92ee563e823bf1f37c94d26531af0a28" kind="enum"><name>iparser_exe_t</name></member>
     <member refid="namespaceamrex_1a92ee563e823bf1f37c94d26531af0a28a6dfbde3e58ba42669d2dab8e0afe5983" kind="enumvalue"><name>IPARSER_EXE_NULL</name></member>
     <member refid="namespaceamrex_1a92ee563e823bf1f37c94d26531af0a28aedb5c10079e70548e697cd7161dd07ee" kind="enumvalue"><name>IPARSER_EXE_NUMBER</name></member>
@@ -12280,43 +12335,43 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d455" kind="namespace"><name>amrex::@455</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d529" kind="namespace"><name>amrex::@529</name>
-  </compound>
   <compound refid="namespaceamrex_1_1_0d53" kind="namespace"><name>amrex::@53</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d531" kind="namespace"><name>amrex::@531</name>
+  <compound refid="namespaceamrex_1_1_0d530" kind="namespace"><name>amrex::@530</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d538" kind="namespace"><name>amrex::@538</name>
+  <compound refid="namespaceamrex_1_1_0d532" kind="namespace"><name>amrex::@532</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d545" kind="namespace"><name>amrex::@545</name>
+  <compound refid="namespaceamrex_1_1_0d539" kind="namespace"><name>amrex::@539</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d546" kind="namespace"><name>amrex::@546</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d548" kind="namespace"><name>amrex::@548</name>
+  <compound refid="namespaceamrex_1_1_0d547" kind="namespace"><name>amrex::@547</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d551" kind="namespace"><name>amrex::@551</name>
+  <compound refid="namespaceamrex_1_1_0d549" kind="namespace"><name>amrex::@549</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d564" kind="namespace"><name>amrex::@564</name>
+  <compound refid="namespaceamrex_1_1_0d552" kind="namespace"><name>amrex::@552</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d565" kind="namespace"><name>amrex::@565</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d566" kind="namespace"><name>amrex::@566</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d574" kind="namespace"><name>amrex::@574</name>
+  <compound refid="namespaceamrex_1_1_0d567" kind="namespace"><name>amrex::@567</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d577" kind="namespace"><name>amrex::@577</name>
+  <compound refid="namespaceamrex_1_1_0d575" kind="namespace"><name>amrex::@575</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d578" kind="namespace"><name>amrex::@578</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d579" kind="namespace"><name>amrex::@579</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d592" kind="namespace"><name>amrex::@592</name>
+  <compound refid="namespaceamrex_1_1_0d580" kind="namespace"><name>amrex::@580</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d598" kind="namespace"><name>amrex::@598</name>
+  <compound refid="namespaceamrex_1_1_0d593" kind="namespace"><name>amrex::@593</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0d599" kind="namespace"><name>amrex::@599</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d60" kind="namespace"><name>amrex::@60</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d605" kind="namespace"><name>amrex::@605</name>
+  <compound refid="namespaceamrex_1_1_0d606" kind="namespace"><name>amrex::@606</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d69" kind="namespace"><name>amrex::@69</name>
   </compound>
@@ -13247,7 +13302,14 @@
   </compound>
   <compound refid="namespaceamrex_1_1sundials_1_1_0d496" kind="namespace"><name>amrex::sundials::@496</name>
   </compound>
-  <compound refid="namespaceamrex_1_1sundials_1_1_0d498" kind="namespace"><name>amrex::sundials::@498</name>
+  <compound refid="namespaceamrex_1_1sundials_1_1_0d499" kind="namespace"><name>amrex::sundials::@499</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1SundialsUserFun" kind="namespace"><name>amrex::SundialsUserFun</name>
+    <member refid="namespaceamrex_1_1SundialsUserFun_1aa64fc5cec19aa33eb07abd22a5e388de" kind="function"><name>f0</name></member>
+    <member refid="namespaceamrex_1_1SundialsUserFun_1ab6ef23c14197ba199f01448789486e7d" kind="function"><name>f_fast</name></member>
+    <member refid="namespaceamrex_1_1SundialsUserFun_1acc0c2cceab5a58cafa4ae6e68be50d24" kind="function"><name>f</name></member>
+    <member refid="namespaceamrex_1_1SundialsUserFun_1a547d76fae87f15799e5ccc3bd63f678e" kind="function"><name>ProcessStage</name></member>
+    <member refid="namespaceamrex_1_1SundialsUserFun_1a6ed8a931c8d21be6b9f89205384c24ce" kind="function"><name>PostStoreStage</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1system" kind="namespace"><name>amrex::system</name>
     <member refid="namespaceamrex_1_1system_1aa338ee7ebd729e662154160b02022599" kind="variable"><name>exename</name></member>
@@ -16198,6 +16260,8 @@
   <compound refid="AMReX__Sundials_8cpp" kind="file"><name>AMReX_Sundials.cpp</name>
   </compound>
   <compound refid="AMReX__Sundials_8H" kind="file"><name>AMReX_Sundials.H</name>
+  </compound>
+  <compound refid="AMReX__SundialsIntegrator_8H" kind="file"><name>AMReX_SundialsIntegrator.H</name>
   </compound>
   <compound refid="AMReX__SUNMemory_8cpp" kind="file"><name>AMReX_SUNMemory.cpp</name>
   </compound>

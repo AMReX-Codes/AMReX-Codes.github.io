@@ -514,7 +514,8 @@ var hierarchy =
     ] ],
     [ "amrex::IntegratorBase< T >", "classamrex_1_1IntegratorBase.html", [
       [ "amrex::FEIntegrator< T >", "classamrex_1_1FEIntegrator.html", null ],
-      [ "amrex::RKIntegrator< T >", "classamrex_1_1RKIntegrator.html", null ]
+      [ "amrex::RKIntegrator< T >", "classamrex_1_1RKIntegrator.html", null ],
+      [ "amrex::SundialsIntegrator< T >", "classamrex_1_1SundialsIntegrator.html", null ]
     ] ],
     [ "amrex::IntegratorOps< T, Tv >", "structamrex_1_1IntegratorOps.html", null ],
     [ "amrex::IntegratorOps< T, typename std::enable_if< std::is_same< amrex::MultiFab, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html", null ],
@@ -914,6 +915,7 @@ var hierarchy =
     [ "amrex::StructOfArrays< NArrayReal, NArrayInt, DefaultAllocator >", "structamrex_1_1StructOfArrays.html", null ],
     [ "amrex::Scan::detail::STVA< T >", "structamrex_1_1Scan_1_1detail_1_1STVA.html", null ],
     [ "amrex::Scan::detail::STVA< U >", "structamrex_1_1Scan_1_1detail_1_1STVA.html", null ],
+    [ "amrex::SundialsUserData", "structamrex_1_1SundialsUserData.html", null ],
     [ "amrex::NonLocalBC::SwapComponents< I, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", null ],
     [ "amrex::NonLocalBC::SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", null ],
     [ "amrex::NonLocalBC::SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", null ],

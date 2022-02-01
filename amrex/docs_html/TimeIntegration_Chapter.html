@@ -57,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Time Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#a-simple-time-integrator-setup">A Simple Time Integrator Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-sundials">Using SUNDIALS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#picking-a-time-integration-method">Picking A Time Integration Method</a></li>
 </ul>
 </li>
@@ -150,20 +151,150 @@ ghost cells are filled when the right hand side function is called on that solut
 </pre></div>
 </div>
 </div>
+<div class="section" id="using-sundials">
+<h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Permalink to this headline"></a></h2>
+<p>The AMReX Time Integration interface also supports a SUNDIALS backend that
+wraps both the explicit Runge-Kutta (ERK) and multirate (MRI) integration
+schemes in the SUNDIALS ARKODE package. To use either of them, the user needs
+to compile AMReX with <cite>USE_SUNDIALS=TRUE</cite> and use SUNDIALS v. 6.0 or later.</p>
+<p>There are only minor changes to the code above required to use the SUNDIALS
+interface. The first change is that the integration datatype is now a
+<cite>Vector&lt;MultiFab&gt;</cite> type instead of simply <cite>MultiFab</cite>. The reason for
+introducing a <cite>Vector&lt;MultiFab&gt;</cite> in this case, is to permit integrating state
+data with different spatial centering (e.g. cell centered, face centered, node
+centered) concurrently. Shown here is sample code equivalent to the code above,
+suitable for the SUNDIALS explicit Runge-Kutta integrator:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_TimeIntegrator.H&gt;</span><span class="cp"></span>
+
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">Sborder</span><span class="p">;</span> <span class="c1">// MultiFab(s) containing old-time state data and ghost cells</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">Snew</span><span class="p">;</span>    <span class="c1">// MultiFab(s) where we want new-time state data</span>
+<span class="n">Geometry</span> <span class="n">geom</span><span class="p">;</span>    <span class="c1">// The domain (or level) geometry</span>
+
+<span class="c1">// [Fill Sborder here]</span>
+
+<span class="c1">// Create a time integrator that will work with</span>
+<span class="c1">// MultiFabs with the same BoxArray, DistributionMapping,</span>
+<span class="c1">// and number of components as the state_data MultiFab.</span>
+<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">integrator</span><span class="p">(</span><span class="n">Sborder</span><span class="p">);</span>
+
+<span class="c1">// Create a RHS source function we will integrate</span>
+<span class="k">auto</span> <span class="n">source_fun</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">rhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">){</span>
+    <span class="c1">// User function to calculate the rhs MultiFab given the state MultiFab</span>
+    <span class="n">fill_rhs</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Create a function to call after updating a state</span>
+<span class="k">auto</span> <span class="n">post_update_fun</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">S_data</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Call user function to update state MultiFab, e.g. fill BCs</span>
+    <span class="n">post_update</span><span class="p">(</span><span class="n">S_data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">geom</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Attach the right hand side and post-update functions</span>
+<span class="c1">// to the integrator</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">source_fun</span><span class="p">);</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_post_update</span><span class="p">(</span><span class="n">post_update_fun</span><span class="p">);</span>
+
+<span class="c1">// integrate forward one step from `time` by `dt` to fill S_new</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sborder</span><span class="p">,</span> <span class="n">S_new</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Afterwards, to select the ERK integrator, one needs only to add the following
+two input parameters at runtime:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">integration</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">SUNDIALS</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">ERK</span>
+</pre></div>
+</div>
+<p>If instead one wishes to use the SUNDIALS multirate integrator, then the user
+will need to use the following runtime inputs parameters:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">integration</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">SUNDIALS</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">MRI</span>
+</pre></div>
+</div>
+<p>In addition, to set up the multirate problem, the user needs to supply a fast
+timescale right-hand-side function in addition to the usual right hand side
+function (which is interpreted as the slow timescale right-hand side). The user
+will also need to supply the ratio of the slow timestep size to the fast
+timestep size, which is an integer corresponding to the number of fast
+timesteps the integrator will take per every slow timestep. An example code
+snippet would look as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_TimeIntegrator.H&gt;</span><span class="cp"></span>
+
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">Sborder</span><span class="p">;</span> <span class="c1">// Vector of MultiFab(s) containing old-time state data and ghost cells</span>
+<span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">Snew</span><span class="p">;</span>    <span class="c1">// Vector of MultiFab(s) where we want new-time state data</span>
+<span class="n">Geometry</span> <span class="n">geom</span><span class="p">;</span>    <span class="c1">// The domain (or level) geometry</span>
+
+<span class="c1">// [Fill Sborder here]</span>
+
+<span class="c1">// Create a time integrator that will work with</span>
+<span class="c1">// MultiFabs with the same BoxArray, DistributionMapping,</span>
+<span class="c1">// and number of components as the state_data MultiFab.</span>
+<span class="n">TimeIntegrator</span><span class="o">&lt;</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">integrator</span><span class="p">(</span><span class="n">Sborder</span><span class="p">);</span>
+
+<span class="c1">// Create a slow timescale RHS function we will integrate</span>
+<span class="k">auto</span> <span class="n">rhs_fun</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">rhs</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">){</span>
+    <span class="c1">// User function to calculate the rhs MultiFab given the state MultiFab(s)</span>
+    <span class="n">fill_rhs</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Create a fast timescale RHS function to integrate</span>
+<span class="k">auto</span> <span class="n">rhs_fun_fast</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">rhs</span><span class="p">,</span>
+                        <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">stage_data</span><span class="p">,</span>
+                        <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// User function to calculate the fast-timescale rhs MultiFab given</span>
+     <span class="c1">// the state MultiFab and stage_data which holds the previously</span>
+     <span class="c1">// accessed slow-timescale stage state data.</span>
+     <span class="n">fill_fast_rhs</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="n">stage_data</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">time</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// The post update function is called after updating state data or</span>
+<span class="c1">// immediately before using state data to calculate a fast or slow right hand side.</span>
+<span class="c1">// (it is a good place to e.g. fill boundary conditions)</span>
+<span class="k">auto</span> <span class="n">post_update_fun</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;&amp;</span> <span class="n">S_data</span><span class="p">,</span> <span class="k">const</span> <span class="n">Real</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Call user function to update state MultiFab(s), e.g. fill BCs</span>
+    <span class="n">post_update</span><span class="p">(</span><span class="n">S_data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">geom</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Attach the slow and fast right hand side functions to integrator</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_rhs</span><span class="p">(</span><span class="n">rhs_fun</span><span class="p">);</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_fast_rhs</span><span class="p">(</span><span class="n">rhs_fun_fast</span><span class="p">);</span>
+
+<span class="c1">// This sets the ratio of slow timestep size to fast timestep size as an integer,</span>
+<span class="c1">// or equivalently, the number of fast timesteps per slow timestep.</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_slow_fast_timestep_ratio</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// Attach the post update function to the integrator</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">set_post_update</span><span class="p">(</span><span class="n">post_update_fun</span><span class="p">);</span>
+
+<span class="c1">// integrate forward one step from `time` by `dt` to fill S_new</span>
+<span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sborder</span><span class="p">,</span> <span class="n">S_new</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="picking-a-time-integration-method">
 <h2>Picking A Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this headline"></a></h2>
 <p>The user can customize which integration method they wish to use with a set of
 runtime parameters that allow choosing between a simple Forward Euler method or
-a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the
-user can choose which of a set of predefined Butcher Tables to use, or can
-choose to use a custom table and supply it manually. The options are detailed as follows:</p>
+a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the user
+can choose which of a set of predefined Butcher Tables to use, or can choose to
+use a custom table and supply it manually.</p>
+<p>When AMReX is compiled with SUNDIALS v.6 or later, the user also has an option
+to use the SUNDIALS ARKODE integrator as a backend for the AMReX Time Integrator
+class. The features of this interface evolve with the needs of our codes, so
+they may not yet support all SUNDIALS configurations available. If you find you
+need SUNDIALS options we have not implemented, please let us know.</p>
+<p>The full set of integrator options are detailed as follows:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># INTEGRATION</span>
-<span class="cp">## integration.type can take on the following values:</span>
-<span class="cp">## 0 = Forward Euler</span>
-<span class="cp">## 1 = Explicit Runge Kutta</span>
-<span class="n">integration</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="cp">## Explicit Runge-Kutta parameters</span>
+<span class="cp">## *** Selecting the integrator backend ***</span>
+<span class="cp">## integration.type can take on the following string or int values:</span>
+<span class="cp">## (without the quotation marks)</span>
+<span class="cp">## &quot;ForwardEuler&quot; or &quot;0&quot; = Native Forward Euler Integrator</span>
+<span class="cp">## &quot;RungeKutta&quot; or &quot;1&quot;   = Native Explicit Runge Kutta</span>
+<span class="cp">## &quot;SUNDIALS&quot; or &quot;2&quot;     = SUNDIALS ARKODE Integrator</span>
+<span class="cp">## for example:</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">RungeKutta</span>
+
+<span class="cp">## *** Parameters Needed For Native Explicit Runge-Kutta ***</span>
 <span class="cp">#</span>
 <span class="cp">## integration.rk.type can take the following values:</span>
 <span class="cp">### 0 = User-specified Butcher Tableau</span>
@@ -182,6 +313,15 @@ choose to use a custom table and supply it manually. The options are detailed as
 <span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">weights</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">integration</span><span class="p">.</span><span class="n">rk</span><span class="p">.</span><span class="n">tableau</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="cp">## *** Parameters Needed For SUNDIALS ARKODE Integrator ***</span>
+<span class="cp">## integration.sundials.strategy specifies which ARKODE strategy to use.</span>
+<span class="cp">## The available options are (without the quoatations):</span>
+<span class="cp">## &quot;ERK&quot; = Explicit Runge Kutta</span>
+<span class="cp">## &quot;MRI&quot; = Multirate Integrator</span>
+<span class="cp">## &quot;MRITEST&quot; = Tests the Multirate Integrator by setting a zero-valued fast RHS function</span>
+<span class="cp">## for example:</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">ERK</span>
 </pre></div>
 </div>
 </div>

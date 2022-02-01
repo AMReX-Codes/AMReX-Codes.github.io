@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> F, <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;F, Vector&lt;std::<span class="keywordtype">string</span>&gt;&gt;::value&gt;::type*&gt;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</a></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">::WritePlotFileHDF5</a> (<span class="keyword">const</span> std::string&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, <span class="keyword">const</span> std::string&amp; name, F&amp;&amp; f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">::WritePlotFileHDF5</a> (<span class="keyword">const</span> std::string&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, <span class="keyword">const</span> std::string&amp; name, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    Vector&lt;int&gt; write_real_comp;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    Vector&lt;std::string&gt; real_comp_names;</div>
@@ -376,7 +376,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="AMReX__ParticlesHDF5_8H.html#ac25b8bb149e73a1dbb0caf0e12b15b5b">WriteHDF5ParticleData</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, name, write_real_comp, write_int_comp,</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                          real_comp_names, int_comp_names,</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                          std::forward&lt;F&gt;(f));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                          std::forward&lt;F&gt;(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>));</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
@@ -386,7 +386,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</a></div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">::WritePlotFileHDF5</a> (<span class="keyword">const</span> std::string&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, <span class="keyword">const</span> std::string&amp; name,</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                     <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; real_comp_names,</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                     <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; int_comp_names, F&amp;&amp; f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                     <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; int_comp_names, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(real_comp_names.size() == NStructReal + NumRealComps());</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>( int_comp_names.size() == NStructInt  + NArrayInt );</div>
@@ -400,7 +400,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="AMReX__ParticlesHDF5_8H.html#ac25b8bb149e73a1dbb0caf0e12b15b5b">WriteHDF5ParticleData</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, name,</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                          write_real_comp, write_int_comp,</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                          real_comp_names, int_comp_names,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                          std::forward&lt;F&gt;(f));</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                          std::forward&lt;F&gt;(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>));</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
@@ -409,7 +409,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</a></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">::WritePlotFileHDF5</a> (<span class="keyword">const</span> std::string&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                 <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; real_comp_names, F&amp;&amp; f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                 <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; real_comp_names, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(real_comp_names.size() == NStructReal + NumRealComps());</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
@@ -430,7 +430,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <a class="code" href="AMReX__ParticlesHDF5_8H.html#ac25b8bb149e73a1dbb0caf0e12b15b5b">WriteHDF5ParticleData</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, name,</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                          write_real_comp, write_int_comp,</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                          real_comp_names, int_comp_names,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                          std::forward&lt;F&gt;(f));</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                          std::forward&lt;F&gt;(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>));</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
@@ -441,7 +441,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">::WritePlotFileHDF5</a> (<span class="keyword">const</span> std::string&amp; <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>,</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                     <span class="keyword">const</span> std::string&amp; name,</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                     <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_real_comp,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                     <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_int_comp, F&amp;&amp; f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                     <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_int_comp, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(write_real_comp.size() == NStructReal + NumRealComps());</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(write_int_comp.size()  == NStructInt  + NumIntComps() );</div>
@@ -464,7 +464,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="AMReX__ParticlesHDF5_8H.html#ac25b8bb149e73a1dbb0caf0e12b15b5b">WriteHDF5ParticleData</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, name, write_real_comp, write_int_comp,</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                          real_comp_names, int_comp_names,</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                          std::forward&lt;F&gt;(f));</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                          std::forward&lt;F&gt;(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>));</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
@@ -477,14 +477,14 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                   <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_int_comp,</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                   <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; real_comp_names,</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                   <span class="keyword">const</span> Vector&lt;std::string&gt;&amp;  int_comp_names,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                   F&amp;&amp; f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                   F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::WritePlotFile()&quot;</span>);</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="AMReX__ParticlesHDF5_8H.html#ac25b8bb149e73a1dbb0caf0e12b15b5b">WriteHDF5ParticleData</a>(<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, name,</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                          write_real_comp, write_int_comp,</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                          real_comp_names, int_comp_names,</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                          std::forward&lt;F&gt;(f));</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                          std::forward&lt;F&gt;(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>));</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;}</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
@@ -497,7 +497,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                         <span class="keyword">const</span> Vector&lt;int&gt;&amp; write_int_comp,</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                         <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; real_comp_names,</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                         <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; int_comp_names,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                         F&amp;&amp; f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                         F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="comment">/* if (AsyncOut::UseAsyncOut()) { */</span></div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="comment">/*     WriteHDF5ParticleDataAsync(*this, dir, name, */</span></div>
@@ -508,7 +508,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#afec0f3e905aba85133c5bf766b0f2be1">WriteHDF5ParticleDataSync</a>(*<span class="keyword">this</span>, <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, name,</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                                  write_real_comp, write_int_comp,</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                                  real_comp_names, int_comp_names,</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                  std::forward&lt;F&gt;(f));</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                  std::forward&lt;F&gt;(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>));</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="comment">/* } */</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
@@ -1492,6 +1492,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="ttc" id="aAMReX__ParticlesHDF5_8H_html_a62123365ed5b3ff068ec4dd495c137f1"><div class="ttname"><a href="AMReX__ParticlesHDF5_8H.html#a62123365ed5b3ff068ec4dd495c137f1">WritePlotFilePostHDF5</a></div><div class="ttdeci">void WritePlotFilePostHDF5()</div></div>
 <div class="ttc" id="aAMReX__ParticlesHDF5_8H_html_a0efe44e22b6f6e711c39bb8e0b7ab386"><div class="ttname"><a href="AMReX__ParticlesHDF5_8H.html#a0efe44e22b6f6e711c39bb8e0b7ab386">WritePlotFileHDF5</a></div><div class="ttdeci">void WritePlotFileHDF5(const std::string &amp;dir, const std::string &amp;name) const</div><div class="ttdoc">This version of WritePlotFile writes all components and assigns component names.</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:129</div></div>
+<div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_acc0c2cceab5a58cafa4ae6e68be50d24"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">amrex::SundialsUserFun::f</a></div><div class="ttdeci">static int f(realtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:40</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a72761a0aff0775f8f6943062a34fca31"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a72761a0aff0775f8f6943062a34fca31">amrex::ParallelDescriptor::ReduceLongMax</a></div><div class="ttdeci">void ReduceLongMax(Long &amp;)</div><div class="ttdoc">Long max reduction.</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.cpp:1157</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4ffc2b3090d34803c0b78ee6f53d22a9"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">amrex::Gpu::hostToDevice</a></div><div class="ttdeci">static constexpr HostToDevice hostToDevice</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:105</div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleData_8H_html"><div class="ttname"><a href="AMReX__WriteBinaryParticleData_8H.html">AMReX_WriteBinaryParticleData.H</a></div></div>
