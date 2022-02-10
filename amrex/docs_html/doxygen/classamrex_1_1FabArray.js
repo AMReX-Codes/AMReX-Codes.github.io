@@ -42,8 +42,6 @@ var classamrex_1_1FabArray =
     [ "copy", "classamrex_1_1FabArray.html#a097eb48c84133dcf0c0cb0fa40ca5f50", null ],
     [ "copy", "classamrex_1_1FabArray.html#a960ecb1ed695a7e13cbc7c3cff3f934a", null ],
     [ "copy", "classamrex_1_1FabArray.html#a0194c55a13a8695b863eec146146335c", null ],
-    [ "copyTo", "classamrex_1_1FabArray.html#aa19dd0482e00be1e43cd9c37d60aa0b2", null ],
-    [ "copyTo", "classamrex_1_1FabArray.html#a81b037f6ed7b60e5dc95d11512468187", null ],
     [ "copyTo", "classamrex_1_1FabArray.html#a9d247d17dd40dc29f57f87556b50b62a", null ],
     [ "copyTo", "classamrex_1_1FabArray.html#a307d4ba571507f21248861f1755fcb7c", null ],
     [ "define", "classamrex_1_1FabArray.html#ae978e4109861cb21bbb90d389fee4a01", null ],
