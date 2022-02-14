@@ -191,7 +191,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" line="35" column="10" declfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" declline="35" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__ParticlesHDF5_8H_1afe27e5d4f8a48936a553cf7a4de17369" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class F</type>
@@ -199,7 +199,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void WriteHDF5ParticleData</definition>
-        <argsstring>(const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</argsstring>
+        <argsstring>(const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f, bool is_checkpoint=false) const</argsstring>
         <name>WriteHDF5ParticleData</name>
         <param>
           <type>const std::string &amp;</type>
@@ -228,6 +228,11 @@
         <param>
           <type>F &amp;&amp;</type>
           <declname>f</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_checkpoint</declname>
+          <defval>false</defval>
         </param>
         <briefdescription>
 <para>Writes particle data to disk in the AMReX native format. </para>
@@ -1208,10 +1213,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" line="246" column="10" declfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" declline="246" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__ParticlesHDF5_8H_1a87df9fb67cb7c80b249dacab3830d77d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__ParticlesHDF5_8H_1a528ca2aac319e7a2a9ef1824263b13e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void WriteParticlesHDF5</definition>
-        <argsstring>(int level, hid_t grp, Vector&lt; int &gt; &amp;which, Vector&lt; int &gt; &amp;count, Vector&lt; Long &gt; &amp;where, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, IntVector &gt;&gt; &amp;particle_io_flags) const</argsstring>
+        <argsstring>(int level, hid_t grp, Vector&lt; int &gt; &amp;which, Vector&lt; int &gt; &amp;count, Vector&lt; Long &gt; &amp;where, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, IntVector &gt;&gt; &amp;particle_io_flags, bool is_checkpoint) const</argsstring>
         <name>WriteParticlesHDF5</name>
         <param>
           <type>int</type>
@@ -1245,6 +1250,10 @@
           <type>const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, IntVector &gt;&gt; &amp;</type>
           <declname>particle_io_flags</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>is_checkpoint</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1253,7 +1262,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" line="249" column="5" declfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" declline="249" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__ParticlesHDF5_8H_1acf9b30276f0faaa9503b8d9c08aa379a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__ParticlesHDF5_8H_1a8c7ba0d4cc37b8af14a09f1b3be39242" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class RTYPE</type>
@@ -1261,7 +1270,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void ReadParticlesHDF5</definition>
-        <argsstring>(hsize_t offset, hsize_t count, int grd, int lev, hid_t int_dset, hid_t real_dset, int finest_level_in_file)</argsstring>
+        <argsstring>(hsize_t offset, hsize_t count, int grd, int lev, hid_t int_dset, hid_t real_dset, int finest_level_in_file, bool convert_ids)</argsstring>
         <name>ReadParticlesHDF5</name>
         <param>
           <type>hsize_t</type>
@@ -1291,13 +1300,17 @@
           <type>int</type>
           <declname>finest_level_in_file</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>convert_ids</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" line="257" column="10" declfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" declline="257" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" line="257" column="6" declfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_ParticlesHDF5.H" declline="257" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1320,13 +1333,13 @@
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>int_comp_names<sp/>=<sp/>Vector&lt;std::string&gt;())<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__ParticlesHDF5_8H_1ac25b8bb149e73a1dbb0caf0e12b15b5b" kindref="member">WriteHDF5ParticleData</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__ParticlesHDF5_8H_1afe27e5d4f8a48936a553cf7a4de17369" kindref="member">WriteHDF5ParticleData</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/>real_comp_names,</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::string&gt;&amp;<sp/><sp/>int_comp_names,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>F&amp;&amp;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1acc0c2cceab5a58cafa4ae6e68be50d24" kindref="member">f</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>F&amp;&amp;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1acc0c2cceab5a58cafa4ae6e68be50d24" kindref="member">f</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_checkpoint=</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__ParticlesHDF5_8H_1a538fea67623e9ea45e61df3b3293fb95" kindref="member">CheckpointPreHDF5</ref><sp/>();</highlight></codeline>
@@ -1390,15 +1403,15 @@
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__ParticlesHDF5_8H_1a62123365ed5b3ff068ec4dd495c137f1" kindref="member">WritePlotFilePostHDF5</ref><sp/>();</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"></highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1a87df9fb67cb7c80b249dacab3830d77d" kindref="member">WriteParticlesHDF5</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>hid_t<sp/>grp,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ParticlesHDF5_8H_1a528ca2aac319e7a2a9ef1824263b13e1" kindref="member">WriteParticlesHDF5</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>hid_t<sp/>grp,</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;&amp;<sp/>which,<sp/>Vector&lt;int&gt;&amp;<sp/>count,<sp/>Vector&lt;Long&gt;&amp;<sp/>where,</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_real_comp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>write_int_comp,</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::map&lt;std::pair&lt;int,<sp/>int&gt;,IntVector&gt;&gt;&amp;<sp/>particle_io_flags)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::map&lt;std::pair&lt;int,<sp/>int&gt;,IntVector&gt;&gt;&amp;<sp/>particle_io_flags,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_checkpoint)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
 <codeline lineno="254"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
 <codeline lineno="256"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>RTYPE&gt;</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__ParticlesHDF5_8H_1acf9b30276f0faaa9503b8d9c08aa379a" kindref="member">ReadParticlesHDF5</ref><sp/>(hsize_t<sp/>offset,<sp/>hsize_t<sp/>count,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev,<sp/>hid_t<sp/>int_dset,<sp/>hid_t<sp/>real_dset,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>finest_level_in_file);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__ParticlesHDF5_8H_1a8c7ba0d4cc37b8af14a09f1b3be39242" kindref="member">ReadParticlesHDF5</ref><sp/>(hsize_t<sp/>offset,<sp/>hsize_t<sp/>count,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev,<sp/>hid_t<sp/>int_dset,<sp/>hid_t<sp/>real_dset,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>finest_level_in_file,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>convert_ids);</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

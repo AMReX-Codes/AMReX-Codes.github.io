@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"dir_678e78232f51bebdca12cae3de73223b.html":[3,0,0,7],
 "dir_818e0d91a034d8d4dd6c89556c0fcde9.html":[3,0,0,5,2],
 "dir_90921d4ecb565478cdefd18c8f0474ea.html":[3,0,0,5,0],
 "dir_9181264258de91461eb210f766c47479.html":[3,0,0,5,8],
@@ -204,8 +205,8 @@ var NAVTREEINDEX53 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "index.html":[],
 "index.html":[0],
 "index.html#Overview":[0,0,0],
-"index.html#amrex_explained":[0,0,4],
-"index.html#contribute":[0,0,2]
+"index.html#amrex_explained":[0,0,4]
 };

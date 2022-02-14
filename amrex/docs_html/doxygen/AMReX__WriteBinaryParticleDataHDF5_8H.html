@@ -114,9 +114,9 @@ Functions</h2></td></tr>
 <tr class="separator:aad63ab7770ca222d4e42f2cd5ddcf0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f">SetHDF5fapl</a> (hid_t fapl)</td></tr>
 <tr class="separator:a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afec0f3e905aba85133c5bf766b0f2be1"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
-<tr class="memitem:afec0f3e905aba85133c5bf766b0f2be1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#afec0f3e905aba85133c5bf766b0f2be1">WriteHDF5ParticleDataSync</a> (PC const &amp;pc, const std::string &amp;<a class="el" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f)</td></tr>
-<tr class="separator:afec0f3e905aba85133c5bf766b0f2be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd50d0b5d77ba2ff39c0bf816522dd6"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aabd50d0b5d77ba2ff39c0bf816522dd6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#aabd50d0b5d77ba2ff39c0bf816522dd6">WriteHDF5ParticleDataSync</a> (PC const &amp;pc, const std::string &amp;<a class="el" href="AMReX__MLCellLinOp_8cpp.html#a851cf68c8f607573c1a5e987784c83f6">dir</a>, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f, bool is_checkpoint)</td></tr>
+<tr class="separator:aabd50d0b5d77ba2ff39c0bf816522dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a13f3233ca46385427245008f434493fc"></a>
@@ -289,8 +289,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afec0f3e905aba85133c5bf766b0f2be1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afec0f3e905aba85133c5bf766b0f2be1">&#9670;&nbsp;</a></span>WriteHDF5ParticleDataSync()</h2>
+<a id="aabd50d0b5d77ba2ff39c0bf816522dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd50d0b5d77ba2ff39c0bf816522dd6">&#9670;&nbsp;</a></span>WriteHDF5ParticleDataSync()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,7 +343,13 @@ template&lt;class PC , class F , std::enable_if_t&lt; IsParticleContainer&lt; PC
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">F &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f</em>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_checkpoint</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

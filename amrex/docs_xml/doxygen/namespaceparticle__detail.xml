@@ -233,7 +233,40 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="132" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="132" bodyend="140"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a3ce80a3e2c2fea8e6036ec4d9f89dc9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a30a6f3594be5d404180737352c8c375d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename P</type>
+          </param>
+          <param>
+            <type>typename I</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE void particle_detail::packParticleIDs</definition>
+        <argsstring>(I *idata, const P &amp;p, bool is_checkpoint) noexcept</argsstring>
+        <name>packParticleIDs</name>
+        <param>
+          <type>I *</type>
+          <declname>idata</declname>
+        </param>
+        <param>
+          <type>const P &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_checkpoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="144" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="144" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceparticle__detail_1a32c79228797f0b67784cf06d5767df2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -241,7 +274,7 @@
         </templateparamlist>
         <type>std::enable_if&lt; RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;::type</type>
         <definition>std::enable_if&lt;RunOnGpu&lt;typename PC::template AllocatorType&lt;int&gt; &gt;::value&gt;::type particle_detail::packIOData</definition>
-        <argsstring>(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np)</argsstring>
+        <argsstring>(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np, bool is_checkpoint)</argsstring>
         <name>packIOData</name>
         <param>
           <type>Vector&lt; int &gt; &amp;</type>
@@ -283,15 +316,19 @@
           <type>int</type>
           <declname>np</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>is_checkpoint</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="144" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="144" bodyend="231"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="163" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="163" bodyend="249"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a1405c07f627ddaaac832c4ef9da519d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a037d69b06fff9ac32219c2a17886a88b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -299,7 +336,7 @@
         </templateparamlist>
         <type>std::enable_if&lt;!RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;::type</type>
         <definition>std::enable_if&lt;!RunOnGpu&lt;typename PC::template AllocatorType&lt;int&gt; &gt;::value&gt;::type particle_detail::packIOData</definition>
-        <argsstring>(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np)</argsstring>
+        <argsstring>(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np, bool is_checkpoint)</argsstring>
         <name>packIOData</name>
         <param>
           <type>Vector&lt; int &gt; &amp;</type>
@@ -341,13 +378,17 @@
           <type>int</type>
           <declname>np</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>is_checkpoint</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="235" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="235" bodyend="299"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="253" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="253" bodyend="318"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
