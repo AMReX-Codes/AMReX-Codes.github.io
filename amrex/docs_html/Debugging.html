@@ -203,7 +203,7 @@ Usage of several of these variations are described in the following sections.</p
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">nvprof</span> <span class="pre">-o</span> <span class="pre">profile%p.nvvp</span> <span class="pre">./main3d.xxxx</span></code> or
 <code class="docutils literal notranslate"><span class="pre">nsys</span> <span class="pre">profile</span> <span class="pre">-o</span> <span class="pre">nsys_out.%q{SLURM_PROCID}.%q{SLURM_JOBID}</span> <span class="pre">./main3d.xxx</span></code> for
 a small problem and examine page faults using <code class="docutils literal notranslate"><span class="pre">nvvp</span></code> or <code class="docutils literal notranslate"><span class="pre">nsight-sys</span> <span class="pre">$(pwd)/nsys_out.#.######.qdrep</span></code>.</p></li>
-<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code> to identify memory errors.</p></li>
+<li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-memcheck</span></code> or the newer version <code class="docutils literal notranslate"><span class="pre">compute-sanitizer</span></code> to identify memory errors.</p></li>
 <li><p>Run under <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code> to identify kernel errors.</p></li>
 <li><p>To help identify race conditions, globally disable asynchronicity of kernel launches for all
 CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment variables. This
