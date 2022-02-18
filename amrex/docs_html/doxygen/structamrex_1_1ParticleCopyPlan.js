@@ -1,6 +1,6 @@
 var structamrex_1_1ParticleCopyPlan =
 [
-    [ "build", "structamrex_1_1ParticleCopyPlan.html#a9e7e36993ac94530af3bec8f0643764a", null ],
+    [ "build", "structamrex_1_1ParticleCopyPlan.html#abe6bc677fed710ac617242ea29aeaefa", null ],
     [ "buildMPIFinish", "structamrex_1_1ParticleCopyPlan.html#ab70e7cbaf0b6636a9be60729e0869495", null ],
     [ "buildMPIStart", "structamrex_1_1ParticleCopyPlan.html#a996c810aea3ffa99a480dffa839230c3", null ],
     [ "clear", "structamrex_1_1ParticleCopyPlan.html#afd8b75e43a4f9a19787cec45ee84b493", null ],
@@ -8,6 +8,9 @@ var structamrex_1_1ParticleCopyPlan =
     [ "doHandShakeAllToAll", "structamrex_1_1ParticleCopyPlan.html#a73a76648a2246e710211b3bb9404b6f4", null ],
     [ "doHandShakeGlobal", "structamrex_1_1ParticleCopyPlan.html#a6dabbed162dce5462b4fd0023b1b57a0", null ],
     [ "doHandShakeLocal", "structamrex_1_1ParticleCopyPlan.html#afb1ad83ab8ab56bb98500f418fc2cc42", null ],
+    [ "superParticleSize", "structamrex_1_1ParticleCopyPlan.html#aa9079143c32a58be84a505fd9d97ffd8", null ],
+    [ "d_int_comp_mask", "structamrex_1_1ParticleCopyPlan.html#aeb86bf7ccfb6c6fdc0d232135a1c5908", null ],
+    [ "d_real_comp_mask", "structamrex_1_1ParticleCopyPlan.html#a36f3d83885b79143865c67ff5599414e", null ],
     [ "m_box_counts_d", "structamrex_1_1ParticleCopyPlan.html#a7285486c8e5119099572a46997f89641", null ],
     [ "m_box_counts_h", "structamrex_1_1ParticleCopyPlan.html#ad7d72a20fb9d967f606d7e1ed546b6ac", null ],
     [ "m_box_offsets", "structamrex_1_1ParticleCopyPlan.html#a813195052803b3c8844eb604a508e9b0", null ],
@@ -37,5 +40,6 @@ var structamrex_1_1ParticleCopyPlan =
     [ "m_snd_offsets", "structamrex_1_1ParticleCopyPlan.html#a03f46ec462fad618d823836214c9411a", null ],
     [ "m_snd_pad_correction_d", "structamrex_1_1ParticleCopyPlan.html#a3900fd1e88118efacebc15ddd99cbacf", null ],
     [ "m_snd_pad_correction_h", "structamrex_1_1ParticleCopyPlan.html#a7bfedead4c32d33e5013a8b5df9c5245", null ],
-    [ "m_Snds", "structamrex_1_1ParticleCopyPlan.html#a4f11e52b07357018bf4097a60913ec01", null ]
+    [ "m_Snds", "structamrex_1_1ParticleCopyPlan.html#a4f11e52b07357018bf4097a60913ec01", null ],
+    [ "m_superparticle_size", "structamrex_1_1ParticleCopyPlan.html#a439daadd96aa6868c30e13e8baf8be18", null ]
 ];

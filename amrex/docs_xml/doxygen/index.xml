@@ -7483,8 +7483,8 @@
     <member refid="classamrex_1_1NeighborParticleContainer_1a6d6260836577412b1a3a17c7f8d09bc4" kind="variable"><name>rcvs</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a9c0cf5742a0014b73afe38a75f02534e" kind="variable"><name>num_snds</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a5ba336738781f2d529bbb68a7f297e17" kind="variable"><name>send_data</name></member>
-    <member refid="classamrex_1_1NeighborParticleContainer_1abe13d10d672a558cf71e711fb838801e" kind="variable"><name>rc</name></member>
-    <member refid="classamrex_1_1NeighborParticleContainer_1a4dcbd1979fd215fa6c8ab4ea563638d0" kind="variable"><name>ic</name></member>
+    <member refid="classamrex_1_1NeighborParticleContainer_1abaca3cff5c84aa26d0e6c4a454af00cd" kind="variable"><name>ghost_real_comp</name></member>
+    <member refid="classamrex_1_1NeighborParticleContainer_1a686b95f083fdf17811b9933e189326db" kind="variable"><name>ghost_int_comp</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a68fedc2fd57b0e5efccdf65617f930ff" kind="variable"><name>m_neighbor_mask_initialized</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a0f3bc83f8fdf1b3468248103a0000a49" kind="variable"><name>m_neighbor_mask_ptr</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a6aafab3c8c1565c5457b08400f0c7984" kind="variable"><name>m_grid_map</name></member>
@@ -8389,10 +8389,8 @@
     <member refid="classamrex_1_1ParticleContainer_1aaa0314a49003d2db0614b57846519c82" kind="friend"><name>ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a3b5415dd8c40d2a6bd203d924dfdbbf0" kind="friend"><name>ParIterBase&lt; false, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a34d81cb6db969ef60c5440df7925c904" kind="variable"><name>ParticleRealDescriptor</name></member>
-    <member refid="classamrex_1_1ParticleContainer_1a839b2b309c4894661911e0c22726cb20" kind="variable"><name>h_communicate_real_comp</name></member>
-    <member refid="classamrex_1_1ParticleContainer_1a8b8559f9912f624258ef591158eaf115" kind="variable"><name>h_communicate_int_comp</name></member>
-    <member refid="classamrex_1_1ParticleContainer_1acfcf69da8218b517a1319af4aef4b7da" kind="variable"><name>d_communicate_real_comp</name></member>
-    <member refid="classamrex_1_1ParticleContainer_1a3bda7f33f9612317c988b7a6f4548751" kind="variable"><name>d_communicate_int_comp</name></member>
+    <member refid="classamrex_1_1ParticleContainer_1a04ea1d50636374a2e6da9dff4dc64226" kind="variable"><name>h_redistribute_real_comp</name></member>
+    <member refid="classamrex_1_1ParticleContainer_1a4bb20f2bc8c95d6b39ab84d0711b5253" kind="variable"><name>h_redistribute_int_comp</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a3c0331bb4661f65348efaa7e59b6b9be" kind="variable"><name>levelDirectoriesCreated</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a5379ae495140bc0763c163fac9eff177" kind="variable"><name>usePrePost</name></member>
     <member refid="classamrex_1_1ParticleContainer_1af397a66c3849926e09fd03b1dd1acc1b" kind="variable"><name>doUnlink</name></member>
@@ -8637,8 +8635,12 @@
     <member refid="structamrex_1_1ParticleCopyPlan_1a3900fd1e88118efacebc15ddd99cbacf" kind="variable"><name>m_snd_pad_correction_d</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1ac166e1289239c5e946d1286621d5abd5" kind="variable"><name>m_rcv_pad_correction_h</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a8305346a9bb20a4e5d7983acb025a5a8" kind="variable"><name>m_rcv_pad_correction_d</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1aeb86bf7ccfb6c6fdc0d232135a1c5908" kind="variable"><name>d_int_comp_mask</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1a36f3d83885b79143865c67ff5599414e" kind="variable"><name>d_real_comp_mask</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1a439daadd96aa6868c30e13e8baf8be18" kind="variable"><name>m_superparticle_size</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a1d2885301b5e06ee60387143583aa6f6" kind="variable"><name>m_local</name></member>
-    <member refid="structamrex_1_1ParticleCopyPlan_1a9e7e36993ac94530af3bec8f0643764a" kind="function"><name>build</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1aa9079143c32a58be84a505fd9d97ffd8" kind="function"><name>superParticleSize</name></member>
+    <member refid="structamrex_1_1ParticleCopyPlan_1abe6bc677fed710ac617242ea29aeaefa" kind="function"><name>build</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1afd8b75e43a4f9a19787cec45ee84b493" kind="function"><name>clear</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1ab70e7cbaf0b6636a9be60729e0869495" kind="function"><name>buildMPIFinish</name></member>
     <member refid="structamrex_1_1ParticleCopyPlan_1a996c810aea3ffa99a480dffa839230c3" kind="function"><name>buildMPIStart</name></member>

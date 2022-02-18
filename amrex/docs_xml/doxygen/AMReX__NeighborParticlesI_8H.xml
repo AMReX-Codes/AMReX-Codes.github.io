@@ -65,9 +65,9 @@
 <codeline lineno="43"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a9fc777a6611729b79c56fc8f1782c830" kindref="member">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</ref></highlight></codeline>
 <codeline lineno="44" refid="classamrex_1_1NeighborParticleContainer_1a9fc777a6611729b79c56fc8f1782c830" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a9fc777a6611729b79c56fc8f1782c830" kindref="member">::initializeCommComps</ref><sp/>()<sp/>{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>AMREX_SPACEDIM<sp/>+<sp/>NStructReal<sp/>+<sp/>this-&gt;NumRealComps();<sp/>++ii)</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rc.push_back(1);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ghost_real_comp.push_back(1);</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>2<sp/>+<sp/>NStructInt<sp/>+<sp/>this-&gt;NumIntComps();<sp/>++ii)</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ic.push_back(1);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ghost_int_comp.push_back(1);</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>calcCommSize();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
@@ -75,7 +75,7 @@
 <codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a9c5eaf4a73e02b631f586b8d9eaa9b44" kindref="member">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</ref></highlight></codeline>
 <codeline lineno="55" refid="classamrex_1_1NeighborParticleContainer_1a9c5eaf4a73e02b631f586b8d9eaa9b44" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a9c5eaf4a73e02b631f586b8d9eaa9b44" kindref="member">::setRealCommComp</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>value)<sp/>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>rc[i]<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>ghost_real_comp[i]<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>calcCommSize();</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
@@ -83,7 +83,7 @@
 <codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a63cbb0b5b6c81df9e4321148bc960f32" kindref="member">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</ref></highlight></codeline>
 <codeline lineno="63" refid="classamrex_1_1NeighborParticleContainer_1a63cbb0b5b6c81df9e4321148bc960f32" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a63cbb0b5b6c81df9e4321148bc960f32" kindref="member">::setIntCommComp</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>value)<sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>ic[i]<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>ghost_int_comp[i]<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>calcCommSize();</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
@@ -93,12 +93,12 @@
 <codeline lineno="71" refid="classamrex_1_1NeighborParticleContainer_1a9fea3b7765226c9483a81c772e3cfcd0" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a9fea3b7765226c9483a81c772e3cfcd0" kindref="member">::calcCommSize</ref><sp/>()<sp/>{</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>comm_size<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>AMREX_SPACEDIM<sp/>+<sp/>NStructReal<sp/>+<sp/>this-&gt;NumRealComps();<sp/>++ii)<sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rc[ii])<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ghost_real_comp[ii])<sp/>{</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comm_size<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ParticleType::RealType);</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>2<sp/>+<sp/>NStructInt<sp/>+<sp/>this-&gt;NumIntComps();<sp/>++ii)<sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ic[ii])<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ghost_int_comp[ii])<sp/>{</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comm_size<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>);</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

@@ -1,7 +1,5 @@
 var NAVTREEINDEX51 =
 {
-"classamrex_1_1TagBoxArray.html#ae151c3feb479bcc695e279915e2a068c":[2,0,0,446,11],
-"classamrex_1_1TagBoxArray.html#ae1c70eba84405176aafd0353098d02a4":[2,0,0,446,7],
 "classamrex_1_1TimeIntegrator.html":[2,0,0,449],
 "classamrex_1_1TimeIntegrator.html#a15591ffe95bc3937bfc7711a9535181e":[2,0,0,449,2],
 "classamrex_1_1TimeIntegrator.html#a16f8db810ab5114eca59616f59803062":[2,0,0,449,9],
@@ -249,5 +247,7 @@ var NAVTREEINDEX51 =
 "classamrex_1_1XYPlotDataListLink.html#aedc6b302ba8a41a7b0860a54f93eac00":[2,0,0,462,10],
 "classamrex_1_1YAFluxRegister.html":[2,0,0,463],
 "classamrex_1_1YAFluxRegister.html#a16e46b300ff340a7ff39d65aa572d3cf":[2,0,0,463,6],
-"classamrex_1_1YAFluxRegister.html#a1c455cac046d9c693f48cd2b84533d17":[2,0,0,463,5]
+"classamrex_1_1YAFluxRegister.html#a1c455cac046d9c693f48cd2b84533d17":[2,0,0,463,5],
+"classamrex_1_1YAFluxRegister.html#a1de636a21ef7f808042c3ad6ebefd84e":[2,0,0,463,11],
+"classamrex_1_1YAFluxRegister.html#a24d221d7e5538a09512389d71386e9bd":[2,0,0,463,3]
 };

@@ -144,9 +144,9 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a9fc777a6611729b79c56fc8f1782c830">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</a></div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#a9fc777a6611729b79c56fc8f1782c830">   44</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a9fc777a6611729b79c56fc8f1782c830">::initializeCommComps</a> () {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; AMREX_SPACEDIM + NStructReal + this-&gt;NumRealComps(); ++ii)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        rc.push_back(1);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ghost_real_comp.push_back(1);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2 + NStructInt + this-&gt;NumIntComps(); ++ii)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ic.push_back(1);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ghost_int_comp.push_back(1);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    calcCommSize();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a9c5eaf4a73e02b631f586b8d9eaa9b44">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</a></div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#a9c5eaf4a73e02b631f586b8d9eaa9b44">   55</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a9c5eaf4a73e02b631f586b8d9eaa9b44">::setRealCommComp</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> value) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    rc[i] = value;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    ghost_real_comp[i] = value;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    calcCommSize();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a63cbb0b5b6c81df9e4321148bc960f32">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</a></div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#a63cbb0b5b6c81df9e4321148bc960f32">   63</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a63cbb0b5b6c81df9e4321148bc960f32">::setIntCommComp</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> value) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ic[i] = value;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ghost_int_comp[i] = value;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    calcCommSize();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
@@ -172,12 +172,12 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#a9fea3b7765226c9483a81c772e3cfcd0">   71</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#a9fea3b7765226c9483a81c772e3cfcd0">::calcCommSize</a> () {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">size_t</span> comm_size = 0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; AMREX_SPACEDIM + NStructReal + this-&gt;NumRealComps(); ++ii) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (rc[ii]) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (ghost_real_comp[ii]) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            comm_size += <span class="keyword">sizeof</span>(<span class="keyword">typename</span> ParticleType::RealType);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt; 2 + NStructInt + this-&gt;NumIntComps(); ++ii) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (ic[ii]) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (ghost_int_comp[ii]) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            comm_size += <span class="keyword">sizeof</span>(<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
