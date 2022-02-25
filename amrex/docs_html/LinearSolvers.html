@@ -53,7 +53,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
 <li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">MLMG and Linear Operator Classes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MLMG and Linear Operator Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#coefficients">Coefficients</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
@@ -127,12 +130,13 @@ below</p>
                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span> <span class="n">a_grids</span><span class="p">,</span>
                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span> <span class="n">a_dmap</span><span class="p">,</span>
                  <span class="k">const</span> <span class="n">LPInfo</span><span class="o">&amp;</span> <span class="n">a_info</span> <span class="o">=</span> <span class="n">LPInfo</span><span class="p">(),</span>
-                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_factory</span> <span class="o">=</span> <span class="p">{});</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_factory</span> <span class="o">=</span> <span class="p">{},</span>
+                 <span class="k">const</span> <span class="kt">int</span> <span class="n">a_ncomp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>It takes <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vectors</span></span></code> of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMapping</span></span></code>.  The arguments are <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vectors</span></span></code> because MLMG can
-do multi-level composite solve.  If you are using it for single-level,
+do multi-level composite solves.  If you are using it for single-level,
 you can do</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Given Geometry geom, BoxArray grids, and DistributionMapping dmap on single level</span>
 <span class="n">MLABecLaplacian</span> <span class="nf">mlabeclaplacian</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span> <span class="p">{</span><span class="n">grids</span><span class="p">},</span> <span class="p">{</span><span class="n">dmap</span><span class="p">});</span>
@@ -147,18 +151,59 @@ with embedded boundaries (chapter <a class="reference internal" href="EB_Chapter
 <p>After the linear operator is built, we need to set up boundary
 conditions.  This will be discussed later in section
 <a class="reference internal" href="#sec-linearsolver-bc"><span class="std std-ref">Boundary Conditions</span></a>.</p>
-<p>For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>, we next need to call member functions</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setScalars</span> <span class="p">(</span><span class="n">Real</span> <span class="n">A</span><span class="p">,</span> <span class="n">Real</span> <span class="n">B</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">setACoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">alpha</span><span class="p">);</span>
+<div class="section" id="coefficients">
+<h2>Coefficients<a class="headerlink" href="#coefficients" title="Permalink to this headline"></a></h2>
+<p>Next, we consider the coefficients for equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>.
+For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLPoisson</span></span></code>, there are no coefficients to set so nothing needs to be done.
+For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>, we need to call member functions <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setScalars</span></span></code>,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setACoeffs</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setBCoeffs</span></span></code>.
+The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setScalars</span></span></code> function sets the scalar constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setScalars</span> <span class="p">(</span><span class="n">Real</span> <span class="n">a</span><span class="p">,</span> <span class="n">Real</span> <span class="n">b</span><span class="p">)</span> <span class="k">noexcept</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>For the general case where
+<span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are scalar fields, we use</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setACoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">alpha</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">setBCoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">beta</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>to set up the coefficients for equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>. This is unnecessary for
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLPoisson</span></span></code>, as there are no coefficients to set.  For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLNodeLaplacian</span></span></code>,
-one needs to call the member function</p>
+</div></blockquote>
+<p>For the case where <span class="math notranslate nohighlight">\(\alpha\)</span> and/or <span class="math notranslate nohighlight">\(\beta\)</span> are scalar constants,
+there is the option to use</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setACoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="n">Real</span> <span class="n">alpha</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setBCoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="n">Real</span> <span class="n">beta</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setBCoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">beta</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Note, however, that the solver behaviour is the same regardless of which functions you
+use to set the coefficients. These functions solely copy the constant value(s) to a MultiFab
+internal to <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> and so no appreciable efficiency gains can be expected.</p>
+<p>For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLNodeLaplacian</span></span></code>,
+one can set a variable <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">sigma</span></span></code> with the member function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setSigma</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">a_sigma</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>or a constant <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">sigma</span></span></code> during declaration or definition</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLNodeLaplacian</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span> <span class="n">a_geom</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span> <span class="n">a_grids</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span> <span class="n">a_dmap</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">LPInfo</span><span class="o">&amp;</span> <span class="n">a_info</span> <span class="o">=</span> <span class="n">LPInfo</span><span class="p">(),</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_factory</span> <span class="o">=</span> <span class="p">{},</span>
+                 <span class="n">Real</span>  <span class="n">a_const_sigma</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));</span>
+
+<span class="kt">void</span> <span class="nf">define</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span> <span class="n">a_geom</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span> <span class="n">a_grids</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span> <span class="n">a_dmap</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">LPInfo</span><span class="o">&amp;</span> <span class="n">a_info</span> <span class="o">=</span> <span class="n">LPInfo</span><span class="p">(),</span>
+             <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_factory</span> <span class="o">=</span> <span class="p">{},</span>
+             <span class="n">Real</span>  <span class="n">a_const_sigma</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Here, setting a constant <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">sigma</span></span></code> alters the internal behavior of the solver making it more
+efficient for this special case.</p>
 <p>The <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">amrlev</span></span></code> parameter should be zero for single-level
 solves.  For multi-level solves, each level needs to be provided with
 <code class="docutils literal notranslate"><span class="pre">alpha</span></code> and <code class="docutils literal notranslate"><span class="pre">beta</span></code>, or <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.  For composite solves, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrlev</span></span></code> 0 will
@@ -202,6 +247,7 @@ following functions to compute gradient <span class="math notranslate nohighligh
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">getGradSolution</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="o">&gt;&amp;</span> <span class="n">a_grad_sol</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">getFluxes</span>       <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="o">&gt;&amp;</span> <span class="n">a_fluxes</span><span class="p">);</span>
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="boundary-conditions">
