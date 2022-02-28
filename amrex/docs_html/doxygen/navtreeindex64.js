@@ -1,5 +1,9 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1Table3D.html#af4179c98b0242d4cf2387d1c4458de6d":[2,0,0,442,3],
+"structamrex_1_1Table4D.html":[2,0,0,443],
+"structamrex_1_1Table4D.html#a0ffcd793ec142932e68f4b0ef4a427f4":[2,0,0,443,0],
+"structamrex_1_1Table4D.html#a226bbe3a233d27432a7510c1af2272ab":[2,0,0,443,7],
 "structamrex_1_1Table4D.html#a4c61dfb1d3b83405886b8d6b5f2aa419":[2,0,0,443,2],
 "structamrex_1_1Table4D.html#a5dec26b782ff54c2a0fc88694d1e2cdc":[2,0,0,443,5],
 "structamrex_1_1Table4D.html#a8632cacd7e65997567dfaa01c1c102ba":[2,0,0,443,8],
@@ -114,8 +118,8 @@ var NAVTREEINDEX64 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a8e63fff308a2667a803639c70fce0b3b":[2,0,0,0,2,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aa572c858d18a32a5834232222e0de86c":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ab0b0d21b0436db3368df308ac574a8ec":[2,0,0,0,2,2],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac3aa0501b0844da98bbe89d033795500":[2,0,0,0,2,10],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#afeff1f944e669f66896bdc7b76eccc88":[2,0,0,0,2,9],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aff95bdf7c30770f6021900c9eedaad6b":[2,0,0,0,2,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1parser__f3.html#a6caf5b36a9f8beace196c5072f325928":[2,0,0,334,1],
 "structamrex_1_1parser__f3.html#a9c0e8a7d413bf12c7adc9cfb9159da53":[2,0,0,334,2],
 "structamrex_1_1parser__f3.html#af480e24f7880857ba4ee5710e1e2f823":[2,0,0,334,0],
-"structamrex_1_1parser__node.html":[2,0,0,335],
-"structamrex_1_1parser__node.html#a3a9f4a4402fe7b5d744bf67fa9d0d21d":[2,0,0,335,0],
-"structamrex_1_1parser__node.html#a4bf0ec524b5c9134d413514ff75a7033":[2,0,0,335,3],
-"structamrex_1_1parser__node.html#aeb2f3f6f5f90a7cc9843357edecb2538":[2,0,0,335,2],
-"structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[2,0,0,335,4]
+"structamrex_1_1parser__node.html":[2,0,0,335]
 };
