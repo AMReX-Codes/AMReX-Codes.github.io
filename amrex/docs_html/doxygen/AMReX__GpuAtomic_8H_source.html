@@ -348,7 +348,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_HIP)</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_HIP) &amp;&amp; defined(HIP_VERSION_MAJOR) &amp;&amp; (HIP_VERSION_MAJOR &lt; 5)</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">AddNoRet</a> (<span class="keywordtype">float</span>* <span class="keyword">const</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, <span class="keywordtype">float</span> <span class="keyword">const</span> value) noexcept</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    {</div>
