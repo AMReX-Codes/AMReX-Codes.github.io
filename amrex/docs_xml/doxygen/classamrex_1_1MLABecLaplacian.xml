@@ -379,10 +379,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Set scalar constants A and B in the equation: (A \alpha - B \nabla \cdot \beta \nabla ) \phi = f for the Multi-Level AB Laplacian Solver. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="56" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="91" bodyend="102"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="56" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="98" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a2dc08f7d45b41d0b9b88c7a96f95b23d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -400,10 +401,29 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Sets alpha as a scalar field to values from a single component mutlifab.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amrlev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of the multifab for the solver, with <computeroutput>amrlev</computeroutput> = 0 always being the lowest level in the AMR hierarchy represented in the solve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Multifab of alpha values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="57" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="105" bodyend="111"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="57" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="122" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a992fd553ade4720189014453615b28b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -421,10 +441,29 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Sets alpha as a single scalar constant value across the mutlifab.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amrlev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of the multifab for the solver, with <computeroutput>amrlev</computeroutput> = 0 always being the lowest level in the AMR hierarchy represented in the solve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Single scalar value to populate across mutlifab. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="58" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="114" bodyend="118"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="58" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="141" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4746800064d0d00e8318a4e61fa59f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -442,10 +481,29 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Sets beta as a scalar field to be the values defined in the supplied multifabs (one for each space dimension).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amrlev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of the multifab for the solver, with <computeroutput>amrlev</computeroutput> = 0 always being the lowest level in the AMR hierarchy represented in the solve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of Multifabs of beta values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="59" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="121" bodyend="139"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="59" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="158" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a34c3b1b0d5cbc79985def0003fe8c53d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -463,10 +521,29 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Sets beta as a single scalar constant value across the mutlifabs (one for each dimension).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amrlev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of the multifab for the solver, with <computeroutput>amrlev</computeroutput> = 0 always being the lowest level in the AMR hierarchy represented in the solve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Single scalar value to populate across mutlifabs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="60" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="142" bodyend="148"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="60" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="189" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a7e78a84b10a437a183500c3134b25459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -484,10 +561,29 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Set each beta component to a single scalar constant value corresponding to the respective component of the supplied vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amrlev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of the multifab for the solver, with <computeroutput>amrlev</computeroutput> = 0 always being the lowest level in the AMR hierarchy represented in the solve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref> of scalar constant values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="61" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="151" bodyend="160"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="61" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="208" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a315f85d5190597877f1c42a08a58ddd8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -532,7 +628,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="68" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="881" bodyend="894"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="68" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="938" bodyend="951"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a627779ad059394a0bd2b3bede177e12a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -547,7 +643,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="70" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="411" bodyend="428"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="70" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="468" bodyend="485"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4304750fa837f09df7c0d400b147fe2f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>bool</type>
@@ -611,7 +707,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="73" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="460" bodyend="534"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="73" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="517" bodyend="591"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a32f30f88fc7763cc7c6f378e91761e6f" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -645,7 +741,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="74" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="593" bodyend="791"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="74" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="650" bodyend="848"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a6e3cc0a31d52d1bb18ebf5c43dac89eb" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -683,7 +779,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="75" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="794" bodyend="809"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="75" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="851" bodyend="866"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1af3a38005298c98dec1874957bccc31a6" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -709,7 +805,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="80" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="537" bodyend="590"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="80" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="594" bodyend="647"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1aeaca483e0d98821830a050a124c78df4" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>Real</type>
@@ -798,7 +894,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="89" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="912" bodyend="1002"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="89" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="969" bodyend="1059"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1ab8725018ab20ba9130eccd4b9eb82e17" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>bool</type>
@@ -812,7 +908,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="91" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="897" bodyend="909"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="91" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="954" bodyend="966"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a6e2d3bd2582d97baffe5204f5867c2a3" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -834,7 +930,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="93" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="1005" bodyend="1047"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="93" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="1062" bodyend="1104"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a703ad22ae8672c91ab5c7f044530202a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -859,7 +955,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="95" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="180" bodyend="241"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="95" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="237" bodyend="298"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a850f02af43a26190e332319b9ddb8942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -872,7 +968,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="97" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="163" bodyend="177"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="97" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="220" bodyend="234"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a9f80d265602f986fc8e4a4255ff3a525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -889,7 +985,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="244" bodyend="260"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="98" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="301" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4c648c8c2131afb622bc29f4aed80f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -902,7 +998,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="263" bodyend="276"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="320" bodyend="333"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1ad7c506fd80192a8f76dcbac6c60f6935" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -915,7 +1011,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="306" bodyend="408"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="102" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="363" bodyend="465"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -962,7 +1058,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="104" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="812" bodyend="878"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="104" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="869" bodyend="935"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -1006,7 +1102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="128" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="431" bodyend="457"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="128" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="488" bodyend="514"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
