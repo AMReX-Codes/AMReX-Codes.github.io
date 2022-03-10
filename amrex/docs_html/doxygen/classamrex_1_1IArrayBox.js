@@ -18,7 +18,7 @@ var classamrex_1_1IArrayBox =
     [ "getFABio", "classamrex_1_1IArrayBox.html#aceb0eff246538d984578232e27f82045", null ],
     [ "Initialize", "classamrex_1_1IArrayBox.html#aff085ec8097788fc08d663f81062154e", null ],
     [ "operator=", "classamrex_1_1IArrayBox.html#a1f15c661d9fa23250901595a7e7e2179", null ],
-    [ "operator=", "classamrex_1_1IArrayBox.html#a684c32bf8f70f624272652284da549c4", null ],
+    [ "operator=", "classamrex_1_1IArrayBox.html#aa6ab7e172b712f730ad09f00e3127549", null ],
     [ "operator=", "classamrex_1_1IArrayBox.html#a1fbfd1676ed945234f965e4c44a8823c", null ],
     [ "readFrom", "classamrex_1_1IArrayBox.html#a3a19e0c558360ae380fba44e0aec9086", null ],
     [ "resize", "classamrex_1_1IArrayBox.html#aa3b1edf0b241a6c722dea0ceced6b102", null ],
