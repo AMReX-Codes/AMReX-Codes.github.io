@@ -61,6 +61,7 @@
         <definition>int amrex::IntegratorBase&lt; T &gt;::slow_fast_timestep_ratio</definition>
         <argsstring></argsstring>
         <name>slow_fast_timestep_ratio</name>
+        <initializer>= 0</initializer>
         <briefdescription>
 <para>For multirate problems, the ratio of slow timestep size / fast timestep size (int) </para>
         </briefdescription>
@@ -69,6 +70,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="172" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1IntegratorBase_1a020d8e83bf55dd069e374403d4ff1f7a" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::IntegratorBase&lt; T &gt;::fast_timestep</definition>
+        <argsstring></argsstring>
+        <name>fast_timestep</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+<para>For multirate problems, the fast timestep size (Real) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="177" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1IntegratorBase_1a093f10915c880670f78fcc8cbc763dd6" prot="protected" static="no" mutable="no">
         <type>std::function&lt; void(T &amp;, amrex::Real)&gt;</type>
@@ -82,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="177" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="177" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="182" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="182" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -97,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="180" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="180" bodyend="180"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="185" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="185" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a33e59ff0c3058f32e4c28ab13369f211" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -114,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="182" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="182" bodyend="182"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="187" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="187" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a9bcad149736f2fc82ca342a2e0f24fc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type></type>
@@ -127,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="184" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="184" bodyend="184"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="189" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="189" bodyend="189"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a776b334c903b6275ea792b4e7cca5a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -147,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="186" column="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="191" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1ad6bd9eb8cc13ac9e2a120c9018f529aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -164,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="188" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="188" bodyend="191"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="193" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="193" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a8c488010a33a199738095676417424ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -181,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="193" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="193" bodyend="196"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="198" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="198" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a2c28fc76c5cdf2fceab4b2c06b07074c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -199,7 +215,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="198" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="198" bodyend="201"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="203" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IntegratorBase_1ac5003ee30c98dff34007cf2738599392" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::IntegratorBase&lt; T &gt;::set_fast_timestep</definition>
+        <argsstring>(const Real fast_dt=1.0)</argsstring>
+        <name>set_fast_timestep</name>
+        <param>
+          <type>const Real</type>
+          <declname>fast_dt</declname>
+          <defval>1.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="208" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="208" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1ab844bc357c2ad282e111b0f3e965864e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -216,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="203" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="203" bodyend="206"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="213" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="213" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1af961f09393e62d6a09749da90d0b9016" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::function&lt; void(T &amp;, amrex::Real)&gt;</type>
@@ -229,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="208" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="208" bodyend="211"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="218" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="218" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a273aca91ddf7ee9e5de270e7f6c02a21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt;</type>
@@ -242,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="213" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="213" bodyend="216"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="223" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="223" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a1295d3faece00c625a70ab996fc9fa99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::function&lt; void(T &amp;, const T &amp;, const T &amp;, const amrex::Real)&gt;</type>
@@ -255,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="218" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="218" bodyend="221"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="228" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="228" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1aedf790cb6391c0861069d8c358f65ddf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -268,7 +302,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="223" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="223" bodyend="226"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="233" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a1b6d214905b360f23d3a162eb4aa8f99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::IntegratorBase&lt; T &gt;::get_fast_timestep</definition>
+        <argsstring>()</argsstring>
+        <name>get_fast_timestep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="238" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="238" bodyend="241"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1ae03ee5e425bef0111005514d81fdf5e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -293,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="228" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="228" bodyend="231"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="243" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="243" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1abb21d3ddf233718bd7d828471c1bb91d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -322,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="233" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="233" bodyend="236"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="248" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="248" bodyend="251"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a0b820091c0cdc69c24149eb97b5cb0b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>amrex::Real</type>
@@ -354,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="238" column="25"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="253" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a3dc1f86935271c9b053b9d6a60911739" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -386,7 +433,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="240" column="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="255" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntegratorBase_1a9a0b2271de694f1ea0903339931578ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -406,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="242" column="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="257" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -446,16 +493,19 @@
         <link refid="classamrex_1_1IntegratorBase"/>
         <childnode refid="2" relation="usage">
           <edgelabel>timestep</edgelabel>
+          <edgelabel>fast_timestep</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="150" bodyend="243"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="150" bodyend="258"/>
     <listofallmembers>
       <member refid="classamrex_1_1IntegratorBase_1a0b820091c0cdc69c24149eb97b5cb0b7" prot="public" virt="pure-virtual"><scope>amrex::IntegratorBase</scope><name>advance</name></member>
       <member refid="classamrex_1_1IntegratorBase_1abb21d3ddf233718bd7d828471c1bb91d" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>fast_rhs</name></member>
+      <member refid="classamrex_1_1IntegratorBase_1a020d8e83bf55dd069e374403d4ff1f7a" prot="protected" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>fast_timestep</name></member>
       <member refid="classamrex_1_1IntegratorBase_1a23632d8a36a1af5671c02d51a69a5785" prot="private" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>FastFun</name></member>
       <member refid="classamrex_1_1IntegratorBase_1a26bec4822130d973d323ec22ce38e71a" prot="private" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>Fun</name></member>
       <member refid="classamrex_1_1IntegratorBase_1a1295d3faece00c625a70ab996fc9fa99" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>get_fast_rhs</name></member>
+      <member refid="classamrex_1_1IntegratorBase_1a1b6d214905b360f23d3a162eb4aa8f99" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>get_fast_timestep</name></member>
       <member refid="classamrex_1_1IntegratorBase_1af961f09393e62d6a09749da90d0b9016" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>get_post_update</name></member>
       <member refid="classamrex_1_1IntegratorBase_1a273aca91ddf7ee9e5de270e7f6c02a21" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>get_rhs</name></member>
       <member refid="classamrex_1_1IntegratorBase_1aedf790cb6391c0861069d8c358f65ddf" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>get_slow_fast_timestep_ratio</name></member>
@@ -466,6 +516,7 @@
       <member refid="classamrex_1_1IntegratorBase_1a093f10915c880670f78fcc8cbc763dd6" prot="protected" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>post_update</name></member>
       <member refid="classamrex_1_1IntegratorBase_1ae03ee5e425bef0111005514d81fdf5e4" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>rhs</name></member>
       <member refid="classamrex_1_1IntegratorBase_1a8c488010a33a199738095676417424ae" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>set_fast_rhs</name></member>
+      <member refid="classamrex_1_1IntegratorBase_1ac5003ee30c98dff34007cf2738599392" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>set_fast_timestep</name></member>
       <member refid="classamrex_1_1IntegratorBase_1ab844bc357c2ad282e111b0f3e965864e" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>set_post_update</name></member>
       <member refid="classamrex_1_1IntegratorBase_1ad6bd9eb8cc13ac9e2a120c9018f529aa" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>set_rhs</name></member>
       <member refid="classamrex_1_1IntegratorBase_1a2c28fc76c5cdf2fceab4b2c06b07074c" prot="public" virt="non-virtual"><scope>amrex::IntegratorBase</scope><name>set_slow_fast_timestep_ratio</name></member>
