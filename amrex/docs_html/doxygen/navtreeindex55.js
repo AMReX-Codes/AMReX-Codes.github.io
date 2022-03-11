@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"namespaceamrex__fort__module.html":[2,0,4],
+"namespaceamrex__fort__module.html":[1,0,8],
 "namespaceamrex__io__module.html":[1,0,9],
 "namespaceamrex__lo__bctypes__module.html":[1,0,10],
 "namespaceamrex__lo__util__module.html":[1,0,11],
@@ -7,8 +9,8 @@ var NAVTREEINDEX55 =
 "namespaceamrex__mempool__module.html":[1,0,12],
 "namespaceamrex__mllinop__nd__module.html":[1,0,13],
 "namespaceamrex__omp__module.html":[1,0,14],
-"namespaceamrex__paralleldescriptor__module.html":[2,0,6],
 "namespaceamrex__paralleldescriptor__module.html":[1,0,15],
+"namespaceamrex__paralleldescriptor__module.html":[2,0,6],
 "namespaceamrex__parmparse__module.html":[2,0,7],
 "namespaceamrex__parmparse__module.html":[1,0,16],
 "namespaceamrex__string__module.html":[1,0,17],
@@ -17,8 +19,8 @@ var NAVTREEINDEX55 =
 "namespacedetail.html":[1,0,18],
 "namespacehacc.html":[2,0,10],
 "namespacehacc.html":[1,0,19],
-"namespacemembers.html":[1,1,0,0],
 "namespacemembers.html":[1,1,0],
+"namespacemembers.html":[1,1,0,0],
 "namespacemembers_a.html":[1,1,0,1],
 "namespacemembers_b.html":[1,1,0,2],
 "namespacemembers_c.html":[1,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structRegionsProfStats_1_1DataBlock.html#af1b2cc36e918fd0673c576f2adb7265b":[2,0,24,0,3],
 "structRegionsProfStats_1_1DataBlock.html#afbaca3dac9e6d63164eae742d64b0aed":[2,0,24,0,1],
 "structTransformerGhost.html":[2,0,26],
-"structTransformerGhost.html#ac0f55ce4a39ac6c99b4fe7ffd29dd191":[2,0,26,0],
-"structTransformerVirt.html":[2,0,27],
-"structTransformerVirt.html#a5ca4a0a936c90155fe2fd0fc99a90a65":[2,0,27,0]
+"structTransformerGhost.html#ac0f55ce4a39ac6c99b4fe7ffd29dd191":[2,0,26,0]
 };
