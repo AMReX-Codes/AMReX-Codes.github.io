@@ -67,10 +67,11 @@ var NAVTREEINDEX6 =
 "AMReX__GpuContainers_8H.html#a2c1110b22670288daa9e2a01cbb70fbb":[3,0,0,2,117,12],
 "AMReX__GpuContainers_8H.html#a337aceb06d1f93486e6593ff058c0a93":[3,0,0,2,117,5],
 "AMReX__GpuContainers_8H.html#a39c6894dcdb993d9e4455d7d418947b9":[3,0,0,2,117,15],
+"AMReX__GpuContainers_8H.html#a3abad1fb37ce40b710326ae2d9ab208c":[3,0,0,2,117,17],
 "AMReX__GpuContainers_8H.html#a3da569ab08ec568b8e512d91d6259b53":[3,0,0,2,117,13],
-"AMReX__GpuContainers_8H.html#a45b5d93b9e83ebcd8fb2f1e90aced0c7":[3,0,0,2,117,16],
-"AMReX__GpuContainers_8H.html#a4cb810463e0c04bdea932a011e77b548":[3,0,0,2,117,17],
-"AMReX__GpuContainers_8H.html#a4ffc2b3090d34803c0b78ee6f53d22a9":[3,0,0,2,117,18],
+"AMReX__GpuContainers_8H.html#a45b5d93b9e83ebcd8fb2f1e90aced0c7":[3,0,0,2,117,18],
+"AMReX__GpuContainers_8H.html#a4cb810463e0c04bdea932a011e77b548":[3,0,0,2,117,19],
+"AMReX__GpuContainers_8H.html#a4ffc2b3090d34803c0b78ee6f53d22a9":[3,0,0,2,117,20],
 "AMReX__GpuContainers_8H.html#a577de7f575fb4991814e3ee2b5af0cdf":[3,0,0,2,117,9],
 "AMReX__GpuContainers_8H.html#a6e76d121ad2e1030d86ccbc9a47f6fde":[3,0,0,2,117,8],
 "AMReX__GpuContainers_8H.html#a99e1f048890efc1c275606cb9bdc41c7":[3,0,0,2,117,4],
@@ -78,6 +79,7 @@ var NAVTREEINDEX6 =
 "AMReX__GpuContainers_8H.html#abea324bd9a4533e4f54614f6a7d410d1":[3,0,0,2,117,11],
 "AMReX__GpuContainers_8H.html#af0ed55b80609bd8e66da4d0c435894d0":[3,0,0,2,117,3],
 "AMReX__GpuContainers_8H.html#af22f411b79da7033051cdfa1539e21be":[3,0,0,2,117,6],
+"AMReX__GpuContainers_8H.html#af50ec082ab16407059545feed99d648f":[3,0,0,2,117,16],
 "AMReX__GpuContainers_8H.html#afb3bc7b25afb38fc8f371f3bc4966483":[3,0,0,2,117,10],
 "AMReX__GpuContainers_8H_source.html":[3,0,0,2,117],
 "AMReX__GpuControl_8H.html":[3,0,0,2,119],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "AMReX__GpuLaunchFunctsG_8H.html#aa0e2291d95cafe7bfafbc9d93f4289b0":[3,0,0,2,128,35],
 "AMReX__GpuLaunchFunctsG_8H.html#aa3d67648733b6d47b6f579e9f157ee11":[3,0,0,2,128,5],
 "AMReX__GpuLaunchFunctsG_8H.html#aa785b3b07c24c864604e8de72a0bb919":[3,0,0,2,128,60],
-"AMReX__GpuLaunchFunctsG_8H.html#aab94450e77d0755cada273158f5373d4":[3,0,0,2,128,32],
-"AMReX__GpuLaunchFunctsG_8H.html#aad398246e65a7d7102beb5169e03a04d":[3,0,0,2,128,23],
-"AMReX__GpuLaunchFunctsG_8H.html#ab3863817bfa1ca3b9a76d4fc953d7e4c":[3,0,0,2,128,36]
+"AMReX__GpuLaunchFunctsG_8H.html#aab94450e77d0755cada273158f5373d4":[3,0,0,2,128,32]
 };

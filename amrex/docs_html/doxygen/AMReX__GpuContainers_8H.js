@@ -16,6 +16,8 @@ var AMReX__GpuContainers_8H =
     [ "copyAsync", "AMReX__GpuContainers_8H.html#a3da569ab08ec568b8e512d91d6259b53", null ],
     [ "copyAsync", "AMReX__GpuContainers_8H.html#a15d5aa9cbac1f2a0ef1f042530760b88", null ],
     [ "copyAsync", "AMReX__GpuContainers_8H.html#a39c6894dcdb993d9e4455d7d418947b9", null ],
+    [ "prefetchToDevice", "AMReX__GpuContainers_8H.html#af50ec082ab16407059545feed99d648f", null ],
+    [ "prefetchToHost", "AMReX__GpuContainers_8H.html#a3abad1fb37ce40b710326ae2d9ab208c", null ],
     [ "deviceToDevice", "AMReX__GpuContainers_8H.html#a45b5d93b9e83ebcd8fb2f1e90aced0c7", null ],
     [ "deviceToHost", "AMReX__GpuContainers_8H.html#a4cb810463e0c04bdea932a011e77b548", null ],
     [ "hostToDevice", "AMReX__GpuContainers_8H.html#a4ffc2b3090d34803c0b78ee6f53d22a9", null ]

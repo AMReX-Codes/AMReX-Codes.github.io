@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__distFcnElement_8H_source.html":[3,0,0,4,4],
+"AMReX__distFcnElement_8cpp.html":[3,0,0,4,3],
 "AMReX__ebcellflag__mod_8F90.html":[3,0,0,4,52],
 "AMReX__ebcellflag__mod_8F90.html#a042a1d5bee97b5d90c352a09ffc13956":[3,0,0,4,52,4],
 "AMReX__ebcellflag__mod_8F90.html#a2610316e2634c6510e9511a17e425c39":[3,0,0,4,52,23],
@@ -247,7 +249,5 @@ var NAVTREEINDEX19 =
 "Dfft_8H.html":[3,0,0,5,9,3],
 "Dfft_8H.html#a68b901258fcc3a1c0ebf5c0efa756b0d":[3,0,0,5,9,3,2],
 "Dfft_8H.html#ae6567dcb005bd62f046f163d6ba90d51":[3,0,0,5,9,3,1],
-"Dfft_8H_source.html":[3,0,0,5,9,3],
-"DistributionC_8cpp.html":[3,0,0,5,9,8],
-"DistributionC_8cpp.html#a3cf79a54db8b84004b4a2df366db3c50":[3,0,0,5,9,8,2]
+"Dfft_8H_source.html":[3,0,0,5,9,3]
 };

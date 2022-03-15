@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"namespaceamrex__filcc__module.html":[1,0,7],
+"namespaceamrex__filcc__module.html":[2,0,3],
 "namespaceamrex__fort__module.html":[2,0,4],
 "namespaceamrex__fort__module.html":[1,0,8],
 "namespaceamrex__io__module.html":[1,0,9],
@@ -9,8 +11,8 @@ var NAVTREEINDEX55 =
 "namespaceamrex__mempool__module.html":[1,0,12],
 "namespaceamrex__mllinop__nd__module.html":[1,0,13],
 "namespaceamrex__omp__module.html":[1,0,14],
-"namespaceamrex__paralleldescriptor__module.html":[1,0,15],
 "namespaceamrex__paralleldescriptor__module.html":[2,0,6],
+"namespaceamrex__paralleldescriptor__module.html":[1,0,15],
 "namespaceamrex__parmparse__module.html":[2,0,7],
 "namespaceamrex__parmparse__module.html":[1,0,16],
 "namespaceamrex__string__module.html":[1,0,17],
@@ -118,8 +120,8 @@ var NAVTREEINDEX55 =
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,20],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[1,0,21],
 "namespacesdcquadrature__mod.html":[2,0,11],
+"namespacesdcquadrature__mod.html":[1,0,21],
 "pages.html":[],
 "structAssignGridFilter.html":[2,0,14],
 "structAssignGridFilter.html#a067cf16cb382b143e8c1891468548937":[2,0,14,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "structRegionsProfStats_1_1DataBlock.html#acbca0639ad8b69e1f647d223eefc11da":[2,0,24,0,11],
 "structRegionsProfStats_1_1DataBlock.html#adb82ca461a4fa2596be2dc2acb05a049":[2,0,24,0,8],
 "structRegionsProfStats_1_1DataBlock.html#af1b2cc36e918fd0673c576f2adb7265b":[2,0,24,0,3],
-"structRegionsProfStats_1_1DataBlock.html#afbaca3dac9e6d63164eae742d64b0aed":[2,0,24,0,1],
-"structTransformerGhost.html":[2,0,26],
-"structTransformerGhost.html#ac0f55ce4a39ac6c99b4fe7ffd29dd191":[2,0,26,0]
+"structRegionsProfStats_1_1DataBlock.html#afbaca3dac9e6d63164eae742d64b0aed":[2,0,24,0,1]
 };

@@ -255,6 +255,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a3da569ab08ec568b8e512d91d6259b53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a3da569ab08ec568b8e512d91d6259b53">copyAsync</a> (<a class="el" href="structamrex_1_1Gpu_1_1DeviceToDevice.html">DeviceToDevice</a>, InIter <a class="el" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, InIter <a class="el" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>, OutIter result) noexcept</td></tr>
 <tr class="memdesc:a3da569ab08ec568b8e512d91d6259b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">A device-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <a class="el" href="namespaceamrex_1_1Gpu.html#a337aceb06d1f93486e6593ff058c0a93" title="A PODVector that uses pinned host memory. Same as PinnedVector. For a vector class that uses std::all...">Gpu::HostVector</a>, <a class="el" href="namespaceamrex_1_1Gpu.html#a99e1f048890efc1c275606cb9bdc41c7" title="A PODVector that uses the standard memory Arena. Note that, on NVIDIA architectures,...">Gpu::DeviceVector</a>, etc. meet this requirement.  <a href="namespaceamrex_1_1Gpu.html#a3da569ab08ec568b8e512d91d6259b53">More...</a><br /></td></tr>
 <tr class="separator:a3da569ab08ec568b8e512d91d6259b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abad1fb37ce40b710326ae2d9ab208c"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:a3abad1fb37ce40b710326ae2d9ab208c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a3abad1fb37ce40b710326ae2d9ab208c">prefetchToHost</a> (Iter <a class="el" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, Iter <a class="el" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>) noexcept</td></tr>
+<tr class="memdesc:a3abad1fb37ce40b710326ae2d9ab208c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate elements of a container from device to host. This is a no-op for host-only code.  <a href="namespaceamrex_1_1Gpu.html#a3abad1fb37ce40b710326ae2d9ab208c">More...</a><br /></td></tr>
+<tr class="separator:a3abad1fb37ce40b710326ae2d9ab208c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50ec082ab16407059545feed99d648f"><td class="memTemplParams" colspan="2">template&lt;class Iter &gt; </td></tr>
+<tr class="memitem:af50ec082ab16407059545feed99d648f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">prefetchToDevice</a> (Iter <a class="el" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, Iter <a class="el" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>) noexcept</td></tr>
+<tr class="memdesc:af50ec082ab16407059545feed99d648f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate elements of a container from host to device. This is a no-op for host-only code.  <a href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">More...</a><br /></td></tr>
+<tr class="separator:af50ec082ab16407059545feed99d648f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a05369cacb826ba5546b4dd507c49dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">inLaunchRegion</a> () noexcept</td></tr>
 <tr class="separator:a7a05369cacb826ba5546b4dd507c49dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6abda3339e4295716d7e2ff78e9603"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">notInLaunchRegion</a> () noexcept</td></tr>
@@ -2670,6 +2678,88 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="af50ec082ab16407059545feed99d648f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50ec082ab16407059545feed99d648f">&#9670;&nbsp;</a></span>prefetchToDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iter &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::prefetchToDevice </td>
+          <td>(</td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Migrate elements of a container from host to device. This is a no-op for host-only code. </p>
+<p>This version is blocking - CPU execution will halt until the migration is finished. </p>
+
+</div>
+</div>
+<a id="a3abad1fb37ce40b710326ae2d9ab208c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3abad1fb37ce40b710326ae2d9ab208c">&#9670;&nbsp;</a></span>prefetchToHost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iter &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::prefetchToHost </td>
+          <td>(</td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Migrate elements of a container from device to host. This is a no-op for host-only code. </p>
+<p>This version is blocking - CPU execution will halt until the migration is finished. </p>
 
 </div>
 </div>
