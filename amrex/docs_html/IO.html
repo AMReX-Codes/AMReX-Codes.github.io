@@ -53,6 +53,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Plotfile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#async-output">Async Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hdf5-plotfile">HDF5 Plotfile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hdf5-plotfile-compression">HDF5 Plotfile Compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hdf5-asynchronous-output">HDF5 Asynchronous Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alternative-hdf5-plotfile-schema">Alternative HDF5 Plotfile Schema</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#checkpoint-file">Checkpoint File</a></li>
 </ul>
 </li>
@@ -215,6 +221,114 @@ hardware threads in another way, such as OpenMP.  If you see any degradation
 when using Async Output and OpenMP, try using one less thread in
 <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> to prevent oversubscription and get more consistent
 results.</p>
+</div>
+<div class="section" id="hdf5-plotfile">
+<h1>HDF5 Plotfile<a class="headerlink" href="#hdf5-plotfile" title="Permalink to this headline"></a></h1>
+<p>Besides AMReX’s native plotfile, applications can also write plotfile in
+the HDF5 format, which is a cross-platform, self-describing file format.
+The HDF5 plotfiles store the same information as the native format, and
+has the additional compression capability that can reduce the file size.
+Currently supported compression libraries include <a class="reference external" href="https://szcompressor.org">SZ</a> and <a class="reference external" href="https://zfp.llnl.gov">ZFP</a>.</p>
+<p>To enable HDF5 output, AMReX must be compiled and linked to an HDF5 library
+with parallel I/O support, by adding <code class="docutils literal notranslate"><span class="pre">USE_HDF5=TRUE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">HDF5_HOME=/path/to/hdf5/install/dir</span></code> to the GNUMakefile.
+many HPC systems have an HDF5 module available that can be loaded with
+<code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">hdf5</span></code> or <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">cray-hdf5-parallel</span></code>. To download
+and compile HDF5 from source code, please go to <a class="reference external" href="https://portal.hdfgroup.org/display/support/Downloads">HDF5 Download</a> webpage
+and follow the instructions (latest version is recommended and remember
+to turn on parallel I/O).</p>
+<p>Following are two functions for writing a generic AMReX plotfile in HDF5
+format, which are very similar to the AMReX native write functions.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">WriteSingleLevelPlotfileHDF5</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">plotfilename</span><span class="p">,</span>
+                                   <span class="k">const</span> <span class="n">MultiFab</span> <span class="o">&amp;</span><span class="n">mf</span><span class="p">,</span>
+                                   <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">varnames</span><span class="p">,</span>
+                                   <span class="k">const</span> <span class="n">Geometry</span> <span class="o">&amp;</span><span class="n">geom</span><span class="p">,</span>
+                                   <span class="n">Real</span> <span class="n">t</span><span class="p">,</span>
+                                   <span class="kt">int</span> <span class="n">level_step</span><span class="p">,</span>
+                                   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">compression</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">WriteMultiLevelPlotfileHDF5</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">plotfilename</span><span class="p">,</span>
+                                  <span class="kt">int</span> <span class="n">nlevels</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">*&gt;</span> <span class="o">&amp;</span><span class="n">mf</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">varnames</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">geom</span><span class="p">,</span>
+                                  <span class="n">Real</span> <span class="n">time</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">level_steps</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">IntVect</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">ref_ratio</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">compression</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteSingleLevelPlotfileHDF5</span></span></code> is for single level runs and
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteMultiLevelPlotfileHDF5</span></span></code> is for multiple levels. Their arguments are
+the same as the native ones except the last one, which optional, and specifies
+the compression parameters. These two functions write plotfiles with a
+Chombo-compatible HDF5 file schema, which can be read by visualization tools
+such as VisIt and ParaView using their built-in Chombo reader plugin (see the
+chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a>)</p>
+<div class="section" id="hdf5-plotfile-compression">
+<h2>HDF5 Plotfile Compression<a class="headerlink" href="#hdf5-plotfile-compression" title="Permalink to this headline"></a></h2>
+<p>To enable data compression on the HDF5 datasets, the corresponding compression
+library and its HDF5 plugin must be available. To compile <a class="reference external" href="https://szcompressor.org">SZ</a> or <a class="reference external" href="https://zfp.llnl.gov">ZFP</a> plugin,
+please refer to their documentation: <a class="reference external" href="https://github.com/szcompressor/SZ/tree/master/hdf5-filter/H5Z-SZ">H5Z-SZ</a> and <a class="reference external" href="https://github.com/LLNL/H5Z-ZFP">H5Z-ZFP</a>, and adding
+<code class="docutils literal notranslate"><span class="pre">USE_HDF5_SZ=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">SZ_HOME=</span></code>, or <code class="docutils literal notranslate"><span class="pre">USE_HDF5_ZFP=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">ZFP_HOME=</span></code>,
+<code class="docutils literal notranslate"><span class="pre">H5Z_HOME=</span></code> to the GNUMakefile.</p>
+<p>The string argument <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">compression</span></span></code> in the above two functions controls
+whether to enable data compression and its parameters. Currently supported
+options include:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>No compression</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">None&#64;0</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SZ compression</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SZ&#64;/path/to/sz.config</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ZFP compression</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZFP_RATE&#64;rate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZFP_PRECISION&#64;precision</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZFP_ACCURACY&#64;accuracy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZFP_REVERSIBLE&#64;reversible</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="hdf5-asynchronous-output">
+<h2>HDF5 Asynchronous Output<a class="headerlink" href="#hdf5-asynchronous-output" title="Permalink to this headline"></a></h2>
+<p>The HDF5 output also comes with its own asynchronous I/O support, which is different
+from the native async output mentioned in the previous section. To use the HDF5
+asynchronous I/O VOL connector, download and compile by following the instructions
+at <a class="reference external" href="https://github.com/hpc-io/vol-async">vol-async</a>.</p>
+<p>Since the HDF5 asynchronous I/O in AMReX does not use double buffering, vol-async
+must be compiled with <code class="docutils literal notranslate"><span class="pre">-DENABLE_WRITE_MEMCPY=1</span></code> added to <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code>.
+When compiling AMReX, add <code class="docutils literal notranslate"><span class="pre">USE_HDF5_ASYNC</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">ABT_HOME=</span></code>, <code class="docutils literal notranslate"><span class="pre">ASYNC_HOME=</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">MPI_THREAD_MULTIPLE=TRUE</span></code> to the GNUMakefile. Refer to
+<code class="docutils literal notranslate"><span class="pre">amrex/Tests/HDF5Benchmark/GNUmakefile</span></code> for the example usage.</p>
+</div>
+<div class="section" id="alternative-hdf5-plotfile-schema">
+<h2>Alternative HDF5 Plotfile Schema<a class="headerlink" href="#alternative-hdf5-plotfile-schema" title="Permalink to this headline"></a></h2>
+<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteSingleLevelPlotfileHDF5</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteMultiLevelPlotfileHDF5</span></span></code>
+write HDF5 plotfiles that store all the data on an AMR level as one 1D HDF5 dataset.
+Each AMR box’s data is linearized and the data of different variables are
+concatenated, resulting in an interleaved pattern for each variable. This could
+be undesirable when compression is used, as it may lead to applying the
+compression algorithm to multiple variables with different value ranges and
+chararistics, and reduce the compression ratio. To overcome this issue, two
+additional functions are provided to write each variable into individual HDF5
+datasets: <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteSingleLevelPlotfileHDF5MultiDset</span></span></code> and
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteMultiLevelPlotfileHDF5MultiDset</span></span></code>. They use the exact same arguments
+as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteSingleLevelPlotfileHDF5</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">WriteMultiLevelPlotfileHDF5</span></span></code>.
+However, this alternative schema is not yet supported by the visualization tools.</p>
+</div>
 </div>
 <div class="section" id="checkpoint-file">
 <h1>Checkpoint File<a class="headerlink" href="#checkpoint-file" title="Permalink to this headline"></a></h1>
