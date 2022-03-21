@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structRegionsProfStats_1_1DataBlock.html#adb82ca461a4fa2596be2dc2acb05a049":[2,0,24,0,8],
+"structRegionsProfStats_1_1DataBlock.html#af1b2cc36e918fd0673c576f2adb7265b":[2,0,24,0,3],
 "structRegionsProfStats_1_1DataBlock.html#afbaca3dac9e6d63164eae742d64b0aed":[2,0,24,0,1],
 "structTransformerGhost.html":[2,0,26],
 "structTransformerGhost.html#ac0f55ce4a39ac6c99b4fe7ffd29dd191":[2,0,26,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "structamrex_1_1BATbndryReg.html#a742f179bd6167bd80a9f9aa9e561bb41":[2,0,0,61,11],
 "structamrex_1_1BATbndryReg.html#a8076201cf94e0e9145160b6aa522ba26":[2,0,0,61,13],
 "structamrex_1_1BATbndryReg.html#a8e3247c949b2224196c82ab300bbfbb4":[2,0,0,61,14],
-"structamrex_1_1BATbndryReg.html#acab83ae65cddf401ab88e355cf63fcf2":[2,0,0,61,1],
-"structamrex_1_1BATbndryReg.html#ad8ea19edcbf549f67753ecdcd6a2f32e":[2,0,0,61,9],
-"structamrex_1_1BATbndryReg.html#ae30ce7aef9fb1c29ea4b1a2708ae19eb":[2,0,0,61,12]
+"structamrex_1_1BATbndryReg.html#acab83ae65cddf401ab88e355cf63fcf2":[2,0,0,61,1]
 };

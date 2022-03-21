@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"classamrex_1_1FaceLinear.html#a82d92835cb2d626c9b1551e201b08a68":[2,0,0,153,0],
+"classamrex_1_1FaceLinear.html#ae6caa6fa65382bef97431b284967c081":[2,0,0,153,2],
 "classamrex_1_1FaceLinear.html#af8c208982ffa7f4b377b3d652e23e5ba":[2,0,0,153,1],
 "classamrex_1_1FaceLinear.html#aff0293b88ffe56ff520ed92791526f1e":[2,0,0,153,4],
 "classamrex_1_1FillBoxId.html":[2,0,0,159],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "classamrex_1_1Gpu_1_1Buffer.html#aca5acc3051c0c94e3668e5e5b5f17c17":[2,0,0,6,8,13],
 "classamrex_1_1Gpu_1_1Buffer.html#aeec4be8fd894735d9acaa7de8c62d63a":[2,0,0,6,8,16],
 "classamrex_1_1Gpu_1_1Buffer.html#af613bc8ff56b5c8e598e90cd8c61f6b0":[2,0,0,6,8,15],
-"classamrex_1_1Gpu_1_1Device.html":[2,0,0,6,11],
-"classamrex_1_1Gpu_1_1Device.html#a02723429d759214d88aab6044423995e":[2,0,0,6,11,31],
-"classamrex_1_1Gpu_1_1Device.html#a049b80f650443158297dbc0fb19c304e":[2,0,0,6,11,34]
+"classamrex_1_1Gpu_1_1Device.html":[2,0,0,6,11]
 };

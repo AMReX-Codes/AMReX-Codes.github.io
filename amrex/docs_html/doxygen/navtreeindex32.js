@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classamrex_1_1DeriveList.html#a06d459c523dcea94b914d4a7ee2371a7":[2,0,0,115,4],
+"classamrex_1_1DeriveList.html#a1d0c22b55e3ec0b19f14da3262df6ae1":[2,0,0,115,9],
 "classamrex_1_1DeriveList.html#a23e6015e6bcbdbce86cd0c475fd8a3c9":[2,0,0,115,8],
 "classamrex_1_1DeriveList.html#a3ac820fa945e8ba517f3dbfc9a5d43bd":[2,0,0,115,7],
 "classamrex_1_1DeriveList.html#a687b60c01f5addf31abee4e0a6510873":[2,0,0,115,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1GeometryShop.html#a21626bdeb656074c2e675969aec678bb":[2,0,0,4,10,9],
 "classamrex_1_1EB2_1_1GeometryShop.html#a2e356da2badc30adacbc98d1e04cff97":[2,0,0,4,10,4],
 "classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,19],
-"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,20],
-"classamrex_1_1EB2_1_1GeometryShop.html#a3e0822600d48fac2177a0b93671e868a":[2,0,0,4,10,26],
-"classamrex_1_1EB2_1_1GeometryShop.html#a4743c337de07fcbcad184ec6242ad0e1":[2,0,0,4,10,24]
+"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,20]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"Dfft_8H.html#ae6567dcb005bd62f046f163d6ba90d51":[3,0,0,5,9,3,1],
+"Dfft_8H_source.html":[3,0,0,5,9,3],
 "DistributionC_8cpp.html":[3,0,0,5,9,8],
 "DistributionC_8cpp.html#a3cf79a54db8b84004b4a2df366db3c50":[3,0,0,5,9,8,2],
 "DistributionC_8cpp.html#aeec859fd88ba3b4a7fc18047436a74db":[3,0,0,5,9,8,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "amrex__iparser_8lex_8h.html#a46af646807e0797e72b6e8945e7ea88b":[3,0,0,2,0,3,97],
 "amrex__iparser_8lex_8h.html#a47f8646b5738a8e92fc58b34c7a37547":[3,0,0,2,0,3,44],
 "amrex__iparser_8lex_8h.html#a48e81b6f60f5f21fcaca3cc542e6c9f2":[3,0,0,2,0,3,87],
-"amrex__iparser_8lex_8h.html#a498ea96bb65e39b1eab5c51cf16ead13":[3,0,0,2,0,3,61],
-"amrex__iparser_8lex_8h.html#a4bf8969e5234aef8b46cce9a67a62724":[3,0,0,2,0,3,89],
-"amrex__iparser_8lex_8h.html#a4e5bd2d129903df83f3d13effaf8f3e4":[3,0,0,2,0,3,78]
+"amrex__iparser_8lex_8h.html#a498ea96bb65e39b1eab5c51cf16ead13":[3,0,0,2,0,3,61]
 };
