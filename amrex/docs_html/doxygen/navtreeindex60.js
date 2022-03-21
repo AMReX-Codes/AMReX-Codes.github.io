@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1HasMultiComp_1_1type.html":[2,0,0,189,0],
 "structamrex_1_1IParserExeADD.html":[2,0,0,221],
 "structamrex_1_1IParserExeADD.html#ae0bff41668e0c1e5701209d61e4560a6":[2,0,0,221,0],
 "structamrex_1_1IParserExeADD__PN.html":[2,0,0,222],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e":[2,0,0,310,0],
 "structamrex_1_1NeighborData.html":[2,0,0,311],
 "structamrex_1_1NeighborData.html#a09fd3cee10d0e540e802b6c7cd9fc6fd":[2,0,0,311,4],
-"structamrex_1_1NeighborData.html#a5810ab8fb05e91430d6e3d6282d5335a":[2,0,0,311,1],
-"structamrex_1_1NeighborData.html#a7f2e9c324bce9a494b544b608d346999":[2,0,0,311,0]
+"structamrex_1_1NeighborData.html#a5810ab8fb05e91430d6e3d6282d5335a":[2,0,0,311,1]
 };

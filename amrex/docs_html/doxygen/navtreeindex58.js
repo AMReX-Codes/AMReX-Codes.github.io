@@ -1,5 +1,6 @@
 var NAVTREEINDEX58 =
 {
+"structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01typename_01std_1_0106a99ebe3263da4342cdd68c621473.html":[2,0,0,4,28],
 "structamrex_1_1EB2_1_1Neighbor.html":[2,0,0,4,32],
 "structamrex_1_1EB2_1_1Neighbor.html#a02795942f0ecd9ff232334b4c4ccdb20":[2,0,0,4,32,12],
 "structamrex_1_1EB2_1_1Neighbor.html#a05e914a9bdd59ee8d460a558677634c2":[2,0,0,4,32,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX58 =
 "structamrex_1_1FabCopyDescriptor.html#a339ecf32165d5528efe85cd26bdcb9ff":[2,0,0,143,5],
 "structamrex_1_1FabCopyDescriptor.html#a3d6e218f177ba9156deff887f2356d67":[2,0,0,143,0],
 "structamrex_1_1FabCopyDescriptor.html#a3e2bb26a42b27ca072324f9bdfb0e1cf":[2,0,0,143,11],
-"structamrex_1_1FabCopyDescriptor.html#a405adb5266b8deb2c2e18cea095eee45":[2,0,0,143,4],
-"structamrex_1_1FabCopyDescriptor.html#a466957334ed9625a7a6ffb97e52d07bc":[2,0,0,143,2]
+"structamrex_1_1FabCopyDescriptor.html#a405adb5266b8deb2c2e18cea095eee45":[2,0,0,143,4]
 };

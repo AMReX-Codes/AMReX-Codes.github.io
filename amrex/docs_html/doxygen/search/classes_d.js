@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['openmpbinpolicy_8740',['OpenMPBinPolicy',['../structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html',1,'amrex::BinPolicy']]],
-  ['orderedboxes_8741',['OrderedBoxes',['../classamrex_1_1OrderedBoxes.html',1,'amrex']]],
-  ['orientation_8742',['Orientation',['../classamrex_1_1Orientation.html',1,'amrex']]],
-  ['orientationiter_8743',['OrientationIter',['../classamrex_1_1OrientationIter.html',1,'amrex']]],
-  ['orop_8744',['orOp',['../structamrex_1_1InSituUtils_1_1orOp.html',1,'amrex::InSituUtils']]]
+  ['openmpbinpolicy_8741',['OpenMPBinPolicy',['../structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html',1,'amrex::BinPolicy']]],
+  ['orderedboxes_8742',['OrderedBoxes',['../classamrex_1_1OrderedBoxes.html',1,'amrex']]],
+  ['orientation_8743',['Orientation',['../classamrex_1_1Orientation.html',1,'amrex']]],
+  ['orientationiter_8744',['OrientationIter',['../classamrex_1_1OrientationIter.html',1,'amrex']]],
+  ['orop_8745',['orOp',['../structamrex_1_1InSituUtils_1_1orOp.html',1,'amrex::InSituUtils']]]
 ];
