@@ -51463,7 +51463,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="286" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="286" bodyend="377"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="288" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="288" bodyend="377"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a088b41cb8cc59ea2e3235669ca30b9b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -54976,7 +54976,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="636" declcolumn="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="635" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac6d35da48f520c8ae3f429aee03601c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -54997,7 +54997,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="638" declcolumn="8"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="637" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acad483c5f0e30f9cd471ad05e1920320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55575,7 +55575,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="481" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="481" bodyend="511"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af9369351a33ba2efb75cb82f57aadff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa52bb434615440319a13cba11ff56619" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename PTile</type>
@@ -55586,7 +55586,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </templateparamlist>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>int amrex::partitionParticlesByDest</definition>
-        <argsstring>(PTile &amp;ptile, const PLocator &amp;ploc, const ParticleBufferMap &amp;pmap, const Geometry &amp;geom, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</argsstring>
+        <argsstring>(PTile &amp;ptile, const PLocator &amp;ploc, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;plo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;phi, const GpuArray&lt; int, AMREX_SPACEDIM &gt; &amp;is_per, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</argsstring>
         <name>partitionParticlesByDest</name>
         <param>
           <type>PTile &amp;</type>
@@ -55601,8 +55601,16 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>pmap</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
-          <declname>geom</declname>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>plo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>phi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>is_per</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -55637,7 +55645,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="517" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="517" bodyend="632"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="517" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="517" bodyend="631"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1983ce5560b8e4e34d4f0a8ade1fa640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

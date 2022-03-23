@@ -53,6 +53,7 @@ var classamrex_1_1ParticleContainer =
     [ "CreateVirtualParticles", "classamrex_1_1ParticleContainer.html#a13c9702fc016f3d6521f173115b94ec2", null ],
     [ "Define", "classamrex_1_1ParticleContainer.html#a3b3abd75c81fdb90bd1c0219404f2abb", null ],
     [ "Define", "classamrex_1_1ParticleContainer.html#a5d9a132b45d62f770b786771fd69e959", null ],
+    [ "Define", "classamrex_1_1ParticleContainer.html#a85e5cdc6192f3faef023cfae20044f4e", null ],
     [ "Define", "classamrex_1_1ParticleContainer.html#ae4ec7278685f0bdc307a4a5119f3768d", null ],
     [ "DefineAndReturnParticleTile", "classamrex_1_1ParticleContainer.html#a86bb7b9d5d63abaaa52210f103b99f49", null ],
     [ "DefineAndReturnParticleTile", "classamrex_1_1ParticleContainer.html#a08836ef61a1fb5f718f5684eeb6a5a2c", null ],

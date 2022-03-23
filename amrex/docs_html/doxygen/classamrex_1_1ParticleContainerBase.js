@@ -13,6 +13,7 @@ var classamrex_1_1ParticleContainerBase =
     [ "DataPrefix", "classamrex_1_1ParticleContainerBase.html#ac11b2227836fc7582170fbeba06c780a", null ],
     [ "Define", "classamrex_1_1ParticleContainerBase.html#ab2d7e2f655c0926dc7856544d9626140", null ],
     [ "Define", "classamrex_1_1ParticleContainerBase.html#a2d2f5b76392326defb14c8adaee1f1a5", null ],
+    [ "Define", "classamrex_1_1ParticleContainerBase.html#a1784a92d18a97247d05bbaae9ba0135b", null ],
     [ "Define", "classamrex_1_1ParticleContainerBase.html#a58cb6f59ee8ed859dce4a4c82b148dab", null ],
     [ "defineBufferMap", "classamrex_1_1ParticleContainerBase.html#a23baa2791b5f62a9dd1e7f6c709d4615", null ],
     [ "finestLevel", "classamrex_1_1ParticleContainerBase.html#aa9d1fb8c82d375e2d473e0dd677b3f61", null ],
