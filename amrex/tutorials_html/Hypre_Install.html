@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HYPRE for ABecLaplacian_C Tutorial &mdash; amrex 22.04-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> amrex
+          </a>
+              <div class="version">
+                22.04-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>HYPRE for ABecLaplacian_C Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Hypre_Install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hypre-for-abeclaplacian-c-tutorial">
+<span id="hypre"></span><h1>HYPRE for ABecLaplacian_C Tutorial<a class="headerlink" href="#hypre-for-abeclaplacian-c-tutorial" title="Permalink to this headline"></a></h1>
+<p>The following directions explain how to configure, build and run
+the <code class="docutils literal notranslate"><span class="pre">ABecLaplacian_C</span></code> example using the external solver library HYPRE.
+HYPRE is a library of scalable linear solvers and multigrid methods. For
+more information about HYPRE see their <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">website</a>. More information on
+setting HYPRE options within AMReX is available in the User’s Guide in
+the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers.html#external-solvers">External Solvers</a> section.</p>
+<section id="building-with-hypre-via-gnumake">
+<h2>Building with HYPRE via GNUMake<a class="headerlink" href="#building-with-hypre-via-gnumake" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Clone, configure, make install and set the <code class="docutils literal notranslate"><span class="pre">HYPRE_DIR</span></code> environment variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/hypre-space/hypre.git
+<span class="nb">cd</span> hypre/src
+./configure
+make install
+<span class="nb">export</span> <span class="nv">HYPRE_DIR</span><span class="o">=</span>/path_to_hypre_dir/hypre/src/hypre
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If HYPRE fails the configure step, it may be necessary to manually specify
+several options. This can be done during the configure step (see <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">-h</span></code>). For example,
+one might replace <code class="code docutils literal notranslate"><span class="pre">./configure</span></code> with,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure <span class="nv">CXX</span><span class="o">=</span>CC <span class="nv">CC</span><span class="o">=</span>cc <span class="nv">FC</span><span class="o">=</span>ftn --with-MPI
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>Navigate to the location of the ABecLaplacian_C example,
+<code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/LinearSolvers/ABecLaplacian_C</span></code>.</p></li>
+<li><p>Make the executable by typing,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -j4 <span class="nv">USE_HYPRE</span><span class="o">=</span>TRUE
+</pre></div>
+</div>
+<p>This will compile the code with HYPRE enabled using 4 processes.</p>
+</li>
+<li><p>To run the HYPRE enabled example, use the <code class="docutils literal notranslate"><span class="pre">inputs.hypre</span></code> file
+as input.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./ABecLaplacian_C inputs.hypre
+</pre></div>
+</div>
+</li>
+<li><p>To verify the HYPRE solver has been used, look for the line,</p>
+<div class="highlight-literal notranslate"><div class="highlight"><pre><span></span>HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05
+</pre></div>
+</div>
+<p>in the output. For this example, the code should quickly reach the end with
+only a handful of iterations at each step. The code successfully completes
+with the AMReX finalized output.</p>
+</li>
+</ol>
+</section>
+<section id="building-with-hypre-via-cmake">
+<h2>Building with HYPRE via CMake<a class="headerlink" href="#building-with-hypre-via-cmake" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Follow the directions above for cloning, configuring, make installing
+and setting the environment variable.</p></li>
+<li><p>Next navigate to the ExampleCodes parent directory,
+<code class="docutils literal notranslate"><span class="pre">/amrex-tutorials/ExampleCodes/</span></code>. CMake is currently
+configured to compile multiple examples at once using the file <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.
+Create and enter a build directory to hold the configuration and compiled files.</p></li>
+<li><p>From the build directory, call CMake with the following configuration:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake .. -DAMReX_HYPRE<span class="o">=</span>ON <span class="se">\</span>
+-DHYPRE_LIBRARIES<span class="o">=</span><span class="si">${</span><span class="nv">HYPRE_DIR</span><span class="si">}</span><span class="se">\l</span>ib<span class="se">\l</span>ibHYPRE.a <span class="se">\</span>
+-DHYPRE_INCLUDE_DIRS<span class="o">=</span><span class="si">${</span><span class="nv">HYPRE_DIR</span><span class="si">}</span><span class="se">\i</span>nclude <span class="se">\</span>
+-DAMReX_LINEAR_SOLVERS<span class="o">=</span>ON <span class="se">\</span>
+-DAMReX_FORTRAN<span class="o">=</span>ON
+</pre></div>
+</div>
+<p>The first option tells CMake to enable the HYPRE interface in AMReX. The
+following two options specify the location of the HYPRE library we
+compiled in the first step, and the directory of HYPRE’s required files
+that we also installed in the first step. In this example, the
+environment variable <code class="docutils literal notranslate"><span class="pre">HYPRE_DIR</span></code> is used to replace writing out the
+entire path. The next flag enables compilation for the <code class="docutils literal notranslate"><span class="pre">LinearSolver</span></code> example codes,
+some of which require Fortran, and thus require the last flag.</p>
+</li>
+<li><p>Next we can build the executable with,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake --build . -j8
+</pre></div>
+</div>
+<p>This will tell CMake to use 8 processes to compile the source files.</p>
+</li>
+<li><p>Finally we can run the executable by navigating to the
+<code class="docutils literal notranslate"><span class="pre">build/LinearSolvers/ABecLaplacian_C</span></code> folder inside our build directory, and typing
+the name of the executable followed by the inputs file, <code class="docutils literal notranslate"><span class="pre">inputs.hypre</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./ABecLaplacian_C inputs.hypre
+</pre></div>
+</div>
+</li>
+<li><p>To verify the HYPRE solver has been used, look for the line,</p>
+<div class="highlight-literal notranslate"><div class="highlight"><pre><span></span>HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05
+</pre></div>
+</div>
+<p>in the output. For this example, the code should quickly reach the end with
+only a handful of iterations at each step. The code successfully completes
+with the AMReX finalized output.</p>
+</li>
+</ol>
+</section>
+<section id="amrex-with-hypre-via-spack">
+<h2>AMReX with HYPRE via Spack<a class="headerlink" href="#amrex-with-hypre-via-spack" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Using Spack, install AMReX with HYPRE and Fortran
+options selected.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack install amrex +hypre +fortran
+</pre></div>
+</div>
+</li>
+<li><p>Load the desired version of AMReX.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spack load amrex +hypre +fortran
+</pre></div>
+</div>
+</li>
+<li><p>Identify the location of the installed version of AMReX. Because the location is
+usually quite long, we will store the result from Spack as the shell variable,
+<code class="docutils literal notranslate"><span class="pre">AMREX_DIR</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">AMREX_DIR</span><span class="o">=</span><span class="k">$(</span>spack location -i amrex +hypre +fortran<span class="k">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>In this example we will build the <code class="docutils literal notranslate"><span class="pre">ABecLaplacian_C</span></code> example code from
+the linear solvers in <code class="docutils literal notranslate"><span class="pre">amrex-tutorials</span></code>. First navigate to the <code class="docutils literal notranslate"><span class="pre">ExampleCodes</span></code>
+directory. Then create a build folder to store the compiled files. Inside
+this folder we’ll use CMake to compile the code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake .. -DAMReX_DIR<span class="o">=</span><span class="si">${</span><span class="nv">AMREX_DIR</span><span class="si">}</span> <span class="se">\</span>
+         -DAMReX_HYPRE<span class="o">=</span>ON <span class="se">\</span>
+         -DAMReX_FORTRAN<span class="o">=</span>ON <span class="se">\</span>
+         -DAMReX_FORTRAN_INTERFACES<span class="o">=</span>ON <span class="se">\</span>
+         -DAMREX_LINEAR_SOLVERS<span class="o">=</span>ON
+</pre></div>
+</div>
+<p>These configuration commands do the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AMReX_DIR: Tells CMake where to find the installed version of
+AMReX. If this is not supplied, CMake may be unable to locate
+the AMReX files or it may download the file from the latest release
+from GitHub.</p></li>
+<li><p>AMReX_HYPRE: Enables AMReX to use HYPRE.</p></li>
+<li><p>AMReX_FORTRAN: Enables Fortran for AMReX.</p></li>
+<li><p>AMReX_FORTRAN_INTERFACES: Enables the Fortran API.</p></li>
+<li><p>AMReX_LINEAR_SOLVERS: This command is specific to the
+<code class="docutils literal notranslate"><span class="pre">ExamplesCodes</span></code> install configuration, i.e. CMakeLists.txt. It tells CMake
+to compile all the linear solver examples.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>After setting up the configuration, we build the executables with
+CMake. This command will build the files according to the configuration
+in the current directory using 4 processes (<code class="docutils literal notranslate"><span class="pre">-j4</span></code>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake --build . -j4
+</pre></div>
+</div>
+</li>
+<li><p>To run the HYPRE example navigate to the folder,
+<code class="docutils literal notranslate"><span class="pre">path_to_base_dir/ExampleCodes/build/LinearSolvers/ABecLaplacian_C</span></code>
+and call the executable with the <code class="docutils literal notranslate"><span class="pre">inputs.hypre</span></code> file as input.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./ABecLaplacian_C inputs.hypre
+</pre></div>
+</div>
+</li>
+<li><p>To verify the HYPRE solver has been used, look for the line,</p>
+<div class="highlight-literal notranslate"><div class="highlight"><pre><span></span>HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05
+</pre></div>
+</div>
+<p>in the output. For this example, the code should quickly reach the end with
+only a handful of iterations at each step. The code successfully completes
+with the AMReX finalized output.</p>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
