@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"AMReX__ParallelReduce_8H.html#a5f7fc55ae2bbfbbc7f2b026b754c30c1":[3,0,0,2,198,21],
+"AMReX__ParallelReduce_8H.html#a647e136efea8ad3d3e88887700c5f1af":[3,0,0,2,198,31],
+"AMReX__ParallelReduce_8H.html#a6ea7eeaafa369d6246da405045b73208":[3,0,0,2,198,7],
+"AMReX__ParallelReduce_8H.html#a7b59db01a99d74e6bb7a057942b48d04":[3,0,0,2,198,15],
 "AMReX__ParallelReduce_8H.html#a809a9a78d9cfb7c86a0dd7b72a212fd7":[3,0,0,2,198,4],
 "AMReX__ParallelReduce_8H.html#a83b6af463895bccfbf4ae0606041cd33":[3,0,0,2,198,30],
 "AMReX__ParallelReduce_8H.html#a84377e96c4ecb57c17fe8e83aea0e04e":[3,0,0,2,198,28],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "AMReX__ParticleContainerBase_8H.html":[3,0,0,7,18],
 "AMReX__ParticleContainerBase_8H_source.html":[3,0,0,7,18],
 "AMReX__ParticleContainerBase_8cpp.html":[3,0,0,7,17],
-"AMReX__ParticleContainerI_8H.html":[3,0,0,7,19],
-"AMReX__ParticleContainerI_8H_source.html":[3,0,0,7,19],
-"AMReX__ParticleDataAdaptorI_8H.html":[3,0,0,5,7,19],
-"AMReX__ParticleDataAdaptorI_8H_source.html":[3,0,0,5,7,19],
-"AMReX__ParticleDataAdaptor_8H.html":[3,0,0,5,7,18]
+"AMReX__ParticleContainerI_8H.html":[3,0,0,7,19]
 };

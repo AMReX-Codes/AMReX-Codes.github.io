@@ -1366,8 +1366,25 @@
 <codeline lineno="1322"><highlight class="normal"><sp/><sp/>});</highlight></codeline>
 <codeline lineno="1323"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1324"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1325"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1326"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1325"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1326" refid="namespaceamrex_1aa35f46cf4c79ff77d1a3849e7ad5bb98" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2cb587d0d7b4a0a7e85eaea44a331f81" kindref="member">eb_add_divergence_from_flow</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>divu,</highlight></codeline>
+<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vel_eb,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;EBCellFlag const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>flag,</highlight></codeline>
+<codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vfrc,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bnorm,</highlight></codeline>
+<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>barea,<sp/><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;Real,3&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dxinv)</highlight></codeline>
+<codeline lineno="1330"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(flag(i,j,k).isSingleValued())</highlight></codeline>
+<codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>Ueb_dot_n<sp/>=<sp/>vel_eb(i,j,k,0)*bnorm(i,j,k,0)</highlight></codeline>
+<codeline lineno="1334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>vel_eb(i,j,k,1)*bnorm(i,j,k,1)</highlight></codeline>
+<codeline lineno="1335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>vel_eb(i,j,k,2)*bnorm(i,j,k,2);</highlight></codeline>
+<codeline lineno="1336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>divu(i,j,k,n)<sp/>+=<sp/>Ueb_dot_n<sp/>*<sp/>barea(i,j,k)<sp/>*<sp/>dxinv[0]<sp/>/<sp/>vfrc(i,j,k);</highlight></codeline>
+<codeline lineno="1338"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1339"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1342"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1343"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMultiFabUtil_3D_C.H"/>
   </compounddef>

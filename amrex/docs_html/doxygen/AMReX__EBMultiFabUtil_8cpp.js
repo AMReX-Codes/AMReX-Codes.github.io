@@ -10,6 +10,7 @@ var AMReX__EBMultiFabUtil_8cpp =
     [ "EB_average_down_faces", "AMReX__EBMultiFabUtil_8cpp.html#a3df9dbf65687fa616a98a6be2789eedd", null ],
     [ "EB_average_face_to_cellcenter", "AMReX__EBMultiFabUtil_8cpp.html#a2ca083595ee0a76ca027da372fadf716", null ],
     [ "EB_computeDivergence", "AMReX__EBMultiFabUtil_8cpp.html#aac572002c16db8070f5ffaf6afaf1b87", null ],
+    [ "EB_computeDivergence", "AMReX__EBMultiFabUtil_8cpp.html#a5c82ba2090dd0accf9b02cf8aca324b7", null ],
     [ "EB_interp_CC_to_Centroid", "AMReX__EBMultiFabUtil_8cpp.html#aacd5723b8bb544b8feedee372294e10c", null ],
     [ "EB_interp_CC_to_FaceCentroid", "AMReX__EBMultiFabUtil_8cpp.html#abcbe7f0f5cd9b990c3b3946e3b0419c2", null ],
     [ "EB_interp_CellCentroid_to_FaceCentroid", "AMReX__EBMultiFabUtil_8cpp.html#a84f2fd1d8faaa80410294ddfc4c4158f", null ],

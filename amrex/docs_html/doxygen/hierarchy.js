@@ -497,8 +497,8 @@ var hierarchy =
     [ "amrex::NonLocalBC::Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", null ],
     [ "amrex::IFABio", "classamrex_1_1IFABio.html", null ],
     [ "amrex::BlockMutex::state_t::II", "structamrex_1_1BlockMutex_1_1state__t_1_1II.html", null ],
-    [ "amrex::algoim::ImplicitIntegral< M, N, Phi, F >", "structamrex_1_1algoim_1_1ImplicitIntegral.html", null ],
-    [ "amrex::algoim::ImplicitIntegral< 0, N, Phi, F >", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_01_4.html", null ],
+    [ "amrex::algoim::ImplicitIntegral< M, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral.html", null ],
+    [ "amrex::algoim::ImplicitIntegral< 0, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html", null ],
     [ "amrex::Scan::Type::Inclusive", "structamrex_1_1Scan_1_1Type_1_1Inclusive.html", null ],
     [ "amrex::EB2::IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", [
       [ "amrex::EB2::IndexSpaceImp< G >", "classamrex_1_1EB2_1_1IndexSpaceImp.html", null ]

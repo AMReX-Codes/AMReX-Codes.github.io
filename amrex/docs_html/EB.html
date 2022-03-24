@@ -405,7 +405,8 @@ have been discussed in chapter <a class="reference internal" href="LinearSolvers
 <p>AMReX supports multi-level
 1) cell-centered solvers with homogeneous Neumann, homogeneous Dirichlet,
 or inhomogeneous Dirichlet boundary conditions on the EB faces, and
-2) nodal solvers with homogeneous Neumann boundary conditions on the EB faces.</p>
+2) nodal solvers with homogeneous Neumann boundary conditions,
+or inflow velocity conditions on the EB faces.</p>
 <p>To use a cell-centered solver with EB, one builds a linear operator
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLEBABecLap</span></span></code> with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBFArrayBoxFactory</span></span></code> (instead of a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>)</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLEBABecLap</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span> <span class="n">a_geom</span><span class="p">,</span>

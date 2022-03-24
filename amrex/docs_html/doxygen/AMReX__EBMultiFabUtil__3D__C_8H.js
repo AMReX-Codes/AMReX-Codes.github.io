@@ -1,5 +1,6 @@
 var AMReX__EBMultiFabUtil__3D__C_8H =
 [
+    [ "eb_add_divergence_from_flow", "AMReX__EBMultiFabUtil__3D__C_8H.html#aa35f46cf4c79ff77d1a3849e7ad5bb98", null ],
     [ "eb_avg_fc_to_cc", "AMReX__EBMultiFabUtil__3D__C_8H.html#a7ca548557a81e714b0e5aa66407d548a", null ],
     [ "eb_avgdown", "AMReX__EBMultiFabUtil__3D__C_8H.html#a658f71f1a20f1c31976ad401e53e28cd", null ],
     [ "eb_avgdown_boundaries", "AMReX__EBMultiFabUtil__3D__C_8H.html#a538016b8eefb9144d408402eec36d390", null ],
