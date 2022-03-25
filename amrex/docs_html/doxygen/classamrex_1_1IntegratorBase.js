@@ -1,7 +1,7 @@
 var classamrex_1_1IntegratorBase =
 [
     [ "IntegratorBase", "classamrex_1_1IntegratorBase.html#a8960e06411e4dac4bd0a99f5be3b489e", null ],
-    [ "IntegratorBase", "classamrex_1_1IntegratorBase.html#a33e59ff0c3058f32e4c28ab13369f211", null ],
+    [ "IntegratorBase", "classamrex_1_1IntegratorBase.html#ad6e1d1e6bb0cd9f1ac3dec311f811151", null ],
     [ "~IntegratorBase", "classamrex_1_1IntegratorBase.html#a9bcad149736f2fc82ca342a2e0f24fc6", null ],
     [ "advance", "classamrex_1_1IntegratorBase.html#a0b820091c0cdc69c24149eb97b5cb0b7", null ],
     [ "fast_rhs", "classamrex_1_1IntegratorBase.html#abb21d3ddf233718bd7d828471c1bb91d", null ],
