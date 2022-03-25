@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1ParticleCopyPlan.html#a813195052803b3c8844eb604a508e9b0":[2,0,0,384,13],
+"structamrex_1_1ParticleCopyPlan.html#a8305346a9bb20a4e5d7983acb025a5a8":[2,0,0,384,30],
 "structamrex_1_1ParticleCopyPlan.html#a860eec9b2f5d15e91706d6feb2fa2134":[2,0,0,384,34],
 "structamrex_1_1ParticleCopyPlan.html#a996c810aea3ffa99a480dffa839230c3":[2,0,0,384,2],
 "structamrex_1_1ParticleCopyPlan.html#a9af231ffac4e8ee9799fe6db8edd6886":[2,0,0,384,36],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "structamrex_1_1StructOfArrays.html#adefc562d67fd0e640e80a8ee068948a5":[2,0,0,437,29],
 "structamrex_1_1StructOfArrays.html#ae3cc8d8bbcf1909fb45ae2a6f722d676":[2,0,0,437,8],
 "structamrex_1_1StructOfArrays.html#ae6c1e19e9551116263efb5381f3f6bb7":[2,0,0,437,13],
-"structamrex_1_1StructOfArrays.html#aed3ffbe932f69885df6a16a067758eed":[2,0,0,437,16],
-"structamrex_1_1SundialsUserData.html":[2,0,0,439],
-"structamrex_1_1SundialsUserData.html#a4e825ce3a349ec2e2d02cbf6c53cd646":[2,0,0,439,1]
+"structamrex_1_1StructOfArrays.html#aed3ffbe932f69885df6a16a067758eed":[2,0,0,437,16]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"classamrex_1_1PolymorphicAllocator.html#a683ae339e0bad414c7683ee7478c6ad0":[2,0,0,403,4],
+"classamrex_1_1PolymorphicAllocator.html#a72355f37a3018d8871f4f997c9180a22":[2,0,0,403,0],
 "classamrex_1_1PolymorphicAllocator.html#aa692a6382997d3eecf97fc0b51cba599":[2,0,0,403,1],
 "classamrex_1_1PolymorphicAllocator.html#aac8b392f17694bc59ff27a81a1a55b2f":[2,0,0,403,2],
 "classamrex_1_1PolymorphicAllocator.html#acd631df716e315396e3861e45a45dba6":[2,0,0,403,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "classamrex_1_1SplineDistFcnElement2d.html#a46ac59d2d62435816d113653dfde733d":[2,0,0,430,12],
 "classamrex_1_1SplineDistFcnElement2d.html#a50880c22f1474e901e3440b9a48e8e12":[2,0,0,430,3],
 "classamrex_1_1SplineDistFcnElement2d.html#a5da55e4a3464f1a04eb34beffd638600":[2,0,0,430,10],
-"classamrex_1_1SplineDistFcnElement2d.html#a65ae863d0ecb9da486be9cb0a7d7d359":[2,0,0,430,1],
-"classamrex_1_1SplineDistFcnElement2d.html#a65c92788e6055de8aae755e1836a7789":[2,0,0,430,13],
-"classamrex_1_1SplineDistFcnElement2d.html#a6dc7a3f96e7d9b912a500fb17abb9a83":[2,0,0,430,18]
+"classamrex_1_1SplineDistFcnElement2d.html#a65ae863d0ecb9da486be9cb0a7d7d359":[2,0,0,430,1]
 };

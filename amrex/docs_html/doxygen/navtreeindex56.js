@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"structFilterVirt.html#a1fc799a241e146a74f383e58b291f188":[2,0,19,4],
+"structFilterVirt.html#a321c610c520a56ef865cc89c0f54211b":[2,0,19,3],
 "structFilterVirt.html#a9f3aa887f80e6e29f1eed0eab5686e31":[2,0,19,0],
 "structFilterVirt.html#aa0dc57c35d82cef845b823c50ee367c3":[2,0,19,1],
 "structKeepValidFilter.html":[2,0,20],
@@ -121,13 +123,13 @@ var NAVTREEINDEX56 =
 "structamrex_1_1Array2D.html#a6c11e88a9c5d43efdbfc6f1acef6397d":[2,0,0,45,3],
 "structamrex_1_1Array2D.html#a7ed97ce5a43fa5616d9d89171c05c286":[2,0,0,45,14],
 "structamrex_1_1Array2D.html#a85acd12849153eb0faca0f5c22f84d3d":[2,0,0,45,12],
-"structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,45,6],
 "structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,45,7],
+"structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,45,6],
 "structamrex_1_1Array2D.html#aa8de85adf5367a972d5da3c2562530f9":[2,0,0,45,18],
 "structamrex_1_1Array2D.html#ac16eb800ddcd657a034c9c7ff342d85a":[2,0,0,45,2],
 "structamrex_1_1Array2D.html#ac3b0f0863090dfd120326dccff60fb81":[2,0,0,45,10],
-"structamrex_1_1Array2D.html#acdf33ec733b645a48eea51ae3d53a011":[2,0,0,45,4],
 "structamrex_1_1Array2D.html#acdf33ec733b645a48eea51ae3d53a011":[2,0,0,45,5],
+"structamrex_1_1Array2D.html#acdf33ec733b645a48eea51ae3d53a011":[2,0,0,45,4],
 "structamrex_1_1Array2D.html#ad663a1d8bd1165b26303ff63b0cfafbe":[2,0,0,45,19],
 "structamrex_1_1Array2D.html#afd8b853ff1742083599a018e439274ac":[2,0,0,45,9],
 "structamrex_1_1Array3D.html":[2,0,0,46],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "structamrex_1_1BARef.html#a983668be1ab6a935c4bd6bdf22d5c8bb":[2,0,0,58,11],
 "structamrex_1_1BARef.html#a99abf80b40a6ebff2f6ac1e3e71a21da":[2,0,0,58,5],
 "structamrex_1_1BARef.html#a9c091cdb6183ee153e309231d68ef52b":[2,0,0,58,6],
-"structamrex_1_1BARef.html#aa4715d9e30ad640a00703a76b8b29f5d":[2,0,0,58,25],
-"structamrex_1_1BARef.html#aa7702554a15d6a73ffa7a16ee2e017bc":[2,0,0,58,20],
-"structamrex_1_1BARef.html#aaa1d0e47191bce43137f9aeecf529f64":[2,0,0,58,23]
+"structamrex_1_1BARef.html#aa4715d9e30ad640a00703a76b8b29f5d":[2,0,0,58,25]
 };
