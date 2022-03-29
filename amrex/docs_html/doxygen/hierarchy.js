@@ -389,7 +389,6 @@ var hierarchy =
       [ "amrex::IsBaseFab< A, Enable >", "structamrex_1_1IsBaseFab.html", null ],
       [ "amrex::IsFabArray< A, Enable >", "structamrex_1_1IsFabArray.html", null ],
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
-      [ "amrex::MaybeHostDeviceRunnable< T, std::enable_if_t< __nv_is_extended_device_lambda_closure_type(T)> >", "structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extended_ac548a468bcc64242955fc23b2d496e6.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ],
       [ "amrex::EB2::IsGPUable< IntersectionIF< Tail... > >", "structamrex_1_1EB2_1_1IsGPUable.html", [
         [ "amrex::EB2::IsGPUable< IntersectionIF< Head, Tail... >, typename std::enable_if< IsGPUable< Head >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01typename_0aa6c0e2bc9cf84a2cc942d5a159f7839.html", null ]
@@ -705,8 +704,8 @@ var hierarchy =
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::NeighborTask", "structamrex_1_1NeighborParticleContainer_1_1NeighborTask.html", null ],
     [ "amrex::NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
-    [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
+    [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],
     [ "amrex::NullInterpHook< FAB >", "structamrex_1_1NullInterpHook.html", null ],
@@ -859,8 +858,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
+    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],
@@ -939,7 +938,6 @@ var hierarchy =
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
     [ "true_type", null, [
       [ "amrex::Conjunction<... >", "structamrex_1_1Conjunction.html", null ],
-      [ "amrex::DefinitelyNotHostRunnable< T, std::enable_if_t< __nv_is_extended_device_lambda_closure_type(T)> >", "structamrex_1_1DefinitelyNotHostRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extendecedf017524586c3f34ab1174adfd1f3d.html", null ],
       [ "amrex::EB2::IsGPUable< ComplementIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_439214b16f92fe663637b42c0a5a5552.html", null ],
       [ "amrex::EB2::IsGPUable< D, typename std::enable_if< std::is_base_of< GPUable, D >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_e7975428109c6f3d89c9f8ba8c25626f.html", null ],
       [ "amrex::EB2::IsGPUable< DifferenceIF< F, G >, typename std::enable_if< IsGPUable< F >::value &&IsGPUable< G >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01typename_01std_1_1enableac26215ba9e0277ee7231118dc9a8a74.html", null ],

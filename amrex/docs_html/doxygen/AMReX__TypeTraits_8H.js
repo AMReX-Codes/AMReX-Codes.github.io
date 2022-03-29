@@ -17,8 +17,6 @@ var AMReX__TypeTraits_8H =
     [ "MaybeDeviceRunnable", "structamrex_1_1MaybeDeviceRunnable.html", null ],
     [ "MaybeHostDeviceRunnable", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
     [ "DefinitelyNotHostRunnable", "structamrex_1_1DefinitelyNotHostRunnable.html", null ],
-    [ "MaybeHostDeviceRunnable< T, std::enable_if_t< __nv_is_extended_device_lambda_closure_type(T)> >", "structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extended_ac548a468bcc64242955fc23b2d496e6.html", null ],
-    [ "DefinitelyNotHostRunnable< T, std::enable_if_t< __nv_is_extended_device_lambda_closure_type(T)> >", "structamrex_1_1DefinitelyNotHostRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extendecedf017524586c3f34ab1174adfd1f3d.html", null ],
     [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
     [ "Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", "structamrex_1_1Same_3_01T_00_01U_01_4" ],
     [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
