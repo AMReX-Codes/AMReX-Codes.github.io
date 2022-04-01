@@ -393,13 +393,22 @@ to the ghost cell center; <code class="code cpp c++ docutils literal notranslate
 </div>
 <div class="section" id="curvilinear-coordinates">
 <h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Permalink to this headline"></a></h1>
-<p>The linear solvers support curvilinear coordinates including 1D
+<p>Some of the linear solvers support curvilinear coordinates including 1D
 spherical and 2d cylindrical <span class="math notranslate nohighlight">\((r,z)\)</span>.  In those cases, the
 divergence operator has extra metric terms.  If one does not want the
 solver to include the metric terms because they have been handled in
-other ways, one can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMetricTerm</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code> with <code class="code cpp c++ docutils literal notranslate"><span class="name builtin"><span class="pre">false</span></span></code>
+other ways, one can turn them off with a setter funtion. For
+the cell-centered linear solvers <cite>MLABecLaplacian</cite> and <cite>MLPoisson</cite>, one
+can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMetricTerm</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code> with <code class="code cpp c++ docutils literal notranslate"><span class="name builtin"><span class="pre">false</span></span></code>
 on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object passed to the constructor of linear
-operators.</p>
+operators.
+For the node-based <cite>MLNodeLaplacian</cite>, one can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setRZCorrection</span></span> <span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code>
+with <code class="code cpp c++ docutils literal notranslate"><span class="name builtin"><span class="pre">false</span></span></code> on the <cite>MLNodeLaplacian</cite> object.</p>
+<p><cite>MLABecLaplacian</cite> and <cite>MLPoisson</cite> support both spherical and cylindrical
+coordinates, while <cite>MLNodeLaplacian</cite> supports only cylindrical at this
+time. Note that to use cylindrical coordinates with <cite>MLNodeLaplacian</cite>,
+the application code must scale <code class="docutils literal notranslate"><span class="pre">sigma</span></code> by the radial coordinate
+before calling <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setSigma</span></span><span class="punctuation"><span class="pre">()</span></span></code>.</p>
 </div>
 <div class="section" id="embedded-boundaries">
 <h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline"></a></h1>
