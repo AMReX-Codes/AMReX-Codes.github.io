@@ -912,17 +912,13 @@ Instead of using <code class="code cpp c++ docutils literal notranslate"><span c
   <span class="k">const</span> <span class="n">Box</span><span class="o">&amp;</span> <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
   <span class="n">FArrayBox</span> <span class="nf">tmp_fab</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">numcomps</span><span class="p">,</span> <span class="n">The_Async_Arena</span><span class="p">());</span>
   <span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tmp_arr</span> <span class="o">=</span> <span class="n">tmp_fab</span><span class="p">.</span><span class="n">array</span><span class="p">();</span>
-  <span class="n">FArrayBox</span> <span class="n">tmp_fab_2</span><span class="p">;</span>
-  <span class="n">tmp_fab_2</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">numcomps</span><span class="p">,</span> <span class="n">The_Async_Arena</span><span class="p">());</span>
 
   <span class="c1">// GPU kernels using the temporary</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>This is now the recommended way because it’s usually more efficient than
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>.  Unlike <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>, a temporary :cpp:FArrayBox object
-must be defined inside the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop.
-Note that the code above works for CUDA older than 11.2, HIP
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>.  Note that the code above works for CUDA older than 11.2, HIP
 and DPC++ as well, and it’s equivalent to using <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code> in these
 cases.  By default, the release threshold for the memory pool is unlimited.
 One can adjust it with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> parameter,
