@@ -12,6 +12,7 @@ var structamrex_1_1LPInfo =
     [ "setMaxSemicoarseningLevel", "structamrex_1_1LPInfo.html#ab79eab223be7acae5356f6a9e1fdb0fc", null ],
     [ "setMetricTerm", "structamrex_1_1LPInfo.html#ad52d1c9d3214bf62a03f3a41ca82a34c", null ],
     [ "setSemicoarsening", "structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a", null ],
+    [ "setSemicoarseningDirection", "structamrex_1_1LPInfo.html#adbc91f7b18c419f5e1be642d15a28e5e", null ],
     [ "agg_grid_size", "structamrex_1_1LPInfo.html#ac46e08d33dd242d0b6d79ae7db01b2c0", null ],
     [ "con_grid_size", "structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5", null ],
     [ "do_agglomeration", "structamrex_1_1LPInfo.html#a92aabd4e7880bf08c8d9195ebf723512", null ],
@@ -20,5 +21,6 @@ var structamrex_1_1LPInfo =
     [ "has_metric_term", "structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b", null ],
     [ "hidden_direction", "structamrex_1_1LPInfo.html#acbd4630a533152de976660cbd0c16310", null ],
     [ "max_coarsening_level", "structamrex_1_1LPInfo.html#ab29d5c837ce5f103103e6babf71e5d2e", null ],
-    [ "max_semicoarsening_level", "structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc", null ]
+    [ "max_semicoarsening_level", "structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc", null ],
+    [ "semicoarsening_direction", "structamrex_1_1LPInfo.html#af940b94437ae9286df0f551aa28c8119", null ]
 ];

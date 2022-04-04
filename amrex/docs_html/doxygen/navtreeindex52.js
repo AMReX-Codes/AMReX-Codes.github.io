@@ -1,5 +1,15 @@
 var NAVTREEINDEX52 =
 {
+"classamrex_1_1XYPlotDataList.html#a523062418a8d9a4207077fa87b98d521":[2,0,0,459,13],
+"classamrex_1_1XYPlotDataList.html#a58dbc137c88f33a60c950b1a399e7ec2":[2,0,0,459,1],
+"classamrex_1_1XYPlotDataList.html#a613fe181c09a5abcd497c827b17c3bbb":[2,0,0,459,15],
+"classamrex_1_1XYPlotDataList.html#a6fb006c80650854a70d3f1dc2c3c4655":[2,0,0,459,12],
+"classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16":[2,0,0,459,29],
+"classamrex_1_1XYPlotDataList.html#a88ab515d361ad0b1fdd14ec20b572969":[2,0,0,459,36],
+"classamrex_1_1XYPlotDataList.html#a8f0d43baff2b628b18a538011a6dac4f":[2,0,0,459,19],
+"classamrex_1_1XYPlotDataList.html#a901a80f5953cc152073c60286cb6c860":[2,0,0,459,38],
+"classamrex_1_1XYPlotDataList.html#a9810578aa21d4c3ea548697820ada970":[2,0,0,459,23],
+"classamrex_1_1XYPlotDataList.html#a9ea4cf951957098f5fa36fe181899f41":[2,0,0,459,3],
 "classamrex_1_1XYPlotDataList.html#aaffb528097b4e4d99500193127ea15af":[2,0,0,459,16],
 "classamrex_1_1XYPlotDataList.html#ab19f254be90dcd366f2e12953d492cd4":[2,0,0,459,40],
 "classamrex_1_1XYPlotDataList.html#ab77bccba000ad381fed7aa4a3c7b7b6e":[2,0,0,459,8],
@@ -239,15 +249,5 @@ var NAVTREEINDEX52 =
 "classhacc_1_1Distribution.html#aa381914659691d811714d279f927972f":[2,0,10,2,59],
 "classhacc_1_1Distribution.html#aabb229232bc80f264cab6ac0d8f31c19":[2,0,10,2,44],
 "classhacc_1_1Distribution.html#aafa1cb9e62443ac3329d94a82309f9c1":[2,0,10,2,3],
-"classhacc_1_1Distribution.html#ab21736808a07fa9f8cc43457152f844b":[2,0,10,2,36],
-"classhacc_1_1Distribution.html#ab36b24c7f9d57e4edad0b60638eae060":[2,0,10,2,46],
-"classhacc_1_1Distribution.html#ab4871886fd1f8d5a7e7341a9b474b231":[2,0,10,2,17],
-"classhacc_1_1Distribution.html#ab5776b5a84129bc8c7b3e7e00e2c92c2":[2,0,10,2,50],
-"classhacc_1_1Distribution.html#ab9d7979cc6700470b188a13e23e077e9":[2,0,10,2,24],
-"classhacc_1_1Distribution.html#abae2e9fb372fbe9e21bd2438f3a35193":[2,0,10,2,51],
-"classhacc_1_1Distribution.html#abe531df2570a6fcb99bd9ad2b420eb5e":[2,0,10,2,32],
-"classhacc_1_1Distribution.html#abeedf1164b76a8781f3e026cf692d131":[2,0,10,2,49],
-"classhacc_1_1Distribution.html#ac7e073d3f64574fb26e2c7119ab25358":[2,0,10,2,42],
-"classhacc_1_1Distribution.html#ac914e07048c1a7b341451b9d73c1f56d":[2,0,10,2,29],
-"classhacc_1_1Distribution.html#acac836d38dde8ad2d4b6f7816438ceee":[2,0,10,2,35]
+"classhacc_1_1Distribution.html#ab21736808a07fa9f8cc43457152f844b":[2,0,10,2,36]
 };

@@ -3668,40 +3668,12 @@
 <codeline lineno="1783"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1784"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1785"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1786"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
+<codeline lineno="1786"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1afc2840698e1cec5a44ebeb9d34783327" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iMultiFab&amp;<sp/>msk,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
 <codeline lineno="1787"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1788"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ixType().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1789"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>msk<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1a3c8c9bf8723fcfac9b8d410485e7ed4a" kindref="member">OwnerMask</ref>(period);</highlight></codeline>
-<codeline lineno="1790"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" kindref="member">amrex::OverrideSync</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>*msk,<sp/>period);</highlight></codeline>
+<codeline lineno="1788"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" kindref="member">amrex::OverrideSync</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>msk,<sp/>period);</highlight></codeline>
+<codeline lineno="1789"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1790"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1791"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1792"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1793"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1794"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iMultiFab&amp;<sp/>msk,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1795"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1796"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" kindref="member">amrex::OverrideSync</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>msk,<sp/>period);</highlight></codeline>
-<codeline lineno="1797"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1798"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1799"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1800"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1a95a61091fc299d0be54e41c75b2e8576" kindref="member">MultiFab::OverrideSync_nowait</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1801"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1802"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ixType().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1803"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>msk<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1a3c8c9bf8723fcfac9b8d410485e7ed4a" kindref="member">OwnerMask</ref>(period);</highlight></codeline>
-<codeline lineno="1804"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1af6d31b25633d781cd8fe931951889e6c" kindref="member">amrex::OverrideSync_nowait</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>*msk,<sp/>period);</highlight></codeline>
-<codeline lineno="1805"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1806"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1807"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1808"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1a95a61091fc299d0be54e41c75b2e8576" kindref="member">MultiFab::OverrideSync_nowait</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iMultiFab&amp;<sp/>msk,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1809"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1810"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1af6d31b25633d781cd8fe931951889e6c" kindref="member">amrex::OverrideSync_nowait</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>msk,<sp/>period);</highlight></codeline>
-<codeline lineno="1811"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1812"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1813"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1814"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1af9036c3c070c1da1fc434324685fe91c" kindref="member">MultiFab::OverrideSync_finish</ref><sp/>()</highlight></codeline>
-<codeline lineno="1815"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad81d4975698feb7461d8ad18c21c7951" kindref="member">amrex::OverrideSync_finish</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1817"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1818"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1819"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp"/>
   </compounddef>

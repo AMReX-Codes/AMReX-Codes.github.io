@@ -106,77 +106,77 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;template &lt;class F, typename std::enable_if&lt;IsBaseFab&lt;F&gt;::value,<span class="keywordtype">int</span>&gt;::type Z&gt;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a0e0073142d1598838048317216fa6d12">    8</a></span>&#160;<a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::FBEP_nowait</a> (<span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; nghost,</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a1552128d132bb7c9b87f909f3d30c169">    8</a></span>&#160;<a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::FBEP_nowait</a> (<span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; nghost,</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Periodicity.html">Periodicity</a>&amp; period, <span class="keywordtype">bool</span> cross,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                            <span class="keywordtype">bool</span> enforce_periodicity_only)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>(!fbd, <span class="stringliteral">&quot;FillBoundary_nowait() called when comm operation already in progress.&quot;</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">bool</span> work_to_do;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (enforce_periodicity_only) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        work_to_do = period.<a class="code" href="classamrex_1_1Periodicity.html#a6f3139a13faee557751404e44ab09042">isAnyPeriodic</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        work_to_do = nghost.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>() &gt; 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (!work_to_do) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> FB&amp; TheFB = getFB(nghost, period, cross, enforce_periodicity_only);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843">ParallelContext::NProcsSub</a>() == 1)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// There can only be local work to do.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">int</span> N_locs = (*TheFB.m_LocTags).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#if ( defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &gt;= 10))</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a2fed08a89572d6c04add3c5587f647d8">Gpu::inGraphRegion</a>())</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                FB_local_copy_cuda_graph_1(TheFB, scomp, ncomp);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                FB_local_copy_gpu(TheFB, scomp, ncomp);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            FB_local_copy_cpu(TheFB, scomp, ncomp);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Do this before prematurely exiting if running in parallel.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Otherwise sequence numbers will not match across MPI processes.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a> = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">ParallelDescriptor::SeqNum</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N_locs = TheFB.m_LocTags-&gt;size();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N_rcvs = TheFB.m_RcvTags-&gt;size();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N_snds = TheFB.m_SndTags-&gt;size();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                            <span class="keywordtype">bool</span> enforce_periodicity_only,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                            <span class="keywordtype">bool</span> override_sync)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c">AMREX_ASSERT_WITH_MESSAGE</a>(!fbd, <span class="stringliteral">&quot;FillBoundary_nowait() called when comm operation already in progress.&quot;</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(!enforce_periodicity_only || !override_sync);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> work_to_do;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (enforce_periodicity_only) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        work_to_do = period.<a class="code" href="classamrex_1_1Periodicity.html#a6f3139a13faee557751404e44ab09042">isAnyPeriodic</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (override_sync) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        work_to_do = (nghost.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>() &gt; 0) || !is_cell_centered();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        work_to_do = nghost.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>() &gt; 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (!work_to_do) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> FB&amp; TheFB = getFB(nghost, period, cross, enforce_periodicity_only, override_sync);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843">ParallelContext::NProcsSub</a>() == 1)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// There can only be local work to do.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">int</span> N_locs = (*TheFB.m_LocTags).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#if ( defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &gt;= 10))</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a2fed08a89572d6c04add3c5587f647d8">Gpu::inGraphRegion</a>())</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                FB_local_copy_cuda_graph_1(TheFB, scomp, ncomp);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                FB_local_copy_gpu(TheFB, scomp, ncomp);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            FB_local_copy_cpu(TheFB, scomp, ncomp);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Do this before prematurely exiting if running in parallel.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Otherwise sequence numbers will not match across MPI processes.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a> = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">ParallelDescriptor::SeqNum</a>();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0 &amp;&amp; N_rcvs == 0 &amp;&amp; N_snds == 0) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// No work to do.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    fbd = std::make_unique&lt;FBData&lt;FAB&gt;&gt;();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    fbd-&gt;fb    = &amp;TheFB;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    fbd-&gt;scomp = scomp;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    fbd-&gt;ncomp = ncomp;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    fbd-&gt;nghost = nghost;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    fbd-&gt;period = period;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    fbd-&gt;cross = cross;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    fbd-&gt;epo   = enforce_periodicity_only;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N_locs = TheFB.m_LocTags-&gt;size();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N_rcvs = TheFB.m_RcvTags-&gt;size();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N_snds = TheFB.m_SndTags-&gt;size();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0 &amp;&amp; N_rcvs == 0 &amp;&amp; N_snds == 0) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// No work to do.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    fbd = std::make_unique&lt;FBData&lt;FAB&gt;&gt;();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    fbd-&gt;fb    = &amp;TheFB;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    fbd-&gt;scomp = scomp;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    fbd-&gt;ncomp = ncomp;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    fbd-&gt;tag   = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//</span></div>
@@ -1239,7 +1239,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:51</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aacefe17a39734cb2475a36199ab1370b"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">amrex::Gpu::htod_memcpy_async</a></div><div class="ttdeci">void htod_memcpy_async(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:300</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_aa7f481a6be5e8f2eefbe9448135a3843"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843">amrex::ParallelContext::NProcsSub</a></div><div class="ttdeci">int NProcsSub() noexcept</div><div class="ttdoc">number of ranks in current frame</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelContext.H:73</div></div>
-<div class="ttc" id="anamespaceamrex_html_ab72e53672887ede3d7ddc5f65002700e"><div class="ttname"><a href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a></div><div class="ttdeci">void Add(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:266</div></div>
+<div class="ttc" id="anamespaceamrex_html_ab72e53672887ede3d7ddc5f65002700e"><div class="ttname"><a href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a></div><div class="ttdeci">void Add(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:262</div></div>
 <div class="ttc" id="aAMReX__Loop_8H_html_a17fd46bf5cf689e1b3eb8b6f202c065c"><div class="ttname"><a href="AMReX__Loop_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a></div><div class="ttdeci">#define AMREX_LOOP_4D(bx, ncomp, i, j, k, n, block)</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:226</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad7bef6630afa8a2109d2a242cc2d7591"><div class="ttname"><a href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a></div><div class="ttdeci">std::size_t aligned_size(std::size_t align_requirement, std::size_t size) noexcept</div><div class="ttdoc">Given a minimum required size of size bytes, this returns the next largest arena size that will align...</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.H:17</div></div>
 <div class="ttc" id="anamespaceamrex_1_1NonLocalBC_html_a5e37435a999c0eb51e29139501d7ca49"><div class="ttname"><a href="namespaceamrex_1_1NonLocalBC.html#a5e37435a999c0eb51e29139501d7ca49">amrex::NonLocalBC::PrepareSendBuffers</a></div><div class="ttdeci">std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; PrepareSendBuffers(const PackComponents &amp;components, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, CommData &amp;comm, const FabArrayBase::MapOfCopyComTagContainers &amp;cctc)</div><div class="ttdoc">Calls PrepareComBuffers.</div><div class="ttdef"><b>Definition:</b> AMReX_NonLocalBC.H:555</div></div>
@@ -1258,8 +1258,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdoc">return the rank number local to the current Parallel Context</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:127</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a1defc2bb8023a3e2599bfb2fc637cb43"><div class="ttname"><a href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT_WITH_MESSAGE(EX, MSG)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:49</div></div>
 <div class="ttc" id="aAMReX__FabArrayCommI_8H_html_a986a3259b1e339f5652dd4c3d896cc45"><div class="ttname"><a href="AMReX__FabArrayCommI_8H.html#a986a3259b1e339f5652dd4c3d896cc45">FillBoundary</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillBoundary(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period, Vector&lt; int &gt; const &amp;cross={})</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayCommI.H:868</div></div>
-<div class="ttc" id="astructamrex_1_1FabArrayBase_1_1CPC_html"><div class="ttname"><a href="structamrex_1_1FabArrayBase_1_1CPC.html">amrex::FabArrayBase::CPC</a></div><div class="ttdoc">parallel copy or add</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayBase.H:531</div></div>
-<div class="ttc" id="anamespaceamrex_html_a1036d99710a96586826f090a3266f5da"><div class="ttname"><a href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:221</div></div>
+<div class="ttc" id="astructamrex_1_1FabArrayBase_1_1CPC_html"><div class="ttname"><a href="structamrex_1_1FabArrayBase_1_1CPC.html">amrex::FabArrayBase::CPC</a></div><div class="ttdoc">parallel copy or add</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayBase.H:537</div></div>
+<div class="ttc" id="anamespaceamrex_html_a1036d99710a96586826f090a3266f5da"><div class="ttname"><a href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:217</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
 <div class="ttc" id="astructamrex_1_1IsStoreAtomic_html"><div class="ttname"><a href="structamrex_1_1IsStoreAtomic.html">amrex::IsStoreAtomic</a></div><div class="ttdef"><b>Definition:</b> AMReX_TypeTraits.H:224</div></div>
 <div class="ttc" id="anamespaceamrex_1_1NonLocalBC_html_a7bf19b06a9bab53ac6dea6bfa875af9d"><div class="ttname"><a href="namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d">amrex::NonLocalBC::ParallelCopy_nowait</a></div><div class="ttdeci">AMREX_NODISCARD CommHandler ParallelCopy_nowait(NoLocalCopy, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</div><div class="ttdef"><b>Definition:</b> AMReX_NonLocalBC.H:701</div></div>

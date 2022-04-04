@@ -1,11 +1,7 @@
 var structamrex_1_1FBData =
 [
-    [ "cross", "structamrex_1_1FBData.html#a76c421f9fabab69eeb6725f85f875e9f", null ],
-    [ "epo", "structamrex_1_1FBData.html#a77e7045e3ff8a0a8b870e7462a88b639", null ],
     [ "fb", "structamrex_1_1FBData.html#a12405182d3038f333d621aaf7ba0de9f", null ],
     [ "ncomp", "structamrex_1_1FBData.html#ad2ab165dff9bdbdedaf65405a2bee07a", null ],
-    [ "nghost", "structamrex_1_1FBData.html#a88fb3f6360b867dc412a82ee1a2e7eeb", null ],
-    [ "period", "structamrex_1_1FBData.html#a4557ccffa32c50fdcc2578b01076acf5", null ],
     [ "recv_data", "structamrex_1_1FBData.html#a56b9327ba0b96235d8296bb1b1716872", null ],
     [ "recv_from", "structamrex_1_1FBData.html#a8a3cfe25482c47ca2e7bef67a9012713", null ],
     [ "recv_reqs", "structamrex_1_1FBData.html#a4aa5af528b7479cc3a9a8c7687554b74", null ],

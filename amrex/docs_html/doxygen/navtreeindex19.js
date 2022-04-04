@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__constants__mod_8f90.html#a629e9df315fc853fd9996d553493c395":[3,0,0,2,51,26],
+"AMReX__constants__mod_8f90.html#a6d0e20a18c5f695168cf590f87a460a4":[3,0,0,2,51,0],
+"AMReX__constants__mod_8f90.html#a7469c455ff0cedccfe42c39814622d44":[3,0,0,2,51,5],
 "AMReX__constants__mod_8f90.html#a82956dfe228acd8237172da6676e9e6c":[3,0,0,2,51,23],
 "AMReX__constants__mod_8f90.html#a83c308d92e3f50a4417ffa2eff4fc09c":[3,0,0,2,51,16],
 "AMReX__constants__mod_8f90.html#a884b54aef39c5c0ccba71be9614da8ea":[3,0,0,2,51,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX19 =
 "BL__HPGMG_8H_source.html":[3,0,0,5,3,1],
 "BL__HPGMG_8cpp.html":[3,0,0,5,3,0],
 "CheckDecomposition_8c.html":[3,0,0,5,9,1],
-"CheckDecomposition_8c.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,0,5,9,1,0],
-"CheckDecomposition_8c.html#a15b7c317b9a227be46fc94b2c8d49bdc":[3,0,0,5,9,1,1],
-"DfftC_8cpp.html":[3,0,0,5,9,4],
-"DfftC_8cpp.html#a459dee3e4c4234e3fd484adb7ccbf347":[3,0,0,5,9,4,2]
+"CheckDecomposition_8c.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,0,5,9,1,0]
 };
