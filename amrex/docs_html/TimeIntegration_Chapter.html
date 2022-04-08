@@ -322,6 +322,30 @@ need SUNDIALS options we have not implemented, please let us know.</p>
 <span class="cp">## &quot;MRITEST&quot; = Tests the Multirate Integrator by setting a zero-valued fast RHS function</span>
 <span class="cp">## for example:</span>
 <span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">ERK</span>
+
+<span class="cp">## *** Parameters Specific to SUNDIALS ERK Strategy ***</span>
+<span class="cp">## (Requires integration.type=SUNDIALS and integration.sundials.strategy=ERK)</span>
+<span class="cp">## integration.sundials.erk.method specifies which explicit Runge Kutta method</span>
+<span class="cp">## for SUNDIALS to use. The following options are supported:</span>
+<span class="cp">## &quot;SSPRK3&quot; = 3rd order strong stability preserving RK (default)</span>
+<span class="cp">## &quot;Trapezoid&quot; = 2nd order trapezoidal rule</span>
+<span class="cp">## &quot;ForwardEuler&quot; = 1st order forward euler</span>
+<span class="cp">## for example:</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">erk</span><span class="p">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">SSPRK3</span>
+
+<span class="cp">## *** Parameters Specific to SUNDIALS MRI Strategy ***</span>
+<span class="cp">## (Requires integration.type=SUNDIALS and integration.sundials.strategy=MRI)</span>
+<span class="cp">## integration.sundials.mri.implicit_inner specifies whether or not to use an implicit inner solve</span>
+<span class="cp">## integration.sundials.mri.outer_method specifies which outer (slow) method to use</span>
+<span class="cp">## integration.sundials.mri.inner_method specifies which inner (fast) method to use</span>
+<span class="cp">## The following options are supported for both the inner and outer methods:</span>
+<span class="cp">## &quot;KnothWolke3&quot; = 3rd order Knoth-Wolke method (default for outer method)</span>
+<span class="cp">## &quot;Trapezoid&quot; = 2nd order trapezoidal rule</span>
+<span class="cp">## &quot;ForwardEuler&quot; = 1st order forward euler (default for inner method)</span>
+<span class="cp">## for example:</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">mri</span><span class="p">.</span><span class="n">implicit_inner</span> <span class="o">=</span> <span class="nb">false</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">mri</span><span class="p">.</span><span class="n">outer_method</span> <span class="o">=</span> <span class="n">KnothWolke3</span>
+<span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">mri</span><span class="p">.</span><span class="n">inner_method</span> <span class="o">=</span> <span class="n">Trapezoid</span>
 </pre></div>
 </div>
 </div>

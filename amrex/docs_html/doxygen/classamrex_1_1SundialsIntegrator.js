@@ -14,12 +14,15 @@ var classamrex_1_1SundialsIntegrator =
     [ "time_interpolate", "classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d", null ],
     [ "abstol", "classamrex_1_1SundialsIntegrator.html#a0855b2e653511753c1e569c7b87c9ca5", null ],
     [ "arkode_mem", "classamrex_1_1SundialsIntegrator.html#a5517e10d207516410fc8c47821199574", null ],
+    [ "erk_method", "classamrex_1_1SundialsIntegrator.html#a0f980336770439af5a7bb68e91e99c8d", null ],
     [ "hfixed", "classamrex_1_1SundialsIntegrator.html#a31cc728355cd6c45dda548cb02230689", null ],
     [ "hfixed_mri", "classamrex_1_1SundialsIntegrator.html#af5f0fff01cffc816095e63fe90133042", null ],
     [ "inner_mem", "classamrex_1_1SundialsIntegrator.html#a5c4ae34fa9d6ae829a0681baa924e76c", null ],
     [ "LS", "classamrex_1_1SundialsIntegrator.html#ad774ef92ba17a6baff2d36023f33b87f", null ],
     [ "LSf", "classamrex_1_1SundialsIntegrator.html#adc40e275ad9f22f598f1ce11f7dd667d", null ],
     [ "mpi_comm", "classamrex_1_1SundialsIntegrator.html#a9e2a6925e89dabd666bfe6d700f8c638", null ],
+    [ "mri_inner_method", "classamrex_1_1SundialsIntegrator.html#a8fd7da7afb3469247f54874ce6c59642", null ],
+    [ "mri_outer_method", "classamrex_1_1SundialsIntegrator.html#ae5d9824bd51e2a8ae91e1956322a32b0", null ],
     [ "mristep_mem", "classamrex_1_1SundialsIntegrator.html#acaf06c656b7a49d832f5a1deda67c6c4", null ],
     [ "NLS", "classamrex_1_1SundialsIntegrator.html#a0dd50fc21030f7b640138089cce401d7", null ],
     [ "NLSf", "classamrex_1_1SundialsIntegrator.html#a733cb29fa69d1df694f4481292b32644", null ],
@@ -33,6 +36,7 @@ var classamrex_1_1SundialsIntegrator =
     [ "timestep", "classamrex_1_1SundialsIntegrator.html#ae0ce7b5d30da9447a3734166bc8cd41f", null ],
     [ "tout", "classamrex_1_1SundialsIntegrator.html#a07150223c7502907d0f86a58993f9751", null ],
     [ "use_erk_strategy", "classamrex_1_1SundialsIntegrator.html#a931f12473d4c9ff5194a42e7560b87a0", null ],
+    [ "use_implicit_inner", "classamrex_1_1SundialsIntegrator.html#a6f5903d72ada4e746c516bdae638932f", null ],
     [ "use_mri_strategy", "classamrex_1_1SundialsIntegrator.html#a259e167849dc040148505e8a2bea504d", null ],
     [ "use_mri_strategy_test", "classamrex_1_1SundialsIntegrator.html#a22720e2c074c7e0f6449d8fbc75620bc", null ]
 ];

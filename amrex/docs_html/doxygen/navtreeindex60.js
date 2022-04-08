@@ -1,5 +1,9 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01_4.html":[2,0,0,6,37],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01_4.html#a08f882518f067c7d3168ca119ee38da3":[2,0,0,6,37,0],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01long_01_4.html":[2,0,0,6,38],
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01long_01_4.html#adde9b03b0fc2f8bdfeb8a2e4f47af15d":[2,0,0,6,38,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html":[2,0,0,6,39],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html#af63cb8e7547e202d476c57cd5da8ec08":[2,0,0,6,39,0],
 "structamrex_1_1Gpu_1_1StreamItInfo.html":[2,0,0,6,41],
@@ -245,9 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1MFUtil_1_1AsymmetricGhost.html":[2,0,0,9,0],
 "structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6":[2,0,0,9,0,0],
 "structamrex_1_1MFUtil_1_1SymmetricGhost.html":[2,0,0,9,1],
-"structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[2,0,0,9,1,0],
-"structamrex_1_1MLCellLinOp_1_1BCTL.html":[2,0,0,289,0],
-"structamrex_1_1MLCellLinOp_1_1BCTL.html#a7264caf756e53ce8d36ce44eb3f821f6":[2,0,0,289,0,1],
-"structamrex_1_1MLCellLinOp_1_1BCTL.html#af65725e81c31fb350eb9dde371c296cd":[2,0,0,289,0,0],
-"structamrex_1_1MLLinOp_1_1CommContainer.html":[2,0,0,294,0]
+"structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[2,0,0,9,1,0]
 };
