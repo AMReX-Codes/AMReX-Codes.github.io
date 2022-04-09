@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"AMReX__ParallelReduce_8H.html#a220eeb19edc1365466cc0acfec9ee3d7":[3,0,0,2,198,22],
+"AMReX__ParallelReduce_8H.html#a22a60add9d9c9a8d562a9417d297f9bc":[3,0,0,2,198,14],
 "AMReX__ParallelReduce_8H.html#a2d9a622392a0eee879ac8180cb2371e6":[3,0,0,2,198,24],
 "AMReX__ParallelReduce_8H.html#a44f537cdb77b89119617f7760ada307a":[3,0,0,2,198,9],
 "AMReX__ParallelReduce_8H.html#a59bb763ea3df042d86d6906cc9ccfc77":[3,0,0,2,198,25],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "AMReX__ParticleCommunication_8H.html#a814322d519ae32014737504164a0516b":[3,0,0,7,16,5],
 "AMReX__ParticleCommunication_8H.html#aecd4b7b3db27a6698403b2f272a378ea":[3,0,0,7,16,6],
 "AMReX__ParticleCommunication_8H.html#af4c8c19cb812cdbcc34bc408577bb25c":[3,0,0,7,16,7],
-"AMReX__ParticleCommunication_8H_source.html":[3,0,0,7,16],
-"AMReX__ParticleCommunication_8cpp.html":[3,0,0,7,15],
-"AMReX__ParticleContainerBase_8H.html":[3,0,0,7,18]
+"AMReX__ParticleCommunication_8H_source.html":[3,0,0,7,16]
 };

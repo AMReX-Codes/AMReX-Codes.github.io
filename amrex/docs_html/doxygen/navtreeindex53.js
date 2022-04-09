@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"classhacc_1_1Distribution.html#a8f4f9713f602b41d9bf405c0d0743d9f":[2,0,10,2,2],
+"classhacc_1_1Distribution.html#a94d5a159cb92f96aba1022b781ddfd64":[2,0,10,2,57],
 "classhacc_1_1Distribution.html#aa381914659691d811714d279f927972f":[2,0,10,2,59],
 "classhacc_1_1Distribution.html#aabb229232bc80f264cab6ac0d8f31c19":[2,0,10,2,44],
 "classhacc_1_1Distribution.html#aafa1cb9e62443ac3329d94a82309f9c1":[2,0,10,2,3],
@@ -118,8 +120,8 @@ var NAVTREEINDEX53 =
 "distribution__c_8h.html#afc2e25bc33f0263abbac9ef713b67345":[3,0,0,5,9,7,8],
 "distribution__c_8h_source.html":[3,0,0,5,9,7],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "globals_defs_r.html":[3,1,6,15],
 "globals_defs_s.html":[3,1,6,16],
 "globals_defs_u.html":[3,1,6,17],
-"globals_defs_v.html":[3,1,6,18],
-"globals_defs_y.html":[3,1,6,19],
-"globals_e.html":[3,1,0,4]
+"globals_defs_v.html":[3,1,6,18]
 };

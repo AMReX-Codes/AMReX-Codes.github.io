@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1MFUtil_1_1SymmetricGhost.html":[2,0,0,9,1],
+"structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[2,0,0,9,1,0],
 "structamrex_1_1MLCellLinOp_1_1BCTL.html":[2,0,0,289,0],
 "structamrex_1_1MLCellLinOp_1_1BCTL.html#a7264caf756e53ce8d36ce44eb3f821f6":[2,0,0,289,0,1],
 "structamrex_1_1MLCellLinOp_1_1BCTL.html#af65725e81c31fb350eb9dde371c296cd":[2,0,0,289,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html":[2,0,0,13,1],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a178254a5520c3ee1ea23f47987392468":[2,0,0,13,1,3],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[2,0,0,13,1,1],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,13,1,2],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,13,1,0],
-"structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html":[2,0,0,13,2]
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,13,1,2]
 };

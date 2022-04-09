@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"globals_defs_y.html":[3,1,6,19],
+"globals_e.html":[3,1,0,4],
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
@@ -44,8 +46,8 @@ var NAVTREEINDEX54 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -200,11 +202,11 @@ var NAVTREEINDEX54 =
 "interfacesdcquadrature__mod_1_1poly__eval.html":[2,0,11,0],
 "interfacesdcquadrature__mod_1_1poly__eval.html#aaf65ea1be7f3b8d7e5e1e99d79a91099":[2,0,11,0,1],
 "interfacesdcquadrature__mod_1_1poly__eval.html#ab38d996c6f957cb170aa2ca9fa135a74":[2,0,11,0,0],
-"namespaceamrex.html":[2,0,0],
 "namespaceamrex.html":[1,0,0],
+"namespaceamrex.html":[2,0,0],
 "namespaceamrex_1_1Amrvis.html":[1,0,0,1],
-"namespaceamrex_1_1AsyncOut.html":[2,0,0,1],
 "namespaceamrex_1_1AsyncOut.html":[1,0,0,2],
+"namespaceamrex_1_1AsyncOut.html":[2,0,0,1],
 "namespaceamrex_1_1BGColor.html":[1,0,0,3],
 "namespaceamrex_1_1BinPolicy.html":[2,0,0,2],
 "namespaceamrex_1_1BinPolicy.html":[1,0,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "namespaceamrex_1_1ParallelDescriptor.html":[2,0,0,13],
 "namespaceamrex_1_1ParallelDescriptor.html":[1,0,0,29],
 "namespaceamrex_1_1ParallelDescriptor_1_1detail.html":[1,0,0,29,0],
-"namespaceamrex_1_1ParallelGather.html":[1,0,0,30],
-"namespaceamrex_1_1ParallelReduce.html":[1,0,0,31],
-"namespaceamrex_1_1ParticleInterpolator.html":[1,0,0,33]
+"namespaceamrex_1_1ParallelGather.html":[1,0,0,30]
 };
