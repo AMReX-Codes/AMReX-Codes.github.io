@@ -52124,7 +52124,7 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleMPIUtil.cpp" line="50" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleMPIUtil.cpp" bodystart="50" bodyend="94" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleMPIUtil.H" declline="17" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a8f1971a46d37a951bb0ef8b189f8987f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a4a0d7f39455f1fad5de147aa8cbf45a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52141,7 +52141,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceSum</definition>
-        <argsstring>(PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceSum</name>
         <param>
           <type>PC const &amp;</type>
@@ -52187,7 +52187,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52195,9 +52215,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="39" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="39" bodyend="42"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="61" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="61" bodyend="65"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a9600b570271756f90a1c8b3c7e05a9a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1afe943e0bac4c931ba74fcfb7e0fceb64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52214,7 +52234,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceSum</definition>
-        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceSum</name>
         <param>
           <type>PC const &amp;</type>
@@ -52272,7 +52292,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52280,9 +52320,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="65" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="65" bodyend="68"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="109" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="109" bodyend="113"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a234b29ca2ab42dc4b7d3713800d82a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a6a4e13460f583730884202aa24ba165f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52299,7 +52339,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceSum</definition>
-        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceSum</name>
         <param>
           <type>PC const &amp;</type>
@@ -52369,7 +52409,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto sm = amrex::ReduceSum(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52377,9 +52437,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="92" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="92" bodyend="149"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="158" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="158" bodyend="218"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a7ea00de6fd7be3ddb1b4f841295cac21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1afcc19ed59f5327a67f329b7745af5802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52396,7 +52456,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceMax</definition>
-        <argsstring>(PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceMax</name>
         <param>
           <type>PC const &amp;</type>
@@ -52442,7 +52502,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52450,9 +52530,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="171" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="171" bodyend="174"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="261" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="261" bodyend="265"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af55bd59d2c594a63ae6bb0136596fb9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a372810a65569e56565a9bb33254184bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52469,7 +52549,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceMax</definition>
-        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceMax</name>
         <param>
           <type>PC const &amp;</type>
@@ -52527,7 +52607,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52535,9 +52635,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="197" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="197" bodyend="200"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="309" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="309" bodyend="313"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa9bf7aa5f979cd910b5b270070cac8b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a2a143a183f01010f7f57ca6025fc0b81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52554,7 +52654,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceMax</definition>
-        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceMax</name>
         <param>
           <type>PC const &amp;</type>
@@ -52624,7 +52724,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto mx = amrex::ReduceMax(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52632,9 +52752,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="224" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="224" bodyend="282"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="358" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="358" bodyend="419"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3aa271dcaabdcc69a172b422fdc60349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a23f8188bafacc115d2cfd1dfcda0db65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52651,7 +52771,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceMin</definition>
-        <argsstring>(PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceMin</name>
         <param>
           <type>PC const &amp;</type>
@@ -52697,7 +52817,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52705,9 +52845,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="304" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="304" bodyend="307"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="462" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="462" bodyend="466"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aab38aa5f542e67c840d6e9c6d30d586a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af6e2c75c0f4c085c615019cbd2f7fe94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52724,7 +52864,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceMin</definition>
-        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceMin</name>
         <param>
           <type>PC const &amp;</type>
@@ -52782,7 +52922,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52790,9 +52950,9 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="330" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="330" bodyend="333"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="510" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="510" bodyend="514"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab8f47432b3e35fe46b1b89def917916e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a8d2f558353675dae0aa185f137d8e0ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -52809,7 +52969,7 @@ Returns the index of the first element for which f is 0. </para>
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::ReduceMin</definition>
-        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</argsstring>
+        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(particle_detail::call_f(f, typename PC::ParticleTileType::ConstParticleTileDataType(), int()))</argsstring>
         <name>ReduceMin</name>
         <param>
           <type>PC const &amp;</type>
@@ -52879,7 +53039,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; ParticleReal
+             {
+                 return p.rdata(0);
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; int
+             {
+                 return p.idata(0);
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto mn = amrex::ReduceMin(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; ParticleReal
+             {
+                 return ptd.m_aos[i].rdata(0);
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52887,7 +53067,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="357" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="357" bodyend="415"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="559" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="559" bodyend="620"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa175f510a09bbc1252a4e1b8f3ac5250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -52952,7 +53132,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; bool
+             {
+                 return p.id() &gt; 0;
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; bool
+             {
+                 return p.id() &gt; 0;
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; bool
+             {
+                 return ptd.m_aos[i].id() &gt; 0;
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -52960,7 +53160,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="437" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="437" bodyend="440"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="663" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="663" bodyend="666"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2e4d86e52a629511e02bff646ca60b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53037,7 +53237,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; bool
+             {
+                 return p.id() &gt; 0;
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; bool
+             {
+                 return p.id() &gt; 0;
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; bool
+             {
+                 return ptd.m_aos[i].id() &gt; 0;
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -53045,7 +53265,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="463" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="463" bodyend="466"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="710" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="710" bodyend="713"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a14d08a69d1ad19e5499277055d469400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53134,7 +53354,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; bool
+             {
+                 return p.id() &gt; 0;
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; bool
+             {
+                 return p.id() &gt; 0;
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto rv = amrex::ReduceLogicalAnd(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; bool
+             {
+                 return ptd.m_aos[i].id() &gt; 0;
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -53142,7 +53382,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="490" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="490" bodyend="546"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="758" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="758" bodyend="816"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a43f13583043013b5751afe1e193cc8b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53207,7 +53447,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; bool
+             {
+                 return p.id() &lt; 1;
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; bool
+             {
+                 return p.id() &lt; 1;
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; bool
+             {
+                 return ptd.m_aos[i].id() &lt; 1;
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -53215,7 +53475,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="568" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="568" bodyend="571"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="859" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="859" bodyend="862"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a18f76938d120a4d9891cc99e67cab771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53292,7 +53552,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; bool
+             {
+                 return p.id() &lt; 1;
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; bool
+             {
+                 return p.id() &lt; 1;
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; bool
+             {
+                 return ptd.m_aos[i].id() &lt; 1;
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -53300,7 +53580,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="594" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="594" bodyend="597"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="906" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="906" bodyend="909"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4045ba476918bce64dc92d94e4cda26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53389,7 +53669,27 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para>
+<para>a callable that operates on a single particle. Example forms: <verbatim>   using PType = typename PC::ParticleType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PType&amp; p) -&gt; bool
+             {
+                 return p.id() &lt; 1;
+             });
+
+   using SPType  = typename PC::SuperParticleType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const SPType&amp; p) -&gt; bool
+             {
+                 return p.id() &lt; 1;
+             });
+
+   using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType;
+   auto rv = amrex::ReduceLogicalOr(pc,
+             [=] AMREX_GPU_HOST_DEVICE (const PTDType&amp; ptd, const int i) -&gt; bool
+             {
+                 return ptd.m_aos[i].id() &lt; 1;
+             });
+</verbatim> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -53397,7 +53697,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="621" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="621" bodyend="678"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="954" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="954" bodyend="1013"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53489,7 +53789,7 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns a tuple of values to be reduced over all particles. </para>
+<para>a callable that operates on a single particle, see below for example forms. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -53501,11 +53801,13 @@ Returns the index of the first element for which f is 0. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops); </para>
+Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops);</para>
+<para>using SPType = typename PC::SuperParticleType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const SPType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops);</para>
+<para>using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PTDType&amp; ptd, const int i) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = ptd.m_aos[i].rdata(1); const amrex::Real b = ptd.m_aos[i].rdata(2); const int c = ptd.m_aos[i].idata(1); return {a, b, c}; }, reduce_ops); </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="719" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="719" bodyend="722"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="1079" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="1079" bodyend="1082"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af42436c4813e6fedd6dd7a5c73581b63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53609,7 +53911,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns a tuple of values to be reduced over all particles. </para>
+<para>a callable that operates on a single particle, see below for example forms. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -53621,11 +53923,13 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, 0, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops); </para>
+Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops);</para>
+<para>using SPType = typename PC::SuperParticleType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const SPType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops);</para>
+<para>using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PTDType&amp; ptd, const int i) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = ptd.m_aos[i].rdata(1); const amrex::Real b = ptd.m_aos[i].rdata(2); const int c = ptd.m_aos[i].idata(1); return {a, b, c}; }, reduce_ops); </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="764" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="764" bodyend="767"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="1149" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="1149" bodyend="1152"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abd99345bb2a77ab8b210256686079d4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -53741,7 +54045,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
 <parametername>f</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>a function that takes a &quot;superparticle&quot; and returns a tuple of values to be reduced over all particles. </para>
+<para>a callable that operates on a single particle, see below for example forms. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -53753,11 +54057,13 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, 0, 1, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops); </para>
+Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops);</para>
+<para>using SPType = typename PC::SuperParticleType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const SPType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops);</para>
+<para>using PTDType = typename PC::ParticleTileType::ConstParticleTileDataType; amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PTDType&amp; ptd, const int i) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = ptd.m_aos[i].rdata(1); const amrex::Real b = ptd.m_aos[i].rdata(2); const int c = ptd.m_aos[i].idata(1); return {a, b, c}; }, reduce_ops); </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="810" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="810" bodyend="838"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="1220" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="1220" bodyend="1248"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9f2c65531307840edc2c376e273a2dcd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -55311,7 +55617,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="638" declcolumn="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="674" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac6d35da48f520c8ae3f429aee03601c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -55332,7 +55638,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="640" declcolumn="8"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="676" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acad483c5f0e30f9cd471ad05e1920320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55392,7 +55698,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="205" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="205" bodyend="209"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="241" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="241" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a76c9efa7ebf0969d1986d57f86c1882b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55452,7 +55758,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="223" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="223" bodyend="258"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="259" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="259" bodyend="294"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9624cde7b9ad11a1692714a8a2cf4d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55513,7 +55819,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="274" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="274" bodyend="277"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="310" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="310" bodyend="313"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a16b2ad610aeda065996254dcb64e1210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55574,7 +55880,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="293" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="293" bodyend="296"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="329" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="329" bodyend="332"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af026262a284dc45b1a535e1d2c3da3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55659,7 +55965,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="314" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="314" bodyend="320"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="350" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="350" bodyend="356"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa69e2d3ab61d58e37142f8ca2607da7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55744,7 +56050,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="338" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="338" bodyend="357"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="374" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="374" bodyend="393"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aede00a5fe66df6418eb44590a33296a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -55777,7 +56083,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="360" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="360" bodyend="405"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="396" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="396" bodyend="441"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a77b016483c8263c1a67e93d79d31da4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -55802,7 +56108,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="408" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="408" bodyend="431"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="444" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="444" bodyend="467"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -55836,7 +56142,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="454" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="454" bodyend="465"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="490" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="490" bodyend="501"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -55874,7 +56180,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="469" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="469" bodyend="477"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="505" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="505" bodyend="513"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa14dc776bf08e5f32891fc7788b82e07" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -55912,7 +56218,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="481" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="481" bodyend="513"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="517" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="517" bodyend="549"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae0112b869a3cebcbaa5160751f6768ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -55988,7 +56294,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="519" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="519" bodyend="634"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="555" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="555" bodyend="670"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1983ce5560b8e4e34d4f0a8ade1fa640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
