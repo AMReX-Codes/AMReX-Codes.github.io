@@ -4559,26 +4559,25 @@
 <codeline lineno="2693"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2694"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(no_assertion);</highlight></codeline>
 <codeline lineno="2695"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(no_assertion<sp/>||<sp/>getBDKey()<sp/>==<sp/>m_bdkey);</highlight></codeline>
-<codeline lineno="2696"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(getBDKey()<sp/>==<sp/>m_bdkey);</highlight></codeline>
-<codeline lineno="2697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>er_it<sp/>=<sp/>m_TheParForCache.equal_range(m_bdkey);</highlight></codeline>
-<codeline lineno="2698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>er_it.first;<sp/>it<sp/>!=<sp/>er_it.second;<sp/>++it)<sp/>{</highlight></codeline>
-<codeline lineno="2699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
-<codeline lineno="2700"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2701"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.erase(er_it.first,<sp/>er_it.second);</highlight></codeline>
-<codeline lineno="2702"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2703"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2704"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2705"><highlight class="normal">FabArrayBase::flushParForCache<sp/>()</highlight></codeline>
-<codeline lineno="2706"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2707"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_TheParForCache.begin();<sp/>it<sp/>!=<sp/>m_TheParForCache.end();<sp/>++it)<sp/>{</highlight></codeline>
-<codeline lineno="2708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
-<codeline lineno="2709"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2710"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.clear();</highlight></codeline>
-<codeline lineno="2711"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2712"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2713"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2714"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2715"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2696"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>er_it<sp/>=<sp/>m_TheParForCache.equal_range(m_bdkey);</highlight></codeline>
+<codeline lineno="2697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>er_it.first;<sp/>it<sp/>!=<sp/>er_it.second;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="2698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="2699"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2700"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.erase(er_it.first,<sp/>er_it.second);</highlight></codeline>
+<codeline lineno="2701"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2703"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2704"><highlight class="normal">FabArrayBase::flushParForCache<sp/>()</highlight></codeline>
+<codeline lineno="2705"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2706"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_TheParForCache.begin();<sp/>it<sp/>!=<sp/>m_TheParForCache.end();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="2707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="2708"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2709"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.clear();</highlight></codeline>
+<codeline lineno="2710"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2711"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2712"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2713"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2714"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.cpp"/>
   </compounddef>
