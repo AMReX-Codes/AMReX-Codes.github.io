@@ -91,6 +91,7 @@ var classamrex_1_1BoxArray =
     [ "size", "classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417", null ],
     [ "surroundingNodes", "classamrex_1_1BoxArray.html#abf9bf4fe5d5ddb8ae3498893bc2253c8", null ],
     [ "surroundingNodes", "classamrex_1_1BoxArray.html#ae3ca0eb36b4308574b2f0dfc1fdd3562", null ],
+    [ "transformer", "classamrex_1_1BoxArray.html#a88cd64a084e68534607b2463a28081f3", null ],
     [ "type_update", "classamrex_1_1BoxArray.html#a9f2c23e3d3ccd73f1045f2bca61f7a11", null ],
     [ "uniqify", "classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c", null ],
     [ "writeOn", "classamrex_1_1BoxArray.html#a20e70e6b9fe276e04f66520bb2f56931", null ],

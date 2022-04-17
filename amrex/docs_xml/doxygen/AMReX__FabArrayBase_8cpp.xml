@@ -4506,78 +4506,76 @@
 <codeline lineno="2640"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2641"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2642"><highlight class="normal">FabArrayBase::ParForInfo::ParForInfo<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArrayBase&amp;<sp/>fa,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>nghost,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads)</highlight></codeline>
-<codeline lineno="2643"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_typ(fa.boxArray().ixType()),</highlight></codeline>
-<codeline lineno="2644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_crse_ratio(fa.boxArray().crseRatio()),</highlight></codeline>
-<codeline lineno="2645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_ng(nghost),</highlight></codeline>
-<codeline lineno="2646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_nthreads(nthreads),</highlight></codeline>
-<codeline lineno="2647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_nblocks_x({</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">})</highlight></codeline>
-<codeline lineno="2648"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2649"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>boxes;</highlight></codeline>
-<codeline lineno="2650"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>ncells;</highlight></codeline>
-<codeline lineno="2651"><highlight class="normal"><sp/><sp/><sp/><sp/>ncells.reserve(fa.indexArray.size());</highlight></codeline>
-<codeline lineno="2652"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>K<sp/>:<sp/>fa.indexArray)<sp/>{</highlight></codeline>
-<codeline lineno="2653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>N<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="2654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>b<sp/>=<sp/>fa.box(K);</highlight></codeline>
-<codeline lineno="2655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b.ok())<sp/>{</highlight></codeline>
-<codeline lineno="2656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.grow(nghost);</highlight></codeline>
-<codeline lineno="2657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N<sp/>=<sp/>b.numPts();</highlight></codeline>
-<codeline lineno="2658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxes.push_back(b);</highlight></codeline>
-<codeline lineno="2660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncells.push_back(N);</highlight></codeline>
-<codeline lineno="2661"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2662"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1ad2a58bfacc6c0c5c71c5af8f54270061" kindref="member">detail::build_par_for_nblocks</ref>(m_hp,<sp/>m_dp,<sp/>m_nblocks_x,<sp/>m_boxes,<sp/>boxes,<sp/>ncells,<sp/>nthreads);</highlight></codeline>
-<codeline lineno="2663"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2664"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2665"><highlight class="normal">FabArrayBase::ParForInfo::~ParForInfo<sp/>()</highlight></codeline>
-<codeline lineno="2666"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2667"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1ad7264c9be2687016a1fb029841f127e4" kindref="member">detail::destroy_par_for_nblocks</ref>(m_hp,<sp/>m_dp);</highlight></codeline>
-<codeline lineno="2668"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2669"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2670"><highlight class="normal">FabArrayBase::ParForInfo<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;</highlight></codeline>
-<codeline lineno="2671"><highlight class="normal">FabArrayBase::getParForInfo<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>nghost,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="2672"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2673"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(getBDKey()<sp/>==<sp/>m_bdkey);</highlight></codeline>
-<codeline lineno="2674"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>er_it<sp/>=<sp/>m_TheParForCache.equal_range(m_bdkey);</highlight></codeline>
-<codeline lineno="2675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>er_it.first;<sp/>it<sp/>!=<sp/>er_it.second;<sp/>++it)<sp/>{</highlight></codeline>
-<codeline lineno="2676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;second-&gt;m_typ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>boxArray().ixType()<sp/><sp/><sp/><sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="2677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;m_crse_ratio<sp/>==<sp/>boxArray().crseRatio()<sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="2678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;m_ng<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>nghost<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="2679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;m_nthreads<sp/><sp/><sp/>==<sp/>nthreads)</highlight></codeline>
-<codeline lineno="2680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="2681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*(it-&gt;second);</highlight></codeline>
-<codeline lineno="2682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2683"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2684"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2685"><highlight class="normal"><sp/><sp/><sp/><sp/>ParForInfo*<sp/>new_pfi<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ParForInfo(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>nghost,<sp/>nthreads);</highlight></codeline>
-<codeline lineno="2686"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.insert(er_it.second,</highlight></codeline>
-<codeline lineno="2687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;BDKey,ParForInfo*&gt;::value_type(m_bdkey,new_pfi));</highlight></codeline>
-<codeline lineno="2688"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*new_pfi;</highlight></codeline>
-<codeline lineno="2689"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2690"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2691"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2692"><highlight class="normal">FabArrayBase::flushParForInfo<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>no_assertion)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="2693"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2694"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(no_assertion);</highlight></codeline>
-<codeline lineno="2695"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(no_assertion<sp/>||<sp/>getBDKey()<sp/>==<sp/>m_bdkey);</highlight></codeline>
-<codeline lineno="2696"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>er_it<sp/>=<sp/>m_TheParForCache.equal_range(m_bdkey);</highlight></codeline>
-<codeline lineno="2697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>er_it.first;<sp/>it<sp/>!=<sp/>er_it.second;<sp/>++it)<sp/>{</highlight></codeline>
-<codeline lineno="2698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
-<codeline lineno="2699"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2700"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.erase(er_it.first,<sp/>er_it.second);</highlight></codeline>
-<codeline lineno="2701"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="2702"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2703"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2704"><highlight class="normal">FabArrayBase::flushParForCache<sp/>()</highlight></codeline>
-<codeline lineno="2705"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2706"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_TheParForCache.begin();<sp/>it<sp/>!=<sp/>m_TheParForCache.end();<sp/>++it)<sp/>{</highlight></codeline>
-<codeline lineno="2707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
-<codeline lineno="2708"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2709"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.clear();</highlight></codeline>
-<codeline lineno="2710"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2643"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_bat(fa.boxArray().transformer()),</highlight></codeline>
+<codeline lineno="2644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_ng(nghost),</highlight></codeline>
+<codeline lineno="2645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_nthreads(nthreads),</highlight></codeline>
+<codeline lineno="2646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_nblocks_x({</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">})</highlight></codeline>
+<codeline lineno="2647"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2648"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>boxes;</highlight></codeline>
+<codeline lineno="2649"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>ncells;</highlight></codeline>
+<codeline lineno="2650"><highlight class="normal"><sp/><sp/><sp/><sp/>ncells.reserve(fa.indexArray.size());</highlight></codeline>
+<codeline lineno="2651"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>K<sp/>:<sp/>fa.indexArray)<sp/>{</highlight></codeline>
+<codeline lineno="2652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>N<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>b<sp/>=<sp/>fa.box(K);</highlight></codeline>
+<codeline lineno="2654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b.ok())<sp/>{</highlight></codeline>
+<codeline lineno="2655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.grow(nghost);</highlight></codeline>
+<codeline lineno="2656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N<sp/>=<sp/>b.numPts();</highlight></codeline>
+<codeline lineno="2657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boxes.push_back(b);</highlight></codeline>
+<codeline lineno="2659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncells.push_back(N);</highlight></codeline>
+<codeline lineno="2660"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2661"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1ad2a58bfacc6c0c5c71c5af8f54270061" kindref="member">detail::build_par_for_nblocks</ref>(m_hp,<sp/>m_dp,<sp/>m_nblocks_x,<sp/>m_boxes,<sp/>boxes,<sp/>ncells,<sp/>nthreads);</highlight></codeline>
+<codeline lineno="2662"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2664"><highlight class="normal">FabArrayBase::ParForInfo::~ParForInfo<sp/>()</highlight></codeline>
+<codeline lineno="2665"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2666"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1ad7264c9be2687016a1fb029841f127e4" kindref="member">detail::destroy_par_for_nblocks</ref>(m_hp,<sp/>m_dp);</highlight></codeline>
+<codeline lineno="2667"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2668"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2669"><highlight class="normal">FabArrayBase::ParForInfo<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;</highlight></codeline>
+<codeline lineno="2670"><highlight class="normal">FabArrayBase::getParForInfo<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>nghost,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="2671"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2672"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(getBDKey()<sp/>==<sp/>m_bdkey);</highlight></codeline>
+<codeline lineno="2673"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>er_it<sp/>=<sp/>m_TheParForCache.equal_range(m_bdkey);</highlight></codeline>
+<codeline lineno="2674"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>er_it.first;<sp/>it<sp/>!=<sp/>er_it.second;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="2675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;second-&gt;m_bat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>boxArray().transformer()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="2676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;m_ng<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>nghost<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="2677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;m_nthreads<sp/><sp/><sp/>==<sp/>nthreads)</highlight></codeline>
+<codeline lineno="2678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="2679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*(it-&gt;second);</highlight></codeline>
+<codeline lineno="2680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2681"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2682"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2683"><highlight class="normal"><sp/><sp/><sp/><sp/>ParForInfo*<sp/>new_pfi<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ParForInfo(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>nghost,<sp/>nthreads);</highlight></codeline>
+<codeline lineno="2684"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.insert(er_it.second,</highlight></codeline>
+<codeline lineno="2685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;BDKey,ParForInfo*&gt;::value_type(m_bdkey,new_pfi));</highlight></codeline>
+<codeline lineno="2686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*new_pfi;</highlight></codeline>
+<codeline lineno="2687"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2688"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2689"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2690"><highlight class="normal">FabArrayBase::flushParForInfo<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>no_assertion)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="2691"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2692"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(no_assertion);</highlight></codeline>
+<codeline lineno="2693"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(no_assertion<sp/>||<sp/>getBDKey()<sp/>==<sp/>m_bdkey);</highlight></codeline>
+<codeline lineno="2694"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>er_it<sp/>=<sp/>m_TheParForCache.equal_range(m_bdkey);</highlight></codeline>
+<codeline lineno="2695"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>er_it.first;<sp/>it<sp/>!=<sp/>er_it.second;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="2696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="2697"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2698"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.erase(er_it.first,<sp/>er_it.second);</highlight></codeline>
+<codeline lineno="2699"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2700"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2701"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2702"><highlight class="normal">FabArrayBase::flushParForCache<sp/>()</highlight></codeline>
+<codeline lineno="2703"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="2704"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_TheParForCache.begin();<sp/>it<sp/>!=<sp/>m_TheParForCache.end();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="2705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="2706"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="2707"><highlight class="normal"><sp/><sp/><sp/><sp/>m_TheParForCache.clear();</highlight></codeline>
+<codeline lineno="2708"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2709"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2710"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2711"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2712"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2713"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2714"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="2712"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.cpp"/>
   </compounddef>

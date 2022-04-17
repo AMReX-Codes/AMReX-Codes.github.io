@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"classamrex_1_1DenseBins.html#a1c13238822cee328b27603d0a467f981":[2,0,0,113,3],
 "classamrex_1_1DenseBins.html#a3448e9a533b211d486f42f06f9736218":[2,0,0,113,16],
 "classamrex_1_1DenseBins.html#a4c7d40c3975acb725e9d2b5e76f4d2d1":[2,0,0,113,11],
 "classamrex_1_1DenseBins.html#a594a9ba943cde14aeec576817d575b6a":[2,0,0,113,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1ExtrusionIF.html#afde14763bb9fd21e0e03cbcaa27ae053":[2,0,0,4,8,1],
 "classamrex_1_1EB2_1_1GFab.html":[2,0,0,4,11],
 "classamrex_1_1EB2_1_1GFab.html#a06370be1805b070ebf8964b57b5957e5":[2,0,0,4,11,9],
-"classamrex_1_1EB2_1_1GFab.html#a2896574b578bc56288ba3e848c877bd8":[2,0,0,4,11,6],
-"classamrex_1_1EB2_1_1GFab.html#a361f500f8c5de192acb6538e1a372139":[2,0,0,4,11,12]
+"classamrex_1_1EB2_1_1GFab.html#a2896574b578bc56288ba3e848c877bd8":[2,0,0,4,11,6]
 };

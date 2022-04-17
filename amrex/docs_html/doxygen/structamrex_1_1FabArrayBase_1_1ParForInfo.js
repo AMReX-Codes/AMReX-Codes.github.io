@@ -9,12 +9,11 @@ var structamrex_1_1FabArrayBase_1_1ParForInfo =
     [ "getBoxes", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a04c88b0fe4e9a12cd0886456d9a34a1c", null ],
     [ "operator=", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ac7f708582ac16f85339579a6b67776de", null ],
     [ "operator=", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a75e2960ee0458eb71dd4fd91ca728fa6", null ],
+    [ "m_bat", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a24bf518e21de06c34d5ccafe0b1ac244", null ],
     [ "m_boxes", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#aee7174df98e72b2c9ce06f0b229e0840", null ],
-    [ "m_crse_ratio", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a981dc47643b5d9a4dff3ee9485005d5b", null ],
     [ "m_dp", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ad1cd3540aa647e1a370450d70fac6176", null ],
     [ "m_hp", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a61018a635a080b4ef9d94852423668ae", null ],
     [ "m_nblocks_x", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#ab8a2eebe5390786a4fd677cae1cb498f", null ],
     [ "m_ng", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#aa6a101ddf89df501b82f6fcc9e91ebd7", null ],
-    [ "m_nthreads", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a42964fcfc71605c366a9881334b4b44e", null ],
-    [ "m_typ", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#affbe2c289594f992d44abf46129e2a0e", null ]
+    [ "m_nthreads", "structamrex_1_1FabArrayBase_1_1ParForInfo.html#a42964fcfc71605c366a9881334b4b44e", null ]
 ];
