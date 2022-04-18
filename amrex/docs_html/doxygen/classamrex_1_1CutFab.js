@@ -10,8 +10,8 @@ var classamrex_1_1CutFab =
     [ "CutFab", "classamrex_1_1CutFab.html#a93dfcf381d11cb3367775cbb816763f0", null ],
     [ "copy", "classamrex_1_1CutFab.html#a51bceac102ef6fa83de179298fd79d21", null ],
     [ "copy", "classamrex_1_1CutFab.html#a8098a70c5216794093f4c5a2a7031465", null ],
-    [ "copyFromMem", "classamrex_1_1CutFab.html#a7f1f31db3031d7090173fae7e2e2f96f", null ],
-    [ "copyFromMem", "classamrex_1_1CutFab.html#a1ffd721cef1f2d2f595eb95fb2009442", null ],
+    [ "copyFromMem", "classamrex_1_1CutFab.html#a951d15d61f3458c6e25de9d9e401c32c", null ],
+    [ "copyFromMem", "classamrex_1_1CutFab.html#ae785483ff900e3dbef875150b543d755", null ],
     [ "operator=", "classamrex_1_1CutFab.html#a0044b3af56a828f401596afc6ab8c29e", null ],
     [ "operator=", "classamrex_1_1CutFab.html#a65bd431e8fbba71e5c349dc2fddc37a4", null ]
 ];
