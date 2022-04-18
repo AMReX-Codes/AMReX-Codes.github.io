@@ -318,8 +318,8 @@ $(document).ready(function(){initNavTree('AMReX__Interp__2D__C_8H_source.html','
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="comment">// RZ</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keyword">const</span> Real* cs_problo = cs_geomdata.ProbLo();</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                Real rp = cs_problo[0] + (ic+0.5)*cs_dx[0];</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                Real rm = cs_problo[0] + (ic-0.5)*cs_dx[0];</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                Real rp = cs_problo[0] + (ic+0.5_rt)*cs_dx[0];</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                Real rm = cs_problo[0] + (ic-0.5_rt)*cs_dx[0];</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                cvol = (rp*rp - rm*rm) * cs_dx[1];</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
@@ -349,8 +349,8 @@ $(document).ready(function(){initNavTree('AMReX__Interp__2D__C_8H_source.html','
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                        <span class="comment">// RZ</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                        <span class="keyword">const</span> Real* fn_problo = fn_geomdata.ProbLo();</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                        Real rp = fn_problo[0] + (i+0.5)*fn_dx[0];</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                        Real rm = fn_problo[0] + (i-0.5)*fn_dx[0];</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                        Real rp = fn_problo[0] + (i+0.5_rt)*fn_dx[0];</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                        Real rm = fn_problo[0] + (i-0.5_rt)*fn_dx[0];</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        fvol = (rp*rp - rm*rm) * fn_dx[1];</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
