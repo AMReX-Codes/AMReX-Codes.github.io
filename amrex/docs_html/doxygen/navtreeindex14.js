@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"AMReX__ParallelDescriptor_8H.html#a1d3e6b955f1aa4b39b38149966afcb7e":[3,0,0,2,196,121],
 "AMReX__ParallelDescriptor_8H.html#a1edfac65363a39cde188d5f5adb85134":[3,0,0,2,196,55],
 "AMReX__ParallelDescriptor_8H.html#a1f1780bd83ee339ade2a2dd702473e20":[3,0,0,2,196,23],
 "AMReX__ParallelDescriptor_8H.html#a201290543de69eac17ee181475285844":[3,0,0,2,196,148],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569da9409354542db34fb149ecb3c91ebb8bd":[3,0,0,2,198,0,3],
 "AMReX__ParallelReduce_8H.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52":[3,0,0,2,198,0,2],
 "AMReX__ParallelReduce_8H.html#a11b496ac41b8e46fe7f1adf74392dcfb":[3,0,0,2,198,23],
-"AMReX__ParallelReduce_8H.html#a1ea9d029b1a0e862f2cf90ee0679ab65":[3,0,0,2,198,1],
-"AMReX__ParallelReduce_8H.html#a214a8d06880d44cb28990daeccc2884e":[3,0,0,2,198,19]
+"AMReX__ParallelReduce_8H.html#a1ea9d029b1a0e862f2cf90ee0679ab65":[3,0,0,2,198,1]
 };

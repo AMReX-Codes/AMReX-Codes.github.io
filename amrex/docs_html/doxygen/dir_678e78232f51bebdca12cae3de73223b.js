@@ -8,13 +8,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
       [ "iterator", "structamrex_1_1BinIterator_1_1iterator.html", "structamrex_1_1BinIterator_1_1iterator" ]
     ] ],
     [ "AMReX_DenseBins.H", "AMReX__DenseBins_8H.html", "AMReX__DenseBins_8H" ],
-    [ "AMReX_NeighborList.H", "AMReX__NeighborList_8H.html", [
-      [ "Neighbors", "structamrex_1_1Neighbors.html", "structamrex_1_1Neighbors" ],
-      [ "iterator", "structamrex_1_1Neighbors_1_1iterator.html", "structamrex_1_1Neighbors_1_1iterator" ],
-      [ "const_iterator", "structamrex_1_1Neighbors_1_1const__iterator.html", "structamrex_1_1Neighbors_1_1const__iterator" ],
-      [ "NeighborData", "structamrex_1_1NeighborData.html", "structamrex_1_1NeighborData" ],
-      [ "NeighborList", "classamrex_1_1NeighborList.html", "classamrex_1_1NeighborList" ]
-    ] ],
+    [ "AMReX_NeighborList.H", "AMReX__NeighborList_8H.html", "AMReX__NeighborList_8H" ],
     [ "AMReX_NeighborParticles.H", "AMReX__NeighborParticles_8H.html", [
       [ "NeighborCode", "structamrex_1_1NeighborCode.html", "structamrex_1_1NeighborCode" ],
       [ "NeighborParticleContainer", "classamrex_1_1NeighborParticleContainer.html", "classamrex_1_1NeighborParticleContainer" ],

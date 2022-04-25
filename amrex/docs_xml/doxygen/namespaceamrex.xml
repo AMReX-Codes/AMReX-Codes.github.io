@@ -51515,6 +51515,39 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLTensor_3D_K.H" line="1312" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLTensor_3D_K.H" bodystart="1312" bodyend="1352"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aa47fc757d0d25899f61d37329d2d5769" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename A</type>
+          </param>
+          <param>
+            <type>typename B</type>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; std::is_same&lt; std::remove_cv_t&lt; A &gt;, std::remove_cv_t&lt; B &gt; &gt;::value, int &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool amrex::isSame</definition>
+        <argsstring>(A const *pa, B const *pb)</argsstring>
+        <name>isSame</name>
+        <param>
+          <type>A const *</type>
+          <declname>pa</declname>
+        </param>
+        <param>
+          <type>B const *</type>
+          <declname>pb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" line="162" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="162" bodyend="165"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab612cdff7b506fd2884de82a842e95b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -55617,7 +55650,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="674" declcolumn="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="696" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac6d35da48f520c8ae3f429aee03601c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -55638,7 +55671,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="676" declcolumn="8"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="698" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acad483c5f0e30f9cd471ad05e1920320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -56295,6 +56328,57 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="555" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="555" bodyend="670"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ac8512b687a529806d0f382cf7c9eee97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PC1</type>
+          </param>
+          <param>
+            <type>class PC2</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool amrex::SameIteratorsOK</definition>
+        <argsstring>(const PC1 &amp;pc1, const PC2 &amp;pc2)</argsstring>
+        <name>SameIteratorsOK</name>
+        <param>
+          <type>const PC1 &amp;</type>
+          <declname>pc1</declname>
+        </param>
+        <param>
+          <type>const PC2 &amp;</type>
+          <declname>pc2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="675" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="675" bodyend="684"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2a6f51f01e9f0350a8b447ee451d0efb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PC</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::EnsureThreadSafeTiles</definition>
+        <argsstring>(PC &amp;pc)</argsstring>
+        <name>EnsureThreadSafeTiles</name>
+        <param>
+          <type>PC &amp;</type>
+          <declname>pc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="687" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="687" bodyend="694"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1983ce5560b8e4e34d4f0a8ade1fa640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

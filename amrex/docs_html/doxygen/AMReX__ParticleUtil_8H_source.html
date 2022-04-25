@@ -700,30 +700,52 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;IntVect <a class="code" href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">computeRefFac</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> src_lev, <span class="keywordtype">int</span> lev);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;Vector&lt;int&gt; <a class="code" href="namespaceamrex.html#ac6d35da48f520c8ae3f429aee03601c9">computeNeighborProcs</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> ngrow);</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceparticle__detail.html">particle_detail</a></div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;{</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> C&gt;</div>
-<div class="line"><a name="l00681"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">  681</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">clearEmptyEntries</a> (C&amp; c)</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;{</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c_it = c.begin(); c_it != c.end(); <span class="comment">/* no ++ */</span>)</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <span class="keywordflow">if</span> (c_it-&gt;second.empty()) { c.erase(c_it++); }</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        <span class="keywordflow">else</span> { ++c_it; }</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    }</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;}</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;}</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;}</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<span class="preprocessor">#endif // include guard</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> PC1, <span class="keyword">class</span> PC2&gt;</div>
+<div class="line"><a name="l00675"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ac8512b687a529806d0f382cf7c9eee97">  675</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceamrex.html#ac8512b687a529806d0f382cf7c9eee97">SameIteratorsOK</a> (<span class="keyword">const</span> PC1&amp; pc1, <span class="keyword">const</span> PC2&amp; pc2) {</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keywordflow">if</span> (pc1.numLevels() != pc2.numLevels()) {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keywordflow">if</span> (pc1.do_tiling != pc2.do_tiling) {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">if</span> (pc1.tile_size != pc2.tile_size) {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; pc1.numLevels(); ++lev) {</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <span class="keywordflow">if</span> (pc1.ParticleBoxArray(lev) != pc2.ParticleBoxArray(lev)) {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <span class="keywordflow">if</span> (pc1.ParticleDistributionMap(lev) != pc2.ParticleDistributionMap(lev)) {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    }</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;}</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> PC&gt;</div>
+<div class="line"><a name="l00687"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a2a6f51f01e9f0350a8b447ee451d0efb">  687</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a2a6f51f01e9f0350a8b447ee451d0efb">EnsureThreadSafeTiles</a>(PC&amp; pc) {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keyword">using</span> Iter = <span class="keyword">typename</span> PC::ParIterType;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; pc.numLevels(); ++lev) {</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="keywordflow">for</span> (Iter pti(pc, lev); pti.isValid(); ++pti) {</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            pc.DefineAndReturnParticleTile(lev, pti);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        }</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    }</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;}</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;IntVect <a class="code" href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">computeRefFac</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> src_lev, <span class="keywordtype">int</span> lev);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;Vector&lt;int&gt; <a class="code" href="namespaceamrex.html#ac6d35da48f520c8ae3f429aee03601c9">computeNeighborProcs</a> (<span class="keyword">const</span> ParGDBBase* a_gdb, <span class="keywordtype">int</span> ngrow);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceparticle__detail.html">particle_detail</a></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;{</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> C&gt;</div>
+<div class="line"><a name="l00703"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">  703</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">clearEmptyEntries</a> (C&amp; c)</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;{</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c_it = c.begin(); c_it != c.end(); <span class="comment">/* no ++ */</span>)</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keywordflow">if</span> (c_it-&gt;second.empty()) { c.erase(c_it++); }</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="keywordflow">else</span> { ++c_it; }</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    }</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;}</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;}</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;}</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="preprocessor">#endif // include guard</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__Gpu_8H_html"><div class="ttname"><a href="AMReX__Gpu_8H.html">AMReX_Gpu.H</a></div></div>
@@ -738,6 +760,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="ttc" id="aclassamrex_1_1MFIter_html_a61b9a1d5eda39765d1db9b9b936558c7"><div class="ttname"><a href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">amrex::MFIter::isValid</a></div><div class="ttdeci">bool isValid() const noexcept</div><div class="ttdoc">Is the iterator valid i.e. is it associated with a FAB?</div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:138</div></div>
 <div class="ttc" id="astructamrex_1_1ConstParticleTileData_html"><div class="ttname"><a href="structamrex_1_1ConstParticleTileData.html">amrex::ConstParticleTileData</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:164</div></div>
 <div class="ttc" id="anamespaceamrex_html_aa14dc776bf08e5f32891fc7788b82e07"><div class="ttname"><a href="namespaceamrex.html#aa14dc776bf08e5f32891fc7788b82e07">amrex::enforcePeriodic</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool enforcePeriodic(P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;phi, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;rhi, amrex::GpuArray&lt; int, AMREX_SPACEDIM &gt; const &amp;is_per) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:517</div></div>
+<div class="ttc" id="anamespaceamrex_html_ac8512b687a529806d0f382cf7c9eee97"><div class="ttname"><a href="namespaceamrex.html#ac8512b687a529806d0f382cf7c9eee97">amrex::SameIteratorsOK</a></div><div class="ttdeci">bool SameIteratorsOK(const PC1 &amp;pc1, const PC2 &amp;pc2)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:675</div></div>
 <div class="ttc" id="aAMReX__Print_8H_html"><div class="ttname"><a href="AMReX__Print_8H.html">AMReX_Print.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1particle__detail_html_af1a0333c4222e4b0817845fdef5f20bd"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#af1a0333c4222e4b0817845fdef5f20bd">amrex::particle_detail::NSI</a></div><div class="ttdeci">int int int NSI</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:82</div></div>
 <div class="ttc" id="anamespaceamrex_html_acad483c5f0e30f9cd471ad05e1920320"><div class="ttname"><a href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">amrex::numParticlesOutOfRange</a></div><div class="ttdeci">int numParticlesOutOfRange(Iterator const &amp;pti, int nGrow)</div><div class="ttdoc">Returns the number of particles that are more than nGrow cells from the box correspond to the input i...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:241</div></div>
@@ -788,11 +811,12 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_ae0112b869a3cebcbaa5160751f6768ae"><div class="ttname"><a href="namespaceamrex.html#ae0112b869a3cebcbaa5160751f6768ae">amrex::partitionParticlesByDest</a></div><div class="ttdeci">int partitionParticlesByDest(PTile &amp;ptile, const PLocator &amp;ploc, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;plo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;phi, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;rhi, const GpuArray&lt; int, AMREX_SPACEDIM &gt; &amp;is_per, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:555</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html_a500e159391a7508f43c2595e9eb3c7b0"><div class="ttname"><a href="classamrex_1_1Box.html#a500e159391a7508f43c2595e9eb3c7b0">amrex::Box::smallEnd</a></div><div class="ttdeci">const AMREX_GPU_HOST_DEVICE IntVect &amp; smallEnd() const &amp;noexcept</div><div class="ttdoc">Get the smallend of the box.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:103</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2a6f51f01e9f0350a8b447ee451d0efb"><div class="ttname"><a href="namespaceamrex.html#a2a6f51f01e9f0350a8b447ee451d0efb">amrex::EnsureThreadSafeTiles</a></div><div class="ttdeci">void EnsureThreadSafeTiles(PC &amp;pc)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:687</div></div>
 <div class="ttc" id="aAMReX__IntVect_8H_html"><div class="ttname"><a href="AMReX__IntVect_8H.html">AMReX_IntVect.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:16</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleTileData_html"><div class="ttname"><a href="structamrex_1_1ParticleTileData.html">amrex::ParticleTileData</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:16</div></div>
 <div class="ttc" id="aAMReX__ParticleBufferMap_8H_html"><div class="ttname"><a href="AMReX__ParticleBufferMap_8H.html">AMReX_ParticleBufferMap.H</a></div></div>
-<div class="ttc" id="anamespaceamrex_1_1particle__detail_html_aece8b1e2716e84a5261e988b9e9b1ef2"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">amrex::particle_detail::clearEmptyEntries</a></div><div class="ttdeci">void clearEmptyEntries(C &amp;c)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:681</div></div>
+<div class="ttc" id="anamespaceamrex_1_1particle__detail_html_aece8b1e2716e84a5261e988b9e9b1ef2"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2">amrex::particle_detail::clearEmptyEntries</a></div><div class="ttdeci">void clearEmptyEntries(C &amp;c)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:703</div></div>
 <div class="ttc" id="aAMReX__Box_8H_html"><div class="ttname"><a href="AMReX__Box_8H.html">AMReX_Box.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1particle__detail_html_ae8a815a03dd199d4f0a63a1ea9618ce8"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#ae8a815a03dd199d4f0a63a1ea9618ce8">amrex::particle_detail::NAR</a></div><div class="ttdeci">int int int int NAR</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:82</div></div>
 <div class="ttc" id="aclassamrex_1_1ReduceData_html_a2d7733b7adfa9401fdc90202486d2b54"><div class="ttname"><a href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">amrex::ReduceData::value</a></div><div class="ttdeci">Type value()</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:268</div></div>
