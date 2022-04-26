@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMReX-Hydro &mdash; amrex-hydro 22.05-dev documentation</title>
+  <title>Welcome to AMReX-Hydro’s Documentation &mdash; amrex-hydro 22.05-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -19,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation Guide" href="Install.html" /> 
+    <link rel="next" title="Introduction" href="Introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,14 +41,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installation Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EBMOL.html">EBMOL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Godunov.html">Godunov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MOL.html">MOL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Schemes.html">Advection Schemes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projection Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Slopes.html">Slopes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Utilities.html">Helper functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
         </div>
@@ -66,7 +67,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>AMReX-Hydro</li>
+      <li>Welcome to AMReX-Hydro’s Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -76,42 +77,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="amrex-hydro">
-<span id="amrex-hydro-indx"></span><h1>AMReX-Hydro<a class="headerlink" href="#amrex-hydro" title="Permalink to this headline"></a></h1>
+  <div class="section" id="welcome-to-amrex-hydro-s-documentation">
+<span id="amrex-hydro-indx"></span><h1>Welcome to AMReX-Hydro’s Documentation<a class="headerlink" href="#welcome-to-amrex-hydro-s-documentation" title="Permalink to this headline"></a></h1>
 <p>AMReX-Hydro is set of routines that support the construction of convective
-terms for incompressible and low Mach number flow modeling.  There are different
-routines depending on whether the grid being operated on contains cut cells.</p>
-<p>The fundamental algorithm is either a Method-of-Lines (MOL) or Godunov approach.
-We use one of these to construct values of the normal velocity the centroid on each cell face,
-then MAC-project this velocity field, then use these MAC-projected velocities to help
-construct values on faces which will be used to define fluxes on faces that will
-be differenced to create the convective term.</p>
-<p>AMReX-Hydro also includes the flux redistribution and state redistribution algorithms
-which are used to address the “small cell problem” associated with explicit cut
-cell algorithms.</p>
-<p>We organize the documentation here by chapters with the same headings as the
-directories within AMReX-Hydro.</p>
+terms for incompressible and low Mach number flow modeling.
+It supports cartesian coordinates with (or without) embedded boundaries and R-Z coordinate systems.
+It’s feely available
+on GitHub: <a class="reference external" href="https://github.com/AMReX-Codes/AMReX-Hydro">https://github.com/AMReX-Codes/AMReX-Hydro</a> .</p>
+<p>AMReX-Hydro is built on top of AMReX: <a class="reference external" href="https://github.com/AMReX-Codes/amrex">https://github.com/AMReX-Codes/amrex</a> ,
+a publicly available software framework designed for
+building massively parallel block-structured adaptive mesh refinement (AMR)
+applications.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EBMOL.html">EBMOL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Godunov.html">Godunov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MOL.html">MOL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Slopes.html">Slopes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Install.html#clone-configure-and-install-amrex">Clone, Configure and Install AMReX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Install.html#clone-and-configure-amrex-hydro">Clone and Configure AMReX-Hydro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Install.html#make-the-object-files">Make The Object Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Schemes.html">Advection Schemes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Schemes.html#notation">Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Schemes.html#method-of-lines-mol">Method of Lines (MOL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Schemes.html#method-of-lines-with-embedded-boundaries-ebmol">Method of Lines with Embedded Boundaries (EBMOL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Schemes.html#godunov-methods">Godunov Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Schemes.html#godunov-with-embedded-boundaries-ebgodunov">Godunov with Embedded Boundaries (EBGodunov)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projection Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Projections.html#mac-projection">MAC Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Projections.html#nodal-projection">Nodal Projection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Redistribution.html#small-volume-embedded-boundary-cells">Small Volume Embedded Boundary Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Redistribution.html#flux-redistribution">Flux Redistribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Redistribution.html#state-redistribution">State Redistribution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Utilities.html">Helper functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Utilities.html#notation">Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities.html#slopes">Slopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities.html#eb-slopes">EB Slopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities.html#boundary-conditions">Boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities.html#computing-fluxes">Computing Fluxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities.html#constructing-the-advective-term">Constructing the advective term</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 </div>
 <p>API documentation can be found in the <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/">Doxygen Technical Reference</a>.</p>
-</section>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Install.html" class="btn btn-neutral float-right" title="Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation Guide &mdash; amrex-hydro 22.05-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -19,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="EBGodunov" href="EBGodunov.html" />
-    <link rel="prev" title="AMReX-Hydro" href="index.html" /> 
+    <link rel="next" title="Advection schemes" href="Schemes.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,19 +42,21 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#clone-configure-and-install-amrex">Clone, Configure and Install AMReX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#clone-and-configure-amrex-hydro">Clone and Configure AMReX-Hydro</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#make-the-object-files">Make The Object Files</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EBMOL.html">EBMOL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Godunov.html">Godunov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MOL.html">MOL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Schemes.html">Advection Schemes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projection Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Slopes.html">Slopes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Utilities.html">Helper functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
         </div>
@@ -82,11 +83,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation-guide">
+  <div class="section" id="installation-guide">
 <h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline"></a></h1>
 <p>Object files of AMReX-Hydro routines can be built with CMake. To build the objects for linking
 with your projects see the steps below:</p>
-<section id="clone-configure-and-install-amrex">
+<div class="section" id="clone-configure-and-install-amrex">
 <h2>Clone, Configure and Install AMReX<a class="headerlink" href="#clone-configure-and-install-amrex" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>Download AMReX from GitHub by using</p></li>
@@ -127,8 +128,8 @@ and header files. The optional flag <code class="docutils literal notranslate"><
 this number as you see fit, or omit it altogether.</p>
 </li>
 </ol>
-</section>
-<section id="clone-and-configure-amrex-hydro">
+</div>
+<div class="section" id="clone-and-configure-amrex-hydro">
 <h2>Clone and Configure AMReX-Hydro<a class="headerlink" href="#clone-and-configure-amrex-hydro" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple" start="5">
 <li><p>Download AMReX-Hydro from GitHub by using</p></li>
@@ -166,8 +167,8 @@ relative path such as</p>
 </div>
 <p>will result in error because CMake will be unable to find <code class="docutils literal notranslate"><span class="pre">AMReXConfig.cmake</span></code>.</p>
 </div>
-</section>
-<section id="make-the-object-files">
+</div>
+<div class="section" id="make-the-object-files">
 <h2>Make The Object Files<a class="headerlink" href="#make-the-object-files" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple" start="8">
 <li><p>While in the AMReX-Hydro build directory <code class="docutils literal notranslate"><span class="pre">AMReX-Hydro/build</span></code>, create the object
@@ -187,15 +188,15 @@ subdirectories at</p></li>
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="AMReX-Hydro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="EBGodunov.html" class="btn btn-neutral float-right" title="EBGodunov" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Schemes.html" class="btn btn-neutral float-right" title="Advection schemes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
