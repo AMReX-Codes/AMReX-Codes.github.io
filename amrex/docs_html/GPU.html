@@ -549,8 +549,8 @@ function requires separate code for the CPU and GPU implementations.</p>
 <span id="sec-gpu-memory"></span><h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline"></a></h1>
 <p>To provide portability and improve memory allocation performance,
 AMReX provides a number of memory pools.  When compiled without
-CUDA, all <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s use standard <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">new</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">delete</span></span></code>
-operators. With CUDA, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s each allocate with a
+GPU support, all <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s use standard <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">new</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">delete</span></span></code>
+operators. With GPU support, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s each allocate with a
 specific type of GPU memory:</p>
 <span id="tab-gpu-arena"></span><table class="docutils align-default" id="id5">
 <caption><span class="caption-number">Table 14 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
@@ -1560,6 +1560,11 @@ requested allocation, AMReX will call AMReX::Abort() with an error
 describing how much free memory there is and what was requested.</p></td>
 <td><p>Bool</p></td>
 <td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>the_arena_is_managed</p></td>
+<td><p>Whether <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> allocates managed memory.</p></td>
+<td><p>Bool</p></td>
+<td><p>True</p></td>
 </tr>
 </tbody>
 </table>
