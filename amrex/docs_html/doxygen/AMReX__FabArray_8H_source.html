@@ -996,7 +996,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArray_8H_source.html',''); i
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1FabArray.html#a202d8ada102cc6fc40749039c0e1f3a7">CMD_local_setVal_gpu</a> (<a class="code" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> x, <span class="keyword">const</span> CommMetaData&amp; thecmd, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp);</div>
 <div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1FabArray.html#a2064856b8d0efe0ae3e92d91a72f3274">CMD_remote_setVal_gpu</a> (<a class="code" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> x, <span class="keyword">const</span> CommMetaData&amp; thecmd, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp);</div>
 <div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160; </div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;<span class="preprocessor">#if ( defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &gt;= 10))</span></div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;<span class="preprocessor">#if defined(__CUDACC__)</span></div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160; </div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="keywordtype">void</span> FB_local_copy_cuda_graph_1 (<span class="keyword">const</span> FB&amp; TheFB, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp);</div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keywordtype">void</span> FB_local_copy_cuda_graph_n (<span class="keyword">const</span> FB&amp; TheFB, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp);</div>
@@ -1007,7 +1007,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArray_8H_source.html',''); i
 <div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160; </div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;<span class="preprocessor">#if ( defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &gt;= 10) )</span></div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;<span class="preprocessor">#if defined(__CUDACC__)</span></div>
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160; </div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    <span class="keywordtype">void</span> FB_pack_send_buffer_cuda_graph (<span class="keyword">const</span> FB&amp; TheFB, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
 <div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                                         <a class="code" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a>&amp; send_data,</div>

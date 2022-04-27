@@ -201,7 +201,7 @@ var searchData=
   ['amrex_5farrayofstructs_2eh_206',['AMReX_ArrayOfStructs.H',['../AMReX__ArrayOfStructs_8H.html',1,'']]],
   ['amrex_5fassert_207',['AMREX_ASSERT',['../AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007',1,'AMReX_BLassert.H']]],
   ['amrex_5fassert_5fwith_5fmessage_208',['AMREX_ASSERT_WITH_MESSAGE',['../AMReX__BLassert_8H.html#a8013eb3b1fc596632383f1bb7c40e92c',1,'AMReX_BLassert.H']]],
-  ['amrex_5fasyncarray_5fdelete_209',['amrex_asyncarray_delete',['../AMReX__GpuAsyncArray_8cpp.html#ad430cef5c8d738ad7c7f2d45db5fdc7b',1,'amrex_asyncarray_delete(cudaStream_t, cudaError_t, void *p):&#160;AMReX_GpuAsyncArray.cpp'],['../AMReX__GpuAsyncArray_8H.html#a984a9765863d3bfb90f7d695178858d2',1,'amrex_asyncarray_delete(cudaStream_t stream, cudaError_t error, void *p):&#160;AMReX_GpuAsyncArray.cpp']]],
+  ['amrex_5fasyncarray_5fdelete_209',['amrex_asyncarray_delete',['../AMReX__GpuAsyncArray_8cpp.html#ac595290cdba7bcb8b7a61deda2d8633f',1,'amrex_asyncarray_delete(void *p):&#160;AMReX_GpuAsyncArray.cpp'],['../AMReX__GpuAsyncArray_8H.html#ac595290cdba7bcb8b7a61deda2d8633f',1,'amrex_asyncarray_delete(void *p):&#160;AMReX_GpuAsyncArray.cpp']]],
   ['amrex_5fasyncout_2ecpp_210',['AMReX_AsyncOut.cpp',['../AMReX__AsyncOut_8cpp.html',1,'']]],
   ['amrex_5fasyncout_2eh_211',['AMReX_AsyncOut.H',['../AMReX__AsyncOut_8H.html',1,'']]],
   ['amrex_5fattribute_5fweak_212',['AMREX_ATTRIBUTE_WEAK',['../AMReX__Extension_8H.html#aca0e371f8327722548a19e84acabea8e',1,'AMReX_Extension.H']]],
