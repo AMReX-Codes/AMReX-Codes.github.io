@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1ParticleCopyOp.html#a3486942c2721d9199b20c57461b5d31a":[2,0,0,381,7],
+"structamrex_1_1ParticleCopyOp.html#a5fbf90399c57c4fb121c1aac5ac825d7":[2,0,0,381,5],
 "structamrex_1_1ParticleCopyOp.html#a6bcb299fb24ae49438d9aff35ff1fee5":[2,0,0,381,6],
 "structamrex_1_1ParticleCopyOp.html#a735fac73ae176c6e53ed172b8d122774":[2,0,0,381,3],
 "structamrex_1_1ParticleCopyOp.html#a8f1e282c58e59fdc95a3343a81ff0517":[2,0,0,381,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "structamrex_1_1StateData_1_1TimeInterval.html#add8128cb7af0fe0a981329a09e5fee37":[2,0,0,430,0,1],
 "structamrex_1_1StructOfArrays.html":[2,0,0,435],
 "structamrex_1_1StructOfArrays.html#a031f0da90c07aa74bbb399db39b378a8":[2,0,0,435,24],
-"structamrex_1_1StructOfArrays.html#a04e229de2a830b849d1900050b383f8d":[2,0,0,435,20],
-"structamrex_1_1StructOfArrays.html#a0713765da8db746084c4b0d7d9e3230b":[2,0,0,435,4],
-"structamrex_1_1StructOfArrays.html#a10c0a0dea4cddd7bfec98c2f14a2292e":[2,0,0,435,11]
+"structamrex_1_1StructOfArrays.html#a04e229de2a830b849d1900050b383f8d":[2,0,0,435,20]
 };

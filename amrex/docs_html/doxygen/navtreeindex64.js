@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1StructOfArrays.html#a0713765da8db746084c4b0d7d9e3230b":[2,0,0,435,4],
+"structamrex_1_1StructOfArrays.html#a10c0a0dea4cddd7bfec98c2f14a2292e":[2,0,0,435,11],
 "structamrex_1_1StructOfArrays.html#a2dcab6a884a05d6548547b8359758611":[2,0,0,435,15],
 "structamrex_1_1StructOfArrays.html#a32f1b56e5d68299fc49813648903e884":[2,0,0,435,5],
 "structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333":[2,0,0,435,0],
@@ -171,8 +173,8 @@ var NAVTREEINDEX64 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a138287a5f4ac861068205835ac07da5b":[2,0,0,3,9,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a2a0e1d6ab3b7c9ea94631a06b23a3f12":[2,0,0,3,9,2],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a4f76c22f32d585f22f2a80704c97b693":[2,0,0,3,9,0],
-"structamrex_1_1detail_1_1invoke__result.html":[2,0,0,3,11],
-"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[2,0,0,3,12],
-"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a474c374c08deeca905c2167f997f8b49":[2,0,0,3,12,0]
+"structamrex_1_1detail_1_1invoke__result.html":[2,0,0,3,11]
 };

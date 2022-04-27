@@ -20,10 +20,12 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "prepareForSolve", "classamrex_1_1MLEBNodeFDLaplacian.html#a31d3fbddab89750d2dc6212d4fe6fc9a", null ],
     [ "reflux", "classamrex_1_1MLEBNodeFDLaplacian.html#ab24f43cada8f1a1daa112e1c17ea635d", null ],
     [ "restriction", "classamrex_1_1MLEBNodeFDLaplacian.html#a79f111ea6c182c3ca749babb56729051", null ],
+    [ "setAlpha", "classamrex_1_1MLEBNodeFDLaplacian.html#a3eca729943f3b29da314d62bcb5937d4", null ],
     [ "setRZ", "classamrex_1_1MLEBNodeFDLaplacian.html#a7aa065c26dda1e04e7433b12f6c09648", null ],
     [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ab81f654708d4756a07160c7eaa343d48", null ],
     [ "m_phi_eb", "classamrex_1_1MLEBNodeFDLaplacian.html#aac77fee4af067d987c117ae62a73d9ce", null ],
     [ "m_rz", "classamrex_1_1MLEBNodeFDLaplacian.html#a37504f75c2cf6b138aa349ec76e7a078", null ],
+    [ "m_rz_alpha", "classamrex_1_1MLEBNodeFDLaplacian.html#a78cd20ff53eafb5fcd69e357e221d08a", null ],
     [ "m_s_phi_eb", "classamrex_1_1MLEBNodeFDLaplacian.html#ad48c24f09145f008fdbfce5f08f02351", null ],
     [ "m_sigma", "classamrex_1_1MLEBNodeFDLaplacian.html#a7d8ad0e6e2657c16c753f60cc17434af", null ]
 ];

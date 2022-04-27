@@ -1,5 +1,7 @@
 var NAVTREEINDEX65 =
 {
+"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[2,0,0,3,12],
+"structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a474c374c08deeca905c2167f997f8b49":[2,0,0,3,12,0],
 "structamrex_1_1detail_1_1tuple__cat__result.html":[2,0,0,3,14],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html":[2,0,0,3,15],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#aa86d70758c7267b714f7e84b0aa84f6c":[2,0,0,3,15,0],

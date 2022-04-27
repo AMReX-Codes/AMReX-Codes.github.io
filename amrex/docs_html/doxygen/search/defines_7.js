@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hoextrap_16858',['HOEXTRAP',['../AMReX__BC__TYPES_8H.html#ab3f2cb808193937a3651291078955292',1,'AMReX_BC_TYPES.H']]],
-  ['hoextrapcc_16859',['HOEXTRAPCC',['../AMReX__BC__TYPES_8H.html#a64b07b4a69819f26234681bd3d948681',1,'AMReX_BC_TYPES.H']]]
+  ['hoextrap_16862',['HOEXTRAP',['../AMReX__BC__TYPES_8H.html#ab3f2cb808193937a3651291078955292',1,'AMReX_BC_TYPES.H']]],
+  ['hoextrapcc_16863',['HOEXTRAPCC',['../AMReX__BC__TYPES_8H.html#a64b07b4a69819f26234681bd3d948681',1,'AMReX_BC_TYPES.H']]]
 ];
