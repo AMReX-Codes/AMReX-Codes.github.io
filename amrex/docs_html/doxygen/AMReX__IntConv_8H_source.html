@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('AMReX__IntConv_8H_source.html',''); in
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        To value;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">bool</span> swapEndian = (<span class="keywordtype">id</span>.order() != <a class="code" href="classamrex_1_1FPC.html#a9cad45e259106beaa8e4dc56f613bd06">amrex::FPC::NativeIntDescriptor</a>().<a class="code" href="classamrex_1_1IntDescriptor.html#af4fd11c6c5ff73c8937000fd60729ad4">order</a>());</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>; ++j) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            value = data[j];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            value = <span class="keyword">static_cast&lt;</span>To<span class="keyword">&gt;</span>(data[j]);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (swapEndian) value = <a class="code" href="namespaceamrex.html#ac25dfba1079e742467f752e4ee21450f">swapBytes</a>(value);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            os.write((<span class="keywordtype">char</span>*) &amp;value, <span class="keyword">sizeof</span>(To));</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('AMReX__IntConv_8H_source.html',''); in
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>; ++j) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            is.read((<span class="keywordtype">char</span>*) &amp;value, <span class="keyword">sizeof</span>(From));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (swapEndian) value = <a class="code" href="namespaceamrex.html#ac25dfba1079e742467f752e4ee21450f">swapBytes</a>(value);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            data[j] = value;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            data[j] = <span class="keyword">static_cast&lt;</span>To<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>

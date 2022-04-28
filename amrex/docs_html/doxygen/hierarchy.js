@@ -8,12 +8,12 @@ var hierarchy =
       [ "amrex::PODVector< amrex::GpuArray< amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM > >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::IntVect >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::NeighborCode >", "classamrex_1_1PODVector.html", null ],
-      [ "amrex::PODVector< amrex::Real >", "classamrex_1_1PODVector.html", null ],
+      [ "amrex::PODVector< amrex::STLtools::Triangle >", "classamrex_1_1PODVector.html", null ],
+      [ "amrex::PODVector< amrex::XDim3 >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< char >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< index_type >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< Int >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< int >", "classamrex_1_1PODVector.html", null ],
-      [ "amrex::PODVector< Real >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< std::size_t >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< unsigned int >", "classamrex_1_1PODVector.html", null ]
     ] ],
@@ -502,7 +502,8 @@ var hierarchy =
     [ "amrex::algoim::ImplicitIntegral< 0, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html", null ],
     [ "amrex::Scan::Type::Inclusive", "structamrex_1_1Scan_1_1Type_1_1Inclusive.html", null ],
     [ "amrex::EB2::IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", [
-      [ "amrex::EB2::IndexSpaceImp< G >", "classamrex_1_1EB2_1_1IndexSpaceImp.html", null ]
+      [ "amrex::EB2::IndexSpaceImp< G >", "classamrex_1_1EB2_1_1IndexSpaceImp.html", null ],
+      [ "amrex::EB2::IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html", null ]
     ] ],
     [ "amrex::IndexType", "classamrex_1_1IndexType.html", null ],
     [ "amrex::InSituBridge", "classamrex_1_1InSituBridge.html", [
@@ -631,7 +632,10 @@ var hierarchy =
     [ "amrex::LayoutData< RealTuple >", "classamrex_1_1LayoutData.html", null ],
     [ "amrex::Less< T >", "structamrex_1_1Less.html", null ],
     [ "amrex::EB2::Level", "classamrex_1_1EB2_1_1Level.html", [
-      [ "amrex::EB2::GShopLevel< G >", "classamrex_1_1EB2_1_1GShopLevel.html", null ]
+      [ "amrex::EB2::GShopLevel< G >", "classamrex_1_1EB2_1_1GShopLevel.html", null ],
+      [ "amrex::EB2::GShopLevel< STLtools >", "classamrex_1_1EB2_1_1GShopLevel.html", [
+        [ "amrex::EB2::STLLevel", "classamrex_1_1EB2_1_1STLLevel.html", null ]
+      ] ]
     ] ],
     [ "amrex::LevelBld", "classamrex_1_1LevelBld.html", null ],
     [ "amrex::DistributionMapping::LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", null ],
@@ -860,8 +864,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
     [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
+    [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],
@@ -938,6 +942,7 @@ var hierarchy =
     [ "TransformerGhost", "structTransformerGhost.html", null ],
     [ "TransformerVirt", "structTransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
+    [ "amrex::STLtools::Triangle", "structamrex_1_1STLtools_1_1Triangle.html", null ],
     [ "true_type", null, [
       [ "amrex::Conjunction<... >", "structamrex_1_1Conjunction.html", null ],
       [ "amrex::EB2::IsGPUable< ComplementIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_439214b16f92fe663637b42c0a5a5552.html", null ],
@@ -1000,6 +1005,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::EB2::Edge >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::GShopLevel< G > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::PolyTerm >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::EB2::STLLevel >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::FabArrayId >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::FArrayBox * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::FillBoxId >", "classamrex_1_1Vector.html", null ],

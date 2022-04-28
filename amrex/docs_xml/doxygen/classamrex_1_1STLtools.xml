@@ -3,10 +3,55 @@
   <compounddef id="classamrex_1_1STLtools" kind="class" language="C++" prot="public">
     <compoundname>amrex::STLtools</compoundname>
     <includes refid="AMReX__EB__STL__utils_8H" local="no">AMReX_EB_STL_utils.H</includes>
+    <innerclass refid="structamrex_1_1STLtools_1_1Triangle" prot="public">amrex::STLtools::Triangle</innerclass>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1a071a8fb28babb5af263c2aa74a0d979b" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::STLtools::allregular</definition>
+        <argsstring></argsstring>
+        <name>allregular</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="20" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1ad0e62c6693f9f0100b33547ddef29fa2" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::STLtools::mixedcells</definition>
+        <argsstring></argsstring>
+        <name>mixedcells</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="21" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1ad56ce2bf01da43520e270f2ae570f29a" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::STLtools::allcovered</definition>
+        <argsstring></argsstring>
+        <name>allcovered</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="22" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a5d7194fb3dbe6dc7065d997d1d96d41a" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; Real &gt;</type>
-        <definition>Gpu::PinnedVector&lt;Real&gt; amrex::STLtools::m_tri_pts_h</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1aee7f90ddbeb003f7aac15f3b448c4a87" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; <ref refid="structamrex_1_1STLtools_1_1Triangle" kindref="compound">Triangle</ref> &gt;</type>
+        <definition>Gpu::PinnedVector&lt;Triangle&gt; amrex::STLtools::m_tri_pts_h</definition>
         <argsstring></argsstring>
         <name>m_tri_pts_h</name>
         <briefdescription>
@@ -15,24 +60,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="21" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="21" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="26" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a2c7d4b0ae4c2b28e342e7120325eb927" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; Real &gt;</type>
-        <definition>Gpu::PinnedVector&lt;Real&gt; amrex::STLtools::m_tri_normals_h</definition>
-        <argsstring></argsstring>
-        <name>m_tri_normals_h</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="22" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="22" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1aa06aeb8518099faec116425d0da8d4c5" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; amrex::Real &gt;</type>
-        <definition>Gpu::DeviceVector&lt;amrex::Real&gt; amrex::STLtools::m_tri_pts_d</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1afe0f0661535402979c4c346235b957fc" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="structamrex_1_1STLtools_1_1Triangle" kindref="compound">Triangle</ref> &gt;</type>
+        <definition>Gpu::DeviceVector&lt;Triangle&gt; amrex::STLtools::m_tri_pts_d</definition>
         <argsstring></argsstring>
         <name>m_tri_pts_d</name>
         <briefdescription>
@@ -41,11 +73,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="25" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="25" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="27" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="27" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a0ab5ffb5e73a4e47293d27e9dd0ee8d2" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; amrex::Real &gt;</type>
-        <definition>Gpu::DeviceVector&lt;amrex::Real&gt; amrex::STLtools::m_tri_normals_d</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1accd39d6fb1aca77a857b0a4ad1e51ce4" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref> &gt;</type>
+        <definition>Gpu::DeviceVector&lt;XDim3&gt; amrex::STLtools::m_tri_normals_d</definition>
         <argsstring></argsstring>
         <name>m_tri_normals_d</name>
         <briefdescription>
@@ -54,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="26" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="26" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="28" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1STLtools_1a02713b3bdf5197301486a78cca290534" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -68,88 +100,155 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="28" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="28" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="30" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="30" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a9450b049ec5843e46dafd6c96fd6134e" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::STLtools::m_ndata_per_tri</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1aeeee47c9bfc52a2c01f6b6ad38043b49" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref></type>
+        <definition>XDim3 amrex::STLtools::m_ptmin</definition>
         <argsstring></argsstring>
-        <name>m_ndata_per_tri</name>
-        <initializer>=9</initializer>
+        <name>m_ptmin</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="29" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="29" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="32" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="32" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a1f2bd89c58a57b3469a3a1c9413a73e3" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::STLtools::m_ndata_per_normal</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1a135d25559bca9a4ec5dca07f1d08378b" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref></type>
+        <definition>XDim3 amrex::STLtools::m_ptmax</definition>
         <argsstring></argsstring>
-        <name>m_ndata_per_normal</name>
-        <initializer>=3</initializer>
+        <name>m_ptmax</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="30" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="30" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="33" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="33" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1af712b8f52c101abae0f7522baa256474" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::STLtools::m_nlines_per_facet</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1ab287060a4866170710f23abb884afe91" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref></type>
+        <definition>XDim3 amrex::STLtools::m_ptref</definition>
         <argsstring></argsstring>
-        <name>m_nlines_per_facet</name>
-        <initializer>=7</initializer>
+        <name>m_ptref</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="31" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="31" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="34" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="34" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1af40519dfb521db162bc2d5abf5b54de9" prot="private" static="no" mutable="no">
-        <type>Real</type>
-        <definition>Real amrex::STLtools::m_inside</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1ae50a6d985147b0ae607e688e120f2935" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::STLtools::m_boundry_is_outside</definition>
         <argsstring></argsstring>
-        <name>m_inside</name>
-        <initializer>= -1.0</initializer>
+        <name>m_boundry_is_outside</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="32" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="32" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="35" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1acfbab6be00333025dd5c9c2de279fdeb" prot="private" static="no" mutable="no">
-        <type>Real</type>
-        <definition>Real amrex::STLtools::m_outside</definition>
-        <argsstring></argsstring>
-        <name>m_outside</name>
-        <initializer>=  1.0</initializer>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1STLtools_1aa4f438da64a6ea3b7520112aac9f8fd3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::STLtools::read_ascii_stl_file</definition>
+        <argsstring>(std::string const &amp;fname, Real scale, Array&lt; Real, 3 &gt; const &amp;center, int reverse_normal)</argsstring>
+        <name>read_ascii_stl_file</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, 3 &gt; const &amp;</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>reverse_normal</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="33" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="33" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="37" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="168" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1aca6050ea96a310625fe20e9f9594680a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::STLtools::read_binary_stl_file</definition>
+        <argsstring>(std::string const &amp;fname, Real scale, Array&lt; Real, 3 &gt; const &amp;center, int reverse_normal)</argsstring>
+        <name>read_binary_stl_file</name>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, 3 &gt; const &amp;</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>reverse_normal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="39" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="120" bodyend="165"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1STLtools_1a140c630969931c24e52ecc0f07b3267a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1STLtools_1a137269ba305483a92bf01d19ec1fd07c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::STLtools::read_ascii_stl_file</definition>
-        <argsstring>(std::string fname)</argsstring>
-        <name>read_ascii_stl_file</name>
+        <definition>void amrex::STLtools::prepare</definition>
+        <argsstring>()</argsstring>
+        <name>prepare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="43" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="239" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1abde98e341a2edf239bfa987ce47ed2be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::STLtools::read_stl_file</definition>
+        <argsstring>(std::string const &amp;fname, Real scale, Array&lt; Real, 3 &gt; const &amp;center, int reverse_normal)</argsstring>
+        <name>read_stl_file</name>
         <param>
-          <type>std::string</type>
+          <type>std::string const &amp;</type>
           <declname>fname</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, 3 &gt; const &amp;</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>reverse_normal</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -157,24 +256,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="38" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="7" bodyend="93"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="47" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="95" bodyend="117"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1STLtools_1aaffd99fa9a6b2e0199925fb2999faa2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1STLtools_1a84b77230eb00f0ebb682f6751fc5184b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::STLtools::stl_to_markerfab</definition>
-        <argsstring>(MultiFab &amp;markerfab, Geometry geom, Real *point_outside)</argsstring>
-        <name>stl_to_markerfab</name>
+        <definition>void amrex::STLtools::fill</definition>
+        <argsstring>(MultiFab &amp;mf, IntVect const &amp;nghost, Geometry const &amp;geom, Real outside_value=-1._rt, Real inside_value=1._rt) const</argsstring>
+        <name>fill</name>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
-          <declname>markerfab</declname>
+          <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref></type>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
           <declname>geom</declname>
         </param>
         <param>
-          <type>Real *</type>
-          <declname>point_outside</declname>
+          <type>Real</type>
+          <declname>outside_value</declname>
+          <defval>-1._rt</defval>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>inside_value</declname>
+          <defval>1._rt</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -182,7 +291,137 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="39" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="95" bodyend="159"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="50" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="417" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1a6f8e64bd2b4c7935903ce0d5daa44f70" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::STLtools::getBoxType</definition>
+        <argsstring>(Box const &amp;box, Geometry const &amp;geom, RunOn) const</argsstring>
+        <name>getBoxType</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="53" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="462" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1aa864a279180d86f25903352bd93b9393" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::STLtools::isGPUable</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>isGPUable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="55" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1aefcdeb44ca0770702422b5f7eb289234" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::STLtools::fillFab</definition>
+        <argsstring>(BaseFab&lt; Real &gt; &amp;levelset, const Geometry &amp;geom, RunOn, Box const &amp;bounding_box) const</argsstring>
+        <name>fillFab</name>
+        <param>
+          <type><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt; Real &gt; &amp;</type>
+          <declname>levelset</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>bounding_box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="57" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="543" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1addae911a258f776f2bf862da19290953" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::STLtools::getIntercept</definition>
+        <argsstring>(Array&lt; Array4&lt; Real &gt;, AMREX_SPACEDIM &gt; const &amp;inter_arr, Array&lt; Array4&lt; EB2::Type_t const &gt;, AMREX_SPACEDIM &gt; const &amp;type_arr, Array4&lt; Real const &gt; const &amp;lst, Geometry const &amp;geom, RunOn, Box const &amp;bounding_box) const</argsstring>
+        <name>getIntercept</name>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt;, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>inter_arr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">EB2::Type_t</ref> const &gt;, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>type_arr</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>bounding_box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="60" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="586" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1STLtools_1a107f822bd5f003022a6b22e247126f0b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::STLtools::updateIntercept</definition>
+        <argsstring>(Array&lt; Array4&lt; Real &gt;, AMREX_SPACEDIM &gt; const &amp;inter_arr, Array&lt; Array4&lt; EB2::Type_t const &gt;, AMREX_SPACEDIM &gt; const &amp;type_arr, Array4&lt; Real const &gt; const &amp;lst, Geometry const &amp;geom) const</argsstring>
+        <name>updateIntercept</name>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt;, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>inter_arr</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">EB2::Type_t</ref> const &gt;, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>type_arr</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="65" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.cpp" bodystart="680" bodyend="734"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -190,48 +429,38 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="4">
+        <label>T</label>
+      </node>
       <node id="3">
-        <label>std::allocator&lt; Real &gt;</label>
+        <label>std::allocator&lt; amrex::STLtools::Triangle &gt;</label>
         <childnode refid="4" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="4">
-        <label>T</label>
-      </node>
-      <node id="5">
+      <node id="7">
         <label>Real</label>
       </node>
-      <node id="6">
-        <label>amrex::PODVector&lt; amrex::Real &gt;</label>
+      <node id="8">
+        <label>amrex::PODVector&lt; amrex::XDim3 &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>amrex::STLtools</label>
-        <link refid="classamrex_1_1STLtools"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>m_tri_pts_h</edgelabel>
-          <edgelabel>m_tri_normals_h</edgelabel>
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>m_tri_pts_d</edgelabel>
-          <edgelabel>m_tri_normals_d</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>m_inside</edgelabel>
-          <edgelabel>m_outside</edgelabel>
+          <edgelabel>const_reference</edgelabel>
+          <edgelabel>const_iterator</edgelabel>
+          <edgelabel>const_pointer</edgelabel>
+          <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="7">
-        <label>std::allocator&lt; amrex::Real &gt;</label>
+      <node id="9">
+        <label>std::allocator&lt; amrex::XDim3 &gt;</label>
         <childnode refid="4" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="2">
-        <label>amrex::PODVector&lt; Real &gt;</label>
+        <label>amrex::PODVector&lt; amrex::STLtools::Triangle &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
@@ -242,21 +471,64 @@
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>amrex::STLtools</label>
+        <link refid="classamrex_1_1STLtools"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_tri_pts_d</edgelabel>
+          <edgelabel>m_tri_pts_h</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_tri_normals_d</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_ptmin</edgelabel>
+          <edgelabel>m_ptmax</edgelabel>
+          <edgelabel>m_ptref</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::XDim3</label>
+        <link refid="structamrex_1_1XDim3"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>x</edgelabel>
+          <edgelabel>y</edgelabel>
+          <edgelabel>z</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::STLtools::Triangle</label>
+        <link refid="structamrex_1_1STLtools_1_1Triangle"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>v2</edgelabel>
+          <edgelabel>v3</edgelabel>
+          <edgelabel>v1</edgelabel>
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="17" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="16" bodyend="42"/>
+    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="14" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="13" bodyend="69"/>
     <listofallmembers>
-      <member refid="classamrex_1_1STLtools_1af40519dfb521db162bc2d5abf5b54de9" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_inside</name></member>
-      <member refid="classamrex_1_1STLtools_1a1f2bd89c58a57b3469a3a1c9413a73e3" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_ndata_per_normal</name></member>
-      <member refid="classamrex_1_1STLtools_1a9450b049ec5843e46dafd6c96fd6134e" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_ndata_per_tri</name></member>
-      <member refid="classamrex_1_1STLtools_1af712b8f52c101abae0f7522baa256474" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_nlines_per_facet</name></member>
+      <member refid="classamrex_1_1STLtools_1ad56ce2bf01da43520e270f2ae570f29a" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>allcovered</name></member>
+      <member refid="classamrex_1_1STLtools_1a071a8fb28babb5af263c2aa74a0d979b" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>allregular</name></member>
+      <member refid="classamrex_1_1STLtools_1a84b77230eb00f0ebb682f6751fc5184b" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>fill</name></member>
+      <member refid="classamrex_1_1STLtools_1aefcdeb44ca0770702422b5f7eb289234" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>fillFab</name></member>
+      <member refid="classamrex_1_1STLtools_1a6f8e64bd2b4c7935903ce0d5daa44f70" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>getBoxType</name></member>
+      <member refid="classamrex_1_1STLtools_1addae911a258f776f2bf862da19290953" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>getIntercept</name></member>
+      <member refid="classamrex_1_1STLtools_1aa864a279180d86f25903352bd93b9393" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>isGPUable</name></member>
+      <member refid="classamrex_1_1STLtools_1ae50a6d985147b0ae607e688e120f2935" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_boundry_is_outside</name></member>
       <member refid="classamrex_1_1STLtools_1a02713b3bdf5197301486a78cca290534" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_num_tri</name></member>
-      <member refid="classamrex_1_1STLtools_1acfbab6be00333025dd5c9c2de279fdeb" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_outside</name></member>
-      <member refid="classamrex_1_1STLtools_1a0ab5ffb5e73a4e47293d27e9dd0ee8d2" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_normals_d</name></member>
-      <member refid="classamrex_1_1STLtools_1a2c7d4b0ae4c2b28e342e7120325eb927" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_normals_h</name></member>
-      <member refid="classamrex_1_1STLtools_1aa06aeb8518099faec116425d0da8d4c5" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_d</name></member>
-      <member refid="classamrex_1_1STLtools_1a5d7194fb3dbe6dc7065d997d1d96d41a" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_h</name></member>
-      <member refid="classamrex_1_1STLtools_1a140c630969931c24e52ecc0f07b3267a" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>read_ascii_stl_file</name></member>
-      <member refid="classamrex_1_1STLtools_1aaffd99fa9a6b2e0199925fb2999faa2d" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>stl_to_markerfab</name></member>
+      <member refid="classamrex_1_1STLtools_1a135d25559bca9a4ec5dca07f1d08378b" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_ptmax</name></member>
+      <member refid="classamrex_1_1STLtools_1aeeee47c9bfc52a2c01f6b6ad38043b49" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_ptmin</name></member>
+      <member refid="classamrex_1_1STLtools_1ab287060a4866170710f23abb884afe91" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_ptref</name></member>
+      <member refid="classamrex_1_1STLtools_1accd39d6fb1aca77a857b0a4ad1e51ce4" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_normals_d</name></member>
+      <member refid="classamrex_1_1STLtools_1afe0f0661535402979c4c346235b957fc" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_d</name></member>
+      <member refid="classamrex_1_1STLtools_1aee7f90ddbeb003f7aac15f3b448c4a87" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_h</name></member>
+      <member refid="classamrex_1_1STLtools_1ad0e62c6693f9f0100b33547ddef29fa2" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>mixedcells</name></member>
+      <member refid="classamrex_1_1STLtools_1a137269ba305483a92bf01d19ec1fd07c" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>prepare</name></member>
+      <member refid="classamrex_1_1STLtools_1aa4f438da64a6ea3b7520112aac9f8fd3" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>read_ascii_stl_file</name></member>
+      <member refid="classamrex_1_1STLtools_1aca6050ea96a310625fe20e9f9594680a" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>read_binary_stl_file</name></member>
+      <member refid="classamrex_1_1STLtools_1abde98e341a2edf239bfa987ce47ed2be" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>read_stl_file</name></member>
+      <member refid="classamrex_1_1STLtools_1a107f822bd5f003022a6b22e247126f0b" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>updateIntercept</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

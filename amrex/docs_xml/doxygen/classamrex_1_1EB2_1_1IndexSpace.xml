@@ -3,6 +3,7 @@
   <compounddef id="classamrex_1_1EB2_1_1IndexSpace" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>amrex::EB2::IndexSpace</compoundname>
     <derivedcompoundref refid="classamrex_1_1EB2_1_1IndexSpaceImp" prot="public" virt="non-virtual">amrex::EB2::IndexSpaceImp&lt; G &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1EB2_1_1IndexSpaceSTL" prot="public" virt="non-virtual">amrex::EB2::IndexSpaceSTL</derivedcompoundref>
     <includes refid="AMReX__EB2_8H" local="no">AMReX_EB2.H</includes>
       <sectiondef kind="protected-static-attrib">
       <memberdef kind="variable" id="classamrex_1_1EB2_1_1IndexSpace_1a8534fa5e1a19e2e1f6fbcfb162a8460a" prot="protected" static="yes" mutable="no">
@@ -38,6 +39,7 @@
         <definition>virtual const Level&amp; amrex::EB2::IndexSpace::getLevel</definition>
         <argsstring>(const Geometry &amp;geom) const =0</argsstring>
         <name>getLevel</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a4106393335714ad0351ccf212d479cdf">getLevel</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a1eeaab4266c11166a3072eea2f888f52">getLevel</reimplementedby>
         <param>
           <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
@@ -56,6 +58,7 @@
         <definition>virtual const Geometry&amp; amrex::EB2::IndexSpace::getGeometry</definition>
         <argsstring>(const Box &amp;domain) const =0</argsstring>
         <name>getGeometry</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1afa9591f706505991554b147f3d2a137b">getGeometry</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1ac216284322537eefb6a3817e784a716d">getGeometry</reimplementedby>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
@@ -74,6 +77,7 @@
         <definition>virtual const Box&amp; amrex::EB2::IndexSpace::coarsestDomain</definition>
         <argsstring>() const =0</argsstring>
         <name>coarsestDomain</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1aaaa590849e7bb70c9f2b0814153b0e9e">coarsestDomain</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1aeb660db350d2d8ea329bdbd72e6f258d">coarsestDomain</reimplementedby>
         <briefdescription>
         </briefdescription>
@@ -100,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="34" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="44" bodyend="54"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="34" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="45" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpace_1aff6283995254b7660c80cd420d99886b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -117,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="37" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="57" bodyend="65"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="37" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp" bodystart="58" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1EB2_1_1IndexSpace_1a45b714be9d0d45f3ecb339085a73c6ec" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -190,6 +194,12 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>amrex::EB2::IndexSpaceSTL</label>
+        <link refid="classamrex_1_1EB2_1_1IndexSpaceSTL"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>amrex::EB2::IndexSpace</label>
         <link refid="classamrex_1_1EB2_1_1IndexSpace"/>
