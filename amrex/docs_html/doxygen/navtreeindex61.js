@@ -1,5 +1,13 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[2,0,0,270,21],
+"structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad":[2,0,0,270,2],
+"structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a":[2,0,0,270,11],
+"structamrex_1_1LPInfo.html#a4a7b1b85ca071370a9a98488be7dd5dc":[2,0,0,270,8],
+"structamrex_1_1LPInfo.html#a50655cba9bb48a63c7f0913e0ba8e21a":[2,0,0,270,6],
+"structamrex_1_1LPInfo.html#a5969085705dd33f4ed532326141d4c78":[2,0,0,270,3],
+"structamrex_1_1LPInfo.html#a60ea99c73f17852d0e41ea154b86841a":[2,0,0,270,16],
+"structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5":[2,0,0,270,14],
 "structamrex_1_1LPInfo.html#a92aabd4e7880bf08c8d9195ebf723512":[2,0,0,270,15],
 "structamrex_1_1LPInfo.html#a9c3339a35d018641c2d340cee364755e":[2,0,0,270,7],
 "structamrex_1_1LPInfo.html#aa03ac62b9591746b85f0591485a25335":[2,0,0,270,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8":[2,0,0,10,16,6],
 "structamrex_1_1NonLocalBC_1_1PolarFn2.html#a57390b7167c35581d52780017a21deaf":[2,0,0,10,16,4],
 "structamrex_1_1NonLocalBC_1_1PolarFn2.html#a647f7f2f14eb12e2e9230804fefa9529":[2,0,0,10,16,5],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac2d435417231ee6a45673a064745c6e0":[2,0,0,10,16,1],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac5e141b423187ca40c97d0c5d79b20dd":[2,0,0,10,16,2],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html":[2,0,0,10,17],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e":[2,0,0,10,17,3],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#ab250f91a5a4edccafa2f02ac39803fb2":[2,0,0,10,17,2],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#ae44bd6a19203f44e230332c21a8c6d2d":[2,0,0,10,17,0],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#af665917cfa8748aed265f540a86bfbf0":[2,0,0,10,17,1],
-"structamrex_1_1NonLocalBC_1_1Rotate90ClockWise.html":[2,0,0,10,18],
-"structamrex_1_1NonLocalBC_1_1Rotate90ClockWise.html#a2bdad25065ec09584969bdb1c45e7772":[2,0,0,10,18,1]
+"structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac2d435417231ee6a45673a064745c6e0":[2,0,0,10,16,1]
 };

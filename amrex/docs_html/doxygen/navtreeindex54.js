@@ -1,5 +1,13 @@
 var NAVTREEINDEX54 =
 {
+"functions_vars.html":[2,3,2,0],
+"functions_vars_a.html":[2,3,2,1],
+"functions_vars_b.html":[2,3,2,2],
+"functions_vars_c.html":[2,3,2,3],
+"functions_vars_d.html":[2,3,2,4],
+"functions_vars_e.html":[2,3,2,5],
+"functions_vars_f.html":[2,3,2,6],
+"functions_vars_g.html":[2,3,2,7],
 "functions_vars_h.html":[2,3,2,8],
 "functions_vars_i.html":[2,3,2,9],
 "functions_vars_j.html":[2,3,2,10],
@@ -24,8 +32,8 @@ var NAVTREEINDEX54 =
 "functions_y.html":[2,3,0,25],
 "functions_z.html":[2,3,0,26],
 "functions_~.html":[2,3,0,27],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -54,8 +62,8 @@ var NAVTREEINDEX54 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1,0],
 "globals_func.html":[3,1,1],
+"globals_func.html":[3,1,1,0],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX54 =
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__stringarr.html":[2,0,7,18],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__stringarr.html#a61fe4caeb4e56c80853d6f1b780b7107":[2,0,7,18,0],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__query__bool.html":[2,0,7,19],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__bool.html#a07401369ede8f5f13b856d53beee87dc":[2,0,7,19,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__int.html":[2,0,7,20],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__int.html#a444f902d4afc4cb2d7f23a3bb23dec25":[2,0,7,20,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__real.html":[2,0,7,21],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__real.html#a5a54a2c523b950cb67bf937c9fc20cf0":[2,0,7,21,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__string.html":[2,0,7,22],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__string.html#a391538d43a5a4e75b4c96a7b801ae0a0":[2,0,7,22,0],
-"interfacesdcquadrature__mod_1_1poly__eval.html":[2,0,11,0],
-"interfacesdcquadrature__mod_1_1poly__eval.html#aaf65ea1be7f3b8d7e5e1e99d79a91099":[2,0,11,0,1]
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__query__bool.html#a07401369ede8f5f13b856d53beee87dc":[2,0,7,19,0]
 };
