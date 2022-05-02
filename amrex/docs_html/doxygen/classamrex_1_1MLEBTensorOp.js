@@ -29,6 +29,7 @@ var classamrex_1_1MLEBTensorOp =
     [ "setEBHomogDirichlet", "classamrex_1_1MLEBTensorOp.html#a4fd75863f9948f2fc1c82336088f1d51", null ],
     [ "setEBShearViscosity", "classamrex_1_1MLEBTensorOp.html#a7c8d573df03c82ad4c1bbb8cec38f6aa", null ],
     [ "setEBShearViscosity", "classamrex_1_1MLEBTensorOp.html#a95ede9e3771119992924c74dbbd6a83d", null ],
+    [ "setEBShearViscosityWithInflow", "classamrex_1_1MLEBTensorOp.html#ad4578df66187d70b495bee32c9833c90", null ],
     [ "setShearViscosity", "classamrex_1_1MLEBTensorOp.html#a6907d1c2b45662f70a24cc5deef001ca", null ],
     [ "setShearViscosity", "classamrex_1_1MLEBTensorOp.html#a514d2b861724430a7a0d3182bbf26d06", null ],
     [ "update", "classamrex_1_1MLEBTensorOp.html#a3c4aac7c4c8cec7458fd1b5b3ac8c3f4", null ],
