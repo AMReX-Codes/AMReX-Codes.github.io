@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projection Methods &mdash; amrex-hydro 22.05-dev documentation</title>
+  <title>Projection Methods &mdash; amrex-hydro 22.06-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -31,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> amrex-hydro
           </a>
               <div class="version">
-                22.05-dev
+                22.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -107,7 +107,7 @@ at the interfaces of grid cells. Diffusive fluxes can be computed
 either implicit or explicit in time, and are added to the advective fluxes,
 and used, along with the source terms to update the state in time. An
 excellent introduction to these methods is provided by LeVeque’s book
-<span id="id1">[<a class="reference internal" href="references.html#id3" title="Randall J LeVeque. Finite volume methods for hyperbolic problems. Volume 31. Cambridge university press, 2002.">5</a>]</span>. The timestep for these methods is limited by all three processes
+<span id="id1">[<a class="reference internal" href="references.html#id3" title="Randall J LeVeque. Finite volume methods for hyperbolic problems. Volume 31. Cambridge university press, 2002.">LeVeque, 2002</a>]</span>. The timestep for these methods is limited by all three processes
 and their numerical implementation. Typically, advection terms are treated
 time-explicitly, and the time step will be constrained by the time
 it takes for the maximum characteristic speed to traverse one grid cell.
@@ -153,17 +153,17 @@ be computed as</p>
 <p>Because soundwaves are filtered, the timestep constraint now depends only
 on <span class="math notranslate nohighlight">\(|{{\bf U}}|\)</span>.</p>
 <p>Extensions to variable-density incompressible
-flows <span id="id2">[<a class="reference internal" href="references.html#id7" title="J. B. Bell and D. L. Marcus. A second-order projection method for variable-density flows. Journal of Computational Physics, 101:334-348, 1992.">4</a>]</span> involve a slightly different
+flows <span id="id2">[<a class="reference internal" href="references.html#id7" title="J. B. Bell and D. L. Marcus. A second-order projection method for variable-density flows. Journal of Computational Physics, 101:334-348, 1992.">Bell and Marcus, 1992</a>]</span> involve a slightly different
 decomposition of the velocity field and, as a result, a slightly
 different, variable-coefficient Poisson equation.
 There are also a variety of different ways
-to express what is being projected <span id="id3">[<a class="reference internal" href="references.html#id13" title="A. S. Almgren, J. B. Bell, and W. Y. Crutchfield. Approximate projection methods: part I. Inviscid analysis. SIAM J. Sci. Comput., 22(4):1139–59, 2000.">1</a>]</span>,
+to express what is being projected <span id="id3">[<a class="reference internal" href="references.html#id13" title="A. S. Almgren, J. B. Bell, and W. Y. Crutchfield. Approximate projection methods: part I. Inviscid analysis. SIAM J. Sci. Comput., 22(4):1139–59, 2000.">Almgren <em>et al.</em>, 2000</a>]</span>,
 and different discretizations of the divergence and gradient operators
 lead to slightly different mathematical properties of the methods
 (leading to “approximate
-projections” <span id="id4">[<a class="reference internal" href="references.html#id11" title="A. S. Almgren, J. B. Bell, and W. G. Szymczak. A numerical method for the incompressible Navier-Stokes equations based on an approximate projection. SIAM J. Sci. Comput., 17(2):358–369, March 1996.">2</a>]</span>).</p>
+projections” <span id="id4">[<a class="reference internal" href="references.html#id11" title="A. S. Almgren, J. B. Bell, and W. G. Szymczak. A numerical method for the incompressible Navier-Stokes equations based on an approximate projection. SIAM J. Sci. Comput., 17(2):358–369, March 1996.">Almgren <em>et al.</em>, 1996</a>]</span>).</p>
 <p>For second-order methods, two projections are typically done per timestep.
-First, the ‘MAC’ projection <span id="id5">[<a class="reference internal" href="references.html#id12" title="J. B. Bell, P. Colella, and L. H. Howell. An efficient second-order projection method for viscous incompressible flow. In Proceedings of the Tenth AIAA Computational Fluid Dynamics Conference, 360–367. AIAA, June 1991.">3</a>]</span>
+First, the ‘MAC’ projection <span id="id5">[<a class="reference internal" href="references.html#id12" title="J. B. Bell, P. Colella, and L. H. Howell. An efficient second-order projection method for viscous incompressible flow. In Proceedings of the Tenth AIAA Computational Fluid Dynamics Conference, 360–367. AIAA, June 1991.">Bell <em>et al.</em>, 1991</a>]</span>
 operates on the half-time, edge-centered advective velocities, making
 sure that they satisfy the divergence constraint. These advective
 velocities are used to construct the fluxes through the interfaces to
@@ -176,7 +176,7 @@ velocity fields. The projection classes use AMReX’s linear solvers internally.
 Both classes provide member functions <code class="docutils literal notranslate"><span class="pre">getLinOp</span></code> and <code class="docutils literal notranslate"><span class="pre">getMLMG</span></code> to
 access the underlying objects and allow for modification of the linear operator
 and multigrid properties if needed.
-Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v22.05-dev)"><span>Linear Solvers</span></a>
+Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v22.06-dev)"><span>Linear Solvers</span></a>
 section of AMReX’s documentation.</p>
 <p>Both Projector classes provide the following parameters, which can be set in an
 inputs file or on the command line. For the MacProjector, these must be preceeded by

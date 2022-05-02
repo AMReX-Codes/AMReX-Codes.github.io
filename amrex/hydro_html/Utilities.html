@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helper functions &mdash; amrex-hydro 22.05-dev documentation</title>
+  <title>Helper functions &mdash; amrex-hydro 22.06-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -31,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> amrex-hydro
           </a>
               <div class="version">
-                22.05-dev
+                22.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -123,6 +123,8 @@
 \newcommand{\DMAC}{E \rightarrow C}
 \newcommand{\U}{\boldsymbol{U}}
 \newcommand{\F}{\boldsymbol{F}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\shalf}{\sfrac{1}{2}}
 \newcommand\hathat[1]{\widehat{\widehat{#1}}}
 \newcommand\hairbow[1]{\overset{\bowtie}{#1}}
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
@@ -158,7 +160,7 @@ For cells where this calculation would involve all regular cells (i.e. no cut or
 there are second-order and fourth-order stencils.</p>
 <p>For (EB)Godunov, the default is monotonicity-limited fourth-order slopes.
 For (EB)MOL, the default is monotonicity-limited second-order slopes.
-Default limiting is as described in Colella (1985) <span id="id2">[<a class="reference internal" href="references.html#id15" title="P. Colella and H. M. Glaz. Efficient solution algorithms for the Riemann problem for real gases. Journal of Computational Physics, 59:264-289, June 1985. doi:10.1016/0021-9991(85)90146-9.">8</a>]</span>,
+Default limiting is as described in Colella (1985) <span id="id2">[<a class="reference internal" href="references.html#id15" title="P. Colella and H. M. Glaz. Efficient solution algorithms for the Riemann problem for real gases. Journal of Computational Physics, 59:264-289, June 1985. doi:10.1016/0021-9991(85)90146-9.">Colella and Glaz, 1985</a>]</span>,
 where limiting is done on each component of the velocity individually.</p>
 </div>
 <div class="section" id="eb-slopes">
@@ -182,7 +184,7 @@ that enforces no new maxima or minima when the state is predicted to the face ce
 <div class="section" id="boundary-conditions">
 <span id="bcs"></span><h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline"></a></h2>
 <p>AMReX-Hydro uses underlying AMReX functionality in implementing boundary conditions
-(see AMReX’s documentation section <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-boundary" title="(in amrex v22.05-dev)"><span>Boundary Conditions</span></a>).
+(see AMReX’s documentation section <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-boundary" title="(in amrex v22.06-dev)"><span>Boundary Conditions</span></a>).
 Physical boundary conditions, such as
 inflow, outflow, slip/no-slip walls, etc., and are ultimately linked to
 mathematical Dirichlet or Neumann conditions.
@@ -221,7 +223,7 @@ even reflection about the boundary (<code class="docutils literal notranslate"><
 <ol class="arabic simple">
 <li><p>Same as pre-MAC</p></li>
 <li><p>Same as pre-MAC</p></li>
-<li><p>Here, we do not impose the no-outflow-at-inflow condition quite as described above;
+<li><p>Here, we do not impose the <span class="target" id="no-inflow-at-outflow">no-inflow-at-outflow</span> condition quite as described above;
 instead we enforce that if <span class="math notranslate nohighlight">\(u^{MAC}\)</span> on an outflow face is inflowing,
 the normal velocity component must be outflowing or zero. We do this by imposing</p>
 <ul class="simple">
@@ -267,6 +269,8 @@ functions <a class="reference external" href="https://amrex-codes.github.io/amre
 \newcommand{\DMAC}{E \rightarrow C}
 \newcommand{\U}{\boldsymbol{U}}
 \newcommand{\F}{\boldsymbol{F}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\shalf}{\sfrac{1}{2}}
 \newcommand\hathat[1]{\widehat{\widehat{#1}}}
 \newcommand\hairbow[1]{\overset{\bowtie}{#1}}
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
@@ -360,6 +364,8 @@ Here <span class="math notranslate nohighlight">\(\alpha_{i-\frac{1}{2},j,k}\)</
 \newcommand{\DMAC}{E \rightarrow C}
 \newcommand{\U}{\boldsymbol{U}}
 \newcommand{\F}{\boldsymbol{F}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\shalf}{\sfrac{1}{2}}
 \newcommand\hathat[1]{\widehat{\widehat{#1}}}
 \newcommand\hairbow[1]{\overset{\bowtie}{#1}}
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
