@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['redistribution_8808',['Redistribution',['../namespaceRedistribution.html',1,'']]],
-  ['regionsprofstats_8809',['RegionsProfStats',['https://amrex-codes.github.io/amrex/doxygen/structRegionsProfStats_1_1DataBlock.html',1,'']]]
+  ['redistribution_8811',['Redistribution',['../namespaceRedistribution.html',1,'']]],
+  ['regionsprofstats_8812',['RegionsProfStats',['https://amrex-codes.github.io/amrex/doxygen/structRegionsProfStats_1_1DataBlock.html',1,'']]]
 ];
