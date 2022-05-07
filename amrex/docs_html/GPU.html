@@ -74,7 +74,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#gpuarray-array1d-array2d-and-array3d">GpuArray, Array1D, Array2D, and Array3D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#asyncarray">AsyncArray</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gpu-vectors">Gpu Vectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#amrex-min-and-amrex-max">amrex::min and amrex::max</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multifab-reductions">MultiFab Reductions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#box-intvect-and-indextype">Box, IntVect and IndexType</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometry">Geometry</a></li>
@@ -652,9 +651,7 @@ version and/or device access.</p>
 that are important for programming GPUs.</p>
 <div class="section" id="gpuarray-array1d-array2d-and-array3d">
 <h2>GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#gpuarray-array1d-array2d-and-array3d" title="Permalink to this headline"></a></h2>
-<p>As we have mentioned in <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code>
-cannot be used in device code, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>,
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array1D</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array2D</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array3D</span></span></code> are trivial types
+<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array1D</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array2D</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array3D</span></span></code> are trivial types
 that work on both host and device. They can be used whenever a fixed size array
 needs to be passed to the GPU or created on GPU.  A variety of
 functions in AMReX return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> and they can be
@@ -762,15 +759,6 @@ race conditions with concurrent GPU kernels.</p>
 constructed inside of an MFIter loop with GPU kernels and great care should
 be used when accessing <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code> data on GPUs to avoid race
 conditions.</p>
-</div>
-<div class="section" id="amrex-min-and-amrex-max">
-<h2>amrex::min and amrex::max<a class="headerlink" href="#amrex-min-and-amrex-max" title="Permalink to this headline"></a></h2>
-<p>GPU versions of <code class="docutils literal notranslate"><span class="pre">std::min</span></code> and <code class="docutils literal notranslate"><span class="pre">std::max</span></code> are not provided in CUDA.
-So, AMReX provides a templated <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">min</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">max</span></span></code> with host and
-device versions to allow functionality on GPUs. Invoke the explicitly
-namespaced <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">min</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">B</span></span><span class="punctuation"><span class="pre">)</span></span></code> or <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">max</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">x</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">y</span></span><span class="punctuation"><span class="pre">)</span></span></code> to use the
-GPU safe implementations. These functions are variadic, so they can take
-any number of arguments and can be invoked with any standard data type.</p>
 </div>
 <div class="section" id="multifab-reductions">
 <h2>MultiFab Reductions<a class="headerlink" href="#multifab-reductions" title="Permalink to this headline"></a></h2>
