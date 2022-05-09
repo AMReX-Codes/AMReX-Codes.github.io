@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HYPRE for ABecLaplacian_C Tutorial &mdash; amrex 22.05-dev documentation</title>
+  <title>HYPRE for ABecLaplacian_C Tutorial &mdash; amrex 22.06-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -18,7 +18,9 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ML/PYTORCH" href="ML_Tutorial.html" />
+    <link rel="prev" title="LinearSolvers" href="LinearSolvers_Tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.05-dev
+                22.06-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,14 +44,22 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
 </ul>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HYPRE for ABecLaplacian_C Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-with-hypre-via-gnumake">Building with HYPRE via GNUMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-with-hypre-via-cmake">Building with HYPRE via CMake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#amrex-with-hypre-via-spack">AMReX with HYPRE via Spack</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
@@ -72,6 +82,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="LinearSolvers_Tutorial.html">LinearSolvers</a> &raquo;</li>
       <li>HYPRE for ABecLaplacian_C Tutorial</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Hypre_Install.rst.txt" rel="nofollow"> View page source</a>
@@ -126,7 +137,7 @@ as input.</p>
 </div>
 </li>
 <li><p>To verify the HYPRE solver has been used, look for the line,</p>
-<div class="highlight-literal notranslate"><div class="highlight"><pre><span></span>HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05</span>
 </pre></div>
 </div>
 <p>in the output. For this example, the code should quickly reach the end with
@@ -174,7 +185,7 @@ the name of the executable followed by the inputs file, <code class="docutils li
 </div>
 </li>
 <li><p>To verify the HYPRE solver has been used, look for the line,</p>
-<div class="highlight-literal notranslate"><div class="highlight"><pre><span></span>HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05</span>
 </pre></div>
 </div>
 <p>in the output. For this example, the code should quickly reach the end with
@@ -246,7 +257,7 @@ and call the executable with the <code class="docutils literal notranslate"><spa
 </div>
 </li>
 <li><p>To verify the HYPRE solver has been used, look for the line,</p>
-<div class="highlight-literal notranslate"><div class="highlight"><pre><span></span>HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HYPRE BoomerAMG: Num. iterations = 4; Relative residual = 3.92236062e-05</span>
 </pre></div>
 </div>
 <p>in the output. For this example, the code should quickly reach the end with
@@ -260,7 +271,10 @@ with the AMReX finalized output.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LinearSolvers_Tutorial.html" class="btn btn-neutral float-left" title="LinearSolvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ML_Tutorial.html" class="btn btn-neutral float-right" title="ML/PYTORCH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
