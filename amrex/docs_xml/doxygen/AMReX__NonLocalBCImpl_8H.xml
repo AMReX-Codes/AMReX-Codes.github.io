@@ -2108,7 +2108,7 @@
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>szbuffer<sp/>=<sp/>(recv_data[N_rcvs-1]-recv_data[0])<sp/>+<sp/>recv_size[N_rcvs-1];</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pbuffer<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e" kindref="member">alloc</ref>(szbuffer);</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,recv_data[0],recv_data[0]+szbuffer,pbuffer);</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kindref="member">Gpu::synchronize</ref>();</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="302"><highlight class="normal"></highlight></codeline>
@@ -2139,7 +2139,7 @@
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tag.<ref refid="structamrex_1_1NonLocalBC_1_1Array4Array4Box_1ab6e635807a682a3effe1f6b58ee0ba50" kindref="member">dfab</ref>(i,j,k,scomp+n)<sp/>=<sp/>proj(tag.<ref refid="structamrex_1_1NonLocalBC_1_1Array4Array4Box_1aae3afb364f52453a52644d95c56f846e" kindref="member">sfab</ref>,<sp/>si<sp/>,n);</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"></highlight></codeline>
-<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>There<sp/>is<sp/>Gpu::synchronize<sp/>in<sp/>ParallelFor<sp/>above</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>There<sp/>is<sp/>Gpu::streamSynchronize<sp/>in<sp/>ParallelFor<sp/>above</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"></highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pbuffer<sp/>!=<sp/>recv_data[0])<sp/>{</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(pbuffer);</highlight></codeline>

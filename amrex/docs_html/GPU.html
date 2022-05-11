@@ -89,8 +89,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#kernel-launch-details">Kernel launch details</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#stream-and-synchronization">Stream and Synchronization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#an-example-of-migrating-to-gpu">An Example of Migrating to GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#assertions-error-checking-and-synchronization">Assertions, Error Checking and Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assertions-and-error-checking">Assertions and Error Checking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#particle-support">Particle Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#profiling-with-gpus">Profiling with GPUs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#performance-tips">Performance Tips</a></li>
@@ -143,7 +144,7 @@ uses the native programming language for GPUs: CUDA for NVIDIA, HIP
 for AMD and DPC++ for Intel. This will be designated with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/DPC++</span></code>
 throughout the documentation.  However, application teams can also use
 OpenACC or OpenMP in their individual codes.</p>
-<p>At this time, AMReX does not support cross-native language compliation
+<p>At this time, AMReX does not support cross-native language compilation
 (HIP for non-AMD systems and DPC++ for non Intel systems).  It may work with
 a given version, but AMReX does not track or guarantee such functionality.</p>
 <p>When running AMReX on a CPU system, the parallelization strategy is a
@@ -1199,7 +1200,7 @@ the destructor of <code class="code cpp c++ docutils literal notranslate"><span 
 inside of an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop will complete before code outside of
 the loop is executed. Any CUDA kernel launches made outside of an
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop must ensure appropriate device synchronization
-occurs. This can be done by calling <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">synchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code>.</p>
+occurs. This can be done by calling <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code>.</p>
 <p>CUDA supports multiple streams and kernels. Kernels launched in the
 same stream are executed sequentially, but different streams of kernel
 launches may be run in parallel.  For each iteration of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code>,
@@ -1285,6 +1286,41 @@ should be added to MFIter loops that contain GPU work, unless users specifically
 the performance or are designing more complex workflows that require OpenMP.</p>
 </div>
 </div>
+<div class="section" id="stream-and-synchronization">
+<h1>Stream and Synchronization<a class="headerlink" href="#stream-and-synchronization" title="Permalink to this headline"></a></h1>
+<p>As mentioned in Section <a class="reference internal" href="#sec-gpu-overview"><span class="std std-ref">Overview of AMReX GPU Strategy</span></a>, AMReX uses a number of GPU
+streams that are either CUDA streams or HIP streams or SYCL queues.  Many
+GPU functions (e.g., <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">copyAsync</span></span></code>) are
+asynchronous with respect to the host.  To facilitate synchronization that
+is sometimes necessary, AMReX provides <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code> and
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronizeAll</span></span><span class="punctuation"><span class="pre">()</span></span></code> to synchronize the current stream and all
+AMReX streams, respectively.  For performance reasons, one should try to
+minimize the number of synchronization calls.  For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// The synchronous version is NOT recommended</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+
+<span class="c1">// NOT recommended because of unnecessary synchronization</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+
+<span class="c1">// recommended</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">copyAsync</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">deviceToHost</span><span class="p">,</span> <span class="p">....);</span>
+<span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>In addition to stream synchronization, there is also
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">synchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code> that will perform a device wide synchronization.
+However, a device wide synchronization is usually too excessive and it might
+interfere with other libraries (e.g., MPI).</p>
+</div>
 <div class="section" id="an-example-of-migrating-to-gpu">
 <span id="sec-gpu-example"></span><h1>An Example of Migrating to GPU<a class="headerlink" href="#an-example-of-migrating-to-gpu" title="Permalink to this headline"></a></h1>
 <p>The nature of GPU programming poses difficulties for a number
@@ -1364,8 +1400,8 @@ portable way.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="assertions-error-checking-and-synchronization">
-<span id="sec-gpu-assertion"></span><h1>Assertions, Error Checking and Synchronization<a class="headerlink" href="#assertions-error-checking-and-synchronization" title="Permalink to this headline"></a></h1>
+<div class="section" id="assertions-and-error-checking">
+<span id="sec-gpu-assertion"></span><h1>Assertions and Error Checking<a class="headerlink" href="#assertions-and-error-checking" title="Permalink to this headline"></a></h1>
 <p>To help debugging, we often use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Assert</span></span></code> and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Abort</span></span></code>.  These functions are GPU safe and can be used in
 GPU kernels.  However, implementing these functions requires additional
@@ -1385,10 +1421,11 @@ before continuing work.</p>
 can be difficult.  Even if GPU kernels launched earlier in the code
 result in a CUDA error, the error may not be output at a nearby call to
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMREX_GPU_ERROR_CHECK</span></span><span class="punctuation"><span class="pre">()</span></span></code> by the CPU.  When tracking down a CUDA
-launch error, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">synchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code> and
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code> can be used to synchronize
-the device or the CUDA stream, respectively, and track down the specific
-launch that causes the error.</p>
+launch error, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">synchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code>,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronize</span></span><span class="punctuation"><span class="pre">()</span></span></code>, or <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">streamSynchronizeAll</span></span><span class="punctuation"><span class="pre">()</span></span></code> can
+be used to synchronize the device, the current GPU stream, or all GPU
+streams, respectively, and track down the specific launch that causes the
+error.</p>
 </div>
 <div class="section" id="particle-support">
 <h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this headline"></a></h1>

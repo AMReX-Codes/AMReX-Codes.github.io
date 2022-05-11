@@ -35,10 +35,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="90" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="90" bodyend="98"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a6db6e023f51c3cb7dc4ac1c85d467950" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1aa7b1971427e83d1d8f91f30ad942d2c5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;::Copy</definition>
-        <argsstring>(T &amp;Y, const T &amp;Other, bool Grow=true)</argsstring>
+        <argsstring>(T &amp;Y, const T &amp;Other, const Vector&lt; int &gt; scomp={}, const Vector&lt; int &gt; ncomp={}, bool Grow=true)</argsstring>
         <name>Copy</name>
         <param>
           <type>T &amp;</type>
@@ -47,6 +47,16 @@
         <param>
           <type>const T &amp;</type>
           <declname>Other</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+          <declname>scomp</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+          <declname>ncomp</declname>
+          <defval>{}</defval>
         </param>
         <param>
           <type>bool</type>
@@ -59,12 +69,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="100" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="100" bodyend="108"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="100" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="100" bodyend="113"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a86ae3987067b43e91393997b5c250792" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1afebe5d5bd0658ac4b01a6c6300cd9bbb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;::Saxpy</definition>
-        <argsstring>(T &amp;Y, const amrex::Real a, const T &amp;X, bool Grow=false)</argsstring>
+        <argsstring>(T &amp;Y, const amrex::Real a, const T &amp;X, const Vector&lt; int &gt; scomp={}, const Vector&lt; int &gt; ncomp={}, bool Grow=false)</argsstring>
         <name>Saxpy</name>
         <param>
           <type>T &amp;</type>
@@ -79,6 +89,16 @@
           <declname>X</declname>
         </param>
         <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+          <declname>scomp</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+          <declname>ncomp</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
           <type>bool</type>
           <declname>Grow</declname>
           <defval>false</defval>
@@ -89,18 +109,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="110" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="110" bodyend="118"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="115" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="115" bodyend="128"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="88" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="87" bodyend="120"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" line="88" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntegratorBase.H" bodystart="87" bodyend="130"/>
     <listofallmembers>
-      <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a6db6e023f51c3cb7dc4ac1c85d467950" prot="public" virt="non-virtual"><scope>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;</scope><name>Copy</name></member>
+      <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1aa7b1971427e83d1d8f91f30ad942d2c5" prot="public" virt="non-virtual"><scope>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;</scope><name>Copy</name></member>
       <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a8d75a5692239f0e1c9ad6f2c7e22a34a" prot="public" virt="non-virtual"><scope>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;</scope><name>CreateLike</name></member>
-      <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a86ae3987067b43e91393997b5c250792" prot="public" virt="non-virtual"><scope>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;</scope><name>Saxpy</name></member>
+      <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1afebe5d5bd0658ac4b01a6c6300cd9bbb" prot="public" virt="non-virtual"><scope>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;</scope><name>Saxpy</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

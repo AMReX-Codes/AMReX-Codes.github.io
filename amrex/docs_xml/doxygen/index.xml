@@ -3204,7 +3204,6 @@
     <member refid="classamrex_1_1Gpu_1_1Device_1aea19aa89a556ee88fe67f6067c0abacd" kind="function"><name>Initialize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a5bf574c7d8adff1fc0593e06d9007078" kind="function"><name>Finalize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" kind="function"><name>gpuStream</name></member>
-    <member refid="classamrex_1_1Gpu_1_1Device_1ab63f3b80987088fbbf0a3a14e7b34f41" kind="function"><name>nullStream</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a659a046032f304e13547b3b633e7c10a" kind="function"><name>cudaStream</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kind="function"><name>numGpuStreams</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kind="function"><name>setStreamIndex</name></member>
@@ -3216,6 +3215,7 @@
     <member refid="classamrex_1_1Gpu_1_1Device_1aaad1273663de56c788b3809ed7537a4e" kind="function"><name>numDevicesUsed</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" kind="function"><name>synchronize</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a67c55a7d25eb5f5fdec62ffcc9c0dccf" kind="function"><name>streamSynchronize</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a95bff02196b80d848b89b92166e704b9" kind="function"><name>streamSynchronizeAll</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1ae88f180144c332b3c64ce46584484b10" kind="function"><name>mem_advise_set_preferred</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1aa2984b48d13a570d6987968741a04741" kind="function"><name>mem_advise_set_readonly</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a6693f142f50d3d5683ee44892c3f155a" kind="function"><name>setNumThreadsMin</name></member>
@@ -5476,13 +5476,13 @@
   </compound>
   <compound refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511" kind="struct"><name>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::MultiFab, T &gt;::value &gt;::type &gt;</name>
     <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511_1a47993e638b098a95bcfdfaca47058eb0" kind="function"><name>CreateLike</name></member>
-    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511_1ad2577132a90ec5ee95abeac9bca03bcd" kind="function"><name>Copy</name></member>
-    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511_1ad0a20ed2967f5654590f09308b379be2" kind="function"><name>Saxpy</name></member>
+    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511_1ae7e9955973785a29d321ba4680fafce3" kind="function"><name>Copy</name></member>
+    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511_1ab8dfe9dbb67acf14bbbfe3c2b756fa3d" kind="function"><name>Saxpy</name></member>
   </compound>
   <compound refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089" kind="struct"><name>amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt;::value &gt;::type &gt;</name>
     <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a8d75a5692239f0e1c9ad6f2c7e22a34a" kind="function"><name>CreateLike</name></member>
-    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a6db6e023f51c3cb7dc4ac1c85d467950" kind="function"><name>Copy</name></member>
-    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1a86ae3987067b43e91393997b5c250792" kind="function"><name>Saxpy</name></member>
+    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1aa7b1971427e83d1d8f91f30ad942d2c5" kind="function"><name>Copy</name></member>
+    <member refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089_1afebe5d5bd0658ac4b01a6c6300cd9bbb" kind="function"><name>Saxpy</name></member>
   </compound>
   <compound refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrDataAdaptor::InternalsType</name>
     <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ae53eccbcdd637ad1dcbdc0be4e895dc8" kind="variable"><name>SimData</name></member>
@@ -12886,16 +12886,16 @@
     <member refid="namespaceamrex_1_1Gpu_1a73a7f12036e7cda0332aec8185d4c330" kind="function"><name>notInGraphRegion</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a092d5e2b6a052f9620c9d3c3757ed1be" kind="function"><name>setGraphRegion</name></member>
     <member refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kind="function"><name>gpuStream</name></member>
-    <member refid="namespaceamrex_1_1Gpu_1ac8f41ed721849dbcee0f3117395d0b15" kind="function"><name>nullStream</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a920dd19f186b2276d9bbdb14d117565c" kind="function"><name>numGpuStreams</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kind="function"><name>synchronize</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kind="function"><name>streamSynchronize</name></member>
-    <member refid="namespaceamrex_1_1Gpu_1aa720ba8e7b622f0897659c64d23d5db4" kind="function"><name>htod_memcpy</name></member>
-    <member refid="namespaceamrex_1_1Gpu_1aa443a27f05e81db793b131d3fc0b101c" kind="function"><name>dtoh_memcpy</name></member>
-    <member refid="namespaceamrex_1_1Gpu_1ab695bddeb3cc727225d95a1826472ae4" kind="function"><name>dtod_memcpy</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a78acbb676e94c674fa5ec73508cef459" kind="function"><name>streamSynchronizeAll</name></member>
     <member refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kind="function"><name>htod_memcpy_async</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" kind="function"><name>dtoh_memcpy_async</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a00026ef5f8505586ed52acbbc11fdf91" kind="function"><name>dtod_memcpy_async</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1aa720ba8e7b622f0897659c64d23d5db4" kind="function"><name>htod_memcpy</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1aa443a27f05e81db793b131d3fc0b101c" kind="function"><name>dtoh_memcpy</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1ab695bddeb3cc727225d95a1826472ae4" kind="function"><name>dtod_memcpy</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a8e72d3661b320758c41e4a548b80beec" kind="function"><name>ErrorCheck</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a9ac3f1c6e71f0842b8f152fce7e4a7fb" kind="function"><name>numThreadsPerBlockParallelFor</name></member>
     <member refid="namespaceamrex_1_1Gpu_1ae2cf1d72cec1f6929ea0405c70ce2f45" kind="function"><name>getThreadBox</name></member>

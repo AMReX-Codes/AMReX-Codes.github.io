@@ -2905,11 +2905,11 @@
 <codeline lineno="184"><highlight class="normal"></highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PC::IntVector<sp/>write_int_comp_d(write_int_comp.size());</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>PC::IntVector<sp/>write_real_comp_d(write_real_comp.size());</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>write_int_comp.begin(),<sp/>write_int_comp.end(),</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_int_comp_d.begin());</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>write_real_comp.begin(),<sp/>write_real_comp.end(),</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp_d.begin());</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kindref="member">Gpu::Device::synchronize</ref>();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>write_int_comp.begin(),<sp/>write_int_comp.end(),</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_int_comp_d.begin());</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>,<sp/>write_real_comp.begin(),<sp/>write_real_comp.end(),</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>write_real_comp_d.begin());</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::Device::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>write_int_comp_d_ptr<sp/>=<sp/>write_int_comp_d.data();</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>write_real_comp_d_ptr<sp/>=<sp/>write_real_comp_d.data();</highlight></codeline>
@@ -2964,9 +2964,9 @@
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poffset<sp/>+=<sp/>num_copies;</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="245"><highlight class="normal"></highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>idata_d.begin(),<sp/>idata_d.end(),<sp/>idata.begin());</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>rdata_d.begin(),<sp/>rdata_d.end(),<sp/>rdata.begin());</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kindref="member">Gpu::Device::synchronize</ref>();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>idata_d.begin(),<sp/>idata_d.end(),<sp/>idata.begin());</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>,<sp/>rdata_d.begin(),<sp/>rdata_d.end(),<sp/>rdata.begin());</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::Device::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="249"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>PC&gt;</highlight></codeline>
@@ -3096,7 +3096,7 @@
 <codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="377"><highlight class="normal"></highlight></codeline>
-<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kindref="member">Gpu::Device::synchronize</ref>();</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::Device::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="379"><highlight class="normal"></highlight></codeline>
 <codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pc.GetUsePrePost())</highlight></codeline>
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
