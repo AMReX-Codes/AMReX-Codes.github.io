@@ -1,5 +1,8 @@
 var NAVTREEINDEX65 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule.html#ab49f0d215d0f61cdc48cefdfda4ed845":[2,0,0,0,6,3],
+"structamrex_1_1algoim_1_1QuadratureRule.html#ade3a8b7cb056567a40e8be98e24d3260":[2,0,0,0,6,1],
+"structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12":[2,0,0,0,6,4],
 "structamrex_1_1algoim_1_1QuadratureRule.html#aff9ac4f971a67e107e2cf55dd95fad21":[2,0,0,0,6,5],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html":[2,0,0,0,6,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[2,0,0,0,6,0,0],

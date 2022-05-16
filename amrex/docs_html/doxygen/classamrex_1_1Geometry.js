@@ -55,6 +55,7 @@ var classamrex_1_1Geometry =
     [ "RoundoffLoArray", "classamrex_1_1Geometry.html#a46cf7b75810112ffe67272a1811a1eba", null ],
     [ "setPeriodicity", "classamrex_1_1Geometry.html#a07025080452434734ae74c23e9f97224", null ],
     [ "Setup", "classamrex_1_1Geometry.html#ae6556ff88fa1aea8c8793dbb25d97873", null ],
+    [ "Volume", "classamrex_1_1Geometry.html#a26f93383859ece5c7349633cc9f50948", null ],
     [ "domain", "classamrex_1_1Geometry.html#a52477661ac7c7ccbd93f397340176c74", null ],
     [ "is_periodic", "classamrex_1_1Geometry.html#a84b1ad3fef8594c10d9ff2000505b20a", null ],
     [ "prob_domain", "classamrex_1_1Geometry.html#af62cd34804aea5643a6fc2205495b7a2", null ],
