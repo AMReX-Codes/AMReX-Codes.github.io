@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiFab Tutorial &mdash; amrex 22.06-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> amrex
+          </a>
+              <div class="version">
+                22.06-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MultiFab Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/MultiFab.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="multifab-tutorial">
+<span id="id1"></span><h1>MultiFab Tutorial<a class="headerlink" href="#multifab-tutorial" title="Permalink to this headline"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title"><strong>Time to Complete</strong>: 15 mins</p>
+<dl class="simple">
+<dt><strong>GOALS:</strong></dt><dd><ul class="simple">
+<li><p>Create a MultiFab</p></li>
+<li><p>Write Data to a MultiFab</p></li>
+<li><p>Plot MultiFab Data</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<p>In this tutorial we focus on using the MultiFab data structure.
+We will learn the steps to create a MultiFab, load it with data, and plot
+it. At the end, we make some comments about writing code that works
+for both 2 and 3 dimensions.</p>
+<a class="reference external image-reference" href="https://youtu.be/498VdW2cNB8"><img alt="Image of Youtube video" class="align-right" src="_images/MultiFabTutorialVideo.png" style="height: 120px;" /></a>
+<p>A video companion to this tutorial is available on YouTube. You
+can access it by clicking on the thumbnail to the right.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="what-is-a-multifab">
+<h2>What is a MultiFab?<a class="headerlink" href="#what-is-a-multifab" title="Permalink to this headline"></a></h2>
+<p>A MultiFab is a C++ class in AMReX the stores and operates on
+multidimensional arrays in parallel. It contains:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Grid information in the form of a BoxArray that contains one or more
+components (scalar values) for a single level of the mesh.</p></li>
+<li><p>A distribution map, that allows for parallel processing of data
+in the MultiFab.</p></li>
+<li><p>Ghost cells that facilitate a variety of mesh refinement, boundary
+conditions, and particle algorithms.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="defining-a-multifab">
+<h2>Defining a MultiFab<a class="headerlink" href="#defining-a-multifab" title="Permalink to this headline"></a></h2>
+<p>To use the MultiFab type we first need to include the header file,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_MultiFab.H&gt;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>To define a MultiFab,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span> <span class="n">mf</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">ncomp</span><span class="p">,</span> <span class="n">ngrow</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Defining a MultiFab in this way requires 4 inputs:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ba</span></code>, a BoxArray.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dm</span></code>, a DistributionMapping.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ncomp</span></code>, the number of components (scalar values) to store in the MultiFab.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ngrow</span></code>, the number of layers of ghost cells.</p></li>
+</ul>
+</div></blockquote>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">ncomp</span></code> is straight-forward and can be specified when
+the MultiFab is defined. The correct number of ghost cells, <code class="docutils literal notranslate"><span class="pre">ngrow</span></code>, is important
+for many of the algorithms in AMReX such as boundary behavior, mesh refinement, etc.
+For this reason it should be carefully selected based on application requirements.
+The DistributionMapping, <code class="docutils literal notranslate"><span class="pre">dm</span></code>,  directs parts of the domain to different processes
+for parallel computation. In this example, the default suffices and can be easily
+defined once the BoxArray is configured. Defining the BoxArray requires a few steps
+that are presented in the next section.</p>
+<section id="number-of-components-and-ghost-cells">
+<h3>Number of Components and Ghost Cells<a class="headerlink" href="#number-of-components-and-ghost-cells" title="Permalink to this headline"></a></h3>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">ncomp</span></code> determines how many scalar values to store in the MultiFab.
+For example, if we want to store the value of phi at every point on the grid,
+thats one component for the MultiFab. Then we would set:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">ncomp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The number of layers of ghost cells around the boundary of the domain is determined
+by the value of <code class="docutils literal notranslate"><span class="pre">ngrow</span></code> and will depend on your application. In this tutorial
+we will not be doing any operations that require ghost cells,
+so we will set the value to 0.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">ngrow</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="boxarray-abstract-domain-setup">
+<h3>BoxArray: Abstract Domain Setup<a class="headerlink" href="#boxarray-abstract-domain-setup" title="Permalink to this headline"></a></h3>
+<p>The BoxArray contains a list of boxes that cover the domain. To define a
+BoxArray, we will therefore first need to define the domain and some of its properties.
+In this example, we chose a 3-dimensional domain and therefore have three inputs.
+The steps are:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Define the lower and upper indices of the domain:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span> <span class="n">dom_lo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span> <span class="n">dom_hi</span><span class="p">(</span><span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_cell</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>We use two IntVects to define the high and low indices of the domain. In the case
+of the high indices, we define it as <code class="docutils literal notranslate"><span class="pre">n_cell-1</span></code>. <code class="docutils literal notranslate"><span class="pre">n_cell</span></code> represents the
+number of cells we want in each dimension. Typically its value is
+read from the inputs file.</p>
+</li>
+<li><p>Define a single Box with the specified domain:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span> <span class="n">domain</span><span class="p">(</span><span class="n">dom_lo</span><span class="p">,</span> <span class="n">dom_hi</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Define the BoxArray object using the domain:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">BoxArray</span> <span class="n">ba</span><span class="p">(</span><span class="n">domain</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Next we define a maximum size for grids (“chunks”) in the domain:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ba</span><span class="p">.</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">max_grid_size</span></code> will be read from the inputs file at runtime. Its value will effect how
+AMReX processes the data on the MultiFab in parallel.</p>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="distribution-mapping">
+<h3>Distribution Mapping<a class="headerlink" href="#distribution-mapping" title="Permalink to this headline"></a></h3>
+<p>Once the BoxArray is defined. We can define a DisbributionMapping. The
+DistributionMapping will determine how parts of the domain are divided among
+processes. For us, the default behavior is sufficient. Therefore we write,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">DistributionMapping</span> <span class="n">dm</span><span class="p">(</span><span class="n">ba</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>At this point, we have defined the four necessary parts of the MultiFab and
+can create it with the line,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span> <span class="n">mf</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">ncomp</span><span class="p">,</span> <span class="n">ngrow</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="adding-data-to-the-multifab">
+<h2>Adding Data to the MultiFab<a class="headerlink" href="#adding-data-to-the-multifab" title="Permalink to this headline"></a></h2>
+<p>Now that we have setup an abstract domain, we want to provide physical
+information about the boxes within it so that we can fill it with
+useful data. To do that, we will define a Geometry object, and
+use a nested loop structure that efficiently iterates over
+all the boxes in the domain. AMReX will automatically decide how to
+parallelize these operations with MPI ranks or GPU accelerators.</p>
+<section id="geometry-add-physical-properties">
+<h3>Geometry: Add Physical Properties<a class="headerlink" href="#geometry-add-physical-properties" title="Permalink to this headline"></a></h3>
+<p>For the geometry, we will
+define the size of the box, the coordinate system and the boundary conditions.
+It is also convenient to derive the dimensions of each cell at this time.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Define the physical dimensions of the box:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">RealBox</span> <span class="n">real_box</span> <span class="p">({</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">}</span> <span class="p">,</span> <span class="p">{</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>In this case, we use <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code> for all directions.</p>
+</li>
+<li><p>Define the Geometry object with the properties specified above:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Geometry</span> <span class="n">geom</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">real_box</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>*In preparation for future operations on the MultiFab, extract the physical
+dimensions of each cell:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">GpuArray</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">geom</span><span class="p">.</span><span class="n">CellSizeArray</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This commands creates a 1-dimensional array of <code class="docutils literal notranslate"><span class="pre">amrex::Real</span></code>–single or double floating point–
+values that correspond to the physical dimensions of each cell side, i.e. <code class="docutils literal notranslate"><span class="pre">dx[0]</span></code> contains the length
+of the cell in the x-direction, <code class="docutils literal notranslate"><span class="pre">dx[1]</span></code>, contains the length in the y-direction, and so on.</p>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="loop-structure-mfiter-and-parallelfor">
+<h3>Loop Structure: MFIter and ParallelFor<a class="headerlink" href="#loop-structure-mfiter-and-parallelfor" title="Permalink to this headline"></a></h3>
+<p>To traverse the elements of the MultiFab we will use two loops. The first loop is a MultiFab iterator,
+called <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, and the second loop is a <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>. The <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop efficiently divides
+and distributes work on MultiFab data among processors. It does this by telling each processor,
+“iterate through all the boxes on the MultiFab, but only do work on the boxes assigned
+to you.”</p>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> for loop, the
+<code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> function behaves like a triple-nested loop over the <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> coordinates in the box.
+Beginning and ending values for each index are derived
+from the inputs, and do not need to be explicitly stated. When a GPU backend is enabled, <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>
+will launch a thread on the GPU to process each <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> iteration in parallel.
+On CPU only, <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> will enable tiling to process the data in the most efficient way for the hardware available.</p>
+<p>Below is an example of typical usage of <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> and <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> to fill the MultiFab with data:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">){</span>
+
+    <span class="k">const</span> <span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="o">&amp;</span> <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;&amp;</span> <span class="n">mf_array</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+
+    <span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+
+        <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+        <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">));</span>
+        <span class="n">mf_array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the first line,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">){</span>
+</pre></div>
+</div>
+<p>the MFIter object <code class="docutils literal notranslate"><span class="pre">mfi</span></code> is defined from the MultiFab <code class="docutils literal notranslate"><span class="pre">mf</span></code>. <code class="docutils literal notranslate"><span class="pre">mfi.isValid()</span></code>, tells the for loop
+to work on only the parts of the domain designated to that processor by <code class="docutils literal notranslate"><span class="pre">mf</span></code> including growth or ghost cells.</p>
+<p>The following two lines,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">amrex</span><span class="o">::</span><span class="n">Box</span><span class="o">&amp;</span> <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+<span class="k">const</span> <span class="n">amrex</span><span class="o">::</span><span class="n">Array4</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span><span class="o">&gt;&amp;</span> <span class="n">mf_array</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>define a new box, <code class="docutils literal notranslate"><span class="pre">bx</span></code> that represents the current section of the grid being iterated on. To access
+and store data in the components
+of the MultiFab within this section of the grid, we cast <code class="docutils literal notranslate"><span class="pre">mf</span></code> as an Array4 object called <code class="docutils literal notranslate"><span class="pre">mf_array</span></code>.
+We declare <code class="docutils literal notranslate"><span class="pre">mf_array</span></code> by reference so that
+values changed within the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> loop, change values in the components of the MultiFab <code class="docutils literal notranslate"><span class="pre">mf</span></code>.
+Within <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> each component of <code class="docutils literal notranslate"><span class="pre">mf</span></code> can be accessed by
+calling <code class="docutils literal notranslate"><span class="pre">mf_array(i,j,k,n)</span></code> where <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> represents the location and <code class="docutils literal notranslate"><span class="pre">n</span></code> represents the
+<span class="math notranslate nohighlight">\((n+1)^{\text th}\)</span> component in the MultiFab. Moreover, the first or <span class="math notranslate nohighlight">\(0^{\text th}\)</span> component, can be accessed
+by dropping the 4th index, i.e. <code class="docutils literal notranslate"><span class="pre">mf_array(i,j,k)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">mf_array(i,j,k,0)</span></code>.</p>
+<p>The line with the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> function,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+</pre></div>
+</div>
+<p>calls a custom looping function that traverses the three dimensions of the box, <code class="docutils literal notranslate"><span class="pre">bx</span></code>. The range of values
+for <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> are determined by the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> from the box information passed to it.
+When a GPU backend is enabled, code inside <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> will be executed in parallel on the GPU. Functions called
+within this loop are often called “lambdas”. Note that, because <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> is a function call, and
+not a simple for loop, the closing brackets are <code class="docutils literal notranslate"><span class="pre">});</span></code>.</p>
+<p>The remaining lines inside <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> are,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">));</span>
+<span class="n">mf_array</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The first three lines translate integer indices to their <code class="docutils literal notranslate"><span class="pre">(x,y,z)</span></code> location in the domain. In this case,
+the <code class="docutils literal notranslate"><span class="pre">+0.5</span></code> indicates that we want the :math:0^{text th} index for <code class="docutils literal notranslate"><span class="pre">i</span></code>, to represent the middle of
+the first cell in the x-direction. Together, treating all three variables in this way
+indicates cell-center data.</p>
+<p>The last line, stores the calculated value in the appropriate location of <code class="docutils literal notranslate"><span class="pre">mf_array</span></code>
+which, in turn, stores it in the corresponding location of the MultiFab <code class="docutils literal notranslate"><span class="pre">mf</span></code> because
+of the way we declared <code class="docutils literal notranslate"><span class="pre">mf_array</span></code>.</p>
+<p>So far, we’ve defined and filled a MultiFab with a single component with data. The filling
+operation will be done in parallel when compiled with a GPU backend. When compiled for CPU-only computation,
+AMReX will use tiling
+to increase performance (see <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#mfiter-and-tiling">AMReX User’s Guide – Tiling</a>). Configuring these
+performance optimizations would normally require different lines of code, however, AMReX handles these changes
+automatically for portable performance.</p>
+</section>
+</section>
+<section id="plotting-multifab-data">
+<h2>Plotting MultiFab Data<a class="headerlink" href="#plotting-multifab-data" title="Permalink to this headline"></a></h2>
+<p>AMReX can plot MultiFab data with a single function call. To access the plotting
+functions we include the header,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;AMReX_PlotFileUtil.H&gt;</span>
+</pre></div>
+</div>
+<p>at the top of the file. We can then write the line,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">WriteSingleLevelPlotfile</span><span class="p">(</span><span class="s">&quot;plt001&quot;</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;comp0&quot;</span><span class="p">},</span> <span class="n">geom</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The first input takes the plotfile name, “plt001”.
+The second, is the MultiFab that contains th e data we want to plot, <code class="docutils literal notranslate"><span class="pre">mf</span></code>.
+The parameter, <code class="docutils literal notranslate"><span class="pre">{&quot;comp0&quot;}</span></code>, labels the
+first component as “comp0”. For multiple components, its necessary to pass additional
+variable names, such as <code class="docutils literal notranslate"><span class="pre">{&quot;comp0&quot;,&quot;comp1&quot;}</span></code>.  The third parameter, <code class="docutils literal notranslate"><span class="pre">geom</span></code>, is the
+Geometry we defined for the MultiFab above. The
+last parameter specifies the level of the MultiFab. In this tutorial, we only had a
+single MultiFab to represent the zeroth level of the mesh, therefore we pass <code class="docutils literal notranslate"><span class="pre">0</span></code> for the level.</p>
+<section id="visualizing-the-plotfile">
+<h3>Visualizing the Plotfile<a class="headerlink" href="#visualizing-the-plotfile" title="Permalink to this headline"></a></h3>
+<p>The call above to <code class="docutils literal notranslate"><span class="pre">WriteSingleLevelPlotfile</span></code> will produce a plotfile in the form
+of a directory that contains a Header file, and several subdirectories. The data can be
+visualized by passing this directory to one of several visualization software packages.
+Information on how to do this is available in the AMReX User’s Guide <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Visualization_Chapter.html">Visualization</a>
+section.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"></a></h2>
+<p>In this tutorial we described the steps to define the domain, and physical properties
+of our simulation space. We then demonstrated how to initialize and store scalar values
+on a grid across
+this domain in the form of a 3-dimensional MultiFab data structure with a single component.
+Initializing the data involved the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> nested-“loop” structure that
+required casting the MultiFab as an Array4 for <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> access to the active section of the
+grid. Finally, we showed the commands to write out the MultiFab data to a plotfile that
+can be visualized with several software packages.</p>
+<p>The complete code for this tutorial is available <a class="reference external" href="https:://where?">here</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="additional-comments">
+<h2>Additional Comments<a class="headerlink" href="#additional-comments" title="Permalink to this headline"></a></h2>
+<p>AMReX allows for the selection of 2- or 3- dimensional simulation
+at compile time. For simplicity, the example above is presented as 3-dimensional only.
+The example below shows how to write code to assign data to a MultiFab
+in a way that can be automatically adapted for 2 or 3 dimensions:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">phi_old</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">const</span> <span class="n">Box</span><span class="o">&amp;</span> <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">validbox</span><span class="p">();</span>
+
+        <span class="k">const</span> <span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;&amp;</span> <span class="n">phiOld</span> <span class="o">=</span> <span class="n">phi_old</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">mfi</span><span class="p">);</span>
+
+        <span class="c1">// set phi = 1 + e^(-(r-0.5)^2)</span>
+        <span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="cp">#if (AMREX_SPACEDIM == 2)</span>
+            <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+<span class="cp">#elif (AMREX_SPACEDIM == 3)</span>
+            <span class="n">Real</span> <span class="n">z</span><span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+            <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+<span class="cp">#endif</span>
+            <span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>The interesting features to point out are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the preprocessor directives, <code class="docutils literal notranslate"><span class="pre">#if</span></code>, <code class="docutils literal notranslate"><span class="pre">#elif</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>, etc. are evaluated
+at compile time, and will only process the code within the appropriate
+<code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> section. Moreover, the value of <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> can be
+set while compiling the AMReX application.</p></li>
+<li><p>The indices of the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> function are <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> despite being applicable
+to both 2- or 3- dimensional code. AMReX has the built-in ability to revert to the two
+dimensional <code class="docutils literal notranslate"><span class="pre">i,j</span></code> indices, when compiled as a 2D code.</p></li>
+<li><p>Additional code differences, not shown here, are required in the steps to define
+the BoxArray and Geometry of the MultiFab. An example of the needed modifications
+can be found in <code class="docutils literal notranslate"><span class="pre">HeatEuation_EX0_C</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<section id="a-parallelfor-only-approach">
+<h3>A ParallelFor Only Approach<a class="headerlink" href="#a-parallelfor-only-approach" title="Permalink to this headline"></a></h3>
+<p>The method presented above is the most common at the time of writing the guide. However,
+other methods exist to achieve similar results. For example, AMReX has added to the
+capabilities of <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> to include the functionality of both the loops in our
+previous example. To use this type of <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> we need to include the header,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_MFParallelFor.H&gt;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>The newer approach reduces the necessary syntax. However, we still need to cast
+the MultiFab as a different type, so that we can access it with <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> indices.
+We also need to explicitly pass the number of grow or ghost cells in each direction.
+These two things are accomplished in the first two lines.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="o">&amp;</span> <span class="n">amrex</span><span class="o">::</span><span class="n">MultiArray4</span> <span class="n">mf_arrs</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+<span class="k">const</span> <span class="n">amrex</span><span class="o">::</span><span class="n">IntVect</span> <span class="n">ngs</span><span class="p">(</span><span class="n">ngrow</span><span class="p">);</span>
+
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="p">(</span>
+   <span class="n">mf</span><span class="p">,</span> <span class="n">ngs</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">nbx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="k">noexcept</span> <span class="p">{</span>
+
+      <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+      <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+      <span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+      <span class="n">mf_arrs</span><span class="p">[</span><span class="n">nbx</span><span class="p">](</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The other change worth mentioning is <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">nbx</span></code>, the first iterative variable in the
+inputs to the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>. In comparison to the first example, iterating through
+this variable mimics the functionality of the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> for loop in the first
+approach shown in this tutorial.</p>
+<p>Finally one last comment, the line,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="o">&amp;</span> <span class="n">amrex</span><span class="o">::</span><span class="n">MultiArray4</span> <span class="n">mf_arrs</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>is often written to take advantage of the compiler’s ability to determine the correct type.
+To do this, we replace the above line with</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mf_arrs</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">arrays</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="what-s-next">
+<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline"></a></h2>
+<p>This tutorial provided an introduction to the MultiFab data structure. The <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Tutorial: Heat Equation - Simple</span></a>
+and <a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a> tutorials both have source code that demonstrate MultiFab usage in a loop that evolves
+the data over time. At the cost of additional complexity, the <a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a> tutorial makes use
+of the <code class="code cpp docutils literal notranslate"><span class="keyword"><span class="pre">using</span></span> <span class="keyword"><span class="pre">namespace</span></span></code> and preprocessor directives to make writing coding easier and add
+additional functionality. On the other hand, the source code in <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Tutorial: Heat Equation - Simple</span></a> more
+closely resembles the code used in this example.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

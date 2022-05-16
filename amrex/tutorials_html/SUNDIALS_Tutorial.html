@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EB &mdash; amrex 22.06-dev documentation</title>
+  <title>SUNDIALS and Time Integrators &mdash; amrex 22.06-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Forkjoin" href="ForkJoin_Tutorial.html" />
-    <link rel="prev" title="Blueprint" href="Blueprint_Tutorial.html" /> 
+    <link rel="next" title="SWFFT" href="SWFFT_Tutorial.html" />
+    <link rel="prev" title="SENSEI" href="SENSEI_Tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,7 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
@@ -57,7 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SUNDIALS and Time Integrators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
 </ul>
 
@@ -75,9 +75,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>EB</li>
+      <li>SUNDIALS and Time Integrators</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/EB_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/SUNDIALS_Tutorial.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,21 +85,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="eb">
-<span id="tutorials-eb"></span><h1>EB<a class="headerlink" href="#eb" title="Permalink to this headline"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/EB/CNS</span></code> is an AMR code for solving compressible
-Navier-Stokes equations with the embedded boundary approach.</p>
-<p><code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/EB/Poisson</span></code> is a single-level code that is a proxy for
-solving the electrostatic Poisson equation for a grounded sphere with a point
-charge inside.</p>
+  <section id="sundials-and-time-integrators">
+<span id="tutorials-sundials"></span><h1>SUNDIALS and Time Integrators<a class="headerlink" href="#sundials-and-time-integrators" title="Permalink to this headline"></a></h1>
+<p>This example code shows how to use the AMReX TimeIntegrator class
+with SUNDIALS backend for integration. It also include two example
+of AMReX native integrators, Forward Euler, and Explicit Runge Kutta.
+Each integration type can be chosen by selecting the corresponding
+inputs file:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inputs_forward_euler</span></code> – Native AMReX Forward Euler integrator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputs_rk3</span></code> – Native AMReX Explicit Runge Kutta</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputs_sundials_erk</span></code> – SUNDIALS backend</p></li>
+</ul>
+</div></blockquote>
+<p>Both Runge Kutta and SUNDIALS have additional options which can
+be set by modifying the inputs file. Please see each respective inputs
+file or <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/TimeIntegration_Chapter.html#">AMReX User Guide:Time Integration</a> for more details.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Blueprint_Tutorial.html" class="btn btn-neutral float-left" title="Blueprint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ForkJoin_Tutorial.html" class="btn btn-neutral float-right" title="Forkjoin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="SENSEI_Tutorial.html" class="btn btn-neutral float-left" title="SENSEI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SWFFT_Tutorial.html" class="btn btn-neutral float-right" title="SWFFT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
