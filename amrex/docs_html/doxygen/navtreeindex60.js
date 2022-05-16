@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1Gpu_1_1DeviceToHost.html":[2,0,0,6,14],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html":[2,0,0,6,16],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#a08f6a3b8fe37c3a6c070a86b6771abf4":[2,0,0,6,16,4],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#a37cfbe8246a2b757ee9753ee96f03385":[2,0,0,6,16,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,263],
 "structamrex_1_1LPInfo.html":[2,0,0,270],
 "structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,270,17],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,270,18],
-"structamrex_1_1LPInfo.html#a2adef9e34d1e183d6fe240d63ac5e62a":[2,0,0,270,4]
+"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,270,18]
 };

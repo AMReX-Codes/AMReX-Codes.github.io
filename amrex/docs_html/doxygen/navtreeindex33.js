@@ -1,5 +1,6 @@
 var NAVTREEINDEX33 =
 {
+"classamrex_1_1EB2_1_1ExtrusionIF.html#a8d0b86fe0458f8d27a31ed322f7dc73d":[2,0,0,4,8,5],
 "classamrex_1_1EB2_1_1ExtrusionIF.html#aa230623413b7fc4ff5e42479ca962a51":[2,0,0,4,8,0],
 "classamrex_1_1EB2_1_1ExtrusionIF.html#aaf16d236003b96546fb354e9d07f2941":[2,0,0,4,8,7],
 "classamrex_1_1EB2_1_1ExtrusionIF.html#ad55c726742be3e692c9a65b4c8c6b6e8":[2,0,0,4,8,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX33 =
 "classamrex_1_1EB2_1_1SphereIF.html#a2db0e61abd7b74cd08262e3ba77313a7":[2,0,0,4,41,1],
 "classamrex_1_1EB2_1_1SphereIF.html#a3824095808843e69354b448ae713aabb":[2,0,0,4,41,3],
 "classamrex_1_1EB2_1_1SphereIF.html#a3de3a558f56392c6c36976d0a8f21813":[2,0,0,4,41,8],
-"classamrex_1_1EB2_1_1SphereIF.html#a43d80b03741314b72b14c9be08206eed":[2,0,0,4,41,7],
-"classamrex_1_1EB2_1_1SphereIF.html#a4f5cad08cb5e198a941e1a0c4691fabf":[2,0,0,4,41,5]
+"classamrex_1_1EB2_1_1SphereIF.html#a43d80b03741314b72b14c9be08206eed":[2,0,0,4,41,7]
 };

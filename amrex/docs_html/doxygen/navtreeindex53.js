@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"classhacc_1_1Dfft.html#a80ed718b7bc25881cb073e957f1aea5e":[2,0,10,1,4],
 "classhacc_1_1Dfft.html#a8ddddcf90a534cbb5cd92e89c4ab79d9":[2,0,10,1,10],
 "classhacc_1_1Dfft.html#a8f5425ac672068dbfff3467676171ead":[2,0,10,1,16],
 "classhacc_1_1Dfft.html#a93ec294804edefba92f96f3e544068de":[2,0,10,1,28],
@@ -230,8 +231,8 @@ var NAVTREEINDEX53 =
 "functions_rela.html":[2,3,6],
 "functions_s.html":[2,3,0,19],
 "functions_t.html":[2,3,0,20],
-"functions_type.html":[2,3,3],
 "functions_type.html":[2,3,3,0],
+"functions_type.html":[2,3,3],
 "functions_type_b.html":[2,3,3,1],
 "functions_type_c.html":[2,3,3,2],
 "functions_type_d.html":[2,3,3,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "functions_type_t.html":[2,3,3,14],
 "functions_type_v.html":[2,3,3,15],
 "functions_u.html":[2,3,0,21],
-"functions_v.html":[2,3,0,22],
-"functions_vars.html":[2,3,2]
+"functions_v.html":[2,3,0,22]
 };
