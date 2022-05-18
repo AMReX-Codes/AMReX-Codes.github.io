@@ -1,5 +1,12 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1IsCallable.html":[2,0,0,257],
+"structamrex_1_1IsCallableR.html":[2,0,0,258],
+"structamrex_1_1IsFabArray.html":[2,0,0,259],
+"structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,260],
+"structamrex_1_1IsMultiFabIterator.html":[2,0,0,261],
+"structamrex_1_1IsStoreAtomic.html":[2,0,0,262],
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,263],
 "structamrex_1_1LPInfo.html":[2,0,0,270],
 "structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,270,17],
 "structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,270,18],
@@ -242,12 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1NonLocalBC_1_1PolarFn.html":[2,0,0,10,15],
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#a1d0e35f2f99a8af476ad46075de03441":[2,0,0,10,15,6],
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#a4f21d05f161053497b9f34dc212821b5":[2,0,0,10,15,5],
-"structamrex_1_1NonLocalBC_1_1PolarFn.html#a74e20a328c5d77a82f62f90216bd4916":[2,0,0,10,15,3],
-"structamrex_1_1NonLocalBC_1_1PolarFn.html#aa619d771c598cba66bd8e10b064aa3a5":[2,0,0,10,15,4],
-"structamrex_1_1NonLocalBC_1_1PolarFn.html#abb3db0e8e5221ee3116e277385c87bc5":[2,0,0,10,15,1],
-"structamrex_1_1NonLocalBC_1_1PolarFn.html#adae8c23737504d11978f812f253631a0":[2,0,0,10,15,2],
-"structamrex_1_1NonLocalBC_1_1PolarFn.html#ae95ad91feedc2a0b50fb7093090bb78d":[2,0,0,10,15,0],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html":[2,0,0,10,16],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a1302ef1e60c9888f4d6c6bfbec335e83":[2,0,0,10,16,0],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a2cb01b1486ad5c3e09971e6d552cc26a":[2,0,0,10,16,3]
+"structamrex_1_1NonLocalBC_1_1PolarFn.html#a74e20a328c5d77a82f62f90216bd4916":[2,0,0,10,15,3]
 };

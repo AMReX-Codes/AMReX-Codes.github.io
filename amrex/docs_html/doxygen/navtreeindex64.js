@@ -1,5 +1,12 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1RunOnGpu.html":[2,0,0,419],
+"structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,420],
+"structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,421],
+"structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,422],
+"structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,423],
+"structamrex_1_1STLtools_1_1Triangle.html":[2,0,0,433,0],
+"structamrex_1_1STLtools_1_1Triangle.html#a55b9d3099133f345ecb5d650727c793b":[2,0,0,433,0,0],
 "structamrex_1_1STLtools_1_1Triangle.html#a6b301a1c15117340fbb999bfee7dd5a2":[2,0,0,433,0,1],
 "structamrex_1_1STLtools_1_1Triangle.html#ab4af12af8d6c359d4870d0d93a9d07b5":[2,0,0,433,0,2],
 "structamrex_1_1Same.html":[2,0,0,424],
@@ -224,8 +231,8 @@ var NAVTREEINDEX64 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
@@ -242,12 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1algoim_1_1Interval.html":[2,0,0,0,4],
 "structamrex_1_1algoim_1_1Interval.html#a017e3af95c08cb7c803eb4717bc2da14":[2,0,0,0,4,0],
 "structamrex_1_1algoim_1_1PsiCode.html":[2,0,0,0,5],
-"structamrex_1_1algoim_1_1PsiCode.html#a079589b947e48000160801106e65d2fe":[2,0,0,0,5,3],
-"structamrex_1_1algoim_1_1PsiCode.html#a29bab161ac1174d2812b11888ff1d189":[2,0,0,0,5,0],
-"structamrex_1_1algoim_1_1PsiCode.html#a47d12f0c6eef6f8e1f3f3d205d37c958":[2,0,0,0,5,4],
-"structamrex_1_1algoim_1_1PsiCode.html#a791226bc3dff2637e4a5dacb30c25ec0":[2,0,0,0,5,2],
-"structamrex_1_1algoim_1_1PsiCode.html#a80ddd826639ec72c71ba72a3c6dfc09a":[2,0,0,0,5,5],
-"structamrex_1_1algoim_1_1PsiCode.html#ac85d103050ea6acd04b2a2b4e55ee8d4":[2,0,0,0,5,1],
-"structamrex_1_1algoim_1_1QuadratureRule.html":[2,0,0,0,6],
-"structamrex_1_1algoim_1_1QuadratureRule.html#a93e5266e3de3f1d636f081e118526ea2":[2,0,0,0,6,2]
+"structamrex_1_1algoim_1_1PsiCode.html#a079589b947e48000160801106e65d2fe":[2,0,0,0,5,3]
 };

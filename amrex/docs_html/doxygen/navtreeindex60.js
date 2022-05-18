@@ -1,5 +1,12 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989":[2,0,0,6,12,7],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178":[2,0,0,6,12,9],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[2,0,0,6,12,0],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504":[2,0,0,6,12,5],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[2,0,0,6,12,1],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#ac7995253d4db738ff6283ab41aaf67c8":[2,0,0,6,12,6],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[2,0,0,6,12,3],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,6,12,4],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[2,0,0,6,12,10],
 "structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,6,13],
@@ -242,12 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#aa7b1971427e83d1d8f91f30ad942d2c5":[2,0,0,204,0],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#afebe5d5bd0658ac4b01a6c6300cd9bbb":[2,0,0,204,2],
 "structamrex_1_1IsBaseFab.html":[2,0,0,255],
-"structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html":[2,0,0,256],
-"structamrex_1_1IsCallable.html":[2,0,0,257],
-"structamrex_1_1IsCallableR.html":[2,0,0,258],
-"structamrex_1_1IsFabArray.html":[2,0,0,259],
-"structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,260],
-"structamrex_1_1IsMultiFabIterator.html":[2,0,0,261],
-"structamrex_1_1IsStoreAtomic.html":[2,0,0,262],
-"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,263]
+"structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html":[2,0,0,256]
 };
