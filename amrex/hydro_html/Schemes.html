@@ -400,11 +400,11 @@ with a factor of the z-derivative at cell centers</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\breve{u}_{i,j+\half,k}^{F} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j,k} \\
           = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F}
-            - \frac{dt}{3} \left( \frac{\hat{u}_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \hat{u}_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half} }{dz} \right) \\
+        - \frac{dt}{3} \left( \frac{\hat{u}_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \hat{u}_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half} }{dz} \right) \\
             &amp; + \frac{dt}{3} \left( \frac{\hat{w}^{adv}_{i,j,k+\half} - \hat{w}^{adv}_{i,j,k-\half}}{dz} \right) u_{i,j,k} \\
 \breve{u}_{i,j+\half,k}^{B} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j+1,k} \\
           = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B}
-            - \frac{dt}{3} \left( \frac{\hat{u}_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \hat{u}_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz} \right) \\
+        - \frac{dt}{3} \left( \frac{\hat{u}_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \hat{u}_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz} \right) \\
             &amp; + \frac{dt}{3} \left( \frac{\hat{w}^{adv}_{i,j+1,k+\half} - \hat{w}^{adv}_{i,j+1,k-\half}}{dz} \right) u_{i,j+1,k} \\\end{split}\]</div>
 <p>and then apply boundary conditions on domian faces before upwinding according to
 <span class="math notranslate nohighlight">\(\hat{v}_{i,j+\frac{1}{2},k}^{adv}\)</span> as was done above for <span class="math notranslate nohighlight">\(\widehat{\U}\)</span>.
@@ -542,11 +542,11 @@ For example, for <span class="math notranslate nohighlight">\(u\)</span> predict
 <div class="math notranslate nohighlight">
 \[\begin{split}\breve{u}_{i,j+\half,k}^{F} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F} -  \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j,k}  \\
           = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F}
-            - \frac{dt}{3}   \left[ \left( \frac{\alpha_{i,j,k+\half} \hat{u}_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \alpha_{i,j,k-\half} \hat{u}_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half}}{dz\ \kappa_{i,j,k}} \right) \right. \\
+        - \frac{dt}{3}   \left[ \left( \frac{\alpha_{i,j,k+\half} \hat{u}_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \alpha_{i,j,k-\half} \hat{u}_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half}}{dz\ \kappa_{i,j,k}} \right) \right. \\
              &amp; - \left. \left( \frac{\alpha_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \alpha_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half}}{dz\ \kappa_{i,j,k}} \right) u_{i,j,k} \right] \\
 \breve{u}_{i,j+\half,k}^{B} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j+1,k} \\
           = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B}
-            - \frac{dt}{3} \left[ \left( \frac{\alpha_{i,j+1,k+\half} \hat{u}_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \alpha_{i,j+1,k-\half} \hat{u}_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz\ \kappa_{i,j+1,k}} \right) \right. \\
+        - \frac{dt}{3} \left[ \left( \frac{\alpha_{i,j+1,k+\half} \hat{u}_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \alpha_{i,j+1,k-\half} \hat{u}_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz\ \kappa_{i,j+1,k}} \right) \right. \\
             &amp; - \left. \left( \frac{\alpha_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \alpha_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz\ \kappa_{i,j+1,k}} \right) u_{i,j+1,k} \right]\\\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(alpha\)</span> are cell face area fractions and <span class="math notranslate nohighlight">\(kappa\)</span> is the cell volume fraction.
 Then we apply boundary conditions on domain faces before upwinding according to
