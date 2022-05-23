@@ -179,18 +179,18 @@ $(document).ready(function(){initNavTree('hydro__ebmol__edge__state__K_8H_source
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        amrex::Real cc_qmax = <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(q(i,j,k,n),q(i-1,j,k,n));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        amrex::Real cc_qmin = <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(q(i,j,k,n),q(i-1,j,k,n));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ilo = (d_bcrec[n].lo(0) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ilo = (d_bcrec[n].lo(0) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                     (d_bcrec[n].lo(0) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jlo = (d_bcrec[n].lo(1) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jlo = (d_bcrec[n].lo(1) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                             (d_bcrec[n].lo(1) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_klo = (d_bcrec[n].lo(2) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_klo = (d_bcrec[n].lo(2) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                             (d_bcrec[n].lo(2) == amrex::BCType::hoextrap););</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ihi = (d_bcrec[n].hi(0) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ihi = (d_bcrec[n].hi(0) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                             (d_bcrec[n].hi(0) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jhi = (d_bcrec[n].hi(1) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jhi = (d_bcrec[n].hi(1) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                             (d_bcrec[n].hi(1) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_khi = (d_bcrec[n].hi(2) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_khi = (d_bcrec[n].hi(2) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                             (d_bcrec[n].hi(2) == amrex::BCType::hoextrap););</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; slopes_eb_hi =</div>
@@ -426,18 +426,18 @@ $(document).ready(function(){initNavTree('hydro__ebmol__edge__state__K_8H_source
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> domain_khi = domain.bigEnd(2);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ilo = (d_bcrec[n].lo(0) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ilo = (d_bcrec[n].lo(0) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                     (d_bcrec[n].lo(0) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jlo = (d_bcrec[n].lo(1) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jlo = (d_bcrec[n].lo(1) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                             (d_bcrec[n].lo(1) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_klo = (d_bcrec[n].lo(2) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_klo = (d_bcrec[n].lo(2) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                             (d_bcrec[n].lo(2) == amrex::BCType::hoextrap););</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ihi = (d_bcrec[n].hi(0) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ihi = (d_bcrec[n].hi(0) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                             (d_bcrec[n].hi(0) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jhi = (d_bcrec[n].hi(1) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jhi = (d_bcrec[n].hi(1) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                             (d_bcrec[n].hi(1) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_khi = (d_bcrec[n].hi(2) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_khi = (d_bcrec[n].hi(2) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                             (d_bcrec[n].hi(2) == amrex::BCType::hoextrap););</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Real xf = fcy(i,j,k,0); <span class="comment">// local (x,z) of centroid of z-face we are extrapolating to</span></div>
@@ -692,18 +692,18 @@ $(document).ready(function(){initNavTree('hydro__ebmol__edge__state__K_8H_source
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> domain_khi = domain.bigEnd(2);</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ilo = (d_bcrec[n].lo(0) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ilo = (d_bcrec[n].lo(0) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                     (d_bcrec[n].lo(0) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jlo = (d_bcrec[n].lo(1) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jlo = (d_bcrec[n].lo(1) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                                             (d_bcrec[n].lo(1) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_klo = (d_bcrec[n].lo(2) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_klo = (d_bcrec[n].lo(2) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                                             (d_bcrec[n].lo(2) == amrex::BCType::hoextrap););</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ihi = (d_bcrec[n].hi(0) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keywordtype">bool</span> extdir_or_ho_ihi = (d_bcrec[n].hi(0) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                                             (d_bcrec[n].hi(0) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jhi = (d_bcrec[n].hi(1) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_jhi = (d_bcrec[n].hi(1) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                                             (d_bcrec[n].hi(1) == amrex::BCType::hoextrap);,</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_khi = (d_bcrec[n].hi(2) == amrex::BCType::ext_dir) or</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;             <span class="keywordtype">bool</span> extdir_or_ho_khi = (d_bcrec[n].hi(2) == amrex::BCType::ext_dir) ||</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                                             (d_bcrec[n].hi(2) == amrex::BCType::hoextrap););</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        amrex::Real xf = fcz(i,j,k,0); <span class="comment">// local (x,y) of centroid of z-face we are extrapolating to</span></div>
