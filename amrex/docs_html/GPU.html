@@ -767,14 +767,15 @@ conditions.</p>
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code>, including <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">sum</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">max</span></span></code>.
 When <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, these functions automatically implement the
 corresponding reductions on GPUs in an efficient manner.</p>
-<p>Function template <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> can be used to implement user-defined
+<p>Function template <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParReduce</span></span></code> can be used to implement user-defined
 reduction functions over <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>s.  For example, the following
 function computes the sum of total kinetic energy using the data in a
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> storing the mass and momentum density.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span> <span class="nf">compute_ek</span> <span class="p">(</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">ma</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">ParallelFor</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="c1">// zero ghost cells</span>
+    <span class="k">return</span> <span class="n">ParReduce</span><span class="p">(</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">ReduceOpSum</span><span class="o">&gt;</span><span class="p">{},</span> <span class="n">TypeList</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">{},</span>
+                     <span class="n">mf</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="c1">// zero ghost cells</span>
            <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span> <span class="p">(</span><span class="kt">int</span> <span class="n">box_no</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
                <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span>
            <span class="p">{</span>
@@ -796,7 +797,9 @@ function computes the sum of total kinetic energy using the data in a
 <span class="p">{</span>
     <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">data_ma</span> <span class="o">=</span> <span class="n">mf</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
     <span class="k">auto</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">mask_ma</span> <span class="o">=</span> <span class="n">mask</span><span class="p">.</span><span class="n">const_arrays</span><span class="p">();</span>
-    <span class="k">return</span> <span class="nf">ParallelFor</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="c1">// zero ghost cells</span>
+    <span class="k">return</span> <span class="nf">ParReduce</span><span class="p">(</span><span class="n">TypeList</span><span class="o">&lt;</span><span class="n">ReduceOpMax</span><span class="p">,</span><span class="n">ReduceOpSum</span><span class="o">&gt;</span><span class="p">{},</span>
+                     <span class="n">TypeList</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">{},</span>
+                     <span class="n">mf</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="c1">// zero ghost cells</span>
            <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span> <span class="p">(</span><span class="kt">int</span> <span class="n">box_no</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
                <span class="k">noexcept</span> <span class="o">-&gt;</span> <span class="n">GpuTuple</span><span class="o">&lt;</span><span class="n">Real</span><span class="p">,</span><span class="n">Real</span><span class="o">&gt;</span>
            <span class="p">{</span>
@@ -810,7 +813,7 @@ function computes the sum of total kinetic energy using the data in a
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>It should be noted that the reduction result of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> is local
+<p>It should be noted that the reduction result of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParReduce</span></span></code> is local
 and it is the user’s responsibility if MPI communication is needed.</p>
 </div>
 <div class="section" id="box-intvect-and-indextype">
