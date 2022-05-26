@@ -9,11 +9,11 @@
       </param>
     </templateparamlist>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1TimeIntegrator_1a26051c576eb8be3b006b8e74e842899e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1TimeIntegrator_1aae7bc2dadb31481a43abc24759aaaafb" prot="private" static="no" mutable="no">
         <type>amrex::Real</type>
-        <definition>amrex::Real amrex::TimeIntegrator&lt; T &gt;::time</definition>
+        <definition>amrex::Real amrex::TimeIntegrator&lt; T &gt;::m_time</definition>
         <argsstring></argsstring>
-        <name>time</name>
+        <name>m_time</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -22,24 +22,24 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TimeIntegrator.H" line="28" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TimeIntegrator.H" bodystart="28" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1TimeIntegrator_1ae674f798e38cc1747c7d1b5c4643cfa1" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1TimeIntegrator_1a9706b72c1b7bfc77f77c9a1c638b749f" prot="private" static="no" mutable="no">
         <type>amrex::Real</type>
-        <definition>amrex::Real amrex::TimeIntegrator&lt; T &gt;::timestep</definition>
+        <definition>amrex::Real amrex::TimeIntegrator&lt; T &gt;::m_timestep</definition>
         <argsstring></argsstring>
-        <name>timestep</name>
+        <name>m_timestep</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TimeIntegrator.H" line="28" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TimeIntegrator.H" bodystart="28" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TimeIntegrator.H" line="28" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TimeIntegrator.H" bodystart="28" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1TimeIntegrator_1ac48158776ee4a43583ff87247ac46d63" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1TimeIntegrator_1a3380f2b80343145ae2e959dced644826" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::TimeIntegrator&lt; T &gt;::step_number</definition>
+        <definition>int amrex::TimeIntegrator&lt; T &gt;::m_step_number</definition>
         <argsstring></argsstring>
-        <name>step_number</name>
+        <name>m_step_number</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -549,8 +549,8 @@
           <edgelabel>integrator_ptr</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
-          <edgelabel>timestep</edgelabel>
-          <edgelabel>time</edgelabel>
+          <edgelabel>m_time</edgelabel>
+          <edgelabel>m_timestep</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
@@ -568,6 +568,9 @@
       <member refid="classamrex_1_1TimeIntegrator_1a16f8db810ab5114eca59616f59803062" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>initialize_integrator</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a0eae9b06298e069eab80098118fe239d" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>integrate</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a945c0ab164fee73db3dcc6cdc38fe216" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>integrator_ptr</name></member>
+      <member refid="classamrex_1_1TimeIntegrator_1a3380f2b80343145ae2e959dced644826" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>m_step_number</name></member>
+      <member refid="classamrex_1_1TimeIntegrator_1aae7bc2dadb31481a43abc24759aaaafb" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>m_time</name></member>
+      <member refid="classamrex_1_1TimeIntegrator_1a9706b72c1b7bfc77f77c9a1c638b749f" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>m_timestep</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a1cf98d54388171aa821affc5af092394" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>map_data</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a53389e8f6312b2078234b219976d43ac" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>post_timestep</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a35f3f508708be4b72388384a46b3b6a3" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>read_parameters</name></member>
@@ -579,13 +582,10 @@
       <member refid="classamrex_1_1TimeIntegrator_1ae16747791ab03ecd41284a2c31635290" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>set_rhs</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a7e16927ca77f3f9bfcb707caccdc4197" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>set_slow_fast_timestep_ratio</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a0a4f4620c1eb35ad54acd2b1f63fe957" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>set_timestep</name></member>
-      <member refid="classamrex_1_1TimeIntegrator_1ac48158776ee4a43583ff87247ac46d63" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>step_number</name></member>
-      <member refid="classamrex_1_1TimeIntegrator_1a26051c576eb8be3b006b8e74e842899e" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>time</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a7cae24606fd9c92a44f4ae163bab5a3b" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>time_interpolate</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a5aec68476188bb41118352fe8c2c947e" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>TimeIntegrator</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a1b4c7669c86409de3c465e562ee408db" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>TimeIntegrator</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1a15591ffe95bc3937bfc7711a9535181e" prot="public" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>TimeIntegrator</name></member>
-      <member refid="classamrex_1_1TimeIntegrator_1ae674f798e38cc1747c7d1b5c4643cfa1" prot="private" virt="non-virtual"><scope>amrex::TimeIntegrator</scope><name>timestep</name></member>
       <member refid="classamrex_1_1TimeIntegrator_1acff5bb21bb84fea124f333d6f951c452" prot="public" virt="virtual"><scope>amrex::TimeIntegrator</scope><name>~TimeIntegrator</name></member>
     </listofallmembers>
   </compounddef>

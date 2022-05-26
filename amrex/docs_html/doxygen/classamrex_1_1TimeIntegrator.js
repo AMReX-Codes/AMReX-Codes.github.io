@@ -27,8 +27,8 @@ var classamrex_1_1TimeIntegrator =
     [ "set_timestep", "classamrex_1_1TimeIntegrator.html#a0a4f4620c1eb35ad54acd2b1f63fe957", null ],
     [ "time_interpolate", "classamrex_1_1TimeIntegrator.html#a7cae24606fd9c92a44f4ae163bab5a3b", null ],
     [ "integrator_ptr", "classamrex_1_1TimeIntegrator.html#a945c0ab164fee73db3dcc6cdc38fe216", null ],
-    [ "post_timestep", "classamrex_1_1TimeIntegrator.html#a53389e8f6312b2078234b219976d43ac", null ],
-    [ "step_number", "classamrex_1_1TimeIntegrator.html#ac48158776ee4a43583ff87247ac46d63", null ],
-    [ "time", "classamrex_1_1TimeIntegrator.html#a26051c576eb8be3b006b8e74e842899e", null ],
-    [ "timestep", "classamrex_1_1TimeIntegrator.html#ae674f798e38cc1747c7d1b5c4643cfa1", null ]
+    [ "m_step_number", "classamrex_1_1TimeIntegrator.html#a3380f2b80343145ae2e959dced644826", null ],
+    [ "m_time", "classamrex_1_1TimeIntegrator.html#aae7bc2dadb31481a43abc24759aaaafb", null ],
+    [ "m_timestep", "classamrex_1_1TimeIntegrator.html#a9706b72c1b7bfc77f77c9a1c638b749f", null ],
+    [ "post_timestep", "classamrex_1_1TimeIntegrator.html#a53389e8f6312b2078234b219976d43ac", null ]
 ];
