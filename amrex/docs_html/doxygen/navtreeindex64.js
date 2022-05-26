@@ -1,5 +1,10 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1ReduceOpSum.html#a8a57daa2e7672e9a16e824dd2ea6048f":[2,0,0,416,1],
+"structamrex_1_1ReduceOpSum.html#acc3c648eb08f68c0d72d0bcca9534927":[2,0,0,416,2],
+"structamrex_1_1ReduceOpSum.html#af18e050e03babd636f9b492f8776a4df":[2,0,0,416,0],
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box.html":[2,0,0,15,0,0],
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html":[2,0,0,15,0,1],
 "structamrex_1_1RunOnGpu.html":[2,0,0,419],
 "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,420],
 "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,421],
@@ -244,10 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aca80bffdcf736a33a21c70582d2182bf":[2,0,0,0,2,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#acca11ab4048cabd364f8e25012b416ba":[2,0,0,0,2,4],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ad7a1d13d438479b184c871b0dec86a66":[2,0,0,0,2,10],
-"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html":[2,0,0,0,3],
-"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html#ab942f7d12d8564d8cdc739a1b904df4d":[2,0,0,0,3,0],
-"structamrex_1_1algoim_1_1Interval.html":[2,0,0,0,4],
-"structamrex_1_1algoim_1_1Interval.html#a017e3af95c08cb7c803eb4717bc2da14":[2,0,0,0,4,0],
-"structamrex_1_1algoim_1_1PsiCode.html":[2,0,0,0,5],
-"structamrex_1_1algoim_1_1PsiCode.html#a079589b947e48000160801106e65d2fe":[2,0,0,0,5,3]
+"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html":[2,0,0,0,3]
 };

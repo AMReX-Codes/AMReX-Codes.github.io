@@ -1771,7 +1771,97 @@
 <codeline lineno="1691"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1692"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1693"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1694"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1694"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1695"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1696"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(defined(BL_PROFILING)<sp/>||<sp/>defined(AMREX_TINY_PROFILING))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1697"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1698"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParmParse_8H" kindref="compound">AMReX_ParmParse.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1699"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLProfiler_8H" kindref="compound">AMReX_BLProfiler.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1700"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParallelDescriptor_8H" kindref="compound">AMReX_ParallelDescriptor.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1701"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParallelContext_8H" kindref="compound">AMReX_ParallelContext.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1703"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="1704"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1705"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>BLProfileSync::use_prof_syncs<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1706"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>BLProfileSync::sync_counter<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1707"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1708"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1709"><highlight class="normal">BLProfileSync::Sync<sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="1710"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1711"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)</highlight></codeline>
+<codeline lineno="1712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(<ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());<sp/>}</highlight></codeline>
+<codeline lineno="1713"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1714"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1715"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1716"><highlight class="normal">BLProfileSync::Sync<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1717"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
+<codeline lineno="1719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
+<codeline lineno="1720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(<ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());</highlight></codeline>
+<codeline lineno="1721"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1722"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1723"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1724"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1725"><highlight class="normal">BLProfileSync::Sync<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1726"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
+<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
+<codeline lineno="1729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(<ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());</highlight></codeline>
+<codeline lineno="1730"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1731"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1732"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1733"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1734"><highlight class="normal">BLProfileSync::InitParams<sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="1735"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1736"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse<sp/>pParse(</highlight><highlight class="stringliteral">&quot;amrex&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1737"><highlight class="normal"><sp/><sp/><sp/><sp/>pParse.queryAdd(</highlight><highlight class="stringliteral">&quot;use_profiler_syncs&quot;</highlight><highlight class="normal">,<sp/>BLProfileSync::use_prof_syncs);</highlight></codeline>
+<codeline lineno="1738"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1739"><highlight class="normal"><sp/><sp/><sp/><sp/>sync_counter<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1740"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1741"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1742"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1743"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="1744"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
+<codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sync_counter<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(<ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());</highlight></codeline>
+<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sync_counter++;</highlight></codeline>
+<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1751"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1752"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1753"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1754"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
+<codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sync_counter<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
+<codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(<ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());</highlight></codeline>
+<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sync_counter++;</highlight></codeline>
+<codeline lineno="1761"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1762"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1763"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1764"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1765"><highlight class="normal">BLProfileSync::StartSyncRegion<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1766"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
+<codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sync_counter<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(name);</highlight></codeline>
+<codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac0861548eabcd3f4b4c72a8826f83f8e" kindref="member">ParallelDescriptor::Barrier</ref>(<ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());</highlight></codeline>
+<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sync_counter++;</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1773"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1774"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1775"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1776"><highlight class="normal">BLProfileSync::EndSyncRegion<sp/>()<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="1777"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(use_prof_syncs)<sp/>{</highlight></codeline>
+<codeline lineno="1778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sync_counter--;</highlight></codeline>
+<codeline lineno="1779"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1780"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1781"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1782"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1783"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1784"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLProfiler.cpp"/>
   </compounddef>

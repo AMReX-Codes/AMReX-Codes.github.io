@@ -1,5 +1,10 @@
 var NAVTREEINDEX18 =
 {
+"AMReX__TypeTraits_8H.html#afcea7cdc6e03361f56c401b56d66a870":[3,0,0,2,240,39],
+"AMReX__TypeTraits_8H_source.html":[3,0,0,2,240],
+"AMReX__Utility_8H.html":[3,0,0,2,242],
+"AMReX__Utility_8H.html#a09ef310468cc24552cfc73abfc282b72":[3,0,0,2,242,28],
+"AMReX__Utility_8H.html#a0dace3a79fc48a8b02686c10363b70a9":[3,0,0,2,242,20],
 "AMReX__Utility_8H.html#a107cab62d5043f039671cf5b68068ddc":[3,0,0,2,242,21],
 "AMReX__Utility_8H.html#a15ea4e09dbb2ff1919ec42ea7702d5aa":[3,0,0,2,242,14],
 "AMReX__Utility_8H.html#a1a8cddb9effe92e67b1ad49de145e901":[3,0,0,2,242,32],
@@ -244,10 +249,5 @@ var NAVTREEINDEX18 =
 "AMReX__ccse-mpi_8H.html#aaeb65c6a10733707cec88e9cd3e3271e":[3,0,0,2,49,9],
 "AMReX__ccse-mpi_8H.html#ac57c1fc8484fb9b5c8359a559851107b":[3,0,0,2,49,8],
 "AMReX__ccse-mpi_8H.html#af7dcaf76f6b9b428d64f80155365e1df":[3,0,0,2,49,14],
-"AMReX__ccse-mpi_8H.html#affc17fe964f9f670fb06e09d6134b4ff":[3,0,0,2,49,3],
-"AMReX__ccse-mpi_8H_source.html":[3,0,0,2,49],
-"AMReX__constants__mod_8f90.html":[3,0,0,2,51],
-"AMReX__constants__mod_8f90.html#a0054397f5649f24a3da0cb5933162018":[3,0,0,2,51,13],
-"AMReX__constants__mod_8f90.html#a04f6986662b60baad0ef6dfc00b3d3f0":[3,0,0,2,51,12],
-"AMReX__constants__mod_8f90.html#a09ef6234d430ece0cd17687b6206eb28":[3,0,0,2,51,28]
+"AMReX__ccse-mpi_8H.html#affc17fe964f9f670fb06e09d6134b4ff":[3,0,0,2,49,3]
 };
