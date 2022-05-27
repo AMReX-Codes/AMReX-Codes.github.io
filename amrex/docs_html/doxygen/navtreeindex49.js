@@ -1,5 +1,10 @@
 var NAVTREEINDEX49 =
 {
+"classamrex_1_1PinnedArenaAllocator.html#a27cd3eb6e443faa574407c4f7ee5dc50":[2,0,0,396,2],
+"classamrex_1_1PinnedArenaAllocator.html#ac69e6e7fe296c776cda4f655591199d2":[2,0,0,396,1],
+"classamrex_1_1PlotFileData.html":[2,0,0,397],
+"classamrex_1_1PlotFileData.html#a0cc0ef78ac5a9ed1d7ad288cf6774723":[2,0,0,397,17],
+"classamrex_1_1PlotFileData.html#a0d8ab75fa81879e1ed0f1a08d34ae84f":[2,0,0,397,4],
 "classamrex_1_1PlotFileData.html#a0fdee328da3ad85b3dbb121f64adc105":[2,0,0,397,14],
 "classamrex_1_1PlotFileData.html#a120c87042788ba7040ced33bbff0dcf5":[2,0,0,397,21],
 "classamrex_1_1PlotFileData.html#a20a6ee376fe0fb4b149be6374249e79a":[2,0,0,397,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX49 =
 "classamrex_1_1RealVect.html#addcc9764c758d18f28fb58fd3c5b3a8b":[2,0,0,408,44],
 "classamrex_1_1RealVect.html#ae2fd3bdec2802aef034cc7cfb36bf14a":[2,0,0,408,4],
 "classamrex_1_1RealVect.html#aede3778179f57e5b9c02a7ed7cbfa04d":[2,0,0,408,37],
-"classamrex_1_1RealVect.html#af98b10ea8dcc7c6b0a87218452b39448":[2,0,0,408,36],
-"classamrex_1_1RealVect.html#afbffcdbb3488ce262cf30dde85593795":[2,0,0,408,0],
-"classamrex_1_1RealVect.html#aff390cd91e247a60ce2802a5c03c2235":[2,0,0,408,5],
-"classamrex_1_1ReduceData.html":[2,0,0,410],
-"classamrex_1_1ReduceData.html#a0fc76fd07dedd99b36524e3ce362f962":[2,0,0,410,2],
-"classamrex_1_1ReduceData.html#a1a2f10f97f0ff50897c92cd0a49e292a":[2,0,0,410,6]
+"classamrex_1_1RealVect.html#af98b10ea8dcc7c6b0a87218452b39448":[2,0,0,408,36]
 };

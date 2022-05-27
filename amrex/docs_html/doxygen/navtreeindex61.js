@@ -1,5 +1,10 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html":[2,0,0,203],
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#a47993e638b098a95bcfdfaca47058eb0":[2,0,0,203,1],
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#ab8dfe9dbb67acf14bbbfe3c2b756fa3d":[2,0,0,203,2],
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#ae7e9955973785a29d321ba4680fafce3":[2,0,0,203,0],
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html":[2,0,0,204],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#a8d75a5692239f0e1c9ad6f2c7e22a34a":[2,0,0,204,1],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#aa7b1971427e83d1d8f91f30ad942d2c5":[2,0,0,204,0],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#afebe5d5bd0658ac4b01a6c6300cd9bbb":[2,0,0,204,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a57d71866cb674a85f1cc645bfdc0bd06":[2,0,0,10,12,4],
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a73c39a5e51dab2870165da88688306d7":[2,0,0,10,12,2],
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a874f4d4d95984b6d53a10e76a5a7d27a":[2,0,0,10,12,5],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a952e8acf8b0d5176442546ca16c789ee":[2,0,0,10,12,1],
-"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#af8970386ed97a77fdb26348c6ae02871":[2,0,0,10,12,0],
-"structamrex_1_1NonLocalBC_1_1NoLocalCopy.html":[2,0,0,10,13],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html":[2,0,0,10,14],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html#a30d08fef2b14e838731f87056d78a617":[2,0,0,10,14,0],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html#abde0cfb7cbd64033b3462d65905c5831":[2,0,0,10,14,2]
+"structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a952e8acf8b0d5176442546ca16c789ee":[2,0,0,10,12,1]
 };

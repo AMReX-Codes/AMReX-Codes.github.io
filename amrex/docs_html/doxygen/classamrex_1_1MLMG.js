@@ -40,7 +40,6 @@ var classamrex_1_1MLMG =
     [ "getGradSolution", "classamrex_1_1MLMG.html#a6fcfa52ef82ffa84f1e4358c6b3fd3c6", null ],
     [ "getInitResidual", "classamrex_1_1MLMG.html#a38246ba4d9cc99180d23f13eaee31858", null ],
     [ "getInitRHS", "classamrex_1_1MLMG.html#a44fe292771ffd1f946297f72295217c1", null ],
-    [ "getNodalSum", "classamrex_1_1MLMG.html#a0a5c73d611e9e8b1fd1995d9bcf79086", null ],
     [ "getNumCGIters", "classamrex_1_1MLMG.html#ac3822a91ae7b60ff1c4a691936cf527e", null ],
     [ "getNumIters", "classamrex_1_1MLMG.html#ab7d3085def0c04b487a8cabf898ce039", null ],
     [ "getResidualHistory", "classamrex_1_1MLMG.html#a8bdedc7ec262346ed0007f53c3a8d200", null ],

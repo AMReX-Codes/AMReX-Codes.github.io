@@ -248,6 +248,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af43ce113549e125050df7b81c1e6feca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10fa03f772bb4d863bfef6d20fd8de28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a10fa03f772bb4d863bfef6d20fd8de28">scaleRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
 <tr class="separator:a10fa03f772bb4d863bfef6d20fd8de28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e52a0f8c493c146c2289443ea39c270"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a3e52a0f8c493c146c2289443ea39c270">getSolvabilityOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;) const</td></tr>
+<tr class="separator:a3e52a0f8c493c146c2289443ea39c270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a7f0a805c4a506d45f5f65a8741701"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a19a7f0a805c4a506d45f5f65a8741701">fixSolvabilityByOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, Real) const</td></tr>
+<tr class="separator:a19a7f0a805c4a506d45f5f65a8741701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a431d85bffa7e9bbcd36a10ae82fe3683">prepareForSolve</a> ()=0</td></tr>
 <tr class="separator:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d6ef9e77180f9076ef5cb83f48bb50"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev) const =0</td></tr>
@@ -796,7 +800,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a79b6bca7f31b09333bc7caae80d39136">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellABecLap.html#a576364fc5fcadf5eb1b23a7a693fa3ba">amrex::MLCellABecLap</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#ac373746aad70ce82f53b904e43a6539d">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellABecLap.html#a576364fc5fcadf5eb1b23a7a693fa3ba">amrex::MLCellABecLap</a>.</p>
 
 </div>
 </div>
@@ -1606,6 +1610,56 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a19a7f0a805c4a506d45f5f65a8741701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a7f0a805c4a506d45f5f65a8741701">&#9670;&nbsp;</a></span>fixSolvabilityByOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::fixSolvabilityByOffset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#aa6ad36a13e5266cd2d27585cac230b4b">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#ae56234ddc2cc3ab27892ca894028daba">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
 <a id="ac94ee917e5350722a537af7e127984d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac94ee917e5350722a537af7e127984d3">&#9670;&nbsp;</a></span>fixUpResidualMask()</h2>
 
@@ -1987,6 +2041,50 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e52a0f8c493c146c2289443ea39c270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e52a0f8c493c146c2289443ea39c270">&#9670;&nbsp;</a></span>getSolvabilityOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Real amrex::MLLinOp::getSolvabilityOffset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#afce52debc382600b9f83c6945ff1a509">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a7412e48ff518d82e3a077d224d34ddbe">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -2510,7 +2608,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#acd7d1f624947d653cfb4b3ea3f2fd193">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#afe42320f6ba8574d18aefce6492ee6b5">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2a3faa786b7090c2c15f76f2e29f6a28">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLALaplacian.html#a51c74968da344ad604efb62e7200f899">amrex::MLALaplacian</a>, and <a class="el" href="classamrex_1_1MLPoisson.html#a92cdc76d121dbcf72edad3dd82b25e77">amrex::MLPoisson</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#acd7d1f624947d653cfb4b3ea3f2fd193">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2a3faa786b7090c2c15f76f2e29f6a28">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#afe42320f6ba8574d18aefce6492ee6b5">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLALaplacian.html#a51c74968da344ad604efb62e7200f899">amrex::MLALaplacian</a>, and <a class="el" href="classamrex_1_1MLPoisson.html#a92cdc76d121dbcf72edad3dd82b25e77">amrex::MLPoisson</a>.</p>
 
 </div>
 </div>

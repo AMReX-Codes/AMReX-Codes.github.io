@@ -1,5 +1,10 @@
 var NAVTREEINDEX54 =
 {
+"functions_type.html":[2,3,3],
+"functions_type_b.html":[2,3,3,1],
+"functions_type_c.html":[2,3,3,2],
+"functions_type_d.html":[2,3,3,3],
+"functions_type_f.html":[2,3,3,4],
 "functions_type_h.html":[2,3,3,5],
 "functions_type_i.html":[2,3,3,6],
 "functions_type_l.html":[2,3,3,7],
@@ -13,8 +18,8 @@ var NAVTREEINDEX54 =
 "functions_type_v.html":[2,3,3,15],
 "functions_u.html":[2,3,0,21],
 "functions_v.html":[2,3,0,22],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -46,13 +51,13 @@ var NAVTREEINDEX54 =
 "functions_y.html":[2,3,0,25],
 "functions_z.html":[2,3,0,26],
 "functions_~.html":[2,3,0,27],
-"globals.html":[3,1,0,0],
 "globals.html":[3,1,0],
+"globals.html":[3,1,0,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
-"globals_defs.html":[3,1,6],
 "globals_defs.html":[3,1,6,0],
+"globals_defs.html":[3,1,6],
 "globals_defs_b.html":[3,1,6,1],
 "globals_defs_c.html":[3,1,6,2],
 "globals_defs_d.html":[3,1,6,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX54 =
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__string.html#a988b13fe082afcf29f4d61fe2de1e0f8":[2,0,7,8,0],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html":[2,0,7,9],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html#acaa614221f79466050f0803965f1bc82":[2,0,7,9,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html":[2,0,7,10],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html#aed6352ced14952145ea0dd0bd4723bdb":[2,0,7,10,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html":[2,0,7,11],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html#a99846b43a41a77557855585ac13555e3":[2,0,7,11,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html":[2,0,7,12],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html#a8b8d54bfcfee670480bf6a8479318ace":[2,0,7,12,0]
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html":[2,0,7,10]
 };
