@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namespaces and Multidimensional Code Tutorial &mdash; amrex 22.06-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> amrex
+          </a>
+              <div class="version">
+                22.06-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Namespaces and Multidimensional Code Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/NamespaceMultidim.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="namespaces-and-multidimensional-code-tutorial">
+<span id="name-multidim"></span><h1>Namespaces and Multidimensional Code Tutorial<a class="headerlink" href="#namespaces-and-multidimensional-code-tutorial" title="Permalink to this headline"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title"><strong>Time to Complete</strong>: 15 mins</p>
+<dl class="simple">
+<dt><strong>GOALS:</strong></dt><dd><ul class="simple">
+<li><p>Organize and Simplify Syntax with Namespaces</p></li>
+<li><p>Modify a 3D Code for 2D or 3D Simulation Using Macros and Compiler
+Directives</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<p>In this tutorial we will start from the file <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> from
+the <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">HeatEquation_Simple</span></a>
+example and make several modifications to the code. First we will
+discuss the <code class="docutils literal notranslate"><span class="pre">amrex</span></code> namespace, and use commands to
+simplify the syntax of the code. Second, we will cover
+AMReX macros and compiler directives commonly used to write
+multidimensional code. We will insert these commands into our
+example code to enable these features. In the end, we will have
+a more capable code with cleaner syntax.</p>
+<section id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline"></a></h2>
+<p>AMReX uses namespaces to organize classes, functions, data, types
+and templates and avoid naming conflicts with other libraries.
+In the simplified Heat Equation guided tutorial, aspects of the <code class="docutils literal notranslate"><span class="pre">amrex</span></code>
+namespace were accessed by using the prefix <code class="docutils literal notranslate"><span class="pre">amrex::</span></code>. For example,
+to use the AMReX Real type we wrote,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Real</span> <span class="n">dt</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Moreover, this pattern was repeated 34 times throughout the example
+leading to a lot of extra typing! In this case, we can simplify the code
+by adding the line,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">amrex</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>before the sections of code where we want to access the classes, functions,
+data, types or templates from the <code class="docutils literal notranslate"><span class="pre">amrex</span></code> namespace. Typically, this
+is done after the <code class="docutils literal notranslate"><span class="pre">#include</span></code> lines at the top of the file. Once this
+is done, we can drop the <code class="docutils literal notranslate"><span class="pre">amrex::</span></code> prefix, and write only,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span> <span class="n">dt</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>to get the same result.</p>
+<p>At this point, we should add the <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">amrex;</span></code>
+line at the top of our file and remove the <code class="docutils literal notranslate"><span class="pre">amrex::</span></code> prefix from all the
+commands that use it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using math functions such as <code class="docutils literal notranslate"><span class="pre">min</span></code> or <code class="docutils literal notranslate"><span class="pre">max</span></code> from the C++ standard library,
+it is recommend that users prefix these commands with <code class="docutils literal notranslate"><span class="pre">std::</span></code>, to have <code class="docutils literal notranslate"><span class="pre">std::min</span></code>
+or <code class="docutils literal notranslate"><span class="pre">std::max</span></code> to avoid any conflicts with the <code class="docutils literal notranslate"><span class="pre">amrex</span></code> namespace.</p>
+</div>
+<p>The rest of this tutorial will assume we implemented <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">amrex;</span></code>
+and removed the <code class="docutils literal notranslate"><span class="pre">amrex::</span></code> prefixes.</p>
+</section>
+<section id="writing-multidimensional-code">
+<h2>Writing Multidimensional Code<a class="headerlink" href="#writing-multidimensional-code" title="Permalink to this headline"></a></h2>
+<p>In this section of the tutorial we focus on using compiler or preprocessor
+directives and AMReX macros to write code that will run
+in 1-, 2- or 3-Dimensions, depending on what was chosen at compile
+time. We continue modifications of the <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> file from
+the <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Tutorial: Heat Equation - Simple</span></a>.</p>
+<section id="what-is-a-compiler-directive">
+<h3>What is a compiler directive?<a class="headerlink" href="#what-is-a-compiler-directive" title="Permalink to this headline"></a></h3>
+<p>A compiler directive allows a programmer to tell the compiler
+to take specific actions at compile time. In C++ they are
+often called preprocessor directives, because they are interpreted
+before the compilation process. In AMReX they are
+commonly used in conjunction with macros for writing 2D/3D code.</p>
+</section>
+<section id="what-is-a-macro">
+<h3>What is a Macro?<a class="headerlink" href="#what-is-a-macro" title="Permalink to this headline"></a></h3>
+<p>Macros are a form of text substitution. For example,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define VALUE_OF_PI 3.14</span>
+</pre></div>
+</div>
+<p>will substitute 3.14 when the string VALUE_OF_PI is found in
+the code. They can
+also include more advanced functionality. As we’ll
+see in the tutorial, AMReX has several helpful macros. They
+are named in all caps to avoid confusion with
+normal variables.</p>
+<p>In this section, we’ll start from the <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> code used in
+the HeatEquation_Simple example, and modify it for 2D/3D
+compilation. We’ll begin by adding several macros.</p>
+<section id="amrex-d-decl">
+<h4>AMREX_D_DECL<a class="headerlink" href="#amrex-d-decl" title="Permalink to this headline"></a></h4>
+<p>The first line we’ll modify is</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span> <span class="nf">dom_lo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span> <span class="nf">dom_lo</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">AMREX_D_DECL</span></code> macro expands to a comma-separated list of
+1, 2, or 3 of the arguments depending on the dimension selected at
+compile time. To be explicit,</p>
+<p>if compiled with <code class="docutils literal notranslate"><span class="pre">DIM=2</span></code> or <code class="docutils literal notranslate"><span class="pre">AMReX_SPACEDIM=2</span></code> the line above will
+evaluate to,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span> <span class="n">dom_lo</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>if compiled with <code class="docutils literal notranslate"><span class="pre">DIM=3</span></code> or <code class="docutils literal notranslate"><span class="pre">AMReX_SPACEDIM=3</span></code> it will
+evaluate to,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span> <span class="n">dom_lo</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, modify the definitions of <code class="docutils literal notranslate"><span class="pre">dom_hi</span></code> and <code class="docutils literal notranslate"><span class="pre">real_box</span></code> to use
+the <code class="docutils literal notranslate"><span class="pre">AMREX_D_DECL</span></code> macro in a similar manner.</p>
+</section>
+<section id="amrex-spacedim">
+<h4>AMREX_SPACEDIM<a class="headerlink" href="#amrex-spacedim" title="Permalink to this headline"></a></h4>
+<p>When we arrive at the line</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span> <span class="n">is_periodic</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>we encounter a slightly different situation. This time we need to
+change the dimension of the Array as well as the number of inputs.
+For this we change the 3 in <code class="docutils literal notranslate"><span class="pre">Array&lt;int,3&gt;</span></code>, to <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>.
+The inputs to <code class="docutils literal notranslate"><span class="pre">is_preiodic</span></code> are treated as above, giving:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="n">is_periodic</span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)};</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> macro in this statement will evaluate to 1, 2 or 3 depending on the
+dimension selected at compile time.</p>
+</section>
+</section>
+</section>
+<section id="preprocessor-directives">
+<h2>Preprocessor Directives<a class="headerlink" href="#preprocessor-directives" title="Permalink to this headline"></a></h2>
+<p>While macros address many of the dimensional needs of our code
+sometimes its necessary to use them in conjunction with
+preprocessor directives, such as <code class="docutils literal notranslate"><span class="pre">#if</span></code>, <code class="docutils literal notranslate"><span class="pre">#elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">#endif</span></code>,
+to allow for algorithmic differences for
+different dimensions.  In our code example, this need arises within calls to <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>.</p>
+<p>As a first step to writing a multidimensional version of this code, consider what the algorithm
+looks like in 3D dimensions
+(This is what we see in the code we’re starting with.):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">Real</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+    <span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>If we wanted a similar initialization in 2D, it would be:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+    <span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Notice that much of this code is redundant. The declarations of <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>
+and value assigned to <code class="docutils literal notranslate"><span class="pre">phiOld</span></code> are all the same. The difference comes
+with the addition of <code class="docutils literal notranslate"><span class="pre">z</span></code> and definition of the distance <code class="docutils literal notranslate"><span class="pre">rsquared</span></code> in 2D and 3D.
+We can address this by adding preprocessor directives with AMReX macros
+to create different sections of code for different numbers of dimensions.</p>
+<section id="splitting-the-code-by-dimensional-dependence">
+<h3>Splitting the Code by Dimensional Dependence<a class="headerlink" href="#splitting-the-code-by-dimensional-dependence" title="Permalink to this headline"></a></h3>
+<p>Now we will separate the parts of the code by the number of dimensions
+they exclusively pertain to. Because the <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">phiOld</span></code> lines are
+included in all cases, they will
+remain outside the preprocessor directives. Then we can separate the code like this,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// included in all cases</span>
+<span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="c1">// dimensional dependent code</span>
+
+<span class="c1">// included in all cases</span>
+<span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-the-2-dimensional-section">
+<h3>Adding the 2-Dimensional Section<a class="headerlink" href="#adding-the-2-dimensional-section" title="Permalink to this headline"></a></h3>
+<p>To address the 2-dimensional case, we add preprocessor directives <code class="docutils literal notranslate"><span class="pre">#if</span></code> and
+<code class="docutils literal notranslate"><span class="pre">#endif</span></code> with the logic, <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">(AMREX_SPACEDIM</span> <span class="pre">==</span> <span class="pre">2)</span></code>. This will
+check if the value of the macro <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> is equal to 2. If true,
+it will compile the code inside this section. Therefore we write:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// included in all cases</span>
+<span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="c1">// dimensional dependent code</span>
+<span class="hll"><span class="cp">#if (AMREX_SPACEDIM == 2)</span>
+</span><span class="hll">   <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+</span><span class="hll"><span class="cp">#endif</span>
+</span>
+<span class="c1">// included in all cases</span>
+<span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-the-3-dimensional-section">
+<h3>Adding the 3-dimensional Section<a class="headerlink" href="#adding-the-3-dimensional-section" title="Permalink to this headline"></a></h3>
+<p>With the above additions, the code will work if we compile with the option <code class="docutils literal notranslate"><span class="pre">DIM=2</span></code> or
+<code class="docutils literal notranslate"><span class="pre">AMReX_SPACEDIM=2</span></code>. For three dimensions, we include
+<code class="docutils literal notranslate"><span class="pre">#elif</span> <span class="pre">(AMREX_SPACEDIM</span> <span class="pre">==</span> <span class="pre">3)</span></code> and add the lines for <code class="docutils literal notranslate"><span class="pre">z</span></code> and the 3D version
+of <code class="docutils literal notranslate"><span class="pre">rsquared</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="cp">#if (AMREX_SPACEDIM == 2)</span>
+   <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+
+<span class="hll"><span class="cp">#elif (AMREX_SPACEDIM == 3)</span>
+</span><span class="hll">   <span class="n">Real</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span class="hll">   <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+</span><span class="hll"><span class="cp">#endif</span>
+</span>
+<span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This adds another preprocessor directive
+which evaluates the statement <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM==3</span></code>. If true
+(and <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM==2</span></code> false), it will
+compile this section of code and not the 2-dimensional section.</p>
+</section>
+<section id="d-3d-multidimensional-version">
+<h3>2D/3D Multidimensional Version<a class="headerlink" href="#d-3d-multidimensional-version" title="Permalink to this headline"></a></h3>
+<p>Altogether the 2D/3D multidimensional version of the call to <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> is:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="n">Real</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+   <span class="n">Real</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="cp">#if (AMREX_SPACEDIM == 2)</span>
+   <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+
+<span class="cp">#elif (AMREX_SPACEDIM == 3)</span>
+   <span class="n">Real</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+   <span class="n">Real</span> <span class="n">rsquared</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span><span class="o">/</span><span class="mf">0.01</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+   <span class="n">phiOld</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rsquared</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The section of code that will be compiled and executed is now determined
+by the value of <code class="docutils literal notranslate"><span class="pre">DIM</span></code> or <code class="docutils literal notranslate"><span class="pre">AMReX_SPACEDIM</span></code> configured at compile
+time. The final addition to this tutorial is to see we need to add
+another preprocessor directive to modify the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> responsible
+for advancing the data by dt. In this case all we need is a conditional
+statement to isolate the code that updates the third dimension.</p>
+</section>
+</section>
+<section id="a-note-about-parallelfor">
+<h2>A Note About ParallelFor<a class="headerlink" href="#a-note-about-parallelfor" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> function automatically optimizes code execution for
+the hardware according to commands given at compile time. However, when writing
+multidimensional code the syntax of the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> loop is <strong>always
+written as if compiling for three dimensions</strong>. Consider,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span> <span class="p">...</span>  <span class="p">});</span>
+</pre></div>
+</div>
+<p>and note that we included the iterative variables <code class="docutils literal notranslate"><span class="pre">i,j,k</span></code> even though
+the 2-dimensional code will not use the <code class="docutils literal notranslate"><span class="pre">k</span></code> variable. The <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>
+function is aware of the dimension specified at compile time, and
+automatically makes this adjustment for the convenience of AMReX users.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"></a></h2>
+<p>Congratulations, you should now be able to compile the code for 2- or
+3-dimensional simulations. At this point, our modified <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> code should
+look similar to the code used in the <a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a>. The commands to compile
+for each number of dimensions with GNU Make and CMake are listed in the
+table below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 22%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Compile Commands</p></th>
+<th class="head"><p>GNU Make</p></th>
+<th class="head"><p>CMake</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2 Dimensions</p></td>
+<td><p>make DIM=2</p></td>
+<td><p>cmake .. -DAMReX_SPACEDIM=2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 Dimensions</p></td>
+<td><p>make DIM=3</p></td>
+<td><p>cmake .. -DAMReX_SPACEDIM=3</p></td>
+</tr>
+</tbody>
+</table>
+<p>Please be aware that the plotfiles generated in each version of the code
+will have different requirements due to the difference in dimensions. For example,
+a plotfile from the 3D code will need, <code class="docutils literal notranslate"><span class="pre">amrviz3d</span></code> while the 2D code
+will need <code class="docutils literal notranslate"><span class="pre">amrviz2d</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
