@@ -1,5 +1,7 @@
 var NAVTREEINDEX65 =
 {
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#aa84aea4f19fd97919030c7bc2b2bce52":[2,0,0,0,2,12],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467":[2,0,0,0,2,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac95794690d4fb50c8e149a55ade09fb8":[2,0,0,0,2,3],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aca80bffdcf736a33a21c70582d2182bf":[2,0,0,0,2,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#acca11ab4048cabd364f8e25012b416ba":[2,0,0,0,2,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX65 =
 "unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814":[2,0,0,66,0,6],
 "unionamrex_1_1BATransformer_1_1BATOp.html#afd4493c8028cd11dab3a11c1b5d7f906":[2,0,0,66,0,3],
 "unionamrex_1_1BlockMutex_1_1state__t.html":[2,0,0,71,0],
-"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[2,0,0,71,0,1],
-"unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[2,0,0,71,0,2],
-"unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html":[2,0,0,16,0,2,0]
+"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[2,0,0,71,0,1]
 };

@@ -7,6 +7,7 @@ var AMReX__FillPatchUtil_8H =
     ] ],
     [ "FillPatchSingleLevel", "AMReX__FillPatchUtil_8H.html#a3cf973090fa613c635340a08df7ecd38", null ],
     [ "FillPatchSingleLevel", "AMReX__FillPatchUtil_8H.html#a05934ee478017afcd9908667de64a79c", null ],
+    [ "FillPatchTwoLevels", "AMReX__FillPatchUtil_8H.html#a3b2f67cfdffeeea1442daa3174a8ad7c", null ],
     [ "FillPatchTwoLevels", "AMReX__FillPatchUtil_8H.html#ae7fdce34557bf398e68e173045b5498a", null ],
     [ "FillPatchTwoLevels", "AMReX__FillPatchUtil_8H.html#a760ab1490c5580a3d640bd43b73a2ccc", null ],
     [ "FillPatchTwoLevels", "AMReX__FillPatchUtil_8H.html#a5b5440802e0895fcba37e6b295116585", null ],
