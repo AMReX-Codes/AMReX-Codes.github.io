@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fork-Join &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -92,8 +94,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="fork-join">
-<h1>Fork-Join<a class="headerlink" href="#fork-join" title="Permalink to this headline"></a></h1>
+  <section id="fork-join">
+<h1>Fork-Join<a class="headerlink" href="#fork-join" title="Permalink to this heading"></a></h1>
 <p>An AMReX program consists of a set of MPI ranks cooperating together on
 distributed data.
 Typically, all of the ranks in a job compute in a bulk-synchronous,
@@ -104,23 +106,27 @@ job’s MPI ranks into subgroups (i.e. <cite>fork</cite>) and assign each subgro
 an independent task to compute in parallel with each other.
 After all of the forked child tasks complete, they synchronize
 (i.e. <cite>join</cite>), and the parent task continues execution as before.</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/fork_join_tasks.png"><img alt="Fork-Join Tasks" src="_images/fork_join_tasks.png" style="width: 420.8px; height: 469.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Example of a fork-join operation where the parent task’s MPI processes (ranks) are
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Example of a fork-join operation where the parent task’s MPI processes (ranks) are
 split into two independent child tasks that execute in parallel and
 then join to resume execution of the parent task.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
+</figcaption>
+</figure>
 <p>The Fork-Join operation can also be invoked in a nested fashion,
 creating a hierarchy of fork-join operations, where each fork further
 subdivides the ranks of a task into child tasks.
 This approach enables heterogeneous computation and reduces the strong
 scaling penalty for operations with less inherent parallelism or with
 large communication overheads.</p>
-<div class="figure align-center" id="id2">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/nested_fork_join_tasks.png"><img alt="Nested Fork-Join Tasks" src="_images/nested_fork_join_tasks.png" style="width: 436.8px; height: 589.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Example of nested fork-join operations where a child task is further
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Example of nested fork-join operations where a child task is further
 split into more subtasks.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
-</div>
+</figcaption>
+</figure>
 <p>The fork-join operation is accomplished by:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
@@ -133,7 +139,7 @@ other during subtask collectives (e.g. for <code class="docutils literal notrans
 </div></blockquote>
 <p>When the program starts, all of the ranks in the MPI communicator are
 in the root task.</p>
-</div>
+</section>
 
 
            </div>

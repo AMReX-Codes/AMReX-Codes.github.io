@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SWFFT &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -102,11 +104,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="swfft">
-<span id="swfftdoc"></span><h1>SWFFT<a class="headerlink" href="#swfft" title="Permalink to this headline"></a></h1>
+  <section id="swfft">
+<span id="swfftdoc"></span><h1>SWFFT<a class="headerlink" href="#swfft" title="Permalink to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">hacc/SWFFT</span></code>, developed by Adrian Pope et al. at Argonne National Lab, provides the functionality to perform forward and reverse Fast Fourier Transforms (FFT) within a fully parallelized framework built in C++ and F90. In the words of HACC’s developers, SWFFT is a “distributed-memory, pencil-decomposed, parallel 3D FFT.” <a class="footnote-reference brackets" href="#id6" id="id1">1</a> The SWFFT source code is also contained in the following directory within AMReX: <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/SWFFT</span></code>. <a class="footnote-reference brackets" href="#id7" id="id2">2</a></p>
-<div class="section" id="pencil-redistribution">
-<h2>Pencil Redistribution<a class="headerlink" href="#pencil-redistribution" title="Permalink to this headline"></a></h2>
+<section id="pencil-redistribution">
+<h2>Pencil Redistribution<a class="headerlink" href="#pencil-redistribution" title="Permalink to this heading"></a></h2>
 <p>As input, SWFFT takes three-dimensional arrays of data distributed across block-structured grids, and redistributes the data into “pencil” grids in <span class="math notranslate nohighlight">\(z, x,\)</span> and then <span class="math notranslate nohighlight">\(y\)</span>, belonging to different MPI processes. After each pencil conversion, a 1D FFT is performed on the data along the pencil direction using calls to the FFTW <a class="footnote-reference brackets" href="#id8" id="id3">3</a> library. The <code class="docutils literal notranslate"><span class="pre">README</span></code> files in the tutorial directories specify the relationship between the number of grids and the number of MPI processes that should be used. The <code class="docutils literal notranslate"><span class="pre">hacc/SWFFT</span></code> <code class="docutils literal notranslate"><span class="pre">README</span></code> document by Adrian Pope et al. explains restrictions on grid dimensions in relation to the number of MPI processes <a class="footnote-reference brackets" href="#id6" id="id4">1</a>  <a class="footnote-reference brackets" href="#id7" id="id5">2</a>:</p>
 <blockquote>
 <div><p>[…] A rule of thumb is that [SWFFT] generally works when the number of vertices along
@@ -179,15 +181,15 @@ test with <code class="docutils literal notranslate"><span class="pre">TestDfft/
 <div class="math notranslate nohighlight">
 \[N_{b} = m_{bi} m_{bj} = n_{bi} n_{bj} n_{bk},\]</div>
 <p>where <span class="math notranslate nohighlight">\(n_{bi}, n_{bj},\)</span> and  <span class="math notranslate nohighlight">\(n_{bk}\)</span> are the number of grids, or boxes, in the <span class="math notranslate nohighlight">\(x, y,\)</span> and <span class="math notranslate nohighlight">\(z\)</span> dimensions of the block-structured grid. Analogously, for pencil distributions, <span class="math notranslate nohighlight">\(m_{bi}\)</span> and <span class="math notranslate nohighlight">\(m_{bj}\)</span> are the number of grids along the remaining dimensions if pencils are taken in the <span class="math notranslate nohighlight">\(k\)</span> direction. There are many possible ways of redistributing the data, for example <span class="math notranslate nohighlight">\(m_{bi} = n_{bi}n_{bk}\)</span> &amp; <span class="math notranslate nohighlight">\(m_{bj} = n_{bj}\)</span> is one possible simple configuration. However, it is evident from the figures above that the SWFFT redistribution algorithm has a more sophisticated method for finding the prime factors of the grid.</p>
-</div>
-<div class="section" id="tutorials">
-<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline"></a></h2>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading"></a></h2>
 <p>AMReX contains two SWFFT tutorials, <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/SWFFT_Tutorial.html#swfft-poisson">SWFFT Poisson</a> and <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/SWFFT_Tutorial.html#swfft-simple">SWFFT Simple</a>:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/SWFFT_Tutorial.html#swfft-poisson">SWFFT Poisson</a> solves a Poisson equation with periodic boundary conditions.  In it, both a forward FFT
 and reverse FFT are called to solve the equation, however, no reordering of the DFT data in k-space is performed.</p></li>
 <li><p><a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/SWFFT_Tutorial.html#swfft-simple">SWFFT Simple</a> is useful if the objective is to simply take a forward FFT of data,
-and the DFT’s ordering in k-space matters to the user. This tutorial initializes a 3D or 2D <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>,
+and the DFT’s ordering in k-space matters to the user. This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>,
 takes a forward FFT, and then redistributes the data in k-space back to the “correct,” 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>, ordering.
 The results are written to a plot file.</p></li>
 </ul>
@@ -202,8 +204,8 @@ The results are written to a plot file.</p></li>
 <dd><p><a class="reference external" href="http://www.fftw.org/">http://www.fftw.org/</a></p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

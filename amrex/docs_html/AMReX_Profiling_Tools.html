@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Types of Profiling &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -75,10 +77,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#instrumenting-c-code">Instrumenting C++ Code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#a-scoped-timer-bl-profile">1) A scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE</span></span></code>:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a-named-scoped-timer-bl-profile-var">2) A named, scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR</span></span></code>:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns">3) A named, scoped timer that doesn’t auto-start, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR_NS</span></span></code>:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#designate-a-sub-region-to-profile-bl-profile-region">4) Designate a sub-region to profile, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_REGION</span></span></code>:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-scoped-timer-bl-profile">1) A scoped timer, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE</span></code>:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-named-scoped-timer-bl-profile-var">2) A named, scoped timer, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR</span></code>:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns">3) A named, scoped timer that doesn’t auto-start, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_NS</span></code>:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#designate-a-sub-region-to-profile-bl-profile-region">4) Designate a sub-region to profile, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_REGION</span></code>:</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#scoped-regions">Scoped Regions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#named-regions">Named Regions</a></li>
 </ul>
@@ -120,16 +122,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="types-of-profiling">
-<h1>Types of Profiling<a class="headerlink" href="#types-of-profiling" title="Permalink to this headline"></a></h1>
+  <section id="types-of-profiling">
+<h1>Types of Profiling<a class="headerlink" href="#types-of-profiling" title="Permalink to this heading"></a></h1>
 <p>AMReX’s built-in profiling works through objects that start and stop timers
 based on user-placed macros or an object’s constructor and destructor.
 The results from these timers are stored in a global list that is consolidated
 and printed during finalization, or at a user-defined flush point.</p>
 <p>Currently, AMReX has two options for built-in profiling:
 <a class="reference internal" href="#sec-tiny-profiling"><span class="std std-ref">Tiny Profiling</span></a> and <a class="reference internal" href="#sec-full-profiling"><span class="std std-ref">Full Profiling</span></a>.</p>
-<div class="section" id="tiny-profiling">
-<span id="sec-tiny-profiling"></span><h2>Tiny Profiling<a class="headerlink" href="#tiny-profiling" title="Permalink to this headline"></a></h2>
+<section id="tiny-profiling">
+<span id="sec-tiny-profiling"></span><h2>Tiny Profiling<a class="headerlink" href="#tiny-profiling" title="Permalink to this heading"></a></h2>
 <p>To enable “Tiny Profiling” with GNU Make edit the options in the file <code class="docutils literal notranslate"><span class="pre">GNUMakefile</span></code>
 to show,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TINY_PROFILE</span> <span class="o">=</span> <span class="n">TRUE</span>
@@ -147,8 +149,8 @@ to show,</p>
 <span class="pre">ON</span></code>) to enable full profiling then this will override the <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE</span></code> flag
 and tiny profiling will be disabled.</p>
 </div>
-<div class="section" id="output">
-<h3>Output<a class="headerlink" href="#output" title="Permalink to this headline"></a></h3>
+<section id="output">
+<h3>Output<a class="headerlink" href="#output" title="Permalink to this heading"></a></h3>
 <p>At the end of a run, a summary of exclusive and inclusive function times will
 be written to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>. This output includes the minimum and maximum (over
 processes) time spent in each routine as well as the average and the maximum
@@ -190,30 +192,30 @@ timers as possible, such as immediately before or after writing a checkpoint.</p
 it is also recommended to wrap any <code class="docutils literal notranslate"><span class="pre">BL_PROFILE_TINY_FLUSH();</span></code> calls in
 informative <code class="docutils literal notranslate"><span class="pre">amrex::Print()</span></code> lines to ensure accurate identification of each
 set of timers.</p>
-</div>
-</div>
-<div class="section" id="full-profiling">
-<span id="sec-full-profiling"></span><h2>Full Profiling<a class="headerlink" href="#full-profiling" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="full-profiling">
+<span id="sec-full-profiling"></span><h2>Full Profiling<a class="headerlink" href="#full-profiling" title="Permalink to this heading"></a></h2>
 <p>If you set <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> then a <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> directory will be written that
 contains detailed per-task timings for each processor.  This will be written in
 <code class="docutils literal notranslate"><span class="pre">nfiles</span></code> files (where <code class="docutils literal notranslate"><span class="pre">nfiles</span></code> is specified by the user). The information
 in the directory can be analyzed by the <a class="reference internal" href="#sec-amrprofparse"><span class="std std-ref">AMRProfParser</span></a> tool
 within <a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>. In addition, an
 exclusive-only set of function timings will be written to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.</p>
-<div class="section" id="trace-profiling">
-<h3>Trace Profiling<a class="headerlink" href="#trace-profiling" title="Permalink to this headline"></a></h3>
+<section id="trace-profiling">
+<h3>Trace Profiling<a class="headerlink" href="#trace-profiling" title="Permalink to this heading"></a></h3>
 <blockquote>
 <div><p>If you set <code class="docutils literal notranslate"><span class="pre">TRACE_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> in addition to <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>,
 then the profiler keeps track of when each profiled function is called and
 the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> directory will include the function call stack. This is
-especially useful when core functions, such as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FillBoundary</span></span></code> can be
+especially useful when core functions, such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FillBoundary</span></code> can be
 called from many different regions of the code. Using trace profiling
 allows one to specify regions in the code that can be analyzed for
 profiling information independently from other regions.</p>
 </div></blockquote>
-</div>
-<div class="section" id="communication-profiling">
-<h3>Communication Profiling<a class="headerlink" href="#communication-profiling" title="Permalink to this headline"></a></h3>
+</section>
+<section id="communication-profiling">
+<h3>Communication Profiling<a class="headerlink" href="#communication-profiling" title="Permalink to this heading"></a></h3>
 <blockquote>
 <div><p>If you set <code class="docutils literal notranslate"><span class="pre">COMM_PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> in addition to <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, then
 the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> directory will contain additional information about MPI
@@ -223,12 +225,12 @@ together.</p>
 </div></blockquote>
 <p>The AMReX-specific profiling tools are currently under development and this
 documentation will reflect the latest status in the development branch.</p>
-</div>
-</div>
-</div>
-<div class="section" id="instrumenting-c-code">
-<h1>Instrumenting C++ Code<a class="headerlink" href="#instrumenting-c-code" title="Permalink to this headline"></a></h1>
-<p>AMReX profiler objects are created and managed through <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROF</span></span></code> macros.</p>
+</section>
+</section>
+</section>
+<section id="instrumenting-c-code">
+<h1>Instrumenting C++ Code<a class="headerlink" href="#instrumenting-c-code" title="Permalink to this heading"></a></h1>
+<p>AMReX profiler objects are created and managed through <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROF</span></code> macros.</p>
 <p>To start, you must at least instrument main(), i.e.:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(...)</span>
 <span class="p">{</span>
@@ -260,8 +262,8 @@ documentation will reflect the latest status in the development branch.</p>
 </div>
 <p>You can then instrument any of your functions, or code blocks. There are four general
 profiler macro types available:</p>
-<div class="section" id="a-scoped-timer-bl-profile">
-<h2>1) A scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE</span></span></code>:<a class="headerlink" href="#a-scoped-timer-bl-profile" title="Permalink to this headline"></a></h2>
+<section id="a-scoped-timer-bl-profile">
+<h2>1) A scoped timer, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE</span></code>:<a class="headerlink" href="#a-scoped-timer-bl-profile" title="Permalink to this heading"></a></h2>
 <p>These timers generate their own object names, so they can’t be controlled after being defined.
 However, they are the cleanest and easiest to work with in many situations. They time from
 the point where the macro is called until the end of the enclosing scope. This macro is ideal
@@ -277,9 +279,9 @@ for timing an entire function. For example:</p>
 </div>
 <p>Note that all AMReX timers are scoped and will call “stop” when the corresponding object is destroyed.
 This macro is unique because it can <em>only</em> stop when it goes out of scope.</p>
-</div>
-<div class="section" id="a-named-scoped-timer-bl-profile-var">
-<h2>2) A named, scoped timer, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR</span></span></code>:<a class="headerlink" href="#a-named-scoped-timer-bl-profile-var" title="Permalink to this headline"></a></h2>
+</section>
+<section id="a-named-scoped-timer-bl-profile-var">
+<h2>2) A named, scoped timer, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR</span></code>:<a class="headerlink" href="#a-named-scoped-timer-bl-profile-var" title="Permalink to this heading"></a></h2>
 <p>In some cases, using scopes to control a timer is not ideal. In such cases, you can use the
 <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> macros to create a named timer that can be controlled through <code class="docutils literal notranslate"><span class="pre">_START_</span></code> and <code class="docutils literal notranslate"><span class="pre">_STOP_</span></code> macros.
 <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> signifies that the macro takes a variable name. For example, to time a function without scoping:</p>
@@ -288,8 +290,8 @@ This macro is unique because it can <em>only</em> stop when it goes out of scope
 <span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">anyname</span><span class="p">);</span>   <span class="c1">// Stop the &quot;anyname&quot; timer object.</span>
 </pre></div>
 </div>
-<p>This can also be used to selectively time with the same scope. For example, to include <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Func_0</span></span></code>
-and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Func_2</span></span></code>, but not <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Func_1</span></span></code>:</p>
+<p>This can also be used to selectively time with the same scope. For example, to include <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_0</span></code>
+and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_2</span></code>, but not <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Func_1</span></code>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span> <span class="n">myfuncs</span><span class="p">);</span>  <span class="c1">// the first one</span>
   <span class="n">MyFunc_0</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
 <span class="n">BL_PROFILE_VAR_STOP</span><span class="p">(</span><span class="n">myfuncs</span><span class="p">);</span>
@@ -302,7 +304,7 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 </pre></div>
 </div>
 <p>Remember, these are still scoped. So, the scoped timer example can be reproduced exactly with named
-timers by just using the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">_VAR</span></span></code> macro:</p>
+timers by just using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">_VAR</span></code> macro:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">YourClass</span><span class="o">::</span><span class="n">YourFunction</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="n">BL_PROFILE_VAR</span><span class="p">(</span><span class="s">&quot;YourClass::YourFunction()&quot;</span><span class="p">,</span>  <span class="n">pmain</span><span class="p">);</span>   <span class="c1">// Timer starts here.</span>
@@ -312,13 +314,13 @@ timers by just using the <code class="code cpp c++ docutils literal notranslate"
 <span class="p">}</span>    <span class="c1">// &lt;------ Timer goes out of scope here correctly, without a STOP call.</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns">
-<h2>3) A named, scoped timer that doesn’t auto-start, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_VAR_NS</span></span></code>:<a class="headerlink" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns" title="Permalink to this headline"></a></h2>
+</section>
+<section id="a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns">
+<h2>3) A named, scoped timer that doesn’t auto-start, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_VAR_NS</span></code>:<a class="headerlink" href="#a-named-scoped-timer-that-doesn-t-auto-start-bl-profile-var-ns" title="Permalink to this heading"></a></h2>
 <p>Sometimes, a complicated scoping may mean the profiling object needs to be defined before it’s
 started. To create a named AMReX timer that doesn’t start automatically, use the <code class="docutils literal notranslate"><span class="pre">_NS_</span></code> macros.
-(“NS” stands for “no start”). For example, this implementation times <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MyFunc0</span></span></code>
-and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MyFunc1</span></span></code> but not any of the
+(“NS” stands for “no start”). For example, this implementation times <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc0</span></code>
+and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc1</span></code> but not any of the
 “Additional Code” blocks:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">BL_PROFILE_VAR_NS</span><span class="p">(</span><span class="s">&quot;MyFuncs()&quot;</span><span class="p">,</span> <span class="n">myfuncs</span><span class="p">);</span>  <span class="c1">// dont start the timer</span>
@@ -348,17 +350,17 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <p>The <code class="docutils literal notranslate"><span class="pre">_NS_</span></code> macro must, by necessity, also be a <code class="docutils literal notranslate"><span class="pre">_VAR_</span></code> macro. Otherwise, you would never be
 able to turn the timer on!</p>
 </div>
-</div>
-<div class="section" id="designate-a-sub-region-to-profile-bl-profile-region">
-<h2>4) Designate a sub-region to profile, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BL_PROFILE_REGION</span></span></code>:<a class="headerlink" href="#designate-a-sub-region-to-profile-bl-profile-region" title="Permalink to this headline"></a></h2>
+</section>
+<section id="designate-a-sub-region-to-profile-bl-profile-region">
+<h2>4) Designate a sub-region to profile, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_PROFILE_REGION</span></code>:<a class="headerlink" href="#designate-a-sub-region-to-profile-bl-profile-region" title="Permalink to this heading"></a></h2>
 <p>Often, it’s helpful to look at a subset of timers separately from the complete profile. For
 example, you may want to view the timing of a specific time step or isolate everything inside the “Chemistry”
 part of the code. This can be accomplished by designating profile regions. All timers within a
 named region will be included both in the full analysis, as well as in a separate sub-analysis.</p>
 <p>Regions are meant to be large contiguous blocks of code, and should be used sparingly and purposefully
 to produce useful profiling reports. As such, the possible region options are purposefully limited.</p>
-<div class="section" id="scoped-regions">
-<h3>Scoped Regions<a class="headerlink" href="#scoped-regions" title="Permalink to this headline"></a></h3>
+<section id="scoped-regions">
+<h3>Scoped Regions<a class="headerlink" href="#scoped-regions" title="Permalink to this heading"></a></h3>
 <p>When using the Tiny Profiler, the only available region macro is the scoped macro. To create a region
 that profiles the <cite>MyFuncs</cite> code block, including all timers in the “Additional Code” regions, add
 macros in the following way:</p>
@@ -408,9 +410,9 @@ indicated by <code class="docutils literal notranslate"><span class="pre">REG::M
 <span class="go">END REGION MyFuncs</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="named-regions">
-<h3>Named Regions<a class="headerlink" href="#named-regions" title="Permalink to this headline"></a></h3>
+</section>
+<section id="named-regions">
+<h3>Named Regions<a class="headerlink" href="#named-regions" title="Permalink to this heading"></a></h3>
 <p>If using the Full Profiler, named region objects are also available.
 Named regions allow control of start and stop points without relying on scope.
 These macros use slightly modified
@@ -444,16 +446,16 @@ Consider the following example:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Here, <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">Code</span></span> <span class="name"><span class="pre">Block</span></span> <span class="name"><span class="pre">A</span></span><span class="operator"><span class="pre">&gt;</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">Code</span></span> <span class="name"><span class="pre">Block</span></span> <span class="name"><span class="pre">C</span></span><span class="operator"><span class="pre">&gt;</span></span></code> are
-grouped into one region labeled “RegionAC” for profiling. <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">&lt;</span></span><span class="name"><span class="pre">Code</span></span> <span class="name"><span class="pre">Block</span></span> <span class="name"><span class="pre">B</span></span><span class="operator"><span class="pre">&gt;</span></span></code>
+<p>Here, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;</span><span class="n">Code</span> <span class="n">Block</span> <span class="n">A</span><span class="o">&gt;</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;</span><span class="n">Code</span> <span class="n">Block</span> <span class="n">C</span><span class="o">&gt;</span></code> are
+grouped into one region labeled “RegionAC” for profiling. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">&lt;</span><span class="n">Code</span> <span class="n">Block</span> <span class="n">B</span><span class="o">&gt;</span></code>
 is isolated in its own group.
-Any timers inside <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MyFunc_0</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MyFunc_1</span></span></code> are not included in the
+Any timers inside <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc_0</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MyFunc_1</span></code> are not included in the
 region groupings.</p>
-</div>
-</div>
-</div>
-<div class="section" id="instrumenting-fortran90-code">
-<h1>Instrumenting Fortran90 Code<a class="headerlink" href="#instrumenting-fortran90-code" title="Permalink to this headline"></a></h1>
+</section>
+</section>
+</section>
+<section id="instrumenting-fortran90-code">
+<h1>Instrumenting Fortran90 Code<a class="headerlink" href="#instrumenting-fortran90-code" title="Permalink to this heading"></a></h1>
 <p>When using the full profiler, Fortran90 functions can also be instrumented
 with the following calls:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">bl_proffortfuncstart</span><span class="p">(</span><span class="s2">&quot;my_function&quot;</span><span class="p">)</span>
@@ -463,11 +465,11 @@ with the following calls:</p>
 </div>
 <p>Note that the start and stop calls must be matched before leaving the
 scope of the corresponding start. Moreover, it is necessary to take into
-account all possible code paths. Therefore, you may need to add <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">bl_proffortfuncstop</span></span></code>
+account all possible code paths. Therefore, you may need to add <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">bl_proffortfuncstop</span></code>
 in multiple locations, such as before any returns, at the end of the function
 and at the point in the function where you want to stop profiling. The profiling
-output will only warn of any <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">bl_proffortfuncstart</span></span></code> calls that were not stopped with
-<code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">bl_proffortfuncstop</span></span></code> calls when in debug mode.</p>
+output will only warn of any <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">bl_proffortfuncstart</span></code> calls that were not stopped with
+<code class="code highlight fortran docutils literal highlight-fortran"><span class="n">bl_proffortfuncstop</span></code> calls when in debug mode.</p>
 <p>For functions with a high number of calls, there is a lighter-weight interface,</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">bl_proffortfuncstart_int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="p">...</span>
@@ -487,10 +489,10 @@ in the <code class="docutils literal notranslate"><span class="pre">bl_proffortf
 You will need to turn on the Full Profiler to receive the results from
 fortran instrumentation.</p>
 </div>
-</div>
-<div class="section" id="amrprofparser">
-<span id="sec-amrprofparse"></span><h1>AMRProfParser<a class="headerlink" href="#amrprofparser" title="Permalink to this headline"></a></h1>
-<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AMRProfParser</span></span></code> is a tool for processing and analyzing the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code>
+</section>
+<section id="amrprofparser">
+<span id="sec-amrprofparse"></span><h1>AMRProfParser<a class="headerlink" href="#amrprofparser" title="Permalink to this heading"></a></h1>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMRProfParser</span></code> is a tool for processing and analyzing the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code>
 database. It is a command line application that can create performance
 summaries, plotfiles showing point-to-point communication and timelines, HTML
 call trees, communication call statistics, function timing graphs, and other
@@ -501,7 +503,7 @@ parser itself. It has been integrated into Amrvis for visual interpretation of
 the data allowing Amrvis to open the <code class="docutils literal notranslate"><span class="pre">bl_prof</span></code> database like a plotfile but with
 interfaces appropriate to profiling data. AMRProfParser and Amrvis can be run
 in parallel both interactively and in batch mode.</p>
-</div>
+</section>
 
 
            </div>

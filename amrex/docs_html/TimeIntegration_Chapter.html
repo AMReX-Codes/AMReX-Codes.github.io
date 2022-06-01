@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Time Integration &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -97,8 +99,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="time-integration">
-<span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this headline"></a></h1>
+  <section id="time-integration">
+<span id="sec-basics-timeintegration"></span><h1>Time Integration<a class="headerlink" href="#time-integration" title="Permalink to this heading"></a></h1>
 <p>AMReX provides a basic explicit time integrator capable of Forward Euler or
 both predefined and custom Runge-Kutta schemes designed to advance data on a
 particular AMR level by a timestep. This integrator is designed to be flexible,
@@ -106,8 +108,8 @@ requiring the user to supply a right-hand side function taking a <code class="do
 of state data and filling a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> of the corresponding right hand side
 data. The user simply needs to supply a C++ lambda function to implement
 whatever right hand side operations they need.</p>
-<div class="section" id="a-simple-time-integrator-setup">
-<h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Permalink to this headline"></a></h2>
+<section id="a-simple-time-integrator-setup">
+<h2>A Simple Time Integrator Setup<a class="headerlink" href="#a-simple-time-integrator-setup" title="Permalink to this heading"></a></h2>
 <p>This is best shown with some sample code that sets up a time integrator and
 asks it to step forwards by some interval <code class="docutils literal notranslate"><span class="pre">dt</span></code>. The user needs to supply at
 minimum, the right-hand side function using the <code class="docutils literal notranslate"><span class="pre">TimeIntegrator::set_rhs()</span></code>
@@ -150,9 +152,9 @@ ghost cells are filled when the right hand side function is called on that solut
 <span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sborder</span><span class="p">,</span> <span class="n">S_new</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">dt</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-sundials">
-<span id="sec-time-int-sundials"></span><h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Permalink to this headline"></a></h2>
+</section>
+<section id="using-sundials">
+<span id="sec-time-int-sundials"></span><h2>Using SUNDIALS<a class="headerlink" href="#using-sundials" title="Permalink to this heading"></a></h2>
 <p>The AMReX Time Integration interface also supports a SUNDIALS backend that
 wraps both the explicit Runge-Kutta (ERK) and multirate (MRI) integration
 schemes in the SUNDIALS ARKODE package. To use either of them, the user needs
@@ -269,9 +271,9 @@ snippet would look as follows:</p>
 <span class="n">integrator</span><span class="p">.</span><span class="n">advance</span><span class="p">(</span><span class="n">Sborder</span><span class="p">,</span> <span class="n">S_new</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">dt</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="picking-a-time-integration-method">
-<h2>Picking A Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this headline"></a></h2>
+</section>
+<section id="picking-a-time-integration-method">
+<h2>Picking A Time Integration Method<a class="headerlink" href="#picking-a-time-integration-method" title="Permalink to this heading"></a></h2>
 <p>The user can customize which integration method they wish to use with a set of
 runtime parameters that allow choosing between a simple Forward Euler method or
 a generic explicit Runge-Kutta method. If Runge-Kutta is selected, then the user
@@ -348,8 +350,8 @@ need SUNDIALS options we have not implemented, please let us know.</p>
 <span class="n">integration</span><span class="p">.</span><span class="n">sundials</span><span class="p">.</span><span class="n">mri</span><span class="p">.</span><span class="n">inner_method</span> <span class="o">=</span> <span class="n">Trapezoid</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

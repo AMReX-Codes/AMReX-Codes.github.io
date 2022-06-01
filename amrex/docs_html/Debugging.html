@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debugging &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -102,8 +104,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="debugging">
-<span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline"></a></h1>
+  <section id="debugging">
+<span id="sec-basics-debugging"></span><h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h1>
 <p>Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.</p>
 <p>To help debugging, AMReX handles various signals in the C standard
@@ -165,8 +167,8 @@ For example,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 valgrind --leak-check=yes --track-origins=yes --log-file=vallog.%p ./foo.exe ...</span>
 </pre></div>
 </div>
-<div class="section" id="breaking-into-debuggers">
-<h2>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this headline"></a></h2>
+<section id="breaking-into-debuggers">
+<h2>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this heading"></a></h2>
 <p>In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be disabled.</p>
 <p>The following runtime options need to be set in order to prevent AMReX from catching the break signals before a debugger can attach to a crashing process:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amrex.throw_exception = 1</span>
@@ -174,22 +176,22 @@ For example,</p>
 </pre></div>
 </div>
 <p>This default behavior can also be modified by applications, see for example <a class="reference external" href="https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21">this custom application initializer</a>.</p>
-</div>
-<div class="section" id="basic-gpu-debugging">
-<span id="sec-gpu-debugging"></span><h2>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this headline"></a></h2>
+</section>
+<section id="basic-gpu-debugging">
+<span id="sec-gpu-debugging"></span><h2>Basic Gpu Debugging<a class="headerlink" href="#basic-gpu-debugging" title="Permalink to this heading"></a></h2>
 <p>The asynchronous nature of GPU execution can make tracking down bugs complex.
 The relative timing of improperly coded functions can cause variations in output and the timing of error messages
 may not linearly relate to a place in the code.
 One strategy to isolate specific kernel failures is to add <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::synchronize()</span></code> or <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::streamSynchronize()</span></code> after every <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> or similar <code class="docutils literal notranslate"><span class="pre">amrex::launch</span></code> type call.
 These synchronization commands will halt execution of the code until the GPU or GPU stream, respectively, has finished processing all previously requested tasks, thereby making it easier to locate and identify sources of error.</p>
-<div class="section" id="debuggers-and-related-tools">
-<h3>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this headline"></a></h3>
+<section id="debuggers-and-related-tools">
+<h3>Debuggers and Related Tools<a class="headerlink" href="#debuggers-and-related-tools" title="Permalink to this heading"></a></h3>
 <p>Users may also find debuggers useful. Architecture agnostic tools include <code class="docutils literal notranslate"><span class="pre">gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">hpctoolkit</span></code>, and <code class="docutils literal notranslate"><span class="pre">Valgrind</span></code>. Note that there are architecture specific implementations of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> such as <code class="docutils literal notranslate"><span class="pre">cuda-gdb</span></code>, <code class="docutils literal notranslate"><span class="pre">rocgdb</span></code>, <code class="docutils literal notranslate"><span class="pre">gdb-amd</span></code>, and the Intel <code class="docutils literal notranslate"><span class="pre">gdb</span></code>.
 Usage of several of these variations are described in the following sections.</p>
 <p>For advance debugging topics and tools, refer to system-specific documentation (e.g. <a class="reference external" href="https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging">https://docs.olcf.ornl.gov/systems/summit_user_guide.html#debugging</a>).</p>
-</div>
-<div class="section" id="cuda-specific-tests">
-<h3>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this headline"></a></h3>
+</section>
+<section id="cuda-specific-tests">
+<h3>CUDA-Specific Tests<a class="headerlink" href="#cuda-specific-tests" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nvprof ./main3d.xxx</span>
@@ -209,9 +211,9 @@ a small problem and examine page faults using <code class="docutils literal notr
 CUDA applications by setting <code class="docutils literal notranslate"><span class="pre">CUDA_LAUNCH_BLOCKING=1</span></code> in your environment variables. This
 will ensure that only one CUDA kernel will run at a time.</p></li>
 </ul>
-</div>
-<div class="section" id="amd-rocm-specific-tests">
-<h3>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Permalink to this headline"></a></h3>
+</section>
+<section id="amd-rocm-specific-tests">
+<h3>AMD ROCm-Specific Tests<a class="headerlink" href="#amd-rocm-specific-tests" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rocprof ./main3d.xxx</span>
@@ -225,9 +227,9 @@ a small problem and examine tracing using <code class="docutils literal notransl
 in your environment variables. This will ensure only one kernel will run at a time.
 See the <a class="reference external" href="https://rocmdocs.amd.com/en/latest/Programming_Guides/HIP_Debugging.html#chicken-bits">AMD ROCm docs’ chicken bits section</a> for more debugging environment variables.</p></li>
 </ul>
-</div>
-<div class="section" id="intel-gpu-specific-tests">
-<h3>Intel GPU Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this headline"></a></h3>
+</section>
+<section id="intel-gpu-specific-tests">
+<h3>Intel GPU Specific Tests<a class="headerlink" href="#intel-gpu-specific-tests" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>To test if your kernels have launched, run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./ze_tracer ./main3d.xxx</span>
@@ -240,9 +242,9 @@ a small problem with 1 MPI process and examine metrics.</p></li>
 <li><p>Run under <code class="docutils literal notranslate"><span class="pre">gdb</span></code> with the <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/distribution-for-gdb.html">Intel Distribution for GDB</a>.</p></li>
 <li><p>To report back-end information, set <code class="docutils literal notranslate"><span class="pre">ZE_DEBUG=1</span></code> in your environment variables.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

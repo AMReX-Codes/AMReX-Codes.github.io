@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gridding and Load Balancing &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -97,8 +99,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="gridding-and-load-balancing">
-<span id="chap-managinggridhierarchy"></span><h1>Gridding and Load Balancing<a class="headerlink" href="#gridding-and-load-balancing" title="Permalink to this headline"></a></h1>
+  <section id="gridding-and-load-balancing">
+<span id="chap-managinggridhierarchy"></span><h1>Gridding and Load Balancing<a class="headerlink" href="#gridding-and-load-balancing" title="Permalink to this heading"></a></h1>
 <p>AMReX provides a great deal of generality when it comes to how to decompose the
 computational domain into individual logically rectangular grids, and how to distribute
 those grids to MPI ranks.  We use the phrase “load balancing” here to refer to the combined process
@@ -108,18 +110,18 @@ more than one grid per MPI rank, and different strategies for distributing the g
 <p>For multi-level calculations, the same principles for load balancing apply as in single-level calculations,
 but there is additional complexity in how to tag cells for refinement and how to create the
 union of grids at levels &gt; 0 where that union most likely does not cover the computational domain.</p>
-<p>See <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a> for grids are created, i.e. how the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> on which
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code> will be built is defined at each level.</p>
+<p>See <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a> for grids are created, i.e. how the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> on which
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> will be built is defined at each level.</p>
 <p>See <a class="reference internal" href="LoadBalancing.html#sec-load-balancing"><span class="std std-ref">Load Balancing</span></a> for the strategies AMReX supports for distributing
-grids to MPI ranks, i.e. defining the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMapping</span></span></code> with which
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFabs</span></span></code> at that level will be built.</p>
+grids to MPI ranks, i.e. defining the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code> with which
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> at that level will be built.</p>
 <p>We also note that we can create separate grids, and map them in different ways to MPI ranks, for
 different types of data in a single calculation.  We refer to this as the “dual grid approach”
 and the most common usage is to load balance mesh and particle data separately. See <a class="reference internal" href="DualGrid.html#sec-dual-grid"><span class="std std-ref">Dual Grid Approach</span></a>
 for more about this approach.</p>
 <p>When running on multicore machines with OpenMP, we can also control the distribution of
-work by setting the size of grid tiles (by defining <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fabarray_mfiter</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">tile_size</span></span></code>), and if relevant, of
-particle tiles (by defining <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">particle</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">tile_size</span></span></code>).  We can also specify the strategy for assigning
+work by setting the size of grid tiles (by defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">fabarray_mfiter</span><span class="p">.</span><span class="n">tile_size</span></code>), and if relevant, of
+particle tiles (by defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">particle</span><span class="p">.</span><span class="n">tile_size</span></code>).  We can also specify the strategy for assigning
 tiles to OpenMP threads.  See <a class="reference internal" href="Basics.html#sec-basics-mfiter-tiling"><span class="std std-ref">MFIter with Tiling</span></a> for more about tiling.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -128,7 +130,7 @@ tiles to OpenMP threads.  See <a class="reference internal" href="Basics.html#se
 <li class="toctree-l1"><a class="reference internal" href="LoadBalancing.html">Load Balancing</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

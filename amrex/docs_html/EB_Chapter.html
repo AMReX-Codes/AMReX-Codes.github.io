@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Embedded Boundaries &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -101,8 +103,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="embedded-boundaries">
-<span id="sec-eb-eboverview"></span><span id="chap-eb"></span><h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline"></a></h1>
+  <section id="embedded-boundaries">
+<span id="sec-eb-eboverview"></span><span id="chap-eb"></span><h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this heading"></a></h1>
 <p>For computations with complex geometries, AMReX provides data structures and
 algorithms to employ an embedded boundary (EB) approach to PDE discretizations.
 In this approach, the underlying computational mesh is uniform and
@@ -111,12 +113,14 @@ conceptually cuts through this mesh. Each cell in the mesh becomes labeled as
 regular, cut or covered, and the finite-volume based discretization methods
 traditionally used in AMReX applications can be modified to incorporate these
 cell shapes. See <a class="reference internal" href="#fig-ebexample"><span class="std std-numref">Fig. 11</span></a> for an illustration.</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <span id="fig-ebexample"></span><a class="reference internal image-reference" href="_images/EB_example.png"><img alt="_images/EB_example.png" src="_images/EB_example.png" style="width: 50.0%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
 rectangular mesh is cut by the irregular shape of the computational domain.
 The cells in the mesh are label as regular, cut or covered.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
+</figcaption>
+</figure>
 <p>Note that in a completely general implementation of the EB approach, there
 would be no restrictions on the shape or complexity of the EB surface.  With
 this generality comes the possibility that the process of “cutting” the cells
@@ -150,7 +154,7 @@ operators.  Finally we present EB support of linear solvers.</p>
 <li class="toctree-l1"><a class="reference internal" href="EB.html#tutorials">Tutorials</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>
