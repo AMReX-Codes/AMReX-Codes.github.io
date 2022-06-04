@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MultiFab Tutorial &mdash; amrex 22.06-dev documentation</title>
+  <title>MultiFab Tutorial &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -30,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.06-dev
+                22.07-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -85,7 +86,7 @@
            <div itemprop="articleBody">
              
   <section id="multifab-tutorial">
-<span id="id1"></span><h1>MultiFab Tutorial<a class="headerlink" href="#multifab-tutorial" title="Permalink to this headline"></a></h1>
+<span id="id1"></span><h1>MultiFab Tutorial<a class="headerlink" href="#multifab-tutorial" title="Permalink to this heading"></a></h1>
 <div class="warning admonition">
 <p class="admonition-title"><strong>Time to Complete</strong>: 15 mins</p>
 <dl class="simple">
@@ -108,7 +109,7 @@ can access it by clicking on the thumbnail to the right.</p>
 <div class="line"><br /></div>
 </div>
 <section id="what-is-a-multifab">
-<h2>What is a MultiFab?<a class="headerlink" href="#what-is-a-multifab" title="Permalink to this headline"></a></h2>
+<h2>What is a MultiFab?<a class="headerlink" href="#what-is-a-multifab" title="Permalink to this heading"></a></h2>
 <p>A MultiFab is a C++ class in AMReX the stores and operates on
 multidimensional arrays in parallel. It contains:</p>
 <blockquote>
@@ -123,7 +124,7 @@ conditions, and particle algorithms.</p></li>
 </div></blockquote>
 </section>
 <section id="defining-a-multifab">
-<h2>Defining a MultiFab<a class="headerlink" href="#defining-a-multifab" title="Permalink to this headline"></a></h2>
+<h2>Defining a MultiFab<a class="headerlink" href="#defining-a-multifab" title="Permalink to this heading"></a></h2>
 <p>To use the MultiFab type we first need to include the header file,</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_MultiFab.H&gt;</span><span class="cp"></span>
 </pre></div>
@@ -150,7 +151,7 @@ for parallel computation. In this example, the default suffices and can be easil
 defined once the BoxArray is configured. Defining the BoxArray requires a few steps
 that are presented in the next section.</p>
 <section id="number-of-components-and-ghost-cells">
-<h3>Number of Components and Ghost Cells<a class="headerlink" href="#number-of-components-and-ghost-cells" title="Permalink to this headline"></a></h3>
+<h3>Number of Components and Ghost Cells<a class="headerlink" href="#number-of-components-and-ghost-cells" title="Permalink to this heading"></a></h3>
 <p>The value of <code class="docutils literal notranslate"><span class="pre">ncomp</span></code> determines how many scalar values to store in the MultiFab.
 For example, if we want to store the value of phi at every point on the grid,
 thats one component for the MultiFab. Then we would set:</p>
@@ -166,7 +167,7 @@ so we will set the value to 0.</p>
 </div>
 </section>
 <section id="boxarray-abstract-domain-setup">
-<h3>BoxArray: Abstract Domain Setup<a class="headerlink" href="#boxarray-abstract-domain-setup" title="Permalink to this headline"></a></h3>
+<h3>BoxArray: Abstract Domain Setup<a class="headerlink" href="#boxarray-abstract-domain-setup" title="Permalink to this heading"></a></h3>
 <p>The BoxArray contains a list of boxes that cover the domain. To define a
 BoxArray, we will therefore first need to define the domain and some of its properties.
 In this example, we chose a 3-dimensional domain and therefore have three inputs.
@@ -204,7 +205,7 @@ AMReX processes the data on the MultiFab in parallel.</p>
 </div></blockquote>
 </section>
 <section id="distribution-mapping">
-<h3>Distribution Mapping<a class="headerlink" href="#distribution-mapping" title="Permalink to this headline"></a></h3>
+<h3>Distribution Mapping<a class="headerlink" href="#distribution-mapping" title="Permalink to this heading"></a></h3>
 <p>Once the BoxArray is defined. We can define a DisbributionMapping. The
 DistributionMapping will determine how parts of the domain are divided among
 processes. For us, the default behavior is sufficient. Therefore we write,</p>
@@ -219,7 +220,7 @@ can create it with the line,</p>
 </section>
 </section>
 <section id="adding-data-to-the-multifab">
-<h2>Adding Data to the MultiFab<a class="headerlink" href="#adding-data-to-the-multifab" title="Permalink to this headline"></a></h2>
+<h2>Adding Data to the MultiFab<a class="headerlink" href="#adding-data-to-the-multifab" title="Permalink to this heading"></a></h2>
 <p>Now that we have setup an abstract domain, we want to provide physical
 information about the boxes within it so that we can fill it with
 useful data. To do that, we will define a Geometry object, and
@@ -227,7 +228,7 @@ use a nested loop structure that efficiently iterates over
 all the boxes in the domain. AMReX will automatically decide how to
 parallelize these operations with MPI ranks or GPU accelerators.</p>
 <section id="geometry-add-physical-properties">
-<h3>Geometry: Add Physical Properties<a class="headerlink" href="#geometry-add-physical-properties" title="Permalink to this headline"></a></h3>
+<h3>Geometry: Add Physical Properties<a class="headerlink" href="#geometry-add-physical-properties" title="Permalink to this heading"></a></h3>
 <p>For the geometry, we will
 define the size of the box, the coordinate system and the boundary conditions.
 It is also convenient to derive the dimensions of each cell at this time.</p>
@@ -257,7 +258,7 @@ of the cell in the x-direction, <code class="docutils literal notranslate"><span
 </div></blockquote>
 </section>
 <section id="loop-structure-mfiter-and-parallelfor">
-<h3>Loop Structure: MFIter and ParallelFor<a class="headerlink" href="#loop-structure-mfiter-and-parallelfor" title="Permalink to this headline"></a></h3>
+<h3>Loop Structure: MFIter and ParallelFor<a class="headerlink" href="#loop-structure-mfiter-and-parallelfor" title="Permalink to this heading"></a></h3>
 <p>To traverse the elements of the MultiFab we will use two loops. The first loop is a MultiFab iterator,
 called <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, and the second loop is a <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code>. The <code class="docutils literal notranslate"><span class="pre">MFIter</span></code> loop efficiently divides
 and distributes work on MultiFab data among processors. It does this by telling each processor,
@@ -340,7 +341,7 @@ automatically for portable performance.</p>
 </section>
 </section>
 <section id="plotting-multifab-data">
-<h2>Plotting MultiFab Data<a class="headerlink" href="#plotting-multifab-data" title="Permalink to this headline"></a></h2>
+<h2>Plotting MultiFab Data<a class="headerlink" href="#plotting-multifab-data" title="Permalink to this heading"></a></h2>
 <p>AMReX can plot MultiFab data with a single function call. To access the plotting
 functions we include the header,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;AMReX_PlotFileUtil.H&gt;</span>
@@ -359,7 +360,7 @@ Geometry we defined for the MultiFab above. The
 last parameter specifies the level of the MultiFab. In this tutorial, we only had a
 single MultiFab to represent the zeroth level of the mesh, therefore we pass <code class="docutils literal notranslate"><span class="pre">0</span></code> for the level.</p>
 <section id="visualizing-the-plotfile">
-<h3>Visualizing the Plotfile<a class="headerlink" href="#visualizing-the-plotfile" title="Permalink to this headline"></a></h3>
+<h3>Visualizing the Plotfile<a class="headerlink" href="#visualizing-the-plotfile" title="Permalink to this heading"></a></h3>
 <p>The call above to <code class="docutils literal notranslate"><span class="pre">WriteSingleLevelPlotfile</span></code> will produce a plotfile in the form
 of a directory that contains a Header file, and several subdirectories. The data can be
 visualized by passing this directory to one of several visualization software packages.
@@ -368,7 +369,7 @@ section.</p>
 </section>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"></a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
 <p>In this tutorial we described the steps to define the domain, and physical properties
 of our simulation space. We then demonstrated how to initialize and store scalar values
 on a grid across
@@ -383,7 +384,7 @@ can be visualized with several software packages.</p>
 </div>
 </section>
 <section id="additional-comments">
-<h2>Additional Comments<a class="headerlink" href="#additional-comments" title="Permalink to this headline"></a></h2>
+<h2>Additional Comments<a class="headerlink" href="#additional-comments" title="Permalink to this heading"></a></h2>
 <p>AMReX allows for the selection of 2- or 3- dimensional simulation
 at compile time. For simplicity, the example above is presented as 3-dimensional only.
 The example below shows how to write code to assign data to a MultiFab
@@ -426,7 +427,7 @@ can be found in <code class="docutils literal notranslate"><span class="pre">Hea
 </ul>
 </div></blockquote>
 <section id="a-parallelfor-only-approach">
-<h3>A ParallelFor Only Approach<a class="headerlink" href="#a-parallelfor-only-approach" title="Permalink to this headline"></a></h3>
+<h3>A ParallelFor Only Approach<a class="headerlink" href="#a-parallelfor-only-approach" title="Permalink to this heading"></a></h3>
 <p>The method presented above is the most common at the time of writing the guide. However,
 other methods exist to achieve similar results. For example, AMReX has added to the
 capabilities of <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> to include the functionality of both the loops in our
@@ -473,11 +474,11 @@ To do this, we replace the above line with</p>
 </section>
 </section>
 <section id="what-s-next">
-<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline"></a></h2>
+<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading"></a></h2>
 <p>This tutorial provided an introduction to the MultiFab data structure. The <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Tutorial: Heat Equation - Simple</span></a>
 and <a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a> tutorials both have source code that demonstrate MultiFab usage in a loop that evolves
 the data over time. At the cost of additional complexity, the <a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a> tutorial makes use
-of the <code class="code cpp docutils literal notranslate"><span class="keyword"><span class="pre">using</span></span> <span class="keyword"><span class="pre">namespace</span></span></code> and preprocessor directives to make writing coding easier and add
+of the <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">using</span> <span class="k">namespace</span></code> and preprocessor directives to make writing coding easier and add
 additional functionality. On the other hand, the source code in <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Tutorial: Heat Equation - Simple</span></a> more
 closely resembles the code used in this example.</p>
 </section>

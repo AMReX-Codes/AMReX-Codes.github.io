@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ML/PYTORCH &mdash; amrex 22.06-dev documentation</title>
+  <title>ML/PYTORCH &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -31,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.06-dev
+                22.07-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -91,7 +92,7 @@
            <div itemprop="articleBody">
              
   <section id="ml-pytorch">
-<h1>ML/PYTORCH<a class="headerlink" href="#ml-pytorch" title="Permalink to this headline"></a></h1>
+<h1>ML/PYTORCH<a class="headerlink" href="#ml-pytorch" title="Permalink to this heading"></a></h1>
 <p>The overall goal of machine learning models in this context is to accelerate computationally expensive kernels/routines as part of an AMReX simulation.
 This tutorial demonstrates how to interface a pre-trained PyTorch machine learning model to an AMReX simulation by querying inputs from and supplying outputs to an AMReX MultiFab.
 Here we use a 1-input, 2-output model to illustrate the interface between the PyTorch model and a MultiFab.</p>
@@ -100,7 +101,7 @@ Located in the directory <code class="docutils literal notranslate"><span class=
 To begin, we initialize data on a MultiFab, then copy the data into a PyTorch tensor, then we call the pre-trained model to compute the outputs, and finally we load the result back into a MultiFab.
 The program runs on either only the CPU or both the CPU and GPU.</p>
 <section id="running-an-amrex-application-with-a-pytorch-model">
-<h2><strong>Running an AMReX application with a PyTorch model</strong><a class="headerlink" href="#running-an-amrex-application-with-a-pytorch-model" title="Permalink to this headline"></a></h2>
+<h2><strong>Running an AMReX application with a PyTorch model</strong><a class="headerlink" href="#running-an-amrex-application-with-a-pytorch-model" title="Permalink to this heading"></a></h2>
 <p>Below is a step-by-step guide to successfully run an AMReX program that uses a PyTorch model. It will require the model to have been saved as a TorchScript. In this example the TorchScript file is <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>. For more information on TorchScript, please see their <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">intro tutorial</a>.</p>
 <blockquote>
 <div><ol class="arabic">
@@ -124,11 +125,11 @@ The program runs on either only the CPU or both the CPU and GPU.</p>
 </div></blockquote>
 </section>
 <section id="beta-decay">
-<h2><strong>Beta Decay</strong><a class="headerlink" href="#beta-decay" title="Permalink to this headline"></a></h2>
+<h2><strong>Beta Decay</strong><a class="headerlink" href="#beta-decay" title="Permalink to this heading"></a></h2>
 <p>In this example, the machine learning model is a regression model pre-trained to solve a two-component ODE system describing beta decay. The input is a time step <code class="docutils literal notranslate"><span class="pre">dt</span></code> and output is the two-component solution of the ODE system at time <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">dt</span></code>.</p>
 </section>
 <section id="pre-trained-model">
-<h2><strong>Pre-trained Model</strong><a class="headerlink" href="#pre-trained-model" title="Permalink to this headline"></a></h2>
+<h2><strong>Pre-trained Model</strong><a class="headerlink" href="#pre-trained-model" title="Permalink to this heading"></a></h2>
 <p>The TorchScript model that is included in this example is located at <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec/model.pt</span></code>. If you wish to change the model, edit the <code class="docutils literal notranslate"><span class="pre">model_file</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec/inputs</span></code> to your desired PyTorch model file location.</p>
 </section>
 </section>

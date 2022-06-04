@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Particles &mdash; amrex 22.06-dev documentation</title>
+  <title>Particles &mdash; amrex 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -31,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.06-dev
+                22.07-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -92,11 +93,11 @@
            <div itemprop="articleBody">
              
   <section id="particles">
-<span id="tutorials-particles"></span><h1>Particles<a class="headerlink" href="#particles" title="Permalink to this headline"></a></h1>
+<span id="tutorials-particles"></span><h1>Particles<a class="headerlink" href="#particles" title="Permalink to this heading"></a></h1>
 <p>There are several tutorials in amrex/Tutorials/Particles that demonstrate the basic usage of
 AMReX’s particle data structures.</p>
 <section id="electrostaticpic">
-<h2><strong>ElectrostaticPIC</strong><a class="headerlink" href="#electrostaticpic" title="Permalink to this headline"></a></h2>
+<h2><strong>ElectrostaticPIC</strong><a class="headerlink" href="#electrostaticpic" title="Permalink to this heading"></a></h2>
 <p>This tutorial demonstrates how to perform an electrostatic Particle-in-Cell calculation
 using AMReX. The code initializes a single particle in a conducting box (i.e. Dirichlet
 zero boundary conditions) that is slightly off-center in one direction. Because of the
@@ -105,14 +106,14 @@ boundary conditions, the particle sees an image charge and is accelerated in thi
 electric field, and electrostatic potential are all defined on the mesh nodes. To solve
 Poisson’s equation, we use AMReX’s Fortran-based multigrid solver. The Fortran routines for
 performing charge deposition, field gathering, and the particle push are all defined in
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">electrostatic_pic_2d</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">f90</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">electrostatic_pic_3d</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">f90</span></span></code> for 2D and 3D, respectively.</p>
-<p>The particle container in this example using a Struct-of-Arrays layout, with <code class="code cpp c++ docutils literal notranslate"><span class="literal number integer"><span class="pre">1</span></span> <span class="operator"><span class="pre">+</span></span> <span class="literal number integer"><span class="pre">2</span></span><span class="operator"><span class="pre">*</span></span><span class="name"><span class="pre">BL_SPACEDIM</span></span></code>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">electrostatic_pic_2d</span><span class="p">.</span><span class="n">f90</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">electrostatic_pic_3d</span><span class="p">.</span><span class="n">f90</span></code> for 2D and 3D, respectively.</p>
+<p>The particle container in this example using a Struct-of-Arrays layout, with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">BL_SPACEDIM</span></code>
 real components to store the particle weight, velocity, and the electric field interpolated
 to the particle position. To see how to set up such a particle container, see
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ElectrostaticParticleContainer</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">H</span></span></code>.</p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ElectrostaticParticleContainer</span><span class="p">.</span><span class="n">H</span></code>.</p>
 </section>
 <section id="electromagneticpic">
-<h2><strong>ElectromagneticPIC</strong><a class="headerlink" href="#electromagneticpic" title="Permalink to this headline"></a></h2>
+<h2><strong>ElectromagneticPIC</strong><a class="headerlink" href="#electromagneticpic" title="Permalink to this heading"></a></h2>
 <p>This tutorial shows how to perform an electromagnetic particle-in-cell calculation
 using AMReX. Essentially, this is a mini-app version of the WarpX application code.
 The electric fields, magnetic fields, and current densities are stored using the
@@ -120,8 +121,8 @@ staggered Yee grid, and it solves Maxwell’s Equations using the finite-differe
 time domain method.</p>
 <p>This tutorial also demonstrates how to offload calculations involving particle data
 onto the GPU using OpenACC. To compile with GPU support, use the pgi compiler, and set
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">USE_ACC</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">TRUE</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">USE_CUDA</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">TRUE</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">USE_OMP</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">FALSE</span></span></code>.</p>
-<p>You can choose between two problem types by toggling the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">problem_type</span></span></code> parameter
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">USE_ACC</span> <span class="o">=</span> <span class="n">TRUE</span></code>, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">USE_CUDA</span> <span class="o">=</span> <span class="n">TRUE</span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">USE_OMP</span> <span class="o">=</span> <span class="n">FALSE</span></code>.</p>
+<p>You can choose between two problem types by toggling the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">problem_type</span></code> parameter
 in the provided inputs file. Choosing the uniform plasma setup provides a nearly
 perfectly load balanced problem setup that is useful for performance testing. Choosing
 the Langmuir wave problem will automatically compare the simulated fields to the exact
@@ -129,23 +130,23 @@ solution.</p>
 <p>Currently, this tutorial does not use mesh refinement.</p>
 </section>
 <section id="neighborlist">
-<h2><strong>NeighborList</strong><a class="headerlink" href="#neighborlist" title="Permalink to this headline"></a></h2>
+<h2><strong>NeighborList</strong><a class="headerlink" href="#neighborlist" title="Permalink to this heading"></a></h2>
 <p>This tutorial demonstrates how to have AMReX’s particles undergo short-range collisions
 with each other. To facilite this, a neighbor list data structure is created, in which
 all of the partners that could potentially collide with a given particle are pre-computed.
 This is done by first constructing a cell-linked list, and then looping over all 27 neighbor
-cells to test for potential collision partners. The Fortran subroutine <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex_compute_forces_nl</span></span></code>
-defined in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">neighbor_list_2d</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">f90</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">neighbor_list_3d</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">f90</span></span></code> demonstrates how to loop over
+cells to test for potential collision partners. The Fortran subroutine <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex_compute_forces_nl</span></code>
+defined in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">neighbor_list_2d</span><span class="p">.</span><span class="n">f90</span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">neighbor_list_3d</span><span class="p">.</span><span class="n">f90</span></code> demonstrates how to loop over
 the resulting data structure.</p>
 <p>The particles in this example store velocity and acceleration in addition to the default
 components. They are initially placed at cell centers and given random velocities. When a
 particle reaches the domain boundary, it is specularly reflected back into the domain. To
-see how the particle data structures are set up, see <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborListParticleContainer</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cpp</span></span></code>.</p>
-<p>The file called <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span></code> can be used to run this tutorial with a single level, and
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">mr</span></span></code> sets up a run with static mesh refinement.</p>
+see how the particle data structures are set up, see <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">NeighborListParticleContainer</span><span class="p">.</span><span class="n">cpp</span></code>.</p>
+<p>The file called <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">inputs</span></code> can be used to run this tutorial with a single level, and
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">inputs</span><span class="p">.</span><span class="n">mr</span></code> sets up a run with static mesh refinement.</p>
 </section>
 <section id="cellsortedparticles">
-<h2><strong>CellSortedParticles</strong><a class="headerlink" href="#cellsortedparticles" title="Permalink to this headline"></a></h2>
+<h2><strong>CellSortedParticles</strong><a class="headerlink" href="#cellsortedparticles" title="Permalink to this heading"></a></h2>
 <p>Sometimes, it’s useful to sort particles at a finer granularity than grids or tiles. In this
 Tutorial, each cell contains a list of particle indices that tell you which particles belong to
 that cell. This is useful, for example, in Direct Simulation Monte Carlo calculations, where you want to
