@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helper functions &mdash; amrex-hydro 22.06-dev documentation</title>
+  <title>Helper functions &mdash; amrex-hydro 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -31,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> amrex-hydro
           </a>
               <div class="version">
-                22.06-dev
+                22.07-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -130,10 +132,10 @@
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
-<div class="section" id="helper-functions">
-<span id="utilities"></span><h1>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline"></a></h1>
-<div class="section" id="notation">
-<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline"></a></h2>
+<section id="helper-functions">
+<span id="utilities"></span><h1>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this heading"></a></h1>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(dx\)</span>, <span class="math notranslate nohighlight">\(dy\)</span>, <span class="math notranslate nohighlight">\(dz\)</span> : cell sizes in the x-, y- and z- directions, respectively.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\vol_{i,j,k}\)</span> : Volume of cell-centered element <span class="math notranslate nohighlight">\((i,j,k)\)</span>.</p></li>
@@ -152,9 +154,9 @@ and one an un-cut face, so that for regular cells
 <span class="math notranslate nohighlight">\(\alpha_{i-\half ,j,k} \area_{i-\half ,j,k} = dy\ dz\)</span>.</p></li>
 </ul>
 <p>Note that EB is only an option for Cartesian geometries as of this writing.</p>
-</div>
-<div class="section" id="slopes">
-<span id="id1"></span><h2>Slopes<a class="headerlink" href="#slopes" title="Permalink to this headline"></a></h2>
+</section>
+<section id="slopes">
+<span id="id1"></span><h2>Slopes<a class="headerlink" href="#slopes" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro includes implementations of several different slope routines along with options to apply limiters.
 For cells where this calculation would involve all regular cells (i.e. no cut or covered cells),
 there are second-order and fourth-order stencils.</p>
@@ -162,9 +164,9 @@ there are second-order and fourth-order stencils.</p>
 For (EB)MOL, the default is monotonicity-limited second-order slopes.
 Default limiting is as described in Colella (1985) <span id="id2">[<a class="reference internal" href="references.html#id15" title="P. Colella and H. M. Glaz. Efficient solution algorithms for the Riemann problem for real gases. Journal of Computational Physics, 59:264-289, June 1985. doi:10.1016/0021-9991(85)90146-9.">Colella and Glaz, 1985</a>]</span>,
 where limiting is done on each component of the velocity individually.</p>
-</div>
-<div class="section" id="eb-slopes">
-<span id="ebslopes"></span><h2>EB Slopes<a class="headerlink" href="#eb-slopes" title="Permalink to this headline"></a></h2>
+</section>
+<section id="eb-slopes">
+<span id="ebslopes"></span><h2>EB Slopes<a class="headerlink" href="#eb-slopes" title="Permalink to this heading"></a></h2>
 <p>The procedure for problems with embedded boundaries
 is detailed below, and attempts to use standard (non-EB) stencils wherever possible.</p>
 <ul class="simple">
@@ -180,11 +182,11 @@ cell centroids, where the data is assumed to live, are the same as cell centers.
 This least-squares slope is then multiplied by a limiter based on the work of Barth-Jespersen
 that enforces no new maxima or minima when the state is predicted to the face centroids.</p></li>
 </ul>
-</div>
-<div class="section" id="boundary-conditions">
-<span id="bcs"></span><h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline"></a></h2>
+</section>
+<section id="boundary-conditions">
+<span id="bcs"></span><h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro uses underlying AMReX functionality in implementing boundary conditions
-(see AMReX’s documentation section <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-boundary" title="(in amrex v22.06-dev)"><span>Boundary Conditions</span></a>).
+(see AMReX’s documentation section <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-boundary" title="(in amrex v22.07-dev)"><span>Boundary Conditions</span></a>).
 Physical boundary conditions, such as
 inflow, outflow, slip/no-slip walls, etc., and are ultimately linked to
 mathematical Dirichlet or Neumann conditions.
@@ -276,9 +278,9 @@ functions <a class="reference external" href="https://amrex-codes.github.io/amre
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
-</div>
-<div class="section" id="computing-fluxes">
-<span id="fluxes"></span><h2>Computing Fluxes<a class="headerlink" href="#computing-fluxes" title="Permalink to this headline"></a></h2>
+</section>
+<section id="computing-fluxes">
+<span id="fluxes"></span><h2>Computing Fluxes<a class="headerlink" href="#computing-fluxes" title="Permalink to this heading"></a></h2>
 <p>Doxygen links
 <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>
 and
@@ -290,8 +292,8 @@ and AMReX has functions for computing the position dependent cell volume and fac
 <a class="reference external" href="https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Geometry.html#af7996fe47b1e82704565102c15df47c9">Geometry::GetVolume</a>).
 We first give the formulas for the EB-regular case,
 and then those used when embedded boundaries are present.</p>
-<div class="section" id="intensive">
-<h3>Intensive<a class="headerlink" href="#intensive" title="Permalink to this headline"></a></h3>
+<section id="intensive">
+<h3>Intensive<a class="headerlink" href="#intensive" title="Permalink to this heading"></a></h3>
 <p>Intensive fluxes are computed from the advective velocity, <span class="math notranslate nohighlight">\(\U^{MAC}\)</span>, and edge states, <span class="math notranslate nohighlight">\(s\)</span>,
 by defining</p>
 <div class="math notranslate nohighlight" id="equation-flux-eq1">
@@ -317,9 +319,9 @@ by defining</p>
 \[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = \alpha_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}}\]</div>
 <p>on all z-faces.
 Here <span class="math notranslate nohighlight">\(\alpha_{i-\frac{1}{2},j,k}\)</span> is the area fraction of the lower x-face of cell-centered element <span class="math notranslate nohighlight">\((i,j,k)\)</span>, etc.</p>
-</div>
-<div class="section" id="extensive">
-<h3>Extensive<a class="headerlink" href="#extensive" title="Permalink to this headline"></a></h3>
+</section>
+<section id="extensive">
+<h3>Extensive<a class="headerlink" href="#extensive" title="Permalink to this heading"></a></h3>
 <p>Extensive fluxes are computed as</p>
 <div class="math notranslate nohighlight">
 \[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = \area_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k} \; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}}\]</div>
@@ -371,16 +373,16 @@ Here <span class="math notranslate nohighlight">\(\alpha_{i-\frac{1}{2},j,k}\)</
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
-</div>
-</div>
-<div class="section" id="constructing-the-advective-term">
-<span id="advective-term"></span><h2>Constructing the advective term<a class="headerlink" href="#constructing-the-advective-term" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="constructing-the-advective-term">
+<span id="advective-term"></span><h2>Constructing the advective term<a class="headerlink" href="#constructing-the-advective-term" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro provides the option to compute the advective term either in
 conservative (<span class="math notranslate nohighlight">\(\grad \cdot \U s\)</span>) or convective form (<span class="math notranslate nohighlight">\(\U \cdot \grad s\)</span>).
 The exact equations differ slightly depending on whether the fluxes are
 intensive or extensive (required for R-Z coordinates).</p>
-<div class="section" id="intensive-fluxes">
-<h3>Intensive fluxes<a class="headerlink" href="#intensive-fluxes" title="Permalink to this headline"></a></h3>
+<section id="intensive-fluxes">
+<h3>Intensive fluxes<a class="headerlink" href="#intensive-fluxes" title="Permalink to this heading"></a></h3>
 <p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, we construct</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla \cdot \left({\bf u} s\right)^{n+\frac{1}{2}}
@@ -408,9 +410,9 @@ intensive or extensive (required for R-Z coordinates).</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-</div>
-<div class="section" id="extensive-fluxes">
-<h3>Extensive fluxes<a class="headerlink" href="#extensive-fluxes" title="Permalink to this headline"></a></h3>
+</section>
+<section id="extensive-fluxes">
+<h3>Extensive fluxes<a class="headerlink" href="#extensive-fluxes" title="Permalink to this heading"></a></h3>
 <p>Given extensive fluxes we must divide by the cell volume in constructing the advective term.
 Here, we give the form for EB and note that the EB-regular case is obtained by setting both <span class="math notranslate nohighlight">\(\alpha = 1\)</span> and
 <span class="math notranslate nohighlight">\(\kappa=1\)</span>.
@@ -436,9 +438,9 @@ If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to b
                  s_{i-\frac{1}{2},j,k}^{{n+\frac{1}{2}}} + s_{i+\frac{1}{2},j,k}^{{n+\frac{1}{2}}}
              +   s_{i,j-\frac{1}{2},k}^{{n+\frac{1}{2}}} + s_{i,j-\frac{1}{2},k}^{{n+\frac{1}{2}}}
              +   s_{i,j,k-\frac{1}{2}}^{{n+\frac{1}{2}}} + s_{i,j,k-\frac{1}{2}}^{{n+\frac{1}{2}}} )\]</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

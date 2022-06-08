@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advection schemes &mdash; amrex-hydro 22.06-dev documentation</title>
+  <title>Advection schemes &mdash; amrex-hydro 22.07-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -14,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -31,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> amrex-hydro
           </a>
               <div class="version">
-                22.06-dev
+                22.07-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -142,8 +144,8 @@
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
-<div class="section" id="advection-schemes">
-<span id="schemes"></span><h1>Advection schemes<a class="headerlink" href="#advection-schemes" title="Permalink to this headline"></a></h1>
+<section id="advection-schemes">
+<span id="schemes"></span><h1>Advection schemes<a class="headerlink" href="#advection-schemes" title="Permalink to this heading"></a></h1>
 <p>In AMReX-Hydro, the fundamental algorithm is either a Method-of-Lines (MOL) or Godunov approach.
 Each method provides functions for two separate usages:</p>
 <ol class="arabic simple">
@@ -170,8 +172,8 @@ precision) as the non-EB methodology. Here we define neighbor to mean any cell t
 involved in the calculation of the face-based state, and the extent of the resulting neighborhood
 varies depending on the order of the slope used.</p>
 </div>
-<div class="section" id="notation">
-<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline"></a></h2>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this heading"></a></h2>
 <p>Here we use <span class="math notranslate nohighlight">\((i,j,k)\)</span> to denote cell centers (or centroids for EB),
 and thus <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k)\)</span> denotes the lower x-face of the <span class="math notranslate nohighlight">\((i,j,k)\)</span>-th cell,
 <span class="math notranslate nohighlight">\((i,j+\frac{1}{2},k)\)</span> denotes the upper y-face of the <span class="math notranslate nohighlight">\((i,j,k)\)</span>-th cell, etc.</p>
@@ -187,16 +189,16 @@ And for the third dimension,
 <span class="math notranslate nohighlight">\(U\)</span> (for up) indicates extrapolation from higher z indices.</p>
 <p><span class="math notranslate nohighlight">\(\U^{MAC}\)</span> is the MAC-projected velocity at face centers (or centroids for EB).</p>
 <p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/group__Utilities.html#ga57d5ce9bc3bca16e249c611342f3c550">Utils/hydro_constants.H</a>. This is an empirically determined constant that works well for flows where velocities are on the order of 1.</p>
-</div>
-<div class="section" id="method-of-lines-mol">
-<span id="mol"></span><h2>Method of Lines (MOL)<a class="headerlink" href="#method-of-lines-mol" title="Permalink to this headline"></a></h2>
+</section>
+<section id="method-of-lines-mol">
+<span id="mol"></span><h2>Method of Lines (MOL)<a class="headerlink" href="#method-of-lines-mol" title="Permalink to this heading"></a></h2>
 <p>The procedure for computing MAC velocities and edge states with MOL involves extrapolation in space only,
 and does not involve any time derivatives. All slope computations use
 second-order limited slopes as described in <a class="reference internal" href="Utilities.html#slopes"><span class="std std-ref">Slopes</span></a>.</p>
 <p>These alogrithms are applied in the MOL namespace. For API documentation, see
 <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html">Doxygen: MOL Namespace</a>.</p>
-<div class="section" id="pre-mac-api-ref-mol-extrapveltofaces">
-<h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-mol-extrapveltofaces" title="Permalink to this headline"></a></h3>
+<section id="pre-mac-api-ref-mol-extrapveltofaces">
+<h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-mol-extrapveltofaces" title="Permalink to this heading"></a></h3>
 <p>For computing the pre-MAC edge states to be MAC-projected, we define on
 every x-face:</p>
 <div class="math notranslate nohighlight">
@@ -216,9 +218,9 @@ u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
 \end{cases}\end{split}\]</div>
 <p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
 <span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
-</div>
-<div class="section" id="post-mac-api-ref-mol-computeedgestate">
-<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-mol-computeedgestate" title="Permalink to this headline"></a></h3>
+</section>
+<section id="post-mac-api-ref-mol-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-mol-computeedgestate" title="Permalink to this heading"></a></h3>
 <p>Once we have the MAC-projected velocities, we extrapolate all quantities to
 faces as above:</p>
 <div class="math notranslate nohighlight">
@@ -235,15 +237,15 @@ s_L, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; 
 s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
 \frac{1}{2}(s_L + s_R),
 \end{cases}\end{split}\]</div>
-</div>
-</div>
-<div class="section" id="method-of-lines-with-embedded-boundaries-ebmol">
-<span id="ebmol"></span><h2>Method of Lines with Embedded Boundaries (EBMOL)<a class="headerlink" href="#method-of-lines-with-embedded-boundaries-ebmol" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="method-of-lines-with-embedded-boundaries-ebmol">
+<span id="ebmol"></span><h2>Method of Lines with Embedded Boundaries (EBMOL)<a class="headerlink" href="#method-of-lines-with-embedded-boundaries-ebmol" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro has also implemented an embedded boundary (EB) aware version of the MOL algorithm
 discussed above.
 All slope computations use second-order limited slopes as described in <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a>.</p>
-<div class="section" id="pre-mac-api-ref-ebmol-extrapveltofaces">
-<h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a7add53a153ade9c5cb83e79a61ad1929">EBMOL::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-ebmol-extrapveltofaces" title="Permalink to this headline"></a></h3>
+<section id="pre-mac-api-ref-ebmol-extrapveltofaces">
+<h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a7add53a153ade9c5cb83e79a61ad1929">EBMOL::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-ebmol-extrapveltofaces" title="Permalink to this heading"></a></h3>
 <p>For computing the pre-MAC edge states to be MAC-projected, we define on every x-face with non-zero area fraction:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -264,9 +266,9 @@ u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
 \end{cases}\end{split}\]</div>
 <p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
 <span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
-</div>
-<div class="section" id="post-mac-api-ref-ebmol-computeedgestate">
-<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a94df1b279b45eac5141dfe0dff0a79bc">EBMOL::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-ebmol-computeedgestate" title="Permalink to this headline"></a></h3>
+</section>
+<section id="post-mac-api-ref-ebmol-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a94df1b279b45eac5141dfe0dff0a79bc">EBMOL::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-ebmol-computeedgestate" title="Permalink to this heading"></a></h3>
 <p>Once we have the MAC-projected velocities, we predict all quantities to faces with non-zero area fractions as above:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -319,17 +321,17 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
-</div>
-</div>
-<div class="section" id="godunov-methods">
-<span id="godunov"></span><h2>Godunov Methods<a class="headerlink" href="#godunov-methods" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="godunov-methods">
+<span id="godunov"></span><h2>Godunov Methods<a class="headerlink" href="#godunov-methods" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro’s implementation uses dimenensionally unsplit algorithms with full corner coupling in 3D,
 with the option to use either piecewise linear (PLM) <span id="id1">[<a class="reference internal" href="references.html#id25" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id24" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>
 or piecewise parabolic (PPM) <span id="id2">[<a class="reference internal" href="references.html#id18" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id27" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> reconstructions of the state.</p>
 <p>These alogrithms are applied in the Godunov namespace. For API documentation, see
 <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html">Doxygen: Godunov Namespace</a>.</p>
-<div class="section" id="pre-mac-api-ref-godunov-extrapveltofaces">
-<span id="godunov-pre-mac"></span><h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#a1c1dcedd6781260bd8322588e1290d94">Godunov::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-godunov-extrapveltofaces" title="Permalink to this headline"></a></h3>
+<section id="pre-mac-api-ref-godunov-extrapveltofaces">
+<span id="godunov-pre-mac"></span><h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#a1c1dcedd6781260bd8322588e1290d94">Godunov::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-godunov-extrapveltofaces" title="Permalink to this heading"></a></h3>
 <p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
 in space and time. For each face, we extrapolate the normal velocity
 component from the centers of the cells on either side to the face, creating left (L)
@@ -442,9 +444,9 @@ $ | \tilde{u}^{L,n+\frac{1}{2}} + \tilde{u}^{R,n+\frac{1}{2}} | &lt; \varepsilon
 procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n+\frac{1}{2}}_{i,j+\frac{1}{2},k}\)</span>
 and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to this unique value of
 normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
-</div>
-<div class="section" id="post-mac-api-ref-godnuov-computeedgestate">
-<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222">Godnuov::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-godnuov-computeedgestate" title="Permalink to this headline"></a></h3>
+</section>
+<section id="post-mac-api-ref-godnuov-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222">Godnuov::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-godnuov-computeedgestate" title="Permalink to this heading"></a></h3>
 <p>Here, the face-centered advective velocity field, which we will call <span class="math notranslate nohighlight">\(\U^{MAC}\)</span>, is already known.
 Typically, this is the MAC projection of <span class="math notranslate nohighlight">\(\U^{MAC,*}\)</span>, which would have been computed via the Pre-MAC
 procedure detailed above.
@@ -467,17 +469,17 @@ We extrapolate all quantities to faces as above:</p>
 \tilde{s}_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
 \frac{1}{2}(\tilde{s}_L + \tilde{s}_R),
 \end{cases}\end{split}\]</div>
-</div>
-</div>
-<div class="section" id="godunov-with-embedded-boundaries-ebgodunov">
-<span id="ebgodunov"></span><h2>Godunov with Embedded Boundaries (EBGodunov)<a class="headerlink" href="#godunov-with-embedded-boundaries-ebgodunov" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="godunov-with-embedded-boundaries-ebgodunov">
+<span id="ebgodunov"></span><h2>Godunov with Embedded Boundaries (EBGodunov)<a class="headerlink" href="#godunov-with-embedded-boundaries-ebgodunov" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro contains an embedded boundary (EB) aware version of the Godunov algorithm
 discussed above, although with fewer options available.
 This EB implementation employs a piecewise linear method (PLM) <span id="id5">[]</span>, and
 always includes any forcing terms <em>after</em> the computation of the transverse terms.
 EBGodunov attempts to use fourth-order limited slopes wherever possible, as described in <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a>.</p>
-<div class="section" id="pre-mac-api-ref-ebgodunov-extrapveltofaces">
-<span id="pre-mac"></span><h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#abea06da38cd7e2c6a6ed94d761c4e996">EBGodunov::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-ebgodunov-extrapveltofaces" title="Permalink to this headline"></a></h3>
+<section id="pre-mac-api-ref-ebgodunov-extrapveltofaces">
+<span id="pre-mac"></span><h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#abea06da38cd7e2c6a6ed94d761c4e996">EBGodunov::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-ebgodunov-extrapveltofaces" title="Permalink to this heading"></a></h3>
 <p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
 in space and time. For each face with a non-zero area fraction, we extrapolate the normal velocity
 component from the centroids of the cells on either side to the face centroid, creating left (L)
@@ -583,9 +585,9 @@ procedure is similar to that described above, i.e.
 procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n+\frac{1}{2}}_{i,j+\frac{1}{2},k}\)</span>
 and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to these unique values of
 normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
-</div>
-<div class="section" id="post-mac-api-ref-ebgondunov-computeedgestate">
-<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4">EBGondunov::ComputeEdgestate</a>)<a class="headerlink" href="#post-mac-api-ref-ebgondunov-computeedgestate" title="Permalink to this headline"></a></h3>
+</section>
+<section id="post-mac-api-ref-ebgondunov-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4">EBGondunov::ComputeEdgestate</a>)<a class="headerlink" href="#post-mac-api-ref-ebgondunov-computeedgestate" title="Permalink to this heading"></a></h3>
 <p>Here, the face-centered advective velocity field, which we will call <span class="math notranslate nohighlight">\(\U^{MAC}\)</span>, is already known.
 Typically, this is the MAC projection of <span class="math notranslate nohighlight">\(\U^{MAC,*}\)</span>, which would have been computed via the Pre-MAC
 procedure detailed above.
@@ -660,10 +662,10 @@ the subscripts, we define</p>
 \newcommand\widebreve[1]{\overset{\smile}{#1}}
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
-</div>
-</div>
-<div class="section" id="bds-algorithm">
-<h2>BDS Algorithm<a class="headerlink" href="#bds-algorithm" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section id="bds-algorithm">
+<h2>BDS Algorithm<a class="headerlink" href="#bds-algorithm" title="Permalink to this heading"></a></h2>
 <p>The Bell-Dawson-Shubin (BDS) algorithm is a higher order Godunov method for scalar
 conservation laws in multiple dimensions. Satisfying the maximum principal for
 constant coefficient linear advection, the BDS routine provides
@@ -680,13 +682,13 @@ this time.
 If additional functionality is desired, or if questions remain after reading this guide,
 further help is available by submitting an issue through
 <a class="reference external" href="https://github.com/AMReX-Codes/AMReX-Hydro/issues/new">Github</a></p>
-<div class="section" id="id7">
-<h3>Pre-MAC<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<section id="id7">
+<h3>Pre-MAC<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <p>The BDS routine follows the Godunov PLM method to extrapolate velocities to cell faces,
 see <a class="reference internal" href="#godunov-pre-mac"><span class="std std-ref">Godunov Methods: Pre-MAC</span></a>.</p>
-</div>
-<div class="section" id="post-mac">
-<h3>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this headline"></a></h3>
+</section>
+<section id="post-mac">
+<h3>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this heading"></a></h3>
 <p>In the notation below,
 <span class="math notranslate nohighlight">\(s\)</span> is a scalar field of the form <span class="math notranslate nohighlight">\(s=s(x,y,z,t)\)</span>
 and <span class="math notranslate nohighlight">\({\U}=(u,v,w)\)</span> represents a known face-centered velocity field, typically the projected velocity field from the Pre-MAC step (<span class="math notranslate nohighlight">\(\U^{MAC}\)</span>).
@@ -710,9 +712,9 @@ piecewise trilinear (bilinear in 2D) profiles over the space-time region determi
 domain of dependence of the face.
 We enforce no inflow at an outflow face as described in the post-MAC <a class="reference internal" href="Utilities.html#no-inflow-at-outflow"><span class="std std-ref">Boundary Conditions Section</span></a>.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
