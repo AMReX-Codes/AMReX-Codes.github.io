@@ -1,5 +1,9 @@
 var NAVTREEINDEX59 =
 {
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#ae121ffe428388c574820f65530cdd113":[2,0,0,139,4,3],
+"structamrex_1_1FabArrayBase_1_1FB.html":[2,0,0,139,8],
+"structamrex_1_1FabArrayBase_1_1FB.html#a042c8672d37a4a51f885ab940987ed71":[2,0,0,139,8,10],
+"structamrex_1_1FabArrayBase_1_1FB.html#a0a00f73f9c7b0a2817b46ea1044e17ff":[2,0,0,139,8,12],
 "structamrex_1_1FabArrayBase_1_1FB.html#a2f92b0b744eb605c14a46ab090c244eb":[2,0,0,139,8,5],
 "structamrex_1_1FabArrayBase_1_1FB.html#a3a5bf414a1fa823843b3c35d2ee5bbc9":[2,0,0,139,8,1],
 "structamrex_1_1FabArrayBase_1_1FB.html#a3ca8c8a83ae8de231f84a5f8069e8348":[2,0,0,139,8,11],
@@ -147,9 +151,9 @@ var NAVTREEINDEX59 =
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,156,0],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,156,2],
 "structamrex_1_1FilfcFace.html":[2,0,0,157],
+"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,157,0],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,157,1],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,157,2],
-"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,157,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html":[2,0,0,162,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[2,0,0,162,0,3],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a7d0fbbb79ec0286ab72dfe0d23116573":[2,0,0,162,0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX59 =
 "structamrex_1_1GpuComplex.html#ae2a818d0a7964627c0273d2cc9f85bb5":[2,0,0,173,6],
 "structamrex_1_1GpuTupleElement.html":[2,0,0,175],
 "structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[2,0,0,176],
-"structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#aa7a55672d011b43d9986ba29665e298e":[2,0,0,176,0],
-"structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[2,0,0,177],
-"structamrex_1_1GpuTupleSize.html":[2,0,0,178],
-"structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,179],
-"structamrex_1_1Gpu_1_1AtomicAdd.html":[2,0,0,6,3]
+"structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#aa7a55672d011b43d9986ba29665e298e":[2,0,0,176,0]
 };
