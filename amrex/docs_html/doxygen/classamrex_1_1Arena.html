@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa45555e396ee74158b0c6f3331ce5536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a336e271c5a07296e4c2866d194111784"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a336e271c5a07296e4c2866d194111784">isPinned</a> () const</td></tr>
 <tr class="separator:a336e271c5a07296e4c2866d194111784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6b026129f35157aa2b3945a37bdbd3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#abd6b026129f35157aa2b3945a37bdbd3">hasFreeDeviceMemory</a> (std::size_t sz)</td></tr>
+<tr class="memdesc:abd6b026129f35157aa2b3945a37bdbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does the device have enough free memory for allocating this much memory? For CPU builds, this always return true. This is not a const funciton because it may attempt to release memory back to the system.  <a href="classamrex_1_1Arena.html#abd6b026129f35157aa2b3945a37bdbd3">More...</a><br /></td></tr>
+<tr class="separator:abd6b026129f35157aa2b3945a37bdbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1af72a36a13904de0715917915db1f6b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a1af72a36a13904de0715917915db1f6b">arenaInfo</a> () const</td></tr>
 <tr class="memdesc:a1af72a36a13904de0715917915db1f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> object for querying.  <a href="classamrex_1_1Arena.html#a1af72a36a13904de0715917915db1f6b">More...</a><br /></td></tr>
 <tr class="separator:a1af72a36a13904de0715917915db1f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -471,6 +474,36 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classamrex_1_1CArena.html#a5d453f5a9a96ede674a4ef4d8a40382c">amrex::CArena</a>.</p>
+
+</div>
+</div>
+<a id="abd6b026129f35157aa2b3945a37bdbd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6b026129f35157aa2b3945a37bdbd3">&#9670;&nbsp;</a></span>hasFreeDeviceMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Arena::hasFreeDeviceMemory </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does the device have enough free memory for allocating this much memory? For CPU builds, this always return true. This is not a const funciton because it may attempt to release memory back to the system. </p>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1CArena.html#aedcc3761e701afca1a5ae61d5d75eed7">amrex::CArena</a>.</p>
 
 </div>
 </div>

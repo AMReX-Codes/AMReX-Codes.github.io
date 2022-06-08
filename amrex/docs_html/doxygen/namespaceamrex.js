@@ -404,6 +404,7 @@ var namespaceamrex =
     [ "Plus", "structamrex_1_1Plus.html", "structamrex_1_1Plus" ],
     [ "PODVector", "classamrex_1_1PODVector.html", "classamrex_1_1PODVector" ],
     [ "PolymorphicAllocator", "classamrex_1_1PolymorphicAllocator.html", "classamrex_1_1PolymorphicAllocator" ],
+    [ "PolymorphicArenaAllocator", "classamrex_1_1PolymorphicArenaAllocator.html", "classamrex_1_1PolymorphicArenaAllocator" ],
     [ "PolymorphicArray4", "structamrex_1_1PolymorphicArray4.html", "structamrex_1_1PolymorphicArray4" ],
     [ "Print", "classamrex_1_1Print.html", "classamrex_1_1Print" ],
     [ "PrintToFile", "classamrex_1_1PrintToFile.html", "classamrex_1_1PrintToFile" ],

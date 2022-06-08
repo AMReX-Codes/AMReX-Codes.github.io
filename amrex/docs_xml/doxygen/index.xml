@@ -986,6 +986,7 @@
     <member refid="classamrex_1_1Arena_1a7119489f4464f902d907f6dfe9716909" kind="function"><name>isManaged</name></member>
     <member refid="classamrex_1_1Arena_1aa45555e396ee74158b0c6f3331ce5536" kind="function"><name>isDevice</name></member>
     <member refid="classamrex_1_1Arena_1a336e271c5a07296e4c2866d194111784" kind="function"><name>isPinned</name></member>
+    <member refid="classamrex_1_1Arena_1abd6b026129f35157aa2b3945a37bdbd3" kind="function"><name>hasFreeDeviceMemory</name></member>
     <member refid="classamrex_1_1Arena_1a1af72a36a13904de0715917915db1f6b" kind="function"><name>arenaInfo</name></member>
     <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" kind="function"><name>align</name></member>
     <member refid="classamrex_1_1Arena_1a9f40990a545f4d280e905117fc6a0786" kind="function"><name>Initialize</name></member>
@@ -2449,6 +2450,7 @@
     <member refid="classamrex_1_1CArena_1a1bc87d17826c27e1b3ec8c623554db04" kind="function"><name>alloc</name></member>
     <member refid="classamrex_1_1CArena_1a56528182c07ceb5d08fce7f674f62991" kind="function"><name>free</name></member>
     <member refid="classamrex_1_1CArena_1a1452ccfc21b50919047fdaf5c3a5497f" kind="function"><name>freeUnused</name></member>
+    <member refid="classamrex_1_1CArena_1aedcc3761e701afca1a5ae61d5d75eed7" kind="function"><name>hasFreeDeviceMemory</name></member>
     <member refid="classamrex_1_1CArena_1a5f5de3e5518c0f5bcc71a6a2b4076a3f" kind="function"><name>heap_space_used</name></member>
     <member refid="classamrex_1_1CArena_1a52c8024bd12299f84f2362c0547c533d" kind="function"><name>heap_space_actually_used</name></member>
     <member refid="classamrex_1_1CArena_1a1aefcfca2b595c0f7ddac3e351f6e8a3" kind="function"><name>sizeOf</name></member>
@@ -7538,7 +7540,7 @@
     <member refid="classamrex_1_1NeighborParticleContainer_1adc56d3fa06a368656ba30775e6af57d5" kind="variable"><name>m_code_offsets</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a42b4110915286223007d92bbcf580d89" kind="variable"><name>neighbor_copy_op</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a4057e1a1eaeca59b1c87cec0720343d6" kind="variable"><name>neighbor_copy_plan</name></member>
-    <member refid="classamrex_1_1NeighborParticleContainer_1a78049454550fa714d431a49586671628" kind="variable"><name>snd_buffer</name></member>
+    <member refid="classamrex_1_1NeighborParticleContainer_1a8fd0536bf961bc912c1a380d93b077dd" kind="variable"><name>snd_buffer</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a2f7e6baa209278afea162548a1425bf2" kind="variable"><name>rcv_buffer</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a1f7704df7069ec0df0e84a649babf620" kind="variable"><name>pinned_snd_buffer</name></member>
     <member refid="classamrex_1_1NeighborParticleContainer_1a57f27a8f270653d1a738490e32dffe4b" kind="variable"><name>pinned_rcv_buffer</name></member>
@@ -9148,6 +9150,13 @@
     <member refid="classamrex_1_1PolymorphicAllocator_1a48ec36e08b0ded236d50c15c54194cc5" kind="function"><name>deallocate</name></member>
     <member refid="classamrex_1_1PolymorphicAllocator_1acd631df716e315396e3861e45a45dba6" kind="friend"><name>operator==</name></member>
     <member refid="classamrex_1_1PolymorphicAllocator_1a683ae339e0bad414c7683ee7478c6ad0" kind="friend"><name>operator!=</name></member>
+  </compound>
+  <compound refid="classamrex_1_1PolymorphicArenaAllocator" kind="class"><name>amrex::PolymorphicArenaAllocator</name>
+    <member refid="classamrex_1_1PolymorphicArenaAllocator_1aba2866eeb3c5059df1ef376b889172b3" kind="typedef"><name>value_type</name></member>
+    <member refid="classamrex_1_1PolymorphicArenaAllocator_1a5e1d7e4cf4f82598c50747dd3515f735" kind="variable"><name>m_arena</name></member>
+    <member refid="classamrex_1_1PolymorphicArenaAllocator_1a8236f42f7f6b4e7b532cc1b4a5e5dfa8" kind="function"><name>allocate</name></member>
+    <member refid="classamrex_1_1PolymorphicArenaAllocator_1ae8ff9646e310e343c37c80a832308c6e" kind="function"><name>deallocate</name></member>
+    <member refid="classamrex_1_1PolymorphicArenaAllocator_1a354331e95ea76ac27cc59024ffbc37e7" kind="function"><name>arena</name></member>
   </compound>
   <compound refid="structamrex_1_1PolymorphicArray4" kind="struct"><name>amrex::PolymorphicArray4</name>
     <member refid="structamrex_1_1PolymorphicArray4_1a0e1fecd400082a5f28e0712fa2eadee0" kind="function"><name>PolymorphicArray4</name></member>
@@ -12340,7 +12349,7 @@
     <member refid="namespaceamrex_1aa90dde62ffe45aa35b5dd015043019a8" kind="function"><name>amrex_interpolate_cic</name></member>
     <member refid="namespaceamrex_1af4c8c19cb812cdbcc34bc408577bb25c" kind="function"><name>packBuffer</name></member>
     <member refid="namespaceamrex_1a088b41cb8cc59ea2e3235669ca30b9b7" kind="function"><name>unpackBuffer</name></member>
-    <member refid="namespaceamrex_1aecd4b7b3db27a6698403b2f272a378ea" kind="function"><name>communicateParticlesStart</name></member>
+    <member refid="namespaceamrex_1a1798b9b2e1585609dcc68430ad8502e5" kind="function"><name>communicateParticlesStart</name></member>
     <member refid="namespaceamrex_1a814322d519ae32014737504164a0516b" kind="function"><name>communicateParticlesFinish</name></member>
     <member refid="namespaceamrex_1a1dd1ea6c385ce3a863e1818566937e24" kind="function"><name>unpackRemotes</name></member>
     <member refid="namespaceamrex_1a0f14d3e99332b7415aea27a0a5aeea8c" kind="function"><name>ParticleToMesh</name></member>

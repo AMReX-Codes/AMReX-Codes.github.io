@@ -102,6 +102,6 @@ var classamrex_1_1NeighborParticleContainer =
     [ "rcv_buffer", "classamrex_1_1NeighborParticleContainer.html#a2f7e6baa209278afea162548a1425bf2", null ],
     [ "rcvs", "classamrex_1_1NeighborParticleContainer.html#a6d6260836577412b1a3a17c7f8d09bc4", null ],
     [ "send_data", "classamrex_1_1NeighborParticleContainer.html#a5ba336738781f2d529bbb68a7f297e17", null ],
-    [ "snd_buffer", "classamrex_1_1NeighborParticleContainer.html#a78049454550fa714d431a49586671628", null ],
+    [ "snd_buffer", "classamrex_1_1NeighborParticleContainer.html#a8fd0536bf961bc912c1a380d93b077dd", null ],
     [ "use_mask", "classamrex_1_1NeighborParticleContainer.html#a21bd4a08b87b0afeeb0d8889c619c86c", null ]
 ];

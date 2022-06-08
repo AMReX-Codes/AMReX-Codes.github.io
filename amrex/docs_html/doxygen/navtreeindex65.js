@@ -1,5 +1,13 @@
 var NAVTREEINDEX65 =
 {
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a6f02ffa4e9e64c01721321d5a3b7e44b":[2,0,0,0,2,9],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a9352b5694ad95664dce6d6214668eb05":[2,0,0,0,2,11],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aa84aea4f19fd97919030c7bc2b2bce52":[2,0,0,0,2,12],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467":[2,0,0,0,2,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac95794690d4fb50c8e149a55ade09fb8":[2,0,0,0,2,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX65 =
 "unionamrex_1_1BATransformer_1_1BATOp.html#a0658b5293698992c4cc7df2062991b2a":[2,0,0,66,0,7],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a08b7befe0d3be3fd7cec0fc17832f89a":[2,0,0,66,0,1],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a221948cf931ebf7ae97fd6cbc80a7d61":[2,0,0,66,0,0],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a3834e9c9445ec289b6d868f29f4ebfd4":[2,0,0,66,0,2],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39":[2,0,0,66,0,9],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf":[2,0,0,66,0,5],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360":[2,0,0,66,0,8],
-"unionamrex_1_1BATransformer_1_1BATOp.html#a8a638320a3eff1eddadce618e107e535":[2,0,0,66,0,4],
-"unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814":[2,0,0,66,0,6],
-"unionamrex_1_1BATransformer_1_1BATOp.html#afd4493c8028cd11dab3a11c1b5d7f906":[2,0,0,66,0,3],
-"unionamrex_1_1BlockMutex_1_1state__t.html":[2,0,0,71,0],
-"unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[2,0,0,71,0,1]
+"unionamrex_1_1BATransformer_1_1BATOp.html#a3834e9c9445ec289b6d868f29f4ebfd4":[2,0,0,66,0,2]
 };

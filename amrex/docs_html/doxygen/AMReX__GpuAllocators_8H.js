@@ -7,6 +7,7 @@ var AMReX__GpuAllocators_8H =
     [ "PinnedArenaAllocator", "classamrex_1_1PinnedArenaAllocator.html", "classamrex_1_1PinnedArenaAllocator" ],
     [ "ManagedArenaAllocator", "classamrex_1_1ManagedArenaAllocator.html", "classamrex_1_1ManagedArenaAllocator" ],
     [ "AsyncArenaAllocator", "classamrex_1_1AsyncArenaAllocator.html", "classamrex_1_1AsyncArenaAllocator" ],
+    [ "PolymorphicArenaAllocator", "classamrex_1_1PolymorphicArenaAllocator.html", "classamrex_1_1PolymorphicArenaAllocator" ],
     [ "PolymorphicAllocator", "classamrex_1_1PolymorphicAllocator.html", "classamrex_1_1PolymorphicAllocator" ],
     [ "RunOnGpu< ArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],

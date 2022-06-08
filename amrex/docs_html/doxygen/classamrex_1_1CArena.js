@@ -9,6 +9,7 @@ var classamrex_1_1CArena =
     [ "free", "classamrex_1_1CArena.html#a56528182c07ceb5d08fce7f674f62991", null ],
     [ "freeUnused", "classamrex_1_1CArena.html#a1452ccfc21b50919047fdaf5c3a5497f", null ],
     [ "freeUnused_protected", "classamrex_1_1CArena.html#a5d453f5a9a96ede674a4ef4d8a40382c", null ],
+    [ "hasFreeDeviceMemory", "classamrex_1_1CArena.html#aedcc3761e701afca1a5ae61d5d75eed7", null ],
     [ "heap_space_actually_used", "classamrex_1_1CArena.html#a52c8024bd12299f84f2362c0547c533d", null ],
     [ "heap_space_used", "classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f", null ],
     [ "operator=", "classamrex_1_1CArena.html#ae491fc24a9163b864bc798acc7518852", null ],

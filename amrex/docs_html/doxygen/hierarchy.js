@@ -101,7 +101,11 @@ var hierarchy =
       [ "amrex::AsyncArenaAllocator< T >", "classamrex_1_1AsyncArenaAllocator.html", null ],
       [ "amrex::DeviceArenaAllocator< T >", "classamrex_1_1DeviceArenaAllocator.html", null ],
       [ "amrex::ManagedArenaAllocator< T >", "classamrex_1_1ManagedArenaAllocator.html", null ],
-      [ "amrex::PinnedArenaAllocator< T >", "classamrex_1_1PinnedArenaAllocator.html", null ]
+      [ "amrex::PinnedArenaAllocator< T >", "classamrex_1_1PinnedArenaAllocator.html", null ],
+      [ "amrex::PolymorphicArenaAllocator< T >", "classamrex_1_1PolymorphicArenaAllocator.html", null ],
+      [ "amrex::PolymorphicArenaAllocator< char >", "classamrex_1_1PolymorphicArenaAllocator.html", [
+        [ "amrex::PODVector< char, amrex::PolymorphicArenaAllocator< char > >", "classamrex_1_1PODVector.html", null ]
+      ] ]
     ] ],
     [ "amrex::ArenaInfo", "structamrex_1_1ArenaInfo.html", null ],
     [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", null ],

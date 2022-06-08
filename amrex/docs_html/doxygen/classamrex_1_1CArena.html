@@ -149,6 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1452ccfc21b50919047fdaf5c3a5497f"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a1452ccfc21b50919047fdaf5c3a5497f">freeUnused</a> () override final</td></tr>
 <tr class="memdesc:a1452ccfc21b50919047fdaf5c3a5497f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free unused memory back to the system. Return value is the amount memory freed.  <a href="classamrex_1_1CArena.html#a1452ccfc21b50919047fdaf5c3a5497f">More...</a><br /></td></tr>
 <tr class="separator:a1452ccfc21b50919047fdaf5c3a5497f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedcc3761e701afca1a5ae61d5d75eed7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#aedcc3761e701afca1a5ae61d5d75eed7">hasFreeDeviceMemory</a> (std::size_t sz) override</td></tr>
+<tr class="memdesc:aedcc3761e701afca1a5ae61d5d75eed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does the device have enough free memory for allocating this much memory? For CPU builds, this always return true. This is not a const funciton because it may attempt to release memory back to the system.  <a href="classamrex_1_1CArena.html#aedcc3761e701afca1a5ae61d5d75eed7">More...</a><br /></td></tr>
+<tr class="separator:aedcc3761e701afca1a5ae61d5d75eed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f5de3e5518c0f5bcc71a6a2b4076a3f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f">heap_space_used</a> () const noexcept</td></tr>
 <tr class="memdesc:a5f5de3e5518c0f5bcc71a6a2b4076a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current amount of heap space used by the <a class="el" href="classamrex_1_1CArena.html" title="A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager....">CArena</a> object.  <a href="classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f">More...</a><br /></td></tr>
 <tr class="separator:a5f5de3e5518c0f5bcc71a6a2b4076a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -470,6 +473,36 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a881f97d5676c4784f52d6f4c702da696">amrex::Arena</a>.</p>
+
+</div>
+</div>
+<a id="aedcc3761e701afca1a5ae61d5d75eed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedcc3761e701afca1a5ae61d5d75eed7">&#9670;&nbsp;</a></span>hasFreeDeviceMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::CArena::hasFreeDeviceMemory </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does the device have enough free memory for allocating this much memory? For CPU builds, this always return true. This is not a const funciton because it may attempt to release memory back to the system. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#abd6b026129f35157aa2b3945a37bdbd3">amrex::Arena</a>.</p>
 
 </div>
 </div>

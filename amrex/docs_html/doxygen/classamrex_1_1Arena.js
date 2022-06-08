@@ -10,6 +10,7 @@ var classamrex_1_1Arena =
     [ "free", "classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515", null ],
     [ "freeUnused", "classamrex_1_1Arena.html#ae58dbb9ab6bb4e8d980b384b0d8804e5", null ],
     [ "freeUnused_protected", "classamrex_1_1Arena.html#a881f97d5676c4784f52d6f4c702da696", null ],
+    [ "hasFreeDeviceMemory", "classamrex_1_1Arena.html#abd6b026129f35157aa2b3945a37bdbd3", null ],
     [ "Initialize", "classamrex_1_1Arena.html#a9f40990a545f4d280e905117fc6a0786", null ],
     [ "isDevice", "classamrex_1_1Arena.html#aa45555e396ee74158b0c6f3331ce5536", null ],
     [ "isDeviceAccessible", "classamrex_1_1Arena.html#afa7c9e223346f671eb055b3ce8580e56", null ],
