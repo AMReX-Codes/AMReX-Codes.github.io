@@ -43,6 +43,12 @@ var dir_678e78232f51bebdca12cae3de73223b =
     ] ],
     [ "AMReX_ParticleCommunication.cpp", "AMReX__ParticleCommunication_8cpp.html", null ],
     [ "AMReX_ParticleCommunication.H", "AMReX__ParticleCommunication_8H.html", "AMReX__ParticleCommunication_8H" ],
+    [ "AMReX_ParticleContainer.H", "AMReX__ParticleContainer_8H.html", [
+      [ "ParticleCommData", "structamrex_1_1ParticleCommData.html", "structamrex_1_1ParticleCommData" ],
+      [ "ParticleLocData", "structamrex_1_1ParticleLocData.html", "structamrex_1_1ParticleLocData" ],
+      [ "ParticleInitType", "structamrex_1_1ParticleInitType.html", "structamrex_1_1ParticleInitType" ],
+      [ "ParticleContainer", "classamrex_1_1ParticleContainer.html", "classamrex_1_1ParticleContainer" ]
+    ] ],
     [ "AMReX_ParticleContainerBase.cpp", "AMReX__ParticleContainerBase_8cpp.html", null ],
     [ "AMReX_ParticleContainerBase.H", "AMReX__ParticleContainerBase_8H.html", [
       [ "ParticleContainerBase", "classamrex_1_1ParticleContainerBase.html", "classamrex_1_1ParticleContainerBase" ]
@@ -70,12 +76,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_ParticleMPIUtil.cpp", "AMReX__ParticleMPIUtil_8cpp.html", "AMReX__ParticleMPIUtil_8cpp" ],
     [ "AMReX_ParticleMPIUtil.H", "AMReX__ParticleMPIUtil_8H.html", "AMReX__ParticleMPIUtil_8H" ],
     [ "AMReX_ParticleReduce.H", "AMReX__ParticleReduce_8H.html", "AMReX__ParticleReduce_8H" ],
-    [ "AMReX_Particles.H", "AMReX__Particles_8H.html", [
-      [ "ParticleCommData", "structamrex_1_1ParticleCommData.html", "structamrex_1_1ParticleCommData" ],
-      [ "ParticleLocData", "structamrex_1_1ParticleLocData.html", "structamrex_1_1ParticleLocData" ],
-      [ "ParticleInitType", "structamrex_1_1ParticleInitType.html", "structamrex_1_1ParticleInitType" ],
-      [ "ParticleContainer", "classamrex_1_1ParticleContainer.html", "classamrex_1_1ParticleContainer" ]
-    ] ],
+    [ "AMReX_Particles.H", "AMReX__Particles_8H.html", null ],
     [ "AMReX_ParticleTile.H", "AMReX__ParticleTile_8H.html", [
       [ "ParticleTileData", "structamrex_1_1ParticleTileData.html", "structamrex_1_1ParticleTileData" ],
       [ "ConstParticleTileData", "structamrex_1_1ConstParticleTileData.html", "structamrex_1_1ConstParticleTileData" ],
