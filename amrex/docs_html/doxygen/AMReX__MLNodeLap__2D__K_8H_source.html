@@ -2452,9 +2452,9 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__2D__K_8H_source.html
 <div class="line"><a name="l02351"></a><span class="lineno"> 2351</span>&#160;            Real x0 = pts[0][0], x1 = pts[1][0];</div>
 <div class="line"><a name="l02352"></a><span class="lineno"> 2352</span>&#160;            Real y0 = pts[0][1], y1 = pts[1][1];</div>
 <div class="line"><a name="l02353"></a><span class="lineno"> 2353</span>&#160; </div>
-<div class="line"><a name="l02354"></a><span class="lineno"> 2354</span>&#160;            Real Bx = Real(0.5)*(x1 + x0);</div>
-<div class="line"><a name="l02355"></a><span class="lineno"> 2355</span>&#160;            Real By = Real(0.5)*(y1 + y0);</div>
-<div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;            Real Bxy = x0*y0 + (x0*(y1 - y0) + y0*(x1 - x0))/Real(2.) + (x1 - x0)*(y1 - y0)/Real(3.);</div>
+<div class="line"><a name="l02354"></a><span class="lineno"> 2354</span>&#160;            Real Bx  = barea(i,j,0)*Real(0.5)*(x1 + x0);</div>
+<div class="line"><a name="l02355"></a><span class="lineno"> 2355</span>&#160;            Real By  = barea(i,j,0)*Real(0.5)*(y1 + y0);</div>
+<div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;            Real Bxy = barea(i,j,0)*(x0*y0 + (x0*(y1 - y0) + y0*(x1 - x0))/Real(2.) + (x1 - x0)*(y1 - y0)/Real(3.));</div>
 <div class="line"><a name="l02357"></a><span class="lineno"> 2357</span>&#160; </div>
 <div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;            sintg(i,j,0,<a class="code" href="namespaceamrex_1_1algoim.html#aa2dc15a8317387997b7599ac5dfb3b36">i_B_x</a> ) = Bx;</div>
 <div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;            sintg(i,j,0,<a class="code" href="namespaceamrex_1_1algoim.html#ae87c1a6426de20a1c5f4573bf6f5a08a">i_B_y</a> ) = By;</div>
