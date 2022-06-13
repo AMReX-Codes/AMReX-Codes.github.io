@@ -659,7 +659,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Partition.H" line="46" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Partition.H" bodystart="46" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a5bcec00259aa287e4fa1c57ed626d4e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a0076aea64837f78fff89e17e088c9500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -674,9 +674,9 @@
             <type>typename Value</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl</definition>
-        <argsstring>(U *data, Size count, const Value &amp;value)</argsstring>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl</definition>
+        <argsstring>(U *data, Size count, const Value &amp;value, T &amp;)</argsstring>
         <name>uninitializedFillNImpl</name>
         <param>
           <type>U *</type>
@@ -690,15 +690,18 @@
           <type>const Value &amp;</type>
           <declname>value</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="21" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="21" bodyend="27"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="22" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="22" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a2bc955e71a20bceeaed3cc8333eb0398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a16990f636fe5fdc926d637efe2871f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -713,9 +716,9 @@
             <type>typename Value</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl</definition>
-        <argsstring>(U *data, Size count, const Value &amp;value)</argsstring>
+        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl</definition>
+        <argsstring>(U *data, Size count, const Value &amp;value, T &amp;)</argsstring>
         <name>uninitializedFillNImpl</name>
         <param>
           <type>U *</type>
@@ -729,15 +732,61 @@
           <type>const Value &amp;</type>
           <declname>value</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="31" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="31" bodyend="34"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="32" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="32" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a1c0f245e3531dd80829daea6238690a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a4de20535e729f578e9f521074cd131a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename Size</type>
+          </param>
+          <param>
+            <type>typename Value</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl</definition>
+        <argsstring>(U *data, Size count, const Value &amp;value, T &amp;allocator)</argsstring>
+        <name>uninitializedFillNImpl</name>
+        <param>
+          <type>U *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>Size</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>const Value &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>allocator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="39" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="39" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a26fb31860229e07a03940da8f379478e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -749,9 +798,9 @@
             <type>typename Size</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::fillValuesImpl</definition>
-        <argsstring>(U *dst, const U *src, Size count)</argsstring>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::fillValuesImpl</definition>
+        <argsstring>(U *dst, const U *src, Size count, T &amp;)</argsstring>
         <name>fillValuesImpl</name>
         <param>
           <type>U *</type>
@@ -765,15 +814,18 @@
           <type>Size</type>
           <declname>count</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="38" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="38" bodyend="44"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="57" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="57" bodyend="63"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1ab898e3e417022179bf1bce3502eb7379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1aefc41b31331a10b3de1ad2d3d911d9ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -785,9 +837,9 @@
             <type>typename Size</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::fillValuesImpl</definition>
-        <argsstring>(U *dst, const U *src, Size count)</argsstring>
+        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::fillValuesImpl</definition>
+        <argsstring>(U *dst, const U *src, Size count, T &amp;)</argsstring>
         <name>fillValuesImpl</name>
         <param>
           <type>U *</type>
@@ -801,23 +853,66 @@
           <type>Size</type>
           <declname>count</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="48" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="48" bodyend="51"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="67" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="67" bodyend="70"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1aa59349c2dc230fb4a0c79fd80154b201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a1fe98dfd157c4d6a81f075f9e711b3ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename Size</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::fillValuesImpl</definition>
+        <argsstring>(U *dst, const U *src, Size count, T &amp;allocator)</argsstring>
+        <name>fillValuesImpl</name>
+        <param>
+          <type>U *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const U *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>Size</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>allocator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="74" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="74" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a08c0c8bb09cb02e536c3d30731485efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
-        <argsstring>(void *dst, const void *src, std::size_t count)</argsstring>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
+        <argsstring>(void *dst, const void *src, std::size_t count, T &amp;)</argsstring>
         <name>memCopyImpl</name>
         <param>
           <type>void *</type>
@@ -831,23 +926,26 @@
           <type>std::size_t</type>
           <declname>count</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="55" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="55" bodyend="62"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="92" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="92" bodyend="99"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a5eae9e79bcaf47cc572db8a613117788" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a7851b8f89cd7745957cbba5c467fc51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
-        <argsstring>(void *dst, const void *src, std::size_t count)</argsstring>
+        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
+        <argsstring>(void *dst, const void *src, std::size_t count, T &amp;)</argsstring>
         <name>memCopyImpl</name>
         <param>
           <type>void *</type>
@@ -861,22 +959,59 @@
           <type>std::size_t</type>
           <declname>count</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="66" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="66" bodyend="69"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="103" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="103" bodyend="106"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a4ad48aa99f6648fea787451a974dda26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a980bc526bd3c2e82888c672a8b31f559" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl</definition>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
+        <argsstring>(void *dst, const void *src, std::size_t count, T &amp;allocator)</argsstring>
+        <name>memCopyImpl</name>
+        <param>
+          <type>void *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>allocator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="110" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="110" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a07dd38ddad743d46fe67991eda9a8d9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl</definition>
         <argsstring>(void *dst, const void *src, std::size_t count, T &amp;allocator)</argsstring>
         <name>memMoveImpl</name>
         <param>
@@ -901,16 +1036,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="73" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="73" bodyend="92"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="125" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="125" bodyend="144"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a1470b94793e6b77a8735c66329069612" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad3182cae322a165690f9c9b302667783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl</definition>
+        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl</definition>
         <argsstring>(void *dst, const void *src, std::size_t count, T &amp;)</argsstring>
         <name>memMoveImpl</name>
         <param>
@@ -934,9 +1069,43 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="96" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="96" bodyend="99"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="148" column="2" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="148" bodyend="151"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a0a1833caa214a1cb642c80afe8c49bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a5541d5d1234082fe2ab2e7ef35385227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl</definition>
+        <argsstring>(void *dst, const void *src, std::size_t count, T &amp;allocator)</argsstring>
+        <name>memMoveImpl</name>
+        <param>
+          <type>void *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>allocator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="155" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="155" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a8b03cc98be6ef47a119eebf60f00939d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -945,9 +1114,9 @@
             <type>typename U</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl</definition>
-        <argsstring>(U *data, std::initializer_list&lt; U &gt; list)</argsstring>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl</definition>
+        <argsstring>(U *data, std::initializer_list&lt; U &gt; list, T &amp;)</argsstring>
         <name>initFromListImpl</name>
         <param>
           <type>U *</type>
@@ -957,15 +1126,18 @@
           <type>std::initializer_list&lt; U &gt;</type>
           <declname>list</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="103" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="103" bodyend="110"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="182" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="182" bodyend="189"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a2eed1c648c543a4917823d6a12dc9135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a39aad906032773bf9bf8849cab97af76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -974,9 +1146,9 @@
             <type>typename U</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl</definition>
-        <argsstring>(U *data, std::initializer_list&lt; U &gt; list)</argsstring>
+        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl</definition>
+        <argsstring>(U *data, std::initializer_list&lt; U &gt; list, T &amp;)</argsstring>
         <name>initFromListImpl</name>
         <param>
           <type>U *</type>
@@ -986,13 +1158,49 @@
           <type>std::initializer_list&lt; U &gt;</type>
           <declname>list</declname>
         </param>
+        <param>
+          <type>T &amp;</type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="114" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="114" bodyend="117"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="193" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="193" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1acc9a78544f37cf01f1aaddc32f6fda28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl</definition>
+        <argsstring>(U *data, std::initializer_list&lt; U &gt; list, T &amp;allocator)</argsstring>
+        <name>initFromListImpl</name>
+        <param>
+          <type>U *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::initializer_list&lt; U &gt;</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>allocator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="200" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="200" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ULong</type>

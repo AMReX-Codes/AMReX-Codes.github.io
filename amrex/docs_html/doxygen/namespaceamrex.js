@@ -265,6 +265,8 @@ var namespaceamrex =
     [ "IsFabArray", "structamrex_1_1IsFabArray.html", null ],
     [ "IsFabArray< D, typename std::enable_if< std::is_base_of< FabArray< typename D::FABType::value_type >, D >::value >::type >", "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html", null ],
     [ "IsMultiFabIterator", "structamrex_1_1IsMultiFabIterator.html", null ],
+    [ "IsPolymorphicArenaAllocator", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
+    [ "IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "IsStoreAtomic", "structamrex_1_1IsStoreAtomic.html", null ],
     [ "IsStoreAtomic< EBCellFlag >", "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html", null ],
     [ "LayoutData", "classamrex_1_1LayoutData.html", "classamrex_1_1LayoutData" ],

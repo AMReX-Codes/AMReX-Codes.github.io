@@ -16,7 +16,7 @@ var NAVTREEINDEX6 =
 "AMReX__Geometry_8cpp.html#a5086c850dfa16df677225c8c1139e466":[3,0,0,2,108,1],
 "AMReX__Geometry_8cpp.html#ad287398c706f3a1775e0954b73e5c779":[3,0,0,2,108,0],
 "AMReX__GpuAllocators_8H.html":[3,0,0,2,111],
-"AMReX__GpuAllocators_8H.html#a179fafc569924202b166896b608cd5c2":[3,0,0,2,111,13],
+"AMReX__GpuAllocators_8H.html#a179fafc569924202b166896b608cd5c2":[3,0,0,2,111,15],
 "AMReX__GpuAllocators_8H_source.html":[3,0,0,2,111],
 "AMReX__GpuAssert_8H.html":[3,0,0,2,112],
 "AMReX__GpuAssert_8H.html#ad2fc1939c7344c73cae30833f9ea0d6f":[3,0,0,2,112,0],

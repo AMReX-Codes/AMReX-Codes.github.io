@@ -395,6 +395,7 @@ var hierarchy =
       [ "amrex::HasMultiComp< A, Enable >", "structamrex_1_1HasMultiComp.html", null ],
       [ "amrex::IsBaseFab< A, Enable >", "structamrex_1_1IsBaseFab.html", null ],
       [ "amrex::IsFabArray< A, Enable >", "structamrex_1_1IsFabArray.html", null ],
+      [ "amrex::IsPolymorphicArenaAllocator< T >", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ],
       [ "amrex::EB2::IsGPUable< IntersectionIF< Tail... > >", "structamrex_1_1EB2_1_1IsGPUable.html", [
@@ -972,6 +973,7 @@ var hierarchy =
       [ "amrex::HasMultiComp< A, Enable >::type", "structamrex_1_1HasMultiComp_1_1type.html", null ],
       [ "amrex::IsBaseFab< D, typename std::enable_if< std::is_base_of< BaseFab< typename D::value_type >, D >::value >::type >", "structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html", null ],
       [ "amrex::IsFabArray< D, typename std::enable_if< std::is_base_of< FabArray< typename D::FABType::value_type >, D >::value >::type >", "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html", null ],
+      [ "amrex::IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::IsStoreAtomic< EBCellFlag >", "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html", null ],
       [ "amrex::MaybeDeviceRunnable< T, Enable >", "structamrex_1_1MaybeDeviceRunnable.html", null ],
       [ "amrex::MaybeHostDeviceRunnable< T, Enable >", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
