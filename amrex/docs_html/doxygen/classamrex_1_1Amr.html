@@ -259,6 +259,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a925e6a93c8c15b09058d992c92ef59e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a925e6a93c8c15b09058d992c92ef59e3">okToContinue</a> () noexcept</td></tr>
 <tr class="memdesc:a925e6a93c8c15b09058d992c92ef59e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">More work to be done?  <a href="classamrex_1_1Amr.html#a925e6a93c8c15b09058d992c92ef59e3">More...</a><br /></td></tr>
 <tr class="separator:a925e6a93c8c15b09058d992c92ef59e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6faadd0aabf54081fe9ea12be10484"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484">regrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lbase, Real time, bool initial=false) override</td></tr>
+<tr class="memdesc:a9d6faadd0aabf54081fe9ea12be10484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild grid hierarchy finer than lbase.  <a href="classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484">More...</a><br /></td></tr>
+<tr class="separator:a9d6faadd0aabf54081fe9ea12be10484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6254e512f37656c89acb1e19162d26b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a6254e512f37656c89acb1e19162d26b8">RegridOnly</a> (Real time, bool do_io=true)</td></tr>
 <tr class="memdesc:a6254e512f37656c89acb1e19162d26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regrid only!  <a href="classamrex_1_1Amr.html#a6254e512f37656c89acb1e19162d26b8">More...</a><br /></td></tr>
 <tr class="separator:a6254e512f37656c89acb1e19162d26b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -608,9 +611,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a12a8a852d0fe80b6a15cd05d0e96d2fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a12a8a852d0fe80b6a15cd05d0e96d2fd">bldFineLevels</a> (Real <a class="el" href="classamrex_1_1Amr.html#ad97c2f4d6656288b817b8bbcc0bba7b6">start_time</a>)</td></tr>
 <tr class="memdesc:a12a8a852d0fe80b6a15cd05d0e96d2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and initialize refined levels.  <a href="classamrex_1_1Amr.html#a12a8a852d0fe80b6a15cd05d0e96d2fd">More...</a><br /></td></tr>
 <tr class="separator:a12a8a852d0fe80b6a15cd05d0e96d2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d6faadd0aabf54081fe9ea12be10484"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484">regrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lbase, Real time, bool initial=false) override</td></tr>
-<tr class="memdesc:a9d6faadd0aabf54081fe9ea12be10484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild grid hierarchy finer than lbase.  <a href="classamrex_1_1Amr.html#a9d6faadd0aabf54081fe9ea12be10484">More...</a><br /></td></tr>
-<tr class="separator:a9d6faadd0aabf54081fe9ea12be10484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c2a28dfa0840069f813bf56565b4007"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Amr.html#a5c2a28dfa0840069f813bf56565b4007">regrid_level_0_on_restart</a> ()</td></tr>
 <tr class="memdesc:a5c2a28dfa0840069f813bf56565b4007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regrid level 0 on restart.  <a href="classamrex_1_1Amr.html#a5c2a28dfa0840069f813bf56565b4007">More...</a><br /></td></tr>
 <tr class="separator:a5c2a28dfa0840069f813bf56565b4007"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3645,7 +3645,7 @@ Private Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
