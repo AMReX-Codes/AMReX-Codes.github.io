@@ -83,6 +83,7 @@ var hierarchy =
     [ "amrex::AmrLevel", "classamrex_1_1AmrLevel.html", null ],
     [ "amrex::AmrParticleLocator< Bins >", "classamrex_1_1AmrParticleLocator.html", null ],
     [ "amrex::AmrParticleLocator< amrex::DenseBins< amrex::Box > >", "classamrex_1_1AmrParticleLocator.html", null ],
+    [ "amrex::Any", "classamrex_1_1Any.html", null ],
     [ "amrex::detail::apply_result< F,... >", "structamrex_1_1detail_1_1apply__result.html", null ],
     [ "amrex::detail::apply_result< F, GpuTuple< Ts... > >", "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "amrex::Arena", "classamrex_1_1Arena.html", [
@@ -510,6 +511,9 @@ var hierarchy =
       [ "amrex::EB2::IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html", null ]
     ] ],
     [ "amrex::IndexType", "classamrex_1_1IndexType.html", null ],
+    [ "amrex::Any::innards_base", "structamrex_1_1Any_1_1innards__base.html", [
+      [ "amrex::Any::innards< MF >", "structamrex_1_1Any_1_1innards.html", null ]
+    ] ],
     [ "amrex::InSituBridge", "classamrex_1_1InSituBridge.html", [
       [ "amrex::AmrInSituBridge", "classamrex_1_1AmrInSituBridge.html", null ],
       [ "amrex::AmrMeshInSituBridge", "classamrex_1_1AmrMeshInSituBridge.html", null ]

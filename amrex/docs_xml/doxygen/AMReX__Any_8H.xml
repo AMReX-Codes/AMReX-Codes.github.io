@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="AMReX__Any_8H" kind="file" language="C++">
+    <compoundname>AMReX_Any.H</compoundname>
+    <includes local="no">AMReX_Config.H</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">typeinfo</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>typeinfo</label>
+      </node>
+      <node id="2">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_Any.H</label>
+        <link refid="AMReX__Any_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classamrex_1_1Any" prot="public">amrex::Any</innerclass>
+    <innerclass refid="structamrex_1_1Any_1_1innards__base" prot="private">amrex::Any::innards_base</innerclass>
+    <innerclass refid="structamrex_1_1Any_1_1innards" prot="private">amrex::Any::innards</innerclass>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AMREX_ANY_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ANY_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;typeinfo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classamrex_1_1Any" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1Any" kindref="compound">Any</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classamrex_1_1Any_1a00e47f5c0aef72a9483c3cc6c9cc4e12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any_1a00e47f5c0aef72a9483c3cc6c9cc4e12" kindref="member">Any</ref><sp/>()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kindref="member">m_ptr</ref>(std::make_unique&lt;<ref refid="structamrex_1_1Any_1_1innards" kindref="compound">innards</ref>&lt;<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>&gt;<sp/>&gt;(0))</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any_1a75f911e1b2a254db4b6626bf98fa1923" kindref="member">~Any</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any_1a00e47f5c0aef72a9483c3cc6c9cc4e12" kindref="member">Any</ref><sp/>(<ref refid="classamrex_1_1Any" kindref="compound">Any</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any" kindref="compound">Any</ref>&amp;<sp/><ref refid="classamrex_1_1Any_1ac04132048490ddd59eb7312eb33856e4" kindref="member">operator= </ref>(<ref refid="classamrex_1_1Any" kindref="compound">Any</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any_1a00e47f5c0aef72a9483c3cc6c9cc4e12" kindref="member">Any</ref><sp/>(<ref refid="classamrex_1_1Any" kindref="compound">Any</ref><sp/>&amp;&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any" kindref="compound">Any</ref>&amp;<sp/><ref refid="classamrex_1_1Any_1ac04132048490ddd59eb7312eb33856e4" kindref="member">operator= </ref>(<ref refid="classamrex_1_1Any" kindref="compound">Any</ref><sp/>&amp;&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="34" refid="classamrex_1_1Any_1abbcaad293ac7cfef89396c60034c02ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any_1abbcaad293ac7cfef89396c60034c02ff" kindref="member">Any</ref><sp/>(MF<sp/>&amp;&amp;<sp/>mf)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kindref="member">m_ptr</ref>(std::make_unique&lt;<ref refid="structamrex_1_1Any_1_1innards" kindref="compound">innards</ref>&lt;MF&gt;<sp/>&gt;(std::forward&lt;MF&gt;(mf)))</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="40" refid="classamrex_1_1Any_1a7f6a6f9344ee02404ec221b6b010ec30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Any_1ac04132048490ddd59eb7312eb33856e4" kindref="member">operator= </ref>(MF<sp/>&amp;&amp;<sp/>mf)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kindref="member">m_ptr</ref><sp/>=<sp/>std::make_unique&lt;innards&lt;MF&gt;<sp/>&gt;(std::forward&lt;MF&gt;(mf));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classamrex_1_1Any_1ad3ea6134bfd9b5a51d9ad381e548cb19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::type_info&amp;<sp/><ref refid="classamrex_1_1Any_1ad3ea6134bfd9b5a51d9ad381e548cb19" kindref="member">Type</ref><sp/>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kindref="member">m_ptr</ref>-&gt;Type();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="51" refid="classamrex_1_1Any_1ab3b0861ff49959fd1103921dc291b918" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MF&amp;<sp/><ref refid="classamrex_1_1Any_1ab3b0861ff49959fd1103921dc291b918" kindref="member">get</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal"><ref refid="structamrex_1_1Any_1_1innards" kindref="compound">innards&lt;MF&gt;</ref>&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*m_ptr).<ref refid="structamrex_1_1Any_1_1innards_1a764850492da1fd11e69854a0a6d511cf" kindref="member">m_mf</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="55" refid="classamrex_1_1Any_1a743acfa69c626f0a2f66fda4830312dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MF<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="classamrex_1_1Any_1a743acfa69c626f0a2f66fda4830312dc" kindref="member">get</ref><sp/>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal"><ref refid="structamrex_1_1Any_1_1innards" kindref="compound">innards&lt;MF&gt;</ref><sp/>const&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*m_ptr).<ref refid="structamrex_1_1Any_1_1innards_1a764850492da1fd11e69854a0a6d511cf" kindref="member">m_mf</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="58" refid="classamrex_1_1Any_1a6756f5c90f3bab7334449702da7ae003" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Any_1a6756f5c90f3bab7334449702da7ae003" kindref="member">is</ref><sp/>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kindref="member">m_ptr</ref>-&gt;Type()<sp/>==<sp/></highlight><highlight class="keyword">typeid</highlight><highlight class="normal">(MF);<sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61" refid="structamrex_1_1Any_1_1innards__base" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Any_1_1innards__base" kindref="compound">innards_base</ref><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::type_info&amp;<sp/><ref refid="structamrex_1_1Any_1_1innards__base_1afa3049bddd4c3493eeb9a1f62fa7981d" kindref="member">Type</ref><sp/>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
+<codeline lineno="66" refid="structamrex_1_1Any_1_1innards" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Any_1_1innards" kindref="compound">innards</ref><sp/>:<sp/><ref refid="structamrex_1_1Any_1_1innards__base" kindref="compound">innards_base</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68" refid="structamrex_1_1Any_1_1innards_1aacaac28ad77795a2c5443a992e3701ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Any_1_1innards_1aacaac28ad77795a2c5443a992e3701ad" kindref="member">innards</ref>(MF<sp/>&amp;&amp;<sp/>mf)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structamrex_1_1Any_1_1innards_1a764850492da1fd11e69854a0a6d511cf" kindref="member">m_mf</ref>(std::forward&lt;MF&gt;(mf))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="structamrex_1_1Any_1_1innards_1a8f84898111d3428ff1f529295f042918" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::type_info&amp;<sp/><ref refid="structamrex_1_1Any_1_1innards_1a8f84898111d3428ff1f529295f042918" kindref="member">Type</ref><sp/>()</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typeid</highlight><highlight class="normal">(MF);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="structamrex_1_1Any_1_1innards_1a764850492da1fd11e69854a0a6d511cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MF<sp/><ref refid="structamrex_1_1Any_1_1innards_1a764850492da1fd11e69854a0a6d511cf" kindref="member">m_mf</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;innards_base&gt;<sp/><ref refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kindref="member">m_ptr</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Any.H"/>
+  </compounddef>
+</doxygen>
