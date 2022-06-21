@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"structamrex_1_1Array1D.html#afd1c8361929cdf3d8d4f928263113fac":[2,0,0,45,9],
 "structamrex_1_1Array2D.html":[2,0,0,46],
 "structamrex_1_1Array2D.html#a08f53cc26a4b05c464b19204c78a4d15":[2,0,0,46,13],
 "structamrex_1_1Array2D.html#a20209ab4cd8d47141802b24c5a95268a":[2,0,0,46,11],
@@ -12,8 +13,8 @@ var NAVTREEINDEX57 =
 "structamrex_1_1Array2D.html#a6c11e88a9c5d43efdbfc6f1acef6397d":[2,0,0,46,3],
 "structamrex_1_1Array2D.html#a7ed97ce5a43fa5616d9d89171c05c286":[2,0,0,46,14],
 "structamrex_1_1Array2D.html#a85acd12849153eb0faca0f5c22f84d3d":[2,0,0,46,12],
-"structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,46,7],
 "structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,46,6],
+"structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,46,7],
 "structamrex_1_1Array2D.html#aa8de85adf5367a972d5da3c2562530f9":[2,0,0,46,18],
 "structamrex_1_1Array2D.html#ac16eb800ddcd657a034c9c7ff342d85a":[2,0,0,46,2],
 "structamrex_1_1Array2D.html#ac3b0f0863090dfd120326dccff60fb81":[2,0,0,46,10],
@@ -34,8 +35,8 @@ var NAVTREEINDEX57 =
 "structamrex_1_1Array3D.html#a738bf226cd7ec23057eb95176cd4bfa6":[2,0,0,47,9],
 "structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0":[2,0,0,47,22],
 "structamrex_1_1Array3D.html#a95521eae522931f98cbb29c0daba5b35":[2,0,0,47,1],
-"structamrex_1_1Array3D.html#aab5afb1a6f3a90cad27f3a00449cf479":[2,0,0,47,5],
 "structamrex_1_1Array3D.html#aab5afb1a6f3a90cad27f3a00449cf479":[2,0,0,47,4],
+"structamrex_1_1Array3D.html#aab5afb1a6f3a90cad27f3a00449cf479":[2,0,0,47,5],
 "structamrex_1_1Array3D.html#ab58dde651cfad3f07ffdfb42d66e1c3b":[2,0,0,47,8],
 "structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,47,6],
 "structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,47,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1BinIterator_1_1iterator.html#acc740e2dd1e027a8a76f605050e76619":[2,0,0,69,0,2],
 "structamrex_1_1BinIterator_1_1iterator.html#afba47c1927bd537e97033eb5f5a6bdab":[2,0,0,69,0,4],
 "structamrex_1_1BinPolicy_1_1GPUBinPolicy.html":[2,0,0,2,0],
-"structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html":[2,0,0,2,1],
-"structamrex_1_1BinPolicy_1_1SerialBinPolicy.html":[2,0,0,2,2]
+"structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html":[2,0,0,2,1]
 };

@@ -49,6 +49,7 @@ var classamrex_1_1CoordSys =
     [ "LowerIndex", "classamrex_1_1CoordSys.html#aedba9cb3e81e6a96fd3cea8330ef0708", null ],
     [ "Offset", "classamrex_1_1CoordSys.html#a9d3eb77447b9c748b7223e271f6c9bb1", null ],
     [ "Offset", "classamrex_1_1CoordSys.html#aa67991fbbc479f95a966bcf04ae0e49a", null ],
+    [ "Ok", "classamrex_1_1CoordSys.html#a13dd49de2ef262fde3364ae394f32538", null ],
     [ "operator=", "classamrex_1_1CoordSys.html#a12bcf6eec38424a7f71387215d1ea4a8", null ],
     [ "operator=", "classamrex_1_1CoordSys.html#ab4ede9ab39bfb6f6445e6eb71ba686a9", null ],
     [ "SetCoord", "classamrex_1_1CoordSys.html#a2bf1bf10c89e3d151b0ad49b2c1722fa", null ],
