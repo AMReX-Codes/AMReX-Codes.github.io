@@ -133,11 +133,16 @@ is done, we can drop the <code class="docutils literal notranslate"><span class=
 <p>At this point, we should add the <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">amrex;</span></code>
 line at the top of our file and remove the <code class="docutils literal notranslate"><span class="pre">amrex::</span></code> prefix from all the
 commands that use it.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Note: C++ Standard Library Math Functions</p>
 <p>When using math functions such as <code class="docutils literal notranslate"><span class="pre">min</span></code> or <code class="docutils literal notranslate"><span class="pre">max</span></code> from the C++ standard library,
 it is recommend that users prefix these commands with <code class="docutils literal notranslate"><span class="pre">std::</span></code>, to have <code class="docutils literal notranslate"><span class="pre">std::min</span></code>
 or <code class="docutils literal notranslate"><span class="pre">std::max</span></code> to avoid any conflicts with the <code class="docutils literal notranslate"><span class="pre">amrex</span></code> namespace.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note: Best Practices</p>
+<p>It is good practice to avoid placing a <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span></code> command in
+a header (<code class="docutils literal notranslate"><span class="pre">.H</span></code>) file.</p>
 </div>
 <p>The rest of this tutorial will assume we implemented <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">amrex;</span></code>
 and removed the <code class="docutils literal notranslate"><span class="pre">amrex::</span></code> prefixes.</p>
@@ -383,8 +388,8 @@ table below.</p>
 </table>
 <p>Please be aware that the plotfiles generated in each version of the code
 will have different requirements due to the difference in dimensions. For example,
-a plotfile from the 3D code will need, <code class="docutils literal notranslate"><span class="pre">amrviz3d</span></code> while the 2D code
-will need <code class="docutils literal notranslate"><span class="pre">amrviz2d</span></code>.</p>
+a plotfile from the 3D code will need, <code class="docutils literal notranslate"><span class="pre">amrvis3d</span></code> while the 2D code
+will need <code class="docutils literal notranslate"><span class="pre">amrvis2d</span></code>.</p>
 </section>
 </section>
 
