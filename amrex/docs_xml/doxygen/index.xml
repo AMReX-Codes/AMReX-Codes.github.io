@@ -4752,7 +4752,8 @@
   <compound refid="classamrex_1_1Geometry" kind="class"><name>amrex::Geometry</name>
     <member refid="classamrex_1_1Geometry_1a84b1ad3fef8594c10d9ff2000505b20a" kind="variable"><name>is_periodic</name></member>
     <member refid="classamrex_1_1Geometry_1af62cd34804aea5643a6fc2205495b7a2" kind="variable"><name>prob_domain</name></member>
-    <member refid="classamrex_1_1Geometry_1af3f7a3e4807fd7a925377b93bad4476b" kind="variable"><name>roundoff_domain</name></member>
+    <member refid="classamrex_1_1Geometry_1a8fc1a2451a70d708a79d077e01c85a55" kind="variable"><name>roundoff_hi_d</name></member>
+    <member refid="classamrex_1_1Geometry_1a52912a524ac17a8607dbce5d834c8702" kind="variable"><name>roundoff_hi_f</name></member>
     <member refid="classamrex_1_1Geometry_1a52477661ac7c7ccbd93f397340176c74" kind="variable"><name>domain</name></member>
     <member refid="classamrex_1_1Geometry_1abe4767b2f215bc24725017610b86091d" kind="function"><name>Geometry</name></member>
     <member refid="classamrex_1_1Geometry_1ab9cc9315f181884f554c5866cd1e68e5" kind="function"><name>Geometry</name></member>
@@ -4766,7 +4767,6 @@
     <member refid="classamrex_1_1Geometry_1aeba60991848a022ff91863c7b6af0de8" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1Geometry_1a1b38d6eb6c35983b8569d5acafad944b" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1Geometry_1a69dfda38f7288ba1c26211d5b2160c1c" kind="function"><name>ProbDomain</name></member>
-    <member refid="classamrex_1_1Geometry_1aac9cdc08bdd77d5be479b2e3e0bbf62d" kind="function"><name>RoundoffDomain</name></member>
     <member refid="classamrex_1_1Geometry_1ae68fad0b0c42fcd904bcc36c8d678ca9" kind="function"><name>ProbDomain</name></member>
     <member refid="classamrex_1_1Geometry_1a02ef0d522174b99ca75e569def4c091c" kind="function"><name>ProbLo</name></member>
     <member refid="classamrex_1_1Geometry_1a9a8ebe29bfbb66ffa7d2ac47d2fb255b" kind="function"><name>ProbHi</name></member>
@@ -4774,8 +4774,7 @@
     <member refid="classamrex_1_1Geometry_1a5fd19e6998dd24eb5156808bdabc1dae" kind="function"><name>ProbHi</name></member>
     <member refid="classamrex_1_1Geometry_1a2cbf2a8943849597fdcb06608416d0db" kind="function"><name>ProbLoArray</name></member>
     <member refid="classamrex_1_1Geometry_1a8de19f13c63f4cb2759207cb725581ed" kind="function"><name>ProbHiArray</name></member>
-    <member refid="classamrex_1_1Geometry_1a46cf7b75810112ffe67272a1811a1eba" kind="function"><name>RoundoffLoArray</name></member>
-    <member refid="classamrex_1_1Geometry_1aaf4cdbedd6074c4c34d22d0e5d947804" kind="function"><name>RoundoffHiArray</name></member>
+    <member refid="classamrex_1_1Geometry_1aa55c38ac0db751b7aa40625464034b73" kind="function"><name>ProbHiArrayInParticleReal</name></member>
     <member refid="classamrex_1_1Geometry_1ad215766309286d88d85b4d78f7280f4c" kind="function"><name>ProbSize</name></member>
     <member refid="classamrex_1_1Geometry_1aa957525db46a7c7c22c1371633a3f263" kind="function"><name>ProbLength</name></member>
     <member refid="classamrex_1_1Geometry_1a94f4ddb683e381201694d644be7566f1" kind="function"><name>Domain</name></member>
@@ -4801,8 +4800,8 @@
     <member refid="classamrex_1_1Geometry_1a07025080452434734ae74c23e9f97224" kind="function"><name>setPeriodicity</name></member>
     <member refid="classamrex_1_1Geometry_1a1d9c01b45625d9e6f8e0e4d1cdd4a5a6" kind="function"><name>coarsen</name></member>
     <member refid="classamrex_1_1Geometry_1a122947abb8d93a6984f26277576faad3" kind="function"><name>refine</name></member>
-    <member refid="classamrex_1_1Geometry_1a3845557e4cc445f5eea932b503d04e5a" kind="function"><name>outsideRoundoffDomain</name></member>
-    <member refid="classamrex_1_1Geometry_1a37ed8cec1765b22e6f3db11a157bfca8" kind="function"><name>insideRoundoffDomain</name></member>
+    <member refid="classamrex_1_1Geometry_1af5bc2516bcf62a317b7bd5c77def5171" kind="function"><name>outsideRoundoffDomain</name></member>
+    <member refid="classamrex_1_1Geometry_1ab6da90b609946e2435bdb054e7770f54" kind="function"><name>insideRoundoffDomain</name></member>
     <member refid="classamrex_1_1Geometry_1aa9f2a9f6b90b4c58d8b870685669a398" kind="function"><name>computeRoundoffDomain</name></member>
     <member refid="classamrex_1_1Geometry_1ae6556ff88fa1aea8c8793dbb25d97873" kind="function"><name>Setup</name></member>
     <member refid="classamrex_1_1Geometry_1a4de5799760ae5f5831c719af01a33531" kind="function"><name>ResetDefaultProbDomain</name></member>
@@ -12430,8 +12429,8 @@
     <member refid="namespaceamrex_1a77b016483c8263c1a67e93d79d31da4c" kind="function"><name>numTilesInBox</name></member>
     <member refid="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" kind="function"><name>getParticleCell</name></member>
     <member refid="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" kind="function"><name>getParticleGrid</name></member>
-    <member refid="namespaceamrex_1aa14dc776bf08e5f32891fc7788b82e07" kind="function"><name>enforcePeriodic</name></member>
-    <member refid="namespaceamrex_1ae0112b869a3cebcbaa5160751f6768ae" kind="function"><name>partitionParticlesByDest</name></member>
+    <member refid="namespaceamrex_1ae1fcbdc79cff5f8ed488b8f8d5549783" kind="function"><name>enforcePeriodic</name></member>
+    <member refid="namespaceamrex_1a15f9fb9c5ef4289a5d05c36bebb1b739" kind="function"><name>partitionParticlesByDest</name></member>
     <member refid="namespaceamrex_1ac8512b687a529806d0f382cf7c9eee97" kind="function"><name>SameIteratorsOK</name></member>
     <member refid="namespaceamrex_1a2a6f51f01e9f0350a8b447ee451d0efb" kind="function"><name>EnsureThreadSafeTiles</name></member>
     <member refid="namespaceamrex_1a1983ce5560b8e4e34d4f0a8ade1fa640" kind="function"><name>cic_interpolate</name></member>
@@ -12672,6 +12671,7 @@
     <member refid="namespaceamrex_1_1detail_1a4dabd168440a362478e0d2887dfdfe23" kind="typedef"><name>tuple_decay_t</name></member>
     <member refid="namespaceamrex_1_1detail_1a1fbad5ff9cc23fcc37c363d9d3bc0d94" kind="typedef"><name>Void_t</name></member>
     <member refid="namespaceamrex_1_1detail_1ad9ffd55042a6573c492b8fc107951d12" kind="typedef"><name>call_result_t</name></member>
+    <member refid="namespaceamrex_1_1detail_1aee083ef365f625a6ce604ab13c65d49e" kind="function"><name>bisect_prob_hi</name></member>
     <member refid="namespaceamrex_1_1detail_1a10e8c484da7d2f2f5bbd223b6b92dc87" kind="function"><name>complex_pow_unsigned</name></member>
     <member refid="namespaceamrex_1_1detail_1aca3a36a75e09011d483bcaaa6f9ee7f5" kind="function"><name>call_f</name></member>
     <member refid="namespaceamrex_1_1detail_1ac02794506750edcf0d39acedf4ddb19d" kind="function"><name>call_f</name></member>

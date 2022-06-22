@@ -469,6 +469,8 @@ var hierarchy =
     [ "amrex::GpuArray< bool, N >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< const int *AMREX_RESTRICT, NArrayInt >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< const ParticleReal *AMREX_RESTRICT, NArrayReal >", "structamrex_1_1GpuArray.html", null ],
+    [ "amrex::GpuArray< double, AMREX_SPACEDIM >", "structamrex_1_1GpuArray.html", null ],
+    [ "amrex::GpuArray< float, AMREX_SPACEDIM >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int *AMREX_RESTRICT, NArrayInt >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int, 2 >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int, 3 >", "structamrex_1_1GpuArray.html", null ],

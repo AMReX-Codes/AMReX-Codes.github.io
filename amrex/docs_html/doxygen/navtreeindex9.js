@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"AMReX__InterpFaceReg__2D__C_8H.html#aed91a03099231a70cb9d3fbf02d95081":[3,0,0,1,31,0],
 "AMReX__InterpFaceReg__2D__C_8H_source.html":[3,0,0,1,31],
 "AMReX__InterpFaceReg__3D__C_8H.html":[3,0,0,1,32],
 "AMReX__InterpFaceReg__3D__C_8H.html#a78a68acf45501af596b096939b49995c":[3,0,0,1,32,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "AMReX__MLABecLap__3D__K_8H_source.html":[3,0,0,6,0,2],
 "AMReX__MLABecLap__K_8H.html":[3,0,0,6,0,3],
 "AMReX__MLABecLap__K_8H_source.html":[3,0,0,6,0,3],
-"AMReX__MLABecLaplacian_8H.html":[3,0,0,6,0,5],
-"AMReX__MLABecLaplacian_8H_source.html":[3,0,0,6,0,5]
+"AMReX__MLABecLaplacian_8H.html":[3,0,0,6,0,5]
 };

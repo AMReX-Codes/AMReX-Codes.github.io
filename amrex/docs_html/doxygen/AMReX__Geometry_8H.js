@@ -2,6 +2,7 @@ var AMReX__Geometry_8H =
 [
     [ "GeometryData", "structamrex_1_1GeometryData.html", "structamrex_1_1GeometryData" ],
     [ "Geometry", "classamrex_1_1Geometry.html", "classamrex_1_1Geometry" ],
+    [ "bisect_prob_hi", "AMReX__Geometry_8H.html#aee083ef365f625a6ce604ab13c65d49e", null ],
     [ "coarsen", "AMReX__Geometry_8H.html#abf0376e5e15137aa9ec711295e7bf6bf", null ],
     [ "coarsen", "AMReX__Geometry_8H.html#adbc2cc619f36c517e2d0c6cbc5a40068", null ],
     [ "DefaultGeometry", "AMReX__Geometry_8H.html#acb7e4e52bb38ce342af7e2edf41293be", null ],
