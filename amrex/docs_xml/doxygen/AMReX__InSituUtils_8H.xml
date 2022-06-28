@@ -3,10 +3,10 @@
   <compounddef id="AMReX__InSituUtils_8H" kind="file" language="C++">
     <compoundname>AMReX_InSituUtils.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
-    <includes local="no">vtkDataSetAttributes.h</includes>
-    <includes local="no">vtkUnsignedCharArray.h</includes>
-    <includes local="no">vtkFloatArray.h</includes>
-    <includes local="no">vtkDoubleArray.h</includes>
+    <includes local="no">svtkDataSetAttributes.h</includes>
+    <includes local="no">svtkUnsignedCharArray.h</includes>
+    <includes local="no">svtkFloatArray.h</includes>
+    <includes local="no">svtkDoubleArray.h</includes>
     <includes refid="AMReX__BoxArray_8H" local="no">AMReX_BoxArray.H</includes>
     <includes refid="AMReX__Geometry_8H" local="no">AMReX_Geometry.H</includes>
     <includes refid="AMReX__RealBox_8H" local="no">AMReX_RealBox.H</includes>
@@ -483,11 +483,11 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>vtkUnsignedCharArray.h</label>
-      </node>
       <node id="56">
         <label>map</label>
+      </node>
+      <node id="3">
+        <label>svtkDataSetAttributes.h</label>
       </node>
       <node id="87">
         <label>AMReX_ANSIEscCode.H</label>
@@ -694,6 +694,9 @@
       </node>
       <node id="78">
         <label>sys/types.h</label>
+      </node>
+      <node id="5">
+        <label>svtkFloatArray.h</label>
       </node>
       <node id="112">
         <label>AMReX_GpuAsyncArray.H</label>
@@ -1094,14 +1097,14 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>svtkUnsignedCharArray.h</label>
+      </node>
       <node id="48">
         <label>iosfwd</label>
       </node>
       <node id="38">
         <label>cstdlib</label>
-      </node>
-      <node id="6">
-        <label>vtkDoubleArray.h</label>
       </node>
       <node id="25">
         <label>iostream</label>
@@ -1252,9 +1255,6 @@
       <node id="66">
         <label>csignal</label>
       </node>
-      <node id="5">
-        <label>vtkFloatArray.h</label>
-      </node>
       <node id="85">
         <label>AMReX_ParallelReduce.H</label>
         <link refid="AMReX__ParallelReduce_8H"/>
@@ -1402,6 +1402,9 @@
       <node id="75">
         <label>curand.h</label>
       </node>
+      <node id="6">
+        <label>svtkDoubleArray.h</label>
+      </node>
       <node id="81">
         <label>cstring</label>
       </node>
@@ -1431,9 +1434,6 @@
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>vtkDataSetAttributes.h</label>
       </node>
       <node id="76">
         <label>curand_kernel.h</label>
@@ -1498,18 +1498,18 @@
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <innernamespace refid="namespaceamrex_1_1InSituUtils">amrex::InSituUtils</innernamespace>
       <sectiondef kind="define">
-      <memberdef kind="define" id="AMReX__InSituUtils_8H_1a71885f0d4d91f7ac0933db0bfaa477af" prot="public" static="no">
+      <memberdef kind="define" id="AMReX__InSituUtils_8H_1ab14fe6532bbec8de0b1f8a3d2f6879a2" prot="public" static="no">
         <name>amrex_tt_specialize</name>
         <param><defname>cpp_t</defname></param>
-        <param><defname>vtk_t</defname></param>
-        <param><defname>vtk_t_e</defname></param>
+        <param><defname>svtk_t</defname></param>
+        <param><defname>svtk_t_e</defname></param>
         <initializer>template &lt;&gt;                                             \
 struct amrex_tt&lt;cpp_t&gt;                                  \
 {                                                       \
-    using vtk_type = vtk_t;                             \
+    using svtk_type = svtk_t;                           \
                                                         \
     static                                              \
-    constexpr int vtk_type_enum() { return vtk_t_e; }   \
+    constexpr int svtk_type_enum() { return svtk_t_e; } \
 };</initializer>
         <briefdescription>
         </briefdescription>
@@ -1529,10 +1529,10 @@ struct amrex_tt&lt;cpp_t&gt;                                  \
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMReX_InSituUtils_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkDataSetAttributes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkUnsignedCharArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkFloatArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkDoubleArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkDataSetAttributes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkUnsignedCharArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkFloatArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkDoubleArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BoxArray_8H" kindref="compound">AMReX_BoxArray.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Geometry_8H" kindref="compound">AMReX_Geometry.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -1574,21 +1574,21 @@ struct amrex_tt&lt;cpp_t&gt;                                  \
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>traits<sp/>helper<sp/>for<sp/>mapping<sp/>between<sp/>amrex_real<sp/>and<sp/>vtkDataArray</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>traits<sp/>helper<sp/>for<sp/>mapping<sp/>between<sp/>amrex_real<sp/>and<sp/>svtkDataArray</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="51" refid="structamrex_1_1InSituUtils_1_1amrex__tt" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>cpp_t&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1InSituUtils_1_1amrex__tt" kindref="compound">amrex_tt</ref><sp/>{};</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="AMReX__InSituUtils_8H_1a71885f0d4d91f7ac0933db0bfaa477af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>amrex_tt_specialize(cpp_t,<sp/>vtk_t,<sp/>vtk_t_e)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="53" refid="AMReX__InSituUtils_8H_1ab14fe6532bbec8de0b1f8a3d2f6879a2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>amrex_tt_specialize(cpp_t,<sp/>svtk_t,<sp/>svtk_t_e)<sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="54"><highlight class="preprocessor">template<sp/>&lt;&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="55"><highlight class="preprocessor">struct<sp/>amrex_tt&lt;cpp_t&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="56"><highlight class="preprocessor">{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>using<sp/>vtk_type<sp/>=<sp/>vtk_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>using<sp/>svtk_type<sp/>=<sp/>svtk_t;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="58"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>static<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>constexpr<sp/>int<sp/>vtk_type_enum()<sp/>{<sp/>return<sp/>vtk_t_e;<sp/>}<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>constexpr<sp/>int<sp/>svtk_type_enum()<sp/>{<sp/>return<sp/>svtk_t_e;<sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="61"><highlight class="preprocessor">};</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><ref refid="namespaceamrex_1_1InSituUtils_1ae89fd34a650c67b47d1fa937ce642983" kindref="member">amrex_tt_specialize</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/>vtkFloatArray,<sp/>VTK_FLOAT)</highlight></codeline>
-<codeline lineno="64" refid="namespaceamrex_1_1InSituUtils_1aa808316be933a2b2b49023d63a337a41" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1InSituUtils_1ae89fd34a650c67b47d1fa937ce642983" kindref="member">amrex_tt_specialize</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/><ref refid="namespaceamrex_1_1InSituUtils_1aa808316be933a2b2b49023d63a337a41" kindref="member">vtkDoubleArray</ref>,<sp/>VTK_DOUBLE)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="namespaceamrex_1_1InSituUtils_1aea93d9dae530ab0650826726ebba0dfb" kindref="member">amrex_tt_specialize</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/>svtkFloatArray,<sp/>SVTK_FLOAT)</highlight></codeline>
+<codeline lineno="64" refid="namespaceamrex_1_1InSituUtils_1a21643ca604baa89f6786319692943c6d" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1InSituUtils_1aea93d9dae530ab0650826726ebba0dfb" kindref="member">amrex_tt_specialize</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/><ref refid="namespaceamrex_1_1InSituUtils_1a21643ca604baa89f6786319692943c6d" kindref="member">svtkDoubleArray</ref>,<sp/>SVTK_DOUBLE)</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>helpers<sp/>to<sp/>modify<sp/>values</highlight><highlight class="normal"></highlight></codeline>

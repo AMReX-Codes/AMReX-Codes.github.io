@@ -858,10 +858,13 @@ the desired SENSEI module. After configuring the build environment with
 <h2>Compiling with CMake<a class="headerlink" href="#compiling-with-cmake" title="Permalink to this heading"></a></h2>
 <p>For codes making use of AMReX’s CMake based build, one needs to enable SENSEI
 and point to the CMake configuration installed with SENSEI.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DAMReX_SENSEI<span class="o">=</span>ON -DSENSEI_DIR<span class="o">=</span>&lt;path to install&gt;/lib/cmake ..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -DAMReX_SENSEI<span class="o">=</span>ON -DSENSEI_DIR<span class="o">=</span>&lt;path to install&gt;/&lt;lib dir&gt;/cmake ..
 </pre></div>
 </div>
-<p>When CMake generates the make files proceed as usual.</p>
+<p>When CMake generates the make files proceed as usual. Note: &lt;lib dir&gt; may be
+<cite>lib</cite> or <cite>lib64</cite> or something else depending on what CMake decided to use for
+your particular OS. See the CMake GNUInstallDirs documentation for more
+information.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -j4 -f GNUmakefile
 </pre></div>
 </div>
@@ -930,8 +933,7 @@ computed by IAMR on NERSC Cori using 2048 cores.</span><a class="headerlink" hre
 </section>
 <section id="obtaining-sensei">
 <h2>Obtaining SENSEI<a class="headerlink" href="#obtaining-sensei" title="Permalink to this heading"></a></h2>
-<p>SENSEI is hosted on Kitware’s Gitlab site at <a class="reference external" href="https://gitlab.kitware.com/sensei/sensei">https://gitlab.kitware.com/sensei/sensei</a>
-It’s best to checkout the latest release rather than working on the master branch.</p>
+<p>SENSEI is hosted on github at <a class="reference external" href="https://github.com/SENSEI-insitu/SENSEI.git">https://github.com/SENSEI-insitu/SENSEI.git</a></p>
 <p>To ease the burden of wrangling back end installs SENSEI provides two platforms
 with all dependencies pre-installed, a VirtualBox VM, and a NERSC Cori
 deployment. New users are encouraged to experiment with one of these.</p>

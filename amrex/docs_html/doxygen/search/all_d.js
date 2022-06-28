@@ -656,7 +656,7 @@ var searchData=
   ['managed_4782',['Managed',['../structamrex_1_1Gpu_1_1Managed.html',1,'amrex::Gpu']]],
   ['managedarenaallocator_4783',['ManagedArenaAllocator',['../classamrex_1_1ManagedArenaAllocator.html',1,'amrex']]],
   ['manageddevicevector_4784',['ManagedDeviceVector',['../namespaceamrex_1_1Gpu.html#af22f411b79da7033051cdfa1539e21be',1,'amrex::Gpu']]],
-  ['managedobjects_4785',['ManagedObjects',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a5e5e006af4417aa0d4384eedf95f77b6',1,'amrex::AmrDataAdaptor::InternalsType::ManagedObjects()'],['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#afe1955be77ad98e82b431d7b6eb5aeb8',1,'amrex::AmrMeshDataAdaptor::InternalsType::ManagedObjects()']]],
+  ['managedobjects_4785',['ManagedObjects',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#aeb6b0e7cb1bbac77e4f65e96e4f8a4d5',1,'amrex::AmrDataAdaptor::InternalsType::ManagedObjects()'],['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a11b8e5a1bb9908d15d0cf626b12be2f5',1,'amrex::AmrMeshDataAdaptor::InternalsType::ManagedObjects()']]],
   ['managedvector_4786',['ManagedVector',['../namespaceamrex_1_1Gpu.html#ab2661b6ddd9751b7e197a9d619dabc7b',1,'amrex::Gpu']]],
   ['manual_5ftags_5fplacement_4787',['manual_tags_placement',['../classamrex_1_1AmrLevel.html#a2e78f3a4398272855b0a9ac3becaefd7',1,'amrex::AmrLevel']]],
   ['manualtagsplacement_4788',['ManualTagsPlacement',['../classamrex_1_1Amr.html#a9d0e58b8aaa0cac0a8cd432f37198197',1,'amrex::Amr::ManualTagsPlacement()'],['../classamrex_1_1AmrMesh.html#abe4eb07db47e710993616e88931fafe1',1,'amrex::AmrMesh::ManualTagsPlacement()']]],

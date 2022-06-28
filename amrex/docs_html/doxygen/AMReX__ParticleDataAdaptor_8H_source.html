@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptor_8H_source.h
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__MultiFab_8H.html">AMReX_MultiFab.H</a>&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;DataAdaptor.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>vtkPolyData;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>svtkPolyData;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
@@ -141,22 +141,22 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptor_8H_source.h
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> SetPinMesh(<span class="keywordtype">int</span> val);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// get particle id numbers</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> AddParticlesIDArray(vtkDataObject* mesh);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> AddParticlesIDArray(svtkDataObject* mesh);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// get particle cpu numbers (process each particle was generated on)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">int</span> AddParticlesCPUArray(vtkDataObject* mesh);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">int</span> AddParticlesCPUArray(svtkDataObject* mesh);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// get particle integer arrays in Structs of Arrays format</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">int</span> AddParticlesSOAIntArray(<span class="keyword">const</span> std::string &amp;arrayName, vtkDataObject* mesh);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">int</span> AddParticlesSOAIntArray(<span class="keyword">const</span> std::string &amp;arrayName, svtkDataObject* mesh);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// get particle real arrays in Structs of Arrays format</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">int</span> AddParticlesSOARealArray(<span class="keyword">const</span> std::string &amp;arrayName, vtkDataObject* mesh);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">int</span> AddParticlesSOARealArray(<span class="keyword">const</span> std::string &amp;arrayName, svtkDataObject* mesh);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// get particle integer arrays in Array Of Structs format</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">int</span> AddParticlesAOSIntArray(<span class="keyword">const</span> std::string &amp;arrayName, vtkDataObject* mesh);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">int</span> AddParticlesAOSIntArray(<span class="keyword">const</span> std::string &amp;arrayName, svtkDataObject* mesh);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// get particle real arrays in Array Of Structs format</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">int</span> AddParticlesAOSRealArray(<span class="keyword">const</span> std::string &amp;arrayName, vtkDataObject* mesh);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">int</span> AddParticlesAOSRealArray(<span class="keyword">const</span> std::string &amp;arrayName, svtkDataObject* mesh);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// SENSEI API</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &gt;= 3</span></div>
@@ -169,10 +169,10 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptor_8H_source.h
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> GetArrayName(<span class="keyword">const</span> std::string &amp;meshName, <span class="keywordtype">int</span> association, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, std::string &amp;arrayName) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">int</span> GetNumberOfMeshes(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;numMeshes) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> GetMesh(<span class="keyword">const</span> std::string &amp;meshName, <span class="keywordtype">bool</span> structureOnly, vtkDataObject *&amp;mesh) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> AddGhostNodesArray(vtkDataObject* mesh, <span class="keyword">const</span> std::string &amp;meshName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> AddGhostCellsArray(vtkDataObject* mesh, <span class="keyword">const</span> std::string &amp;meshName) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">int</span> AddArray(vtkDataObject* mesh, <span class="keyword">const</span> std::string &amp;meshName, <span class="keywordtype">int</span> association, <span class="keyword">const</span> std::string &amp;arrayName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> GetMesh(<span class="keyword">const</span> std::string &amp;meshName, <span class="keywordtype">bool</span> structureOnly, svtkDataObject *&amp;mesh) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> AddGhostNodesArray(svtkDataObject* mesh, <span class="keyword">const</span> std::string &amp;meshName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> AddGhostCellsArray(svtkDataObject* mesh, <span class="keyword">const</span> std::string &amp;meshName) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">int</span> AddArray(svtkDataObject* mesh, <span class="keyword">const</span> std::string &amp;meshName, <span class="keywordtype">int</span> association, <span class="keyword">const</span> std::string &amp;arrayName) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">int</span> ReleaseData() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">protected</span>:</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptor_8H_source.h
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  ~ParticleDataAdaptor() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  vtkPolyData* BuildParticles();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  svtkPolyData* BuildParticles();</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">const</span> std::string m_particlesName = <span class="stringliteral">&quot;particles&quot;</span>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>

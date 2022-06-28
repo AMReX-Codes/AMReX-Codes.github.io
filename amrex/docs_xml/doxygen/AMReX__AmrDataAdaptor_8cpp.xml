@@ -3,22 +3,22 @@
   <compounddef id="AMReX__AmrDataAdaptor_8cpp" kind="file" language="C++">
     <compoundname>AMReX_AmrDataAdaptor.cpp</compoundname>
     <includes refid="AMReX__AmrDataAdaptor_8H" local="yes">AMReX_AmrDataAdaptor.H</includes>
+    <includes local="yes">senseiConfig.h</includes>
     <includes local="yes">MPIUtils.h</includes>
     <includes local="yes">STLUtils.h</includes>
-    <includes local="yes">VTKUtils.h</includes>
+    <includes local="yes">SVTKUtils.h</includes>
     <includes local="yes">Profiler.h</includes>
     <includes refid="Error_8h" local="yes">Error.h</includes>
-    <includes local="no">vtkObjectFactory.h</includes>
-    <includes local="no">vtkOverlappingAMR.h</includes>
-    <includes local="no">vtkAMRBox.h</includes>
-    <includes local="no">vtkUniformGrid.h</includes>
-    <includes local="no">vtkXMLUniformGridAMRWriter.h</includes>
-    <includes local="no">vtkDataSetAttributes.h</includes>
-    <includes local="no">vtkUnsignedCharArray.h</includes>
-    <includes local="no">vtkFloatArray.h</includes>
-    <includes local="no">vtkDoubleArray.h</includes>
-    <includes local="no">vtkCellData.h</includes>
-    <includes local="no">vtkPointData.h</includes>
+    <includes local="no">svtkObjectFactory.h</includes>
+    <includes local="no">svtkOverlappingAMR.h</includes>
+    <includes local="no">svtkAMRBox.h</includes>
+    <includes local="no">svtkUniformGrid.h</includes>
+    <includes local="no">svtkDataSetAttributes.h</includes>
+    <includes local="no">svtkUnsignedCharArray.h</includes>
+    <includes local="no">svtkFloatArray.h</includes>
+    <includes local="no">svtkDoubleArray.h</includes>
+    <includes local="no">svtkCellData.h</includes>
+    <includes local="no">svtkPointData.h</includes>
     <includes refid="AMReX__AmrLevel_8H" local="no">AMReX_AmrLevel.H</includes>
     <includes refid="AMReX__BoxArray_8H" local="no">AMReX_BoxArray.H</includes>
     <includes refid="AMReX__Geometry_8H" local="no">AMReX_Geometry.H</includes>
@@ -174,9 +174,6 @@
         <childnode refid="52" relation="include">
         </childnode>
       </node>
-      <node id="166">
-        <label>vtkPointData.h</label>
-      </node>
       <node id="66">
         <label>AMReX_BoxArray.H</label>
         <link refid="AMReX__BoxArray_8H"/>
@@ -296,7 +293,7 @@
         <childnode refid="43" relation="include">
         </childnode>
       </node>
-      <node id="153">
+      <node id="154">
         <label>Error.h</label>
         <link refid="Error_8h"/>
         <childnode refid="13" relation="include">
@@ -307,9 +304,9 @@
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="154" relation="include">
-        </childnode>
         <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
         </childnode>
       </node>
       <node id="65">
@@ -496,6 +493,9 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
+      <node id="157">
+        <label>svtkObjectFactory.h</label>
+      </node>
       <node id="56">
         <label>AMReX_BLBackTrace.H</label>
         <link refid="AMReX__BLBackTrace_8H"/>
@@ -568,7 +568,7 @@
       <node id="28">
         <label>cmath</label>
       </node>
-      <node id="154">
+      <node id="155">
         <label>errno.h</label>
       </node>
       <node id="19">
@@ -631,6 +631,9 @@
       <node id="22">
         <label>stdexcept</label>
       </node>
+      <node id="165">
+        <label>svtkCellData.h</label>
+      </node>
       <node id="20">
         <label>AMReX_ccse-mpi.H</label>
         <link refid="AMReX__ccse-mpi_8H"/>
@@ -640,7 +643,7 @@
       <node id="61">
         <label>numeric</label>
       </node>
-      <node id="149">
+      <node id="150">
         <label>MPIUtils.h</label>
       </node>
       <node id="171">
@@ -659,7 +662,7 @@
         <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="152">
+      <node id="153">
         <label>Profiler.h</label>
       </node>
       <node id="25">
@@ -703,9 +706,6 @@
         <childnode refid="181" relation="include">
         </childnode>
       </node>
-      <node id="162">
-        <label>vtkUnsignedCharArray.h</label>
-      </node>
       <node id="194">
         <label>AMReX_AsyncOut.H</label>
         <link refid="AMReX__AsyncOut_8H"/>
@@ -735,8 +735,8 @@
       <node id="69">
         <label>map</label>
       </node>
-      <node id="165">
-        <label>vtkCellData.h</label>
+      <node id="161">
+        <label>svtkDataSetAttributes.h</label>
       </node>
       <node id="186">
         <label>AMReX_FilND_C.H</label>
@@ -791,17 +791,11 @@
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="158">
-        <label>vtkAMRBox.h</label>
-      </node>
       <node id="8">
         <label>AMReX_GpuQualifiers.H</label>
         <link refid="AMReX__GpuQualifiers_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="151">
-        <label>VTKUtils.h</label>
       </node>
       <node id="78">
         <label>cfloat</label>
@@ -889,6 +883,9 @@
       </node>
       <node id="126">
         <label>driver_types.h</label>
+      </node>
+      <node id="166">
+        <label>svtkPointData.h</label>
       </node>
       <node id="2">
         <label>AMReX_AmrDataAdaptor.H</label>
@@ -1046,9 +1043,6 @@
         <childnode refid="33" relation="include">
         </childnode>
       </node>
-      <node id="160">
-        <label>vtkXMLUniformGridAMRWriter.h</label>
-      </node>
       <node id="187">
         <label>AMReX_FilFC_C.H</label>
         <link refid="AMReX__FilFC__C_8H"/>
@@ -1056,6 +1050,9 @@
         </childnode>
         <childnode refid="188" relation="include">
         </childnode>
+      </node>
+      <node id="159">
+        <label>svtkAMRBox.h</label>
       </node>
       <node id="9">
         <label>AMReX_Extension.H</label>
@@ -1088,6 +1085,9 @@
         </childnode>
         <childnode refid="142" relation="include">
         </childnode>
+      </node>
+      <node id="163">
+        <label>svtkFloatArray.h</label>
       </node>
       <node id="77">
         <label>sys/types.h</label>
@@ -1132,7 +1132,7 @@
         <childnode refid="24" relation="include">
         </childnode>
       </node>
-      <node id="155">
+      <node id="156">
         <label>string.h</label>
       </node>
       <node id="98">
@@ -1252,7 +1252,7 @@
         <label>AMReX_PCI.H</label>
         <link refid="AMReX__PCI_8H"/>
       </node>
-      <node id="150">
+      <node id="151">
         <label>STLUtils.h</label>
       </node>
       <node id="113">
@@ -1446,6 +1446,9 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="152">
+        <label>SVTKUtils.h</label>
+      </node>
       <node id="192">
         <label>AMReX_FACopyDescriptor.H</label>
         <link refid="AMReX__FACopyDescriptor_8H"/>
@@ -1483,9 +1486,6 @@
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-      </node>
-      <node id="159">
-        <label>vtkUniformGrid.h</label>
       </node>
       <node id="44">
         <label>utility</label>
@@ -1638,6 +1638,9 @@
         <childnode refid="116" relation="include">
         </childnode>
       </node>
+      <node id="160">
+        <label>svtkUniformGrid.h</label>
+      </node>
       <node id="108">
         <label>AMReX_GpuAtomic.H</label>
         <link refid="AMReX__GpuAtomic_8H"/>
@@ -1673,7 +1676,7 @@
         </childnode>
         <childnode refid="153" relation="include">
         </childnode>
-        <childnode refid="156" relation="include">
+        <childnode refid="154" relation="include">
         </childnode>
         <childnode refid="157" relation="include">
         </childnode>
@@ -1735,6 +1738,9 @@
         </childnode>
         <childnode refid="133" relation="include">
         </childnode>
+      </node>
+      <node id="162">
+        <label>svtkUnsignedCharArray.h</label>
       </node>
       <node id="83">
         <label>AMReX_BC_TYPES.H</label>
@@ -1849,9 +1855,6 @@
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
-      </node>
-      <node id="164">
-        <label>vtkDoubleArray.h</label>
       </node>
       <node id="13">
         <label>iostream</label>
@@ -2043,9 +2046,6 @@
       <node id="60">
         <label>csignal</label>
       </node>
-      <node id="163">
-        <label>vtkFloatArray.h</label>
-      </node>
       <node id="138">
         <label>AMReX_FabFactory.H</label>
         <link refid="AMReX__FabFactory_8H"/>
@@ -2061,6 +2061,9 @@
         </childnode>
         <childnode refid="90" relation="include">
         </childnode>
+      </node>
+      <node id="158">
+        <label>svtkOverlappingAMR.h</label>
       </node>
       <node id="183">
         <label>AMReX_PhysBCFunct.H</label>
@@ -2268,9 +2271,6 @@
         <childnode refid="98" relation="include">
         </childnode>
       </node>
-      <node id="157">
-        <label>vtkOverlappingAMR.h</label>
-      </node>
       <node id="136">
         <label>AMReX_FabArray.H</label>
         <link refid="AMReX__FabArray_8H"/>
@@ -2360,9 +2360,6 @@
         <childnode refid="77" relation="include">
         </childnode>
       </node>
-      <node id="156">
-        <label>vtkObjectFactory.h</label>
-      </node>
       <node id="167">
         <label>AMReX_AmrLevel.H</label>
         <link refid="AMReX__AmrLevel_8H"/>
@@ -2432,6 +2429,9 @@
         <childnode refid="25" relation="include">
         </childnode>
       </node>
+      <node id="164">
+        <label>svtkDoubleArray.h</label>
+      </node>
       <node id="140">
         <label>AMReX_BaseFabUtility.H</label>
         <link refid="AMReX__BaseFabUtility_8H"/>
@@ -2494,11 +2494,11 @@
         <childnode refid="32" relation="include">
         </childnode>
       </node>
-      <node id="161">
-        <label>vtkDataSetAttributes.h</label>
-      </node>
       <node id="75">
         <label>curand_kernel.h</label>
+      </node>
+      <node id="149">
+        <label>senseiConfig.h</label>
       </node>
       <node id="122">
         <label>AMReX_Print.H</label>
@@ -2552,23 +2552,23 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="AMReX__AmrDataAdaptor_8H" kindref="compound">AMReX_AmrDataAdaptor.H</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MPIUtils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;STLUtils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;VTKUtils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Profiler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Error_8h" kindref="compound">Error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkObjectFactory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkOverlappingAMR.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkAMRBox.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkUniformGrid.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkXMLUniformGridAMRWriter.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkDataSetAttributes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkUnsignedCharArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkFloatArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkDoubleArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkCellData.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vtkPointData.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;senseiConfig.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MPIUtils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;STLUtils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SVTKUtils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Profiler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Error_8h" kindref="compound">Error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkObjectFactory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkOverlappingAMR.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkAMRBox.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkUniformGrid.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkDataSetAttributes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkUnsignedCharArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkFloatArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkDoubleArray.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkCellData.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;svtkPointData.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AmrLevel_8H" kindref="compound">AMReX_AmrLevel.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BoxArray_8H" kindref="compound">AMReX_BoxArray.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -2614,15 +2614,15 @@
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itype.<ref refid="classamrex_1_1IndexType_1a8b2bbd96dc5aae2d9ae4da637a3f43d5" kindref="member">cellCentered</ref>())</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a83596ee5f5aec04eecf65de835ca82fb" kindref="member">Map</ref>[vtkDataObject::CELL][arrayName]<sp/>=<sp/>std::make_pair(i,j);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a83596ee5f5aec04eecf65de835ca82fb" kindref="member">Map</ref>[svtkDataObject::CELL][arrayName]<sp/>=<sp/>std::make_pair(i,j);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itype.<ref refid="classamrex_1_1IndexType_1afd8588da9e95238a5294d33bae5f39ec" kindref="member">nodeCentered</ref>())</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a83596ee5f5aec04eecf65de835ca82fb" kindref="member">Map</ref>[vtkDataObject::POINT][arrayName]<sp/>=<sp/>std::make_pair(i,j);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a83596ee5f5aec04eecf65de835ca82fb" kindref="member">Map</ref>[svtkDataObject::POINT][arrayName]<sp/>=<sp/>std::make_pair(i,j);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a83596ee5f5aec04eecf65de835ca82fb" kindref="member">Map</ref>[vtkDataObject::FIELD][arrayName]<sp/>=<sp/>std::make_pair(i,j);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a83596ee5f5aec04eecf65de835ca82fb" kindref="member">Map</ref>[svtkDataObject::FIELD][arrayName]<sp/>=<sp/>std::make_pair(i,j);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2708,7 +2708,7 @@
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a18e4c53a74f5623786c5dadbe087f209" kindref="member">PinMesh</ref>;</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1InSituUtils_1_1DescriptorMap" kindref="compound">amrex::InSituUtils::DescriptorMap</ref><sp/><ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ab54c62846a8614acc3d677a975186569" kindref="member">SimMetadata</ref>;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>SENSEI_VERSION_MAJOR<sp/>&lt;<sp/>3</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;vtkDataObject*&gt;<sp/><ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kindref="member">ManagedObjects</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;svtkDataObject*&gt;<sp/><ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1aeb6b0e7cb1bbac77e4f65e96e4f8a4d5" kindref="member">ManagedObjects</ref>;</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;unsigned<sp/>char<sp/>*&gt;&gt;<sp/><ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a7e91eaba6548fd6e92413aa049f4a4ac" kindref="member">Masks</ref>;</highlight></codeline>
 <codeline lineno="162"><highlight class="normal">};</highlight></codeline>
@@ -2777,11 +2777,11 @@
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;GlobalView<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"></highlight></codeline>
 <codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;MeshName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;mesh&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;MeshType<sp/>=<sp/>VTK_OVERLAPPING_AMR;</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;BlockType<sp/>=<sp/>VTK_UNIFORM_GRID;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;MeshType<sp/>=<sp/>SVTK_OVERLAPPING_AMR;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;BlockType<sp/>=<sp/>SVTK_UNIFORM_GRID;</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;NumBlocks<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;NumBlocksLocal<sp/>=<sp/>{-1};</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;CoordinateType<sp/>=<sp/>InSituUtils::amrex_tt&lt;amrex_real&gt;::vtk_type_enum();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;CoordinateType<sp/>=<sp/>InSituUtils::amrex_tt&lt;amrex_real&gt;::svtk_type_enum();</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>metadata-&gt;StaticMesh<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"></highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO</highlight><highlight class="normal"></highlight></codeline>
@@ -2870,14 +2870,14 @@
 <codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>arrayName<sp/>=<sp/>desc.name(j);</highlight></codeline>
 <codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayName.push_back(arrayName);</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayComponents.push_back(1);</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayType.push_back(InSituUtils::amrex_tt&lt;amrex_real&gt;::vtk_type_enum());</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayType.push_back(InSituUtils::amrex_tt&lt;amrex_real&gt;::svtk_type_enum());</highlight></codeline>
 <codeline lineno="322"><highlight class="normal"></highlight></codeline>
 <codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itype.cellCentered())</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayCentering.push_back(vtkDataObject::CELL);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayCentering.push_back(svtkDataObject::CELL);</highlight></codeline>
 <codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itype.nodeCentered())</highlight></codeline>
-<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayCentering.push_back(vtkDataObject::POINT);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayCentering.push_back(svtkDataObject::POINT);</highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayCentering.push_back(vtkDataObject::FIELD);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;ArrayCentering.push_back(svtkDataObject::FIELD);</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="330"><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3109,8 +3109,8 @@
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
 <codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="559"><highlight class="normal"></highlight></codeline>
-<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>((association<sp/>!=<sp/>vtkDataObject::POINT)<sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(association<sp/>!=<sp/>vtkDataObject::CELL))</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>((association<sp/>!=<sp/>svtkDataObject::POINT)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(association<sp/>!=<sp/>svtkDataObject::CELL))</highlight></codeline>
 <codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>association<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>association)</highlight></codeline>
 <codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
@@ -3142,7 +3142,7 @@
 <codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>(this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;SimMetadata.GetName(association,<sp/>index,<sp/>arrayName))</highlight></codeline>
 <codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;No<sp/>array<sp/>named<sp/>\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>arrayName<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&quot;<sp/>in<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>sensei::VTKUtils::GetAttributesName(association)</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>sensei::SVTKUtils::GetAttributesName(association)</highlight></codeline>
 <codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>data&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
 <codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3154,8 +3154,8 @@
 <codeline lineno="602"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="603"><highlight class="normal"></highlight></codeline>
 <codeline lineno="604"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="605"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a153894396c7877ce14d53f2319ec0049" kindref="member">AmrDataAdaptor::GetMesh</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,</highlight></codeline>
-<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>structureOnly,<sp/>vtkDataObject<sp/>*&amp;mesh)</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a001bb962fd2d5b3a0c63efdfc0283b26" kindref="member">AmrDataAdaptor::GetMesh</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName,</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>structureOnly,<sp/>svtkDataObject<sp/>*&amp;mesh)</highlight></codeline>
 <codeline lineno="607"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(structureOnly);</highlight></codeline>
 <codeline lineno="609"><highlight class="normal"></highlight></codeline>
@@ -3178,10 +3178,10 @@
 <codeline lineno="626"><highlight class="normal"></highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nLevels<sp/>=<sp/>InSituUtils::<ref refid="namespaceamrex_1_1InSituUtils_1a173fd151597a60eff340740888fa3ec5" kindref="member">NumActiveLevels</ref>(levels);</highlight></codeline>
 <codeline lineno="628"><highlight class="normal"></highlight></codeline>
-<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>new<sp/>vtk<sp/>datasets</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>vtkOverlappingAMR<sp/>*amrMesh<sp/>=<sp/>vtkOverlappingAMR::<ref refid="classamrex_1_1AmrDataAdaptor_1a41f3c8b6a7d66e0b17a4e9869c8c9b40" kindref="member">New</ref>();</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>new<sp/>svtk<sp/>datasets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>svtkOverlappingAMR<sp/>*amrMesh<sp/>=<sp/>svtkOverlappingAMR::<ref refid="classamrex_1_1AmrDataAdaptor_1a41f3c8b6a7d66e0b17a4e9869c8c9b40" kindref="member">New</ref>();</highlight></codeline>
 <codeline lineno="631"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>SENSEI_VERSION_MAJOR<sp/>&lt;<sp/>3</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kindref="member">ManagedObjects</ref>.push_back(amrMesh);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1aeb6b0e7cb1bbac77e4f65e96e4f8a4d5" kindref="member">ManagedObjects</ref>.push_back(amrMesh);</highlight></codeline>
 <codeline lineno="633"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/>mesh<sp/>=<sp/>amrMesh;</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"></highlight></codeline>
@@ -3237,12 +3237,12 @@
 <codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cboxLo[3]<sp/>=<sp/>{AMREX_ARLIM(cbox.<ref refid="classamrex_1_1Box_1a2ab2afd4bf58db1e588724456eb41511" kindref="member">loVect</ref>())};</highlight></codeline>
 <codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cboxHi[3]<sp/>=<sp/>{AMREX_ARLIM(cbox.<ref refid="classamrex_1_1Box_1a9e70e1b52ee7195f43c246a86a8e9d0a" kindref="member">hiVect</ref>())};</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"></highlight></codeline>
-<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vtk&apos;s<sp/>representation<sp/>of<sp/>box<sp/>metadata</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkAMRBox<sp/>block(cboxLo,<sp/>cboxHi);</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>svtk&apos;s<sp/>representation<sp/>of<sp/>box<sp/>metadata</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkAMRBox<sp/>block(cboxLo,<sp/>cboxHi);</highlight></codeline>
 <codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrMesh-&gt;SetAMRBox(i,<sp/>j,<sp/>block);</highlight></codeline>
 <codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrMesh-&gt;SetAMRBlockSourceIndex(i,<sp/>j,<sp/>gid++);</highlight></codeline>
 <codeline lineno="692"><highlight class="normal"></highlight></codeline>
-<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>skip<sp/>building<sp/>a<sp/>vtk<sp/>amrMesh<sp/>for<sp/>the<sp/>non<sp/>local<sp/>boxes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>skip<sp/>building<sp/>a<sp/>svtk<sp/>amrMesh<sp/>for<sp/>the<sp/>non<sp/>local<sp/>boxes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dmap[j]<sp/>!=<sp/>rank)</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="696"><highlight class="normal"></highlight></codeline>
@@ -3257,14 +3257,14 @@
 <codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxLo[3]<sp/>=<sp/>{AMREX_ARLIM(nbox.<ref refid="classamrex_1_1Box_1a2ab2afd4bf58db1e588724456eb41511" kindref="member">loVect</ref>())};</highlight></codeline>
 <codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxHi[3]<sp/>=<sp/>{AMREX_ARLIM(nbox.<ref refid="classamrex_1_1Box_1a9e70e1b52ee7195f43c246a86a8e9d0a" kindref="member">hiVect</ref>())};</highlight></codeline>
 <codeline lineno="707"><highlight class="normal"></highlight></codeline>
-<codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>new<sp/>vtk<sp/>uniform<sp/>amrMesh,<sp/>node<sp/>centered</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkUniformGrid<sp/>*ug<sp/>=<sp/>vtkUniformGrid::New();</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>new<sp/>svtk<sp/>uniform<sp/>amrMesh,<sp/>node<sp/>centered</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkUniformGrid<sp/>*ug<sp/>=<sp/>svtkUniformGrid::New();</highlight></codeline>
 <codeline lineno="710"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ug-&gt;SetOrigin(origin);</highlight></codeline>
 <codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ug-&gt;SetSpacing(spacing);</highlight></codeline>
 <codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ug-&gt;SetExtent(nboxLo[0],<sp/>nboxHi[0],</highlight></codeline>
 <codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nboxLo[1],<sp/>nboxHi[1],<sp/>nboxLo[2],<sp/>nboxHi[2]);</highlight></codeline>
 <codeline lineno="714"><highlight class="normal"></highlight></codeline>
-<codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pass<sp/>the<sp/>block<sp/>into<sp/>vtk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pass<sp/>the<sp/>block<sp/>into<sp/>svtk</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrMesh-&gt;SetDataSet(i,<sp/>j,<sp/>ug);</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ug-&gt;Delete();</highlight></codeline>
 <codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3274,7 +3274,7 @@
 <codeline lineno="722"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="723"><highlight class="normal"></highlight></codeline>
 <codeline lineno="724"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="725"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1ab6e63c3a1e551496c7939d1be99b2d3f" kindref="member">AmrDataAdaptor::AddGhostCellsArray</ref>(vtkDataObject*<sp/>mesh,</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a1fe18833c7427ae8a5629b50ab7cf3bf" kindref="member">AmrDataAdaptor::AddGhostCellsArray</ref>(svtkDataObject*<sp/>mesh,</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName)</highlight></codeline>
 <codeline lineno="727"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/>sensei::TimeEvent&lt;64&gt;<sp/>event(</highlight><highlight class="stringliteral">&quot;AmrDataAdaptor::AddGhostCellsArray&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -3285,7 +3285,7 @@
 <codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
 <codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="735"><highlight class="normal"></highlight></codeline>
-<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/>vtkOverlappingAMR<sp/>*amrMesh<sp/>=<sp/>dynamic_cast&lt;vtkOverlappingAMR*&gt;(mesh);</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/>svtkOverlappingAMR<sp/>*amrMesh<sp/>=<sp/>dynamic_cast&lt;svtkOverlappingAMR*&gt;(mesh);</highlight></codeline>
 <codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>(!amrMesh)</highlight></codeline>
 <codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>mesh<sp/>type<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -3332,7 +3332,7 @@
 <codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dMap[j]<sp/>!=<sp/>rank)</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="782"><highlight class="normal"></highlight></codeline>
-<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkUniformGrid<sp/>*blockMesh<sp/>=<sp/>amrMesh-&gt;GetDataSet(i,<sp/>j);</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkUniformGrid<sp/>*blockMesh<sp/>=<sp/>amrMesh-&gt;GetDataSet(i,<sp/>j);</highlight></codeline>
 <codeline lineno="784"><highlight class="normal"></highlight></codeline>
 <codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!blockMesh)</highlight></codeline>
 <codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3342,24 +3342,24 @@
 <codeline lineno="790"><highlight class="normal"></highlight></codeline>
 <codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nCells<sp/>=<sp/>blockMesh-&gt;GetNumberOfCells();</highlight></codeline>
 <codeline lineno="792"><highlight class="normal"></highlight></codeline>
-<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>transfer<sp/>mask<sp/>array<sp/>into<sp/>vtk</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkUnsignedCharArray<sp/>*ga<sp/>=<sp/>vtkUnsignedCharArray::New();</highlight></codeline>
-<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;SetName(</highlight><highlight class="stringliteral">&quot;vtkGhostType&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>transfer<sp/>mask<sp/>array<sp/>into<sp/>svtk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkUnsignedCharArray<sp/>*ga<sp/>=<sp/>svtkUnsignedCharArray::New();</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;SetName(</highlight><highlight class="stringliteral">&quot;svtkGhostType&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;SetArray(<ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref>[j],<sp/>nCells,<sp/>0);</highlight></codeline>
 <codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blockMesh-&gt;GetCellData()-&gt;AddArray(ga);</highlight></codeline>
 <codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;Delete();</highlight></codeline>
 <codeline lineno="799"><highlight class="normal"></highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>debug<sp/>can<sp/>visualize<sp/>the<sp/>ghost<sp/>cells</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>FIXME<sp/>--<sp/>a<sp/>bug<sp/>in<sp/>Catalyst<sp/>ignores<sp/>internal<sp/>ghost<sp/>zones</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>when<sp/>using<sp/>the<sp/>VTK<sp/>writrer.<sp/>Until<sp/>that<sp/>bug<sp/>gets<sp/>fixed,<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>when<sp/>using<sp/>the<sp/>SVTK<sp/>writrer.<sp/>Until<sp/>that<sp/>bug<sp/>gets<sp/>fixed,<sp/>one</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>can<sp/>manually<sp/>inject<sp/>this<sp/>copy<sp/>using<sp/>a<sp/>PV<sp/>Python<sp/>filter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga<sp/>=<sp/>vtkUnsignedCharArray::New();</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga<sp/>=<sp/>svtkUnsignedCharArray::New();</highlight></codeline>
 <codeline lineno="805"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;SetName(</highlight><highlight class="stringliteral">&quot;GhostType&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;SetArray(<ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref>[j],<sp/>nCells,<sp/>1);</highlight></codeline>
 <codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blockMesh-&gt;GetCellData()-&gt;AddArray(ga);</highlight></codeline>
 <codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ga-&gt;Delete();</highlight></codeline>
 <codeline lineno="809"><highlight class="normal"></highlight></codeline>
-<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>because<sp/>VTK<sp/>takes<sp/>ownership</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>because<sp/>SVTK<sp/>takes<sp/>ownership</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a5b2221de12a27f0d22ceec3ecf3fc430" kindref="member">mask</ref>[j]<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3368,7 +3368,7 @@
 <codeline lineno="816"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="817"><highlight class="normal"></highlight></codeline>
 <codeline lineno="818"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="819"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a5a7d27b32862a00a20708bac7fbb9b84" kindref="member">AmrDataAdaptor::AddGhostNodesArray</ref>(vtkDataObject<sp/>*mesh,</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a056f2eba156e4154622e5685a4608bfd" kindref="member">AmrDataAdaptor::AddGhostNodesArray</ref>(svtkDataObject<sp/>*mesh,</highlight></codeline>
 <codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;meshName)</highlight></codeline>
 <codeline lineno="821"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(mesh);</highlight></codeline>
@@ -3386,7 +3386,7 @@
 <codeline lineno="834"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="835"><highlight class="normal"></highlight></codeline>
 <codeline lineno="836"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="837"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a3e22c77fccec5c37868f505251044032" kindref="member">AmrDataAdaptor</ref>::<ref refid="classamrex_1_1AmrDataAdaptor_1a9ff0ae0968afe3189251603485e983d1" kindref="member">AddArray</ref>(vtkDataObject*<sp/>mesh,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;meshName,</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrDataAdaptor_1a3e22c77fccec5c37868f505251044032" kindref="member">AmrDataAdaptor</ref>::<ref refid="classamrex_1_1AmrDataAdaptor_1a37e756eb19e77938f22ed043f0ae57f5" kindref="member">AddArray</ref>(svtkDataObject*<sp/>mesh,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;meshName,</highlight></codeline>
 <codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>association,<sp/>const<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;arrayName)</highlight></codeline>
 <codeline lineno="839"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/>sensei::TimeEvent&lt;64&gt;<sp/>event(</highlight><highlight class="stringliteral">&quot;AmrDataAdaptor::AddArray&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -3400,7 +3400,7 @@
 <codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
 <codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="850"><highlight class="normal"></highlight></codeline>
-<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/>vtkOverlappingAMR<sp/>*amrMesh<sp/>=<sp/>dynamic_cast&lt;vtkOverlappingAMR*&gt;(mesh);</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/>svtkOverlappingAMR<sp/>*amrMesh<sp/>=<sp/>dynamic_cast&lt;svtkOverlappingAMR*&gt;(mesh);</highlight></codeline>
 <codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>(!amrMesh)</highlight></codeline>
 <codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>mesh<sp/>type<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -3413,8 +3413,8 @@
 <codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
 <codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="863"><highlight class="normal"></highlight></codeline>
-<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>((association<sp/>!=<sp/>vtkDataObject::CELL)<sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(association<sp/>!=<sp/>vtkDataObject::POINT))</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref><sp/>((association<sp/>!=<sp/>svtkDataObject::CELL)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(association<sp/>!=<sp/>svtkDataObject::POINT))</highlight></codeline>
 <codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="867"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>association<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>association)</highlight></codeline>
 <codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
@@ -3430,7 +3430,7 @@
 <codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ab54c62846a8614acc3d677a975186569" kindref="member">SimMetadata</ref>.<ref refid="classamrex_1_1InSituUtils_1_1StateMap_1a51ba1d33196fe07ad0508207f2762b83" kindref="member">GetIndex</ref>(arrayName,<sp/>association,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a0555045efe3506ffa446042caacaccc0" kindref="member">fab</ref>,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a1b3f06ddcdb29e455759b0afa41793a5" kindref="member">comp</ref>))</highlight></codeline>
 <codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>locate<sp/>descriptor<sp/>for<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>sensei::VTKUtils::GetAttributesName(association)</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>sensei::SVTKUtils::GetAttributesName(association)</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>data<sp/>array<sp/>\&quot;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>arrayName<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&quot;&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
 <codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3446,8 +3446,8 @@
 <codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref>&amp;<sp/>state<sp/>=<sp/>levels[i]-&gt;get_new_data(<ref refid="AMReX__MLCellLinOp_8cpp_1a0555045efe3506ffa446042caacaccc0" kindref="member">fab</ref>);</highlight></codeline>
 <codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ng<sp/>=<sp/>state.nGrow();</highlight></codeline>
 <codeline lineno="896"><highlight class="normal"></highlight></codeline>
-<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!((association<sp/>==<sp/>vtkDataObject::CELL)<sp/>&amp;&amp;<sp/>state.is_cell_centered())<sp/>&amp;&amp;</highlight></codeline>
-<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((association<sp/>==<sp/>vtkDataObject::POINT)<sp/>&amp;&amp;<sp/>state.is_nodal()))</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!((association<sp/>==<sp/>svtkDataObject::CELL)<sp/>&amp;&amp;<sp/>state.is_cell_centered())<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((association<sp/>==<sp/>svtkDataObject::POINT)<sp/>&amp;&amp;<sp/>state.is_nodal()))</highlight></codeline>
 <codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SENSEI_ERROR(</highlight><highlight class="stringliteral">&quot;association<sp/>does<sp/>not<sp/>match<sp/>MultiFAB<sp/>centering&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>-1;</highlight></codeline>
@@ -3478,7 +3478,7 @@
 <codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cboxLo[3]<sp/>=<sp/>{AMREX_ARLIM(cbox.<ref refid="classamrex_1_1Box_1a2ab2afd4bf58db1e588724456eb41511" kindref="member">loVect</ref>())};</highlight></codeline>
 <codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cboxHi[3]<sp/>=<sp/>{AMREX_ARLIM(cbox.<ref refid="classamrex_1_1Box_1a9e70e1b52ee7195f43c246a86a8e9d0a" kindref="member">hiVect</ref>())};</highlight></codeline>
 <codeline lineno="928"><highlight class="normal"></highlight></codeline>
-<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>skip<sp/>building<sp/>a<sp/>vtk<sp/>mesh<sp/>for<sp/>the<sp/>non<sp/>local<sp/>boxes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>skip<sp/>building<sp/>a<sp/>svtk<sp/>mesh<sp/>for<sp/>the<sp/>non<sp/>local<sp/>boxes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dmap[j]<sp/>!=<sp/>rank)</highlight></codeline>
 <codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="932"><highlight class="normal"></highlight></codeline>
@@ -3490,7 +3490,7 @@
 <codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxHi[3]<sp/>=<sp/>{AMREX_ARLIM(nbox.<ref refid="classamrex_1_1Box_1a9e70e1b52ee7195f43c246a86a8e9d0a" kindref="member">hiVect</ref>())};</highlight></codeline>
 <codeline lineno="939"><highlight class="normal"></highlight></codeline>
 <codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>block<sp/>mesh</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkUniformGrid<sp/>*ug<sp/>=<sp/>amrMesh-&gt;GetDataSet(i,<sp/>j);</highlight></codeline>
+<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkUniformGrid<sp/>*ug<sp/>=<sp/>amrMesh-&gt;GetDataSet(i,<sp/>j);</highlight></codeline>
 <codeline lineno="942"><highlight class="normal"></highlight></codeline>
 <codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>node<sp/>centered<sp/>size</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nlen<sp/>=<sp/>1;</highlight></codeline>
@@ -3505,9 +3505,9 @@
 <codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>pointer<sp/>to<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="954"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>*pcd<sp/>=<sp/>state[j].dataPtr(<ref refid="AMReX__MLCellLinOp_8cpp_1a1b3f06ddcdb29e455759b0afa41793a5" kindref="member">comp</ref>);</highlight></codeline>
 <codeline lineno="955"><highlight class="normal"></highlight></codeline>
-<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allocate<sp/>vtk<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InSituUtils::amrex_tt&lt;amrex_real&gt;::vtk_type<sp/>*da<sp/>=</highlight></codeline>
-<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InSituUtils::amrex_tt&lt;amrex_real&gt;::vtk_type::New();</highlight></codeline>
+<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allocate<sp/>svtk<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InSituUtils::amrex_tt&lt;amrex_real&gt;::svtk_type<sp/>*da<sp/>=</highlight></codeline>
+<codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InSituUtils::amrex_tt&lt;amrex_real&gt;::svtk_type::New();</highlight></codeline>
 <codeline lineno="959"><highlight class="normal"></highlight></codeline>
 <codeline lineno="960"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>component<sp/>name</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="961"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>da-&gt;SetName(arrayName.c_str());</highlight></codeline>
@@ -3533,7 +3533,7 @@
 <codeline lineno="981"><highlight class="normal"></highlight></codeline>
 <codeline lineno="982"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SENSEI_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="983"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mark<sp/>level<sp/>id</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkFloatArray<sp/>*la<sp/>=<sp/>vtkFloatArray::New();</highlight></codeline>
+<codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkFloatArray<sp/>*la<sp/>=<sp/>svtkFloatArray::New();</highlight></codeline>
 <codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>la-&gt;SetName(</highlight><highlight class="stringliteral">&quot;amrex_level_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>la-&gt;SetNumberOfTuples(clen);</highlight></codeline>
 <codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>la-&gt;Fill(i);</highlight></codeline>
@@ -3541,7 +3541,7 @@
 <codeline lineno="989"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>la-&gt;Delete();</highlight></codeline>
 <codeline lineno="990"><highlight class="normal"></highlight></codeline>
 <codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mark<sp/>mpi<sp/>rank</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vtkFloatArray<sp/>*ra<sp/>=<sp/>vtkFloatArray::New();</highlight></codeline>
+<codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>svtkFloatArray<sp/>*ra<sp/>=<sp/>svtkFloatArray::New();</highlight></codeline>
 <codeline lineno="993"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ra-&gt;SetName(</highlight><highlight class="stringliteral">&quot;amrex_mpi_rank&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="994"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ra-&gt;SetNumberOfTuples(clen);</highlight></codeline>
 <codeline lineno="995"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ra-&gt;Fill(rank);</highlight></codeline>
@@ -3563,10 +3563,10 @@
 <codeline lineno="1011"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1012"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>SENSEI_VERSION_MAJOR<sp/>&lt;<sp/>3</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>free<sp/>up<sp/>mesh<sp/>objects<sp/>we<sp/>allocated</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kindref="member">ManagedObjects</ref>.size();</highlight></codeline>
+<codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1aeb6b0e7cb1bbac77e4f65e96e4f8a4d5" kindref="member">ManagedObjects</ref>.size();</highlight></codeline>
 <codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)</highlight></codeline>
-<codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kindref="member">ManagedObjects</ref>[i]-&gt;Delete();</highlight></codeline>
-<codeline lineno="1017"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kindref="member">ManagedObjects</ref>.clear();</highlight></codeline>
+<codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1aeb6b0e7cb1bbac77e4f65e96e4f8a4d5" kindref="member">ManagedObjects</ref>[i]-&gt;Delete();</highlight></codeline>
+<codeline lineno="1017"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1AmrDataAdaptor_1a7f3433a6470167d503b3fe0f0e7da3d4" kindref="member">Internals</ref>-&gt;<ref refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1aeb6b0e7cb1bbac77e4f65e96e4f8a4d5" kindref="member">ManagedObjects</ref>.clear();</highlight></codeline>
 <codeline lineno="1018"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1019"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1020"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>masks<sp/>are<sp/>cached<sp/>free<sp/>them</highlight><highlight class="normal"></highlight></codeline>

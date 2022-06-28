@@ -117,9 +117,10 @@ var searchData=
   ['suffix_15705',['suffix',['../classamrex_1_1StreamRetry.html#a87fb6f4eaeaa1e62c31a3f1b4c451a87',1,'amrex::StreamRetry']]],
   ['sunctx_15706',['sunctx',['../classamrex_1_1SundialsIntegrator.html#afbff179c20dc2bbf74941d02247d1d7c',1,'amrex::SundialsIntegrator::sunctx()'],['../classamrex_1_1sundials_1_1MemoryHelper.html#ac93fe349524feb542323ce4507856d52',1,'amrex::sundials::MemoryHelper::sunctx()']]],
   ['superparticle_5fsize_15707',['superparticle_size',['../classamrex_1_1ParticleContainer.html#a71a5c1448096fb5347f01ee164e70456',1,'amrex::ParticleContainer']]],
-  ['swap_5findices_15708',['swap_indices',['../namespaceamrex_1_1NonLocalBC.html#a618f8d1f0b1258ad4931eb6a5ae65ebc',1,'amrex::NonLocalBC']]],
-  ['sys_5fname_15709',['sys_name',['../namespaceamrex.html#abac42537a3d9d5a2f6c6fac15f99f66c',1,'amrex']]],
-  ['syserror_15710',['SysError',['../classhacc_1_1Error.html#a4a9d9e1dee3986d055bf6c64729b3dee',1,'hacc::Error']]],
-  ['sz_5fmempool_15711',['sz_mempool',['../structamrex_1_1amrex__iparser.html#a8f655ec2d94e45e273647a1e602b0c57',1,'amrex::amrex_iparser::sz_mempool()'],['../structamrex_1_1amrex__parser.html#af0acb0644812be5dc5a7c0d1a116e8f3',1,'amrex::amrex_parser::sz_mempool()']]],
-  ['szi_15712',['szi',['../namespaceamrex__mempool__module.html#ac54b332ae65afbcd1863fa9ae4174cc2',1,'amrex_mempool_module']]]
+  ['svtkdoublearray_15708',['svtkDoubleArray',['../namespaceamrex_1_1InSituUtils.html#a21643ca604baa89f6786319692943c6d',1,'amrex::InSituUtils']]],
+  ['swap_5findices_15709',['swap_indices',['../namespaceamrex_1_1NonLocalBC.html#a618f8d1f0b1258ad4931eb6a5ae65ebc',1,'amrex::NonLocalBC']]],
+  ['sys_5fname_15710',['sys_name',['../namespaceamrex.html#abac42537a3d9d5a2f6c6fac15f99f66c',1,'amrex']]],
+  ['syserror_15711',['SysError',['../classhacc_1_1Error.html#a4a9d9e1dee3986d055bf6c64729b3dee',1,'hacc::Error']]],
+  ['sz_5fmempool_15712',['sz_mempool',['../structamrex_1_1amrex__iparser.html#a8f655ec2d94e45e273647a1e602b0c57',1,'amrex::amrex_iparser::sz_mempool()'],['../structamrex_1_1amrex__parser.html#af0acb0644812be5dc5a7c0d1a116e8f3',1,'amrex::amrex_parser::sz_mempool()']]],
+  ['szi_15713',['szi',['../namespaceamrex__mempool__module.html#ac54b332ae65afbcd1863fa9ae4174cc2',1,'amrex_mempool_module']]]
 ];
