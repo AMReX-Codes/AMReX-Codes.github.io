@@ -25,6 +25,7 @@ var classamrex_1_1NeighborParticleContainer =
     [ "NeighborParticleContainer", "classamrex_1_1NeighborParticleContainer.html#a8e16762fd9648d7b623cff439d75e888", null ],
     [ "AddIntComp", "classamrex_1_1NeighborParticleContainer.html#a495d805bcf68681c718d5316bac80c07", null ],
     [ "AddRealComp", "classamrex_1_1NeighborParticleContainer.html#a394a5717e0621cf4e2250d432950cd8a", null ],
+    [ "areMasksValid", "classamrex_1_1NeighborParticleContainer.html#a1be3305131595afe235881caad842d14", null ],
     [ "BuildMasks", "classamrex_1_1NeighborParticleContainer.html#af79112d043b45868fb00cf720d61b0a5", null ],
     [ "buildNeighborCopyOp", "classamrex_1_1NeighborParticleContainer.html#a429842d84ae93439634d8953d71b63bf", null ],
     [ "buildNeighborList", "classamrex_1_1NeighborParticleContainer.html#ab3f15c1b66190b5ff6d895d6ab0b63e2", null ],
