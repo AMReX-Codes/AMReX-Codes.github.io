@@ -1,5 +1,6 @@
 var files_dup =
 [
+    [ "BDS", "dir_23b61f0b995dd142298338ffd83b0fa5.html", "dir_23b61f0b995dd142298338ffd83b0fa5" ],
     [ "Docs", "dir_5baf679cf4943df8904dce5d41d4d3dc.html", "dir_5baf679cf4943df8904dce5d41d4d3dc" ],
     [ "EBGodunov", "dir_413c2e08b2339e8bf965d98e845b3f90.html", "dir_413c2e08b2339e8bf965d98e845b3f90" ],
     [ "EBMOL", "dir_d3303b1bce4cda598f264c9b6377e496.html", "dir_d3303b1bce4cda598f264c9b6377e496" ],
