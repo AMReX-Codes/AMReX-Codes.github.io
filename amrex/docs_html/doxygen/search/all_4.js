@@ -67,7 +67,7 @@ var searchData=
   ['define_5fab_5fcoeffs_2164',['define_ab_coeffs',['../classamrex_1_1MLABecLaplacian.html#a283853eeb0e1f06102254ba76a76c7cc',1,'amrex::MLABecLaplacian']]],
   ['define_5fepo_2165',['define_epo',['../structamrex_1_1FabArrayBase_1_1FB.html#a53df06970b8cf1cb353ec184bb5422ef',1,'amrex::FabArrayBase::FB']]],
   ['define_5ffb_2166',['define_fb',['../structamrex_1_1FabArrayBase_1_1FB.html#a782fbc8576a01acde04fd3e8c6686c4b',1,'amrex::FabArrayBase::FB']]],
-  ['define_5ffine_2167',['define_fine',['../classamrex_1_1EB2_1_1GShopLevel.html#afe91de737aae3569a5bcf1ffc8070f5f',1,'amrex::EB2::GShopLevel']]],
+  ['define_5ffine_2167',['define_fine',['../classamrex_1_1EB2_1_1GShopLevel.html#a014eda53f91496efc4cbf702c944ca00',1,'amrex::EB2::GShopLevel']]],
   ['define_5ffunction_5fcalled_2168',['define_function_called',['../classamrex_1_1FabArray.html#a8a547f660eb49f5b25df2a1eddcd7eef',1,'amrex::FabArray']]],
   ['define_5fos_2169',['define_os',['../structamrex_1_1FabArrayBase_1_1FB.html#a2f92b0b744eb605c14a46ab090c244eb',1,'amrex::FabArrayBase::FB']]],
   ['defineandreturnparticletile_2170',['DefineAndReturnParticleTile',['../classamrex_1_1ParticleContainer.html#a08836ef61a1fb5f718f5684eeb6a5a2c',1,'amrex::ParticleContainer::DefineAndReturnParticleTile(int lev, int grid, int tile)'],['../classamrex_1_1ParticleContainer.html#a86bb7b9d5d63abaaa52210f103b99f49',1,'amrex::ParticleContainer::DefineAndReturnParticleTile(int lev, const Iterator &amp;iter)']]],
