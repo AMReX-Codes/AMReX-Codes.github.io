@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1GetSendBufferOffset.html#a7fed473672f976de3014a8116df479f4":[2,0,0,170,3],
+"structamrex_1_1GetSendBufferOffset.html#a81bc5519ac623a1d14e612f8fe202742":[2,0,0,170,5],
 "structamrex_1_1GetSendBufferOffset.html#ae0bd21edb636525d7e8011db403b9fca":[2,0,0,170,0],
 "structamrex_1_1GpuArray.html":[2,0,0,172],
 "structamrex_1_1GpuArray.html#a14cf263d6563d7bbd28ba3bc2cd15d8b":[2,0,0,172,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1IParserExeNull.html":[2,0,0,247],
 "structamrex_1_1IParserExeNull.html#a815c97aaab5abad09c8a6b4e9bf74d45":[2,0,0,247,0],
 "structamrex_1_1IParserExeNumber.html":[2,0,0,248],
-"structamrex_1_1IParserExeNumber.html#a15529de413faee5b1bc579a5ef14a725":[2,0,0,248,0],
-"structamrex_1_1IParserExeNumber.html#ab61875eaf2f0391820e4759b92229929":[2,0,0,248,1],
-"structamrex_1_1IParserExeSUB.html":[2,0,0,249]
+"structamrex_1_1IParserExeNumber.html#a15529de413faee5b1bc579a5ef14a725":[2,0,0,248,0]
 };
