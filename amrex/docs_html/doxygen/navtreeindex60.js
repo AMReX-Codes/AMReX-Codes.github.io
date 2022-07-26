@@ -1,5 +1,8 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1GetSendBufferOffset.html#a0ed01f542a7575b5a8d300c751d962b2":[2,0,0,170,2],
+"structamrex_1_1GetSendBufferOffset.html#a6a63716df57946f90594a5a756582a77":[2,0,0,170,4],
+"structamrex_1_1GetSendBufferOffset.html#a6e0f7057538a8b0e3447ad9f3eca33ba":[2,0,0,170,1],
 "structamrex_1_1GetSendBufferOffset.html#a7fed473672f976de3014a8116df479f4":[2,0,0,170,3],
 "structamrex_1_1GetSendBufferOffset.html#a81bc5519ac623a1d14e612f8fe202742":[2,0,0,170,5],
 "structamrex_1_1GetSendBufferOffset.html#ae0bd21edb636525d7e8011db403b9fca":[2,0,0,170,0],
@@ -156,7 +159,8 @@ var NAVTREEINDEX60 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[2,0,0,6,1,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[2,0,0,6,1,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[2,0,0,6,42],
-"structamrex_1_1Gpu_1_1warpReduce.html#af3ec86cf0b4c9246dcef11943f948417":[2,0,0,6,42,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[2,0,0,6,42,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[2,0,0,6,42,1],
 "structamrex_1_1Greater.html":[2,0,0,181],
 "structamrex_1_1Greater.html#acfb96847fe87a76de8d9d6ac3c1126e1":[2,0,0,181,0],
 "structamrex_1_1HasAtomicAdd.html":[2,0,0,182],
@@ -245,9 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1IParserExeNEG.html#aab3caa3fd632e0793998556c15325438":[2,0,0,245,0],
 "structamrex_1_1IParserExeNEG__P.html":[2,0,0,246],
 "structamrex_1_1IParserExeNEG__P.html#a8997602493f06fc79b9924c8e5078201":[2,0,0,246,1],
-"structamrex_1_1IParserExeNEG__P.html#ae140f4a56bf6c337fba05d93e2080c1d":[2,0,0,246,0],
-"structamrex_1_1IParserExeNull.html":[2,0,0,247],
-"structamrex_1_1IParserExeNull.html#a815c97aaab5abad09c8a6b4e9bf74d45":[2,0,0,247,0],
-"structamrex_1_1IParserExeNumber.html":[2,0,0,248],
-"structamrex_1_1IParserExeNumber.html#a15529de413faee5b1bc579a5ef14a725":[2,0,0,248,0]
+"structamrex_1_1IParserExeNEG__P.html#ae140f4a56bf6c337fba05d93e2080c1d":[2,0,0,246,0]
 };

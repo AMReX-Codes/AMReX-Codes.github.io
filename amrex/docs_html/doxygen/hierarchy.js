@@ -1000,6 +1000,7 @@ var hierarchy =
     [ "amrex::detail::unwrap< T >", "structamrex_1_1detail_1_1unwrap.html", null ],
     [ "amrex::detail::unwrap< std::reference_wrapper< T > >", "structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html", null ],
     [ "amrex::AMRErrorTag::UserFunc", "structamrex_1_1AMRErrorTag_1_1UserFunc.html", null ],
+    [ "amrex::ValLocPair< TV, TI >", "structamrex_1_1ValLocPair.html", null ],
     [ "std::vector< T >", null, [
       [ "amrex::Vector< T, Allocator >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BCRec >", "classamrex_1_1Vector.html", null ],

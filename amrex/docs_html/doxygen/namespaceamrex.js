@@ -458,6 +458,7 @@ var namespaceamrex =
     [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", "classamrex_1_1TinyProfileRegion" ],
     [ "TracerParticleContainer", "classamrex_1_1TracerParticleContainer.html", "classamrex_1_1TracerParticleContainer" ],
     [ "TypeList", "structamrex_1_1TypeList.html", null ],
+    [ "ValLocPair", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ],
     [ "Vector", "classamrex_1_1Vector.html", "classamrex_1_1Vector" ],
     [ "VectorTag", "structamrex_1_1VectorTag.html", "structamrex_1_1VectorTag" ],
     [ "VisMF", "classamrex_1_1VisMF.html", "classamrex_1_1VisMF" ],

@@ -126,12 +126,13 @@ var searchData=
   ['low_4119',['low',['../classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255',1,'amrex::Orientation']]],
   ['lowconnectivitycell_4120',['LOWCONNECTIVITYCELL',['../namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530a18a436f5269414b41219195a6e3613f2',1,'amrex::InSituUtils']]],
   ['lowerindex_4121',['LowerIndex',['../classamrex_1_1CoordSys.html#aedba9cb3e81e6a96fd3cea8330ef0708',1,'amrex::CoordSys']]],
-  ['lp_4122',['Lp',['../classamrex_1_1MLCGSolver.html#a6545d114e5d595327ffd94ac69f22170',1,'amrex::MLCGSolver']]],
-  ['lpinfo_4123',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
-  ['ls_4124',['LS',['../classamrex_1_1SundialsIntegrator.html#ad774ef92ba17a6baff2d36023f33b87f',1,'amrex::SundialsIntegrator']]],
-  ['lsf_4125',['LSf',['../classamrex_1_1SundialsIntegrator.html#adc40e275ad9f22f598f1ce11f7dd667d',1,'amrex::SundialsIntegrator']]],
-  ['lst_4126',['lst',['../classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a',1,'amrex::DeriveList::lst()'],['../classamrex_1_1ClusterList.html#a27c46e812840379455b46b092f2e6732',1,'amrex::ClusterList::lst()']]],
-  ['lvp_4127',['lvp',['../structamrex_1_1iparser__node.html#abbf396f19865fa20d59aa8d2353cea53',1,'amrex::iparser_node::lvp()'],['../structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0',1,'amrex::parser_node::lvp()']]],
-  ['lx_4128',['Lx',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a4f21d05f161053497b9f34dc212821b5',1,'amrex::NonLocalBC::PolarFn::Lx()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a647f7f2f14eb12e2e9230804fefa9529',1,'amrex::NonLocalBC::PolarFn2::Lx()']]],
-  ['ly_4129',['Ly',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e',1,'amrex::NonLocalBC::Rotate180Fn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a1d0e35f2f99a8af476ad46075de03441',1,'amrex::NonLocalBC::PolarFn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8',1,'amrex::NonLocalBC::PolarFn2::Ly()']]]
+  ['lowest_4122',['lowest',['../structamrex_1_1ValLocPair.html#ab5e449549896fdf8698e0bab593a5b92',1,'amrex::ValLocPair']]],
+  ['lp_4123',['Lp',['../classamrex_1_1MLCGSolver.html#a6545d114e5d595327ffd94ac69f22170',1,'amrex::MLCGSolver']]],
+  ['lpinfo_4124',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
+  ['ls_4125',['LS',['../classamrex_1_1SundialsIntegrator.html#ad774ef92ba17a6baff2d36023f33b87f',1,'amrex::SundialsIntegrator']]],
+  ['lsf_4126',['LSf',['../classamrex_1_1SundialsIntegrator.html#adc40e275ad9f22f598f1ce11f7dd667d',1,'amrex::SundialsIntegrator']]],
+  ['lst_4127',['lst',['../classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a',1,'amrex::DeriveList::lst()'],['../classamrex_1_1ClusterList.html#a27c46e812840379455b46b092f2e6732',1,'amrex::ClusterList::lst()']]],
+  ['lvp_4128',['lvp',['../structamrex_1_1iparser__node.html#abbf396f19865fa20d59aa8d2353cea53',1,'amrex::iparser_node::lvp()'],['../structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0',1,'amrex::parser_node::lvp()']]],
+  ['lx_4129',['Lx',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a4f21d05f161053497b9f34dc212821b5',1,'amrex::NonLocalBC::PolarFn::Lx()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a647f7f2f14eb12e2e9230804fefa9529',1,'amrex::NonLocalBC::PolarFn2::Lx()']]],
+  ['ly_4130',['Ly',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e',1,'amrex::NonLocalBC::Rotate180Fn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a1d0e35f2f99a8af476ad46075de03441',1,'amrex::NonLocalBC::PolarFn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8',1,'amrex::NonLocalBC::PolarFn2::Ly()']]]
 ];

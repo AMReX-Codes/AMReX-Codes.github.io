@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="152" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="152" bodyend="155"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="183" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="183" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1ReduceOpMax_1a30f832fb9453829363682efa1b829c68" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -54,16 +54,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="161" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="161" bodyend="161"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="192" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="192" bodyend="192"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ReduceOpMax_1ab4c33ab5f39267d3f8fb801e5443d665" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ReduceOpMax_1af69ee6eb252dae9acb0706eb7a31492b" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>constexpr void</type>
-        <definition>constexpr void amrex::ReduceOpMax::init</definition>
+        <type>constexpr std::enable_if_t&lt; std::numeric_limits&lt; T &gt;::is_specialized &gt;</type>
+        <definition>constexpr std::enable_if_t&lt;std::numeric_limits&lt;T&gt;::is_specialized&gt; amrex::ReduceOpMax::init</definition>
         <argsstring>(T &amp;t) const noexcept</argsstring>
         <name>init</name>
         <param>
@@ -76,16 +76,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="164" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="164" bodyend="164"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="196" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="196" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ReduceOpMax_1ad53fdbbdcc39cc0025641ff1119d3718" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::enable_if_t&lt;!std::numeric_limits&lt; T &gt;::is_specialized &gt;</type>
+        <definition>constexpr std::enable_if_t&lt;!std::numeric_limits&lt;T&gt;::is_specialized&gt; amrex::ReduceOpMax::init</definition>
+        <argsstring>(T &amp;t) const noexcept</argsstring>
+        <name>init</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="200" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="200" bodyend="200"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="140" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="139" bodyend="165"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="171" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="170" bodyend="201"/>
     <listofallmembers>
-      <member refid="structamrex_1_1ReduceOpMax_1ab4c33ab5f39267d3f8fb801e5443d665" prot="public" virt="non-virtual"><scope>amrex::ReduceOpMax</scope><name>init</name></member>
+      <member refid="structamrex_1_1ReduceOpMax_1af69ee6eb252dae9acb0706eb7a31492b" prot="public" virt="non-virtual"><scope>amrex::ReduceOpMax</scope><name>init</name></member>
+      <member refid="structamrex_1_1ReduceOpMax_1ad53fdbbdcc39cc0025641ff1119d3718" prot="public" virt="non-virtual"><scope>amrex::ReduceOpMax</scope><name>init</name></member>
       <member refid="structamrex_1_1ReduceOpMax_1a30f832fb9453829363682efa1b829c68" prot="public" virt="non-virtual"><scope>amrex::ReduceOpMax</scope><name>local_update</name></member>
       <member refid="structamrex_1_1ReduceOpMax_1a4d882050c4554f4f6857b3443a8fd2fa" prot="public" virt="non-virtual"><scope>amrex::ReduceOpMax</scope><name>parallel_update</name></member>
     </listofallmembers>

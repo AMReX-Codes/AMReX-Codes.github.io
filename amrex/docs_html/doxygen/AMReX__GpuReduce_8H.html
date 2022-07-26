@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H.html',''); initRes
 <code>#include &lt;<a class="el" href="AMReX__GpuAtomic_8H_source.html">AMReX_GpuAtomic.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuUtility_8H_source.html">AMReX_GpuUtility.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Functional_8H_source.html">AMReX_Functional.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__TypeTraits_8H_source.html">AMReX_TypeTraits.H</a>&gt;</code><br />
 </div>
 <p><a href="AMReX__GpuReduce_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -123,6 +124,8 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceamrex_1_1Gpu"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html">amrex::Gpu</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamrex_1_1Gpu_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1detail.html">amrex::Gpu::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -140,6 +143,12 @@ Functions</h2></td></tr>
 <tr class="separator:a18d6ae36f6f894265b771b9d33717041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d778287a96f6d710a69b41027bb9b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ad4d778287a96f6d710a69b41027bb9b8">amrex::Gpu::deviceReduceLogicalOr</a> (int *dest, int source, Gpu::Handler const &amp;h) noexcept</td></tr>
 <tr class="separator:ad4d778287a96f6d710a69b41027bb9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70672ccc3c84750b04061d9750d7d6bd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a70672ccc3c84750b04061d9750d7d6bd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1detail.html#a70672ccc3c84750b04061d9750d7d6bd">amrex::Gpu::detail::shuffle_down</a> (T x, int offset) noexcept</td></tr>
+<tr class="separator:a70672ccc3c84750b04061d9750d7d6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287d2faf92608b095d6ae9eb9f97f22b"><td class="memTemplParams" colspan="2">template&lt;class T , std::enable_if_t&lt; sizeof(T)%sizeof(unsigned int)==0, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a287d2faf92608b095d6ae9eb9f97f22b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1detail.html#a287d2faf92608b095d6ae9eb9f97f22b">amrex::Gpu::detail::multi_shuffle_down</a> (T x, int offset) noexcept</td></tr>
+<tr class="separator:a287d2faf92608b095d6ae9eb9f97f22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06351ce8c083138d26fa7653a0c63d7b"><td class="memTemplParams" colspan="2">template&lt;int warpSize, typename T , typename WARPREDUCE &gt; </td></tr>
 <tr class="memitem:a06351ce8c083138d26fa7653a0c63d7b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a06351ce8c083138d26fa7653a0c63d7b">amrex::Gpu::blockReduce</a> (T x, WARPREDUCE &amp;&amp;warp_reduce, T x0)</td></tr>
 <tr class="separator:a06351ce8c083138d26fa7653a0c63d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
