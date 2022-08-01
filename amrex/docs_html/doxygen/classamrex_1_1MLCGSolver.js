@@ -18,6 +18,7 @@ var classamrex_1_1MLCGSolver =
     [ "setNGhost", "classamrex_1_1MLCGSolver.html#a351c3fd9af99a8b2f2bad292bedb9c67", null ],
     [ "setSolver", "classamrex_1_1MLCGSolver.html#ada4e0d9149b16d5c340fe7c8f2d70d1b", null ],
     [ "setVerbose", "classamrex_1_1MLCGSolver.html#a13a48ab17ef5172e248134839b2e5ef8", null ],
+    [ "solve", "classamrex_1_1MLCGSolver.html#a738b756693d0cefe662cc5db938afcd1", null ],
     [ "solve", "classamrex_1_1MLCGSolver.html#ac0eadefb7faf267f91879b30fc5aa894", null ],
     [ "solve_bicgstab", "classamrex_1_1MLCGSolver.html#aa40411197f3ef314c892e87e6275a351", null ],
     [ "solve_cg", "classamrex_1_1MLCGSolver.html#a8f5383cd09372e80bdf1b309546f8424", null ],

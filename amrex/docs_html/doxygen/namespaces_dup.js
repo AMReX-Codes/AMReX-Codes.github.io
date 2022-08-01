@@ -18,6 +18,7 @@ var namespaces_dup =
     [ "amrex_paralleldescriptor_module", "namespaceamrex__paralleldescriptor__module.html", null ],
     [ "amrex_parmparse_module", "namespaceamrex__parmparse__module.html", null ],
     [ "amrex_string_module", "namespaceamrex__string__module.html", null ],
+    [ "amrex_temp", "namespaceamrex__temp.html", null ],
     [ "detail", "namespacedetail.html", null ],
     [ "hacc", "namespacehacc.html", null ],
     [ "particle_detail", "namespaceparticle__detail.html", null ],

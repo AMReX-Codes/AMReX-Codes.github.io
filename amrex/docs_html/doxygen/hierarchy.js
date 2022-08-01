@@ -696,7 +696,8 @@ var hierarchy =
         [ "amrex::MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", null ],
         [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", null ],
         [ "amrex::MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", null ]
-      ] ]
+      ] ],
+      [ "amrex_temp::MLLinOpTemp", "classamrex__temp_1_1MLLinOpTemp.html", null ]
     ] ],
     [ "amrex::MLMG", "classamrex_1_1MLMG.html", null ],
     [ "MPI_Status", "structMPI__Status.html", null ],
@@ -1003,6 +1004,7 @@ var hierarchy =
     [ "amrex::ValLocPair< TV, TI >", "structamrex_1_1ValLocPair.html", null ],
     [ "std::vector< T >", null, [
       [ "amrex::Vector< T, Allocator >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Any >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BCRec >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::CallStats >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::CommStats >", "classamrex_1_1Vector.html", null ],
@@ -1040,6 +1042,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::PODVector< Int > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Real >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::StateData >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< amrex::Any > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BndryRegister > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoundCond > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Box > >", "classamrex_1_1Vector.html", null ],

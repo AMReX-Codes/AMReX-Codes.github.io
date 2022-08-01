@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4":[2,0,0,32,95],
+"classamrex_1_1AmrLevel.html#a1625024217a38ec9637cf3a428164c71":[2,0,0,32,84],
 "classamrex_1_1AmrLevel.html#a169bef0169afefe32db1d994d2600c69":[2,0,0,32,8],
 "classamrex_1_1AmrLevel.html#a18159b17b5d40999e3f38474e53f23ff":[2,0,0,32,47],
 "classamrex_1_1AmrLevel.html#a186555902c913a437e6676f5cec90ae8":[2,0,0,32,80],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "classamrex_1_1AmrParticleLocator.html#a06d216fc9cf978fc5c842675468b2ca5":[2,0,0,38,3],
 "classamrex_1_1AmrParticleLocator.html#a095e51d1001dbc1f5923c5b00606b1b3":[2,0,0,38,11],
 "classamrex_1_1AmrParticleLocator.html#a137731a88dc832f6c1b0d1a48136b612":[2,0,0,38,10],
-"classamrex_1_1AmrParticleLocator.html#a881e6459bd149cf677a5dd72a3804579":[2,0,0,38,0],
-"classamrex_1_1AmrParticleLocator.html#abd5f11521215d7eb8477770dbff30816":[2,0,0,38,6],
-"classamrex_1_1AmrParticleLocator.html#ac8dc82560e4b24adc9e5490f8f03e068":[2,0,0,38,8]
+"classamrex_1_1AmrParticleLocator.html#a881e6459bd149cf677a5dd72a3804579":[2,0,0,38,0]
 };

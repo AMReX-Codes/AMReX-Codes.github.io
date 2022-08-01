@@ -121,6 +121,7 @@ Inheritance diagram for amrex::MLLinOp:</div>
   <map id="amrex::MLLinOp_map" name="amrex::MLLinOp_map">
 <area href="classamrex_1_1MLCellLinOp.html" alt="amrex::MLCellLinOp" shape="rect" coords="306,56,500,80"/>
 <area href="classamrex_1_1MLNodeLinOp.html" alt="amrex::MLNodeLinOp" shape="rect" coords="714,56,908,80"/>
+<area href="classamrex__temp_1_1MLLinOpTemp.html" alt="amrex_temp::MLLinOpTemp" shape="rect" coords="918,56,1112,80"/>
 <area href="classamrex_1_1MLCellABecLap.html" alt="amrex::MLCellABecLap" shape="rect" coords="306,112,500,136"/>
 <area href="classamrex_1_1MLEBNodeFDLaplacian.html" alt="amrex::MLEBNodeFDLaplacian" shape="rect" coords="510,112,704,136"/>
 <area href="classamrex_1_1MLNodeLaplacian.html" alt="amrex::MLNodeLaplacian" shape="rect" coords="714,112,908,136"/>
@@ -189,9 +190,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac161f1d53e925b82ba5defeb9b0efe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac161f1d53e925b82ba5defeb9b0efe70">setCoarseFineBC</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_ratio) noexcept</td></tr>
 <tr class="memdesc:ac161f1d53e925b82ba5defeb9b0efe70"><td class="mdescLeft">&#160;</td><td class="mdescRight">For cell-centered solves only: if we want to do a linear solve where the boundary conditions on the coarsest AMR level of the solve come from a coarser level (e.g. the base AMR level of the solve is &gt; 0 and does not cover the entire domain), we must explicitly provide the coarser data. Boundary conditions from a coarser level are always Dirichlet. The <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> crse does not need to have ghost cells and is at a coarser resolution than the coarsest AMR level of the solve; it is used to supply (interpolated) boundary conditions for the solve. NOTE: If this is called, it must be called before <code>setLevelBC</code>. If crse is nullptr, then the bc values are assumed to be zero.  <a href="classamrex_1_1MLLinOp.html#ac161f1d53e925b82ba5defeb9b0efe70">More...</a><br /></td></tr>
 <tr class="separator:ac161f1d53e925b82ba5defeb9b0efe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abef28e40052b37dfd16370e2db45f06f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#abef28e40052b37dfd16370e2db45f06f">setLevelBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *levelbcdata, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *robinbc_a=nullptr, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *robinbc_b=nullptr, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *robinbc_f=nullptr)=0</td></tr>
-<tr class="memdesc:abef28e40052b37dfd16370e2db45f06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">For cell-centered solves only: this must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or Neumann bc at the physical domain; if those data are homogeneous we can pass nullptr instead of levelbcdata. Regardless, this function must be called. If used, the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> levelbcdata must have one ghost cell. Only the data outside the physical domain will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. The optional arguments robinbc_[a|b|f] provide Robin boundary condition <code>a*phi + b*dphi/dn = f</code>. Note that <code>d./dn</code> is <code>d./dx</code> at the upper boundary and <code>-d./dx</code> at the lower boundary, for Robin BC. However, for inhomogeneous Neumann BC, the value in leveldata is assumed to be <code>d./dx</code>.  <a href="classamrex_1_1MLLinOp.html#abef28e40052b37dfd16370e2db45f06f">More...</a><br /></td></tr>
-<tr class="separator:abef28e40052b37dfd16370e2db45f06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04008d16768c19836e3ea78add024630"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a04008d16768c19836e3ea78add024630">setLevelBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr)</td></tr>
+<tr class="memdesc:a04008d16768c19836e3ea78add024630"><td class="mdescLeft">&#160;</td><td class="mdescRight">For cell-centered solves only: this must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or Neumann bc at the physical domain; if those data are homogeneous we can pass nullptr instead of levelbcdata. Regardless, this function must be called. If used, the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> levelbcdata must have one ghost cell. Only the data outside the physical domain will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. The optional arguments robinbc_[a|b|f] provide Robin boundary condition <code>a*phi + b*dphi/dn = f</code>. Note that <code>d./dn</code> is <code>d./dx</code> at the upper boundary and <code>-d./dx</code> at the lower boundary, for Robin BC. However, for inhomogeneous Neumann BC, the value in leveldata is assumed to be <code>d./dx</code>.  <a href="classamrex_1_1MLLinOp.html#a04008d16768c19836e3ea78add024630">More...</a><br /></td></tr>
+<tr class="separator:a04008d16768c19836e3ea78add024630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d96a0475759eef80d096851fdedd411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a4d96a0475759eef80d096851fdedd411">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v) noexcept</td></tr>
 <tr class="separator:a4d96a0475759eef80d096851fdedd411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b72169ccf285c17f439c4e990c0f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a45b72169ccf285c17f439c4e990c0f58">setMaxOrder</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> o) noexcept</td></tr>
@@ -212,60 +213,56 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a210b4c125747c6a4a6f171dcff941579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5afb08b77db92744e5e7f7f02e5c83b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ad5afb08b77db92744e5e7f7f02e5c83b">update</a> ()</td></tr>
 <tr class="separator:ad5afb08b77db92744e5e7f7f02e5c83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a1bffd08a85405f9a9fbeed7c20fd97"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a5a1bffd08a85405f9a9fbeed7c20fd97">restriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cmglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>) const =0</td></tr>
-<tr class="separator:a5a1bffd08a85405f9a9fbeed7c20fd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55d585de64a0263a1b2308553cbaee13"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a55d585de64a0263a1b2308553cbaee13">interpolation</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>) const =0</td></tr>
-<tr class="separator:a55d585de64a0263a1b2308553cbaee13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49e8248c4a3a27e8bfc77227bdfb433a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a49e8248c4a3a27e8bfc77227bdfb433a">averageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> camrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_rhs, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_rhs)=0</td></tr>
-<tr class="separator:a49e8248c4a3a27e8bfc77227bdfb433a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01cdaaf631b81b52be1ffaf606d8f9e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a01cdaaf631b81b52be1ffaf606d8f9e1">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndry.html">MLMGBndry</a> *bndry=nullptr) const =0</td></tr>
-<tr class="separator:a01cdaaf631b81b52be1ffaf606d8f9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf3d13b45072c825f835b9b9a536e774"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#acf3d13b45072c825f835b9b9a536e774">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, bool skip_fillboundary=false) const =0</td></tr>
-<tr class="separator:acf3d13b45072c825f835b9b9a536e774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd006e1aba81687f29e30e7a26bcba04"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#afd006e1aba81687f29e30e7a26bcba04">restriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
+<tr class="separator:afd006e1aba81687f29e30e7a26bcba04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250ef9650a08f752045410345cd3a408"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a250ef9650a08f752045410345cd3a408">interpolation</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
+<tr class="separator:a250ef9650a08f752045410345cd3a408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac055c06cab956b521c8b66bed595ef79"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac055c06cab956b521c8b66bed595ef79">interpAssign</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
+<tr class="separator:ac055c06cab956b521c8b66bed595ef79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5321e037b2534811f295b767c58398"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a9b5321e037b2534811f295b767c58398">averageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;)</td></tr>
+<tr class="separator:a9b5321e037b2534811f295b767c58398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268158a66466e7fec51ef1240689b687"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a268158a66466e7fec51ef1240689b687">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a>, <a class="el" href="classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3">StateMode</a>, const <a class="el" href="classamrex_1_1MLMGBndry.html">MLMGBndry</a> *=nullptr) const</td></tr>
+<tr class="separator:a268158a66466e7fec51ef1240689b687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39026c5bf9ff3a7826a8804526ba9a9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af39026c5bf9ff3a7826a8804526ba9a9">smooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, bool=false) const</td></tr>
+<tr class="separator:af39026c5bf9ff3a7826a8804526ba9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86207e36440100ba012296cb95b51713"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a86207e36440100ba012296cb95b51713">normalize</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
 <tr class="separator:a86207e36440100ba012296cb95b51713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cdc5b58be54be165fee5cc26a5f5e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a37cdc5b58be54be165fee5cc26a5f5e1">solutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;resid, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;x, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;b, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *crse_bcdata=nullptr)=0</td></tr>
-<tr class="separator:a37cdc5b58be54be165fee5cc26a5f5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824432661ed84da479fefccbf118f6fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a824432661ed84da479fefccbf118f6fe">correctionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;resid, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;x, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;b, <a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a> bc_mode, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *crse_bcdata=nullptr)=0</td></tr>
-<tr class="separator:a824432661ed84da479fefccbf118f6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c9c6f136cf005be3ce2c797b4b67537"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a0c9c6f136cf005be3ce2c797b4b67537">reflux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;res, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;crse_rhs, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_res, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;fine_rhs) const =0</td></tr>
-<tr class="separator:a0c9c6f136cf005be3ce2c797b4b67537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e7404bd72d5372194a5012f9783fd6c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a5e7404bd72d5372194a5012f9783fd6c">compFlux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;fluxes, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> loc) const =0</td></tr>
-<tr class="separator:a5e7404bd72d5372194a5012f9783fd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa811fc7672cda86a04b37b7a36380823"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa811fc7672cda86a04b37b7a36380823">compGrad</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;grad, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> loc) const =0</td></tr>
-<tr class="separator:aa811fc7672cda86a04b37b7a36380823"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1097a30ac7246a9ef37ab71e8281a8c9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a1097a30ac7246a9ef37ab71e8281a8c9">applyMetricTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const =0</td></tr>
-<tr class="separator:a1097a30ac7246a9ef37ab71e8281a8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3493bb63b041a05c4f4f6de28df1b37e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a3493bb63b041a05c4f4f6de28df1b37e">unapplyMetricTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const =0</td></tr>
-<tr class="separator:a3493bb63b041a05c4f4f6de28df1b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93fed17bd53a16d98faaa1c8a6a6e401"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a93fed17bd53a16d98faaa1c8a6a6e401">fillSolutionBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *crse_bcdata=nullptr)=0</td></tr>
-<tr class="separator:a93fed17bd53a16d98faaa1c8a6a6e401"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac62698656785dd3261f05e9dc76cd8fa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac62698656785dd3261f05e9dc76cd8fa">unimposeNeumannBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
-<tr class="separator:ac62698656785dd3261f05e9dc76cd8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0b572b22f065860af22a6451bc43706"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac0b572b22f065860af22a6451bc43706">applyInhomogNeumannTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
-<tr class="separator:ac0b572b22f065860af22a6451bc43706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af43ce113549e125050df7b81c1e6feca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af43ce113549e125050df7b81c1e6feca">applyOverset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
-<tr class="separator:af43ce113549e125050df7b81c1e6feca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10fa03f772bb4d863bfef6d20fd8de28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a10fa03f772bb4d863bfef6d20fd8de28">scaleRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
-<tr class="separator:a10fa03f772bb4d863bfef6d20fd8de28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e52a0f8c493c146c2289443ea39c270"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a3e52a0f8c493c146c2289443ea39c270">getSolvabilityOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;) const</td></tr>
-<tr class="separator:a3e52a0f8c493c146c2289443ea39c270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19a7f0a805c4a506d45f5f65a8741701"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a19a7f0a805c4a506d45f5f65a8741701">fixSolvabilityByOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, Real) const</td></tr>
-<tr class="separator:a19a7f0a805c4a506d45f5f65a8741701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c2c2bf1622b6359e830155d7b5352c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a10c2c2bf1622b6359e830155d7b5352c">solutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr)</td></tr>
+<tr class="separator:a10c2c2bf1622b6359e830155d7b5352c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc4a740107bec84bb7bac80b4a34f53"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a1cc4a740107bec84bb7bac80b4a34f53">correctionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a>, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr)</td></tr>
+<tr class="separator:a1cc4a740107bec84bb7bac80b4a34f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f098dbddd9ad2068278fc3a51a7b56"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ab1f098dbddd9ad2068278fc3a51a7b56">reflux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
+<tr class="separator:ab1f098dbddd9ad2068278fc3a51a7b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dfae9fa431aefebde79a4d5aff2ac5e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a7dfae9fa431aefebde79a4d5aff2ac5e">compFlux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>) const</td></tr>
+<tr class="separator:a7dfae9fa431aefebde79a4d5aff2ac5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6f46c05df22dbda4d2da6e198f98344"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ab6f46c05df22dbda4d2da6e198f98344">compGrad</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>) const</td></tr>
+<tr class="separator:ab6f46c05df22dbda4d2da6e198f98344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e31761ce1106732dd8db8e72894d1bd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a8e31761ce1106732dd8db8e72894d1bd">applyMetricTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;) const</td></tr>
+<tr class="separator:a8e31761ce1106732dd8db8e72894d1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73a5461ea6c841bc1293a1c0a9d91a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af73a5461ea6c841bc1293a1c0a9d91a3">unapplyMetricTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
+<tr class="separator:af73a5461ea6c841bc1293a1c0a9d91a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806af8f6ea146fdf513e1cc82305c822"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a806af8f6ea146fdf513e1cc82305c822">unimposeNeumannBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;) const</td></tr>
+<tr class="separator:a806af8f6ea146fdf513e1cc82305c822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f31b79968da09d7a713f6581fe8e3dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a6f31b79968da09d7a713f6581fe8e3dd">applyInhomogNeumannTerm</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;) const</td></tr>
+<tr class="separator:a6f31b79968da09d7a713f6581fe8e3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15c57a1dbcd04052f52b9ca0701d603d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a15c57a1dbcd04052f52b9ca0701d603d">applyOverset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;) const</td></tr>
+<tr class="separator:a15c57a1dbcd04052f52b9ca0701d603d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32f494664d6666bdd94d92998f4b5f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af32f494664d6666bdd94d92998f4b5f0">scaleRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;) const</td></tr>
+<tr class="separator:af32f494664d6666bdd94d92998f4b5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d5ab7f7712cf681083ed6763399132"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a21d5ab7f7712cf681083ed6763399132">getSolvabilityOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;) const</td></tr>
+<tr class="separator:a21d5ab7f7712cf681083ed6763399132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9437bf41a67df3f776428c41f284a022"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a9437bf41a67df3f776428c41f284a022">fixSolvabilityByOffset</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; const &amp;) const</td></tr>
+<tr class="separator:a9437bf41a67df3f776428c41f284a022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a431d85bffa7e9bbcd36a10ae82fe3683">prepareForSolve</a> ()=0</td></tr>
 <tr class="separator:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8d6ef9e77180f9076ef5cb83f48bb50"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev) const =0</td></tr>
-<tr class="separator:aa8d6ef9e77180f9076ef5cb83f48bb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6ff4935f1246d7c94ac38dc65c25d7d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa6ff4935f1246d7c94ac38dc65c25d7d">isBottomSingular</a> () const =0</td></tr>
-<tr class="separator:aa6ff4935f1246d7c94ac38dc65c25d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37371995331ab213ba93ed280b9c71ed"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a37371995331ab213ba93ed280b9c71ed">xdoty</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;x, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;y, bool local) const =0</td></tr>
-<tr class="separator:a37371995331ab213ba93ed280b9c71ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94ee917e5350722a537af7e127984d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac94ee917e5350722a537af7e127984d3">fixUpResidualMask</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &amp;)</td></tr>
-<tr class="separator:ac94ee917e5350722a537af7e127984d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f43837a5a495425a72840dc811fc230"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a8f43837a5a495425a72840dc811fc230">nodalSync</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;) const</td></tr>
-<tr class="separator:a8f43837a5a495425a72840dc811fc230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7992c664d65948c99e3661e6d23a646"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLLinOp.html">MLLinOp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af7992c664d65948c99e3661e6d23a646">makeNLinOp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> grid_size) const =0</td></tr>
-<tr class="separator:af7992c664d65948c99e3661e6d23a646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb84e18739d3e95d406166acb56a9a3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#abdb84e18739d3e95d406166acb56a9a3">isSingular</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
+<tr class="separator:abdb84e18739d3e95d406166acb56a9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5110978eac9ec01689bec96866ad8d5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ae5110978eac9ec01689bec96866ad8d5">isBottomSingular</a> () const</td></tr>
+<tr class="separator:ae5110978eac9ec01689bec96866ad8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb9c046c943c797ebe796a72ad0c895"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#adeb9c046c943c797ebe796a72ad0c895">xdoty</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, bool) const</td></tr>
+<tr class="separator:adeb9c046c943c797ebe796a72ad0c895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce310367908f9f10842859e92c5fd3d"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLLinOp.html">MLLinOp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a1ce310367908f9f10842859e92c5fd3d">makeNLinOp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
+<tr class="separator:a1ce310367908f9f10842859e92c5fd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16bfe483ac9088f65f81d12166adecb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a16bfe483ac9088f65f81d12166adecb4">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &gt; &amp;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>) const</td></tr>
 <tr class="separator:a16bfe483ac9088f65f81d12166adecb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac495d1d722cbb68c31af46b2e860fa9f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac495d1d722cbb68c31af46b2e860fa9f">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;) const</td></tr>
@@ -274,6 +271,58 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9d05943073d4f01c9a6d03c2ec9f0602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff1b5ba7a45c7e320550f99f88984301"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aff1b5ba7a45c7e320550f99f88984301">copyNSolveSolution</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;) const</td></tr>
 <tr class="separator:aff1b5ba7a45c7e320550f99f88984301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40e38b311ffc4f58f39b1ada8619294"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1Any.html">Any</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ad40e38b311ffc4f58f39b1ada8619294">AnyMake</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="separator:ad40e38b311ffc4f58f39b1ada8619294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8d808ba57a2331615f1e256cf85e4e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1Any.html">Any</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a4e8d808ba57a2331615f1e256cf85e4e">AnyMakeCoarseMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="separator:a4e8d808ba57a2331615f1e256cf85e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7fcc41c14f77079d509e5eb85cbfe9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1Any.html">Any</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a9f7fcc41c14f77079d509e5eb85cbfe9">AnyMakeCoarseAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="separator:a9f7fcc41c14f77079d509e5eb85cbfe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768ff0c44cdf30e07b0c9ddb0a30ffef"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1Any.html">Any</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a768ff0c44cdf30e07b0c9ddb0a30ffef">AnyMakeAlias</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;a) const</td></tr>
+<tr class="separator:a768ff0c44cdf30e07b0c9ddb0a30ffef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0a26169b857efbc1bd1e424e787886"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1IntVect.html">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aca0a26169b857efbc1bd1e424e787886">AnyGrowVect</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;a) const</td></tr>
+<tr class="separator:aca0a26169b857efbc1bd1e424e787886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bcab258419204e22344e10166971f25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a0bcab258419204e22344e10166971f25">AnyCopy</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> &amp;dst, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;src, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="separator:a0bcab258419204e22344e10166971f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798b4eaeb4638b01352daba1ce7a5e44"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a798b4eaeb4638b01352daba1ce7a5e44">AnyAdd</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> &amp;dst, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;src, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="separator:a798b4eaeb4638b01352daba1ce7a5e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd14b1829a52c3f9eedfc975274242d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a8cd14b1829a52c3f9eedfc975274242d">AnySetToZero</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> &amp;a) const</td></tr>
+<tr class="separator:a8cd14b1829a52c3f9eedfc975274242d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad28403dda85895d123abdaf36365cf29"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ad28403dda85895d123abdaf36365cf29">AnySetBndryToZero</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> &amp;a) const</td></tr>
+<tr class="separator:ad28403dda85895d123abdaf36365cf29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd9e2b3acdcd9494d321c020b6ce98f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#acfd9e2b3acdcd9494d321c020b6ce98f">AnyParallelCopy</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> &amp;dst, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;src, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;src_nghost, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;dst_nghost, <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> const &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>()) const</td></tr>
+<tr class="separator:acfd9e2b3acdcd9494d321c020b6ce98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47701945960629a5fab242da32add560"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a47701945960629a5fab242da32add560">AnyNormInf</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> &amp;a) const</td></tr>
+<tr class="separator:a47701945960629a5fab242da32add560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f4ec813a013e966d0d9d8fb87cdbb5"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a64f4ec813a013e966d0d9d8fb87cdbb5">AnyNormInfMask</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;a, bool local) const =0</td></tr>
+<tr class="separator:a64f4ec813a013e966d0d9d8fb87cdbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3c616a0a54d9367a924b3779108f8b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#acd3c616a0a54d9367a924b3779108f8b">AnySolutionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;resid, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;x, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;b, <a class="el" href="classamrex_1_1Any.html">Any</a> const *crse_bcdata=nullptr)</td></tr>
+<tr class="separator:acd3c616a0a54d9367a924b3779108f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a60ca7809271135f39ea4294f3890ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a0a60ca7809271135f39ea4294f3890ca">AnyCorrectionResidual</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;resid, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;x, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;b, <a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a> bc_mode, const <a class="el" href="classamrex_1_1Any.html">Any</a> *crse_bcdata=nullptr)</td></tr>
+<tr class="separator:a0a60ca7809271135f39ea4294f3890ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316bc42d433c2d77a6110ac5632324f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a316bc42d433c2d77a6110ac5632324f6">AnyReflux</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> crse_amrlev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;res, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;crse_sol, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;crse_rhs, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;fine_res, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;fine_rhs)</td></tr>
+<tr class="separator:a316bc42d433c2d77a6110ac5632324f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea292e743cd597afb9543a76261990b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#abea292e743cd597afb9543a76261990b">AnyAvgDownResAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> clev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;cres, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;fres) const =0</td></tr>
+<tr class="separator:abea292e743cd597afb9543a76261990b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe1037430dd65ce6f5f90ff47fa3abf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#afbe1037430dd65ce6f5f90ff47fa3abf">AnyAvgDownResMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> clev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;cres, <a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;fres) const</td></tr>
+<tr class="separator:afbe1037430dd65ce6f5f90ff47fa3abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f520cd860d3be048f5bf04a219aa85"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af6f520cd860d3be048f5bf04a219aa85">AnySmooth</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;sol, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;rhs, bool skip_fillboundary=false) const</td></tr>
+<tr class="separator:af6f520cd860d3be048f5bf04a219aa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae135c931d3ceb31f1d21f06253e73658"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ae135c931d3ceb31f1d21f06253e73658">AnyRestriction</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cmglev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>) const</td></tr>
+<tr class="separator:ae135c931d3ceb31f1d21f06253e73658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdf9aaf1ccc800c62487b24f336b502"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#adbdf9aaf1ccc800c62487b24f336b502">AnyInterpolationMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>) const</td></tr>
+<tr class="separator:adbdf9aaf1ccc800c62487b24f336b502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb9d5705330c057bdb1bd8800a6f430"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aebb9d5705330c057bdb1bd8800a6f430">AnyInterpAssignMG</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fmglev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>) const</td></tr>
+<tr class="separator:aebb9d5705330c057bdb1bd8800a6f430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a74a280b8321de86dbf25297ed95ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac0a74a280b8321de86dbf25297ed95ef">AnyInterpolationAmr</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> famrlev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;) const =0</td></tr>
+<tr class="separator:ac0a74a280b8321de86dbf25297ed95ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7053d4e8db13b9bc6aa1505228e42b82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a7053d4e8db13b9bc6aa1505228e42b82">AnyAverageDownSolutionRHS</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> camrlev, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;crse_sol, <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;crse_rhs, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;fine_sol, const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;fine_rhs)</td></tr>
+<tr class="separator:a7053d4e8db13b9bc6aa1505228e42b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f2a99b89fdb222ff2c006c3e623625"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a19f2a99b89fdb222ff2c006c3e623625">AnyAverageDownAndSync</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Any.html">Any</a> &gt; &amp;sol) const =0</td></tr>
+<tr class="separator:a19f2a99b89fdb222ff2c006c3e623625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63aaab910ae5e9c6bd653804eb1c8148"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a63aaab910ae5e9c6bd653804eb1c8148">MFNormInf</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;mf, <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> const *fine_mask, bool local) const</td></tr>
+<tr class="separator:a63aaab910ae5e9c6bd653804eb1c8148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8de1257ddde2a40a49011ef34d68100"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af8de1257ddde2a40a49011ef34d68100">isMFIterSafe</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev2) const</td></tr>
+<tr class="separator:af8de1257ddde2a40a49011ef34d68100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -325,8 +374,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ae920d0e3602dd26d57876b6d6a6843e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa42fd2dfa3b0133f2b20a99026549900"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa42fd2dfa3b0133f2b20a99026549900">isCellCentered</a> () const noexcept</td></tr>
 <tr class="separator:aa42fd2dfa3b0133f2b20a99026549900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02f3afbdee5598f2cae332d7946a5a70"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a02f3afbdee5598f2cae332d7946a5a70">make</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; &gt; &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
-<tr class="separator:a02f3afbdee5598f2cae332d7946a5a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af653a69980f01d30f178caede72b3843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af653a69980f01d30f178caede72b3843">make</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Any.html">Any</a> &gt; &gt; &amp;mf, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ng) const</td></tr>
+<tr class="separator:af653a69980f01d30f178caede72b3843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac31926ba837b440475e0715a8fa4b87b"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac31926ba837b440475e0715a8fa4b87b">makeFactory</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) const</td></tr>
 <tr class="separator:ac31926ba837b440475e0715a8fa4b87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae80c21d0f29e6878cf478dfeef8dd4f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ae80c21d0f29e6878cf478dfeef8dd4f2">resizeMultiGrid</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> new_size)</td></tr>
@@ -698,8 +747,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a01cdaaf631b81b52be1ffaf606d8f9e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01cdaaf631b81b52be1ffaf606d8f9e1">&#9670;&nbsp;</a></span>apply()</h2>
+<a id="a798b4eaeb4638b01352daba1ce7a5e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798b4eaeb4638b01352daba1ce7a5e44">&#9670;&nbsp;</a></span>AnyAdd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -708,46 +757,150 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void amrex::MLLinOp::apply </td>
+          <td class="memname">void amrex::MLLinOp::AnyAdd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ng</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#ae6f9908fe5ae9dc23f2aeb2c88310dd3">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a19f2a99b89fdb222ff2c006c3e623625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f2a99b89fdb222ff2c006c3e623625">&#9670;&nbsp;</a></span>AnyAverageDownAndSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::AnyAverageDownAndSync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Any.html">Any</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sol</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a3efe1958435b3fde0ea3acb0f404f54e">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a8ba9590cf173c7884a4cbcb3b4aa9795">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#ac44d0d0ad9e98fd7cc8d718111c70de9">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a7053d4e8db13b9bc6aa1505228e42b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7053d4e8db13b9bc6aa1505228e42b82">&#9670;&nbsp;</a></span>AnyAverageDownSolutionRHS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyAverageDownSolutionRHS </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname"><em>camrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse_sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse_rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine_sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a09f00880ccef6be45584ea0c1cd3ed66">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="abea292e743cd597afb9543a76261990b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea292e743cd597afb9543a76261990b">&#9670;&nbsp;</a></span>AnyAvgDownResAmr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::AnyAvgDownResAmr </td>
+          <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>mglev</em>, </td>
+          <td class="paramname"><em>clev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>cres</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a>&#160;</td>
-          <td class="paramname"><em>bc_mode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3">StateMode</a>&#160;</td>
-          <td class="paramname"><em>s_mode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MLMGBndry.html">MLMGBndry</a> *&#160;</td>
-          <td class="paramname"><em>bndry</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>fres</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -762,12 +915,980 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a62ea55fae7824c00b3237cf57616dd1d">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a8e392e42b5c238124145af83776d575a">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#ab27ab49bb00008a08ebb46ae961492a9">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a492bdb86a17eff7aa7b01a99d68eefed">amrex::MLEBTensorOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a3bcbe4767274ef89df6f5eaaacded060">amrex::MLNodeLinOp</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#ac708104455ff3de644bd18889ffd1028">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#af7c27ed28c0d3038c44e786416fcfa27">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a27bbbe363b028cf1083493615db6bb64">amrex_temp::MLLinOpTemp</a>.</p>
 
 </div>
 </div>
-<a id="ac0b572b22f065860af22a6451bc43706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0b572b22f065860af22a6451bc43706">&#9670;&nbsp;</a></span>applyInhomogNeumannTerm()</h2>
+<a id="afbe1037430dd65ce6f5f90ff47fa3abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe1037430dd65ce6f5f90ff47fa3abf">&#9670;&nbsp;</a></span>AnyAvgDownResMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyAvgDownResMG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>clev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>cres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>fres</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#adef89de45ee6a9225f2908b93b0f8182">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a0bcab258419204e22344e10166971f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bcab258419204e22344e10166971f25">&#9670;&nbsp;</a></span>AnyCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyCopy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ng</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a77b0cc8dd4bcadbad869465e6faebf23">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a0a60ca7809271135f39ea4294f3890ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a60ca7809271135f39ea4294f3890ca">&#9670;&nbsp;</a></span>AnyCorrectionResidual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyCorrectionResidual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>resid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a>&#160;</td>
+          <td class="paramname"><em>bc_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> *&#160;</td>
+          <td class="paramname"><em>crse_bcdata</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca0a26169b857efbc1bd1e424e787886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0a26169b857efbc1bd1e424e787886">&#9670;&nbsp;</a></span>AnyGrowVect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> amrex::MLLinOp::AnyGrowVect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a751cc742613140af9bb0a023f6505a4f">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="aebb9d5705330c057bdb1bd8800a6f430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb9d5705330c057bdb1bd8800a6f430">&#9670;&nbsp;</a></span>AnyInterpAssignMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyInterpAssignMG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>fmglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a5a150b34eca280af42f2532e246c9457">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="ac0a74a280b8321de86dbf25297ed95ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a74a280b8321de86dbf25297ed95ef">&#9670;&nbsp;</a></span>AnyInterpolationAmr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::AnyInterpolationAmr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>famrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a86728c40ba63428f3f98297a5e9309a5">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#a9bc26851381c49d35f14bbcf2e0bbb75">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a645d14435020ae3e48d1af3cc01fc004">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="adbdf9aaf1ccc800c62487b24f336b502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdf9aaf1ccc800c62487b24f336b502">&#9670;&nbsp;</a></span>AnyInterpolationMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyInterpolationMG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>fmglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#ad0aa77a6b8f70e07fc4a0c404639714d">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="ad40e38b311ffc4f58f39b1ada8619294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40e38b311ffc4f58f39b1ada8619294">&#9670;&nbsp;</a></span>AnyMake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Any.html">Any</a> amrex::MLLinOp::AnyMake </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ng</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a983f8f4c9e12cc6da2ff0cfeb0129b38">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a768ff0c44cdf30e07b0c9ddb0a30ffef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768ff0c44cdf30e07b0c9ddb0a30ffef">&#9670;&nbsp;</a></span>AnyMakeAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Any.html">Any</a> amrex::MLLinOp::AnyMakeAlias </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a158eb5a2983b02171137df48df4b8ed9">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a9f7fcc41c14f77079d509e5eb85cbfe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f7fcc41c14f77079d509e5eb85cbfe9">&#9670;&nbsp;</a></span>AnyMakeCoarseAmr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Any.html">Any</a> amrex::MLLinOp::AnyMakeCoarseAmr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>famrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ng</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#ab6c24334926ec7f7329f94c362f6bc5d">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a4e8d808ba57a2331615f1e256cf85e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e8d808ba57a2331615f1e256cf85e4e">&#9670;&nbsp;</a></span>AnyMakeCoarseMG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Any.html">Any</a> amrex::MLLinOp::AnyMakeCoarseMG </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ng</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#abe1f030de398704261c228eaaa8f6943">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a47701945960629a5fab242da32add560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47701945960629a5fab242da32add560">&#9670;&nbsp;</a></span>AnyNormInf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real amrex::MLLinOp::AnyNormInf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a86f199a4c79aec7951dd2df979d8f8d5">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a64f4ec813a013e966d0d9d8fb87cdbb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f4ec813a013e966d0d9d8fb87cdbb5">&#9670;&nbsp;</a></span>AnyNormInfMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Real amrex::MLLinOp::AnyNormInfMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#aaacf8a4f3f2c127b3ea2bb7035897b19">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a8d8f0c75dbf4b4befd03223bb683fee4">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a94ae8f1860c2181aecda4e989685ff1a">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="acfd9e2b3acdcd9494d321c020b6ce98f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd9e2b3acdcd9494d321c020b6ce98f">&#9670;&nbsp;</a></span>AnyParallelCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyParallelCopy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>src_nghost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>dst_nghost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> const &amp;&#160;</td>
+          <td class="paramname"><em>period</em> = <code><a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a72f511d2ea81051a7429d342d4bd2277">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a316bc42d433c2d77a6110ac5632324f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316bc42d433c2d77a6110ac5632324f6">&#9670;&nbsp;</a></span>AnyReflux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyReflux </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>crse_amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse_sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse_rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine_res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine_sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine_rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a3ebc058ff69e971128ba0295e5a8968c">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="ae135c931d3ceb31f1d21f06253e73658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae135c931d3ceb31f1d21f06253e73658">&#9670;&nbsp;</a></span>AnyRestriction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnyRestriction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cmglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>crse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#aa54b9e9ee9067c70503cbd3f33cadfaa">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="ad28403dda85895d123abdaf36365cf29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad28403dda85895d123abdaf36365cf29">&#9670;&nbsp;</a></span>AnySetBndryToZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnySetBndryToZero </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#afb0c384afc863fe5196db3f79fdab669">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a8cd14b1829a52c3f9eedfc975274242d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd14b1829a52c3f9eedfc975274242d">&#9670;&nbsp;</a></span>AnySetToZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnySetToZero </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#abeb4b960dcd100be602581072784292c">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="af6f520cd860d3be048f5bf04a219aa85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f520cd860d3be048f5bf04a219aa85">&#9670;&nbsp;</a></span>AnySmooth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnySmooth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skip_fillboundary</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a4a01e4b7965f666bc840bf2619083f8a">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="acd3c616a0a54d9367a924b3779108f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3c616a0a54d9367a924b3779108f8b">&#9670;&nbsp;</a></span>AnySolutionResidual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::AnySolutionResidual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>resid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const *&#160;</td>
+          <td class="paramname"><em>crse_bcdata</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#aab95bd2cce19cdb0aa9b7a2d3529971d">amrex_temp::MLLinOpTemp</a>.</p>
+
+</div>
+</div>
+<a id="a268158a66466e7fec51ef1240689b687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268158a66466e7fec51ef1240689b687">&#9670;&nbsp;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::apply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3">StateMode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MLMGBndry.html">MLMGBndry</a> *&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a62ea55fae7824c00b3237cf57616dd1d">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a8e392e42b5c238124145af83776d575a">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#ab27ab49bb00008a08ebb46ae961492a9">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a492bdb86a17eff7aa7b01a99d68eefed">amrex::MLEBTensorOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a3bcbe4767274ef89df6f5eaaacded060">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
+<a id="a6f31b79968da09d7a713f6581fe8e3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f31b79968da09d7a713f6581fe8e3dd">&#9670;&nbsp;</a></span>applyInhomogNeumannTerm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -784,7 +1905,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -800,12 +1921,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#ac373746aad70ce82f53b904e43a6539d">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellABecLap.html#a576364fc5fcadf5eb1b23a7a693fa3ba">amrex::MLCellABecLap</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLap.html#a1776ab863b406f855c04737879f98523">amrex::MLCellABecLap</a>.</p>
 
 </div>
 </div>
-<a id="a1097a30ac7246a9ef37ab71e8281a8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1097a30ac7246a9ef37ab71e8281a8c9">&#9670;&nbsp;</a></span>applyMetricTerm()</h2>
+<a id="a8e31761ce1106732dd8db8e72894d1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e31761ce1106732dd8db8e72894d1bd">&#9670;&nbsp;</a></span>applyMetricTerm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,19 +1938,19 @@ Friends</h2></td></tr>
           <td class="memname">virtual void amrex::MLLinOp::applyMetricTerm </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>mglev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -839,17 +1960,17 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a4107b1bf507cc31aadeb7c547b85574a">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#af6190fe1b9d2ed218129e7ad6f4b4f64">amrex::MLCellLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a1860614d12e92fb59fbc981b9bdadfd5">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a3ecef53f14386209e60edf69cab15bb1">amrex::MLCellLinOp</a>.</p>
 
 </div>
 </div>
-<a id="af43ce113549e125050df7b81c1e6feca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af43ce113549e125050df7b81c1e6feca">&#9670;&nbsp;</a></span>applyOverset()</h2>
+<a id="a15c57a1dbcd04052f52b9ca0701d603d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c57a1dbcd04052f52b9ca0701d603d">&#9670;&nbsp;</a></span>applyOverset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -866,7 +1987,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -882,12 +2003,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLap.html#ad9c4081306f2882750345d3161ca2261">amrex::MLCellABecLap</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLap.html#a41b8fd47ae330f346ee7e5ff6b90ca62">amrex::MLCellABecLap</a>.</p>
 
 </div>
 </div>
-<a id="a49e8248c4a3a27e8bfc77227bdfb433a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49e8248c4a3a27e8bfc77227bdfb433a">&#9670;&nbsp;</a></span>averageDownSolutionRHS()</h2>
+<a id="a9b5321e037b2534811f295b767c58398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5321e037b2534811f295b767c58398">&#9670;&nbsp;</a></span>averageDownSolutionRHS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -899,31 +2020,31 @@ Friends</h2></td></tr>
           <td class="memname">virtual void amrex::MLLinOp::averageDownSolutionRHS </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>camrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>crse_sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>crse_rhs</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine_sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine_rhs</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -933,12 +2054,12 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#adfefa1b34d6988c4bf97957616b61c8f">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a184c8bb62e01581cfc6d1d936f7eeca0">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a01995bfb648c50b3a15598d09e07b83e">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ac78cd13e2533f566292aed726e19f7c5">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#aa8b834ce4429f552256ed5e1aae9be74">amrex::MLNodeTensorLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#adfefa1b34d6988c4bf97957616b61c8f">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a184c8bb62e01581cfc6d1d936f7eeca0">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a01995bfb648c50b3a15598d09e07b83e">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ac78cd13e2533f566292aed726e19f7c5">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#aa8b834ce4429f552256ed5e1aae9be74">amrex::MLNodeTensorLaplacian</a>.</p>
 
 </div>
 </div>
@@ -1074,8 +2195,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5e7404bd72d5372194a5012f9783fd6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e7404bd72d5372194a5012f9783fd6c">&#9670;&nbsp;</a></span>compFlux()</h2>
+<a id="a7dfae9fa431aefebde79a4d5aff2ac5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfae9fa431aefebde79a4d5aff2ac5e">&#9670;&nbsp;</a></span>compFlux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1087,25 +2208,25 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::compFlux </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fluxes</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td>
-          <td class="paramname"><em>loc</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1115,17 +2236,17 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#ad4308a8cc2e4cb0ee8850640a80ca2a2">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#acd6c78c0e6307234b1539ba81caadb9c">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#ab07ec8381bce1e90f83ecf92d6581547">amrex::MLTensorOp</a>, and <a class="el" href="classamrex_1_1MLEBTensorOp.html#a739281050ab5aebe8d61a56992049a58">amrex::MLEBTensorOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#ad4308a8cc2e4cb0ee8850640a80ca2a2">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#acd6c78c0e6307234b1539ba81caadb9c">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#ab07ec8381bce1e90f83ecf92d6581547">amrex::MLTensorOp</a>, and <a class="el" href="classamrex_1_1MLEBTensorOp.html#a739281050ab5aebe8d61a56992049a58">amrex::MLEBTensorOp</a>.</p>
 
 </div>
 </div>
-<a id="aa811fc7672cda86a04b37b7a36380823"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa811fc7672cda86a04b37b7a36380823">&#9670;&nbsp;</a></span>compGrad()</h2>
+<a id="ab6f46c05df22dbda4d2da6e198f98344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6f46c05df22dbda4d2da6e198f98344">&#9670;&nbsp;</a></span>compGrad()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1137,25 +2258,25 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::compGrad </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;&#160;</td>
-          <td class="paramname"><em>grad</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td>
-          <td class="paramname"><em>loc</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1165,12 +2286,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a1d9985ccb20acc6419c9dcfaf5a365fb">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a02d03e47f411047c83284bfe2c9686fc">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ae749675d0ae6abd70771a049598a64dc">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#aead98967987fb3826008fc69f3270247">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLEBABecLap.html#afc09237149ffffd61a4fc209955f9ff8">amrex::MLEBABecLap</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a1d9985ccb20acc6419c9dcfaf5a365fb">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a02d03e47f411047c83284bfe2c9686fc">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ae749675d0ae6abd70771a049598a64dc">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#aead98967987fb3826008fc69f3270247">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLEBABecLap.html#afc09237149ffffd61a4fc209955f9ff8">amrex::MLEBABecLap</a>.</p>
 
 </div>
 </div>
@@ -1212,8 +2333,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a824432661ed84da479fefccbf118f6fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a824432661ed84da479fefccbf118f6fe">&#9670;&nbsp;</a></span>correctionResidual()</h2>
+<a id="a1cc4a740107bec84bb7bac80b4a34f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc4a740107bec84bb7bac80b4a34f53">&#9670;&nbsp;</a></span>correctionResidual()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1225,43 +2346,43 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::correctionResidual </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>mglev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>resid</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a>&#160;</td>
-          <td class="paramname"><em>bc_mode</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>crse_bcdata</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1271,12 +2392,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2018b943fdab7019461dc9580b04177c">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a3c1832912375e08e8bd38775b6b532b3">amrex::MLCellLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2018b943fdab7019461dc9580b04177c">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a3c1832912375e08e8bd38775b6b532b3">amrex::MLCellLinOp</a>.</p>
 
 </div>
 </div>
@@ -1541,50 +2662,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a93fed17bd53a16d98faaa1c8a6a6e401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93fed17bd53a16d98faaa1c8a6a6e401">&#9670;&nbsp;</a></span>fillSolutionBC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void amrex::MLLinOp::fillSolutionBC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>sol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>crse_bcdata</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a7905a0afbcd61f0ea15b85a987ec15c5">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a10b043a8a06133e0f36f81231a7519d9">amrex::MLCellLinOp</a>.</p>
-
-</div>
-</div>
 <a id="ad00407760d4927438c355ba115aaad4e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad00407760d4927438c355ba115aaad4e">&#9670;&nbsp;</a></span>Finalize()</h2>
 
@@ -1610,8 +2687,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a19a7f0a805c4a506d45f5f65a8741701"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19a7f0a805c4a506d45f5f65a8741701">&#9670;&nbsp;</a></span>fixSolvabilityByOffset()</h2>
+<a id="a9437bf41a67df3f776428c41f284a022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9437bf41a67df3f776428c41f284a022">&#9670;&nbsp;</a></span>fixSolvabilityByOffset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1634,13 +2711,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Real&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; const &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1656,45 +2733,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#aa6ad36a13e5266cd2d27585cac230b4b">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#ae56234ddc2cc3ab27892ca894028daba">amrex::MLNodeLinOp</a>.</p>
-
-</div>
-</div>
-<a id="ac94ee917e5350722a537af7e127984d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac94ee917e5350722a537af7e127984d3">&#9670;&nbsp;</a></span>fixUpResidualMask()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void amrex::MLLinOp::fixUpResidualMask </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#af318d231f400caaa9271c6fddee26815">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ab8a56b262d500064fee4f687b293c268">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a9c5ab123d700922d2483e3e09d66cdbf">amrex::MLNodeTensorLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a8a9e84cdae16cefb1f4dac19ac06c793">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a9d01d5b7955be1815f3d4c9b5a8792f4">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#aa9c4b7b43d5b2f42c4ca4662e1125914">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -1845,7 +2884,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a6733cc0185bbfe0f1a5430b961ac84d7">amrex::MLNodeLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a75cb44a29909aa245fc41da536a69775">amrex_temp::MLLinOpTemp</a>, and <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a6733cc0185bbfe0f1a5430b961ac84d7">amrex::MLNodeLaplacian</a>.</p>
 
 </div>
 </div>
@@ -2044,8 +3083,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a3e52a0f8c493c146c2289443ea39c270"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e52a0f8c493c146c2289443ea39c270">&#9670;&nbsp;</a></span>getSolvabilityOffset()</h2>
+<a id="a21d5ab7f7712cf681083ed6763399132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d5ab7f7712cf681083ed6763399132">&#9670;&nbsp;</a></span>getSolvabilityOffset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2054,7 +3093,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Real amrex::MLLinOp::getSolvabilityOffset </td>
+          <td class="memname">virtual <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;Real&gt; amrex::MLLinOp::getSolvabilityOffset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname">, </td>
@@ -2068,7 +3107,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -2084,7 +3123,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#afce52debc382600b9f83c6945ff1a509">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a7412e48ff518d82e3a077d224d34ddbe">amrex::MLNodeLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a83f585ffe6e99a77143a4ae564b9f988">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#af04b9620a526881c747edcf7e3d6eeee">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a89994d8a9689ab0d5dcdcd74dbb89bfe">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -2239,8 +3278,58 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a55d585de64a0263a1b2308553cbaee13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55d585de64a0263a1b2308553cbaee13">&#9670;&nbsp;</a></span>interpolation()</h2>
+<a id="ac055c06cab956b521c8b66bed595ef79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac055c06cab956b521c8b66bed595ef79">&#9670;&nbsp;</a></span>interpAssign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::interpAssign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#afc69014267331541efe7c497b31118e4">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a4d49ac5447d6ea1fc807b221460fb54d">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
+<a id="a250ef9650a08f752045410345cd3a408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250ef9650a08f752045410345cd3a408">&#9670;&nbsp;</a></span>interpolation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2252,25 +3341,25 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::interpolation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>fmglev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>crse</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2280,12 +3369,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a0044458b3dd79241c2b74483b70cb7e7">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a15a2cb048460b6619e61e66fb3a8e3d5">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#adce212d6785b5cedafa7b823adbc582e">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#af8a22ae6d414c1b98b3229132f35d539">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ad886e81a6fbce7dda6d9a8cf569fb707">amrex::MLNodeTensorLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a0044458b3dd79241c2b74483b70cb7e7">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a15a2cb048460b6619e61e66fb3a8e3d5">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#adce212d6785b5cedafa7b823adbc582e">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#af8a22ae6d414c1b98b3229132f35d539">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#ad886e81a6fbce7dda6d9a8cf569fb707">amrex::MLNodeTensorLaplacian</a>.</p>
 
 </div>
 </div>
@@ -2314,8 +3403,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aa6ff4935f1246d7c94ac38dc65c25d7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6ff4935f1246d7c94ac38dc65c25d7d">&#9670;&nbsp;</a></span>isBottomSingular()</h2>
+<a id="ae5110978eac9ec01689bec96866ad8d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5110978eac9ec01689bec96866ad8d5">&#9670;&nbsp;</a></span>isBottomSingular()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2332,12 +3421,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#a74d6ab8dcd6375bed793437c83271aaa">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a5ebdba6239eb393431835a2f2ad724df">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#aa0ead02bedca70191f223b455654b49b">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a1ebac1979e56e1354afa11b556bf074a">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a82e9a304ae27837aa45c9215df9d2b15">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLPoisson.html#aee620ca36a51d37385f849f261eb6502">amrex::MLPoisson</a>, and <a class="el" href="classamrex_1_1MLALaplacian.html#a8c9a07d262d0dc09dbfd73b5f5e5c863">amrex::MLALaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#a74d6ab8dcd6375bed793437c83271aaa">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#aa0ead02bedca70191f223b455654b49b">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a5ebdba6239eb393431835a2f2ad724df">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a1ebac1979e56e1354afa11b556bf074a">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a82e9a304ae27837aa45c9215df9d2b15">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLPoisson.html#aee620ca36a51d37385f849f261eb6502">amrex::MLPoisson</a>, and <a class="el" href="classamrex_1_1MLALaplacian.html#a8c9a07d262d0dc09dbfd73b5f5e5c863">amrex::MLALaplacian</a>.</p>
 
 </div>
 </div>
@@ -2366,8 +3455,42 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aa8d6ef9e77180f9076ef5cb83f48bb50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8d6ef9e77180f9076ef5cb83f48bb50">&#9670;&nbsp;</a></span>isSingular()</h2>
+<a id="af8de1257ddde2a40a49011ef34d68100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8de1257ddde2a40a49011ef34d68100">&#9670;&nbsp;</a></span>isMFIterSafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLLinOp::isMFIterSafe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>mglev2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abdb84e18739d3e95d406166acb56a9a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb84e18739d3e95d406166acb56a9a3">&#9670;&nbsp;</a></span>isSingular()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2379,18 +3502,18 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual bool amrex::MLLinOp::isSingular </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a50d42cd15eea1fb4b562d26a88d6b05c">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#abb68b7b79b8bb488979e6b25b05f6d82">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#abe98c1ca87f919a66405ece51d590f07">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#accc281e18237ce18823e3a1a00cbbf01">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a18804aba43a14c7ffea9b6bc3f3179ba">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#a4304750fa837f09df7c0d400b147fe2f">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLPoisson.html#aefdfec1d9ad383609a1becaa7974d15a">amrex::MLPoisson</a>, and <a class="el" href="classamrex_1_1MLALaplacian.html#a3681713acaa645f62ab556c96ea733e5">amrex::MLALaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a50d42cd15eea1fb4b562d26a88d6b05c">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#abb68b7b79b8bb488979e6b25b05f6d82">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#abe98c1ca87f919a66405ece51d590f07">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#accc281e18237ce18823e3a1a00cbbf01">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#a4304750fa837f09df7c0d400b147fe2f">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a18804aba43a14c7ffea9b6bc3f3179ba">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLPoisson.html#aefdfec1d9ad383609a1becaa7974d15a">amrex::MLPoisson</a>, and <a class="el" href="classamrex_1_1MLALaplacian.html#a3681713acaa645f62ab556c96ea733e5">amrex::MLALaplacian</a>.</p>
 
 </div>
 </div>
@@ -2420,8 +3543,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a02f3afbdee5598f2cae332d7946a5a70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02f3afbdee5598f2cae332d7946a5a70">&#9670;&nbsp;</a></span>make()</h2>
+<a id="af653a69980f01d30f178caede72b3843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af653a69980f01d30f178caede72b3843">&#9670;&nbsp;</a></span>make()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2432,14 +3555,8 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void amrex::MLLinOp::make </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Any.html">Any</a> &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>nc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2455,7 +3572,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2584,8 +3701,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="af7992c664d65948c99e3661e6d23a646"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7992c664d65948c99e3661e6d23a646">&#9670;&nbsp;</a></span>makeNLinOp()</h2>
+<a id="a1ce310367908f9f10842859e92c5fd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce310367908f9f10842859e92c5fd3d">&#9670;&nbsp;</a></span>makeNLinOp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2597,18 +3714,18 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="classamrex_1_1MLLinOp.html">MLLinOp</a>&gt; amrex::MLLinOp::makeNLinOp </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>grid_size</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#acd7d1f624947d653cfb4b3ea3f2fd193">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2a3faa786b7090c2c15f76f2e29f6a28">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#afe42320f6ba8574d18aefce6492ee6b5">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLALaplacian.html#a51c74968da344ad604efb62e7200f899">amrex::MLALaplacian</a>, and <a class="el" href="classamrex_1_1MLPoisson.html#a92cdc76d121dbcf72edad3dd82b25e77">amrex::MLPoisson</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLEBABecLap.html#acd7d1f624947d653cfb4b3ea3f2fd193">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#afe42320f6ba8574d18aefce6492ee6b5">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2a3faa786b7090c2c15f76f2e29f6a28">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLALaplacian.html#a51c74968da344ad604efb62e7200f899">amrex::MLALaplacian</a>, and <a class="el" href="classamrex_1_1MLPoisson.html#a92cdc76d121dbcf72edad3dd82b25e77">amrex::MLPoisson</a>.</p>
 
 </div>
 </div>
@@ -2634,6 +3751,40 @@ template&lt;typename T &gt; </div>
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63aaab910ae5e9c6bd653804eb1c8148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63aaab910ae5e9c6bd653804eb1c8148">&#9670;&nbsp;</a></span>MFNormInf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real amrex::MLLinOp::MFNormInf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> const *&#160;</td>
+          <td class="paramname"><em>fine_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -2772,50 +3923,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a8f43837a5a495425a72840dc811fc230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f43837a5a495425a72840dc811fc230">&#9670;&nbsp;</a></span>nodalSync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void amrex::MLLinOp::nodalSync </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a96c1c36d7c2f9acf4e469e7669aaecc2">amrex::MLNodeLinOp</a>.</p>
-
-</div>
-</div>
 <a id="a86207e36440100ba012296cb95b51713"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86207e36440100ba012296cb95b51713">&#9670;&nbsp;</a></span>normalize()</h2>
 
@@ -2935,12 +4042,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a142ae4b8e4c68254e81516b5c8e00f4d">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a10d9a42df59b0c48c0de0bc3a2b41cca">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#ac604e9b47938e183cd38f8f9ad400668">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#a627779ad059394a0bd2b3bede177e12a">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLCellABecLap.html#a7d6d2646e9f6afaf7ed70bf0c86fa762">amrex::MLCellABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a87443891a5437af65f59dc9a02c72d35">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a31d3fbddab89750d2dc6212d4fe6fc9a">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a7d6264e24870296cd61ca4ce20b118df">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#adb58fe08c96787422aaf6449a03a76e8">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#af3750449862fc251b642c8105e748fc9">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLPoisson.html#af7ed92c7fa5541ead4182b86c3a7d275">amrex::MLPoisson</a>, and <a class="el" href="classamrex_1_1MLALaplacian.html#a0273d9fc3ae644bc006c08af0d891660">amrex::MLALaplacian</a>.</p>
+<p>Implemented in <a class="el" href="classamrex__temp_1_1MLLinOpTemp.html#a1ed54df7b2361419471f1650c90a4ef1">amrex_temp::MLLinOpTemp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#a142ae4b8e4c68254e81516b5c8e00f4d">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a10d9a42df59b0c48c0de0bc3a2b41cca">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLABecLaplacian.html#a627779ad059394a0bd2b3bede177e12a">amrex::MLABecLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLinOp.html#a997cf1a004e76b021a262f35a834da32">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellABecLap.html#a7d6d2646e9f6afaf7ed70bf0c86fa762">amrex::MLCellABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a87443891a5437af65f59dc9a02c72d35">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a31d3fbddab89750d2dc6212d4fe6fc9a">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#a7d6264e24870296cd61ca4ce20b118df">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#adb58fe08c96787422aaf6449a03a76e8">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#af3750449862fc251b642c8105e748fc9">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLPoisson.html#af7ed92c7fa5541ead4182b86c3a7d275">amrex::MLPoisson</a>, and <a class="el" href="classamrex_1_1MLALaplacian.html#a0273d9fc3ae644bc006c08af0d891660">amrex::MLALaplacian</a>.</p>
 
 </div>
 </div>
-<a id="a0c9c6f136cf005be3ce2c797b4b67537"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c9c6f136cf005be3ce2c797b4b67537">&#9670;&nbsp;</a></span>reflux()</h2>
+<a id="ab1f098dbddd9ad2068278fc3a51a7b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f098dbddd9ad2068278fc3a51a7b56">&#9670;&nbsp;</a></span>reflux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2952,43 +4059,43 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::reflux </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>crse_amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>res</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>crse_sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>crse_rhs</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine_res</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine_sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine_rhs</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2998,12 +4105,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#af07a158131d2bb5078c0840365cea305">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ab24f43cada8f1a1daa112e1c17ea635d">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a011f0b17c95908e2eb6f61483229b6f3">amrex::MLNodeTensorLaplacian</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#afc76c452e2704200c3b596ba1c1cb1a2">amrex::MLCellLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#af07a158131d2bb5078c0840365cea305">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#ab24f43cada8f1a1daa112e1c17ea635d">amrex::MLEBNodeFDLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a011f0b17c95908e2eb6f61483229b6f3">amrex::MLNodeTensorLaplacian</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#afc76c452e2704200c3b596ba1c1cb1a2">amrex::MLCellLinOp</a>.</p>
 
 </div>
 </div>
@@ -3061,8 +4168,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5a1bffd08a85405f9a9fbeed7c20fd97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a1bffd08a85405f9a9fbeed7c20fd97">&#9670;&nbsp;</a></span>restriction()</h2>
+<a id="afd006e1aba81687f29e30e7a26bcba04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd006e1aba81687f29e30e7a26bcba04">&#9670;&nbsp;</a></span>restriction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3074,25 +4181,25 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::restriction </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>cmglev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>crse</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>fine</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3102,17 +4209,17 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#aa95312f91d2baeeba018a231d162ad9a">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a4e02281f596d4f8d9fc0ccad62f8525b">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#adfa34733af6c1ade7b084ee4519c3851">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a79f111ea6c182c3ca749babb56729051">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a3d7d8f08d42c1958ee46caa17dde18c5">amrex::MLNodeTensorLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#aa95312f91d2baeeba018a231d162ad9a">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a4e02281f596d4f8d9fc0ccad62f8525b">amrex::MLEBABecLap</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#adfa34733af6c1ade7b084ee4519c3851">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a79f111ea6c182c3ca749babb56729051">amrex::MLEBNodeFDLaplacian</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a3d7d8f08d42c1958ee46caa17dde18c5">amrex::MLNodeTensorLaplacian</a>.</p>
 
 </div>
 </div>
-<a id="a10fa03f772bb4d863bfef6d20fd8de28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10fa03f772bb4d863bfef6d20fd8de28">&#9670;&nbsp;</a></span>scaleRHS()</h2>
+<a id="af32f494664d6666bdd94d92998f4b5f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32f494664d6666bdd94d92998f4b5f0">&#9670;&nbsp;</a></span>scaleRHS()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3129,7 +4236,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -3361,8 +4468,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="abef28e40052b37dfd16370e2db45f06f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abef28e40052b37dfd16370e2db45f06f">&#9670;&nbsp;</a></span>setLevelBC()</h2>
+<a id="a04008d16768c19836e3ea78add024630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04008d16768c19836e3ea78add024630">&#9670;&nbsp;</a></span>setLevelBC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3374,31 +4481,31 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::setLevelBC </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>levelbcdata</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>robinbc_a</em> = <code>nullptr</code>, </td>
+          <td class="paramname"> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>robinbc_b</em> = <code>nullptr</code>, </td>
+          <td class="paramname"> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>robinbc_f</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3408,14 +4515,14 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>For cell-centered solves only: this must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or Neumann bc at the physical domain; if those data are homogeneous we can pass nullptr instead of levelbcdata. Regardless, this function must be called. If used, the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> levelbcdata must have one ghost cell. Only the data outside the physical domain will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. The optional arguments robinbc_[a|b|f] provide Robin boundary condition <code>a*phi + b*dphi/dn = f</code>. Note that <code>d./dn</code> is <code>d./dx</code> at the upper boundary and <code>-d./dx</code> at the lower boundary, for Robin BC. However, for inhomogeneous Neumann BC, the value in leveldata is assumed to be <code>d./dx</code>. </p>
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a9c212333d250c722b7c8ff2d21f19073">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a17b29b5c93f25181f34313b42b795a9e">amrex::MLCellLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a17b29b5c93f25181f34313b42b795a9e">amrex::MLCellLinOp</a>.</p>
 
 </div>
 </div>
@@ -3471,8 +4578,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="acf3d13b45072c825f835b9b9a536e774"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf3d13b45072c825f835b9b9a536e774">&#9670;&nbsp;</a></span>smooth()</h2>
+<a id="af39026c5bf9ff3a7826a8804526ba9a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39026c5bf9ff3a7826a8804526ba9a9">&#9670;&nbsp;</a></span>smooth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3484,31 +4591,31 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::smooth </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>mglev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>sol</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>skip_fillboundary</em> = <code>false</code>&#160;</td>
+          <td class="paramname"> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3518,17 +4625,17 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#aa6f77ffd080d73ac9346cc408ee7a6d8">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#a240eadd9886e8df70f955fecb56bcdfe">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a241a70e73822570252d889e7e7bd6110">amrex::MLNodeTensorLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#aa6f77ffd080d73ac9346cc408ee7a6d8">amrex::MLNodeLinOp</a>, <a class="el" href="classamrex_1_1MLCellLinOp.html#a240eadd9886e8df70f955fecb56bcdfe">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a241a70e73822570252d889e7e7bd6110">amrex::MLNodeTensorLaplacian</a>.</p>
 
 </div>
 </div>
-<a id="a37cdc5b58be54be165fee5cc26a5f5e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37cdc5b58be54be165fee5cc26a5f5e1">&#9670;&nbsp;</a></span>solutionResidual()</h2>
+<a id="a10c2c2bf1622b6359e830155d7b5352c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c2c2bf1622b6359e830155d7b5352c">&#9670;&nbsp;</a></span>solutionResidual()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3540,31 +4647,31 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::solutionResidual </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>resid</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
-          <td class="paramname"><em>crse_bcdata</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3574,12 +4681,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#ab18841d6aec78590a56eeaed61fe4345">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a9577a87ff76e6c9406e3cbe716d26746">amrex::MLNodeLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#ab18841d6aec78590a56eeaed61fe4345">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a9577a87ff76e6c9406e3cbe716d26746">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
@@ -3664,8 +4771,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a3493bb63b041a05c4f4f6de28df1b37e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3493bb63b041a05c4f4f6de28df1b37e">&#9670;&nbsp;</a></span>unapplyMetricTerm()</h2>
+<a id="af73a5461ea6c841bc1293a1c0a9d91a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73a5461ea6c841bc1293a1c0a9d91a3">&#9670;&nbsp;</a></span>unapplyMetricTerm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3677,49 +4784,11 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual void amrex::MLLinOp::unapplyMetricTerm </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>mglev</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2dd8986c8dee800d2a3b9003b8188d5c">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a4ee573102053163e673153f3334153fe">amrex::MLCellLinOp</a>.</p>
-
-</div>
-</div>
-<a id="ac62698656785dd3261f05e9dc76cd8fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac62698656785dd3261f05e9dc76cd8fa">&#9670;&nbsp;</a></span>unimposeNeumannBC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void amrex::MLLinOp::unimposeNeumannBC </td>
-          <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
@@ -3742,7 +4811,45 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a2c6b0fa5629e3a7d3725c5d44206fde7">amrex::MLNodeLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a2dd8986c8dee800d2a3b9003b8188d5c">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellLinOp.html#a4ee573102053163e673153f3334153fe">amrex::MLCellLinOp</a>.</p>
+
+</div>
+</div>
+<a id="a806af8f6ea146fdf513e1cc82305c822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806af8f6ea146fdf513e1cc82305c822">&#9670;&nbsp;</a></span>unimposeNeumannBC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::unimposeNeumannBC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Any.html">Any</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a6c10d9dffbce563895108a99cb1db099">amrex::MLNodeLaplacian</a>.</p>
 
 </div>
 </div>
@@ -3773,8 +4880,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a37371995331ab213ba93ed280b9c71ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37371995331ab213ba93ed280b9c71ed">&#9670;&nbsp;</a></span>xdoty()</h2>
+<a id="adeb9c046c943c797ebe796a72ad0c895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb9c046c943c797ebe796a72ad0c895">&#9670;&nbsp;</a></span>xdoty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3786,31 +4893,31 @@ template&lt;typename T &gt; </div>
           <td class="memname">virtual Real amrex::MLLinOp::xdoty </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>amrlev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>mglev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>local</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3820,12 +4927,12 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a2d3d01dcb4fddb4f2df39484b6f58f97">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#ae81b0104718c1f31d4b1bba2450d32b6">amrex::MLNodeLinOp</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a2d3d01dcb4fddb4f2df39484b6f58f97">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#ae81b0104718c1f31d4b1bba2450d32b6">amrex::MLNodeLinOp</a>.</p>
 
 </div>
 </div>
