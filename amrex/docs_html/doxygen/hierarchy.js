@@ -247,6 +247,7 @@ var hierarchy =
     [ "amrex::CoordSys", "classamrex_1_1CoordSys.html", [
       [ "amrex::Geometry", "classamrex_1_1Geometry.html", null ]
     ] ],
+    [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", null ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", null ],
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
     [ "amrex::Scan::detail::BlockStatus< T, true >::Data< U >", "unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html", null ],

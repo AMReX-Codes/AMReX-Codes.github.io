@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classamrex_1_1MPMD_1_1Copier" kind="class" language="C++" prot="public">
+    <compoundname>amrex::MPMD::Copier</compoundname>
+    <includes refid="AMReX__MPMD_8H" local="no">AMReX_MPMD.H</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1MPMD_1_1Copier_1ac8a7a8cb167be835313951319df1a7c0" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> &gt;</type>
+        <definition>std::map&lt;int,FabArrayBase::CopyComTagsContainer&gt; amrex::MPMD::Copier::m_SndTags</definition>
+        <argsstring></argsstring>
+        <name>m_SndTags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" line="35" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MPMD_1_1Copier_1ace340f0f6a72f7ab1c028ea49d783ba3" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> &gt;</type>
+        <definition>std::map&lt;int,FabArrayBase::CopyComTagsContainer&gt; amrex::MPMD::Copier::m_RcvTags</definition>
+        <argsstring></argsstring>
+        <name>m_RcvTags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" line="36" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1MPMD_1_1Copier_1adbb1502d6736e3d4d8b05fb34eea25ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MPMD::Copier::Copier</definition>
+        <argsstring>(BoxArray const &amp;ba, DistributionMapping const &amp;dm)</argsstring>
+        <name>Copier</name>
+        <param>
+          <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> const &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> const &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" line="26" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.cpp" bodystart="117" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MPMD_1_1Copier_1abd739815de7fa2e6cf9ac116eeaadd93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::MPMD::Copier::send</definition>
+        <argsstring>(FabArray&lt; FAB &gt; const &amp;fa, int icomp, int ncomp) const</argsstring>
+        <name>send</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; const &amp;</type>
+          <declname>fa</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" line="29" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" bodystart="40" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MPMD_1_1Copier_1a2bc5ad6eb5e42ace28526f57cd718503" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::MPMD::Copier::recv</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;fa, int icomp, int ncomp) const</argsstring>
+        <name>recv</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>fa</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" line="32" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" bodystart="107" bodyend="173"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Program ID. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::map&lt; int, FabArrayBase::CopyComTagsContainer &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::MPMD::Copier</label>
+        <link refid="classamrex_1_1MPMD_1_1Copier"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_RcvTags</edgelabel>
+          <edgelabel>m_SndTags</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MPMD.H" bodystart="23" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1MPMD_1_1Copier_1adbb1502d6736e3d4d8b05fb34eea25ae" prot="public" virt="non-virtual"><scope>amrex::MPMD::Copier</scope><name>Copier</name></member>
+      <member refid="classamrex_1_1MPMD_1_1Copier_1ace340f0f6a72f7ab1c028ea49d783ba3" prot="private" virt="non-virtual"><scope>amrex::MPMD::Copier</scope><name>m_RcvTags</name></member>
+      <member refid="classamrex_1_1MPMD_1_1Copier_1ac8a7a8cb167be835313951319df1a7c0" prot="private" virt="non-virtual"><scope>amrex::MPMD::Copier</scope><name>m_SndTags</name></member>
+      <member refid="classamrex_1_1MPMD_1_1Copier_1a2bc5ad6eb5e42ace28526f57cd718503" prot="public" virt="non-virtual"><scope>amrex::MPMD::Copier</scope><name>recv</name></member>
+      <member refid="classamrex_1_1MPMD_1_1Copier_1abd739815de7fa2e6cf9ac116eeaadd93" prot="public" virt="non-virtual"><scope>amrex::MPMD::Copier</scope><name>send</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

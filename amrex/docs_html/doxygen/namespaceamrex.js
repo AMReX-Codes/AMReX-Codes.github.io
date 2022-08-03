@@ -10,6 +10,7 @@ var namespaceamrex =
     [ "HostDevice", "namespaceamrex_1_1HostDevice.html", null ],
     [ "InSituUtils", "namespaceamrex_1_1InSituUtils.html", "namespaceamrex_1_1InSituUtils" ],
     [ "MFUtil", "namespaceamrex_1_1MFUtil.html", "namespaceamrex_1_1MFUtil" ],
+    [ "MPMD", "namespaceamrex_1_1MPMD.html", "namespaceamrex_1_1MPMD" ],
     [ "NonLocalBC", "namespaceamrex_1_1NonLocalBC.html", "namespaceamrex_1_1NonLocalBC" ],
     [ "Order", "namespaceamrex_1_1Order.html", "namespaceamrex_1_1Order" ],
     [ "ParallelContext", "namespaceamrex_1_1ParallelContext.html", "namespaceamrex_1_1ParallelContext" ],
