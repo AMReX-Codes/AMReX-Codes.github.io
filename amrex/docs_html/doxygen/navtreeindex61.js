@@ -1,5 +1,13 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1Gpu_1_1StreamItInfo.html#aed9ddfaaefcb489e81209d64b9f95cb4":[2,0,0,6,41,1],
+"structamrex_1_1Gpu_1_1StreamItInfo.html#af984c422b61b1c2fa85896df7635e8e8":[2,0,0,6,41,2],
+"structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html":[2,0,0,6,1,0],
+"structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#a292b7313c477c14ba179443ce2d24112":[2,0,0,6,1,0,4],
+"structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#a3b5576e8ad5290c80b9fddc284213506":[2,0,0,6,1,0,3],
+"structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#a4d8a0ff4b36cd64070e3bbf980788054":[2,0,0,6,1,0,2],
+"structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#ad477a99f0707aee61523131329f2ad34":[2,0,0,6,1,0,5],
+"structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#ad4f7d96980fc27cd61042157159e0b4a":[2,0,0,6,1,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html":[2,0,0,6,1,0,0],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a2e2e9f92ab70561863bc24cc7453a46f":[2,0,0,6,1,0,0,3],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a4fbe5d48fc816218c5458a3ca0bbce81":[2,0,0,6,1,0,0,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1MLCellLinOp_1_1BCTL.html#a7264caf756e53ce8d36ce44eb3f821f6":[2,0,0,293,0,1],
 "structamrex_1_1MLCellLinOp_1_1BCTL.html#af65725e81c31fb350eb9dde371c296cd":[2,0,0,293,0,0],
 "structamrex_1_1MLLinOp_1_1CommContainer.html":[2,0,0,298,0],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#a186857eb564ead75427bed97573e3283":[2,0,0,298,0,2],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#a1dd9344cd7ef74f6a8715eb79ab4f32a":[2,0,0,298,0,5],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#a3cfdc93d63585946dd3a1aa9c1f47b1e":[2,0,0,298,0,3],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#a60804da348a4b69619286dc0867f39e0":[2,0,0,298,0,1],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#a772c93e540a8c4a0e75b5874e09a0f60":[2,0,0,298,0,6],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#a8f1b7a4c500995611703e56e66931428":[2,0,0,298,0,0],
-"structamrex_1_1MLLinOp_1_1CommContainer.html#abd769793d1c4df11fa4dc6fa2e9e660f":[2,0,0,298,0,4],
-"structamrex_1_1MaybeDeviceRunnable.html":[2,0,0,278],
-"structamrex_1_1MaybeHostDeviceRunnable.html":[2,0,0,279]
+"structamrex_1_1MLLinOp_1_1CommContainer.html#a186857eb564ead75427bed97573e3283":[2,0,0,298,0,2]
 };

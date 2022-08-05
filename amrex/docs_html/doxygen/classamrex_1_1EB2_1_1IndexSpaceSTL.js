@@ -4,6 +4,7 @@ var classamrex_1_1EB2_1_1IndexSpaceSTL =
     [ "IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#accce0356b6e62b40a6fa8bb0cf1a9402", null ],
     [ "IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#adc0c4857ce013433b350e51cfb2f1b47", null ],
     [ "~IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a366483cfa4e0b0c4741fe8e065c14fe7", null ],
+    [ "addFineLevels", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a91c9991bc2691ccf3603be8005954c83", null ],
     [ "coarsestDomain", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#aaaa590849e7bb70c9f2b0814153b0e9e", null ],
     [ "getGeometry", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#afa9591f706505991554b147f3d2a137b", null ],
     [ "getLevel", "classamrex_1_1EB2_1_1IndexSpaceSTL.html#a4106393335714ad0351ccf212d479cdf", null ],

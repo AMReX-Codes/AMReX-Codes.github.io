@@ -1,5 +1,6 @@
 var AMReX__EB2_8cpp =
 [
+    [ "addFineLevels", "AMReX__EB2_8cpp.html#a72554dbd2be4d423812d6207b9c61aa3", null ],
     [ "Build", "AMReX__EB2_8cpp.html#a027cac750cb881076f90fdcf0e9c5adc", null ],
     [ "ExtendDomainFace", "AMReX__EB2_8cpp.html#a2258b3042676370ae01a2968e6962765", null ],
     [ "Finalize", "AMReX__EB2_8cpp.html#afd3e2ed9a69b9e53f5b68eca49ee6fe6", null ],

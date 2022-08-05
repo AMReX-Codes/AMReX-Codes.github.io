@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"classamrex_1_1Amr.html#a739b025250207eabcd5f0505ab16dc8d":[2,0,0,21,4],
+"classamrex_1_1Amr.html#a746a85f8a72742a006a5c78de497c3f9":[2,0,0,21,197],
 "classamrex_1_1Amr.html#a74f3b055b554426d6404985f46bc5713":[2,0,0,21,158],
 "classamrex_1_1Amr.html#a76adb6f14e46b7ed89679dfdca012385":[2,0,0,21,11],
 "classamrex_1_1Amr.html#a782f42d62191f606a77cb1c78ab584a1":[2,0,0,21,25],
@@ -247,7 +249,5 @@ var NAVTREEINDEX26 =
 "classamrex_1_1AmrDataAdaptor.html#a9ae9a8df3d126eb7dd38d1288c85e25b":[2,0,0,25,2],
 "classamrex_1_1AmrDataAdaptor.html#ac384e988016eac31074e99f36f7cd49a":[2,0,0,25,6],
 "classamrex_1_1AmrDataAdaptor.html#ac8ab6353c41ea4880d2b5e68e2465564":[2,0,0,25,16],
-"classamrex_1_1AmrDataAdaptor.html#aeb19ff64f67ce3d581833588cd8a362b":[2,0,0,25,11],
-"classamrex_1_1AmrDataAdaptor.html#aeb2aa16f7cb72eebdd278083cc8616ef":[2,0,0,25,17],
-"classamrex_1_1AmrInSituBridge.html":[2,0,0,32]
+"classamrex_1_1AmrDataAdaptor.html#aeb19ff64f67ce3d581833588cd8a362b":[2,0,0,25,11]
 };

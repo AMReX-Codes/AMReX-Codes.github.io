@@ -2,6 +2,7 @@ var AMReX__EB2_8H =
 [
     [ "IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", "classamrex_1_1EB2_1_1IndexSpace" ],
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html", "classamrex_1_1EB2_1_1IndexSpaceImp" ],
+    [ "addFineLevels", "AMReX__EB2_8H.html#a72554dbd2be4d423812d6207b9c61aa3", null ],
     [ "Build", "AMReX__EB2_8H.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
     [ "Build", "AMReX__EB2_8H.html#a027cac750cb881076f90fdcf0e9c5adc", null ],
     [ "ExtendDomainFace", "AMReX__EB2_8H.html#a2258b3042676370ae01a2968e6962765", null ],

@@ -1,5 +1,13 @@
 var NAVTREEINDEX58 =
 {
+"structamrex_1_1BARef.html#a850d8df48213b59d82ab683351d2805e":[2,0,0,60,4],
+"structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f":[2,0,0,60,1],
+"structamrex_1_1BARef.html#a88374d21f3cf26914235a3136df641f7":[2,0,0,60,18],
+"structamrex_1_1BARef.html#a983668be1ab6a935c4bd6bdf22d5c8bb":[2,0,0,60,11],
+"structamrex_1_1BARef.html#a99abf80b40a6ebff2f6ac1e3e71a21da":[2,0,0,60,5],
+"structamrex_1_1BARef.html#a9c091cdb6183ee153e309231d68ef52b":[2,0,0,60,6],
+"structamrex_1_1BARef.html#aa4715d9e30ad640a00703a76b8b29f5d":[2,0,0,60,25],
+"structamrex_1_1BARef.html#aa7702554a15d6a73ffa7a16ee2e017bc":[2,0,0,60,20],
 "structamrex_1_1BARef.html#aaa1d0e47191bce43137f9aeecf529f64":[2,0,0,60,23],
 "structamrex_1_1BARef.html#aaa44a8c337df517114ccca6c8d4a2c11":[2,0,0,60,26],
 "structamrex_1_1BARef.html#aae9932a1a2b245c7a6a1b472cbd0b8ff":[2,0,0,60,15],
@@ -241,13 +249,5 @@ var NAVTREEINDEX58 =
 "structamrex_1_1DistributionMapping_1_1Ref.html#ae47a673a2d7c94e3483b90b58444be0c":[2,0,0,126,2,3],
 "structamrex_1_1DistributionMapping_1_1RefID.html":[2,0,0,126,3],
 "structamrex_1_1DistributionMapping_1_1RefID.html#a27efe3d5f7340241a0b4d2e2df7814b1":[2,0,0,126,3,7],
-"structamrex_1_1DistributionMapping_1_1RefID.html#a354390fe979bbccf718f8243e4bbfc75":[2,0,0,126,3,0],
-"structamrex_1_1DistributionMapping_1_1RefID.html#a4a4237a4808d5f1bbd7266cc847e4952":[2,0,0,126,3,5],
-"structamrex_1_1DistributionMapping_1_1RefID.html#a614a6f4d10ea61b0dc126aa932d1ab27":[2,0,0,126,3,6],
-"structamrex_1_1DistributionMapping_1_1RefID.html#a83d7d3288a3b51ffca12886346794042":[2,0,0,126,3,8],
-"structamrex_1_1DistributionMapping_1_1RefID.html#a8866859d71db556f069c2a15af15afa3":[2,0,0,126,3,2],
-"structamrex_1_1DistributionMapping_1_1RefID.html#ab120307e57dd47cc9d01ca636bf1f0df":[2,0,0,126,3,3],
-"structamrex_1_1DistributionMapping_1_1RefID.html#acf88511a112b6bcc2cba29a585f5ac13":[2,0,0,126,3,4],
-"structamrex_1_1DistributionMapping_1_1RefID.html#af498ab4c22436f6e5e6e530392dc74c8":[2,0,0,126,3,1],
-"structamrex_1_1DynamicTiling.html":[2,0,0,127]
+"structamrex_1_1DistributionMapping_1_1RefID.html#a354390fe979bbccf718f8243e4bbfc75":[2,0,0,126,3,0]
 };

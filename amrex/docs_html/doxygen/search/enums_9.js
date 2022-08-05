@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['maketype_16261',['MakeType',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6',1,'amrex']]],
-  ['maskval_16262',['MaskVal',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9',1,'amrex::BndryData']]],
-  ['minmaxrangetype_16263',['MinMaxRangeType',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98e',1,'amrex::Amrvis']]],
-  ['minmaxrangetypeforbuttons_16264',['MinMaxRangeTypeForButtons',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9',1,'amrex::Amrvis']]]
+  ['maketype_16269',['MakeType',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6',1,'amrex']]],
+  ['maskval_16270',['MaskVal',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9',1,'amrex::BndryData']]],
+  ['minmaxrangetype_16271',['MinMaxRangeType',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98e',1,'amrex::Amrvis']]],
+  ['minmaxrangetypeforbuttons_16272',['MinMaxRangeTypeForButtons',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9',1,'amrex::Amrvis']]]
 ];

@@ -1,6 +1,7 @@
 var classamrex_1_1EB2_1_1IndexSpace =
 [
     [ "~IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html#ac4076fe625fa22e660fed58771f6b2d5", null ],
+    [ "addFineLevels", "classamrex_1_1EB2_1_1IndexSpace.html#a346cc897525e434cd311f4b303d6b898", null ],
     [ "clear", "classamrex_1_1EB2_1_1IndexSpace.html#ac2b149fea822702476a70d1b12ae2f21", null ],
     [ "coarsestDomain", "classamrex_1_1EB2_1_1IndexSpace.html#a7795703119c27937004c54f50532a369", null ],
     [ "empty", "classamrex_1_1EB2_1_1IndexSpace.html#a7ebc7ce80aded82313b3f96ba0f14d8e", null ],
