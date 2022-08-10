@@ -87,6 +87,7 @@ var classamrex_1_1MultiFab =
     [ "Subtract", "classamrex_1_1MultiFab.html#a4f2c04ea9d0f7a551bc2263b9a63d324", null ],
     [ "Subtract", "classamrex_1_1MultiFab.html#a5f37af40303a10e8d54e15c1931a5b8e", null ],
     [ "sum", "classamrex_1_1MultiFab.html#a62669a27ec4a577f0bef72dc2a1243aa", null ],
+    [ "sum_unique", "classamrex_1_1MultiFab.html#afe7c47dff8cf8e0fb550d0e78c7b5375", null ],
     [ "Swap", "classamrex_1_1MultiFab.html#ac259813cd54d52b5c20cad7c0f24c246", null ],
     [ "Swap", "classamrex_1_1MultiFab.html#a2e29e28afce0aa520da5cd068cb5e96b", null ],
     [ "WeightedSync", "classamrex_1_1MultiFab.html#ad80a338735a5addaa47a0726cb24c8c5", null ],

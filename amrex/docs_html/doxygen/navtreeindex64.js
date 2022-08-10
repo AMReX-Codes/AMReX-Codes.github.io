@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1ParticleCopyPlan.html#a439daadd96aa6868c30e13e8baf8be18":[2,0,0,386,41],
 "structamrex_1_1ParticleCopyPlan.html#a4f11e52b07357018bf4097a60913ec01":[2,0,0,386,40],
 "structamrex_1_1ParticleCopyPlan.html#a6dabbed162dce5462b4fd0023b1b57a0":[2,0,0,386,6],
 "structamrex_1_1ParticleCopyPlan.html#a7285486c8e5119099572a46997f89641":[2,0,0,386,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1StructOfArrays.html#a7668bc0907c454a0959603288a2b9873":[2,0,0,440,28],
 "structamrex_1_1StructOfArrays.html#a76f073678406c1191acd44dd1cf562d1":[2,0,0,440,12],
 "structamrex_1_1StructOfArrays.html#a7db5f7869add58ecbebac952fc75e1ff":[2,0,0,440,26],
-"structamrex_1_1StructOfArrays.html#a812e8db38b02a923e33de9d31a4978ba":[2,0,0,440,14],
-"structamrex_1_1StructOfArrays.html#a852422beff887d7d8d82cb21e7190dce":[2,0,0,440,10]
+"structamrex_1_1StructOfArrays.html#a812e8db38b02a923e33de9d31a4978ba":[2,0,0,440,14]
 };

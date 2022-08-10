@@ -204,6 +204,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a62669a27ec4a577f0bef72dc2a1243aa"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a62669a27ec4a577f0bef72dc2a1243aa">sum</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>=0, bool local=false) const</td></tr>
 <tr class="memdesc:a62669a27ec4a577f0bef72dc2a1243aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of component "comp" over the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> &ndash; no ghost cells are included.  <a href="classamrex_1_1MultiFab.html#a62669a27ec4a577f0bef72dc2a1243aa">More...</a><br /></td></tr>
 <tr class="separator:a62669a27ec4a577f0bef72dc2a1243aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#afe7c47dff8cf8e0fb550d0e78c7b5375">sum_unique</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>=0, bool local=false, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>()) const</td></tr>
+<tr class="memdesc:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as sum with local=false, but for non-cell-centered data, this skips non-unique points that are owned by multiple boxes.  <a href="classamrex_1_1MultiFab.html#afe7c47dff8cf8e0fb550d0e78c7b5375">More...</a><br /></td></tr>
+<tr class="separator:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafbc29a68d3c0c000fee414f76f7b79c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#aafbc29a68d3c0c000fee414f76f7b79c">plus</a> (Real val, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost=0)</td></tr>
 <tr class="memdesc:aafbc29a68d3c0c000fee414f76f7b79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the scalar value val to the value of each cell in the specified subregion of the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a>. The subregion consists of the num_comp components starting at component comp. The value of nghost specifies the number of cells in the boundary region of each <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a> in the subregion that should be modified.  <a href="classamrex_1_1MultiFab.html#aafbc29a68d3c0c000fee414f76f7b79c">More...</a><br /></td></tr>
 <tr class="separator:aafbc29a68d3c0c000fee414f76f7b79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4453,6 +4456,42 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the sum of component "comp" over the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> &ndash; no ghost cells are included. </p>
+
+</div>
+</div>
+<a id="afe7c47dff8cf8e0fb550d0e78c7b5375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7c47dff8cf8e0fb550d0e78c7b5375">&#9670;&nbsp;</a></span>sum_unique()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real amrex::MultiFab::sum_unique </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>comp</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;&#160;</td>
+          <td class="paramname"><em>period</em> = <code><a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structamrex_1_1Same.html">Same</a> as sum with local=false, but for non-cell-centered data, this skips non-unique points that are owned by multiple boxes. </p>
 
 </div>
 </div>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"structamrex_1_1StructOfArrays.html#a852422beff887d7d8d82cb21e7190dce":[2,0,0,440,10],
 "structamrex_1_1StructOfArrays.html#a910364653d0aee372ea5d30dbd98e34c":[2,0,0,440,17],
 "structamrex_1_1StructOfArrays.html#a9dab7a711b3b967a56646e6c30ae5904":[2,0,0,440,19],
 "structamrex_1_1StructOfArrays.html#aa9ae6d2054d75f3a9d34c3fb630e6804":[2,0,0,440,27],
@@ -166,8 +167,8 @@ var NAVTREEINDEX65 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "structamrex_1_1detail_1_1tuple__cat__result.html":[2,0,0,3,14],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html":[2,0,0,3,15],
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html#aa86d70758c7267b714f7e84b0aa84f6c":[2,0,0,3,15,0],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,3,16],
-"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ad3adafe44d04fd011602994a46bd459e":[2,0,0,3,16,0]
+"structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,3,16]
 };

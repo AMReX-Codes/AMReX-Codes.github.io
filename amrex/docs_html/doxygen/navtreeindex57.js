@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"structKeepValidFilter.html":[2,0,21],
 "structKeepValidFilter.html#af4bf053d8e8024c447f42ee722e08eb5":[2,0,21,0],
 "structMPI__Status.html":[2,0,22],
 "structN__VectorContent__MultiFab__notptr.html":[2,0,23],
@@ -152,8 +153,8 @@ var NAVTREEINDEX57 =
 "structamrex_1_1Array3D.html#a738bf226cd7ec23057eb95176cd4bfa6":[2,0,0,48,9],
 "structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0":[2,0,0,48,22],
 "structamrex_1_1Array3D.html#a95521eae522931f98cbb29c0daba5b35":[2,0,0,48,1],
-"structamrex_1_1Array3D.html#aab5afb1a6f3a90cad27f3a00449cf479":[2,0,0,48,4],
 "structamrex_1_1Array3D.html#aab5afb1a6f3a90cad27f3a00449cf479":[2,0,0,48,5],
+"structamrex_1_1Array3D.html#aab5afb1a6f3a90cad27f3a00449cf479":[2,0,0,48,4],
 "structamrex_1_1Array3D.html#ab58dde651cfad3f07ffdfb42d66e1c3b":[2,0,0,48,8],
 "structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,48,6],
 "structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,48,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1BARef.html#a6d54f5af3411a20df87cec16abf974f8":[2,0,0,60,17],
 "structamrex_1_1BARef.html#a706eeeb8f176a08d3774dd488715bfc1":[2,0,0,60,22],
 "structamrex_1_1BARef.html#a734b995447c10c9d1c7b743aaa30e345":[2,0,0,60,21],
-"structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc":[2,0,0,60,3],
-"structamrex_1_1BARef.html#a7a41d2a79c7b1a0f9b36ffa0afbc6b49":[2,0,0,60,2]
+"structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc":[2,0,0,60,3]
 };
