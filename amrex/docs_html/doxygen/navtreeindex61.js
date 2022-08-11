@@ -1,5 +1,6 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1Gpu_1_1StreamItInfo.html":[2,0,0,6,41],
 "structamrex_1_1Gpu_1_1StreamItInfo.html#a4de687fc827f6b0fd1960b07435be1ba":[2,0,0,6,41,0],
 "structamrex_1_1Gpu_1_1StreamItInfo.html#aed9ddfaaefcb489e81209d64b9f95cb4":[2,0,0,6,41,1],
 "structamrex_1_1Gpu_1_1StreamItInfo.html#af984c422b61b1c2fa85896df7635e8e8":[2,0,0,6,41,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[2,0,0,9,1,0],
 "structamrex_1_1MLCellLinOp_1_1BCTL.html":[2,0,0,293,0],
 "structamrex_1_1MLCellLinOp_1_1BCTL.html#a7264caf756e53ce8d36ce44eb3f821f6":[2,0,0,293,0,1],
-"structamrex_1_1MLCellLinOp_1_1BCTL.html#af65725e81c31fb350eb9dde371c296cd":[2,0,0,293,0,0],
-"structamrex_1_1MLLinOp_1_1CommContainer.html":[2,0,0,298,0]
+"structamrex_1_1MLCellLinOp_1_1BCTL.html#af65725e81c31fb350eb9dde371c296cd":[2,0,0,293,0,0]
 };

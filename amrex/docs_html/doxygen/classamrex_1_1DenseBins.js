@@ -22,6 +22,7 @@ var classamrex_1_1DenseBins =
     [ "m_bins", "classamrex_1_1DenseBins.html#af1561b37e307d49631e3fc2ee1b68212", null ],
     [ "m_counts", "classamrex_1_1DenseBins.html#af113e9e077a9aed3c6696adabcefa899", null ],
     [ "m_items", "classamrex_1_1DenseBins.html#a9bc32ea181687bc997cb145606c436b4", null ],
+    [ "m_local_offsets", "classamrex_1_1DenseBins.html#a489cbe99cd70050a8d0d5d0de2aa2fe4", null ],
     [ "m_offsets", "classamrex_1_1DenseBins.html#ad70b443fd8e65a368e1fed776614b0e4", null ],
     [ "m_perm", "classamrex_1_1DenseBins.html#ad40e15a5e019a0a7afa527c6226e7675", null ]
 ];
