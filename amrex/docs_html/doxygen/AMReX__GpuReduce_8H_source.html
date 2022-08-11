@@ -156,10 +156,10 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">struct </span>warpReduce</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    T <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">operator() </a>(T x, amrex::oneapi::sub_group <span class="keyword">const</span>&amp; sg) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    T <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">operator() </a>(T x, sycl::sub_group <span class="keyword">const</span>&amp; sg) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset = warpSize/2; offset &gt; 0; offset /= 2) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            T y = sg.shuffle_down(x, offset);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            T y = sycl::shift_group_left(sg, x, offset);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            x = F()(x,y);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> x;</div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    T* shared = (T*)h.local;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> tid = h.item-&gt;get_local_id(0);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    amrex::oneapi::sub_group <span class="keyword">const</span>&amp; sg = h.item-&gt;get_sub_group();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    sycl::sub_group <span class="keyword">const</span>&amp; sg = h.item-&gt;get_sub_group();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> lane = sg.get_local_id()[0];</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> wid = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> numwarps = sg.get_group_range()[0];</div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Gpu.html#ab9a50b1a64ebde8610e71103d50c9ff4">blockReduce_partial</a> (T* dest, T x, WARPREDUCE &amp;&amp; warp_reduce, ATOMICOP &amp;&amp; <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>,</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                          Gpu::Handler <span class="keyword">const</span>&amp; handler)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   amrex::oneapi::sub_group <span class="keyword">const</span>&amp; sg = handler.item-&gt;get_sub_group();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   sycl::sub_group <span class="keyword">const</span>&amp; sg = handler.item-&gt;get_sub_group();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keywordtype">int</span> wid = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <span class="keywordflow">if</span> ((wid+1)*warpSize &lt;= handler.numActiveThreads) {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;       x = warp_reduce(x, sg); <span class="comment">// full warp</span></div>

@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(nblocks, nthreads, sm, stream,</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; gh) noexcept</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        amrex::oneapi::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        sycl::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordtype">int</span> lane = sg.get_local_id()[0];</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordtype">int</span> warp = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordtype">int</span> nwarps = sg.get_group_range()[0];</div>
@@ -327,7 +327,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            T x = x0;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">// Scan within a warp</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                T s = sg.shuffle_up(x, i);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                T s = sycl::shift_group_right(sg, x, i);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">if</span> (lane &gt;= i) x += s;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            }</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
@@ -345,7 +345,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">if</span> (warp == 0) {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                T y = (lane &lt; nwarps) ? shared[lane] : 0;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    T s = sg.shuffle_up(y, i);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    T s = sycl::shift_group_right(sg, y, i);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <span class="keywordflow">if</span> (lane &gt;= i) y += s;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                }</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
@@ -378,7 +378,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(1, nthreads, sm, stream,</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Gpu::Handler <span class="keyword">const</span>&amp; gh) noexcept</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        amrex::oneapi::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        sycl::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordtype">int</span> lane = sg.get_local_id()[0];</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordtype">int</span> warp = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordtype">int</span> nwarps = sg.get_group_range()[0];</div>
@@ -394,7 +394,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            T x = (offset &lt; nblocks) ? blocksum_p[offset] : 0;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="comment">// Scan within a warp</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                T s = sg.shuffle_up(x, i);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                T s = sycl::shift_group_right(sg, x, i);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                <span class="keywordflow">if</span> (lane &gt;= i) x += s;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            }</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
@@ -412,7 +412,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordflow">if</span> (warp == 0) {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                T y = (lane &lt; nwarps) ? shared[lane] : 0;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    T s = sg.shuffle_up(y, i);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    T s = sycl::shift_group_right(sg, y, i);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    <span class="keywordflow">if</span> (lane &gt;= i) y += s;</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                }</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
@@ -518,7 +518,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(nblocks, nthreads, sm, stream,</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Gpu::Handler <span class="keyword">const</span>&amp; gh) noexcept</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    {</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        amrex::oneapi::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        sycl::sub_group <span class="keyword">const</span>&amp; sg = gh.item-&gt;get_sub_group();</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordtype">int</span> lane = sg.get_local_id()[0];</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordtype">int</span> warp = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordtype">int</span> nwarps = sg.get_group_range()[0];</div>
@@ -573,7 +573,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            T x = x0;</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="comment">// Scan within a warp</span></div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                T s = sg.shuffle_up(x, i);</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                T s = sycl::shift_group_right(sg, x, i);</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                <span class="keywordflow">if</span> (lane &gt;= i) x += s;</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            }</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
@@ -591,7 +591,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="keywordflow">if</span> (warp == 0) {</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                T y = (lane &lt; nwarps) ? shared[lane] : 0;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                    T s = sg.shuffle_up(y, i);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                    T s = sycl::shift_group_right(sg, y, i);</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                    <span class="keywordflow">if</span> (lane &gt;= i) y += s;</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                }</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
@@ -644,7 +644,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                    <span class="comment">// implement our own __ballot</span></div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                    <span class="keywordtype">unsigned</span> status_bf = (stva.status == <span class="charliteral">&#39;p&#39;</span>) ? (0x1u &lt;&lt; lane) : 0;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>; i *= 2) {</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                        status_bf |= sg.shuffle_xor(status_bf, i);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                        status_bf |= sycl::permute_group_by_xor(sg, status_bf, i);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                    }</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                    <span class="keywordtype">bool</span> stop_lookback = status_bf &amp; 0x1u;</div>
@@ -664,7 +664,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                        }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>/2; i &gt; 0; i /= 2) {</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                            x += sg.shuffle_down(x,i);</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                            x += sycl::shift_group_left(sg, x,i);</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                        }</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    }</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
