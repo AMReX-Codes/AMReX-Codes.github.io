@@ -3200,7 +3200,7 @@
 <codeline lineno="1154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>wgt<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="1156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;int&gt;&amp;<sp/>vi<sp/>=<sp/>vec[i];</highlight></codeline>
-<codeline lineno="1157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/>M<sp/>=<sp/>vi.size();<sp/>j<sp/>&lt;<sp/>M;<sp/>++j)</highlight></codeline>
+<codeline lineno="1157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref><sp/>=<sp/>vi.size();<sp/>j<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>;<sp/>++j)</highlight></codeline>
 <codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wgt<sp/>+=<sp/>wgts[vi[j]];</highlight></codeline>
 <codeline lineno="1159"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LIpairV.push_back(LIpair(wgt,i));</highlight></codeline>
@@ -3346,7 +3346,7 @@
 <codeline lineno="1300"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>boxes.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="1302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wgts.push_back(boxes[i].<ref refid="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c" kindref="member">volume</ref>());</highlight></codeline>
+<codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wgts.push_back(boxes[i].numPts());</highlight></codeline>
 <codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1305"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SFCProcessorMapDoIt(boxes,wgts,nprocs);</highlight></codeline>
@@ -3815,7 +3815,7 @@
 <codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>ba[i];</highlight></codeline>
 <codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tokens.push_back(makeSFCToken(i,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.smallEnd()));</highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Long<sp/>v<sp/>=<sp/>use_box_vol<sp/>?<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.volume()<sp/>:<sp/>Long(1);</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Long<sp/>v<sp/>=<sp/>use_box_vol<sp/>?<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.numPts()<sp/>:<sp/>Long(1);</highlight></codeline>
 <codeline lineno="1773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vol_sum<sp/>+=<sp/>v;</highlight></codeline>
 <codeline lineno="1774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wgts.push_back(v);</highlight></codeline>
 <codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

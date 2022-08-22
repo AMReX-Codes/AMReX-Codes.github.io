@@ -965,7 +965,7 @@
 <codeline lineno="331"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MemProfiler::Bytes&amp;<sp/>bytes)</highlight></codeline>
 <codeline lineno="332"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Long<sp/>G<sp/>=<sp/>1024L*1024L*1024L;</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Long<sp/>M<sp/>=<sp/>1024L*1024L;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Long<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref><sp/>=<sp/>1024L*1024L;</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Long<sp/>K<sp/>=<sp/>1024L;</highlight></codeline>
 <codeline lineno="336"><highlight class="normal"></highlight></codeline>
 <codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>fac;</highlight></codeline>
@@ -973,8 +973,8 @@
 <codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bytes.mn<sp/>&gt;=<sp/>10L*G)<sp/>{</highlight></codeline>
 <codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fac<sp/><sp/>=<sp/><sp/>G;</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unit<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;GB&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bytes.mn<sp/>&gt;=<sp/>10L*M)<sp/>{</highlight></codeline>
-<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fac<sp/><sp/>=<sp/><sp/>M;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bytes.mn<sp/>&gt;=<sp/>10L*<ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fac<sp/><sp/>=<sp/><sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>;</highlight></codeline>
 <codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unit<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MB&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bytes.mn<sp/>&gt;=<sp/>10L*K)<sp/>{</highlight></codeline>
 <codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fac<sp/><sp/>=<sp/><sp/>K;</highlight></codeline>

@@ -34,6 +34,7 @@ var namespaceamrex_1_1Gpu =
     [ "SharedMemory< int >", "structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4" ],
     [ "SharedMemory< long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4" ],
     [ "SharedMemory< long long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4" ],
+    [ "SharedMemory< openbc::Moments::array_type >", "structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4" ],
     [ "SharedMemory< short >", "structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4" ],
     [ "SharedMemory< unsigned char >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01char_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01char_01_4" ],
     [ "SharedMemory< unsigned int >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4.html", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01int_01_4" ],

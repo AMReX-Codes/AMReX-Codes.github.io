@@ -7,6 +7,7 @@
     <includes refid="AMReX__REAL_8H" local="no">AMReX_REAL.H</includes>
     <includedby refid="AMReX__InterpBndryData__2D__K_8H" local="no">/home/runner/work/amrex/amrex/Src/Boundary/AMReX_InterpBndryData_2D_K.H</includedby>
     <includedby refid="AMReX__MLLinOp__K_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_K.H</includedby>
+    <includedby refid="AMReX__OpenBC__K_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC_K.H</includedby>
     <incdepgraph>
       <node id="6">
         <label>float.h</label>
@@ -68,6 +69,10 @@
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.cpp</label>
         <link refid="AMReX__MLCellLinOp_8cpp"/>
       </node>
+      <node id="14">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC.cpp</label>
+        <link refid="AMReX__OpenBC_8cpp"/>
+      </node>
       <node id="3">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp_K.H</label>
         <link refid="AMReX__MLLinOp__K_8H"/>
@@ -91,6 +96,8 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
       </node>
       <node id="6">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.cpp</label>
@@ -99,6 +106,12 @@
       <node id="9">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H</label>
         <link refid="AMReX__MLEBTensor__2D__K_8H"/>
+      </node>
+      <node id="13">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC/AMReX_OpenBC_K.H</label>
+        <link refid="AMReX__OpenBC__K_8H"/>
+        <childnode refid="14" relation="include">
+        </childnode>
       </node>
       <node id="4">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap.cpp</label>
@@ -163,9 +176,25 @@
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N&gt;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="39" refid="namespaceamrex_1af2743cd3ee5067a885cb1abecf2f1a72" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a21e5b8295b57ab90e4ddd05a04ca5a85" kindref="member">poly_interp_coeff</ref><sp/>(Real<sp/>xInt,<sp/>Real<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/><ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref><sp/>x,<sp/>Real*<sp/><ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref><sp/>c)<sp/>noexcept</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>N;<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>num<sp/>=<sp/>1.0,<sp/>den<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>!=<sp/>j)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num<sp/>*=<sp/>xInt-x[i];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>den<sp/>*=<sp/>x[j]-x[i];</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c[j]<sp/>=<sp/>num<sp/>/<sp/>den;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_LOUtil_K.H"/>
   </compounddef>

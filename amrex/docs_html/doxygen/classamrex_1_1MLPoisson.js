@@ -12,6 +12,7 @@ var classamrex_1_1MLPoisson =
     [ "Fapply", "classamrex_1_1MLPoisson.html#a228246373b0a8c05a2b8656725e3ad6a", null ],
     [ "FFlux", "classamrex_1_1MLPoisson.html#ada86917688ba1183c91948846b316344", null ],
     [ "Fsmooth", "classamrex_1_1MLPoisson.html#a420216f540519af7ead6ca22fd1f2e3f", null ],
+    [ "get_dpdn_on_domain_faces", "classamrex_1_1MLPoisson.html#a26a2e9dd3d9b66c0c28edff18ad00e83", null ],
     [ "getACoeffs", "classamrex_1_1MLPoisson.html#a7f08612c1b68a7acf871a660d6964d1c", null ],
     [ "getAScalar", "classamrex_1_1MLPoisson.html#a38d2d286fac339214ebc0675d1aa33aa", null ],
     [ "getBCoeffs", "classamrex_1_1MLPoisson.html#a564bd0b4593a7dd540054efc59da5138", null ],

@@ -7278,6 +7278,7 @@
     <member refid="classamrex_1_1MLPoisson_1a92cdc76d121dbcf72edad3dd82b25e77" kind="function"><name>makeNLinOp</name></member>
     <member refid="classamrex_1_1MLPoisson_1a02af5f787e3630e0de7112f48fcb0160" kind="function"><name>supportNSolve</name></member>
     <member refid="classamrex_1_1MLPoisson_1afad3ba6e2e581217bde559c9d7b92098" kind="function"><name>copyNSolveSolution</name></member>
+    <member refid="classamrex_1_1MLPoisson_1a26a2e9dd3d9b66c0c28edff18ad00e83" kind="function"><name>get_dpdn_on_domain_faces</name></member>
   </compound>
   <compound refid="classamrex_1_1MLTensorOp" kind="class"><name>amrex::MLTensorOp</name>
     <member refid="classamrex_1_1MLTensorOp_1a15ebbe140a2faea1fccb3b4bb71ddb60" kind="variable"><name>m_needs_update</name></member>
@@ -7310,6 +7311,20 @@
     <member refid="classamrex_1_1MLTensorOp_1a365317f94f2141fd23b7e865996bcb58" kind="function"><name>compVelGrad</name></member>
     <member refid="classamrex_1_1MLTensorOp_1afd1fbd89d6fdbe0014a9efeaf4e6ce06" kind="function"><name>applyBCTensor</name></member>
     <member refid="classamrex_1_1MLTensorOp_1aec6c60aa0be2285afbcb0ea8b13efe93" kind="function"><name>setBCoeffs</name></member>
+  </compound>
+  <compound refid="structamrex_1_1openbc_1_1Moments" kind="struct"><name>amrex::openbc::Moments</name>
+    <member refid="structamrex_1_1openbc_1_1Moments_1a9c2df64bd33ff4b0115d3d4e66a0a64c" kind="typedef"><name>array_type</name></member>
+    <member refid="structamrex_1_1openbc_1_1Moments_1a8479610f91f050e03aa5738c513500d2" kind="variable"><name>mom</name></member>
+    <member refid="structamrex_1_1openbc_1_1Moments_1ae6db912d553d631bb09b61be167b59e9" kind="variable"><name>x</name></member>
+    <member refid="structamrex_1_1openbc_1_1Moments_1adb6657fa49f022a5f02ab1a51fafeac0" kind="variable"><name>y</name></member>
+    <member refid="structamrex_1_1openbc_1_1Moments_1a014340bfb64fc9518ac7541cd634253c" kind="variable"><name>z</name></member>
+    <member refid="structamrex_1_1openbc_1_1Moments_1aa1e9cd4a538973217a64708b921d4ada" kind="variable"><name>face</name></member>
+  </compound>
+  <compound refid="structamrex_1_1openbc_1_1MomTag" kind="struct"><name>amrex::openbc::MomTag</name>
+    <member refid="structamrex_1_1openbc_1_1MomTag_1a886bcabd4fa635b87082757fb595cc6c" kind="variable"><name>gp</name></member>
+    <member refid="structamrex_1_1openbc_1_1MomTag_1aeade94c9720a2866e2b569a11b0ae142" kind="variable"><name>b2d</name></member>
+    <member refid="structamrex_1_1openbc_1_1MomTag_1a94c8e6d912bcbcefb65e98b0e28a9ac8" kind="variable"><name>face</name></member>
+    <member refid="structamrex_1_1openbc_1_1MomTag_1a29156afc0392ae965c03200dd3fae7f1" kind="variable"><name>offset</name></member>
   </compound>
   <compound refid="structMPI__Status" kind="struct"><name>MPI_Status</name>
   </compound>
@@ -7859,6 +7874,49 @@
   <compound refid="structamrex_1_1NumComps" kind="struct"><name>amrex::NumComps</name>
     <member refid="structamrex_1_1NumComps_1a51d8b50d57ee8a52833c414ae13a5381" kind="variable"><name>n</name></member>
     <member refid="structamrex_1_1NumComps_1a810ccab9fa653cd2a504f2539eaa4c1f" kind="function"><name>NumComps</name></member>
+  </compound>
+  <compound refid="classamrex_1_1OpenBCSolver" kind="class"><name>amrex::OpenBCSolver</name>
+    <member refid="classamrex_1_1OpenBCSolver_1a0ca647ecd06b85d8b1ae579ae02895d5" kind="variable"><name>m_verbose</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a1d6c905d586d04d63a33985d4a919ce2" kind="variable"><name>m_geom</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a036b6904fd09ed914a7b12ebc900034a" kind="variable"><name>m_grids</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1aa8a7ddd4f65f8f43b9df11669e7720cf" kind="variable"><name>m_dmap</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1aeec6daa6ebe88ef8eaf6491af2f02cd6" kind="variable"><name>m_info</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a709e83e70ab954da3922f40d676b5295" kind="variable"><name>m_poisson_1</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a30bb1d5c74178f67ac147168cf5d7e27" kind="variable"><name>m_poisson_2</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1af4f8bd2cd9315ff6b44f81cc1e4a2d6f" kind="variable"><name>m_mlmg_1</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a97b6170ecb8747fcc50cfc8fb11da671" kind="variable"><name>m_mlmg_2</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a3d401d8f6e037bf70fe52989385f4dac" kind="variable"><name>m_coarsen_ratio</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1ae7fada71ee96535887f907f28e17246c" kind="variable"><name>m_dpdn</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a637ef773d76e4ded161fdde7e2057d7e" kind="variable"><name>m_momtags_h</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a42401091098315c9aaab7a635345692f" kind="variable"><name>m_momtags_d</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a80eeb93e042aaf3ba2197349b17e85c0" kind="variable"><name>m_ngpublocks_h</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a08a177855c8f971da2aa51ebc08041bf" kind="variable"><name>m_ngpublocks_d</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a5d5c2037341dc1939ceb71904c642f7e" kind="variable"><name>m_nthreads_momtag</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1ac4211b50259bcddcdb640a73362b0e19" kind="variable"><name>m_nblocks_local</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a23018825c7f4b69f2ccc208bc88cfaa0" kind="variable"><name>m_nblocks</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1ae1be4beb27cb3b3667cc36fdc6448415" kind="variable"><name>m_countvec</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a2c1236a694939f630bd82a59f383f00d" kind="variable"><name>m_offset</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a3a92090574e0adaf00fc51398e9fcc32" kind="variable"><name>m_ngrowdomain</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a25518d5cabb1d9332b6f8fb812d872cf" kind="variable"><name>m_crse_grown_faces_phi</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a5169dad1c41680aa536527c80486f3b6" kind="variable"><name>m_phind</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a597017e3faf53c6b6569a27fbf01ce3f" kind="variable"><name>m_bag</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1abb6fd098be05f5d6763cf26b71eedee9" kind="variable"><name>m_ba_all</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a4793209f81cbca41253a8ae8950480bc" kind="variable"><name>m_dm_all</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a2ede296c3da0102e0aaa954e923d4342" kind="variable"><name>m_geom_all</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a67f80b2378dbe69bcae2ed61f427f0f5" kind="function"><name>OpenBCSolver</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a31ec46379a45506dceab79e66c66f5c8" kind="function"><name>OpenBCSolver</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a03d5928d33717ca57878f6f45b19f7e3" kind="function"><name>~OpenBCSolver</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1aa89b51713976f2e1561966c3bd66574e" kind="function"><name>OpenBCSolver</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1ad780a1c2f297ad99edc26b462b3d65d5" kind="function"><name>OpenBCSolver</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1aa683523b9787a4de44ec76ce557094b0" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a7861601e913a4f49dd5be1338245f681" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1af01e6f4fb7c82f61c978d6afc1b20f4e" kind="function"><name>define</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a657ff95ca0e408729e171ef2a3ca2141" kind="function"><name>setVerbose</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a687b35c6ab5b576840ab03ae61a898ab" kind="function"><name>solve</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1addf5ecada6e7f7ece057304b8547c5a8" kind="function"><name>compute_moments</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1ac0363c008c9b41babb1758a686a397d0" kind="function"><name>compute_potential</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1a5e29bc57a9ca4bc8ef562a731a373871" kind="function"><name>interpolate_potential</name></member>
+    <member refid="classamrex_1_1OpenBCSolver_1ac9096a2954bfd6a9f717711b294b9f95" kind="function"><name>bcast_moments</name></member>
   </compound>
   <compound refid="structamrex_1_1BinPolicy_1_1OpenMPBinPolicy" kind="struct"><name>amrex::BinPolicy::OpenMPBinPolicy</name>
   </compound>
@@ -9886,6 +9944,9 @@
   </compound>
   <compound refid="structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4" kind="struct"><name>amrex::Gpu::SharedMemory&lt; long long &gt;</name>
     <member refid="structamrex_1_1Gpu_1_1SharedMemory_3_01long_01long_01_4_1a6498967b3ecefd257bff40a52fe6affb" kind="function"><name>dataPtr</name></member>
+  </compound>
+  <compound refid="structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4" kind="struct"><name>amrex::Gpu::SharedMemory&lt; openbc::Moments::array_type &gt;</name>
+    <member refid="structamrex_1_1Gpu_1_1SharedMemory_3_01openbc_1_1Moments_1_1array__type_01_4_1aca108787de55ebdc311eb28d421a6fd9" kind="function"><name>dataPtr</name></member>
   </compound>
   <compound refid="structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4" kind="struct"><name>amrex::Gpu::SharedMemory&lt; short &gt;</name>
     <member refid="structamrex_1_1Gpu_1_1SharedMemory_3_01short_01_4_1a1264c2471c53840fa6e825ba28978223" kind="function"><name>dataPtr</name></member>
@@ -12060,6 +12121,7 @@
     <member refid="namespaceamrex_1af2bf25abc31c0e385f06936425f29c1d" kind="function"><name>interpbndrydata_z_o3</name></member>
     <member refid="namespaceamrex_1a326873b485cf73b0daa906dda88ee008" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceamrex_1a21e5b8295b57ab90e4ddd05a04ca5a85" kind="function"><name>poly_interp_coeff</name></member>
+    <member refid="namespaceamrex_1af2743cd3ee5067a885cb1abecf2f1a72" kind="function"><name>poly_interp_coeff</name></member>
     <member refid="namespaceamrex_1a255f1f8c5e709392a949283da47211f5" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceamrex_1aeddafb7300c5464e3bf385c510ddb5e0" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="namespaceamrex_1ad75cd67f1791f528fbba104045280e6e" kind="function"><name>yafluxreg_crseadd</name></member>
@@ -12619,9 +12681,9 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0d602" kind="namespace"><name>amrex::@602</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d608" kind="namespace"><name>amrex::@608</name>
+  <compound refid="namespaceamrex_1_1_0d611" kind="namespace"><name>amrex::@611</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0d615" kind="namespace"><name>amrex::@615</name>
+  <compound refid="namespaceamrex_1_1_0d618" kind="namespace"><name>amrex::@618</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0d70" kind="namespace"><name>amrex::@70</name>
   </compound>
@@ -13258,6 +13320,17 @@
     <member refid="namespaceamrex_1_1NonLocalBC_1a691dc7cd1b0fb5c65e64b2ecda39169e" kind="function"><name>FillPolar</name></member>
     <member refid="namespaceamrex_1_1NonLocalBC_1ad27d4e549420f04e09a0257f7bf1a061" kind="function"><name>Comm_nowait</name></member>
     <member refid="namespaceamrex_1_1NonLocalBC_1af9ec0d9354978f736d6d42e6b79bfb32" kind="function"><name>Comm_finish</name></member>
+  </compound>
+  <compound refid="namespaceamrex_1_1openbc" kind="namespace"><name>amrex::openbc</name>
+    <member refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kind="variable"><name>M</name></member>
+    <member refid="namespaceamrex_1_1openbc_1adde2e79c224bebd89be90830c87b7a74" kind="variable"><name>P</name></member>
+    <member refid="namespaceamrex_1_1openbc_1a492f8cd348a9cfb3805468d3f1081e17" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespaceamrex_1_1openbc_1a64049f3606c3c05adb718242b9bb48a3" kind="function"><name>scale_moments</name></member>
+    <member refid="namespaceamrex_1_1openbc_1acc33b913d7ecfb81353190b3ce2e95df" kind="function"><name>block_potential</name></member>
+    <member refid="namespaceamrex_1_1openbc_1acce74b37bc2ee4518cb6bd2d058f2b53" kind="function"><name>interp_coef</name></member>
+    <member refid="namespaceamrex_1_1openbc_1a9fe6fda4f0515c834002a49cba04cc2e" kind="function"><name>interpccx</name></member>
+    <member refid="namespaceamrex_1_1openbc_1a765bedd56cb0c8e024a821cc942663bf" kind="function"><name>interpccy</name></member>
+    <member refid="namespaceamrex_1_1openbc_1a8233d38e6789cbe1cd5dc3138f4bd389" kind="function"><name>interpccz</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1OpenMP" kind="namespace"><name>amrex::OpenMP</name>
     <member refid="namespaceamrex_1_1OpenMP_1ab20933abbde0f4d52baff34fd3d0f10a" kind="function"><name>get_num_threads</name></member>
@@ -16893,6 +16966,12 @@
   </compound>
   <compound refid="AMReX__MLTensorOp__grad_8cpp" kind="file"><name>AMReX_MLTensorOp_grad.cpp</name>
   </compound>
+  <compound refid="AMReX__OpenBC_8cpp" kind="file"><name>AMReX_OpenBC.cpp</name>
+  </compound>
+  <compound refid="AMReX__OpenBC_8H" kind="file"><name>AMReX_OpenBC.H</name>
+  </compound>
+  <compound refid="AMReX__OpenBC__K_8H" kind="file"><name>AMReX_OpenBC_K.H</name>
+  </compound>
   <compound refid="AMReX__ArrayOfStructs_8H" kind="file"><name>AMReX_ArrayOfStructs.H</name>
   </compound>
   <compound refid="AMReX__BinIterator_8H" kind="file"><name>AMReX_BinIterator.H</name>
@@ -17007,6 +17086,8 @@
   <compound refid="dir_25f1d00fd66065d0aa2a8720d1ed1df5" kind="dir"><name>/home/runner/work/amrex/amrex/Src/LinearSolvers</name>
   </compound>
   <compound refid="dir_25d7822c1b649e6df029ec2b7597a2a5" kind="dir"><name>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG</name>
+  </compound>
+  <compound refid="dir_ec3321dc65bacf9068b9f722dcf8a841" kind="dir"><name>/home/runner/work/amrex/amrex/Src/LinearSolvers/OpenBC</name>
   </compound>
   <compound refid="dir_a3d35c88284bcc9e68dd82330f2a8332" kind="dir"><name>/home/runner/work/amrex/amrex/Src/Base/Parser</name>
   </compound>
