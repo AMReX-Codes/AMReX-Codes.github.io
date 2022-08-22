@@ -598,7 +598,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;          <span class="keyword">typename</span> = std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;,</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;          <span class="keyword">typename</span> = std::enable_if_t&lt;IsDataPacking&lt;DataPacking, FAB&gt;::value&gt;&gt;</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<a class="code" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">AMREX_NODISCARD</a> CommHandler</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<a class="code" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">AMREX_NODISCARD</a> <a class="code" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a></div>
 <div class="line"><a name="l00701"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d">  701</a></span>&#160;<a class="code" href="namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d">ParallelCopy_nowait</a> (<a class="code" href="structamrex_1_1NonLocalBC_1_1NoLocalCopy.html">NoLocalCopy</a>, <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp; dest, <span class="keyword">const</span> <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp; src,</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                     <span class="keyword">const</span> <a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a>&amp; cmd, <span class="keyword">const</span> DataPacking&amp; data_packing) {</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <a class="code" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> handler{};</div>
@@ -626,9 +626,9 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="keywordflow">return</span> handler;</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;}</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;CommHandler <a class="code" href="namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d">ParallelCopy_nowait</a> (NoLocalCopy, <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp;, <span class="keyword">const</span> <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp;,</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<a class="code" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a> <a class="code" href="namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d">ParallelCopy_nowait</a> (NoLocalCopy, <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp;, <span class="keyword">const</span> <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp;,</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a>&amp;, <span class="keyword">const</span> DataPacking&amp;) {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">return</span> CommHandler{};</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a>{};</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
@@ -682,7 +682,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    }</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;}</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;<a class="code" href="namespaceamrex_1_1NonLocalBC.html#a51fb0add78ab242015474585b0f7207e">ParallelCopy_finish</a> (<a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp;, CommHandler, <span class="keyword">const</span> <a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a>&amp;, <span class="keyword">const</span> DataPacking&amp;) {}</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;<a class="code" href="namespaceamrex_1_1NonLocalBC.html#a51fb0add78ab242015474585b0f7207e">ParallelCopy_finish</a> (<a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a>&amp;, <a class="code" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">CommHandler</a>, <span class="keyword">const</span> <a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">FabArrayBase::CommMetaData</a>&amp;, <span class="keyword">const</span> DataPacking&amp;) {}</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160; </div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> FAB, <span class="keyword">typename</span> DataPacking&gt;</div>
@@ -774,7 +774,16 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160; </div>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__NonLocalBCImpl_8H.html">AMReX_NonLocalBCImpl.H</a>&gt;</span></div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160; </div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> {</div>
+<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1NonLocalBC.html#ac09ca9edc6d06054f9f1c62d5627c916">NonLocalBC::ParallelCopy</a>;</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1NonLocalBC.html#a7bf19b06a9bab53ac6dea6bfa875af9d">NonLocalBC::ParallelCopy_nowait</a>;</div>
+<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1NonLocalBC.html#a51fb0add78ab242015474585b0f7207e">NonLocalBC::ParallelCopy_finish</a>;</div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;    <span class="keyword">using</span> NonLocalBC::MultiBlockIndexMapping;</div>
+<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;    <span class="keyword">using</span> NonLocalBC::MultiBlockCommMetaData;</div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;    <span class="keyword">using</span> NonLocalBC::CommHandler;</div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;}</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160; </div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
