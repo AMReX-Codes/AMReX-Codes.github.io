@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['qall_15707',['Qall',['../classSDCstruct.html#ae4f82ca9e75b2c19aeb29f7bd951e5c3',1,'SDCstruct']]],
-  ['qexp_15708',['Qexp',['../classSDCstruct.html#a6e4cb54efa5588875042c900b12ed1f0',1,'SDCstruct']]],
-  ['qgauss_15709',['Qgauss',['../classSDCstruct.html#ad62b8f4e5d90f40928e8b5c3a8e0a1ed',1,'SDCstruct']]],
-  ['qimp_15710',['Qimp',['../classSDCstruct.html#a81893e7f180d9832cbc185535fde4ca0',1,'SDCstruct']]],
-  ['qlu_15711',['QLU',['../classSDCstruct.html#af8cf02cc9385ebff2a345a027e7af0ba',1,'SDCstruct']]],
-  ['qnodes_15712',['qnodes',['../classSDCstruct.html#a31a4078930e156dc28589750c88b7fb3',1,'SDCstruct']]],
-  ['qp_15713',['qp',['../namespacesdcquadrature__mod.html#a3b6ebab50bdb3680467e36128f5e4f53',1,'sdcquadrature_mod']]],
-  ['qtype_15714',['qtype',['../classSDCstruct.html#a6ce083cc22a392cc9a487fcd854387ac',1,'SDCstruct']]],
-  ['quadratic_5finterp_15715',['quadratic_interp',['../namespaceamrex.html#a598d5de93b75c979f72ab8a78f4a0048',1,'amrex']]],
-  ['quartic_5finterp_15716',['quartic_interp',['../namespaceamrex.html#a1c282d3f8e2bfed573c63087cee86525',1,'amrex']]]
+  ['qall_15713',['Qall',['../classSDCstruct.html#ae4f82ca9e75b2c19aeb29f7bd951e5c3',1,'SDCstruct']]],
+  ['qexp_15714',['Qexp',['../classSDCstruct.html#a6e4cb54efa5588875042c900b12ed1f0',1,'SDCstruct']]],
+  ['qgauss_15715',['Qgauss',['../classSDCstruct.html#ad62b8f4e5d90f40928e8b5c3a8e0a1ed',1,'SDCstruct']]],
+  ['qimp_15716',['Qimp',['../classSDCstruct.html#a81893e7f180d9832cbc185535fde4ca0',1,'SDCstruct']]],
+  ['qlu_15717',['QLU',['../classSDCstruct.html#af8cf02cc9385ebff2a345a027e7af0ba',1,'SDCstruct']]],
+  ['qnodes_15718',['qnodes',['../classSDCstruct.html#a31a4078930e156dc28589750c88b7fb3',1,'SDCstruct']]],
+  ['qp_15719',['qp',['../namespacesdcquadrature__mod.html#a3b6ebab50bdb3680467e36128f5e4f53',1,'sdcquadrature_mod']]],
+  ['qtype_15720',['qtype',['../classSDCstruct.html#a6ce083cc22a392cc9a487fcd854387ac',1,'SDCstruct']]],
+  ['quadratic_5finterp_15721',['quadratic_interp',['../namespaceamrex.html#a598d5de93b75c979f72ab8a78f4a0048',1,'amrex']]],
+  ['quartic_5finterp_15722',['quartic_interp',['../namespaceamrex.html#a1c282d3f8e2bfed573c63087cee86525',1,'amrex']]]
 ];

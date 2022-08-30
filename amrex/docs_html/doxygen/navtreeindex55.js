@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"functions_vars_q.html":[2,3,2,17],
+"functions_vars_r.html":[2,3,2,18],
+"functions_vars_s.html":[2,3,2,19],
+"functions_vars_t.html":[2,3,2,20],
 "functions_vars_u.html":[2,3,2,21],
 "functions_vars_v.html":[2,3,2,22],
 "functions_vars_w.html":[2,3,2,23],
@@ -241,13 +245,9 @@ var NAVTREEINDEX55 =
 "namespaceamrex.html":[1,0,0],
 "namespaceamrex.html":[2,0,0],
 "namespaceamrex_1_1Amrvis.html":[1,0,0,1],
-"namespaceamrex_1_1AsyncOut.html":[1,0,0,2],
 "namespaceamrex_1_1AsyncOut.html":[2,0,0,1],
+"namespaceamrex_1_1AsyncOut.html":[1,0,0,2],
 "namespaceamrex_1_1BGColor.html":[1,0,0,3],
 "namespaceamrex_1_1BinPolicy.html":[2,0,0,2],
-"namespaceamrex_1_1BinPolicy.html":[1,0,0,4],
-"namespaceamrex_1_1Cuda.html":[1,0,0,5],
-"namespaceamrex_1_1EB2.html":[1,0,0,8],
-"namespaceamrex_1_1EB2.html":[2,0,0,4],
-"namespaceamrex_1_1EB2_1_1IIF__detail.html":[1,0,0,8,0]
+"namespaceamrex_1_1BinPolicy.html":[1,0,0,4]
 };

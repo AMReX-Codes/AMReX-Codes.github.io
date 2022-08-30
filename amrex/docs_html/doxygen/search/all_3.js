@@ -371,7 +371,7 @@ var searchData=
   ['cssize_2123',['csSize',['../classCommProfStats.html#af705693efa58487843e7624857f94399',1,'CommProfStats']]],
   ['csversion_2124',['csVersion',['../classRegionsProfStats.html#ae262ff88e11aded2e904267db1e94a56',1,'RegionsProfStats']]],
   ['cudastream_2125',['cudaStream',['../classamrex_1_1Gpu_1_1Device.html#a659a046032f304e13547b3b633e7c10a',1,'amrex::Gpu::Device']]],
-  ['cumtime_2126',['cumtime',['../classamrex_1_1Amr.html#a9b46db71980158bc8f12c2f7eebede4a',1,'amrex::Amr::cumtime()'],['../classamrex_1_1Amr.html#ae1a7de4bbf27289ccab4e3b8364a7c83',1,'amrex::Amr::cumTime() const noexcept']]],
+  ['cumtime_2126',['cumTime',['../classamrex_1_1Amr.html#ae1a7de4bbf27289ccab4e3b8364a7c83',1,'amrex::Amr::cumTime() const noexcept'],['../classamrex_1_1Amr.html#a9b46db71980158bc8f12c2f7eebede4a',1,'amrex::Amr::cumtime()']]],
   ['curlevel_2127',['curLevel',['../classamrex_1_1XYPlotDataList.html#a125f114aafc7c3b80d2a84a1cd77314d',1,'amrex::XYPlotDataList::curLevel()'],['../classamrex_1_1XYPlotDataList.html#af0712096e78d8f38eea8c4b2e8251f05',1,'amrex::XYPlotDataList::CurLevel() const']]],
   ['current_5fbuilds_2128',['current_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#a1af174d3541b8cb0ffddf9902562db08',1,'amrex::MemProfiler::NBuildsInfo']]],
   ['current_5fbytes_2129',['current_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a821bd45f3af572df6c5dad7f24de66fc',1,'amrex::MemProfiler::MemInfo']]],

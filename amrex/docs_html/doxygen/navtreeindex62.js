@@ -1,5 +1,9 @@
 var NAVTREEINDEX62 =
 {
+"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,266],
+"structamrex_1_1IsStoreAtomic.html":[2,0,0,267],
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,268],
+"structamrex_1_1LPInfo.html":[2,0,0,275],
 "structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,275,17],
 "structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,275,18],
 "structamrex_1_1LPInfo.html#a2adef9e34d1e183d6fe240d63ac5e62a":[2,0,0,275,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX62 =
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#aa619d771c598cba66bd8e10b064aa3a5":[2,0,0,11,15,4],
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#abb3db0e8e5221ee3116e277385c87bc5":[2,0,0,11,15,1],
 "structamrex_1_1NonLocalBC_1_1PolarFn.html#adae8c23737504d11978f812f253631a0":[2,0,0,11,15,2],
-"structamrex_1_1NonLocalBC_1_1PolarFn.html#ae95ad91feedc2a0b50fb7093090bb78d":[2,0,0,11,15,0],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html":[2,0,0,11,16],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a1302ef1e60c9888f4d6c6bfbec335e83":[2,0,0,11,16,0],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a2cb01b1486ad5c3e09971e6d552cc26a":[2,0,0,11,16,3],
-"structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8":[2,0,0,11,16,6]
+"structamrex_1_1NonLocalBC_1_1PolarFn.html#ae95ad91feedc2a0b50fb7093090bb78d":[2,0,0,11,15,0]
 };

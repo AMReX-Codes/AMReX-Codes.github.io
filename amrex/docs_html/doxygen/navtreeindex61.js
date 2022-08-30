@@ -1,5 +1,9 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,6,13],
+"structamrex_1_1Gpu_1_1DeviceToHost.html":[2,0,0,6,14],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html":[2,0,0,6,16],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a08f6a3b8fe37c3a6c070a86b6771abf4":[2,0,0,6,16,4],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#a37cfbe8246a2b757ee9753ee96f03385":[2,0,0,6,16,3],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#a383b070cb13bc99de64062941d521149":[2,0,0,6,16,5],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#a59e4685120009f8432768699e898fd98":[2,0,0,6,16,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1IsFabArray.html":[2,0,0,262],
 "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,263],
 "structamrex_1_1IsMultiFabIterator.html":[2,0,0,264],
-"structamrex_1_1IsPolymorphicArenaAllocator.html":[2,0,0,265],
-"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,266],
-"structamrex_1_1IsStoreAtomic.html":[2,0,0,267],
-"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,268],
-"structamrex_1_1LPInfo.html":[2,0,0,275]
+"structamrex_1_1IsPolymorphicArenaAllocator.html":[2,0,0,265]
 };

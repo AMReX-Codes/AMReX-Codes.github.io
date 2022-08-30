@@ -130,6 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af01e6f4fb7c82f61c978d6afc1b20f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a657ff95ca0e408729e171ef2a3ca2141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a657ff95ca0e408729e171ef2a3ca2141">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v) noexcept</td></tr>
 <tr class="separator:a657ff95ca0e408729e171ef2a3ca2141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebed57922b06a40a22b8e77048fade35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#aebed57922b06a40a22b8e77048fade35">setBottomVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v) noexcept</td></tr>
+<tr class="separator:aebed57922b06a40a22b8e77048fade35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ca175723edf119484f91db70abd0ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a69ca175723edf119484f91db70abd0ca">useHypre</a> (bool use_hypre) noexcept</td></tr>
+<tr class="separator:a69ca175723edf119484f91db70abd0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687b35c6ab5b576840ab03ae61a898ab"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a687b35c6ab5b576840ab03ae61a898ab">solve</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_sol, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const * &gt; &amp;a_rhs, Real a_tol_rel, Real a_tol_abs)</td></tr>
 <tr class="separator:a687b35c6ab5b576840ab03ae61a898ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addf5ecada6e7f7ece057304b8547c5a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#addf5ecada6e7f7ece057304b8547c5a8">compute_moments</a> (<a class="el" href="namespaceamrex_1_1Gpu.html#a99e1f048890efc1c275606cb9bdc41c7">Gpu::DeviceVector</a>&lt; <a class="el" href="structamrex_1_1openbc_1_1Moments.html">openbc::Moments</a> &gt; &amp;moments)</td></tr>
@@ -148,6 +152,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0ca647ecd06b85d8b1ae579ae02895d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a0ca647ecd06b85d8b1ae579ae02895d5">m_verbose</a> = 0</td></tr>
 <tr class="separator:a0ca647ecd06b85d8b1ae579ae02895d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4bd2677d8bb695cffd7a476ad3a68b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#aac4bd2677d8bb695cffd7a476ad3a68b">m_bottom_verbose</a> = 0</td></tr>
+<tr class="separator:aac4bd2677d8bb695cffd7a476ad3a68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d6c905d586d04d63a33985d4a919ce2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a1d6c905d586d04d63a33985d4a919ce2">m_geom</a></td></tr>
 <tr class="separator:a1d6c905d586d04d63a33985d4a919ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a036b6904fd09ed914a7b12ebc900034a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a036b6904fd09ed914a7b12ebc900034a">m_grids</a></td></tr>
@@ -164,6 +170,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af4f8bd2cd9315ff6b44f81cc1e4a2d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97b6170ecb8747fcc50cfc8fb11da671"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLMG.html">MLMG</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a97b6170ecb8747fcc50cfc8fb11da671">m_mlmg_2</a></td></tr>
 <tr class="separator:a97b6170ecb8747fcc50cfc8fb11da671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6794548ac1811d752900f18875e596b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">BottomSolver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a6794548ac1811d752900f18875e596b5">m_bottom_solver_type</a> = <a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4ae123b37d2b5fd373237e049a1e68ca13">BottomSolver::bicgstab</a></td></tr>
+<tr class="separator:a6794548ac1811d752900f18875e596b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d401d8f6e037bf70fe52989385f4dac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#a3d401d8f6e037bf70fe52989385f4dac">m_coarsen_ratio</a> = 0</td></tr>
 <tr class="separator:a3d401d8f6e037bf70fe52989385f4dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7fada71ee96535887f907f28e17246c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1OpenBCSolver.html#ae7fada71ee96535887f907f28e17246c">m_dpdn</a></td></tr>
@@ -504,6 +512,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aebed57922b06a40a22b8e77048fade35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebed57922b06a40a22b8e77048fade35">&#9670;&nbsp;</a></span>setBottomVerbose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::OpenBCSolver::setBottomVerbose </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a657ff95ca0e408729e171ef2a3ca2141"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a657ff95ca0e408729e171ef2a3ca2141">&#9670;&nbsp;</a></span>setVerbose()</h2>
 
@@ -570,6 +604,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a69ca175723edf119484f91db70abd0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ca175723edf119484f91db70abd0ca">&#9670;&nbsp;</a></span>useHypre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::OpenBCSolver::useHypre </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_hypre</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="abb6fd098be05f5d6763cf26b71eedee9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb6fd098be05f5d6763cf26b71eedee9">&#9670;&nbsp;</a></span>m_ba_all</h2>
@@ -604,6 +664,50 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> amrex::OpenBCSolver::m_bag</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6794548ac1811d752900f18875e596b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6794548ac1811d752900f18875e596b5">&#9670;&nbsp;</a></span>m_bottom_solver_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">BottomSolver</a> amrex::OpenBCSolver::m_bottom_solver_type = <a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4ae123b37d2b5fd373237e049a1e68ca13">BottomSolver::bicgstab</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac4bd2677d8bb695cffd7a476ad3a68b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4bd2677d8bb695cffd7a476ad3a68b">&#9670;&nbsp;</a></span>m_bottom_verbose</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrex::OpenBCSolver::m_bottom_verbose = 0</td>
         </tr>
       </table>
   </td>
