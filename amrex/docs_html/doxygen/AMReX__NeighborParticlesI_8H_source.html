@@ -923,140 +923,142 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; this-&gt;numLevels(); ++lev)</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    {</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="comment">// clear previous neighbor particle ids</span></div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; keyval: m_boundary_particle_ids[lev]) {</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;          keyval.second.clear();</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        }</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160; </div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter.html">MyParIter</a> pti(*<span class="keyword">this</span>, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;            <a class="code" href="classamrex_1_1NeighborParticleContainer.html#a0c2a28aef7db24fbfccc53f46637a582">PairIndex</a> index(pti.index(), pti.LocalTileIndex());</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160; </div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            <span class="comment">// id of actual particles that need to be sent</span></div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            m_boundary_particle_ids[lev][index];</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            m_boundary_particle_ids[lev][index].resize(pti.numNeighborParticles());</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="keyword">auto</span>* p_boundary_particle_ids = m_boundary_particle_ids[lev][index].dataPtr();</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160; </div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos     = pti.GetArrayOfStructs();</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>* pstruct = aos().dataPtr();</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> ptile_data = this-&gt;ParticlesAt(lev, pti).getConstParticleTileData();</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160; </div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> grownBox  = pti.tilebox();</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            grownBox.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(<a class="code" href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">computeRefFac</a>(0, lev).<a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">max</a>()*m_num_neighbor_cells);</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">lbound</a>(grownBox);</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">ubound</a>(grownBox);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> box       = pti.validbox();</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160; </div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; geom    = this-&gt;Geom(lev);</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  domain  = geom.Domain();</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  dxi     = geom.InvCellSizeArray();</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  plo     = geom.ProbLoArray();</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span>  np_real        = pti.numRealParticles();</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span>  np_total       = aos().size();</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160; </div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <a class="code" href="classamrex_1_1DenseBins.html">DenseBins&lt;ParticleType&gt;</a> bins;</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            bins.<a class="code" href="classamrex_1_1DenseBins.html#a5eb07c849d5749bf5aa71d0d2727201d">build</a>(np_total, pstruct, grownBox,</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                      [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1NeighborParticleContainer.html#ab9497648313d317adc40bc7bebb5ca2d">ParticleType</a>&amp; p) noexcept -&gt; <a class="code" href="classamrex_1_1IntVect.html">IntVect</a></div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                      {</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                          <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((p.pos(0)-plo[0])*dxi[0]) - lo.x);</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                          <span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((p.pos(1)-plo[1])*dxi[1]) - lo.y);</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                          <span class="keywordtype">int</span> k = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((p.pos(2)-plo[2])*dxi[2]) - lo.z);</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                          <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(i &gt;= 0);, <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(j &gt;= 0);, <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(k &gt;= 0));</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                          <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(i, j, k));</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                        });</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160; </div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            <span class="keyword">auto</span> pperm   = bins.<a class="code" href="classamrex_1_1DenseBins.html#ab50df3946feebe789f41c7d01762a30b">permutationPtr</a>();</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;            <span class="keyword">auto</span> poffset = bins.<a class="code" href="classamrex_1_1DenseBins.html#a3448e9a533b211d486f42f06f9736218">offsetsPtr</a>();</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <a class="code" href="classamrex_1_1Gpu_1_1Buffer.html">Gpu::Buffer&lt;unsigned int&gt;</a> np_boundary({0});</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* p_np_boundary = np_boundary.<a class="code" href="classamrex_1_1Gpu_1_1Buffer.html#a3c1a6f7fdd37b0efeabc75f9f2375a1f">data</a>();</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_unsigned_int = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;unsigned int&gt;::max</a>();</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a> ( np_real, i,</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            {</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((pstruct[i].pos(0)-plo[0])*dxi[0])) - lo.x,</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((pstruct[i].pos(1)-plo[1])*dxi[1])) - lo.y,</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((pstruct[i].pos(2)-plo[2])*dxi[2])) - lo.z));</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                <span class="keyword">auto</span> iv3 = iv.<a class="code" href="classamrex_1_1IntVect.html#ab58021983f7ea091fa42717851af0a3a">dim3</a>();</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                <span class="keywordtype">int</span> ix = iv3.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>;</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                <span class="keywordtype">int</span> iy = iv3.y;</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                <span class="keywordtype">int</span> iz = iv3.z;</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160; </div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                <span class="keywordtype">int</span> nx = hi.x-lo.x+1;</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                <span class="keywordtype">int</span> ny = hi.y-lo.y+1;</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                <span class="keywordtype">int</span> nz = hi.z-lo.z+1;</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                <span class="keywordtype">bool</span> isActualNeighbor = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(ix-num_cells, 0); ii &lt;= <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(ix+num_cells, nx); ++ii) {</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(iy-num_cells, 0); jj &lt;= <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(iy+num_cells, ny); ++jj) {</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(iz-num_cells, 0); kk &lt;= <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(iz+num_cells, nz); ++kk) {</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                            <span class="keywordflow">if</span> (isActualNeighbor) <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                            <span class="keywordtype">int</span> nbr_cell_id = (ii * ny + jj) * nz + kk;</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                            <span class="keywordflow">for</span> (<span class="keyword">auto</span> p = poffset[nbr_cell_id]; p &lt; poffset[nbr_cell_id+1]; ++p) {</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                                <span class="keywordflow">if</span> (pperm[p] == i) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                                <span class="keywordflow">if</span> (call_check_pair(check_pair, ptile_data, ptile_data, i, pperm[p])) {</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                                    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> cell_ijk = <a class="code" href="namespaceamrex.html#a6e7a7d55a9760a9b62a5675badced0e1">getParticleCell</a>(pstruct[pperm[p]], plo, dxi, domain);</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                                    <span class="keywordflow">if</span> (!box.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(cell_ijk)) {</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                                        <span class="keywordtype">int</span> loc = <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ac87e449691a622f1f9175c75cb79892a">Gpu::Atomic::Inc</a>(p_np_boundary, max_unsigned_int);</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                                        p_boundary_particle_ids[loc] = i;</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                                        isActualNeighbor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                                    }</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                                }<span class="comment">// end if check_pair</span></div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                            }</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                        }</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;                    }</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                }</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;            });<span class="comment">// end amrex_for_1d</span></div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* p_np_boundary_h = np_boundary.copyToHost();</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            m_boundary_particle_ids[lev][index].resize(*p_np_boundary_h);</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160; </div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        }<span class="comment">// end mypariter</span></div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    }<span class="comment">// end lev</span></div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;}</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::</a></div>
-<div class="line"><a name="l00922"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">  922</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">printNeighborList</a> ()</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;{</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;NeighborParticleContainer::printNeighborList&quot;</span>);</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160; </div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; this-&gt;numLevels(); ++lev)</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    {</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi = this-&gt;MakeMFIter(lev); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        {</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            <span class="keywordtype">int</span> gid = mfi.index();</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;            <span class="keywordtype">int</span> tid = mfi.LocalTileIndex();</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;            <span class="keyword">auto</span> index = std::make_pair(gid, tid);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            m_neighbor_list[lev][index].print();</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        }</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    }</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;}</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160; </div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::</a></div>
-<div class="line"><a name="l00941"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">  941</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">resizeContainers</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> num_levels)</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;{</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    this-&gt;reserveData();</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    this-&gt;resizeData();</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    <span class="keywordflow">if</span> ( <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(neighbors.size()) &lt;= num_levels )</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    {</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        neighbors.resize(num_levels);</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;        m_neighbor_list.resize(num_levels);</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        neighbor_list.resize(num_levels);</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        mask_ptr.resize(num_levels);</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        buffer_tag_cache.resize(num_levels);</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        local_neighbor_sizes.resize(num_levels);</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;        <span class="keywordflow">if</span> ( enableInverse() ) inverse_tags.resize(num_levels);</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;    }</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>((neighbors.size() == m_neighbor_list.size()) &amp;&amp;</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;                 (neighbors.size() == mask_ptr.size()     )    );</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;}</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="keywordflow">if</span> (!m_boundary_particle_ids.empty()) {</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;          <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; keyval: m_boundary_particle_ids[lev]) {</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            keyval.second.clear();</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;          }</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        }</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter.html">MyParIter</a> pti(*<span class="keyword">this</span>, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            <a class="code" href="classamrex_1_1NeighborParticleContainer.html#a0c2a28aef7db24fbfccc53f46637a582">PairIndex</a> index(pti.index(), pti.LocalTileIndex());</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            <span class="comment">// id of actual particles that need to be sent</span></div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            m_boundary_particle_ids[lev][index];</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            m_boundary_particle_ids[lev][index].resize(pti.numNeighborParticles());</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <span class="keyword">auto</span>* p_boundary_particle_ids = m_boundary_particle_ids[lev][index].dataPtr();</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160; </div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos     = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>* pstruct = aos().dataPtr();</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> ptile_data = this-&gt;ParticlesAt(lev, pti).getConstParticleTileData();</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> grownBox  = pti.tilebox();</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            grownBox.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(<a class="code" href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">computeRefFac</a>(0, lev).<a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">max</a>()*m_num_neighbor_cells);</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">lbound</a>(grownBox);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">ubound</a>(grownBox);</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> box       = pti.validbox();</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; geom    = this-&gt;Geom(lev);</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  domain  = geom.Domain();</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  dxi     = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>  plo     = geom.ProbLoArray();</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160; </div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span>  np_real        = pti.numRealParticles();</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">size_t</span>  np_total       = aos().size();</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160; </div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            <a class="code" href="classamrex_1_1DenseBins.html">DenseBins&lt;ParticleType&gt;</a> bins;</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            bins.<a class="code" href="classamrex_1_1DenseBins.html#a5eb07c849d5749bf5aa71d0d2727201d">build</a>(np_total, pstruct, grownBox,</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                      [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1NeighborParticleContainer.html#ab9497648313d317adc40bc7bebb5ca2d">ParticleType</a>&amp; p) noexcept -&gt; <a class="code" href="classamrex_1_1IntVect.html">IntVect</a></div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                      {</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                          <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((p.pos(0)-plo[0])*dxi[0]) - lo.x);</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                          <span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((p.pos(1)-plo[1])*dxi[1]) - lo.y);</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                          <span class="keywordtype">int</span> k = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((p.pos(2)-plo[2])*dxi[2]) - lo.z);</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                          <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(i &gt;= 0);, <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(j &gt;= 0);, <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(k &gt;= 0));</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160; </div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                          <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(i, j, k));</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                        });</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            <span class="keyword">auto</span> pperm   = bins.<a class="code" href="classamrex_1_1DenseBins.html#ab50df3946feebe789f41c7d01762a30b">permutationPtr</a>();</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <span class="keyword">auto</span> poffset = bins.<a class="code" href="classamrex_1_1DenseBins.html#a3448e9a533b211d486f42f06f9736218">offsetsPtr</a>();</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            <a class="code" href="classamrex_1_1Gpu_1_1Buffer.html">Gpu::Buffer&lt;unsigned int&gt;</a> np_boundary({0});</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* p_np_boundary = np_boundary.<a class="code" href="classamrex_1_1Gpu_1_1Buffer.html#a3c1a6f7fdd37b0efeabc75f9f2375a1f">data</a>();</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_unsigned_int = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;unsigned int&gt;::max</a>();</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160; </div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a> ( np_real, i,</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            {</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((pstruct[i].pos(0)-plo[0])*dxi[0])) - lo.x,</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((pstruct[i].pos(1)-plo[1])*dxi[1])) - lo.y,</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor((pstruct[i].pos(2)-plo[2])*dxi[2])) - lo.z));</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                <span class="keyword">auto</span> iv3 = iv.<a class="code" href="classamrex_1_1IntVect.html#ab58021983f7ea091fa42717851af0a3a">dim3</a>();</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                <span class="keywordtype">int</span> ix = iv3.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>;</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                <span class="keywordtype">int</span> iy = iv3.y;</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                <span class="keywordtype">int</span> iz = iv3.z;</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                <span class="keywordtype">int</span> nx = hi.x-lo.x+1;</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                <span class="keywordtype">int</span> ny = hi.y-lo.y+1;</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                <span class="keywordtype">int</span> nz = hi.z-lo.z+1;</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                <span class="keywordtype">bool</span> isActualNeighbor = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(ix-num_cells, 0); ii &lt;= <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(ix+num_cells, nx); ++ii) {</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(iy-num_cells, 0); jj &lt;= <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(iy+num_cells, ny); ++jj) {</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(iz-num_cells, 0); kk &lt;= <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(iz+num_cells, nz); ++kk) {</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                            <span class="keywordflow">if</span> (isActualNeighbor) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                            <span class="keywordtype">int</span> nbr_cell_id = (ii * ny + jj) * nz + kk;</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                            <span class="keywordflow">for</span> (<span class="keyword">auto</span> p = poffset[nbr_cell_id]; p &lt; poffset[nbr_cell_id+1]; ++p) {</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                                <span class="keywordflow">if</span> (pperm[p] == i) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                                <span class="keywordflow">if</span> (call_check_pair(check_pair, ptile_data, ptile_data, i, pperm[p])) {</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                                    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> cell_ijk = <a class="code" href="namespaceamrex.html#a6e7a7d55a9760a9b62a5675badced0e1">getParticleCell</a>(pstruct[pperm[p]], plo, dxi, domain);</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                                    <span class="keywordflow">if</span> (!box.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(cell_ijk)) {</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                                        <span class="keywordtype">int</span> loc = <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ac87e449691a622f1f9175c75cb79892a">Gpu::Atomic::Inc</a>(p_np_boundary, max_unsigned_int);</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                                        p_boundary_particle_ids[loc] = i;</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                                        isActualNeighbor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                                    }</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                                }<span class="comment">// end if check_pair</span></div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;                            }</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                        }</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;                    }</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;                }</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            });<span class="comment">// end amrex_for_1d</span></div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* p_np_boundary_h = np_boundary.copyToHost();</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            m_boundary_particle_ids[lev][index].resize(*p_np_boundary_h);</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160; </div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        }<span class="comment">// end mypariter</span></div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    }<span class="comment">// end lev</span></div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;}</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::</a></div>
+<div class="line"><a name="l00924"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">  924</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">printNeighborList</a> ()</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;{</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;NeighborParticleContainer::printNeighborList&quot;</span>);</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160; </div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; this-&gt;numLevels(); ++lev)</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    {</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi = this-&gt;MakeMFIter(lev); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        {</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;            <span class="keywordtype">int</span> gid = mfi.index();</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            <span class="keywordtype">int</span> tid = mfi.LocalTileIndex();</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="keyword">auto</span> index = std::make_pair(gid, tid);</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            m_neighbor_list[lev][index].print();</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;        }</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    }</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;}</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160; </div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">NeighborParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::</a></div>
+<div class="line"><a name="l00943"></a><span class="lineno"><a class="line" href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">  943</a></span>&#160;<a class="code" href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">resizeContainers</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> num_levels)</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;{</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    this-&gt;reserveData();</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    this-&gt;resizeData();</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    <span class="keywordflow">if</span> ( <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(neighbors.size()) &lt;= num_levels )</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    {</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        neighbors.resize(num_levels);</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        m_neighbor_list.resize(num_levels);</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        neighbor_list.resize(num_levels);</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        mask_ptr.resize(num_levels);</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;        buffer_tag_cache.resize(num_levels);</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;        local_neighbor_sizes.resize(num_levels);</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;        <span class="keywordflow">if</span> ( enableInverse() ) inverse_tags.resize(num_levels);</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    }</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160; </div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>((neighbors.size() == m_neighbor_list.size()) &amp;&amp;</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;                 (neighbors.size() == mask_ptr.size()     )    );</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:51</div></div>
@@ -1118,7 +1120,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_a0c2a28aef7db24fbfccc53f46637a582"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#a0c2a28aef7db24fbfccc53f46637a582">amrex::NeighborParticleContainer::PairIndex</a></div><div class="ttdeci">std::pair&lt; int, int &gt; PairIndex</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticles.H:193</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad2e9cbb8f28bbbba7378ec7bf4654b89"><div class="ttname"><a href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">amrex::computeRefFac</a></div><div class="ttdeci">IntVect computeRefFac(const ParGDBBase *a_gdb, int src_lev, int lev)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.cpp:6</div></div>
 <div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_a2c1bf28f2552627e93d1587e977dd22a"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#a2c1bf28f2552627e93d1587e977dd22a">amrex::NeighborParticleContainer::fillNeighbors</a></div><div class="ttdeci">void fillNeighbors()</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticlesI.H:632</div></div>
-<div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_aac13e1f1c324181ce01a8f50fe3897d9"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">amrex::NeighborParticleContainer::printNeighborList</a></div><div class="ttdeci">void printNeighborList()</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticlesI.H:922</div></div>
+<div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_aac13e1f1c324181ce01a8f50fe3897d9"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#aac13e1f1c324181ce01a8f50fe3897d9">amrex::NeighborParticleContainer::printNeighborList</a></div><div class="ttdeci">void printNeighborList()</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticlesI.H:924</div></div>
 <div class="ttc" id="aclassamrex_1_1DenseBins_html_ab50df3946feebe789f41c7d01762a30b"><div class="ttname"><a href="classamrex_1_1DenseBins.html#ab50df3946feebe789f41c7d01762a30b">amrex::DenseBins::permutationPtr</a></div><div class="ttdeci">index_type * permutationPtr() noexcept</div><div class="ttdoc">returns the pointer to the permutation array</div><div class="ttdef"><b>Definition:</b> AMReX_DenseBins.H:478</div></div>
 <div class="ttc" id="aclassamrex_1_1Gpu_1_1Buffer_html"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Buffer.html">amrex::Gpu::Buffer</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuBuffer.H:17</div></div>
 <div class="ttc" id="aclassamrex_1_1Periodicity_html"><div class="ttname"><a href="classamrex_1_1Periodicity.html">amrex::Periodicity</a></div><div class="ttdoc">This provides length of period for periodic domains. 0 means it is not periodic in that direction....</div><div class="ttdef"><b>Definition:</b> AMReX_Periodicity.H:16</div></div>
@@ -1134,7 +1136,7 @@ $(document).ready(function(){initNavTree('AMReX__NeighborParticlesI_8H_source.ht
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_ab3f15c1b66190b5ff6d895d6ab0b63e2"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#ab3f15c1b66190b5ff6d895d6ab0b63e2">amrex::NeighborParticleContainer::buildNeighborList</a></div><div class="ttdeci">void buildNeighborList(CheckPair &amp;&amp;check_pair, bool sort=false)</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6ce6b4176121c2c23327903a8139af0c"><div class="ttname"><a href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:228</div></div>
-<div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_af03a2d960e9c4975823cee72793a6410"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">amrex::NeighborParticleContainer::resizeContainers</a></div><div class="ttdeci">void resizeContainers(const int lev)</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticlesI.H:941</div></div>
+<div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_af03a2d960e9c4975823cee72793a6410"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#af03a2d960e9c4975823cee72793a6410">amrex::NeighborParticleContainer::resizeContainers</a></div><div class="ttdeci">void resizeContainers(const int lev)</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticlesI.H:943</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_a5f6737315bff6905419103b17acf3d06"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#a5f6737315bff6905419103b17acf3d06">amrex::ParallelContext::MyProcSub</a></div><div class="ttdeci">int MyProcSub() noexcept</div><div class="ttdoc">my sub-rank in current frame</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelContext.H:75</div></div>
 <div class="ttc" id="aclassamrex_1_1NeighborParticleContainer_html_a6aeacb4e33f4b1946b8b7a5434a77f6d"><div class="ttname"><a href="classamrex_1_1NeighborParticleContainer.html#a6aeacb4e33f4b1946b8b7a5434a77f6d">amrex::NeighborParticleContainer::updateNeighbors</a></div><div class="ttdeci">void updateNeighbors(bool boundary_neighbors_only=false)</div><div class="ttdef"><b>Definition:</b> AMReX_NeighborParticlesI.H:657</div></div>
 <div class="ttc" id="aAMReX__MLCellLinOp_8cpp_html_a6519f4e4ebc41cae6cbf1be37636751d"><div class="ttname"><a href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a></div><div class="ttdeci">Box bx</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellLinOp.cpp:28</div></div>
