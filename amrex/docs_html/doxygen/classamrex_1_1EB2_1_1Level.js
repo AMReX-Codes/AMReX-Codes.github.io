@@ -31,6 +31,7 @@ var classamrex_1_1EB2_1_1Level =
     [ "operator=", "classamrex_1_1EB2_1_1Level.html#a3ad78d565e99b94235b3afade60d9fed", null ],
     [ "operator=", "classamrex_1_1EB2_1_1Level.html#abae36260177c7e79251005e56d741d5c", null ],
     [ "prepareForCoarsening", "classamrex_1_1EB2_1_1Level.html#ac040458ac6f5ac51b303915a6dd66eb5", null ],
+    [ "write_to_chkpt_file", "classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1", null ],
     [ "m_allregular", "classamrex_1_1EB2_1_1Level.html#a16651c9d026bf4c7876a890be6e85253", null ],
     [ "m_areafrac", "classamrex_1_1EB2_1_1Level.html#a26945ad6833c8275b375cec03a60cad0", null ],
     [ "m_bndryarea", "classamrex_1_1EB2_1_1Level.html#a03eaf98bf7542beafaf696e05c431d5a", null ],

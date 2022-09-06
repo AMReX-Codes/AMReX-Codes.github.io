@@ -217,6 +217,7 @@ var hierarchy =
     [ "detail::CellAtomicAdd< T0, T1 >", "structdetail_1_1CellAtomicAdd.html", null ],
     [ "detail::CellStore< T0, T1 >", "structdetail_1_1CellStore.html", null ],
     [ "amrex::FabArrayBase::CFinfo", "structamrex_1_1FabArrayBase_1_1CFinfo.html", null ],
+    [ "amrex::EB2::ChkptFile", "classamrex_1_1EB2_1_1ChkptFile.html", null ],
     [ "amrex::Cluster", "classamrex_1_1Cluster.html", null ],
     [ "amrex::ClusterList", "classamrex_1_1ClusterList.html", null ],
     [ "amrex::detail::clzll_tag", "structamrex_1_1detail_1_1clzll__tag.html", [
@@ -514,6 +515,7 @@ var hierarchy =
     [ "amrex::algoim::ImplicitIntegral< 0, N, Phi, F, S >", "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html", null ],
     [ "amrex::Scan::Type::Inclusive", "structamrex_1_1Scan_1_1Type_1_1Inclusive.html", null ],
     [ "amrex::EB2::IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", [
+      [ "amrex::EB2::IndexSpaceChkptFile", "classamrex_1_1EB2_1_1IndexSpaceChkptFile.html", null ],
       [ "amrex::EB2::IndexSpaceImp< G >", "classamrex_1_1EB2_1_1IndexSpaceImp.html", null ],
       [ "amrex::EB2::IndexSpaceSTL", "classamrex_1_1EB2_1_1IndexSpaceSTL.html", null ]
     ] ],
@@ -648,6 +650,9 @@ var hierarchy =
     [ "amrex::Less< T >", "structamrex_1_1Less.html", null ],
     [ "amrex::EB2::Level", "classamrex_1_1EB2_1_1Level.html", [
       [ "amrex::EB2::GShopLevel< G >", "classamrex_1_1EB2_1_1GShopLevel.html", null ],
+      [ "amrex::EB2::GShopLevel< ChkptFile >", "classamrex_1_1EB2_1_1GShopLevel.html", [
+        [ "amrex::EB2::ChkptFileLevel", "classamrex_1_1EB2_1_1ChkptFileLevel.html", null ]
+      ] ],
       [ "amrex::EB2::GShopLevel< STLtools >", "classamrex_1_1EB2_1_1GShopLevel.html", [
         [ "amrex::EB2::STLLevel", "classamrex_1_1EB2_1_1STLLevel.html", null ]
       ] ]
@@ -1025,6 +1030,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::DataServices * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::distFcnElement2d * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::DistributionMapping >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::EB2::ChkptFileLevel >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::Edge >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::GShopLevel< G > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::PolyTerm >", "classamrex_1_1Vector.html", null ],
