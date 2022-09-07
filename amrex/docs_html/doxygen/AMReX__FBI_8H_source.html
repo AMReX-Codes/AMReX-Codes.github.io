@@ -1025,7 +1025,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                <a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">amrex::LoopConcurrentOnCpu</a>( <a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>, ncomp,</div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                [=] (<span class="keywordtype">int</span> ii, <span class="keywordtype">int</span> jj, <span class="keywordtype">int</span> kk, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                {</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                    pfab(ii,jj,kk,n) = sfab(ii,jj,kk,n+scomp);</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                    pfab(ii,jj,kk,n) = <span class="keyword">static_cast&lt;</span>BUF<span class="keyword">&gt;</span>(sfab(ii,jj,kk,n+scomp));</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                });</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                dptr += (<a class="code" href="AMReX__MLCellLinOp_8cpp.html#a6519f4e4ebc41cae6cbf1be37636751d">bx</a>.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF));</div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            }</div>
