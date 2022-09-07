@@ -6130,7 +6130,7 @@
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD<sp/>_Pragma(&quot;ivdep&quot;)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_CRAYC)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_CRAYC)<sp/>||<sp/>defined(__cray__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD<sp/>_Pragma(&quot;ivdep&quot;)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__PGI)</highlight><highlight class="normal"></highlight></codeline>
@@ -6146,7 +6146,7 @@
 <codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD<sp/>_Pragma(&quot;ibm<sp/>independent_loop&quot;)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD<sp/>_Pragma(&quot;clang<sp/>loop<sp/>vectorize(enable)&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD<sp/>_Pragma(&quot;GCC<sp/>ivdep&quot;)</highlight><highlight class="normal"></highlight></codeline>
