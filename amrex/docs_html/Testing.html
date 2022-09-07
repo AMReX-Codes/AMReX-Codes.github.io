@@ -114,7 +114,8 @@ quickly on every commit. For more extensive testing, we rely on the nightly regr
 application codes that use it as a framework. We use an in-house test runner script to manage this
 operation, originally developed by Michael Zingale for the Castro code, and later expanded to other
 application codes as well. The results for each night are collected and stored on a web page; see
-<a class="reference external" href="https://ccse.lbl.gov/pub/RegressionTesting/">https://ccse.lbl.gov/pub/RegressionTesting/</a> for the latest set of results.</p>
+<a class="reference external" href="https://ccse.lbl.gov/pub/RegressionTesting/">https://ccse.lbl.gov/pub/RegressionTesting/</a> for the latest set of results.
+The runtime option <code class="docutils literal notranslate"><span class="pre">amrex.abort_on_unused_inputs</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>; default is <code class="docutils literal notranslate"><span class="pre">0</span></code> for false) is useful for making sure that tests always stay up to date with API changes as it will abort the application after the test run if any unused input parameters were detected.</p>
 </section>
 <section id="running-the-test-suite-locally">
 <h1>Running the test suite locally<a class="headerlink" href="#running-the-test-suite-locally" title="Permalink to this heading"></a></h1>
@@ -154,7 +155,7 @@ with a recent version of the <code class="code highlight cpp c++ docutils litera
 </div>
 <p>Once that is finished, you can switch over to the branch you want to test in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>, and then
 re-run the script without the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">--</span><span class="n">make_benchmarks</span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --make_benchmarks <span class="s1">&#39;generating initial benchmarks&#39;</span> AMReX-tests.ini
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py AMReX-tests.ini
 </pre></div>
 </div>
 <p>The script will generate a set of html pages in the directory specified in your <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>
