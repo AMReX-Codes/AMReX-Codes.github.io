@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8H_source.html
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    if (amrex::Gpu::inLaunchRegion()) \</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">    { \</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">        const auto amrex_i_ec = amrex::Gpu::ExecutionConfig(amrex_i_tn); \</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, amrex::Gpu::gpuStream(), \</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(AMREX_GPU_MAX_THREADS, amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, amrex::Gpu::gpuStream(), \</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">        [=] AMREX_GPU_DEVICE () noexcept { \</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">            for (auto const TI : amrex::Gpu::Range(amrex_i_tn)) { \</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">                block \</span></div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8H_source.html
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">        dim3 amrex_i_nblocks = amrex::max(amrex_i_ec1.numBlocks.x, \</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">                                          amrex_i_ec2.numBlocks.x); \</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">        amrex_i_nblocks.y = 2; \</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(AMREX_GPU_MAX_THREADS, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">        [=] AMREX_GPU_DEVICE () noexcept { \</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">            switch (blockIdx.y) { \</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">            case 0: for (auto const TI1 : amrex::Gpu::Range(amrex_i_tn1)) { \</span></div>
@@ -303,7 +303,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8H_source.html
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">                                                     amrex_i_ec2.numBlocks.x), \</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">                                                     amrex_i_ec3.numBlocks.x); \</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">        amrex_i_nblocks.y = 3; \</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(AMREX_GPU_MAX_THREADS, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">        [=] AMREX_GPU_DEVICE () noexcept { \</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">            switch (blockIdx.y) { \</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">            case 0: for (auto const TI1 : amrex::Gpu::Range(amrex_i_tn1)) { \</span></div>
@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8H_source.html
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">    if (amrex::Gpu::inLaunchRegion()) \</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">    { \</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">        auto amrex_i_ec = amrex::Gpu::ExecutionConfig(amrex_i_tn); \</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, amrex::Gpu::gpuStream(), \</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(AMREX_GPU_MAX_THREADS, amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, amrex::Gpu::gpuStream(), \</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">        [=] AMREX_GPU_DEVICE () noexcept { \</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">            for (auto const TI : amrex::Gpu::Range(amrex_i_tn)) { \</span></div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">                block \</span></div>
@@ -434,7 +434,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8H_source.html
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">        dim3 amrex_i_nblocks = amrex::max(amrex_i_ec1.numBlocks.x, \</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">                                          amrex_i_ec2.numBlocks.x); \</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">        amrex_i_nblocks.y = 2; \</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(AMREX_GPU_MAX_THREADS, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">        [=] AMREX_GPU_DEVICE () noexcept { \</span></div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor">            switch (blockIdx.y) { \</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">            case 0: for (auto const TI1 : amrex::Gpu::Range(amrex_i_tn1)) { \</span></div>
@@ -511,7 +511,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunchMacrosG_8H_source.html
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor">                                                     amrex_i_ec2.numBlocks.x), \</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">                                                     amrex_i_ec3.numBlocks.x); \</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor">        amrex_i_nblocks.y = 3; \</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor">        AMREX_LAUNCH_KERNEL(AMREX_GPU_MAX_THREADS, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor">        [=] AMREX_GPU_DEVICE () noexcept { \</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor">            switch (blockIdx.y) { \</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="preprocessor">            case 0: for (auto const TI1 : amrex::Gpu::Range(amrex_i_tn1)) { \</span></div>

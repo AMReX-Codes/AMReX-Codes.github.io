@@ -86,6 +86,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#kernel-launch">Kernel Launch</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#launching-c-nested-loops">Launching C++ nested loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gpu-block-size">GPU block size</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#launching-general-kernels">Launching general kernels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#offloading-work-using-openacc-or-openmp-pragmas">Offloading work using OpenACC or OpenMP pragmas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#kernel-launch-details">Kernel launch details</a></li>
@@ -1007,7 +1008,7 @@ data.  The <code class="code highlight cpp c++ docutils literal highlight-c++"><
 launch function.</p>
 <p><code class="docutils literal notranslate"><span class="pre">amrex::ParallelFor()</span></code> expands into different variations of a quadruply-nested
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span></code> loop depending dimensionality and whether it is being implemented on CPU or GPU.
-The best way to understand this macro is to take a look at the 4D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span></code>
+The best way to understand this function is to take a look at the 4D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span></code>
 that is implemented when <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>. A simplified version is reproduced here:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">ParallelFor</span> <span class="p">(</span><span class="n">Box</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">box</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ncomp</span><span class="p">,</span> <span class="cm">/* LAMBDA FUNCTION */</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1093,6 +1094,15 @@ bounds, a <code class="code highlight cpp c++ docutils literal highlight-c++"><s
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span></code> loop.  This construct can be used to work on any contiguous set of memory by
 passing the number of elements to work on and indexing the pointer to the starting
 element: <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">p</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">15</span><span class="p">]</span></code>.</p>
+</section>
+<section id="gpu-block-size">
+<h2>GPU block size<a class="headerlink" href="#gpu-block-size" title="Permalink to this heading"></a></h2>
+<p>By default, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span></code> launches <code class="docutils literal notranslate"><span class="pre">AMREX_GPU_MAX_THREADS</span></code> threads
+per GPU block, where <code class="docutils literal notranslate"><span class="pre">AMREX_GPU_MAX_THREADS</span></code> is a compile-time constant
+with a default value of 256.  The users can also explcitly specify the
+number of threads per block by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span><span class="o">&lt;</span><span class="n">MY_BLOCK_SIZE</span><span class="o">&gt;</span><span class="p">(...)</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">MY_BLOCK_SIZE</span></code> is a multiple of the warp size (e.g., 128).  This allows
+the users to do performance tuning for individual kernels.</p>
 </section>
 <section id="launching-general-kernels">
 <h2>Launching general kernels<a class="headerlink" href="#launching-general-kernels" title="Permalink to this heading"></a></h2>

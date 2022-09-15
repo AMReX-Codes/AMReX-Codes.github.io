@@ -742,7 +742,7 @@ var searchData=
   ['amrex_5flaunch_5fhost_5fdevice_5flambda_5frange_5f2_5fflag_747',['AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2_FLAG',['../AMReX__GpuLaunch_8H.html#acadc9d904a8c84d37f4d4e8227d80a21',1,'AMReX_GpuLaunch.H']]],
   ['amrex_5flaunch_5fhost_5fdevice_5flambda_5frange_5f3_5fflag_748',['AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3_FLAG',['../AMReX__GpuLaunch_8H.html#a51874ae8e0a5f8d6975df7ba59d2a018',1,'AMReX_GpuLaunch.H']]],
   ['amrex_5flaunch_5fhost_5fdevice_5flambda_5frange_5fflag_749',['AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_FLAG',['../AMReX__GpuLaunch_8H.html#a2d0e306c518e1c8054055541e60bebd8',1,'AMReX_GpuLaunch.H']]],
-  ['amrex_5flaunch_5fkernel_750',['AMREX_LAUNCH_KERNEL',['../AMReX__GpuLaunch_8H.html#a5e16b51a0139af0f65fc463c7d37e0f6',1,'AMReX_GpuLaunch.H']]],
+  ['amrex_5flaunch_5fkernel_750',['AMREX_LAUNCH_KERNEL',['../AMReX__GpuLaunch_8H.html#a70f6a154a9518b2be561acca7d54c95b',1,'AMReX_GpuLaunch.H']]],
   ['amrex_5flayoutdata_2eh_751',['AMReX_LayoutData.H',['../AMReX__LayoutData_8H.html',1,'']]],
   ['amrex_5flazy_2ecpp_752',['AMReX_Lazy.cpp',['../AMReX__Lazy_8cpp.html',1,'']]],
   ['amrex_5flazy_2eh_753',['AMReX_Lazy.H',['../AMReX__Lazy_8H.html',1,'']]],

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bl_5fhpgmg_2ecpp_10160',['BL_HPGMG.cpp',['../BL__HPGMG_8cpp.html',1,'']]],
-  ['bl_5fhpgmg_2eh_10161',['BL_HPGMG.H',['../BL__HPGMG_8H.html',1,'']]]
+  ['bl_5fhpgmg_2ecpp_10161',['BL_HPGMG.cpp',['../BL__HPGMG_8cpp.html',1,'']]],
+  ['bl_5fhpgmg_2eh_10162',['BL_HPGMG.H',['../BL__HPGMG_8H.html',1,'']]]
 ];

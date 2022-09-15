@@ -32,7 +32,7 @@ var AMReX__GpuLaunch_8H =
     [ "AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2_FLAG", "AMReX__GpuLaunch_8H.html#acadc9d904a8c84d37f4d4e8227d80a21", null ],
     [ "AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3_FLAG", "AMReX__GpuLaunch_8H.html#a51874ae8e0a5f8d6975df7ba59d2a018", null ],
     [ "AMREX_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_FLAG", "AMReX__GpuLaunch_8H.html#a2d0e306c518e1c8054055541e60bebd8", null ],
-    [ "AMREX_LAUNCH_KERNEL", "AMReX__GpuLaunch_8H.html#a5e16b51a0139af0f65fc463c7d37e0f6", null ],
+    [ "AMREX_LAUNCH_KERNEL", "AMReX__GpuLaunch_8H.html#a70f6a154a9518b2be561acca7d54c95b", null ],
     [ "AMREX_PARALLEL_FOR_1D", "AMReX__GpuLaunch_8H.html#a775a21da7a0872eb04e5d779d8c3e579", null ],
     [ "AMREX_PARALLEL_FOR_3D", "AMReX__GpuLaunch_8H.html#a5276700f57c62c88725cd2015e45c304", null ],
     [ "AMREX_PARALLEL_FOR_4D", "AMReX__GpuLaunch_8H.html#a47b94de342e3db50339d953446f1b469", null ],
@@ -43,5 +43,7 @@ var AMReX__GpuLaunch_8H =
     [ "launch_global", "AMReX__GpuLaunch_8H.html#af6334d58395d4bec0257d18060918ab0", null ],
     [ "launch_host", "AMReX__GpuLaunch_8H.html#a006c22eb1e141a0784faa415c00a49c4", null ],
     [ "launch_host", "AMReX__GpuLaunch_8H.html#a12c011a8bc6459b1c2a8f691b2554972", null ],
+    [ "makeExecutionConfig", "AMReX__GpuLaunch_8H.html#a96329917c7544347d421e3a216fb58a1", null ],
+    [ "makeExecutionConfig", "AMReX__GpuLaunch_8H.html#ac21b6d1625e2f56c27d364434a5c49f4", null ],
     [ "numThreadsPerBlockParallelFor", "AMReX__GpuLaunch_8H.html#a9ac3f1c6e71f0842b8f152fce7e4a7fb", null ]
 ];
