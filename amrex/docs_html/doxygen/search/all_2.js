@@ -357,5 +357,5 @@ var searchData=
   ['bytes_5fhwm_1758',['bytes_hwm',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a9c99b077a5aac77d3677eadc8caf0f14',1,'amrex::FabArrayBase::CacheStats']]],
   ['bytesof_1759',['bytesOf',['../namespaceamrex.html#a7eba5dd365d87751a963b6bd078673c4',1,'amrex::bytesOf(const std::vector&lt; T &gt; &amp;v)'],['../namespaceamrex.html#a87b15ece376f09dacd5bb7e8f266a6bd',1,'amrex::bytesOf(const std::map&lt; Key, T, Compare &gt; &amp;m)']]],
   ['bytesofmapofcopycomtagcontainers_1760',['bytesOfMapOfCopyComTagContainers',['../classamrex_1_1FabArrayBase.html#ad8ef26468982ff9ba6e2fbc5eb8073bb',1,'amrex::FabArrayBase']]],
-  ['bytespread_1761',['ByteSpread',['../classamrex_1_1ParticleContainer.html#aab3e8fd11dd5a3b385e93347932cf1ee',1,'amrex::ParticleContainer']]]
+  ['bytespread_1761',['ByteSpread',['../classamrex_1_1ParticleContainer.html#a8b99d8d6636ac0957e6274f36b2d44f7',1,'amrex::ParticleContainer']]]
 ];
