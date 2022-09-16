@@ -173,9 +173,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee083ef365f625a6ce604ab13c65d49e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aee083ef365f625a6ce604ab13c65d49e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aee083ef365f625a6ce604ab13c65d49e">bisect_prob_hi</a> (amrex::Real plo, amrex::Real phi, amrex::Real idx, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ilo, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ihi, amrex::Real tol)</td></tr>
-<tr class="separator:aee083ef365f625a6ce604ab13c65d49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f28be2277f42d7a03a9e08a27ef688"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a22f28be2277f42d7a03a9e08a27ef688"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a22f28be2277f42d7a03a9e08a27ef688">bisect_prob_lo</a> (amrex::Real plo, amrex::Real, amrex::Real dxinv, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ilo, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ihi, amrex::Real tol)</td></tr>
+<tr class="separator:a22f28be2277f42d7a03a9e08a27ef688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0213dbae1995cd2830f4309c85f4cbdb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0213dbae1995cd2830f4309c85f4cbdb"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a0213dbae1995cd2830f4309c85f4cbdb">bisect_prob_hi</a> (amrex::Real plo, amrex::Real phi, amrex::Real dxinv, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ilo, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ihi, amrex::Real tol)</td></tr>
+<tr class="separator:a0213dbae1995cd2830f4309c85f4cbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10e8c484da7d2f2f5bbd223b6b92dc87"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a10e8c484da7d2f2f5bbd223b6b92dc87"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a10e8c484da7d2f2f5bbd223b6b92dc87">complex_pow_unsigned</a> (<a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt; a_z, unsigned a_n)</td></tr>
 <tr class="separator:a10e8c484da7d2f2f5bbd223b6b92dc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -522,8 +525,8 @@ template&lt;typename F , typename TP , std::size_t... N&gt; </div>
 
 </div>
 </div>
-<a id="aee083ef365f625a6ce604ab13c65d49e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee083ef365f625a6ce604ab13c65d49e">&#9670;&nbsp;</a></span>bisect_prob_hi()</h2>
+<a id="a0213dbae1995cd2830f4309c85f4cbdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0213dbae1995cd2830f4309c85f4cbdb">&#9670;&nbsp;</a></span>bisect_prob_hi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,7 +549,61 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
+          <td class="paramname"><em>dxinv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ilo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ihi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22f28be2277f42d7a03a9e08a27ef688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f28be2277f42d7a03a9e08a27ef688">&#9670;&nbsp;</a></span>bisect_prob_lo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T amrex::detail::bisect_prob_lo </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>plo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>dxinv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -4785,7 +4785,9 @@
   <compound refid="classamrex_1_1Geometry" kind="class"><name>amrex::Geometry</name>
     <member refid="classamrex_1_1Geometry_1a84b1ad3fef8594c10d9ff2000505b20a" kind="variable"><name>is_periodic</name></member>
     <member refid="classamrex_1_1Geometry_1af62cd34804aea5643a6fc2205495b7a2" kind="variable"><name>prob_domain</name></member>
+    <member refid="classamrex_1_1Geometry_1aecef2f5bb7de3875c51ffd1419cee96c" kind="variable"><name>roundoff_lo_d</name></member>
     <member refid="classamrex_1_1Geometry_1a8fc1a2451a70d708a79d077e01c85a55" kind="variable"><name>roundoff_hi_d</name></member>
+    <member refid="classamrex_1_1Geometry_1af89d216d7151829c93718832267cc981" kind="variable"><name>roundoff_lo_f</name></member>
     <member refid="classamrex_1_1Geometry_1a52912a524ac17a8607dbce5d834c8702" kind="variable"><name>roundoff_hi_f</name></member>
     <member refid="classamrex_1_1Geometry_1a52477661ac7c7ccbd93f397340176c74" kind="variable"><name>domain</name></member>
     <member refid="classamrex_1_1Geometry_1abe4767b2f215bc24725017610b86091d" kind="function"><name>Geometry</name></member>
@@ -4807,6 +4809,7 @@
     <member refid="classamrex_1_1Geometry_1a5fd19e6998dd24eb5156808bdabc1dae" kind="function"><name>ProbHi</name></member>
     <member refid="classamrex_1_1Geometry_1a2cbf2a8943849597fdcb06608416d0db" kind="function"><name>ProbLoArray</name></member>
     <member refid="classamrex_1_1Geometry_1a8de19f13c63f4cb2759207cb725581ed" kind="function"><name>ProbHiArray</name></member>
+    <member refid="classamrex_1_1Geometry_1a8f5623ee19b444e7c1a38d28a79459fb" kind="function"><name>ProbLoArrayInParticleReal</name></member>
     <member refid="classamrex_1_1Geometry_1aa55c38ac0db751b7aa40625464034b73" kind="function"><name>ProbHiArrayInParticleReal</name></member>
     <member refid="classamrex_1_1Geometry_1ad215766309286d88d85b4d78f7280f4c" kind="function"><name>ProbSize</name></member>
     <member refid="classamrex_1_1Geometry_1aa957525db46a7c7c22c1371633a3f263" kind="function"><name>ProbLength</name></member>
@@ -12712,8 +12715,8 @@
     <member refid="namespaceamrex_1a77b016483c8263c1a67e93d79d31da4c" kind="function"><name>numTilesInBox</name></member>
     <member refid="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" kind="function"><name>getParticleCell</name></member>
     <member refid="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" kind="function"><name>getParticleGrid</name></member>
-    <member refid="namespaceamrex_1ae1fcbdc79cff5f8ed488b8f8d5549783" kind="function"><name>enforcePeriodic</name></member>
-    <member refid="namespaceamrex_1a15f9fb9c5ef4289a5d05c36bebb1b739" kind="function"><name>partitionParticlesByDest</name></member>
+    <member refid="namespaceamrex_1a8d4982679d65bfe0ea15633d2c6bbca1" kind="function"><name>enforcePeriodic</name></member>
+    <member refid="namespaceamrex_1a866fe0479b95fae68d4728835bf6ea68" kind="function"><name>partitionParticlesByDest</name></member>
     <member refid="namespaceamrex_1ac8512b687a529806d0f382cf7c9eee97" kind="function"><name>SameIteratorsOK</name></member>
     <member refid="namespaceamrex_1a2a6f51f01e9f0350a8b447ee451d0efb" kind="function"><name>EnsureThreadSafeTiles</name></member>
     <member refid="namespaceamrex_1a1983ce5560b8e4e34d4f0a8ade1fa640" kind="function"><name>cic_interpolate</name></member>
@@ -12954,7 +12957,8 @@
     <member refid="namespaceamrex_1_1detail_1a4dabd168440a362478e0d2887dfdfe23" kind="typedef"><name>tuple_decay_t</name></member>
     <member refid="namespaceamrex_1_1detail_1a1fbad5ff9cc23fcc37c363d9d3bc0d94" kind="typedef"><name>Void_t</name></member>
     <member refid="namespaceamrex_1_1detail_1ad9ffd55042a6573c492b8fc107951d12" kind="typedef"><name>call_result_t</name></member>
-    <member refid="namespaceamrex_1_1detail_1aee083ef365f625a6ce604ab13c65d49e" kind="function"><name>bisect_prob_hi</name></member>
+    <member refid="namespaceamrex_1_1detail_1a22f28be2277f42d7a03a9e08a27ef688" kind="function"><name>bisect_prob_lo</name></member>
+    <member refid="namespaceamrex_1_1detail_1a0213dbae1995cd2830f4309c85f4cbdb" kind="function"><name>bisect_prob_hi</name></member>
     <member refid="namespaceamrex_1_1detail_1a10e8c484da7d2f2f5bbd223b6b92dc87" kind="function"><name>complex_pow_unsigned</name></member>
     <member refid="namespaceamrex_1_1detail_1aca3a36a75e09011d483bcaaa6f9ee7f5" kind="function"><name>call_f</name></member>
     <member refid="namespaceamrex_1_1detail_1ac02794506750edcf0d39acedf4ddb19d" kind="function"><name>call_f</name></member>

@@ -45,6 +45,7 @@ var classamrex_1_1Geometry =
     [ "ProbLo", "classamrex_1_1Geometry.html#a02ef0d522174b99ca75e569def4c091c", null ],
     [ "ProbLo", "classamrex_1_1Geometry.html#a03bdebdfb4b402507aab117a78bb71b4", null ],
     [ "ProbLoArray", "classamrex_1_1Geometry.html#a2cbf2a8943849597fdcb06608416d0db", null ],
+    [ "ProbLoArrayInParticleReal", "classamrex_1_1Geometry.html#a8f5623ee19b444e7c1a38d28a79459fb", null ],
     [ "ProbSize", "classamrex_1_1Geometry.html#ad215766309286d88d85b4d78f7280f4c", null ],
     [ "read_params", "classamrex_1_1Geometry.html#aa0385aea8391d0b59b6adfb910cffbf4", null ],
     [ "refine", "classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3", null ],
@@ -58,5 +59,7 @@ var classamrex_1_1Geometry =
     [ "is_periodic", "classamrex_1_1Geometry.html#a84b1ad3fef8594c10d9ff2000505b20a", null ],
     [ "prob_domain", "classamrex_1_1Geometry.html#af62cd34804aea5643a6fc2205495b7a2", null ],
     [ "roundoff_hi_d", "classamrex_1_1Geometry.html#a8fc1a2451a70d708a79d077e01c85a55", null ],
-    [ "roundoff_hi_f", "classamrex_1_1Geometry.html#a52912a524ac17a8607dbce5d834c8702", null ]
+    [ "roundoff_hi_f", "classamrex_1_1Geometry.html#a52912a524ac17a8607dbce5d834c8702", null ],
+    [ "roundoff_lo_d", "classamrex_1_1Geometry.html#aecef2f5bb7de3875c51ffd1419cee96c", null ],
+    [ "roundoff_lo_f", "classamrex_1_1Geometry.html#af89d216d7151829c93718832267cc981", null ]
 ];
