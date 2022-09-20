@@ -14,6 +14,7 @@ var classamrex_1_1AMRErrorTag =
     [ "AMRErrorTag", "classamrex_1_1AMRErrorTag.html#aa4440ce8ce47afb4ffe1f9f1c5a213e6", null ],
     [ "AMRErrorTag", "classamrex_1_1AMRErrorTag.html#ac7c6b81884c611796ce3136c75cf4c1d", null ],
     [ "AMRErrorTag", "classamrex_1_1AMRErrorTag.html#a75ed74323d9b257efb86bc2acda5f48d", null ],
+    [ "~AMRErrorTag", "classamrex_1_1AMRErrorTag.html#abe0c0cd3e826b94c76d675ed558741f9", null ],
     [ "Field", "classamrex_1_1AMRErrorTag.html#a8f18164eaa226a34be64abf48d9617ba", null ],
     [ "NGrow", "classamrex_1_1AMRErrorTag.html#a2f6daf12771b72f61d675a618378fab6", null ],
     [ "operator()", "classamrex_1_1AMRErrorTag.html#a3f9d380346d4509d37eb8bde92fa184f", null ],
