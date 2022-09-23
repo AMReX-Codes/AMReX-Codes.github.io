@@ -5,6 +5,7 @@ var structamrex_1_1Array4 =
     [ "Array4", "structamrex_1_1Array4.html#aadaa817898bc6aaee36f54e294c94d6d", null ],
     [ "Array4", "structamrex_1_1Array4.html#a8ce3c58d917a4c14dce99d84097756cd", null ],
     [ "Array4", "structamrex_1_1Array4.html#addc632464912cc3a4db197cb3eb831b1", null ],
+    [ "cellData", "structamrex_1_1Array4.html#af169992bc482ac1cd44d5a5a034ab23a", null ],
     [ "contains", "structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49", null ],
     [ "dataPtr", "structamrex_1_1Array4.html#a92996beac4532d45d7ac4be41b1ff439", null ],
     [ "nComp", "structamrex_1_1Array4.html#a7c005d65913452a3aa2b0e2e4d6ffd22", null ],

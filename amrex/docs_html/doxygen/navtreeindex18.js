@@ -1,5 +1,11 @@
 var NAVTREEINDEX18 =
 {
+"AMReX__Reduce_8H.html#aa222fe966c90523082b2cc7ecdf695c4":[3,0,0,2,231,25],
+"AMReX__Reduce_8H.html#abe303744738dffcde1225825759169f1":[3,0,0,2,231,18],
+"AMReX__Reduce_8H.html#ada14c45ee9673665c1c3df6749ede80f":[3,0,0,2,231,12],
+"AMReX__Reduce_8H.html#afac1250d786b98bab8d8d2cf5c06411e":[3,0,0,2,231,28],
+"AMReX__Reduce_8H.html#afd579b95fc57cf9aaf43717d976eff41":[3,0,0,2,231,16],
+"AMReX__Reduce_8H_source.html":[3,0,0,2,231],
 "AMReX__RegionsProfStats_8H.html":[3,0,0,5,6,14],
 "AMReX__RegionsProfStats_8H_source.html":[3,0,0,5,6,14],
 "AMReX__RegionsProfStats_8cpp.html":[3,0,0,5,6,13],
@@ -13,8 +19,8 @@ var NAVTREEINDEX18 =
 "AMReX__RegionsProfStats_8cpp.html#a82ff102a1952ad4ab549505b10f24456":[3,0,0,5,6,13,11],
 "AMReX__RegionsProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[3,0,0,5,6,13,8],
 "AMReX__RegionsProfStats_8cpp.html#a9eaad985fc3700bfc26c0ce411504f81":[3,0,0,5,6,13,12],
-"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[3,0,0,5,6,13,4],
 "AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[3,0,0,5,6,13,3],
+"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[3,0,0,5,6,13,4],
 "AMReX__RegionsProfStats_8cpp.html#adf40b37aa3d31187890635b3b571403c":[3,0,0,5,6,13,0],
 "AMReX__SDCquadrature_8F90.html":[3,0,0,8,0],
 "AMReX__SDCquadrature_8F90.html#a0ffbe7bf11e56b416c5631c0b38321b6":[3,0,0,8,0,5],
@@ -243,11 +249,5 @@ var NAVTREEINDEX18 =
 "AMReX__VectorIO_8H.html#afd3603d5627ea48a5c25919fa90482f5":[3,0,0,2,248,1],
 "AMReX__VectorIO_8H_source.html":[3,0,0,2,248],
 "AMReX__VectorIO_8cpp.html":[3,0,0,2,247],
-"AMReX__Vector_8H.html":[3,0,0,2,246],
-"AMReX__Vector_8H.html#a22a501f5be1e47c511f000546bcae72a":[3,0,0,2,246,11],
-"AMReX__Vector_8H.html#a2eb81423f83e826a61bafde352b67e98":[3,0,0,2,246,10],
-"AMReX__Vector_8H.html#a36a4c65f6872127d9a779ef9f971777d":[3,0,0,2,246,8],
-"AMReX__Vector_8H.html#a4ad8b7a21907586ee3a86bda5163cd2d":[3,0,0,2,246,12],
-"AMReX__Vector_8H.html#a77fdd4258ec656fb99a6124a73501803":[3,0,0,2,246,13],
-"AMReX__Vector_8H.html#a7c59b1fe9bc7b0498852cb74d7df5a76":[3,0,0,2,246,16]
+"AMReX__Vector_8H.html":[3,0,0,2,246]
 };

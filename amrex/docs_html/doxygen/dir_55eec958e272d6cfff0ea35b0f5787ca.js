@@ -61,7 +61,8 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
       [ "PCInterp", "classamrex_1_1PCInterp.html", "classamrex_1_1PCInterp" ],
       [ "CellConservativeQuartic", "classamrex_1_1CellConservativeQuartic.html", "classamrex_1_1CellConservativeQuartic" ],
       [ "FaceDivFree", "classamrex_1_1FaceDivFree.html", "classamrex_1_1FaceDivFree" ],
-      [ "FaceLinear", "classamrex_1_1FaceLinear.html", "classamrex_1_1FaceLinear" ]
+      [ "FaceLinear", "classamrex_1_1FaceLinear.html", "classamrex_1_1FaceLinear" ],
+      [ "CellQuartic", "classamrex_1_1CellQuartic.html", "classamrex_1_1CellQuartic" ]
     ] ],
     [ "AMReX_MFInterp_1D_C.H", "AMReX__MFInterp__1D__C_8H.html", "AMReX__MFInterp__1D__C_8H" ],
     [ "AMReX_MFInterp_2D_C.H", "AMReX__MFInterp__2D__C_8H.html", "AMReX__MFInterp__2D__C_8H" ],

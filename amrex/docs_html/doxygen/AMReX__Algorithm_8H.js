@@ -15,9 +15,11 @@ var AMReX__Algorithm_8H =
     [ "elemwiseMax", "AMReX__Algorithm_8H.html#a93a16e30ea4ae11d5478b61bc66508be", null ],
     [ "elemwiseMin", "AMReX__Algorithm_8H.html#a596c8bdb575a0bb55727422ca467ca83", null ],
     [ "elemwiseMin", "AMReX__Algorithm_8H.html#ae4bfe8e79990e6c03cf02379c2b883a8", null ],
+    [ "lower_bound", "AMReX__Algorithm_8H.html#afe5f053f9083b72c3ba55354f2f30e71", null ],
     [ "max", "AMReX__Algorithm_8H.html#a72d8b9352d99ebca0a7eba07dadbdfa5", null ],
     [ "max", "AMReX__Algorithm_8H.html#a04c8938742d74b9d40d6835a73b276af", null ],
     [ "min", "AMReX__Algorithm_8H.html#a2d2bb7bdafe91906c966d8e75d540bea", null ],
     [ "min", "AMReX__Algorithm_8H.html#aa4a1344f3ecb9497e21ffab197a99fb0", null ],
-    [ "Swap", "AMReX__Algorithm_8H.html#a5311a5775a3f24d73376bdc6268b7a3d", null ]
+    [ "Swap", "AMReX__Algorithm_8H.html#a5311a5775a3f24d73376bdc6268b7a3d", null ],
+    [ "upper_bound", "AMReX__Algorithm_8H.html#ab28eefec426cf22afcff6bd888243731", null ]
 ];
