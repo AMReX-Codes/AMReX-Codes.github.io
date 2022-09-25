@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a138287a5f4ac861068205835ac07da5b":[2,0,0,3,9,1],
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a2a0e1d6ab3b7c9ea94631a06b23a3f12":[2,0,0,3,9,2],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a4f76c22f32d585f22f2a80704c97b693":[2,0,0,3,9,0],
 "structamrex_1_1detail_1_1invoke__result.html":[2,0,0,3,11],
 "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[2,0,0,3,12],

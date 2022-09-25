@@ -188,6 +188,7 @@ var searchData=
   ['void_5ft_7756',['Void_t',['../namespaceamrex_1_1detail.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94',1,'amrex::detail']]],
   ['voidcopytag_7757',['VoidCopyTag',['../structVoidCopyTag.html',1,'']]],
   ['volume_7758',['volume',['../classamrex_1_1Box.html#a6dfb8f30676adeb11d4e87d22e209047',1,'amrex::Box::volume()'],['../classamrex_1_1RealBox.html#a098e1f2357e21072c37d33fff98d9cb7',1,'amrex::RealBox::volume()'],['../classamrex_1_1CoordSys.html#aba35a53907662ab238f8ad457a9c242d',1,'amrex::CoordSys::Volume(const IntVect &amp;point) const'],['../classamrex_1_1CoordSys.html#a1f29329ea886494a3df45eaba9c0b2cb',1,'amrex::CoordSys::Volume(const Real xlo[AMREX_SPACEDIM], const Real xhi[AMREX_SPACEDIM]) const'],['../classamrex_1_1Geometry.html#a26f93383859ece5c7349633cc9f50948',1,'amrex::Geometry::Volume()'],['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c',1,'amrex::volume()']]],
-  ['vort_7759',['VORT',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a0d08f661e48e89e5120b9c9006c4b090',1,'amrex::AMRErrorTag']]],
-  ['vshowval_7760',['VSHOWVAL',['../AMReX__AmrData_8cpp.html#a527b668d58b090a517777607a82fa5b6',1,'AMReX_AmrData.cpp']]]
+  ['volumeweightedsum_7759',['volumeWeightedSum',['../namespaceamrex.html#a5daadefeacaedc115d9a284241da21cd',1,'amrex']]],
+  ['vort_7760',['VORT',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5a0d08f661e48e89e5120b9c9006c4b090',1,'amrex::AMRErrorTag']]],
+  ['vshowval_7761',['VSHOWVAL',['../AMReX__AmrData_8cpp.html#a527b668d58b090a517777607a82fa5b6',1,'AMReX_AmrData.cpp']]]
 ];

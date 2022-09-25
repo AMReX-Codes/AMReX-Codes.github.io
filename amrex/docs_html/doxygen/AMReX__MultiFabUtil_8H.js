@@ -42,6 +42,7 @@ var AMReX__MultiFabUtil_8H =
     [ "sumToLine", "AMReX__MultiFabUtil_8H.html#a882a700cf7fab66ee3ce8de37de3ef73", null ],
     [ "ToLongMultiFab", "AMReX__MultiFabUtil_8H.html#ae062fb7f904c1f39327797d8c3fea414", null ],
     [ "ToMultiFab", "AMReX__MultiFabUtil_8H.html#a6ca286511a003d2770dba9c37ab53c94", null ],
+    [ "volumeWeightedSum", "AMReX__MultiFabUtil_8H.html#a5daadefeacaedc115d9a284241da21cd", null ],
     [ "writeFabs", "AMReX__MultiFabUtil_8H.html#a78ee47545ca66e809f4f680e7513cbd5", null ],
     [ "writeFabs", "AMReX__MultiFabUtil_8H.html#aa9f903b417da5fb1d02ea65d0bbf8934", null ]
 ];

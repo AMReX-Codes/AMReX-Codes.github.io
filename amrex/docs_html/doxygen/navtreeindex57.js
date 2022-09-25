@@ -1,6 +1,8 @@
 var NAVTREEINDEX57 =
 {
+"namespaceamrex_1_1machine.html":[1,0,0,19],
 "namespaceamrex_1_1openbc.html":[2,0,0,12],
+"namespaceamrex_1_1openbc.html":[1,0,0,25],
 "namespaceamrex_1_1particle__detail.html":[1,0,0,34],
 "namespaceamrex_1_1sundials.html":[1,0,0,38],
 "namespaceamrex_1_1sundials.html":[2,0,0,19],
@@ -27,16 +29,16 @@ var NAVTREEINDEX57 =
 "namespaceamrex__omp__module.html":[1,0,14],
 "namespaceamrex__paralleldescriptor__module.html":[1,0,15],
 "namespaceamrex__paralleldescriptor__module.html":[2,0,6],
-"namespaceamrex__parmparse__module.html":[1,0,16],
 "namespaceamrex__parmparse__module.html":[2,0,7],
+"namespaceamrex__parmparse__module.html":[1,0,16],
 "namespaceamrex__string__module.html":[2,0,8],
 "namespaceamrex__string__module.html":[1,0,17],
 "namespaceamrex__temp.html":[2,0,9],
 "namespaceamrex__temp.html":[1,0,18],
-"namespacedetail.html":[2,0,10],
 "namespacedetail.html":[1,0,19],
-"namespacehacc.html":[2,0,11],
+"namespacedetail.html":[2,0,10],
 "namespacehacc.html":[1,0,20],
+"namespacehacc.html":[2,0,11],
 "namespacemembers.html":[1,1,0,0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_a.html":[1,1,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX57 =
 "structFilterVirt.html#aa0dc57c35d82cef845b823c50ee367c3":[2,0,20,1],
 "structKeepValidFilter.html":[2,0,21],
 "structKeepValidFilter.html#af4bf053d8e8024c447f42ee722e08eb5":[2,0,21,0],
-"structMPI__Status.html":[2,0,22],
-"structN__VectorContent__MultiFab__notptr.html":[2,0,23],
-"structN__VectorContent__MultiFab__notptr.html#a1af6ce9e83db0135a45c4b2bc7afc31b":[2,0,23,2]
+"structMPI__Status.html":[2,0,22]
 };
