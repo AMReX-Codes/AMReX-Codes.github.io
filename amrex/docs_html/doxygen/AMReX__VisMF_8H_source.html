@@ -607,110 +607,108 @@ $(document).ready(function(){initNavTree('AMReX__VisMF_8H_source.html',''); init
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        }</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        <span class="keywordtype">int</span> totalioreqs = nboxes;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <span class="keywordtype">int</span> messtotal = 0;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <span class="keywordtype">int</span> reqspending = 0;</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keywordtype">int</span> iopfileindex;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        std::deque&lt;int&gt; iopreads;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        std::set&lt;int&gt; busyprocs;</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="keywordflow">while</span> (totalioreqs &gt; 0) {</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="keyword">auto</span> afilesiter = availablefiles.begin();</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="keywordflow">while</span> (afilesiter != availablefiles.end()) {</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> fi = *afilesiter;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                <span class="keywordflow">if</span> (allreads[fi].empty()) {</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                    availablefiles.erase(fi);</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    afilesiter = availablefiles.begin();</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                }</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                <span class="keyword">auto</span> whichread = allreads[fi].begin();</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                <span class="keywordflow">for</span> ( ; whichread != allreads[fi].end(); ++whichread) {</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> tryproc = whichread-&gt;first;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                    <span class="keywordflow">if</span> (busyprocs.find(tryproc) == busyprocs.end()) { <span class="comment">// not busy</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                        busyprocs.insert(tryproc);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> vreads;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                        vreads.reserve(whichread-&gt;second.size());</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; kv : whichread-&gt;second) {</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                            vreads.push_back(kv.second);</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                        }</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                        <span class="keywordflow">if</span> (tryproc == coordproc) {</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                            iopfileindex = fi;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                            <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : vreads) {</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                                iopreads.push_back(x);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                            }</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                            <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a89ca8639338d64c25ee28faf1b829701">ParallelDescriptor::Send</a>(vreads, tryproc, readtag);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                            ++messtotal;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                            ++reqspending;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                        }</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                        availablefiles.erase(afilesiter);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                        afilesiter = availablefiles.begin();</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                    }</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                }</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                <span class="keywordflow">if</span> (whichread == allreads[fi].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>()) {</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                    ++afilesiter;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                    allreads[fi].erase(whichread);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                }</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            }</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            <span class="keywordflow">while</span> (!iopreads.empty()) {</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                <span class="keywordtype">int</span> i = iopreads.front();</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                <a class="code" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">detail::read_fab</a>(fa[i], fod[i], name);</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                --totalioreqs;</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                iopreads.pop_front();</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                <span class="keywordflow">if</span> (iopreads.empty()) {</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    availablefiles.insert(iopfileindex);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    busyprocs.erase(coordproc);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                }</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                <span class="keywordtype">int</span> doneflag;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                <a class="code" href="structMPI__Status.html">MPI_Status</a> status;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aa6542637438eaa734790f6ab8ae83ce0">ParallelDescriptor::IProbe</a>(MPI_ANY_SOURCE, donetag, doneflag, status);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                <span class="keywordflow">if</span> (doneflag) {</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                }</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            }</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            <span class="keywordflow">if</span> (reqspending &gt; 0) {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> idone(2);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                <a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html">ParallelDescriptor::Message</a> rmess = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#af4996999fa16efb8ab255e1d26ab2163">ParallelDescriptor::Recv</a>(idone, MPI_ANY_SOURCE,</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                                                                             donetag);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> i = idone[0];</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> procdone = rmess.<a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a226101263b27282d94f687320e25177f">pid</a>();</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                totalioreqs -= idone[1];</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                --reqspending;</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                busyprocs.erase(procdone);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                std::string <span class="keyword">const</span>&amp; fname = fod[i].m_name;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> fi = filenames.find(fname)-&gt;second;</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                availablefiles.insert(fi);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;            }</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        }</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> recreads(nreqs, -1);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> idone(2);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keywordflow">while</span> (nreqs &gt; 0) {</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            <a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html">ParallelDescriptor::Message</a> rmess = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#af4996999fa16efb8ab255e1d26ab2163">ParallelDescriptor::Recv</a>(recreads, coordproc,</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                                                                         readtag);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nrmess = rmess.<a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a934d6ed56619c14db1833d57662fd86b">count</a>();</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ir = 0; ir &lt; nrmess; ++ir) {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                <span class="keywordtype">int</span> i = recreads[ir];</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                <a class="code" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">detail::read_fab</a>(fa[i], fod[i], name);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            }</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            nreqs -= nrmess;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            idone[0] = recreads[0];</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            idone[1] = nrmess;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a89ca8639338d64c25ee28faf1b829701">ParallelDescriptor::Send</a>(idone, coordproc, donetag);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        }</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    }</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <a class="code" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">detail::read_fab</a>(fa[mfi], fod[mfi.index()], name);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    }</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <span class="keywordtype">int</span> reqspending = 0;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <span class="keywordtype">int</span> iopfileindex;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        std::deque&lt;int&gt; iopreads;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        std::set&lt;int&gt; busyprocs;</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <span class="keywordflow">while</span> (totalioreqs &gt; 0) {</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            <span class="keyword">auto</span> afilesiter = availablefiles.begin();</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="keywordflow">while</span> (afilesiter != availablefiles.end()) {</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> fi = *afilesiter;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <span class="keywordflow">if</span> (allreads[fi].empty()) {</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                    availablefiles.erase(fi);</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                    afilesiter = availablefiles.begin();</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                }</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                <span class="keyword">auto</span> whichread = allreads[fi].begin();</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                <span class="keywordflow">for</span> ( ; whichread != allreads[fi].end(); ++whichread) {</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> tryproc = whichread-&gt;first;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                    <span class="keywordflow">if</span> (busyprocs.find(tryproc) == busyprocs.end()) { <span class="comment">// not busy</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                        busyprocs.insert(tryproc);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> vreads;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                        vreads.reserve(whichread-&gt;second.size());</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; kv : whichread-&gt;second) {</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                            vreads.push_back(kv.second);</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                        }</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                        <span class="keywordflow">if</span> (tryproc == coordproc) {</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                            iopfileindex = fi;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                            <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : vreads) {</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                                iopreads.push_back(x);</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                            }</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                            <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a89ca8639338d64c25ee28faf1b829701">ParallelDescriptor::Send</a>(vreads, tryproc, readtag);</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                            ++reqspending;</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                        }</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                        availablefiles.erase(afilesiter);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                        afilesiter = availablefiles.begin();</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                    }</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                }</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                <span class="keywordflow">if</span> (whichread == allreads[fi].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>()) {</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                    ++afilesiter;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                    allreads[fi].erase(whichread);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                }</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            }</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            <span class="keywordflow">while</span> (!iopreads.empty()) {</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                <span class="keywordtype">int</span> i = iopreads.front();</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                <a class="code" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">detail::read_fab</a>(fa[i], fod[i], name);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                --totalioreqs;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                iopreads.pop_front();</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                <span class="keywordflow">if</span> (iopreads.empty()) {</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                    availablefiles.insert(iopfileindex);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                    busyprocs.erase(coordproc);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                }</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                <span class="keywordtype">int</span> doneflag;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                <a class="code" href="structMPI__Status.html">MPI_Status</a> status;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aa6542637438eaa734790f6ab8ae83ce0">ParallelDescriptor::IProbe</a>(MPI_ANY_SOURCE, donetag, doneflag, status);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                <span class="keywordflow">if</span> (doneflag) {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                }</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            }</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            <span class="keywordflow">if</span> (reqspending &gt; 0) {</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> idone(2);</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                <a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html">ParallelDescriptor::Message</a> rmess = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#af4996999fa16efb8ab255e1d26ab2163">ParallelDescriptor::Recv</a>(idone, MPI_ANY_SOURCE,</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                                                                             donetag);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> i = idone[0];</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> procdone = rmess.<a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a226101263b27282d94f687320e25177f">pid</a>();</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                totalioreqs -= idone[1];</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                --reqspending;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                busyprocs.erase(procdone);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                std::string <span class="keyword">const</span>&amp; fname = fod[i].m_name;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> fi = filenames.find(fname)-&gt;second;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                availablefiles.insert(fi);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            }</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        }</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> recreads(nreqs, -1);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> idone(2);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordflow">while</span> (nreqs &gt; 0) {</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            <a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html">ParallelDescriptor::Message</a> rmess = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#af4996999fa16efb8ab255e1d26ab2163">ParallelDescriptor::Recv</a>(recreads, coordproc,</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                                                                         readtag);</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nrmess = rmess.<a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a934d6ed56619c14db1833d57662fd86b">count</a>();</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ir = 0; ir &lt; nrmess; ++ir) {</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                <span class="keywordtype">int</span> i = recreads[ir];</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                <a class="code" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">detail::read_fab</a>(fa[i], fod[i], name);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            }</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            nreqs -= nrmess;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            idone[0] = recreads[0];</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            idone[1] = nrmess;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a89ca8639338d64c25ee28faf1b829701">ParallelDescriptor::Send</a>(idone, coordproc, donetag);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        }</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <a class="code" href="namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752">detail::read_fab</a>(fa[mfi], fod[mfi.index()], name);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    }</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;}</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;}</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;}</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*BL_VISMF_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*BL_VISMF_H*/</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:51</div></div>
