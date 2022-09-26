@@ -1,5 +1,6 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1StructOfArrays.html#a2dcab6a884a05d6548547b8359758611":[2,0,0,444,15],
 "structamrex_1_1StructOfArrays.html#a32f1b56e5d68299fc49813648903e884":[2,0,0,444,5],
 "structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333":[2,0,0,444,0],
 "structamrex_1_1StructOfArrays.html#a480b74499d8a9eafa9c81d5404287c80":[2,0,0,444,23],
@@ -177,8 +178,8 @@ var NAVTREEINDEX66 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html":[2,0,0,3,10],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a52514ef1d14b3467dd51e98568305acf":[2,0,0,3,10,1],
 "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a654cc54f1b6eceb2babda4006d1dcaf2":[2,0,0,3,10,0],
-"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a9623ee960fbac28922dbd43ee186a71f":[2,0,0,3,10,2],
-"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html":[2,0,0,3,9]
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a9623ee960fbac28922dbd43ee186a71f":[2,0,0,3,10,2]
 };

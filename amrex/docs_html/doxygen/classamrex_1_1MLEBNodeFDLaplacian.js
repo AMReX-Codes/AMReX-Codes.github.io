@@ -12,6 +12,7 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "fixUpResidualMask", "classamrex_1_1MLEBNodeFDLaplacian.html#ab8a56b262d500064fee4f687b293c268", null ],
     [ "Fsmooth", "classamrex_1_1MLEBNodeFDLaplacian.html#a4c82d05fb5f0114b96fec9850a13940b", null ],
     [ "interpolation", "classamrex_1_1MLEBNodeFDLaplacian.html#af8a22ae6d414c1b98b3229132f35d539", null ],
+    [ "isBottomSingular", "classamrex_1_1MLEBNodeFDLaplacian.html#a85a019414c7e2a4c0a5e7db9beaa9fc6", null ],
     [ "isSingular", "classamrex_1_1MLEBNodeFDLaplacian.html#a50d42cd15eea1fb4b562d26a88d6b05c", null ],
     [ "name", "classamrex_1_1MLEBNodeFDLaplacian.html#a30b8c12319907caf82b87005902a6bcc", null ],
     [ "normalize", "classamrex_1_1MLEBNodeFDLaplacian.html#ae8e6a26dbbd7e415c6c071e85a19cef3", null ],
