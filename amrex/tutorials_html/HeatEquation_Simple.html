@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial: Heat Equation - Simple &mdash; amrex 22.09-dev documentation</title>
+  <title>Tutorial: Heat Equation - Simple &mdash; amrex 22.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -31,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.09-dev
+                22.10-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -338,7 +339,7 @@ commands to read AMReX output files.</p>
 <p>The following commands import the <code class="code docutils literal notranslate"><span class="pre">yt</span></code> package and plot
 a 2D slice of the output at from the 1000th time step.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yt</span>
-<span class="kn">from</span> <span class="nn">yt.frontends.boxlib.data_structures</span> <span class="k">import</span> <span class="n">AMReXDataset</span>
+<span class="kn">from</span> <span class="nn">yt.frontends.boxlib.data_structures</span> <span class="kn">import</span> <span class="n">AMReXDataset</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">AMReXDataset</span><span class="p">(</span><span class="s2">&quot;plt01000&quot;</span><span class="p">)</span>
 <span class="n">sl</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">SlicePlot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;boxlib&#39;</span><span class="p">,</span> <span class="s1">&#39;phi&#39;</span><span class="p">))</span>
 <span class="n">sl</span>

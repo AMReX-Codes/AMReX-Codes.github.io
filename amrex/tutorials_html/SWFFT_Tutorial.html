@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SWFFT &mdash; amrex 22.09-dev documentation</title>
+  <title>SWFFT &mdash; amrex 22.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -32,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.09-dev
+                22.10-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -95,8 +96,8 @@
 <p>This Tutorial demonstrates how to call the SWFFT wrapper to the FFTW3 solver.</p>
 <p>Note that the SWFFT source code was developed by Adrian Pope and colleagues and
 is available at:</p>
-<p><a class="reference external" href="https://xgitlab.cels.anl.gov/hacc/SWFFT">https://xgitlab.cels.anl.gov/hacc/SWFFT</a></p>
-<p>Please refer to the AMReX documentation at <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/SWFFT.html#swfftdoc" title="(in amrex v22.09-dev)"><span>SWFFT</span></a> for a brief explanation
+<p><a class="reference external" href="https://git.cels.anl.gov/hacc/SWFFT">https://git.cels.anl.gov/hacc/SWFFT</a></p>
+<p>Please refer to the AMReX documentation at <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/SWFFT.html#swfftdoc" title="(in amrex v22.10-dev)"><span>SWFFT</span></a> for a brief explanation
 of how the SWFFT redistributes data into pencil grids.</p>
 <p>AMReX contains two SWFFT tutorials, <code class="docutils literal notranslate"><span class="pre">SWFFT_poisson</span></code> and <code class="docutils literal notranslate"><span class="pre">SWFFT_simple</span></code>:</p>
 <ul class="simple">
@@ -105,7 +106,7 @@ a Poisson equation with periodic boundary conditions.  In it, both a forward FFT
 are called to solve the equation, however, no reordering of the DFT data in k-space is performed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SWFFT_simple</span></code> tutorial: This tutorial: <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/SWFFT/SWFFT_simple</span></code>, is
 useful if the objective is to simply take a forward FFT of data, and the DFT’s ordering in k-space
-matters to the user.  This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>, takes a forward FFT,
+matters to the user.  This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>, takes a forward FFT,
 and then redistributes the data in k-space back to the “correct,” 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>, ordering.
 The results are written to a plot file.</p></li>
 </ul>
@@ -130,7 +131,7 @@ use amrvis3d (source available at <a class="reference external" href="https://gi
 </section>
 <section id="swfft-simple">
 <span id="section-swfft-tutorial-swfft-simple"></span><h2>SWFFT_simple<a class="headerlink" href="#swfft-simple" title="Permalink to this heading"></a></h2>
-<p>This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>, takes a forward FFT, and then redistributes the data in k-space back to the “correct,” 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>, ordering.  The results are written to a plot file.</p>
+<p>This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>, takes a forward FFT, and then redistributes the data in k-space back to the “correct,” 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>, ordering.  The results are written to a plot file.</p>
 <p>In a similar fashion to the <code class="docutils literal notranslate"><span class="pre">SWFFT_poisson</span></code> tutorial:</p>
 <p>To build the code, type ‘make’ in <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/SWFFT/SWFFT_simple</span></code>.  This
 will include code from <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/SWFFT</span></code> and you will need to
@@ -140,7 +141,7 @@ you would need to “module load fft”)</p>
 <p>Use amrvis2d or amrvis3d to visualize the output (source available at <a class="reference external" href="https://github.com/AMReX-Codes/Amrvis">https://github.com/AMReX-Codes/Amrvis</a>):</p>
 <p>amrvis${dims}d plt_fft*</p>
 <p>where <code class="docutils literal notranslate"><span class="pre">dims</span></code> specifies <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>. The DFT of the data and the original data are labeled as <code class="docutils literal notranslate"><span class="pre">FFT_of_phi</span></code> and <code class="docutils literal notranslate"><span class="pre">phi</span></code> within the plot file.</p>
-<p>The <a class="reference internal" href="#section-swfft-tutorial-swfft-pois"><span class="std std-ref">SWFFT_poisson</span></a> tutorial provides an example of solving a Poisson equation using a discrete spectral method, in which a forward and reverse FFT of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> are computed.</p>
+<p>The <a class="reference internal" href="#section-swfft-tutorial-swfft-pois"><span class="std std-ref">SWFFT_poisson</span></a> tutorial provides an example of solving a Poisson equation using a discrete spectral method, in which a forward and reverse FFT of a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> are computed.</p>
 </section>
 </section>
 
