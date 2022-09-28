@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('AMReX__Algorithm_8H_source.html',''); 
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ae028ac7f5c3bea125e9525c505ceefd2">  146</a></span>&#160;    I <a class="code" href="namespaceamrex.html#a6d6b1086f3f7b77f820cac8d8005ac38">bisect</a> (T <span class="keyword">const</span>* d, I lo, I hi, T <span class="keyword">const</span>&amp; v) {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">while</span> (lo &lt;= hi) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordtype">int</span> mid = (lo+hi)/2;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordtype">int</span> mid = lo + (hi-lo)/2;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span> (v &gt;= d[mid] &amp;&amp; v &lt; d[mid+1]) {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">return</span> mid;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v &lt; d[mid]) {</div>
