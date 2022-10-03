@@ -202,7 +202,7 @@ var searchData=
   ['comp_5fbflo_1962',['comp_bflo',['../namespaceamrex_1_1detail.html#a63f67f333c651c923c2d3eaf7b0a15aa',1,'amrex::detail']]],
   ['comp_5fsplit_1963',['comp_split',['../structamrex_1_1ForkJoin_1_1MFFork.html#a10f36654d975cbc986561d7c1931a02b',1,'amrex::ForkJoin::MFFork']]],
   ['compactify_1964',['compactify',['../classamrex_1_1MLLinOp.html#af37726771c106055867bf88ade1f65d7',1,'amrex::MLLinOp::compactify(Box const &amp;b) const noexcept'],['../classamrex_1_1MLLinOp.html#ae3dae2320c8c9e64274e8d41131187dc',1,'amrex::MLLinOp::compactify(Array4&lt; T &gt; const &amp;a) const noexcept']]],
-  ['compcrossterms_1965',['compCrossTerms',['../classamrex_1_1MLEBTensorOp.html#a14c881c5002de907212e7a2803d88046',1,'amrex::MLEBTensorOp']]],
+  ['compcrossterms_1965',['compCrossTerms',['../classamrex_1_1MLEBTensorOp.html#a786a65eb6237c5c0072d107f3670911b',1,'amrex::MLEBTensorOp']]],
   ['compdivergence_1966',['compDivergence',['../classamrex_1_1MLNodeLaplacian.html#adb3e623e86459b1e9a9c14492961d759',1,'amrex::MLNodeLaplacian']]],
   ['compex_1967',['compex',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#ae641e60af08fa4f6e33d79a5f03db53a',1,'amrex::TinyProfiler::ProcStats']]],
   ['compflux_1968',['compFlux',['../classamrex_1_1MLCellLinOp.html#acd6c78c0e6307234b1539ba81caadb9c',1,'amrex::MLCellLinOp::compFlux()'],['../classamrex_1_1MLEBTensorOp.html#a739281050ab5aebe8d61a56992049a58',1,'amrex::MLEBTensorOp::compFlux()'],['../classamrex_1_1MLLinOp.html#a7dfae9fa431aefebde79a4d5aff2ac5e',1,'amrex::MLLinOp::compFlux()'],['../classamrex_1_1MLNodeLinOp.html#ad4308a8cc2e4cb0ee8850640a80ca2a2',1,'amrex::MLNodeLinOp::compFlux()'],['../classamrex_1_1MLTensorOp.html#ab07ec8381bce1e90f83ecf92d6581547',1,'amrex::MLTensorOp::compFlux()']]],

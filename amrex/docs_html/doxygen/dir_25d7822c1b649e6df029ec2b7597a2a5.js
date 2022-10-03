@@ -52,7 +52,7 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     ] ],
     [ "AMReX_MLEBTensor_2D_K.H", "AMReX__MLEBTensor__2D__K_8H.html", "AMReX__MLEBTensor__2D__K_8H" ],
     [ "AMReX_MLEBTensor_3D_K.H", "AMReX__MLEBTensor__3D__K_8H.html", "AMReX__MLEBTensor__3D__K_8H" ],
-    [ "AMReX_MLEBTensor_K.H", "AMReX__MLEBTensor__K_8H.html", null ],
+    [ "AMReX_MLEBTensor_K.H", "AMReX__MLEBTensor__K_8H.html", "AMReX__MLEBTensor__K_8H" ],
     [ "AMReX_MLEBTensorOp.cpp", "AMReX__MLEBTensorOp_8cpp.html", null ],
     [ "AMReX_MLEBTensorOp.H", "AMReX__MLEBTensorOp_8H.html", [
       [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", "classamrex_1_1MLEBTensorOp" ]
@@ -114,7 +114,7 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLTensor_1D_K.H", "AMReX__MLTensor__1D__K_8H.html", null ],
     [ "AMReX_MLTensor_2D_K.H", "AMReX__MLTensor__2D__K_8H.html", "AMReX__MLTensor__2D__K_8H" ],
     [ "AMReX_MLTensor_3D_K.H", "AMReX__MLTensor__3D__K_8H.html", "AMReX__MLTensor__3D__K_8H" ],
-    [ "AMReX_MLTensor_K.H", "AMReX__MLTensor__K_8H.html", null ],
+    [ "AMReX_MLTensor_K.H", "AMReX__MLTensor__K_8H.html", "AMReX__MLTensor__K_8H" ],
     [ "AMReX_MLTensorOp.cpp", "AMReX__MLTensorOp_8cpp.html", null ],
     [ "AMReX_MLTensorOp.H", "AMReX__MLTensorOp_8H.html", [
       [ "MLTensorOp", "classamrex_1_1MLTensorOp.html", "classamrex_1_1MLTensorOp" ]

@@ -7,7 +7,7 @@ var classamrex_1_1MLEBTensorOp =
     [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html#a16a15944a17ebe8341932a53483ef2b6", null ],
     [ "apply", "classamrex_1_1MLEBTensorOp.html#a492bdb86a17eff7aa7b01a99d68eefed", null ],
     [ "applyBCTensor", "classamrex_1_1MLEBTensorOp.html#a6cf6cb52bc1116d3bae93ea118d55096", null ],
-    [ "compCrossTerms", "classamrex_1_1MLEBTensorOp.html#a14c881c5002de907212e7a2803d88046", null ],
+    [ "compCrossTerms", "classamrex_1_1MLEBTensorOp.html#a786a65eb6237c5c0072d107f3670911b", null ],
     [ "compFlux", "classamrex_1_1MLEBTensorOp.html#a739281050ab5aebe8d61a56992049a58", null ],
     [ "compVelGrad", "classamrex_1_1MLEBTensorOp.html#af68d7a6c4f6bf5075b2263eaece90f21", null ],
     [ "define", "classamrex_1_1MLEBTensorOp.html#ac6b1462f39aa6a60a2bfd0cd6e687aee", null ],
