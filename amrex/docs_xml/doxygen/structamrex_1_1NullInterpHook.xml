@@ -5,17 +5,27 @@
     <includes refid="AMReX__FillPatchUtil_8H" local="no">AMReX_FillPatchUtil.H</includes>
     <templateparamlist>
       <param>
-        <type>typename FAB</type>
+        <type>typename MFFAB</type>
       </param>
     </templateparamlist>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1NullInterpHook_1a9251814f4d8e0ed5ca372e6f4b3c2462" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1NullInterpHook_1a9633b75eb2bd1251d7406b5ba1bee0db" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+            <defval>MFFAB</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type>void</type>
-        <definition>void amrex::NullInterpHook&lt; FAB &gt;::operator()</definition>
-        <argsstring>(FAB &amp;, const Box &amp;, int, int) const</argsstring>
+        <definition>void amrex::NullInterpHook&lt; MFFAB &gt;::operator()</definition>
+        <argsstring>(MFFAB &amp;, const Box &amp;, int, int) const</argsstring>
         <name>operator()</name>
         <param>
-          <type>FAB &amp;</type>
+          <type>MFFAB &amp;</type>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
@@ -32,15 +42,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="34" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="34" bodyend="34"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="35" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="35" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1NullInterpHook_1ace510329652fbc0316ca9ae8f5adaf93" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1NullInterpHook_1ab32241bc8164d5433b0a0feeaa64e308" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+            <defval>MFFAB</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type>void</type>
-        <definition>void amrex::NullInterpHook&lt; FAB &gt;::operator()</definition>
-        <argsstring>(Array&lt; FAB *, AMREX_SPACEDIM &gt;, const Box &amp;, int, int) const</argsstring>
+        <definition>void amrex::NullInterpHook&lt; MFFAB &gt;::operator()</definition>
+        <argsstring>(Array&lt; MFFAB *, AMREX_SPACEDIM &gt;, const Box &amp;, int, int) const</argsstring>
         <name>operator()</name>
         <param>
-          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; FAB *, AMREX_SPACEDIM &gt;</type>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; MFFAB *, AMREX_SPACEDIM &gt;</type>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
@@ -57,17 +77,50 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="36" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="36" bodyend="36"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="38" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1NullInterpHook_1a95fb47ea2bdaf1d0296a32db51dff33e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+            <defval>MFFAB</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::NullInterpHook&lt; MFFAB &gt;::operator()</definition>
+        <argsstring>(MFFAB &amp;, int, int) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>MFFAB &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="41" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="41" bodyend="41"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="32" bodyend="37"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="32" bodyend="42"/>
     <listofallmembers>
-      <member refid="structamrex_1_1NullInterpHook_1a9251814f4d8e0ed5ca372e6f4b3c2462" prot="public" virt="non-virtual"><scope>amrex::NullInterpHook</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1NullInterpHook_1ace510329652fbc0316ca9ae8f5adaf93" prot="public" virt="non-virtual"><scope>amrex::NullInterpHook</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1NullInterpHook_1a9633b75eb2bd1251d7406b5ba1bee0db" prot="public" virt="non-virtual"><scope>amrex::NullInterpHook</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1NullInterpHook_1ab32241bc8164d5433b0a0feeaa64e308" prot="public" virt="non-virtual"><scope>amrex::NullInterpHook</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1NullInterpHook_1a95fb47ea2bdaf1d0296a32db51dff33e" prot="public" virt="non-virtual"><scope>amrex::NullInterpHook</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

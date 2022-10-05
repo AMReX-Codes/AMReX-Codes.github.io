@@ -18,6 +18,9 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
     ] ],
     [ "AMReX_ErrorList.cpp", "AMReX__ErrorList_8cpp.html", "AMReX__ErrorList_8cpp" ],
     [ "AMReX_ErrorList.H", "AMReX__ErrorList_8H.html", "AMReX__ErrorList_8H" ],
+    [ "AMReX_FillPatcher.H", "AMReX__FillPatcher_8H.html", [
+      [ "FillPatcher", "classamrex_1_1FillPatcher.html", "classamrex_1_1FillPatcher" ]
+    ] ],
     [ "AMReX_FillPatchUtil.cpp", "AMReX__FillPatchUtil_8cpp.html", "AMReX__FillPatchUtil_8cpp" ],
     [ "AMReX_FillPatchUtil.H", "AMReX__FillPatchUtil_8H.html", "AMReX__FillPatchUtil_8H" ],
     [ "AMReX_FillPatchUtil_1d.F90", "AMReX__FillPatchUtil__1d_8F90.html", "AMReX__FillPatchUtil__1d_8F90" ],

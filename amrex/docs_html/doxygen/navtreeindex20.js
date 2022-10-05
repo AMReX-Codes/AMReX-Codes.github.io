@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__constants__mod_8f90.html#a3b52f9631247ee9d89ef856418d73e7e":[3,0,0,2,52,33],
+"AMReX__constants__mod_8f90.html#a4461444e428f4382ebae724a72ae6fdb":[3,0,0,2,52,3],
 "AMReX__constants__mod_8f90.html#a4af48d8e7785fd2fdc80cc68c460e520":[3,0,0,2,52,14],
 "AMReX__constants__mod_8f90.html#a4f8d71c1b1d316bbf6505f7a9511d24d":[3,0,0,2,52,1],
 "AMReX__constants__mod_8f90.html#a5321716779ead3e7f70ea68bdbd2fb8b":[3,0,0,2,52,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__string__mod_8F90.html#a8661803d88bd3264e542f0f1362406e1":[3,0,0,2,235,1],
 "AMReX__string__mod_8F90.html#a959bc74ecd938061a024fb0d210facad":[3,0,0,2,235,2],
 "AlignedAllocator_8h.html":[3,0,0,5,9,0],
-"AlignedAllocator_8h_source.html":[3,0,0,5,9,0],
-"BL__HPGMG_8H.html":[3,0,0,5,3,1],
-"BL__HPGMG_8H_source.html":[3,0,0,5,3,1]
+"AlignedAllocator_8h_source.html":[3,0,0,5,9,0]
 };

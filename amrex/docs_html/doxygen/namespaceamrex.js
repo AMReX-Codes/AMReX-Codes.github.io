@@ -164,6 +164,7 @@ var namespaceamrex =
     [ "FilccCell", "structamrex_1_1FilccCell.html", "structamrex_1_1FilccCell" ],
     [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ],
     [ "FillBoxId", "classamrex_1_1FillBoxId.html", "classamrex_1_1FillBoxId" ],
+    [ "FillPatcher", "classamrex_1_1FillPatcher.html", "classamrex_1_1FillPatcher" ],
     [ "FillPatchIterator", "classamrex_1_1FillPatchIterator.html", "classamrex_1_1FillPatchIterator" ],
     [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html", "classamrex_1_1FillPatchIteratorHelper" ],
     [ "FluxRegister", "classamrex_1_1FluxRegister.html", "classamrex_1_1FluxRegister" ],

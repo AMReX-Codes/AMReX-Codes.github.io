@@ -226,9 +226,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a95ab5abc1e6c5d1efb9de40e0873d391"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a95ab5abc1e6c5d1efb9de40e0873d391">periodicShift</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;target, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;src, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &gt; &amp;out) const noexcept</td></tr>
 <tr class="memdesc:a95ab5abc1e6c5d1efb9de40e0873d391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute Array of shifts which will translate src so that it will intersect target with non-zero intersection. the array will be resized internally, so anything previously there will be gone DO NOT return non-periodic shifts, even if the box's do intersect without shifting. The logic is that you will only do this as a special case if there is some periodicity.  <a href="classamrex_1_1Geometry.html#a95ab5abc1e6c5d1efb9de40e0873d391">More...</a><br /></td></tr>
 <tr class="separator:a95ab5abc1e6c5d1efb9de40e0873d391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4838041db3d95fdd4960045349db2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a8a4838041db3d95fdd4960045349db2d">growNonPeriodicDomain</a> (<a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ngrow) const noexcept</td></tr>
+<tr class="memdesc:a8a4838041db3d95fdd4960045349db2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return domain box with non-periodic directions grown by ngrow.  <a href="classamrex_1_1Geometry.html#a8a4838041db3d95fdd4960045349db2d">More...</a><br /></td></tr>
+<tr class="separator:a8a4838041db3d95fdd4960045349db2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4535bb6797e6c53c228d598f23cc7296"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a4535bb6797e6c53c228d598f23cc7296">growNonPeriodicDomain</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow) const noexcept</td></tr>
 <tr class="memdesc:a4535bb6797e6c53c228d598f23cc7296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return domain box with non-periodic directions grown by ngrow.  <a href="classamrex_1_1Geometry.html#a4535bb6797e6c53c228d598f23cc7296">More...</a><br /></td></tr>
 <tr class="separator:a4535bb6797e6c53c228d598f23cc7296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0dd62693f548b7fb4ee38acc6310db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#aca0dd62693f548b7fb4ee38acc6310db">growPeriodicDomain</a> (<a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ngrow) const noexcept</td></tr>
+<tr class="memdesc:aca0dd62693f548b7fb4ee38acc6310db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return domain box with periodic directions grown by ngrow.  <a href="classamrex_1_1Geometry.html#aca0dd62693f548b7fb4ee38acc6310db">More...</a><br /></td></tr>
+<tr class="separator:aca0dd62693f548b7fb4ee38acc6310db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9c676150da912017772bb39a1f0d91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#abe9c676150da912017772bb39a1f0d91">growPeriodicDomain</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow) const noexcept</td></tr>
 <tr class="memdesc:abe9c676150da912017772bb39a1f0d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return domain box with periodic directions grown by ngrow.  <a href="classamrex_1_1Geometry.html#abe9c676150da912017772bb39a1f0d91">More...</a><br /></td></tr>
 <tr class="separator:abe9c676150da912017772bb39a1f0d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1206,7 +1212,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a4535bb6797e6c53c228d598f23cc7296"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4535bb6797e6c53c228d598f23cc7296">&#9670;&nbsp;</a></span>growNonPeriodicDomain()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4535bb6797e6c53c228d598f23cc7296">&#9670;&nbsp;</a></span>growNonPeriodicDomain() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1233,8 +1239,36 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a8a4838041db3d95fdd4960045349db2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4838041db3d95fdd4960045349db2d">&#9670;&nbsp;</a></span>growNonPeriodicDomain() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Box.html">Box</a> amrex::Geometry::growNonPeriodicDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ngrow</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return domain box with non-periodic directions grown by ngrow. </p>
+
+</div>
+</div>
 <a id="abe9c676150da912017772bb39a1f0d91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe9c676150da912017772bb39a1f0d91">&#9670;&nbsp;</a></span>growPeriodicDomain()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abe9c676150da912017772bb39a1f0d91">&#9670;&nbsp;</a></span>growPeriodicDomain() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1246,6 +1280,34 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname"><a class="el" href="classamrex_1_1Box.html">Box</a> amrex::Geometry::growPeriodicDomain </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ngrow</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return domain box with periodic directions grown by ngrow. </p>
+
+</div>
+</div>
+<a id="aca0dd62693f548b7fb4ee38acc6310db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0dd62693f548b7fb4ee38acc6310db">&#9670;&nbsp;</a></span>growPeriodicDomain() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Box.html">Box</a> amrex::Geometry::growPeriodicDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
           <td class="paramname"><em>ngrow</em></td><td>)</td>
           <td> const</td>
         </tr>
