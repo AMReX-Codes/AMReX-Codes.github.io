@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timingstats_2eh_9709',['TimingStats.h',['https://amrex-codes.github.io/amrex/doxygen/TimingStats_8h.html.html',1,'']]]
+  ['timingstats_2eh_9822',['TimingStats.h',['https://amrex-codes.github.io/amrex/doxygen/TimingStats_8h.html.html',1,'']]]
 ];
