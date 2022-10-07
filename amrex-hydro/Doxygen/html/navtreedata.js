@@ -62,7 +62,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"hydro__godunov__plm_8H.html"
+"hydro__godunov__plm_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

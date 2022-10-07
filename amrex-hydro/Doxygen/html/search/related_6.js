@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ifabio_16378',['IFABio',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd',1,'amrex::IArrayBox']]]
+  ['ifabio_16374',['IFABio',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd',1,'amrex::IArrayBox']]]
 ];
