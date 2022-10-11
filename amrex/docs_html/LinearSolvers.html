@@ -271,6 +271,7 @@ function</p>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span></code> for Dirichlet boundary condition.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span></code> for homogeneous Neumann boundary condition.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">inhomogNeumann</span></code> for inhomogeneous Neumann boundary condition.</p></li>
+<li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Robin</span></code> for Robin boundary conditions, <span class="math notranslate nohighlight">\(a\phi + b\frac{\partial\phi}{\partial n} = f\)</span>.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">reflect_odd</span></code> for reflection with sign changed.</p></li>
 </ul>
 <p>2) Cell-centered solvers only:
@@ -293,13 +294,13 @@ can be passed instead of <code class="code highlight cpp c++ docutils literal hi
 <p>3) Cell-centered solvers only:
 before the solve one must always call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span></code> member function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">,</span>
-                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_a</span><span class="p">,</span>
-                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_b</span><span class="p">,</span>
-                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_f</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_a</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_b</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_f</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If we want to supply an inhomogeneous Dirichlet, inhomogeneous Neumann, or
-Robin boundary conditions at the domain boundaries, we must supply those values
+<p>If we want to supply an inhomogeneous Dirichlet or inhomogeneous Neumann
+boundary condition at the domain boundaries, we must supply those values
 in <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">levelbcdata</span></code>, which must have at least one ghost cell.
 Note that the argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrlev</span></code> is relative to the solve, not
 necessarily the full AMR hierarchy; amrlev = 0 refers to the coarsest
@@ -320,6 +321,10 @@ Note, however, that this call does not provide an initial guess for the solve.</
 Dirichlet or Neumann boundaries are assumed to be exactly on the face
 of the physical domain; storing these values in the ghost cell of
 a cell-centered array is a convenience of implementation.</p>
+<p>For Robin boundary conditions, the ghost cells in
+<code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">robinbc_a</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">robinbc_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">robinbc_f</span></code>
+store the numerical values in the condition,
+<span class="math notranslate nohighlight">\(a\phi + b\frac{\partial\phi}{\partial n} = f\)</span>.</p>
 </section>
 <section id="parameters">
 <span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h1>
