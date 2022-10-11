@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"structamrex_1_1FabArrayBase_1_1FB.html#a3ca8c8a83ae8de231f84a5f8069e8348":[2,0,0,144,8,11],
+"structamrex_1_1FabArrayBase_1_1FB.html#a53df06970b8cf1cb353ec184bb5422ef":[2,0,0,144,8,3],
 "structamrex_1_1FabArrayBase_1_1FB.html#a5dabbd852ff0a3516c1d7b2b40496773":[2,0,0,144,8,7],
 "structamrex_1_1FabArrayBase_1_1FB.html#a70a0f9e05a982b0fba0204104b794e72":[2,0,0,144,8,15],
 "structamrex_1_1FabArrayBase_1_1FB.html#a7350ce3c86017261950af6f94802d343":[2,0,0,144,8,2],
@@ -139,13 +141,13 @@ var NAVTREEINDEX61 =
 "structamrex_1_1FabInfo.html#ab455e0f8529af58aa33685251d0f736a":[2,0,0,149,0],
 "structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec":[2,0,0,149,4],
 "structamrex_1_1FilccCell.html":[2,0,0,161],
-"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,161,1],
-"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,161,2],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,161,0],
+"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,161,2],
+"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[2,0,0,161,1],
 "structamrex_1_1FilfcFace.html":[2,0,0,162],
-"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,162,0],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,162,1],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,162,2],
+"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[2,0,0,162,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html":[2,0,0,168,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[2,0,0,168,0,3],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a7d0fbbb79ec0286ab72dfe0d23116573":[2,0,0,168,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,185],
 "structamrex_1_1Gpu_1_1AtomicAdd.html":[2,0,0,6,3],
 "structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[2,0,0,6,3,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[2,0,0,6,4],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[2,0,0,6,4,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[2,0,0,6,5]
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[2,0,0,6,4]
 };
