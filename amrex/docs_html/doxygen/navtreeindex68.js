@@ -1,5 +1,7 @@
 var NAVTREEINDEX68 =
 {
+"structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[2,0,30,9],
+"structyy__trans__info.html":[2,0,31],
 "structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[2,0,31,1],
 "structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[2,0,31,0],
 "unionAMREX__IPARSERSTYPE.html":[2,0,13],

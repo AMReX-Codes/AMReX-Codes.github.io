@@ -1,5 +1,7 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1ReduceOpLogicalAnd.html":[2,0,0,421],
+"structamrex_1_1ReduceOpLogicalAnd.html#a18be9b2403fd9d77004b01b32e26f523":[2,0,0,421,0],
 "structamrex_1_1ReduceOpLogicalAnd.html#a6165dd9de8a059c0ff66c4c2affa1b11":[2,0,0,421,2],
 "structamrex_1_1ReduceOpLogicalAnd.html#a8e979dc39b9c4f12519cc52c7ce0f9ec":[2,0,0,421,1],
 "structamrex_1_1ReduceOpLogicalOr.html":[2,0,0,422],
@@ -247,7 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1algoim_1_1BoundingBox.html#a5ddb29896fb93ee72d69b9545d3453b1":[2,0,0,0,0,1],
 "structamrex_1_1algoim_1_1BoundingBox.html#a77b0f6867f6784ee3d987eb3de9ac2f8":[2,0,0,0,0,2],
 "structamrex_1_1algoim_1_1BoundingBox.html#a7a62e727685b8e1d48309139944ab28f":[2,0,0,0,0,5],
-"structamrex_1_1algoim_1_1BoundingBox.html#aeb237522d3043c217b69e736554b4791":[2,0,0,0,0,3],
-"structamrex_1_1algoim_1_1BoundingBox.html#af29ddffe552640cdadd8dec27b352074":[2,0,0,0,0,0],
-"structamrex_1_1algoim_1_1EBPlane.html":[2,0,0,0,1]
+"structamrex_1_1algoim_1_1BoundingBox.html#aeb237522d3043c217b69e736554b4791":[2,0,0,0,0,3]
 };

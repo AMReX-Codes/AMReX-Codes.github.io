@@ -3444,23 +3444,26 @@
 <codeline lineno="1159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1ac055c06cab956b521c8b66bed595ef79" kindref="member">interpAssign</ref>(amrlev,<sp/>fmglev,<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>.get&lt;MultiFab&gt;(),<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a952c6efe16374645210c3308f3b335f6" kindref="member">crse</ref>.get&lt;MultiFab&gt;());</highlight></codeline>
 <codeline lineno="1160"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1161"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1162"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1163"><highlight class="normal"><ref refid="classamrex_1_1MLLinOp_1af8de1257ddde2a40a49011ef34d68100" kindref="member">MLLinOp::isMFIterSafe</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev2)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1164"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[amrlev][mglev1]<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[amrlev][mglev2]</highlight></codeline>
-<codeline lineno="1166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1BoxArray_1a93718ee84062758c5256a2792939c6f7" kindref="member">BoxArray::SameRefs</ref>(<ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[amrlev][mglev1],<sp/><ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[amrlev][mglev2]);</highlight></codeline>
-<codeline lineno="1167"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1169"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_PETSC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1170"><highlight class="normal">std::unique_ptr&lt;PETScABecLap&gt;</highlight></codeline>
-<codeline lineno="1171"><highlight class="normal">MLLinOp::makePETSc<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1172"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;MLLinOp::makePETSc:<sp/>How<sp/>did<sp/>we<sp/>get<sp/>here?&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
-<codeline lineno="1175"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1162"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1163"><highlight class="normal"><ref refid="classamrex_1_1MLLinOp_1aea26a4fe6d5a15d23a347501c6be1c71" kindref="member">MLLinOp::postSolve</ref><sp/>(Vector&lt;Any&gt;&amp;<sp/></highlight><highlight class="comment">/*<sp/>sol<sp/>*/</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="1164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1165"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1166"><highlight class="normal"><ref refid="classamrex_1_1MLLinOp_1af8de1257ddde2a40a49011ef34d68100" kindref="member">MLLinOp::isMFIterSafe</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev2)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1167"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[amrlev][mglev1]<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[amrlev][mglev2]</highlight></codeline>
+<codeline lineno="1169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1BoxArray_1a93718ee84062758c5256a2792939c6f7" kindref="member">BoxArray::SameRefs</ref>(<ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[amrlev][mglev1],<sp/><ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[amrlev][mglev2]);</highlight></codeline>
+<codeline lineno="1170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1172"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_PETSC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1173"><highlight class="normal">std::unique_ptr&lt;PETScABecLap&gt;</highlight></codeline>
+<codeline lineno="1174"><highlight class="normal">MLLinOp::makePETSc<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1175"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;MLLinOp::makePETSc:<sp/>How<sp/>did<sp/>we<sp/>get<sp/>here?&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
 <codeline lineno="1178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1179"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1181"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.cpp"/>
   </compounddef>

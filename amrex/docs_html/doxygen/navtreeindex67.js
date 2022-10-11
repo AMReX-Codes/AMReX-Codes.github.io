@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"structamrex_1_1algoim_1_1BoundingBox.html#af29ddffe552640cdadd8dec27b352074":[2,0,0,0,0,0],
+"structamrex_1_1algoim_1_1EBPlane.html":[2,0,0,0,1],
 "structamrex_1_1algoim_1_1EBPlane.html#a289724cd28f09eb3d384c5a9f432c082":[2,0,0,0,1,4],
 "structamrex_1_1algoim_1_1EBPlane.html#a3ae6123f45aee26c756d2105c8c903ab":[2,0,0,0,1,6],
 "structamrex_1_1algoim_1_1EBPlane.html#a6a73bedd66de0d9db79f8af959ad72d3":[2,0,0,0,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX67 =
 "structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465":[2,0,30,10],
 "structyy__buffer__state.html#a818e94bc9c766e683c60df1e9fd01199":[2,0,30,2],
 "structyy__buffer__state.html#a8435c3f786bbb55d21d0174e4cfc22a0":[2,0,30,3],
-"structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[2,0,30,0],
-"structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[2,0,30,9],
-"structyy__trans__info.html":[2,0,31]
+"structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[2,0,30,0]
 };

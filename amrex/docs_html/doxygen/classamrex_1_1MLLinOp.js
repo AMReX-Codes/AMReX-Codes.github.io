@@ -110,6 +110,7 @@ var classamrex_1_1MLLinOp =
     [ "normalize", "classamrex_1_1MLLinOp.html#a86207e36440100ba012296cb95b51713", null ],
     [ "operator=", "classamrex_1_1MLLinOp.html#ad163e1fa25935bce528783de5adb6b1a", null ],
     [ "operator=", "classamrex_1_1MLLinOp.html#aec2118e27e9938788a89f5dda28709f7", null ],
+    [ "postSolve", "classamrex_1_1MLLinOp.html#aea26a4fe6d5a15d23a347501c6be1c71", null ],
     [ "prepareForSolve", "classamrex_1_1MLLinOp.html#a431d85bffa7e9bbcd36a10ae82fe3683", null ],
     [ "reflux", "classamrex_1_1MLLinOp.html#ab1f098dbddd9ad2068278fc3a51a7b56", null ],
     [ "remapNeighborhoods", "classamrex_1_1MLLinOp.html#a62f7495893309fa4f4805bbea9b59b3b", null ],

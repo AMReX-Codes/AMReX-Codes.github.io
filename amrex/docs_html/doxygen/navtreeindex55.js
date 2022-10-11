@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"classhacc_1_1Dfft.html#a9e008a9f0839f098d817a567bf2c598c":[2,0,11,1,38],
+"classhacc_1_1Dfft.html#aa73a222d425fcec58d2b0f8526ed8399":[2,0,11,1,39],
 "classhacc_1_1Dfft.html#aaafa2873c552d058d627650a7c613cc8":[2,0,11,1,2],
 "classhacc_1_1Dfft.html#aabbda3d97d9422f63ac32a3bf81d5d79":[2,0,11,1,5],
 "classhacc_1_1Dfft.html#aadaf549efd3eb7afb18be130c5c70997":[2,0,11,1,23],
@@ -172,8 +174,8 @@ var NAVTREEINDEX55 =
 "distribution__c_8h.html#afc2e25bc33f0263abbac9ef713b67345":[3,0,0,5,9,7,8],
 "distribution__c_8h_source.html":[3,0,0,5,9,7],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX55 =
 "functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
 "functions_vars_a.html":[2,3,2,1],
-"functions_vars_b.html":[2,3,2,2],
-"functions_vars_c.html":[2,3,2,3],
-"functions_vars_d.html":[2,3,2,4]
+"functions_vars_b.html":[2,3,2,2]
 };
