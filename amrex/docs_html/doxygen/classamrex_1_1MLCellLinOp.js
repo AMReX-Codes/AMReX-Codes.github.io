@@ -8,6 +8,7 @@ var classamrex_1_1MLCellLinOp =
     [ "~MLCellLinOp", "classamrex_1_1MLCellLinOp.html#a4d46c85e7e43e5231e19607a868d3d0f", null ],
     [ "MLCellLinOp", "classamrex_1_1MLCellLinOp.html#acba5508d208bbb531ce2fe45042b4f6f", null ],
     [ "MLCellLinOp", "classamrex_1_1MLCellLinOp.html#a4bb69639aa4cb08113d6d8273fca03ae", null ],
+    [ "addInhomogNeumannFlux", "classamrex_1_1MLCellLinOp.html#a7220b4246ab9447e6b2b4432797c794f", null ],
     [ "AnyAverageDownAndSync", "classamrex_1_1MLCellLinOp.html#a3efe1958435b3fde0ea3acb0f404f54e", null ],
     [ "AnyAvgDownResAmr", "classamrex_1_1MLCellLinOp.html#af7c27ed28c0d3038c44e786416fcfa27", null ],
     [ "AnyInterpolationAmr", "classamrex_1_1MLCellLinOp.html#a9bc26851381c49d35f14bbcf2e0bbb75", null ],

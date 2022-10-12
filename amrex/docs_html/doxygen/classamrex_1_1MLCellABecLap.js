@@ -4,6 +4,7 @@ var classamrex_1_1MLCellABecLap =
     [ "~MLCellABecLap", "classamrex_1_1MLCellABecLap.html#aaa11148ef1cc3386414a3b3d02f9a4b2", null ],
     [ "MLCellABecLap", "classamrex_1_1MLCellABecLap.html#aff6a0f1c81880c9e944e725098d73a7c", null ],
     [ "MLCellABecLap", "classamrex_1_1MLCellABecLap.html#a13b727caa58ea6b165dcc414b6c14bae", null ],
+    [ "addInhomogNeumannFlux", "classamrex_1_1MLCellABecLap.html#a8e19334555666cedb2a6a35a7bb3e885", null ],
     [ "applyInhomogNeumannTerm", "classamrex_1_1MLCellABecLap.html#a1776ab863b406f855c04737879f98523", null ],
     [ "applyOverset", "classamrex_1_1MLCellABecLap.html#a41b8fd47ae330f346ee7e5ff6b90ca62", null ],
     [ "define", "classamrex_1_1MLCellABecLap.html#a93dbbb7204ba78212d8891ab72cb8491", null ],
