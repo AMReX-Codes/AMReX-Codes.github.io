@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"structamrex_1_1NonLocalBC_1_1IsFabProjection.html":[2,0,0,11,8],
+"structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[2,0,0,11,9],
 "structamrex_1_1NonLocalBC_1_1MapComponents.html":[2,0,0,11,10],
 "structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[2,0,0,11,10,1],
 "structamrex_1_1NonLocalBC_1_1MapComponents.html#a368643b0ca2dfd8221c8ce8252b2fc4a":[2,0,0,11,10,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX64 =
 "structamrex_1_1Particle.html":[2,0,0,379],
 "structamrex_1_1Particle.html#a102ae1d7ef52914d8c93baa331169016":[2,0,0,379,15],
 "structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26":[2,0,0,379,0],
-"structamrex_1_1Particle.html#a1b1f1b307acf1e1762ee8aa31a1a6938":[2,0,0,379,4],
-"structamrex_1_1Particle.html#a2fcbaec8aac910c864f4a210d48d9c93":[2,0,0,379,11],
-"structamrex_1_1Particle.html#a3db7403027a6374a5fbc4c90ed0362cf":[2,0,0,379,22]
+"structamrex_1_1Particle.html#a1b1f1b307acf1e1762ee8aa31a1a6938":[2,0,0,379,4]
 };

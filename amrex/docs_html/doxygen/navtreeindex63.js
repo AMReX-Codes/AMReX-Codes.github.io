@@ -1,5 +1,7 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1IParser_1_1Data.html":[2,0,0,217,0],
+"structamrex_1_1IParser_1_1Data.html#a1c4d044550c8a47002f221aeead2c6a4":[2,0,0,217,0,2],
 "structamrex_1_1IParser_1_1Data.html#a7ba706756f6d9f4806511c613a16596f":[2,0,0,217,0,0],
 "structamrex_1_1IParser_1_1Data.html#a8f3166649cf29c5c3292bfb4eee475ec":[2,0,0,217,0,6],
 "structamrex_1_1IParser_1_1Data.html#a8f941db726ad3f6a2e60a4e4bed8229a":[2,0,0,217,0,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX63 =
 "structamrex_1_1NonLocalBC_1_1Identity.html#a2be194ea3baaf9a996c82b946bf54803":[2,0,0,11,6,1],
 "structamrex_1_1NonLocalBC_1_1Identity.html#a3319c4ea6b55bcbf4790af653e33257a":[2,0,0,11,6,3],
 "structamrex_1_1NonLocalBC_1_1Identity.html#ae1ac0e6d45d64ff668824d1b1180900a":[2,0,0,11,6,0],
-"structamrex_1_1NonLocalBC_1_1IsDataPacking.html":[2,0,0,11,7],
-"structamrex_1_1NonLocalBC_1_1IsFabProjection.html":[2,0,0,11,8],
-"structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[2,0,0,11,9]
+"structamrex_1_1NonLocalBC_1_1IsDataPacking.html":[2,0,0,11,7]
 };
