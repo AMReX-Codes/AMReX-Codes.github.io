@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1AmrLevel.html',''); init
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classamrex_1_1AmrLevel-members.html">List of all members</a>  </div>
@@ -183,9 +184,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a96b6f33d22c9341b1cff894f17555f47"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a96b6f33d22c9341b1cff894f17555f47">advance</a> (Real time, Real dt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle)=0</td></tr>
 <tr class="memdesc:a96b6f33d22c9341b1cff894f17555f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do an integration step on this level. Returns maximum safe time step. This is a pure virtual function and hence MUST be implemented by derived classes.  <a href="classamrex_1_1AmrLevel.html#a96b6f33d22c9341b1cff894f17555f47">More...</a><br /></td></tr>
 <tr class="separator:a96b6f33d22c9341b1cff894f17555f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada19927c13fa73b81f7edff40cf82b41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ada19927c13fa73b81f7edff40cf82b41">post_timestep</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration)=0</td></tr>
-<tr class="memdesc:ada19927c13fa73b81f7edff40cf82b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains operations to be done after a timestep. This is a pure virtual function and hence MUST be implemented by derived classes.  <a href="classamrex_1_1AmrLevel.html#ada19927c13fa73b81f7edff40cf82b41">More...</a><br /></td></tr>
-<tr class="separator:ada19927c13fa73b81f7edff40cf82b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc31baa80c3f278350ad20a64577155"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6dc31baa80c3f278350ad20a64577155">post_timestep</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration)</td></tr>
+<tr class="memdesc:a6dc31baa80c3f278350ad20a64577155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains operations to be done after a timestep. If this function is overridden, don't forget to reset <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a>.  <a href="classamrex_1_1AmrLevel.html#a6dc31baa80c3f278350ad20a64577155">More...</a><br /></td></tr>
+<tr class="separator:a6dc31baa80c3f278350ad20a64577155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c4e273ed6a867d2da0dbf8ae325c82a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a6c4e273ed6a867d2da0dbf8ae325c82a">postCoarseTimeStep</a> (Real time)</td></tr>
 <tr class="memdesc:a6c4e273ed6a867d2da0dbf8ae325c82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains operations to be done only after a full coarse timestep. The default implementation does nothing.  <a href="classamrex_1_1AmrLevel.html#a6c4e273ed6a867d2da0dbf8ae325c82a">More...</a><br /></td></tr>
 <tr class="separator:a6c4e273ed6a867d2da0dbf8ae325c82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -346,6 +347,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af7dbabf3cd9767f5e38dc96157986618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618">FillPatcherFill</a> (<a class="el" href="classamrex_1_1MultiFab.html">amrex::MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost, amrex::Real time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_index, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp)</td></tr>
 <tr class="memdesc:af7dbabf3cd9767f5e38dc96157986618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill with <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> on level &gt; 0 and <a class="el" href="classamrex_1_1AmrLevel.html#a55c1a2d0040ba28bf022fb293113a5f2">AmrLevel::FillPatch</a> on level 0.  <a href="classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618">More...</a><br /></td></tr>
 <tr class="separator:af7dbabf3cd9767f5e38dc96157986618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memTemplParams" colspan="2">template&lt;typename F , typename P  = RungeKutta::PostStageNoOp&gt; </td></tr>
+<tr class="memitem:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41">RK</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> order, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_type, Real time, Real dt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle, F &amp;&amp;f, P &amp;&amp;p=<a class="el" href="structamrex_1_1RungeKutta_1_1PostStageNoOp.html">RungeKutta::PostStageNoOp</a>())</td></tr>
+<tr class="memdesc:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve one step with Runge-Kutta (2, 3, or 4)  <a href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41">More...</a><br /></td></tr>
+<tr class="separator:a95aea02fe7abbf3d1e5cd58ee5ff7d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -417,6 +422,14 @@ Static Protected Attributes</h2></td></tr>
 <tr class="separator:a792f148ee0bb20432a4acefa1c2cac9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5f9e8c8d903d3a700d2cc11be500e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DescriptorList.html">DescriptorList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#acb5f9e8c8d903d3a700d2cc11be500e5">desc_lst</a></td></tr>
 <tr class="separator:acb5f9e8c8d903d3a700d2cc11be500e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab3d554a4e9e4b98aae59f88ebba1e288"><td class="memTemplParams" colspan="2">template&lt;std::size_t order&gt; </td></tr>
+<tr class="memitem:ab3d554a4e9e4b98aae59f88ebba1e288"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#ab3d554a4e9e4b98aae59f88ebba1e288">storeRKCoarseData</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_type, Real time, Real dt, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;S_old, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>, order &gt; const &amp;rkk)</td></tr>
+<tr class="separator:ab3d554a4e9e4b98aae59f88ebba1e288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262e295c3b6e661f434303f502c9d442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrLevel.html#a262e295c3b6e661f434303f502c9d442">FillRKPatch</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> state_index, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;S, Real time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> stage, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle)</td></tr>
+<tr class="separator:a262e295c3b6e661f434303f502c9d442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -1579,6 +1592,66 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a262e295c3b6e661f434303f502c9d442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262e295c3b6e661f434303f502c9d442">&#9670;&nbsp;</a></span>FillRKPatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::AmrLevel::FillRKPatch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>state_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>S</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>stage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncycle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3fb007c5f97c38ef4515b3a74d6873fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3fb007c5f97c38ef4515b3a74d6873fa">&#9670;&nbsp;</a></span>fineRatio()</h2>
 
@@ -2540,8 +2613,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ada19927c13fa73b81f7edff40cf82b41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada19927c13fa73b81f7edff40cf82b41">&#9670;&nbsp;</a></span>post_timestep()</h2>
+<a id="a6dc31baa80c3f278350ad20a64577155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc31baa80c3f278350ad20a64577155">&#9670;&nbsp;</a></span>post_timestep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2550,7 +2623,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void amrex::AmrLevel::post_timestep </td>
+          <td class="memname">void amrex::AmrLevel::post_timestep </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>iteration</em></td><td>)</td>
@@ -2559,12 +2632,12 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Contains operations to be done after a timestep. This is a pure virtual function and hence MUST be implemented by derived classes. </p>
+<p>Contains operations to be done after a timestep. If this function is overridden, don't forget to reset <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a>. </p>
 
 </div>
 </div>
@@ -2727,6 +2800,88 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Restart from a checkpoint file. </p>
+
+</div>
+</div>
+<a id="a95aea02fe7abbf3d1e5cd58ee5ff7d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95aea02fe7abbf3d1e5cd58ee5ff7d41">&#9670;&nbsp;</a></span>RK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename P &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::AmrLevel::RK </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>state_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncycle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">P &amp;&amp;&#160;</td>
+          <td class="paramname"><em>p</em> = <code><a class="el" href="structamrex_1_1RungeKutta_1_1PostStageNoOp.html">RungeKutta::PostStageNoOp</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evolve one step with Runge-Kutta (2, 3, or 4) </p>
+<p>To use RK, the <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> must have all the ghost cells needed. See namespace <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> for expected function signatures of the callable parameters.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">order</td><td>order of RK </td></tr>
+    <tr><td class="paramname">state_type</td><td>index of <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a> </td></tr>
+    <tr><td class="paramname">time</td><td>time at the beginning of the step. </td></tr>
+    <tr><td class="paramname">dt</td><td>time step </td></tr>
+    <tr><td class="paramname">iteration</td><td>iteration number on fine level during a coarse time step. For an AMR simulation with subcycling and a refinement ratio of 2, the number is either 1 or 2, denoting the first and second substep, respectively. </td></tr>
+    <tr><td class="paramname">ncycle</td><td>number of subcyling steps. It's usually 2 or 4. Without subcycling, this will be 1. </td></tr>
+    <tr><td class="paramname">f</td><td>computing right-hand side for evolving the <a class="el" href="classamrex_1_1StateData.html" title="Current and previous level-time data.">StateData</a>. One can also register data for flux registers in this. </td></tr>
+    <tr><td class="paramname">p</td><td>optionally post-processing RK stage results </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3061,6 +3216,62 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the time levels of state data. </p>
+
+</div>
+</div>
+<a id="ab3d554a4e9e4b98aae59f88ebba1e288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d554a4e9e4b98aae59f88ebba1e288">&#9670;&nbsp;</a></span>storeRKCoarseData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t order&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::AmrLevel::storeRKCoarseData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>state_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;&#160;</td>
+          <td class="paramname"><em>S_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>, order &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>rkk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('classamrex_1_1FillPatcher.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classamrex_1_1FillPatcher-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -122,6 +123,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5b77e740f3c652055c218e494c0168c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ab5b77e740f3c652055c218e494c0168c">fillCoarseFineBoundary</a> (MF &amp;mf, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, Real time, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF * &gt; const &amp;crse_data, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; const &amp;crse_time, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, BC &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, PreInterpHook const &amp;pre_interp={}, PostInterpHook const &amp;post_interp={})</td></tr>
 <tr class="memdesc:ab5b77e740f3c652055c218e494c0168c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to fill data at coarse/fine boundary only.  <a href="classamrex_1_1FillPatcher.html#ab5b77e740f3c652055c218e494c0168c">More...</a><br /></td></tr>
 <tr class="separator:ab5b77e740f3c652055c218e494c0168c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad059e9960589afeff57d54307acd2dca"><td class="memTemplParams" colspan="2">template&lt;std::size_t order&gt; </td></tr>
+<tr class="memitem:ad059e9960589afeff57d54307acd2dca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">storeRKCoarseData</a> (Real time, Real dt, MF const &amp;S_old, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF, order &gt; const &amp;RK_k)</td></tr>
+<tr class="memdesc:ad059e9960589afeff57d54307acd2dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store coarse AMR level data for RK3 and RK4.  <a href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">More...</a><br /></td></tr>
+<tr class="separator:ad059e9960589afeff57d54307acd2dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa756e7fa531116007159b132f0312577"><td class="memTemplParams" colspan="2">template&lt;typename BC &gt; </td></tr>
+<tr class="memitem:aa756e7fa531116007159b132f0312577"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">fillRK</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> stage, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> iteration, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncycle, MF &amp;mf, Real time, BC &amp;cbc, BC &amp;fbc, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;bcs)</td></tr>
+<tr class="memdesc:aa756e7fa531116007159b132f0312577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill ghost cells of fine AMR level for RK3 and RK4.  <a href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">More...</a><br /></td></tr>
+<tr class="separator:aa756e7fa531116007159b132f0312577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad5c0afcb0f98eda5ed211fa3e232d6ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1FabArrayBase_1_1FPinfo.html">FabArrayBase::FPinfo</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ad5c0afcb0f98eda5ed211fa3e232d6ad">getFPinfo</a> ()</td></tr>
+<tr class="separator:ad5c0afcb0f98eda5ed211fa3e232d6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -145,10 +159,18 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a28281a3e9ad213ff779ae2b7978c8fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c7a1666b20fe8bfad0377ce4fa278d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a8c7a1666b20fe8bfad0377ce4fa278d8">m_eb_index_space</a> = nullptr</td></tr>
 <tr class="separator:a8c7a1666b20fe8bfad0377ce4fa278d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2eadd469cce946d670a7de5a16e4f79"><td class="memItemLeft" align="right" valign="top">MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#ab2eadd469cce946d670a7de5a16e4f79">m_sfine</a></td></tr>
+<tr class="separator:ab2eadd469cce946d670a7de5a16e4f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a8d3b8adf15cc4121246a77d7d23e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a97a8d3b8adf15cc4121246a77d7d23e0">m_ratio</a></td></tr>
+<tr class="separator:a97a8d3b8adf15cc4121246a77d7d23e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19e35173a3232a3505a3c4c3b30e86e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::pair&lt; Real, std::unique_ptr&lt; MF &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a19e35173a3232a3505a3c4c3b30e86e5">m_cf_crse_data</a></td></tr>
 <tr class="separator:a19e35173a3232a3505a3c4c3b30e86e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f373925ff45d0ff777315114039e5b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; MF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a44f373925ff45d0ff777315114039e5b">m_cf_crse_data_tmp</a></td></tr>
+<tr class="separator:a44f373925ff45d0ff777315114039e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43df40e0e8dbd2de56018b5180aeabe2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; MF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#a43df40e0e8dbd2de56018b5180aeabe2">m_cf_fine_data</a></td></tr>
 <tr class="separator:a43df40e0e8dbd2de56018b5180aeabe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef4e08d1768a02cae4c25c4c5cfd1d5"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FillPatcher.html#aeef4e08d1768a02cae4c25c4c5cfd1d5">m_dt_coarse</a> = std::numeric_limits&lt;Real&gt;::lowest()</td></tr>
+<tr class="separator:aeef4e08d1768a02cae4c25c4c5cfd1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class MF = MultiFab&gt;<br />
@@ -161,7 +183,8 @@ class amrex::FillPatcher&lt; MF &gt;</h3>
 <p>(2) When to build? It is recommended that one uses <code>std::unique_ptr</code> to store the <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> object, and build it only when it is needed and it's a nullptr. For <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> based codes, the <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> class will build it for you as needed when you call the <a class="el" href="classamrex_1_1AmrLevel.html#af7dbabf3cd9767f5e38dc96157986618" title="Fill with FillPatcher on level &gt; 0 and AmrLevel::FillPatch on level 0.">AmrLevel::FillPatcherFill</a> function.</p>
 <p>(3) When to destroy? Usually, we do time steppig on a coarse level first. Then we recursively do time stepping on fine levels. After the finer level finishes, we do reflux and averge the fine data down to the coarse level. After that we should destroy the <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> object associated with these two levels, because the coarse data stored in the object has become outdated. For <a class="el" href="classamrex_1_1AmrCore.html" title="Provide basic functionalities to set up an AMR hierarchy.">AmrCore</a> based codes, you could use Tests/Amr/Advection_AmrCore as an example. For <a class="el" href="classamrex_1_1AmrLevel.html" title="Virtual base class for managing individual levels. AmrLevel functions both as a container for state d...">AmrLevel</a> based codes, you should do this in the post_timestep virtual function (see Tests/Amr/Advection_AmrLevel for an example).</p>
 <p>(4) The source MultiFabs/FabArrays (i.e., the crse_data and fine_data arguments of the fill function) need to have exactly the same number of components as the ncomp argument of the constructor, even though it's allowed to fill only some of the components with the fill function.</p>
-<p>(5) This only works for cell-centered and nodal data. </p>
+<p>(5) This only works for cell-centered and nodal data.</p>
+<p>This class also provides support for <a class="el" href="namespaceamrex_1_1RungeKutta.html#a8375e990286224b1183ba166695978e1" title="Time stepping with RK3.">RungeKutta::RK3</a> and <a class="el" href="namespaceamrex_1_1RungeKutta.html#af07c90c5bce95ed34b87a09e4d45f7b2" title="Time stepping with RK4.">RungeKutta::RK4</a>. The storeRKCoarseData function can be used to store coarse AMR level data that are needed for filling fine level data's ghost cells in this class. The <code>fillRK</code> function can be used to fill ghost cells for fine AMR levels. This operation at the coarse/fine boundary is non-trivial for RK orders higher than 2. Note that it is expected that time stepping on the coarse level is perform before any fine level time stepping, and it's the user's reponsibility to properly create and destroy this object. See <a class="el" href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41" title="Evolve one step with Runge-Kutta (2, 3, or 4)">AmrLevel::RK</a> for an example of using the <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> functions and <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> together. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af190f9e264e08dd6fec696c4ff84c53b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af190f9e264e08dd6fec696c4ff84c53b">&#9670;&nbsp;</a></span>FillPatcher()</h2>
@@ -536,6 +559,172 @@ template&lt;typename BC , typename PreInterpHook , typename PostInterpHook &gt; 
 
 </div>
 </div>
+<a id="aa756e7fa531116007159b132f0312577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa756e7fa531116007159b132f0312577">&#9670;&nbsp;</a></span>fillRK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<div class="memtemplate">
+template&lt;typename BC &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::fillRK </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>stage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncycle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BC &amp;&#160;</td>
+          <td class="paramname"><em>cbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BC &amp;&#160;</td>
+          <td class="paramname"><em>fbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill ghost cells of fine AMR level for RK3 and RK4. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stage</td><td>RK stage number starting from 1 </td></tr>
+    <tr><td class="paramname">iteration</td><td>iteration number on fine level during a coarse time step. For an AMR simulation with subcycling and a refinement ratio of 2, the number is either 1 or 2, denoting the first and second substep, respectively. </td></tr>
+    <tr><td class="paramname">ncycle</td><td>number of subcyling steps. It's usually 2 or 4. Without subcycling, this will be 1. </td></tr>
+    <tr><td class="paramname">cbc</td><td>filling physical boundary on coarse level </td></tr>
+    <tr><td class="paramname">fbc</td><td>filling physical boundary on fine level </td></tr>
+    <tr><td class="paramname">bcs</td><td>physical BC types </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5c0afcb0f98eda5ed211fa3e232d6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c0afcb0f98eda5ed211fa3e232d6ad">&#9670;&nbsp;</a></span>getFPinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1FabArrayBase_1_1FPinfo.html">FabArrayBase::FPinfo</a> const  &amp; <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::getFPinfo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad059e9960589afeff57d54307acd2dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad059e9960589afeff57d54307acd2dca">&#9670;&nbsp;</a></span>storeRKCoarseData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<div class="memtemplate">
+template&lt;std::size_t order&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::storeRKCoarseData </td>
+          <td>(</td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF const &amp;&#160;</td>
+          <td class="paramname"><em>S_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF, order &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>RK_k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store coarse AMR level data for RK3 and RK4. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">order</td><td>RK order. Must be 3 or 4. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>time at the beginning of the step </td></tr>
+    <tr><td class="paramname">dt</td><td>time step </td></tr>
+    <tr><td class="paramname">S_old</td><td>data at time </td></tr>
+    <tr><td class="paramname">RK_k</td><td>right-hand side at RK stages </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a5775b10f198c89e397a7e2a46b2179e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5775b10f198c89e397a7e2a46b2179e4">&#9670;&nbsp;</a></span>m_cba</h2>
@@ -609,6 +798,30 @@ template&lt;class MF  = MultiFab&gt; </div>
 
 </div>
 </div>
+<a id="a44f373925ff45d0ff777315114039e5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f373925ff45d0ff777315114039e5b">&#9670;&nbsp;</a></span>m_cf_crse_data_tmp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;MF&gt; <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::m_cf_crse_data_tmp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a43df40e0e8dbd2de56018b5180aeabe2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43df40e0e8dbd2de56018b5180aeabe2">&#9670;&nbsp;</a></span>m_cf_fine_data</h2>
 
@@ -646,6 +859,30 @@ template&lt;class MF  = MultiFab&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a> <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::m_cgeom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeef4e08d1768a02cae4c25c4c5cfd1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef4e08d1768a02cae4c25c4c5cfd1d5">&#9670;&nbsp;</a></span>m_dt_coarse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::m_dt_coarse = std::numeric_limits&lt;Real&gt;::lowest()</td>
         </tr>
       </table>
   </td>
@@ -814,6 +1051,54 @@ template&lt;class MF  = MultiFab&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::m_nghost</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97a8d3b8adf15cc4121246a77d7d23e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a8d3b8adf15cc4121246a77d7d23e0">&#9670;&nbsp;</a></span>m_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::m_ratio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2eadd469cce946d670a7de5a16e4f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2eadd469cce946d670a7de5a16e4f79">&#9670;&nbsp;</a></span>m_sfine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MF  = MultiFab&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MF <a class="el" href="classamrex_1_1FillPatcher.html">amrex::FillPatcher</a>&lt; MF &gt;::m_sfine</td>
         </tr>
       </table>
   </td>

@@ -861,6 +861,7 @@ var hierarchy =
     [ "amrex::PolymorphicAllocator< T >", "classamrex_1_1PolymorphicAllocator.html", null ],
     [ "amrex::EB2::PolynomialIF", "classamrex_1_1EB2_1_1PolynomialIF.html", null ],
     [ "amrex::EB2::PolyTerm", "classamrex_1_1EB2_1_1PolyTerm.html", null ],
+    [ "amrex::RungeKutta::PostStageNoOp", "structamrex_1_1RungeKutta_1_1PostStageNoOp.html", null ],
     [ "amrex::ParmParse::PP_entry", "structamrex_1_1ParmParse_1_1PP__entry.html", null ],
     [ "amrex::Print", "classamrex_1_1Print.html", [
       [ "amrex::AllPrint", "classamrex_1_1AllPrint.html", null ]
@@ -892,8 +893,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
+    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],

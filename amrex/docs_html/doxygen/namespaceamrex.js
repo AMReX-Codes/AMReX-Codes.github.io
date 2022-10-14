@@ -18,6 +18,7 @@ var namespaceamrex =
     [ "ParallelDescriptor", "namespaceamrex_1_1ParallelDescriptor.html", "namespaceamrex_1_1ParallelDescriptor" ],
     [ "ParticleInterpolator", "namespaceamrex_1_1ParticleInterpolator.html", "namespaceamrex_1_1ParticleInterpolator" ],
     [ "Reduce", "namespaceamrex_1_1Reduce.html", "namespaceamrex_1_1Reduce" ],
+    [ "RungeKutta", "namespaceamrex_1_1RungeKutta.html", "namespaceamrex_1_1RungeKutta" ],
     [ "Scan", "namespaceamrex_1_1Scan.html", "namespaceamrex_1_1Scan" ],
     [ "sundials", "namespaceamrex_1_1sundials.html", "namespaceamrex_1_1sundials" ],
     [ "AllPrint", "classamrex_1_1AllPrint.html", "classamrex_1_1AllPrint" ],
