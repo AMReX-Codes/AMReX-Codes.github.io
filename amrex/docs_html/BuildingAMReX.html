@@ -808,7 +808,7 @@ and import its settings and targets into your CMake project.
 Imported AMReX targets can be linked to any of your targets, after they have been made available
 following a successful call to <code class="docutils literal notranslate"><span class="pre">find_package(AMReX)</span></code>, by including
 the following line in the appropriate CMakeLists.txt file:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">&lt;your-target-name&gt;</span>  <span class="s">AMReX::&lt;amrex-target-name&gt;</span> <span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">&lt;your-target-name&gt;</span> <span class="s">PUBLIC</span> <span class="s">AMReX::&lt;amrex-target-name&gt;</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>In the above snippet, <code class="docutils literal notranslate"><span class="pre">&lt;amrex-target-name&gt;</span></code> is any of the targets listed in the table below.</p>
@@ -945,7 +945,7 @@ A list of AMReX component names and related configure options are shown in the t
 </table>
 <p>As an example, consider the following CMake code:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span> <span class="s">REQUIRED</span> <span class="s">3D</span> <span class="s">EB</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">Foo</span>  <span class="s">AMReX::amrex</span> <span class="s">AMReX::Flags_CXX</span> <span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">Foo</span> <span class="s">PUBLIC</span> <span class="s">AMReX::amrex</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>The code in the snippet above checks whether an AMReX installation with 3D and Embedded Boundary support
