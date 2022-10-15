@@ -79,6 +79,7 @@
     <innerclass refid="classamrex_1_1CellQuartic" prot="public">amrex::CellQuartic</innerclass>
     <innerclass refid="classamrex_1_1Cluster" prot="public">amrex::Cluster</innerclass>
     <innerclass refid="classamrex_1_1ClusterList" prot="public">amrex::ClusterList</innerclass>
+    <innerclass refid="structamrex_1_1CompileTimeOptions" prot="public">amrex::CompileTimeOptions</innerclass>
     <innerclass refid="structamrex_1_1Conjunction" prot="public">amrex::Conjunction</innerclass>
     <innerclass refid="structamrex_1_1Conjunction_3_01B1_01_4" prot="public">amrex::Conjunction&lt; B1 &gt;</innerclass>
     <innerclass refid="structamrex_1_1Conjunction_3_01B1_00_01Bn_8_8_8_01_4" prot="public">amrex::Conjunction&lt; B1, Bn... &gt;</innerclass>
@@ -12065,6 +12066,462 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_COORDSYS_2D_C.H" line="146" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_COORDSYS_2D_C.H" bodystart="146" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>CTOs</declname>
+            <defname>CTOs</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ParallelFor</definition>
+        <argsstring>(TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</argsstring>
+        <name>ParallelFor</name>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; CTOs... &gt;</type>
+        </param>
+        <param>
+          <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(CTOs)&gt; const &amp;</type>
+          <declname>runtime_options</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="120" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="120" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1af8ef78b0668a4a000d853b5cc52170ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>CTOs</declname>
+            <defname>CTOs</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, Box const &amp;box, F &amp;&amp;f)</argsstring>
+        <name>ParallelFor</name>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; CTOs... &gt;</type>
+        </param>
+        <param>
+          <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(CTOs)&gt; const &amp;</type>
+          <declname>runtime_options</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="136" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="136" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a47aa380373cacdcd0e3c68fea31b620c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>MT</declname>
+            <defname>MT</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>CTOs</declname>
+            <defname>CTOs</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ParallelFor</definition>
+        <argsstring>(TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, Box const &amp;box, T ncomp, F &amp;&amp;f)</argsstring>
+        <name>ParallelFor</name>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; CTOs... &gt;</type>
+        </param>
+        <param>
+          <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(CTOs)&gt; const &amp;</type>
+          <declname>runtime_options</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="153" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="153" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a4f3b1b6572ac7163e6d5a15149da4e57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>CTOs</declname>
+            <defname>CTOs</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ParallelFor</definition>
+        <argsstring>(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, T N, F &amp;&amp;f)</argsstring>
+        <name>ParallelFor</name>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; CTOs... &gt;</type>
+          <declname>ctos</declname>
+        </param>
+        <param>
+          <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(CTOs)&gt; const &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>ParallelFor with compile time optimization of kernels with run time options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It uses fold expression to generate kernel launches for all combinations of the run time options. The kernel function can use constexpr if to discard unused code blocks for better run time performance. In the example below, the code will be expanded into 4*2=8 normal ParallelFors for all combinations of the run time parameters. <verbatim>    int A_runtime_option = ...;
+    int B_runtime_option = ...;
+    enum A_options : int { A0, A1, A2, A3};
+    enum B_options : int { B0, B1 };
+    ParallelFor(TypeList&lt;CompileTimeOptions&lt;A0,A1,A2,A3&gt;,
+                         CompileTimeOptions&lt;B0,B1&gt;&gt;{},
+                {A_runtime_option, B_runtime_option},
+                N, [=] AMREX_GPU_DEVICE (int i, auto A_control, auto B_control)
+    {
+        ...
+        if constexpr (A_control.value == A0) {
+            ...
+        } else if constexpr (A_control.value == A1) {
+            ...
+        } else if constexpr (A_control.value == A2) {
+            ...
+        else {
+            ...
+        }
+        if constexpr (A_control.value != A3 &amp;&amp; B_control.value == B1) {
+            ...
+        }
+        ...
+    });
+</verbatim> Note that due to a limitation of CUDA&apos;s extended device lambda, the constexpr if block cannot be the one that captures a variable first. If nvcc complains about it, you will have to manually capture it outside constexpr if. The data type for the parameters is int.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of all possible values of the parameters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the run time parameters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an interger specifying the 1D for loop&apos;s range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a callable object taking an integer and working on that iteration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="214" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="214" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a7bcd0763fa57d502f90cd74ff93ba547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>CTOs</declname>
+            <defname>CTOs</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelFor</definition>
+        <argsstring>(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, Box const &amp;box, F &amp;&amp;f)</argsstring>
+        <name>ParallelFor</name>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; CTOs... &gt;</type>
+          <declname>ctos</declname>
+        </param>
+        <param>
+          <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(CTOs)&gt; const &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>ParallelFor with compile time optimization of kernels with run time options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It uses fold expression to generate kernel launches for all combinations of the run time options. The kernel function can use constexpr if to discard unused code blocks for better run time performance. In the example below, the code will be expanded into 4*2=8 normal ParallelFors for all combinations of the run time parameters. <verbatim>    int A_runtime_option = ...;
+    int B_runtime_option = ...;
+    enum A_options : int { A0, A1, A2, A3};
+    enum B_options : int { B0, B1 };
+    ParallelFor(TypeList&lt;CompileTimeOptions&lt;A0,A1,A2,A3&gt;,
+                         CompileTimeOptions&lt;B0,B1&gt;&gt;{},
+                {A_runtime_option, B_runtime_option},
+                box, [=] AMREX_GPU_DEVICE (int i, int j, int k,
+                                           auto A_control, auto B_control)
+    {
+        ...
+        if constexpr (A_control.value == A0) {
+            ...
+        } else if constexpr (A_control.value == A1) {
+            ...
+        } else if constexpr (A_control.value == A2) {
+            ...
+        else {
+            ...
+        }
+        if constexpr (A_control.value != A3 &amp;&amp; B_control.value == B1) {
+            ...
+        }
+        ...
+    });
+</verbatim> Note that due to a limitation of CUDA&apos;s extended device lambda, the constexpr if block cannot be the one that captures a variable first. If nvcc complains about it, you will have to manually capture it outside constexpr if. The data type for the parameters is int.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of all possible values of the parameters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the run time parameters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> specifying the 3D for loop&apos;s range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a callable object taking three integers and working on the given cell. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="267" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="267" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1abee51ceb0f447b6f86830e994c760ed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>CTOs</declname>
+            <defname>CTOs</defname>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; amrex::ParallelFor</definition>
+        <argsstring>(TypeList&lt; CTOs... &gt; ctos, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;option, Box const &amp;box, T ncomp, F &amp;&amp;f)</argsstring>
+        <name>ParallelFor</name>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; CTOs... &gt;</type>
+          <declname>ctos</declname>
+        </param>
+        <param>
+          <type>std::array&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, sizeof...(CTOs)&gt; const &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>ParallelFor with compile time optimization of kernels with run time options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It uses fold expression to generate kernel launches for all combinations of the run time options. The kernel function can use constexpr if to discard unused code blocks for better run time performance. In the example below, the code will be expanded into 4*2=8 normal ParallelFors for all combinations of the run time parameters. <verbatim>    int A_runtime_option = ...;
+    int B_runtime_option = ...;
+    enum A_options : int { A0, A1, A2, A3};
+    enum B_options : int { B0, B1 };
+    ParallelFor(TypeList&lt;CompileTimeOptions&lt;A0,A1,A2,A3&gt;,
+                         CompileTimeOptions&lt;B0,B1&gt;&gt;{},
+                {A_runtime_option, B_runtime_option},
+                box, ncomp, [=] AMREX_GPU_DEVICE (int i, int j, int k, int n,
+                                                  auto A_control, auto B_control)
+    {
+        ...
+        if constexpr (A_control.value == A0) {
+            ...
+        } else if constexpr (A_control.value == A1) {
+            ...
+        } else if constexpr (A_control.value == A2) {
+            ...
+        else {
+            ...
+        }
+        if constexpr (A_control.value != A3 &amp;&amp; B_control.value == B1) {
+            ...
+        }
+        ...
+    });
+</verbatim> Note that due to a limitation of CUDA&apos;s extended device lambda, the constexpr if block cannot be the one that captures a variable first. If nvcc complains about it, you will have to manually capture it outside constexpr if. The data type for the parameters is int.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of all possible values of the parameters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>option</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the run time parameters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> specifying the iteration in 3D space. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an integer specifying the range for iteration over components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a callable object taking three integers and working on the given cell. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" line="322" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CTOParallelForImpl.H" bodystart="322" bodyend="327"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a542e598352208488d6049caf539dd073" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

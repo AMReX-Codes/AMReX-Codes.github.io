@@ -3359,7 +3359,7 @@
     auto const&amp; amrex_i_n = n; \
     using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \
     <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) { \
-        <ref refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kindref="member">amrex::ParallelFor</ref>(amrex_i_n,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept block); \
+        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(amrex_i_n,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept block); \
     } else { \
         auto amrex_i_lambda = [=] (amrex_i_inttype i) noexcept block; \
         <ref refid="AMReX__Extension_8H_1a8c414106ab987031039a0ad05bb2519b" kindref="member">AMREX_PRAGMA_SIMD</ref> \
@@ -3381,7 +3381,7 @@
         <param><defname>block</defname></param>
         <initializer>{ \
     using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \
-    <ref refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kindref="member">amrex::ParallelFor</ref>(n,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept block); \
+    <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(n,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept block); \
 }</initializer>
         <briefdescription>
         </briefdescription>
@@ -3401,7 +3401,7 @@
         <initializer>{ \
     auto const&amp; amrex_i_box = box; \
     <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) { \
-        <ref refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kindref="member">amrex::ParallelFor</ref>(amrex_i_box,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept block); \
+        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(amrex_i_box,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept block); \
     } else { \
         <ref refid="namespaceamrex_1abdd5d7a3b382bc1d21220946d7084839" kindref="member">amrex::LoopConcurrentOnCpu</ref>(amrex_i_box,[=] (int i, int j, int k) noexcept block); \
     } \
@@ -3422,7 +3422,7 @@
         <param><defname>k</defname></param>
         <param><defname>block</defname></param>
         <initializer>{ \
-    <ref refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kindref="member">amrex::ParallelFor</ref>(box,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept block); \
+    <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(box,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept block); \
 }</initializer>
         <briefdescription>
         </briefdescription>
@@ -3445,7 +3445,7 @@
     auto const&amp; amrex_i_box = box; \
     auto const&amp; amrex_i_ncomp = ncomp; \
     <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) { \
-        <ref refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kindref="member">amrex::ParallelFor</ref>(amrex_i_box,amrex_i_ncomp,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept block); \
+        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(amrex_i_box,amrex_i_ncomp,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept block); \
     } else { \
         <ref refid="namespaceamrex_1abdd5d7a3b382bc1d21220946d7084839" kindref="member">amrex::LoopConcurrentOnCpu</ref>(amrex_i_box,amrex_i_ncomp,[=] (int i, int j, int k, int n) noexcept block); \
     } \
@@ -3468,7 +3468,7 @@
         <param><defname>n</defname></param>
         <param><defname>block</defname></param>
         <initializer>{ \
-    <ref refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kindref="member">amrex::ParallelFor</ref>(box,ncomp,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept block); \
+    <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(box,ncomp,[=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept block); \
 }</initializer>
         <briefdescription>
         </briefdescription>

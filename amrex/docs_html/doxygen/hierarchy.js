@@ -237,6 +237,7 @@ var hierarchy =
       [ "amrex::FabArrayBase::RB90", "structamrex_1_1FabArrayBase_1_1RB90.html", null ],
       [ "amrex::NonLocalBC::MultiBlockCommMetaData", "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html", null ]
     ] ],
+    [ "amrex::CompileTimeOptions< ctr >", "structamrex_1_1CompileTimeOptions.html", null ],
     [ "amrex::EB2::ComplementIF< F >", "classamrex_1_1EB2_1_1ComplementIF.html", null ],
     [ "amrex::Gpu::ComponentBox", "structamrex_1_1Gpu_1_1ComponentBox.html", null ],
     [ "amrex::ForkJoin::ComponentSet", "structamrex_1_1ForkJoin_1_1ComponentSet.html", null ],
@@ -893,8 +894,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
     [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
+    [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],
