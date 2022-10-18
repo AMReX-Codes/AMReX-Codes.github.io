@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"classamrex_1_1Gpu_1_1Elixir.html#aaf8c50c534f3c06f0b7adf47ca0944f3":[2,0,0,6,15,4],
 "classamrex_1_1Gpu_1_1Elixir.html#af79e02ec3b0398a363792fb05f8fdada":[2,0,0,6,15,7],
 "classamrex_1_1Gpu_1_1Elixir.html#afbafbee2ae0733e7b642416a6c0e1d95":[2,0,0,6,15,2],
 "classamrex_1_1Gpu_1_1KernelInfo.html":[2,0,0,6,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "classamrex_1_1IParser.html#aec5f0bb22e4084d50b12adbda2cc56ff":[2,0,0,219,1],
 "classamrex_1_1InSituBridge.html":[2,0,0,207],
 "classamrex_1_1InSituBridge.html#a093ff6109c501d8b6fd3fa102e0710d4":[2,0,0,207,8],
-"classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2":[2,0,0,207,11],
-"classamrex_1_1InSituBridge.html#a1f8a76f22bde94cbfc3c495aa50877e7":[2,0,0,207,14]
+"classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2":[2,0,0,207,11]
 };
