@@ -261,8 +261,8 @@ boundaries between AMR levels. The following steps must be
 followed in the exact order.</p>
 <p>1) For any type of solver, we first need to set physical domain boundary types via the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span></code> member
 function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setDomainBC</span> <span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">BCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">lobc</span><span class="p">,</span>  <span class="c1">// for lower ends</span>
-                  <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">BCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">hibc</span><span class="p">);</span> <span class="c1">// for higher ends</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setDomainBC</span> <span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">LinOpBCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">lobc</span><span class="p">,</span>  <span class="c1">// for lower ends</span>
+                  <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">LinOpBCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">hibc</span><span class="p">);</span> <span class="c1">// for higher ends</span>
 </pre></div>
 </div>
 <p>The supported BC types at the physical domain boundaries are</p>

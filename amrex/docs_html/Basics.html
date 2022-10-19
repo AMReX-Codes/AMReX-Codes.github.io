@@ -2199,10 +2199,13 @@ unchanged, <span class="math notranslate nohighlight">\(q(-i) = q(i)\)</span>.</
 <dt>reflect_odd</dt><dd><p>Reflection from interior cells with sign
 changed, <span class="math notranslate nohighlight">\(q(-i) = -q(i)\)</span>.</p>
 </dd>
+<dt>user_1, user_2 and user_3</dt><dd><p>“User”.  It is the user’s responsibility to write a routine
+to fill ghost cells (more details below).</p>
+</dd>
 </dl>
 </div></blockquote>
 </li>
-<li><p>For external Dirichlet boundaries, the user needs to provide a
+<li><p>For external Dirichlet and user boundaries, the user needs to provide a
 callable object like below.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">MyExtBCFill</span> <span class="p">{</span>
     <span class="n">AMREX_GPU_DEVICE</span>
@@ -2212,7 +2215,7 @@ callable object like below.</p>
                      <span class="k">const</span> <span class="n">BCRec</span><span class="o">*</span> <span class="n">bcr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">bcomp</span><span class="p">,</span>
                      <span class="k">const</span> <span class="kt">int</span> <span class="n">orig_comp</span><span class="p">)</span> <span class="k">const</span>
     <span class="p">{</span>
-        <span class="c1">// external Dirichlet for cell iv</span>
+        <span class="c1">// external Dirichlet or user BC for cell iv</span>
     <span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
