@@ -195,7 +195,7 @@ and <span class="math notranslate nohighlight">\(\mathcal{V}_i\)</span> is the v
 <p>where <span class="math notranslate nohighlight">\(N(i)\)</span> is the index set of cell <span class="math notranslate nohighlight">\(i\)</span> and its neighbors.</p>
 <p>For each cell cut by the EB geometry, compute the convective update <span class="math notranslate nohighlight">\(\nabla \cdot{F}^{EB}\)</span> follows:</p>
 <div class="math notranslate nohighlight">
-\[\nabla \cdot{F}^{EB}_i = \mathcal{K}_i\nabla \cdot{F}^{c}_i +(1-\mathcal{K}_i)\mathcal{F}^{nc}_i\]</div>
+\[\nabla \cdot{F}^{EB}_i = \mathcal{K}_i\nabla \cdot{F}^{c}_i +(1-\mathcal{K}_i) \nabla \cdot \mathcal{F}^{nc}_i\]</div>
 <p>For each cell cut by the EB geometry, redistribute its mass loss, <span class="math notranslate nohighlight">\(\delta M_i\)</span> , to its neighbors:</p>
 <div class="math notranslate nohighlight">
 \[\nabla \cdot {F}^{EB}_j :=   \nabla \cdot {F}^{EB}_j + w_{ij}\delta M_i\, \qquad \forall j\in N(i)\setminus i\]</div>
