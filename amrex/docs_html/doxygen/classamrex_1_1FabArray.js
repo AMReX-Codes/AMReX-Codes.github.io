@@ -88,6 +88,7 @@ var classamrex_1_1FabArray =
     [ "invert", "classamrex_1_1FabArray.html#a17da9b4e30ef5211cdc56747641a622a", null ],
     [ "invert", "classamrex_1_1FabArray.html#a6024801773f82956d6cdfcd47edc15ef", null ],
     [ "isAllRegular", "classamrex_1_1FabArray.html#acf745741e899a140f64afeefbb903f5c", null ],
+    [ "isDefined", "classamrex_1_1FabArray.html#af5d3da506729e946bd90678a06d09dc2", null ],
     [ "mult", "classamrex_1_1FabArray.html#a179ad441a231e9d09ffebfbc7ad674fb", null ],
     [ "mult", "classamrex_1_1FabArray.html#aabc2fcb2d3b6c12974d49d5aff23ef5d", null ],
     [ "ok", "classamrex_1_1FabArray.html#a1d7f20697c473d1186b4b3c290f5eb1f", null ],
