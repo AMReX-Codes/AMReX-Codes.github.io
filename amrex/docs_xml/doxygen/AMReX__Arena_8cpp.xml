@@ -1713,7 +1713,7 @@
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>the_async_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>PArena(the_async_arena_release_threshold);</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"></highlight></codeline>
 <codeline lineno="307"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(the_arena-&gt;isDevice()<sp/>||<sp/>the_arena-&gt;isManaged())<sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(the_arena-&gt;isDevice())<sp/>{</highlight></codeline>
 <codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_device_arena<sp/>=<sp/>the_arena;</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_device_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo{}.SetDeviceMemory().SetReleaseThreshold</highlight></codeline>

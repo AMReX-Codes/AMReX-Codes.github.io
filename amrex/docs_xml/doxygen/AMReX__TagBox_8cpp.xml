@@ -2463,7 +2463,7 @@
 <codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partial_sum(nblocks.begin(),<sp/>nblocks.end(),<sp/>blockoffset.begin()+1);</highlight></codeline>
 <codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ntotblocks<sp/>=<sp/>blockoffset.back();</highlight></codeline>
 <codeline lineno="443"><highlight class="normal"></highlight></codeline>
-<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>PODVector&lt;int,DeviceArenaAllocator&lt;int&gt;<sp/>&gt;<sp/>dv_ntags(ntotblocks);</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::NonManagedDeviceVector&lt;int&gt;<sp/>dv_ntags(ntotblocks);</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"></highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>fai(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>fai.isValid();<sp/>++fai)</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2513,21 +2513,21 @@
 <codeline lineno="491"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"></highlight></codeline>
-<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>PODVector&lt;int,PinnedArenaAllocator&lt;int&gt;<sp/>&gt;<sp/>hv_ntags(ntotblocks);</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::PinnedVector&lt;int&gt;<sp/>hv_ntags(ntotblocks);</highlight></codeline>
 <codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a998c5815369d23cd73eea1b09f43a966" kindref="member">Gpu::dtoh_memcpy</ref>(hv_ntags.data(),<sp/>dv_ntags.data(),<sp/>ntotblocks*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"></highlight></codeline>
-<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>PODVector&lt;int,PinnedArenaAllocator&lt;int&gt;<sp/>&gt;<sp/>hv_tags_offset(ntotblocks+1);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::PinnedVector&lt;int&gt;<sp/>hv_tags_offset(ntotblocks+1);</highlight></codeline>
 <codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/>hv_tags_offset[0]<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partial_sum(hv_ntags.begin(),<sp/>hv_ntags.end(),<sp/>hv_tags_offset.begin()+1);</highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ntotaltags<sp/>=<sp/>hv_tags_offset.back();</highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight></codeline>
 <codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ntotaltags<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="503"><highlight class="normal"></highlight></codeline>
-<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>PODVector&lt;int,DeviceArenaAllocator&lt;int&gt;<sp/>&gt;<sp/>dv_tags_offset(ntotblocks);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::NonManagedDeviceVector&lt;int&gt;<sp/>dv_tags_offset(ntotblocks);</highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>dp_tags_offset<sp/>=<sp/>dv_tags_offset.data();</highlight></codeline>
 <codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kindref="member">Gpu::htod_memcpy_async</ref>(dp_tags_offset,<sp/>hv_tags_offset.data(),<sp/>ntotblocks*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"></highlight></codeline>
-<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>PODVector&lt;IntVect,DeviceArenaAllocator&lt;IntVect&gt;<sp/>&gt;<sp/>dv_tags(ntotaltags);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::NonManagedDeviceVector&lt;IntVect&gt;<sp/>dv_tags(ntotaltags);</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect*<sp/>dp_tags<sp/>=<sp/>dv_tags.data();</highlight></codeline>
 <codeline lineno="510"><highlight class="normal"></highlight></codeline>
 <codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iblock<sp/>=<sp/>0;</highlight></codeline>
