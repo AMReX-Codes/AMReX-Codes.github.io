@@ -1,5 +1,6 @@
 var NAVTREEINDEX62 =
 {
+"structamrex_1_1GetSendBufferOffset.html#ae0bd21edb636525d7e8011db403b9fca":[2,0,0,177,0],
 "structamrex_1_1GpuArray.html":[2,0,0,179],
 "structamrex_1_1GpuArray.html#a14cf263d6563d7bbd28ba3bc2cd15d8b":[2,0,0,179,6],
 "structamrex_1_1GpuArray.html#a228f882df63c0b9fec5d54e08b4254d0":[2,0,0,179,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX62 =
 "structamrex_1_1IParserExeNEG__P.html#ae140f4a56bf6c337fba05d93e2080c1d":[2,0,0,253,0],
 "structamrex_1_1IParserExeNull.html":[2,0,0,254],
 "structamrex_1_1IParserExeNull.html#a815c97aaab5abad09c8a6b4e9bf74d45":[2,0,0,254,0],
-"structamrex_1_1IParserExeNumber.html":[2,0,0,255],
-"structamrex_1_1IParserExeNumber.html#a15529de413faee5b1bc579a5ef14a725":[2,0,0,255,0]
+"structamrex_1_1IParserExeNumber.html":[2,0,0,255]
 };

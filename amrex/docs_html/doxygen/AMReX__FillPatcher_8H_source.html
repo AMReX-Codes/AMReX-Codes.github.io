@@ -290,260 +290,259 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            }</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        MF mf_crse_patch;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (m_cf_crse_data.size() &gt; 0 &amp;&amp;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <a class="code" href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a>(time, m_cf_crse_data[0].first,5))</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            mf_crse_patch = MF(*m_cf_crse_data[0].<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">second</a>, <a class="code" href="namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba">amrex::make_alias</a>,</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                               scomp, ncomp);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_cf_crse_data.size() &gt; 1 &amp;&amp;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                 <a class="code" href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a>(time, m_cf_crse_data[1].first,5))</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            mf_crse_patch = MF(*m_cf_crse_data[1].<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">second</a>, <a class="code" href="namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba">amrex::make_alias</a>,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                               scomp, ncomp);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_cf_crse_data.size() == 2)</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keywordflow">if</span> (m_cf_crse_data_tmp == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                m_cf_crse_data_tmp = std::make_unique&lt;MF&gt;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                    (make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            mf_crse_patch = MF(*m_cf_crse_data_tmp, <a class="code" href="namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba">amrex::make_alias</a>, scomp, ncomp);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordtype">int</span> <span class="keyword">const</span> ng_space_interp = 8; <span class="comment">// Need to be big enough</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> domain = m_cgeom.growPeriodicDomain(ng_space_interp);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            domain.<a class="code" href="classamrex_1_1Box.html#a5499f2bb3ff92ef3951332fa6b390b73">convert</a>(mf.ixType());</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            Real t0 = m_cf_crse_data[0].first;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            Real t1 = m_cf_crse_data[1].first;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            Real alpha = (t1-time)/(t1-t0);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            Real beta = (time-t0)/(t1-t0);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(alpha &gt;= 0._rt &amp;&amp; beta &gt;= 0._rt);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = mf_crse_patch.arrays();</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a0 = m_cf_crse_data[0].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a1 = m_cf_crse_data[1].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(mf_crse_patch, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), ncomp,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                               [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                               {</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                   <span class="keywordflow">if</span> (domain.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(i,j,k)) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                       a[bi](i,j,k,n)</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                           = alpha*a0[bi](i,j,k,scomp+n)</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                                           +  beta*a1[bi](i,j,k,scomp+n);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                   }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                               });</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FillPatcher: High order interpolation in time not supported.  Or FillPatcher was not properly deleted.&quot;</span>);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        cbc(mf_crse_patch, 0, ncomp, nghost, time, cbccomp);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        pre_interp(mf_crse_patch, 0, ncomp);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(*m_cf_fine_data, scomp, mf_crse_patch, 0,</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                        ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_cgeom, m_fgeom,</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                        <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(m_fgeom.Domain(),</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                                   mf.ixType()),nghost),</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                        m_ratio, m_interp, bcs, bcscomp);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        post_interp(*m_cf_fine_data, scomp, ncomp);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        mf.ParallelCopy(*m_cf_fine_data, scomp, dcomp, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>{0}, nghost);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> order&gt;</div>
-<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">  398</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classamrex_1_1FillPatcher.html">FillPatcher&lt;MF&gt;::storeRKCoarseData</a> (Real <span class="comment">/*time*/</span>, Real dt, MF <span class="keyword">const</span>&amp; S_old,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                         <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF,order&gt;</a> <span class="keyword">const</span>&amp; RK_k)</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;{</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    m_dt_coarse = dt;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    m_cf_crse_data.resize(order+1);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; fpc = getFPinfo();</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; tmf : m_cf_crse_data) {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        tmf.first = std::numeric_limits&lt;Real&gt;::lowest(); <span class="comment">// because we dont&#39; need it</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        tmf.second = std::make_unique&lt;MF&gt;(make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    m_cf_crse_data[0].second-&gt;ParallelCopy(S_old, m_cgeom.periodicity());</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; order; ++i) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        m_cf_crse_data[i+1].second-&gt;ParallelCopy(RK_k[i], m_cgeom.periodicity());</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;}</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> BC&gt;</div>
-<div class="line"><a name="l00418"></a><span class="lineno"><a class="line" href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">  418</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classamrex_1_1FillPatcher.html">FillPatcher&lt;MF&gt;::fillRK</a> (<span class="keywordtype">int</span> stage, <span class="keywordtype">int</span> iteration, <span class="keywordtype">int</span> ncycle,</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                              MF&amp; mf, Real time, BC&amp; cbc, BC&amp; fbc,</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                              <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> <span class="keyword">const</span>&amp; bcs)</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;{</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordtype">int</span> rk_order = m_cf_crse_data.size()-1;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordflow">if</span> (rk_order != 3 &amp;&amp; rk_order != 4) {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FillPatcher: unsupported RK order &quot;</span>+std::to_string(rk_order));</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(stage &gt; 0 &amp;&amp; stage &lt;= rk_order);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; fpc = getFPinfo();</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">if</span> (m_cf_crse_data_tmp == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        m_cf_crse_data_tmp = std::make_unique&lt;MF&gt;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            (make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u = m_cf_crse_data_tmp-&gt;arrays();</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u0 = m_cf_crse_data[0].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k1 = m_cf_crse_data[1].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k2 = m_cf_crse_data[2].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k3 = m_cf_crse_data[3].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    Real dtc = m_dt_coarse;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    Real r = Real(1) / Real(ncycle);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    Real xsi = Real(iteration-1) / Real(ncycle);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">if</span> (rk_order == 3) {</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="comment">// coefficients for U</span></div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        Real b1 = xsi - Real(5./6.)*xsi*xsi;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        Real b2 = Real(1./6.)*xsi*xsi;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        Real b3 = Real(2./3)*xsi*xsi;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="comment">// coefficients for Ut</span></div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        Real c1 = Real(1.) - Real(5./3.)*xsi;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        Real c2 = Real(1./3.)*xsi;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        Real c3 = Real(4./3.)*xsi;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="comment">// coefficients for Utt</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        constexpr Real d1 = Real(-5./3.);</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        constexpr Real d2 = Real(1./3.);</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        constexpr Real d3 = Real(4./3.);</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <span class="keywordflow">if</span> (stage == 1) {</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            {</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                Real uu  = b1*kk1 + b2*kk2 + b3*kk3;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*uu;</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            });</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 2) {</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            {</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                Real uu = b1*kk1 + b2*kk2 + b3*kk3;</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                Real ut = c1*kk1 + c2*kk2 + c3*kk3;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*(uu + r*ut);</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            });</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 3) {</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                Real uu  = b1*kk1 + b2*kk2 + b3*kk3;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                Real ut  = c1*kk1 + c2*kk2 + c3*kk3;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                Real utt = d1*kk1 + d2*kk2 + d3*kk3;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                    (uu + Real(0.5)*r*ut + Real(0.25)*r*r*utt);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            });</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        }</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rk_order == 4) {</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k4 = m_cf_crse_data[4].second-&gt;const_arrays();</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        Real xsi2 = xsi*xsi;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        Real xsi3 = xsi2*xsi;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        <span class="comment">// coefficients for U</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        Real b1 = xsi - Real(1.5)*xsi2 + Real(2./3.)*xsi3;</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        Real b2 = xsi2 - Real(2./3.)*xsi3;</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        Real b3 = b2;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        Real b4 = Real(-0.5)*xsi2 + Real(2./3.)*xsi3;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="comment">// coefficients for Ut</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        Real c1 = Real(1.) - Real(3.)*xsi + Real(2.)*xsi2;</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        Real c2 = Real(2.)*xsi - Real(2.)*xsi2;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        Real c3 = c2;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        Real c4 = -xsi + Real(2.)*xsi2;</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        <span class="comment">// coefficients for Utt</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        Real d1 = Real(-3.) + Real(4.)*xsi;</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        Real d2 = Real( 2.) - Real(4.)*xsi;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        Real d3 = d2;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        Real d4 = Real(-1.) + Real(4.)*xsi;</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="comment">// coefficients for Uttt</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        constexpr Real e1 = Real( 4.);</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        constexpr Real e2 = Real(-4.);</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        constexpr Real e3 = Real(-4.);</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        constexpr Real e4 = Real( 4.);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <span class="keywordflow">if</span> (stage == 1) {</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                Real kk4 = k4[bi](i,j,k,n);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                Real uu  = b1*kk1 + b2*kk2 + b3*kk3 + b4*kk4;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*uu;</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            });</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 2) {</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            {</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                Real kk4 = k4[bi](i,j,k,n);</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                Real uu = b1*kk1 + b2*kk2 + b3*kk3 + b4*kk4;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                Real ut = c1*kk1 + c2*kk2 + c3*kk3 + c4*kk4;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*(uu + Real(0.5)*r*ut);</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            });</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 3 || stage == 4) {</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            Real r2 = r*r;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            Real r3 = r2*r;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            Real <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a0e77baa94ae43828e9d53113e8367665">at</a> = (stage == 3) ? Real(0.5)*r : r;</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            Real att = (stage == 3) ? Real(0.25)*r2 : Real(0.5)*r2;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            Real attt = (stage == 3) ? Real(0.0625)*r3 : Real(0.125)*r3;</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            Real akk = (stage == 3) ? Real(-4.) : Real(4.);</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            {</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                Real kk4 = k4[bi](i,j,k,n);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                Real uu   = b1*kk1 + b2*kk2 + b3*kk3 + b4*kk4;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                Real ut   = c1*kk1 + c2*kk2 + c3*kk3 + c4*kk4;</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                Real utt  = d1*kk1 + d2*kk2 + d3*kk3 + d4*kk4;</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                Real uttt = e1*kk1 + e2*kk2 + e3*kk3 + e4*kk4;</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc *</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                    (uu + <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a0e77baa94ae43828e9d53113e8367665">at</a>*ut + att*utt + attt*(uttt+akk*(kk3-kk2)));</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            });</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        }</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    }</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    cbc(*m_cf_crse_data_tmp, 0, m_ncomp, m_nghost, time, 0);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">if</span> (m_cf_fine_data == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        m_cf_fine_data = std::make_unique&lt;MF&gt;(make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    }</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(*m_cf_fine_data, 0, *m_cf_crse_data_tmp, 0,</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                    m_ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_cgeom, m_fgeom,</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                    <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(m_fgeom.Domain(),</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                                               mf.ixType()),m_nghost),</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                    m_ratio, m_interp, bcs, 0);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="comment">// xxxxx We can optimize away this ParallelCopy by making a special fpinfo.</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    mf.ParallelCopy(*m_cf_fine_data, 0, 0, m_ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_nghost);</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    mf.FillBoundary(m_fgeom.periodicity());</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    fbc(mf, 0, m_ncomp, m_nghost, time, 0);</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;}</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;}</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (m_cf_crse_data_tmp == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            m_cf_crse_data_tmp = std::make_unique&lt;MF&gt;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                (make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">if</span> (m_cf_crse_data.size() &gt; 0 &amp;&amp;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <a class="code" href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a>(time, m_cf_crse_data[0].first,5))</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <a class="code" href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a>(*m_cf_crse_data_tmp, *m_cf_crse_data[0].<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">second</a>,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                        scomp, 0, ncomp, 0);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_cf_crse_data.size() &gt; 1 &amp;&amp;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                 <a class="code" href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a>(time, m_cf_crse_data[1].first,5))</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <a class="code" href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a>(*m_cf_crse_data_tmp, *m_cf_crse_data[1].<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">second</a>,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                        scomp, 0, ncomp, 0);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_cf_crse_data.size() == 2)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordtype">int</span> <span class="keyword">const</span> ng_space_interp = 8; <span class="comment">// Need to be big enough</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> domain = m_cgeom.growPeriodicDomain(ng_space_interp);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            domain.<a class="code" href="classamrex_1_1Box.html#a5499f2bb3ff92ef3951332fa6b390b73">convert</a>(mf.ixType());</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            Real t0 = m_cf_crse_data[0].first;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            Real t1 = m_cf_crse_data[1].first;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            Real alpha = (t1-time)/(t1-t0);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            Real beta = (time-t0)/(t1-t0);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(alpha &gt;= 0._rt &amp;&amp; beta &gt;= 0._rt);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a = m_cf_crse_data_tmp-&gt;arrays();</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a0 = m_cf_crse_data[0].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; a1 = m_cf_crse_data[1].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), ncomp,</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                               [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                               {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                   <span class="keywordflow">if</span> (domain.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(i,j,k)) {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                       a[bi](i,j,k,n)</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                           = alpha*a0[bi](i,j,k,scomp+n)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                           +  beta*a1[bi](i,j,k,scomp+n);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                                   }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                               });</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FillPatcher: High order interpolation in time not supported.  Or FillPatcher was not properly deleted.&quot;</span>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        cbc(*m_cf_crse_data_tmp, 0, ncomp, nghost, time, cbccomp);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <a class="code" href="namespaceamrex_1_1detail.html#aaa2f442d8ea72f80f2d543e12c5f8a1a">detail::call_interp_hook</a>(pre_interp, *m_cf_crse_data_tmp, 0, ncomp);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(*m_cf_fine_data, scomp, *m_cf_crse_data_tmp, 0,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                        ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_cgeom, m_fgeom,</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                        <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(m_fgeom.Domain(),</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                                   mf.ixType()),nghost),</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                        m_ratio, m_interp, bcs, bcscomp);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <a class="code" href="namespaceamrex_1_1detail.html#aaa2f442d8ea72f80f2d543e12c5f8a1a">detail::call_interp_hook</a>(post_interp, *m_cf_fine_data, scomp, ncomp);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        mf.ParallelCopy(*m_cf_fine_data, scomp, dcomp, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>{0}, nghost);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> order&gt;</div>
+<div class="line"><a name="l00397"></a><span class="lineno"><a class="line" href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">  397</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classamrex_1_1FillPatcher.html">FillPatcher&lt;MF&gt;::storeRKCoarseData</a> (Real <span class="comment">/*time*/</span>, Real dt, MF <span class="keyword">const</span>&amp; S_old,</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                                         <a class="code" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array&lt;MF,order&gt;</a> <span class="keyword">const</span>&amp; RK_k)</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    m_dt_coarse = dt;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    m_cf_crse_data.resize(order+1);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; fpc = getFPinfo();</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; tmf : m_cf_crse_data) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        tmf.first = std::numeric_limits&lt;Real&gt;::lowest(); <span class="comment">// because we dont&#39; need it</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        tmf.second = std::make_unique&lt;MF&gt;(make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    m_cf_crse_data[0].second-&gt;ParallelCopy(S_old, m_cgeom.periodicity());</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; order; ++i) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        m_cf_crse_data[i+1].second-&gt;ParallelCopy(RK_k[i], m_cgeom.periodicity());</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;}</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> BC&gt;</div>
+<div class="line"><a name="l00417"></a><span class="lineno"><a class="line" href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">  417</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classamrex_1_1FillPatcher.html">FillPatcher&lt;MF&gt;::fillRK</a> (<span class="keywordtype">int</span> stage, <span class="keywordtype">int</span> iteration, <span class="keywordtype">int</span> ncycle,</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                              MF&amp; mf, Real time, BC&amp; cbc, BC&amp; fbc,</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                              <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> <span class="keyword">const</span>&amp; bcs)</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;{</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">int</span> rk_order = m_cf_crse_data.size()-1;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">if</span> (rk_order != 3 &amp;&amp; rk_order != 4) {</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FillPatcher: unsupported RK order &quot;</span>+std::to_string(rk_order));</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    }</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(stage &gt; 0 &amp;&amp; stage &lt;= rk_order);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; fpc = getFPinfo();</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">if</span> (m_cf_crse_data_tmp == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        m_cf_crse_data_tmp = std::make_unique&lt;MF&gt;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            (make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    }</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u = m_cf_crse_data_tmp-&gt;arrays();</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u0 = m_cf_crse_data[0].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k1 = m_cf_crse_data[1].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k2 = m_cf_crse_data[2].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k3 = m_cf_crse_data[3].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    Real dtc = m_dt_coarse;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    Real r = Real(1) / Real(ncycle);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    Real xsi = Real(iteration-1) / Real(ncycle);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordflow">if</span> (rk_order == 3) {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="comment">// coefficients for U</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        Real b1 = xsi - Real(5./6.)*xsi*xsi;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        Real b2 = Real(1./6.)*xsi*xsi;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        Real b3 = Real(2./3)*xsi*xsi;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="comment">// coefficients for Ut</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        Real c1 = Real(1.) - Real(5./3.)*xsi;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        Real c2 = Real(1./3.)*xsi;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        Real c3 = Real(4./3.)*xsi;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="comment">// coefficients for Utt</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        constexpr Real d1 = Real(-5./3.);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        constexpr Real d2 = Real(1./3.);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        constexpr Real d3 = Real(4./3.);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordflow">if</span> (stage == 1) {</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            {</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                Real uu  = b1*kk1 + b2*kk2 + b3*kk3;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*uu;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            });</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 2) {</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            {</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                Real uu = b1*kk1 + b2*kk2 + b3*kk3;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                Real ut = c1*kk1 + c2*kk2 + c3*kk3;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*(uu + r*ut);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            });</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 3) {</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            {</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                Real uu  = b1*kk1 + b2*kk2 + b3*kk3;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                Real ut  = c1*kk1 + c2*kk2 + c3*kk3;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                Real utt = d1*kk1 + d2*kk2 + d3*kk3;</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                    (uu + Real(0.5)*r*ut + Real(0.25)*r*r*utt);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            });</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        }</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rk_order == 4) {</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; k4 = m_cf_crse_data[4].second-&gt;const_arrays();</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        Real xsi2 = xsi*xsi;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        Real xsi3 = xsi2*xsi;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="comment">// coefficients for U</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        Real b1 = xsi - Real(1.5)*xsi2 + Real(2./3.)*xsi3;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        Real b2 = xsi2 - Real(2./3.)*xsi3;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        Real b3 = b2;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        Real b4 = Real(-0.5)*xsi2 + Real(2./3.)*xsi3;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <span class="comment">// coefficients for Ut</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        Real c1 = Real(1.) - Real(3.)*xsi + Real(2.)*xsi2;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        Real c2 = Real(2.)*xsi - Real(2.)*xsi2;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        Real c3 = c2;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        Real c4 = -xsi + Real(2.)*xsi2;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        <span class="comment">// coefficients for Utt</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        Real d1 = Real(-3.) + Real(4.)*xsi;</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        Real d2 = Real( 2.) - Real(4.)*xsi;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        Real d3 = d2;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        Real d4 = Real(-1.) + Real(4.)*xsi;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        <span class="comment">// coefficients for Uttt</span></div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        constexpr Real e1 = Real( 4.);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        constexpr Real e2 = Real(-4.);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        constexpr Real e3 = Real(-4.);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        constexpr Real e4 = Real( 4.);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <span class="keywordflow">if</span> (stage == 1) {</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            {</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                Real kk4 = k4[bi](i,j,k,n);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                Real uu  = b1*kk1 + b2*kk2 + b3*kk3 + b4*kk4;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*uu;</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            });</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 2) {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                Real kk4 = k4[bi](i,j,k,n);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                Real uu = b1*kk1 + b2*kk2 + b3*kk3 + b4*kk4;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                Real ut = c1*kk1 + c2*kk2 + c3*kk3 + c4*kk4;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc*(uu + Real(0.5)*r*ut);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            });</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 3 || stage == 4) {</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            Real r2 = r*r;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            Real r3 = r2*r;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            Real <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a0e77baa94ae43828e9d53113e8367665">at</a> = (stage == 3) ? Real(0.5)*r : r;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            Real att = (stage == 3) ? Real(0.25)*r2 : Real(0.5)*r2;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            Real attt = (stage == 3) ? Real(0.0625)*r3 : Real(0.125)*r3;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            Real akk = (stage == 3) ? Real(-4.) : Real(4.);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(*m_cf_crse_data_tmp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_ncomp,</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> bi, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            {</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                Real kk1 = k1[bi](i,j,k,n);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                Real kk2 = k2[bi](i,j,k,n);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                Real kk3 = k3[bi](i,j,k,n);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                Real kk4 = k4[bi](i,j,k,n);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                Real uu   = b1*kk1 + b2*kk2 + b3*kk3 + b4*kk4;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                Real ut   = c1*kk1 + c2*kk2 + c3*kk3 + c4*kk4;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                Real utt  = d1*kk1 + d2*kk2 + d3*kk3 + d4*kk4;</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                Real uttt = e1*kk1 + e2*kk2 + e3*kk3 + e4*kk4;</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                u[bi](i,j,k,n) = u0[bi](i,j,k,n) + dtc *</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                    (uu + <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a0e77baa94ae43828e9d53113e8367665">at</a>*ut + att*utt + attt*(uttt+akk*(kk3-kk2)));</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            });</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        }</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    }</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    cbc(*m_cf_crse_data_tmp, 0, m_ncomp, m_nghost, time, 0);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="keywordflow">if</span> (m_cf_fine_data == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        m_cf_fine_data = std::make_unique&lt;MF&gt;(make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    }</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(*m_cf_fine_data, 0, *m_cf_crse_data_tmp, 0,</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                    m_ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_cgeom, m_fgeom,</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                    <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(m_fgeom.Domain(),</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                                               mf.ixType()),m_nghost),</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                    m_ratio, m_interp, bcs, 0);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="comment">// xxxxx We can optimize away this ParallelCopy by making a special fpinfo.</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    mf.ParallelCopy(*m_cf_fine_data, 0, 0, m_ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0), m_nghost);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    mf.FillBoundary(m_fgeom.periodicity());</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    fbc(mf, 0, m_ncomp, m_nghost, time, 0);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;}</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassamrex_1_1Vector_html_a58c24fe05cc91d42ebe7151c398f0c58"><div class="ttname"><a href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">amrex::Vector::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:51</div></div>
@@ -553,6 +552,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a81344a3343158d0e1d9e14938e171ba9"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a81344a3343158d0e1d9e14938e171ba9">amrex::FillPatcher::m_ncomp</a></div><div class="ttdeci">int m_ncomp</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:207</div></div>
 <div class="ttc" id="astructamrex_1_1MFInfo_html"><div class="ttname"><a href="structamrex_1_1MFInfo.html">amrex::MFInfo</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:116</div></div>
 <div class="ttc" id="anamespaceamrex_html_a314545dbd77212eb64c3a248c754eda6"><div class="ttname"><a href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box convert(const Box &amp;b, const IntVect &amp;typ) noexcept</div><div class="ttdoc">Returns a Box with different type.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1323</div></div>
+<div class="ttc" id="anamespaceamrex_1_1detail_html_aaa2f442d8ea72f80f2d543e12c5f8a1a"><div class="ttname"><a href="namespaceamrex_1_1detail.html#aaa2f442d8ea72f80f2d543e12c5f8a1a">amrex::detail::call_interp_hook</a></div><div class="ttdeci">auto call_interp_hook(F const &amp;f, MF &amp;mf, int icomp, int ncomp) -&gt; decltype(f(mf[0], Box(), icomp, ncomp))</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:10</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a24b14c5172528271b48b0bd0bd1244fb"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a24b14c5172528271b48b0bd0bd1244fb">amrex::FillPatcher::m_cdm</a></div><div class="ttdeci">DistributionMapping m_cdm</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:203</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html_a0b71343932dcc55cb16d1b2b95973114"><div class="ttname"><a href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">amrex::Box::contains</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE bool contains(const IntVect &amp;p) const noexcept</div><div class="ttdoc">Returns true if argument is contained within Box.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:214</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_ab5b77e740f3c652055c218e494c0168c"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#ab5b77e740f3c652055c218e494c0168c">amrex::FillPatcher::fillCoarseFineBoundary</a></div><div class="ttdeci">void fillCoarseFineBoundary(MF &amp;mf, IntVect const &amp;nghost, Real time, Vector&lt; MF * &gt; const &amp;crse_data, Vector&lt; Real &gt; const &amp;crse_time, int scomp, int dcomp, int ncomp, BC &amp;cbc, int cbccomp, Vector&lt; BCRec &gt; const &amp;bcs, int bcscomp, PreInterpHook const &amp;pre_interp={}, PostInterpHook const &amp;post_interp={})</div><div class="ttdoc">Function to fill data at coarse/fine boundary only.</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:286</div></div>
@@ -565,10 +565,10 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="ttc" id="anamespaceamrex_html_aedb1ce8af83d1d6323271203b7168bcc"><div class="ttname"><a href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box grow(const Box &amp;b, int i) noexcept</div><div class="ttdoc">Grow Box in all directions by given amount.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1133</div></div>
 <div class="ttc" id="aclassamrex_1_1Vector_html"><div class="ttname"><a href="classamrex_1_1Vector.html">amrex::Vector</a></div><div class="ttdoc">This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...</div><div class="ttdef"><b>Definition:</b> AMReX_Vector.H:25</div></div>
 <div class="ttc" id="anamespaceamrex_html_a93b8e270e0c8360ed35815598a5b7f46"><div class="ttname"><a href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">amrex::FillPatchInterp</a></div><div class="ttdeci">void FillPatchInterp(MultiFab &amp;mf_fine_patch, int fcomp, MultiFab const &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const &amp;dest_domain, const IntVect &amp;ratio, MFInterpolater *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil.cpp:140</div></div>
-<div class="ttc" id="anamespaceamrex_html_a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba"><div class="ttname"><a href="namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba">amrex::make_alias</a></div><div class="ttdeci">@ make_alias</div><div class="ttdef"><b>Definition:</b> AMReX_MakeType.H:7</div></div>
 <div class="ttc" id="astructamrex_1_1NullInterpHook_html"><div class="ttname"><a href="structamrex_1_1NullInterpHook.html">amrex::NullInterpHook</a></div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil.H:32</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a43df40e0e8dbd2de56018b5180aeabe2"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a43df40e0e8dbd2de56018b5180aeabe2">amrex::FillPatcher::m_cf_fine_data</a></div><div class="ttdeci">std::unique_ptr&lt; MF &gt; m_cf_fine_data</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:214</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a5775b10f198c89e397a7e2a46b2179e4"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a5775b10f198c89e397a7e2a46b2179e4">amrex::FillPatcher::m_cba</a></div><div class="ttdeci">BoxArray m_cba</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:201</div></div>
+<div class="ttc" id="anamespaceamrex_html_a1036d99710a96586826f090a3266f5da"><div class="ttname"><a href="namespaceamrex.html#a1036d99710a96586826f090a3266f5da">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:217</div></div>
 <div class="ttc" id="aclassamrex_1_1EB2_1_1IndexSpace_html"><div class="ttname"><a href="classamrex_1_1EB2_1_1IndexSpace.html">amrex::EB2::IndexSpace</a></div><div class="ttdef"><b>Definition:</b> AMReX_EB2.H:25</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1range__detail_html_a0e77baa94ae43828e9d53113e8367665"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1range__detail.html#a0e77baa94ae43828e9d53113e8367665">amrex::Gpu::range_detail::at</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE Long at(T const &amp;, Long offset) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuRange.H:29</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
@@ -578,7 +578,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="ttc" id="aclassamrex_1_1InterpBase_html"><div class="ttname"><a href="classamrex_1_1InterpBase.html">amrex::InterpBase</a></div><div class="ttdef"><b>Definition:</b> AMReX_InterpBase.H:26</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a44f373925ff45d0ff777315114039e5b"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a44f373925ff45d0ff777315114039e5b">amrex::FillPatcher::m_cf_crse_data_tmp</a></div><div class="ttdeci">std::unique_ptr&lt; MF &gt; m_cf_crse_data_tmp</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:213</div></div>
 <div class="ttc" id="anamespaceamrex_html_abb7cbdfb8c8ec3d94bec38fcf10b92db"><div class="ttname"><a href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box refine(const Box &amp;b, int ref_ratio) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1244</div></div>
-<div class="ttc" id="aclassamrex_1_1FillPatcher_html_aa756e7fa531116007159b132f0312577"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">amrex::FillPatcher::fillRK</a></div><div class="ttdeci">void fillRK(int stage, int iteration, int ncycle, MF &amp;mf, Real time, BC &amp;cbc, BC &amp;fbc, Vector&lt; BCRec &gt; const &amp;bcs)</div><div class="ttdoc">Fill ghost cells of fine AMR level for RK3 and RK4.</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:418</div></div>
+<div class="ttc" id="aclassamrex_1_1FillPatcher_html_aa756e7fa531116007159b132f0312577"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577">amrex::FillPatcher::fillRK</a></div><div class="ttdeci">void fillRK(int stage, int iteration, int ncycle, MF &amp;mf, Real time, BC &amp;cbc, BC &amp;fbc, Vector&lt; BCRec &gt; const &amp;bcs)</div><div class="ttdoc">Fill ghost cells of fine AMR level for RK3 and RK4.</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:417</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a1c66886bf7f6b6444729cb8a783a900d"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a1c66886bf7f6b6444729cb8a783a900d">amrex::FillPatcher::m_fgeom</a></div><div class="ttdeci">Geometry m_fgeom</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:204</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a02e5ea36fb6bd2df914062d9e2317629"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a02e5ea36fb6bd2df914062d9e2317629">amrex::FillPatcher::m_cgeom</a></div><div class="ttdeci">Geometry m_cgeom</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:205</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4b8ad062bb5e1980e5f9094e47d71420"><div class="ttname"><a href="namespaceamrex.html#a4b8ad062bb5e1980e5f9094e47d71420">amrex::fill</a></div><div class="ttdeci">void fill(BaseFab&lt; STRUCT &gt; &amp;aos_fab, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFabUtility.H:29</div></div>
@@ -603,8 +603,8 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="ttc" id="aAMReX__FillPatchUtil_8H_html"><div class="ttname"><a href="AMReX__FillPatchUtil_8H.html">AMReX_FillPatchUtil.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition:</b> AMReX.cpp:191</div></div>
-<div class="ttc" id="aclassamrex_1_1FillPatcher_html_ad059e9960589afeff57d54307acd2dca"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">amrex::FillPatcher::storeRKCoarseData</a></div><div class="ttdeci">void storeRKCoarseData(Real time, Real dt, MF const &amp;S_old, Array&lt; MF, order &gt; const &amp;RK_k)</div><div class="ttdoc">Store coarse AMR level data for RK3 and RK4.</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:398</div></div>
-<div class="ttc" id="anamespaceamrex_html_a3cf973090fa613c635340a08df7ecd38"><div class="ttname"><a href="namespaceamrex.html#a3cf973090fa613c635340a08df7ecd38">amrex::FillPatchSingleLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillPatchSingleLevel(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:48</div></div>
+<div class="ttc" id="aclassamrex_1_1FillPatcher_html_ad059e9960589afeff57d54307acd2dca"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca">amrex::FillPatcher::storeRKCoarseData</a></div><div class="ttdeci">void storeRKCoarseData(Real time, Real dt, MF const &amp;S_old, Array&lt; MF, order &gt; const &amp;RK_k)</div><div class="ttdoc">Store coarse AMR level data for RK3 and RK4.</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:397</div></div>
+<div class="ttc" id="anamespaceamrex_html_a3cf973090fa613c635340a08df7ecd38"><div class="ttname"><a href="namespaceamrex.html#a3cf973090fa613c635340a08df7ecd38">amrex::FillPatchSingleLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillPatchSingleLevel(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:73</div></div>
 <div class="ttc" id="aclassamrex_1_1FillPatcher_html_a97a8d3b8adf15cc4121246a77d7d23e0"><div class="ttname"><a href="classamrex_1_1FillPatcher.html#a97a8d3b8adf15cc4121246a77d7d23e0">amrex::FillPatcher::m_ratio</a></div><div class="ttdeci">IntVect m_ratio</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatcher.H:211</div></div>
 <div class="ttc" id="anamespaceamrex_html_afe930d74045516fece8591f173e57007"><div class="ttname"><a href="namespaceamrex.html#afe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:23</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html"><div class="ttname"><a href="classamrex_1_1Box.html">amrex::Box</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:37</div></div>
