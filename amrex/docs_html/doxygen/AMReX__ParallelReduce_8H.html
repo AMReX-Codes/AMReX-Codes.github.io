@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('AMReX__ParallelReduce_8H.html',''); in
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX_8H_source.html">AMReX.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Functional_8H_source.html">AMReX_Functional.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__ParallelDescriptor_8H_source.html">AMReX_ParallelDescriptor.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Print_8H_source.html">AMReX_Print.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
@@ -169,6 +170,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ac500e0120b76d32a349a73f8ebfd36b2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ac500e0120b76d32a349a73f8ebfd36b2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelGather.html#ac500e0120b76d32a349a73f8ebfd36b2">amrex::ParallelGather::Gather</a> (const T &amp;v, T *vs, int root, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
 <tr class="separator:ac500e0120b76d32a349a73f8ebfd36b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195a600b56559959513775be2f6f0fbd"><td class="memTemplParams" colspan="2">template&lt;typename TV , typename TI &gt; </td></tr>
+<tr class="memitem:a195a600b56559959513775be2f6f0fbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelAllReduce.html#a195a600b56559959513775be2f6f0fbd">amrex::ParallelAllReduce::Max</a> (ValLocPair&lt; TV, TI &gt; &amp;vi, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
+<tr class="separator:a195a600b56559959513775be2f6f0fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb7df37be32c5e1f03e9babc81318a0"><td class="memTemplParams" colspan="2">template&lt;typename TV , typename TI &gt; </td></tr>
+<tr class="memitem:aebb7df37be32c5e1f03e9babc81318a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelAllReduce.html#aebb7df37be32c5e1f03e9babc81318a0">amrex::ParallelAllReduce::Min</a> (ValLocPair&lt; TV, TI &gt; &amp;vi, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
+<tr class="separator:aebb7df37be32c5e1f03e9babc81318a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc654239660dfc6eb557813ef5314650"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abc654239660dfc6eb557813ef5314650"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelAllReduce.html#abc654239660dfc6eb557813ef5314650">amrex::ParallelAllReduce::Max</a> (T &amp;v, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
 <tr class="separator:abc654239660dfc6eb557813ef5314650"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,6 +207,12 @@ Functions</h2></td></tr>
 <tr class="separator:a220eeb19edc1365466cc0acfec9ee3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a809a9a78d9cfb7c86a0dd7b72a212fd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelAllReduce.html#a809a9a78d9cfb7c86a0dd7b72a212fd7">amrex::ParallelAllReduce::And</a> (bool &amp;v, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
 <tr class="separator:a809a9a78d9cfb7c86a0dd7b72a212fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e7ce183504dddfd249498e545a4389"><td class="memTemplParams" colspan="2">template&lt;typename TV , typename TI &gt; </td></tr>
+<tr class="memitem:a76e7ce183504dddfd249498e545a4389"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelReduce.html#a76e7ce183504dddfd249498e545a4389">amrex::ParallelReduce::Max</a> (ValLocPair&lt; TV, TI &gt; &amp;vi, int root, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
+<tr class="separator:a76e7ce183504dddfd249498e545a4389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f86ef8401baf987f6248b087a42e0f2"><td class="memTemplParams" colspan="2">template&lt;typename TV , typename TI &gt; </td></tr>
+<tr class="memitem:a5f86ef8401baf987f6248b087a42e0f2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelReduce.html#a5f86ef8401baf987f6248b087a42e0f2">amrex::ParallelReduce::Min</a> (ValLocPair&lt; TV, TI &gt; &amp;vi, int root, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
+<tr class="separator:a5f86ef8401baf987f6248b087a42e0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f537cdb77b89119617f7760ada307a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a44f537cdb77b89119617f7760ada307a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1ParallelReduce.html#a44f537cdb77b89119617f7760ada307a">amrex::ParallelReduce::Max</a> (T &amp;v, int root, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
 <tr class="separator:a44f537cdb77b89119617f7760ada307a"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -1,5 +1,14 @@
 var NAVTREEINDEX31 =
 {
+"classamrex_1_1Box.html#a5922660f71dc5ac4118424bf2291f027":[2,0,0,81,79],
+"classamrex_1_1Box.html#a5bdfff3b6976d487ffe2212a92ffb229":[2,0,0,81,99],
+"classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97":[2,0,0,81,58],
+"classamrex_1_1Box.html#a62e60d27acbb5b50cf826534b87510f4":[2,0,0,81,11],
+"classamrex_1_1Box.html#a685ddc974b561a1d0f505a5678c5d3f3":[2,0,0,81,1],
+"classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421":[2,0,0,81,45],
+"classamrex_1_1Box.html#a6da9bbd57acf97d6a0ef41f2d0b88bb1":[2,0,0,81,6],
+"classamrex_1_1Box.html#a6dfb8f30676adeb11d4e87d22e209047":[2,0,0,81,101],
+"classamrex_1_1Box.html#a6f147c0c62906bc0c8cc3f89378de9e2":[2,0,0,81,47],
 "classamrex_1_1Box.html#a706adbfbd33e0269b3c2688ba5b36959":[2,0,0,81,98],
 "classamrex_1_1Box.html#a70b5efe9b9fd950695344ef3ab899524":[2,0,0,81,5],
 "classamrex_1_1Box.html#a71033afdc717e21489fe903cc688aff8":[2,0,0,81,91],
@@ -240,14 +249,5 @@ var NAVTREEINDEX31 =
 "classamrex_1_1BoxList.html#a1a8247d3b12b7bd82410a977d43302f0":[2,0,0,87,4],
 "classamrex_1_1BoxList.html#a1b546c6d1a623b0335f40983e1d46b8a":[2,0,0,87,19],
 "classamrex_1_1BoxList.html#a1da3baa5ff605620901791904d448d87":[2,0,0,87,23],
-"classamrex_1_1BoxList.html#a21d91d95c6b068d48292a4fdc2f53486":[2,0,0,87,35],
-"classamrex_1_1BoxList.html#a25986c43e3bd0e8b7043955680879e16":[2,0,0,87,40],
-"classamrex_1_1BoxList.html#a2d15815fbdd75a908fc1b5363a73b189":[2,0,0,87,69],
-"classamrex_1_1BoxList.html#a30479ce1f63ba9843fe6d5253b6c3fb9":[2,0,0,87,7],
-"classamrex_1_1BoxList.html#a31584546393b5ff7f420e6bffd8486bd":[2,0,0,87,2],
-"classamrex_1_1BoxList.html#a35fb0445d4f861be4ed66bf9861e9f14":[2,0,0,87,31],
-"classamrex_1_1BoxList.html#a39ed8708f5d1a7c4aaa7a8a792dc13d8":[2,0,0,87,28],
-"classamrex_1_1BoxList.html#a3b14d38ee9c592394f4465c5e48e8e38":[2,0,0,87,21],
-"classamrex_1_1BoxList.html#a3b3222b65efa7cdc1944106dbb07d6ae":[2,0,0,87,13],
-"classamrex_1_1BoxList.html#a3c9b3b9af19b73c1c7efafda6238dbe9":[2,0,0,87,6]
+"classamrex_1_1BoxList.html#a21d91d95c6b068d48292a4fdc2f53486":[2,0,0,87,35]
 };

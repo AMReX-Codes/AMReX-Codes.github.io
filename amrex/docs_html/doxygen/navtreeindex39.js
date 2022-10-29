@@ -1,5 +1,14 @@
 var NAVTREEINDEX39 =
 {
+"classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca":[2,0,0,166,5],
+"classamrex_1_1FillPatcher.html#ad106fffa846cdb025aee4f0f8e43c582":[2,0,0,166,15],
+"classamrex_1_1FillPatcher.html#ad1b6281e67325dc9e99fedc7b08e0b14":[2,0,0,166,1],
+"classamrex_1_1FillPatcher.html#ad5c0afcb0f98eda5ed211fa3e232d6ad":[2,0,0,166,4],
+"classamrex_1_1FillPatcher.html#aeef4e08d1768a02cae4c25c4c5cfd1d5":[2,0,0,166,12],
+"classamrex_1_1FillPatcher.html#af190f9e264e08dd6fec696c4ff84c53b":[2,0,0,166,0],
+"classamrex_1_1FluxRegister.html":[2,0,0,169],
+"classamrex_1_1FluxRegister.html#a028780603be1fd71e5e7d7069b48c007":[2,0,0,169,26],
+"classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7":[2,0,0,169,0],
 "classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7a6ddca7001a16a7ff26dc0c2c3910ae3a":[2,0,0,169,0,1],
 "classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613":[2,0,0,169,0,0],
 "classamrex_1_1FluxRegister.html#a0c8efd8e75a881af49dbfc1e6bdc5184":[2,0,0,169,33],
@@ -240,14 +249,5 @@ var NAVTREEINDEX39 =
 "classamrex_1_1Gpu_1_1Device.html#ad584078f0787df001af05bfe9c8d0356":[2,0,0,6,11,40],
 "classamrex_1_1Gpu_1_1Device.html#adccc576a72b545911c26ec7febfdd078":[2,0,0,6,11,12],
 "classamrex_1_1Gpu_1_1Device.html#ade4fd28a778c5764f258744e57ef4f66":[2,0,0,6,11,43],
-"classamrex_1_1Gpu_1_1Device.html#adf89d2ef6829289ef4e4f9ea2bd6a648":[2,0,0,6,11,38],
-"classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a":[2,0,0,6,11,37],
-"classamrex_1_1Gpu_1_1Device.html#ae53661945fe0e36f109401055a3d87cf":[2,0,0,6,11,10],
-"classamrex_1_1Gpu_1_1Device.html#ae88f180144c332b3c64ce46584484b10":[2,0,0,6,11,18],
-"classamrex_1_1Gpu_1_1Device.html#aea19aa89a556ee88fe67f6067c0abacd":[2,0,0,6,11,11],
-"classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e":[2,0,0,6,11,44],
-"classamrex_1_1Gpu_1_1Device.html#aff182b0690355fc54cde1842964fc7db":[2,0,0,6,11,5],
-"classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4":[2,0,0,6,11,39],
-"classamrex_1_1Gpu_1_1Elixir.html":[2,0,0,6,15],
-"classamrex_1_1Gpu_1_1Elixir.html#a310bb8d80cc54cfd15e1d7dfca67dd66":[2,0,0,6,15,5]
+"classamrex_1_1Gpu_1_1Device.html#adf89d2ef6829289ef4e4f9ea2bd6a648":[2,0,0,6,11,38]
 };

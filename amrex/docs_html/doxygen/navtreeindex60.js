@@ -1,5 +1,14 @@
 var NAVTREEINDEX60 =
 {
+"structamrex_1_1BinIterator_1_1iterator.html#acc740e2dd1e027a8a76f605050e76619":[2,0,0,72,0,2],
+"structamrex_1_1BinIterator_1_1iterator.html#afba47c1927bd537e97033eb5f5a6bdab":[2,0,0,72,0,4],
+"structamrex_1_1BinPolicy_1_1GPUBinPolicy.html":[2,0,0,2,0],
+"structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html":[2,0,0,2,1],
+"structamrex_1_1BinPolicy_1_1SerialBinPolicy.html":[2,0,0,2,2],
+"structamrex_1_1BlockMutex.html":[2,0,0,75],
+"structamrex_1_1BlockMutex.html#a15739554c59b1f13c811674d600856a6":[2,0,0,75,3],
+"structamrex_1_1BlockMutex.html#a2c7806c54820135f097449360f35a8f4":[2,0,0,75,2],
+"structamrex_1_1BlockMutex.html#a3eb4aec3fa8021b4fcb50768365ca52f":[2,0,0,75,6],
 "structamrex_1_1BlockMutex.html#a5dd0ffbdeea32e60081285deaf2923ec":[2,0,0,75,8],
 "structamrex_1_1BlockMutex.html#a6ecc59b2420e534d8288d4dbc46bcb72":[2,0,0,75,1],
 "structamrex_1_1BlockMutex.html#ab5a49fbd49c206ff3f03ee616e60b990":[2,0,0,75,9],
@@ -240,14 +249,5 @@ var NAVTREEINDEX60 =
 "structamrex_1_1FabArrayBase_1_1CFinfo.html#ab7ed1b94952706285d9835f120f14460":[2,0,0,146,2,11],
 "structamrex_1_1FabArrayBase_1_1CFinfo.html#ac07051a2c7c91144216d0a333e2b9bce":[2,0,0,146,2,3],
 "structamrex_1_1FabArrayBase_1_1CFinfo.html#ac64d8105ecb149bb9cbabab98f735a3b":[2,0,0,146,2,6],
-"structamrex_1_1FabArrayBase_1_1CFinfo.html#aca354eb516dc263308380e26666bb0b7":[2,0,0,146,2,5],
-"structamrex_1_1FabArrayBase_1_1CFinfo.html#aeb127de6351fbe080c4d924c38e6a9db":[2,0,0,146,2,4],
-"structamrex_1_1FabArrayBase_1_1CPC.html":[2,0,0,146,5],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a0731da1aa60b01a75a86c66a1e49a82c":[2,0,0,146,5,11],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a354b679a17210c1815e5313618091e0e":[2,0,0,146,5,1],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a368567f75989319e5002e2ec870d82b6":[2,0,0,146,5,13],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a56625fa335515114f136cf0aa8488fec":[2,0,0,146,5,14],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a5f390136bc410e6524afb0c7605d01ae":[2,0,0,146,5,6],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a786fb125f0c7e03c58115eaddeb7c159":[2,0,0,146,5,12],
-"structamrex_1_1FabArrayBase_1_1CPC.html#a84e7707a96ebc2dc55fe2384d403426a":[2,0,0,146,5,4]
+"structamrex_1_1FabArrayBase_1_1CFinfo.html#aca354eb516dc263308380e26666bb0b7":[2,0,0,146,2,5]
 };

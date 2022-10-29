@@ -362,6 +362,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_TypeTraits.H", "AMReX__TypeTraits_8H.html", "AMReX__TypeTraits_8H" ],
     [ "AMReX_Utility.cpp", "AMReX__Utility_8cpp.html", "AMReX__Utility_8cpp" ],
     [ "AMReX_Utility.H", "AMReX__Utility_8H.html", "AMReX__Utility_8H" ],
+    [ "AMReX_ValLocPair.H", "AMReX__ValLocPair_8H.html", [
+      [ "ValLocPair", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ]
+    ] ],
     [ "AMReX_Vector.H", "AMReX__Vector_8H.html", "AMReX__Vector_8H" ],
     [ "AMReX_VectorIO.cpp", "AMReX__VectorIO_8cpp.html", null ],
     [ "AMReX_VectorIO.H", "AMReX__VectorIO_8H.html", "AMReX__VectorIO_8H" ],

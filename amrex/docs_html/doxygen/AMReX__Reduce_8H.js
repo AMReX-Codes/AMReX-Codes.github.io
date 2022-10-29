@@ -1,6 +1,5 @@
 var AMReX__Reduce_8H =
 [
-    [ "ValLocPair", "structamrex_1_1ValLocPair.html", "structamrex_1_1ValLocPair" ],
     [ "ReduceOpSum", "structamrex_1_1ReduceOpSum.html", "structamrex_1_1ReduceOpSum" ],
     [ "ReduceOpMin", "structamrex_1_1ReduceOpMin.html", "structamrex_1_1ReduceOpMin" ],
     [ "ReduceOpMax", "structamrex_1_1ReduceOpMax.html", "structamrex_1_1ReduceOpMax" ],

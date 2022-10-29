@@ -1,5 +1,14 @@
 var NAVTREEINDEX52 =
 {
+"classamrex_1_1ReduceData.html#a61d113644b72c6bda6b1221a9079fe8c":[2,0,0,422,0],
+"classamrex_1_1ReduceData.html#a71bbfd3ca387af546ab718418a3d8521":[2,0,0,422,1],
+"classamrex_1_1ReduceData.html#a7d9d45224655edf3da07cab63c4389ec":[2,0,0,422,5],
+"classamrex_1_1ReduceData.html#a8758fc9b8484f68cf9dbd7b7961d9db9":[2,0,0,422,7],
+"classamrex_1_1ReduceData.html#a88088cca6d2dd4f7e752e3d5fec5f7d7":[2,0,0,422,19],
+"classamrex_1_1ReduceData.html#a95441a0edc24955aa9f0c83e21c34cad":[2,0,0,422,18],
+"classamrex_1_1ReduceData.html#aa7ac26fc429cbaf9db787e3400d11d08":[2,0,0,422,10],
+"classamrex_1_1ReduceData.html#ab375ddfc635376587d621e83a8daa746":[2,0,0,422,14],
+"classamrex_1_1ReduceData.html#acdd88eae26f790899fa6d061102875d0":[2,0,0,422,15],
 "classamrex_1_1ReduceData.html#ad9b6892476ee0222229ebc178fb0089f":[2,0,0,422,3],
 "classamrex_1_1ReduceData.html#ae683e1c583e7cf07816bca2d45bb3044":[2,0,0,422,16],
 "classamrex_1_1ReduceData.html#ae76a0d3958366cbcd739d85648a6701b":[2,0,0,422,8],
@@ -240,14 +249,5 @@ var NAVTREEINDEX52 =
 "classamrex_1_1StreamRetry.html#ae3b5909bdd9d104025eb427395c84356":[2,0,0,446,5],
 "classamrex_1_1StreamRetry.html#ae894808026adb5099b7b36f193f39f7c":[2,0,0,446,3],
 "classamrex_1_1SundialsIntegrator.html":[2,0,0,448],
-"classamrex_1_1SundialsIntegrator.html#a05cb5f15aa7235f6f803b2ad3fc0a825":[2,0,0,448,4],
-"classamrex_1_1SundialsIntegrator.html#a064376184442b5fa00c9f3b407e9fe5d":[2,0,0,448,11],
-"classamrex_1_1SundialsIntegrator.html#a07150223c7502907d0f86a58993f9751":[2,0,0,448,34],
-"classamrex_1_1SundialsIntegrator.html#a073132be2c807a20aaddee85783c35fa":[2,0,0,448,1],
-"classamrex_1_1SundialsIntegrator.html#a0855b2e653511753c1e569c7b87c9ca5":[2,0,0,448,12],
-"classamrex_1_1SundialsIntegrator.html#a0dd50fc21030f7b640138089cce401d7":[2,0,0,448,24],
-"classamrex_1_1SundialsIntegrator.html#a0f980336770439af5a7bb68e91e99c8d":[2,0,0,448,14],
-"classamrex_1_1SundialsIntegrator.html#a22720e2c074c7e0f6449d8fbc75620bc":[2,0,0,448,38],
-"classamrex_1_1SundialsIntegrator.html#a259e167849dc040148505e8a2bea504d":[2,0,0,448,37],
-"classamrex_1_1SundialsIntegrator.html#a31cc728355cd6c45dda548cb02230689":[2,0,0,448,15]
+"classamrex_1_1SundialsIntegrator.html#a05cb5f15aa7235f6f803b2ad3fc0a825":[2,0,0,448,4]
 };
