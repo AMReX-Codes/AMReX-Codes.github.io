@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"AMReX__EBFluxRegister__nd_8F90.html":[3,0,0,4,74],
 "AMReX__EBFluxRegister__nd_8F90.html#a03a212df04f2b5a5a753d0d3a4ba60d7":[3,0,0,4,74,1],
 "AMReX__EBFluxRegister__nd_8F90.html#a0688dcea64b51e2f058407b826f95045":[3,0,0,4,74,5],
 "AMReX__EBFluxRegister__nd_8F90.html#a248ca933a7707ac5dfe93b484be5c2cc":[3,0,0,4,74,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "AMReX__FBI_8H.html#a6fd0b0eaa86bb8985f5471f13b76ce44":[3,0,0,2,82,5],
 "AMReX__FBI_8H.html#ab1edc85caabaea9ac0a3b1e5cf851f17":[3,0,0,2,82,7],
 "AMReX__FBI_8H.html#afc1b915037c4dab142f1df60d412713e":[3,0,0,2,82,8],
-"AMReX__FBI_8H_source.html":[3,0,0,2,82]
+"AMReX__FBI_8H_source.html":[3,0,0,2,82],
+"AMReX__FEIntegrator_8H.html":[3,0,0,2,83]
 };
