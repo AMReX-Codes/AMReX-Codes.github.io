@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['maketype_16355',['MakeType',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6',1,'amrex']]],
-  ['maskval_16356',['MaskVal',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9',1,'amrex::BndryData']]],
-  ['minmaxrangetype_16357',['MinMaxRangeType',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98e',1,'amrex::Amrvis']]],
-  ['minmaxrangetypeforbuttons_16358',['MinMaxRangeTypeForButtons',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9',1,'amrex::Amrvis']]]
+  ['maketype_16357',['MakeType',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6',1,'amrex']]],
+  ['maskval_16358',['MaskVal',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9',1,'amrex::BndryData']]],
+  ['minmaxrangetype_16359',['MinMaxRangeType',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98e',1,'amrex::Amrvis']]],
+  ['minmaxrangetypeforbuttons_16360',['MinMaxRangeTypeForButtons',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9',1,'amrex::Amrvis']]]
 ];
