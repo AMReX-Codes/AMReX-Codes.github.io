@@ -332,7 +332,7 @@ var searchData=
   ['godunovcornercouple_3017',['GodunovCornerCouple',['../namespaceGodunovCornerCouple.html',1,'']]],
   ['gp_3018',['gp',['https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1openbc_1_1MomTag.html#a886bcabd4fa635b87082757fb595cc6c',1,'amrex::openbc::MomTag']]],
   ['gpercent_3019',['gPercent',['https://amrex-codes.github.io/amrex/doxygen/classBLProfStats.html#aa9cbfb5bc0b3ad413e06060864eed0f8',1,'BLProfStats']]],
-  ['gpu_3020',['Gpu',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu()'],['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU()']]],
+  ['gpu_3020',['GPU',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU()'],['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu()']]],
   ['gpu_5fdefault_5fstream_3021',['gpu_default_stream',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Gpu_1_1Device.html#ad584078f0787df001af05bfe9c8d0356',1,'amrex::Gpu::Device']]],
   ['gpu_5frand_5fstate_3022',['gpu_rand_state',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866',1,'amrex']]],
   ['gpu_5fstream_3023',['gpu_stream',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Gpu_1_1Device.html#a44b4d2d558f0b94c682dcc9a26f7e666',1,'amrex::Gpu::Device']]],
