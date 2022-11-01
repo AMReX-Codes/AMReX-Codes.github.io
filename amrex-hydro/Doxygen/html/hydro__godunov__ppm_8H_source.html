@@ -938,16 +938,18 @@ $(document).ready(function(){initNavTree('hydro__godunov__ppm_8H_source.html',''
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                               q, umac, pbc[n], dlo.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>, dhi.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>,limiter);</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <a class="code" href="namespacePPM.html#adacb69e879ed8e48037a90602b689caa">PPM::PredictStateOnYFace</a>(i, j, k, n, l_dt, dy, Imy(i,j,k,n), Ipy(i,j,k,n),</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                               q, vmac, pbc[n], dlo.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>, dhi.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a5b607ff8424cba649fe2c3c19f34714b">y</a>,limiter);</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        PPM::PredictStateOnZFace(i, j, k, n, l_dt, dz, Imz(i,j,k,n), Ipz(i,j,k,n),</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                               q, wmac, pbc[n], dlo.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, dhi.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>,limiter);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    });</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;}</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;}</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM==3)</span></div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        PPM::PredictStateOnZFace(i, j, k, n, l_dt, dz, Imz(i,j,k,n), Ipz(i,j,k,n),</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                               q, wmac, pbc[n], dlo.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>, dhi.<a class="codeRef" href="https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>,limiter);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    });</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;}</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160; </div>
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160; </div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="comment">/** @} */</span></div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;}</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160; </div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;<span class="comment">/** @} */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="ahydro__constants_8H_html"><div class="ttname"><a href="hydro__constants_8H.html">hydro_constants.H</a></div></div>
