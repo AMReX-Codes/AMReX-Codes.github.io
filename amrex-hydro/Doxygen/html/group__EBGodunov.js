@@ -1,6 +1,7 @@
 var group__EBGodunov =
 [
     [ "EBGodunov", "namespaceEBGodunov.html", null ],
+    [ "EBGodunovBC", "namespaceEBGodunovBC.html", null ],
     [ "EBGodunovCornerCouple", "namespaceEBGodunovCornerCouple.html", null ],
     [ "EBPLM", "namespaceEBPLM.html", null ],
     [ "create_transverse_terms_for_xface", "group__EBGodunov.html#ga840e5c3022f313f87524b3f600549b35", null ],
