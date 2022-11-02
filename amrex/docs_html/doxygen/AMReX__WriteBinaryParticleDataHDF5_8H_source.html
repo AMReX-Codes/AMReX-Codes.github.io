@@ -345,7 +345,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleDataHDF5_8H_
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            set_stripe = 1;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span> (set_stripe == 1) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            sprintf(setstripe, <span class="stringliteral">&quot;lfs setstripe -c %d -S %dm %s&quot;</span>, stripe_count, stripe_size, pdir.c_str());</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            snprintf(setstripe, <span class="keyword">sizeof</span> setstripe, <span class="stringliteral">&quot;lfs setstripe -c %d -S %dm %s&quot;</span>, stripe_count, stripe_size, pdir.c_str());</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Setting stripe parameters for HDF5 output: &quot;</span> &lt;&lt; setstripe &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(std::system(setstripe));</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
@@ -391,7 +391,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleDataHDF5_8H_
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NStructReal + pc.NumRealComps(); ++i ) {</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">if</span> (write_real_comp[i]) {</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="comment">/* HdrFile &lt;&lt; real_comp_names[i] &lt;&lt; &#39;\n&#39;; */</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                sprintf(comp_name, <span class="stringliteral">&quot;real_component_%d&quot;</span>, i);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                snprintf(comp_name, <span class="keyword">sizeof</span> comp_name, <span class="stringliteral">&quot;real_component_%d&quot;</span>, i);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#ab299613356b740b738644e0807412feb">CreateWriteHDF5AttrString</a>(fid, comp_name, real_comp_names[i].c_str());</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            }</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
@@ -402,7 +402,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleDataHDF5_8H_
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">// int component names</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NStructInt + pc.NumIntComps(); ++i ) {</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (write_int_comp[i]) {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                sprintf(comp_name, <span class="stringliteral">&quot;int_component_%d&quot;</span>, i);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                snprintf(comp_name, <span class="keyword">sizeof</span> comp_name, <span class="stringliteral">&quot;int_component_%d&quot;</span>, i);</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#ab299613356b740b738644e0807412feb">CreateWriteHDF5AttrString</a>(fid, comp_name, int_comp_names[i].c_str());</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            }</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
@@ -424,7 +424,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleDataHDF5_8H_
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        H5Pset_fill_time(dcpl_id, H5D_FILL_TIME_NEVER);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            sprintf(level_name, <span class="stringliteral">&quot;level_%d&quot;</span>, lev);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            snprintf(level_name, <span class="keyword">sizeof</span> level_name, <span class="stringliteral">&quot;level_%d&quot;</span>, lev);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            grp = H5Gcreate(fid, level_name, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">if</span> (grp &lt; 0) {</div>
@@ -499,7 +499,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleDataHDF5_8H_
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordtype">char</span> level_name[64];</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= pc.finestLevel(); lev++)</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        sprintf(level_name, <span class="stringliteral">&quot;level_%d&quot;</span>, lev);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        snprintf(level_name, <span class="keyword">sizeof</span> level_name, <span class="stringliteral">&quot;level_%d&quot;</span>, lev);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        grp = H5Gopen_async(fid, level_name, H5P_DEFAULT, es_par_g);</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">#else</span></div>
