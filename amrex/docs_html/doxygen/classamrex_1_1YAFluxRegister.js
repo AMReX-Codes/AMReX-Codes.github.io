@@ -12,6 +12,8 @@ var classamrex_1_1YAFluxRegister =
     [ "define", "classamrex_1_1YAFluxRegister.html#a1c455cac046d9c693f48cd2b84533d17", null ],
     [ "FineAdd", "classamrex_1_1YAFluxRegister.html#a16e46b300ff340a7ff39d65aa572d3cf", null ],
     [ "FineHasWork", "classamrex_1_1YAFluxRegister.html#aac0df8bf308e353e01a5477f2c3fe458", null ],
+    [ "getCrseData", "classamrex_1_1YAFluxRegister.html#aba172f07f544fe12772e94b681eb2d5b", null ],
+    [ "getFineData", "classamrex_1_1YAFluxRegister.html#a71d8d0ab300c7c7e8e006d46a62d3026", null ],
     [ "Reflux", "classamrex_1_1YAFluxRegister.html#a710ed45f31383818bc39e92010e63cb6", null ],
     [ "reset", "classamrex_1_1YAFluxRegister.html#a9f4e5bbfcfe4bd2de5e3487a80e8cc0c", null ],
     [ "m_cfp_fab", "classamrex_1_1YAFluxRegister.html#ae5fdcdbe4998bb8636e686763cebc949", null ],
