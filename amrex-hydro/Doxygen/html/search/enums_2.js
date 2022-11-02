@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['cellghosttypes_16327',['CellGhostTypes',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530',1,'amrex::InSituUtils']]],
-  ['cellindex_16328',['CellIndex',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1IndexType.html#a4bbe4fdc07aa019c3a4a6839cdafccce',1,'amrex::IndexType']]],
-  ['celltype_16329',['CellType',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1YAFluxRegister.html#a793217326d57a18d473ad802963c1a39',1,'amrex::YAFluxRegister']]],
-  ['cfstrategy_16330',['CFStrategy',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLMG.html#a318536fe822c58660f772ef85c0ef1dd',1,'amrex::MLMG']]],
-  ['coarseningstrategy_16331',['CoarseningStrategy',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82',1,'amrex::MLNodeLinOp']]],
-  ['contourtype_16332',['ContourType',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323b',1,'amrex::Amrvis']]],
-  ['coordtype_16333',['CoordType',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806eba',1,'amrex::CoordSys']]],
-  ['cpop_16334',['CpOp',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff',1,'amrex::FabArrayBase']]]
+  ['cellghosttypes_16329',['CellGhostTypes',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530',1,'amrex::InSituUtils']]],
+  ['cellindex_16330',['CellIndex',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1IndexType.html#a4bbe4fdc07aa019c3a4a6839cdafccce',1,'amrex::IndexType']]],
+  ['celltype_16331',['CellType',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1YAFluxRegister.html#a793217326d57a18d473ad802963c1a39',1,'amrex::YAFluxRegister']]],
+  ['cfstrategy_16332',['CFStrategy',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLMG.html#a318536fe822c58660f772ef85c0ef1dd',1,'amrex::MLMG']]],
+  ['coarseningstrategy_16333',['CoarseningStrategy',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82',1,'amrex::MLNodeLinOp']]],
+  ['contourtype_16334',['ContourType',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323b',1,'amrex::Amrvis']]],
+  ['coordtype_16335',['CoordType',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806eba',1,'amrex::CoordSys']]],
+  ['cpop_16336',['CpOp',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff',1,'amrex::FabArrayBase']]]
 ];
