@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                        bvxlo(i-1,j,k-1,n) * Real(2.) +</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                        bvxlo(i-1,j,k-2,n) * Real(-0.5)) * dzi;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                ddz = whi*dzi*(bvxlo(i-1,j,khip,n)-bvxlo(i-1,j,khim,n));</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                ddz = wlo*dzi*(bvxlo(i-1,j,klop,n)-bvxlo(i-1,j,klom,n));</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#a8357bdd8096531117cdcb334a5bab9b0">Orientation::xlo</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            ddz = whi*dzi*(vel(i,j,khip,n)-vel(i,j,khim,n));</div>
@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                        bvxhi(i,j,k-1,n) * Real(2.) +</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                        bvxhi(i,j,k-2,n) * Real(-0.5)) * dzi;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                ddz = wlo*dzi*(bvxhi(i,j,klop,n)-bvxhi(i,j,klom,n));</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                ddz = whi*dzi*(bvxhi(i,j,khip,n)-bvxhi(i,j,khim,n));</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#a9f188bc06079f1c188304a32ad6110a1">Orientation::xhi</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            ddz = wlo*dzi*(vel(i-1,j,klop,n)-vel(i-1,j,klom,n));</div>
@@ -407,7 +407,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                        bvylo(i,j-1,k-1,n) * Real(2.) +</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        bvylo(i,j-1,k-2,n) * Real(-0.5)) * dzi;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                ddz = whi*dzi*(bvylo(i,j-1,khip,n)-bvylo(i,j-1,khim,n));</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                ddz = wlo*dzi*(bvylo(i,j-1,klop,n)-bvylo(i,j-1,klom,n));</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#a834da152cd3da5a15d0b486a2765778f">Orientation::ylo</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            ddz = whi*dzi*(vel(i,j,khip,n)-vel(i,j,khim,n));</div>
@@ -425,7 +425,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                        bvyhi(i,j,k-1,n) * Real(2.) +</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        bvyhi(i,j,k-2,n) * Real(-0.5)) * dzi;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                ddz = wlo*dzi*(bvyhi(i,j,klop,n)-bvyhi(i,j,klom,n));</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                ddz = whi*dzi*(bvyhi(i,j,khip,n)-bvyhi(i,j,khim,n));</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            }</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#a60ebce7e24f582476b0759479c38cec8">Orientation::yhi</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            ddz = wlo*dzi*(vel(i,j-1,klop,n)-vel(i,j-1,klom,n));</div>
@@ -462,7 +462,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                        bvzlo(i-1,j,k-1,n) * Real(2.) +</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                        bvzlo(i-2,j,k-1,n) * Real(-0.5)) * dxi;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                ddx = whi*dxi*(bvzlo(ihip,j,k-1,n)-bvzlo(ihim,j,k-1,n));</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                ddx = wlo*dxi*(bvzlo(ilop,j,k-1,n)-bvzlo(ilom,j,k-1,n));</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            }</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#adc5c24fdb759cd388af0ca18c37a49f3">Orientation::zlo</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            ddx = whi*dxi*(vel(ihip,j,k,n)-vel(ihim,j,k,n));</div>
@@ -480,7 +480,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                        bvzhi(i-1,j,k,n) * Real(2.) +</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                        bvzhi(i-2,j,k,n) * Real(-0.5)) * dxi;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                ddx = wlo*dxi*(bvzhi(ilop,j,k,n)-bvzhi(ilom,j,k,n));</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                ddx = whi*dxi*(bvzhi(ihip,j,k,n)-bvzhi(ihim,j,k,n));</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#a04130dc48cb39636a34e8b35f79f0dd4">Orientation::zhi</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            ddx = wlo*dxi*(vel(ilop,j,k-1,n)-vel(ilom,j,k-1,n));</div>
@@ -518,7 +518,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                        bvzlo(i,j-1,k-1,n) * Real(2.) +</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                        bvzlo(i,j-2,k-1,n) * Real(-0.5)) * dyi;</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                ddy = whi*dyi*(bvzlo(i,jhip,k-1,n)-bvzlo(i,jhim,k-1,n));</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                ddy = wlo*dyi*(bvzlo(i,jlop,k-1,n)-bvzlo(i,jlom,k-1,n));</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            }</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#adc5c24fdb759cd388af0ca18c37a49f3">Orientation::zlo</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            ddy = whi*dyi*(vel(i,jhip,k,n)-vel(i,jhim,k,n));</div>
@@ -536,7 +536,7 @@ $(document).ready(function(){initNavTree('AMReX__MLEBTensor__3D__K_8H_source.htm
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                        bvzhi(i,j-1,k,n) * Real(2.) +</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                        bvzhi(i,j-2,k,n) * Real(-0.5)) * dyi;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                ddy = wlo*dyi*(bvzhi(i,jlop,k,n)-bvzhi(i,jlom,k,n));</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                ddy = whi*dyi*(bvzhi(i,jhip,k,n)-bvzhi(i,jhim,k,n));</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            }</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bct(<a class="code" href="classamrex_1_1Orientation.html#a04130dc48cb39636a34e8b35f79f0dd4">Orientation::zhi</a>(),n) == <a class="code" href="AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60">AMREX_LO_NEUMANN</a>) {</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            ddy = wlo*dyi*(vel(i,jlop,k-1,n)-vel(i,jlom,k-1,n));</div>
