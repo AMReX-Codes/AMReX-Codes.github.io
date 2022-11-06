@@ -895,8 +895,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
+    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],
@@ -1018,6 +1018,11 @@ var hierarchy =
       [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ]
     ] ],
     [ "amrex::TypeList< Ts >", "structamrex_1_1TypeList.html", null ],
+    [ "amrex::detail::TypeListGet< I, T >", "structamrex_1_1detail_1_1TypeListGet.html", null ],
+    [ "amrex::detail::TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
+    [ "amrex::detail::TypeListGet< I-1, TypeList< Tail... > >", "structamrex_1_1detail_1_1TypeListGet.html", [
+      [ "amrex::detail::TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ]
+    ] ],
     [ "amrex::detail::unwrap< T >", "structamrex_1_1detail_1_1unwrap.html", null ],
     [ "amrex::detail::unwrap< std::reference_wrapper< T > >", "structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html", null ],
     [ "amrex::AMRErrorTag::UserFunc", "structamrex_1_1AMRErrorTag_1_1UserFunc.html", null ],

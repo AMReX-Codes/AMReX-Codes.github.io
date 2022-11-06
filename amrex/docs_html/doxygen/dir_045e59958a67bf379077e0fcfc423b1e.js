@@ -359,6 +359,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
       [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", "classamrex_1_1TinyProfileRegion" ]
     ] ],
     [ "AMReX_Tuple.H", "AMReX__Tuple_8H.html", "AMReX__Tuple_8H" ],
+    [ "AMReX_TypeList.H", "AMReX__TypeList_8H.html", "AMReX__TypeList_8H" ],
     [ "AMReX_TypeTraits.H", "AMReX__TypeTraits_8H.html", "AMReX__TypeTraits_8H" ],
     [ "AMReX_Utility.cpp", "AMReX__Utility_8cpp.html", "AMReX__Utility_8cpp" ],
     [ "AMReX_Utility.H", "AMReX__Utility_8H.html", "AMReX__Utility_8H" ],

@@ -17,6 +17,9 @@ var namespaceamrex_1_1detail =
     [ "tuple_cat_result", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
     [ "tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802" ],
     [ "tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
+    [ "TypeListGet", "structamrex_1_1detail_1_1TypeListGet.html", null ],
+    [ "TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
+    [ "TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
     [ "unwrap", "structamrex_1_1detail_1_1unwrap.html", "structamrex_1_1detail_1_1unwrap" ],
     [ "unwrap< std::reference_wrapper< T > >", "structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html", "structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4" ]
 ];
