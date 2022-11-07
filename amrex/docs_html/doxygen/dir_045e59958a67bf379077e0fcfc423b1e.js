@@ -95,6 +95,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
       [ "DataAllocator", "structamrex_1_1DataAllocator.html", "structamrex_1_1DataAllocator" ],
       [ "DataDeleter", "structamrex_1_1DataDeleter.html", "structamrex_1_1DataDeleter" ]
     ] ],
+    [ "AMReX_Demangle.H", "AMReX__Demangle_8H.html", "AMReX__Demangle_8H" ],
     [ "AMReX_Dim3.H", "AMReX__Dim3_8H.html", "AMReX__Dim3_8H" ],
     [ "AMReX_DistributionMapping.cpp", "AMReX__DistributionMapping_8cpp.html", "AMReX__DistributionMapping_8cpp" ],
     [ "AMReX_DistributionMapping.H", "AMReX__DistributionMapping_8H.html", "AMReX__DistributionMapping_8H" ],

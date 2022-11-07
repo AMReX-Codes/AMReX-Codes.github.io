@@ -1,5 +1,8 @@
 var NAVTREEINDEX67 =
 {
+"structamrex_1_1TinyProfiler_1_1ProcStats.html#ad9c2c49d8b22ac959def10c90dd3ed30":[2,0,0,460,0,8],
+"structamrex_1_1TinyProfiler_1_1ProcStats.html#ae641e60af08fa4f6e33d79a5f03db53a":[2,0,0,460,0,1],
+"structamrex_1_1TinyProfiler_1_1ProcStats.html#aedc188bc05126bc46593e11478c19f66":[2,0,0,460,0,0],
 "structamrex_1_1TinyProfiler_1_1Stats.html":[2,0,0,460,1],
 "structamrex_1_1TinyProfiler_1_1Stats.html#a1985c5975c675b3fb1d9746ee5f016c7":[2,0,0,460,1,0],
 "structamrex_1_1TinyProfiler_1_1Stats.html#a23fedc6778a6f6a72862b3a659494231":[2,0,0,460,1,4],
@@ -84,8 +87,8 @@ var NAVTREEINDEX67 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX67 =
 "structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[2,0,0,344,4],
 "structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0":[2,0,0,344,1],
 "structamrex_1_1parser__number.html":[2,0,0,345],
-"structamrex_1_1parser__number.html#a9b8b81a5486eb6114f80a5a40489fd92":[2,0,0,345,1],
-"structamrex_1_1parser__number.html#ab186dabf87779fb9b65fe0edc854e46c":[2,0,0,345,0],
-"structamrex_1_1parser__symbol.html":[2,0,0,347],
-"structamrex_1_1parser__symbol.html#a36d42d12dc34e9e1a3321c27539bb34d":[2,0,0,347,1]
+"structamrex_1_1parser__number.html#a9b8b81a5486eb6114f80a5a40489fd92":[2,0,0,345,1]
 };
