@@ -86,5 +86,7 @@ var AMReX__FabArrayUtility_8H =
     [ "ReduceSum_host_wrapper", "AMReX__FabArrayUtility_8H.html#a446108c6c03634721a360874316711e6", null ],
     [ "ReduceSum_host_wrapper", "AMReX__FabArrayUtility_8H.html#aa0a24159faf6dc62695bc3e1758aa1bf", null ],
     [ "Subtract", "AMReX__FabArrayUtility_8H.html#afeebec2f58b85bfde5b88b30810cd82d", null ],
-    [ "Subtract", "AMReX__FabArrayUtility_8H.html#a54b8b46deca518b441b849bbd1ceda02", null ]
+    [ "Subtract", "AMReX__FabArrayUtility_8H.html#a54b8b46deca518b441b849bbd1ceda02", null ],
+    [ "Xpay", "AMReX__FabArrayUtility_8H.html#a497906cc7789ced0e618f4a16e17209d", null ],
+    [ "Xpay", "AMReX__FabArrayUtility_8H.html#a4f65027913056f5fae89a0b15d55e6d8", null ]
 ];
