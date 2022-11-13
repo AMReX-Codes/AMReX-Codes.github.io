@@ -291,6 +291,7 @@ var namespaceamrex =
     [ "MemProfiler", "classamrex_1_1MemProfiler.html", "classamrex_1_1MemProfiler" ],
     [ "MFCellBilinear", "classamrex_1_1MFCellBilinear.html", "classamrex_1_1MFCellBilinear" ],
     [ "MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", "classamrex_1_1MFCellConsLinInterp" ],
+    [ "MFCellConsLinMinmaxLimitInterp", "classamrex_1_1MFCellConsLinMinmaxLimitInterp.html", "classamrex_1_1MFCellConsLinMinmaxLimitInterp" ],
     [ "MFInfo", "structamrex_1_1MFInfo.html", "structamrex_1_1MFInfo" ],
     [ "MFInterpolater", "classamrex_1_1MFInterpolater.html", "classamrex_1_1MFInterpolater" ],
     [ "MFIter", "classamrex_1_1MFIter.html", "classamrex_1_1MFIter" ],

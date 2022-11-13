@@ -76,6 +76,7 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
       [ "MFInterpolater", "classamrex_1_1MFInterpolater.html", "classamrex_1_1MFInterpolater" ],
       [ "MFPCInterp", "classamrex_1_1MFPCInterp.html", "classamrex_1_1MFPCInterp" ],
       [ "MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", "classamrex_1_1MFCellConsLinInterp" ],
+      [ "MFCellConsLinMinmaxLimitInterp", "classamrex_1_1MFCellConsLinMinmaxLimitInterp.html", "classamrex_1_1MFCellConsLinMinmaxLimitInterp" ],
       [ "MFCellBilinear", "classamrex_1_1MFCellBilinear.html", "classamrex_1_1MFCellBilinear" ],
       [ "MFNodeBilinear", "classamrex_1_1MFNodeBilinear.html", "classamrex_1_1MFNodeBilinear" ]
     ] ],
