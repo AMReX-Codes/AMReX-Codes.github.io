@@ -1,6 +1,6 @@
 var hydro__bds_8H =
 [
-    [ "ComputeConc", "hydro__bds_8H.html#af45fb985b7b54aeb2d8e6d3442c98b41", null ],
-    [ "ComputeEdgeState", "hydro__bds_8H.html#a913484de17940ca14b8f5035c055dc67", null ],
-    [ "ComputeSlopes", "hydro__bds_8H.html#adbef6ff80f518a4f0fb9821874a7234f", null ]
+    [ "ComputeConc", "hydro__bds_8H.html#a8f15920329b58787dc01e20ec1a72b55", null ],
+    [ "ComputeEdgeState", "hydro__bds_8H.html#af698b6387a476422a364e69f899c0b63", null ],
+    [ "ComputeSlopes", "hydro__bds_8H.html#adf462f5a6d17bb0f4fc80e6ee10041a4", null ]
 ];
