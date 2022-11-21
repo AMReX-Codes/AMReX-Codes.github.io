@@ -185,10 +185,9 @@ var hierarchy =
     [ "amrex::MLCellLinOp::BndryCondLoc", "classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html", null ],
     [ "amrex::StateDescriptor::BndryFunc", "classamrex_1_1StateDescriptor_1_1BndryFunc.html", null ],
     [ "amrex::BndryFuncArray", "classamrex_1_1BndryFuncArray.html", null ],
-    [ "amrex::BndryRegister", "classamrex_1_1BndryRegister.html", [
-      [ "amrex::BndryData", "classamrex_1_1BndryData.html", [
-        [ "amrex::InterpBndryData", "classamrex_1_1InterpBndryData.html", [
-          [ "amrex::MacBndry", "classamrex_1_1MacBndry.html", null ],
+    [ "amrex::BndryRegisterT< MF >", "classamrex_1_1BndryRegisterT.html", [
+      [ "amrex::BndryDataT< MF >", "classamrex_1_1BndryDataT.html", [
+        [ "amrex::InterpBndryDataT< MF >", "classamrex_1_1InterpBndryDataT.html", [
           [ "amrex::MLMGBndry", "classamrex_1_1MLMGBndry.html", null ]
         ] ]
       ] ],
@@ -390,7 +389,7 @@ var hierarchy =
     ] ],
     [ "amrex::VisMF::FabOnDisk", "structamrex_1_1VisMF_1_1FabOnDisk.html", null ],
     [ "amrex::VisMF::FabReadLink", "structamrex_1_1VisMF_1_1FabReadLink.html", null ],
-    [ "amrex::FabSet", "classamrex_1_1FabSet.html", null ],
+    [ "amrex::FabSetT< MF >", "classamrex_1_1FabSetT.html", null ],
     [ "amrex::FabArray< FAB >::FABType", "structamrex_1_1FabArray_1_1FABType.html", null ],
     [ "amrex::EB2::Face", "structamrex_1_1EB2_1_1Face.html", null ],
     [ "false_type", null, [
@@ -1035,7 +1034,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::BLProfiler::CallStats >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::CommStats >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::RStartStop >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::BndryRegister >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::BndryRegisterT >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BoundCond >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Box >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BoxArray >", "classamrex_1_1Vector.html", null ],
@@ -1070,7 +1069,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Real >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::StateData >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Any > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Vector< amrex::BndryRegister > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< amrex::BndryRegisterT > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoundCond > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Box > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoxArray > >", "classamrex_1_1Vector.html", null ],
@@ -1165,7 +1164,7 @@ var hierarchy =
       [ "amrex::Vector< std::size_t >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::string >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::AmrLevel > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::unique_ptr< amrex::BndryRegister > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::unique_ptr< amrex::BndryRegisterT > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::DistributionMapping > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::EB2::IndexSpace > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::ErrorRec > >", "classamrex_1_1Vector.html", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"AMReX__CudaGraph_8H_source.html":[3,0,0,2,60],
+"AMReX__CuptiTrace_8H.html":[3,0,0,2,62],
 "AMReX__CuptiTrace_8H_source.html":[3,0,0,2,62],
 "AMReX__CuptiTrace_8cpp.html":[3,0,0,2,61],
 "AMReX__DataAllocator_8H.html":[3,0,0,2,63],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "AMReX__EBFluxRegister__3D__C_8H.html#a72c1982bd1003fddcf274e2fd059fc87":[3,0,0,4,72,5],
 "AMReX__EBFluxRegister__3D__C_8H.html#abd990a563d63d022c9b09433c621015f":[3,0,0,4,72,2],
 "AMReX__EBFluxRegister__3D__C_8H.html#ac9df63fc752ddecfc0659aa645670462":[3,0,0,4,72,8],
-"AMReX__EBFluxRegister__3D__C_8H.html#ad52e53deaf4b675c315293a57f6958c9":[3,0,0,4,72,6],
-"AMReX__EBFluxRegister__3D__C_8H.html#ad88229550040a794c1b560b1db6ecdc2":[3,0,0,4,72,0],
-"AMReX__EBFluxRegister__3D__C_8H_source.html":[3,0,0,4,72]
+"AMReX__EBFluxRegister__3D__C_8H.html#ad52e53deaf4b675c315293a57f6958c9":[3,0,0,4,72,6]
 };

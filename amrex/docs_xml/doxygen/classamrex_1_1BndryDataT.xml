@@ -1,0 +1,1061 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classamrex_1_1BndryDataT" kind="class" language="C++" prot="public">
+    <compoundname>amrex::BndryDataT</compoundname>
+    <basecompoundref refid="classamrex_1_1BndryRegisterT" prot="public" virt="non-virtual">amrex::BndryRegisterT&lt; MF &gt;</basecompoundref>
+    <derivedcompoundref refid="classamrex_1_1InterpBndryDataT" prot="public" virt="non-virtual">amrex::InterpBndryDataT&lt; MF &gt;</derivedcompoundref>
+    <includes refid="AMReX__BndryData_8H" local="no">AMReX_BndryData.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename MF</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MaskVal</name>
+        <enumvalue id="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3" prot="public">
+          <name>covered</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288" prot="public">
+          <name>not_covered</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077" prot="public">
+          <name>outside_domain</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7" prot="public">
+          <name>NumMaskVals</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>mask values enumeration </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="44" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1BndryDataT_1abcdaf55bfa67d5d815bf0f02b11b4755" prot="public" static="no">
+        <type>typename MF::value_type</type>
+        <definition>using amrex::BndryDataT&lt; MF &gt;::value_type =  typename MF::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="46" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1BndryDataT_1a635d69fddbe9b8785a9f16e6874273d0" prot="public" static="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1BndryDataT_1abcdaf55bfa67d5d815bf0f02b11b4755" kindref="member">value_type</ref>, 2 *AMREX_SPACEDIM &gt;</type>
+        <definition>using amrex::BndryDataT&lt; MF &gt;::RealTuple =  Array&lt;value_type,2*AMREX_SPACEDIM&gt;</definition>
+        <argsstring></argsstring>
+        <name>RealTuple</name>
+        <briefdescription>
+<para>Some useful typedefs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="82" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1a043be8a7bc1486ff3e42dde8d785023c" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref> &gt; &gt; &gt;</type>
+        <definition>LayoutData&lt;Vector&lt; Vector&lt;BoundCond&gt; &gt; &gt; amrex::BndryDataT&lt; MF &gt;::bcond</definition>
+        <argsstring></argsstring>
+        <name>bcond</name>
+        <briefdescription>
+<para>Map of boundary condition type specifiers. The outer Array dimension is over <ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="142" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1af7bb1a70a4e8bb07247e07f9de03c3ab" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; <ref refid="classamrex_1_1BndryDataT_1a635d69fddbe9b8785a9f16e6874273d0" kindref="member">RealTuple</ref> &gt;</type>
+        <definition>LayoutData&lt;RealTuple&gt; amrex::BndryDataT&lt; MF &gt;::bcloc</definition>
+        <argsstring></argsstring>
+        <name>bcloc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="144" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1abb734566f5eab0761ad80aec4f7dfa3d" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref> &gt;</type>
+        <definition>Vector&lt;MultiMask&gt; amrex::BndryDataT&lt; MF &gt;::masks</definition>
+        <argsstring></argsstring>
+        <name>masks</name>
+        <briefdescription>
+<para>Boundary condition mask. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="146" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1ae4436ce0d60dc60cd15ff3ab3c2ed7a7" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref></type>
+        <definition>Geometry amrex::BndryDataT&lt; MF &gt;::geom</definition>
+        <argsstring></argsstring>
+        <name>geom</name>
+        <briefdescription>
+<para>Domain used for mask definitions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="148" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1adabe55330d4668477240acc170ab6032" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::BndryDataT&lt; MF &gt;::m_ncomp</definition>
+        <argsstring></argsstring>
+        <name>m_ncomp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="149" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1a1c152f39fdeb4881636df629cc0d8077" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::BndryDataT&lt; MF &gt;::m_defined</definition>
+        <argsstring></argsstring>
+        <name>m_defined</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="150" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1BndryDataT_1af24fa42fa7ee1bcbb9fb775c5ab192d6" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::BndryDataT&lt; MF &gt;::NTangHalfWidth</definition>
+        <argsstring></argsstring>
+        <name>NTangHalfWidth</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="156" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a0b38594755407961cf669679bd5f2827" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BndryDataT&lt; MF &gt;::BndryDataT</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>BndryDataT</name>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="49" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="160" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1ae449a1eee7596c48ad129d92e02e79c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BndryDataT&lt; MF &gt;::BndryDataT</definition>
+        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, int ncomp, const Geometry &amp;geom)</argsstring>
+        <name>BndryDataT</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+<para>constructor specifying number of components and box of physical domain (cell-centered) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="55" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="165" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a5516fe31e846fc0e58ac78628938940b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BndryDataT&lt; MF &gt;::~BndryDataT</definition>
+        <argsstring>()=default</argsstring>
+        <name>~BndryDataT</name>
+        <briefdescription>
+<para>destructor </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="61" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a48956cc70261a5b28ab7a2559d2df611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BndryDataT&lt; MF &gt;::BndryDataT</definition>
+        <argsstring>(const BndryDataT&lt; MF &gt; &amp;src)=delete</argsstring>
+        <name>BndryDataT</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT</ref>&lt; MF &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="63" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a0997f3f226667e9d93136128fcfaf798" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::BndryDataT&lt; MF &gt;::BndryDataT</definition>
+        <argsstring>(BndryDataT&lt; MF &gt; &amp;&amp;rhs)=delete</argsstring>
+        <name>BndryDataT</name>
+        <param>
+          <type><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT</ref>&lt; MF &gt; &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="64" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1ae7e3bc077f7e5695cfef56a57075d164" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT</ref>&lt; MF &gt; &amp;</type>
+        <definition>BndryDataT&lt;MF&gt;&amp; amrex::BndryDataT&lt; MF &gt;::operator=</definition>
+        <argsstring>(const BndryDataT&lt; MF &gt; &amp;src)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT</ref>&lt; MF &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="65" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a536257808c5792850bdeaf82cf76f85d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT</ref>&lt; MF &gt; &amp;</type>
+        <definition>BndryDataT&lt;MF&gt;&amp; amrex::BndryDataT&lt; MF &gt;::operator=</definition>
+        <argsstring>(BndryDataT&lt; MF &gt; &amp;&amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1BndryDataT" kindref="compound">BndryDataT</ref>&lt; MF &gt; &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="66" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a90495c408f01aebfc13f916272d48c5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BndryDataT&lt; MF &gt;::define</definition>
+        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, int ncomp, const Geometry &amp;geom)</argsstring>
+        <name>define</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+<para>allocate bndry fabs along given face </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="69" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="245" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a61899ec60817d524fd886e0b6d9f361a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1MultiMask" kindref="compound">MultiMask</ref> &amp;</type>
+        <definition>const MultiMask&amp; amrex::BndryDataT&lt; MF &gt;::bndryMasks</definition>
+        <argsstring>(Orientation face) const noexcept</argsstring>
+        <name>bndryMasks</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="74" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1ae0d643450444b8374f35e761564d075b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1FabSetT" kindref="compound">FabSetT</ref>&lt; MF &gt; &amp;</type>
+        <definition>const FabSetT&lt;MF&gt;&amp; amrex::BndryDataT&lt; MF &gt;::bndryValues</definition>
+        <argsstring>(Orientation face) const noexcept</argsstring>
+        <name>bndryValues</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+<para>Return FabSet on given face. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="77" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1af48fcbe60dd847da0a52181bf10ef7aa" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1BndryDataT_1a635d69fddbe9b8785a9f16e6874273d0" kindref="member">RealTuple</ref> &amp;</type>
+        <definition>const BndryDataT&lt; MF &gt;::RealTuple &amp; amrex::BndryDataT&lt; MF &gt;::bndryLocs</definition>
+        <argsstring>(int igrid) const noexcept</argsstring>
+        <name>bndryLocs</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>igrid</declname>
+        </param>
+        <briefdescription>
+<para>Return boundary location on given face for grids we own. It&apos;s an error if we don&apos;t own that grid. RealTuple is indexed with <ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="89" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="231" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a311921844eeca8b18621c7199a86729b" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1BndryDataT_1a635d69fddbe9b8785a9f16e6874273d0" kindref="member">RealTuple</ref> &amp;</type>
+        <definition>const BndryDataT&lt; MF &gt;::RealTuple &amp; amrex::BndryDataT&lt; MF &gt;::bndryLocs</definition>
+        <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
+        <name>bndryLocs</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="90" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1ae3a893425723763871fed2b8f6727abf" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref> &gt; &gt; &amp;</type>
+        <definition>const Vector&lt; Vector&lt; BoundCond &gt; &gt; &amp; amrex::BndryDataT&lt; MF &gt;::bndryConds</definition>
+        <argsstring>(int igrid) const noexcept</argsstring>
+        <name>bndryConds</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>igrid</declname>
+        </param>
+        <briefdescription>
+<para>Return boundary type specifier on given face for grids we own. It&apos;s an error if we don&apos;t own that grid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="96" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a06c546aa81b72020efdddf748a5d0164" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref> &gt; &gt; &amp;</type>
+        <definition>const Vector&lt; Vector&lt; BoundCond &gt; &gt; &amp; amrex::BndryDataT&lt; MF &gt;::bndryConds</definition>
+        <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
+        <name>bndryConds</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="97" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a1052f19a1566840110263a9ebe9c3587" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::BndryDataT&lt; MF &gt;::nComp</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>nComp</name>
+        <briefdescription>
+<para>return number of components for which this object is intended </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="100" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1aac632701a65ebb8b2d429ee83da1e34e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+        <definition>const Box&amp; amrex::BndryDataT&lt; MF &gt;::getDomain</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>getDomain</name>
+        <briefdescription>
+<para>return domain used to define masks </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="103" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a7ae9f7791272299abb7f27b53208288a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+        <definition>const Geometry&amp; amrex::BndryDataT&lt; MF &gt;::getGeom</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>getGeom</name>
+        <briefdescription>
+<para>return geometry used to define masks </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="106" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="106" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BndryDataT&lt; MF &gt;::setValue</definition>
+        <argsstring>(Orientation face, int n, Real val) noexcept</argsstring>
+        <name>setValue</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>set values of boundary Fab for given orientation on nth grid </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="109" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="298" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1aa8cb046e06f3de6cb1db4be12ec87010" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BndryDataT&lt; MF &gt;::setBoundCond</definition>
+        <argsstring>(Orientation face, int n, int comp, const BoundCond &amp;bcn) noexcept</argsstring>
+        <name>setBoundCond</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref> &amp;</type>
+          <declname>bcn</declname>
+        </param>
+        <briefdescription>
+<para>set boundary type specifier for given orientation on nth grid </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="112" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="179" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1afd3fdc202fd316dff91863242679263f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BndryDataT&lt; MF &gt;::setBoundCond</definition>
+        <argsstring>(Orientation face, const MFIter &amp;mfi, int comp, const BoundCond &amp;bcn) noexcept</argsstring>
+        <name>setBoundCond</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref> &amp;</type>
+          <declname>bcn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="117" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="189" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1ac308c460f9c083f2fd2326ca62cd1811" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BndryDataT&lt; MF &gt;::setBoundLoc</definition>
+        <argsstring>(Orientation face, int n, value_type val) noexcept</argsstring>
+        <name>setBoundLoc</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BndryDataT_1abcdaf55bfa67d5d815bf0f02b11b4755" kindref="member">value_type</ref></type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>set boundary location for given orientation on nth grid </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="123" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="199" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a85f08d239e69b27930ba8ba4e4c163c1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::BndryDataT&lt; MF &gt;::setBoundLoc</definition>
+        <argsstring>(Orientation face, const MFIter &amp;mfi, value_type val) noexcept</argsstring>
+        <name>setBoundLoc</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BndryDataT_1abcdaf55bfa67d5d815bf0f02b11b4755" kindref="member">value_type</ref></type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="127" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="208" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1aa362341b91354c3efb2b604549e3319c" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1FabSetT" kindref="compound">FabSetT</ref>&lt; MF &gt; &amp;</type>
+        <definition>const FabSetT&lt;MF&gt;&amp; amrex::BndryDataT&lt; MF &gt;::operator[]</definition>
+        <argsstring>(Orientation face) const noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+<para>implement public access to const <ref refid="classamrex_1_1BndryRegisterT_1a95bfbf54acf359a2d3c741c345ebaf6e" kindref="member">BndryRegister::operator[]</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="132" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BndryDataT_1a2d7ae73be4e090c02d93dee4b5d22370" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSetT" kindref="compound">FabSetT</ref>&lt; MF &gt; &amp;</type>
+        <definition>FabSetT&lt;MF&gt;&amp; amrex::BndryDataT&lt; MF &gt;::operator[]</definition>
+        <argsstring>(Orientation face) noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type><ref refid="classamrex_1_1Orientation" kindref="compound">Orientation</ref></type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+<para>implement public access to <ref refid="classamrex_1_1BndryRegisterT_1a95bfbf54acf359a2d3c741c345ebaf6e" kindref="member">BndryRegister::operator[]</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="135" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="135" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A BndryData stores and manipulates boundary data information on each side of each box in a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A BndryData contains a BndryRegister about each side of each grid in a Boxarray. These data are used to store information along the outer layer of each grid (at the same level of coarseness), such as the value of boundary conditions there. Also, for each boundary, this class maintains a <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref> identifier and a location. This &quot;location&quot; often specifies where, in physical space, a value, which is stored in the boundary registers, will be applied by a solver (although interpretation of this information is application-specific).</para>
+<para>In addition to boundary condition values, types and locations, and BndryDate object maintains a mask for each boundary value. Given a <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> describing the physical &quot;domain&quot; of application, a BndryData object fills the mask arrays with a mask value to indicate if the node is outside the domain (outside_domain), or, if not, whether it lays within the valid region of an adjacent grid (covered), or not (not_covered). This mask data is created upon non-default class instantiation. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>amrex::BndryDataT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1BndryDataT"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::MLMGBndry&lt; MultiFab &gt;</label>
+        <link refid="classamrex_1_1MLMGBndry"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::InterpBndryDataT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1InterpBndryDataT"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::BndryRegisterT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1BndryRegisterT"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>amrex::BndryDataT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1BndryDataT"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>bcloc</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>masks</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>bcond</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>amrex::BoxList</label>
+        <link refid="classamrex_1_1BoxList"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_lbox</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>amrex::BATindexType</label>
+        <link refid="structamrex_1_1BATindexType"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>amrex::BATindexType_coarsenRatio</label>
+        <link refid="structamrex_1_1BATindexType__coarsenRatio"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>amrex::BATnull</label>
+        <link refid="structamrex_1_1BATnull"/>
+      </node>
+      <node id="6">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>T</label>
+      </node>
+      <node id="35">
+        <label>amrex::LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Real</label>
+      </node>
+      <node id="7">
+        <label>std::unordered_map&lt; IntVect, std::vector&lt; int &gt;, IntVect::shift_hasher &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>amrex::GpuArray&lt; float, AMREX_SPACEDIM &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+      </node>
+      <node id="34">
+        <label>std::vector&lt; amrex::MultiMask, std::allocator&lt; amrex::MultiMask &gt; &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>amrex::Orientation</label>
+        <link refid="classamrex_1_1Orientation"/>
+      </node>
+      <node id="5">
+        <label>amrex::BARef</label>
+        <link refid="structamrex_1_1BARef"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>crsn</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>hash</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_abox</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>bbox</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>amrex::BATransformer</label>
+        <link refid="structamrex_1_1BATransformer"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_op</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt; &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>amrex::BATcoarsenRatio</label>
+        <link refid="structamrex_1_1BATcoarsenRatio"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>amrex::BATransformer::BATOp</label>
+        <link refid="unionamrex_1_1BATransformer_1_1BATOp"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_bndryReg</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>m_coarsenRatio</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>m_indexType</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_null</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>m_indexType_coarsenRatio</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>amrex::Vector&lt; amrex::MultiMask &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_ref</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_simplified_list</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_bat</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>amrex::RealBox</label>
+        <link refid="classamrex_1_1RealBox"/>
+        <childnode refid="26" relation="usage">
+          <edgelabel>xhi</edgelabel>
+          <edgelabel>xlo</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::BndryRegisterT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1BndryRegisterT"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>grids</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::shared_ptr&lt; amrex::BARef &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>amrex::CoordSys</label>
+        <link refid="classamrex_1_1CoordSys"/>
+        <childnode refid="26" relation="usage">
+          <edgelabel>inv_dx</edgelabel>
+          <edgelabel>offset</edgelabel>
+          <edgelabel>dx</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>amrex::BATbndryReg</label>
+        <link refid="structamrex_1_1BATbndryReg"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_doihi</edgelabel>
+          <edgelabel>m_doilo</edgelabel>
+          <edgelabel>m_hishft</edgelabel>
+          <edgelabel>m_crse_ratio</edgelabel>
+          <edgelabel>m_loshft</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_face</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="24">
+        <label>amrex::Geometry</label>
+        <link refid="classamrex_1_1Geometry"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>prob_domain</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>roundoff_lo_f</edgelabel>
+          <edgelabel>roundoff_hi_f</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>roundoff_lo_d</edgelabel>
+          <edgelabel>roundoff_hi_d</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>std::shared_ptr&lt; amrex::BoxList &gt;</label>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>std::vector&lt; RealTuple, std::allocator&lt; RealTuple &gt; &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>amrex::GpuArray&lt; double, AMREX_SPACEDIM &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+      </node>
+      <node id="30">
+        <label>amrex::LayoutData&lt; RealTuple &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>amrex::Vector&lt; RealTuple &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>amrex::Vector&lt; amrex::Box &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; int &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" line="41" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_BndryData.H" bodystart="39" bodyend="157"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1BndryDataT_1af7bb1a70a4e8bb07247e07f9de03c3ab" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bcloc</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a043be8a7bc1486ff3e42dde8d785023c" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bcond</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a885dd729158b9a96cc833b5a291be3bf" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndry</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ae3a893425723763871fed2b8f6727abf" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndryConds</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a06c546aa81b72020efdddf748a5d0164" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndryConds</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a0b38594755407961cf669679bd5f2827" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryDataT</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ae449a1eee7596c48ad129d92e02e79c4" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryDataT</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a48956cc70261a5b28ab7a2559d2df611" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryDataT</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a0997f3f226667e9d93136128fcfaf798" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryDataT</name></member>
+      <member refid="classamrex_1_1BndryDataT_1af48fcbe60dd847da0a52181bf10ef7aa" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndryLocs</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a311921844eeca8b18621c7199a86729b" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndryLocs</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a61899ec60817d524fd886e0b6d9f361a" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndryMasks</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1af78eeba652abe61dd6b4225f8b8dd1b0" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryRegisterT</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a669440b13ff12d665b4a732a77aa6658" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryRegisterT</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a2922ba0d4eff802a4460e33c950a1ad9" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryRegisterT</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a13afc3531affff7230330514f2b0725a" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>BndryRegisterT</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ae0d643450444b8374f35e761564d075b" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>bndryValues</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a50efdc257f760e9e25399c37af9e6cc1" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>boxes</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a691927d0b6e40f9923bacd565c590a91" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>clear</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a859e565c8590d0c8dbe88bede09a35d6" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>Copy</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a1c8fdfc61237f7b6a8d6c040d8daadf2" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>copyFrom</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a1a2056eb03f81ff6a627850c9b05e2c3" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>covered</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a90495c408f01aebfc13f916272d48c5c" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>define</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a9f157b615e14c68633617c6e2031d027" prot="public" virt="non-virtual" ambiguityscope="amrex::BndryRegisterT::"><scope>amrex::BndryDataT</scope><name>define</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1aac2ef4b2b53e50f002404a507fa667c6" prot="public" virt="non-virtual" ambiguityscope="amrex::BndryRegisterT::"><scope>amrex::BndryDataT</scope><name>define</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a092a134a6f7fd3ba7abb9a0922d08b6d" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>DistributionMap</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ae4436ce0d60dc60cd15ff3ab3c2ed7a7" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>geom</name></member>
+      <member refid="classamrex_1_1BndryDataT_1aac632701a65ebb8b2d429ee83da1e34e" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>getDomain</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a7ae9f7791272299abb7f27b53208288a" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>getGeom</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a3661eefa8a7bc8f810c39fdc6f8fb350" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>grids</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1ae8f5e1195457dc7f2204abbcaf2fe148" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>linComb</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a1c152f39fdeb4881636df629cc0d8077" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>m_defined</name></member>
+      <member refid="classamrex_1_1BndryDataT_1adabe55330d4668477240acc170ab6032" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>m_ncomp</name></member>
+      <member refid="classamrex_1_1BndryDataT_1abb734566f5eab0761ad80aec4f7dfa3d" prot="protected" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>masks</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>MaskVal</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a1052f19a1566840110263a9ebe9c3587" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>nComp</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a08dba959557635494bd0b8ca5e561288" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>not_covered</name></member>
+      <member refid="classamrex_1_1BndryDataT_1af24fa42fa7ee1bcbb9fb775c5ab192d6" prot="private" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>NTangHalfWidth</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>NumMaskVals</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a305048fb353b663f23b3562bc793d4d9" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>operator+=</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ae7e3bc077f7e5695cfef56a57075d164" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a536257808c5792850bdeaf82cf76f85d" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a453a8fc604e77bc263b7ea91bf8920d3" prot="public" virt="non-virtual" ambiguityscope="amrex::BndryRegisterT::"><scope>amrex::BndryDataT</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a3d277d77c5e0fb1bb42e5834196c6783" prot="public" virt="non-virtual" ambiguityscope="amrex::BndryRegisterT::"><scope>amrex::BndryDataT</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1BndryDataT_1aa362341b91354c3efb2b604549e3319c" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a2d7ae73be4e090c02d93dee4b5d22370" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>outside_domain</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a5176cafd217bf9069ed83feba52d71c2" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a58d2309f0eb636417e763b5a1e74599c" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>plusFrom</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1ad918f23e64a2d59ba453b09617e5ac15" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>read</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a635d69fddbe9b8785a9f16e6874273d0" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>RealTuple</name></member>
+      <member refid="classamrex_1_1BndryDataT_1aa8cb046e06f3de6cb1db4be12ec87010" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setBoundCond</name></member>
+      <member refid="classamrex_1_1BndryDataT_1afd3fdc202fd316dff91863242679263f" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setBoundCond</name></member>
+      <member refid="classamrex_1_1BndryDataT_1ac308c460f9c083f2fd2326ca62cd1811" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setBoundLoc</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a85f08d239e69b27930ba8ba4e4c163c1" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setBoundLoc</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a31f3e491669d858c7c73e04d2ad6cb00" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setBoxes</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a005714dcfffa4635a7261f525892ac37" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>setValue</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a132f07148e07fdae3f891ab726e467fb" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>size</name></member>
+      <member refid="classamrex_1_1BndryDataT_1abcdaf55bfa67d5d815bf0f02b11b4755" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>value_type</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a18c2a8b193ac63488ae4d1ef4acad7b8" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>write</name></member>
+      <member refid="classamrex_1_1BndryDataT_1a5516fe31e846fc0e58ac78628938940b" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>~BndryDataT</name></member>
+      <member refid="classamrex_1_1BndryRegisterT_1a051c0fcdc1710dedffe67af4f31d680d" prot="public" virt="non-virtual"><scope>amrex::BndryDataT</scope><name>~BndryRegisterT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
