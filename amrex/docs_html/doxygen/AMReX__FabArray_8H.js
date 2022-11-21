@@ -12,8 +12,8 @@ var AMReX__FabArray_8H =
     [ "TheFaArenaPointer", "AMReX__FabArray_8H.html#a2081a3d338ad899832ab632c44a12eb5", null ],
     [ "Add", "AMReX__FabArray_8H.html#ae53cc004fbab26533ec33294445a4d5c", null ],
     [ "Add", "AMReX__FabArray_8H.html#ab72e53672887ede3d7ddc5f65002700e", null ],
-    [ "Copy", "AMReX__FabArray_8H.html#abe39b5ec64aab9ed8e59747f0983d848", null ],
-    [ "Copy", "AMReX__FabArray_8H.html#a1036d99710a96586826f090a3266f5da", null ],
+    [ "Copy", "AMReX__FabArray_8H.html#a99036a3f75d026bf2807b946a592a9af", null ],
+    [ "Copy", "AMReX__FabArray_8H.html#ae9d59a8063401bce6d3df08ee6a41034", null ],
     [ "nBytesOwned", "AMReX__FabArray_8H.html#a064d90077e1d86d6ba81b5b546bb7438", null ],
     [ "nBytesOwned", "AMReX__FabArray_8H.html#a68d95d50ed271feafbd28018aa0e8d96", null ]
 ];

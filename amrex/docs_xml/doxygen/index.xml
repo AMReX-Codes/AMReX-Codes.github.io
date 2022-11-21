@@ -974,7 +974,7 @@
   </compound>
   <compound refid="classamrex_1_1Any" kind="class"><name>amrex::Any</name>
     <member refid="classamrex_1_1Any_1ae7a9bb6b1bb859d01987340327e8d570" kind="variable"><name>m_ptr</name></member>
-    <member refid="classamrex_1_1Any_1a00e47f5c0aef72a9483c3cc6c9cc4e12" kind="function"><name>Any</name></member>
+    <member refid="classamrex_1_1Any_1a794f63d073e59619a7fed27e8e40e2ba" kind="function"><name>Any</name></member>
     <member refid="classamrex_1_1Any_1a75f911e1b2a254db4b6626bf98fa1923" kind="function"><name>~Any</name></member>
     <member refid="classamrex_1_1Any_1afc3bc0660243e8d8719884a2f81a2a3a" kind="function"><name>Any</name></member>
     <member refid="classamrex_1_1Any_1ac04132048490ddd59eb7312eb33856e4" kind="function"><name>operator=</name></member>
@@ -986,6 +986,7 @@
     <member refid="classamrex_1_1Any_1ab3b0861ff49959fd1103921dc291b918" kind="function"><name>get</name></member>
     <member refid="classamrex_1_1Any_1a743acfa69c626f0a2f66fda4830312dc" kind="function"><name>get</name></member>
     <member refid="classamrex_1_1Any_1a6756f5c90f3bab7334449702da7ae003" kind="function"><name>is</name></member>
+    <member refid="classamrex_1_1Any_1a7b20f835a46c1aba635c2159391f53f1" kind="function"><name>hasValue</name></member>
   </compound>
   <compound refid="structamrex_1_1detail_1_1apply__result" kind="struct"><name>amrex::detail::apply_result</name>
   </compound>
@@ -3989,6 +3990,8 @@
     <member refid="classamrex_1_1FabArray_1a4782a3068c5950a1838e1018f8ff69f5" kind="function"><name>release</name></member>
     <member refid="classamrex_1_1FabArray_1a4750acee26c62d569535b66ec2957bca" kind="function"><name>release</name></member>
     <member refid="classamrex_1_1FabArray_1a7544c03f72d87f3f49ea0683848dc8aa" kind="function"><name>clear</name></member>
+    <member refid="classamrex_1_1FabArray_1a7bba14e2fb4bff5f323251912a75f5ac" kind="function"><name>LocalCopy</name></member>
+    <member refid="classamrex_1_1FabArray_1abd6dc24319471bcd6406fa9da2145197" kind="function"><name>LocalAdd</name></member>
     <member refid="classamrex_1_1FabArray_1a9235d60131ff0d5f81450896420fe691" kind="function"><name>setVal</name></member>
     <member refid="classamrex_1_1FabArray_1a25c18cdc7e890e0876df9a72a1278bf6" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1FabArray_1a3da4950419b2d1486fc639b4dc9c7f50" kind="function"><name>setVal</name></member>
@@ -4011,6 +4014,7 @@
     <member refid="classamrex_1_1FabArray_1a9deababbf136398c5902f84ad2ea4f2c" kind="function"><name>setBndry</name></member>
     <member refid="classamrex_1_1FabArray_1a499aee434c06201cadb658484dda3e37" kind="function"><name>setDomainBndry</name></member>
     <member refid="classamrex_1_1FabArray_1a24591060d4412dddb8298001e5f580c5" kind="function"><name>setDomainBndry</name></member>
+    <member refid="classamrex_1_1FabArray_1a025b813208a188552aba514a69a3b480" kind="function"><name>sum</name></member>
     <member refid="classamrex_1_1FabArray_1ae4b12e5942706dac23a5bef3d4781740" kind="function"><name>ParallelAdd</name></member>
     <member refid="classamrex_1_1FabArray_1a4d5c152276e1e70438c9d7072cb7c6f0" kind="function"><name>ParallelCopy</name></member>
     <member refid="classamrex_1_1FabArray_1ad5437f2b6689074e7e4e2abc25662daa" kind="function"><name>copy</name></member>
@@ -11698,8 +11702,8 @@
     <member refid="namespaceamrex_1adc0569d3487d998596b2a11392bddaca" kind="function"><name>MakeSimilarDM</name></member>
     <member refid="namespaceamrex_1a68d95d50ed271feafbd28018aa0e8d96" kind="function"><name>nBytesOwned</name></member>
     <member refid="namespaceamrex_1a064d90077e1d86d6ba81b5b546bb7438" kind="function"><name>nBytesOwned</name></member>
-    <member refid="namespaceamrex_1a1036d99710a96586826f090a3266f5da" kind="function"><name>Copy</name></member>
-    <member refid="namespaceamrex_1abe39b5ec64aab9ed8e59747f0983d848" kind="function"><name>Copy</name></member>
+    <member refid="namespaceamrex_1ae9d59a8063401bce6d3df08ee6a41034" kind="function"><name>Copy</name></member>
+    <member refid="namespaceamrex_1a99036a3f75d026bf2807b946a592a9af" kind="function"><name>Copy</name></member>
     <member refid="namespaceamrex_1ab72e53672887ede3d7ddc5f65002700e" kind="function"><name>Add</name></member>
     <member refid="namespaceamrex_1ae53cc004fbab26533ec33294445a4d5c" kind="function"><name>Add</name></member>
     <member refid="namespaceamrex_1a8bf3fd2af3f97b6e13b0b7be0a4dcaa7" kind="function"><name>operator&lt;&lt;</name></member>
@@ -12040,13 +12044,6 @@
     <member refid="namespaceamrex_1a9b27497dc89f64ae78be824f2187e698" kind="function"><name>average_down</name></member>
     <member refid="namespaceamrex_1ab67331acff75bf2840f409750b1ada66" kind="function"><name>sum_fine_to_coarse</name></member>
     <member refid="namespaceamrex_1ad04ddc51f3c2757b7749e1a28985cb0c" kind="function"><name>average_down</name></member>
-    <member refid="namespaceamrex_1a8a610379c3e81725b1696a50804000cc" kind="function"><name>average_down_faces</name></member>
-    <member refid="namespaceamrex_1afcbe33f2d95c99ef4234b766f5fb8d2d" kind="function"><name>average_down_faces</name></member>
-    <member refid="namespaceamrex_1a22a8042ae490c1c69750d292dc69ee59" kind="function"><name>average_down_faces</name></member>
-    <member refid="namespaceamrex_1afffa551617afa39c891c442f06298f38" kind="function"><name>average_down_faces</name></member>
-    <member refid="namespaceamrex_1adfd1995843ee277516f6bdef42f44852" kind="function"><name>average_down_faces</name></member>
-    <member refid="namespaceamrex_1a00dec9d4448252ee121a4292eed6165a" kind="function"><name>average_down_faces</name></member>
-    <member refid="namespaceamrex_1a55938a1244c5b26a1c67fbadf5928a62" kind="function"><name>average_down_faces</name></member>
     <member refid="namespaceamrex_1a84e55e433b2972354d98a0684f7f1394" kind="function"><name>average_down_edges</name></member>
     <member refid="namespaceamrex_1a3d6739058267b9ba2aed9936247f49fe" kind="function"><name>average_down_edges</name></member>
     <member refid="namespaceamrex_1ab744a797b85135257add34a49c96c734" kind="function"><name>average_down_edges</name></member>
@@ -12066,6 +12063,13 @@
     <member refid="namespaceamrex_1a882a700cf7fab66ee3ce8de37de3ef73" kind="function"><name>sumToLine</name></member>
     <member refid="namespaceamrex_1a5daadefeacaedc115d9a284241da21cd" kind="function"><name>volumeWeightedSum</name></member>
     <member refid="namespaceamrex_1adde5cec8cf83a5e5970cf61cd12e6bb7" kind="function"><name>FourthOrderInterpFromFineToCoarse</name></member>
+    <member refid="namespaceamrex_1a444e92d4213a53739768571a4bb72ce3" kind="function"><name>average_down_faces</name></member>
+    <member refid="namespaceamrex_1ac0212832fb955bf32b6ce4cb2779c930" kind="function"><name>average_down_faces</name></member>
+    <member refid="namespaceamrex_1a1fef73f693345a09f5a9d945f6fa4aa3" kind="function"><name>average_down_faces</name></member>
+    <member refid="namespaceamrex_1a330b95248c1940f21fb9d1260610b07e" kind="function"><name>average_down_faces</name></member>
+    <member refid="namespaceamrex_1a1bc63dedd63a3c820e4527fd4d6cac6c" kind="function"><name>average_down_faces</name></member>
+    <member refid="namespaceamrex_1af5cd832fa513266e3840b39486d9b1e9" kind="function"><name>average_down_faces</name></member>
+    <member refid="namespaceamrex_1a8d23f273421b89ddf32a809cba7bdaef" kind="function"><name>average_down_faces</name></member>
     <member refid="namespaceamrex_1aff7bc26e4e82b323802d4b6d546101fc" kind="function"><name>average_down_nodal</name></member>
     <member refid="namespaceamrex_1a60886a6799fb7ae612bf30d74a493a26" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a78142d53611f8627f6d68afd0779ef54" kind="function"><name>makeFineMask</name></member>
@@ -12078,8 +12082,8 @@
     <member refid="namespaceamrex_1ac4c137e801c2f8827b3dfecce9101a9b" kind="function"><name>amrex_avg_eg_to_cc</name></member>
     <member refid="namespaceamrex_1aeb61a45dcd19dee2633e1de0ac19ce34" kind="function"><name>amrex_avg_fc_to_cc</name></member>
     <member refid="namespaceamrex_1a5f54d03612f4bca257af260e16dc37f0" kind="function"><name>amrex_avg_cc_to_fc</name></member>
-    <member refid="namespaceamrex_1aa8a45fade0fd322c9807478ce4803c06" kind="function"><name>amrex_avgdown_faces</name></member>
-    <member refid="namespaceamrex_1abad365c4c2847a39d3474a21e578d2e9" kind="function"><name>amrex_avgdown_faces</name></member>
+    <member refid="namespaceamrex_1a4c74be21c5dff00c88782858a813cb9f" kind="function"><name>amrex_avgdown_faces</name></member>
+    <member refid="namespaceamrex_1a89fbc6eaecafa9e4d17df78b4ab0da17" kind="function"><name>amrex_avgdown_faces</name></member>
     <member refid="namespaceamrex_1aa16a357bfbf75a90cc06faf36cffe268" kind="function"><name>amrex_avgdown_edges</name></member>
     <member refid="namespaceamrex_1a4af58d1ed1db1299d88bab26b250b504" kind="function"><name>amrex_avgdown_edges</name></member>
     <member refid="namespaceamrex_1a3ab3ed088630c6a18bd0c33c66d2a254" kind="function"><name>amrex_avgdown</name></member>

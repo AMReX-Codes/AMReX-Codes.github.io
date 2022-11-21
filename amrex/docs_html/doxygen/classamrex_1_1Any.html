@@ -116,9 +116,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a00e47f5c0aef72a9483c3cc6c9cc4e12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Any.html#a00e47f5c0aef72a9483c3cc6c9cc4e12">Any</a> ()</td></tr>
-<tr class="memdesc:a00e47f5c0aef72a9483c3cc6c9cc4e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. By default it stores an int.  <a href="classamrex_1_1Any.html#a00e47f5c0aef72a9483c3cc6c9cc4e12">More...</a><br /></td></tr>
-<tr class="separator:a00e47f5c0aef72a9483c3cc6c9cc4e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794f63d073e59619a7fed27e8e40e2ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Any.html#a794f63d073e59619a7fed27e8e40e2ba">Any</a> ()=default</td></tr>
+<tr class="separator:a794f63d073e59619a7fed27e8e40e2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f911e1b2a254db4b6626bf98fa1923"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Any.html#a75f911e1b2a254db4b6626bf98fa1923">~Any</a> ()=default</td></tr>
 <tr class="separator:a75f911e1b2a254db4b6626bf98fa1923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc3bc0660243e8d8719884a2f81a2a3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Any.html#afc3bc0660243e8d8719884a2f81a2a3a">Any</a> (<a class="el" href="classamrex_1_1Any.html">Any</a> const &amp;rhs)=delete</td></tr>
@@ -151,6 +150,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6756f5c90f3bab7334449702da7ae003"><td class="memTemplParams" colspan="2">template&lt;typename MF &gt; </td></tr>
 <tr class="memitem:a6756f5c90f3bab7334449702da7ae003"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1Any.html#a6756f5c90f3bab7334449702da7ae003">is</a> () const</td></tr>
 <tr class="separator:a6756f5c90f3bab7334449702da7ae003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b20f835a46c1aba635c2159391f53f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Any.html#a7b20f835a46c1aba635c2159391f53f1">hasValue</a> () const</td></tr>
+<tr class="separator:a7b20f835a46c1aba635c2159391f53f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -160,8 +161,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is similar to std::any. However, <a class="el" href="classamrex_1_1Any.html">amrex::Any</a> is for storing move-only types (e.g., <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">amrex::MultiFab</a>), whereas std::any is for copy constructible types. An object of this class is non-copyable. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a00e47f5c0aef72a9483c3cc6c9cc4e12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00e47f5c0aef72a9483c3cc6c9cc4e12">&#9670;&nbsp;</a></span>Any() <span class="overload">[1/4]</span></h2>
+<a id="a794f63d073e59619a7fed27e8e40e2ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794f63d073e59619a7fed27e8e40e2ba">&#9670;&nbsp;</a></span>Any() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,12 +179,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Default constructor. By default it stores an int. </p>
 
 </div>
 </div>
@@ -350,6 +349,31 @@ template&lt;typename MF &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns a const reference to the contained object. </p>
+
+</div>
+</div>
+<a id="a7b20f835a46c1aba635c2159391f53f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b20f835a46c1aba635c2159391f53f1">&#9670;&nbsp;</a></span>hasValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Any::hasValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

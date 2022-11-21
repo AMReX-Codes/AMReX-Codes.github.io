@@ -1,8 +1,5 @@
 var NAVTREEINDEX67 =
 {
-"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,459,0],
-"structamrex_1_1TileSize.html#a8daad07261e670c91e3d6788f152f668":[2,0,0,459,1],
-"structamrex_1_1TinyProfiler_1_1ProcStats.html":[2,0,0,461,0],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a01cbf389132c01e2971cb1723fa846cd":[2,0,0,461,0,5],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a072e3cbbf26527a9f54155ce1140e45c":[2,0,0,461,0,10],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a23387ec0b0dd45815da72c13541e68de":[2,0,0,461,0,3],
@@ -101,8 +98,8 @@ var NAVTREEINDEX67 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,1,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,2,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,2,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,2,2],
@@ -249,5 +246,8 @@ var NAVTREEINDEX67 =
 "structamrex_1_1parser__f2.html#a061f4a9f63618c8b77ff0af074dc4659":[2,0,0,343,1],
 "structamrex_1_1parser__f2.html#a3d6eae5bbd75c46a06b38a40d6978ba6":[2,0,0,343,2],
 "structamrex_1_1parser__f2.html#a4ac8fe1eae42c466f6562e00eadecfca":[2,0,0,343,3],
-"structamrex_1_1parser__f2.html#a64c4972956d99a93eae3ded417a94e74":[2,0,0,343,0]
+"structamrex_1_1parser__f2.html#a64c4972956d99a93eae3ded417a94e74":[2,0,0,343,0],
+"structamrex_1_1parser__f3.html":[2,0,0,344],
+"structamrex_1_1parser__f3.html#a48657b209b39759006477045312ff03b":[2,0,0,344,4],
+"structamrex_1_1parser__f3.html#a62f9b0134e9c4f6d0019a249f4dc9017":[2,0,0,344,3]
 };

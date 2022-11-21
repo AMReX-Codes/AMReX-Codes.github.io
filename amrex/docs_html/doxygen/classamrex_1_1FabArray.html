@@ -286,6 +286,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7544c03f72d87f3f49ea0683848dc8aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a7544c03f72d87f3f49ea0683848dc8aa">clear</a> ()</td></tr>
 <tr class="memdesc:a7544c03f72d87f3f49ea0683848dc8aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases FAB memory in the <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>.  <a href="classamrex_1_1FabArray.html#a7544c03f72d87f3f49ea0683848dc8aa">More...</a><br /></td></tr>
 <tr class="separator:a7544c03f72d87f3f49ea0683848dc8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bba14e2fb4bff5f323251912a75f5ac"><td class="memTemplParams" colspan="2">template&lt;typename SFAB , std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &amp;&amp;IsBaseFab&lt; SFAB &gt;::value &amp;&amp;std::is_convertible_v&lt; typename SFAB::value_type, typename FAB::value_type &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a7bba14e2fb4bff5f323251912a75f5ac"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a7bba14e2fb4bff5f323251912a75f5ac">LocalCopy</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; SFAB &gt; const &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost)</td></tr>
+<tr class="memdesc:a7bba14e2fb4bff5f323251912a75f5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform local copy of <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> data.  <a href="classamrex_1_1FabArray.html#a7bba14e2fb4bff5f323251912a75f5ac">More...</a><br /></td></tr>
+<tr class="separator:a7bba14e2fb4bff5f323251912a75f5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6dc24319471bcd6406fa9da2145197"><td class="memTemplParams" colspan="2">template&lt;class F  = FAB, std::enable_if_t&lt; IsBaseFab&lt; F &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:abd6dc24319471bcd6406fa9da2145197"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#abd6dc24319471bcd6406fa9da2145197">LocalAdd</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost)</td></tr>
+<tr class="memdesc:abd6dc24319471bcd6406fa9da2145197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform local addition of <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> data.  <a href="classamrex_1_1FabArray.html#abd6dc24319471bcd6406fa9da2145197">More...</a><br /></td></tr>
+<tr class="separator:abd6dc24319471bcd6406fa9da2145197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9235d60131ff0d5f81450896420fe691"><td class="memTemplParams" colspan="2">template&lt;class F  = FAB, typename std::enable_if&lt; IsBaseFab&lt; F &gt;::value, int &gt;::type  = 0&gt; </td></tr>
 <tr class="memitem:a9235d60131ff0d5f81450896420fe691"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a9235d60131ff0d5f81450896420fe691">setVal</a> (<a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> val)</td></tr>
 <tr class="memdesc:a9235d60131ff0d5f81450896420fe691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all components in the entire region of each FAB to val.  <a href="classamrex_1_1FabArray.html#a9235d60131ff0d5f81450896420fe691">More...</a><br /></td></tr>
@@ -362,6 +370,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a24591060d4412dddb8298001e5f580c5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a24591060d4412dddb8298001e5f580c5">setDomainBndry</a> (<a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> val, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> strt_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom)</td></tr>
 <tr class="memdesc:a24591060d4412dddb8298001e5f580c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set ncomp values outside the <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> domain to val, starting at start_comp.  <a href="classamrex_1_1FabArray.html#a24591060d4412dddb8298001e5f580c5">More...</a><br /></td></tr>
 <tr class="separator:a24591060d4412dddb8298001e5f580c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025b813208a188552aba514a69a3b480"><td class="memTemplParams" colspan="2">template&lt;typename F  = FAB, std::enable_if_t&lt; IsBaseFab&lt; F &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a025b813208a188552aba514a69a3b480"><td class="memTemplItemLeft" align="right" valign="top">F::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a025b813208a188552aba514a69a3b480">sum</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, bool local=false) const</td></tr>
+<tr class="memdesc:a025b813208a188552aba514a69a3b480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of component "comp".  <a href="classamrex_1_1FabArray.html#a025b813208a188552aba514a69a3b480">More...</a><br /></td></tr>
+<tr class="separator:a025b813208a188552aba514a69a3b480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b12e5942706dac23a5bef3d4781740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#ae4b12e5942706dac23a5bef3d4781740">ParallelAdd</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;fa, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>())</td></tr>
 <tr class="memdesc:ae4b12e5942706dac23a5bef3d4781740"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function copies data from fa to this <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>. Each FAB in fa is intersected with all FABs in this <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> and a copy is performed on the region of intersection. The intersection is restricted to the valid regions.  <a href="classamrex_1_1FabArray.html#ae4b12e5942706dac23a5bef3d4781740">More...</a><br /></td></tr>
 <tr class="separator:ae4b12e5942706dac23a5bef3d4781740"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3915,6 +3927,132 @@ template&lt;class F , std::enable_if_t&lt; IsBaseFab&lt; F &gt;::value, int &gt;
 
 </div>
 </div>
+<a id="abd6dc24319471bcd6406fa9da2145197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6dc24319471bcd6406fa9da2145197">&#9670;&nbsp;</a></span>LocalAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FAB &gt; </div>
+<div class="memtemplate">
+template&lt;class F , std::enable_if_t&lt; IsBaseFab&lt; F &gt;::value, int &gt; &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray</a>&lt; FAB &gt;::LocalAdd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform local addition of <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> data. </p>
+<p>The two FabArrays must have the same <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> and <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>source <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> </td></tr>
+    <tr><td class="paramname">scomp</td><td>starting component of source </td></tr>
+    <tr><td class="paramname">dcomp</td><td>starting component of this <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> </td></tr>
+    <tr><td class="paramname">ncomp</td><td>number of components </td></tr>
+    <tr><td class="paramname">nghost</td><td>number of ghost cells </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7bba14e2fb4bff5f323251912a75f5ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bba14e2fb4bff5f323251912a75f5ac">&#9670;&nbsp;</a></span>LocalCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FAB &gt; </div>
+<div class="memtemplate">
+template&lt;typename SFAB , std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &amp;&amp;IsBaseFab&lt; SFAB &gt;::value &amp;&amp;std::is_convertible_v&lt; typename SFAB::value_type, typename FAB::value_type &gt;, int &gt; &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray</a>&lt; FAB &gt;::LocalCopy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; SFAB &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform local copy of <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> data. </p>
+<p>The two FabArrays must have the same <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> and <a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a>, although they could have different data types. For example, this could be used to copy from <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt;BaseFab&lt;float&gt;&gt; to <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt;BaseFab&lt;double&gt;&gt;.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>source <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> </td></tr>
+    <tr><td class="paramname">scomp</td><td>starting component of source </td></tr>
+    <tr><td class="paramname">dcomp</td><td>starting component of this <a class="el" href="classamrex_1_1FabArray.html">FabArray</a> </td></tr>
+    <tr><td class="paramname">ncomp</td><td>number of components </td></tr>
+    <tr><td class="paramname">nghost</td><td>number of ghost cells </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a179ad441a231e9d09ffebfbc7ad674fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a179ad441a231e9d09ffebfbc7ad674fb">&#9670;&nbsp;</a></span>mult() <span class="overload">[1/2]</span></h2>
 
@@ -7098,6 +7236,54 @@ template&lt;class FAB &gt; </div>
 </div><div class="memdoc">
 
 <p>Shift the boxarray by vector v. </p>
+
+</div>
+</div>
+<a id="a025b813208a188552aba514a69a3b480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a025b813208a188552aba514a69a3b480">&#9670;&nbsp;</a></span>sum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FAB &gt; </div>
+<div class="memtemplate">
+template&lt;class F , std::enable_if_t&lt; IsBaseFab&lt; F &gt;::value, int &gt; FOO&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">F::value_type <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray</a>&lt; FAB &gt;::sum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the sum of component "comp". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>component </td></tr>
+    <tr><td class="paramname">nghost</td><td>number of ghost cells </td></tr>
+    <tr><td class="paramname">local</td><td>If true, MPI communciation is skipped. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

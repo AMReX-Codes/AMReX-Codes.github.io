@@ -1,12 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"AMReX__Tuple_8H.html#a55b45d61c6e18c31d787042cf9169385":[3,0,0,2,245,25],
-"AMReX__Tuple_8H.html#a72ba0f3bd5880d4218b4bfe93373edf6":[3,0,0,2,245,21],
-"AMReX__Tuple_8H.html#a7630375a13ce1d49fd232e6436d658e2":[3,0,0,2,245,24],
-"AMReX__Tuple_8H.html#a796da28b12c3448559ad1af823e855af":[3,0,0,2,245,35],
-"AMReX__Tuple_8H.html#a813577e3d9b0ad5b7795dd9351160f9a":[3,0,0,2,245,34],
-"AMReX__Tuple_8H.html#aa989894bc9a9c24c61dfb1b56a38fb4a":[3,0,0,2,245,31],
-"AMReX__Tuple_8H.html#ac058d02c07c2b74e83e50b33b90197e5":[3,0,0,2,245,28],
 "AMReX__Tuple_8H.html#ac60a1b88f1421c5113c694d9460de676":[3,0,0,2,245,22],
 "AMReX__Tuple_8H.html#ad8cc1e47b11f22cfe944555f6e833cc8":[3,0,0,2,245,23],
 "AMReX__Tuple_8H.html#af2cf176de6238efb234749dec71b4a0f":[3,0,0,2,245,37],
@@ -249,5 +242,12 @@ var NAVTREEINDEX19 =
 "AMReX__algoim_8cpp.html#a3ccdff6c18c04f2fb7aa460f885333ba":[3,0,0,4,0,1],
 "AMReX__algoim_8cpp.html#a6784c63be461e49a81c5c587605674e4":[3,0,0,4,0,0],
 "AMReX__algoim_8cpp.html#a73c808c0927111a6a5391aaad9f7c1e9":[3,0,0,4,0,3],
-"AMReX__algoim__K_8H.html":[3,0,0,4,2]
+"AMReX__algoim__K_8H.html":[3,0,0,4,2],
+"AMReX__algoim__K_8H.html#a05434c8a13201e8af0f5dab5420e33d2":[3,0,0,4,2,9],
+"AMReX__algoim__K_8H.html#a1d243dc8981384f1c0cb8b266c042735":[3,0,0,4,2,12],
+"AMReX__algoim__K_8H.html#a71b582d94d1c5cd614711ec7b7853192":[3,0,0,4,2,13],
+"AMReX__algoim__K_8H.html#a8faf5a6ffdc4ce9947820dca5b901140":[3,0,0,4,2,8],
+"AMReX__algoim__K_8H.html#a9ddd20373173f3218e9adf472a02f119":[3,0,0,4,2,11],
+"AMReX__algoim__K_8H.html#ae4ae5a6514e4fdd7deb24725de0b3444":[3,0,0,4,2,10],
+"AMReX__algoim__K_8H_source.html":[3,0,0,4,2]
 };
