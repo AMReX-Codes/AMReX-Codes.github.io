@@ -1,5 +1,6 @@
 var NAVTREEINDEX67 =
 {
+"structamrex_1_1TinyProfiler_1_1ProcStats.html":[2,0,0,461,0],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a01cbf389132c01e2971cb1723fa846cd":[2,0,0,461,0,5],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a072e3cbbf26527a9f54155ce1140e45c":[2,0,0,461,0,10],
 "structamrex_1_1TinyProfiler_1_1ProcStats.html#a23387ec0b0dd45815da72c13541e68de":[2,0,0,461,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX67 =
 "structamrex_1_1parser__f2.html#a4ac8fe1eae42c466f6562e00eadecfca":[2,0,0,343,3],
 "structamrex_1_1parser__f2.html#a64c4972956d99a93eae3ded417a94e74":[2,0,0,343,0],
 "structamrex_1_1parser__f3.html":[2,0,0,344],
-"structamrex_1_1parser__f3.html#a48657b209b39759006477045312ff03b":[2,0,0,344,4],
-"structamrex_1_1parser__f3.html#a62f9b0134e9c4f6d0019a249f4dc9017":[2,0,0,344,3]
+"structamrex_1_1parser__f3.html#a48657b209b39759006477045312ff03b":[2,0,0,344,4]
 };
