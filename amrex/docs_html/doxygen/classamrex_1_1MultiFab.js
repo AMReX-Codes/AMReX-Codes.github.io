@@ -38,7 +38,6 @@ var classamrex_1_1MultiFab =
     [ "invert", "classamrex_1_1MultiFab.html#abc88cd9b7b451baaea2d53b97d20368a", null ],
     [ "invert", "classamrex_1_1MultiFab.html#a1151850ade9c29c2c657b173ad4a29c3", null ],
     [ "invert", "classamrex_1_1MultiFab.html#ad7883de5b1bd515c4714e434e2a98547", null ],
-    [ "LinComb", "classamrex_1_1MultiFab.html#ab858dc7ae13d97eea108b007d547488f", null ],
     [ "LinComb", "classamrex_1_1MultiFab.html#a0486c02587ea11cc9a30e9da8d7cf957", null ],
     [ "max", "classamrex_1_1MultiFab.html#ad26e4c97b949bcafacf6c8173d632f5f", null ],
     [ "max", "classamrex_1_1MultiFab.html#abb92462276ca55cd70f16507118f63ad", null ],
@@ -69,7 +68,6 @@ var classamrex_1_1MultiFab =
     [ "norm2", "classamrex_1_1MultiFab.html#aa0b6bb4fb2ee206356cd613ed8458b8f", null ],
     [ "norminf", "classamrex_1_1MultiFab.html#abc7329288ae6f73f8fd7eda95e49b8ba", null ],
     [ "norminf", "classamrex_1_1MultiFab.html#a92b462cb3d7c55a7d3277aaa9e3e0ff3", null ],
-    [ "norminf", "classamrex_1_1MultiFab.html#a1b364b5b4fc00d42b1959a6ab22cc05f", null ],
     [ "norminf", "classamrex_1_1MultiFab.html#a9d57175907c89a969b9b5392631e65cf", null ],
     [ "operator=", "classamrex_1_1MultiFab.html#a62b9fe978cd451f411245dc8a1e97b40", null ],
     [ "operator=", "classamrex_1_1MultiFab.html#aa2e6e3cf95934c1b6ee898d10a1845f0", null ],
@@ -82,7 +80,6 @@ var classamrex_1_1MultiFab =
     [ "plus", "classamrex_1_1MultiFab.html#a38506771a271ef8a5d4b6c3065815566", null ],
     [ "plus", "classamrex_1_1MultiFab.html#aafbc29a68d3c0c000fee414f76f7b79c", null ],
     [ "plus", "classamrex_1_1MultiFab.html#a0b410a02ca211c74033d77fac9b8a40b", null ],
-    [ "Saxpy", "classamrex_1_1MultiFab.html#a4f39387844b0d4393e9cffd9b8fb3cc0", null ],
     [ "Saxpy", "classamrex_1_1MultiFab.html#a505eb471a78f4e0f8791b10cbb1bbd75", null ],
     [ "Subtract", "classamrex_1_1MultiFab.html#a4f2c04ea9d0f7a551bc2263b9a63d324", null ],
     [ "Subtract", "classamrex_1_1MultiFab.html#a5f37af40303a10e8d54e15c1931a5b8e", null ],
@@ -91,6 +88,5 @@ var classamrex_1_1MultiFab =
     [ "Swap", "classamrex_1_1MultiFab.html#ac259813cd54d52b5c20cad7c0f24c246", null ],
     [ "Swap", "classamrex_1_1MultiFab.html#a2e29e28afce0aa520da5cd068cb5e96b", null ],
     [ "WeightedSync", "classamrex_1_1MultiFab.html#ad80a338735a5addaa47a0726cb24c8c5", null ],
-    [ "Xpay", "classamrex_1_1MultiFab.html#a6057618ee794a63cc24ba0d95007e609", null ],
     [ "Xpay", "classamrex_1_1MultiFab.html#aa06c264011c21bb5a97070ae7cf250d3", null ]
 ];

@@ -456,7 +456,7 @@
     <innerclass refid="structamrex_1_1XDim3" prot="public">amrex::XDim3</innerclass>
     <innerclass refid="classamrex_1_1XYPlotDataList" prot="public">amrex::XYPlotDataList</innerclass>
     <innerclass refid="classamrex_1_1XYPlotDataListLink" prot="public">amrex::XYPlotDataListLink</innerclass>
-    <innerclass refid="classamrex_1_1YAFluxRegister" prot="public">amrex::YAFluxRegister</innerclass>
+    <innerclass refid="classamrex_1_1YAFluxRegisterT" prot="public">amrex::YAFluxRegisterT</innerclass>
     <innernamespace refid="namespaceamrex_1_1algoim">amrex::algoim</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Amrvis">amrex::Amrvis</innernamespace>
     <innernamespace refid="namespaceamrex_1_1AsyncOut">amrex::AsyncOut</innernamespace>
@@ -3304,6 +3304,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Utility.H" line="248" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Utility.H" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1a9418cfdd8457daebb1c971d4e38ceb17" prot="public" static="no">
+        <type><ref refid="classamrex_1_1YAFluxRegisterT" kindref="compound">YAFluxRegisterT</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>using amrex::YAFluxRegister = typedef YAFluxRegisterT&lt;MultiFab&gt;</definition>
+        <argsstring></argsstring>
+        <name>YAFluxRegister</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" line="474" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="474" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a2172ed493dfadbd34d5cdb72995f96af" prot="public" static="no">
         <type><ref refid="classamrex_1_1ParIter" kindref="compound">ParIter</ref>&lt; AMREX_SPACEDIM &gt;</type>
@@ -14673,106 +14686,6 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1225" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1225" bodyend="1255"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a4f65027913056f5fae89a0b15d55e6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class FAB</type>
-          </param>
-          <param>
-            <type>class bar</type>
-            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::Xpay</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dst, typename FAB::value_type a, const FabArray&lt; FAB &gt; &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</argsstring>
-        <name>Xpay</name>
-        <param>
-          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>dst</declname>
-        </param>
-        <param>
-          <type>typename FAB::value_type</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>src</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>srccomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>dstcomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>numcomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>nghost</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1259" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1259" bodyend="1264"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a497906cc7789ced0e618f4a16e17209d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class FAB</type>
-          </param>
-          <param>
-            <type>class bar</type>
-            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::Xpay</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dst, typename FAB::value_type a, const FabArray&lt; FAB &gt; &amp;src, int srccomp, int dstcomp, int numcomp, const IntVect &amp;nghost)</argsstring>
-        <name>Xpay</name>
-        <param>
-          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>dst</declname>
-        </param>
-        <param>
-          <type>typename FAB::value_type</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>src</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>srccomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>dstcomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>numcomp</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>nghost</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1268" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1268" bodyend="1304"/>
-      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab02b05e2eb3282f8df33e5cbc655b2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -14802,7 +14715,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1308" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1308" bodyend="1319"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1259" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1259" bodyend="1270"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4db8bcd1f50c790aba6b81860143cc96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14833,7 +14746,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1323" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1323" bodyend="1334"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1274" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1274" bodyend="1285"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14870,7 +14783,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1340" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1340" bodyend="1346"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1291" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1291" bodyend="1297"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af6d31b25633d781cd8fe931951889e6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14907,7 +14820,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1352" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1352" bodyend="1393"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1303" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1303" bodyend="1344"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad81d4975698feb7461d8ad18c21c7951" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14933,7 +14846,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1397" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1397" bodyend="1407"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1348" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1348" bodyend="1358"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a998c5815369d23cd73eea1b09f43a966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14975,7 +14888,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1411" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1411" bodyend="1425"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1362" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1362" bodyend="1376"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8531953b8fba66482d81cad6c5dc3e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15005,7 +14918,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1429" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1429" bodyend="1432"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1380" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1380" bodyend="1383"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae243b10c65516ed7dfeaf9aed7e75aa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15047,7 +14960,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1436" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1436" bodyend="1450"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1387" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1387" bodyend="1401"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa9df7c449e875ece24add0d826c4f133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15077,7 +14990,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1454" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1454" bodyend="1457"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1405" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1405" bodyend="1408"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af1fe8dd7d2e436cf2e4e696b9b5ae006" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15115,7 +15028,119 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1461" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1461" bodyend="1552"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1412" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1412" bodyend="1503"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ad99f216d6d06fb8bc99e3597173b7ef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value, int &gt;</type>
+            <declname>FOO</declname>
+            <defname>FOO</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>FAB::value_type</type>
+        <definition>FAB::value_type amrex::Dot</definition>
+        <argsstring>(FabArray&lt; FAB &gt; const &amp;x, int xcomp, FabArray&lt; FAB &gt; const &amp;y, int ycomp, int ncomp, IntVect const &amp;nghost, bool local=false)</argsstring>
+        <name>Dot</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>xcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ycomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Compute dot products of two FabArrays. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>first <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component of x </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>second <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ycomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component of y </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost cells </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>local</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, MPI communciation is skipped. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1518" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1518" bodyend="1567"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac185c39750011cc24fb8c1a0b872a34d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -25761,7 +25786,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="700" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="700" bodyend="711"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="678" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="678" bodyend="689"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad64dcd62b16d9022d914f067d30d7918" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36374,17 +36399,22 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" line="54" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_Mask.cpp" bodystart="54" bodyend="76"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad75cd67f1791f528fbba104045280e6e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ad3b5be86618428780e4c8d65b50e92ef" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::yafluxreg_crseadd</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; Real &gt; const &amp;d, Array4&lt; int const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;fx, Real dtdx, int nc) noexcept</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; T &gt; const &amp;d, Array4&lt; int const &gt; const &amp;flag, Array4&lt; T const &gt; const &amp;fx, T dtdx, int nc) noexcept</argsstring>
         <name>yafluxreg_crseadd</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>d</declname>
         </param>
         <param>
@@ -36392,11 +36422,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>fx</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdx</declname>
         </param>
         <param>
@@ -36409,27 +36439,32 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" line="10" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" bodystart="10" bodyend="31"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" line="11" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" bodystart="11" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a6c9d6af79aab749f067cbf51533ab31a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a8e5424db64aba9748df778a60884c7b9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::yafluxreg_fineadd</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; Real &gt; const &amp;d, Array4&lt; Real const &gt; const &amp;f, Real dtdx, int nc, int dirside, Dim3 const &amp;rr) noexcept</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; T &gt; const &amp;d, Array4&lt; T const &gt; const &amp;f, T dtdx, int nc, int dirside, Dim3 const &amp;rr) noexcept</argsstring>
         <name>yafluxreg_fineadd</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>d</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>f</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdx</declname>
         </param>
         <param>
@@ -36450,19 +36485,24 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" line="34" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" bodystart="34" bodyend="62"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" line="36" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_1D_K.H" bodystart="36" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a61c2415c625485ccfed2f1c7e9b9db8b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a022123f91218b914a5c94f972669cb57" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::yafluxreg_crseadd</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; Real &gt; const &amp;d, Array4&lt; int const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;fx, Array4&lt; Real const &gt; const &amp;fy, Real dtdx, Real dtdy, int nc) noexcept</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; T &gt; const &amp;d, Array4&lt; int const &gt; const &amp;flag, Array4&lt; T const &gt; const &amp;fx, Array4&lt; T const &gt; const &amp;fy, T dtdx, T dtdy, int nc) noexcept</argsstring>
         <name>yafluxreg_crseadd</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>d</declname>
         </param>
         <param>
@@ -36470,19 +36510,19 @@ Returns the index of the first element for which f is 0. </para>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>fx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>fy</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdx</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdy</declname>
         </param>
         <param>
@@ -36495,19 +36535,24 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_2D_K.H" line="10" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_2D_K.H" bodystart="10" bodyend="44"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_2D_K.H" line="11" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_2D_K.H" bodystart="11" bodyend="45"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab2ea3b54c3008390ec817a61b805b126" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a0b1d07ca28efdd9ea5b1ef56ad6e2778" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::yafluxreg_crseadd</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; Real &gt; const &amp;d, Array4&lt; int const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;fx, Array4&lt; Real const &gt; const &amp;fy, Array4&lt; Real const &gt; const &amp;fz, Real dtdx, Real dtdy, Real dtdz, int nc) noexcept</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; T &gt; const &amp;d, Array4&lt; int const &gt; const &amp;flag, Array4&lt; T const &gt; const &amp;fx, Array4&lt; T const &gt; const &amp;fy, Array4&lt; T const &gt; const &amp;fz, T dtdx, T dtdy, T dtdz, int nc) noexcept</argsstring>
         <name>yafluxreg_crseadd</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
           <declname>bx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T &gt; const &amp;</type>
           <declname>d</declname>
         </param>
         <param>
@@ -36515,27 +36560,27 @@ Returns the index of the first element for which f is 0. </para>
           <declname>flag</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>fx</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>fy</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; T const &gt; const &amp;</type>
           <declname>fz</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdx</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdy</declname>
         </param>
         <param>
-          <type>Real</type>
+          <type>T</type>
           <declname>dtdz</declname>
         </param>
         <param>
@@ -36548,7 +36593,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_3D_K.H" line="10" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_3D_K.H" bodystart="10" bodyend="58"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_3D_K.H" line="11" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister_3D_K.H" bodystart="11" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a32d409e89c5f589f2e729130898b6d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>

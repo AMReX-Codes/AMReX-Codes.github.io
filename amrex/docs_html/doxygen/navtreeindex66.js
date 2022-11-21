@@ -1,5 +1,7 @@
 var NAVTREEINDEX66 =
 {
+"structamrex_1_1ParticleTile.html":[2,0,0,400],
+"structamrex_1_1ParticleTile.html#a094ecbaf29e3d8786d48786dda4ad8af":[2,0,0,400,53],
 "structamrex_1_1ParticleTile.html#a0b5daeed890ad1681d6d5efb263d1d45":[2,0,0,400,17],
 "structamrex_1_1ParticleTile.html#a1013ca03cb3abee5f186d0d2c36d91ba":[2,0,0,400,42],
 "structamrex_1_1ParticleTile.html#a19e08486f33c6c8536f591608a882dff":[2,0,0,400,47],
@@ -247,7 +249,5 @@ var NAVTREEINDEX66 =
 "structamrex_1_1TheFaArenaDeleter.html":[2,0,0,458],
 "structamrex_1_1TheFaArenaDeleter.html#a27f45496b5f43b097780b5ca62f10b64":[2,0,0,458,0],
 "structamrex_1_1TheFaArenaDeleter.html#a621695c7c205f29b1b389a3ae6518d9b":[2,0,0,458,1],
-"structamrex_1_1TileSize.html":[2,0,0,459],
-"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,459,0],
-"structamrex_1_1TileSize.html#a8daad07261e670c91e3d6788f152f668":[2,0,0,459,1]
+"structamrex_1_1TileSize.html":[2,0,0,459]
 };

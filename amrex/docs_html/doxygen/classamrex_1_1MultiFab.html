@@ -176,8 +176,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abc7329288ae6f73f8fd7eda95e49b8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a93902e69dd534d7a84cfbdc1acf32e"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a4a93902e69dd534d7a84cfbdc1acf32e">norm0</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, bool local=false, bool ignore_covered=false) const</td></tr>
 <tr class="separator:a4a93902e69dd534d7a84cfbdc1acf32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b364b5b4fc00d42b1959a6ab22cc05f"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a1b364b5b4fc00d42b1959a6ab22cc05f">norminf</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, bool local=false, bool ignore_covered=false) const</td></tr>
-<tr class="separator:a1b364b5b4fc00d42b1959a6ab22cc05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a727b71bae4005883ea88221157184346"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a727b71bae4005883ea88221157184346">norm0</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;comps, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost=0, bool local=false, bool ignore_covered=false) const</td></tr>
 <tr class="memdesc:a727b71bae4005883ea88221157184346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum <em>absolute</em> values contained in each component of "comps" of the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a>. "nghost" ghost cells are used.  <a href="classamrex_1_1MultiFab.html#a727b71bae4005883ea88221157184346">More...</a><br /></td></tr>
 <tr class="separator:a727b71bae4005883ea88221157184346"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -665,6 +663,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abf79f429c979d93fb8a204aae9851054 inherit pub_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f362d93f85699c530e36d2f78193ff inherit pub_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#ad3f362d93f85699c530e36d2f78193ff">unpack_recv_buffer_cpu</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;dst, int dcomp, int ncomp, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char * &gt; const &amp;recv_data, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::size_t &gt; const &amp;recv_size, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; CopyComTagsContainer const * &gt; const &amp;recv_cctc, CpOp op, bool is_thread_safe)</td></tr>
 <tr class="separator:ad3f362d93f85699c530e36d2f78193ff inherit pub_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a6ea18e68973543bf8b2a9bab89d8a inherit pub_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">F::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a62a6ea18e68973543bf8b2a9bab89d8a">norminf</a> (int <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, int ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, bool local=false,[[maybe_unused]] bool ignore_covered=false) const</td></tr>
+<tr class="memdesc:a62a6ea18e68973543bf8b2a9bab89d8a inherit pub_methods_classamrex_1_1FabArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return infinity norm.  <a href="classamrex_1_1FabArray.html#a62a6ea18e68973543bf8b2a9bab89d8a">More...</a><br /></td></tr>
+<tr class="separator:a62a6ea18e68973543bf8b2a9bab89d8a inherit pub_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea595d71e8f04b18bc48aaca29acfe77 inherit pub_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">F::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#aea595d71e8f04b18bc48aaca29acfe77">norminf</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; IFAB &gt; const &amp;<a class="el" href="AMReX__InterpFaceRegister_8cpp.html#a5b2221de12a27f0d22ceec3ecf3fc430">mask</a>, int <a class="el" href="AMReX__MLCellLinOp_8cpp.html#a1b3f06ddcdb29e455759b0afa41793a5">comp</a>, int ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, bool local=false) const</td></tr>
+<tr class="memdesc:aea595d71e8f04b18bc48aaca29acfe77 inherit pub_methods_classamrex_1_1FabArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return infinity norm in masked region.  <a href="classamrex_1_1FabArray.html#aea595d71e8f04b18bc48aaca29acfe77">More...</a><br /></td></tr>
+<tr class="separator:aea595d71e8f04b18bc48aaca29acfe77 inherit pub_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -709,18 +713,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a505eb471a78f4e0f8791b10cbb1bbd75"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a505eb471a78f4e0f8791b10cbb1bbd75">Saxpy</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, Real a, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost)</td></tr>
 <tr class="memdesc:a505eb471a78f4e0f8791b10cbb1bbd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">dst += a*src  <a href="classamrex_1_1MultiFab.html#a505eb471a78f4e0f8791b10cbb1bbd75">More...</a><br /></td></tr>
 <tr class="separator:a505eb471a78f4e0f8791b10cbb1bbd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f39387844b0d4393e9cffd9b8fb3cc0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a4f39387844b0d4393e9cffd9b8fb3cc0">Saxpy</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, Real a, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost)</td></tr>
-<tr class="separator:a4f39387844b0d4393e9cffd9b8fb3cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa06c264011c21bb5a97070ae7cf250d3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#aa06c264011c21bb5a97070ae7cf250d3">Xpay</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, Real a, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost)</td></tr>
 <tr class="memdesc:aa06c264011c21bb5a97070ae7cf250d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">dst = src + a*dst  <a href="classamrex_1_1MultiFab.html#aa06c264011c21bb5a97070ae7cf250d3">More...</a><br /></td></tr>
 <tr class="separator:aa06c264011c21bb5a97070ae7cf250d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6057618ee794a63cc24ba0d95007e609"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a6057618ee794a63cc24ba0d95007e609">Xpay</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, Real a, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost)</td></tr>
-<tr class="separator:a6057618ee794a63cc24ba0d95007e609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0486c02587ea11cc9a30e9da8d7cf957"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a0486c02587ea11cc9a30e9da8d7cf957">LinComb</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, Real a, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;x, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> xcomp, Real b, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;y, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ycomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost)</td></tr>
 <tr class="memdesc:a0486c02587ea11cc9a30e9da8d7cf957"><td class="mdescLeft">&#160;</td><td class="mdescRight">dst = a*x + b*y  <a href="classamrex_1_1MultiFab.html#a0486c02587ea11cc9a30e9da8d7cf957">More...</a><br /></td></tr>
 <tr class="separator:a0486c02587ea11cc9a30e9da8d7cf957"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab858dc7ae13d97eea108b007d547488f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#ab858dc7ae13d97eea108b007d547488f">LinComb</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, Real a, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;x, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> xcomp, Real b, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;y, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ycomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost)</td></tr>
-<tr class="separator:ab858dc7ae13d97eea108b007d547488f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71038d97e0e66d46a0a45388b7614ce1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a71038d97e0e66d46a0a45388b7614ce1">AddProduct</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp1, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src2, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp2, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dstcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost)</td></tr>
 <tr class="memdesc:a71038d97e0e66d46a0a45388b7614ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">dst += src1*src2  <a href="classamrex_1_1MultiFab.html#a71038d97e0e66d46a0a45388b7614ce1">More...</a><br /></td></tr>
 <tr class="separator:a71038d97e0e66d46a0a45388b7614ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -739,6 +737,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad369c044980014877a2affbed7e266dd inherit pub_static_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6251aaa8ffe703d3eb8a259393471a5a inherit pub_static_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a6251aaa8ffe703d3eb8a259393471a5a">unpack_recv_buffer_cpu</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;dst, int dcomp, int ncomp, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; char * &gt; const &amp;recv_data, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::size_t &gt; const &amp;recv_size, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const CopyComTagsContainer * &gt; const &amp;recv_cctc, CpOp op, bool is_thread_safe)</td></tr>
 <tr class="separator:a6251aaa8ffe703d3eb8a259393471a5a inherit pub_static_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e18d4d369bda7337c541adad0c6cd3 inherit pub_static_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#ab3e18d4d369bda7337c541adad0c6cd3">Saxpy</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;y, <a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> a, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; const &amp;x, int xcomp, int ycomp, int ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost)</td></tr>
+<tr class="memdesc:ab3e18d4d369bda7337c541adad0c6cd3 inherit pub_static_methods_classamrex_1_1FabArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">y += a*x  <a href="classamrex_1_1FabArray.html#ab3e18d4d369bda7337c541adad0c6cd3">More...</a><br /></td></tr>
+<tr class="separator:ab3e18d4d369bda7337c541adad0c6cd3 inherit pub_static_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742793255ff2aed0213773f989cc8394 inherit pub_static_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a742793255ff2aed0213773f989cc8394">Xpay</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;y, <a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> a, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; const &amp;x, int xcomp, int ycomp, int ncomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost)</td></tr>
+<tr class="memdesc:a742793255ff2aed0213773f989cc8394 inherit pub_static_methods_classamrex_1_1FabArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">y = x + a*y  <a href="classamrex_1_1FabArray.html#a742793255ff2aed0213773f989cc8394">More...</a><br /></td></tr>
+<tr class="separator:a742793255ff2aed0213773f989cc8394 inherit pub_static_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424d30f07a7374d3620c454f8e3c5ae7 inherit pub_static_methods_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a424d30f07a7374d3620c454f8e3c5ae7">LinComb</a> (<a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;dst, <a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> a, const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;x, int xcomp, <a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> b, const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;y, int ycomp, int dstcomp, int numcomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost)</td></tr>
+<tr class="memdesc:a424d30f07a7374d3620c454f8e3c5ae7 inherit pub_static_methods_classamrex_1_1FabArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">dst = a*x + b*y  <a href="classamrex_1_1FabArray.html#a424d30f07a7374d3620c454f8e3c5ae7">More...</a><br /></td></tr>
+<tr class="separator:a424d30f07a7374d3620c454f8e3c5ae7 inherit pub_static_methods_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -758,6 +765,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classamrex_1_1FabArray"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classamrex_1_1FabArray')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray&lt; FArrayBox &gt;</a></td></tr>
 <tr class="memitem:a2b04c30bcb209306838ed6a01bd7816a inherit pub_types_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a">value_type</a> = typename std::conditional&lt; <a class="el" href="structamrex_1_1IsBaseFab.html">IsBaseFab</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt;::value, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a>, FABType &gt;::type::value_type</td></tr>
 <tr class="separator:a2b04c30bcb209306838ed6a01bd7816a inherit pub_types_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea567a25f13cd931b2b1e9433eeda5e inherit pub_types_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a4ea567a25f13cd931b2b1e9433eeda5e">fab_type</a> = <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a></td></tr>
+<tr class="separator:a4ea567a25f13cd931b2b1e9433eeda5e inherit pub_types_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classamrex_1_1FabArray"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classamrex_1_1FabArray')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classamrex_1_1FabArray.html">amrex::FabArray&lt; FArrayBox &gt;</a></td></tr>
 <tr class="memitem:a4bec341c204bf002ce9ea2d636e94f56 inherit pub_attribs_classamrex_1_1FabArray"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structamrex_1_1FBData.html">FBData</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a4bec341c204bf002ce9ea2d636e94f56">fbd</a></td></tr>
 <tr class="separator:a4bec341c204bf002ce9ea2d636e94f56 inherit pub_attribs_classamrex_1_1FabArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2462,92 +2471,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab858dc7ae13d97eea108b007d547488f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab858dc7ae13d97eea108b007d547488f">&#9670;&nbsp;</a></span>LinComb() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::MultiFab::LinComb </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>dst</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>xcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>ycomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>dstcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>numcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
-          <td class="paramname"><em>nghost</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a0486c02587ea11cc9a30e9da8d7cf957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0486c02587ea11cc9a30e9da8d7cf957">&#9670;&nbsp;</a></span>LinComb() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0486c02587ea11cc9a30e9da8d7cf957">&#9670;&nbsp;</a></span>LinComb()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3641,7 +3566,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="abc7329288ae6f73f8fd7eda95e49b8ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc7329288ae6f73f8fd7eda95e49b8ba">&#9670;&nbsp;</a></span>norminf() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abc7329288ae6f73f8fd7eda95e49b8ba">&#9670;&nbsp;</a></span>norminf() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3689,7 +3614,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a92b462cb3d7c55a7d3277aaa9e3e0ff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92b462cb3d7c55a7d3277aaa9e3e0ff3">&#9670;&nbsp;</a></span>norminf() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b462cb3d7c55a7d3277aaa9e3e0ff3">&#9670;&nbsp;</a></span>norminf() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3736,62 +3661,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a1b364b5b4fc00d42b1959a6ab22cc05f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b364b5b4fc00d42b1959a6ab22cc05f">&#9670;&nbsp;</a></span>norminf() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Real amrex::MultiFab::norminf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>ncomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
-          <td class="paramname"><em>nghost</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>local</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ignore_covered</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9d57175907c89a969b9b5392631e65cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d57175907c89a969b9b5392631e65cf">&#9670;&nbsp;</a></span>norminf() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d57175907c89a969b9b5392631e65cf">&#9670;&nbsp;</a></span>norminf() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4176,74 +4047,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4f39387844b0d4393e9cffd9b8fb3cc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f39387844b0d4393e9cffd9b8fb3cc0">&#9670;&nbsp;</a></span>Saxpy() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::MultiFab::Saxpy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>dst</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>srccomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>dstcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>numcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
-          <td class="paramname"><em>nghost</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a505eb471a78f4e0f8791b10cbb1bbd75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a505eb471a78f4e0f8791b10cbb1bbd75">&#9670;&nbsp;</a></span>Saxpy() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a505eb471a78f4e0f8791b10cbb1bbd75">&#9670;&nbsp;</a></span>Saxpy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4650,74 +4455,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6057618ee794a63cc24ba0d95007e609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6057618ee794a63cc24ba0d95007e609">&#9670;&nbsp;</a></span>Xpay() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::MultiFab::Xpay </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>dst</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>srccomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>dstcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>numcomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
-          <td class="paramname"><em>nghost</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa06c264011c21bb5a97070ae7cf250d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa06c264011c21bb5a97070ae7cf250d3">&#9670;&nbsp;</a></span>Xpay() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06c264011c21bb5a97070ae7cf250d3">&#9670;&nbsp;</a></span>Xpay()</h2>
 
 <div class="memitem">
 <div class="memproto">

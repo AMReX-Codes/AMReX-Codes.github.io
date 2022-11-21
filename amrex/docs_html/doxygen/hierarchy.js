@@ -1096,6 +1096,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< BCTuple > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< BLProfStats::TimeRange > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< double > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< FAB * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< int > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Long > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Real > >", "classamrex_1_1Vector.html", null ],
@@ -1108,7 +1109,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::VisMF * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::VisMF::FabOnDisk >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::WeightedBox >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::YAFluxRegister >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::YAFluxRegisterT >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< amrex::MultiFab, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< amrex::MultiMask, 2 *AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< BCType, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
@@ -1125,6 +1126,7 @@ var hierarchy =
       [ "amrex::Vector< CommProfStats::ReductionEntry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< const FabArrayBase::CopyComTagsContainer * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< double >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< FAB * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< GFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< gpuStream_t >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< HYPRE_Int >", "classamrex_1_1Vector.html", null ],
@@ -1198,7 +1200,7 @@ var hierarchy =
     [ "amrex::XDim3", "structamrex_1_1XDim3.html", null ],
     [ "amrex::XYPlotDataList", "classamrex_1_1XYPlotDataList.html", null ],
     [ "amrex::XYPlotDataListLink", "classamrex_1_1XYPlotDataListLink.html", null ],
-    [ "amrex::YAFluxRegister", "classamrex_1_1YAFluxRegister.html", [
+    [ "amrex::YAFluxRegisterT< MF >", "classamrex_1_1YAFluxRegisterT.html", [
       [ "amrex::EBFluxRegister", "classamrex_1_1EBFluxRegister.html", null ]
     ] ],
     [ "yy_buffer_state", "structyy__buffer__state.html", null ],

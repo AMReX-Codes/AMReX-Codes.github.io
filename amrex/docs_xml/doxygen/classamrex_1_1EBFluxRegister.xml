@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classamrex_1_1EBFluxRegister" kind="class" language="C++" prot="public">
     <compoundname>amrex::EBFluxRegister</compoundname>
-    <basecompoundref refid="classamrex_1_1YAFluxRegister" prot="public" virt="non-virtual">amrex::YAFluxRegister</basecompoundref>
+    <basecompoundref refid="classamrex_1_1YAFluxRegisterT" prot="public" virt="non-virtual">amrex::YAFluxRegisterT&lt; MultiFab &gt;</basecompoundref>
     <includes refid="AMReX__EBFluxRegister_8H" local="no">AMReX_EBFluxRegister.H</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1EBFluxRegister_1ae202afe28157891442668596f24fe460" prot="private" static="no" mutable="no">
@@ -301,17 +301,17 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="108" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.cpp" bodystart="43" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1a24d221d7e5538a09512389d71386e9bd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1a56a8169ee708415fe75c7db6076da659" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::YAFluxRegister::CrseAdd</definition>
-        <argsstring>(const MFIter &amp;mfi, const std::array&lt; FArrayBox const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn gpu_or_cpu) noexcept</argsstring>
+        <definition>void amrex::YAFluxRegisterT&lt; MF &gt;::CrseAdd</definition>
+        <argsstring>(const MFIter &amp;mfi, const std::array&lt; FAB const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn gpu_or_cpu) noexcept</argsstring>
         <name>CrseAdd</name>
         <param>
           <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
           <declname>mfi</declname>
         </param>
         <param>
-          <type>const std::array&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> const *, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const std::array&lt; <ref refid="classamrex_1_1YAFluxRegisterT_1a96ad5ba6f6b373c04d31d704bb04d872" kindref="member">FAB</ref> const *, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>flux</declname>
         </param>
         <param>
@@ -332,19 +332,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="74" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.cpp" bodystart="232" bodyend="263"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="74" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="318" bodyend="349"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1a16e46b300ff340a7ff39d65aa572d3cf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1EBFluxRegister_1a2d5b5c8de946f1174b78cc373f330062" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::YAFluxRegister::FineAdd</definition>
-        <argsstring>(const MFIter &amp;mfi, const std::array&lt; FArrayBox const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn gpu_or_cpu) noexcept</argsstring>
+        <definition>void amrex::YAFluxRegisterT&lt; MF &gt;::FineAdd</definition>
+        <argsstring>(const MFIter &amp;mfi, const std::array&lt; FAB const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn gpu_or_cpu) noexcept</argsstring>
         <name>FineAdd</name>
         <param>
           <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
           <declname>mfi</declname>
         </param>
         <param>
-          <type>const std::array&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> const *, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const std::array&lt; <ref refid="classamrex_1_1YAFluxRegisterT_1a96ad5ba6f6b373c04d31d704bb04d872" kindref="member">FAB</ref> const *, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>flux</declname>
         </param>
         <param>
@@ -365,46 +365,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="82" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.cpp" bodystart="267" bodyend="344"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="82" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Boundary/AMReX_YAFluxRegister.H" bodystart="353" bodyend="430"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
 <para><ref refid="classamrex_1_1EBFluxRegister" kindref="compound">EBFluxRegister</ref> is used for refluxing, re-redistribution, re-refluxing, and re-re-redistribution. See <computeroutput>Tutorials/EB/CNS</computeroutput> for an example of using this class.</para>
-<para>Reflux for EB is somewhat similar to non-EB. At the beginning of a coarse step, <computeroutput><ref refid="classamrex_1_1YAFluxRegister_1a9f4e5bbfcfe4bd2de5e3487a80e8cc0c" kindref="member">reset()</ref></computeroutput> is called. In <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> for the coarse level advance, <computeroutput>CrseAdd</computeroutput> is called with coarse flux. There are two versions of <computeroutput>CrseAdd</computeroutput>, one for regular fab/tile and the other for fab/tile containing cutcells. For the cutcell version, the flux is is at centroid, not face center. The flux is not scaled. In <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> for the fine level advance, <computeroutput>FineAdd</computeroutput> is called. There are also two version of <computeroutput>FineAdd</computeroutput>, one for regular and the other for fab/tile containing cutcells. The cutcell version also takes <computeroutput>dm</computeroutput> for re-redistribution explained below. After the fine level finished its time steps, <computeroutput>Reflux</computeroutput> is called to update the coarse cells next to the coarse/fine boundary. Note that re-redistribution is also performed in <computeroutput>Reflux</computeroutput>.</para>
+<para>Reflux for EB is somewhat similar to non-EB. At the beginning of a coarse step, <computeroutput><ref refid="classamrex_1_1YAFluxRegisterT_1af9d5717b63e6c3f0cfb79d33862e44c0" kindref="member">reset()</ref></computeroutput> is called. In <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> for the coarse level advance, <computeroutput>CrseAdd</computeroutput> is called with coarse flux. There are two versions of <computeroutput>CrseAdd</computeroutput>, one for regular fab/tile and the other for fab/tile containing cutcells. For the cutcell version, the flux is is at centroid, not face center. The flux is not scaled. In <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> for the fine level advance, <computeroutput>FineAdd</computeroutput> is called. There are also two version of <computeroutput>FineAdd</computeroutput>, one for regular and the other for fab/tile containing cutcells. The cutcell version also takes <computeroutput>dm</computeroutput> for re-redistribution explained below. After the fine level finished its time steps, <computeroutput>Reflux</computeroutput> is called to update the coarse cells next to the coarse/fine boundary. Note that re-redistribution is also performed in <computeroutput>Reflux</computeroutput>.</para>
 <para>Re-redistribution is unfortunately more complicated. The coarse level needs to accumulate the <emphasis>density</emphasis> (e.g., g/cm^3 for mass density) <emphasis>loss</emphasis> of coarse/fine boundary cells (i.e., coarse cells on the coarse side of the coarse/fine boundary) due to redistribution from/to coarse cells covered by the fine level. If a coarse/fine boundary cell redistributes mass to a covered cell, this counts as a positive loss. Here covered means covered be the fine level, not EB. If a covered cell redistributes mass to a boundary cell, this counts as a negative loss for that boundary cell. The accumulation as the coarse level is performed on <computeroutput><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref></computeroutput> returned by <computeroutput><ref refid="classamrex_1_1EBFluxRegister_1af3c9944a1620773f35a68caa68d22121" kindref="member">EBFluxRegister::getCrseData(MFIter const&amp;)</ref></computeroutput>. <ref refid="classamrex_1_1EBFluxRegister" kindref="compound">EBFluxRegister</ref> also has <computeroutput>getCrseFlag(MFIte cons&amp;)</computeroutput> function returning <computeroutput><ref refid="classamrex_1_1IArrayBox" kindref="compound">IArrayBox</ref></computeroutput> that contains flags for genuine coarse cell, coarse/fine boundary cells and covered cells.</para>
 <para>The fine level in re-redistribution needs to accumulate the <emphasis>mass</emphasis> (e.g., g for density) <emphasis>gain</emphasis> of ghost cells due to redistribution from/to valid cells. The application code can use a local <computeroutput><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref></computeroutput> to store this and then EBFLuxRegister::FineAdd is called to add the part in ghost cells (excluding ghost cells covered by valid cells of other grids) to <ref refid="classamrex_1_1EBFluxRegister" kindref="compound">EBFluxRegister</ref>&apos;s internal data. </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>YAFluxRegister</label>
+        <link refid="classamrex_1_1YAFluxRegisterT"/>
+      </node>
       <node id="1">
         <label>amrex::EBFluxRegister</label>
         <link refid="classamrex_1_1EBFluxRegister"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>amrex::YAFluxRegister</label>
-        <link refid="classamrex_1_1YAFluxRegister"/>
-      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="64">
-        <label>amrex::BaseFab&lt; Real &gt;</label>
-        <link refid="classamrex_1_1BaseFab"/>
-        <childnode refid="65" relation="public-inheritance">
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>domain</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>dptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="91">
+      <node id="78">
         <label>amrex::BaseFab&lt; int &gt;</label>
         <link refid="classamrex_1_1BaseFab"/>
-        <childnode refid="65" relation="public-inheritance">
+        <childnode refid="25" relation="public-inheritance">
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>domain</edgelabel>
@@ -416,46 +404,61 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="80">
+      <node id="17">
         <label>amrex::iMultiFab</label>
         <link refid="classamrex_1_1iMultiFab"/>
-        <childnode refid="81" relation="public-inheritance">
+        <childnode refid="18" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="48">
+      <node id="52">
         <label>amrex::BoxList</label>
         <link refid="classamrex_1_1BoxList"/>
-        <childnode refid="38" relation="usage">
+        <childnode refid="44" relation="usage">
           <edgelabel>m_lbox</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="67">
+      <node id="2">
+        <label>YAFluxRegister</label>
+        <link refid="classamrex_1_1YAFluxRegisterT"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_fine_geom</edgelabel>
+          <edgelabel>m_crse_geom</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_cfp_fab</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_ratio</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_cfp_localindex</edgelabel>
+          <edgelabel>m_crse_fab_flag</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_crse_flag</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="54">
+      <node id="58">
         <label>amrex::BATindexType</label>
         <link refid="structamrex_1_1BATindexType"/>
         <childnode refid="10" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="69">
-        <label>std::unique_ptr&lt; amrex::FBData&lt; FArrayBox &gt; &gt;</label>
-        <childnode refid="70" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="39">
+      <node id="45">
         <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="56">
+      <node id="60">
         <label>amrex::BATindexType_coarsenRatio</label>
         <link refid="structamrex_1_1BATindexType__coarsenRatio"/>
         <childnode refid="9" relation="usage">
@@ -465,16 +468,16 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="92">
+      <node id="79">
         <label>std::unique_ptr&lt; amrex::IFABio &gt;</label>
-        <childnode refid="93" relation="usage">
+        <childnode refid="80" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="30">
+      <node id="36">
         <label>K</label>
       </node>
-      <node id="55">
+      <node id="59">
         <label>amrex::BATnull</label>
         <link refid="structamrex_1_1BATnull"/>
       </node>
@@ -489,212 +492,166 @@
       <node id="14">
         <label>T</label>
       </node>
-      <node id="27">
+      <node id="33">
         <label>amrex::FabArrayBase::CommMetaData</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CommMetaData"/>
-        <childnode refid="28" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>m_RcvTags</edgelabel>
           <edgelabel>m_SndTags</edgelabel>
         </childnode>
-        <childnode refid="31" relation="usage">
+        <childnode refid="37" relation="usage">
           <edgelabel>m_LocTags</edgelabel>
         </childnode>
-      </node>
-      <node id="74">
-        <label>std::unique_ptr&lt; amrex::FabArray&lt; FArrayBox &gt; &gt;</label>
-        <childnode refid="16" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="18">
-        <label>amrex::FabFactory&lt; FArrayBox &gt;</label>
-        <link refid="classamrex_1_1FabFactory"/>
       </node>
       <node id="5">
         <label>Real</label>
       </node>
-      <node id="89">
+      <node id="76">
         <label>std::vector&lt; IArrayBox * &gt;</label>
-        <childnode refid="90" relation="usage">
+        <childnode refid="77" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="32">
+      <node id="38">
         <label>std::vector&lt; T &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="60">
+      <node id="64">
         <label>amrex::Vector&lt; MPI_Request &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="61" relation="public-inheritance">
+        <childnode refid="65" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="78">
+      <node id="74">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
-        <childnode refid="79" relation="usage">
+        <childnode refid="75" relation="usage">
           <edgelabel>hp</edgelabel>
           <edgelabel>dp</edgelabel>
         </childnode>
       </node>
-      <node id="87">
+      <node id="69">
         <label>std::unique_ptr&lt; amrex::FBData&lt; IArrayBox &gt; &gt;</label>
-        <childnode refid="88" relation="usage">
+        <childnode refid="70" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="65">
-        <label>amrex::DataAllocator</label>
-        <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="66" relation="usage">
-          <edgelabel>m_arena</edgelabel>
-        </childnode>
-      </node>
-      <node id="36">
+      <node id="42">
         <label>std::unordered_map&lt; IntVect, std::vector&lt; int &gt;, IntVect::shift_hasher &gt;</label>
         <childnode refid="9" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="37" relation="usage">
+        <childnode refid="43" relation="usage">
           <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>amrex::DataAllocator</label>
+        <link refid="structamrex_1_1DataAllocator"/>
+        <childnode refid="26" relation="usage">
+          <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
       <node id="7">
         <label>amrex::GpuArray&lt; float, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
       </node>
-      <node id="76">
+      <node id="67">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="19">
+      <node id="21">
         <label>amrex::MultiArray4&lt; value_type const &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
-        <childnode refid="20" relation="usage">
+        <childnode refid="22" relation="usage">
           <edgelabel>hp</edgelabel>
           <edgelabel>dp</edgelabel>
         </childnode>
       </node>
-      <node id="79">
+      <node id="75">
         <label>amrex::Array4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1Array4"/>
-        <childnode refid="21" relation="usage">
+        <childnode refid="23" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="29">
+      <node id="35">
         <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="30" relation="usage">
+        <childnode refid="36" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="66">
+      <node id="26">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="67" relation="usage">
+        <childnode refid="27" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="42">
+      <node id="15">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="43" relation="public-inheritance">
+        <childnode refid="16" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="57">
+      <node id="61">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
         <childnode refid="9" relation="usage">
           <edgelabel>period</edgelabel>
         </childnode>
       </node>
-      <node id="59">
+      <node id="63">
         <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="70">
-        <label>amrex::FBData&lt; FArrayBox &gt;</label>
-        <link refid="structamrex_1_1FBData"/>
-        <childnode refid="24" relation="usage">
-          <edgelabel>recv_size</edgelabel>
-        </childnode>
-        <childnode refid="42" relation="usage">
-          <edgelabel>recv_from</edgelabel>
-        </childnode>
-        <childnode refid="58" relation="usage">
-          <edgelabel>recv_data</edgelabel>
-          <edgelabel>send_data</edgelabel>
-        </childnode>
-        <childnode refid="71" relation="usage">
-          <edgelabel>recv_stat</edgelabel>
-        </childnode>
-        <childnode refid="60" relation="usage">
-          <edgelabel>send_reqs</edgelabel>
-          <edgelabel>recv_reqs</edgelabel>
-        </childnode>
-        <childnode refid="73" relation="usage">
-          <edgelabel>fb</edgelabel>
-        </childnode>
-      </node>
-      <node id="12">
-        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox * &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="13" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="52">
+      <node id="56">
         <label>amrex::Orientation</label>
         <link refid="classamrex_1_1Orientation"/>
       </node>
-      <node id="35">
+      <node id="41">
         <label>amrex::BARef</label>
         <link refid="structamrex_1_1BARef"/>
         <childnode refid="9" relation="usage">
           <edgelabel>crsn</edgelabel>
         </childnode>
-        <childnode refid="36" relation="usage">
+        <childnode refid="42" relation="usage">
           <edgelabel>hash</edgelabel>
         </childnode>
-        <childnode refid="38" relation="usage">
+        <childnode refid="44" relation="usage">
           <edgelabel>m_abox</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>bbox</edgelabel>
         </childnode>
       </node>
-      <node id="13">
-        <label>std::vector&lt; amrex::Vector&lt; amrex::FArrayBox * &gt;, std::allocator&lt; amrex::Vector&lt; amrex::FArrayBox * &gt; &gt; &gt;</label>
-        <childnode refid="14" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="88">
+      <node id="70">
         <label>amrex::FBData&lt; IArrayBox &gt;</label>
         <link refid="structamrex_1_1FBData"/>
-        <childnode refid="24" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>recv_size</edgelabel>
         </childnode>
-        <childnode refid="42" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>recv_from</edgelabel>
         </childnode>
-        <childnode refid="58" relation="usage">
+        <childnode refid="62" relation="usage">
           <edgelabel>recv_data</edgelabel>
           <edgelabel>send_data</edgelabel>
         </childnode>
         <childnode refid="71" relation="usage">
           <edgelabel>recv_stat</edgelabel>
         </childnode>
-        <childnode refid="60" relation="usage">
+        <childnode refid="64" relation="usage">
           <edgelabel>send_reqs</edgelabel>
           <edgelabel>recv_reqs</edgelabel>
         </childnode>
@@ -705,7 +662,7 @@
       <node id="73">
         <label>amrex::FabArrayBase::FB</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FB"/>
-        <childnode refid="27" relation="public-inheritance">
+        <childnode refid="33" relation="public-inheritance">
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>m_ngrow</edgelabel>
@@ -714,81 +671,75 @@
         <childnode refid="10" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
-        <childnode refid="57" relation="usage">
+        <childnode refid="61" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
-      <node id="58">
+      <node id="62">
         <label>amrex::Vector&lt; char * &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="59" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="49">
-        <label>amrex::BATransformer</label>
-        <link refid="structamrex_1_1BATransformer"/>
-        <childnode refid="50" relation="usage">
-          <edgelabel>m_op</edgelabel>
+        <childnode refid="63" relation="public-inheritance">
         </childnode>
       </node>
       <node id="53">
+        <label>amrex::BATransformer</label>
+        <link refid="structamrex_1_1BATransformer"/>
+        <childnode refid="54" relation="usage">
+          <edgelabel>m_op</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
         <label>amrex::BATcoarsenRatio</label>
         <link refid="structamrex_1_1BATcoarsenRatio"/>
         <childnode refid="9" relation="usage">
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
       </node>
-      <node id="77">
+      <node id="68">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
-      <node id="50">
+      <node id="54">
         <label>amrex::BATransformer::BATOp</label>
         <link refid="unionamrex_1_1BATransformer_1_1BATOp"/>
-        <childnode refid="51" relation="usage">
+        <childnode refid="55" relation="usage">
           <edgelabel>m_bndryReg</edgelabel>
         </childnode>
-        <childnode refid="53" relation="usage">
+        <childnode refid="57" relation="usage">
           <edgelabel>m_coarsenRatio</edgelabel>
         </childnode>
-        <childnode refid="54" relation="usage">
+        <childnode refid="58" relation="usage">
           <edgelabel>m_indexType</edgelabel>
         </childnode>
-        <childnode refid="55" relation="usage">
+        <childnode refid="59" relation="usage">
           <edgelabel>m_null</edgelabel>
         </childnode>
-        <childnode refid="56" relation="usage">
+        <childnode refid="60" relation="usage">
           <edgelabel>m_indexType_coarsenRatio</edgelabel>
         </childnode>
       </node>
-      <node id="62">
-        <label>std::vector&lt; FArrayBox * &gt;</label>
-        <childnode refid="63" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="26">
+      <node id="32">
         <label>amrex::FabArrayBase::CPC</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CPC"/>
-        <childnode refid="27" relation="public-inheritance">
+        <childnode refid="33" relation="public-inheritance">
         </childnode>
         <childnode refid="9" relation="usage">
           <edgelabel>m_srcng</edgelabel>
           <edgelabel>m_dstng</edgelabel>
         </childnode>
-        <childnode refid="33" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>m_dstbdk</edgelabel>
           <edgelabel>m_srcbdk</edgelabel>
         </childnode>
-        <childnode refid="45" relation="usage">
+        <childnode refid="49" relation="usage">
           <edgelabel>m_srcba</edgelabel>
           <edgelabel>m_dstba</edgelabel>
         </childnode>
-        <childnode refid="57" relation="usage">
+        <childnode refid="61" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
-      <node id="21">
+      <node id="23">
         <label>amrex::Dim3</label>
         <link refid="structamrex_1_1Dim3"/>
       </node>
@@ -797,73 +748,79 @@
         <link refid="classamrex_1_1EBFluxRegister"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="80" relation="usage">
+        <childnode refid="17" relation="usage">
           <edgelabel>m_cfp_inside_mask</edgelabel>
         </childnode>
       </node>
-      <node id="61">
+      <node id="65">
         <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="43">
+      <node id="16">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="84">
+      <node id="24">
         <label>std::unique_ptr&lt; amrex::FabArray&lt; IArrayBox &gt; &gt;</label>
-        <childnode refid="81" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="81">
+      <node id="18">
         <label>amrex::FabArray&lt; IArrayBox &gt;</label>
         <link refid="classamrex_1_1FabArray"/>
-        <childnode refid="82" relation="usage">
+        <childnode refid="19" relation="usage">
           <edgelabel>m_factory</edgelabel>
         </childnode>
-        <childnode refid="19" relation="usage">
+        <childnode refid="21" relation="usage">
           <edgelabel>m_const_arrays</edgelabel>
         </childnode>
-        <childnode refid="84" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>os_temp</edgelabel>
         </childnode>
-        <childnode refid="65" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>m_dallocator</edgelabel>
         </childnode>
-        <childnode refid="85" relation="usage">
+        <childnode refid="28" relation="usage">
           <edgelabel>pcd</edgelabel>
         </childnode>
-        <childnode refid="75" relation="usage">
+        <childnode refid="66" relation="usage">
           <edgelabel>m_tags</edgelabel>
         </childnode>
-        <childnode refid="77" relation="usage">
+        <childnode refid="68" relation="usage">
           <edgelabel>shmem</edgelabel>
         </childnode>
-        <childnode refid="87" relation="usage">
+        <childnode refid="69" relation="usage">
           <edgelabel>fbd</edgelabel>
         </childnode>
-        <childnode refid="78" relation="usage">
+        <childnode refid="74" relation="usage">
           <edgelabel>m_arrays</edgelabel>
         </childnode>
-        <childnode refid="89" relation="usage">
+        <childnode refid="76" relation="usage">
           <edgelabel>m_fabs_v</edgelabel>
         </childnode>
       </node>
-      <node id="45">
+      <node id="49">
         <label>amrex::BoxArray</label>
         <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="46" relation="usage">
+        <childnode refid="50" relation="usage">
           <edgelabel>m_ref</edgelabel>
         </childnode>
-        <childnode refid="47" relation="usage">
+        <childnode refid="51" relation="usage">
           <edgelabel>m_simplified_list</edgelabel>
         </childnode>
-        <childnode refid="49" relation="usage">
+        <childnode refid="53" relation="usage">
           <edgelabel>m_bat</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::vector&lt; amrex::Vector&lt; FAB * &gt;, std::allocator&lt; amrex::Vector&lt; FAB * &gt; &gt; &gt;</label>
+        <childnode refid="14" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="6">
@@ -874,10 +831,10 @@
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="20">
+      <node id="22">
         <label>amrex::Array4&lt; value_type const &gt;</label>
         <link refid="structamrex_1_1Array4"/>
-        <childnode refid="21" relation="usage">
+        <childnode refid="23" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
@@ -893,37 +850,31 @@
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="90">
+      <node id="77">
         <label>amrex::IArrayBox</label>
         <link refid="classamrex_1_1IArrayBox"/>
-        <childnode refid="91" relation="public-inheritance">
+        <childnode refid="78" relation="public-inheritance">
         </childnode>
-        <childnode refid="92" relation="usage">
+        <childnode refid="79" relation="usage">
           <edgelabel>ifabio</edgelabel>
         </childnode>
       </node>
-      <node id="22">
-        <label>std::unique_ptr&lt; amrex::PCData&lt; FArrayBox &gt; &gt;</label>
-        <childnode refid="23" relation="usage">
+      <node id="50">
+        <label>std::shared_ptr&lt; amrex::BARef &gt;</label>
+        <childnode refid="41" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
       <node id="46">
-        <label>std::shared_ptr&lt; amrex::BARef &gt;</label>
-        <childnode refid="35" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="40">
         <label>amrex::DistributionMapping::RefID</label>
         <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
-        <childnode refid="41" relation="usage">
+        <childnode refid="47" relation="usage">
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="82">
+      <node id="19">
         <label>std::unique_ptr&lt; amrex::FabFactory&lt; IArrayBox &gt; &gt;</label>
-        <childnode refid="83" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -942,7 +893,7 @@
           <edgelabel>dx</edgelabel>
         </childnode>
       </node>
-      <node id="51">
+      <node id="55">
         <label>amrex::BATbndryReg</label>
         <link refid="structamrex_1_1BATbndryReg"/>
         <childnode refid="9" relation="usage">
@@ -952,20 +903,20 @@
           <edgelabel>m_crse_ratio</edgelabel>
           <edgelabel>m_loshft</edgelabel>
         </childnode>
-        <childnode refid="52" relation="usage">
+        <childnode refid="56" relation="usage">
           <edgelabel>m_face</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="93">
+      <node id="80">
         <label>amrex::IFABio</label>
         <link refid="classamrex_1_1IFABio"/>
       </node>
-      <node id="28">
+      <node id="34">
         <label>std::unique_ptr&lt; MapOfCopyComTagContainers &gt;</label>
-        <childnode refid="29" relation="usage">
+        <childnode refid="35" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -973,57 +924,41 @@
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="41">
+      <node id="47">
         <label>amrex::DistributionMapping::Ref</label>
         <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="42" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>m_index_array</edgelabel>
           <edgelabel>m_pmap</edgelabel>
         </childnode>
-        <childnode refid="44" relation="usage">
+        <childnode refid="48" relation="usage">
           <edgelabel>m_ownership</edgelabel>
         </childnode>
       </node>
-      <node id="75">
+      <node id="66">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="76" relation="public-inheritance">
+        <childnode refid="67" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="68">
-        <label>amrex::FABio</label>
-        <link refid="classamrex_1_1FABio"/>
-      </node>
-      <node id="85">
+      <node id="28">
         <label>std::unique_ptr&lt; amrex::PCData&lt; IArrayBox &gt; &gt;</label>
-        <childnode refid="86" relation="usage">
+        <childnode refid="29" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="33">
+      <node id="39">
         <label>amrex::FabArrayBase::BDKey</label>
         <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
-        <childnode refid="34" relation="usage">
+        <childnode refid="40" relation="usage">
           <edgelabel>m_ba_id</edgelabel>
         </childnode>
-        <childnode refid="40" relation="usage">
+        <childnode refid="46" relation="usage">
           <edgelabel>m_dm_id</edgelabel>
         </childnode>
       </node>
-      <node id="44">
+      <node id="48">
         <label>std::vector&lt; bool &gt;</label>
-      </node>
-      <node id="17">
-        <label>std::unique_ptr&lt; amrex::FabFactory&lt; FArrayBox &gt; &gt;</label>
-        <childnode refid="18" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="15">
-        <label>amrex::MultiFab</label>
-        <link refid="classamrex_1_1MultiFab"/>
-        <childnode refid="16" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="3">
         <label>amrex::Geometry</label>
@@ -1045,9 +980,9 @@
           <edgelabel>roundoff_hi_d</edgelabel>
         </childnode>
       </node>
-      <node id="47">
+      <node id="51">
         <label>std::shared_ptr&lt; amrex::BoxList &gt;</label>
-        <childnode refid="48" relation="usage">
+        <childnode refid="52" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -1055,203 +990,116 @@
         <label>amrex::GpuArray&lt; double, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
       </node>
-      <node id="83">
+      <node id="20">
         <label>amrex::FabFactory&lt; IArrayBox &gt;</label>
         <link refid="classamrex_1_1FabFactory"/>
       </node>
-      <node id="63">
-        <label>amrex::FArrayBox</label>
-        <link refid="classamrex_1_1FArrayBox"/>
-        <childnode refid="64" relation="public-inheritance">
-        </childnode>
-        <childnode refid="68" relation="usage">
-          <edgelabel>fabio</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>initval</edgelabel>
-        </childnode>
-      </node>
-      <node id="16">
-        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
-        <link refid="classamrex_1_1FabArray"/>
-        <childnode refid="17" relation="usage">
-          <edgelabel>m_factory</edgelabel>
-        </childnode>
-        <childnode refid="19" relation="usage">
-          <edgelabel>m_const_arrays</edgelabel>
-        </childnode>
-        <childnode refid="22" relation="usage">
-          <edgelabel>pcd</edgelabel>
-        </childnode>
-        <childnode refid="62" relation="usage">
-          <edgelabel>m_fabs_v</edgelabel>
-        </childnode>
-        <childnode refid="69" relation="usage">
-          <edgelabel>fbd</edgelabel>
-        </childnode>
-        <childnode refid="65" relation="usage">
-          <edgelabel>m_dallocator</edgelabel>
-        </childnode>
-        <childnode refid="74" relation="usage">
-          <edgelabel>os_temp</edgelabel>
-        </childnode>
-        <childnode refid="75" relation="usage">
-          <edgelabel>m_tags</edgelabel>
-        </childnode>
-        <childnode refid="77" relation="usage">
-          <edgelabel>shmem</edgelabel>
-        </childnode>
-        <childnode refid="78" relation="usage">
-          <edgelabel>m_arrays</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>amrex::YAFluxRegister</label>
-        <link refid="classamrex_1_1YAFluxRegister"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>m_fine_geom</edgelabel>
-          <edgelabel>m_crse_geom</edgelabel>
-        </childnode>
-        <childnode refid="12" relation="usage">
-          <edgelabel>m_cfp_fab</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_ratio</edgelabel>
-        </childnode>
-        <childnode refid="15" relation="usage">
-          <edgelabel>m_cfp_mask</edgelabel>
-          <edgelabel>m_crse_data</edgelabel>
-          <edgelabel>m_cfpatch</edgelabel>
-        </childnode>
-        <childnode refid="42" relation="usage">
-          <edgelabel>m_cfp_localindex</edgelabel>
-          <edgelabel>m_crse_fab_flag</edgelabel>
-        </childnode>
-        <childnode refid="80" relation="usage">
-          <edgelabel>m_crse_flag</edgelabel>
-        </childnode>
-      </node>
-      <node id="24">
+      <node id="30">
         <label>amrex::Vector&lt; std::size_t &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="25" relation="public-inheritance">
+        <childnode refid="31" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="34">
+      <node id="12">
+        <label>amrex::Vector&lt; amrex::Vector&lt; FAB * &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
         <label>amrex::BoxArray::RefID</label>
         <link refid="structamrex_1_1BoxArray_1_1RefID"/>
-        <childnode refid="35" relation="usage">
+        <childnode refid="41" relation="usage">
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="38">
+      <node id="44">
         <label>amrex::Vector&lt; amrex::Box &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="39" relation="public-inheritance">
+        <childnode refid="45" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="23">
-        <label>amrex::PCData&lt; FArrayBox &gt;</label>
-        <link refid="structamrex_1_1PCData"/>
-        <childnode refid="24" relation="usage">
-          <edgelabel>recv_size</edgelabel>
-        </childnode>
-        <childnode refid="26" relation="usage">
-          <edgelabel>cpc</edgelabel>
-        </childnode>
-        <childnode refid="42" relation="usage">
-          <edgelabel>recv_from</edgelabel>
-        </childnode>
-        <childnode refid="58" relation="usage">
-          <edgelabel>recv_data</edgelabel>
-        </childnode>
-        <childnode refid="16" relation="usage">
-          <edgelabel>src</edgelabel>
-        </childnode>
-        <childnode refid="60" relation="usage">
-          <edgelabel>send_reqs</edgelabel>
-          <edgelabel>recv_reqs</edgelabel>
-        </childnode>
-      </node>
-      <node id="25">
+      <node id="31">
         <label>std::vector&lt; std::size_t, std::allocator&lt; std::size_t &gt; &gt;</label>
         <childnode refid="14" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="37">
+      <node id="43">
         <label>std::vector&lt; int &gt;</label>
       </node>
-      <node id="86">
+      <node id="29">
         <label>amrex::PCData&lt; IArrayBox &gt;</label>
         <link refid="structamrex_1_1PCData"/>
-        <childnode refid="24" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>recv_size</edgelabel>
         </childnode>
-        <childnode refid="26" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>cpc</edgelabel>
         </childnode>
-        <childnode refid="42" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>recv_from</edgelabel>
         </childnode>
-        <childnode refid="58" relation="usage">
+        <childnode refid="62" relation="usage">
           <edgelabel>recv_data</edgelabel>
         </childnode>
-        <childnode refid="81" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>src</edgelabel>
         </childnode>
-        <childnode refid="60" relation="usage">
+        <childnode refid="64" relation="usage">
           <edgelabel>send_reqs</edgelabel>
           <edgelabel>recv_reqs</edgelabel>
         </childnode>
       </node>
-      <node id="31">
+      <node id="37">
         <label>std::unique_ptr&lt; CopyComTagsContainer &gt;</label>
-        <childnode refid="32" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" line="59" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFluxRegister.H" bodystart="57" bodyend="109"/>
     <listofallmembers>
-      <member refid="classamrex_1_1YAFluxRegister_1a793217326d57a18d473ad802963c1a39" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CellType</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a793217326d57a18d473ad802963c1a39ad0f71b4da95e7cb4ed06cb9fc1be19a0" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>crse_cell</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a793217326d57a18d473ad802963c1a39ac5c1292509aea6d15b097b266dc73151" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>crse_fine_boundary_cell</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a98d014f8977101cb5406c3437897763c" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CellType</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a98d014f8977101cb5406c3437897763ca5c0ed298da0038126a31182eb1385392" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>crse_cell</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a98d014f8977101cb5406c3437897763ca95ed02b2c9b5b5a936871917a0da3d52" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>crse_fine_boundary_cell</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1a330b4a4a00727bc0b078af7bab02a661" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CrseAdd</name></member>
-      <member refid="classamrex_1_1EBFluxRegister_1a24d221d7e5538a09512389d71386e9bd" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CrseAdd</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a24d221d7e5538a09512389d71386e9bd" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegister::"><scope>amrex::EBFluxRegister</scope><name>CrseAdd</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1af466fe21e95a36341e6a099dcf9c5a97" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CrseHasWork</name></member>
+      <member refid="classamrex_1_1EBFluxRegister_1a56a8169ee708415fe75c7db6076da659" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CrseAdd</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a56a8169ee708415fe75c7db6076da659" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegisterT::"><scope>amrex::EBFluxRegister</scope><name>CrseAdd</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a5191f9f71d66d51913c859e7835fd3a9" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>CrseHasWork</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1af6fb414b612b8563f5ffc4f9bdca7343" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>define</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1a440e02d869ba355d0ade05af7dad4748" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>defineExtra</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1afed46de9d982663ff8bf4bdd752811a9" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>EBFluxRegister</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1a14da975b0621f49220efd195ac6688c8" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>EBFluxRegister</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a793217326d57a18d473ad802963c1a39af227036442400df4bcf1b730c2eb4774" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>fine_cell</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a96ad5ba6f6b373c04d31d704bb04d872" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>FAB</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a98d014f8977101cb5406c3437897763ca4438d5a5594d291716164dd529a902cd" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>fine_cell</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1ae338b578ff37ce9e03bd9ba7312c1b92" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>FineAdd</name></member>
-      <member refid="classamrex_1_1EBFluxRegister_1a16e46b300ff340a7ff39d65aa572d3cf" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>FineAdd</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a16e46b300ff340a7ff39d65aa572d3cf" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegister::"><scope>amrex::EBFluxRegister</scope><name>FineAdd</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1aac0df8bf308e353e01a5477f2c3fe458" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>FineHasWork</name></member>
+      <member refid="classamrex_1_1EBFluxRegister_1a2d5b5c8de946f1174b78cc373f330062" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>FineAdd</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a2d5b5c8de946f1174b78cc373f330062" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegisterT::"><scope>amrex::EBFluxRegister</scope><name>FineAdd</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1aadc0fd498bbbe602b6468b9624b322cf" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>FineHasWork</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1af3c9944a1620773f35a68caa68d22121" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>getCrseData</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1aba172f07f544fe12772e94b681eb2d5b" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegister::"><scope>amrex::EBFluxRegister</scope><name>getCrseData</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1ac9027c1a21fd7ec198393939ff2d4be2" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegisterT::"><scope>amrex::EBFluxRegister</scope><name>getCrseData</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1a81c2340e9470f6d2f4c8658f9e929f78" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>getCrseFlag</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a71d8d0ab300c7c7e8e006d46a62d3026" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>getFineData</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1ae5fdcdbe4998bb8636e686763cebc949" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_fab</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a00e42aad2911705689a1abd3857146bb" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>getFineData</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a166ac40711474ecc9d054bdf63632675" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_fab</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1ae202afe28157891442668596f24fe460" prot="private" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_inside_mask</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a1de636a21ef7f808042c3ad6ebefd84e" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_localindex</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a31991246a5f75c0de9fbdfaf784db4d9" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_mask</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a3f868dbecc624c8d0735356953e6911a" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfpatch</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1ad10fb234e2fec5e6486d114884150a2b" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_data</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a6f45ea054c1b1838346dd1b746a756ac" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_fab_flag</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a3e49048433f266d6f9e1c1f79dc0b395" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_flag</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a6170429b80c9c95fc90120a72cf7d2b6" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_geom</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a4abd839a10e74024737f9adf7e72ca2d" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_fine_geom</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a6fcbf17c79baf4ec382a3a2124ecdfed" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_fine_level</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1aa6fb273e1e2d183bb7e5a15b4df5fa2e" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_ncomp</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1aba05eb1f76e3659a6aadac0e2c1011bb" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_ratio</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1ad3d68c63ff831153ffc01bf39298a1fe" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_localindex</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1ad0aa87622ba3aa5a30c21fe56eeb3c33" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfp_mask</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a266eca2069ccb69be79badf962e3902b" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_cfpatch</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a74b021a20514364f11e7f743cea7c0b4" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_data</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a1bc7ad69316f063b0e10812ff7f06705" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_fab_flag</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a5a0318376def0681f878a9628db75930" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_flag</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a7563f9f354215d32467cc8b6f3e83ad3" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_crse_geom</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a3597f5caa96ed6c401d35158a5228fa7" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_fine_geom</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a775a265fd7aa131bd5c7c3f4cef282ed" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_fine_level</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1af33672ac47d288fbe42c788ddb8f953a" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_ncomp</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a3cc8f2331d48facc82d8d85c31bab3f1" prot="protected" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>m_ratio</name></member>
       <member refid="classamrex_1_1EBFluxRegister_1a03dd763c1ebb0a67b2fd52ded49b1f53" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>Reflux</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a710ed45f31383818bc39e92010e63cb6" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegister::"><scope>amrex::EBFluxRegister</scope><name>Reflux</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a9f4e5bbfcfe4bd2de5e3487a80e8cc0c" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>reset</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1abfac49b8daf5d0b0303aaa24a4f7751a" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>YAFluxRegister</name></member>
-      <member refid="classamrex_1_1YAFluxRegister_1a4cb85ba705d31548325bd3f09c6f17ff" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>YAFluxRegister</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a29bbf0848629975e74b0412adf5cbcf6" prot="public" virt="non-virtual" ambiguityscope="amrex::YAFluxRegisterT::"><scope>amrex::EBFluxRegister</scope><name>Reflux</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1af9d5717b63e6c3f0cfb79d33862e44c0" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>reset</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1ae4ccc72afbdaefad1add5c84f52ded78" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>T</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1a5368c976e1f4845f16096aa9a9945c02" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>YAFluxRegisterT</name></member>
+      <member refid="classamrex_1_1YAFluxRegisterT_1ad17e1ac181b131cfdc655b4abfe03a98" prot="public" virt="non-virtual"><scope>amrex::EBFluxRegister</scope><name>YAFluxRegisterT</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

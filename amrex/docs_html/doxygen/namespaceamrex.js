@@ -477,5 +477,5 @@ var namespaceamrex =
     [ "XDim3", "structamrex_1_1XDim3.html", "structamrex_1_1XDim3" ],
     [ "XYPlotDataList", "classamrex_1_1XYPlotDataList.html", "classamrex_1_1XYPlotDataList" ],
     [ "XYPlotDataListLink", "classamrex_1_1XYPlotDataListLink.html", "classamrex_1_1XYPlotDataListLink" ],
-    [ "YAFluxRegister", "classamrex_1_1YAFluxRegister.html", "classamrex_1_1YAFluxRegister" ]
+    [ "YAFluxRegisterT", "classamrex_1_1YAFluxRegisterT.html", "classamrex_1_1YAFluxRegisterT" ]
 ];

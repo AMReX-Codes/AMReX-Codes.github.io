@@ -4,6 +4,7 @@ var AMReX__FabArrayUtility_8H =
     [ "Abs", "AMReX__FabArrayUtility_8H.html#a3f0f44b09d21b49d00d3d1b12e9e2489", null ],
     [ "Divide", "AMReX__FabArrayUtility_8H.html#a98b5b165f2a8926b40da786a678ed7af", null ],
     [ "Divide", "AMReX__FabArrayUtility_8H.html#aa9f3bb9afb6e1fdfc272654ee6923492", null ],
+    [ "Dot", "AMReX__FabArrayUtility_8H.html#ad99f216d6d06fb8bc99e3597173b7ef7", null ],
     [ "dtoh_memcpy", "AMReX__FabArrayUtility_8H.html#a8531953b8fba66482d81cad6c5dc3e73", null ],
     [ "dtoh_memcpy", "AMReX__FabArrayUtility_8H.html#a998c5815369d23cd73eea1b09f43a966", null ],
     [ "htod_memcpy", "AMReX__FabArrayUtility_8H.html#aa9df7c449e875ece24add0d826c4f133", null ],
@@ -86,7 +87,5 @@ var AMReX__FabArrayUtility_8H =
     [ "ReduceSum_host_wrapper", "AMReX__FabArrayUtility_8H.html#a446108c6c03634721a360874316711e6", null ],
     [ "ReduceSum_host_wrapper", "AMReX__FabArrayUtility_8H.html#aa0a24159faf6dc62695bc3e1758aa1bf", null ],
     [ "Subtract", "AMReX__FabArrayUtility_8H.html#afeebec2f58b85bfde5b88b30810cd82d", null ],
-    [ "Subtract", "AMReX__FabArrayUtility_8H.html#a54b8b46deca518b441b849bbd1ceda02", null ],
-    [ "Xpay", "AMReX__FabArrayUtility_8H.html#a497906cc7789ced0e618f4a16e17209d", null ],
-    [ "Xpay", "AMReX__FabArrayUtility_8H.html#a4f65027913056f5fae89a0b15d55e6d8", null ]
+    [ "Subtract", "AMReX__FabArrayUtility_8H.html#a54b8b46deca518b441b849bbd1ceda02", null ]
 ];

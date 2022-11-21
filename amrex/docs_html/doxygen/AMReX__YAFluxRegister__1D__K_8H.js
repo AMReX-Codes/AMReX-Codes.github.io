@@ -1,5 +1,5 @@
 var AMReX__YAFluxRegister__1D__K_8H =
 [
-    [ "yafluxreg_crseadd", "AMReX__YAFluxRegister__1D__K_8H.html#ad75cd67f1791f528fbba104045280e6e", null ],
-    [ "yafluxreg_fineadd", "AMReX__YAFluxRegister__1D__K_8H.html#a6c9d6af79aab749f067cbf51533ab31a", null ]
+    [ "yafluxreg_crseadd", "AMReX__YAFluxRegister__1D__K_8H.html#ad3b5be86618428780e4c8d65b50e92ef", null ],
+    [ "yafluxreg_fineadd", "AMReX__YAFluxRegister__1D__K_8H.html#a8e5424db64aba9748df778a60884c7b9", null ]
 ];

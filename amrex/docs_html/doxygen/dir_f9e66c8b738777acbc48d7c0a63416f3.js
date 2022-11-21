@@ -43,10 +43,7 @@ var dir_f9e66c8b738777acbc48d7c0a63416f3 =
       [ "MultiMask", "classamrex_1_1MultiMask.html", "classamrex_1_1MultiMask" ],
       [ "MultiMaskIter", "classamrex_1_1MultiMaskIter.html", "classamrex_1_1MultiMaskIter" ]
     ] ],
-    [ "AMReX_YAFluxRegister.cpp", "AMReX__YAFluxRegister_8cpp.html", null ],
-    [ "AMReX_YAFluxRegister.H", "AMReX__YAFluxRegister_8H.html", [
-      [ "YAFluxRegister", "classamrex_1_1YAFluxRegister.html", "classamrex_1_1YAFluxRegister" ]
-    ] ],
+    [ "AMReX_YAFluxRegister.H", "AMReX__YAFluxRegister_8H.html", "AMReX__YAFluxRegister_8H" ],
     [ "AMReX_YAFluxRegister_1D_K.H", "AMReX__YAFluxRegister__1D__K_8H.html", "AMReX__YAFluxRegister__1D__K_8H" ],
     [ "AMReX_YAFluxRegister_2D_K.H", "AMReX__YAFluxRegister__2D__K_8H.html", "AMReX__YAFluxRegister__2D__K_8H" ],
     [ "AMReX_YAFluxRegister_3D_K.H", "AMReX__YAFluxRegister__3D__K_8H.html", "AMReX__YAFluxRegister__3D__K_8H" ],
