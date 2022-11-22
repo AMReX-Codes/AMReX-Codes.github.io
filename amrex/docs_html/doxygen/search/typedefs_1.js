@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['baset_16441',['BaseT',['../classamrex_1_1FEIntegrator.html#a207b8527ea82af2474ea9a2e128071b9',1,'amrex::FEIntegrator::BaseT()'],['../classamrex_1_1RKIntegrator.html#a4e43191f9c23a93eaf641a962c2672ff',1,'amrex::RKIntegrator::BaseT()'],['../classamrex_1_1SundialsIntegrator.html#a551b379b8d153f1e80342ce6803fca2c',1,'amrex::SundialsIntegrator::BaseT()']]],
-  ['bcmode_16442',['BCMode',['../classamrex_1_1MLMG.html#a864ffbd5cc09c630993c949c5d890d0f',1,'amrex::MLMG']]],
-  ['bctuple_16443',['BCTuple',['../classamrex_1_1MLCellLinOp.html#a622b7c2ecc46a6b476aba4fb470f3dcf',1,'amrex::MLCellLinOp::BCTuple()'],['../classamrex_1_1MLMGBndry.html#a7987ee87e2e57e021adc5ead071808e4',1,'amrex::MLMGBndry::BCTuple()']]],
-  ['bctype_16444',['BCType',['../classamrex_1_1MLLinOp.html#ac2e55c34bf6b5c0ed53d0ef6a4625a3f',1,'amrex::MLLinOp']]],
-  ['bin_5ftype_16445',['bin_type',['../classamrex_1_1SparseBins.html#a3bea2b14d8950423ccd43ff1c81b8baf',1,'amrex::SparseBins']]],
-  ['biniteratorfactory_16446',['BinIteratorFactory',['../classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924',1,'amrex::DenseBins::BinIteratorFactory()'],['../classamrex_1_1ParticleLocator.html#aa04241c5ac3af03cc7e1d985fa591e45',1,'amrex::ParticleLocator::BinIteratorFactory()'],['../classamrex_1_1AmrParticleLocator.html#a881e6459bd149cf677a5dd72a3804579',1,'amrex::AmrParticleLocator::BinIteratorFactory()'],['../classamrex_1_1SparseBins.html#a015439d37e7fd4c3ded33837a8b502bc',1,'amrex::SparseBins::BinIteratorFactory()']]],
-  ['bndrybatransformer_16447',['BndryBATransformer',['../namespaceamrex.html#af2ed2dc1168064ab4409c918ad0dfce6',1,'amrex']]],
-  ['bndrydata_16448',['BndryData',['../namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32',1,'amrex']]],
-  ['bndryfunc3ddefault_16449',['BndryFunc3DDefault',['../namespaceamrex.html#ab0cdf132a72bb586fa96bbdc53a19149',1,'amrex']]],
-  ['bndryfuncdefault_16450',['BndryFuncDefault',['../namespaceamrex.html#a395b6c263aecc344bf7648fe2d8d75cf',1,'amrex']]],
-  ['bndryfuncfabdefault_16451',['BndryFuncFabDefault',['../namespaceamrex.html#af0689a6124feceae5af1fb73e7b971f8',1,'amrex']]],
-  ['bndryregister_16452',['BndryRegister',['../namespaceamrex.html#a51a3951b54ca3db6bf891ebc2f867168',1,'amrex']]],
-  ['bottomsolver_16453',['BottomSolver',['../classamrex_1_1MLMG.html#a31f80f78e0f4a69ccc3f167e62ae7d51',1,'amrex::MLMG']]],
-  ['boundarypointlist_16454',['BoundaryPointList',['../classamrex_1_1Amr.html#a8dc323a910cf01ef443a1664ccabdf83',1,'amrex::Amr']]]
+  ['baset_16445',['BaseT',['../classamrex_1_1FEIntegrator.html#a207b8527ea82af2474ea9a2e128071b9',1,'amrex::FEIntegrator::BaseT()'],['../classamrex_1_1RKIntegrator.html#a4e43191f9c23a93eaf641a962c2672ff',1,'amrex::RKIntegrator::BaseT()'],['../classamrex_1_1SundialsIntegrator.html#a551b379b8d153f1e80342ce6803fca2c',1,'amrex::SundialsIntegrator::BaseT()']]],
+  ['bcmode_16446',['BCMode',['../classamrex_1_1MLMG.html#a864ffbd5cc09c630993c949c5d890d0f',1,'amrex::MLMG']]],
+  ['bctuple_16447',['BCTuple',['../classamrex_1_1MLCellLinOp.html#a622b7c2ecc46a6b476aba4fb470f3dcf',1,'amrex::MLCellLinOp::BCTuple()'],['../classamrex_1_1MLMGBndry.html#a7987ee87e2e57e021adc5ead071808e4',1,'amrex::MLMGBndry::BCTuple()']]],
+  ['bctype_16448',['BCType',['../classamrex_1_1MLLinOp.html#ac2e55c34bf6b5c0ed53d0ef6a4625a3f',1,'amrex::MLLinOp']]],
+  ['bin_5ftype_16449',['bin_type',['../classamrex_1_1SparseBins.html#a3bea2b14d8950423ccd43ff1c81b8baf',1,'amrex::SparseBins']]],
+  ['biniteratorfactory_16450',['BinIteratorFactory',['../classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924',1,'amrex::DenseBins::BinIteratorFactory()'],['../classamrex_1_1ParticleLocator.html#aa04241c5ac3af03cc7e1d985fa591e45',1,'amrex::ParticleLocator::BinIteratorFactory()'],['../classamrex_1_1AmrParticleLocator.html#a881e6459bd149cf677a5dd72a3804579',1,'amrex::AmrParticleLocator::BinIteratorFactory()'],['../classamrex_1_1SparseBins.html#a015439d37e7fd4c3ded33837a8b502bc',1,'amrex::SparseBins::BinIteratorFactory()']]],
+  ['bndrybatransformer_16451',['BndryBATransformer',['../namespaceamrex.html#af2ed2dc1168064ab4409c918ad0dfce6',1,'amrex']]],
+  ['bndrydata_16452',['BndryData',['../namespaceamrex.html#a9f6fb58eb396dd06df45ba7787548b32',1,'amrex']]],
+  ['bndryfunc3ddefault_16453',['BndryFunc3DDefault',['../namespaceamrex.html#ab0cdf132a72bb586fa96bbdc53a19149',1,'amrex']]],
+  ['bndryfuncdefault_16454',['BndryFuncDefault',['../namespaceamrex.html#a395b6c263aecc344bf7648fe2d8d75cf',1,'amrex']]],
+  ['bndryfuncfabdefault_16455',['BndryFuncFabDefault',['../namespaceamrex.html#af0689a6124feceae5af1fb73e7b971f8',1,'amrex']]],
+  ['bndryregister_16456',['BndryRegister',['../namespaceamrex.html#a51a3951b54ca3db6bf891ebc2f867168',1,'amrex']]],
+  ['bottomsolver_16457',['BottomSolver',['../classamrex_1_1MLMG.html#a31f80f78e0f4a69ccc3f167e62ae7d51',1,'amrex::MLMG']]],
+  ['boundarypointlist_16458',['BoundaryPointList',['../classamrex_1_1Amr.html#a8dc323a910cf01ef443a1664ccabdf83',1,'amrex::Amr']]]
 ];

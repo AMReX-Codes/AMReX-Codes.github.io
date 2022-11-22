@@ -41,5 +41,7 @@ var AMReX__TypeTraits_8H =
     [ "IsDetected", "AMReX__TypeTraits_8H.html#af199566bf00a390cb47c2a0140b3fc67", null ],
     [ "IsDetectedExact", "AMReX__TypeTraits_8H.html#afcea7cdc6e03361f56c401b56d66a870", null ],
     [ "Negation", "AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa", null ],
-    [ "Void_t", "AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94", null ]
+    [ "Void_t", "AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94", null ],
+    [ "IsBaseFab_v", "AMReX__TypeTraits_8H.html#aa264b7308102fabb2a7356eea1800644", null ],
+    [ "IsFabArray_v", "AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515", null ]
 ];

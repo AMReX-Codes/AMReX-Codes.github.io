@@ -3015,7 +3015,7 @@
 <codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(BoxArray::SameRefs(a_rhs.boxArray(),res_bottom.boxArray())<sp/>&amp;&amp;</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DistributionMapping::SameRefs(a_rhs.DistributionMap(),res_bottom.DistributionMap()))</highlight></codeline>
 <codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae9d59a8063401bce6d3df08ee6a41034" kindref="member">MultiFab::Copy</ref>(a_rhs,<sp/>res_bottom,<sp/>0,<sp/>0,<sp/>a_rhs.nComp(),<sp/>0);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a449d5cd7d3d778be0440141f9272d6bd" kindref="member">MultiFab::Copy</ref>(a_rhs,<sp/>res_bottom,<sp/>0,<sp/>0,<sp/>a_rhs.nComp(),<sp/>0);</highlight></codeline>
 <codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_rhs.setVal(0.0);</highlight></codeline>
 <codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_rhs.ParallelCopy(res_bottom);</highlight></codeline>
@@ -3516,7 +3516,7 @@
 <codeline lineno="1167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sol[alev]<sp/>=<sp/>linop.AnyMake(alev,<sp/>0,<sp/>ng_sol);</highlight></codeline>
 <codeline lineno="1169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae9d59a8063401bce6d3df08ee6a41034" kindref="member">MultiFab::Copy</ref>(sol[alev].get&lt;MultiFab&gt;(),<sp/>*a_sol[alev],<sp/>0,<sp/>0,<sp/>ncomp,<sp/>0);</highlight></codeline>
+<codeline lineno="1170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a449d5cd7d3d778be0440141f9272d6bd" kindref="member">MultiFab::Copy</ref>(sol[alev].get&lt;MultiFab&gt;(),<sp/>*a_sol[alev],<sp/>0,<sp/>0,<sp/>ncomp,<sp/>0);</highlight></codeline>
 <codeline lineno="1171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1173"><highlight class="normal"></highlight></codeline>
@@ -3537,7 +3537,7 @@
 <codeline lineno="1188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Any<sp/>rhstmp_a(MultiFab(prhs-&gt;boxArray(),<sp/>prhs-&gt;DistributionMap(),<sp/>ncomp,<sp/>nghost,</highlight></codeline>
 <codeline lineno="1189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo(),<sp/>*linop.Factory(alev)));</highlight></codeline>
 <codeline lineno="1190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab&amp;<sp/>rhstmp<sp/>=<sp/>rhstmp_a.get&lt;MultiFab&gt;();</highlight></codeline>
-<codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae9d59a8063401bce6d3df08ee6a41034" kindref="member">MultiFab::Copy</ref>(rhstmp,<sp/>*prhs,<sp/>0,<sp/>0,<sp/>ncomp,<sp/>nghost);</highlight></codeline>
+<codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a449d5cd7d3d778be0440141f9272d6bd" kindref="member">MultiFab::Copy</ref>(rhstmp,<sp/>*prhs,<sp/>0,<sp/>0,<sp/>ncomp,<sp/>nghost);</highlight></codeline>
 <codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linop.applyMetricTerm(alev,<sp/>0,<sp/>rhstmp_a);</highlight></codeline>
 <codeline lineno="1193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linop.unimposeNeumannBC(alev,<sp/>rhstmp_a);</highlight></codeline>
 <codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>linop.applyInhomogNeumannTerm(alev,<sp/>rhstmp_a);</highlight></codeline>
@@ -3596,7 +3596,7 @@
 <codeline lineno="1247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_in[alev]-&gt;DistributionMap(),</highlight></codeline>
 <codeline lineno="1248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_in[alev]-&gt;nComp(),<sp/>ng,</highlight></codeline>
 <codeline lineno="1249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo(),<sp/>*linop.Factory(alev));</highlight></codeline>
-<codeline lineno="1250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae9d59a8063401bce6d3df08ee6a41034" kindref="member">MultiFab::Copy</ref>(in_raii[alev],<sp/>*a_in[alev],<sp/>0,<sp/>0,<sp/>a_in[alev]-&gt;nComp(),<sp/>nghost);</highlight></codeline>
+<codeline lineno="1250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a449d5cd7d3d778be0440141f9272d6bd" kindref="member">MultiFab::Copy</ref>(in_raii[alev],<sp/>*a_in[alev],<sp/>0,<sp/>0,<sp/>a_in[alev]-&gt;nComp(),<sp/>nghost);</highlight></codeline>
 <codeline lineno="1251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in[alev]<sp/>=<sp/>&amp;(in_raii[alev]);</highlight></codeline>
 <codeline lineno="1252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rh[alev].define(a_in[alev]-&gt;boxArray(),</highlight></codeline>

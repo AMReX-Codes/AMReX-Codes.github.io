@@ -92,7 +92,7 @@ var classamrex_1_1FabArray =
     [ "isDefined", "classamrex_1_1FabArray.html#af5d3da506729e946bd90678a06d09dc2", null ],
     [ "LinComb", "classamrex_1_1FabArray.html#a424d30f07a7374d3620c454f8e3c5ae7", null ],
     [ "LocalAdd", "classamrex_1_1FabArray.html#abd6dc24319471bcd6406fa9da2145197", null ],
-    [ "LocalCopy", "classamrex_1_1FabArray.html#a7bba14e2fb4bff5f323251912a75f5ac", null ],
+    [ "LocalCopy", "classamrex_1_1FabArray.html#a5086d98e3a63866d87afcd150a8170ef", null ],
     [ "mult", "classamrex_1_1FabArray.html#a179ad441a231e9d09ffebfbc7ad674fb", null ],
     [ "mult", "classamrex_1_1FabArray.html#aabc2fcb2d3b6c12974d49d5aff23ef5d", null ],
     [ "norminf", "classamrex_1_1FabArray.html#aea595d71e8f04b18bc48aaca29acfe77", null ],
