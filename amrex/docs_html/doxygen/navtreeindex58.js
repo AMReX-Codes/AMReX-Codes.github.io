@@ -1,12 +1,10 @@
 var NAVTREEINDEX58 =
 {
-"namespacemembers_s.html":[1,1,0,18],
-"namespacemembers_t.html":[1,1,0,19],
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,20],
 "namespacemembers_v.html":[1,1,0,21],
-"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars.html":[1,1,2],
+"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX58 =
 "structamrex_1_1ArenaInfo.html#a76a736ea531b11031bc4742c16ebfa67":[2,0,0,47,2],
 "structamrex_1_1ArenaInfo.html#a8e8c57c71dcb35c394ddcd580388169f":[2,0,0,47,3],
 "structamrex_1_1ArenaInfo.html#a961c961eb343a2fa091082a6f1717b16":[2,0,0,47,9],
-"structamrex_1_1ArenaInfo.html#ab026f86170fec3dd5d7c54050ef32dc0":[2,0,0,47,11]
+"structamrex_1_1ArenaInfo.html#ab026f86170fec3dd5d7c54050ef32dc0":[2,0,0,47,11],
+"structamrex_1_1ArenaInfo.html#aea2d408b112c9b365f345889eed6965f":[2,0,0,47,0],
+"structamrex_1_1Array1D.html":[2,0,0,48]
 };
