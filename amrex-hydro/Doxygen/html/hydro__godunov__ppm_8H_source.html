@@ -270,13 +270,13 @@ $(document).ready(function(){initNavTree('hydro__godunov__ppm_8H_source.html',''
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;           <span class="keyword">const</span> amrex::Real sp2)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> amrex::Real beta1 =</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            amrex::Real(13.0) / amrex::Real(2.0) * (sm2 - amrex::Real(amrex::Real(2.0)) * sm1 + s0) * (sm2 - amrex::Real(amrex::Real(2.0)) * sm1 + s0) +</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            amrex::Real(13.0) / amrex::Real(12.0) * (sm2 - amrex::Real(amrex::Real(2.0)) * sm1 + s0) * (sm2 - amrex::Real(amrex::Real(2.0)) * sm1 + s0) +</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            amrex::Real(0.25) * (sm2 - amrex::Real(4.0) * sm1 + amrex::Real(3.0) * s0) * (sm2 - amrex::Real(4.0) * sm1 + amrex::Real(3.0) * s0);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> amrex::Real beta2 =</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            amrex::Real(13.0) / amrex::Real(2.0) * (sm1 - amrex::Real(amrex::Real(2.0)) * s0 + sp1) * (sm1 - amrex::Real(amrex::Real(2.0)) * s0 + sp1) +</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            amrex::Real(13.0) / amrex::Real(12.0) * (sm1 - amrex::Real(amrex::Real(2.0)) * s0 + sp1) * (sm1 - amrex::Real(amrex::Real(2.0)) * s0 + sp1) +</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            amrex::Real(0.25) * (sm1 - sp1) * (sm1 - sp1);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> amrex::Real beta3 =</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            amrex::Real(13.0) / amrex::Real(2.0) * (s0 - amrex::Real(amrex::Real(2.0)) * sp1 + sp2) * (s0 - amrex::Real(amrex::Real(2.0)) * sp1 + sp2) +</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            amrex::Real(13.0) / amrex::Real(12.0) * (s0 - amrex::Real(amrex::Real(2.0)) * sp1 + sp2) * (s0 - amrex::Real(amrex::Real(2.0)) * sp1 + sp2) +</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            amrex::Real(0.25) * (amrex::Real(3.0) * s0 - amrex::Real(4.0) * sp1 + sp2) * (amrex::Real(3.0) * s0 - amrex::Real(4.0) * sp1 + sp2);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keyword">const</span> amrex::Real t5 = amrex::Math::abs(beta3 - beta1);</div>
@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__ppm_8H_source.html',''
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">const</span> amrex::Real omega = omega1 + omega2 + omega3;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">const</span> amrex::Real v_1 = amrex::Real(amrex::Real(2.0)) * sm2 - amrex::Real(7.0) * sm1 + amrex::Real(1.0) * s0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">const</span> amrex::Real v_1 = amrex::Real(amrex::Real(2.0)) * sm2 - amrex::Real(7.0) * sm1 + amrex::Real(11.0) * s0;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">const</span> amrex::Real v_2 = -sm1 + amrex::Real(5.0) * s0 + amrex::Real(2.0) * sp1;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">const</span> amrex::Real v_3 = amrex::Real(amrex::Real(2.0)) * s0 + amrex::Real(5.0) * sp1 - sp2;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
