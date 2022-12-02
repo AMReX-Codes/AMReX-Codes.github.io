@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Debugging &mdash; amrex 22.00-dev documentation</title>
+  <title>Debugging &mdash; amrex 22.01-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.00-dev
+                22.01-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -134,29 +134,29 @@ You know the line <code class="docutils literal notranslate"><span class="pre">R
 could add a print statement before that.  But it might print out
 thousands (or even millions) of line before it hits the segfault.  What
 you could do is the following,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_BLBackTrace.H&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;AMReX_BLBackTrace.H&gt;</span><span class="cp"></span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">ss</span><span class="p">;</span>
-<span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;state.box() = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">state</span><span class="p">.</span><span class="n">box</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; cell = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cell</span><span class="p">;</span>
-<span class="n">BL_BACKTRACE_PUSH</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span> <span class="c1">// PUSH takes std::string</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span><span class="w"></span>
+<span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;state.box() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">box</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; cell = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cell</span><span class="p">;</span><span class="w"></span>
+<span class="n">BL_BACKTRACE_PUSH</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span><span class="w"> </span><span class="c1">// PUSH takes std::string</span>
 
-<span class="n">Real</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// state is a Fab, and cell is an IntVect.</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">rho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// state is a Fab, and cell is an IntVect.</span>
 
-<span class="n">BL_BACKTRACE_POP</span><span class="p">();</span> <span class="c1">// One can omit this line.  In that case,</span>
-                    <span class="c1">// there is an implicit POP when &quot;PUSH&quot; is</span>
-                    <span class="c1">// out of scope.</span>
+<span class="n">BL_BACKTRACE_POP</span><span class="p">();</span><span class="w"> </span><span class="c1">// One can omit this line.  In that case,</span>
+<span class="w">                    </span><span class="c1">// there is an implicit POP when &quot;PUSH&quot; is</span>
+<span class="w">                    </span><span class="c1">// out of scope.</span>
 </pre></div>
 </div>
 <p>When it hits the segfault, you will only see the last pint out.</p>
 <p>Writing a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> to disk with</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span> <span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>in <code class="docutils literal notranslate"><span class="pre">AMReX_VisMF.H</span></code> and examining it with <code class="docutils literal notranslate"><span class="pre">Amrvis</span></code> (section
 <a class="reference internal" href="Visualization.html#sec-amrvis"><span class="std std-ref">Amrvis</span></a>) can be helpful as well.  In
 <code class="docutils literal notranslate"><span class="pre">AMReX_MultiFabUtil.H</span></code>, function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">print_state</span><span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">cell</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="n">IntVect</span><span class="o">&amp;</span> <span class="n">ng</span> <span class="o">=</span> <span class="n">IntVect</span><span class="o">::</span><span class="n">TheZeroVector</span><span class="p">());</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">print_state</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">IntVect</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cell</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="mi">-1</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="n">IntVect</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheZeroVector</span><span class="p">());</span><span class="w"></span>
 </pre></div>
 </div>
 <p>can output the data for a single cell. <code class="docutils literal notranslate"><span class="pre">n</span></code> is the component, with the default being

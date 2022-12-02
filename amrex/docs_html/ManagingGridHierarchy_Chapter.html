@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gridding and Load Balancing &mdash; amrex 22.00-dev documentation</title>
+  <title>Gridding and Load Balancing &mdash; amrex 22.01-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.00-dev
+                22.01-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -110,18 +110,18 @@ more than one grid per MPI rank, and different strategies for distributing the g
 <p>For multi-level calculations, the same principles for load balancing apply as in single-level calculations,
 but there is additional complexity in how to tag cells for refinement and how to create the
 union of grids at levels &gt; 0 where that union most likely does not cover the computational domain.</p>
-<p>See <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a> for grids are created, i.e. how the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span></code> on which
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> will be built is defined at each level.</p>
+<p>See <a class="reference internal" href="GridCreation.html#sec-grid-creation"><span class="std std-ref">Grid Creation</span></a> for grids are created, i.e. how the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArray</span><span class="w"></span></code> on which
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span><span class="w"></span></code> will be built is defined at each level.</p>
 <p>See <a class="reference internal" href="LoadBalancing.html#sec-load-balancing"><span class="std std-ref">Load Balancing</span></a> for the strategies AMReX supports for distributing
-grids to MPI ranks, i.e. defining the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span></code> with which
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> at that level will be built.</p>
+grids to MPI ranks, i.e. defining the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMapping</span><span class="w"></span></code> with which
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span><span class="w"></span></code> at that level will be built.</p>
 <p>We also note that we can create separate grids, and map them in different ways to MPI ranks, for
 different types of data in a single calculation.  We refer to this as the “dual grid approach”
 and the most common usage is to load balance mesh and particle data separately. See <a class="reference internal" href="DualGrid.html#sec-dual-grid"><span class="std std-ref">Dual Grid Approach</span></a>
 for more about this approach.</p>
 <p>When running on multicore machines with OpenMP, we can also control the distribution of
-work by setting the size of grid tiles (by defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">fabarray_mfiter</span><span class="p">.</span><span class="n">tile_size</span></code>), and if relevant, of
-particle tiles (by defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">particle</span><span class="p">.</span><span class="n">tile_size</span></code>).  We can also specify the strategy for assigning
+work by setting the size of grid tiles (by defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">fabarray_mfiter</span><span class="p">.</span><span class="n">tile_size</span><span class="w"></span></code>), and if relevant, of
+particle tiles (by defining <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">particle</span><span class="p">.</span><span class="n">tile_size</span><span class="w"></span></code>).  We can also specify the strategy for assigning
 tiles to OpenMP threads.  See <a class="reference internal" href="Basics.html#sec-basics-mfiter-tiling"><span class="std std-ref">MFIter with Tiling</span></a> for more about tiling.</p>
 <div class="toctree-wrapper compound">
 <ul>

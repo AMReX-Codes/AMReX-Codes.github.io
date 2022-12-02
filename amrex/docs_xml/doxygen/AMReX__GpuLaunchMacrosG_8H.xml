@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="AMReX__GpuLaunchMacrosG_8H" kind="file" language="C++">
     <compoundname>AMReX_GpuLaunchMacrosG.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
@@ -3223,7 +3223,7 @@
     { \
         const auto amrex_i_ec1 = <ref refid="structamrex_1_1Gpu_1_1ExecutionConfig" kindref="compound">amrex::Gpu::ExecutionConfig</ref>(amrex_i_tn1); \
         const auto amrex_i_ec2 = <ref refid="structamrex_1_1Gpu_1_1ExecutionConfig" kindref="compound">amrex::Gpu::ExecutionConfig</ref>(amrex_i_tn2); \
-        dim3 amrex_i_nblocks = <ref refid="namespaceamrex_1a72d8b9352d99ebca0a7eba07dadbdfa5" kindref="member">amrex::max</ref>(amrex_i_ec1.numBlocks.x, \
+        dim3 amrex_i_nblocks = <ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(amrex_i_ec1.numBlocks.x, \
                                           amrex_i_ec2.numBlocks.x); \
         amrex_i_nblocks.y = 2; \
         <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(<ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
@@ -3503,12 +3503,12 @@
 <codeline lineno="25"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>catch<sp/>(sycl::exception<sp/>const&amp;<sp/>ex)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;</highlight><highlight class="normal">)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TI<sp/>:<sp/><ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn))<sp/>{<sp/>\</highlight></codeline>
@@ -3573,12 +3573,12 @@
 <codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="96"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="97"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>catch<sp/>(sycl::exception<sp/>const&amp;<sp/>ex)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="98"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="103"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;</highlight><highlight class="normal">)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TI1<sp/>:<sp/><ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn1))<sp/>{<sp/>\</highlight></codeline>
@@ -3665,12 +3665,12 @@
 <codeline lineno="187"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>catch<sp/>(sycl::exception<sp/>const&amp;<sp/>ex)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="192"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="193"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="194"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="195"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;</highlight><highlight class="normal">)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"></highlight></codeline>
 <codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TI1<sp/>:<sp/><ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn1))<sp/>{<sp/>\</highlight></codeline>
@@ -3752,12 +3752,12 @@
 <codeline lineno="274"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="275"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="276"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>catch<sp/>(sycl::exception<sp/>const&amp;<sp/>ex)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="277"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="278"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="279"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="280"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="281"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="282"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;</highlight><highlight class="normal">)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="284" refid="AMReX__GpuLaunchMacrosG_8H_1a475e84abbd9698afb9147ac67a49bdaa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE(TN,TI,block)<sp/>\</highlight></codeline>
 <codeline lineno="285"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn<sp/>=<sp/>TN;<sp/>\</highlight></codeline>
@@ -3774,8 +3774,8 @@
 <codeline lineno="296"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_GPU_ERROR_CHECK();<sp/>\</highlight></codeline>
 <codeline lineno="297"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="298"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="299"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="300"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;</highlight><highlight class="normal">);<sp/>\</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="302"><highlight class="normal"></highlight></codeline>
 <codeline lineno="303"><highlight class="normal"></highlight><highlight class="comment">//<sp/>two<sp/>fused<sp/>launches</highlight><highlight class="normal"></highlight></codeline>
@@ -3812,12 +3812,12 @@
 <codeline lineno="334"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="335"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="336"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>catch<sp/>(sycl::exception<sp/>const&amp;<sp/>ex)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="337"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="338"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="339"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="340"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="341"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="342"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;</highlight><highlight class="normal">)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="343"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="344" refid="AMReX__GpuLaunchMacrosG_8H_1a289cd6699548aba71d287d94299ae098" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2)<sp/>\</highlight></codeline>
 <codeline lineno="345"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>\</highlight></codeline>
@@ -3844,8 +3844,8 @@
 <codeline lineno="366"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_GPU_ERROR_CHECK();<sp/>\</highlight></codeline>
 <codeline lineno="367"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="368"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="369"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="370"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;</highlight><highlight class="normal">);<sp/>\</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="371"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="372"><highlight class="normal"></highlight></codeline>
 <codeline lineno="373"><highlight class="normal"></highlight><highlight class="comment">//<sp/>three<sp/>fused<sp/>launches</highlight><highlight class="normal"></highlight></codeline>
@@ -3887,12 +3887,12 @@
 <codeline lineno="409"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="410"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});<sp/>\</highlight></codeline>
 <codeline lineno="411"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>catch<sp/>(sycl::exception<sp/>const&amp;<sp/>ex)<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="412"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="413"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="414"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="415"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="416"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="417"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(std::string(&quot;LAUNCH:<sp/>&quot;</highlight><highlight class="normal">)+ex.what()+&quot;!!!!!&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="419" refid="AMReX__GpuLaunchMacrosG_8H_1ab8f5b7c92c1194b0f0482c84ce1fe5b3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3)<sp/>\</highlight></codeline>
 <codeline lineno="420"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn3<sp/>=<sp/>TN3;<sp/>\</highlight></codeline>
@@ -3924,8 +3924,8 @@
 <codeline lineno="446"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_GPU_ERROR_CHECK();<sp/>\</highlight></codeline>
 <codeline lineno="447"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="448"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="449"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="450"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2:<sp/>cannot<sp/>call<sp/>device<sp/>function<sp/>from<sp/>host&quot;</highlight><highlight class="normal">);<sp/>\</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
 <codeline lineno="451"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="452"><highlight class="normal"></highlight></codeline>
 <codeline lineno="453"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FOR_1D</highlight><highlight class="normal"></highlight></codeline>
@@ -3938,9 +3938,9 @@
 <codeline lineno="460"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(amrex::Gpu::inLaunchRegion())<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="461"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(amrex_i_n,[=]<sp/>AMREX_GPU_DEVICE<sp/>(amrex_i_inttype<sp/>i)<sp/>noexcept<sp/>block);<sp/>\</highlight></codeline>
 <codeline lineno="462"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="463"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="464"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="465"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;</highlight><highlight class="normal">);<sp/>\</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="465"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="467" refid="AMReX__GpuLaunchMacrosG_8H_1a29d34dc14598d6232a67c02ced582cb3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_HOST_DEVICE_FOR_1D(n,i,block)<sp/>\</highlight></codeline>
 <codeline lineno="468"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
@@ -3971,9 +3971,9 @@
 <codeline lineno="493"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(amrex::Gpu::inLaunchRegion())<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="494"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(amrex_i_box,[=]<sp/>AMREX_GPU_DEVICE<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k)<sp/>noexcept<sp/>block);<sp/>\</highlight></codeline>
 <codeline lineno="495"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="496"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="497"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="498"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;</highlight><highlight class="normal">);<sp/>\</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="498"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="500" refid="AMReX__GpuLaunchMacrosG_8H_1aa12bff29d50b58116aebcfdf836b1554" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_HOST_DEVICE_FOR_3D(box,i,j,k,block)<sp/>\</highlight></codeline>
 <codeline lineno="501"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
@@ -4001,9 +4001,9 @@
 <codeline lineno="523"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(amrex::Gpu::inLaunchRegion())<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="524"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(amrex_i_box,amrex_i_ncomp,[=]<sp/>AMREX_GPU_DEVICE<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>block);<sp/>\</highlight></codeline>
 <codeline lineno="525"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="526"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;);<sp/>\</highlight></codeline>
-<codeline lineno="527"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
-<codeline lineno="528"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Abort(&quot;amrex::<sp/>HOST_DEVICE<sp/>disabled<sp/>for<sp/>Intel.<sp/><sp/>It<sp/>takes<sp/>too<sp/>long<sp/>to<sp/>compile&quot;</highlight><highlight class="normal">);<sp/>\</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="528"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="530" refid="AMReX__GpuLaunchMacrosG_8H_1a111936fe89c50b4c720ad71fb48f371a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_HOST_DEVICE_FOR_4D(box,ncomp,i,j,k,n,block)<sp/>\</highlight></codeline>
 <codeline lineno="531"><highlight class="preprocessor">{<sp/>\</highlight></codeline>

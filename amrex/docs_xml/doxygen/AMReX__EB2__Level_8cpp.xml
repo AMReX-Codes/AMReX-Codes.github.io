@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="AMReX__EB2__Level_8cpp" kind="file" language="C++">
     <compoundname>AMReX_EB2_Level.cpp</compoundname>
     <includes refid="AMReX__EB2__Level_8H" local="no">AMReX_EB2_Level.H</includes>
@@ -2328,7 +2328,7 @@
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReduceTuple<sp/>rv<sp/>=<sp/>reduce_data.value(reduce_op);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mvmc_error<sp/>=<sp/><ref refid="namespaceamrex_1a72d8b9352d99ebca0a7eba07dadbdfa5" kindref="member">amrex::max</ref>(0,<sp/>amrex::get&lt;0&gt;(rv));</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mvmc_error<sp/>=<sp/><ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(0,<sp/>amrex::get&lt;0&gt;(rv));</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2554,7 +2554,7 @@
 <codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="381"><highlight class="normal"></highlight></codeline>
 <codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReduceTuple<sp/>rv<sp/>=<sp/>reduce_data.value(reduce_op);</highlight></codeline>
-<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>=<sp/><ref refid="namespaceamrex_1a72d8b9352d99ebca0a7eba07dadbdfa5" kindref="member">amrex::max</ref>(0,<sp/>amrex::get&lt;0&gt;(rv));</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>=<sp/><ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(0,<sp/>amrex::get&lt;0&gt;(rv));</highlight></codeline>
 <codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="385"><highlight class="normal"></highlight></codeline>
 <codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2659,7 +2659,7 @@
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/>vfrac.setVal(1.0);</highlight></codeline>
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1EB2_1_1Level_1aa6d87378cd84dcd63696879f1a006066" kindref="member">isAllRegular</ref>())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>vfrac.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a0fd8fbb0ff5ceb71c27249153f70a53f" kindref="member">m_volfrac</ref>,0,0,1,0,vfrac.nGrow(),geom.periodicity());</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>vfrac.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a0fd8fbb0ff5ceb71c27249153f70a53f" kindref="member">m_volfrac</ref>,0,0,1,0,vfrac.<ref refid="classamrex_1_1FabArrayBase_1a92cef599b0ae34401a5463ec6fddc606" kindref="member">nGrow</ref>(),geom.periodicity());</highlight></codeline>
 <codeline lineno="489"><highlight class="normal"></highlight></codeline>
 <codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>geom.periodicity().shiftIntVect();</highlight></codeline>
 <codeline lineno="491"><highlight class="normal"></highlight></codeline>
@@ -2729,7 +2729,7 @@
 <codeline lineno="555"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/>centroid.setVal(0.0);</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1EB2_1_1Level_1aa6d87378cd84dcd63696879f1a006066" kindref="member">isAllRegular</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>centroid.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a280b2239887942a0dfdc9802abe88e12" kindref="member">m_centroid</ref>,0,0,AMREX_SPACEDIM,0,centroid.nGrow(),</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>centroid.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a280b2239887942a0dfdc9802abe88e12" kindref="member">m_centroid</ref>,0,0,AMREX_SPACEDIM,0,centroid.<ref refid="classamrex_1_1FabArrayBase_1a92cef599b0ae34401a5463ec6fddc606" kindref="member">nGrow</ref>(),</highlight></codeline>
 <codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>geom.periodicity());</highlight></codeline>
 <codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="561"><highlight class="normal">}</highlight></codeline>
@@ -2753,7 +2753,7 @@
 <codeline lineno="579"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>bndryarea.setVal(0.0);</highlight></codeline>
 <codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1EB2_1_1Level_1aa6d87378cd84dcd63696879f1a006066" kindref="member">isAllRegular</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bndryarea.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a03eaf98bf7542beafaf696e05c431d5a" kindref="member">m_bndryarea</ref>,0,0,1,0,bndryarea.nGrow(),geom.periodicity());</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bndryarea.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a03eaf98bf7542beafaf696e05c431d5a" kindref="member">m_bndryarea</ref>,0,0,1,0,bndryarea.<ref refid="classamrex_1_1FabArrayBase_1a92cef599b0ae34401a5463ec6fddc606" kindref="member">nGrow</ref>(),geom.periodicity());</highlight></codeline>
 <codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="584"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="585"><highlight class="normal"></highlight></codeline>
@@ -2776,7 +2776,7 @@
 <codeline lineno="602"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/>bndrycent.setVal(-1.0);</highlight></codeline>
 <codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1EB2_1_1Level_1aa6d87378cd84dcd63696879f1a006066" kindref="member">isAllRegular</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bndrycent.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a904a42dc11ddb39db9a497fa7093a0dc" kindref="member">m_bndrycent</ref>,0,0,bndrycent.nComp(),0,bndrycent.nGrow(),</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bndrycent.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a904a42dc11ddb39db9a497fa7093a0dc" kindref="member">m_bndrycent</ref>,0,0,bndrycent.<ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>(),0,bndrycent.nGrow(),</highlight></codeline>
 <codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>geom.periodicity());</highlight></codeline>
 <codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="608"><highlight class="normal">}</highlight></codeline>
@@ -2800,7 +2800,7 @@
 <codeline lineno="626"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/>bndrynorm.setVal(0.0);</highlight></codeline>
 <codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1EB2_1_1Level_1aa6d87378cd84dcd63696879f1a006066" kindref="member">isAllRegular</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bndrynorm.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a863477aadc907e1abeb83c666168ccc4" kindref="member">m_bndrynorm</ref>,0,0,bndrynorm.nComp(),0,bndrynorm.nGrow(),</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bndrynorm.ParallelCopy(<ref refid="classamrex_1_1EB2_1_1Level_1a863477aadc907e1abeb83c666168ccc4" kindref="member">m_bndrynorm</ref>,0,0,bndrynorm.<ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>(),0,bndrynorm.nGrow(),</highlight></codeline>
 <codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>geom.periodicity());</highlight></codeline>
 <codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="632"><highlight class="normal">}</highlight></codeline>

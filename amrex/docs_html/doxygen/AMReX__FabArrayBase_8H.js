@@ -1,7 +1,5 @@
 var AMReX__FabArrayBase_8H =
 [
-    [ "FabFactory", "classamrex_1_1FabFactory.html", "classamrex_1_1FabFactory" ],
-    [ "FabArray", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
     [ "FabArrayBase", "classamrex_1_1FabArrayBase.html", "classamrex_1_1FabArrayBase" ],
     [ "CacheStats", "structamrex_1_1FabArrayBase_1_1CacheStats.html", "structamrex_1_1FabArrayBase_1_1CacheStats" ],
     [ "CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", "structamrex_1_1FabArrayBase_1_1CopyComTag" ],

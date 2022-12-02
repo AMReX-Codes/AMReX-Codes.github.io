@@ -80,7 +80,6 @@ var amrex__parser_8tab_8cpp =
     [ "yytype_int8", "amrex__parser_8tab_8cpp.html#aed557a488f2c08c0956e2237f8eba464", null ],
     [ "yytype_uint16", "amrex__parser_8tab_8cpp.html#add1eb32dbafc168be3462180f741af64", null ],
     [ "yytype_uint8", "amrex__parser_8tab_8cpp.html#a79c09f9dcfd0f7a32f598ea3910d2206", null ],
-    [ "YYENOMEM", "amrex__parser_8tab_8cpp.html#abc6126af1d45847bc59afa0aa3216b04a33b65b59dd6c18a52cd4e662918a0742", null ],
     [ "yysymbol_kind_t", "amrex__parser_8tab_8cpp.html#a20a769e9b8f129abf35d03d3904ec0e5", [
       [ "YYSYMBOL_YYEMPTY", "amrex__iparser_8tab_8cpp.html#a20a769e9b8f129abf35d03d3904ec0e5ad800db300c50056778ac571ac922e993", null ],
       [ "YYSYMBOL_YYEOF", "amrex__iparser_8tab_8cpp.html#a20a769e9b8f129abf35d03d3904ec0e5abae1143ba84f95c06898deb2b78f935b", null ],

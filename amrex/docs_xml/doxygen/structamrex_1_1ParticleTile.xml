@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="structamrex_1_1ParticleTile" kind="struct" language="C++" prot="public">
     <compoundname>amrex::ParticleTile</compoundname>
     <includes refid="AMReX__ParticleTile_8H" local="no">AMReX_ParticleTile.H</includes>
@@ -971,9 +971,6 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="20">
-        <label>T</label>
-      </node>
       <node id="5">
         <label>amrex::PODVector&lt; const ParticleReal *, DefaultAllocator&lt; const ParticleReal * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
@@ -983,38 +980,17 @@
       <node id="7">
         <label>amrex::ArrayOfStructs&lt; NStructReal, NStructInt, DefaultAllocator &gt;</label>
         <link refid="classamrex_1_1ArrayOfStructs"/>
-        <childnode refid="8" relation="usage">
-          <edgelabel>m_data</edgelabel>
-        </childnode>
       </node>
-      <node id="18">
-        <label>amrex::PODVector&lt; T, Allocator &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="19" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>DefaultAllocator&lt; ParticleType &gt;</label>
-        <link refid="classamrex_1_1ArenaAllocator"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
-        <link refid="structamrex_1_1Particle"/>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
+      <node id="11">
         <label>DefaultAllocator&lt; int * &gt;</label>
         <link refid="classamrex_1_1ArenaAllocator"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="10">
         <label>amrex::PODVector&lt; int *, DefaultAllocator&lt; int * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="15" relation="public-inheritance">
+        <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -1029,13 +1005,13 @@
         <childnode refid="7" relation="usage">
           <edgelabel>m_aos_tile</edgelabel>
         </childnode>
-        <childnode refid="12" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>m_runtime_i_cptrs</edgelabel>
         </childnode>
-        <childnode refid="14" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>m_runtime_i_ptrs</edgelabel>
         </childnode>
-        <childnode refid="16" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>m_soa_tile</edgelabel>
         </childnode>
       </node>
@@ -1049,27 +1025,11 @@
         <label>amrex::ArenaAllocatorTraits</label>
         <link refid="structamrex_1_1ArenaAllocatorTraits"/>
       </node>
-      <node id="12">
+      <node id="8">
         <label>amrex::PODVector&lt; const int *, DefaultAllocator&lt; const int * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="22">
-        <label>std::array&lt; amrex::PODVector, NReal &gt;</label>
-        <childnode refid="18" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="19">
-        <label>std::allocator&lt; T &gt;</label>
-        <childnode refid="20" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
-        <label>amrex::ParticleBase&lt; ParticleReal, T_NReal, 0 &gt;</label>
-        <link refid="structamrex_1_1ParticleBase"/>
       </node>
       <node id="3">
         <label>DefaultAllocator&lt; ParticleReal * &gt;</label>
@@ -1077,7 +1037,7 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="13">
+      <node id="9">
         <label>DefaultAllocator&lt; const int * &gt;</label>
         <link refid="classamrex_1_1ArenaAllocator"/>
         <childnode refid="4" relation="public-inheritance">
@@ -1089,46 +1049,12 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="16">
+      <node id="12">
         <label>amrex::StructOfArrays&lt; NArrayReal, NArrayInt, DefaultAllocator &gt;</label>
         <link refid="structamrex_1_1StructOfArrays"/>
-        <childnode refid="17" relation="usage">
-          <edgelabel>m_idata</edgelabel>
-        </childnode>
-        <childnode refid="21" relation="usage">
-          <edgelabel>m_runtime_idata</edgelabel>
-          <edgelabel>m_runtime_rdata</edgelabel>
-        </childnode>
-        <childnode refid="22" relation="usage">
-          <edgelabel>m_rdata</edgelabel>
-        </childnode>
-      </node>
-      <node id="17">
-        <label>std::array&lt; amrex::PODVector, NInt &gt;</label>
-        <childnode refid="18" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="21">
-        <label>std::vector&lt; amrex::PODVector &gt;</label>
-        <childnode refid="18" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="8">
-        <label>amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-        <childnode refid="10" relation="usage">
-          <edgelabel>const_reference</edgelabel>
-          <edgelabel>const_iterator</edgelabel>
-          <edgelabel>const_pointer</edgelabel>
-          <edgelabel>m_data</edgelabel>
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="251" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="250" bodyend="660"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="250" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="251" bodyend="660"/>
     <listofallmembers>
       <member refid="structamrex_1_1ParticleTile_1ac2e43ee8e3a01151dc70824f6f79b44d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>AllocatorType</name></member>
       <member refid="structamrex_1_1ParticleTile_1a7eb3695771d4b220b840a1cac81b29ff" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>AoS</name></member>

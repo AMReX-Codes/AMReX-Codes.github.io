@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1FabArrayCopyDescriptor" kind="class" language="C++" prot="public">
     <compoundname>amrex::FabArrayCopyDescriptor</compoundname>
     <includes refid="AMReX__FACopyDescriptor_8H" local="no">AMReX_FACopyDescriptor.H</includes>
@@ -547,6 +547,9 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="10">
+        <label>K</label>
+      </node>
       <node id="6">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
@@ -554,6 +557,9 @@
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
+      </node>
+      <node id="11">
+        <label>T</label>
       </node>
       <node id="2">
         <label>std::vector&lt; amrex::FabArray&lt; FAB &gt; * &gt;</label>
@@ -584,6 +590,15 @@
           <edgelabel>box</edgelabel>
         </childnode>
       </node>
+      <node id="9">
+        <label>std::multimap&lt; K, T &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="5">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
@@ -597,13 +612,16 @@
       </node>
       <node id="8">
         <label>std::vector&lt; FCDMap &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
       <node id="7">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FACopyDescriptor.H" line="122" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FACopyDescriptor.H" bodystart="121" bodyend="215"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FACopyDescriptor.H" line="121" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FACopyDescriptor.H" bodystart="122" bodyend="215"/>
     <listofallmembers>
       <member refid="classamrex_1_1FabArrayCopyDescriptor_1a717aa6067b57f1b49967fcbe2d99e3c9" prot="public" virt="non-virtual"><scope>amrex::FabArrayCopyDescriptor</scope><name>AddBox</name></member>
       <member refid="classamrex_1_1FabArrayCopyDescriptor_1aa4cf9c123c9f38db52bfb98fc7d9154b" prot="public" virt="non-virtual"><scope>amrex::FabArrayCopyDescriptor</scope><name>AddBox</name></member>

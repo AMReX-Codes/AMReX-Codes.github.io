@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dual Grid Approach &mdash; amrex 22.00-dev documentation</title>
+  <title>Dual Grid Approach &mdash; amrex 22.01-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.00-dev
+                22.01-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -106,11 +106,11 @@
 the mesh work and particle work have very different requirements for load balancing.</p>
 <p>Rather than using a combined work estimate to create the same grids for mesh and particle
 data, we have the option to pursue a “dual grid” approach.</p>
-<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span></code>) data
-are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span></code>.</p>
+<p>With this approach the mesh (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>) and particle (<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParticleContainer</span><span class="w"></span></code>) data
+are allocated on different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span><span class="w"></span></code> with different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">DistributionMappings</span><span class="w"></span></code>.</p>
 <p>This enables separate load balancing strategies to be used for the mesh and particle work.</p>
 <p>The cost of this strategy, of course, is the need to copy mesh data onto temporary
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span></code> defined on the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span></code> when mesh-particle communication
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span><span class="w"></span></code> defined on the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BoxArrays</span><span class="w"></span></code> when mesh-particle communication
 is required.</p>
 </section>
 

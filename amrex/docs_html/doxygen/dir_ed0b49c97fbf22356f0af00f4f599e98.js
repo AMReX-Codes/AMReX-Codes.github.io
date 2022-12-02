@@ -114,7 +114,6 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_ebcellflag_mod.F90", "AMReX__ebcellflag__mod_8F90.html", "AMReX__ebcellflag__mod_8F90" ],
     [ "AMReX_EBDataCollection.cpp", "AMReX__EBDataCollection_8cpp.html", null ],
     [ "AMReX_EBDataCollection.H", "AMReX__EBDataCollection_8H.html", [
-      [ "FabArray", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
       [ "EBDataCollection", "classamrex_1_1EBDataCollection.html", "classamrex_1_1EBDataCollection" ]
     ] ],
     [ "AMReX_EBFabFactory.cpp", "AMReX__EBFabFactory_8cpp.html", "AMReX__EBFabFactory_8cpp" ],

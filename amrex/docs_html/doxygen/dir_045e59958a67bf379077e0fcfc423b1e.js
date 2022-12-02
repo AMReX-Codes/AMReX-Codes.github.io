@@ -29,15 +29,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_BaseFab.cpp", "AMReX__BaseFab_8cpp.html", "AMReX__BaseFab_8cpp" ],
     [ "AMReX_BaseFab.H", "AMReX__BaseFab_8H.html", "AMReX__BaseFab_8H" ],
     [ "AMReX_BaseFabUtility.H", "AMReX__BaseFabUtility_8H.html", "AMReX__BaseFabUtility_8H" ],
-    [ "AMReX_BaseFwd.H", "AMReX__BaseFwd_8H.html", [
-      [ "FabArray", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
-      [ "LayoutData", "classamrex_1_1LayoutData.html", "classamrex_1_1LayoutData" ],
-      [ "BaseFab", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
-      [ "Array4", "structamrex_1_1Array4.html", "structamrex_1_1Array4" ],
-      [ "GpuArray", "structamrex_1_1GpuArray.html", "structamrex_1_1GpuArray" ],
-      [ "FabFactory", "classamrex_1_1FabFactory.html", "classamrex_1_1FabFactory" ],
-      [ "ParserExecutor", "structamrex_1_1ParserExecutor.html", "structamrex_1_1ParserExecutor" ]
-    ] ],
+    [ "AMReX_BaseFwd.H", "AMReX__BaseFwd_8H.html", null ],
     [ "AMReX_BC_TYPES.H", "AMReX__BC__TYPES_8H.html", "AMReX__BC__TYPES_8H" ],
     [ "AMReX_bc_types_mod.F90", "AMReX__bc__types__mod_8F90.html", "AMReX__bc__types__mod_8F90" ],
     [ "AMReX_BCRec.cpp", "AMReX__BCRec_8cpp.html", "AMReX__BCRec_8cpp" ],
@@ -241,7 +233,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_IntConv.cpp", "AMReX__IntConv_8cpp.html", "AMReX__IntConv_8cpp" ],
     [ "AMReX_IntConv.H", "AMReX__IntConv_8H.html", "AMReX__IntConv_8H" ],
     [ "AMReX_IntegratorBase.H", "AMReX__IntegratorBase_8H.html", [
-      [ "IntegratorOps", "structamrex_1_1IntegratorOps.html", null ],
       [ "IntegratorOps< T, typename std::enable_if< std::is_same< amrex::Vector< amrex::MultiFab >, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089" ],
       [ "IntegratorOps< T, typename std::enable_if< std::is_same< amrex::MultiFab, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511" ],
       [ "IntegratorBase", "classamrex_1_1IntegratorBase.html", "classamrex_1_1IntegratorBase" ]

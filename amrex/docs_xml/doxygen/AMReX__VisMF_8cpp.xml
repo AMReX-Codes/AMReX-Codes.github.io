@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="AMReX__VisMF_8cpp" kind="file" language="C++">
     <compoundname>AMReX_VisMF.cpp</compoundname>
     <includes refid="AMReX__FabArrayUtility_8H" local="no">AMReX_FabArrayUtility.H</includes>
@@ -2665,13 +2665,13 @@
 <codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx<sp/>=<sp/>mfi.index();</highlight></codeline>
 <codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>m_ncomp;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>mm<sp/>=<sp/>(run_on_device)<sp/>?<sp/>mf[mfi].minmax&lt;RunOn::Device&gt;(m_ba[idx],i)</highlight></codeline>
-<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>mf[mfi].minmax&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref><sp/><sp/>&gt;(m_ba[idx],i);</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>mf[mfi].minmax&lt;RunOn::Host<sp/><sp/>&gt;(m_ba[idx],i);</highlight></codeline>
 <codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_famin[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(m_famin[i],<sp/>mm.first);</highlight></codeline>
 <codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_famax[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(m_famax[i],<sp/>mm.second);</highlight></codeline>
 <codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelAllReduce_1aebb7df37be32c5e1f03e9babc81318a0" kindref="member">ParallelAllReduce::Min</ref>(m_famin.dataPtr(),<sp/>m_famin.size(),<sp/>comm);</highlight></codeline>
-<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelAllReduce_1a195a600b56559959513775be2f6f0fbd" kindref="member">ParallelAllReduce::Max</ref>(m_famax.dataPtr(),<sp/>m_famax.size(),<sp/>comm);</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a775473b1fa3e7d661e3ac6cde59b6018" kindref="member">ParallelAllReduce::Min</ref>(m_famin.dataPtr(),<sp/>m_famin.size(),<sp/>comm);</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a4a6e235c6fc2013e52d7f1b59bc71bb0" kindref="member">ParallelAllReduce::Max</ref>(m_famax.dataPtr(),<sp/>m_famax.size(),<sp/>comm);</highlight></codeline>
 <codeline lineno="681"><highlight class="normal"></highlight></codeline>
 <codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building with GNU Make &mdash; amrex 22.00-dev documentation</title>
+  <title>Building with GNU Make &mdash; amrex 22.01-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.00-dev
+                22.01-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -229,7 +229,7 @@ machine is unknown</p></td>
 </table>
 <p>At the beginning of <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Basic/HelloWorld_C/GNUmakefile</span></code>,
 <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> is set to the path to the top directory of AMReX.  Note that in
-the example <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">?=</span></code> is a conditional variable assignment operator that only
+the example <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">?=</span><span class="w"></span></code> is a conditional variable assignment operator that only
 has an effect if <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> has not been defined (including in the
 environment). One can also set <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> as an environment variable. For
 example in bash, one can set</p>
@@ -812,7 +812,7 @@ and import its settings and targets into your CMake project.
 Imported AMReX targets can be linked to any of your targets, after they have been made available
 following a successful call to <code class="docutils literal notranslate"><span class="pre">find_package(AMReX)</span></code>, by including
 the following line in the appropriate CMakeLists.txt file:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">&lt;your-target-name&gt;</span> <span class="s">PUBLIC</span> <span class="s">AMReX::&lt;amrex-target-name&gt;</span> <span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="w"> </span><span class="s">&lt;your-target-name&gt;</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">AMReX::&lt;amrex-target-name&gt;</span><span class="w"> </span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In the above snippet, <code class="docutils literal notranslate"><span class="pre">&lt;amrex-target-name&gt;</span></code> is any of the targets listed in the table below.</p>
@@ -846,7 +846,7 @@ the following line in the appropriate CMakeLists.txt file:</p>
 to be excluded from compilation. For example, setting <code class="docutils literal notranslate"><span class="pre">-DAMReX_LINEAR_SOLVERS=no</span></code> at configure time
 prevents the compilation of AMReX linear solvers code.
 Your CMake project can check which component is included in the AMReX library via <cite>find_package</cite>:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span> <span class="s">REQUIRED</span> <span class="s">&lt;components-list&gt;</span><span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">&lt;components-list&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The keyword <code class="docutils literal notranslate"><span class="pre">REQUIRED</span></code> in the snippet above will cause a fatal error if AMReX is not found, or
@@ -948,8 +948,8 @@ A list of AMReX component names and related configure options are shown in the t
 </tbody>
 </table>
 <p>As an example, consider the following CMake code:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span> <span class="s">REQUIRED</span> <span class="s">3D</span> <span class="s">EB</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">Foo</span> <span class="s">PUBLIC</span> <span class="s">AMReX::amrex</span> <span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">3D</span><span class="w"> </span><span class="s">EB</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="w"> </span><span class="s">Foo</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">AMReX::amrex</span><span class="w"> </span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The code in the snippet above checks whether an AMReX installation with 3D and Embedded Boundary support

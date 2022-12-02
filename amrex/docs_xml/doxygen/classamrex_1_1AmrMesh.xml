@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1AmrMesh" kind="class" language="C++" prot="public">
     <compoundname>amrex::AmrMesh</compoundname>
     <basecompoundref refid="structamrex_1_1AmrInfo" prot="protected" virt="non-virtual">amrex::AmrInfo</basecompoundref>
@@ -90,7 +90,7 @@
       </sectiondef>
       <sectiondef kind="friend">
       <memberdef kind="friend" id="classamrex_1_1AmrMesh_1a84e5f3cb506d39cac5a25a6ae133a2de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>friend std::ostream &amp;</type>
+        <type>std::ostream &amp;</type>
         <definition>std::ostream&amp; operator&lt;&lt;</definition>
         <argsstring>(std::ostream &amp;os, AmrMesh const &amp;amr_mesh)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1394,12 +1394,6 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="11">
-        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
       <node id="3">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
@@ -1414,8 +1408,8 @@
       <node id="7">
         <label>Real</label>
       </node>
-      <node id="13">
-        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+      <node id="5">
+        <label>std::vector&lt; T &gt;</label>
         <childnode refid="6" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
@@ -1423,19 +1417,13 @@
       <node id="8">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
-        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -1452,24 +1440,18 @@
         </childnode>
         <childnode refid="4" relation="usage">
           <edgelabel>blocking_factor</edgelabel>
-          <edgelabel>n_error_buf</edgelabel>
           <edgelabel>max_grid_size</edgelabel>
+          <edgelabel>n_error_buf</edgelabel>
           <edgelabel>ref_ratio</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
           <edgelabel>grid_eff</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="12">
+      <node id="10">
         <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -1480,15 +1462,15 @@
         <childnode refid="8" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>grids</edgelabel>
         </childnode>
-        <childnode refid="12" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>geom</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrMesh.H" line="54" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrMesh.H" bodystart="52" bodyend="279"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrMesh.H" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrMesh.H" bodystart="54" bodyend="279"/>
     <listofallmembers>
       <member refid="classamrex_1_1AmrMesh_1a163e8a28e1f841b2c174d6d34664e2d3" prot="public" virt="non-virtual"><scope>amrex::AmrMesh</scope><name>AmrMesh</name></member>
       <member refid="classamrex_1_1AmrMesh_1a58e7077dec217e4bdad1f5221e6229cc" prot="public" virt="non-virtual"><scope>amrex::AmrMesh</scope><name>AmrMesh</name></member>

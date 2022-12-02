@@ -1,6 +1,5 @@
 var AMReX__GpuLaunch_8H =
 [
-    [ "LayoutData", "classamrex_1_1LayoutData.html", "classamrex_1_1LayoutData" ],
     [ "ComponentBox", "structamrex_1_1Gpu_1_1ComponentBox.html", "structamrex_1_1Gpu_1_1ComponentBox" ],
     [ "GridSize", "structamrex_1_1Gpu_1_1GridSize.html", "structamrex_1_1Gpu_1_1GridSize" ],
     [ "ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", "structamrex_1_1Gpu_1_1ExecutionConfig" ],

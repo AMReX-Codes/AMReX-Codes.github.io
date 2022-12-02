@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1EB2_1_1IndexSpace" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>amrex::EB2::IndexSpace</compoundname>
     <derivedcompoundref refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile" prot="public" virt="non-virtual">amrex::EB2::IndexSpaceChkptFile</derivedcompoundref>
@@ -40,9 +40,9 @@
         <definition>virtual const Level&amp; amrex::EB2::IndexSpace::getLevel</definition>
         <argsstring>(const Geometry &amp;geom) const =0</argsstring>
         <name>getLevel</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a1eeaab4266c11166a3072eea2f888f52">getLevel</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1ac851ed9fe4d83eccab062b387e301447">getLevel</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a4106393335714ad0351ccf212d479cdf">getLevel</reimplementedby>
-        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a1eeaab4266c11166a3072eea2f888f52">getLevel</reimplementedby>
         <param>
           <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
           <declname>geom</declname>
@@ -60,9 +60,9 @@
         <definition>virtual const Geometry&amp; amrex::EB2::IndexSpace::getGeometry</definition>
         <argsstring>(const Box &amp;domain) const =0</argsstring>
         <name>getGeometry</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1ac216284322537eefb6a3817e784a716d">getGeometry</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1afb59a8649d374054b28322ebd3674428">getGeometry</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1afa9591f706505991554b147f3d2a137b">getGeometry</reimplementedby>
-        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1ac216284322537eefb6a3817e784a716d">getGeometry</reimplementedby>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
           <declname>domain</declname>
@@ -80,9 +80,9 @@
         <definition>virtual const Box&amp; amrex::EB2::IndexSpace::coarsestDomain</definition>
         <argsstring>() const =0</argsstring>
         <name>coarsestDomain</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1aeb660db350d2d8ea329bdbd72e6f258d">coarsestDomain</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1af7dfcfb18ec2a21a179a4b4154567cbb">coarsestDomain</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1aaaa590849e7bb70c9f2b0814153b0e9e">coarsestDomain</reimplementedby>
-        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1aeb660db350d2d8ea329bdbd72e6f258d">coarsestDomain</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -96,9 +96,9 @@
         <definition>virtual void amrex::EB2::IndexSpace::addFineLevels</definition>
         <argsstring>(int num_new_fine_levels)=0</argsstring>
         <name>addFineLevels</name>
+        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a5be42585336a617690b28a56e5c3bc1e">addFineLevels</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1ad224ca5a5ff6adf64c814338375835bc">addFineLevels</reimplementedby>
         <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a91c9991bc2691ccf3603be8005954c83">addFineLevels</reimplementedby>
-        <reimplementedby refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a5be42585336a617690b28a56e5c3bc1e">addFineLevels</reimplementedby>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>num_new_fine_levels</declname>
@@ -253,7 +253,7 @@
         <label>T</label>
       </node>
       <node id="3">
-        <label>std::vector&lt; std::unique_ptr&lt; amrex::EB2::IndexSpace &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::EB2::IndexSpace &gt; &gt; &gt;</label>
+        <label>std::vector&lt; T &gt;</label>
         <childnode refid="4" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
@@ -265,7 +265,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="26" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="25" bodyend="56"/>
+    <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="25" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="26" bodyend="56"/>
     <listofallmembers>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1a346cc897525e434cd311f4b303d6b898" prot="public" virt="pure-virtual"><scope>amrex::EB2::IndexSpace</scope><name>addFineLevels</name></member>
       <member refid="classamrex_1_1EB2_1_1IndexSpace_1ac2b149fea822702476a70d1b12ae2f21" prot="public" virt="non-virtual"><scope>amrex::EB2::IndexSpace</scope><name>clear</name></member>

@@ -1,6 +1,8 @@
 var classhacc_1_1AlignedAllocator =
 [
     [ "rebind", "structhacc_1_1AlignedAllocator_1_1rebind.html", "structhacc_1_1AlignedAllocator_1_1rebind" ],
+    [ "const_pointer", "classhacc_1_1AlignedAllocator.html#a812e592e52eb4338a35980a143facdfc", null ],
+    [ "const_reference", "classhacc_1_1AlignedAllocator.html#aa04ae438c2088c702d3de3816d4f7db5", null ],
     [ "difference_type", "classhacc_1_1AlignedAllocator.html#aa85cb38a8a671ea721f4f8d96b5d061e", null ],
     [ "pointer", "classhacc_1_1AlignedAllocator.html#a8a10b255de4c608b3775a315e409ef8d", null ],
     [ "reference", "classhacc_1_1AlignedAllocator.html#a5830ffb5779f9588ce9f9040b4ac5db7", null ],
@@ -16,7 +18,5 @@ var classhacc_1_1AlignedAllocator =
     [ "construct", "classhacc_1_1AlignedAllocator.html#adb796755df810806e1a03865482fc669", null ],
     [ "deallocate", "classhacc_1_1AlignedAllocator.html#ad5df7bcf7989386441a7b8fc73a81cc4", null ],
     [ "destroy", "classhacc_1_1AlignedAllocator.html#a5d7df6a37fdfcef93d371c3044f424d3", null ],
-    [ "max_size", "classhacc_1_1AlignedAllocator.html#a2d07c9246eff9fc235e24ac818e3c473", null ],
-    [ "const_pointer", "classhacc_1_1AlignedAllocator.html#a0c6978c988fd0279bd083d4dd7279e7b", null ],
-    [ "const_reference", "classhacc_1_1AlignedAllocator.html#a893f873b7be87bcf17b349ad52812873", null ]
+    [ "max_size", "classhacc_1_1AlignedAllocator.html#a2d07c9246eff9fc235e24ac818e3c473", null ]
 ];

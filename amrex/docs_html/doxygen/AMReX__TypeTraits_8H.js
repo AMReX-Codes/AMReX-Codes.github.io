@@ -1,7 +1,5 @@
 var AMReX__TypeTraits_8H =
 [
-    [ "BaseFab", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
-    [ "FabArray", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
     [ "IsBaseFab", "structamrex_1_1IsBaseFab.html", null ],
     [ "IsBaseFab< D, typename std::enable_if< std::is_base_of< BaseFab< typename D::value_type >, D >::value >::type >", "structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html", null ],
     [ "IsFabArray", "structamrex_1_1IsFabArray.html", null ],
@@ -17,7 +15,6 @@ var AMReX__TypeTraits_8H =
     [ "MaybeDeviceRunnable", "structamrex_1_1MaybeDeviceRunnable.html", null ],
     [ "MaybeHostDeviceRunnable", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
     [ "DefinitelyNotHostRunnable", "structamrex_1_1DefinitelyNotHostRunnable.html", null ],
-    [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
     [ "Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", "structamrex_1_1Same_3_01T_00_01U_01_4" ],
     [ "Same", "structamrex_1_1Same.html", "structamrex_1_1Same" ],
     [ "Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", "structamrex_1_1detail_1_1Nonesuch" ],

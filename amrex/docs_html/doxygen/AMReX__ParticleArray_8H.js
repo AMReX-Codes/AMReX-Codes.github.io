@@ -1,8 +1,5 @@
 var AMReX__ParticleArray_8H =
 [
-    [ "DataLayoutPolicy", "structamrex_1_1DataLayoutPolicy.html", null ],
-    [ "DataLayoutPolicyRaw", "structamrex_1_1DataLayoutPolicyRaw.html", null ],
-    [ "ParticleArrayAccessor", "structamrex_1_1ParticleArrayAccessor.html", "structamrex_1_1ParticleArrayAccessor" ],
     [ "ref_wrapper", "classamrex_1_1ref__wrapper.html", "classamrex_1_1ref__wrapper" ],
     [ "DataLayoutPolicy< ContainerType, ParticleType< Types... >, DataLayout::AoS >", "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html", "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4" ],
     [ "DataLayoutPolicyRaw< ParticleType< Types... >, DataLayout::AoS >", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4" ],

@@ -1,7 +1,6 @@
 var AMReX__TypeList_8H =
 [
     [ "TypeList", "structamrex_1_1TypeList.html", "structamrex_1_1TypeList" ],
-    [ "TypeListGet", "structamrex_1_1detail_1_1TypeListGet.html", null ],
     [ "TypeListGet< I, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", null ],
     [ "TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
     [ "TypeAt", "AMReX__TypeList_8H.html#a11fcc5e72789252d6182a7d15233725f", null ],

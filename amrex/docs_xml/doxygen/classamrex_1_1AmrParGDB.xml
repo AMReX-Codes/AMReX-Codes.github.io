@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1AmrParGDB" kind="class" language="C++" prot="public">
     <compoundname>amrex::AmrParGDB</compoundname>
     <basecompoundref refid="classamrex_1_1ParGDBBase" prot="public" virt="non-virtual">amrex::ParGDBBase</basecompoundref>
@@ -543,12 +543,6 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="14">
-        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
-        <childnode refid="9" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
       <node id="6">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
@@ -563,56 +557,44 @@
       <node id="10">
         <label>Real</label>
       </node>
-      <node id="16">
-        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
-        <childnode refid="9" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
       <node id="3">
         <label>amrex::AmrCore</label>
         <link refid="classamrex_1_1AmrCore"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="8">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
       <node id="11">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
+      <node id="14">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="18" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
         <label>amrex::ParGDBBase</label>
         <link refid="classamrex_1_1ParGDBBase"/>
       </node>
-      <node id="13">
+      <node id="12">
         <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
-        <childnode refid="9" relation="usage">
-          <edgelabel>elements</edgelabel>
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
       <node id="7">
         <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="8" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
-        <childnode refid="9" relation="usage">
-          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="5">
@@ -623,18 +605,12 @@
         </childnode>
         <childnode refid="7" relation="usage">
           <edgelabel>blocking_factor</edgelabel>
-          <edgelabel>n_error_buf</edgelabel>
           <edgelabel>max_grid_size</edgelabel>
+          <edgelabel>n_error_buf</edgelabel>
           <edgelabel>ref_ratio</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
           <edgelabel>grid_eff</edgelabel>
-        </childnode>
-      </node>
-      <node id="8">
-        <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
-        <childnode refid="9" relation="usage">
-          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="1">
@@ -648,20 +624,20 @@
         <childnode refid="11" relation="usage">
           <edgelabel>m_dmap</edgelabel>
         </childnode>
-        <childnode refid="17" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>m_has_geom</edgelabel>
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>m_ba</edgelabel>
         </childnode>
-        <childnode refid="15" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
       </node>
-      <node id="15">
+      <node id="13">
         <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="16" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -672,15 +648,15 @@
         <childnode refid="11" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>grids</edgelabel>
         </childnode>
-        <childnode refid="15" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>geom</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParGDB.H" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParGDB.H" bodystart="10" bodyend="69"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParGDB.H" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParGDB.H" bodystart="12" bodyend="69"/>
     <listofallmembers>
       <member refid="classamrex_1_1AmrParGDB_1abb1b359f54a282d950166418754b6749" prot="private" virt="non-virtual"><scope>amrex::AmrParGDB</scope><name>AmrCore</name></member>
       <member refid="classamrex_1_1AmrParGDB_1ac5b326613074f25002466af98f19e6fc" prot="public" virt="non-virtual"><scope>amrex::AmrParGDB</scope><name>AmrParGDB</name></member>

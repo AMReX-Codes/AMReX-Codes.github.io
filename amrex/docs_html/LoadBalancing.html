@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Load Balancing &mdash; amrex 22.00-dev documentation</title>
+  <title>Load Balancing &mdash; amrex 22.01-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.00-dev
+                22.01-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -112,19 +112,19 @@ already assigned to them (assign heaviest set of grids to the least loaded rank)
 load of each process is measured by how much memory has already been allocated, not how much memory
 will be allocated.  Therefore the following code is not recommended because it tends to generate
 non-optimal distributions.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlevels</span><span class="p">;</span> <span class="o">++</span><span class="n">lev</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// build DistributionMapping for Level lev</span>
-<span class="p">}</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlevels</span><span class="p">;</span> <span class="o">++</span><span class="n">lev</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// build MultiFabs for Level lev</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevels</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// build DistributionMapping for Level lev</span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevels</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// build MultiFabs for Level lev</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Instead, one should do,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlevels</span><span class="p">;</span> <span class="o">++</span><span class="n">lev</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// build DistributionMapping for Level lev</span>
-    <span class="c1">// build MultiFabs for Level lev</span>
-<span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nlevels</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">lev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// build DistributionMapping for Level lev</span>
+<span class="w">    </span><span class="c1">// build MultiFabs for Level lev</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Distribution options supported by AMReX include the following; the default is SFC:</p>

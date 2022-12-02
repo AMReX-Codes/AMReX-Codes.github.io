@@ -1,6 +1,5 @@
 var AMReX__ParallelDescriptor_8H =
 [
-    [ "LayoutData", "classamrex_1_1LayoutData.html", "classamrex_1_1LayoutData" ],
     [ "Message", "classamrex_1_1ParallelDescriptor_1_1Message.html", "classamrex_1_1ParallelDescriptor_1_1Message" ],
     [ "ProcessTeam", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam" ],
     [ "Mpi_typemap< ValLocPair< TV, TI > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4" ],

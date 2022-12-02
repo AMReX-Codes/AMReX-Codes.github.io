@@ -1,7 +1,6 @@
 var AMReX__GpuComplex_8H =
 [
     [ "GpuComplex", "structamrex_1_1GpuComplex.html", "structamrex_1_1GpuComplex" ],
-    [ "GpuComplex", "structamrex_1_1GpuComplex.html", "structamrex_1_1GpuComplex" ],
     [ "abs", "AMReX__GpuComplex_8H.html#a4f298e1c3407710de306d440bc79e84e", null ],
     [ "arg", "AMReX__GpuComplex_8H.html#a9f3abe7a79b333248fb3183d9a9df7de", null ],
     [ "complex_pow_unsigned", "AMReX__GpuComplex_8H.html#a10e8c484da7d2f2f5bbd223b6b92dc87", null ],

@@ -1,24 +1,26 @@
 /*
-@licstart  The following is the entire license notice for the
-JavaScript code in this file.
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
 
-Copyright (C) 1997-2019 by Dimitri van Heesch
+ The MIT License (MIT)
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of version 2 of the GNU General Public License as published by
-the Free Software Foundation
+ Copyright (C) 1997-2020 by Dimitri van Heesch
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
 
-@licend  The above is the entire license notice
-for the JavaScript code in this file
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var NAVTREE =
 [
@@ -93,57 +95,69 @@ var NAVTREEINDEX =
 "AMReX__ParallelDescriptor_8H.html#a0f53686fc6a6b7dca69c230fd1336e44",
 "AMReX__ParallelDescriptor__F_8F90.html#a467738899f667913f4c9e3a9f1bfb1f6",
 "AMReX__Parser__Y_8cpp.html#af77166ee4bf8e84e0628c8d6ef96f055",
-"AMReX__RKIntegrator_8H.html#afa67f210f2e6c338d52553562f72c564ab65603b0c54c1b7114d61811751ccf42",
-"AMReX__Tuple_8H.html#ac60a1b88f1421c5113c694d9460de676",
-"AMReX__algoim__K_8H.html#ae4ae5a6514e4fdd7deb24725de0b3444",
-"AMReX__parmparse__mod_8F90.html#a1e0986fe43e8763bc1cef87cfef5e206",
-"amrex__iparser_8lex_8cpp.html#ad4a65b873df5c05570846b5413b41dfd",
-"amrex__iparser_8tab_8cpp.html#a6419f3fd69ecb6b7e063410fd4e73b2f",
-"amrex__parser_8lex_8cpp.html#ac86ea8173dfcfc5c989d3295a77e2f95",
-"amrex__parser_8tab_8cpp.html#a5611300548b2030d86b6ab9168132b88",
-"classCommProfStats.html#a8f4075ef4f0bf6ad7016f6b6c8ad85a8",
-"classamrex_1_1Amr.html#a739b025250207eabcd5f0505ab16dc8d",
-"classamrex_1_1AmrDataAdaptor.html#aeb2aa16f7cb72eebdd278083cc8616ef",
-"classamrex_1_1AmrParGDB.html#ac72fc0f84c6f2c0ced8da0b77f73d0ce",
-"classamrex_1_1BaseFab.html#a56197b4668f634207c4031bcd9e05909",
-"classamrex_1_1Box.html#a41c7435df1d63dcc9db7555ab8f0f405",
-"classamrex_1_1BoxList.html",
-"classamrex_1_1CpuBndryFuncFab.html#abde0392b9ab8c8e90f020e92d4382fe1",
-"classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6f5ec418bb5db591c4b5780f00cce82e",
-"classamrex_1_1EB2_1_1Level.html#a2e965cf11727327d842176406b65ac14",
-"classamrex_1_1EBDataCollection.html#aab5a65341ff21329cc732af1bfb4f004",
-"classamrex_1_1FArrayBox.html#afc7bd5e6829479b3bfef8639f9b92b20",
-"classamrex_1_1FabArrayBase.html#a3bb1453b2bf26b145d0553dcaf8332be",
-"classamrex_1_1FillPatchIteratorHelper.html#ab0e6743c4dbe5632040213a1c6616510",
-"classamrex_1_1Gpu_1_1Device.html#a725fb9c29db07764d1a95c03dedf3df5",
-"classamrex_1_1IArrayBox.html#a6f7c8097795d9d1c63359cba22b9e798",
-"classamrex_1_1Interpolater.html#aee5ce439fa4bbc2dd6f8d40708715485",
-"classamrex_1_1MLCellABecLap.html",
-"classamrex_1_1MLLinOp.html#a0bcab258419204e22344e10166971f25",
-"classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001af8c1043cde20f8e1d9d022abb2c9ffad",
-"classamrex_1_1Mask.html#a2d7bc995fb1eddf4211d4e93d63d9534",
-"classamrex_1_1NFilesIter.html#aecbccfacd424296243d4fb271f754258",
-"classamrex_1_1PETScABecLap.html#a08502c245a5dfd89dbb1ac522d5563f9",
-"classamrex_1_1ParallelContext_1_1Frame.html#af6020c73c104e3e55890bc462643488c",
+"AMReX__RKIntegrator_8H.html",
+"AMReX__Tuple_8H.html#a72ba0f3bd5880d4218b4bfe93373edf6",
+"AMReX__algoim__K_8H.html",
+"AMReX__parmparse__mod_8F90.html",
+"amrex__iparser_8lex_8cpp.html#acc1e625a829554ffed5e4307d4a5f6b7",
+"amrex__iparser_8tab_8cpp.html#a5611300548b2030d86b6ab9168132b88",
+"amrex__parser_8lex_8cpp.html#ac56eb96366c08862bf0efe5d83d1fc4c",
+"amrex__parser_8tab_8cpp.html#a504faa93b92f37fcc147f68e8d111a1d",
+"classCommProfStats.html#a8c515e8da3ca3c3437cd0b5bd18c656d",
+"classamrex_1_1Amr.html#a6f9ae291b9b51ed55c83ff49e418fc49",
+"classamrex_1_1AmrDataAdaptor.html#a9ae9a8df3d126eb7dd38d1288c85e25b",
+"classamrex_1_1AmrParGDB.html#abb1b359f54a282d950166418754b6749",
+"classamrex_1_1BaseFab.html#a4f6421e1246d3830573c1865f1138f60",
+"classamrex_1_1Box.html#a3b2f16add5c730b7da66cdb7fc8d85d3",
+"classamrex_1_1BoxIterator.html#abc9cf7ec321343ab3062e03958d3d792",
+"classamrex_1_1CoordSys.html#aff79cb7249a744e24c5b335935f20fe6",
+"classamrex_1_1DistributionMapping.html#acbe214292ef7da8223f4318919642ace",
+"classamrex_1_1EB2_1_1Level.html#a1c5bf0b16ab52e799b8830fd149c0f62",
+"classamrex_1_1EBDataCollection.html#a8d677f5c06ce1520cd23addf9d22d5ef",
+"classamrex_1_1FArrayBox.html#af0dbc00602c50f34664b6c6cb39033be",
+"classamrex_1_1FabArrayBase.html#a34cc63703ab4e2492a4444199def31d2",
+"classamrex_1_1FillPatchIteratorHelper.html#a9cf2d33e663f0311539a96633ff7560d",
+"classamrex_1_1Gpu_1_1Device.html#a659a046032f304e13547b3b633e7c10a",
+"classamrex_1_1IArrayBox.html#a3868fb3093c1460b818c0a41c9b20f4a",
+"classamrex_1_1Interpolater.html",
+"classamrex_1_1MLCGSolver.html#ae0ff5ed0f4b00ad5bc6051960724f77c",
+"classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3af5c101b5f19e97166e7531ffa1c706c4",
+"classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001",
+"classamrex_1_1Mask.html#a1bbe56597e75e9487f95ea8a720ee5e7",
+"classamrex_1_1NFilesIter.html#ae13a47d2ead798be8070c16227694412",
+"classamrex_1_1PCInterp.html#acd50581dbe4a2e6a14d5351e6ffac7e8",
+"classamrex_1_1ParallelContext_1_1Frame.html#abf278a69530b55db1c0156e40db89e0c",
 "classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727",
-"classamrex_1_1PlotFileData.html#a53dc80997747ee42565b6fb3e6509281",
-"classamrex_1_1ReduceData.html#a1a2f10f97f0ff50897c92cd0a49e292a",
-"classamrex_1_1StreamRetry.html#ade275d3bbc75ea3549c7249d97e74f33",
-"classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1",
+"classamrex_1_1PlotFileData.html#a531e1c57f8cd25355a3ed6ed365deca9",
+"classamrex_1_1ReduceData.html#a0fc76fd07dedd99b36524e3ce362f962",
+"classamrex_1_1StreamRetry.html#ab3c0df58a9da073e05c4e35073ab1706",
+"classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156",
 "classamrex__temp_1_1MLLinOpTemp.html#aa71460da65ff812fc93bd6859ad48981",
-"functions_func_g.html",
-"interfaceamrex__mempool__module_1_1bl__deallocate.html#af24cc70cc5b583aad1ed1b171417f778",
-"namespacemembers_type.html",
-"structamrex_1_1Array1D.html#a20d7b872b6de76acdb3251d7827c8975",
-"structamrex_1_1BinIterator.html#acc4e6d1fb03e2741685948dcf3ee4878",
-"structamrex_1_1FabArrayBase_1_1CFinfo.html#a26aca5aed0a35b2075c1311ff2b92988",
-"structamrex_1_1GetBucket.html#ad2772cab77f44e3555523f450c60a270",
-"structamrex_1_1IParserExeMUL__PN.html#a78823e96ecfa6fc67d4d1e311bec46ff",
-"structamrex_1_1Neighbors.html#a78add4fa0c929801818ea1db168eb81c",
-"structamrex_1_1ParserExeNEG.html",
-"structamrex_1_1ParticleTile.html#a59a1bf76033055a3e1dd0dbbb3d61447",
-"structamrex_1_1TinyProfiler_1_1Stats.html#a4a677c6dd0af7d407604a642c4371c5c",
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a00b3414ab27018ecee235594b89ee675"
+"functions_func_k.html",
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor.html#ac765a3578df4e62522d21e0eb6ec2969",
+"namespaceamrex.html#a19368a040b960bd1ba5b2f39435e1c07",
+"namespaceamrex.html#a3f0f44b09d21b49d00d3d1b12e9e2489",
+"namespaceamrex.html#a65fcc9ad910569bc247b330997d5ed52",
+"namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da",
+"namespaceamrex.html#aab897269404fa5f5579e9f4fece80526",
+"namespaceamrex.html#ad3c5c0681fda33ffa62120cefe254379",
+"namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c",
+"namespaceamrex_1_1FGColor.html#a124ac344d6f1b292c285b82cfbeab201",
+"namespaceamrex_1_1ParallelAllReduce.html#a22a60add9d9c9a8d562a9417d297f9bc",
+"namespaceamrex_1_1RungeKutta_1_1detail.html#a04628ed5d5e6a12c16a387c1aa38fe88",
+"namespaceamrex_1_1openbc.html#a765bedd56cb0c8e024a821cc942663bf",
+"namespaceamrex__omp__module.html#a1f567807c5ae4117153ee1e35cb0a418",
+"structCommProfStats_1_1DataBlock.html#a27353154e5e772a6fbde00aa9ccda88a",
+"structamrex_1_1Array4CopyTag.html",
+"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a84441b8d48f67d4f5106cbdf7285b313",
+"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a79668291012755d981986b35942faa12",
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a383b070cb13bc99de64062941d521149",
+"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b",
+"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html",
+"structamrex_1_1ParticleArray.html#ac63a647b8a7225d490ce30caaf1105b3",
+"structamrex_1_1STLtools_1_1Triangle.html",
+"structamrex_1_1algoim_1_1Interval.html#a017e3af95c08cb7c803eb4717bc2da14",
+"unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

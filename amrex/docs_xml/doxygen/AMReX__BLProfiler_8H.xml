@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="AMReX__BLProfiler_8H" kind="file" language="C++">
     <compoundname>AMReX_BLProfiler.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
@@ -5193,7 +5193,7 @@
 <codeline lineno="496"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PROFILE_VAR_START_CUPTI(vname)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tiny_profiler_##vname.start()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="497"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PROFILE_VAR_STOP_CUPTI(vname)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tiny_profiler_##vname.stop()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="498"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PROFILE_VAR_STOP_CUPTI_ID(vname,<sp/>uintID)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>tiny_profiler_##vname.stop(uintID)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="499"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>AMREX_USE_CUPTI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>AMREX_USE_CUPTI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="500"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PROFILE_INIT_PARAMS(ptl,wall,wfabs)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PROFILE_ADD_STEP(snum)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="502"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PROFILE_SET_RUN_TIME(rtime)</highlight><highlight class="normal"></highlight></codeline>
@@ -5351,23 +5351,23 @@
 <codeline lineno="654"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_VTUNE)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="655"><highlight class="normal"></highlight></codeline>
 <codeline lineno="656"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_TP_PROFILE_REGION_START()<sp/><sp/><sp/>__itt_resume();<sp/>\</highlight></codeline>
-<codeline lineno="657"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;VTune<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="657"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;VTune<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="658"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_TP_PROFILE_REGION_STOP()<sp/><sp/><sp/><sp/>__itt_pause();<sp/>\</highlight></codeline>
-<codeline lineno="659"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;VTune<sp/>regional<sp/>recording<sp/>has<sp/>been<sp/>stopped.\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="659"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;VTune<sp/>regional<sp/>recording<sp/>has<sp/>been<sp/>stopped.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="660"><highlight class="normal"></highlight></codeline>
 <codeline lineno="661"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_CRAYPAT)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="662"><highlight class="normal"></highlight></codeline>
 <codeline lineno="663"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_TP_PROFILE_REGION_START()<sp/><sp/><sp/>PAT_record(PAT_STATE_ON);<sp/>\</highlight></codeline>
-<codeline lineno="664"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;CrayPat<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;CrayPat<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="665"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_TP_PROFILE_REGION_STOP()<sp/><sp/><sp/><sp/>PAT_record(PAT_STATE_OFF);<sp/>\</highlight></codeline>
-<codeline lineno="666"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;CrayPat<sp/>regional<sp/>recording<sp/>has<sp/>been<sp/>stopped.\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="666"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;CrayPat<sp/>regional<sp/>recording<sp/>has<sp/>been<sp/>stopped.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"></highlight></codeline>
 <codeline lineno="668"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_FORGE)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="669"><highlight class="normal"></highlight></codeline>
 <codeline lineno="670"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_TP_PROFILE_REGION_START()<sp/><sp/><sp/>allinea_start_sampling();<sp/>\</highlight></codeline>
-<codeline lineno="671"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;MAP<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="671"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;MAP<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="672"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_TP_PROFILE_REGION_STOP()<sp/><sp/><sp/><sp/>allinea_stop_sampling();<sp/>\</highlight></codeline>
-<codeline lineno="673"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;MAP<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="673"><highlight class="preprocessor">amrex::Print()<sp/>&lt;&lt;<sp/>&quot;MAP<sp/>regional<sp/>recording<sp/>has<sp/>begun.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="674"><highlight class="normal"></highlight></codeline>
 <codeline lineno="675"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="676"><highlight class="normal"></highlight></codeline>

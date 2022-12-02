@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Continuous Compilation Testing &mdash; amrex 22.00-dev documentation</title>
+  <title>Continuous Compilation Testing &mdash; amrex 22.01-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> amrex
           </a>
               <div class="version">
-                22.00-dev
+                22.01-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -129,7 +129,7 @@ version 2.7 or greater. Additional information on the test suite software can be
 <p>After obtaining the code, you will need a configuration file that defines which tests to run, which
 amrex repository to test,
 which branch to use, etc. A sample configuration file for AMReX is distributed with the amrex source
-code at <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">/</span><span class="n">Tools</span><span class="o">/</span><span class="n">RegressionTesting</span><span class="o">/</span><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>. You will need to modify a few of the entries
+code at <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">/</span><span class="n">Tools</span><span class="o">/</span><span class="n">RegressionTesting</span><span class="o">/</span><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span><span class="w"></span></code>. You will need to modify a few of the entries
 to, for example, point the test runner to the clone of amrex on your local machine. Entries you will
 likely want to change include:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">testTopDir</span> <span class="o">=</span> /path/to/test/output <span class="c1"># the tests results and benchmarks will stored here</span>
@@ -149,16 +149,16 @@ likely want to change include:</p>
 </div>
 <p>Before you can use it, you must first generate a set of “benchmarks” - i.e. known “good” answers to the
 tests that will be run. If you are testing a pull request, you can generate these by running the script
-with a recent version of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">development</span></code> branch of AMReX. You can generate the benchmarks like so:</p>
+with a recent version of the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">development</span><span class="w"></span></code> branch of AMReX. You can generate the benchmarks like so:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --make_benchmarks <span class="s1">&#39;generating initial benchmarks&#39;</span> AMReX-tests.ini
 </pre></div>
 </div>
-<p>Once that is finished, you can switch over to the branch you want to test in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>, and then
-re-run the script without the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">--</span><span class="n">make_benchmarks</span></code> option:</p>
+<p>Once that is finished, you can switch over to the branch you want to test in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span><span class="w"></span></code>, and then
+re-run the script without the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="o">--</span><span class="n">make_benchmarks</span><span class="w"></span></code> option:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py AMReX-tests.ini
 </pre></div>
 </div>
-<p>The script will generate a set of html pages in the directory specified in your <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code>
+<p>The script will generate a set of html pages in the directory specified in your <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span><span class="w"></span></code>
 file that you can examine using the browser of your choice.</p>
 <p>For a complete set of script options, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python regtest.py --help
@@ -175,7 +175,7 @@ file that you can examine using the browser of your choice.</p>
 </section>
 <section id="adding-a-new-test">
 <h1>Adding a new test<a class="headerlink" href="#adding-a-new-test" title="Permalink to this heading"></a></h1>
-<p>New tests can be added to the suite by modifying the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span></code> file. The easiest thing to
+<p>New tests can be added to the suite by modifying the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMReX</span><span class="o">-</span><span class="n">tests</span><span class="p">.</span><span class="n">ini</span><span class="w"></span></code> file. The easiest thing to
 do is start from an existing test and modify it. For example, this entry:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>MLMG_FI_PoisCom<span class="o">]</span>
 <span class="nv">buildDir</span> <span class="o">=</span> Tests/LinearSolvers/ABecLaplacian_F
@@ -192,7 +192,7 @@ do is start from an existing test and modify it. For example, this entry:</p>
 <span class="nv">testSrcTree</span> <span class="o">=</span> C_Src
 </pre></div>
 </div>
-<p>defines a test called <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG_FI_PoisCom</span></code> by specifying the appropriate build directory, inputs file,
+<p>defines a test called <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG_FI_PoisCom</span><span class="w"></span></code> by specifying the appropriate build directory, inputs file,
 and a set of configuration options. The above options are the most commonly changed; for a full list
 of options, see the example configuration file at <a class="reference external" href="https://github.com/AMReX-Codes/regression_testing/blob/main/example-tests.ini">https://github.com/AMReX-Codes/regression_testing/blob/main/example-tests.ini</a>.</p>
 </section>

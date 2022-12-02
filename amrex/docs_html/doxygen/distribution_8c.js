@@ -2,10 +2,6 @@ var distribution_8c =
 [
     [ "DEBUG_CONDITION", "distribution_8c.html#a4b0f3914f3a5d4e3126ae2331c245c69", null ],
     [ "USE_SLAB_WORKAROUND", "distribution_8c.html#acf625a919ad096563f5d50a5f2b0cf8b", null ],
-    [ "REDISTRIBUTE_1_TO_3", "distribution_8c.html#adc29c2ff13d900c2f185ee95427fb06cadb2db6e983734128c679d2d6f9660d0a", null ],
-    [ "REDISTRIBUTE_3_TO_1", "distribution_8c.html#adc29c2ff13d900c2f185ee95427fb06ca5f1e479eb94259389275a715271d0e26", null ],
-    [ "REDISTRIBUTE_2_TO_3", "distribution_8c.html#adc29c2ff13d900c2f185ee95427fb06ca93d616dcfe604bebc3850ec51b2f5d15", null ],
-    [ "REDISTRIBUTE_3_TO_2", "distribution_8c.html#adc29c2ff13d900c2f185ee95427fb06cabbf46de6625103b22139e067e3d181fb", null ],
     [ "Coord_cube", "distribution_8c.html#ae4c86ea9f91153635f20d44b9de912aa", null ],
     [ "Coord_x_pencils", "distribution_8c.html#af311497240c534b99258fcc520c8eebe", null ],
     [ "Coord_y_pencils", "distribution_8c.html#a91efcce74607bca8ccb2bf86ede7ddd5", null ],
@@ -26,5 +22,5 @@ var distribution_8c =
     [ "redistribute", "distribution_8c.html#ac4ff94eb3995e0014a284a415919bec1", null ],
     [ "redistribute_2_and_3", "distribution_8c.html#a43da13e337f377862ca04fb68cdccc69", null ],
     [ "redistribute_slab", "distribution_8c.html#a68991e16df33bb936768bd1faa71c978", null ],
-    [ "separator", "distribution_8c.html#a15b7c317b9a227be46fc94b2c8d49bdc", null ]
+    [ "separator", "distribution_8c.html#a153b7b9cfae9ce41f792ba9f71dbd3bf", null ]
 ];

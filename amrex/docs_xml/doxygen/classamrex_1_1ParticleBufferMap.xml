@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1ParticleBufferMap" kind="class" language="C++" prot="public">
     <compoundname>amrex::ParticleBufferMap</compoundname>
     <includes refid="AMReX__ParticleBufferMap_8H" local="no">AMReX_ParticleBufferMap.H</includes>
@@ -441,14 +441,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="10">
-        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; T &gt;</label>
         <childnode refid="4" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-      </node>
-      <node id="4">
-        <label>T</label>
       </node>
       <node id="5">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
@@ -459,47 +459,41 @@
       <node id="7">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
+      <node id="8">
         <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
         <label>amrex::ParticleBufferMap</label>
         <link refid="classamrex_1_1ParticleBufferMap"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>d_lev_offsets</edgelabel>
-          <edgelabel>d_lev_gid_to_bucket</edgelabel>
           <edgelabel>d_bucket_to_pid</edgelabel>
+          <edgelabel>d_lev_gid_to_bucket</edgelabel>
+          <edgelabel>d_lev_offsets</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>m_dm</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>m_lev_offsets</edgelabel>
-          <edgelabel>m_proc_box_offsets</edgelabel>
-          <edgelabel>m_bucket_to_pid</edgelabel>
-          <edgelabel>m_bucket_to_lev</edgelabel>
           <edgelabel>m_bucket_to_gid</edgelabel>
+          <edgelabel>m_bucket_to_lev</edgelabel>
+          <edgelabel>m_bucket_to_pid</edgelabel>
           <edgelabel>m_lev_gid_to_bucket</edgelabel>
+          <edgelabel>m_lev_offsets</edgelabel>
           <edgelabel>m_proc_box_counts</edgelabel>
+          <edgelabel>m_proc_box_offsets</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>m_ba</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
-        <childnode refid="4" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="8">
-        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      <node id="3">
+        <label>std::allocator&lt; T &gt;</label>
         <childnode refid="4" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
@@ -510,14 +504,8 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>std::allocator&lt; int &gt;</label>
-        <childnode refid="4" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="53" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="52" bodyend="160"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="53" bodyend="160"/>
     <listofallmembers>
       <member refid="classamrex_1_1ParticleBufferMap_1a8e59a013a0750aca08aae732ec6789eb" prot="public" virt="non-virtual"><scope>amrex::ParticleBufferMap</scope><name>allBucketsOnProc</name></member>
       <member refid="classamrex_1_1ParticleBufferMap_1ac0429811bb6a3cf2de1d46ecd7da27d3" prot="public" virt="non-virtual"><scope>amrex::ParticleBufferMap</scope><name>bucketToGrid</name></member>

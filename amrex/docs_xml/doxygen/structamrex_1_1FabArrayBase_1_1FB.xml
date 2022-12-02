@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="structamrex_1_1FabArrayBase_1_1FB" kind="struct" language="C++" prot="public">
     <compoundname>amrex::FabArrayBase::FB</compoundname>
     <basecompoundref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" prot="public" virt="non-virtual">amrex::FabArrayBase::CommMetaData</basecompoundref>
@@ -295,18 +295,12 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="5">
-        <label>K</label>
-      </node>
-      <node id="9">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="9" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
-      </node>
-      <node id="6">
-        <label>T</label>
       </node>
       <node id="2">
         <label>amrex::FabArrayBase::CommMetaData</label>
@@ -315,29 +309,14 @@
           <edgelabel>m_RcvTags</edgelabel>
           <edgelabel>m_SndTags</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>m_LocTags</edgelabel>
         </childnode>
       </node>
-      <node id="8">
-        <label>std::vector&lt; T &gt;</label>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="4">
-        <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="5" relation="usage">
-          <edgelabel>keys</edgelabel>
-        </childnode>
-        <childnode refid="6" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
-      </node>
-      <node id="11">
+      <node id="7">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
-        <childnode refid="9" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>period</edgelabel>
         </childnode>
       </node>
@@ -346,35 +325,29 @@
         <link refid="structamrex_1_1FabArrayBase_1_1FB"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_ngrow</edgelabel>
+        <childnode refid="5" relation="usage">
           <edgelabel>m_crse_ratio</edgelabel>
+          <edgelabel>m_ngrow</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
       <node id="3">
         <label>std::unique_ptr&lt; MapOfCopyComTagContainers &gt;</label>
-        <childnode refid="4" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
       </node>
-      <node id="10">
+      <node id="6">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="7">
+      <node id="4">
         <label>std::unique_ptr&lt; CopyComTagsContainer &gt;</label>
-        <childnode refid="8" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="489" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="487" bodyend="520"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="487" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="489" bodyend="520"/>
     <listofallmembers>
       <member refid="structamrex_1_1FabArrayBase_1_1FB_1a7350ce3c86017261950af6f94802d343" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::FB</scope><name>bytes</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1FB_1a53df06970b8cf1cb353ec184bb5422ef" prot="private" virt="non-virtual"><scope>amrex::FabArrayBase::FB</scope><name>define_epo</name></member>

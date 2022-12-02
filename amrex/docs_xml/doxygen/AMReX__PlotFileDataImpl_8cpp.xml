@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="AMReX__PlotFileDataImpl_8cpp" kind="file" language="C++">
     <compoundname>AMReX_PlotFileDataImpl.cpp</compoundname>
     <includes refid="AMReX__PlotFileDataImpl_8H" local="no">AMReX_PlotFileDataImpl.H</includes>
@@ -2096,10 +2096,10 @@
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><ref refid="classamrex_1_1PlotFileDataImpl_1a316f5905166fb9d8dd4942fea21094d4" kindref="member">PlotFileDataImpl::~PlotFileDataImpl</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">PlotFileDataImpl::~PlotFileDataImpl<sp/>()<sp/>{}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><ref refid="classamrex_1_1PlotFileDataImpl_1aade963d47f72015f6e2438ae21f45e12" kindref="member">PlotFileDataImpl::syncDistributionMap</ref><sp/>(PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">PlotFileDataImpl::syncDistributionMap<sp/>(PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs_min<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(m_nlevels,<sp/>src.m_nlevels);</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs_min;<sp/>++ilev)<sp/>{</highlight></codeline>
@@ -2108,7 +2108,7 @@
 <codeline lineno="108"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><ref refid="classamrex_1_1PlotFileDataImpl_1aade963d47f72015f6e2438ae21f45e12" kindref="member">PlotFileDataImpl::syncDistributionMap</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">PlotFileDataImpl::syncDistributionMap<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
 <codeline lineno="112"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>&lt;=<sp/>src.finestLevel()<sp/>&amp;&amp;<sp/>m_dmap[level].size()<sp/>==<sp/>src.DistributionMap(level).size())<sp/>{</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_dmap[level]<sp/>=<sp/>src.DistributionMap(level);</highlight></codeline>
@@ -2116,15 +2116,15 @@
 <codeline lineno="116"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
 <codeline lineno="118"><highlight class="normal">MultiFab</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><ref refid="classamrex_1_1PlotFileDataImpl_1a780c89af0db95b7c96610739ca60ac6c" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>noexcept</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>noexcept</highlight></codeline>
 <codeline lineno="120"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>mf(m_ba[level],<sp/>m_dmap[level],<sp/>m_ncomp,<sp/>m_ngrow[level]);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1a584871b7013d4d9e46d16eb6d53803ed" kindref="member">VisMF::Read</ref>(mf,<sp/>m_mf_name[level]);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad7c4906fd7d4c6640ae4954b1ed33a12" kindref="member">VisMF::Read</ref>(mf,<sp/>m_mf_name[level]);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mf;</highlight></codeline>
 <codeline lineno="124"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal">MultiFab</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><ref refid="classamrex_1_1PlotFileDataImpl_1a780c89af0db95b7c96610739ca60ac6c" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>varname)<sp/>noexcept</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>varname)<sp/>noexcept</highlight></codeline>
 <codeline lineno="128"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>mf(m_ba[level],<sp/>m_dmap[level],<sp/>1,<sp/>m_ngrow[level]);</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(m_var_names),<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(m_var_names),<sp/>varname);</highlight></codeline>
@@ -2136,7 +2136,7 @@
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/>dstfab<sp/>=<sp/>mf[mfi];</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FArrayBox&gt;<sp/>srcfab(m_vismf[level]-&gt;readFAB(gid,<sp/>icomp));</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dstfab.copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(*srcfab);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dstfab.copy&lt;RunOn::Host&gt;(*srcfab);</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mf;</highlight></codeline>

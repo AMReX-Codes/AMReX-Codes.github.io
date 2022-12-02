@@ -5,7 +5,6 @@ var AMReX__Reduce_8H =
     [ "ReduceOpMax", "structamrex_1_1ReduceOpMax.html", "structamrex_1_1ReduceOpMax" ],
     [ "ReduceOpLogicalAnd", "structamrex_1_1ReduceOpLogicalAnd.html", "structamrex_1_1ReduceOpLogicalAnd" ],
     [ "ReduceOpLogicalOr", "structamrex_1_1ReduceOpLogicalOr.html", "structamrex_1_1ReduceOpLogicalOr" ],
-    [ "ReduceOps", "classamrex_1_1ReduceOps.html", "classamrex_1_1ReduceOps" ],
     [ "ReduceData", "classamrex_1_1ReduceData.html", "classamrex_1_1ReduceData" ],
     [ "iterate_box", "structamrex_1_1Reduce_1_1detail_1_1iterate__box.html", null ],
     [ "iterate_box_comp", "structamrex_1_1Reduce_1_1detail_1_1iterate__box__comp.html", null ],

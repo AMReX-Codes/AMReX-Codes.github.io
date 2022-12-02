@@ -1,7 +1,7 @@
 var classamrex_1_1NeighborParticleContainer =
 [
     [ "InverseCopyTag", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag" ],
-    [ "MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", "structamrex_1_1NeighborParticleContainer_1_1MaskComps" ],
+    [ "MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", null ],
     [ "NeighborCommTag", "structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag" ],
     [ "NeighborCopyTag", "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag" ],
     [ "NeighborIndexMap", "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap" ],

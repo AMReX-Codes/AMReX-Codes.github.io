@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1ParmParse" kind="class" language="C++" prot="public">
     <compoundname>amrex::ParmParse</compoundname>
     <includes refid="AMReX__ParmParse_8H" local="no">AMReX_ParmParse.H</includes>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="269" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="269" bodyend="269"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="269" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="269" bodyend="269"/>
       </memberdef>
       <memberdef kind="typedef" id="classamrex_1_1ParmParse_1aee38792d71e1760bfc55a29a64ef36f5" prot="public" static="no">
         <type>std::list&lt; <ref refid="structamrex_1_1ParmParse_1_1PP__entry" kindref="compound">PP_entry</ref> &gt;</type>
@@ -57,9 +57,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="classamrex_1_1ParmParse_1a502b1ccfbb5899cf610e9d6159733193" prot="public" static="yes" mutable="no">
-        <type>const std::string</type>
-        <definition>const std::string amrex::ParmParse::FileKeyword</definition>
+      <memberdef kind="variable" id="classamrex_1_1ParmParse_1a44318f1c5a43d3c6ef6cd9f0fda99ea2" prot="public" static="yes" mutable="no">
+        <type>std::string const</type>
+        <definition>std::string const amrex::ParmParse::FileKeyword</definition>
         <argsstring></argsstring>
         <name>FileKeyword</name>
         <initializer>= &quot;FILE&quot;</initializer>
@@ -75,10 +75,13 @@
       </sectiondef>
       <sectiondef kind="friend">
       <memberdef kind="friend" id="classamrex_1_1ParmParse_1aee3a66b0ddf3b769f015c89b610db0c7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>friend class</type>
+        <type>class</type>
         <definition>friend class Frame</definition>
         <argsstring></argsstring>
         <name>Frame</name>
+        <param>
+          <type><ref refid="classamrex_1_1ParmParse_1_1Frame" kindref="compound">Frame</ref></type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -88,10 +91,13 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="1073" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="1073" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1ParmParse_1a697483987cfb91e205b5be2a8f6752c7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>friend class</type>
+        <type>class</type>
         <definition>friend class Record</definition>
         <argsstring></argsstring>
         <name>Record</name>
+        <param>
+          <type><ref refid="classamrex_1_1ParmParse_1_1Record" kindref="compound">Record</ref></type>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -3311,8 +3317,7 @@
 <para>plot.var = Density 1 10</para>
 <para>plot.var = Energy 5 12</para>
 <para>bigarray = 1 2 3 4 5 6 7 8 <verbatim>       9 10 11 12
-</verbatim></para>
-<para>aBox = ((0,0) (5,5))</para>
+</verbatim> aBox = ((0,0) (5,5))</para>
 <para>test = apple &quot;boy blue&quot; 10 20 30 40</para>
 <para>FILE = prob_file</para>
 <para>Preprocessing of AMREX_SPACEDIM is supported. It supports <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref>, #elif, #else, and #endif. The condition must be <computeroutput>AMREX_SPACEDIM op D</computeroutput>, where op is &gt;, &lt;, &gt;=, &lt;=, or ==, and D is 1, 2, or 3. The parentheses around the condition are optional. Some examples are shown below.</para>
@@ -3322,9 +3327,6 @@
     <collaborationgraph>
       <node id="4">
         <label>std::stack&lt; std::string &gt;</label>
-        <childnode refid="5" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
       </node>
       <node id="1">
         <label>amrex::ParmParse</label>
@@ -3342,14 +3344,14 @@
       <node id="3">
         <label>T</label>
       </node>
+      <node id="6">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
       <node id="2">
         <label>std::list&lt; T &gt;</label>
         <childnode refid="3" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-      </node>
-      <node id="6">
-        <label>std::basic_string&lt; char &gt;</label>
       </node>
       <node id="5">
         <label>std::string</label>
@@ -3357,7 +3359,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="264" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="263" bodyend="1088"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" line="263" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" bodystart="264" bodyend="1088"/>
     <listofallmembers>
       <member refid="classamrex_1_1ParmParse_1a370bca8ac17e25198c845b9882d80e70" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
       <member refid="classamrex_1_1ParmParse_1a315246869dee121211882c0359fe9f78" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
@@ -3384,7 +3386,7 @@
       <member refid="classamrex_1_1ParmParse_1a5d5e7f730cecfe8ec90190eadfe85059" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>countRecords</name></member>
       <member refid="classamrex_1_1ParmParse_1ac6d9a4fda6c8de819a90ba19c327dfe4" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>countval</name></member>
       <member refid="classamrex_1_1ParmParse_1ad5376a2e65027c356b38efbef3180c28" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>dumpTable</name></member>
-      <member refid="classamrex_1_1ParmParse_1a502b1ccfbb5899cf610e9d6159733193" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>FileKeyword</name></member>
+      <member refid="classamrex_1_1ParmParse_1a44318f1c5a43d3c6ef6cd9f0fda99ea2" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>FileKeyword</name></member>
       <member refid="classamrex_1_1ParmParse_1a9283fab7556352eeff908ca26cd440be" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Finalize</name></member>
       <member refid="classamrex_1_1ParmParse_1aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>FIRST</name></member>
       <member refid="classamrex_1_1ParmParse_1aee3a66b0ddf3b769f015c89b610db0c7" prot="protected" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Frame</name></member>
@@ -3483,8 +3485,8 @@
       <member refid="classamrex_1_1ParmParse_1a697483987cfb91e205b5be2a8f6752c7" prot="protected" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Record</name></member>
       <member refid="classamrex_1_1ParmParse_1a6657f8c789a5b37f79bc4219dd6e3a81" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>remove</name></member>
       <member refid="classamrex_1_1ParmParse_1a97b7fee85e0a5c10246c53379b7f44df" prot="protected" virt="non-virtual"><scope>amrex::ParmParse</scope><name>setPrefix</name></member>
-      <member refid="classamrex_1_1ParmParse_1aee38792d71e1760bfc55a29a64ef36f5" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Table</name></member>
       <member refid="classamrex_1_1ParmParse_1ab4f43a6024e50a1c5f9110d29ae42904" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>table</name></member>
+      <member refid="classamrex_1_1ParmParse_1aee38792d71e1760bfc55a29a64ef36f5" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Table</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

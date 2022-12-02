@@ -12,7 +12,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_NeighborParticles.H", "AMReX__NeighborParticles_8H.html", [
       [ "NeighborCode", "structamrex_1_1NeighborCode.html", "structamrex_1_1NeighborCode" ],
       [ "NeighborParticleContainer", "classamrex_1_1NeighborParticleContainer.html", "classamrex_1_1NeighborParticleContainer" ],
-      [ "MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", "structamrex_1_1NeighborParticleContainer_1_1MaskComps" ],
+      [ "MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", null ],
       [ "NeighborIndexMap", "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap" ],
       [ "NeighborCopyTag", "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html", "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag" ],
       [ "InverseCopyTag", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag" ],
@@ -27,7 +27,6 @@ var dir_678e78232f51bebdca12cae3de73223b =
       [ "ParGDB", "classamrex_1_1ParGDB.html", "classamrex_1_1ParGDB" ]
     ] ],
     [ "AMReX_ParIter.H", "AMReX__ParIter_8H.html", [
-      [ "ParticleContainer", "classamrex_1_1ParticleContainer.html", "classamrex_1_1ParticleContainer" ],
       [ "ParIterBase", "classamrex_1_1ParIterBase.html", "classamrex_1_1ParIterBase" ],
       [ "ParIter", "classamrex_1_1ParIter.html", "classamrex_1_1ParIter" ],
       [ "ParConstIter", "classamrex_1_1ParConstIter.html", "classamrex_1_1ParConstIter" ]
