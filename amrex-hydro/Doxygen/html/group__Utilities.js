@@ -1,7 +1,5 @@
 var group__Utilities =
 [
-    [ "HydroBC", "namespaceHydroBC.html", null ],
-    [ "HydroUtils", "namespaceHydroUtils.html", null ],
     [ "XVEL", "group__Utilities.html#gabd88b7e5e752e92713211c3184d3a5ae", null ],
     [ "YVEL", "group__Utilities.html#ga17d5f6d34047cd913543b43d73f2ce9a", null ],
     [ "ZVEL", "group__Utilities.html#gacd4c2357fa827bdc6b058736a689df22", null ],
