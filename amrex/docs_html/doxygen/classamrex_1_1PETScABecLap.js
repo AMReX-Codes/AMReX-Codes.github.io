@@ -10,9 +10,9 @@ var classamrex_1_1PETScABecLap =
     [ "setScalars", "classamrex_1_1PETScABecLap.html#aea6aef5fab439e43995892519fee28b6", null ],
     [ "setVerbose", "classamrex_1_1PETScABecLap.html#a580b216cdd0cc4085925ba398137c59a", null ],
     [ "solve", "classamrex_1_1PETScABecLap.html#a3dfb08dc31961b6f255925c4879a382d", null ],
-    [ "A", "classamrex_1_1PETScABecLap.html#aa7ec19bebac9e6cde8064974b896a9f9", null ],
+    [ "A", "classamrex_1_1PETScABecLap.html#a4f7ec9016da8bda82d240ef488851938", null ],
     [ "acoefs", "classamrex_1_1PETScABecLap.html#a0bdac13a79f515cc266c9babc14a7cc8", null ],
-    [ "b", "classamrex_1_1PETScABecLap.html#a08502c245a5dfd89dbb1ac522d5563f9", null ],
+    [ "b", "classamrex_1_1PETScABecLap.html#abb0cef2ff7ee4b014b5c49b98596f4c0", null ],
     [ "bcoefs", "classamrex_1_1PETScABecLap.html#ac7dbd144ec1cfc9a3c7802f0d9a76a01", null ],
     [ "cell_id", "classamrex_1_1PETScABecLap.html#a0c97a957588e229e248638455172fe75", null ],
     [ "cell_id_vec", "classamrex_1_1PETScABecLap.html#adce283edc6f4a7d4a016c19493c51418", null ],
@@ -28,7 +28,7 @@ var classamrex_1_1PETScABecLap =
     [ "regular_stencil_size", "classamrex_1_1PETScABecLap.html#aecf6271b785a92eee2bcd891ba3111e5", null ],
     [ "scalar_a", "classamrex_1_1PETScABecLap.html#a8ac31a926fe9e667d3f4edd227a855f5", null ],
     [ "scalar_b", "classamrex_1_1PETScABecLap.html#abd0ebc00024206fb8e730aef57ad9fd2", null ],
-    [ "solver", "classamrex_1_1PETScABecLap.html#a3a455ed1779e0a8091cf375d59d3d66e", null ],
+    [ "solver", "classamrex_1_1PETScABecLap.html#a976f5746ad0716c9506ffebd4c4a6cd2", null ],
     [ "verbose", "classamrex_1_1PETScABecLap.html#a03a7a7428fc17a0413d54f5b9c2cb9e6", null ],
-    [ "x", "classamrex_1_1PETScABecLap.html#a4aadd98b014b860d25cc20e10445449c", null ]
+    [ "x", "classamrex_1_1PETScABecLap.html#a82c372d8519e17a10995968b370106dc", null ]
 ];

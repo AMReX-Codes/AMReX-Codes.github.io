@@ -2,7 +2,7 @@ var AMReX__MultiFabUtil__3D__C_8H =
 [
     [ "amrex_avg_cc_to_fc", "AMReX__MultiFabUtil__3D__C_8H.html#ae9ae8b3dc626566b2ae1a8659ae44fb4", null ],
     [ "amrex_avg_eg_to_cc", "AMReX__MultiFabUtil__3D__C_8H.html#aa41060ba2affd9f9e0af483dc0f6adf1", null ],
-    [ "amrex_avg_fc_to_cc", "AMReX__MultiFabUtil__3D__C_8H.html#a27c3fe9362557c585d32411f79d576f6", null ],
+    [ "amrex_avg_fc_to_cc", "AMReX__MultiFabUtil__3D__C_8H.html#a2d5aae08a6994ab934119ad634da8db0", null ],
     [ "amrex_avg_nd_to_cc", "AMReX__MultiFabUtil__3D__C_8H.html#a9904cb709f0cc1096942b2799924eec4", null ],
     [ "amrex_avgdown", "AMReX__MultiFabUtil__3D__C_8H.html#ac657b202a77b0a3e8d6313ea5e9316af", null ],
     [ "amrex_avgdown", "AMReX__MultiFabUtil__3D__C_8H.html#a108fe9fcd30851ff1986f4d4588f5adc", null ],

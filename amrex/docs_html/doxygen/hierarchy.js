@@ -5,7 +5,7 @@ var hierarchy =
       [ "amrex::PODVector< amrex::STLtools::Triangle >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< std::size_t >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::Box >", "classamrex_1_1PODVector.html", null ],
-      [ "amrex::PODVector< amrex::GpuArray< amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM > >", "classamrex_1_1PODVector.html", null ],
+      [ "amrex::PODVector< amrex::GpuArray< amrex::MLCellLinOpT::BCTL, 2 *AMREX_SPACEDIM > >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< int >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< unsigned int >", "classamrex_1_1PODVector.html", null ],
       [ "amrex::PODVector< amrex::XDim3 >", "classamrex_1_1PODVector.html", null ],
@@ -39,7 +39,9 @@ var hierarchy =
     [ "amrex_fort_module::amrex_free", "interfaceamrex__fort__module_1_1amrex__free.html", null ],
     [ "amrex::amrex_iparser", "structamrex_1_1amrex__iparser.html", null ],
     [ "AMREX_IPARSERSTYPE", "unionAMREX__IPARSERSTYPE.html", null ],
+    [ "amrex::amrex_KSP", "structamrex_1_1amrex__KSP.html", null ],
     [ "amrex_fort_module::amrex_malloc", "interfaceamrex__fort__module_1_1amrex__malloc.html", null ],
+    [ "amrex::amrex_Mat", "structamrex_1_1amrex__Mat.html", null ],
     [ "amrex_mempool_module::amrex_mempool_alloc", "interfaceamrex__mempool__module_1_1amrex__mempool__alloc.html", null ],
     [ "amrex_mempool_module::amrex_mempool_free", "interfaceamrex__mempool__module_1_1amrex__mempool__free.html", null ],
     [ "amrex_parmparse_module::amrex_new_parmparse", "interfaceamrex__parmparse__module_1_1amrex__new__parmparse.html", null ],
@@ -72,6 +74,7 @@ var hierarchy =
     [ "amrex_mempool_module::amrex_real_array_init", "interfaceamrex__mempool__module_1_1amrex__real__array__init.html", null ],
     [ "amrex_string_module::amrex_string", "structamrex__string__module_1_1amrex__string.html", null ],
     [ "amrex::InSituUtils::amrex_tt< cpp_t >", "structamrex_1_1InSituUtils_1_1amrex__tt.html", null ],
+    [ "amrex::amrex_Vec", "structamrex_1_1amrex__Vec.html", null ],
     [ "amrex::AmrInfo", "structamrex_1_1AmrInfo.html", [
       [ "amrex::AmrMesh", "classamrex_1_1AmrMesh.html", [
         [ "amrex::AmrCore", "classamrex_1_1AmrCore.html", [
@@ -114,6 +117,7 @@ var hierarchy =
       [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
     ] ],
     [ "amrex::Array4< int >", "structamrex_1_1Array4.html", null ],
+    [ "amrex::Array4< int const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< Real const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< T const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< T0 >", "structamrex_1_1Array4.html", null ],
@@ -160,7 +164,7 @@ var hierarchy =
     [ "amrex::BATransformer::BATOp", "unionamrex_1_1BATransformer_1_1BATOp.html", null ],
     [ "amrex::BATransformer", "structamrex_1_1BATransformer.html", null ],
     [ "amrex::BCRec", "classamrex_1_1BCRec.html", null ],
-    [ "amrex::MLCellLinOp::BCTL", "structamrex_1_1MLCellLinOp_1_1BCTL.html", null ],
+    [ "amrex::MLCellLinOpT< MF >::BCTL", "structamrex_1_1MLCellLinOpT_1_1BCTL.html", null ],
     [ "amrex::FabArrayBase::BDKey", "structamrex_1_1FabArrayBase_1_1BDKey.html", null ],
     [ "amrex::BinIterator< T >", "structamrex_1_1BinIterator.html", null ],
     [ "amrex_mempool_module::bl_allocate", "interfaceamrex__mempool__module_1_1bl__allocate.html", null ],
@@ -177,13 +181,13 @@ var hierarchy =
       [ "CommProfStats", "classCommProfStats.html", null ],
       [ "RegionsProfStats", "classRegionsProfStats.html", null ]
     ] ],
-    [ "amrex::MLCellLinOp::BndryCondLoc", "classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html", null ],
+    [ "amrex::MLCellLinOpT< MF >::BndryCondLoc", "classamrex_1_1MLCellLinOpT_1_1BndryCondLoc.html", null ],
     [ "amrex::StateDescriptor::BndryFunc", "classamrex_1_1StateDescriptor_1_1BndryFunc.html", null ],
     [ "amrex::BndryFuncArray", "classamrex_1_1BndryFuncArray.html", null ],
     [ "amrex::BndryRegisterT< MF >", "classamrex_1_1BndryRegisterT.html", [
       [ "amrex::BndryDataT< MF >", "classamrex_1_1BndryDataT.html", [
         [ "amrex::InterpBndryDataT< MF >", "classamrex_1_1InterpBndryDataT.html", [
-          [ "amrex::MLMGBndry", "classamrex_1_1MLMGBndry.html", null ]
+          [ "amrex::MLMGBndryT< MF >", "classamrex_1_1MLMGBndryT.html", null ]
         ] ]
       ] ],
       [ "amrex::FluxRegister", "classamrex_1_1FluxRegister.html", null ]
@@ -220,7 +224,7 @@ var hierarchy =
         [ "amrex::detail::clz_tag", "structamrex_1_1detail_1_1clz__tag.html", null ]
       ] ]
     ] ],
-    [ "amrex::MLLinOp::CommContainer", "structamrex_1_1MLLinOp_1_1CommContainer.html", null ],
+    [ "amrex::MLLinOpT< MF >::CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html", null ],
     [ "amrex::NonLocalBC::CommData", "structamrex_1_1NonLocalBC_1_1CommData.html", null ],
     [ "amrex::NonLocalBC::CommHandler", "structamrex_1_1NonLocalBC_1_1CommHandler.html", null ],
     [ "amrex::FabArrayBase::CommMetaData", "structamrex_1_1FabArrayBase_1_1CommMetaData.html", [
@@ -351,13 +355,13 @@ var hierarchy =
       ] ],
       [ "amrex::LayoutData< amrex::PODVector< Int > >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< HYPRE_Int >", "classamrex_1_1LayoutData.html", null ],
+      [ "amrex::LayoutData< amrex::GpuArray< amrex::MLCellLinOpT::BCTL, 2 *AMREX_SPACEDIM > * >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< GFab >", "classamrex_1_1LayoutData.html", [
         [ "amrex::EB2::MultiGFab", "classamrex_1_1EB2_1_1MultiGFab.html", null ]
       ] ],
       [ "amrex::LayoutData< Int >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< PetscInt >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::Vector< amrex::Vector< amrex::BoundCond > > >", "classamrex_1_1LayoutData.html", null ],
-      [ "amrex::LayoutData< amrex::GpuArray< amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM > * >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::Vector< RealTuple > >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< RealTuple >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::Vector< BCTuple > >", "classamrex_1_1LayoutData.html", null ],
@@ -637,6 +641,7 @@ var hierarchy =
       [ "amrex::EB2::GShopLevel< G >", "classamrex_1_1EB2_1_1GShopLevel.html", null ]
     ] ],
     [ "amrex::LevelBld", "classamrex_1_1LevelBld.html", null ],
+    [ "amrex::LinOpEnumType", "structamrex_1_1LinOpEnumType.html", null ],
     [ "amrex::DistributionMapping::LIpairGT", "structamrex_1_1DistributionMapping_1_1LIpairGT.html", null ],
     [ "amrex::DistributionMapping::LIpairLT", "structamrex_1_1DistributionMapping_1_1LIpairLT.html", null ],
     [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", null ],
@@ -666,28 +671,29 @@ var hierarchy =
     ] ],
     [ "amrex::MFItInfo", "structamrex_1_1MFItInfo.html", null ],
     [ "amrex::Minus< T >", "structamrex_1_1Minus.html", null ],
-    [ "amrex::MLCGSolver", "classamrex_1_1MLCGSolver.html", null ],
-    [ "amrex::MLLinOp", "classamrex_1_1MLLinOp.html", [
-      [ "amrex::MLCellLinOp", "classamrex_1_1MLCellLinOp.html", [
-        [ "amrex::MLCellABecLap", "classamrex_1_1MLCellABecLap.html", [
-          [ "amrex::MLABecLaplacian", "classamrex_1_1MLABecLaplacian.html", [
+    [ "amrex::MLCGSolverT< MF >", "classamrex_1_1MLCGSolverT.html", null ],
+    [ "amrex::MLLinOpT< MF >", "classamrex_1_1MLLinOpT.html", [
+      [ "amrex::MLCellLinOpT< MF >", "classamrex_1_1MLCellLinOpT.html", [
+        [ "amrex::MLCellABecLapT< MF >", "classamrex_1_1MLCellABecLapT.html", [
+          [ "amrex::MLABecLaplacianT< MF >", "classamrex_1_1MLABecLaplacianT.html", [
             [ "amrex::MLTensorOp", "classamrex_1_1MLTensorOp.html", null ]
           ] ],
-          [ "amrex::MLALaplacian", "classamrex_1_1MLALaplacian.html", null ],
+          [ "amrex::MLALaplacianT< MF >", "classamrex_1_1MLALaplacianT.html", null ],
           [ "amrex::MLEBABecLap", "classamrex_1_1MLEBABecLap.html", [
             [ "amrex::MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", null ]
           ] ],
-          [ "amrex::MLPoisson", "classamrex_1_1MLPoisson.html", null ]
+          [ "amrex::MLPoissonT< MF >", "classamrex_1_1MLPoissonT.html", null ]
         ] ]
       ] ],
       [ "amrex::MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", [
         [ "amrex::MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", null ],
         [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", null ],
         [ "amrex::MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", null ]
-      ] ],
-      [ "amrex_temp::MLLinOpTemp", "classamrex__temp_1_1MLLinOpTemp.html", null ]
+      ] ]
     ] ],
-    [ "amrex::MLMG", "classamrex_1_1MLMG.html", null ],
+    [ "amrex::MLMGABCTag< T >", "structamrex_1_1MLMGABCTag.html", null ],
+    [ "amrex::MLMGPSTag< T >", "structamrex_1_1MLMGPSTag.html", null ],
+    [ "amrex::MLMGT< MF >", "classamrex_1_1MLMGT.html", null ],
     [ "amrex::openbc::Moments", "structamrex_1_1openbc_1_1Moments.html", null ],
     [ "amrex::openbc::MomTag", "structamrex_1_1openbc_1_1MomTag.html", null ],
     [ "MPI_Status", "structMPI__Status.html", null ],
@@ -1002,22 +1008,22 @@ var hierarchy =
       [ "amrex::Vector< amrex::BCRec >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Long > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< const FabArrayBase::CopyComTagsContainer * >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Vector< amrex::Any > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::MultiMask >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< std::vector< bool > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< CommProfStats::ReductionEntry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< ParticleLevel >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< double >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< BCType, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::unique_ptr< amrex::BndryRegisterT< MF > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< gpuStream_t >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< Real > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< int > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, IntVector > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::MLCellLinOpT::BndryCondLoc > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::string >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::LayoutData< int > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::FabFactory< amrex::FArrayBox > > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< RT >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::DistributionMapping > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::unique_ptr< amrex::MLMGBndry > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< amrex::FillBoxId > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::ErrorRec > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::StateDescriptor > >", "classamrex_1_1Vector.html", null ],
@@ -1027,6 +1033,8 @@ var hierarchy =
       [ "amrex::Vector< CommProfStats::NameTagEntry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoxArray > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::MultiFab > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::unique_ptr< MF > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< MF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::DistributionMapping > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BoxArray >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::RStartStop >", "classamrex_1_1Vector.html", null ],
@@ -1043,7 +1051,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Real >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< ParticleTilePtr >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::NeighborParticleContainer::NeighborCommTag >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Vector< amrex::BndryRegisterT > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< RT > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::iMultiFab > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::ForkJoin::ComponentSet >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vertex >", "classamrex_1_1Vector.html", null ],
@@ -1051,21 +1059,22 @@ var hierarchy =
       [ "amrex::Vector< amrex::VisMF::FabOnDisk >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< int, amrex::PODVector< int > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Any >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::PolyTerm >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vector< Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::CallStats >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< double > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Array< amrex::MultiMask, 2 *AMREX_SPACEDIM > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< amrex::BndryRegisterT< MF > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< Real, std::unique_ptr< MultiFab > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< MPI_Status >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::VisMF * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::list< BLProfStats::TimeRange > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::VisMF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, ParticleTile > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::FabFactory< FAB > > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::iMultiFab > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::YAFluxRegisterT< MF > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::iMultiFab > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::MLCellLinOp::BndryCondLoc > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::StateData >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< CommProfStats::DataBlock >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::list< amrex::XYPlotDataListLink * > >", "classamrex_1_1Vector.html", null ],
@@ -1081,15 +1090,16 @@ var hierarchy =
       [ "amrex::Vector< std::unique_ptr< std::fstream > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vector< MultiFab > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< int > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::YAFluxRegisterT >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< MF >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::MultiFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< RegionsProfStats::DataBlock >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< CommProfStats::BarrierEntry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::IntVect >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< BLProfStats::TimeRange > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, amrex::Vector< amrex::NeighborParticleContainer::InverseCopyTag > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::unique_ptr< amrex::BndryRegisterT > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::unique_ptr< amrex::MLMGBndryT< MF > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Setbuf_Char_Type >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< Array< MF, AMREX_SPACEDIM > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< void *, amrex::Arena * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< T > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::distFcnElement2d * >", "classamrex_1_1Vector.html", null ],

@@ -1678,13 +1678,13 @@
 <codeline lineno="137"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
 <codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal">BARef::define<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">BARef::define<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight></codeline>
 <codeline lineno="141"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(m_abox.size()<sp/>==<sp/>0);</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>updateMemoryUsage_box(-1);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>m_abox.push_back(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>m_abox.push_back(bx);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>updateMemoryUsage_box(1);</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
@@ -1818,11 +1818,11 @@
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref(std::make_shared&lt;BARef&gt;())</highlight></codeline>
 <codeline lineno="278"><highlight class="normal">{}</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"></highlight></codeline>
-<codeline lineno="280"><highlight class="normal">BoxArray::BoxArray<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">BoxArray::BoxArray<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bat(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType()),</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref(std::make_shared&lt;BARef&gt;(<ref refid="namespaceamrex" kindref="compound">amrex</ref>::<ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">enclosedCells</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>))),</highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>m_simplified_list(std::make_shared&lt;BoxList&gt;(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>))</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bat(bx.ixType()),</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref(std::make_shared&lt;BARef&gt;(<ref refid="namespaceamrex" kindref="compound">amrex</ref>::<ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">enclosedCells</ref>(bx))),</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>m_simplified_list(std::make_shared&lt;BoxList&gt;(bx))</highlight></codeline>
 <codeline lineno="285"><highlight class="normal">{}</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal">BoxArray::BoxArray<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>bl)</highlight></codeline>
@@ -1887,12 +1887,12 @@
 <codeline lineno="346"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"></highlight></codeline>
 <codeline lineno="348"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="349"><highlight class="normal">BoxArray::define<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">BoxArray::define<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight></codeline>
 <codeline lineno="350"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>clear();</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bat<sp/>=<sp/>BATransformer(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType());</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;define(<ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">amrex::enclosedCells</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>));</highlight></codeline>
-<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>m_simplified_list<sp/>=<sp/>std::make_shared&lt;BoxList&gt;(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bat<sp/>=<sp/>BATransformer(bx.ixType());</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;define(<ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">amrex::enclosedCells</ref>(bx));</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>m_simplified_list<sp/>=<sp/>std::make_shared&lt;BoxList&gt;(bx);</highlight></codeline>
 <codeline lineno="355"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="356"><highlight class="normal"></highlight></codeline>
 <codeline lineno="357"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
@@ -2255,7 +2255,7 @@
 <codeline lineno="714"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="715"><highlight class="normal"></highlight></codeline>
 <codeline lineno="716"><highlight class="normal">BoxArray&amp;</highlight></codeline>
-<codeline lineno="717"><highlight class="normal"><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">BoxArray::grow</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">BoxArray::grow</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,</highlight></codeline>
 <codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_cell)</highlight></codeline>
 <codeline lineno="719"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/>uniqify();</highlight></codeline>
@@ -2265,13 +2265,13 @@
 <codeline lineno="724"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="725"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].grow(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>n_cell);</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].grow(dir,<sp/>n_cell);</highlight></codeline>
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="730"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="731"><highlight class="normal"></highlight></codeline>
 <codeline lineno="732"><highlight class="normal">BoxArray&amp;</highlight></codeline>
-<codeline lineno="733"><highlight class="normal"><ref refid="namespaceamrex_1a83482f38d773ec79abbd74b9fa084436" kindref="member">BoxArray::growLo</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><ref refid="namespaceamrex_1a83482f38d773ec79abbd74b9fa084436" kindref="member">BoxArray::growLo</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,</highlight></codeline>
 <codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_cell)</highlight></codeline>
 <codeline lineno="735"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/>uniqify();</highlight></codeline>
@@ -2281,13 +2281,13 @@
 <codeline lineno="740"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="741"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].growLo(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>n_cell);</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].growLo(dir,<sp/>n_cell);</highlight></codeline>
 <codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="746"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="747"><highlight class="normal"></highlight></codeline>
 <codeline lineno="748"><highlight class="normal">BoxArray&amp;</highlight></codeline>
-<codeline lineno="749"><highlight class="normal"><ref refid="namespaceamrex_1ac2123a6b0d0f3ddc938fbbb4c8b89f73" kindref="member">BoxArray::growHi</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><ref refid="namespaceamrex_1ac2123a6b0d0f3ddc938fbbb4c8b89f73" kindref="member">BoxArray::growHi</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,</highlight></codeline>
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_cell)</highlight></codeline>
 <codeline lineno="751"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/>uniqify();</highlight></codeline>
@@ -2297,7 +2297,7 @@
 <codeline lineno="756"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="757"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].growHi(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>n_cell);</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].growHi(dir,<sp/>n_cell);</highlight></codeline>
 <codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="762"><highlight class="normal">}</highlight></codeline>
@@ -2310,10 +2310,10 @@
 <codeline lineno="769"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="770"><highlight class="normal"></highlight></codeline>
 <codeline lineno="771"><highlight class="normal">BoxArray&amp;</highlight></codeline>
-<codeline lineno="772"><highlight class="normal"><ref refid="namespaceamrex_1a83ce813a4f22bd122dfa0d93671ecb4e" kindref="member">BoxArray::surroundingNodes</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>)</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><ref refid="namespaceamrex_1a83ce813a4f22bd122dfa0d93671ecb4e" kindref="member">BoxArray::surroundingNodes</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir)</highlight></codeline>
 <codeline lineno="773"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>IndexType<sp/>typ<sp/>=<sp/>ixType();</highlight></codeline>
-<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/>typ.setType(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/><ref refid="amrex__iparser_8tab_8h_1aeb75f4c5a547df067e70d41ee5ce67fda59a889456a2d742fdca191dccb3e871d" kindref="member">IndexType::NODE</ref>);</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/>typ.setType(dir,<sp/><ref refid="amrex__iparser_8tab_8h_1aeb75f4c5a547df067e70d41ee5ce67fda59a889456a2d742fdca191dccb3e871d" kindref="member">IndexType::NODE</ref>);</highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="namespaceamrex_1a911442fbfdd591235baf90cac01d9856" kindref="member">convert</ref>(typ);</highlight></codeline>
 <codeline lineno="777"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="778"><highlight class="normal"></highlight></codeline>
@@ -2324,10 +2324,10 @@
 <codeline lineno="783"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="784"><highlight class="normal"></highlight></codeline>
 <codeline lineno="785"><highlight class="normal">BoxArray&amp;</highlight></codeline>
-<codeline lineno="786"><highlight class="normal"><ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">BoxArray::enclosedCells</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>)</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><ref refid="namespaceamrex_1ab6ab1a9e025eea672b3117f9f32d1a68" kindref="member">BoxArray::enclosedCells</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir)</highlight></codeline>
 <codeline lineno="787"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/>IndexType<sp/>typ<sp/>=<sp/>ixType();</highlight></codeline>
-<codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/>typ.setType(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>IndexType::CELL);</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/>typ.setType(dir,<sp/>IndexType::CELL);</highlight></codeline>
 <codeline lineno="790"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="namespaceamrex_1a911442fbfdd591235baf90cac01d9856" kindref="member">convert</ref>(typ);</highlight></codeline>
 <codeline lineno="791"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="792"><highlight class="normal"></highlight></codeline>
@@ -2366,7 +2366,7 @@
 <codeline lineno="825"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="826"><highlight class="normal"></highlight></codeline>
 <codeline lineno="827"><highlight class="normal">BoxArray&amp;</highlight></codeline>
-<codeline lineno="828"><highlight class="normal"><ref refid="namespaceamrex_1ace26a2763f9834a0e4e2369463dd7452" kindref="member">BoxArray::shift</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><ref refid="namespaceamrex_1ace26a2763f9834a0e4e2369463dd7452" kindref="member">BoxArray::shift</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,</highlight></codeline>
 <codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nzones)</highlight></codeline>
 <codeline lineno="830"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/>uniqify();</highlight></codeline>
@@ -2376,7 +2376,7 @@
 <codeline lineno="835"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="836"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].shift(<ref refid="AMReX__MLCellLinOp_8cpp_1a851cf68c8f607573c1a5e987784c83f6" kindref="member">dir</ref>,<sp/>nzones);</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].shift(dir,<sp/>nzones);</highlight></codeline>
 <codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="841"><highlight class="normal">}</highlight></codeline>
@@ -2677,47 +2677,47 @@
 <codeline lineno="1136"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1138"><highlight class="normal">std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="1139"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1139"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1140"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1141"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1142"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,isects,</highlight><highlight class="keyword">false</highlight><highlight class="normal">,IntVect::TheZeroVector());</highlight></codeline>
+<codeline lineno="1142"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(bx,isects,</highlight><highlight class="keyword">false</highlight><highlight class="normal">,IntVect::TheZeroVector());</highlight></codeline>
 <codeline lineno="1143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isects;</highlight></codeline>
 <codeline lineno="1144"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1145"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1146"><highlight class="normal">std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="1147"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_only,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ng)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1147"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_only,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ng)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1148"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,isects,first_only,IntVect(ng));</highlight></codeline>
+<codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(bx,isects,first_only,IntVect(ng));</highlight></codeline>
 <codeline lineno="1151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isects;</highlight></codeline>
 <codeline lineno="1152"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1153"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1154"><highlight class="normal">std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="1155"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_only,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ng)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1155"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first_only,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ng)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1156"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1157"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,isects,first_only,ng);</highlight></codeline>
+<codeline lineno="1158"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(bx,isects,first_only,ng);</highlight></codeline>
 <codeline lineno="1159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isects;</highlight></codeline>
 <codeline lineno="1160"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1161"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1162"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1163"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,</highlight></codeline>
+<codeline lineno="1163"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx,</highlight></codeline>
 <codeline lineno="1164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;&amp;<sp/>isects)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1165"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1166"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>isects,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>IntVect::TheZeroVector());</highlight></codeline>
+<codeline lineno="1166"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(bx,<sp/>isects,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>IntVect::TheZeroVector());</highlight></codeline>
 <codeline lineno="1167"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1168"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1169"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1170"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,</highlight></codeline>
+<codeline lineno="1170"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx,</highlight></codeline>
 <codeline lineno="1171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;&amp;<sp/>isects,</highlight></codeline>
 <codeline lineno="1172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first_only,</highlight></codeline>
 <codeline lineno="1173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ng)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1174"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1175"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,isects,first_only,IntVect(ng));</highlight></codeline>
+<codeline lineno="1175"><highlight class="normal"><sp/><sp/><sp/><sp/>intersections(bx,isects,first_only,IntVect(ng));</highlight></codeline>
 <codeline lineno="1176"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1177"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1178"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1179"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,</highlight></codeline>
+<codeline lineno="1179"><highlight class="normal">BoxArray::intersections<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx,</highlight></codeline>
 <codeline lineno="1180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;&amp;<sp/>isects,</highlight></codeline>
 <codeline lineno="1181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>first_only,</highlight></codeline>
 <codeline lineno="1182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ng)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
@@ -2730,9 +2730,9 @@
 <codeline lineno="1189"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!BoxHashMap.empty())</highlight></codeline>
 <codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType()<sp/>==<sp/>ixType());</highlight></codeline>
+<codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bx.ixType()<sp/>==<sp/>ixType());</highlight></codeline>
 <codeline lineno="1193"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>gbx<sp/>=<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,ng);</highlight></codeline>
+<codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>gbx<sp/>=<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(bx,ng);</highlight></codeline>
 <codeline lineno="1195"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>glo<sp/>=<sp/>gbx.smallEnd();</highlight></codeline>
 <codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>ghi<sp/>=<sp/>gbx.bigEnd();</highlight></codeline>
@@ -2764,7 +2764,7 @@
 <codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)</highlight></codeline>
 <codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/>abox[index];</highlight></codeline>
-<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>&amp;<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(ibox,ng);</highlight></codeline>
+<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(ibox,ng);</highlight></codeline>
 <codeline lineno="1227"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
 <codeline lineno="1229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2778,7 +2778,7 @@
 <codeline lineno="1237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)</highlight></codeline>
 <codeline lineno="1238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(<ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(abox[index],cr),t);</highlight></codeline>
-<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>&amp;<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(ibox,ng);</highlight></codeline>
+<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(ibox,ng);</highlight></codeline>
 <codeline lineno="1241"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
 <codeline lineno="1243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2790,7 +2790,7 @@
 <codeline lineno="1249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)</highlight></codeline>
 <codeline lineno="1250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/>m_bat.m_op.m_bndryReg(abox[index]);</highlight></codeline>
-<codeline lineno="1252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>&amp;<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(ibox,ng);</highlight></codeline>
+<codeline lineno="1252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(ibox,ng);</highlight></codeline>
 <codeline lineno="1253"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
 <codeline lineno="1255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2805,27 +2805,27 @@
 <codeline lineno="1264"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1265"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1266"><highlight class="normal">BoxList</highlight></codeline>
-<codeline lineno="1267"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">BoxArray::complementIn</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1267"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">BoxArray::complementIn</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1268"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1269"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType());</highlight></codeline>
-<codeline lineno="1270"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">complementIn</ref>(bl,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="1269"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl(bx.ixType());</highlight></codeline>
+<codeline lineno="1270"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">complementIn</ref>(bl,<sp/>bx);</highlight></codeline>
 <codeline lineno="1271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bl;</highlight></codeline>
 <codeline lineno="1272"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1273"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1274"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1275"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">BoxArray::complementIn</ref><sp/>(BoxList&amp;<sp/>bl,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">BoxArray::complementIn</ref><sp/>(BoxList&amp;<sp/>bl,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="1276"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1277"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.<ref refid="classamrex_1_1BoxArray_1afed0e52f6570fe4960ce4758f5558761" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.set(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType());</highlight></codeline>
-<codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.push_back(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.set(bx.ixType());</highlight></codeline>
+<codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.push_back(bx);</highlight></codeline>
 <codeline lineno="1280"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1282"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1283"><highlight class="normal"><sp/><sp/><sp/><sp/>BARef::HashType&amp;<sp/>BoxHashMap<sp/>=<sp/>getHashMap();</highlight></codeline>
 <codeline lineno="1284"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1285"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.ixType()<sp/>==<sp/>ixType());</highlight></codeline>
+<codeline lineno="1285"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bx.ixType()<sp/>==<sp/>ixType());</highlight></codeline>
 <codeline lineno="1286"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>gbx<sp/>=<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>;</highlight></codeline>
+<codeline lineno="1287"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>gbx<sp/>=<sp/>bx;</highlight></codeline>
 <codeline lineno="1288"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>glo<sp/>=<sp/>gbx.smallEnd();</highlight></codeline>
 <codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>ghi<sp/>=<sp/>gbx.bigEnd();</highlight></codeline>
@@ -2958,11 +2958,11 @@
 <codeline lineno="1417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects[j].first<sp/>==<sp/>i)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1419"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>m_ref-&gt;m_abox[isects[j].first];</highlight></codeline>
+<codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box&amp;<sp/>bx<sp/>=<sp/>m_ref-&gt;m_abox[isects[j].first];</highlight></codeline>
 <codeline lineno="1421"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,<sp/>isects[j].<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac5028f0e53837bb92fcf49d087aeee88" kindref="member">second</ref>);</highlight></codeline>
+<codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/>bx,<sp/>isects[j].<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac5028f0e53837bb92fcf49d087aeee88" kindref="member">second</ref>);</highlight></codeline>
 <codeline lineno="1423"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>EmptyBox;</highlight></codeline>
+<codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/>EmptyBox;</highlight></codeline>
 <codeline lineno="1425"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b<sp/>:<sp/>bl_diff)</highlight></codeline>
 <codeline lineno="1427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3007,8 +3007,8 @@
 <codeline lineno="1466"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>ixType().cellCentered())</highlight></codeline>
 <codeline lineno="1468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/>m_ref-&gt;m_abox)<sp/>{</highlight></codeline>
-<codeline lineno="1470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.enclosedCells();</highlight></codeline>
+<codeline lineno="1469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/>m_ref-&gt;m_abox)<sp/>{</highlight></codeline>
+<codeline lineno="1470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.enclosedCells();</highlight></codeline>
 <codeline lineno="1471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1473"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3048,10 +3048,10 @@
 <codeline lineno="1507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();</highlight></codeline>
 <codeline lineno="1508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="1509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>m_ref-&gt;m_abox[i];</highlight></codeline>
-<codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.normalize();</highlight></codeline>
-<codeline lineno="1512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxext<sp/>=<sp/><ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(maxext,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>.size());</highlight></codeline>
-<codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundingbox.minBox(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="1510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bx<sp/>=<sp/>m_ref-&gt;m_abox[i];</highlight></codeline>
+<codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.normalize();</highlight></codeline>
+<codeline lineno="1512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxext<sp/>=<sp/><ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(maxext,<sp/>bx.size());</highlight></codeline>
+<codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundingbox.minBox(bx);</highlight></codeline>
 <codeline lineno="1514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1515"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
@@ -3233,9 +3233,9 @@
 <codeline lineno="1692"><highlight class="normal"><ref refid="namespaceamrex_1a4f75454b7ddd1be750318c754c3b1ae3" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>bl)</highlight></codeline>
 <codeline lineno="1693"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1694"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newbl(bl.ixType());</highlight></codeline>
-<codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>:<sp/>bl)</highlight></codeline>
+<codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>:<sp/>bl)</highlight></codeline>
 <codeline lineno="1696"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>newba<sp/>=<sp/><ref refid="namespaceamrex_1a31f38031bc51519297d88d3234115277" kindref="member">amrex::intersect</ref>(ba,<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="1697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>newba<sp/>=<sp/><ref refid="namespaceamrex_1a31f38031bc51519297d88d3234115277" kindref="member">amrex::intersect</ref>(ba,<sp/>bx);</highlight></codeline>
 <codeline lineno="1698"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newba.boxList());</highlight></codeline>
 <codeline lineno="1699"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1700"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newbl;</highlight></codeline>
@@ -3309,8 +3309,8 @@
 <codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_diff(btype);</highlight></codeline>
 <codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>tba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref><sp/>=<sp/>tba[i];</highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(<ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>,ngrow),<sp/><ref refid="AMReX__MLCellLinOp_8cpp_1a6519f4e4ebc41cae6cbf1be37636751d" kindref="member">bx</ref>);</highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>tba[i];</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(bx,ngrow),<sp/>bx);</highlight></codeline>
 <codeline lineno="1773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gcells.join(bl_diff);</highlight></codeline>
 <codeline lineno="1774"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
