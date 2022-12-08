@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"namespaceamrex_1_1algoim.html#a1563d162ff7c724b049f407982b9376a":[2,0,0,0,22],
+"namespaceamrex_1_1algoim.html#a1d243dc8981384f1c0cb8b266c042735":[2,0,0,0,8],
+"namespaceamrex_1_1algoim.html#a26347d2ffb8ae0e55a261293b75aae80":[2,0,0,0,27],
+"namespaceamrex_1_1algoim.html#a2c8ca6ff2da3fdde81370a1dd00c9416":[2,0,0,0,3],
+"namespaceamrex_1_1algoim.html#a319d09e3fac406d5c7435495783c51da":[2,0,0,0,24],
 "namespaceamrex_1_1algoim.html#a354fd3da392bde50d7c9e5fd31a10385":[2,0,0,0,15],
 "namespaceamrex_1_1algoim.html#a3ccdff6c18c04f2fb7aa460f885333ba":[2,0,0,0,2],
 "namespaceamrex_1_1algoim.html#a59d00e52a1182ccb7556e0b34969d082":[2,0,0,0,23],
@@ -41,9 +46,6 @@ var NAVTREEINDEX11 =
 "namespaceamrex_1_1detail.html#a10e8c484da7d2f2f5bbd223b6b92dc87":[2,0,0,5,19],
 "namespaceamrex_1_1detail.html#a11b496ac41b8e46fe7f1adf74392dcfb":[2,0,0,5,43],
 "namespaceamrex_1_1detail.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[2,0,0,5,2],
-"namespaceamrex_1_1Lazy.html#a48f09e6d45685ddcaa72f6424891b9e4":[2,0,0,16,4],
-"namespaceamrex_1_1MFUtil.html#a0d2b028d5b4be5e38a0e4f8fc778c523":[2,0,0,18,3],
-"namespaceamrex_1_1MFUtil.html#afe644ed72607173bbcef31867f6a0c36":[2,0,0,18,2],
 "namespaceamrex_1_1detail.html#a22f28be2277f42d7a03a9e08a27ef688":[2,0,0,5,8],
 "namespaceamrex_1_1detail.html#a250b5d3b18b57c96185794d45778bceb":[2,0,0,5,35],
 "namespaceamrex_1_1detail.html#a25e0b92826e807152f4d649b33c45336":[2,0,0,5,24],
@@ -247,7 +249,5 @@ var NAVTREEINDEX11 =
 "namespaceamrex__constants__module.html#a4af48d8e7785fd2fdc80cc68c460e520":[2,0,3,14],
 "namespaceamrex__constants__module.html#a4f8d71c1b1d316bbf6505f7a9511d24d":[2,0,3,1],
 "namespaceamrex__constants__module.html#a5321716779ead3e7f70ea68bdbd2fb8b":[2,0,3,9],
-"namespaceamrex__constants__module.html#a629e9df315fc853fd9996d553493c395":[2,0,3,26],
-"namespaceamrex__constants__module.html#a6d0e20a18c5f695168cf590f87a460a4":[2,0,3,0],
-"namespaceamrex__constants__module.html#a7469c455ff0cedccfe42c39814622d44":[2,0,3,5]
+"namespaceamrex__constants__module.html#a629e9df315fc853fd9996d553493c395":[2,0,3,26]
 };
