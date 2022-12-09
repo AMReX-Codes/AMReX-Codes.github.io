@@ -1,6 +1,5 @@
 var NAVTREEINDEX78 =
 {
-"structamrex_1_1RungeKutta_1_1PostStageNoOp.html#a723eaac830169eba34146a762f245b58":[2,0,0,16,0,0],
 "structamrex_1_1STLtools_1_1Triangle.html":[2,0,0,366,0],
 "structamrex_1_1STLtools_1_1Triangle.html#a55b9d3099133f345ecb5d650727c793b":[2,0,0,366,0,0],
 "structamrex_1_1STLtools_1_1Triangle.html#a6b301a1c15117340fbb999bfee7dd5a2":[2,0,0,366,0,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX78 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#acca11ab4048cabd364f8e25012b416ba":[2,0,0,0,5,4],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ad7a1d13d438479b184c871b0dec86a66":[2,0,0,0,5,10],
 "structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html":[2,0,0,0,6],
-"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html#ab942f7d12d8564d8cdc739a1b904df4d":[2,0,0,0,6,0]
+"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html#ab942f7d12d8564d8cdc739a1b904df4d":[2,0,0,0,6,0],
+"structamrex_1_1algoim_1_1Interval.html":[2,0,0,0,4]
 };

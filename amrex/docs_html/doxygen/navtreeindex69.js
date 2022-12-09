@@ -1,6 +1,5 @@
 var NAVTREEINDEX69 =
 {
-"namespaceamrex__string__module.html":[1,0,17],
 "namespaceamrex__string__module.html#a0bf8f20010cb63d36d70475cce439c7d":[1,0,17,3],
 "namespaceamrex__string__module.html#a4c4d4d30474688b40ff24d73c6d93073":[1,0,17,4],
 "namespaceamrex__string__module.html#a624a8f56ebfb3afaeb6658ef1c343616":[1,0,17,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX69 =
 "structFabCopyTag.html#a4ff330a96d834decbe692af33b5ef290":[2,0,18,2],
 "structFabCopyTag.html#aaac656d064476485e334474094eff3a3":[2,0,18,0],
 "structFilterVirt.html":[2,0,19],
-"structFilterVirt.html#a0560deac64bc66d21eb1ad8f1c24c430":[2,0,19,2]
+"structFilterVirt.html#a0560deac64bc66d21eb1ad8f1c24c430":[2,0,19,2],
+"structFilterVirt.html#a1dfe31cd80d8874bb9f33d3825231f1c":[2,0,19,5]
 };

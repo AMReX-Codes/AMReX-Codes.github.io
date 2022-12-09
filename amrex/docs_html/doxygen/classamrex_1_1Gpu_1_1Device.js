@@ -40,7 +40,6 @@ var classamrex_1_1Gpu_1_1Device =
     [ "totalGlobalMem", "classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a", null ],
     [ "device_id", "classamrex_1_1Gpu_1_1Device.html#adf89d2ef6829289ef4e4f9ea2bd6a648", null ],
     [ "device_prop", "classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4", null ],
-    [ "gpu_default_stream", "classamrex_1_1Gpu_1_1Device.html#ad584078f0787df001af05bfe9c8d0356", null ],
     [ "gpu_stream", "classamrex_1_1Gpu_1_1Device.html#a44b4d2d558f0b94c682dcc9a26f7e666", null ],
     [ "gpu_stream_pool", "classamrex_1_1Gpu_1_1Device.html#a367f9e7d41a6be0c7822f3dc358b0e4e", null ],
     [ "max_blocks_per_launch", "classamrex_1_1Gpu_1_1Device.html#ade4fd28a778c5764f258744e57ef4f66", null ],

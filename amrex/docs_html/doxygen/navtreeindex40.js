@@ -1,15 +1,14 @@
 var NAVTREEINDEX40 =
 {
 "classamrex_1_1Gpu_1_1Device.html#ad50ffc68d86b60f6c4abea01215ecd80":[2,0,0,5,14,0],
-"classamrex_1_1Gpu_1_1Device.html#ad584078f0787df001af05bfe9c8d0356":[2,0,0,5,14,40],
 "classamrex_1_1Gpu_1_1Device.html#adccc576a72b545911c26ec7febfdd078":[2,0,0,5,14,12],
-"classamrex_1_1Gpu_1_1Device.html#ade4fd28a778c5764f258744e57ef4f66":[2,0,0,5,14,43],
+"classamrex_1_1Gpu_1_1Device.html#ade4fd28a778c5764f258744e57ef4f66":[2,0,0,5,14,42],
 "classamrex_1_1Gpu_1_1Device.html#adf89d2ef6829289ef4e4f9ea2bd6a648":[2,0,0,5,14,38],
 "classamrex_1_1Gpu_1_1Device.html#ae43b670a2fb74049a336cf2c2fc62c5a":[2,0,0,5,14,37],
 "classamrex_1_1Gpu_1_1Device.html#ae53661945fe0e36f109401055a3d87cf":[2,0,0,5,14,10],
 "classamrex_1_1Gpu_1_1Device.html#ae88f180144c332b3c64ce46584484b10":[2,0,0,5,14,18],
 "classamrex_1_1Gpu_1_1Device.html#aea19aa89a556ee88fe67f6067c0abacd":[2,0,0,5,14,11],
-"classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e":[2,0,0,5,14,44],
+"classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e":[2,0,0,5,14,43],
 "classamrex_1_1Gpu_1_1Device.html#aff182b0690355fc54cde1842964fc7db":[2,0,0,5,14,5],
 "classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4":[2,0,0,5,14,39],
 "classamrex_1_1Gpu_1_1Elixir.html":[2,0,0,5,15],
@@ -249,5 +248,6 @@ var NAVTREEINDEX40 =
 "classamrex_1_1IArrayBox.html#af6fedef15cfc27312aafd4587fc49683":[2,0,0,167,1],
 "classamrex_1_1IArrayBox.html#aff085ec8097788fc08d663f81062154e":[2,0,0,167,16],
 "classamrex_1_1IFABio.html":[2,0,0,166],
-"classamrex_1_1IFABio.html#a64691027901b50cde8c20c173d11a5cc":[2,0,0,166,0]
+"classamrex_1_1IFABio.html#a64691027901b50cde8c20c173d11a5cc":[2,0,0,166,0],
+"classamrex_1_1IFABio.html#ab301f216cf4babd2994c0ad2d49943ae":[2,0,0,166,1]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX79 =
 {
-"structamrex_1_1algoim_1_1Interval.html":[2,0,0,0,4],
 "structamrex_1_1algoim_1_1Interval.html#a017e3af95c08cb7c803eb4717bc2da14":[2,0,0,0,4,0],
 "structamrex_1_1algoim_1_1PsiCode.html":[2,0,0,0,2],
 "structamrex_1_1algoim_1_1PsiCode.html#a079589b947e48000160801106e65d2fe":[2,0,0,0,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX79 =
 "unionAMREX__IPARSERSTYPE.html#ae2a7dce34011a9267540c9717a5cb125":[2,0,12,4],
 "unionAMREX__PARSERSTYPE.html":[2,0,13],
 "unionAMREX__PARSERSTYPE.html#a45b983ef388900bd6a62165ed8c9564a":[2,0,13,5],
-"unionAMREX__PARSERSTYPE.html#a75d477cdab0c70b4d8bb6e949274b5f2":[2,0,13,3]
+"unionAMREX__PARSERSTYPE.html#a75d477cdab0c70b4d8bb6e949274b5f2":[2,0,13,3],
+"unionAMREX__PARSERSTYPE.html#a9d33634c4393856708a688f9cdae7052":[2,0,13,0]
 };

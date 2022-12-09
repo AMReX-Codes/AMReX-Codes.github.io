@@ -902,26 +902,30 @@
 <codeline lineno="65"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1StreamIter_1a08fc187035cb7994ed7b74652d1ae60a" kindref="member">StreamIter::~StreamIter</ref><sp/>()<sp/>{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Gpu_1_1StreamIter_1ac43afd05d7a1429cfc3457df64e89d23" kindref="member">m_sync</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a78acbb676e94c674fa5ec73508cef459" kindref="member">Gpu::streamSynchronizeAll</ref>();</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aae61fa0d560ee3c25d7deca229a31f60" kindref="member">Gpu::Device::resetStreamIndex</ref>();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1StreamIter_1a07805b5419bb6d709a1e7b3b4502443b" kindref="member">StreamIter::operator++ </ref>()<sp/>noexcept</highlight></codeline>
-<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a73f6c5940e933d6a33f935f750fbbcc0" kindref="member">m_i</ref>;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a52b41c558e2c01ea2386c5ffcf258759" kindref="member">m_threadsafe</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">Gpu::Device::setStreamIndex</ref>(<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a73f6c5940e933d6a33f935f750fbbcc0" kindref="member">m_i</ref>);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>();</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstreams<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a52a24ab365296e0cb90e053580751fb1" kindref="member">m_n</ref>,<sp/><ref refid="namespaceamrex_1_1Gpu_1a920dd19f186b2276d9bbdb14d117565c" kindref="member">Gpu::numGpuStreams</ref>());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nstreams;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">Gpu::Device::setStreamIndex</ref>(i);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aae61fa0d560ee3c25d7deca229a31f60" kindref="member">Gpu::Device::resetStreamIndex</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1StreamIter_1a07805b5419bb6d709a1e7b3b4502443b" kindref="member">StreamIter::operator++ </ref>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a73f6c5940e933d6a33f935f750fbbcc0" kindref="member">m_i</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a52b41c558e2c01ea2386c5ffcf258759" kindref="member">m_threadsafe</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">Gpu::Device::setStreamIndex</ref>(<ref refid="classamrex_1_1Gpu_1_1StreamIter_1a73f6c5940e933d6a33f935f750fbbcc0" kindref="member">m_i</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuUtility.cpp"/>
   </compounddef>
