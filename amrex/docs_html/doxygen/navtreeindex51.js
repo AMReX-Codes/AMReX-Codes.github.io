@@ -1,5 +1,14 @@
 var NAVTREEINDEX51 =
 {
+"classamrex_1_1PlotFileData.html#aa391b223b190969e506f7a1ca3995544":[2,0,0,194,16],
+"classamrex_1_1PlotFileData.html#ab43bb15523069271e57362121f6b42ce":[2,0,0,194,15],
+"classamrex_1_1PlotFileData.html#abdc4d9be2576d4f7b6f2b4af2ace47da":[2,0,0,194,20],
+"classamrex_1_1PlotFileData.html#ad827fbbd6757ac18eb39a4c5ce37ef95":[2,0,0,194,19],
+"classamrex_1_1PlotFileData.html#ae420ff73e7a6ac0310736a01f1a6dbc1":[2,0,0,194,9],
+"classamrex_1_1PlotFileData.html#aed1692798cdf36cceb29b2370a77c746":[2,0,0,194,2],
+"classamrex_1_1PlotFileData.html#afb42191a08a62dff1534e21804a1891b":[2,0,0,194,8],
+"classamrex_1_1PlotFileDataImpl.html":[2,0,0,193],
+"classamrex_1_1PlotFileDataImpl.html#a075941bb74ff56716adf843dfb352482":[2,0,0,193,4],
 "classamrex_1_1PlotFileDataImpl.html#a1a193312a2db503b2cd3fb46c556500d":[2,0,0,193,29],
 "classamrex_1_1PlotFileDataImpl.html#a2cd678a68c564bb01fd2cd47ce594521":[2,0,0,193,22],
 "classamrex_1_1PlotFileDataImpl.html#a316f5905166fb9d8dd4942fea21094d4":[2,0,0,193,1],
@@ -240,14 +249,5 @@ var NAVTREEINDEX51 =
 "classamrex_1_1ReduceData.html#a45d8b95de17a37ca2b1a02df500f2035":[2,0,0,209,17],
 "classamrex_1_1ReduceData.html#a61d113644b72c6bda6b1221a9079fe8c":[2,0,0,209,0],
 "classamrex_1_1ReduceData.html#a71bbfd3ca387af546ab718418a3d8521":[2,0,0,209,1],
-"classamrex_1_1ReduceData.html#a7d9d45224655edf3da07cab63c4389ec":[2,0,0,209,5],
-"classamrex_1_1ReduceData.html#a8758fc9b8484f68cf9dbd7b7961d9db9":[2,0,0,209,7],
-"classamrex_1_1ReduceData.html#a88088cca6d2dd4f7e752e3d5fec5f7d7":[2,0,0,209,19],
-"classamrex_1_1ReduceData.html#a95441a0edc24955aa9f0c83e21c34cad":[2,0,0,209,18],
-"classamrex_1_1ReduceData.html#aa7ac26fc429cbaf9db787e3400d11d08":[2,0,0,209,10],
-"classamrex_1_1ReduceData.html#ab375ddfc635376587d621e83a8daa746":[2,0,0,209,14],
-"classamrex_1_1ReduceData.html#acdd88eae26f790899fa6d061102875d0":[2,0,0,209,15],
-"classamrex_1_1ReduceData.html#ad9b6892476ee0222229ebc178fb0089f":[2,0,0,209,3],
-"classamrex_1_1ReduceData.html#ae683e1c583e7cf07816bca2d45bb3044":[2,0,0,209,16],
-"classamrex_1_1ReduceData.html#ae76a0d3958366cbcd739d85648a6701b":[2,0,0,209,8]
+"classamrex_1_1ReduceData.html#a7d9d45224655edf3da07cab63c4389ec":[2,0,0,209,5]
 };

@@ -5,5 +5,14 @@ var AMReX__Math_8H =
     [ "abs", "AMReX__Math_8H.html#a0d57b1b25d1b53052c080fe847e40acd", null ],
     [ "abs", "AMReX__Math_8H.html#a06556adef1343823eb8f3add01f1dc96", null ],
     [ "abs", "AMReX__Math_8H.html#a8b565c4d58a622a606eb0db1276b6669", null ],
-    [ "abs", "AMReX__Math_8H.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba", null ]
+    [ "abs", "AMReX__Math_8H.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba", null ],
+    [ "cospi", "AMReX__Math_8H.html#ada7d7d19433d7d59ac03689f8b55631d", null ],
+    [ "cospi", "AMReX__Math_8H.html#adbc23685ea37023206db656ff45973f7", null ],
+    [ "pi", "AMReX__Math_8H.html#ab79268d67f8a70c6e85ad3dfbbc622a3", null ],
+    [ "sincos", "AMReX__Math_8H.html#ac235809e73ad52f2d6b8c7cf324e9a27", null ],
+    [ "sincos", "AMReX__Math_8H.html#a132a1933870ca2c349d598c1a634dd30", null ],
+    [ "sincospi", "AMReX__Math_8H.html#af9868b2887bd7c4758a04d4603d10a5a", null ],
+    [ "sincospi", "AMReX__Math_8H.html#aecf367b723c8148d80df1abf95f5dfb5", null ],
+    [ "sinpi", "AMReX__Math_8H.html#a0568425c35018cd1be09a3b08a245585", null ],
+    [ "sinpi", "AMReX__Math_8H.html#a209b6bc6888f6b26a5337094aa3b5900", null ]
 ];

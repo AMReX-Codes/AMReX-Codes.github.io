@@ -1,5 +1,14 @@
 var NAVTREEINDEX64 =
 {
+"namespaceamrex.html#af9136e401cc189dee737565c20612e59":[1,0,0,1090],
+"namespaceamrex.html#af924e08c1b1c132575c3627b47c65695":[1,0,0,1637],
+"namespaceamrex.html#af95c31e8a68e385d1f891ceca215f977":[1,0,0,1366],
+"namespaceamrex.html#af95dc4f253202580282566c5e79fc50d":[1,0,0,1533],
+"namespaceamrex.html#af9790d1f61a6d21ce4e9f92c58ac0600":[1,0,0,2032],
+"namespaceamrex.html#af97d55742a96cb9e934e06c45ec22f03":[1,0,0,1208],
+"namespaceamrex.html#af9853b376b9431740468fdf9e549553d":[1,0,0,1811],
+"namespaceamrex.html#af99e582811a3661128ecb30e987e20a7":[1,0,0,1284],
+"namespaceamrex.html#afa4184f019cdc6b48fa68be6496681b8":[1,0,0,835],
 "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564":[1,0,0,559],
 "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a779b3131986acb907c287cdaf371d578":[1,0,0,559,1],
 "namespaceamrex.html#afa67f210f2e6c338d52553562f72c564a7e7dd435b4cc7ba2b020d5a97856dc80":[1,0,0,559,2],
@@ -240,14 +249,5 @@ var NAVTREEINDEX64 =
 "namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab":[1,0,0,15,97],
 "namespaceamrex_1_1Gpu.html#a132c08cd6614796306908e0155ac58b2":[1,0,0,15,58],
 "namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92":[1,0,0,15,98],
-"namespaceamrex_1_1Gpu.html#a15d5aa9cbac1f2a0ef1f042530760b88":[1,0,0,15,67],
-"namespaceamrex_1_1Gpu.html#a18d6ae36f6f894265b771b9d33717041":[1,0,0,15,69],
-"namespaceamrex_1_1Gpu.html#a2388c83afe31a41fc38fab133d98a1be":[1,0,0,15,50],
-"namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb":[1,0,0,15,65],
-"namespaceamrex_1_1Gpu.html#a2fed08a89572d6c04add3c5587f647d8":[1,0,0,15,93],
-"namespaceamrex_1_1Gpu.html#a337aceb06d1f93486e6593ff058c0a93":[1,0,0,15,47],
-"namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9":[1,0,0,15,68],
-"namespaceamrex_1_1Gpu.html#a3abad1fb37ce40b710326ae2d9ab208c":[1,0,0,15,111],
-"namespaceamrex_1_1Gpu.html#a3d36026586dd063c89350f39d815285a":[1,0,0,15,121],
-"namespaceamrex_1_1Gpu.html#a3da569ab08ec568b8e512d91d6259b53":[1,0,0,15,66]
+"namespaceamrex_1_1Gpu.html#a15d5aa9cbac1f2a0ef1f042530760b88":[1,0,0,15,67]
 };

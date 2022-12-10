@@ -1,5 +1,14 @@
 var NAVTREEINDEX34 =
 {
+"classamrex_1_1DistributionMapping.html#aefa710ade223a08a0a1ee6babd8e97c2":[2,0,0,117,46],
+"classamrex_1_1DistributionMapping.html#af41949391775da61f74853fc6a16b686":[2,0,0,117,28],
+"classamrex_1_1DistributionMapping.html#af4cb165d9e60aff6ad22b20d44ec22dd":[2,0,0,117,50],
+"classamrex_1_1EB2_1_1AllRegularIF.html":[2,0,0,4,8],
+"classamrex_1_1EB2_1_1AllRegularIF.html#a5355c1f2cd1dae18643f4e99b2db2746":[2,0,0,4,8,0],
+"classamrex_1_1EB2_1_1AllRegularIF.html#afe65b0a23a8c6a2c423aba19003ea70e":[2,0,0,4,8,1],
+"classamrex_1_1EB2_1_1BoxIF.html":[2,0,0,4,11],
+"classamrex_1_1EB2_1_1BoxIF.html#a13836ae745cdf1ef18c14cc11e386afd":[2,0,0,4,11,7],
+"classamrex_1_1EB2_1_1BoxIF.html#a18e83b3403884afdd28e389235427917":[2,0,0,4,11,6],
 "classamrex_1_1EB2_1_1BoxIF.html#a1b6692cc97dd6bccc694ddcb3ab8830d":[2,0,0,4,11,5],
 "classamrex_1_1EB2_1_1BoxIF.html#a22bbb9f61e5ec1f1e7086880b73e2c39":[2,0,0,4,11,8],
 "classamrex_1_1EB2_1_1BoxIF.html#a3b02a8674dd81501122d702f0048cfe1":[2,0,0,4,11,4],
@@ -240,14 +249,5 @@ var NAVTREEINDEX34 =
 "classamrex_1_1EB2_1_1Level.html#a4b580f495f97633950d9a0822c940fe8":[2,0,0,4,44,47],
 "classamrex_1_1EB2_1_1Level.html#a4e89aa75cb75a863666efa8df2f74e9b":[2,0,0,4,44,49],
 "classamrex_1_1EB2_1_1Level.html#a5417de191837a4807397f9dd9acffbc4":[2,0,0,4,44,44],
-"classamrex_1_1EB2_1_1Level.html#a58881e32864c4c8dedf033f9364438ee":[2,0,0,4,44,41],
-"classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1":[2,0,0,4,44,31],
-"classamrex_1_1EB2_1_1Level.html#a7d35fe220526a3427bc11672e79c921f":[2,0,0,4,44,17],
-"classamrex_1_1EB2_1_1Level.html#a8244e442a7b8e9f14056fa883f557c9c":[2,0,0,4,44,5],
-"classamrex_1_1EB2_1_1Level.html#a863477aadc907e1abeb83c666168ccc4":[2,0,0,4,44,36],
-"classamrex_1_1EB2_1_1Level.html#a904a42dc11ddb39db9a497fa7093a0dc":[2,0,0,4,44,35],
-"classamrex_1_1EB2_1_1Level.html#a999ca961f5c742f5d61cbace2d88535d":[2,0,0,4,44,45],
-"classamrex_1_1EB2_1_1Level.html#a9f121c3a3deb6a4cf27461c8745fd10d":[2,0,0,4,44,19],
-"classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066":[2,0,0,4,44,26],
-"classamrex_1_1EB2_1_1Level.html#aa8174a092dd237acf59e9145603b3104":[2,0,0,4,44,18]
+"classamrex_1_1EB2_1_1Level.html#a58881e32864c4c8dedf033f9364438ee":[2,0,0,4,44,41]
 };
