@@ -2030,123 +2030,126 @@
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_ncomp;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>m_var_names.resize(m_ncomp);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_ncomp;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_var_names[i];</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_spacedim<sp/>&gt;&gt;<sp/>m_time<sp/>&gt;&gt;<sp/>m_finest_level;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>m_nlevels<sp/>=<sp/>m_finest_level+1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>GotoNextLine(is);<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>needed,<sp/>otherwise<sp/>the<sp/>next<sp/>getline<sp/>will<sp/>get<sp/>an<sp/>empty<sp/>string.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_ncomp;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>tmp;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::getline(is,<sp/>tmp);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_var_names[i]<sp/>=<sp/><ref refid="namespaceamrex_1a1a8cddb9effe92e67b1ad49de145e901" kindref="member">amrex::trim</ref>(tmp);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_spacedim;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_prob_lo[i];</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_spacedim<sp/>&gt;&gt;<sp/>m_time<sp/>&gt;&gt;<sp/>m_finest_level;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>m_nlevels<sp/>=<sp/>m_finest_level+1;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_spacedim;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_prob_hi[i];</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_prob_size[i]<sp/>=<sp/>m_prob_hi[i]<sp/>-<sp/>m_prob_lo[i];</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref_ratio.resize(m_nlevels,<sp/>0);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_finest_level;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_ref_ratio[i];</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>GotoNextLine(is);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>m_prob_domain.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_nlevels;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_prob_domain[i];</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>m_level_steps.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_nlevels;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_level_steps[i];</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cell_size.resize(m_nlevels,<sp/>Array&lt;Real,AMREX_SPACEDIM&gt;{{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(1.,1.,1.)}});</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>m_nlevels;<sp/>++ilev)<sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>m_spacedim;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_cell_size[ilev][idim];</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_coordsys;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bwidth;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>bwidth;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mf_name.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>m_vismf.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ba.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>m_dmap.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ngrow.resize(m_nlevels);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>m_nlevels;<sp/>++ilev)<sp/>{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>levtmp,<sp/>ngrids,<sp/>levsteptmp;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>gtime;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>levtmp<sp/>&gt;&gt;<sp/>ngrids<sp/>&gt;&gt;<sp/>gtime;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>levsteptmp;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>glo[3],<sp/>ghi[3];</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>igrid<sp/>=<sp/>0;<sp/>igrid<sp/>&lt;<sp/>ngrids;<sp/>++igrid)<sp/>{</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>m_spacedim;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>glo[idim]<sp/>&gt;&gt;<sp/>ghi[idim];</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>relname;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>relname;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mf_name[ilev]<sp/>=<sp/>m_plotfile_name<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/>relname;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ncomp<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vismf[ilev]<sp/>=<sp/>std::make_unique&lt;VisMF&gt;(m_mf_name[ilev]);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ba[ilev]<sp/>=<sp/>m_vismf[ilev]-&gt;boxArray();</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_dmap[ilev].define(m_ba[ilev]);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ngrow[ilev]<sp/>=<sp/>m_vismf[ilev]-&gt;nGrowVect();</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal">PlotFileDataImpl::~PlotFileDataImpl<sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal">PlotFileDataImpl::syncDistributionMap<sp/>(PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
-<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs_min<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(m_nlevels,<sp/>src.m_nlevels);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs_min;<sp/>++ilev)<sp/>{</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syncDistributionMap(ilev,<sp/>src);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal">PlotFileDataImpl::syncDistributionMap<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
-<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>&lt;=<sp/>src.finestLevel()<sp/>&amp;&amp;<sp/>m_dmap[level].size()<sp/>==<sp/>src.DistributionMap(level).size())<sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_dmap[level]<sp/>=<sp/>src.DistributionMap(level);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal">MultiFab</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>noexcept</highlight></codeline>
-<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>mf(m_ba[level],<sp/>m_dmap[level],<sp/>m_ncomp,<sp/>m_ngrow[level]);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad7c4906fd7d4c6640ae4954b1ed33a12" kindref="member">VisMF::Read</ref>(mf,<sp/>m_mf_name[level]);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mf;</highlight></codeline>
-<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal">MultiFab</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>varname)<sp/>noexcept</highlight></codeline>
-<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>mf(m_ba[level],<sp/>m_dmap[level],<sp/>1,<sp/>m_ngrow[level]);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(m_var_names),<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(m_var_names),<sp/>varname);</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(m_var_names))<sp/>{</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;PlotFileDataImpl::get:<sp/>varname<sp/>not<sp/>found<sp/>&quot;</highlight><highlight class="normal">+varname);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icomp<sp/>=<sp/>std::distance(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(m_var_names),<sp/>r);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(mf);<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/>dstfab<sp/>=<sp/>mf[mfi];</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FArrayBox&gt;<sp/>srcfab(m_vismf[level]-&gt;readFAB(gid,<sp/>icomp));</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dstfab.copy&lt;RunOn::Host&gt;(*srcfab);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mf;</highlight></codeline>
-<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_prob_lo[i];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_spacedim;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_prob_hi[i];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_prob_size[i]<sp/>=<sp/>m_prob_hi[i]<sp/>-<sp/>m_prob_lo[i];</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref_ratio.resize(m_nlevels,<sp/>0);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_finest_level;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_ref_ratio[i];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>GotoNextLine(is);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>m_prob_domain.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_nlevels;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_prob_domain[i];</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>m_level_steps.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_nlevels;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_level_steps[i];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cell_size.resize(m_nlevels,<sp/>Array&lt;Real,AMREX_SPACEDIM&gt;{{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(1.,1.,1.)}});</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>m_nlevels;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>m_spacedim;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_cell_size[ilev][idim];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>m_coordsys;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bwidth;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>bwidth;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mf_name.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>m_vismf.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ba.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>m_dmap.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ngrow.resize(m_nlevels);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>m_nlevels;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>levtmp,<sp/>ngrids,<sp/>levsteptmp;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>gtime;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>levtmp<sp/>&gt;&gt;<sp/>ngrids<sp/>&gt;&gt;<sp/>gtime;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>levsteptmp;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>glo[3],<sp/>ghi[3];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>igrid<sp/>=<sp/>0;<sp/>igrid<sp/>&lt;<sp/>ngrids;<sp/>++igrid)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>m_spacedim;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>glo[idim]<sp/>&gt;&gt;<sp/>ghi[idim];</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>relname;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>relname;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mf_name[ilev]<sp/>=<sp/>m_plotfile_name<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/>relname;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ncomp<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_vismf[ilev]<sp/>=<sp/>std::make_unique&lt;VisMF&gt;(m_mf_name[ilev]);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ba[ilev]<sp/>=<sp/>m_vismf[ilev]-&gt;boxArray();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_dmap[ilev].define(m_ba[ilev]);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ngrow[ilev]<sp/>=<sp/>m_vismf[ilev]-&gt;nGrowVect();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">PlotFileDataImpl::~PlotFileDataImpl<sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">PlotFileDataImpl::syncDistributionMap<sp/>(PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs_min<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(m_nlevels,<sp/>src.m_nlevels);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs_min;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syncDistributionMap(ilev,<sp/>src);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">PlotFileDataImpl::syncDistributionMap<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>PlotFileDataImpl<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src)<sp/>noexcept</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(level<sp/>&lt;=<sp/>src.finestLevel()<sp/>&amp;&amp;<sp/>m_dmap[level].size()<sp/>==<sp/>src.DistributionMap(level).size())<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_dmap[level]<sp/>=<sp/>src.DistributionMap(level);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">MultiFab</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level)<sp/>noexcept</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>mf(m_ba[level],<sp/>m_dmap[level],<sp/>m_ncomp,<sp/>m_ngrow[level]);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad7c4906fd7d4c6640ae4954b1ed33a12" kindref="member">VisMF::Read</ref>(mf,<sp/>m_mf_name[level]);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mf;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">MultiFab</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">PlotFileDataImpl::get</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level,<sp/>std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>varname)<sp/>noexcept</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>mf(m_ba[level],<sp/>m_dmap[level],<sp/>1,<sp/>m_ngrow[level]);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(m_var_names),<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(m_var_names),<sp/>varname);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(m_var_names))<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;PlotFileDataImpl::get:<sp/>varname<sp/>not<sp/>found<sp/>&quot;</highlight><highlight class="normal">+varname);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icomp<sp/>=<sp/>std::distance(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(m_var_names),<sp/>r);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(mf);<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/>dstfab<sp/>=<sp/>mf[mfi];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;FArrayBox&gt;<sp/>srcfab(m_vismf[level]-&gt;readFAB(gid,<sp/>icomp));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dstfab.copy&lt;RunOn::Host&gt;(*srcfab);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mf;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileDataImpl.cpp"/>
   </compounddef>
