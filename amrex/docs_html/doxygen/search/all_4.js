@@ -109,7 +109,7 @@ var searchData=
   ['derive_5fname_2344',['derive_name',['../classamrex_1_1DeriveRec.html#a77433a32f069c939a91530330272b36d',1,'amrex::DeriveRec::derive_name()'],['../classamrex_1_1ErrorRec.html#ab6d9228aa813bc973c657510edc9b365',1,'amrex::ErrorRec::derive_name()']]],
   ['derive_5fplot_5fvars_2345',['derive_plot_vars',['../classamrex_1_1Amr.html#a7ff13d5d803c5302fe25c97d4cf64dca',1,'amrex::Amr']]],
   ['derive_5fsmall_5fplot_5fvars_2346',['derive_small_plot_vars',['../classamrex_1_1Amr.html#a5001ffe5303ca45da09139c255f75aeb',1,'amrex::Amr']]],
-  ['deriveboxmap_2347',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#af6e83ba233e4a7212086037a7b7203e4',1,'amrex::DeriveRec']]],
+  ['deriveboxmap_2347',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#a8bd26ba5e222a0c05971df574d307f7f',1,'amrex::DeriveRec']]],
   ['derivedname_2348',['DerivedName',['../classamrex_1_1XYPlotDataList.html#a2ac6b3210b4469651372ff30444258cd',1,'amrex::XYPlotDataList']]],
   ['derivefunc_2349',['DeriveFunc',['../namespaceamrex.html#a046a83e139b61c9ec447bd89eed50967',1,'amrex']]],
   ['derivefunc3d_2350',['DeriveFunc3D',['../namespaceamrex.html#abf838b25d605cefbf6150bc883f4741d',1,'amrex']]],

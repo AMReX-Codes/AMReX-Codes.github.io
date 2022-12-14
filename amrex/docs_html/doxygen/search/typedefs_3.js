@@ -1,7 +1,7 @@
 var searchData=
 [
   ['defaultallocator_17004',['DefaultAllocator',['../namespaceamrex.html#a179fafc569924202b166896b608cd5c2',1,'amrex']]],
-  ['deriveboxmap_17005',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#af6e83ba233e4a7212086037a7b7203e4',1,'amrex::DeriveRec']]],
+  ['deriveboxmap_17005',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#a8bd26ba5e222a0c05971df574d307f7f',1,'amrex::DeriveRec']]],
   ['derivefunc_17006',['DeriveFunc',['../namespaceamrex.html#a046a83e139b61c9ec447bd89eed50967',1,'amrex']]],
   ['derivefunc3d_17007',['DeriveFunc3D',['../namespaceamrex.html#abf838b25d605cefbf6150bc883f4741d',1,'amrex']]],
   ['derivefuncfab_17008',['DeriveFuncFab',['../namespaceamrex.html#a193c40127f1734f83e3bb23cab534a24',1,'amrex']]],
