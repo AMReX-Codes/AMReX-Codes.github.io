@@ -11,8 +11,8 @@ var AMReX__MLPoisson__2D__K_8H =
     [ "mlpoisson_flux_y_m", "AMReX__MLPoisson__2D__K_8H.html#a78d813e2a7e81fb4fb24b12a40792d8a", null ],
     [ "mlpoisson_flux_yface", "AMReX__MLPoisson__2D__K_8H.html#a0d7fed44bfb42c1ab16df0ca1b1fc182", null ],
     [ "mlpoisson_flux_yface_m", "AMReX__MLPoisson__2D__K_8H.html#a16acce3762d190bb0d8fcbc58db439e2", null ],
-    [ "mlpoisson_gsrb", "AMReX__MLPoisson__2D__K_8H.html#a1e26e97dfeb8538301f65c535c5ce284", null ],
-    [ "mlpoisson_gsrb_m", "AMReX__MLPoisson__2D__K_8H.html#a2aed0bfc8f7894c39e3bd5ba1e83753f", null ],
-    [ "mlpoisson_gsrb_os", "AMReX__MLPoisson__2D__K_8H.html#a4effa5878bd729b21f43807d49d5a423", null ],
+    [ "mlpoisson_gsrb", "AMReX__MLPoisson__2D__K_8H.html#a7916b6c7ad2dbac059e35c081772b450", null ],
+    [ "mlpoisson_gsrb_m", "AMReX__MLPoisson__2D__K_8H.html#aabea771325d11e0a08b63f235b7be80a", null ],
+    [ "mlpoisson_gsrb_os", "AMReX__MLPoisson__2D__K_8H.html#a987c939b4effecdac441a9211d1979e9", null ],
     [ "mlpoisson_normalize", "AMReX__MLPoisson__2D__K_8H.html#a42e901e88111cafb3b84f39d0032e0a0", null ]
 ];

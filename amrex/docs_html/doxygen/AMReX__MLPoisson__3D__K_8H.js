@@ -8,6 +8,6 @@ var AMReX__MLPoisson__3D__K_8H =
     [ "mlpoisson_flux_yface", "AMReX__MLPoisson__3D__K_8H.html#a1ace9918d421ae341c148190b63d0b81", null ],
     [ "mlpoisson_flux_z", "AMReX__MLPoisson__3D__K_8H.html#af382239a16f86597c9c6e68ec73879b2", null ],
     [ "mlpoisson_flux_zface", "AMReX__MLPoisson__3D__K_8H.html#acfd998d0d3429948b0a7e68291d6a264", null ],
-    [ "mlpoisson_gsrb", "AMReX__MLPoisson__3D__K_8H.html#ac1020d4168235ed272c6eda210c2710b", null ],
-    [ "mlpoisson_gsrb_os", "AMReX__MLPoisson__3D__K_8H.html#ac2add9ebbcff812237098cc6c57febec", null ]
+    [ "mlpoisson_gsrb", "AMReX__MLPoisson__3D__K_8H.html#af35078e515133d4f3b9734d13ad54d22", null ],
+    [ "mlpoisson_gsrb_os", "AMReX__MLPoisson__3D__K_8H.html#a45a91e8cc49f5cd2430328b7ee08ef57", null ]
 ];
