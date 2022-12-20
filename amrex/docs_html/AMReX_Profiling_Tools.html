@@ -88,6 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#instrumenting-fortran90-code">Instrumenting Fortran90 Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#profiling-options">Profiling Options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#amrprofparser">AMRProfParser</a></li>
 </ul>
 </li>
@@ -488,6 +489,28 @@ in the <code class="docutils literal notranslate"><span class="pre">bl_proffortf
 <p>Fortran functions cannot be profiled when using the Tiny Profiler.
 You will need to turn on the Full Profiler to receive the results from
 fortran instrumentation.</p>
+</div>
+</section>
+<section id="profiling-options">
+<span id="sec-profopts"></span><h1>Profiling Options<a class="headerlink" href="#profiling-options" title="Permalink to this heading"></a></h1>
+<p>AMReX’s communication algorithms are often regions of code that increase in wall clock time
+when the application is load imbalanced, due to the MPI_Wait calls in these functions.
+To better understand if this is occuring and by how much, you can turn on an AMReX timed
+synchronization with the runtime variable: <code class="docutils literal notranslate"><span class="pre">amrex.use_profiler_syncs=1</span></code> This adds named timers
+beginning with <code class="docutils literal notranslate"><span class="pre">SyncBeforeComms</span></code> immediately prior to the start of the FillBoundary,
+ParallelCopy and particle Redistribute functions, isolating any prior load imbalance to that timer
+before beginning the comm operation.</p>
+<p>This is a diagnostic tool and may slow your code down, so it is not recommended to turn this
+on for production runs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: the <code class="docutils literal notranslate"><span class="pre">SyncBeforeComms</span></code> timer is not equal to your load imbalance. It only captures imbalance
+between the comm functions and the previous sync point; there may be other load imbalances
+captured elsewhere. Also, the timer reports in terms of MPI rank, so if the most imbalanced
+rank changes throughout the simulation, the timer will be an underestimation.</p>
+<p>The effect on the communication timers may be more helpful: they will show the time to complete
+communications if there was no load imbalance. This means the difference between a case
+with and without this profiler sync may be a more useful metric for analysis.</p>
 </div>
 </section>
 <section id="amrprofparser">
