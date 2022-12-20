@@ -499,6 +499,17 @@ var namespaces_dup =
         [ "find_best_nbh", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1machine.html#afa7cf247ac1fb3972693835d136c00f1", null ],
         [ "Initialize", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1machine.html#a42a34e9b2688dfa4616c06781fe06d83", null ]
       ] ],
+      [ "Math", null, [
+        [ "cospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d", null ],
+        [ "cospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7", null ],
+        [ "pi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3", null ],
+        [ "sincos", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27", null ],
+        [ "sincos", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30", null ],
+        [ "sincospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a", null ],
+        [ "sincospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5", null ],
+        [ "sinpi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585", null ],
+        [ "sinpi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900", null ]
+      ] ],
       [ "MFUtil", null, [
         [ "duplicate", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1MFUtil.html#a9b34553675e4bbe3e7e6108780d34975", null ],
         [ "duplicate", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1MFUtil.html#a69b29ecaacdc25da8869a005da585ef2", null ],
