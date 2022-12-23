@@ -870,6 +870,94 @@ Example usage:</para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="381" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="381" bodyend="403"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ade7455f3a0bbcde938577dc2cb8295d0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename IT</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename T</type>
+            <defval>typename std::iterator_traits&lt;IT&gt;::value_type</defval>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;!std::is_convertible_v&lt; std::decay_t&lt; F &gt;, T &gt;, int &gt;</type>
+            <declname>FOO</declname>
+            <defname>FOO</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::fillAsync</definition>
+        <argsstring>(IT first, IT last, F &amp;&amp;f) noexcept</argsstring>
+        <name>fillAsync</name>
+        <param>
+          <type>IT</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>IT</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Fill the elements in the given range using the given calllable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is asynchronous for GPU builds.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>IT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the iterator type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callable type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>first</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the inclusive first in the range [first, last) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>last</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the exclusive last in the range [first, last) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callable with the function signature of void(T&amp;, Long), where T is the element type and the Long parameter is the index for the element to be filled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" line="427" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="427" bodyend="502"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool amrex::Gpu::inLaunchRegion</definition>

@@ -1,9 +1,11 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1algoim_1_1EBPlane.html#ac56d4e24891fdae19c88f32f77305ced":[2,0,0,0,0,5],
+"structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX79 =
 "structyy__buffer__state.html#a10c4fcd8be759e6bf11e6d3e8cdb0307":[2,0,29,1],
 "structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda":[2,0,29,8],
 "structyy__buffer__state.html#a451d39697f006f3922c1f43cf79286b4":[2,0,29,4],
-"structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[2,0,29,7],
-"structyy__buffer__state.html#a70fd925d37a2f0454fbd0def675d106c":[2,0,29,5],
-"structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465":[2,0,29,10]
+"structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[2,0,29,7]
 };

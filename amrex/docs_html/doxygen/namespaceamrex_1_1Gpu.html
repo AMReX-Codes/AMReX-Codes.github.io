@@ -271,6 +271,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af50ec082ab16407059545feed99d648f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">prefetchToDevice</a> (Iter <a class="el" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, Iter <a class="el" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>) noexcept</td></tr>
 <tr class="memdesc:af50ec082ab16407059545feed99d648f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate elements of a container from host to device. This is a no-op for host-only code.  <a href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">More...</a><br /></td></tr>
 <tr class="separator:af50ec082ab16407059545feed99d648f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplParams" colspan="2">template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;!std::is_convertible_v&lt; std::decay_t&lt; F &gt;, T &gt;, int &gt; FOO = 0&gt; </td></tr>
+<tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">fillAsync</a> (IT first, IT last, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:ade7455f3a0bbcde938577dc2cb8295d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the elements in the given range using the given calllable.  <a href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">More...</a><br /></td></tr>
+<tr class="separator:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a05369cacb826ba5546b4dd507c49dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">inLaunchRegion</a> () noexcept</td></tr>
 <tr class="separator:a7a05369cacb826ba5546b4dd507c49dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6abda3339e4295716d7e2ff78e9603"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">notInLaunchRegion</a> () noexcept</td></tr>
@@ -2054,6 +2058,68 @@ template&lt;class InIter , class OutIter &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade7455f3a0bbcde938577dc2cb8295d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade7455f3a0bbcde938577dc2cb8295d0">&#9670;&nbsp;</a></span>fillAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;!std::is_convertible_v&lt; std::decay_t&lt; F &gt;, T &gt;, int &gt; FOO = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Gpu::fillAsync </td>
+          <td>(</td>
+          <td class="paramtype">IT&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IT&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the elements in the given range using the given calllable. </p>
+<p>This function is asynchronous for GPU builds.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IT</td><td>the iterator type </td></tr>
+    <tr><td class="paramname">F</td><td>the callable type</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>the inclusive first in the range [first, last) </td></tr>
+    <tr><td class="paramname">last</td><td>the exclusive last in the range [first, last) </td></tr>
+    <tr><td class="paramname">f</td><td>the callable with the function signature of void(T&amp;, Long), where T is the element type and the Long parameter is the index for the element to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
