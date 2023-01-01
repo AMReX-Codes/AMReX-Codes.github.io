@@ -11,6 +11,6 @@ var AMReX__MLEBABecLap__2D__K_8H =
     [ "mlebabeclap_grad_x_0", "AMReX__MLEBABecLap__2D__K_8H.html#a067e6c0418ffaead9da2094841a88f3a", null ],
     [ "mlebabeclap_grad_y", "AMReX__MLEBABecLap__2D__K_8H.html#aea627326ba400186a5122d27ec7d9e2c", null ],
     [ "mlebabeclap_grad_y_0", "AMReX__MLEBABecLap__2D__K_8H.html#a2213da36fad54c31b7ae0ad45af6e507", null ],
-    [ "mlebabeclap_gsrb", "AMReX__MLEBABecLap__2D__K_8H.html#a25e78ce293962126c40b99388937ee44", null ],
-    [ "mlebabeclap_normalize", "AMReX__MLEBABecLap__2D__K_8H.html#aa1be19da2b6c3b87bbcd74ed104f1e33", null ]
+    [ "mlebabeclap_gsrb", "AMReX__MLEBABecLap__2D__K_8H.html#aa87f7cec5c72e10c9bf450a39648b6ab", null ],
+    [ "mlebabeclap_normalize", "AMReX__MLEBABecLap__2D__K_8H.html#adb92024145a44a0d2f56b0e024d274f3", null ]
 ];
