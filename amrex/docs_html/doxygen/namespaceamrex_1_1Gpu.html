@@ -271,7 +271,7 @@ Functions</h2></td></tr>
 <tr class="memitem:af50ec082ab16407059545feed99d648f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">prefetchToDevice</a> (Iter <a class="el" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, Iter <a class="el" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>) noexcept</td></tr>
 <tr class="memdesc:af50ec082ab16407059545feed99d648f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate elements of a container from host to device. This is a no-op for host-only code.  <a href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">More...</a><br /></td></tr>
 <tr class="separator:af50ec082ab16407059545feed99d648f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplParams" colspan="2">template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;!std::is_convertible_v&lt; std::decay_t&lt; F &gt;, T &gt;, int &gt; FOO = 0&gt; </td></tr>
+<tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplParams" colspan="2">template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;amrex::IsCallable&lt; F, T &amp;, Long &gt;::value, int &gt; FOO = 0&gt; </td></tr>
 <tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">fillAsync</a> (IT first, IT last, F &amp;&amp;f) noexcept</td></tr>
 <tr class="memdesc:ade7455f3a0bbcde938577dc2cb8295d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the elements in the given range using the given calllable.  <a href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">More...</a><br /></td></tr>
 <tr class="separator:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2067,7 +2067,7 @@ template&lt;class InIter , class OutIter &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;!std::is_convertible_v&lt; std::decay_t&lt; F &gt;, T &gt;, int &gt; FOO = 0&gt; </div>
+template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;amrex::IsCallable&lt; F, T &amp;, Long &gt;::value, int &gt; FOO = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

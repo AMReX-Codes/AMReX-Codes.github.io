@@ -343,89 +343,88 @@ $(document).ready(function(){initNavTree('AMReX__GpuContainers_8H_source.html','
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;              <span class="keyword">typename</span> T = <span class="keyword">typename</span> std::iterator_traits&lt;IT&gt;::value_type,</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;              std::enable_if_t&lt;(<span class="keyword">sizeof</span>(T) &lt;= 36*8) &amp;&amp;  <span class="comment">// so there is enough shared memory</span></div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                               std::is_trivially_copyable_v&lt;T&gt; &amp;&amp;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                               <span class="comment">// std::is_invocable_v&lt;F, T&amp;, Long&gt;,       // HIP does not like this.</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                               !std::is_convertible_v&lt;std::decay_t&lt;F&gt;,T&gt;, <span class="comment">// So we use this instead.</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                               <span class="keywordtype">int</span>&gt; FOO = 0&gt;</div>
-<div class="line"><a name="l00427"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">  427</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">fillAsync</a> (IT first, IT last, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>) noexcept</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    {</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keyword">auto</span> N = <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(std::distance(first, last));</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">if</span> (N &lt;= 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keyword">auto</span> p = &amp;(*first);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">for</span> (Long i = 0; i &lt; N; ++i) {</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(p[i], i);</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        }</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="comment">// No need to use shared memory if the type is small.</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="comment">// May not have enough shared memory if the type is too big.</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="comment">// Cannot use shared memory, if the type is not trivially copable.</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">if</span> constexpr ((<span class="keyword">sizeof</span>(T) &lt;= 8)</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                      || (<span class="keyword">sizeof</span>(T) &gt; 36*8)</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                      || ! std::is_trivially_copyable&lt;T&gt;()) {</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(N, [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Long i) noexcept</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            {</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(p[i], i);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            });</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            static_assert(<span class="keyword">sizeof</span>(T) % <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) == 0);</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <span class="keyword">using</span> U = std::conditional_t&lt;<span class="keyword">sizeof</span>(T) % <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>) == 0,</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                                         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            constexpr Long nU = <span class="keyword">sizeof</span>(T) / <span class="keyword">sizeof</span>(U);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keyword">auto</span> pu = <span class="keyword">reinterpret_cast&lt;</span>U*<span class="keyword">&gt;</span>(p);</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <span class="keywordtype">int</span> nthreads_per_block = (<span class="keyword">sizeof</span>(T) &lt;= 64) ? 256 : 128;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            <span class="keywordtype">int</span> nblocks = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>((N+nthreads_per_block-1)/nthreads_per_block);</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            std::size_t shared_mem_bytes = nthreads_per_block * <span class="keyword">sizeof</span>(T);</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads_per_block, shared_mem_bytes, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; handler) noexcept</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            {</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                Long i = handler.globalIdx();</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                Long blockDimx = handler.blockDim();</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                Long threadIdxx = handler.threadIdx();</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                Long blockIdxx = handler.blockIdx();</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_U = (U*)handler.sharedMemory();</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_T = (T*)shared_U;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                <span class="keywordflow">if</span> (i &lt; N) {</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                    <span class="keyword">auto</span> ga = <span class="keyword">new</span>(shared_T+threadIdxx) T;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                    <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(*ga, i);</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                }</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                handler.sharedBarrier();</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <span class="keywordflow">for</span> (Long m = threadIdxx,</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                         mend = nU * <a class="code" href="namespaceamrex.html#a475e2bc71e3ca92b6b016fcb70af95bd">amrex::min</a>(blockDimx, N-blockDimx*blockIdxx);</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                     m &lt; mend; m += blockDimx) {</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                    pu[blockDimx*blockIdxx*nU+m] = shared_U[m];</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                }</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            });</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads_per_block, shared_mem_bytes, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                          [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () noexcept</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            {</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                Long blockDimx = blockDim.x;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                Long threadIdxx = threadIdx.x;</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                Long blockIdxx = blockIdx.x;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                Long i = blockDimx*blockIdxx + threadIdxx;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                <a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html">Gpu::SharedMemory&lt;U&gt;</a> gsm;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_U = gsm.<a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html#a15f96d78196939452c41efcf8889420c">dataPtr</a>();</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_T = (T*)shared_U;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                <span class="keywordflow">if</span> (i &lt; N) {</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                    <span class="keyword">auto</span> ga = <span class="keyword">new</span>(shared_T+threadIdxx) T;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                    <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(*ga, i);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                }</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                __syncthreads();</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <span class="keywordflow">for</span> (Long m = threadIdxx,</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                         mend = nU * <a class="code" href="namespaceamrex.html#a475e2bc71e3ca92b6b016fcb70af95bd">amrex::min</a>(blockDimx, N-blockDimx*blockIdxx);</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                     m &lt; mend; m += blockDimx) {</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                    pu[blockDimx*blockIdxx*nU+m] = shared_U[m];</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                }</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            });</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        }</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    }</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;}}</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                               <a class="code" href="structamrex_1_1IsCallable.html">amrex::IsCallable&lt;F, T&amp;, Long&gt;::value</a>,</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                               <span class="keywordtype">int</span>&gt; FOO = 0&gt;</div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">  426</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">fillAsync</a> (IT first, IT last, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>) noexcept</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keyword">auto</span> N = <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(std::distance(first, last));</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">if</span> (N &lt;= 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keyword">auto</span> p = &amp;(*first);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">for</span> (Long i = 0; i &lt; N; ++i) {</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(p[i], i);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        }</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="comment">// No need to use shared memory if the type is small.</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="comment">// May not have enough shared memory if the type is too big.</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="comment">// Cannot use shared memory, if the type is not trivially copable.</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">if</span> constexpr ((<span class="keyword">sizeof</span>(T) &lt;= 8)</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                      || (<span class="keyword">sizeof</span>(T) &gt; 36*8)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                      || ! std::is_trivially_copyable&lt;T&gt;()) {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(N, [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (Long i) noexcept</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(p[i], i);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            });</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            static_assert(<span class="keyword">sizeof</span>(T) % <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) == 0);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keyword">using</span> U = std::conditional_t&lt;<span class="keyword">sizeof</span>(T) % <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>) == 0,</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                                         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            constexpr Long nU = <span class="keyword">sizeof</span>(T) / <span class="keyword">sizeof</span>(U);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <span class="keyword">auto</span> pu = <span class="keyword">reinterpret_cast&lt;</span>U*<span class="keyword">&gt;</span>(p);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordtype">int</span> nthreads_per_block = (<span class="keyword">sizeof</span>(T) &lt;= 64) ? 256 : 128;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <span class="keywordtype">int</span> nblocks = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>((N+nthreads_per_block-1)/nthreads_per_block);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            std::size_t shared_mem_bytes = nthreads_per_block * <span class="keyword">sizeof</span>(T);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads_per_block, shared_mem_bytes, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; handler) noexcept</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                Long i = handler.globalIdx();</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                Long blockDimx = handler.blockDim();</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                Long threadIdxx = handler.threadIdx();</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                Long blockIdxx = handler.blockIdx();</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_U = (U*)handler.sharedMemory();</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_T = (T*)shared_U;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                <span class="keywordflow">if</span> (i &lt; N) {</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                    <span class="keyword">auto</span> ga = <span class="keyword">new</span>(shared_T+threadIdxx) T;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                    <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(*ga, i);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                }</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                handler.sharedBarrier();</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                <span class="keywordflow">for</span> (Long m = threadIdxx,</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                         mend = nU * <a class="code" href="namespaceamrex.html#a475e2bc71e3ca92b6b016fcb70af95bd">amrex::min</a>(blockDimx, N-blockDimx*blockIdxx);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                     m &lt; mend; m += blockDimx) {</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                    pu[blockDimx*blockIdxx*nU+m] = shared_U[m];</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            });</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads_per_block, shared_mem_bytes, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                          [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () noexcept</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;            {</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                Long blockDimx = blockDim.x;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                Long threadIdxx = threadIdx.x;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                Long blockIdxx = blockIdx.x;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                Long i = blockDimx*blockIdxx + threadIdxx;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                <a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html">Gpu::SharedMemory&lt;U&gt;</a> gsm;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_U = gsm.<a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html#a15f96d78196939452c41efcf8889420c">dataPtr</a>();</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> shared_T = (T*)shared_U;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                <span class="keywordflow">if</span> (i &lt; N) {</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                    <span class="keyword">auto</span> ga = <span class="keyword">new</span>(shared_T+threadIdxx) T;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                    <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(*ga, i);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                }</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                __syncthreads();</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <span class="keywordflow">for</span> (Long m = threadIdxx,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                         mend = nU * <a class="code" href="namespaceamrex.html#a475e2bc71e3ca92b6b016fcb70af95bd">amrex::min</a>(blockDimx, N-blockDimx*blockIdxx);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                     m &lt; mend; m += blockDimx) {</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                    pu[blockDimx*blockIdxx*nU+m] = shared_U[m];</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                }</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            });</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        }</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}}</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__GpuAllocators_8H_html"><div class="ttname"><a href="AMReX__GpuAllocators_8H.html">AMReX_GpuAllocators.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuError_8H_html_a6a8e9294d731b70d00a258e8a9d6d222"><div class="ttname"><a href="AMReX__GpuError_8H.html#a6a8e9294d731b70d00a258e8a9d6d222">AMREX_CUDA_SAFE_CALL</a></div><div class="ttdeci">#define AMREX_CUDA_SAFE_CALL(call)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuError.H:73</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
@@ -450,7 +449,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuContainers_8H_source.html','
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aa720ba8e7b622f0897659c64d23d5db4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4">amrex::Gpu::htod_memcpy</a></div><div class="ttdeci">void htod_memcpy(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:272</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_aacefe17a39734cb2475a36199ab1370b"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b">amrex::Gpu::htod_memcpy_async</a></div><div class="ttdeci">void htod_memcpy_async(void *p_d, const void *p_h, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:230</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ab695bddeb3cc727225d95a1826472ae4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ab695bddeb3cc727225d95a1826472ae4">amrex::Gpu::dtod_memcpy</a></div><div class="ttdeci">void dtod_memcpy(void *p_d_dst, const void *p_d_src, const std::size_t sz) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:288</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_html_ade7455f3a0bbcde938577dc2cb8295d0"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">amrex::Gpu::fillAsync</a></div><div class="ttdeci">void fillAsync(IT first, IT last, F &amp;&amp;f) noexcept</div><div class="ttdoc">Fill the elements in the given range using the given calllable.</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:427</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_ade7455f3a0bbcde938577dc2cb8295d0"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">amrex::Gpu::fillAsync</a></div><div class="ttdeci">void fillAsync(IT first, IT last, F &amp;&amp;f) noexcept</div><div class="ttdoc">Fill the elements in the given range using the given calllable.</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:426</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ae1a0966ad8daf3a49564123b8dbdb3fa"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">amrex::Gpu::gpuStream</a></div><div class="ttdeci">gpuStream_t gpuStream() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:197</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_af50ec082ab16407059545feed99d648f"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">amrex::Gpu::prefetchToDevice</a></div><div class="ttdeci">void prefetchToDevice(Iter begin, Iter end) noexcept</div><div class="ttdoc">Migrate elements of a container from host to device. This is a no-op for host-only code.</div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:381</div></div>
 <div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_acc0c2cceab5a58cafa4ae6e68be50d24"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">amrex::SundialsUserFun::f</a></div><div class="ttdeci">static int f(realtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:40</div></div>
@@ -467,6 +466,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuContainers_8H_source.html','
 <div class="ttc" id="astructamrex_1_1Gpu_1_1HostToDevice_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1HostToDevice.html">amrex::Gpu::HostToDevice</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuContainers.H:111</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1SharedMemory_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1SharedMemory.html">amrex::Gpu::SharedMemory</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuMemory.H:126</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1SharedMemory_html_a15f96d78196939452c41efcf8889420c"><div class="ttname"><a href="structamrex_1_1Gpu_1_1SharedMemory.html#a15f96d78196939452c41efcf8889420c">amrex::Gpu::SharedMemory::dataPtr</a></div><div class="ttdeci">AMREX_GPU_DEVICE T * dataPtr() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuMemory.H:127</div></div>
+<div class="ttc" id="astructamrex_1_1IsCallable_html"><div class="ttname"><a href="structamrex_1_1IsCallable.html">amrex::IsCallable</a></div><div class="ttdoc">Test if a given type T is callable with arguments of type Args...</div><div class="ttdef"><b>Definition:</b> AMReX_TypeTraits.H:187</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
