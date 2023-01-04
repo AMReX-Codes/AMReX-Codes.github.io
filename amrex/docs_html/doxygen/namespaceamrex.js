@@ -805,6 +805,7 @@ var namespaceamrex =
     [ "ParticleTileData", "structamrex_1_1ParticleTileData.html", "structamrex_1_1ParticleTileData" ],
     [ "ConstParticleTileData", "structamrex_1_1ConstParticleTileData.html", "structamrex_1_1ConstParticleTileData" ],
     [ "ParticleTile", "structamrex_1_1ParticleTile.html", "structamrex_1_1ParticleTile" ],
+    [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
     [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
     [ "SparseBinIteratorFactory", "structamrex_1_1SparseBinIteratorFactory.html", "structamrex_1_1SparseBinIteratorFactory" ],
     [ "SparseBins", "classamrex_1_1SparseBins.html", "classamrex_1_1SparseBins" ],

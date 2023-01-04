@@ -1,5 +1,6 @@
 var AMReX__ParticleUtil_8H =
 [
+    [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
     [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
     [ "call_f", "AMReX__ParticleUtil_8H.html#a313ec8f9bb7c4fba5146562d4c1da07e", null ],
     [ "call_f", "AMReX__ParticleUtil_8H.html#a142642634ebd6243e0033ed910d77eb8", null ],

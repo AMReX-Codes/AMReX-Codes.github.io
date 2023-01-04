@@ -1,5 +1,8 @@
 var NAVTREEINDEX71 =
 {
+"structamrex_1_1Array4Tag.html#ac98f4aab292a06e27bff388747fdcb0a":[2,0,0,219,0],
+"structamrex_1_1AssignGrid.html":[2,0,0,467],
+"structamrex_1_1AssignGrid.html#a04a974104c8e2ebf50030babf23932f9":[2,0,0,467,8],
 "structamrex_1_1AssignGrid.html#a24db83c35c302d84990f03e69c03df17":[2,0,0,467,1],
 "structamrex_1_1AssignGrid.html#a3bf69089e03f40d7b20e53cee6099727":[2,0,0,467,5],
 "structamrex_1_1AssignGrid.html#a63782cb4dceff5b3b6df900b00e1ba81":[2,0,0,467,6],
@@ -144,6 +147,15 @@ var NAVTREEINDEX71 =
 "structamrex_1_1BinIterator_1_1iterator.html#ac1bd0df198e2b1ee7b65324c70b7d7f3":[2,0,0,423,0,5],
 "structamrex_1_1BinIterator_1_1iterator.html#acc740e2dd1e027a8a76f605050e76619":[2,0,0,423,0,2],
 "structamrex_1_1BinIterator_1_1iterator.html#afba47c1927bd537e97033eb5f5a6bdab":[2,0,0,423,0,4],
+"structamrex_1_1BinMapper.html":[2,0,0,474],
+"structamrex_1_1BinMapper.html#a09e1a7b318d980843013d446fe2c5d4f":[2,0,0,474,4],
+"structamrex_1_1BinMapper.html#a0c3ffb962a03c3307030e52e384688ef":[2,0,0,474,5],
+"structamrex_1_1BinMapper.html#a2fc716ebcdf02dabc5c00fbc19419155":[2,0,0,474,0],
+"structamrex_1_1BinMapper.html#a32a3a6e1b23801796736f10c13fe0600":[2,0,0,474,2],
+"structamrex_1_1BinMapper.html#a3690f68c531d8d64d62a620b5a564a99":[2,0,0,474,1],
+"structamrex_1_1BinMapper.html#a64387b045d204383bf43d1daf728d4a2":[2,0,0,474,6],
+"structamrex_1_1BinMapper.html#aa13006c74c21b3e90f81412d731f3b35":[2,0,0,474,7],
+"structamrex_1_1BinMapper.html#af1f0a8c52e0ba9142abfcdba68c4562e":[2,0,0,474,3],
 "structamrex_1_1BinPolicy_1_1GPUBinPolicy.html":[2,0,0,2,0],
 "structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html":[2,0,0,2,1],
 "structamrex_1_1BinPolicy_1_1SerialBinPolicy.html":[2,0,0,2,2],
@@ -237,17 +249,5 @@ var NAVTREEINDEX71 =
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab0bfa142fa9c2d84cd7c6786768756a9":[2,0,0,450,5],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab6759853d755a1a01624618efeb177b0":[2,0,0,450,1],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab6b4b87deef7286f615f1db384e5774c":[2,0,0,450,4],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ac8950252d5f3400022f97669a5ae9f66":[2,0,0,450,6],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#acf82f34218d15ed26f163a36979c5a30":[2,0,0,450,2],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html":[2,0,0,452],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a5baa987d864932264a15fc54696e1881":[2,0,0,452,1],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a66c45539cf7812458e59c1a15db632b6":[2,0,0,452,7],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a6d7825ead06e725a3e1a91b248a9149a":[2,0,0,452,2],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a7e8276dde25976588d90281777c5a96c":[2,0,0,452,9],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a83fde477aa6104bcc887473e4804f35f":[2,0,0,452,0],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ab721332e7d5f36770a7a3f944857825a":[2,0,0,452,5],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#acec2f30f8a1442343e173e8b286ce526":[2,0,0,452,6],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ad5ea4cf2a80d6956f8b98b3cf50e1cbb":[2,0,0,452,3],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ae4353e245aea999df7d5b84482d96045":[2,0,0,452,8],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#afae6be410a1c1fb2ca8a44f4474b30da":[2,0,0,452,4]
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ac8950252d5f3400022f97669a5ae9f66":[2,0,0,450,6]
 };

@@ -1,7 +1,8 @@
 var classamrex_1_1NeighborList =
 [
+    [ "build", "classamrex_1_1NeighborList.html#a8c8997412e7807ce0ff0f3bdb4369269", null ],
     [ "build", "classamrex_1_1NeighborList.html#acb949036c4f507b6034c2b56782b05fc", null ],
-    [ "build", "classamrex_1_1NeighborList.html#a6e78938aa8067a91ff83d891167eda1d", null ],
+    [ "build", "classamrex_1_1NeighborList.html#ae9ed47e8cb92db3b99f521857d7ccd06", null ],
     [ "data", "classamrex_1_1NeighborList.html#aad9ab69804553dea8362074835debb75", null ],
     [ "GetCounts", "classamrex_1_1NeighborList.html#a3800fa953652a3c7cd933e9c57ffcbf1", null ],
     [ "GetCounts", "classamrex_1_1NeighborList.html#a83ce58d8b5bf7e5c71eb6be826f62b37", null ],

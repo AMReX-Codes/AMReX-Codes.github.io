@@ -167,6 +167,7 @@ var hierarchy =
     [ "amrex::MLCellLinOpT< MF >::BCTL", "structamrex_1_1MLCellLinOpT_1_1BCTL.html", null ],
     [ "amrex::FabArrayBase::BDKey", "structamrex_1_1FabArrayBase_1_1BDKey.html", null ],
     [ "amrex::BinIterator< T >", "structamrex_1_1BinIterator.html", null ],
+    [ "amrex::BinMapper", "structamrex_1_1BinMapper.html", null ],
     [ "amrex_mempool_module::bl_allocate", "interfaceamrex__mempool__module_1_1bl__allocate.html", null ],
     [ "amrex_mempool_module::bl_deallocate", "interfaceamrex__mempool__module_1_1bl__deallocate.html", null ],
     [ "amrex::BLBackTrace", "structamrex_1_1BLBackTrace.html", null ],
