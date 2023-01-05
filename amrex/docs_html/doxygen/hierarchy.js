@@ -724,6 +724,7 @@ var hierarchy =
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],
+    [ "amrex::Gpu::NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", null ],
     [ "amrex::NullInterpHook< MFFAB >", "structamrex_1_1NullInterpHook.html", null ],
     [ "amrex::EBCellFlagFab::NumCells", "structamrex_1_1EBCellFlagFab_1_1NumCells.html", null ],
     [ "amrex::NumComps", "structamrex_1_1NumComps.html", null ],
@@ -878,7 +879,6 @@ var hierarchy =
     [ "amrex::Same< T, U1, Us >", "structamrex_1_1Same.html", null ],
     [ "amrex::Same< T, U >", "structamrex_1_1Same_3_01T_00_01U_01_4.html", null ],
     [ "amrex::EB2::ScaleIF< F >", "classamrex_1_1EB2_1_1ScaleIF.html", null ],
-    [ "amrex::Gpu::ScopedDefaultStream", "structamrex_1_1Gpu_1_1ScopedDefaultStream.html", null ],
     [ "SDCstruct", "classSDCstruct.html", null ],
     [ "CommProfStats::SendRecvPair", "structCommProfStats_1_1SendRecvPair.html", [
       [ "CommProfStats::SendRecvPairUnpaired", "structCommProfStats_1_1SendRecvPairUnpaired.html", null ]
@@ -901,6 +901,7 @@ var hierarchy =
     [ "amrex::Gpu::SharedMemory< unsigned short >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html", null ],
     [ "amrex::IntVect::shift_hasher", "classamrex_1_1IntVect_1_1shift__hasher.html", null ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", null ],
+    [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", null ],
     [ "amrex::SparseBinIteratorFactory< T >", "structamrex_1_1SparseBinIteratorFactory.html", null ],
     [ "amrex::SparseBins< T >", "classamrex_1_1SparseBins.html", null ],
     [ "amrex::EB2::SplineIF", "classamrex_1_1EB2_1_1SplineIF.html", null ],
@@ -1133,7 +1134,7 @@ var hierarchy =
     [ "VoidCopyTag", "structVoidCopyTag.html", null ],
     [ "amrex::Gpu::warpReduce< warpSize, T, F >", "structamrex_1_1Gpu_1_1warpReduce.html", null ],
     [ "amrex::WeightedBox", "classamrex_1_1WeightedBox.html", null ],
-    [ "amrex::WeightedBoxList", "classamrex_1_1WeightedBoxList.html", null ],
+    [ "amrex::WeightedBoxList", "structamrex_1_1WeightedBoxList.html", null ],
     [ "amrex::AsyncOut::WriteInfo", "structamrex_1_1AsyncOut_1_1WriteInfo.html", null ],
     [ "amrex::XDim3", "structamrex_1_1XDim3.html", null ],
     [ "amrex::XYPlotDataList", "classamrex_1_1XYPlotDataList.html", null ],

@@ -141,7 +141,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Gpu_1_1GraphSafeGuard.html">GraphSafeGuard</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Gpu_1_1ScopedDefaultStream.html">ScopedDefaultStream</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Gpu_1_1SingleStreamRegion.html">SingleStreamRegion</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1Gpu_1_1NoSyncRegion.html">NoSyncRegion</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1Device.html">Device</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -287,6 +289,14 @@ Functions</h2></td></tr>
 <tr class="separator:a73a7f12036e7cda0332aec8185d4c330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092d5e2b6a052f9620c9d3c3757ed1be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a092d5e2b6a052f9620c9d3c3757ed1be">setGraphRegion</a> (bool graph)</td></tr>
 <tr class="separator:a092d5e2b6a052f9620c9d3c3757ed1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9b6dc13dd85b3eeac69203a56e39c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a7b9b6dc13dd85b3eeac69203a56e39c0">inSingleStreamRegion</a> () noexcept</td></tr>
+<tr class="separator:a7b9b6dc13dd85b3eeac69203a56e39c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa291965db390b525ec650fbb777bfd44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44">inNoSyncRegion</a> () noexcept</td></tr>
+<tr class="separator:aa291965db390b525ec650fbb777bfd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31e2a43c93959ebf7aa6bd6f564d85c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ae31e2a43c93959ebf7aa6bd6f564d85c">setSingleStreamRegion</a> (bool b) noexcept</td></tr>
+<tr class="separator:ae31e2a43c93959ebf7aa6bd6f564d85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a361fc388a79423386fd65e7dfe189f57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a361fc388a79423386fd65e7dfe189f57">setNoSyncRegion</a> (bool b) noexcept</td></tr>
+<tr class="separator:a361fc388a79423386fd65e7dfe189f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a0966ad8daf3a49564123b8dbdb3fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">gpuStream</a> () noexcept</td></tr>
 <tr class="separator:ae1a0966ad8daf3a49564123b8dbdb3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a920dd19f186b2276d9bbdb14d117565c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a920dd19f186b2276d9bbdb14d117565c">numGpuStreams</a> () noexcept</td></tr>
@@ -428,6 +438,10 @@ Variables</h2></td></tr>
 <tr class="separator:a46c58e76f1942c7eefcf205b3ec3d24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d36026586dd063c89350f39d815285a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a3d36026586dd063c89350f39d815285a">in_graph_region</a> = false</td></tr>
 <tr class="separator:a3d36026586dd063c89350f39d815285a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a9e29985ce3d940d17cad0584d2446"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a77a9e29985ce3d940d17cad0584d2446">in_single_stream_region</a> = false</td></tr>
+<tr class="separator:a77a9e29985ce3d940d17cad0584d2446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8946d247baac46fe1bc6e81897915366"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8946d247baac46fe1bc6e81897915366">in_nosync_region</a> = false</td></tr>
+<tr class="separator:a8946d247baac46fe1bc6e81897915366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="af0ed55b80609bd8e66da4d0c435894d0"></a>
@@ -2354,6 +2368,56 @@ template&lt;class InIter , class OutIter &gt; </div>
 
 </div>
 </div>
+<a id="aa291965db390b525ec650fbb777bfd44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa291965db390b525ec650fbb777bfd44">&#9670;&nbsp;</a></span>inNoSyncRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::inNoSyncRegion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b9b6dc13dd85b3eeac69203a56e39c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9b6dc13dd85b3eeac69203a56e39c0">&#9670;&nbsp;</a></span>inSingleStreamRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::inSingleStreamRegion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af5ad0c7753b11912c68338e7f33fde0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5ad0c7753b11912c68338e7f33fde0f">&#9670;&nbsp;</a></span>isDevicePtr()</h2>
 
@@ -2976,8 +3040,60 @@ template&lt;typename T &gt; </div>
 <div class="line"><span class="comment">//...</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="namespaceamrex_1_1Gpu.html#a9f755b4680ecd261e7416fda7ca2b5bb">Gpu::setLaunchRegion</a>(1);</div>
-<div class="ttc" id="anamespaceamrex_1_1Gpu_html_a9f755b4680ecd261e7416fda7ca2b5bb"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a9f755b4680ecd261e7416fda7ca2b5bb">amrex::Gpu::setLaunchRegion</a></div><div class="ttdeci">bool setLaunchRegion(bool launch) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuControl.H:106</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Gpu_html_a9f755b4680ecd261e7416fda7ca2b5bb"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a9f755b4680ecd261e7416fda7ca2b5bb">amrex::Gpu::setLaunchRegion</a></div><div class="ttdeci">bool setLaunchRegion(bool launch) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuControl.H:108</div></div>
 </div><!-- fragment --><p>Will disable the launching of GPU kernels between the calls. </p>
+
+</div>
+</div>
+<a id="a361fc388a79423386fd65e7dfe189f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a361fc388a79423386fd65e7dfe189f57">&#9670;&nbsp;</a></span>setNoSyncRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::setNoSyncRegion </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae31e2a43c93959ebf7aa6bd6f564d85c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31e2a43c93959ebf7aa6bd6f564d85c">&#9670;&nbsp;</a></span>setSingleStreamRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::setSingleStreamRegion </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -3145,6 +3261,34 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::Gpu::in_launch_region = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8946d247baac46fe1bc6e81897915366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8946d247baac46fe1bc6e81897915366">&#9670;&nbsp;</a></span>in_nosync_region</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::in_nosync_region = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77a9e29985ce3d940d17cad0584d2446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a9e29985ce3d940d17cad0584d2446">&#9670;&nbsp;</a></span>in_single_stream_region</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Gpu::in_single_stream_region = false</td>
         </tr>
       </table>
 </div><div class="memdoc">

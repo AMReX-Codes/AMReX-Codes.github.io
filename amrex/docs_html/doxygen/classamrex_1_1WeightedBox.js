@@ -1,6 +1,6 @@
 var classamrex_1_1WeightedBox =
 [
-    [ "WeightedBox", "classamrex_1_1WeightedBox.html#ad4b4a1b31dee475c27027cb783520522", null ],
+    [ "WeightedBox", "classamrex_1_1WeightedBox.html#a881623a58303364995413ce41b090c0d", null ],
     [ "boxid", "classamrex_1_1WeightedBox.html#a5a49d0ecc04ce9c84d5cc0e68fd04675", null ],
     [ "operator<", "classamrex_1_1WeightedBox.html#afafaad5f1bf1628a4beb4550bbb8a89b", null ],
     [ "weight", "classamrex_1_1WeightedBox.html#ac8ca6a64321140bc39bd7458da778941", null ],

@@ -1,7 +1,5 @@
 var NAVTREEINDEX70 =
 {
-"structCommProfStats_1_1ReductionEntry.html#aced5d9bea68d78a0e937d8594ecd647d":[2,0,16,3,2],
-"structCommProfStats_1_1SendRecvPair.html":[2,0,16,4],
 "structCommProfStats_1_1SendRecvPair.html#a0990a7f5e9b6aa52a2ff77aa94e318b5":[2,0,16,4,0],
 "structCommProfStats_1_1SendRecvPair.html#a0abec33396042409e9f415189c688a9a":[2,0,16,4,6],
 "structCommProfStats_1_1SendRecvPair.html#a532ce884eade8499d8db3c56c3ec66a7":[2,0,16,4,7],
@@ -249,5 +247,7 @@ var NAVTREEINDEX70 =
 "structamrex_1_1Array4PairTag.html#ab388a278c4ac962c735d3b2a31912a94":[2,0,0,216,0],
 "structamrex_1_1Array4PairTag.html#ae6df6358ea8d160540ea882aeb87f3d7":[2,0,0,216,3],
 "structamrex_1_1Array4Tag.html":[2,0,0,219],
-"structamrex_1_1Array4Tag.html#a04cb8b343be42109c1257d014e594982":[2,0,0,219,1]
+"structamrex_1_1Array4Tag.html#a04cb8b343be42109c1257d014e594982":[2,0,0,219,1],
+"structamrex_1_1Array4Tag.html#ac98f4aab292a06e27bff388747fdcb0a":[2,0,0,219,0],
+"structamrex_1_1AssignGrid.html":[2,0,0,467]
 };

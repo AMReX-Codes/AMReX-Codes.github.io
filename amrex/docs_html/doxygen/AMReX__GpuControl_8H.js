@@ -2,7 +2,8 @@ var AMReX__GpuControl_8H =
 [
     [ "LaunchSafeGuard", "structamrex_1_1Gpu_1_1LaunchSafeGuard.html", "structamrex_1_1Gpu_1_1LaunchSafeGuard" ],
     [ "GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", "structamrex_1_1Gpu_1_1GraphSafeGuard" ],
-    [ "ScopedDefaultStream", "structamrex_1_1Gpu_1_1ScopedDefaultStream.html", "structamrex_1_1Gpu_1_1ScopedDefaultStream" ],
+    [ "SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", "structamrex_1_1Gpu_1_1SingleStreamRegion" ],
+    [ "NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", "structamrex_1_1Gpu_1_1NoSyncRegion" ],
     [ "AMREX_DPCPP_1D_ONLY", "AMReX__GpuControl_8H.html#ad3f314807647d4a6530f7151569ad418", null ],
     [ "AMREX_DPCPP_2D_ONLY", "AMReX__GpuControl_8H.html#a8ae10852f9c794cebf24541e44624d28", null ],
     [ "AMREX_DPCPP_3D_ONLY", "AMReX__GpuControl_8H.html#a869371ffeabb102f48ef8771f13cabbc", null ],
@@ -20,8 +21,12 @@ var AMReX__GpuControl_8H =
     ] ],
     [ "inGraphRegion", "AMReX__GpuControl_8H.html#a2fed08a89572d6c04add3c5587f647d8", null ],
     [ "inLaunchRegion", "AMReX__GpuControl_8H.html#a7a05369cacb826ba5546b4dd507c49dd", null ],
+    [ "inNoSyncRegion", "AMReX__GpuControl_8H.html#aa291965db390b525ec650fbb777bfd44", null ],
+    [ "inSingleStreamRegion", "AMReX__GpuControl_8H.html#a7b9b6dc13dd85b3eeac69203a56e39c0", null ],
     [ "notInGraphRegion", "AMReX__GpuControl_8H.html#a73a7f12036e7cda0332aec8185d4c330", null ],
     [ "notInLaunchRegion", "AMReX__GpuControl_8H.html#a8e6abda3339e4295716d7e2ff78e9603", null ],
     [ "setGraphRegion", "AMReX__GpuControl_8H.html#a092d5e2b6a052f9620c9d3c3757ed1be", null ],
-    [ "setLaunchRegion", "AMReX__GpuControl_8H.html#a9f755b4680ecd261e7416fda7ca2b5bb", null ]
+    [ "setLaunchRegion", "AMReX__GpuControl_8H.html#a9f755b4680ecd261e7416fda7ca2b5bb", null ],
+    [ "setNoSyncRegion", "AMReX__GpuControl_8H.html#a361fc388a79423386fd65e7dfe189f57", null ],
+    [ "setSingleStreamRegion", "AMReX__GpuControl_8H.html#ae31e2a43c93959ebf7aa6bd6f564d85c", null ]
 ];

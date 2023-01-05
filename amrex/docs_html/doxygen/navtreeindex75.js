@@ -1,5 +1,7 @@
 var NAVTREEINDEX75 =
 {
+"structamrex_1_1LPInfo.html#a5fc5c419284399b3b4536bab8a917f28":[2,0,0,411,17],
+"structamrex_1_1LPInfo.html#a60ea99c73f17852d0e41ea154b86841a":[2,0,0,411,20],
 "structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5":[2,0,0,411,16],
 "structamrex_1_1LPInfo.html#a92aabd4e7880bf08c8d9195ebf723512":[2,0,0,411,19],
 "structamrex_1_1LPInfo.html#a9c3339a35d018641c2d340cee364755e":[2,0,0,411,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX75 =
 "structamrex_1_1NonLocalBC_1_1IsDataPacking.html":[2,0,0,9,13],
 "structamrex_1_1NonLocalBC_1_1IsFabProjection.html":[2,0,0,9,4],
 "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html":[2,0,0,9,1],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html":[2,0,0,9,6],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a05f29434756e9ac47cca98644a2dc60e":[2,0,0,9,6,1],
-"structamrex_1_1NonLocalBC_1_1MapComponents.html#a368643b0ca2dfd8221c8ce8252b2fc4a":[2,0,0,9,6,0]
+"structamrex_1_1NonLocalBC_1_1MapComponents.html":[2,0,0,9,6]
 };

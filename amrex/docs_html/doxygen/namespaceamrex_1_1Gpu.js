@@ -18,7 +18,8 @@ var namespaceamrex_1_1Gpu =
     [ "DeviceToDevice", "structamrex_1_1Gpu_1_1DeviceToDevice.html", null ],
     [ "LaunchSafeGuard", "structamrex_1_1Gpu_1_1LaunchSafeGuard.html", "structamrex_1_1Gpu_1_1LaunchSafeGuard" ],
     [ "GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", "structamrex_1_1Gpu_1_1GraphSafeGuard" ],
-    [ "ScopedDefaultStream", "structamrex_1_1Gpu_1_1ScopedDefaultStream.html", "structamrex_1_1Gpu_1_1ScopedDefaultStream" ],
+    [ "SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", "structamrex_1_1Gpu_1_1SingleStreamRegion" ],
+    [ "NoSyncRegion", "structamrex_1_1Gpu_1_1NoSyncRegion.html", "structamrex_1_1Gpu_1_1NoSyncRegion" ],
     [ "Device", "classamrex_1_1Gpu_1_1Device.html", "classamrex_1_1Gpu_1_1Device" ],
     [ "Elixir", "classamrex_1_1Gpu_1_1Elixir.html", "classamrex_1_1Gpu_1_1Elixir" ],
     [ "KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", "classamrex_1_1Gpu_1_1KernelInfo" ],
@@ -99,6 +100,8 @@ var namespaceamrex_1_1Gpu =
     [ "inclusive_scan", "namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129", null ],
     [ "inGraphRegion", "namespaceamrex_1_1Gpu.html#a2fed08a89572d6c04add3c5587f647d8", null ],
     [ "inLaunchRegion", "namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd", null ],
+    [ "inNoSyncRegion", "namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44", null ],
+    [ "inSingleStreamRegion", "namespaceamrex_1_1Gpu.html#a7b9b6dc13dd85b3eeac69203a56e39c0", null ],
     [ "isDevicePtr", "namespaceamrex_1_1Gpu.html#af5ad0c7753b11912c68338e7f33fde0f", null ],
     [ "isGpuPtr", "namespaceamrex_1_1Gpu.html#a5ee8881eb9dcf74360bb8981d1478a17", null ],
     [ "isinf", "namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab", null ],
@@ -119,6 +122,8 @@ var namespaceamrex_1_1Gpu =
     [ "Range", "namespaceamrex_1_1Gpu.html#a5a7e65f26ef2a8d356ebef518f007aaf", null ],
     [ "setGraphRegion", "namespaceamrex_1_1Gpu.html#a092d5e2b6a052f9620c9d3c3757ed1be", null ],
     [ "setLaunchRegion", "namespaceamrex_1_1Gpu.html#a9f755b4680ecd261e7416fda7ca2b5bb", null ],
+    [ "setNoSyncRegion", "namespaceamrex_1_1Gpu.html#a361fc388a79423386fd65e7dfe189f57", null ],
+    [ "setSingleStreamRegion", "namespaceamrex_1_1Gpu.html#ae31e2a43c93959ebf7aa6bd6f564d85c", null ],
     [ "streamSynchronize", "namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4", null ],
     [ "streamSynchronizeAll", "namespaceamrex_1_1Gpu.html#a78acbb676e94c674fa5ec73508cef459", null ],
     [ "synchronize", "namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25", null ],
@@ -126,5 +131,7 @@ var namespaceamrex_1_1Gpu =
     [ "deviceToHost", "namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548", null ],
     [ "hostToDevice", "namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9", null ],
     [ "in_graph_region", "namespaceamrex_1_1Gpu.html#a3d36026586dd063c89350f39d815285a", null ],
-    [ "in_launch_region", "namespaceamrex_1_1Gpu.html#a46c58e76f1942c7eefcf205b3ec3d24c", null ]
+    [ "in_launch_region", "namespaceamrex_1_1Gpu.html#a46c58e76f1942c7eefcf205b3ec3d24c", null ],
+    [ "in_nosync_region", "namespaceamrex_1_1Gpu.html#a8946d247baac46fe1bc6e81897915366", null ],
+    [ "in_single_stream_region", "namespaceamrex_1_1Gpu.html#a77a9e29985ce3d940d17cad0584d2446", null ]
 ];

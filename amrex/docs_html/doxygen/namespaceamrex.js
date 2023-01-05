@@ -447,7 +447,7 @@ var namespaceamrex =
     [ "Dim3", "structamrex_1_1Dim3.html", "structamrex_1_1Dim3" ],
     [ "XDim3", "structamrex_1_1XDim3.html", "structamrex_1_1XDim3" ],
     [ "WeightedBox", "classamrex_1_1WeightedBox.html", "classamrex_1_1WeightedBox" ],
-    [ "WeightedBoxList", "classamrex_1_1WeightedBoxList.html", "classamrex_1_1WeightedBoxList" ],
+    [ "WeightedBoxList", "structamrex_1_1WeightedBoxList.html", "structamrex_1_1WeightedBoxList" ],
     [ "DistributionMapping", "classamrex_1_1DistributionMapping.html", "classamrex_1_1DistributionMapping" ],
     [ "MFInfo", "structamrex_1_1MFInfo.html", "structamrex_1_1MFInfo" ],
     [ "TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", "structamrex_1_1TheFaArenaDeleter" ],

@@ -14,7 +14,8 @@
     <innerclass refid="structamrex_1_1Gpu_1_1DeviceToDevice" prot="public">amrex::Gpu::DeviceToDevice</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1LaunchSafeGuard" prot="public">amrex::Gpu::LaunchSafeGuard</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1GraphSafeGuard" prot="public">amrex::Gpu::GraphSafeGuard</innerclass>
-    <innerclass refid="structamrex_1_1Gpu_1_1ScopedDefaultStream" prot="public">amrex::Gpu::ScopedDefaultStream</innerclass>
+    <innerclass refid="structamrex_1_1Gpu_1_1SingleStreamRegion" prot="public">amrex::Gpu::SingleStreamRegion</innerclass>
+    <innerclass refid="structamrex_1_1Gpu_1_1NoSyncRegion" prot="public">amrex::Gpu::NoSyncRegion</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1Device" prot="public">amrex::Gpu::Device</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1Elixir" prot="public">amrex::Gpu::Elixir</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1KernelInfo" prot="public">amrex::Gpu::KernelInfo</innerclass>
@@ -256,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" line="9" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" bodystart="9" bodyend="-1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" declline="82" declcolumn="17"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" line="8" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" bodystart="8" bodyend="-1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" declline="84" declcolumn="17"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1_1Gpu_1a3d36026586dd063c89350f39d815285a" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -270,7 +271,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" line="10" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" bodystart="10" bodyend="-1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" declline="112" declcolumn="17"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" line="9" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" bodystart="9" bodyend="-1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" declline="114" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1Gpu_1a77a9e29985ce3d940d17cad0584d2446" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::in_single_stream_region</definition>
+        <argsstring></argsstring>
+        <name>in_single_stream_region</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" line="10" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" bodystart="10" bodyend="-1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" declline="142" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1Gpu_1a8946d247baac46fe1bc6e81897915366" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::in_nosync_region</definition>
+        <argsstring></argsstring>
+        <name>in_nosync_region</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" line="11" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.cpp" bodystart="11" bodyend="-1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" declline="143" declcolumn="17"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -969,7 +998,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="84" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="84" bodyend="84"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="86" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="86" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a8e6abda3339e4295716d7e2ff78e9603" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -982,7 +1011,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="85" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="85" bodyend="85"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="87" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="87" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a9f755b4680ecd261e7416fda7ca2b5bb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -1009,7 +1038,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="106" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="106" bodyend="110"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="108" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="108" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a2fed08a89572d6c04add3c5587f647d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1022,7 +1051,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="113" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="113" bodyend="113"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="115" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="115" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a73a7f12036e7cda0332aec8185d4c330" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1035,7 +1064,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="114" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="114" bodyend="114"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="116" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="116" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a092d5e2b6a052f9620c9d3c3757ed1be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -1052,7 +1081,67 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="116" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="116" bodyend="120"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="118" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="118" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a7b9b6dc13dd85b3eeac69203a56e39c0" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::inSingleStreamRegion</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>inSingleStreamRegion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="145" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aa291965db390b525ec650fbb777bfd44" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::inNoSyncRegion</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>inNoSyncRegion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="146" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="146" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ae31e2a43c93959ebf7aa6bd6f564d85c" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::setSingleStreamRegion</definition>
+        <argsstring>(bool b) noexcept</argsstring>
+        <name>setSingleStreamRegion</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="148" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="148" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a361fc388a79423386fd65e7dfe189f57" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::Gpu::setNoSyncRegion</definition>
+        <argsstring>(bool b) noexcept</argsstring>
+        <name>setNoSyncRegion</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" line="152" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuControl.H" bodystart="152" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
@@ -1065,7 +1154,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="199" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="199" bodyend="202"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="201" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="201" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a920dd19f186b2276d9bbdb14d117565c" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -1078,7 +1167,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="206" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="206" bodyend="209"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="208" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="208" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1091,7 +1180,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="212" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="212" bodyend="215"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="214" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="214" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1104,7 +1193,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="218" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="218" bodyend="221"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="220" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="220" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a78acbb676e94c674fa5ec73508cef459" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1117,7 +1206,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="224" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="224" bodyend="227"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="226" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="226" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1142,7 +1231,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="232" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="232" bodyend="243"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="234" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="234" bodyend="245"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1167,7 +1256,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="246" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="246" bodyend="257"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="248" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="248" bodyend="259"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a00026ef5f8505586ed52acbbc11fdf91" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1192,7 +1281,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="260" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="260" bodyend="271"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="262" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="262" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aa720ba8e7b622f0897659c64d23d5db4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1217,7 +1306,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="274" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="274" bodyend="279"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="276" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="276" bodyend="281"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aa443a27f05e81db793b131d3fc0b101c" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1242,7 +1331,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="282" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="282" bodyend="287"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="284" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="284" bodyend="289"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ab695bddeb3cc727225d95a1826472ae4" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1267,7 +1356,7 @@ Example usage:</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="290" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="290" bodyend="295"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="292" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="292" bodyend="297"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a8e72d3661b320758c41e4a548b80beec" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
