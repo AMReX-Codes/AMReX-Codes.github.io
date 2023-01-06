@@ -34,6 +34,9 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_EB2_IF_Cylinder.H", "AMReX__EB2__IF__Cylinder_8H.html", [
       [ "CylinderIF", "classamrex_1_1EB2_1_1CylinderIF.html", "classamrex_1_1EB2_1_1CylinderIF" ]
     ] ],
+    [ "AMReX_EB2_IF_DevicePtr.H", "AMReX__EB2__IF__DevicePtr_8H.html", [
+      [ "DevicePtrIF", "classamrex_1_1EB2_1_1DevicePtrIF.html", "classamrex_1_1EB2_1_1DevicePtrIF" ]
+    ] ],
     [ "AMReX_EB2_IF_Difference.H", "AMReX__EB2__IF__Difference_8H.html", "AMReX__EB2__IF__Difference_8H" ],
     [ "AMReX_EB2_IF_Ellipsoid.H", "AMReX__EB2__IF__Ellipsoid_8H.html", [
       [ "EllipsoidIF", "classamrex_1_1EB2_1_1EllipsoidIF.html", "classamrex_1_1EB2_1_1EllipsoidIF" ]

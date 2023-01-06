@@ -1,5 +1,12 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#a1e023351bf031aee0da7cc17272716ae":[2,0,0,263,3,3],
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#a7634d6a3d98fa43f320f1c2b507ebc85":[2,0,0,263,3,0],
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#a85eca5ae503569f1b40b8d4bac373997":[2,0,0,263,3,2],
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1215d1effdf6c549d4d06a61004880d":[2,0,0,263,3,5],
+"structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1ecab1d0722305f0a0257611aeb1bde":[2,0,0,263,3,4],
+"structamrex_1_1WeightedBoxList.html":[2,0,0,116],
+"structamrex_1_1WeightedBoxList.html#a059d2458f21b6e42c2c22ed204e26337":[2,0,0,116,7],
 "structamrex_1_1WeightedBoxList.html#a477680d9afe24f0598b16e436151df7d":[2,0,0,116,4],
 "structamrex_1_1WeightedBoxList.html#a50db43a2c683742c1d3b7be92b47f3d5":[2,0,0,116,6],
 "structamrex_1_1WeightedBoxList.html#a5600c4f99f1a21d9ee5198275ca01e00":[2,0,0,116,8],
@@ -242,12 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex__parmparse__module_1_1amrex__parmparse.html#ad660c077f1712d497852f995827fbead":[2,0,7,0,25],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#ad7d6f97565596d31e0c64d3797f3b128":[2,0,7,0,13],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#adbc27a8477adf06772e50c9063e3f450":[2,0,7,0,22],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#add4580d98996e6b8f6339611f0313adb":[2,0,7,0,24],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#add6764a664666a9bdb4065f20184514e":[2,0,7,0,31],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#aebc8eb2c32d3de6780fda24e9aa03019":[2,0,7,0,3],
-"structamrex__string__module_1_1amrex__string.html":[2,0,8,0],
-"structamrex__string__module_1_1amrex__string.html#a1cb43abc58711a19adfafd9c4a44fd69":[2,0,8,0,0],
-"structdetail_1_1CellAdd.html":[2,0,9,1],
-"structdetail_1_1CellAdd.html#a9309498369d1b40c130b4335dcbf6f94":[2,0,9,1,0],
-"structdetail_1_1CellAtomicAdd.html":[2,0,9,2]
+"structamrex__parmparse__module_1_1amrex__parmparse.html#add4580d98996e6b8f6339611f0313adb":[2,0,7,0,24]
 };

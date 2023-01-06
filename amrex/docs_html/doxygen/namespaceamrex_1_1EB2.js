@@ -33,6 +33,7 @@ var namespaceamrex_1_1EB2 =
     [ "ComplementIF", "classamrex_1_1EB2_1_1ComplementIF.html", "classamrex_1_1EB2_1_1ComplementIF" ],
     [ "IsGPUable< ComplementIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_439214b16f92fe663637b42c0a5a5552.html", null ],
     [ "CylinderIF", "classamrex_1_1EB2_1_1CylinderIF.html", "classamrex_1_1EB2_1_1CylinderIF" ],
+    [ "DevicePtrIF", "classamrex_1_1EB2_1_1DevicePtrIF.html", "classamrex_1_1EB2_1_1DevicePtrIF" ],
     [ "DifferenceIF", "classamrex_1_1EB2_1_1DifferenceIF.html", "classamrex_1_1EB2_1_1DifferenceIF" ],
     [ "IsGPUable< DifferenceIF< F, G >, typename std::enable_if< IsGPUable< F >::value &&IsGPUable< G >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01typename_01std_1_1enableac26215ba9e0277ee7231118dc9a8a74.html", null ],
     [ "EllipsoidIF", "classamrex_1_1EB2_1_1EllipsoidIF.html", "classamrex_1_1EB2_1_1EllipsoidIF" ],

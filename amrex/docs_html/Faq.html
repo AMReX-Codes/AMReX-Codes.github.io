@@ -214,6 +214,23 @@ different from the fine-grained approach?</p>
 <p><strong>A.</strong> Our OpenMP strategy is explained in this paper, <a class="reference external" href="https://arxiv.org/abs/1604.03570">https://arxiv.org/abs/1604.03570</a>.</p>
 <div class="line-block">
 <div class="line"><br /></div>
+</div>
+<p><strong>Q.</strong> How to avoid running into <code class="code cpp docutils literal notranslate"><span class="pre">Formal</span> <span class="pre">parameter</span> <span class="pre">space</span> <span class="pre">overflowed</span></code> CUDA error
+while building complex EB geometries using AMReX implicit functions and CSG functionalities ?</p>
+<p><strong>A.</strong> AMReX enables logical operations and transformations to assemble basic shapes <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/EB.html#initializing-the-geometric-database">Implicit Functions</a>
+into complex geometries. Each operation results in a more complex type which can eventually overflow the
+parameter space (4096 bytes on CUDA 11.4 for instance). To circumvent the problem, explicitly copy the object
+to the device and pass a device pointer function object <cite>DevicePtrIF</cite> into the <cite>EB2</cite> function using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using</span> <span class="n">IF_t</span> <span class="o">=</span> <span class="n">decltype</span><span class="p">(</span><span class="n">myComplexIF</span><span class="p">);</span>
+<span class="n">IF_t</span><span class="o">*</span> <span class="n">dp</span> <span class="o">=</span> <span class="p">(</span><span class="n">IF_t</span><span class="o">*</span><span class="p">)</span><span class="n">The_Arena</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">alloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">myComplexIF</span><span class="p">));</span>
+<span class="n">Gpu</span><span class="p">::</span><span class="n">htod_memcpy_async</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">myComplexIF</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">IF_t</span><span class="p">));</span>
+<span class="n">Gpu</span><span class="p">::</span><span class="n">streamSynchronize</span><span class="p">();</span>
+<span class="n">EB2</span><span class="p">::</span><span class="n">DevicePtrIF</span><span class="o">&lt;</span><span class="n">IF_t</span><span class="o">&gt;</span> <span class="n">dp_myComplexIF</span><span class="p">{</span><span class="n">dp</span><span class="p">};</span>
+<span class="n">auto</span> <span class="n">gshop</span> <span class="o">=</span> <span class="n">EB2</span><span class="p">::</span><span class="n">makeShop</span><span class="p">(</span><span class="n">dp_myComplexIF</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
 <section id="more-questions">

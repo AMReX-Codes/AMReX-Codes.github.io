@@ -455,6 +455,7 @@ var hierarchy =
       [ "amrex::EB2::AllRegularIF", "classamrex_1_1EB2_1_1AllRegularIF.html", null ],
       [ "amrex::EB2::BoxIF", "classamrex_1_1EB2_1_1BoxIF.html", null ],
       [ "amrex::EB2::CylinderIF", "classamrex_1_1EB2_1_1CylinderIF.html", null ],
+      [ "amrex::EB2::DevicePtrIF< T >", "classamrex_1_1EB2_1_1DevicePtrIF.html", null ],
       [ "amrex::EB2::EllipsoidIF", "classamrex_1_1EB2_1_1EllipsoidIF.html", null ],
       [ "amrex::EB2::ParserIF", "classamrex_1_1EB2_1_1ParserIF.html", null ],
       [ "amrex::EB2::PlaneIF", "classamrex_1_1EB2_1_1PlaneIF.html", null ],

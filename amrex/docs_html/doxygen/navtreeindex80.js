@@ -1,5 +1,12 @@
 var NAVTREEINDEX80 =
 {
+"structamrex__parmparse__module_1_1amrex__parmparse.html#add6764a664666a9bdb4065f20184514e":[2,0,7,0,31],
+"structamrex__parmparse__module_1_1amrex__parmparse.html#aebc8eb2c32d3de6780fda24e9aa03019":[2,0,7,0,3],
+"structamrex__string__module_1_1amrex__string.html":[2,0,8,0],
+"structamrex__string__module_1_1amrex__string.html#a1cb43abc58711a19adfafd9c4a44fd69":[2,0,8,0,0],
+"structdetail_1_1CellAdd.html":[2,0,9,1],
+"structdetail_1_1CellAdd.html#a9309498369d1b40c130b4335dcbf6f94":[2,0,9,1,0],
+"structdetail_1_1CellAtomicAdd.html":[2,0,9,2],
 "structdetail_1_1CellAtomicAdd.html#ac853cb6b9adde1eadba8396c59b028dc":[2,0,9,2,0],
 "structdetail_1_1CellStore.html":[2,0,9,0],
 "structdetail_1_1CellStore.html#ac63b24fe49bc64231c37773eddf61e8d":[2,0,9,0,0],
