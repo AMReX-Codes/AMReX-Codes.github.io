@@ -117,13 +117,13 @@ $(document).ready(function(){initNavTree('AMReX__Random_8H_source.html',''); ini
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a65fcc9ad910569bc247b330997d5ed52">   24</a></span>&#160;    Real <a class="code" href="namespaceamrex.html#a3ba29f87f49dfb416b85b65c8b5cd9c3">Random</a> (<a class="code" href="structamrex_1_1RandomEngine.html">RandomEngine</a> <span class="keyword">const</span>&amp; random_engine)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef BL_USE_FLOAT</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> 1.0f - curand_uniform(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> 1.0 - curand_uniform_double(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef BL_USE_FLOAT</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> 1.0f - hiprand_uniform(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
@@ -143,13 +143,13 @@ $(document).ready(function(){initNavTree('AMReX__Random_8H_source.html',''); ini
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a10f7574cba3e496a27f09204cce8aa6f">   57</a></span>&#160;    Real <a class="code" href="namespaceamrex.html#a6a4ed5dc1eeb3e5b409eb8975c9e829b">RandomNormal</a> (Real mean, Real stddev, <a class="code" href="structamrex_1_1RandomEngine.html">RandomEngine</a> <span class="keyword">const</span>&amp; random_engine)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA)</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef BL_USE_FLOAT</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> stddev * curand_normal(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>) + mean;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> stddev * curand_normal_double(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>) + mean;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__)</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef BL_USE_FLOAT</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> stddev * hiprand_normal(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>) + mean;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#else</span></div>
@@ -169,9 +169,9 @@ $(document).ready(function(){initNavTree('AMReX__Random_8H_source.html',''); ini
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a62b2d5b64c692d02452cbed5ee65e61e">   92</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespaceamrex.html#aadec079fd8e2cdca36f7f49355e33864">RandomPoisson</a> (Real lambda, <a class="code" href="structamrex_1_1RandomEngine.html">RandomEngine</a> <span class="keyword">const</span>&amp; random_engine)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__)</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA)</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> curand_poisson(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>, lambda);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> hiprand_poisson(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>, lambda);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#elif defined (__SYCL_DEVICE_ONLY__)</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        mkl::rng::device::poisson&lt;unsigned int&gt; distr(lambda);</div>

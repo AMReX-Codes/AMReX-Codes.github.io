@@ -146,10 +146,10 @@ $(document).ready(function(){initNavTree('AMReX__Extension_8H_source.html',''); 
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#if defined(AMREX_DEBUG)</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define AMREX_PRAGMA_SIMD</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA)</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define AMREX_PRAGMA_SIMD</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define AMREX_PRAGMA_SIMD</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//#elif defined(AMREX_USE_OMP) &amp;&amp; defined(_OPENMP) &amp;&amp; (_OPENMP &gt;= 201307) &amp;&amp; !defined(__PGI)</span></div>
@@ -185,10 +185,10 @@ $(document).ready(function(){initNavTree('AMReX__Extension_8H_source.html',''); 
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* simd */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// force inline</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__)</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#if defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA)</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define AMREX_FORCE_INLINE __forceinline__</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#elif defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define AMREX_FORCE_INLINE __forceinline__</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#elif defined(__INTEL_COMPILER)</span></div>

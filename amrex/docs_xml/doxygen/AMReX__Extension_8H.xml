@@ -5972,10 +5972,10 @@
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__CUDA_ARCH__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__CUDA_ARCH__)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__HIP_DEVICE_COMPILE__)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PRAGMA_SIMD</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//#elif<sp/>defined(AMREX_USE_OMP)<sp/>&amp;&amp;<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>(_OPENMP<sp/>&gt;=<sp/>201307)<sp/>&amp;&amp;<sp/>!defined(__PGI)</highlight><highlight class="normal"></highlight></codeline>
@@ -6011,10 +6011,10 @@
 <codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>simd<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>force<sp/>inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FORCE_INLINE<sp/>__forceinline__</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__HIP_DEVICE_COMPILE__)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FORCE_INLINE<sp/>__forceinline__</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
