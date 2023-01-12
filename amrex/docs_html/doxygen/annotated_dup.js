@@ -177,14 +177,7 @@ var annotated_dup =
         [ "PackComponents", "structamrex_1_1NonLocalBC_1_1PackComponents.html", "structamrex_1_1NonLocalBC_1_1PackComponents" ],
         [ "ApplyDtosAndProjectionOnReciever", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" ],
         [ "NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
-        [ "DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
-        [ "Rotate90ClockWise", "structamrex_1_1NonLocalBC_1_1Rotate90ClockWise.html", "structamrex_1_1NonLocalBC_1_1Rotate90ClockWise" ],
-        [ "Rotate90CounterClockWise", "structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise.html", "structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise" ],
-        [ "Rotate90DstToSrc", "structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc.html", "structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc" ],
-        [ "Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", "structamrex_1_1NonLocalBC_1_1Rotate180Fn" ],
-        [ "PolarFn", "structamrex_1_1NonLocalBC_1_1PolarFn.html", "structamrex_1_1NonLocalBC_1_1PolarFn" ],
-        [ "PolarFn2", "structamrex_1_1NonLocalBC_1_1PolarFn2.html", "structamrex_1_1NonLocalBC_1_1PolarFn2" ],
-        [ "Array4Array4Box", "structamrex_1_1NonLocalBC_1_1Array4Array4Box.html", "structamrex_1_1NonLocalBC_1_1Array4Array4Box" ]
+        [ "DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ]
       ] ],
       [ "openbc", "namespaceamrex_1_1openbc.html", [
         [ "Moments", "structamrex_1_1openbc_1_1Moments.html", "structamrex_1_1openbc_1_1Moments" ],

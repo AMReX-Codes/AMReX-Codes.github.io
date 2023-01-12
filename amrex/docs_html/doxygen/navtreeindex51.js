@@ -1,11 +1,5 @@
 var NAVTREEINDEX51 =
 {
-"classamrex_1_1PinnedArenaAllocator.html":[2,0,0,155],
-"classamrex_1_1PinnedArenaAllocator.html#a1e56668a802c3d2ae2c3e81bbf8fd2c7":[2,0,0,155,0],
-"classamrex_1_1PinnedArenaAllocator.html#a27cd3eb6e443faa574407c4f7ee5dc50":[2,0,0,155,2],
-"classamrex_1_1PinnedArenaAllocator.html#ac69e6e7fe296c776cda4f655591199d2":[2,0,0,155,1],
-"classamrex_1_1PlotFileData.html":[2,0,0,194],
-"classamrex_1_1PlotFileData.html#a0cc0ef78ac5a9ed1d7ad288cf6774723":[2,0,0,194,17],
 "classamrex_1_1PlotFileData.html#a0d8ab75fa81879e1ed0f1a08d34ae84f":[2,0,0,194,4],
 "classamrex_1_1PlotFileData.html#a0fdee328da3ad85b3dbb121f64adc105":[2,0,0,194,14],
 "classamrex_1_1PlotFileData.html#a120c87042788ba7040ced33bbff0dcf5":[2,0,0,194,21],
@@ -249,5 +243,11 @@ var NAVTREEINDEX51 =
 "classamrex_1_1RealVect.html#ac0469b60807117dc2419785ce1168b84":[2,0,0,202,58],
 "classamrex_1_1RealVect.html#ac279e83bbbad84c9218d6673bf75fe65":[2,0,0,202,38],
 "classamrex_1_1RealVect.html#ac49e1cd3af85aa3a6cf106f8064fb3d0":[2,0,0,202,26],
-"classamrex_1_1RealVect.html#aced393e91058fd9dcf46321c5f8f1eef":[2,0,0,202,62]
+"classamrex_1_1RealVect.html#aced393e91058fd9dcf46321c5f8f1eef":[2,0,0,202,62],
+"classamrex_1_1RealVect.html#ad6ae47a8656e02c4d566cdf251d5e532":[2,0,0,202,17],
+"classamrex_1_1RealVect.html#ad83cc01ed7402d9d384b73c046a96b87":[2,0,0,202,13],
+"classamrex_1_1RealVect.html#addcc9764c758d18f28fb58fd3c5b3a8b":[2,0,0,202,44],
+"classamrex_1_1RealVect.html#ade2f2eb10ca0655878ddb552c36208fc":[2,0,0,202,8],
+"classamrex_1_1RealVect.html#ae1d5a95100e25091c6cb29a50e0c2be7":[2,0,0,202,40],
+"classamrex_1_1RealVect.html#ae2fd3bdec2802aef034cc7cfb36bf14a":[2,0,0,202,4]
 };

@@ -287,7 +287,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     ] ],
     [ "AMReX_NonLocalBC.cpp", "AMReX__NonLocalBC_8cpp.html", "AMReX__NonLocalBC_8cpp" ],
     [ "AMReX_NonLocalBC.H", "AMReX__NonLocalBC_8H.html", "AMReX__NonLocalBC_8H" ],
-    [ "AMReX_NonLocalBCImpl.H", "AMReX__NonLocalBCImpl_8H.html", "AMReX__NonLocalBCImpl_8H" ],
+    [ "AMReX_NonLocalBCImpl.H", "AMReX__NonLocalBCImpl_8H.html", null ],
     [ "AMReX_omp_mod.F90", "AMReX__omp__mod_8F90.html", "AMReX__omp__mod_8F90" ],
     [ "AMReX_OpenMP.H", "AMReX__OpenMP_8H.html", "AMReX__OpenMP_8H" ],
     [ "AMReX_Orientation.cpp", "AMReX__Orientation_8cpp.html", "AMReX__Orientation_8cpp" ],

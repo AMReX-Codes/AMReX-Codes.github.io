@@ -20,13 +20,6 @@
     <innerclass refid="structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" prot="public">amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1NoLocalCopy" prot="public">amrex::NonLocalBC::NoLocalCopy</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1DoLocalCopy" prot="public">amrex::NonLocalBC::DoLocalCopy</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate90ClockWise" prot="public">amrex::NonLocalBC::Rotate90ClockWise</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise" prot="public">amrex::NonLocalBC::Rotate90CounterClockWise</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc" prot="public">amrex::NonLocalBC::Rotate90DstToSrc</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate180Fn" prot="public">amrex::NonLocalBC::Rotate180Fn</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1PolarFn" prot="public">amrex::NonLocalBC::PolarFn</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1PolarFn2" prot="public">amrex::NonLocalBC::PolarFn2</innerclass>
-    <innerclass refid="structamrex_1_1NonLocalBC_1_1Array4Array4Box" prot="public">amrex::NonLocalBC::Array4Array4Box</innerclass>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1a165fdced073fa98b961fd6aaceb213d5" prot="public" static="no">
         <templateparamlist>
@@ -602,7 +595,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="193" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="193" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a4e1bcdd62bb28576f70782466201be80" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1af7d3777cd0f7fc47815d6f14621fade6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -617,8 +610,8 @@
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt; amrex::NonLocalBC::local_copy_cpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const  &amp;local_tags, DTOS dtos, Proj proj) noexcept</argsstring>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::local_copy_cpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
         <name>local_copy_cpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -655,84 +648,14 @@
           <defval>Proj{}</defval>
         </param>
         <briefdescription>
-<para>Perform the local copies from src to dest without doing any MPI communication. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function assumes that all destination and source boxes stored in the local copy comm tags are related by the DTOS. If this is not the case the behaviour will at best be caught as an assertion.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="out">dest</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The destination <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> that will be filled with data.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">src</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The source <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> where data will be taken from.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">dcomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The first component at the destination.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">scomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The first component at the source.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">ncomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of components that will be copied.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">local_tags</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The vector of copy com tags that describes each local copy transaction.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">dtos</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The dest to source index mapping that will be used in the copy function.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername direction="in">proj</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>A FAB projection that might transform the data.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Nothing. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="188" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="188" bodyend="205" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="493" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="493" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="493" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a107c83b3af2c582af205743dff872465" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a50fbbda2ae1dbeaf3eb02f1361a22a3d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -747,8 +670,8 @@
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_cpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int dcomp, int ncomp, Vector&lt; char * &gt; const  &amp;recv_data, Vector&lt; std::size_t &gt; const  &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const  * &gt; const  &amp;recv_cctc, DTOS dtos, Proj proj) noexcept</argsstring>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_cpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
         <name>unpack_recv_buffer_cpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -785,16 +708,14 @@
           <defval>Proj{}</defval>
         </param>
         <briefdescription>
-<para>Unpack the received data into the local FABs. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function assumes that all destination and source boxes stored in the local copy comm tags are related by the DTOS. If this is not the case the behaviour will at best be caught as an assertion. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="214" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="214" bodyend="241" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="499" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="499" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="499" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a3fb733183cbc6b17699a7db18399c6ca" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afebb9f386e2018a4623ef8014d2b79e9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -809,7 +730,7 @@
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt; amrex::NonLocalBC::local_copy_gpu</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::local_copy_gpu</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
         <name>local_copy_gpu</name>
         <param>
@@ -852,9 +773,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="256" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="256" bodyend="274" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="507" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="507" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="507" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a0e58b7f692a3fb61a4083b73150d4093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a55ad6d6378fb54ec7d36f079a2289e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -869,7 +790,7 @@
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_gpu</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_gpu</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
         <name>unpack_recv_buffer_gpu</name>
         <param>
@@ -912,7 +833,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="278" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="278" bodyend="335" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="513" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="513" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="513" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ab719edc50f1af0377bb308024219baa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2047,14 +1968,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="996" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="996" bodyend="999"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a1db1b84b89132c3ef19ebeca1d58ba44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a2d9ef1abd51b6a59a2938c4aefbe3456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; amrex::NonLocalBC::Rotate90</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::Rotate90</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, IntVect const &amp;nghost, Box const &amp;domain)</argsstring>
         <name>Rotate90</name>
         <param>
@@ -2083,16 +2004,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="529" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="529" bodyend="566" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1008" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1008" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1008" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad6afa903ade1682dd13aecc08cb7b629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a33354739811ccff59e69722da63a9f5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; amrex::NonLocalBC::Rotate90</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::Rotate90</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, Box const &amp;domain)</argsstring>
         <name>Rotate90</name>
         <param>
@@ -2109,16 +2030,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="570" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="570" bodyend="573" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1012" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1012" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1012" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a406f481108d8e6fc47ed627e5ec4a040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a35b23e1690efb2d7f63af0118739d12e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; amrex::NonLocalBC::Rotate180</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::Rotate180</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, IntVect const &amp;nghost, Box const &amp;domain)</argsstring>
         <name>Rotate180</name>
         <param>
@@ -2147,16 +2068,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="577" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="577" bodyend="599" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1019" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1019" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1019" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a2430b7cfc8c45b6ed7afc813d9de1221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad6b5ad1aeccc1b34a6874b4609654e14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; amrex::NonLocalBC::Rotate180</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::Rotate180</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, Box const &amp;domain)</argsstring>
         <name>Rotate180</name>
         <param>
@@ -2173,16 +2094,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="603" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="603" bodyend="606" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1023" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1023" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1023" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a903b51733df3cc6289e62a3cc5b0629e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a22290d0dc38cd0254f5d14100fec970f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; amrex::NonLocalBC::FillPolar</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::FillPolar</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, IntVect const &amp;nghost, Box const &amp;domain)</argsstring>
         <name>FillPolar</name>
         <param>
@@ -2211,16 +2132,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="610" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="610" bodyend="634" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1031" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1031" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1031" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a691dc7cd1b0fb5c65e64b2ecda39169e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a569fc178d4aad983c5bdd14a8f69127e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
-        <definition>std::enable_if_t&lt; IsBaseFab&lt; FAB &gt;::value &gt; amrex::NonLocalBC::FillPolar</definition>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::FillPolar</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, Box const &amp;domain)</argsstring>
         <name>FillPolar</name>
         <param>
@@ -2237,93 +2158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="638" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="638" bodyend="641" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1035" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad27d4e549420f04e09a0257f7bf1a061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class FAB</type>
-          </param>
-          <param>
-            <type>class DTOS</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" kindref="member">AMREX_NODISCARD</ref> <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
-        <definition>AMREX_NODISCARD CommHandler amrex::NonLocalBC::Comm_nowait</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</argsstring>
-        <name>Comm_nowait</name>
-        <param>
-          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>mf</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>scomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>ncomp</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> const &amp;</type>
-          <declname>cmd</declname>
-        </param>
-        <param>
-          <type>DTOS</type>
-          <declname>dtos</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="403" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="403" bodyend="480"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1af9ec0d9354978f736d6d42e6b79bfb32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class FAB</type>
-          </param>
-          <param>
-            <type>class DTOS</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::NonLocalBC::Comm_finish</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, CommHandler handler, DTOS dtos)</argsstring>
-        <name>Comm_finish</name>
-        <param>
-          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>mf</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>scomp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>ncomp</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> const &amp;</type>
-          <declname>cmd</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
-          <declname>handler</declname>
-        </param>
-        <param>
-          <type>DTOS</type>
-          <declname>dtos</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="485" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="485" bodyend="524"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1035" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1035" declcolumn="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
