@@ -226,7 +226,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, &amp;r.second);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP) || \</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">      defined(_GNU_SOURCE)</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">      (defined(_GNU_SOURCE) &amp;&amp; !defined(__apple_build_version__))</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">::sincos</a>(x, &amp;r.first, &amp;r.second);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    r.first  = std::sin(x);</div>
@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, &amp;r.second);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP) || \</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">      defined(_GNU_SOURCE)</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">      (defined(_GNU_SOURCE) &amp;&amp; !defined(__apple_build_version__))</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ::sincosf(x, &amp;r.first, &amp;r.second);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    r.first  = std::sin(x);</div>
