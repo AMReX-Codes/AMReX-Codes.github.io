@@ -89,6 +89,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#parallelfor">ParallelFor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ghost-cells">Ghost Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#masks">Masks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#owner-mask">Owner Mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overlap-mask">Overlap Mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#point-mask">Point Mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fine-mask">Fine Mask</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#memory-allocation">Memory Allocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#abort-assertion-and-backtrace">Abort, Assertion and Backtrace</a></li>
 </ul>
@@ -2257,6 +2264,80 @@ to fill the ghost cells on each grid.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
+<section id="masks">
+<h1>Masks<a class="headerlink" href="#masks" title="Permalink to this heading"></a></h1>
+<p>Given an index <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"></span></code>, we often need to know its relationship with
+other points and levels (e.g., whether this point on a coarse level is
+covered by a fine level, whether this ghost point is outside coarse/fine
+boundary, etc.).  AMReX provides various functions for creating masks for
+this type of purposes.</p>
+<section id="owner-mask">
+<h2>Owner Mask<a class="headerlink" href="#owner-mask" title="Permalink to this heading"></a></h2>
+<p>AMReX supports various index types such as face, edge and node, besides cell
+centered type.  For non-cell types, two boxes could overlap.  For example, a
+nodal index <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"></span></code> could exist in more than one <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> of
+a nodal <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>.  AMReX provides a function to create an owner mask,
+where the owner is the grid with the lowest grid number containing the data.
+This has a number of use cases.  The nodal data for the same nodal point on
+different <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>es may be out of sync.  We can use
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">OverrideSync</span><span class="w"></span></code> and an owner mask to sync up the data with
+owners overriding non-owners.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// non-cell-centered</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">OwnerMask</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span><span class="w"></span>
+<span class="n">mf</span><span class="p">.</span><span class="n">OverrideSync</span><span class="p">(</span><span class="o">*</span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+<p>To compute the dot product of two nodal <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>s, we can use a
+mask to avoid double counting.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf1</span><span class="p">(...);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf2</span><span class="p">(...);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">OwnerMask</span><span class="p">(</span><span class="n">mf1</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span><span class="w"></span>
+<span class="n">Real</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">::</span><span class="n">Dot</span><span class="p">(</span><span class="o">*</span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="n">mf1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">mf2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="overlap-mask">
+<h2>Overlap Mask<a class="headerlink" href="#overlap-mask" title="Permalink to this heading"></a></h2>
+<p>For the synchronization example mentioned previously, maybe instead of
+overriding, we want to do averaging.  This can be achieved with an overlap
+mask indicating how many duplicates are in each point.  The code below shows
+how the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">AverageSync</span><span class="w"></span></code> function is implemented in AMReX.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MultiFab</span><span class="w"> </span><span class="nf">mf</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// non-cell-centered</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mf</span><span class="p">.</span><span class="n">OverlapMask</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span><span class="w"></span>
+<span class="n">mask</span><span class="o">-&gt;</span><span class="n">invert</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">mf</span><span class="p">.</span><span class="n">WeightedSync</span><span class="p">(</span><span class="o">*</span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="point-mask">
+<h2>Point Mask<a class="headerlink" href="#point-mask" title="Permalink to this heading"></a></h2>
+<p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="w"></span></code> class has a member function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BuildMask</span><span class="w"></span></code> that can be
+used to set masks indicating the type of points (e.g., valid, outside the
+domain, etc.).  For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">iMultiFab</span><span class="w"> </span><span class="nf">mask</span><span class="p">(</span><span class="n">ba</span><span class="p">,</span><span class="w"> </span><span class="n">dm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nghost</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// ghost points covered by valid points</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="c1">// ghost points not covered by valid points</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span><span class="c1">// outside physical domain</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"> </span><span class="c1">// interior points (i.e., valid points)</span>
+<span class="n">mask</span><span class="p">.</span><span class="n">BuildMask</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">Domain</span><span class="p">(),</span><span class="w"> </span><span class="n">geom</span><span class="p">.</span><span class="n">periodicity</span><span class="p">(),</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="fine-mask">
+<h2>Fine Mask<a class="headerlink" href="#fine-mask" title="Permalink to this heading"></a></h2>
+<p>AMReX provides a number of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">makeFineMask</span><span class="w"></span></code> functions that can be useful
+for multi-level AMR calculations.  For example, we may want to compute the
+infinity norm on a coarse AMR level without including data from cells
+covered by fine level grids.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">coarse_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">fine_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">iMultiFab</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">makeFineMask</span><span class="p">(</span><span class="n">coarse_mf</span><span class="p">,</span><span class="w"> </span><span class="n">fine_boxarray</span><span class="p">,</span><span class="w"> </span><span class="n">refine_ratio</span><span class="p">,</span><span class="w"></span>
+<span class="w">                              </span><span class="n">coarse_value</span><span class="p">,</span><span class="w"> </span><span class="n">fine_value</span><span class="p">);</span><span class="w"></span>
+<span class="n">Real</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coarse_mf</span><span class="p">.</span><span class="n">norminf</span><span class="p">(</span><span class="n">mask</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="memory-allocation">
 <h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this heading"></a></h1>
