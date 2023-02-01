@@ -1,9 +1,5 @@
 var NAVTREEINDEX79 =
 {
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a9352b5694ad95664dce6d6214668eb05":[2,0,0,0,5,11],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#aa84aea4f19fd97919030c7bc2b2bce52":[2,0,0,0,5,12],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467":[2,0,0,0,5,6],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#ac95794690d4fb50c8e149a55ade09fb8":[2,0,0,0,5,3],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aca80bffdcf736a33a21c70582d2182bf":[2,0,0,0,5,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#acca11ab4048cabd364f8e25012b416ba":[2,0,0,0,5,4],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ad7a1d13d438479b184c871b0dec86a66":[2,0,0,0,5,10],
@@ -249,5 +245,9 @@ var NAVTREEINDEX79 =
 "structyy__trans__info.html":[2,0,30],
 "structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[2,0,30,1],
 "structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[2,0,30,0],
-"unionAMREX__IPARSERSTYPE.html":[2,0,12]
+"unionAMREX__IPARSERSTYPE.html":[2,0,12],
+"unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac":[2,0,12,3],
+"unionAMREX__IPARSERSTYPE.html#a8105da3c7746493ffd665cd25bb19ca8":[2,0,12,5],
+"unionAMREX__IPARSERSTYPE.html#a99cdaa1f0d3cc968417ed03723f93d44":[2,0,12,1],
+"unionAMREX__IPARSERSTYPE.html#ac48b057f41120f01148091d4dabe428f":[2,0,12,0]
 };

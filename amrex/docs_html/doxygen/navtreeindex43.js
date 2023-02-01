@@ -1,7 +1,5 @@
 var NAVTREEINDEX43 =
 {
-"classamrex_1_1MLCGSolverT.html#abfa2bc8d81a4f4c9a4a05f82ab18312fa5202c6586cac8bee468e86d1ff854231":[2,0,0,407,2,1],
-"classamrex_1_1MLCGSolverT.html#ac578fcc67a6e49ae96d7578ce36c508f":[2,0,0,407,14],
 "classamrex_1_1MLCGSolverT.html#ac9a3353d649e44294c57d703d55dcdcd":[2,0,0,407,3],
 "classamrex_1_1MLCGSolverT.html#ad7cd32d077461754bae70ed300d440a6":[2,0,0,407,10],
 "classamrex_1_1MLCGSolverT.html#adaf95795df6022fbffaeea323e4df3e0":[2,0,0,407,13],
@@ -249,5 +247,7 @@ var NAVTREEINDEX43 =
 "classamrex_1_1MLEBTensorOp.html#aed368e6d9fa6a5cb5b193e4368d39cb7":[2,0,0,410,34],
 "classamrex_1_1MLEBTensorOp.html#af0d70e756af559a4082443914b134b0d":[2,0,0,410,3],
 "classamrex_1_1MLEBTensorOp.html#af68d7a6c4f6bf5075b2263eaece90f21":[2,0,0,410,9],
-"classamrex_1_1MLLinOpT.html":[2,0,0,415]
+"classamrex_1_1MLLinOpT.html":[2,0,0,415],
+"classamrex_1_1MLLinOpT.html#a02b3d2ea4535daf60276e9014571f955":[2,0,0,415,38],
+"classamrex_1_1MLLinOpT.html#a02f8f07d9d724566c7aea603ea1248a6":[2,0,0,415,120]
 };
