@@ -1594,8 +1594,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;                <span class="keywordtype">bool</span> old;</div>
 <div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;<span class="comment">// we should be able to test on _OPENMP &lt; 201107 for capture (version 3.1)</span></div>
 <div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;<span class="comment">// but we must work around a bug in gcc &lt; 4.9</span></div>
-<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;<span class="comment">// And, with NVHPC 21.9, we see an ICE with the atomic capture (NV bug: #3390723)</span></div>
-<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; defined(_OPENMP) &amp;&amp; (_OPENMP &lt; 201307 || defined(__NVCOMPILER)) </span><span class="comment">// OpenMP 4.0</span></div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;<span class="comment">// And, with NVHPC 21.9 to &lt;23.1, we saw an ICE with the atomic capture (NV bug: #3390723)</span></div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_OMP) &amp;&amp; defined(_OPENMP) &amp;&amp; (_OPENMP &lt; 201307 || (defined(__NVCOMPILER) &amp;&amp; __NVCOMPILER_MAJOR__ &lt; 23)) </span><span class="comment">// OpenMP 4.0</span></div>
 <div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;<span class="preprocessor">#pragma omp critical (amrex_indexfromvalue)</span></div>
 <div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_OMP)</span></div>
 <div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;<span class="preprocessor">#pragma omp atomic capture</span></div>
