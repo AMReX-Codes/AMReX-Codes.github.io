@@ -3052,7 +3052,7 @@
     <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) \
     { \
         const auto amrex_i_ec = <ref refid="structamrex_1_1Gpu_1_1ExecutionConfig" kindref="compound">amrex::Gpu::ExecutionConfig</ref>(amrex_i_tn); \
-        <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(<ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>, amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
+        <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(AMREX_GPU_MAX_THREADS, amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
         [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> () noexcept { \
             for (auto const TI : <ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn)) { \
                 block \
@@ -3118,7 +3118,7 @@
     <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) \
     { \
         auto amrex_i_ec = <ref refid="structamrex_1_1Gpu_1_1ExecutionConfig" kindref="compound">amrex::Gpu::ExecutionConfig</ref>(amrex_i_tn); \
-        <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(<ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>, amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
+        <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(AMREX_GPU_MAX_THREADS, amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
         [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> () noexcept { \
             for (auto const TI : <ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn)) { \
                 block \
@@ -3154,7 +3154,7 @@
         dim3 amrex_i_nblocks = <ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">amrex::max</ref>(amrex_i_ec1.numBlocks.x, \
                                           amrex_i_ec2.numBlocks.x); \
         amrex_i_nblocks.y = 2; \
-        <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(<ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
+        <ref refid="AMReX__GpuLaunch_8H_1a70f6a154a9518b2be561acca7d54c95b" kindref="member">AMREX_LAUNCH_KERNEL</ref>(AMREX_GPU_MAX_THREADS, amrex_i_nblocks, amrex_i_ec1.numThreads, 0, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
         [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> () noexcept { \
             switch (blockIdx.y) { \
             case 0: for (auto const TI1 : <ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn1)) { \

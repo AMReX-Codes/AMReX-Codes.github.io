@@ -8,7 +8,6 @@ var AMReX__GpuControl_8H =
     [ "AMREX_DPCPP_2D_ONLY", "AMReX__GpuControl_8H.html#a8ae10852f9c794cebf24541e44624d28", null ],
     [ "AMREX_DPCPP_3D_ONLY", "AMReX__GpuControl_8H.html#a869371ffeabb102f48ef8771f13cabbc", null ],
     [ "AMREX_DPCPP_ONLY", "AMReX__GpuControl_8H.html#a9c43c85c9849a3b6c66b494527d83f08", null ],
-    [ "AMREX_GPU_MAX_THREADS", "AMReX__GpuControl_8H.html#a2e7fcf2342ee5da11b271a774cf65388", null ],
     [ "AMREX_GPU_OR_CPU", "AMReX__GpuControl_8H.html#ac7fc102519949e6bf5e0e7fe70e82e23", null ],
     [ "AMREX_HIP_OR_CUDA", "AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941", null ],
     [ "AMREX_HIP_OR_CUDA_OR_DPCPP", "AMReX__GpuControl_8H.html#a90c94dfad5d935d839bfd6fbe1ee3013", null ],

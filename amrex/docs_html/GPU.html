@@ -289,6 +289,11 @@ can run it and that will generate results like:</p>
 </section>
 <section id="building-with-cmake">
 <h2>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this heading"></a></h2>
+<p>To build AMReX with GPU support in CMake, add
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA|HIP|SYCL</span></code> to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation, for CUDA,
+HIP and SYCL, respectively. By default, AMReX uses 256 threads per GPU
+block/group in most situations. This can be changed with
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_MAX_THREADS=N</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is 128 for example.</p>
 <section id="enabling-cuda-support">
 <h3>Enabling CUDA support<a class="headerlink" href="#enabling-cuda-support" title="Permalink to this heading"></a></h3>
 <p>To build AMReX with CUDA support in CMake, add <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span></code> to the
@@ -357,32 +362,27 @@ device function</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CUDA_MAX_THREADS</p></td>
-<td><p>Max number of CUDA threads per block</p></td>
-<td><p>256</p></td>
-<td><p>User-defined</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_CUDA_MAXREGCOUNT</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_MAXREGCOUNT</p></td>
 <td><p>Limits the number of CUDA registers available</p></td>
 <td><p>255</p></td>
 <td><p>User-defined</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CUDA_PTX_VERBOSE</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_PTX_VERBOSE</p></td>
 <td><p>Verbose code generation statistics in ptxas</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_CUDA_SHOW_CODELINES</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_SHOW_CODELINES</p></td>
 <td><p>Source information in PTX (optimizations: on)</p></td>
 <td><p>Auto</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CUDA_SHOW_LINENUMBERS</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_SHOW_LINENUMBERS</p></td>
 <td><p>Line-number information (optimizations: on)</p></td>
 <td><p>Auto</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_CUDA_WARN_CAPTURE_THIS</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_WARN_CAPTURE_THIS</p></td>
 <td><p>Warn if a CUDA lambda captures a class’ this</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
@@ -454,7 +454,7 @@ If you don’t need Fortran features (<code class="docutils literal notranslate"
 the standard CMake variables used to customize the compilation process for C++,
 for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for HIP as well.</p>
 <p>Since CMake does not support autodetection of HIP compilers/target architectures
-yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">clang++</span></code> or <code class="docutils literal notranslate"><span class="pre">hipcc</span></code> or <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>,
+yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">clang++</span></code> or <code class="docutils literal notranslate"><span class="pre">hipcc</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">AMReX_AMD_ARCH</span></code> to the target architecture you are building for.
 Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP</strong>.
 We again read also an <em>environment variable</em>: <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps) and the C++ compiler can be hinted as always, e.g. with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CXX=$(which</span> <span class="pre">clang++)</span></code>.

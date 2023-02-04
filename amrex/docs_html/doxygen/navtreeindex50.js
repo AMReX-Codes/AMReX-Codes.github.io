@@ -1,6 +1,5 @@
 var NAVTREEINDEX50 =
 {
-"classamrex_1_1ParticleContainer.html#a3eca54e3796067e16dfd915088236097":[2,0,0,433,171],
 "classamrex_1_1ParticleContainer.html#a3f6a321aac01f3dfef8995b7eb2ef9d6":[2,0,0,433,22],
 "classamrex_1_1ParticleContainer.html#a3fe69cdcf81f6bad55051d89bdd62329":[2,0,0,433,159],
 "classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727":[2,0,0,433,141],
@@ -249,5 +248,6 @@ var NAVTREEINDEX50 =
 "classamrex_1_1PlotFileData.html":[2,0,0,194],
 "classamrex_1_1PlotFileData.html#a0cc0ef78ac5a9ed1d7ad288cf6774723":[2,0,0,194,17],
 "classamrex_1_1PlotFileData.html#a0d8ab75fa81879e1ed0f1a08d34ae84f":[2,0,0,194,4],
-"classamrex_1_1PlotFileData.html#a0fdee328da3ad85b3dbb121f64adc105":[2,0,0,194,14]
+"classamrex_1_1PlotFileData.html#a0fdee328da3ad85b3dbb121f64adc105":[2,0,0,194,14],
+"classamrex_1_1PlotFileData.html#a120c87042788ba7040ced33bbff0dcf5":[2,0,0,194,21]
 };
