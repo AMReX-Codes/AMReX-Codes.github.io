@@ -1,17 +1,38 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial: Heat Equation - Simple &mdash; amrex 22.11-dev documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+  <title>Tutorial: Heat Equation - Simple &mdash; amrex 23.03-dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
@@ -19,21 +40,41 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="index.html" class="icon icon-home"> amrex
+          
+
+          
           </a>
+
+          
+            
+            
               <div class="version">
-                22.11-dev
+                23.03-dev
               </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -41,7 +82,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
 </ul>
@@ -62,32 +114,73 @@
 <li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
       <li>Tutorial: Heat Equation - Simple</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="_sources/HeatEquation_Simple.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <section id="tutorial-heat-equation-simple">
-<span id="guided-heat-simple"></span><h1>Tutorial: Heat Equation - Simple<a class="headerlink" href="#tutorial-heat-equation-simple" title="Permalink to this heading"></a></h1>
+<span id="guided-heat-simple"></span><h1>Tutorial: Heat Equation - Simple<a class="headerlink" href="#tutorial-heat-equation-simple" title="Permalink to this heading">¶</a></h1>
 <div class="warning admonition">
 <p class="admonition-title"><strong>Time to Complete</strong>: 25 mins</p>
 <dl class="simple">
@@ -104,7 +197,7 @@ visualized output of an AMReX code. We will demonstrate basic building,
 compiling and output generation. We will also examine several key AMReX features
 in a C++ code and plot the output with Python in a Jupyter notebook.</p>
 <section id="setting-up-your-environment">
-<h2>Setting Up Your Environment<a class="headerlink" href="#setting-up-your-environment" title="Permalink to this heading"></a></h2>
+<h2>Setting Up Your Environment<a class="headerlink" href="#setting-up-your-environment" title="Permalink to this heading">¶</a></h2>
 <p>This tutorial recommends using Gitpod (Requires a GitHub account).  Gitpod
 provides an online terminal that is already preconfigured for our development
 environment.</p>
@@ -113,7 +206,7 @@ environment.</p>
 </div></blockquote>
 </section>
 <section id="building-the-project">
-<h2>Building the Project<a class="headerlink" href="#building-the-project" title="Permalink to this heading"></a></h2>
+<h2>Building the Project<a class="headerlink" href="#building-the-project" title="Permalink to this heading">¶</a></h2>
 <p>This example will use CMake to build the project. Navigate to the directory
 <code class="code docutils literal notranslate"><span class="pre">/workspace/amrex-tutorials/GuidedTutorials/HeatEquation_Simple/</span></code>
 and type</p>
@@ -130,7 +223,7 @@ needs to compile the tutorial in the next step.</p>
 <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX_Chapter.html">https://amrex-codes.github.io/amrex/docs_html/BuildingAMReX_Chapter.html</a>.</p>
 </section>
 <section id="compiling-the-code-with-cmake">
-<h2>Compiling the Code with CMake<a class="headerlink" href="#compiling-the-code-with-cmake" title="Permalink to this heading"></a></h2>
+<h2>Compiling the Code with CMake<a class="headerlink" href="#compiling-the-code-with-cmake" title="Permalink to this heading">¶</a></h2>
 <p>After building the project, in the <code class="docutils literal notranslate"><span class="pre">Build</span></code> directory you will find several new
 files and directories created by CMake during the configuration process.
 At the prompt type</p>
@@ -155,11 +248,11 @@ the input parameters. Parsing of the information in the <code class="code docuti
 <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#parmparse">https://amrex-codes.github.io/amrex/docs_html/Basics.html#parmparse</a></p>
 </section>
 <section id="code-highlights">
-<h2>Code Highlights<a class="headerlink" href="#code-highlights" title="Permalink to this heading"></a></h2>
+<h2>Code Highlights<a class="headerlink" href="#code-highlights" title="Permalink to this heading">¶</a></h2>
 <p>At this point we have built, compiled and ran the <code class="code docutils literal notranslate"><span class="pre">HeatEquation_Simple</span></code> code. Now
 we will walk through the code and explain some essential features of AMReX syntax.</p>
 <section id="basic-structure">
-<h3>Basic Structure<a class="headerlink" href="#basic-structure" title="Permalink to this heading"></a></h3>
+<h3>Basic Structure<a class="headerlink" href="#basic-structure" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Main
  ├──── Initialize AMReX
  ├──── Declare Simulation Parameters
@@ -177,7 +270,7 @@ we will walk through the code and explain some essential features of AMReX synta
 </div>
 </section>
 <section id="amrex-namespace-and-required-commands">
-<h3>AMReX Namespace and Required Commands<a class="headerlink" href="#amrex-namespace-and-required-commands" title="Permalink to this heading"></a></h3>
+<h3>AMReX Namespace and Required Commands<a class="headerlink" href="#amrex-namespace-and-required-commands" title="Permalink to this heading">¶</a></h3>
 <p>The AMReX namespace contains many useful features. They are accessed by including
 the necessary header files and using the
 prefix <code class="code docutils literal notranslate"><span class="pre">amrex::</span></code>. Each
@@ -192,7 +285,7 @@ classes and features not located between the commands will not function properly
 execution.</p>
 </section>
 <section id="the-multifab-data-structure">
-<h3>The MultiFab Data Structure<a class="headerlink" href="#the-multifab-data-structure" title="Permalink to this heading"></a></h3>
+<h3>The MultiFab Data Structure<a class="headerlink" href="#the-multifab-data-structure" title="Permalink to this heading">¶</a></h3>
 <p>A <code class="code docutils literal notranslate"><span class="pre">MultiFab</span></code> is a data structure that AMReX can
 distribute among parallel processes. In this Heat Equation example
 we use two MultiFabs to hold the current and previous values of <span class="math notranslate nohighlight">\(\phi\)</span>
@@ -209,7 +302,7 @@ for the scalar <span class="math notranslate nohighlight">\(\phi\)</span>. The v
 how many <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#ghost-cells">ghost cells</a> to create outside the box’s valid region.</p>
 </section>
 <section id="mfiter-and-parallelfor">
-<h3>MFIter and ParallelFor<a class="headerlink" href="#mfiter-and-parallelfor" title="Permalink to this heading"></a></h3>
+<h3>MFIter and ParallelFor<a class="headerlink" href="#mfiter-and-parallelfor" title="Permalink to this heading">¶</a></h3>
 <p>Now we will examine the main time evolution loop. In this section AMReX’s <code class="code docutils literal notranslate"><span class="pre">MFIter</span></code> and
 <code class="code docutils literal notranslate"><span class="pre">ParallelFor</span></code> constructs work in conjunction to provide efficient parallel execution.
 The code where this happens is:</p>
@@ -249,7 +342,7 @@ The code where this happens is:</p>
 we begin by calling <code class="code docutils literal notranslate"><span class="pre">phi_old.FillBoundary(geom.periodicity())</span></code>. This fills ghost cells
 based on the previous state of <span class="math notranslate nohighlight">\(\phi\)</span> with periodic boundary conditions.</p>
 <section id="mfiter">
-<h4>MFIter<a class="headerlink" href="#mfiter" title="Permalink to this heading"></a></h4>
+<h4>MFIter<a class="headerlink" href="#mfiter" title="Permalink to this heading">¶</a></h4>
 <p>The next <code class="code docutils literal notranslate"><span class="pre">for</span></code> loop,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span> <span class="n">amrex</span><span class="p">::</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">phi_old</span><span class="p">);</span> <span class="n">mfi</span><span class="o">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span> <span class="p">)</span>
 </pre></div>
@@ -267,7 +360,7 @@ piece of the mesh is converted to an <a class="reference external" href="https:/
 </div>
 </section>
 <section id="parallelfor">
-<h4>ParallelFor<a class="headerlink" href="#parallelfor" title="Permalink to this heading"></a></h4>
+<h4>ParallelFor<a class="headerlink" href="#parallelfor" title="Permalink to this heading">¶</a></h4>
 <p><code class="code docutils literal notranslate"><span class="pre">ParallelFor</span></code> provides parallel execution of i,j,k operations that would otherwise require
 three nested loops. This AMReX construct automatically adapts for efficient computation
 based on the available hardware, including CPU and CPU+GPU variations.
@@ -290,9 +383,9 @@ output to a plot file that will be used for visualization.</p>
 </section>
 </section>
 <section id="visualizing-output">
-<h2>Visualizing Output<a class="headerlink" href="#visualizing-output" title="Permalink to this heading"></a></h2>
+<h2>Visualizing Output<a class="headerlink" href="#visualizing-output" title="Permalink to this heading">¶</a></h2>
 <section id="data-files">
-<h3>Data Files<a class="headerlink" href="#data-files" title="Permalink to this heading"></a></h3>
+<h3>Data Files<a class="headerlink" href="#data-files" title="Permalink to this heading">¶</a></h3>
 <p>In <code class="code docutils literal notranslate"><span class="pre">main.cpp</span></code> we called a plot function in two places. The
 first time was to plot initial data.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">129</span>     <span class="k">if</span> <span class="p">(</span><span class="n">plot_int</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
@@ -318,7 +411,7 @@ file. After it finishes your directory should look like this.</p>
 <img alt="_images/plot_dirs.png" src="_images/plot_dirs.png" />
 </section>
 <section id="visualization-in-jupyter">
-<h3>Visualization in Jupyter<a class="headerlink" href="#visualization-in-jupyter" title="Permalink to this heading"></a></h3>
+<h3>Visualization in Jupyter<a class="headerlink" href="#visualization-in-jupyter" title="Permalink to this heading">¶</a></h3>
 <p>We will use Python and the yt package in a Jupyter notebook to generate plots for the data
 in the directories created in the previous step. First launch the Jupyter notebook
 with the command:</p>
@@ -335,7 +428,7 @@ heat equation example, followed by several cells that use <code class="code docu
 commands to read AMReX output files.</p>
 </section>
 <section id="yt">
-<h3>yt<a class="headerlink" href="#yt" title="Permalink to this heading"></a></h3>
+<h3>yt<a class="headerlink" href="#yt" title="Permalink to this heading">¶</a></h3>
 <p>The following commands import the <code class="code docutils literal notranslate"><span class="pre">yt</span></code> package and plot
 a 2D slice of the output at from the 1000th time step.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yt</span>
@@ -352,7 +445,7 @@ Once the run is complete, you will get the following plot.</p>
 </section>
 </section>
 <section id="what-s-next">
-<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading"></a></h2>
+<h2>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading">¶</a></h2>
 <p>The code in this example was simplified down to a single file. Other convenient features
 that require more complex syntax were removed for the sake of a
 straight-forward presentation. In the next example
@@ -362,30 +455,46 @@ we’ll put these pieces back and write code like an AMReX developer.</p>
 
 
            </div>
+           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
-  </div>
+    <p>
+        &#169; Copyright 2017-2018, AMReX Team.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
