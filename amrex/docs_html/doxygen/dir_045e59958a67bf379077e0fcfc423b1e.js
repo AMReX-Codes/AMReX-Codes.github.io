@@ -62,7 +62,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     ] ],
     [ "AMReX_BoxList.cpp", "AMReX__BoxList_8cpp.html", null ],
     [ "AMReX_BoxList.H", "AMReX__BoxList_8H.html", "AMReX__BoxList_8H" ],
-    [ "AMReX_CArena.cpp", "AMReX__CArena_8cpp.html", null ],
+    [ "AMReX_CArena.cpp", "AMReX__CArena_8cpp.html", [
+      [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ]
+    ] ],
     [ "AMReX_CArena.H", "AMReX__CArena_8H.html", [
       [ "CArena", "classamrex_1_1CArena.html", "classamrex_1_1CArena" ],
       [ "Node", "classamrex_1_1CArena_1_1Node.html", "classamrex_1_1CArena_1_1Node" ],
@@ -345,9 +347,11 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_TimeIntegrator.H", "AMReX__TimeIntegrator_8H.html", "AMReX__TimeIntegrator_8H" ],
     [ "AMReX_TinyProfiler.cpp", "AMReX__TinyProfiler_8cpp.html", null ],
     [ "AMReX_TinyProfiler.H", "AMReX__TinyProfiler_8H.html", [
+      [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ],
       [ "TinyProfiler", "classamrex_1_1TinyProfiler.html", "classamrex_1_1TinyProfiler" ],
       [ "Stats", "structamrex_1_1TinyProfiler_1_1Stats.html", "structamrex_1_1TinyProfiler_1_1Stats" ],
       [ "ProcStats", "structamrex_1_1TinyProfiler_1_1ProcStats.html", "structamrex_1_1TinyProfiler_1_1ProcStats" ],
+      [ "MemProcStats", "structamrex_1_1TinyProfiler_1_1MemProcStats.html", "structamrex_1_1TinyProfiler_1_1MemProcStats" ],
       [ "TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", "classamrex_1_1TinyProfileRegion" ]
     ] ],
     [ "AMReX_Tuple.H", "AMReX__Tuple_8H.html", "AMReX__Tuple_8H" ],

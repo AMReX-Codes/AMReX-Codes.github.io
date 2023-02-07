@@ -317,6 +317,7 @@ var annotated_dup =
       [ "BoxDomain", "classamrex_1_1BoxDomain.html", "classamrex_1_1BoxDomain" ],
       [ "BoxIterator", "classamrex_1_1BoxIterator.html", "classamrex_1_1BoxIterator" ],
       [ "BoxList", "classamrex_1_1BoxList.html", "classamrex_1_1BoxList" ],
+      [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ],
       [ "CArena", "classamrex_1_1CArena.html", "classamrex_1_1CArena" ],
       [ "CoordSys", "classamrex_1_1CoordSys.html", "classamrex_1_1CoordSys" ],
       [ "CompileTimeOptions", "structamrex_1_1CompileTimeOptions.html", "structamrex_1_1CompileTimeOptions" ],

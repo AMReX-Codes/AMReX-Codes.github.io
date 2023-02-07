@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="127" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="127" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="132" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1CArena_1_1Node_1a8d1a994928ff734df597327f22db12dd" prot="private" static="no" mutable="no">
         <type>void *</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="129" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="129" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="134" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1CArena_1_1Node_1a3eefad51a3f5c77dfba6bfa8f42e8909" prot="private" static="no" mutable="no">
         <type>std::size_t</type>
@@ -45,14 +45,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="131" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="131" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="136" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1CArena_1_1Node_1a0a7a1c0cd13749231991a5b7361fa2b6" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1MemStat" kindref="compound">MemStat</ref> *</type>
+        <definition>MemStat* amrex::CArena::Node::m_stat</definition>
+        <argsstring></argsstring>
+        <name>m_stat</name>
+        <briefdescription>
+<para>Used for profiling if this <ref refid="classamrex_1_1CArena_1_1Node" kindref="compound">Node</ref> represents a user allocated block of memory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="138" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="138" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a100baa8624f3f84dd51a5f2cba530a9b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1afe41c39814d8c215e3c61d9b68b84a8b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::CArena::Node::Node</definition>
-        <argsstring>(void *a_block, void *a_owner, std::size_t a_size) noexcept</argsstring>
+        <argsstring>(void *a_block, void *a_owner, std::size_t a_size, MemStat *a_stat=nullptr) noexcept</argsstring>
         <name>Node</name>
         <param>
           <type>void *</type>
@@ -66,13 +80,18 @@
           <type>std::size_t</type>
           <declname>a_size</declname>
         </param>
+        <param>
+          <type><ref refid="structamrex_1_1MemStat" kindref="compound">MemStat</ref> *</type>
+          <declname>a_stat</declname>
+          <defval>nullptr</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="85" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="85" bodyend="87"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="87" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="87" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a3d53e0dac699c533be3ddb44eda51cd4" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -90,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="90" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="90" bodyend="93"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="92" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="92" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a88b16dbe8f6f315955cdde15cbd71e7e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -108,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="96" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="96" bodyend="99"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="98" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="98" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a20a366d961aa30bc166cfc7e5ec9a185" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void *</type>
@@ -122,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="102" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="102" bodyend="102"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="104" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="104" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a644086075ae8e03798c85ae56205c953" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -140,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="105" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="105" bodyend="105"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="107" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="107" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a1bc2b9b503ccabb172ffe16f554519cf" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>std::size_t</type>
@@ -154,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="108" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="108" bodyend="108"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="110" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="110" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a736fe7c725b517fece9136f39e983765" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -172,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="111" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="111" bodyend="111"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="113" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="113" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1abef15ce1cbccdaa8dc7aa6a6bb4a0609" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>void *</type>
@@ -185,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="113" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="113" bodyend="113"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="115" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="115" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a9d48386ac6a4c17d1e2b4eb8ad13e221" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -202,7 +221,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="115" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="115" bodyend="117"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="117" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1_1Node_1a11142e8a0afd07d7a851c73c92afe0a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1MemStat" kindref="compound">MemStat</ref> *</type>
+        <definition>MemStat* amrex::CArena::Node::mem_stat</definition>
+        <argsstring>() const</argsstring>
+        <name>mem_stat</name>
+        <briefdescription>
+<para>Get the <ref refid="structamrex_1_1MemStat" kindref="compound">MemStat</ref> object of the function where this block was allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="122" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="122" bodyend="122"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -210,7 +243,26 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="82" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="83" bodyend="132"/>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::array&lt; const char *, 4 &gt;</label>
+      </node>
+      <node id="1">
+        <label>amrex::CArena::Node</label>
+        <link refid="classamrex_1_1CArena_1_1Node"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_stat</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::MemStat</label>
+        <link refid="structamrex_1_1MemStat"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>memory_name</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" line="84" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_CArena.H" bodystart="85" bodyend="139"/>
     <listofallmembers>
       <member refid="classamrex_1_1CArena_1_1Node_1a20a366d961aa30bc166cfc7e5ec9a185" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>block</name></member>
       <member refid="classamrex_1_1CArena_1_1Node_1a644086075ae8e03798c85ae56205c953" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>block</name></member>
@@ -218,7 +270,9 @@
       <member refid="classamrex_1_1CArena_1_1Node_1a999ce0f54f3eae13c2533caabe5acc89" prot="private" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>m_block</name></member>
       <member refid="classamrex_1_1CArena_1_1Node_1a8d1a994928ff734df597327f22db12dd" prot="private" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>m_owner</name></member>
       <member refid="classamrex_1_1CArena_1_1Node_1a3eefad51a3f5c77dfba6bfa8f42e8909" prot="private" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>m_size</name></member>
-      <member refid="classamrex_1_1CArena_1_1Node_1a100baa8624f3f84dd51a5f2cba530a9b" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>Node</name></member>
+      <member refid="classamrex_1_1CArena_1_1Node_1a0a7a1c0cd13749231991a5b7361fa2b6" prot="private" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>m_stat</name></member>
+      <member refid="classamrex_1_1CArena_1_1Node_1a11142e8a0afd07d7a851c73c92afe0a8" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>mem_stat</name></member>
+      <member refid="classamrex_1_1CArena_1_1Node_1afe41c39814d8c215e3c61d9b68b84a8b" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>Node</name></member>
       <member refid="classamrex_1_1CArena_1_1Node_1a3d53e0dac699c533be3ddb44eda51cd4" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>operator&lt;</name></member>
       <member refid="classamrex_1_1CArena_1_1Node_1a88b16dbe8f6f315955cdde15cbd71e7e" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>operator==</name></member>
       <member refid="classamrex_1_1CArena_1_1Node_1abef15ce1cbccdaa8dc7aa6a6bb4a0609" prot="public" virt="non-virtual"><scope>amrex::CArena::Node</scope><name>owner</name></member>
