@@ -1027,14 +1027,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="74" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="74" bodyend="88"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a08c0c8bb09cb02e536c3d30731485efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a4f78d028bbcef8cec38ae3063621b1ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value, bool &gt;</type>
+        <definition>std::enable_if_t&lt;RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value, bool&gt; amrex::detail::memCopyImpl</definition>
         <argsstring>(void *dst, const void *src, std::size_t count, T &amp;)</argsstring>
         <name>memCopyImpl</name>
         <param>
@@ -1058,16 +1058,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="92" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="92" bodyend="99"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="92" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="92" bodyend="101"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a7851b8f89cd7745957cbba5c467fc51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a47604977c48d6a83292c829f09c8a98d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
+        <type>std::enable_if_t&lt;!<ref refid="structamrex_1_1RunOnGpu" kindref="compound">RunOnGpu</ref>&lt; T &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value, bool &gt;</type>
+        <definition>std::enable_if_t&lt;!RunOnGpu&lt;T&gt;::value &amp;&amp; !IsPolymorphicArenaAllocator&lt;T&gt;::value, bool&gt; amrex::detail::memCopyImpl</definition>
         <argsstring>(void *dst, const void *src, std::size_t count, T &amp;)</argsstring>
         <name>memCopyImpl</name>
         <param>
@@ -1091,16 +1091,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="103" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="103" bodyend="106"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="105" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="105" bodyend="109"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1a980bc526bd3c2e82888c672a8b31f559" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a407da614bc8633d7b7920e46432bcdd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsPolymorphicArenaAllocator" kindref="compound">IsPolymorphicArenaAllocator</ref>&lt; T &gt;::value, bool &gt;</type>
+        <definition>std::enable_if_t&lt;IsPolymorphicArenaAllocator&lt;T&gt;::value, bool&gt; amrex::detail::memCopyImpl</definition>
         <argsstring>(void *dst, const void *src, std::size_t count, T &amp;allocator)</argsstring>
         <name>memCopyImpl</name>
         <param>
@@ -1125,7 +1125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="110" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="110" bodyend="121"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="113" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="113" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a07dd38ddad743d46fe67991eda9a8d9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1159,7 +1159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="125" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="125" bodyend="144"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="130" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="130" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1ad3182cae322a165690f9c9b302667783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1192,7 +1192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="148" column="2" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="148" bodyend="151"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="153" column="2" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="153" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a5541d5d1234082fe2ab2e7ef35385227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1226,7 +1226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="155" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="155" bodyend="178"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="160" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="160" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a8b03cc98be6ef47a119eebf60f00939d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1258,7 +1258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="182" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="182" bodyend="189"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="187" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="187" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a39aad906032773bf9bf8849cab97af76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1290,7 +1290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="193" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="193" bodyend="196"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="199" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="199" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1acc9a78544f37cf01f1aaddc32f6fda28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1323,7 +1323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="200" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="200" bodyend="211"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" line="206" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PODVector.H" bodystart="206" bodyend="218"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1afd0b9d029d68b514e004d7c4fccfbe42" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ULong</type>
