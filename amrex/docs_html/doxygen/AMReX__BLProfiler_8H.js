@@ -51,6 +51,8 @@ var AMReX__BLProfiler_8H =
     [ "BL_PROFILE_VAR_STOP", "AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224", null ],
     [ "BL_TINY_PROFILE_FINALIZE", "AMReX__BLProfiler_8H.html#a373794716931c07a8349cfaf1072fd65", null ],
     [ "BL_TINY_PROFILE_INITIALIZE", "AMReX__BLProfiler_8H.html#a59a81bf1a35877d4daec58bc653cc4a7", null ],
+    [ "BL_TINY_PROFILE_MEMORYFINALIZE", "AMReX__BLProfiler_8H.html#af6c37d3911642bf157b8f2f25920cb9d", null ],
+    [ "BL_TINY_PROFILE_MEMORYINITIALIZE", "AMReX__BLProfiler_8H.html#a22a0c045e51c2d594c3b218a8e610f33", null ],
     [ "BL_TP_PROFILE_REGION_START", "AMReX__BLProfiler_8H.html#aba8257f12be77bede2be8276361f8d30", null ],
     [ "BL_TP_PROFILE_REGION_STOP", "AMReX__BLProfiler_8H.html#a29124e86c7ae9f04380d6558788a6cee", null ],
     [ "BL_TRACE_PROFILE_FLUSH", "AMReX__BLProfiler_8H.html#aa5310169186251333ce571bca98b3e2b", null ],

@@ -14,6 +14,8 @@ var classamrex_1_1TinyProfiler =
     [ "memory_free", "classamrex_1_1TinyProfiler.html#acf44a0af5564add5abbde50e6b9aa570", null ],
     [ "memory_start", "classamrex_1_1TinyProfiler.html#abcd103d902962eb392b8fc2867da7c85", null ],
     [ "memory_stop", "classamrex_1_1TinyProfiler.html#abda7b021e9aab1a30edc75b2afee7d13", null ],
+    [ "MemoryFinalize", "classamrex_1_1TinyProfiler.html#a28131b0e3240b1df559a63c255fc6d72", null ],
+    [ "MemoryInitialize", "classamrex_1_1TinyProfiler.html#a106fc3c7abfb4df3cc62527b62c2aff4", null ],
     [ "PrintCallStack", "classamrex_1_1TinyProfiler.html#a8a14bcc37603ec472c17a644428d3686", null ],
     [ "PrintMemStats", "classamrex_1_1TinyProfiler.html#a0e7a45cebf1928c99f315e8fdf783f88", null ],
     [ "PrintStats", "classamrex_1_1TinyProfiler.html#a1931e426fc1808e089917c1667f80adc", null ],

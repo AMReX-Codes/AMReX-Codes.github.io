@@ -1,5 +1,9 @@
 var NAVTREEINDEX80 =
 {
+"structdistribution__t.html#a8bdbbba2982ae871ad4c0f389ca78959":[2,0,17,2],
+"structdistribution__t.html#a957bdfca24a116d7bb5f7bcbde3a93fa":[2,0,17,0],
+"structdistribution__t.html#a971ee0fe2ddf42e0669273a5ebda1512":[2,0,17,1],
+"structdistribution__t.html#aadae10ad5bacae5bceadd4eea37b12c6":[2,0,17,3],
 "structdistribution__t.html#ab7383f9179b519721f4dffdd185c055a":[2,0,17,10],
 "structdistribution__t.html#ad0fc01a1d38109451e446decb6cf91c5":[2,0,17,4],
 "structdistribution__t.html#af6a7bae9b4cb830d7c37076561f1417c":[2,0,17,7],

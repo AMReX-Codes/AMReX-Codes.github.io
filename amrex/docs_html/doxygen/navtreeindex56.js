@@ -1,5 +1,9 @@
 var NAVTREEINDEX56 =
 {
+"functions_type_c.html":[2,3,3,2],
+"functions_type_d.html":[2,3,3,3],
+"functions_type_f.html":[2,3,3,4],
+"functions_type_h.html":[2,3,3,5],
 "functions_type_i.html":[2,3,3,6],
 "functions_type_l.html":[2,3,3,7],
 "functions_type_m.html":[2,3,3,8],
@@ -12,8 +16,8 @@ var NAVTREEINDEX56 =
 "functions_type_v.html":[2,3,3,15],
 "functions_u.html":[2,3,0,21],
 "functions_v.html":[2,3,0,22],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX56 =
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__add__stringarr.html#acaa614221f79466050f0803965f1bc82":[2,0,7,22,0],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html":[2,0,7,8],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html#aed6352ced14952145ea0dd0bd4723bdb":[2,0,7,8,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html":[2,0,7,6],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html#a99846b43a41a77557855585ac13555e3":[2,0,7,6,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html":[2,0,7,3],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html#a8b8d54bfcfee670480bf6a8479318ace":[2,0,7,3,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__int.html":[2,0,7,4]
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html":[2,0,7,6]
 };

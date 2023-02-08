@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"AMReX__BaseFab_8H.html":[3,0,0,2,19],
+"AMReX__BaseFab_8H.html#a01561352ac771218ab7ba04e356a044d":[3,0,0,2,19,9],
 "AMReX__BaseFab_8H.html#a23fa77892c9168a73ef0d653ddd550a0":[3,0,0,2,19,6],
 "AMReX__BaseFab_8H.html#a587a3cb57cff4b7fa72c7c1d4d98900b":[3,0,0,2,19,13],
 "AMReX__BaseFab_8H.html#a610006830e72a750eb65c44c5a540695":[3,0,0,2,19,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "AMReX__CoordSys_8cpp.html":[3,0,0,2,53],
 "AMReX__CoordSys_8cpp.html#a4058fe437a44e4e9367221fbd9fa9e3c":[3,0,0,2,53,2],
 "AMReX__CoordSys_8cpp.html#a93b4a56e5a8af340d43839230b94843c":[3,0,0,2,53,0],
-"AMReX__CoordSys_8cpp.html#aa820e267be1d0dc2b3800553d57ae2ec":[3,0,0,2,53,1],
-"AMReX__CudaGraph_8H.html":[3,0,0,2,60],
-"AMReX__CudaGraph_8H_source.html":[3,0,0,2,60]
+"AMReX__CoordSys_8cpp.html#aa820e267be1d0dc2b3800553d57ae2ec":[3,0,0,2,53,1]
 };

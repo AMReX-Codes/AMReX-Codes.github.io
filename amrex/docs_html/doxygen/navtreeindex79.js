@@ -1,5 +1,9 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1WeightedBoxList.html#ac01973ea2c365ab71ce7903d8e1dc686":[2,0,0,117,12],
+"structamrex_1_1WeightedBoxList.html#acdc00992564ca91350fdcd3d2a38e095":[2,0,0,117,1],
+"structamrex_1_1WeightedBoxList.html#ade62e0019a5532341887838a1d6b0b44":[2,0,0,117,3],
+"structamrex_1_1WeightedBoxList.html#af182f43dc9ced3e1b9bb6e702c8071f6":[2,0,0,117,0],
 "structamrex_1_1XDim3.html":[2,0,0,115],
 "structamrex_1_1XDim3.html#a7355367151105a356ebfa4ecb841a86c":[2,0,0,115,0],
 "structamrex_1_1XDim3.html#ab7d76c217833bd5f7ac309ae9b32b2ed":[2,0,0,115,2],
@@ -22,8 +26,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,5,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX79 =
 "structdistribution__t.html#a2958e45305ae7bd3d1077348c2f30f1e":[2,0,17,6],
 "structdistribution__t.html#a48496ef186f85b7d82d83592b366c03f":[2,0,17,9],
 "structdistribution__t.html#a65f303dfbdd0d1dbe148507bb0a48386":[2,0,17,11],
-"structdistribution__t.html#a82ebfa634d9c07052140242ec82559e5":[2,0,17,5],
-"structdistribution__t.html#a8bdbbba2982ae871ad4c0f389ca78959":[2,0,17,2],
-"structdistribution__t.html#a957bdfca24a116d7bb5f7bcbde3a93fa":[2,0,17,0],
-"structdistribution__t.html#a971ee0fe2ddf42e0669273a5ebda1512":[2,0,17,1],
-"structdistribution__t.html#aadae10ad5bacae5bceadd4eea37b12c6":[2,0,17,3]
+"structdistribution__t.html#a82ebfa634d9c07052140242ec82559e5":[2,0,17,5]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX72 =
 {
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab6759853d755a1a01624618efeb177b0":[2,0,0,451,1],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ac8950252d5f3400022f97669a5ae9f66":[2,0,0,451,6],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#acf82f34218d15ed26f163a36979c5a30":[2,0,0,451,2],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html":[2,0,0,453],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a0c93bb0e80cf6277ee1823f35072007a":[2,0,0,453,5],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a226d825fc52f81b473a5ccb27d0d19e1":[2,0,0,453,3],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a3b69467d541c08b7bfb89a4bfa505644":[2,0,0,453,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX72 =
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ac86e663f7c3fde319223f352e67b8bde":[2,0,0,124,6,0],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ae05279827e8393a4494478d1885e2c2b":[2,0,0,124,6,2],
 "structamrex_1_1FabArrayBase_1_1FabComTag.html":[2,0,0,124,7],
-"structamrex_1_1FabArrayBase_1_1FabComTag.html#a01917a2e8e16dff02f56a81a578687f1":[2,0,0,124,7,12],
-"structamrex_1_1FabArrayBase_1_1FabComTag.html#a198cef4a2b826e76ca0cb0f01b926193":[2,0,0,124,7,13],
-"structamrex_1_1FabArrayBase_1_1FabComTag.html#a202904aa6d60c2cd616182957d41fe66":[2,0,0,124,7,8],
-"structamrex_1_1FabArrayBase_1_1FabComTag.html#a5c3201e1c74a8355f405987ac3c77678":[2,0,0,124,7,3],
-"structamrex_1_1FabArrayBase_1_1FabComTag.html#a5ded8154e0acf04de6c1d60f985a7069":[2,0,0,124,7,10]
+"structamrex_1_1FabArrayBase_1_1FabComTag.html#a01917a2e8e16dff02f56a81a578687f1":[2,0,0,124,7,12]
 };
