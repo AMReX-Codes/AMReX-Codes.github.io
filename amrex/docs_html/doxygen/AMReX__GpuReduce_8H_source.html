@@ -228,7 +228,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a4c26ead15b942c1c4a0195ca7483a315">blockReduceMin</a> (T source, Gpu::Handler <span class="keyword">const</span>&amp; h) noexcept</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> Gpu::blockReduce&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        (source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Less.html">amrex::Less&lt;T&gt;</a> &gt;(), source, h);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        (source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Minimum.html">amrex::Minimum&lt;T&gt;</a> &gt;(), source, h);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -245,7 +245,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a60fd190b91e286384cf13808993fea3d">blockReduceMax</a> (T source, Gpu::Handler <span class="keyword">const</span>&amp; h) noexcept</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> Gpu::blockReduce&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        (source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Greater.html">amrex::Greater&lt;T&gt;</a> &gt;(), source, h);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        (source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Maximum.html">amrex::Maximum&lt;T&gt;</a> &gt;(), source, h);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -307,7 +307,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#af7ce0529fa55b62f17b7ac817c6b720b">deviceReduceMin_full</a>(dest, source, h);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        Gpu::blockReduce_partial&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            (dest, source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Less.html">amrex::Less&lt;T&gt;</a> &gt;(),</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            (dest, source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Minimum.html">amrex::Minimum&lt;T&gt;</a> &gt;(),</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;             Gpu::AtomicMin&lt;T&gt;(), h);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
@@ -320,7 +320,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a611afa3380635b22c50e0c48d1a9e127">deviceReduceMax_full</a>(dest, source, h);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        Gpu::blockReduce_partial&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            (dest, source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Greater.html">amrex::Greater&lt;T&gt;</a> &gt;(),</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            (dest, source, Gpu::warpReduce&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Maximum.html">amrex::Maximum&lt;T&gt;</a> &gt;(),</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;             Gpu::AtomicMax&lt;T&gt;(), h);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
@@ -496,7 +496,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00395"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a4c26ead15b942c1c4a0195ca7483a315">  395</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a4c26ead15b942c1c4a0195ca7483a315">blockReduceMin</a> (T source) noexcept</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;{</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">return</span> Gpu::blockReduce&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        (source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Less.html">amrex::Less&lt;T&gt;</a> &gt;(), source);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        (source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Minimum.html">amrex::Minimum&lt;T&gt;</a> &gt;(), source);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -546,7 +546,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00445"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a60fd190b91e286384cf13808993fea3d">  445</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a60fd190b91e286384cf13808993fea3d">blockReduceMax</a> (T source) noexcept</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;{</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordflow">return</span> Gpu::blockReduce&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        (source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Greater.html">amrex::Greater&lt;T&gt;</a> &gt;(), source);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        (source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Maximum.html">amrex::Maximum&lt;T&gt;</a> &gt;(), source);</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -723,7 +723,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        }</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        Gpu::blockReduce_partial&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            (dest, source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Less.html">amrex::Less&lt;T&gt;</a> &gt;(),</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            (dest, source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Minimum.html">amrex::Minimum&lt;T&gt;</a> &gt;(),</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;             <a class="code" href="structamrex_1_1Gpu_1_1AtomicMin.html">Gpu::AtomicMin&lt;T&gt;</a>(), handler);</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    }</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;}</div>
@@ -742,7 +742,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        }</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        Gpu::blockReduce_partial&lt;Gpu::Device::warp_size&gt;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            (dest, source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Greater.html">amrex::Greater&lt;T&gt;</a> &gt;(),</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            (dest, source, <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html">Gpu::warpReduce</a>&lt;<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>,T,<a class="code" href="structamrex_1_1Maximum.html">amrex::Maximum&lt;T&gt;</a> &gt;(),</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;             <a class="code" href="structamrex_1_1Gpu_1_1AtomicMax.html">Gpu::AtomicMax&lt;T&gt;</a>(), handler);</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    }</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;}</div>
@@ -918,11 +918,11 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html_a277a46596f8e67342709552121787bc5"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">amrex::Gpu::Handler::numActiveThreads</a></div><div class="ttdeci">int numActiveThreads</div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:95</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1warpReduce_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1warpReduce.html">amrex::Gpu::warpReduce</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuReduce.H:282</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1warpReduce_html_a0ca3eeb7048c8c5fc37db73aa3b3376d"><div class="ttname"><a href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">amrex::Gpu::warpReduce::operator()</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE T operator()(T x) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuReduce.H:286</div></div>
-<div class="ttc" id="astructamrex_1_1Greater_html"><div class="ttname"><a href="structamrex_1_1Greater.html">amrex::Greater</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:38</div></div>
-<div class="ttc" id="astructamrex_1_1Less_html"><div class="ttname"><a href="structamrex_1_1Less.html">amrex::Less</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:29</div></div>
-<div class="ttc" id="astructamrex_1_1LogicalAnd_html"><div class="ttname"><a href="structamrex_1_1LogicalAnd.html">amrex::LogicalAnd</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:47</div></div>
-<div class="ttc" id="astructamrex_1_1LogicalOr_html"><div class="ttname"><a href="structamrex_1_1LogicalOr.html">amrex::LogicalOr</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:56</div></div>
-<div class="ttc" id="astructamrex_1_1Plus_html"><div class="ttname"><a href="structamrex_1_1Plus.html">amrex::Plus</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:11</div></div>
+<div class="ttc" id="astructamrex_1_1LogicalAnd_html"><div class="ttname"><a href="structamrex_1_1LogicalAnd.html">amrex::LogicalAnd</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:50</div></div>
+<div class="ttc" id="astructamrex_1_1LogicalOr_html"><div class="ttname"><a href="structamrex_1_1LogicalOr.html">amrex::LogicalOr</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:59</div></div>
+<div class="ttc" id="astructamrex_1_1Maximum_html"><div class="ttname"><a href="structamrex_1_1Maximum.html">amrex::Maximum</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:41</div></div>
+<div class="ttc" id="astructamrex_1_1Minimum_html"><div class="ttname"><a href="structamrex_1_1Minimum.html">amrex::Minimum</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:32</div></div>
+<div class="ttc" id="astructamrex_1_1Plus_html"><div class="ttname"><a href="structamrex_1_1Plus.html">amrex::Plus</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

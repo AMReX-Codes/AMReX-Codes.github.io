@@ -491,7 +491,6 @@ var hierarchy =
     ] ],
     [ "amrex::GpuTupleSize< T >", "structamrex_1_1GpuTupleSize.html", null ],
     [ "amrex::Gpu::GraphSafeGuard", "structamrex_1_1Gpu_1_1GraphSafeGuard.html", null ],
-    [ "amrex::Greater< T >", "structamrex_1_1Greater.html", null ],
     [ "amrex::Gpu::GridSize", "structamrex_1_1Gpu_1_1GridSize.html", null ],
     [ "amrex::Gpu::Handler", "structamrex_1_1Gpu_1_1Handler.html", null ],
     [ "amrex::CArena::Node::hash", "structamrex_1_1CArena_1_1Node_1_1hash.html", null ],
@@ -631,7 +630,6 @@ var hierarchy =
     [ "amrex::Gpu::KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", null ],
     [ "amrex::EB2::LatheIF< F >", "classamrex_1_1EB2_1_1LatheIF.html", null ],
     [ "amrex::Gpu::LaunchSafeGuard", "structamrex_1_1Gpu_1_1LaunchSafeGuard.html", null ],
-    [ "amrex::Less< T >", "structamrex_1_1Less.html", null ],
     [ "amrex::EB2::Level", "classamrex_1_1EB2_1_1Level.html", [
       [ "amrex::EB2::GShopLevel< ChkptFile >", "classamrex_1_1EB2_1_1GShopLevel.html", [
         [ "amrex::EB2::ChkptFileLevel", "classamrex_1_1EB2_1_1ChkptFileLevel.html", null ]
@@ -651,6 +649,7 @@ var hierarchy =
     [ "amrex::Gpu::Managed", "structamrex_1_1Gpu_1_1Managed.html", null ],
     [ "amrex::NonLocalBC::MapComponents< Base, Map >", "structamrex_1_1NonLocalBC_1_1MapComponents.html", null ],
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", null ],
+    [ "amrex::Maximum< T >", "structamrex_1_1Maximum.html", null ],
     [ "amrex::FabArrayBase::meminfo", "structamrex_1_1FabArrayBase_1_1meminfo.html", null ],
     [ "amrex::MemProfiler::MemInfo", "structamrex_1_1MemProfiler_1_1MemInfo.html", null ],
     [ "amrex::sundials::MemoryHelper", "classamrex_1_1sundials_1_1MemoryHelper.html", null ],
@@ -673,6 +672,7 @@ var hierarchy =
       [ "amrex::ParIterBase< is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIterBase.html", null ]
     ] ],
     [ "amrex::MFItInfo", "structamrex_1_1MFItInfo.html", null ],
+    [ "amrex::Minimum< T >", "structamrex_1_1Minimum.html", null ],
     [ "amrex::Minus< T >", "structamrex_1_1Minus.html", null ],
     [ "amrex::MLCGSolverT< MF >", "classamrex_1_1MLCGSolverT.html", null ],
     [ "amrex::MLLinOpT< MF >", "classamrex_1_1MLLinOpT.html", [
