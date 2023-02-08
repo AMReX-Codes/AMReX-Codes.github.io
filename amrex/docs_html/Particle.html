@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Particle &mdash; amrex 23.03-dev documentation</title>
@@ -30,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> amrex
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
           </a>
               <div class="version">
                 23.03-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -105,7 +109,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="Particle_Chapter.html">Particles</a></li>
       <li class="breadcrumb-item active">The Particle</li>
       <li class="wy-breadcrumbs-aside">
@@ -127,11 +131,11 @@ most basic particle data structure is the particle itself:</p>
 <p>This is a templated data type, designed to allow flexibility in the number and
 type of components that the particles carry. The first template parameter is the
 number of extra <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span><span class="w"></span></code> variables this particle will have (either single or
-double precision <a class="footnote-reference brackets" href="#id4" id="id1">1</a>), while the second is the number of extra integer
+double precision <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>), while the second is the number of extra integer
 variables.  It is important to note that this is the number of <em>extra</em> real and
 integer variables; a particle will always have at least <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_SPACEDIM</span><span class="w"></span></code> real
 components that store the particle’s position and 2 integer components that
-store the particle’s <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">id</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cpu</span><span class="w"></span></code> numbers. <a class="footnote-reference brackets" href="#id5" id="id2">2</a></p>
+store the particle’s <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">id</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cpu</span><span class="w"></span></code> numbers. <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <p>The particle struct is designed to store these variables in a way that
 minimizes padding, which in practice means that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Real</span><span class="w"></span></code> components
 always come first, and the integer components second. Additionally, the
@@ -143,7 +147,7 @@ flags. Our particle struct would be set up like:</p>
 </pre></div>
 </div>
 <p>and the order of the particle components in would be (assuming <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BL_SPACEDIM</span><span class="w"></span></code> is 3):
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="n">vz</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="n">cpu</span><span class="w"> </span><span class="n">flag1</span><span class="w"> </span><span class="n">flag2</span><span class="w"></span></code>.  <a class="footnote-reference brackets" href="#id6" id="id3">3</a></p>
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">x</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="n">vx</span><span class="w"> </span><span class="n">vy</span><span class="w"> </span><span class="n">vz</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="n">cpu</span><span class="w"> </span><span class="n">flag1</span><span class="w"> </span><span class="n">flag2</span><span class="w"></span></code>.  <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
 <section id="setting-particle-data">
 <h2>Setting Particle data<a class="headerlink" href="#setting-particle-data" title="Permalink to this heading"></a></h2>
 <p>The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Particle</span><span class="w"></span></code> struct provides a number of methods for getting and setting
@@ -666,12 +670,6 @@ behavior of the AMReX particle classes. These are summarized below. They should 
 <p>The first set of parameters concerns the tiling capability of the ParticleContainer. If you are seeing poor performance
 with OpenMP, the first thing to look at is whether there are enough tiles available for each thread to work on.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 61%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>Description</p></th>
@@ -699,12 +697,6 @@ same file, or if too many small files are created. In general, the “correct”
 size of your problem (i.e., number of boxes, number of MPI tasks), as well as the system you are using. If you are experiencing
 problems with particle IO, you could try varying some / all of these parameters.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 61%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>Description</p></th>
@@ -747,12 +739,6 @@ on large problems.</p></td>
 </table>
 <p>The following runtime parameters affect the behavior of virtual particles in Nyx.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 61%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>Description</p></th>
@@ -780,20 +766,21 @@ boundary in which no aggregation should be performed.</p></td>
 </table>
 <p>Finally, the <cite>amrex.use_gpu_aware_mpi</cite> switch can also affect the behavior of the particle communication routines when
 running on GPU platforms like Summit. We recommend leaving it off.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Particles default to double precision for their real data. To use single precision, compile your code with <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES=TRUE</span></code>.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Note that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cpu</span><span class="w"></span></code> stores the number of the process the particle was <em>generated</em> on, not the one it’s currently assigned to. This number is set on initialization and never changes, just like the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">id</span><span class="w"></span></code>. In essence, the particles have two integer id numbers, and only the combination of the two is unique. This was done to facilitate the creation of particle initial conditions in parallel.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Note that for the extra particle components, which component refers to which
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Particles default to double precision for their real data. To use single precision, compile your code with <code class="docutils literal notranslate"><span class="pre">USE_SINGLE_PRECISION_PARTICLES=TRUE</span></code>.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Note that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">cpu</span><span class="w"></span></code> stores the number of the process the particle was <em>generated</em> on, not the one it’s currently assigned to. This number is set on initialization and never changes, just like the particle <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">id</span><span class="w"></span></code>. In essence, the particles have two integer id numbers, and only the combination of the two is unique. This was done to facilitate the creation of particle initial conditions in parallel.</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Note that for the extra particle components, which component refers to which
 variable is an application-specific convention - the particles have 4 extra real comps, but which one is “mass” is up
 to the user. We suggest using an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">enum</span><span class="w"></span></code> to keep these indices straight; please
 see <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/Particles/ElectrostaticPIC/ElectrosticParticleContainer.H</span></code> for an example of this.</p>
-</dd>
-</dl>
+</aside>
 </section>
 
 
