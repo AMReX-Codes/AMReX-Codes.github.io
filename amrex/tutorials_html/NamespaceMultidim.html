@@ -1,98 +1,50 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Namespaces and Multidimensional Code Tutorial &mdash; amrex 23.03-dev documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> amrex
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            amrex
           </a>
-
-          
-            
-            
               <div class="version">
                 23.03-dev
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
 </ul>
@@ -113,73 +65,32 @@
 <li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">amrex</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Namespaces and Multidimensional Code Tutorial</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Namespaces and Multidimensional Code Tutorial</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/NamespaceMultidim.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="namespaces-and-multidimensional-code-tutorial">
-<span id="name-multidim"></span><h1>Namespaces and Multidimensional Code Tutorial<a class="headerlink" href="#namespaces-and-multidimensional-code-tutorial" title="Permalink to this heading">¶</a></h1>
+<span id="name-multidim"></span><h1>Namespaces and Multidimensional Code Tutorial<a class="headerlink" href="#namespaces-and-multidimensional-code-tutorial" title="Permalink to this heading"></a></h1>
 <div class="warning admonition">
 <p class="admonition-title"><strong>Time to Complete</strong>: 15 mins</p>
 <dl class="simple">
@@ -201,7 +112,7 @@ multidimensional code. We will insert these commands into our
 example code to enable these features. In the end, we will have
 a more capable code with cleaner syntax.</p>
 <section id="namespaces">
-<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading">¶</a></h2>
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading"></a></h2>
 <p>AMReX uses namespaces to organize classes, functions, data, types
 and templates and avoid naming conflicts with other libraries.
 In the simplified Heat Equation guided tutorial, aspects of the <code class="docutils literal notranslate"><span class="pre">amrex</span></code>
@@ -242,14 +153,14 @@ a header (<code class="docutils literal notranslate"><span class="pre">.H</span>
 and removed the <code class="docutils literal notranslate"><span class="pre">amrex::</span></code> prefixes.</p>
 </section>
 <section id="writing-multidimensional-code">
-<h2>Writing Multidimensional Code<a class="headerlink" href="#writing-multidimensional-code" title="Permalink to this heading">¶</a></h2>
+<h2>Writing Multidimensional Code<a class="headerlink" href="#writing-multidimensional-code" title="Permalink to this heading"></a></h2>
 <p>In this section of the tutorial we focus on using compiler or preprocessor
 directives and AMReX macros to write code that will run
 in 1-, 2- or 3-Dimensions, depending on what was chosen at compile
 time. We continue modifications of the <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> file from
 the <a class="reference internal" href="HeatEquation_Simple.html#guided-heat-simple"><span class="std std-ref">Tutorial: Heat Equation - Simple</span></a>.</p>
 <section id="what-is-a-compiler-directive">
-<h3>What is a compiler directive?<a class="headerlink" href="#what-is-a-compiler-directive" title="Permalink to this heading">¶</a></h3>
+<h3>What is a compiler directive?<a class="headerlink" href="#what-is-a-compiler-directive" title="Permalink to this heading"></a></h3>
 <p>A compiler directive allows a programmer to tell the compiler
 to take specific actions at compile time. In C++ they are
 often called preprocessor directives, because they are interpreted
@@ -257,7 +168,7 @@ before the compilation process. In AMReX they are
 commonly used in conjunction with macros for writing 2D/3D code.</p>
 </section>
 <section id="what-is-a-macro">
-<h3>What is a Macro?<a class="headerlink" href="#what-is-a-macro" title="Permalink to this heading">¶</a></h3>
+<h3>What is a Macro?<a class="headerlink" href="#what-is-a-macro" title="Permalink to this heading"></a></h3>
 <p>Macros are a form of text substitution. For example,</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#define VALUE_OF_PI 3.14</span>
 </pre></div>
@@ -272,7 +183,7 @@ normal variables.</p>
 the HeatEquation_Simple example, and modify it for 2D/3D
 compilation. We’ll begin by adding several macros.</p>
 <section id="amrex-d-decl">
-<h4>AMREX_D_DECL<a class="headerlink" href="#amrex-d-decl" title="Permalink to this heading">¶</a></h4>
+<h4>AMREX_D_DECL<a class="headerlink" href="#amrex-d-decl" title="Permalink to this heading"></a></h4>
 <p>The first line we’ll modify is</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span><span class="w"> </span><span class="nf">dom_lo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
@@ -298,7 +209,7 @@ evaluate to,</p>
 the <code class="docutils literal notranslate"><span class="pre">AMREX_D_DECL</span></code> macro in a similar manner.</p>
 </section>
 <section id="amrex-spacedim">
-<h4>AMREX_SPACEDIM<a class="headerlink" href="#amrex-spacedim" title="Permalink to this heading">¶</a></h4>
+<h4>AMREX_SPACEDIM<a class="headerlink" href="#amrex-spacedim" title="Permalink to this heading"></a></h4>
 <p>When we arrive at the line</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_periodic</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span>
 </pre></div>
@@ -317,7 +228,7 @@ the <code class="docutils literal notranslate"><span class="pre">GpuArray</span>
 </section>
 </section>
 <section id="preprocessor-directives">
-<h2>Preprocessor Directives<a class="headerlink" href="#preprocessor-directives" title="Permalink to this heading">¶</a></h2>
+<h2>Preprocessor Directives<a class="headerlink" href="#preprocessor-directives" title="Permalink to this heading"></a></h2>
 <p>While macros address many of the dimensional needs of our code
 sometimes its necessary to use them in conjunction with
 preprocessor directives, such as <code class="docutils literal notranslate"><span class="pre">#if</span></code>, <code class="docutils literal notranslate"><span class="pre">#elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">#endif</span></code>,
@@ -352,7 +263,7 @@ with the addition of <code class="docutils literal notranslate"><span class="pre
 We can address this by adding preprocessor directives with AMReX macros
 to create different sections of code for different numbers of dimensions.</p>
 <section id="splitting-the-code-by-dimensional-dependence">
-<h3>Splitting the Code by Dimensional Dependence<a class="headerlink" href="#splitting-the-code-by-dimensional-dependence" title="Permalink to this heading">¶</a></h3>
+<h3>Splitting the Code by Dimensional Dependence<a class="headerlink" href="#splitting-the-code-by-dimensional-dependence" title="Permalink to this heading"></a></h3>
 <p>Now we will separate the parts of the code by the number of dimensions
 they exclusively pertain to. Because the <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">phiOld</span></code> lines are
 included in all cases, they will
@@ -369,7 +280,7 @@ remain outside the preprocessor directives. Then we can separate the code like t
 </div>
 </section>
 <section id="adding-the-2-dimensional-section">
-<h3>Adding the 2-Dimensional Section<a class="headerlink" href="#adding-the-2-dimensional-section" title="Permalink to this heading">¶</a></h3>
+<h3>Adding the 2-Dimensional Section<a class="headerlink" href="#adding-the-2-dimensional-section" title="Permalink to this heading"></a></h3>
 <p>To address the 2-dimensional case, we add preprocessor directives <code class="docutils literal notranslate"><span class="pre">#if</span></code> and
 <code class="docutils literal notranslate"><span class="pre">#endif</span></code> with the logic, <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">(AMREX_SPACEDIM</span> <span class="pre">==</span> <span class="pre">2)</span></code>. This will
 check if the value of the macro <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> is equal to 2. If true,
@@ -389,7 +300,7 @@ it will compile the code inside this section. Therefore we write:</p>
 </div>
 </section>
 <section id="adding-the-3-dimensional-section">
-<h3>Adding the 3-dimensional Section<a class="headerlink" href="#adding-the-3-dimensional-section" title="Permalink to this heading">¶</a></h3>
+<h3>Adding the 3-dimensional Section<a class="headerlink" href="#adding-the-3-dimensional-section" title="Permalink to this heading"></a></h3>
 <p>With the above additions, the code will work if we compile with the option <code class="docutils literal notranslate"><span class="pre">DIM=2</span></code> or
 <code class="docutils literal notranslate"><span class="pre">AMReX_SPACEDIM=2</span></code>. For three dimensions, we include
 <code class="docutils literal notranslate"><span class="pre">#elif</span> <span class="pre">(AMREX_SPACEDIM</span> <span class="pre">==</span> <span class="pre">3)</span></code> and add the lines for <code class="docutils literal notranslate"><span class="pre">z</span></code> and the 3D version
@@ -414,7 +325,7 @@ which evaluates the statement <code class="docutils literal notranslate"><span c
 compile this section of code and not the 2-dimensional section.</p>
 </section>
 <section id="d-3d-multidimensional-version">
-<h3>2D/3D Multidimensional Version<a class="headerlink" href="#d-3d-multidimensional-version" title="Permalink to this heading">¶</a></h3>
+<h3>2D/3D Multidimensional Version<a class="headerlink" href="#d-3d-multidimensional-version" title="Permalink to this heading"></a></h3>
 <p>Altogether the 2D/3D multidimensional version of the call to <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> is:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ParallelFor</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
 <span class="p">{</span>
@@ -442,7 +353,7 @@ statement to isolate the code that updates the third dimension.</p>
 </section>
 </section>
 <section id="a-note-about-parallelfor">
-<h2>A Note About ParallelFor<a class="headerlink" href="#a-note-about-parallelfor" title="Permalink to this heading">¶</a></h2>
+<h2>A Note About ParallelFor<a class="headerlink" href="#a-note-about-parallelfor" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> function automatically optimizes code execution for
 the hardware according to commands given at compile time. However, when writing
 multidimensional code the syntax of the <code class="docutils literal notranslate"><span class="pre">ParallelFor</span></code> loop is <strong>always
@@ -456,7 +367,7 @@ function is aware of the dimension specified at compile time, and
 automatically makes this adjustment for the convenience of AMReX users.</p>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
 <p>Congratulations, you should now be able to compile the code for 2- or
 3-dimensional simulations. At this point, our modified <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> code should
 look similar to the code used in the <a class="reference internal" href="HeatEquation_EX1_C.html#guided-heat"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a>. The commands to compile
@@ -489,46 +400,30 @@ will need <code class="docutils literal notranslate"><span class="pre">amrvis2d<
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2017-2018, AMReX Team.
-
-    </p>
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
