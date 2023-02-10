@@ -18,5 +18,17 @@ var AMReX__MLEBTensor__3D__K_8H =
     [ "mlebtensor_flux_0", "AMReX__MLEBTensor__3D__K_8H.html#acef8c44712bfa040cb9408c2d61b5319", null ],
     [ "mlebtensor_flux_x", "AMReX__MLEBTensor__3D__K_8H.html#aa196b29d490603bb92e78f1e56593846", null ],
     [ "mlebtensor_flux_y", "AMReX__MLEBTensor__3D__K_8H.html#a52689abb9ae7e544a779a4e9092deac7", null ],
-    [ "mlebtensor_flux_z", "AMReX__MLEBTensor__3D__K_8H.html#a41fa60232e37cb8f8a8d11012a2d6e7a", null ]
+    [ "mlebtensor_flux_z", "AMReX__MLEBTensor__3D__K_8H.html#a41fa60232e37cb8f8a8d11012a2d6e7a", null ],
+    [ "mlebtensor_vel_grads_fx", "AMReX__MLEBTensor__3D__K_8H.html#ada2d853ea486e93070c3ab2b5a3fc80a", null ],
+    [ "mlebtensor_vel_grads_fx", "AMReX__MLEBTensor__3D__K_8H.html#a389b087837766656206528387955a282", null ],
+    [ "mlebtensor_vel_grads_fx", "AMReX__MLEBTensor__3D__K_8H.html#a4d4f6faceab174910e53c05a8e3680ab", null ],
+    [ "mlebtensor_vel_grads_fx", "AMReX__MLEBTensor__3D__K_8H.html#add8eafae03b6517ccc0f3a827b5192dc", null ],
+    [ "mlebtensor_vel_grads_fy", "AMReX__MLEBTensor__3D__K_8H.html#ac3decc02301d9f7a072efec63312145e", null ],
+    [ "mlebtensor_vel_grads_fy", "AMReX__MLEBTensor__3D__K_8H.html#af256fa82a901575cb1155b23f1791b88", null ],
+    [ "mlebtensor_vel_grads_fy", "AMReX__MLEBTensor__3D__K_8H.html#a6ba83feb55e1c07a12e5548e81b677fa", null ],
+    [ "mlebtensor_vel_grads_fy", "AMReX__MLEBTensor__3D__K_8H.html#ad0ed81412024cb369f33d28f62a0cd2b", null ],
+    [ "mlebtensor_vel_grads_fz", "AMReX__MLEBTensor__3D__K_8H.html#a23de0afb3cd2e70304fb3b360cbfa34d", null ],
+    [ "mlebtensor_vel_grads_fz", "AMReX__MLEBTensor__3D__K_8H.html#aa07616c23af650f91c8c5b3b2d3b2463", null ],
+    [ "mlebtensor_vel_grads_fz", "AMReX__MLEBTensor__3D__K_8H.html#ae8af4235939e06c7d5e41075ec8218b5", null ],
+    [ "mlebtensor_vel_grads_fz", "AMReX__MLEBTensor__3D__K_8H.html#ac8a6594a4737c6b5529056beaa8e5204", null ]
 ];
