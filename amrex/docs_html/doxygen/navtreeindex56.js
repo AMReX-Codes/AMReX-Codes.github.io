@@ -1,5 +1,6 @@
 var NAVTREEINDEX56 =
 {
+"functions_func_x.html":[2,3,1,23],
 "functions_func_y.html":[2,3,1,24],
 "functions_func_z.html":[2,3,1,25],
 "functions_func_~.html":[2,3,1,26],
@@ -70,8 +71,8 @@ var NAVTREEINDEX56 =
 "functions_y.html":[2,3,0,25],
 "functions_z.html":[2,3,0,26],
 "functions_~.html":[2,3,0,27],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -100,8 +101,8 @@ var NAVTREEINDEX56 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX56 =
 "interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html":[2,0,6,6],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a0950705752a3ec1defbb7701ac28a32b":[2,0,6,6,2],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a0dc4f5ab19e59b9eef022747ac0d6f3f":[2,0,6,6,0],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a2f2085463e4f7381decb0edc764b9df6":[2,0,6,6,3],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#ac483180176741214ea0f2ef611b77263":[2,0,6,6,1]
+"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a2f2085463e4f7381decb0edc764b9df6":[2,0,6,6,3]
 };

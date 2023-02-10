@@ -1,5 +1,6 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex__mempool__module.html#aa71f81465fb7c20c4b6925bd21e4d36e":[1,0,12,8],
 "namespaceamrex__mempool__module.html#aad0f4a3f588f06c4a2da3c27d8918906":[1,0,12,27],
 "namespaceamrex__mempool__module.html#aad2bcb4576ef3a75d7e2c985621fd852":[1,0,12,9],
 "namespaceamrex__mempool__module.html#ab7ef2ee373d559cbf4aad8474d130184":[1,0,12,12],
@@ -141,8 +142,8 @@ var NAVTREEINDEX69 =
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,20],
 "namespacemembers_v.html":[1,1,0,21],
-"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars.html":[1,1,2],
+"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX69 =
 "structBLProfStats_1_1TimeRange.html#acbbf9b5d2d56142d5fcc5904d77a4409":[2,0,15,3,1],
 "structBLProfStats_1_1TimeRange.html#acc1a0426cbe4ab8ec7294472aacc285e":[2,0,15,3,7],
 "structBLProfStats_1_1TimeRange.html#ad7149f52ad0ed15f773104fd20d34ff7":[2,0,15,3,2],
-"structBLProfStats_1_1TimeRange.html#ae8cf710c0d69005c259ce278c92f0d48":[2,0,15,3,6],
-"structBLProfStats_1_1TimeRangeCompare.html":[2,0,15,4]
+"structBLProfStats_1_1TimeRange.html#ae8cf710c0d69005c259ce278c92f0d48":[2,0,15,3,6]
 };

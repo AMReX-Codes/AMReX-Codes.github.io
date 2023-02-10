@@ -71,6 +71,7 @@ var classamrex_1_1AmrLevel =
     [ "post_timestep", "classamrex_1_1AmrLevel.html#a6dc31baa80c3f278350ad20a64577155", null ],
     [ "postCoarseTimeStep", "classamrex_1_1AmrLevel.html#a6c4e273ed6a867d2da0dbf8ae325c82a", null ],
     [ "postStepRegrid", "classamrex_1_1AmrLevel.html#a89ed82244401ebc45c450909562445d8", null ],
+    [ "ProperBlockingFactor", "classamrex_1_1AmrLevel.html#a2447047c1010b47ee4f3b0de3d5811ee", null ],
     [ "removeOldData", "classamrex_1_1AmrLevel.html#a56805171637298d888a0e5215bab4e82", null ],
     [ "reset", "classamrex_1_1AmrLevel.html#a0aa73b17e9be18d811a21128c8c2f5f9", null ],
     [ "resetFillPatcher", "classamrex_1_1AmrLevel.html#af4f83f6e16dfb5c60f985370541062fa", null ],

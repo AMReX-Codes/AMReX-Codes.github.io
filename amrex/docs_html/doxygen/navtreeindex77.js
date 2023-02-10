@@ -1,5 +1,6 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1Parser_1_1Data.html":[2,0,0,311,0],
 "structamrex_1_1Parser_1_1Data.html#a05dbc0e8814cc41bd9f296b951ec8cb3":[2,0,0,311,0,0],
 "structamrex_1_1Parser_1_1Data.html#a863a707fe492216d36ff882e0fbee9e9":[2,0,0,311,0,5],
 "structamrex_1_1Parser_1_1Data.html#a952263602baabb188b5f915266b95dc0":[2,0,0,311,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1ParticleTileData.html#a1f57039c643995d3223bb1e54e261246":[2,0,0,472,0],
 "structamrex_1_1ParticleTileData.html#a2c83dc92098a0a1b7fe3a6e6ffae34ed":[2,0,0,472,3],
 "structamrex_1_1ParticleTileData.html#a2f8c985859d1715c384d33429a4a7303":[2,0,0,472,7],
-"structamrex_1_1ParticleTileData.html#a4af09b873adaeb3e6a2bddca92978050":[2,0,0,472,6],
-"structamrex_1_1ParticleTileData.html#a4fd0265f56050ec3af4af522d45f4d1a":[2,0,0,472,1]
+"structamrex_1_1ParticleTileData.html#a4af09b873adaeb3e6a2bddca92978050":[2,0,0,472,6]
 };

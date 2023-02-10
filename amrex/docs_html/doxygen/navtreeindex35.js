@@ -1,5 +1,6 @@
 var NAVTREEINDEX35 =
 {
+"classamrex_1_1EB2_1_1LatheIF.html#a117def25c224ea9eff3f16a8d3c65fa2":[2,0,0,4,24,2],
 "classamrex_1_1EB2_1_1LatheIF.html#a2f28fcb7590a82bba0f77f9a1d30054b":[2,0,0,4,24,4],
 "classamrex_1_1EB2_1_1LatheIF.html#a4673532f2e2842aec58a63be5b8b32ac":[2,0,0,4,24,8],
 "classamrex_1_1EB2_1_1LatheIF.html#a541951f58fc33b3758004de48fea29ba":[2,0,0,4,24,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX35 =
 "classamrex_1_1EBCellFlagFab.html#aa21ee05268cabb67bb200801168253b9":[2,0,0,370,6],
 "classamrex_1_1EBCellFlagFab.html#ab8c1b6ba13749dcf960f79bdcc67958b":[2,0,0,370,15],
 "classamrex_1_1EBCellFlagFab.html#abfc0c19edd24b4583d39b256c3916364":[2,0,0,370,10],
-"classamrex_1_1EBCellFlagFab.html#accfba3397c54fc70f5355fe72e53aef5":[2,0,0,370,9],
-"classamrex_1_1EBCellFlagFab.html#ad195d2769922a7376a690010b7cc569a":[2,0,0,370,12]
+"classamrex_1_1EBCellFlagFab.html#accfba3397c54fc70f5355fe72e53aef5":[2,0,0,370,9]
 };

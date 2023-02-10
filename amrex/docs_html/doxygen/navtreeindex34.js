@@ -1,5 +1,6 @@
 var NAVTREEINDEX34 =
 {
+"classamrex_1_1DistributionMapping.html#aa680d94d22fd2dc0e9e6ab1c224113ff":[2,0,0,118,22],
 "classamrex_1_1DistributionMapping.html#aa68c8981b7dcfbaddbc6d3e8f36dd9a5":[2,0,0,118,10],
 "classamrex_1_1DistributionMapping.html#abb2f4bf15b369e16d6387333ef7a0d54":[2,0,0,118,42],
 "classamrex_1_1DistributionMapping.html#abbce89f9e0c8bfb34b02b516b75a3482":[2,0,0,118,61],
@@ -248,6 +249,5 @@ var NAVTREEINDEX34 =
 "classamrex_1_1EB2_1_1IntersectionIF.html#ac953fe2cb4312628b6ae8dea7c7fd74d":[2,0,0,4,21,1],
 "classamrex_1_1EB2_1_1IntersectionIF.html#ac9c3a8ba66c8ad8c372042f871d4cef9":[2,0,0,4,21,0],
 "classamrex_1_1EB2_1_1IntersectionIF.html#ad2e748f8d4a64e6b32590c461400256b":[2,0,0,4,21,2],
-"classamrex_1_1EB2_1_1LatheIF.html":[2,0,0,4,24],
-"classamrex_1_1EB2_1_1LatheIF.html#a117def25c224ea9eff3f16a8d3c65fa2":[2,0,0,4,24,2]
+"classamrex_1_1EB2_1_1LatheIF.html":[2,0,0,4,24]
 };
