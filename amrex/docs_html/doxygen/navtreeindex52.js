@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"classamrex_1_1RealVect.html#a792ecde737e120649cc137385297100c":[2,0,0,203,7],
 "classamrex_1_1RealVect.html#a7da81c75533a97e32fed875a93f6a7c8":[2,0,0,203,16],
 "classamrex_1_1RealVect.html#a7df5aee72e64ca92a9b83ecb5d2dde1f":[2,0,0,203,60],
 "classamrex_1_1RealVect.html#a81c9df182cc9ede59e3eb3f75e144957":[2,0,0,203,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "classamrex_1_1StateDescriptor_1_1BndryFunc.html#a0518667e9de9aca8293b5a3db32d985e":[2,0,0,28,0,17],
 "classamrex_1_1StateDescriptor_1_1BndryFunc.html#a154207e0391a7f8cf5c4110f134580fc":[2,0,0,28,0,8],
 "classamrex_1_1StateDescriptor_1_1BndryFunc.html#a299ae04cbe66fec47f604176ecb0936a":[2,0,0,28,0,12],
-"classamrex_1_1StateDescriptor_1_1BndryFunc.html#a38d234c1f591dc1c13f69afab789fba0":[2,0,0,28,0,19],
-"classamrex_1_1StateDescriptor_1_1BndryFunc.html#a4918961c9dca1e951af0cf9ea6481e46":[2,0,0,28,0,3]
+"classamrex_1_1StateDescriptor_1_1BndryFunc.html#a38d234c1f591dc1c13f69afab789fba0":[2,0,0,28,0,19]
 };

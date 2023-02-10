@@ -1,5 +1,6 @@
 var NAVTREEINDEX74 =
 {
+"structamrex_1_1Gpu_1_1ComponentBox.html#a7f54503bdcb3580672d1f0adc860b3ac":[2,0,0,5,18,0],
 "structamrex_1_1Gpu_1_1ComponentBox.html#a99986b3406a40b454717360c972a5725":[2,0,0,5,18,1],
 "structamrex_1_1Gpu_1_1ComponentBox.html#ab9685b37a78a8a607d5cd932fedf4a30":[2,0,0,5,18,2],
 "structamrex_1_1Gpu_1_1Deleter.html":[2,0,0,5,23],
@@ -248,6 +249,5 @@ var NAVTREEINDEX74 =
 "structamrex_1_1IParser_1_1Data.html#ad236fd077460097e96f55779fc18350b":[2,0,0,267,0,3],
 "structamrex_1_1IParser_1_1Data.html#ad58fe278866bfbcb5cb3390140b72344":[2,0,0,267,0,4],
 "structamrex_1_1IParser_1_1Data.html#ae2e79afe3f2835ee854cfbe074879d97":[2,0,0,267,0,5],
-"structamrex_1_1InSituUtils_1_1amrex__tt.html":[2,0,0,6,2],
-"structamrex_1_1InSituUtils_1_1assignOp.html":[2,0,0,6,3]
+"structamrex_1_1InSituUtils_1_1amrex__tt.html":[2,0,0,6,2]
 };

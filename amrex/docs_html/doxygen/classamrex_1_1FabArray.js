@@ -32,6 +32,7 @@ var classamrex_1_1FabArray =
     [ "build_arrays", "classamrex_1_1FabArray.html#ad37c52d123770b902efbb42a7ba56578", null ],
     [ "BuildMask", "classamrex_1_1FabArray.html#a4f4a269de9e494ef89075265e5b8ecb2", null ],
     [ "clear", "classamrex_1_1FabArray.html#a7544c03f72d87f3f49ea0683848dc8aa", null ],
+    [ "clear_arrays", "classamrex_1_1FabArray.html#a3d078863cd6f3c8fc6ee8929573be274", null ],
     [ "CMD_local_setVal_gpu", "classamrex_1_1FabArray.html#a202d8ada102cc6fc40749039c0e1f3a7", null ],
     [ "CMD_remote_setVal_gpu", "classamrex_1_1FabArray.html#a2064856b8d0efe0ae3e92d91a72f3274", null ],
     [ "const_array", "classamrex_1_1FabArray.html#a0af1d5ec31ed2b73f391952c5d45660a", null ],
