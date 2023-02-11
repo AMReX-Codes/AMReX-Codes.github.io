@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> nblocks = (ntotcells+nthreads_per_block-1)/nthreads_per_block;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::size_t shared_mem_bytes = nthreads_per_block * <span class="keyword">sizeof</span>(STRUCT);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        T* p = (T*)aos_fab.<a class="code" href="classamrex_1_1BaseFab.html#a5c99c1592a80ba46ab6faf9929773f8d">dataPtr</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, nthreads_per_block, shared_mem_bytes, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; handler) noexcept</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>

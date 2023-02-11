@@ -148,11 +148,11 @@ with minimal changes and maximum flexibility.  This allows
 application teams to get running on GPUs quickly while allowing
 long term performance tuning and programming model selection.  AMReX
 uses the native programming language for GPUs: CUDA for NVIDIA, HIP
-for AMD and DPC++ for Intel. This will be designated with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/DPC++</span></code>
+for AMD and SYCL for Intel. This will be designated with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>
 throughout the documentation.  However, application teams can also use
 OpenACC or OpenMP in their individual codes.</p>
 <p>At this time, AMReX does not support cross-native language compilation
-(HIP for non-AMD systems and DPC++ for non Intel systems).  It may work with
+(HIP for non-AMD systems and SYCL for non Intel systems).  It may work with
 a given version, but AMReX does not track or guarantee such functionality.</p>
 <p>When running AMReX on a CPU system, the parallelization strategy is a
 combination of MPI and OpenMP using tiling, as detailed in
@@ -164,7 +164,7 @@ simultaneously, increasing effective parallelism and decreasing the time
 to solution.</p>
 <p>When running on CPUs, AMReX uses an <code class="docutils literal notranslate"><span class="pre">MPI+X</span></code> strategy where the <code class="docutils literal notranslate"><span class="pre">X</span></code>
 threads are used to perform parallelization techniques, like tiling.
-The most common <code class="docutils literal notranslate"><span class="pre">X</span></code> is <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>.  On GPUs, AMReX requires <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/DPC++</span></code>
+The most common <code class="docutils literal notranslate"><span class="pre">X</span></code> is <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>.  On GPUs, AMReX requires <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>
 and can be further combined with other parallel GPU languages, including
 <code class="docutils literal notranslate"><span class="pre">OpenACC</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>, to control the offloading of subroutines
 to the GPU.  This <code class="docutils literal notranslate"><span class="pre">MPI+CUDA+X</span></code> GPU strategy has been developed
@@ -251,7 +251,7 @@ ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Perma
 <section id="building-with-gnu-make">
 <h2>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this heading"></a></h2>
 <p>To build AMReX with GPU support, add <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP=TRUE</span></code> or
-<code class="docutils literal notranslate"><span class="pre">USE_DPCPP=TRUE</span></code> to the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> or as a command line argument.</p>
+<code class="docutils literal notranslate"><span class="pre">USE_SYCL=TRUE</span></code> to the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> or as a command line argument.</p>
 <p>AMReX does not require OpenACC, but application codes
 can use them if they are supported by the compiler.  For OpenACC support, add
 <code class="docutils literal notranslate"><span class="pre">USE_ACC=TRUE</span></code>.  PGI, Cray and GNU compilers support OpenACC.  Thus,
@@ -467,7 +467,7 @@ For a full list of SYCL-specific configuration options,
 check the <a class="reference internal" href="#tab-cmakesyclvar"><span class="std std-ref">table</span></a> below.</p>
 <p>In AMReX CMake, the SYCL compiler is treated as a special C++ compiler and therefore
 the standard CMake variables used to customize the compilation process for C++,
-for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for DPCPP as well.</p>
+for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for SYCL as well.</p>
 <p>Since CMake does not support autodetection of SYCL compilers yet,
 <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid SYCL compiler. i.e. <code class="docutils literal notranslate"><span class="pre">icpx</span></code>.
 Thus <strong>CMAKE_CXX_COMPILER is a required user-input when AMReX_GPU_BACKEND=SYCL</strong>.
@@ -486,8 +486,8 @@ Below is an example configuration for SYCL:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>AMReX_DPCPP_AOT</p></td>
-<td><p>Enable DPCPP ahead-of-time compilation</p></td>
+<tr class="row-even"><td><p>AMReX_SYCL_AOT</p></td>
+<td><p>Enable SYCL ahead-of-time compilation</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
@@ -499,13 +499,13 @@ Below is an example configuration for SYCL:</p>
 </td>
 <td><p>Gen9, etc.</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_DPCPP_SPLIT_KERNEL</p></td>
-<td><p>Enable DPCPP kernel splitting</p></td>
+<tr class="row-even"><td><p>AMReX_SYCL_SPLIT_KERNEL</p></td>
+<td><p>Enable SYCL kernel splitting</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_DPCPP_ONEDPL</p></td>
-<td><p>Enable DPCPP’s oneDPL algorithms</p></td>
+<tr class="row-odd"><td><p>AMReX_SYCL_ONEDPL</p></td>
+<td><p>Enable SYCL’s oneDPL algorithms</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
@@ -528,7 +528,7 @@ These include:</p>
 <span class="cp">#define AMREX_GPU_HOST_DEVICE __host__ __device__</span>
 </pre></div>
 </div>
-<p>Note that when AMReX is not built with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/DPC++</span></code>,
+<p>Note that when AMReX is not built with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>,
 these macros expand to empty space.</p>
 <p>When AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, the preprocessor
 macros <code class="docutils literal notranslate"><span class="pre">AMREX_USE_CUDA</span></code> and <code class="docutils literal notranslate"><span class="pre">AMREX_USE_GPU</span></code> are defined for
@@ -899,7 +899,7 @@ Instead of using <code class="code highlight cpp c++ docutils literal highlight-
 </div>
 <p>This is now the recommended way because it’s usually more efficient than
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Elixir</span><span class="w"></span></code>.  Note that the code above works for CUDA older than 11.2, HIP
-and DPC++ as well, and it’s equivalent to using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Elixir</span><span class="w"></span></code> in these
+and SYCL as well, and it’s equivalent to using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Elixir</span><span class="w"></span></code> in these
 cases.  By default, the release threshold for the memory pool is unlimited.
 One can adjust it with <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameter,
 <code class="docutils literal notranslate"><span class="pre">amrex.the_async_arena_release_threshold</span></code>.</p>

@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#  include &lt;cub/cub.cuh&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#  include &lt;rocprim/rocprim.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP) &amp;&amp; defined(AMREX_USE_ONEDPL)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL) &amp;&amp; defined(AMREX_USE_ONEDPL)</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#  include &lt;oneapi/dpl/execution&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#  include &lt;oneapi/dpl/numeric&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Data&lt;T&gt; tmp;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        tmp.s = {a_status, a_value};</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        static_assert(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>) == <span class="keyword">sizeof</span>(uint64_t),</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                      <span class="stringliteral">&quot;HIP/DPCPP: unsigned long long must be 64 bits&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                      <span class="stringliteral">&quot;HIP/SYCL: unsigned long long must be 64 bits&quot;</span>);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aead1011333d0e8605985cd0ab8c163bf">Gpu::Atomic::Exch</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>*<span class="keyword">&gt;</span>(&amp;d),</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                          <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp;<span class="keyword">&gt;</span>(tmp));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="structamrex_1_1Scan_1_1detail_1_1STVA.html">STVA&lt;T&gt;</a> volatile&amp;<span class="keyword">&gt;</span>(tmp).<a class="code" href="structamrex_1_1Scan_1_1detail_1_1STVA.html#aa76259f63fc8b37f35274e568f69f0cd">value</a> };</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        static_assert(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>) == <span class="keyword">sizeof</span>(uint64_t),</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                      <span class="stringliteral">&quot;HIP/DPCPP: unsigned long long must be 64 bits&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                      <span class="stringliteral">&quot;HIP/SYCL: unsigned long long must be 64 bits&quot;</span>);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> tmp = <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a381dae009311cca3b100d29d0417f83e">Gpu::Atomic::Add</a></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            (<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>*<span class="keyword">&gt;</span>(<span class="keyword">const_cast&lt;</span>Data&lt;T&gt;*<span class="keyword">&gt;</span>(&amp;d)), 0ull);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> (*<span class="keyword">reinterpret_cast&lt;</span>Data&lt;T&gt;*<span class="keyword">&gt;</span>(&amp;tmp)).s;</div>
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4.html#a5af349e5e3e927e2960c462281eec3be">  101</a></span>&#160;    <a class="code" href="structamrex_1_1Scan_1_1detail_1_1STVA.html">STVA&lt;T&gt;</a> <a class="code" href="structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4.html#a5af349e5e3e927e2960c462281eec3be">wait</a> ()<span class="keyword"> volatile </span>{</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="structamrex_1_1Scan_1_1detail_1_1STVA.html">STVA&lt;T&gt;</a> r;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            sycl::atomic_fence(sycl::memory_order::acq_rel, sycl::memory_scope::work_group);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            __threadfence_block();</div>
@@ -227,7 +227,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="namespaceamrex_1_1Scan_1_1Type.html#adc276b3550668e305c5bc5b482db0c4f">inclusive</a> = a_value;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        sycl::atomic_fence(sycl::memory_order::acq_rel, sycl::memory_scope::device);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        __threadfence();</div>
@@ -257,7 +257,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="structamrex_1_1Scan_1_1detail_1_1STVA.html">STVA&lt;T&gt;</a> r;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">do</span> {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            r = read();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            sycl::atomic_fence(sycl::memory_order::acq_rel, sycl::memory_scope::device);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            __threadfence();</div>
@@ -269,9 +269,9 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#ifndef AMREX_DPCPP_NO_MULTIPASS_SCAN</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#ifndef AMREX_SYCL_NO_MULTIPASS_SCAN</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT, <span class="keyword">typename</span> TYPE&gt;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;T PrefixSum_mp (N n, FIN &amp;&amp; fin, FOUT &amp;&amp; fout, TYPE, RetSum a_ret_sum)</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
@@ -484,7 +484,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(<span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(n) &lt; <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;int&gt;::max</a>())*nelms_per_block);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordtype">int</span> nblocks = (<span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(n) + nelms_per_block - 1) / nelms_per_block;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#ifndef AMREX_DPCPP_NO_MULTIPASS_SCAN</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">#ifndef AMREX_SYCL_NO_MULTIPASS_SCAN</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">if</span> (nblocks &gt; 1) {</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">return</span> PrefixSum_mp&lt;T&gt;(n, std::forward&lt;FIN&gt;(fin), std::forward&lt;FOUT&gt;(fout), type, <a class="code" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>);</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
@@ -695,7 +695,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    T totalsum = 0;</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keywordflow">if</span> (a_ret_sum) {</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <span class="comment">// xxxxx DPCPP todo: Should test if using pinned memory and thus</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <span class="comment">// xxxxx SYCL todo: Should test if using pinned memory and thus</span></div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="comment">// avoiding memcpy is faster.</span></div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(&amp;totalsum, totalsum_p, <span class="keyword">sizeof</span>(T));</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    }</div>
@@ -1266,7 +1266,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(d_temp);</div>
 <div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    <a class="code" href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a>();</div>
 <div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    <span class="keywordflow">return</span> totalsum;</div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP) &amp;&amp; defined(AMREX_USE_ONEDPL)</span></div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL) &amp;&amp; defined(AMREX_USE_ONEDPL)</span></div>
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    <span class="keyword">auto</span> policy = oneapi::dpl::execution::make_device_policy(Gpu::Device::streamQueue());</div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129">std::inclusive_scan</a>(policy, in, in+n, out, std::plus&lt;T&gt;(), T(0));</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    T totalsum = 0;</div>
@@ -1336,7 +1336,7 @@ $(document).ready(function(){initNavTree('AMReX__Scan_8H_source.html',''); initR
 <div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;    <a class="code" href="namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1">The_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(d_temp);</div>
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    <a class="code" href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a>();</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    <span class="keywordflow">return</span> in_last+out_last;</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP) &amp;&amp; defined(AMREX_USE_ONEDPL)</span></div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL) &amp;&amp; defined(AMREX_USE_ONEDPL)</span></div>
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    T in_last = 0;</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;    <span class="keywordflow">if</span> (a_ret_sum) {</div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277">Gpu::dtoh_memcpy_async</a>(&amp;in_last, in+(n-1), <span class="keyword">sizeof</span>(T));</div>

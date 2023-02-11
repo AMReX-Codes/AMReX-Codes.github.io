@@ -213,7 +213,7 @@ $(document).ready(function(){initNavTree('AMReX__MFParallelForG_8H_source.html',
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                     icell = (blockIdx.x-ibox*block_0_size)*MT + threadIdx.x;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                 }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="namespaceamrex.html#a685ae8eab582f895ce964b6a99030ef2">amrex::launch</a>(nblocks, MT, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;             [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (sycl::nd_item&lt;1&gt; <span class="keyword">const</span>&amp; item) noexcept</div>

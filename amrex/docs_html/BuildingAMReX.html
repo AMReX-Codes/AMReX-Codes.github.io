@@ -189,7 +189,7 @@ at least <code class="docutils literal notranslate"><span class="pre">c++17</spa
 <td><p>TRUE or FALSE</p></td>
 <td><p>FALSE</p></td>
 </tr>
-<tr class="row-even"><td><p>USE_DPCPP</p></td>
+<tr class="row-even"><td><p>USE_SYCL</p></td>
 <td><p>TRUE or FALSE</p></td>
 <td><p>FALSE</p></td>
 </tr>
@@ -256,10 +256,10 @@ turned off and assertions in source code are turned on. For production runs,
 default in CI and add slight debugging, e.g., initializing default values in FABs.
 An advanced variable, <code class="docutils literal notranslate"><span class="pre">MPI_THREAD_MULTIPLE</span></code>, can be set to TRUE to initialize
 MPI with support for concurrent MPI calls from multiple threads.</p>
-<p>Variables <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_DPCPP</span></code> are used for
+<p>Variables <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_SYCL</span></code> are used for
 targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of
 the three can be TRUE.
-For HIP and DPC++/SYCL builds, we do only test against C++17 builds at the moment.</p>
+For HIP and SYCL builds, we do only test against C++17 builds at the moment.</p>
 <p>The variable <code class="docutils literal notranslate"><span class="pre">USE_RPATH</span></code> controls the link mechanism to dependent libraries.
 If enabled, the library path at link time will be saved as a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Rpath">rpath hint</a> in created binaries.

@@ -3408,7 +3408,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_MACROS_G_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE(TN,TI,block)<sp/>\</highlight></codeline>
 <codeline lineno="7"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn<sp/>=<sp/>TN;<sp/>\</highlight></codeline>
 <codeline lineno="8"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn))<sp/>{<sp/>\</highlight></codeline>
@@ -3468,7 +3468,7 @@
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>two<sp/>fused<sp/>launches</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2)<sp/>\</highlight></codeline>
 <codeline lineno="67"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>\</highlight></codeline>
 <codeline lineno="68"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2))<sp/>{<sp/>\</highlight></codeline>
@@ -3554,7 +3554,7 @@
 <codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">//<sp/>three<sp/>fused<sp/>launches</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3)<sp/>\</highlight></codeline>
 <codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn3<sp/>=<sp/>TN3;<sp/>\</highlight></codeline>
 <codeline lineno="154"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn3))<sp/>{<sp/>\</highlight></codeline>
@@ -3657,7 +3657,7 @@
 <codeline lineno="251"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
-<codeline lineno="254"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE(TN,TI,block)<sp/>\</highlight></codeline>
 <codeline lineno="256"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn<sp/>=<sp/>TN;<sp/>\</highlight></codeline>
 <codeline lineno="257"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn))<sp/>{<sp/>\</highlight></codeline>
@@ -3707,7 +3707,7 @@
 <codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="302"><highlight class="normal"></highlight></codeline>
 <codeline lineno="303"><highlight class="normal"></highlight><highlight class="comment">//<sp/>two<sp/>fused<sp/>launches</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2)<sp/>\</highlight></codeline>
 <codeline lineno="306"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>\</highlight></codeline>
 <codeline lineno="307"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2))<sp/>{<sp/>\</highlight></codeline>
@@ -3777,7 +3777,7 @@
 <codeline lineno="371"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="372"><highlight class="normal"></highlight></codeline>
 <codeline lineno="373"><highlight class="normal"></highlight><highlight class="comment">//<sp/>three<sp/>fused<sp/>launches</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="374"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="375"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3)<sp/>\</highlight></codeline>
 <codeline lineno="376"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn3<sp/>=<sp/>TN3;<sp/>\</highlight></codeline>
 <codeline lineno="377"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn3))<sp/>{<sp/>\</highlight></codeline>
@@ -3858,7 +3858,7 @@
 <codeline lineno="452"><highlight class="normal"></highlight></codeline>
 <codeline lineno="453"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FOR_1D</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="454"><highlight class="normal"></highlight></codeline>
-<codeline lineno="455"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="456"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_HOST_DEVICE_FOR_1D(n,i,block)<sp/>\</highlight></codeline>
 <codeline lineno="457"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
 <codeline lineno="458"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>auto<sp/>const&amp;<sp/>amrex_i_n<sp/>=<sp/>n;<sp/>\</highlight></codeline>
@@ -3892,7 +3892,7 @@
 <codeline lineno="486"><highlight class="normal"></highlight></codeline>
 <codeline lineno="487"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FOR_3D</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="488"><highlight class="normal"></highlight></codeline>
-<codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="490"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_HOST_DEVICE_FOR_3D(box,i,j,k,block)<sp/>\</highlight></codeline>
 <codeline lineno="491"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
 <codeline lineno="492"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>auto<sp/>const&amp;<sp/>amrex_i_box<sp/>=<sp/>box;<sp/>\</highlight></codeline>
@@ -3921,7 +3921,7 @@
 <codeline lineno="515"><highlight class="normal"></highlight></codeline>
 <codeline lineno="516"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FOR_4D</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="517"><highlight class="normal"></highlight></codeline>
-<codeline lineno="518"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="519"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_HOST_DEVICE_FOR_4D(box,ncomp,i,j,k,n,block)<sp/>\</highlight></codeline>
 <codeline lineno="520"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
 <codeline lineno="521"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>auto<sp/>const&amp;<sp/>amrex_i_box<sp/>=<sp/>box;<sp/>\</highlight></codeline>

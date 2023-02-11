@@ -5312,8 +5312,8 @@
 <codeline lineno="1665"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1666"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1667"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;arena()-&gt;<ref refid="namespaceamrex_1_1Gpu_1a15625bddaff1aaca4d04b13492962b92" kindref="member">isManaged</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="1668"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_DPCPP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>DPCPP<sp/>todo:<sp/>prefetchToHost</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1668"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>SYCL<sp/>todo:<sp/>prefetchToHost</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::size_t<sp/>s<sp/>=<sp/>sizeof(T)*this-&gt;nvar*this-&gt;domain.numPts();</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>auto&amp;<sp/>q<sp/>=<sp/>Gpu::Device::streamQueue();</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.prefetch(this-&gt;dptr,<sp/>s);<sp/>});</highlight><highlight class="normal"></highlight></codeline>
@@ -5337,7 +5337,7 @@
 <codeline lineno="1690"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1691"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1692"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;arena()-&gt;<ref refid="namespaceamrex_1_1Gpu_1a15625bddaff1aaca4d04b13492962b92" kindref="member">isManaged</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="1693"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_DPCPP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1693"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SYCL)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>s<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T)*this-&gt;nvar*this-&gt;domain.numPts();</highlight></codeline>
 <codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Gpu::Device::streamQueue();</highlight></codeline>
 <codeline lineno="1696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.prefetch(this-&gt;dptr,<sp/>s);<sp/>});</highlight></codeline>

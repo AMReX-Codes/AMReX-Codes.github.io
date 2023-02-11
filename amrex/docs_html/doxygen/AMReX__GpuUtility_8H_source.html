@@ -151,9 +151,9 @@ $(document).ready(function(){initNavTree('AMReX__GpuUtility_8H_source.html','');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span>* data[] = { (<span class="keywordtype">void</span>*)(&amp;is_managed) };</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        CUresult r = cuPointerGetAttributes(1, &amp;attrib, data, (CUdeviceptr)p);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> r == CUDA_SUCCESS &amp;&amp; is_managed;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// xxxxx DPCPP todo: get_pointer_type</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// xxxxx SYCL todo: get_pointer_type</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//        auto const info = sycl::get_pointer_info(p);</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//        auto type = sycl::get_pointer_type(p,Device::syclContext());</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -174,9 +174,9 @@ $(document).ready(function(){initNavTree('AMReX__GpuUtility_8H_source.html','');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span>* data[] = { (<span class="keywordtype">void</span>*)(&amp;mem_type) };</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        CUresult r = cuPointerGetAttributes(1, &amp;attrib, data, (CUdeviceptr)p);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> r == CUDA_SUCCESS &amp;&amp; mem_type == CU_MEMORYTYPE_DEVICE;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// xxxxx DPCPP todo: get_pointer_type</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// xxxxx SYCL todo: get_pointer_type</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>
@@ -195,9 +195,9 @@ $(document).ready(function(){initNavTree('AMReX__GpuUtility_8H_source.html','');
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span>* data[] = { (<span class="keywordtype">void</span>*)(&amp;mem_type) };</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        CUresult r = cuPointerGetAttributes(1, &amp;attrib, data, (CUdeviceptr)p);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> r == CUDA_SUCCESS &amp;&amp; mem_type == CU_MEMORYTYPE_HOST;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// xxxxx DPCPP todo: get_pointer_type</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// xxxxx SYCL todo: get_pointer_type</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>
@@ -226,9 +226,9 @@ $(document).ready(function(){initNavTree('AMReX__GpuUtility_8H_source.html','');
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;             mem_type == CU_MEMORYTYPE_DEVICE ||</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;             mem_type == CU_MEMORYTYPE_ARRAY  ||</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;             mem_type == CU_MEMORYTYPE_UNIFIED);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// xxxxx DPCPP todo: get_pointer_type</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// xxxxx SYCL todo: get_pointer_type</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(p);</div>

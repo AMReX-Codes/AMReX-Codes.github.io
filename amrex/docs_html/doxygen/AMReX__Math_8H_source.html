@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#  include &lt;sycl/sycl.hpp&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// call of overload abs(int&amp;) is ambiguous, or a link time error such as, undefined reference to</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// `amrex::disabled::abs(double)&#39;.  To fix it, one can use `std::abs` or `amrex::Math::abs`.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// The latter works in both host and device functions, whereas `std::abs` does not currently</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// work on device with HIP and DPC++.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// work on device with HIP and SYCL.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">   23</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723">   24</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">float</span>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96">   25</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span> <span class="keywordtype">double</span>);</div>
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html">   31</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> { <span class="keyword">namespace </span>Math {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//List of unsupported math function can be found at</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// https://github.com/intel/llvm/blob/sycl/sycl/doc/extensions/C-CXX-StandardLibrary/C-CXX-StandardLibrary.rst</span></div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">   70</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">cospi</a> (<span class="keywordtype">double</span> x)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">sycl::cospi</a>(x);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">   84</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">cospi</a> (<span class="keywordtype">float</span> x)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">sycl::cospi</a>(x);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">   98</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">sinpi</a> (<span class="keywordtype">double</span> x)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">sycl::sinpi</a>(x);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">  112</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">sinpi</a> (<span class="keywordtype">float</span> x)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">sycl::sinpi</a>(x);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
@@ -222,7 +222,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">  126</a></span>&#160;std::pair&lt;double,double&gt; <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a> (<span class="keywordtype">double</span> x)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    std::pair&lt;double,double&gt; r;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, &amp;r.second);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP) || \</span></div>
@@ -239,7 +239,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">  144</a></span>&#160;std::pair&lt;float,float&gt; <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a> (<span class="keywordtype">float</span> x)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    std::pair&lt;float,float&gt; r;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, &amp;r.second);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP) || \</span></div>
@@ -256,7 +256,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">  162</a></span>&#160;std::pair&lt;double,double&gt; <a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a> (<span class="keywordtype">double</span> x)</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    std::pair&lt;double,double&gt; r;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(pi&lt;double&gt;()*x, &amp;r.second);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>
@@ -272,7 +272,7 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5">  179</a></span>&#160;std::pair&lt;float,float&gt; <a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a> (<span class="keywordtype">float</span> x)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    std::pair&lt;float,float&gt; r;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(pi&lt;float&gt;()*x, &amp;r.second);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#elif defined(__CUDA_ARCH__) &amp;&amp; defined(AMREX_USE_CUDA) || \</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">      defined(__HIP_DEVICE_COMPILE__) &amp;&amp; defined(AMREX_USE_HIP)</span></div>

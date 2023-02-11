@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html">   22</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> R, <span class="keyword">typename</span> I, <span class="keyword">typename</span> F&gt;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
@@ -223,7 +223,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, sycl::access::address_space AS = sycl::access::address_space::global_space&gt;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
@@ -286,7 +286,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, sycl::access::address_space AS = sycl::access::address_space::global_space&gt;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a381dae009311cca3b100d29d0417f83e">  196</a></span>&#160;    T <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a381dae009311cca3b100d29d0417f83e">Add</a> (T* <span class="keyword">const</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, T <span class="keyword">const</span> value) noexcept</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    {</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#if AMREX_DEVICE_COMPILE</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> Add_device&lt;T,AS&gt;(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, value);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aa2cd0bf29a9ed71679b41a3e54765d39">Add_device</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, value);</div>
@@ -309,7 +309,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">//  If</span></div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || defined(AMREX_USE_HIP) || defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || defined(AMREX_USE_HIP) || defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Op, <span class="keyword">typename</span> Cond,</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;              std::enable_if_t&lt;<span class="keyword">sizeof</span>(T) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>), <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
@@ -349,7 +349,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">//  AddNoRet</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, sycl::access::address_space AS = sycl::access::address_space::global_space&gt;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
@@ -358,7 +358,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">  279</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">AddNoRet</a> (T* <span class="keyword">const</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, T <span class="keyword">const</span> value) noexcept</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    {</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#if AMREX_DEVICE_COMPILE</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        Add_device&lt;T,AS&gt;(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, value);</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aa2cd0bf29a9ed71679b41a3e54765d39">Add_device</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, value);</div>

@@ -344,7 +344,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
 <div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="AMReX__GpuLaunch_8H.html#a1bb4109b1b472fbcfb59fc4111460564">  248</a></span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
@@ -470,7 +470,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">    }</span></div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">// xxxxx DPCPP todo: host disabled in host device</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">// xxxxx SYCL todo: host disabled in host device</span></div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>

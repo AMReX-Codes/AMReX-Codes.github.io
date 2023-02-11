@@ -1861,7 +1861,7 @@
 <codeline lineno="55"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1a3f8fddb521eea2e91972e8a665d0e1cc" kindref="member">detail::ParallelFor_doit</ref>(copy_tags,</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight></codeline>
-<codeline lineno="58"><highlight class="normal">#ifdef<sp/>AMREX_USE_DPCPP</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">#ifdef<sp/>AMREX_USE_SYCL</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sycl::nd_item&lt;1&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/></highlight><highlight class="comment">/*item*/</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="60"><highlight class="normal">#endif</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icell,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncells,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/>Array4CopyTag&lt;T0,<sp/>T1&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>tag)<sp/>noexcept</highlight></codeline>
@@ -1893,12 +1893,12 @@
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1a3f8fddb521eea2e91972e8a665d0e1cc" kindref="member">detail::ParallelFor_doit</ref>(tags,</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">#ifdef<sp/>AMREX_USE_DPCPP</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">#ifdef<sp/>AMREX_USE_SYCL</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sycl::nd_item&lt;1&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>item,</highlight></codeline>
 <codeline lineno="92"><highlight class="normal">#endif</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icell,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncells,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/>TagType<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tag)<sp/>noexcept</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>g_tid<sp/>=<sp/>item.get_global_id(0);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>g_wid<sp/>=<sp/>g_tid<sp/>/<sp/>Gpu::Device::warp_size;</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>

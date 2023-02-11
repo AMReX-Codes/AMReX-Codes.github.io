@@ -121,13 +121,13 @@ $(document).ready(function(){initNavTree('AMReX__GpuControl_8H_source.html','');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_DPCPP(a,b,c) a</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_SYCL(a,b,c) a</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_CUDA)</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a90c94dfad5d935d839bfd6fbe1ee3013">   25</a></span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_DPCPP(a,b,c) b</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_DPCPP)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_DPCPP(a,b,c) c</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a0389b15d0c54d5b472c13de940c4c5d4">   25</a></span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_SYCL(a,b,c) b</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_SYCL(a,b,c) c</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_DPCPP(a,b,c) ((void)0);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define AMREX_HIP_OR_CUDA_OR_SYCL(a,b,c) ((void)0);</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
@@ -136,30 +136,30 @@ $(document).ready(function(){initNavTree('AMReX__GpuControl_8H_source.html','');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define AMREX_GPU_OR_CPU(a,b) b</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define AMREX_DPCPP_ONLY(a) a</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define AMREX_SYCL_ONLY(a) a</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a9c43c85c9849a3b6c66b494527d83f08">   41</a></span>&#160;<span class="preprocessor">#define AMREX_DPCPP_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#ace93349a7beb7f421bfd4f2897d0a2f3">   41</a></span>&#160;<span class="preprocessor">#define AMREX_SYCL_ONLY(a) ((void)0)</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_1D_ONLY(a) a</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_2D_ONLY(a) ((void)0)</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_3D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_1D_ONLY(a) a</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_2D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_3D_ONLY(a) ((void)0)</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_1D_ONLY(a) ((void)0)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_2D_ONLY(a) a</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_3D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_1D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_2D_ONLY(a) a</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_3D_ONLY(a) ((void)0)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_1D_ONLY(a) ((void)0)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_2D_ONLY(a) ((void)0)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_3D_ONLY(a) a</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_1D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_2D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#  define AMREX_SYCL_3D_ONLY(a) a</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#ad3f314807647d4a6530f7151569ad418">   59</a></span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_1D_ONLY(a) ((void)0)</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a8ae10852f9c794cebf24541e44624d28">   60</a></span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_2D_ONLY(a) ((void)0)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a869371ffeabb102f48ef8771f13cabbc">   61</a></span>&#160;<span class="preprocessor">#  define AMREX_DPCPP_3D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#af0be40177af497fa83d6315f742981c8">   59</a></span>&#160;<span class="preprocessor">#  define AMREX_SYCL_1D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a582fbaaf84e6533d5e1296b7c8c9b3ca">   60</a></span>&#160;<span class="preprocessor">#  define AMREX_SYCL_2D_ONLY(a) ((void)0)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="AMReX__GpuControl_8H.html#a97345bfa85179d289a5c255363a0d1ea">   61</a></span>&#160;<span class="preprocessor">#  define AMREX_SYCL_3D_ONLY(a) ((void)0)</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> {</div>

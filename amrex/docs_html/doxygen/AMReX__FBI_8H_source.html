@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="namespaceamrex_1_1detail.html#a3f8fddb521eea2e91972e8a665d0e1cc">detail::ParallelFor_doit</a>(copy_tags,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;#ifdef AMREX_USE_DPCPP</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;#ifdef AMREX_USE_SYCL</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            sycl::nd_item&lt;1&gt; <span class="keyword">const</span>&amp; <span class="comment">/*item*/</span>,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;#endif</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">int</span> icell, <span class="keywordtype">int</span> ncells, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Array4CopyTag&lt;T0, T1&gt; <span class="keyword">const</span> tag) noexcept</div>
@@ -188,12 +188,12 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="namespaceamrex_1_1detail.html#a3f8fddb521eea2e91972e8a665d0e1cc">detail::ParallelFor_doit</a>(tags,</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;#ifdef AMREX_USE_DPCPP</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;#ifdef AMREX_USE_SYCL</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        sycl::nd_item&lt;1&gt; <span class="keyword">const</span>&amp; item,</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;#endif</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">int</span> icell, <span class="keywordtype">int</span> ncells, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, TagType <span class="keyword">const</span>&amp; tag) noexcept</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">int</span> g_tid = item.get_global_id(0);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">int</span> g_wid = g_tid / Gpu::Device::warp_size;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>

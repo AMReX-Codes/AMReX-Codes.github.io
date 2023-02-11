@@ -132,8 +132,8 @@ $(document).ready(function(){initNavTree('AMReX__BlockMutex_8H_source.html','');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structamrex_1_1BlockMutex.html#ad0e65d9bf77725b6bad2a6794d6e2fee">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structamrex_1_1BlockMutex.html#ad0e65d9bf77725b6bad2a6794d6e2fee">lock</a> (<span class="keywordtype">int</span> i) noexcept {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// xxxxx DPCPP todo</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// xxxxx SYCL todo</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(i);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> blockid = blockIdx.z*blockDim.x*blockDim.y + blockIdx.y*blockDim.x + blockIdx.x;</div>
@@ -158,8 +158,8 @@ $(document).ready(function(){initNavTree('AMReX__BlockMutex_8H_source.html','');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structamrex_1_1BlockMutex.html#abd55deb11f6e1a89fa7e6ba517c581ff">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structamrex_1_1BlockMutex.html#abd55deb11f6e1a89fa7e6ba517c581ff">unlock</a> (<span class="keywordtype">int</span> i) noexcept {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// xxxxx DPCPP todo</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// xxxxx SYCL todo</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(i);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="unionamrex_1_1BlockMutex_1_1state__t.html">state_t</a> old = <a class="code" href="structamrex_1_1BlockMutex.html#ab5a49fbd49c206ff3f03ee616e60b990">m_state</a>[i];</div>

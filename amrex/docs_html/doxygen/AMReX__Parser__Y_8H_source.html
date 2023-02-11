@@ -361,11 +361,11 @@ $(document).ready(function(){initNavTree('AMReX__Parser__Y_8H_source.html',''); 
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a5fddc549617b82ce5fc2b33aa9b6aa6f">AMREX_NO_INLINE</a></div>
 <div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a43535087747b0d92f5e11040d600be5c">  261</a></span>&#160;T <a class="code" href="namespaceamrex.html#a43535087747b0d92f5e11040d600be5c">parser_math_jn</a> (<span class="keywordtype">int</span> a, T b)</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#if defined AMREX_USE_DPCPP || defined __MINGW32__</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#if defined AMREX_USE_SYCL || defined __MINGW32__</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(a,b);</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// neither jn(f) nor std::cyl_bessel_j work yet</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// https://github.com/oneapi-src/oneAPI-spec/issues/308</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;parser: jn in SYCL/DPC++ not supported yet&quot;</span>);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a1defc2bb8023a3e2599bfb2fc637cb43">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;parser: jn in SYCL not supported yet&quot;</span>);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span> jn(a, b);</div>

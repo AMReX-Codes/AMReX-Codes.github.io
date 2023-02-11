@@ -1310,8 +1310,8 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;{</div>
 <div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;    <span class="keywordflow">if</span> (this-&gt;arena()-&gt;<a class="code" href="namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92">isManaged</a>()) {</div>
-<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
-<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;        <span class="comment">// xxxxx DPCPP todo: prefetchToHost</span></div>
+<div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;        <span class="comment">// xxxxx SYCL todo: prefetchToHost</span></div>
 <div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;        <span class="comment">// std::size_t s = sizeof(T)*this-&gt;nvar*this-&gt;domain.numPts();</span></div>
 <div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;        <span class="comment">// auto&amp; q = Gpu::Device::streamQueue();</span></div>
 <div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;        <span class="comment">// q.submit([&amp;] (sycl::handler&amp; h) { h.prefetch(this-&gt;dptr, s); });</span></div>
@@ -1335,7 +1335,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;{</div>
 <div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;    <span class="keywordflow">if</span> (this-&gt;arena()-&gt;<a class="code" href="namespaceamrex_1_1Gpu.html#a15625bddaff1aaca4d04b13492962b92">isManaged</a>()) {</div>
-<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
+<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
 <div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;        std::size_t s = <span class="keyword">sizeof</span>(T)*this-&gt;nvar*this-&gt;domain.numPts();</div>
 <div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;        <span class="keyword">auto</span>&amp; q = Gpu::Device::streamQueue();</div>
 <div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;        q.submit([&amp;] (sycl::handler&amp; h) { h.prefetch(this-&gt;dptr, s); });</div>
