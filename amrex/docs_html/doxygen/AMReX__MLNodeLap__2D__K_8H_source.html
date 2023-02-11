@@ -2301,11 +2301,11 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__2D__K_8H_source.html
 <div class="line"><a name="l02200"></a><span class="lineno"> 2200</span>&#160;        Real bcy = bcen(i,j,0,1);</div>
 <div class="line"><a name="l02201"></a><span class="lineno"> 2201</span>&#160; </div>
 <div class="line"><a name="l02202"></a><span class="lineno"> 2202</span>&#160;        Real Sx, Sy, Sx2, Sy2, Sxy;</div>
-<div class="line"><a name="l02203"></a><span class="lineno"> 2203</span>&#160;        <span class="keywordflow">if</span> (anrmx == Real(0.)) {</div>
+<div class="line"><a name="l02203"></a><span class="lineno"> 2203</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(anrmx) &lt;= almostzero) {</div>
 <div class="line"><a name="l02204"></a><span class="lineno"> 2204</span>&#160;            Sx = Real(0.);</div>
 <div class="line"><a name="l02205"></a><span class="lineno"> 2205</span>&#160;            Sx2 = Real(1./24.)*(axm+axp);</div>
 <div class="line"><a name="l02206"></a><span class="lineno"> 2206</span>&#160;            Sxy = Real(0.);</div>
-<div class="line"><a name="l02207"></a><span class="lineno"> 2207</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (anrmy == Real(0.)) {</div>
+<div class="line"><a name="l02207"></a><span class="lineno"> 2207</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(anrmy) &lt;= almostzero) {</div>
 <div class="line"><a name="l02208"></a><span class="lineno"> 2208</span>&#160;            Sx  = Real(1./8.) *(axp-axm) + anrmx*Real(0.5)*(bcx*bcx);</div>
 <div class="line"><a name="l02209"></a><span class="lineno"> 2209</span>&#160;            Sx2 = Real(1./24.)*(axp+axm) + anrmx*Real(1./3.)*(bcx*bcx*bcx);</div>
 <div class="line"><a name="l02210"></a><span class="lineno"> 2210</span>&#160;            Sxy = Real(0.);</div>
@@ -2332,10 +2332,10 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__2D__K_8H_source.html
 <div class="line"><a name="l02231"></a><span class="lineno"> 2231</span>&#160;            Sxy = amrex::Math::copysign(Sxy, anrmy);</div>
 <div class="line"><a name="l02232"></a><span class="lineno"> 2232</span>&#160;        }</div>
 <div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160; </div>
-<div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160;        <span class="keywordflow">if</span> (anrmy == Real(0.)) {</div>
+<div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(anrmy) &lt;= almostzero) {</div>
 <div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160;            Sy = Real(0.);</div>
 <div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;            Sy2 = Real(1./24.)*(aym+ayp);</div>
-<div class="line"><a name="l02237"></a><span class="lineno"> 2237</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (anrmx == Real(0.)) {</div>
+<div class="line"><a name="l02237"></a><span class="lineno"> 2237</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(anrmx) &lt;= almostzero) {</div>
 <div class="line"><a name="l02238"></a><span class="lineno"> 2238</span>&#160;            Sy  = Real(1./8.) *(ayp-aym) + anrmy*Real(0.5)*(bcy*bcy);</div>
 <div class="line"><a name="l02239"></a><span class="lineno"> 2239</span>&#160;            Sy2 = Real(1./24.)*(ayp+aym) + anrmy*Real(1./3.)*(bcy*bcy*bcy);</div>
 <div class="line"><a name="l02240"></a><span class="lineno"> 2240</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -2416,10 +2416,10 @@ $(document).ready(function(){initNavTree('AMReX__MLNodeLap__2D__K_8H_source.html
 <div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160; </div>
 <div class="line"><a name="l02316"></a><span class="lineno"> 2316</span>&#160;            GpuArray&lt;RealVect,4&gt; pts; <span class="comment">//intersection points</span></div>
 <div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160;            <span class="keywordtype">int</span> np = 0;</div>
-<div class="line"><a name="l02318"></a><span class="lineno"> 2318</span>&#160;            <span class="keywordflow">if</span> (anrmx == Real(0.)) {</div>
+<div class="line"><a name="l02318"></a><span class="lineno"> 2318</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(anrmx) &lt;= almostzero) {</div>
 <div class="line"><a name="l02319"></a><span class="lineno"> 2319</span>&#160;                pts[np++] = RealVect{Real(-0.5), Real(-c + Real(0.5)*anrmx)/anrmy};</div>
 <div class="line"><a name="l02320"></a><span class="lineno"> 2320</span>&#160;                pts[np++] = RealVect{Real( 0.5), Real(-c - Real(0.5)*anrmx)/anrmy};</div>
-<div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>( anrmy == Real(0.)) {</div>
+<div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(anrmy) &lt;= almostzero) {</div>
 <div class="line"><a name="l02322"></a><span class="lineno"> 2322</span>&#160;                pts[np++] = RealVect{Real(-c + Real(0.5)*anrmy)/anrmx, Real(-0.5)};</div>
 <div class="line"><a name="l02323"></a><span class="lineno"> 2323</span>&#160;                pts[np++] = RealVect{Real(-c - Real(0.5)*anrmy)/anrmx, Real( 0.5)};</div>
 <div class="line"><a name="l02324"></a><span class="lineno"> 2324</span>&#160;            } <span class="keywordflow">else</span> {</div>
