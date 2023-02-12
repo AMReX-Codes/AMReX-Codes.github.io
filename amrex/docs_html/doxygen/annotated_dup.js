@@ -194,6 +194,7 @@ var annotated_dup =
         [ "Mpi_typemap", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap" ],
         [ "Message", "classamrex_1_1ParallelDescriptor_1_1Message.html", "classamrex_1_1ParallelDescriptor_1_1Message" ],
         [ "ProcessTeam", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam" ],
+        [ "Mpi_typemap< GpuComplex< T > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4" ],
         [ "Mpi_typemap< ValLocPair< TV, TI > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4" ]
       ] ],
       [ "ParticleInterpolator", "namespaceamrex_1_1ParticleInterpolator.html", [

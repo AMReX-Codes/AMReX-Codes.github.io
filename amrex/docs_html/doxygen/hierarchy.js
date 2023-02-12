@@ -701,6 +701,7 @@ var hierarchy =
     [ "amrex::openbc::MomTag", "structamrex_1_1openbc_1_1MomTag.html", null ],
     [ "MPI_Status", "structMPI__Status.html", null ],
     [ "amrex::ParallelDescriptor::Mpi_typemap< T >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html", null ],
+    [ "amrex::ParallelDescriptor::Mpi_typemap< GpuComplex< T > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html", null ],
     [ "amrex::ParallelDescriptor::Mpi_typemap< ValLocPair< TV, TI > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html", null ],
     [ "amrex::MultiArray4< T >", "structamrex_1_1MultiArray4.html", null ],
     [ "amrex::MultiArray4< value_type >", "structamrex_1_1MultiArray4.html", null ],

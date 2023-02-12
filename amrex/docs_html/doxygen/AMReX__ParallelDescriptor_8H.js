@@ -2,6 +2,7 @@ var AMReX__ParallelDescriptor_8H =
 [
     [ "Message", "classamrex_1_1ParallelDescriptor_1_1Message.html", "classamrex_1_1ParallelDescriptor_1_1Message" ],
     [ "ProcessTeam", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html", "structamrex_1_1ParallelDescriptor_1_1ProcessTeam" ],
+    [ "Mpi_typemap< GpuComplex< T > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4" ],
     [ "Mpi_typemap< ValLocPair< TV, TI > >", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html", "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4" ],
     [ "Abarrier", "AMReX__ParallelDescriptor_8H.html#a24603dd135fe7d8badbc0fe3ab25ff1d", null ],
     [ "Abarrier", "AMReX__ParallelDescriptor_8H.html#afaa2aaedf1b60a37ea26eaeda75973a6", null ],

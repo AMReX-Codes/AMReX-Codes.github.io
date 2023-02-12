@@ -117,8 +117,10 @@ var NAVTREEINDEX76 =
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[2,0,0,13,0,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[2,0,0,13,0,3],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[2,0,0,13,0,1],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html":[2,0,0,13,3],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html#a9ddcad1ca5990453ace2b8149173f7bd":[2,0,0,13,3,0],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html":[2,0,0,13,3],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01GpuComplex_3_01T_01_4_01_4.html#a4025a275e81686205f71df80a1833bcc":[2,0,0,13,3,0],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html":[2,0,0,13,4],
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_3_01ValLocPair_3_01TV_00_01TI_01_4_01_4.html#a9ddcad1ca5990453ace2b8149173f7bd":[2,0,0,13,4,0],
 "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html":[2,0,0,13,2],
 "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a0e84c360250692ebc2e6585a33e47d41":[2,0,0,13,2,7],
 "structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a3a15d388a4307d1a6af319e8244b7d1e":[2,0,0,13,2,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1ParserExecutor.html":[2,0,0,88],
 "structamrex_1_1ParserExecutor.html#a132a34cc401496050ca54b6d3cb3855c":[2,0,0,88,2],
 "structamrex_1_1ParserExecutor.html#a195771c96ef68cb237c6da6f6c2d336d":[2,0,0,88,6],
-"structamrex_1_1ParserExecutor.html#a38862e30a4c2fbeefe1e07252ce69c31":[2,0,0,88,5],
-"structamrex_1_1ParserExecutor.html#a4ec94c9ff56d57926d2743b89abb9819":[2,0,0,88,4],
-"structamrex_1_1ParserExecutor.html#a5f007a74d83f9bdcb198458404414118":[2,0,0,88,1]
+"structamrex_1_1ParserExecutor.html#a38862e30a4c2fbeefe1e07252ce69c31":[2,0,0,88,5]
 };
