@@ -1,5 +1,8 @@
 var NAVTREEINDEX56 =
 {
+"functions_func_p.html":[2,3,1,15],
+"functions_func_q.html":[2,3,1,16],
+"functions_func_r.html":[2,3,1,17],
 "functions_func_s.html":[2,3,1,18],
 "functions_func_t.html":[2,3,1,19],
 "functions_func_u.html":[2,3,1,20],
@@ -43,8 +46,8 @@ var NAVTREEINDEX56 =
 "functions_type_v.html":[2,3,3,15],
 "functions_u.html":[2,3,0,21],
 "functions_v.html":[2,3,0,22],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX56 =
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor__number.html":[2,0,6,3],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor__number.html#a8982f3fdc602ce3e7a05c55d7193667c":[2,0,6,3,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc.html":[2,0,6,0],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc.html#a02957b84a9c8ca00e591712627aa6ea3":[2,0,6,0,0],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html":[2,0,6,1],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__nprocs.html#a522ade5dba9e7fc6f1942c44bfc0c9e1":[2,0,6,1,0],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html":[2,0,6,5]
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc.html#a02957b84a9c8ca00e591712627aa6ea3":[2,0,6,0,0]
 };

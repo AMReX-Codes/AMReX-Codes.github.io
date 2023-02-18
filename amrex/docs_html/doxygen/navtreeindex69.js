@@ -1,5 +1,8 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex__mempool__module.html#a07ba766a64e809e4be6c014aad7d19e6":[1,0,12,21],
+"namespaceamrex__mempool__module.html#a0e05b26a99ee9bfcd67d3bcf92f5c2c8":[1,0,12,17],
+"namespaceamrex__mempool__module.html#a2b5ada4df017deb8b5ab35daf32ee166":[1,0,12,15],
 "namespaceamrex__mempool__module.html#a3fc8f0cceacb6dcb6bac79950dcc81f2":[1,0,12,11],
 "namespaceamrex__mempool__module.html#a47590a2b614ca1a020c77a019a93253d":[1,0,12,7],
 "namespaceamrex__mempool__module.html#a52df12c154901553f7481a5ddd08b16f":[1,0,12,16],
@@ -246,8 +249,5 @@ var NAVTREEINDEX69 =
 "structBLProfStats_1_1CallTreeNode.html#abbd67971ba1617870613e5a4a6bf3e48":[2,0,15,1,5],
 "structBLProfStats_1_1CallTreeNode.html#ac01a3f5eb9b5f39ea6fbc013381f9e15":[2,0,15,1,2],
 "structBLProfStats_1_1FuncStat.html":[2,0,15,2],
-"structBLProfStats_1_1FuncStat.html#a950c1731cce4f46316a6e54354ef8882":[2,0,15,2,3],
-"structBLProfStats_1_1FuncStat.html#a9584e7e0ee928c9d2f7bcf6b817c4629":[2,0,15,2,0],
-"structBLProfStats_1_1FuncStat.html#ac8b5d8a4c6027d6b3f0b02c3c7c2b633":[2,0,15,2,1],
-"structBLProfStats_1_1FuncStat.html#ad1a3f8772ee33935e4bcb30cdd5581a4":[2,0,15,2,2]
+"structBLProfStats_1_1FuncStat.html#a950c1731cce4f46316a6e54354ef8882":[2,0,15,2,3]
 };
