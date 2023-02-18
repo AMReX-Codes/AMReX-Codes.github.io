@@ -1337,7 +1337,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">ParallelFor</a>(fa, nghost, numcomp,</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> box_no, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        {</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;            fabarr[box_no](i,j,k,n+icomp) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fabarr[box_no](i,j,k,n+icomp));</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;            fabarr[box_no](i,j,k,n+icomp) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fabarr[box_no](i,j,k,n+icomp));</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;        });</div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="namespaceamrex_1_1Gpu.html#aa291965db390b525ec650fbb777bfd44">Gpu::inNoSyncRegion</a>()) {</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
@@ -1356,7 +1356,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayUtility_8H_source.html'
 <div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; fab = fa.<a class="code" href="classamrex_1_1FabArray.html#a6484b86e240ddcddbe0d68e9408e1d94">array</a>(mfi);</div>
 <div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>( bx, numcomp, i, j, k, n,</div>
 <div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;                {</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;                    fab(i,j,k,n+icomp) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fab(i,j,k,n+icomp));</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;                    fab(i,j,k,n+icomp) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fab(i,j,k,n+icomp));</div>
 <div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;                });</div>
 <div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;            }</div>
 <div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        }</div>

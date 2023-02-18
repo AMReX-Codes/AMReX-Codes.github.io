@@ -1906,7 +1906,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02261"></a><span class="lineno"> 2261</span>&#160;    <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; a = this-&gt;array();</div>
 <div class="line"><a name="l02262"></a><span class="lineno"> 2262</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8H.html#ab10b9f44fb4000025c4d7a025abac805">AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG</a> (run_on, subbox, numcomp, i, j, k, n,</div>
 <div class="line"><a name="l02263"></a><span class="lineno"> 2263</span>&#160;    {</div>
-<div class="line"><a name="l02264"></a><span class="lineno"> 2264</span>&#160;        a(i,j,k,n+comp) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+comp));</div>
+<div class="line"><a name="l02264"></a><span class="lineno"> 2264</span>&#160;        a(i,j,k,n+comp) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+comp));</div>
 <div class="line"><a name="l02265"></a><span class="lineno"> 2265</span>&#160;    });</div>
 <div class="line"><a name="l02266"></a><span class="lineno"> 2266</span>&#160;}</div>
 <div class="line"><a name="l02267"></a><span class="lineno"> 2267</span>&#160; </div>
@@ -1933,7 +1933,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02288"></a><span class="lineno"> 2288</span>&#160;            Real t = 0.0;</div>
 <div class="line"><a name="l02289"></a><span class="lineno"> 2289</span>&#160;            <span class="keywordflow">if</span> (m(i,j,k)) {</div>
 <div class="line"><a name="l02290"></a><span class="lineno"> 2290</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a name="l02291"></a><span class="lineno"> 2291</span>&#160;                    t = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(t,<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+scomp))));</div>
+<div class="line"><a name="l02291"></a><span class="lineno"> 2291</span>&#160;                    t = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(t,<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+scomp))));</div>
 <div class="line"><a name="l02292"></a><span class="lineno"> 2292</span>&#160;                }</div>
 <div class="line"><a name="l02293"></a><span class="lineno"> 2293</span>&#160;            }</div>
 <div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;            <span class="keywordflow">return</span> {t};</div>
@@ -1946,7 +1946,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02301"></a><span class="lineno"> 2301</span>&#160;        <a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a>(subbox, ncomp, [=,&amp;r] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l02302"></a><span class="lineno"> 2302</span>&#160;        {</div>
 <div class="line"><a name="l02303"></a><span class="lineno"> 2303</span>&#160;            <span class="keywordflow">if</span> (m(i,j,k)) {</div>
-<div class="line"><a name="l02304"></a><span class="lineno"> 2304</span>&#160;                Real t = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+scomp)));</div>
+<div class="line"><a name="l02304"></a><span class="lineno"> 2304</span>&#160;                Real t = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+scomp)));</div>
 <div class="line"><a name="l02305"></a><span class="lineno"> 2305</span>&#160;                r = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(r,t);</div>
 <div class="line"><a name="l02306"></a><span class="lineno"> 2306</span>&#160;            }</div>
 <div class="line"><a name="l02307"></a><span class="lineno"> 2307</span>&#160;        });</div>
@@ -1983,7 +1983,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160;            {</div>
 <div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160;                Real t = 0.0;</div>
 <div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; numcomp; ++n) {</div>
-<div class="line"><a name="l02341"></a><span class="lineno"> 2341</span>&#160;                    t = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(t, <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+comp))));</div>
+<div class="line"><a name="l02341"></a><span class="lineno"> 2341</span>&#160;                    t = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(t, <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+comp))));</div>
 <div class="line"><a name="l02342"></a><span class="lineno"> 2342</span>&#160;                }</div>
 <div class="line"><a name="l02343"></a><span class="lineno"> 2343</span>&#160;                <span class="keywordflow">return</span> {t};</div>
 <div class="line"><a name="l02344"></a><span class="lineno"> 2344</span>&#160;            });</div>
@@ -1998,7 +1998,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02353"></a><span class="lineno"> 2353</span>&#160;            {</div>
 <div class="line"><a name="l02354"></a><span class="lineno"> 2354</span>&#160;                Real t = 0.0;</div>
 <div class="line"><a name="l02355"></a><span class="lineno"> 2355</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; numcomp; ++n) {</div>
-<div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;                    t += <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+comp)));</div>
+<div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;                    t += <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+comp)));</div>
 <div class="line"><a name="l02357"></a><span class="lineno"> 2357</span>&#160;                }</div>
 <div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;                <span class="keywordflow">return</span> {t};</div>
 <div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;            });</div>
@@ -2028,13 +2028,13 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;        <span class="keywordflow">if</span> (p == 0) {</div>
 <div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;            <a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a>(subbox, numcomp, [=,&amp;nrm] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;            {</div>
-<div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;                Real t = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+comp)));</div>
+<div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;                Real t = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+comp)));</div>
 <div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;                nrm = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(nrm,t);</div>
 <div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160;            });</div>
 <div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p == 1) {</div>
 <div class="line"><a name="l02390"></a><span class="lineno"> 2390</span>&#160;            <a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a>(subbox, numcomp, [=,&amp;nrm] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l02391"></a><span class="lineno"> 2391</span>&#160;            {</div>
-<div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160;                nrm += <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k,n+comp));</div>
+<div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160;                nrm += <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k,n+comp));</div>
 <div class="line"><a name="l02393"></a><span class="lineno"> 2393</span>&#160;            });</div>
 <div class="line"><a name="l02394"></a><span class="lineno"> 2394</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p == 2) {</div>
 <div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;            <a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a>(subbox, numcomp, [=,&amp;nrm] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
@@ -2189,7 +2189,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02544"></a><span class="lineno"> 2544</span>&#160;        reduce_op.<a class="code" href="classamrex_1_1ReduceOps.html#a00463980dfb637a0c8f867ed55fa99b8">eval</a>(subbox, reduce_data,</div>
 <div class="line"><a name="l02545"></a><span class="lineno"> 2545</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) -&gt; ReduceTuple</div>
 <div class="line"><a name="l02546"></a><span class="lineno"> 2546</span>&#160;        {</div>
-<div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;            <span class="keywordflow">return</span> { <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k)) };</div>
+<div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;            <span class="keywordflow">return</span> { <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k)) };</div>
 <div class="line"><a name="l02548"></a><span class="lineno"> 2548</span>&#160;        });</div>
 <div class="line"><a name="l02549"></a><span class="lineno"> 2549</span>&#160;        ReduceTuple hv = reduce_data.<a class="code" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op);</div>
 <div class="line"><a name="l02550"></a><span class="lineno"> 2550</span>&#160;        <span class="keywordflow">return</span> amrex::get&lt;0&gt;(hv);</div>
@@ -2199,7 +2199,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l02554"></a><span class="lineno"> 2554</span>&#160;        T r = 0;</div>
 <div class="line"><a name="l02555"></a><span class="lineno"> 2555</span>&#160;        <a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a>(subbox, [=,&amp;r] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160;        {</div>
-<div class="line"><a name="l02557"></a><span class="lineno"> 2557</span>&#160;            r = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(r, <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(a(i,j,k)));</div>
+<div class="line"><a name="l02557"></a><span class="lineno"> 2557</span>&#160;            r = <a class="code" href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a>(r, <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a(i,j,k)));</div>
 <div class="line"><a name="l02558"></a><span class="lineno"> 2558</span>&#160;        });</div>
 <div class="line"><a name="l02559"></a><span class="lineno"> 2559</span>&#160;        <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l02560"></a><span class="lineno"> 2560</span>&#160;    }</div>

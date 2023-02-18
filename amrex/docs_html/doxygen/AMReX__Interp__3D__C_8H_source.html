@@ -506,7 +506,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                }</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            }</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keywordflow">if</span> ( (crseTot &gt; 0) &amp;&amp; (crseTot &gt; <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(SumN)) ) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keywordflow">if</span> ( (crseTot &gt; 0) &amp;&amp; (crseTot &gt; <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(SumN)) ) {</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                <span class="comment">/*</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">                 * Special case 1:</span></div>
@@ -530,11 +530,11 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                            <span class="comment">// Then, add the remaining positive proportionally.</span></div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                            <span class="keywordflow">if</span> (SumP &gt; 0.0) {</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                <span class="keywordflow">if</span> (fine_state(i,j,k,n) &gt; 0.0) {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                    Real alpha = (crseTot - <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(SumN)) / SumP;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                    Real alpha = (crseTot - <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(SumN)) / SumP;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                                    <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,k,n) = alpha * fine_state(i,j,k,n);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                }</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                            } <span class="keywordflow">else</span> { <span class="comment">/* (SumP &lt; 0) */</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                Real posVal = (crseTot - <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(SumN)) / (Real)numFineCells;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                Real posVal = (crseTot - <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(SumN)) / (Real)numFineCells;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,k,n) += posVal;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                            }</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
@@ -542,7 +542,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                    }</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                }</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &gt; 0) &amp;&amp; (crseTot &lt; <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(SumN)) ) {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &gt; 0) &amp;&amp; (crseTot &lt; <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(SumN)) ) {</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                <span class="comment">/*</span></div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="comment">                 * Special case 2:</span></div>
@@ -557,10 +557,10 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                <span class="keywordflow">for</span>         (<span class="keywordtype">int</span> k = klo; k &lt;= khi; ++k) {</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                    <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = jlo; j &lt;= jhi; ++j) {</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = ilo; i &lt;= ihi; ++i) {</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                            Real alpha = crseTot / <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(SumN);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                            Real alpha = crseTot / <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(SumN);</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                            <span class="keywordflow">if</span> (fine_state(i,j,k,n) &lt; 0.0) {</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                                <span class="comment">// Add correction to negative cells proportionally.</span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,k,n) = alpha * <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(fine_state(i,j,k,n));</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,k,n) = alpha * <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fine_state(i,j,k,n));</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                                <span class="comment">// Don&#39;t touch the positive states.</span></div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,k,n) = 0.0;</div>
@@ -570,7 +570,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                    }</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                }</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &lt; 0) &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(crseTot) &gt; SumP) ) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &lt; 0) &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(crseTot) &gt; SumP) ) {</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                <span class="comment">/*</span></div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="comment">                 * Special case 3:</span></div>
@@ -593,7 +593,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                    }</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                }</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &lt; 0) &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(crseTot) &lt; SumP) &amp;&amp;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &lt; 0) &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(crseTot) &lt; SumP) &amp;&amp;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                        ((SumP+SumN+crseTot) &gt; 0.0) )  {</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                <span class="comment">/*</span></div>
@@ -621,7 +621,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__3D__C_8H_source.html','
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    }</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                }</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &lt; 0) &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">Math::abs</a>(crseTot) &lt; SumP) &amp;&amp;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (crseTot &lt; 0) &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(crseTot) &lt; SumP) &amp;&amp;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                        ((SumP+SumN+crseTot) &lt; 0.0) )  {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                <span class="comment">/*</span></div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="comment">                 * Special case 5:</span></div>

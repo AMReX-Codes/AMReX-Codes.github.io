@@ -355,10 +355,10 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    {</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        Real fxm = u(i,j,k,n);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">if</span> (apx(i,j,k) != 0.0 &amp;&amp; apx(i,j,k) != 1.0) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt, fcx(i,j,k,0)));</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt, fcx(i,j,k,1)));</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            Real fracy = (ccm(i-1,jj,k) || ccm(i,jj,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i,j,k,0)) : 0.0_rt;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            Real fracz = (ccm(i-1,j,kk) || ccm(i,j,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i,j,k,1)) : 0.0_rt;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt, fcx(i,j,k,0)));</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt, fcx(i,j,k,1)));</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            Real fracy = (ccm(i-1,jj,k) || ccm(i,jj,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcx(i,j,k,0)) : 0.0_rt;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            Real fracz = (ccm(i-1,j,kk) || ccm(i,j,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcx(i,j,k,1)) : 0.0_rt;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            fxm = (1.0-fracy)*(1.0-fracz)*fxm</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                +      fracy *(1.0-fracz)*u(i,jj,k ,n)</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                +      fracz *(1.0-fracy)*u(i,j ,kk,n)</div>
@@ -367,10 +367,10 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        Real fxp = u(i+1,j,k,n);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span> (apx(i+1,j,k) != 0.0 &amp;&amp; apx(i+1,j,k) != 1.0) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcx(i+1,j,k,0)));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcx(i+1,j,k,1)));</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            Real fracy = (ccm(i,jj,k) || ccm(i+1,jj,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i+1,j,k,0)) : 0.0_rt;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            Real fracz = (ccm(i,j,kk) || ccm(i+1,j,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i+1,j,k,1)) : 0.0_rt;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcx(i+1,j,k,0)));</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcx(i+1,j,k,1)));</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            Real fracy = (ccm(i,jj,k) || ccm(i+1,jj,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcx(i+1,j,k,0)) : 0.0_rt;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            Real fracz = (ccm(i,j,kk) || ccm(i+1,j,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcx(i+1,j,k,1)) : 0.0_rt;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            fxp = (1.0-fracy)*(1.0-fracz)*fxp</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                +      fracy *(1.0-fracz)*u(i+1,jj,k ,n)</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                +      fracz *(1.0-fracy)*u(i+1,j ,kk,n)</div>
@@ -379,10 +379,10 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        Real fym = v(i,j,k,n);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">if</span> (apy(i,j,k) != 0.0 &amp;&amp; apy(i,j,k) != 1.0) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcy(i,j,k,0)));</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcy(i,j,k,1)));</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            Real fracx = (ccm(ii,j-1,k) || ccm(ii,j,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j,k,0)) : 0.0_rt;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            Real fracz = (ccm(i,j-1,kk) || ccm(i,j,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j,k,1)) : 0.0_rt;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcy(i,j,k,0)));</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcy(i,j,k,1)));</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            Real fracx = (ccm(ii,j-1,k) || ccm(ii,j,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcy(i,j,k,0)) : 0.0_rt;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            Real fracz = (ccm(i,j-1,kk) || ccm(i,j,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcy(i,j,k,1)) : 0.0_rt;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            fym = (1.0-fracx)*(1.0-fracz)*fym</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                +      fracx *(1.0-fracz)*v(ii,j,k ,n)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                +      fracz *(1.0-fracx)*v(i ,j,kk,n)</div>
@@ -391,10 +391,10 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        Real fyp = v(i,j+1,k,n);</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span> (apy(i,j+1,k) != 0.0 &amp;&amp; apy(i,j+1,k) != 1.0) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcy(i,j+1,k,0)));</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcy(i,j+1,k,1)));</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            Real fracx = (ccm(ii,j,k) || ccm(ii,j+1,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j+1,k,0)) : 0.0_rt;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            Real fracz = (ccm(i,j,kk) || ccm(i,j+1,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j+1,k,1)) : 0.0_rt;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcy(i,j+1,k,0)));</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordtype">int</span> kk = k + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcy(i,j+1,k,1)));</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            Real fracx = (ccm(ii,j,k) || ccm(ii,j+1,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcy(i,j+1,k,0)) : 0.0_rt;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            Real fracz = (ccm(i,j,kk) || ccm(i,j+1,kk)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcy(i,j+1,k,1)) : 0.0_rt;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            fyp = (1.0-fracx)*(1.0-fracz)*fyp</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                +      fracx *(1.0-fracz)*v(ii,j+1,k ,n)</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                +      fracz *(1.0-fracx)*v(i ,j+1,kk,n)</div>
@@ -403,10 +403,10 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        Real fzm = w(i,j,k,n);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">if</span> (apz(i,j,k) != 0.0 &amp;&amp; apz(i,j,k) != 1.0) {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcz(i,j,k,0)));</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcz(i,j,k,1)));</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            Real fracx = (ccm(ii,j,k-1) || ccm(ii,j,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k,0)) : 0.0_rt;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            Real fracy = (ccm(i,jj,k-1) || ccm(i,jj,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k,1)) : 0.0_rt;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcz(i,j,k,0)));</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcz(i,j,k,1)));</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            Real fracx = (ccm(ii,j,k-1) || ccm(ii,j,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcz(i,j,k,0)) : 0.0_rt;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            Real fracy = (ccm(i,jj,k-1) || ccm(i,jj,k)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcz(i,j,k,1)) : 0.0_rt;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            fzm = (1.0-fracx)*(1.0-fracy)*fzm</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                +      fracx *(1.0-fracy)*w(ii,j ,k,n)</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                +      fracy *(1.0-fracx)*w(i ,jj,k,n)</div>
@@ -415,10 +415,10 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        Real fzp = w(i,j,k+1,n);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (apz(i,j,k+1) != 0.0 &amp;&amp; apz(i,j,k+1) != 1.0) {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcz(i,j,k+1,0)));</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::copysign(1.0_rt,fcz(i,j,k+1,1)));</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            Real fracx = (ccm(ii,j,k) || ccm(ii,j,k+1)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k+1,0)) : 0.0_rt;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            Real fracy = (ccm(i,jj,k) || ccm(i,jj,k+1)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k+1,1)) : 0.0_rt;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordtype">int</span> ii = i + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcz(i,j,k+1,0)));</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordtype">int</span> jj = j + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::copysign(1.0_rt,fcz(i,j,k+1,1)));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            Real fracx = (ccm(ii,j,k) || ccm(ii,j,k+1)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcz(i,j,k+1,0)) : 0.0_rt;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            Real fracy = (ccm(i,jj,k) || ccm(i,jj,k+1)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcz(i,j,k+1,1)) : 0.0_rt;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            fzp = (1.0-fracx)*(1.0-fracy)*fzp</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                +      fracx *(1.0-fracy)*w(ii,j ,k+1,n)</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                +      fracy *(1.0-fracx)*w(i ,jj,k+1,n)</div>
@@ -498,9 +498,9 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordtype">int</span> ii = (gx &lt; 0.0) ? i - 1 : i + 1;</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordtype">int</span> jj = (gy &lt; 0.0) ? j - 1 : j + 1;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordtype">int</span> kk = (gz &lt; 0.0) ? k - 1 : k + 1;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        gx = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gx);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        gy = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gy);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        gz = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gz);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        gx = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gx);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        gy = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gy);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        gz = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gz);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        Real gxy = gx*gy;</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        Real gxz = gx*gz;</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        Real gyz = gy*gz;</div>
@@ -562,8 +562,8 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordtype">int</span> ii = i - 1;</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        <span class="keywordtype">int</span> jj = (gy &lt; 0.0) ? j - 1 : j + 1;</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        <span class="keywordtype">int</span> kk = (gz &lt; 0.0) ? k - 1 : k + 1;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        gy = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gy);</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        gz = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gz);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        gy = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gy);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        gz = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gz);</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        Real gxy = gx*gy;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        Real gxz = gx*gz;</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        Real gyz = gy*gz;</div>
@@ -625,8 +625,8 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordtype">int</span> ii = (gx &lt; 0.0) ? i - 1 : i + 1;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordtype">int</span> jj = j - 1;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <span class="keywordtype">int</span> kk = (gz &lt; 0.0) ? k - 1 : k + 1;</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        gx = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gx);</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        gz = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gz);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        gx = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gx);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        gz = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gz);</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        Real gxy = gx*gy;</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        Real gxz = gx*gz;</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        Real gyz = gy*gz;</div>
@@ -688,8 +688,8 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        <span class="keywordtype">int</span> ii = (gx &lt; 0.0) ? i - 1 : i + 1;</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="keywordtype">int</span> jj = (gy &lt; 0.0) ? j - 1 : j + 1;</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <span class="keywordtype">int</span> kk = k -1;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        gx = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gx);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        gy = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(gy);</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        gx = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gx);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        gy = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(gy);</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        Real gxy = gx*gy;</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        Real gxz = gx*gz;</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        Real gyz = gy*gz;</div>
@@ -742,8 +742,8 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;      {</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;          phi_x(i,j,k,n) = 0.5 * ( phi(i,j,k,n) + phi(i-1,j,k,n) );</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;      }</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apx(i,j,k) == 1 &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,1)-ccent(i-1,j,k,1)) &lt; 1.e-8) &amp;&amp;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                                   (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,2)-ccent(i-1,j,k,2)) &lt; 1.e-8) )</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apx(i,j,k) == 1 &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(ccent(i,j,k,1)-ccent(i-1,j,k,1)) &lt; 1.e-8) &amp;&amp;</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                                   (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(ccent(i,j,k,2)-ccent(i-1,j,k,2)) &lt; 1.e-8) )</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;      {</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;          Real d0 = 0.5 + ccent(i  ,j,k,0);                               <span class="comment">// distance in x-dir from centroid(i  ,j) to face(i,j)</span></div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;          Real d1 = 0.5 - ccent(i-1,j,k,0);                               <span class="comment">// distance in x-dir from centroid(i-1,j) to face(i,j)</span></div>
@@ -756,14 +756,14 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;          <span class="comment">// We must add additional tests to avoid the case where fcx is very close to zero, but j-1/j+1 or k-1/k+1</span></div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;          <span class="comment">//    might be covered cells -- this can happen when the EB is exactly aligned with the horizontal grid planes</span></div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;          <span class="keywordtype">int</span> jj,kk;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i,j,k,0)) &gt; 1.e-8)</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcx(i,j,k,0)) &gt; 1.e-8)</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;              jj = (fcx(i,j,k,0) &lt; 0.0) ? j - 1 : j + 1;</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apx(i,j-1,k) &gt; 0.)</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;              jj = j-1;</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;          <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;              jj = j+1;</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160; </div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i,j,k,1)) &gt; 1.e-8)</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcx(i,j,k,1)) &gt; 1.e-8)</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;              kk = (fcx(i,j,k,1) &lt; 0.0) ? k - 1 : k + 1;</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apx(i,j,k-1) &gt; 0.)</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;              kk = k-1;</div>
@@ -955,8 +955,8 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;        {</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            phi_y(i,j,k,n) = 0.5 * (phi(i,j  ,k,n) + phi(i,j-1,k,n));</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        }</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apy(i,j,k) == 1. &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,0)-ccent(i,j-1,k,0)) &lt; 1.e-8) &amp;&amp;</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                                      (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,2)-ccent(i,j-1,k,2)) &lt; 1.e-8) )</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apy(i,j,k) == 1. &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(ccent(i,j,k,0)-ccent(i,j-1,k,0)) &lt; 1.e-8) &amp;&amp;</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                                      (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(ccent(i,j,k,2)-ccent(i,j-1,k,2)) &lt; 1.e-8) )</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        {</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            Real d0 = 0.5 + ccent(i,j  ,k,1);                                <span class="comment">// distance in y-dir from centroid(i,j  ,k) to face(i,j,k)</span></div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            Real d1 = 0.5 - ccent(i,j-1,k,1);                                <span class="comment">// distance in y-dir from centroid(i,j-1,k) to face(i,j,k)</span></div>
@@ -970,14 +970,14 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;          <span class="comment">// We must add additional tests to avoid the case where fcy is very close to zero, but i-1/i+1 or k-1/k+1</span></div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;          <span class="comment">//    might be covered cells -- this can happen when the EB is exactly aligned with the grid planes</span></div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;          <span class="keywordtype">int</span> ii,kk;</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j,k,0)) &gt; 1.e-8)</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcy(i,j,k,0)) &gt; 1.e-8)</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;              ii = (fcy(i,j,k,0) &lt; 0.0) ? i - 1 : i + 1;</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apy(i-1,j,k) &gt; 0.)</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;              ii = i-1;</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;          <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;              ii = i+1;</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j,k,1)) &gt; 1.e-8)</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcy(i,j,k,1)) &gt; 1.e-8)</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;              kk = (fcy(i,j,k,1) &lt; 0.0) ? k - 1 : k + 1;</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apy(i,j,k-1) &gt; 0.)</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;              kk = k-1;</div>
@@ -1166,8 +1166,8 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        {</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;            phi_z(i,j,k,n) = 0.5 * (phi(i,j,k,n) + phi(i,j,k-1,n));</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;        }</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apz(i,j,k) == 1. &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,0)-ccent(i,j,k-1,0)) &lt; 1.e-8) &amp;&amp;</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;                                      (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,1)-ccent(i,j,k-1,1)) &lt; 1.e-8) )</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apz(i,j,k) == 1. &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(ccent(i,j,k,0)-ccent(i,j,k-1,0)) &lt; 1.e-8) &amp;&amp;</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;                                      (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(ccent(i,j,k,1)-ccent(i,j,k-1,1)) &lt; 1.e-8) )</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;        {</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;            Real d0 = 0.5 + ccent(i,j,k  ,2);                                <span class="comment">// distance in z-dir from centroid(i,j,k  ) to face(i,j,k)</span></div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;            Real d1 = 0.5 - ccent(i,j,k-1,2);                                <span class="comment">// distance in z-dir from centroid(i,j,k-1) to face(i,j,k)</span></div>
@@ -1180,14 +1180,14 @@ $(document).ready(function(){initNavTree('AMReX__EBMultiFabUtil__3D__C_8H_source
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;          <span class="comment">// We must add additional tests to avoid the case where fcz is very close to zero, but i-1/i+1 or j-1/j+1</span></div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;          <span class="comment">//    might be covered cells -- this can happen when the EB is exactly aligned with the grid planes</span></div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;          <span class="keywordtype">int</span> ii,jj;</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k,0)) &gt; 1.e-8)</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcz(i,j,k,0)) &gt; 1.e-8)</div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;              ii = (fcz(i,j,k,0) &lt; 0.0) ? i - 1 : i + 1;</div>
 <div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apz(i-1,j,k) &gt; 0.)</div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;              ii = i-1;</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;          <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;              ii = i+1;</div>
 <div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160; </div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k,1)) &gt; 1.e-8)</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(fcz(i,j,k,1)) &gt; 1.e-8)</div>
 <div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;              jj = (fcz(i,j,k,1) &lt; 0.0) ? j - 1 : j + 1;</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apz(i,j-1,k) &gt; 0.)</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;              jj = j-1;</div>
