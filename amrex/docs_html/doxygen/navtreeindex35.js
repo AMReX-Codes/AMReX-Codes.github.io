@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"classamrex_1_1EB2_1_1IndexSpaceSTL.html#afa9591f706505991554b147f3d2a137b":[2,0,0,4,44,6],
+"classamrex_1_1EB2_1_1IntersectionIF.html":[2,0,0,4,21],
 "classamrex_1_1EB2_1_1IntersectionIF.html#a89428abce93c8dd7f913b7c2c9cbbe70":[2,0,0,4,21,3],
 "classamrex_1_1EB2_1_1IntersectionIF.html#ac953fe2cb4312628b6ae8dea7c7fd74d":[2,0,0,4,21,1],
 "classamrex_1_1EB2_1_1IntersectionIF.html#ac9c3a8ba66c8ad8c372042f871d4cef9":[2,0,0,4,21,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "classamrex_1_1EBCellFlagFab.html#a328da9c6a1ffe5ff87003fdc9d5a7e9d":[2,0,0,370,5],
 "classamrex_1_1EBCellFlagFab.html#a5543ed9a9e620af529ce92b82b6498f3":[2,0,0,370,11],
 "classamrex_1_1EBCellFlagFab.html#a57d4f25c01e84b842b1456dee7985600":[2,0,0,370,16],
-"classamrex_1_1EBCellFlagFab.html#a5fbbd6cfac2268f9286c156e7ecd7ea6":[2,0,0,370,13],
-"classamrex_1_1EBCellFlagFab.html#a625c1eeed8e477ce6df628fdf55059a9":[2,0,0,370,17],
-"classamrex_1_1EBCellFlagFab.html#a914a481cd7a1365cd6e02ebdf629131d":[2,0,0,370,18]
+"classamrex_1_1EBCellFlagFab.html#a5fbbd6cfac2268f9286c156e7ecd7ea6":[2,0,0,370,13]
 };

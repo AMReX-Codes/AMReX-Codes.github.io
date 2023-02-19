@@ -1,5 +1,9 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1VectorTag.html#ad0d6dc44218f3617cbd739d953ea577d":[2,0,0,223,1],
+"structamrex_1_1VisMF_1_1FabOnDisk.html":[2,0,0,264,0],
+"structamrex_1_1VisMF_1_1FabOnDisk.html#a08d8b76506a8aaa7d9f43fbf3afbd089":[2,0,0,264,0,1],
+"structamrex_1_1VisMF_1_1FabOnDisk.html#a2592709514015ee6c2e68a254a2b5806":[2,0,0,264,0,2],
 "structamrex_1_1VisMF_1_1FabOnDisk.html#a3384af022eabbdadda0f20d0bda79ebe":[2,0,0,264,0,3],
 "structamrex_1_1VisMF_1_1FabOnDisk.html#a909e67bdc85c7a669788ae3144c7709a":[2,0,0,264,0,0],
 "structamrex_1_1VisMF_1_1FabReadLink.html":[2,0,0,264,1],
@@ -75,8 +79,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,5,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1parser__node.html#aeb2f3f6f5f90a7cc9843357edecb2538":[2,0,0,345,2],
 "structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[2,0,0,345,4],
 "structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0":[2,0,0,345,1],
-"structamrex_1_1parser__number.html":[2,0,0,346],
-"structamrex_1_1parser__number.html#a9b8b81a5486eb6114f80a5a40489fd92":[2,0,0,346,1],
-"structamrex_1_1parser__number.html#ab186dabf87779fb9b65fe0edc854e46c":[2,0,0,346,0],
-"structamrex_1_1parser__symbol.html":[2,0,0,347],
-"structamrex_1_1parser__symbol.html#a36d42d12dc34e9e1a3321c27539bb34d":[2,0,0,347,1]
+"structamrex_1_1parser__number.html":[2,0,0,346]
 };
