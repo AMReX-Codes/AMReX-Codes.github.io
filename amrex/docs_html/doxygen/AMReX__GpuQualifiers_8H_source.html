@@ -133,18 +133,10 @@ $(document).ready(function(){initNavTree('AMReX__GpuQualifiers_8H_source.html','
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a57609a8d4ed3ca830395e1198e3730af">   32</a></span>&#160;<span class="preprocessor">#define AMREX_DEVICE_COMPILE (__CUDA_ARCH__ || __HIP_DEVICE_COMPILE__ || __SYCL_DEVICE_ONLY__)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"># include &lt;sycl/sycl.hpp&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"># include &lt;sycl/sycl.hpp&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"># define AMREX_REQUIRE_SUBGROUP_SIZE(x) \</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">  _Pragma(&quot;clang diagnostic push&quot;</span>) \</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  _Pragma(&quot;clang diagnostic ignored \&quot;-Wattributes\&quot;&quot;) \</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  [[intel::reqd_sub_group_size(x)]]                \</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  _Pragma(&quot;clang diagnostic pop&quot;)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AMREX_USE_SYCL</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
