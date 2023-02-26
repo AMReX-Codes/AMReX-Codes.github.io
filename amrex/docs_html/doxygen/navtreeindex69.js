@@ -1,5 +1,7 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex__lo__bctypes__module.html#aace6b018ab12cf7950ce9fa43315264f":[1,0,10,7],
+"namespaceamrex__lo__bctypes__module.html#ae57c995809ba0ed96cd8666e01a1950e":[1,0,10,1],
 "namespaceamrex__lo__bctypes__module.html#af64f16e71c4cbd71d10e5e0f1c231247":[1,0,10,6],
 "namespaceamrex__lo__util__module.html":[1,0,11],
 "namespaceamrex__lo__util__module.html#a9b3a8d158e19f71d1af1ebe894c7d3de":[1,0,11,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX69 =
 "structBLProfStats_1_1CallTreeNode.html":[2,0,15,1],
 "structBLProfStats_1_1CallTreeNode.html#a07acaf5c443edd83d069c9056d2284e3":[2,0,15,1,4],
 "structBLProfStats_1_1CallTreeNode.html#a39d682d74e38686a5bf06bfabb5827d1":[2,0,15,1,6],
-"structBLProfStats_1_1CallTreeNode.html#a58a170e22648cb330508a33ecd8396c5":[2,0,15,1,0],
-"structBLProfStats_1_1CallTreeNode.html#a696987a2e37d477370485150489b48df":[2,0,15,1,1],
-"structBLProfStats_1_1CallTreeNode.html#a715cf5d864be62cf72c0e554738068bb":[2,0,15,1,3]
+"structBLProfStats_1_1CallTreeNode.html#a58a170e22648cb330508a33ecd8396c5":[2,0,15,1,0]
 };

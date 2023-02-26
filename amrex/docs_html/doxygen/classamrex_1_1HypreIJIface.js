@@ -22,6 +22,8 @@ var classamrex_1_1HypreIJIface =
     [ "lgmres_solver_configure", "classamrex_1_1HypreIJIface.html#a2dce11a296890cc9e974d2e9102eba29", null ],
     [ "parse_inputs", "classamrex_1_1HypreIJIface.html#a2b706d04a2952ad586d31f26184b927b", null ],
     [ "pcg_solver_configure", "classamrex_1_1HypreIJIface.html#a24dc1ec87efeca4c5719f268b4a3cfb9", null ],
+    [ "run_hypre_setup", "classamrex_1_1HypreIJIface.html#aa5e6faf396f20e79f5a8997d826d70e4", null ],
+    [ "run_hypre_solve", "classamrex_1_1HypreIJIface.html#ae6fb3e32e3041f2cee891a7b52f7088e", null ],
     [ "solve", "classamrex_1_1HypreIJIface.html#ab4bdb5426d0cca26e1afe5101c1f71af", null ],
     [ "x", "classamrex_1_1HypreIJIface.html#adee4e26d0112560a0d334844d548a91f", null ],
     [ "m_adjust_singular_matrix", "classamrex_1_1HypreIJIface.html#af24450dfdae7450d10455cae431fb457", null ],

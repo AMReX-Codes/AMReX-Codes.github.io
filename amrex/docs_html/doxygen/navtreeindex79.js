@@ -1,5 +1,7 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1VectorTag.html#a3769fec569be6c2c4379be5bdd1329b6":[2,0,0,223,2],
+"structamrex_1_1VectorTag.html#a39f4b6f8eff085cdbe1c56f1c637f932":[2,0,0,223,0],
 "structamrex_1_1VectorTag.html#ad0d6dc44218f3617cbd739d953ea577d":[2,0,0,223,1],
 "structamrex_1_1VisMF_1_1FabOnDisk.html":[2,0,0,264,0],
 "structamrex_1_1VisMF_1_1FabOnDisk.html#a08d8b76506a8aaa7d9f43fbf3afbd089":[2,0,0,264,0,1],
@@ -79,8 +81,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1parser__node.html#a3a9f4a4402fe7b5d744bf67fa9d0d21d":[2,0,0,345,0],
 "structamrex_1_1parser__node.html#a4bf0ec524b5c9134d413514ff75a7033":[2,0,0,345,3],
 "structamrex_1_1parser__node.html#aeb2f3f6f5f90a7cc9843357edecb2538":[2,0,0,345,2],
-"structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[2,0,0,345,4],
-"structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0":[2,0,0,345,1],
-"structamrex_1_1parser__number.html":[2,0,0,346]
+"structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[2,0,0,345,4]
 };
