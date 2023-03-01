@@ -148,6 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd6b026129f35157aa2b3945a37bdbd3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#abd6b026129f35157aa2b3945a37bdbd3">hasFreeDeviceMemory</a> (std::size_t sz)</td></tr>
 <tr class="memdesc:abd6b026129f35157aa2b3945a37bdbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does the device have enough free memory for allocating this much memory? For CPU builds, this always return true. This is not a const funciton because it may attempt to release memory back to the system.  <a href="classamrex_1_1Arena.html#abd6b026129f35157aa2b3945a37bdbd3">More...</a><br /></td></tr>
 <tr class="separator:abd6b026129f35157aa2b3945a37bdbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99982885760cd861e6e860dea40ea64f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f">registerForProfiling</a> (const std::string &amp;memory_name)</td></tr>
+<tr class="memdesc:a99982885760cd861e6e860dea40ea64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> to the list of Arenas that are profiled by <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a>.  <a href="classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f">More...</a><br /></td></tr>
+<tr class="separator:a99982885760cd861e6e860dea40ea64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1af72a36a13904de0715917915db1f6b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a1af72a36a13904de0715917915db1f6b">arenaInfo</a> () const</td></tr>
 <tr class="memdesc:a1af72a36a13904de0715917915db1f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="structamrex_1_1ArenaInfo.html">ArenaInfo</a> object for querying.  <a href="classamrex_1_1Arena.html#a1af72a36a13904de0715917915db1f6b">More...</a><br /></td></tr>
 <tr class="separator:a1af72a36a13904de0715917915db1f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -725,6 +728,42 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99982885760cd861e6e860dea40ea64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99982885760cd861e6e860dea40ea64f">&#9670;&nbsp;</a></span>registerForProfiling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Arena::registerForProfiling </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>memory_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add this <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation.">Arena</a> to the list of Arenas that are profiled by <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">memory_name</td><td>The name of this arena in the <a class="el" href="classamrex_1_1TinyProfiler.html" title="A simple profiler that returns basic performance information (e.g. min, max, and average running time...">TinyProfiler</a> output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1CArena.html#a6ed3ebcb392722b2895a296e5e644e90">amrex::CArena</a>.</p>
 
 </div>
 </div>

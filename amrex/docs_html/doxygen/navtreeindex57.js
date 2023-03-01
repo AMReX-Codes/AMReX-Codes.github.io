@@ -1,5 +1,12 @@
 var NAVTREEINDEX57 =
 {
+"interfaceamrex__mempool__module_1_1bl__deallocate.html#ac20d001ceb12398adde28bf077e9ca1d":[2,0,5,3,5],
+"interfaceamrex__mempool__module_1_1bl__deallocate.html#acffa0dad2aaa9bd63a20fc8ff3bb163b":[2,0,5,3,3],
+"interfaceamrex__mempool__module_1_1bl__deallocate.html#af24cc70cc5b583aad1ed1b171417f778":[2,0,5,3,7],
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__bcast__r.html":[2,0,6,4],
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__bcast__r.html#ace812da34b7598d9fd221a594080b255":[2,0,6,4,0],
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor.html":[2,0,6,2],
+"interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor.html#ac765a3578df4e62522d21e0eb6ec2969":[2,0,6,2,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor__number.html":[2,0,6,3],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__ioprocessor__number.html#a8982f3fdc602ce3e7a05c55d7193667c":[2,0,6,3,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__myproc.html":[2,0,6,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX57 =
 "namespaceamrex.html#a1798b9b2e1585609dcc68430ad8502e5":[1,0,0,754],
 "namespaceamrex.html#a179e9e92efeda70728fddf2ead4e9360":[1,0,0,1456],
 "namespaceamrex.html#a179fafc569924202b166896b608cd5c2":[1,0,0,513],
-"namespaceamrex.html#a17aa260620939b7f819a7717d06b11d0":[1,0,0,1287],
-"namespaceamrex.html#a17dc6a5f2f58fef3ff23153f88f565ae":[1,0,0,1379],
-"namespaceamrex.html#a18058abd47bcc0f005182c829f1f4e0a":[1,0,0,921],
-"namespaceamrex.html#a187cdb4f4273fdf9bcad01ac8e3fcc4d":[1,0,0,1101],
-"namespaceamrex.html#a1884e8cc3ccdbb7eb0608221b4833133":[1,0,0,647],
-"namespaceamrex.html#a18f76938d120a4d9891cc99e67cab771":[1,0,0,1865],
-"namespaceamrex.html#a19368a040b960bd1ba5b2f39435e1c07":[1,0,0,776],
-"namespaceamrex.html#a193c40127f1734f83e3bb23cab534a24":[1,0,0,516]
+"namespaceamrex.html#a17aa260620939b7f819a7717d06b11d0":[1,0,0,1287]
 };

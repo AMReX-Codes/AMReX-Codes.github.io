@@ -146,8 +146,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa18e47ed6d7f7f022f44468576255dca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#aa18e47ed6d7f7f022f44468576255dca">memory_alloc</a> (std::size_t nbytes, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> memtype) noexcept</td></tr>
-<tr class="separator:aa18e47ed6d7f7f022f44468576255dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7973da4e33568c937969b5eec423e21e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a7973da4e33568c937969b5eec423e21e">memory_alloc</a> (std::size_t nbytes, std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;memstats) noexcept</td></tr>
+<tr class="separator:a7973da4e33568c937969b5eec423e21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf44a0af5564add5abbde50e6b9aa570"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#acf44a0af5564add5abbde50e6b9aa570">memory_free</a> (std::size_t nbytes, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> *stat) noexcept</td></tr>
 <tr class="separator:acf44a0af5564add5abbde50e6b9aa570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae63aac3a7741cc60cb66504da479b50a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#ae63aac3a7741cc60cb66504da479b50a">Initialize</a> () noexcept</td></tr>
@@ -158,6 +158,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a106fc3c7abfb4df3cc62527b62c2aff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28131b0e3240b1df559a63c255fc6d72"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a28131b0e3240b1df559a63c255fc6d72">MemoryFinalize</a> (bool bFlushing=false) noexcept</td></tr>
 <tr class="separator:a28131b0e3240b1df559a63c255fc6d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3b7bc8c1643be36ccc4d41df0dbec7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#acf3b7bc8c1643be36ccc4d41df0dbec7">RegisterArena</a> (const std::string &amp;memory_name, std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;memstats) noexcept</td></tr>
+<tr class="separator:acf3b7bc8c1643be36ccc4d41df0dbec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c89134a317d3c1cb595a236bdaeff0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#af7c89134a317d3c1cb595a236bdaeff0">DeregisterArena</a> (std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;memstats) noexcept</td></tr>
+<tr class="separator:af7c89134a317d3c1cb595a236bdaeff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf8db78796b24b46b0483e5b61ed1d84"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#abf8db78796b24b46b0483e5b61ed1d84">StartRegion</a> (std::string regname) noexcept</td></tr>
 <tr class="separator:abf8db78796b24b46b0483e5b61ed1d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96b507c36165550f9a2bf115aedc5fb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#ac96b507c36165550f9a2bf115aedc5fb">StopRegion</a> (const std::string &amp;regname) noexcept</td></tr>
@@ -189,8 +193,10 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a175f44d41236b9cd4b6268fc0488ac5e"><td class="memItemLeft" align="right" valign="top">static std::deque&lt; const <a class="el" href="classamrex_1_1TinyProfiler.html">TinyProfiler</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a175f44d41236b9cd4b6268fc0488ac5e">mem_stack</a></td></tr>
 <tr class="separator:a175f44d41236b9cd4b6268fc0488ac5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e8fc1cf03c788fc91692b5b4b7b62d6"><td class="memItemLeft" align="right" valign="top">static std::array&lt; std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt;, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a0e8fc1cf03c788fc91692b5b4b7b62d6">mem_statsmap</a></td></tr>
-<tr class="separator:a0e8fc1cf03c788fc91692b5b4b7b62d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac60aa8448dcfb383a94e4f607dfc01"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#adac60aa8448dcfb383a94e4f607dfc01">all_memstats</a></td></tr>
+<tr class="separator:adac60aa8448dcfb383a94e4f607dfc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5a66e30e341fc78c3e29f260fb7904"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a4c5a66e30e341fc78c3e29f260fb7904">all_memnames</a></td></tr>
+<tr class="separator:a4c5a66e30e341fc78c3e29f260fb7904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03febcd85f7ea80790cac0181b9c2b1b"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a03febcd85f7ea80790cac0181b9c2b1b">regionstack</a></td></tr>
 <tr class="separator:a03febcd85f7ea80790cac0181b9c2b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55b136d8859480b76a1311cff89009a0"><td class="memItemLeft" align="right" valign="top">static std::deque&lt; std::tuple&lt; double, double, std::string * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TinyProfiler.html#a55b136d8859480b76a1311cff89009a0">ttstack</a></td></tr>
@@ -363,6 +369,32 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af7c89134a317d3c1cb595a236bdaeff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c89134a317d3c1cb595a236bdaeff0">&#9670;&nbsp;</a></span>DeregisterArena()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::TinyProfiler::DeregisterArena </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>memstats</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2344d0f82665ec2e7efe266b015d163c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2344d0f82665ec2e7efe266b015d163c">&#9670;&nbsp;</a></span>Finalize()</h2>
 
@@ -414,8 +446,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa18e47ed6d7f7f022f44468576255dca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa18e47ed6d7f7f022f44468576255dca">&#9670;&nbsp;</a></span>memory_alloc()</h2>
+<a id="a7973da4e33568c937969b5eec423e21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7973da4e33568c937969b5eec423e21e">&#9670;&nbsp;</a></span>memory_alloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,8 +464,8 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>memtype</em>&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>memstats</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -691,6 +723,42 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="acf3b7bc8c1643be36ccc4d41df0dbec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3b7bc8c1643be36ccc4d41df0dbec7">&#9670;&nbsp;</a></span>RegisterArena()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::TinyProfiler::RegisterArena </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>memory_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>memstats</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa79d79de0a3a1e592808ea80448e1637"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa79d79de0a3a1e592808ea80448e1637">&#9670;&nbsp;</a></span>start()</h2>
 
@@ -794,6 +862,50 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4c5a66e30e341fc78c3e29f260fb7904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c5a66e30e341fc78c3e29f260fb7904">&#9670;&nbsp;</a></span>all_memnames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; amrex::TinyProfiler::all_memnames</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adac60aa8448dcfb383a94e4f607dfc01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac60aa8448dcfb383a94e4f607dfc01">&#9670;&nbsp;</a></span>all_memstats</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt; * &gt; amrex::TinyProfiler::all_memstats</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac2c4c05ecf95fbad73a0bb49012431ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2c4c05ecf95fbad73a0bb49012431ec">&#9670;&nbsp;</a></span>device_synchronize_around_region</h2>
 
@@ -893,28 +1005,6 @@ Static Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::deque&lt; const <a class="el" href="classamrex_1_1TinyProfiler.html">TinyProfiler</a> * &gt; amrex::TinyProfiler::mem_stack</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0e8fc1cf03c788fc91692b5b4b7b62d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e8fc1cf03c788fc91692b5b4b7b62d6">&#9670;&nbsp;</a></span>mem_statsmap</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt; std::map&lt; std::string, <a class="el" href="structamrex_1_1MemStat.html">MemStat</a> &gt;, 4 &gt; amrex::TinyProfiler::mem_statsmap</td>
         </tr>
       </table>
   </td>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[2,0,0,345,4],
 "structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0":[2,0,0,345,1],
 "structamrex_1_1parser__number.html":[2,0,0,346],
 "structamrex_1_1parser__number.html#a9b8b81a5486eb6114f80a5a40489fd92":[2,0,0,346,1],
