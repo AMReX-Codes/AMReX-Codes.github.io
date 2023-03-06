@@ -112,6 +112,8 @@ var classamrex_1_1ParticleContainer =
     [ "reserveData", "classamrex_1_1ParticleContainer.html#a0e98d8607c64975b15e782c6c446228e", null ],
     [ "Reset", "classamrex_1_1ParticleContainer.html#abfae5d5f8542b20a84462bc91073d424", null ],
     [ "resizeData", "classamrex_1_1ParticleContainer.html#a5426a68c091fe10949b169a3a91cd6e0", null ],
+    [ "ResizeRuntimeIntComp", "classamrex_1_1ParticleContainer.html#a50d4e14771a1d9613045e620f4383179", null ],
+    [ "ResizeRuntimeRealComp", "classamrex_1_1ParticleContainer.html#a3c53013ab195155b4fd37218af03ffb2", null ],
     [ "Restart", "classamrex_1_1ParticleContainer.html#a471e8dc79b6f170e96c6022938ce21a1", null ],
     [ "Restart", "classamrex_1_1ParticleContainer.html#ae8a0e12f918ea400911afe914aacad95", null ],
     [ "SetLevelDirectoriesCreated", "classamrex_1_1ParticleContainer.html#a1805463ec66ddf9afc4f502fffa3db83", null ],
