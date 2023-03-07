@@ -41,6 +41,7 @@ var AMReX__MultiFabUtil_8H =
     [ "NormHelper", "AMReX__MultiFabUtil_8H.html#ac69a4b4233f10007191d780450271dd2", null ],
     [ "periodicShift", "AMReX__MultiFabUtil_8H.html#a48b0e0bc9bd17bdcba18aa237718737f", null ],
     [ "print_state", "AMReX__MultiFabUtil_8H.html#aac09e7e5e074f207deb9fae3b4e9148f", null ],
+    [ "ReduceToPlane", "AMReX__MultiFabUtil_8H.html#abd054b552350fba9a54c301c899bd1b8", null ],
     [ "sum_fine_to_coarse", "AMReX__MultiFabUtil_8H.html#ab67331acff75bf2840f409750b1ada66", null ],
     [ "sumToLine", "AMReX__MultiFabUtil_8H.html#a882a700cf7fab66ee3ce8de37de3ef73", null ],
     [ "ToLongMultiFab", "AMReX__MultiFabUtil_8H.html#ae062fb7f904c1f39327797d8c3fea414", null ],

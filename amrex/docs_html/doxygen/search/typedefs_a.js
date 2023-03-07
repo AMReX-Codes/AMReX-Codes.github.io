@@ -1,23 +1,7 @@
 var searchData=
 [
-  ['manageddevicevector_17183',['ManagedDeviceVector',['../namespaceamrex_1_1Gpu.html#af22f411b79da7033051cdfa1539e21be',1,'amrex::Gpu']]],
-  ['managedvector_17184',['ManagedVector',['../namespaceamrex_1_1Gpu.html#ab2661b6ddd9751b7e197a9d619dabc7b',1,'amrex::Gpu']]],
-  ['mapofcopycomtagcontainers_17185',['MapOfCopyComTagContainers',['../classamrex_1_1FabArrayBase.html#a70b58356e2e49c69d54eed3850a9c231',1,'amrex::FabArrayBase::MapOfCopyComTagContainers()'],['../classamrex_1_1MultiFab.html#a9abff4a4be6d566975e62a4682960b96',1,'amrex::MultiFab::MapOfCopyComTagContainers()'],['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#ac93e9be5fadb2a282072412f8801a271',1,'amrex::FabArrayBase::CopyComTag::MapOfCopyComTagContainers()']]],
-  ['maxressteadyclock_17186',['MaxResSteadyClock',['../namespaceamrex.html#ae337b46a7ca54b353861635503079536',1,'amrex']]],
-  ['mlabeclaplacian_17187',['MLABecLaplacian',['../namespaceamrex.html#aa9c032480d2659c266fb23d70800f6a5',1,'amrex']]],
-  ['mlalaplacian_17188',['MLALaplacian',['../namespaceamrex.html#afd71b3eea629ca099ace90909350cc56',1,'amrex']]],
-  ['mlcellabeclap_17189',['MLCellABecLap',['../namespaceamrex.html#a2116fd8f117dd8ebb01e6a3b99c7947e',1,'amrex']]],
-  ['mlcelllinop_17190',['MLCellLinOp',['../namespaceamrex.html#a6d2f435b4a824073e4ba2c714ff4770b',1,'amrex']]],
-  ['mlcgsolver_17191',['MLCGSolver',['../namespaceamrex.html#adc786fadc751afd641a3d05650467dfc',1,'amrex']]],
-  ['mllinop_17192',['MLLinOp',['../namespaceamrex.html#a6cfa07a78393bb456aa7d33ced04fb46',1,'amrex']]],
-  ['mlmg_17193',['MLMG',['../namespaceamrex.html#a77b48f471801c4f6a597804a89c3b543',1,'amrex']]],
-  ['mlmgbndry_17194',['MLMGBndry',['../namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9',1,'amrex']]],
-  ['mlpoisson_17195',['MLPoisson',['../namespaceamrex.html#a339ac1b3381df4095a659ec2b7980cb3',1,'amrex']]],
-  ['mpi_5fcomm_17196',['MPI_Comm',['../AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9',1,'AMReX_ccse-mpi.H']]],
-  ['mpi_5fdatatype_17197',['MPI_Datatype',['../AMReX__ccse-mpi_8H.html#affc17fe964f9f670fb06e09d6134b4ff',1,'AMReX_ccse-mpi.H']]],
-  ['mpi_5fgroup_17198',['MPI_Group',['../AMReX__ccse-mpi_8H.html#a2e7770334e9e65834ce3c95dd0c3a50f',1,'AMReX_ccse-mpi.H']]],
-  ['mpi_5fop_17199',['MPI_Op',['../AMReX__ccse-mpi_8H.html#a1e6360539c256e76b432da612d0ec399',1,'AMReX_ccse-mpi.H']]],
-  ['mpi_5frequest_17200',['MPI_Request',['../AMReX__ccse-mpi_8H.html#a240e9d13a157e03c75e42306b13cd8d8',1,'AMReX_ccse-mpi.H']]],
-  ['multifabid_17201',['MultiFabId',['../namespaceamrex.html#a270e267cbd0e472dd8297d46a9c76854',1,'amrex']]],
-  ['mypariter_17202',['MyParIter',['../classamrex_1_1NeighborParticleContainer.html#a4f7f3ca7bf951e7ec6fce594005694da',1,'amrex::NeighborParticleContainer']]]
+  ['lipair_17195',['LIpair',['../classamrex_1_1DistributionMapping.html#a8bc191492d7a25e16f586ef1e625649c',1,'amrex::DistributionMapping']]],
+  ['list_5ftype_17196',['list_type',['../structamrex_1_1CompileTimeOptions.html#ade5844430b8549754df043e3cf4d870d',1,'amrex::CompileTimeOptions']]],
+  ['localcopy_5ft_17197',['LocalCopy_t',['../namespaceamrex_1_1NonLocalBC.html#a4b44aa3d7a205826948ced4323d0be80',1,'amrex::NonLocalBC']]],
+  ['location_17198',['Location',['../classamrex_1_1MLABecLaplacianT.html#aed1bdc13923f234ac4e4c6425210db69',1,'amrex::MLABecLaplacianT::Location()'],['../classamrex_1_1MLALaplacianT.html#aedfa751b8cf7f0d06a43e71b6e7795cf',1,'amrex::MLALaplacianT::Location()'],['../classamrex_1_1MLCellABecLapT.html#a97dd28df6c3a612116bc4d4f95fb98fb',1,'amrex::MLCellABecLapT::Location()'],['../classamrex_1_1MLCellLinOpT.html#ac93e5fc5cf3373e6711f1328b051b997',1,'amrex::MLCellLinOpT::Location()'],['../classamrex_1_1MLLinOpT.html#ac1e86de83222345c43a378d8698c9543',1,'amrex::MLLinOpT::Location()'],['../classamrex_1_1MLMGT.html#a4adf824fc2842cb7a07dcc0395627629',1,'amrex::MLMGT::Location()'],['../classamrex_1_1MLPoissonT.html#aee09d92cf1cb6a1f95ccadead11ccac4',1,'amrex::MLPoissonT::Location()']]]
 ];

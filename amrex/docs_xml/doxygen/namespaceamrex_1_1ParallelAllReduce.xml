@@ -3,21 +3,21 @@
   <compounddef id="namespaceamrex_1_1ParallelAllReduce" kind="namespace" language="C++">
     <compoundname>amrex::ParallelAllReduce</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a195a600b56559959513775be2f6f0fbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1ae1d56156af0262c668411501ef5f2592" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename TV</type>
+            <type>typename K</type>
           </param>
           <param>
-            <type>typename TI</type>
+            <type>typename V</type>
           </param>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::ParallelAllReduce::Max</definition>
-        <argsstring>(ValLocPair&lt; TV, TI &gt; &amp;vi, MPI_Comm comm)</argsstring>
+        <argsstring>(KeyValuePair&lt; K, V &gt; &amp;vi, MPI_Comm comm)</argsstring>
         <name>Max</name>
         <param>
-          <type><ref refid="structamrex_1_1ValLocPair" kindref="compound">ValLocPair</ref>&lt; TV, TI &gt; &amp;</type>
+          <type><ref refid="namespaceamrex_1a7dd6d3577db87cc950337b856e57f1f9" kindref="member">KeyValuePair</ref>&lt; K, V &gt; &amp;</type>
           <declname>vi</declname>
         </param>
         <param>
@@ -32,22 +32,26 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="125" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="125" bodyend="135"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1aebb7df37be32c5e1f03e9babc81318a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a52cd6d76e8a30d6a2dd9ff1835f036dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename TV</type>
+            <type>typename K</type>
           </param>
           <param>
-            <type>typename TI</type>
+            <type>typename V</type>
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::ParallelAllReduce::Min</definition>
-        <argsstring>(ValLocPair&lt; TV, TI &gt; &amp;vi, MPI_Comm comm)</argsstring>
-        <name>Min</name>
+        <definition>void amrex::ParallelAllReduce::Max</definition>
+        <argsstring>(KeyValuePair&lt; K, V &gt; *vi, int cnt, MPI_Comm comm)</argsstring>
+        <name>Max</name>
         <param>
-          <type><ref refid="structamrex_1_1ValLocPair" kindref="compound">ValLocPair</ref>&lt; TV, TI &gt; &amp;</type>
+          <type><ref refid="namespaceamrex_1a7dd6d3577db87cc950337b856e57f1f9" kindref="member">KeyValuePair</ref>&lt; K, V &gt; *</type>
           <declname>vi</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>cnt</declname>
         </param>
         <param>
           <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
@@ -60,6 +64,68 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="138" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="138" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a82726330e66e765f09dbc81f10f812ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename K</type>
+          </param>
+          <param>
+            <type>typename V</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelAllReduce::Min</definition>
+        <argsstring>(KeyValuePair&lt; K, V &gt; &amp;vi, MPI_Comm comm)</argsstring>
+        <name>Min</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a7dd6d3577db87cc950337b856e57f1f9" kindref="member">KeyValuePair</ref>&lt; K, V &gt; &amp;</type>
+          <declname>vi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="151" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="151" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a76a17125c15adaa1757aa8acb110a56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename K</type>
+          </param>
+          <param>
+            <type>typename V</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelAllReduce::Min</definition>
+        <argsstring>(KeyValuePair&lt; K, V &gt; *vi, int cnt, MPI_Comm comm)</argsstring>
+        <name>Min</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a7dd6d3577db87cc950337b856e57f1f9" kindref="member">KeyValuePair</ref>&lt; K, V &gt; *</type>
+          <declname>vi</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>cnt</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="164" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="164" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1abc654239660dfc6eb557813ef5314650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -85,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="151" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="151" bodyend="153"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="177" bodyend="179"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1ac6513212c95687334df1e0ee67cc96a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -115,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="155" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="155" bodyend="157"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="181" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="181" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a22a60add9d9c9a8d562a9417d297f9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -141,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="159" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="159" bodyend="161"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="185" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="185" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1ab295f18b74675ea0f559d2563eace87d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -167,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="164" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="164" bodyend="166"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="190" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="190" bodyend="192"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a9a24ed2b1803fba71b1ab93b44db7a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -197,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="168" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="168" bodyend="170"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="194" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="194" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1ab75655a29ac29049cb6b1fafbd12a7f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -223,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="172" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="172" bodyend="174"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="198" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="198" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a8f0fba40aa737060c0ac09832c9bf877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -249,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="177" bodyend="179"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="203" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="203" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a93a9a9427252098f6da83a7116c4219d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -279,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="181" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="181" bodyend="183"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="207" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="207" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a647e136efea8ad3d3e88887700c5f1af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -305,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="185" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="185" bodyend="187"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="211" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="211" bodyend="213"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a220eeb19edc1365466cc0acfec9ee3d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -326,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="189" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="189" bodyend="193"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="215" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="215" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1ParallelAllReduce_1a809a9a78d9cfb7c86a0dd7b72a212fd7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -347,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="195" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="195" bodyend="199"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" line="221" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParallelReduce.H" bodystart="221" bodyend="225"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
