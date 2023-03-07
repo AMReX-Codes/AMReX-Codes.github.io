@@ -3,7 +3,6 @@ var classamrex_1_1IParser =
     [ "Data", "structamrex_1_1IParser_1_1Data.html", "structamrex_1_1IParser_1_1Data" ],
     [ "IParser", "classamrex_1_1IParser.html#aec5f0bb22e4084d50b12adbda2cc56ff", null ],
     [ "IParser", "classamrex_1_1IParser.html#ac4ce16b2a7b27e417a149740858b3482", null ],
-    [ "~IParser", "classamrex_1_1IParser.html#a2dd658850f05ff557e46d2e40d2ca04c", null ],
     [ "compile", "classamrex_1_1IParser.html#a79d909101604badec3afaa59b688a031", null ],
     [ "compileHost", "classamrex_1_1IParser.html#a4fb11d950d0822ab0c56bcf65adff32d", null ],
     [ "define", "classamrex_1_1IParser.html#a9c7208c68ce87b4647f80a2354780d74", null ],

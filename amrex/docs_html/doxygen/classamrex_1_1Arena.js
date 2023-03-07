@@ -1,6 +1,6 @@
 var classamrex_1_1Arena =
 [
-    [ "~Arena", "classamrex_1_1Arena.html#a515142557e6b630fbad746e3c33776e5", null ],
+    [ "~Arena", "classamrex_1_1Arena.html#a327e7541e6291ce735c03392b21931b6", null ],
     [ "align", "classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e", null ],
     [ "alloc", "classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e", null ],
     [ "allocate_system", "classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb", null ],

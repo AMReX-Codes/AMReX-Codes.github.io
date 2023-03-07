@@ -2,7 +2,7 @@ var classamrex_1_1MLNodeTensorLaplacian =
 [
     [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html#aa626d5b8ace890b7e6bea033957f2618", null ],
     [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html#ad8c26ff67ae05f0dcdf8b886d856209a", null ],
-    [ "~MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html#aeab3e4177d4f9c42b7735fa1fc4f53c8", null ],
+    [ "~MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html#a5f01bd5a717d6df8d749040d222178f7", null ],
     [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html#a18dc95a71cf758e9589a1c38e684f68b", null ],
     [ "MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html#a01beaf3eb0c5a2afb9479e19f967f2b0", null ],
     [ "averageDownSolutionRHS", "classamrex_1_1MLNodeTensorLaplacian.html#aa8b834ce4429f552256ed5e1aae9be74", null ],

@@ -7,8 +7,8 @@ var classamrex_1_1ErrorRec =
       [ "Standard", "classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dabd4b8573edb15206522a41ee3a5db143", null ],
       [ "UseAverage", "classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872da7907e45520d436a47eb139e8c055c203", null ]
     ] ],
-    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a23c1a082f625f261a869fca2fbcbd16b", null ],
-    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a103642c3a3fe6d0f549a70ca1379bc10", null ],
+    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a7b04d755bf60782cae073b6f8e8fcaf4", null ],
+    [ "ErrorRec", "classamrex_1_1ErrorRec.html#a0a51eb9a95b0246788657c8c48a8fc42", null ],
     [ "~ErrorRec", "classamrex_1_1ErrorRec.html#ab855c1bad2c1c0ceb3dc3eddcbaba9c1", null ],
     [ "errFunc", "classamrex_1_1ErrorRec.html#a71511c07ba07eb68b24293472bbceb24", null ],
     [ "errFunc2", "classamrex_1_1ErrorRec.html#a699129622e8dca590420730ce595e291", null ],

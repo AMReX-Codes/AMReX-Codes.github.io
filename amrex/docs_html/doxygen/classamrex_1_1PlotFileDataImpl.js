@@ -1,7 +1,6 @@
 var classamrex_1_1PlotFileDataImpl =
 [
     [ "PlotFileDataImpl", "classamrex_1_1PlotFileDataImpl.html#a77e164e48c0363b8f87c3879a509ad23", null ],
-    [ "~PlotFileDataImpl", "classamrex_1_1PlotFileDataImpl.html#a316f5905166fb9d8dd4942fea21094d4", null ],
     [ "boxArray", "classamrex_1_1PlotFileDataImpl.html#ac767857a29ab230acd3f3d01a793ac79", null ],
     [ "cellSize", "classamrex_1_1PlotFileDataImpl.html#ac7da65ed0981abeb8cb8124a274f9c80", null ],
     [ "coordSys", "classamrex_1_1PlotFileDataImpl.html#a075941bb74ff56716adf843dfb352482", null ],

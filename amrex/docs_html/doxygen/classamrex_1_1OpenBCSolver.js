@@ -1,8 +1,8 @@
 var classamrex_1_1OpenBCSolver =
 [
-    [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html#a67f80b2378dbe69bcae2ed61f427f0f5", null ],
+    [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html#a17244fab5dd3e32b8840c29578d26856", null ],
     [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html#a31ec46379a45506dceab79e66c66f5c8", null ],
-    [ "~OpenBCSolver", "classamrex_1_1OpenBCSolver.html#a03d5928d33717ca57878f6f45b19f7e3", null ],
+    [ "~OpenBCSolver", "classamrex_1_1OpenBCSolver.html#a048ab1430daeb0d292d1e02c2e1b4dde", null ],
     [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html#aa89b51713976f2e1561966c3bd66574e", null ],
     [ "OpenBCSolver", "classamrex_1_1OpenBCSolver.html#ad780a1c2f297ad99edc26b462b3d65d5", null ],
     [ "bcast_moments", "classamrex_1_1OpenBCSolver.html#ac9096a2954bfd6a9f717711b294b9f95", null ],

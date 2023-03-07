@@ -1,6 +1,6 @@
 var classamrex_1_1BoxCommHelper =
 [
-    [ "BoxCommHelper", "classamrex_1_1BoxCommHelper.html#a2c1e46fced3f278523d85a2157b458af", null ],
+    [ "BoxCommHelper", "classamrex_1_1BoxCommHelper.html#a449f2001ce1f699af3139ad929c66da2", null ],
     [ "data", "classamrex_1_1BoxCommHelper.html#a30700e2fa5f70e566d3c6a949d4909c4", null ],
     [ "data", "classamrex_1_1BoxCommHelper.html#acf15a5bae1a2d1990af066964065fb87", null ],
     [ "make_box", "classamrex_1_1BoxCommHelper.html#a7b99f31edd5a4c819ab81f9ed3045ef6", null ],

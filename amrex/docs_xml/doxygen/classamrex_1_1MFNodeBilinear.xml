@@ -5,10 +5,10 @@
     <basecompoundref refid="classamrex_1_1MFInterpolater" prot="public" virt="non-virtual">amrex::MFInterpolater</basecompoundref>
     <includes refid="AMReX__MFInterpolater_8H" local="no">AMReX_MFInterpolater.H</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1ab1076974c919d004a3283488613b5536" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1aec1f423eeefc59cdc6ba94fafec860bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>virtual amrex::MFNodeBilinear::~MFNodeBilinear</definition>
-        <argsstring>()=default</argsstring>
+        <definition>amrex::MFNodeBilinear::~MFNodeBilinear</definition>
+        <argsstring>() override=default</argsstring>
         <name>~MFNodeBilinear</name>
         <briefdescription>
         </briefdescription>
@@ -16,12 +16,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="126" column="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="126" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1a7d74a5db6404a433c477f17ea0f3c051" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1af5faae2a0ad3edc6147ac23b165d4345" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
         <definition>Box amrex::MFNodeBilinear::CoarseBox</definition>
-        <argsstring>(Box const &amp;fine, int ratio)</argsstring>
+        <argsstring>(Box const &amp;fine, int ratio) override</argsstring>
         <name>CoarseBox</name>
         <reimplements refid="classamrex_1_1InterpBase_1a7120153e965f22098f7cd888274f5c6b">CoarseBox</reimplements>
         <param>
@@ -57,12 +57,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="128" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="475" bodyend="478"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="128" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="475" bodyend="478"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1a8aadcd8d2934297ec3f9fbf16dc6ef6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1a5e99e1d0fae85f722c0c8a9345b48302" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
         <definition>Box amrex::MFNodeBilinear::CoarseBox</definition>
-        <argsstring>(Box const &amp;fine, IntVect const &amp;ratio)</argsstring>
+        <argsstring>(Box const &amp;fine, IntVect const &amp;ratio) override</argsstring>
         <name>CoarseBox</name>
         <reimplements refid="classamrex_1_1InterpBase_1a684e90cd5708cc5746e653c6decc75d1">CoarseBox</reimplements>
         <param>
@@ -98,12 +98,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="129" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="463" bodyend="472"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="129" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="463" bodyend="472"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1a02dbeb791e186933ad2d70e15585b84c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MFNodeBilinear_1aa8ecd57882ef8a19d4c2480083336b71" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void amrex::MFNodeBilinear::interp</definition>
-        <argsstring>(MultiFab const &amp;crsemf, int ccomp, MultiFab &amp;finemf, int fcomp, int ncomp, IntVect const &amp;ng, Geometry const &amp;cgeom, Geometry const &amp;fgeom, Box const &amp;dest_domain, IntVect const &amp;ratio, Vector&lt; BCRec &gt; const &amp;bcs, int bcscomp)</argsstring>
+        <argsstring>(MultiFab const &amp;crsemf, int ccomp, MultiFab &amp;finemf, int fcomp, int ncomp, IntVect const &amp;ng, Geometry const &amp;cgeom, Geometry const &amp;fgeom, Box const &amp;dest_domain, IntVect const &amp;ratio, Vector&lt; BCRec &gt; const &amp;bcs, int bcscomp) override</argsstring>
         <name>interp</name>
         <reimplements refid="classamrex_1_1MFInterpolater_1ad58787e5d20224e834a55b1d566f7672">interp</reimplements>
         <param>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="131" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="481" bodyend="515"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="131" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp" bodystart="481" bodyend="515"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -206,13 +206,13 @@
     <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" line="122" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.H" bodystart="124" bodyend="135"/>
     <listofallmembers>
       <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::MFNodeBilinear</scope><name>BoxCoarsener</name></member>
-      <member refid="classamrex_1_1MFNodeBilinear_1a7d74a5db6404a433c477f17ea0f3c051" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>CoarseBox</name></member>
-      <member refid="classamrex_1_1MFNodeBilinear_1a8aadcd8d2934297ec3f9fbf16dc6ef6c" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>CoarseBox</name></member>
+      <member refid="classamrex_1_1MFNodeBilinear_1af5faae2a0ad3edc6147ac23b165d4345" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>CoarseBox</name></member>
+      <member refid="classamrex_1_1MFNodeBilinear_1a5e99e1d0fae85f722c0c8a9345b48302" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>CoarseBox</name></member>
       <member refid="classamrex_1_1InterpBase_1ad9523dae9903f59fc43bb7df17e2250e" prot="public" virt="non-virtual"><scope>amrex::MFNodeBilinear</scope><name>GetBCArray</name></member>
-      <member refid="classamrex_1_1MFNodeBilinear_1a02dbeb791e186933ad2d70e15585b84c" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>interp</name></member>
+      <member refid="classamrex_1_1MFNodeBilinear_1aa8ecd57882ef8a19d4c2480083336b71" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>interp</name></member>
       <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>~InterpBase</name></member>
-      <member refid="classamrex_1_1MFInterpolater_1afd25250d30fb2d1d605bdb7b6b0e1a4e" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>~MFInterpolater</name></member>
-      <member refid="classamrex_1_1MFNodeBilinear_1ab1076974c919d004a3283488613b5536" prot="public" virt="virtual"><scope>amrex::MFNodeBilinear</scope><name>~MFNodeBilinear</name></member>
+      <member refid="classamrex_1_1MFInterpolater_1aecddbf83aa58d7ea98a59dcf46c555a2" prot="public" virt="non-virtual"><scope>amrex::MFNodeBilinear</scope><name>~MFInterpolater</name></member>
+      <member refid="classamrex_1_1MFNodeBilinear_1aec1f423eeefc59cdc6ba94fafec860bc" prot="public" virt="non-virtual"><scope>amrex::MFNodeBilinear</scope><name>~MFNodeBilinear</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

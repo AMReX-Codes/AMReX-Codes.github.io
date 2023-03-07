@@ -1,7 +1,7 @@
 var structamrex_1_1FabArrayBase_1_1CacheStats =
 [
-    [ "CacheStats", "structamrex_1_1FabArrayBase_1_1CacheStats.html#a133fda6931b3c51c21e4328a0f1580cf", null ],
-    [ "print", "structamrex_1_1FabArrayBase_1_1CacheStats.html#af8307191fd4e0c163ca7d23b89bf02ec", null ],
+    [ "CacheStats", "structamrex_1_1FabArrayBase_1_1CacheStats.html#a172909ef2ee1fc68d2bfcd61ed13d4bd", null ],
+    [ "print", "structamrex_1_1FabArrayBase_1_1CacheStats.html#aa9d7c2eebaa83c655e91f8b9b0040df1", null ],
     [ "recordBuild", "structamrex_1_1FabArrayBase_1_1CacheStats.html#a83dcba41161d5a1672578ee871232dfa", null ],
     [ "recordErase", "structamrex_1_1FabArrayBase_1_1CacheStats.html#a5cb9d8eee911caa7c6b42f7cdd176083", null ],
     [ "recordUse", "structamrex_1_1FabArrayBase_1_1CacheStats.html#a07a1075ba91654c00909193f65076bc1", null ],

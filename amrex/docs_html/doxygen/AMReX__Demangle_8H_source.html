@@ -117,10 +117,10 @@ $(document).ready(function(){initNavTree('AMReX__Demangle_8H_source.html',''); i
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_CXXABI</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> status;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span>* p = abi::__cxa_demangle(name, 0, 0, &amp;status);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span>* p = abi::__cxa_demangle(name, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, &amp;status);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (p) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::string s(p);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="amrex__iparser_8tab_8cpp.html#af07d89f5ceaea0c7c8252cc41fd75f37">std::free</a>(p);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="amrex__iparser_8tab_8nolint_8H.html#af07d89f5ceaea0c7c8252cc41fd75f37">std::free</a>(p);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> s;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    } <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('AMReX__Demangle_8H_source.html',''); i
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aamrex__iparser_8tab_8cpp_html_af07d89f5ceaea0c7c8252cc41fd75f37"><div class="ttname"><a href="amrex__iparser_8tab_8cpp.html#af07d89f5ceaea0c7c8252cc41fd75f37">free</a></div><div class="ttdeci">void free(void *)</div></div>
+<div class="ttc" id="aamrex__iparser_8tab_8nolint_8H_html_af07d89f5ceaea0c7c8252cc41fd75f37"><div class="ttname"><a href="amrex__iparser_8tab_8nolint_8H.html#af07d89f5ceaea0c7c8252cc41fd75f37">free</a></div><div class="ttdeci">void free(void *)</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae6ff944334fa82f4315eb44b3dd08dae"><div class="ttname"><a href="namespaceamrex.html#ae6ff944334fa82f4315eb44b3dd08dae">amrex::demangle</a></div><div class="ttdeci">std::string demangle(const char *name)</div><div class="ttdoc">Demangle C++ name.</div><div class="ttdef"><b>Definition:</b> AMReX_Demangle.H:25</div></div>
 </div><!-- fragment --></div><!-- contents -->

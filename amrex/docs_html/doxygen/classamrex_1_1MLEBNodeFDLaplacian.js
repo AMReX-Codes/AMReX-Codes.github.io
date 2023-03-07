@@ -1,8 +1,8 @@
 var classamrex_1_1MLEBNodeFDLaplacian =
 [
-    [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a6a37b89b81d888d0d30755a2b21449b7", null ],
+    [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a9912bfd08a8f25bfda0a6259539cf21a", null ],
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a0998f6ae5bff0e310795526582972f22", null ],
-    [ "~MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a251fdcde4525e545fad25663d3bc31d1", null ],
+    [ "~MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ae5824637faa7d32d4e22a04f6a3d2ffc", null ],
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a4b86eda13fc31604d8ca3bf79a158902", null ],
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb", null ],
     [ "averageDownSolutionRHS", "classamrex_1_1MLEBNodeFDLaplacian.html#ac78cd13e2533f566292aed726e19f7c5", null ],

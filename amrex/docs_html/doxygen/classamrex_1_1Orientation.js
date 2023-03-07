@@ -26,7 +26,7 @@ var classamrex_1_1Orientation =
     [ "ylo", "classamrex_1_1Orientation.html#a834da152cd3da5a15d0b486a2765778f", null ],
     [ "zhi", "classamrex_1_1Orientation.html#a04130dc48cb39636a34e8b35f79f0dd4", null ],
     [ "zlo", "classamrex_1_1Orientation.html#adc5c24fdb759cd388af0ca18c37a49f3", null ],
-    [ "operator>>", "classamrex_1_1Orientation.html#af0136f36e2baaaf07b4a413f5113689a", null ],
+    [ "operator>>", "classamrex_1_1Orientation.html#a1a84a7ddf56279e4a09fb51fc80fe955", null ],
     [ "OrientationIter", "classamrex_1_1Orientation.html#a89ae2d0b6ad2bb943c5bf57233fdae87", null ],
     [ "val", "classamrex_1_1Orientation.html#a3a44078514365792a6288dcd61a668b0", null ]
 ];

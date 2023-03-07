@@ -189,7 +189,7 @@ Macros</h2></td></tr>
 <tr class="separator:a17ce5ea3b6e40fa1da429fca8b07406e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13e00db49c0c59dd2772385306e84f9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Exe_8H.html#a13e00db49c0c59dd2772385306e84f9a">AMREX_PARSER_LOCAL_IDX0</a>&#160;&#160;&#160;1000</td></tr>
 <tr class="separator:a13e00db49c0c59dd2772385306e84f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7478a6b2c1f097effb3b8788ebf49726"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Exe_8H.html#a7478a6b2c1f097effb3b8788ebf49726">AMREX_PARSER_GET_DATA</a>(i)&#160;&#160;&#160;(i&gt;=1000) ? pstack[i-1000] : x[i]</td></tr>
+<tr class="memitem:a7478a6b2c1f097effb3b8788ebf49726"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Exe_8H.html#a7478a6b2c1f097effb3b8788ebf49726">AMREX_PARSER_GET_DATA</a>(i)&#160;&#160;&#160;((i)&gt;=1000) ? pstack[(i)-1000] : x[i]</td></tr>
 <tr class="separator:a7478a6b2c1f097effb3b8788ebf49726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -239,8 +239,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a90b4dc8da2d01980f9e8f8a83f8ebbcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a90b4dc8da2d01980f9e8f8a83f8ebbcf">amrex::parser_exe_eval</a> (char *p, double const *x)</td></tr>
-<tr class="separator:a90b4dc8da2d01980f9e8f8a83f8ebbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b4ee29b3ed76cab2179ad13c01c19b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad8b4ee29b3ed76cab2179ad13c01c19b">amrex::parser_exe_eval</a> (const char *p, double const *x)</td></tr>
+<tr class="separator:ad8b4ee29b3ed76cab2179ad13c01c19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f9f11532fcac876d2ebe7ec52423587"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8f9f11532fcac876d2ebe7ec52423587">amrex::parser_compile_exe_size</a> (struct parser_node *node, char *&amp;p, std::size_t &amp;exe_size, int &amp;max_stack_size, int &amp;stack_size, Vector&lt; char * &gt; &amp;local_variables)</td></tr>
 <tr class="separator:a8f9f11532fcac876d2ebe7ec52423587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0968c4da0c27c9762dbd61dcc89e270"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad0968c4da0c27c9762dbd61dcc89e270">amrex::parser_exe_size</a> (struct amrex_parser *parser, int &amp;max_stack_size, int &amp;stack_size)</td></tr>
@@ -260,7 +260,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">i</td><td>)</td>
-          <td>&#160;&#160;&#160;(i&gt;=1000) ? pstack[i-1000] : x[i]</td>
+          <td>&#160;&#160;&#160;((i)&gt;=1000) ? pstack[(i)-1000] : x[i]</td>
         </tr>
       </table>
 </div><div class="memdoc">

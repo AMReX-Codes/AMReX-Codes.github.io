@@ -1,9 +1,7 @@
 var classamrex_1_1BoxIterator =
 [
-    [ "BoxIterator", "classamrex_1_1BoxIterator.html#abc9cf7ec321343ab3062e03958d3d792", null ],
+    [ "BoxIterator", "classamrex_1_1BoxIterator.html#a7d4f7fc99b5c3fe06e9a0b2118ad9f20", null ],
     [ "BoxIterator", "classamrex_1_1BoxIterator.html#ad67f55da89142e3527f16fac6a5bcade", null ],
-    [ "BoxIterator", "classamrex_1_1BoxIterator.html#a3ebc7ff9dc7c57eabe16d0a4866ce0f1", null ],
-    [ "~BoxIterator", "classamrex_1_1BoxIterator.html#aad3066fecf437d5d90a950b9302beeba", null ],
     [ "begin", "classamrex_1_1BoxIterator.html#af75e04838970facf1335f10eb67cdeb7", null ],
     [ "define", "classamrex_1_1BoxIterator.html#a7a4a243bcd9c8e5066eddda908833d08", null ],
     [ "next", "classamrex_1_1BoxIterator.html#a7f3c17e356fa82fa08928ed417493761", null ],

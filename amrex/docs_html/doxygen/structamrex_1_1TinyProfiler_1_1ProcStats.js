@@ -1,6 +1,5 @@
 var structamrex_1_1TinyProfiler_1_1ProcStats =
 [
-    [ "ProcStats", "structamrex_1_1TinyProfiler_1_1ProcStats.html#aedc188bc05126bc46593e11478c19f66", null ],
     [ "compex", "structamrex_1_1TinyProfiler_1_1ProcStats.html#ae641e60af08fa4f6e33d79a5f03db53a", null ],
     [ "compin", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a3e930047fc2ea18c08f936b6020c28ef", null ],
     [ "dtexavg", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a23387ec0b0dd45815da72c13541e68de", null ],

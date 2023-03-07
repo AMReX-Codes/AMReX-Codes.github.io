@@ -811,62 +811,61 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect<sp/><ref refid="classamrex_1_1IntVect_1a93df7e94c6d2d07ea3eb7647500bf751" kindref="member">IntVect::Unit</ref><sp/>=<sp/><ref refid="classamrex_1_1IntVect_1a5b5b7435eef0516b2313ad4894d63b1f" kindref="member">IntVect::TheUnitVector</ref>();</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/>os,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>p)</highlight></codeline>
-<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p[0]<sp/>,<sp/>&lt;&lt;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p[1]<sp/>,<sp/>&lt;&lt;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p[2])<sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream&amp;,IntVect&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>iv)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>iv[0]<sp/>,<sp/>&lt;&lt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>iv[1]<sp/>,<sp/>&lt;&lt;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>iv[2])<sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream&amp;,IntVect&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_IGNORE_MAX<sp/>100000</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><ref refid="namespaceamrex_1aac7b44499bc56506bcf5ed89ec42bc09" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect&amp;<sp/><sp/><sp/><sp/><sp/><sp/>iv)</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>std::ws;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>c;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(iv[0]=0;,<sp/>iv[1]=0;,<sp/>iv[2]=0);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>iv[0];</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>std::ws;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/>is.peek();</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ic<sp/>==<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IntVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>iv[1];</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>std::ws;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ic<sp/>=<sp/>is.peek();</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ic<sp/>==<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IntVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>iv[2];</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IntVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&gt;&gt;(istream&amp;,IntVect&amp;):<sp/>expected<sp/>\&apos;(\&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&gt;&gt;(istream&amp;,IntVect&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="namespaceamrex_1a8fe989ba19337100a8bbc4f569ee4e47" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,<sp/>IntVect&amp;<sp/>iv)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>std::ws;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>c;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(iv[0]=0;,<sp/>iv[1]=0;,<sp/>iv[2]=0);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>iv[0];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>std::ws;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/>is.peek();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ic<sp/>==<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IntVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>iv[1];</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>std::ws;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ic<sp/>=<sp/>is.peek();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ic<sp/>==<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IntVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>iv[2];</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IntVect_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&gt;&gt;(istream&amp;,IntVect&amp;):<sp/>expected<sp/>\&apos;(\&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&gt;&gt;(istream&amp;,IntVect&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.cpp"/>
   </compounddef>

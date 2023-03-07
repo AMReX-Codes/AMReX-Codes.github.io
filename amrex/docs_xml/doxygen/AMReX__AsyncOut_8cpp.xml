@@ -865,141 +865,140 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Utility_8H" kindref="compound">AMReX_Utility.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX_8H" kindref="compound">AMReX.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
-<codeline lineno="10" refid="namespaceamrex_1_1AsyncOut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">AsyncOut<sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s_asyncout<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s_noutfiles<sp/>=<sp/>64;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>s_comm<sp/>=<sp/><ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal">std::unique_ptr&lt;BackgroundThread&gt;<sp/>s_thread;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref><sp/>s_info;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1ad322c4e7eab6b75bf9448b5b7d464ee1" kindref="member">Initialize</ref><sp/>()</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(s_comm,s_info);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;amrex&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1a5a524b8c11f99e8ef86fd6bbc1a33493" kindref="member">queryAdd</ref>(</highlight><highlight class="stringliteral">&quot;async_out&quot;</highlight><highlight class="normal">,<sp/>s_asyncout);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1a5a524b8c11f99e8ef86fd6bbc1a33493" kindref="member">queryAdd</ref>(</highlight><highlight class="stringliteral">&quot;async_out_nfiles&quot;</highlight><highlight class="normal">,<sp/>s_noutfiles);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>s_noutfiles<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(s_noutfiles,<sp/>nprocs);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_asyncout<sp/>&amp;&amp;<sp/>s_noutfiles<sp/>&lt;<sp/>nprocs)</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>provided<sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Query_thread(&amp;provided);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(provided<sp/>&lt;<sp/>MPI_THREAD_MULTIPLE)<sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;AsyncOut<sp/>with<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(s_noutfiles)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>and<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::to_string(nprocs)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>processes<sp/>requires<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;MPI_THREAD_MULTIPLE<sp/>at<sp/>runtime,<sp/>but<sp/>got<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a3557c1b3ec791b8bf6f9e9cab5c6b0d8" kindref="member">ParallelDescriptor::mpi_level_to_string</ref>(provided));</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_info<sp/>=<sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2a9d5d76aba34e026f1d33404c6bfe00" kindref="member">GetWriteInfo</ref>(myproc);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Comm_split(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),<sp/>s_info.ifile,<sp/>myproc,<sp/>&amp;s_comm);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_asyncout)<sp/>{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_thread<sp/>=<sp/>std::make_unique&lt;BackgroundThread&gt;();</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aec8ceac1148bd8331f3a51572068f8a0" kindref="member">ExecOnFinalize</ref>(<ref refid="namespaceamrex_1_1AsyncOut_1a2040a56976bffbbfac29f5e01800ea3c" kindref="member">Finalize</ref>);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2040a56976bffbbfac29f5e01800ea3c" kindref="member">Finalize</ref><sp/>()</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_thread)<sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_thread.reset();</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_comm<sp/>!=<sp/><ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>)<sp/>MPI_Comm_free(&amp;s_comm);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>s_comm<sp/>=<sp/><ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1adbc79ec1aacd0106757683aea46b43ce" kindref="member">UseAsyncOut</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s_asyncout;<sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2a9d5d76aba34e026f1d33404c6bfe00" kindref="member">GetWriteInfo</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank)</highlight></codeline>
-<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nfiles<sp/>=<sp/>s_noutfiles;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmaxspots<sp/>=<sp/>(nprocs<sp/>+<sp/>(nfiles-1))<sp/>/<sp/>nfiles;<sp/><sp/></highlight><highlight class="comment">//<sp/>max<sp/>spots<sp/>per<sp/>file</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nfull<sp/>=<sp/>nfiles<sp/>+<sp/>nprocs<sp/>-<sp/>nmaxspots*nfiles;<sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>first<sp/>nfull<sp/>files<sp/>are<sp/>full</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ifile,<sp/>ispot,<sp/>nspots;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rank<sp/>&lt;<sp/>nfull*nmaxspots)<sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifile<sp/>=<sp/>rank<sp/>/<sp/>nmaxspots;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ispot<sp/>=<sp/>rank<sp/>-<sp/>ifile*nmaxspots;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nspots<sp/>=<sp/>nmaxspots;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmpproc<sp/>=<sp/>rank-nfull*nmaxspots;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifile<sp/>=<sp/>tmpproc/(nmaxspots-1);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ispot<sp/>=<sp/>tmpproc<sp/>-<sp/>ifile*(nmaxspots-1);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifile<sp/>+=<sp/>nfull;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nspots<sp/>=<sp/>nmaxspots<sp/>-<sp/>1;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref>{ifile,<sp/>ispot,<sp/>nspots};</highlight></codeline>
-<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aa1f51f051314b9228d4e287292937139" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;&amp;&amp;<sp/>a_f)</highlight></codeline>
-<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>s_thread-&gt;Submit(std::move(a_f));</highlight></codeline>
-<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aa1f51f051314b9228d4e287292937139" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_f)</highlight></codeline>
-<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>s_thread-&gt;Submit(a_f);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aee3a42cfdf4c23b913fe7b42f8a22185" kindref="member">Finish</ref><sp/>()</highlight></codeline>
-<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_thread)<sp/>{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_thread-&gt;Finish();</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a98b17038c0286de4668a2bed1102d3b6" kindref="member">Wait</ref><sp/>()</highlight></codeline>
-<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>s_info.ispot;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Request&gt;</ref><sp/>reqs(N);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Status&gt;</ref><sp/>stats(N);</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reqs[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a24603dd135fe7d8badbc0fe3ab25ff1d" kindref="member">ParallelDescriptor::Abarrier</ref>(s_comm).<ref refid="classamrex_1_1ParallelDescriptor_1_1Message_1a3dd73a745e975beb885a19b708190cbe" kindref="member">req</ref>();</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(reqs,<sp/>stats);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a9b651e401d0a75620501243cc1171a63" kindref="member">Notify</ref><sp/>()</highlight></codeline>
-<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>s_info.nspots<sp/>-<sp/>1<sp/>-<sp/>s_info.ispot;</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Request&gt;</ref><sp/>reqs(N);</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Status&gt;</ref><sp/>stats(N);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reqs[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a24603dd135fe7d8badbc0fe3ab25ff1d" kindref="member">ParallelDescriptor::Abarrier</ref>(s_comm).<ref refid="classamrex_1_1ParallelDescriptor_1_1Message_1a3dd73a745e975beb885a19b708190cbe" kindref="member">req</ref>();</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(reqs,<sp/>stats);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="9" refid="namespaceamrex_1_1AsyncOut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex_1_1AsyncOut" kindref="compound">amrex::AsyncOut</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s_asyncout<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s_noutfiles<sp/>=<sp/>64;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>s_comm<sp/>=<sp/><ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">std::unique_ptr&lt;BackgroundThread&gt;<sp/>s_thread;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref><sp/>s_info;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1ad322c4e7eab6b75bf9448b5b7d464ee1" kindref="member">Initialize</ref><sp/>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(s_comm,s_info);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;amrex&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1a5a524b8c11f99e8ef86fd6bbc1a33493" kindref="member">queryAdd</ref>(</highlight><highlight class="stringliteral">&quot;async_out&quot;</highlight><highlight class="normal">,<sp/>s_asyncout);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1a5a524b8c11f99e8ef86fd6bbc1a33493" kindref="member">queryAdd</ref>(</highlight><highlight class="stringliteral">&quot;async_out_nfiles&quot;</highlight><highlight class="normal">,<sp/>s_noutfiles);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>s_noutfiles<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(s_noutfiles,<sp/>nprocs);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_asyncout<sp/>&amp;&amp;<sp/>s_noutfiles<sp/>&lt;<sp/>nprocs)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>provided<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Query_thread(&amp;provided);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(provided<sp/>&lt;<sp/>MPI_THREAD_MULTIPLE)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;AsyncOut<sp/>with<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(s_noutfiles)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>and<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>std::to_string(nprocs)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>processes<sp/>requires<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;MPI_THREAD_MULTIPLE<sp/>at<sp/>runtime,<sp/>but<sp/>got<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a3557c1b3ec791b8bf6f9e9cab5c6b0d8" kindref="member">ParallelDescriptor::mpi_level_to_string</ref>(provided));</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_info<sp/>=<sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2a9d5d76aba34e026f1d33404c6bfe00" kindref="member">GetWriteInfo</ref>(myproc);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Comm_split(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),<sp/>s_info.ifile,<sp/>myproc,<sp/>&amp;s_comm);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_asyncout)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_thread<sp/>=<sp/>std::make_unique&lt;BackgroundThread&gt;();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aec8ceac1148bd8331f3a51572068f8a0" kindref="member">ExecOnFinalize</ref>(<ref refid="namespaceamrex_1_1AsyncOut_1a2040a56976bffbbfac29f5e01800ea3c" kindref="member">Finalize</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2040a56976bffbbfac29f5e01800ea3c" kindref="member">Finalize</ref><sp/>()</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_thread)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_thread.reset();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_comm<sp/>!=<sp/><ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>)<sp/>MPI_Comm_free(&amp;s_comm);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>s_comm<sp/>=<sp/><ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1adbc79ec1aacd0106757683aea46b43ce" kindref="member">UseAsyncOut</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s_asyncout;<sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2a9d5d76aba34e026f1d33404c6bfe00" kindref="member">GetWriteInfo</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nfiles<sp/>=<sp/>s_noutfiles;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nmaxspots<sp/>=<sp/>(nprocs<sp/>+<sp/>(nfiles-1))<sp/>/<sp/>nfiles;<sp/><sp/></highlight><highlight class="comment">//<sp/>max<sp/>spots<sp/>per<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nfull<sp/>=<sp/>nfiles<sp/>+<sp/>nprocs<sp/>-<sp/>nmaxspots*nfiles;<sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>first<sp/>nfull<sp/>files<sp/>are<sp/>full</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ifile,<sp/>ispot,<sp/>nspots;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rank<sp/>&lt;<sp/>nfull*nmaxspots)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifile<sp/>=<sp/>rank<sp/>/<sp/>nmaxspots;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ispot<sp/>=<sp/>rank<sp/>-<sp/>ifile*nmaxspots;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nspots<sp/>=<sp/>nmaxspots;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmpproc<sp/>=<sp/>rank-nfull*nmaxspots;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifile<sp/>=<sp/>tmpproc/(nmaxspots-1);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ispot<sp/>=<sp/>tmpproc<sp/>-<sp/>ifile*(nmaxspots-1);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifile<sp/>+=<sp/>nfull;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nspots<sp/>=<sp/>nmaxspots<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1AsyncOut_1_1WriteInfo" kindref="compound">WriteInfo</ref>{ifile,<sp/>ispot,<sp/>nspots};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aa1f51f051314b9228d4e287292937139" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;&amp;&amp;<sp/>a_f)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>s_thread-&gt;Submit(std::move(a_f));</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aa1f51f051314b9228d4e287292937139" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_f)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>s_thread-&gt;Submit(a_f);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1aee3a42cfdf4c23b913fe7b42f8a22185" kindref="member">Finish</ref><sp/>()</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_thread)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_thread-&gt;Finish();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a98b17038c0286de4668a2bed1102d3b6" kindref="member">Wait</ref><sp/>()</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>s_info.ispot;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Request&gt;</ref><sp/>reqs(N);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Status&gt;</ref><sp/>stats(N);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reqs[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a24603dd135fe7d8badbc0fe3ab25ff1d" kindref="member">ParallelDescriptor::Abarrier</ref>(s_comm).<ref refid="classamrex_1_1ParallelDescriptor_1_1Message_1a3dd73a745e975beb885a19b708190cbe" kindref="member">req</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(reqs,<sp/>stats);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1AsyncOut_1a9b651e401d0a75620501243cc1171a63" kindref="member">Notify</ref><sp/>()</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>s_info.nspots<sp/>-<sp/>1<sp/>-<sp/>s_info.ispot;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Request&gt;</ref><sp/>reqs(N);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Status&gt;</ref><sp/>stats(N);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reqs[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a24603dd135fe7d8badbc0fe3ab25ff1d" kindref="member">ParallelDescriptor::Abarrier</ref>(s_comm).<ref refid="classamrex_1_1ParallelDescriptor_1_1Message_1a3dd73a745e975beb885a19b708190cbe" kindref="member">req</ref>();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(reqs,<sp/>stats);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_AsyncOut.cpp"/>
   </compounddef>

@@ -1,7 +1,6 @@
 var structamrex_1_1FabArrayBase_1_1FPinfo =
 [
     [ "FPinfo", "structamrex_1_1FabArrayBase_1_1FPinfo.html#ade7a9e79503e61ff6803d58a345d2ffa", null ],
-    [ "~FPinfo", "structamrex_1_1FabArrayBase_1_1FPinfo.html#a189905997fd17cf4f8a1e19d7f6a714a", null ],
     [ "bytes", "structamrex_1_1FabArrayBase_1_1FPinfo.html#a60b3d32706607b5ab04d00f255382f81", null ],
     [ "ba_crse_patch", "structamrex_1_1FabArrayBase_1_1FPinfo.html#a6b1f18981c96f45dcf49c05987770548", null ],
     [ "ba_fine_patch", "structamrex_1_1FabArrayBase_1_1FPinfo.html#af6fcea43716595c028ab06b5ca6e57c0", null ],

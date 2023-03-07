@@ -5,7 +5,7 @@ var classamrex_1_1MLNodeLinOp =
       [ "RAP", "classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82abb0014f2e34a1a63c199eb717fe3accf", null ]
     ] ],
     [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html#aaf264472c0b70b5588a04b930fbcd8ff", null ],
-    [ "~MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html#a07faf757bcc476afe8bf3b88997d3039", null ],
+    [ "~MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html#a8e93960d5bf966e405092a47747497d2", null ],
     [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html#a712873309064abf30aafcb2d277890fb", null ],
     [ "MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html#a02892864c3a177a34cc38d3d55a972fd", null ],
     [ "apply", "classamrex_1_1MLNodeLinOp.html#a3bcbe4767274ef89df6f5eaaacded060", null ],

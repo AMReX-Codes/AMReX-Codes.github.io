@@ -4,7 +4,7 @@ var classamrex_1_1IndexType =
       [ "CELL", "classamrex_1_1IndexType.html#a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1", null ],
       [ "NODE", "classamrex_1_1IndexType.html#a4bbe4fdc07aa019c3a4a6839cdafcccea410f04417a9413c9d3d862e84300eb05", null ]
     ] ],
-    [ "IndexType", "classamrex_1_1IndexType.html#ac9583cb4a44a2010d6ab12609aa23abe", null ],
+    [ "IndexType", "classamrex_1_1IndexType.html#aa436f72f3072d2475508cad46163bda3", null ],
     [ "IndexType", "classamrex_1_1IndexType.html#af2a8da6b64c188c9d66761a59ab1f70c", null ],
     [ "IndexType", "classamrex_1_1IndexType.html#aa0ecc302c00a520b9368b7797b9805ff", null ],
     [ "any", "classamrex_1_1IndexType.html#aae41b2ed4529b1a15193583c327ec29c", null ],

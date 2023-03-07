@@ -3,7 +3,6 @@ var AMReX__Random_8H =
     [ "DeallocateRandomSeedDevArray", "AMReX__Random_8H.html#abce0125a244f443854b1c4a2709c5990", null ],
     [ "DefaultGpuSeed", "AMReX__Random_8H.html#afd0b9d029d68b514e004d7c4fccfbe42", null ],
     [ "InitRandom", "AMReX__Random_8H.html#a1b2c12e9a133d26ba2bd4b978a95df44", null ],
-    [ "NItemsPerBin", "AMReX__Random_8H.html#aaf97cdbc0db387b57d9641d57cce591e", null ],
     [ "Random", "AMReX__Random_8H.html#a384bf7a8791d85fe1ae4153eee61d71e", null ],
     [ "Random", "AMReX__Random_8H.html#a65fcc9ad910569bc247b330997d5ed52", null ],
     [ "Random_int", "AMReX__Random_8H.html#a20796a80df81ee204983811cc8a1b705", null ],

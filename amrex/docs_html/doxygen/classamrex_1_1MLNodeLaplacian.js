@@ -1,8 +1,8 @@
 var classamrex_1_1MLNodeLaplacian =
 [
-    [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#ac394ddffb9ed6a17dec6b50db0f7275a", null ],
+    [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#af05a623e35211c9bb416eb93a7117238", null ],
     [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#a8fab712729235b3fabdeae74513aab8a", null ],
-    [ "~MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#aeba4557ed8cd5a660c5925f4ebc0e271", null ],
+    [ "~MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#ab04fb2b76dc86e65cbbe5443b18b6964", null ],
     [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#a3e118d417a65df672755dedb1623fe06", null ],
     [ "MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html#a9b935f6c3fd7cdb7d702502ffbabc275", null ],
     [ "averageDownCoeffs", "classamrex_1_1MLNodeLaplacian.html#aca10dcca4922ff74faf8f26263cbed7e", null ],

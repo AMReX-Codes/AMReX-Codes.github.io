@@ -1,6 +1,6 @@
 var structamrex_1_1BoxArray_1_1RefID =
 [
-    [ "RefID", "structamrex_1_1BoxArray_1_1RefID.html#aec422cd271e716d05160dbadc7526394", null ],
+    [ "RefID", "structamrex_1_1BoxArray_1_1RefID.html#a3afae958bb4bf99b0eb1705208e3e1b5", null ],
     [ "RefID", "structamrex_1_1BoxArray_1_1RefID.html#a0adac980947d771e29e1420e5adc4e06", null ],
     [ "operator!=", "structamrex_1_1BoxArray_1_1RefID.html#ab9afafb3f06bd646649bc865668e874a", null ],
     [ "operator<", "structamrex_1_1BoxArray_1_1RefID.html#a6e0ad88f090537be644ffd04d1e729c8", null ],

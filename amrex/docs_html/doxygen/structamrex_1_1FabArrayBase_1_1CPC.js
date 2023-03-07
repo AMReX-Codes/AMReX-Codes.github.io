@@ -3,7 +3,6 @@ var structamrex_1_1FabArrayBase_1_1CPC =
     [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#acd2bded35632a96fc6dd4e5938d624d6", null ],
     [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#a354b679a17210c1815e5313618091e0e", null ],
     [ "CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#aa0e09825745457d0931b3c5d1110794b", null ],
-    [ "~CPC", "structamrex_1_1FabArrayBase_1_1CPC.html#a97655cd5ccd143f3ab9c2a154d4d4f2f", null ],
     [ "bytes", "structamrex_1_1FabArrayBase_1_1CPC.html#a84e7707a96ebc2dc55fe2384d403426a", null ],
     [ "define", "structamrex_1_1FabArrayBase_1_1CPC.html#a8899d4aaf8c5e2d8677a9b09f90e206b", null ],
     [ "m_dstba", "structamrex_1_1FabArrayBase_1_1CPC.html#a5f390136bc410e6524afb0c7605d01ae", null ],

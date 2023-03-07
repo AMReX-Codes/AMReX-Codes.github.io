@@ -3,7 +3,6 @@ var classamrex_1_1Parser =
     [ "Data", "structamrex_1_1Parser_1_1Data.html", "structamrex_1_1Parser_1_1Data" ],
     [ "Parser", "classamrex_1_1Parser.html#a9829ccc584238c1042b7c1ef25b69685", null ],
     [ "Parser", "classamrex_1_1Parser.html#a979ec2bb844542bdd274c04010282c19", null ],
-    [ "~Parser", "classamrex_1_1Parser.html#abdb30b6438c497e1da632eef58c386bc", null ],
     [ "compile", "classamrex_1_1Parser.html#a84c2f77f7586faf9e89ef87489297bfa", null ],
     [ "compileHost", "classamrex_1_1Parser.html#a2bcb71246d0395f1f9c3ce37e2286c09", null ],
     [ "define", "classamrex_1_1Parser.html#a47d09b414b7b5b8e369c3b58819676fb", null ],

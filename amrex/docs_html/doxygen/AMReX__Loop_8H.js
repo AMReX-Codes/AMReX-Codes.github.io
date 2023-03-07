@@ -1,7 +1,5 @@
 var AMReX__Loop_8H =
 [
-    [ "AMREX_LOOP_3D", "AMReX__Loop_8H.html#a03b436b41a98f86757c053a372a7947f", null ],
-    [ "AMREX_LOOP_4D", "AMReX__Loop_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c", null ],
     [ "Loop", "AMReX__Loop_8H.html#ab47a3b98bcd26d509fba9e831d218d33", null ],
     [ "Loop", "AMReX__Loop_8H.html#a0958f5bfc610a207d30ce2a5a8446f98", null ],
     [ "Loop", "AMReX__Loop_8H.html#afee333c49bcfdf12a3ccc051cd2f7406", null ],

@@ -628,13 +628,13 @@
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;std::unique_ptr&lt;CArena&gt;</ref><sp/>&gt;<sp/>the_memory_pool;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;std::unique_ptr&lt;CArena&gt;</ref><sp/>&gt;<sp/>the_memory_pool;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_TESTING)<sp/>||<sp/>defined(AMREX_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_snan<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_snan<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_snan<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -708,9 +708,9 @@
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>hsu_max<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(hsu,<sp/>hsu_max);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>hsu_tot<sp/>+=<sp/>hsu;</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/>mp_min<sp/>=<sp/>hsu_min/(1024*1024);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/>mp_max<sp/>=<sp/>hsu_max/(1024*1024);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/>mp_tot<sp/>=<sp/>hsu_tot/(1024*1024);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>mp_min<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(hsu_min/(1024*1024));</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>mp_max<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(hsu_max/(1024*1024));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>mp_tot<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(hsu_tot/(1024*1024));</highlight></codeline>
 <codeline lineno="108"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1a3c075e31a22dc6c15e7da22613154e74" kindref="member">amrex_real_array_init</ref><sp/>(Real*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems)</highlight></codeline>

@@ -122,9 +122,9 @@ Macros</h2></td></tr>
 <tr class="separator:ab1ce64456a61cab718681cca462dca5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d428819a9f4e0c46d6c68f580aa3db2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Y_8cpp.html#a9d428819a9f4e0c46d6c68f580aa3db2">PARSER_MOVEUP_L</a>(node,  v)</td></tr>
 <tr class="separator:a9d428819a9f4e0c46d6c68f580aa3db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbff47b8f6ed01ed41e91024681aaf7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Y_8cpp.html#afbff47b8f6ed01ed41e91024681aaf7b">PARSER_EVAL_R</a>(node)&#160;&#160;&#160;node-&gt;r-&gt;lvp.v</td></tr>
+<tr class="memitem:afbff47b8f6ed01ed41e91024681aaf7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Y_8cpp.html#afbff47b8f6ed01ed41e91024681aaf7b">PARSER_EVAL_R</a>(node)&#160;&#160;&#160;(node)-&gt;r-&gt;lvp.v</td></tr>
 <tr class="separator:afbff47b8f6ed01ed41e91024681aaf7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8302ef14ce5c5d3756fe16648af101"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Y_8cpp.html#aea8302ef14ce5c5d3756fe16648af101">PARSER_EVAL_L</a>(node)&#160;&#160;&#160;node-&gt;l-&gt;lvp.v</td></tr>
+<tr class="memitem:aea8302ef14ce5c5d3756fe16648af101"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Y_8cpp.html#aea8302ef14ce5c5d3756fe16648af101">PARSER_EVAL_L</a>(node)&#160;&#160;&#160;(node)-&gt;l-&gt;lvp.v</td></tr>
 <tr class="separator:aea8302ef14ce5c5d3756fe16648af101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6593ff8ba47094dc48dc4180c83ff22a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Parser__Y_8cpp.html#a6593ff8ba47094dc48dc4180c83ff22a">PARSER_NEG_MOVEUP</a>(node)</td></tr>
 <tr class="separator:a6593ff8ba47094dc48dc4180c83ff22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,7 +213,7 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">node</td><td>)</td>
-          <td>&#160;&#160;&#160;node-&gt;l-&gt;lvp.v</td>
+          <td>&#160;&#160;&#160;(node)-&gt;l-&gt;lvp.v</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -231,7 +231,7 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">node</td><td>)</td>
-          <td>&#160;&#160;&#160;node-&gt;r-&gt;lvp.v</td>
+          <td>&#160;&#160;&#160;(node)-&gt;r-&gt;lvp.v</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -263,11 +263,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>parser_node* n = node-&gt;l-&gt;r; \</div>
-<div class="line">    int ip = node-&gt;l-&gt;rip; \</div>
-<div class="line">    node-&gt;r = n; \</div>
-<div class="line">    node-&gt;lvp.v = v; \</div>
-<div class="line">    node-&gt;rip   = ip;</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>parser_node* n = (node)-&gt;l-&gt;r; \</div>
+<div class="line">    <span class="keywordtype">int</span> ip = (node)-&gt;l-&gt;rip; \</div>
+<div class="line">    (node)-&gt;r = n; \</div>
+<div class="line">    (node)-&gt;lvp.v = v; \</div>
+<div class="line">    (node)-&gt;rip   = ip;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,11 +296,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>parser_node* n = node-&gt;r-&gt;r; \</div>
-<div class="line">    int ip = node-&gt;r-&gt;rip; \</div>
-<div class="line">    node-&gt;r = n; \</div>
-<div class="line">    node-&gt;lvp.v = v; \</div>
-<div class="line">    node-&gt;rip   = ip;</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>parser_node* n = (node)-&gt;r-&gt;r; \</div>
+<div class="line">    <span class="keywordtype">int</span> ip = (node)-&gt;r-&gt;rip; \</div>
+<div class="line">    (node)-&gt;r = n; \</div>
+<div class="line">    (node)-&gt;lvp.v = v; \</div>
+<div class="line">    (node)-&gt;rip   = ip;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,9 +319,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    node-&gt;r = node-&gt;l-&gt;r; \</div>
-<div class="line">    node-&gt;lvp.v = -node-&gt;l-&gt;lvp.v; \</div>
-<div class="line">    node-&gt;rip = node-&gt;l-&gt;rip;</div>
+<b>Value:</b><div class="fragment"><div class="line">    (node)-&gt;r = (node)-&gt;l-&gt;r; \</div>
+<div class="line">    (node)-&gt;lvp.v = -(node)-&gt;l-&gt;lvp.v; \</div>
+<div class="line">    (node)-&gt;rip = (node)-&gt;l-&gt;rip;</div>
 </div><!-- fragment -->
 </div>
 </div>

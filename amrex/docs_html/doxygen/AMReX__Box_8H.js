@@ -42,7 +42,7 @@ var AMReX__Box_8H =
     [ "minBox", "AMReX__Box_8H.html#a2f9af438df67d831ca3a3db7a71f811f", null ],
     [ "minBox", "AMReX__Box_8H.html#a67df6bf4139c0d12419a8f5ca21d2730", null ],
     [ "operator<<", "AMReX__Box_8H.html#a5a8c3c95822fc26d529026c5ef8b9308", null ],
-    [ "operator>>", "AMReX__Box_8H.html#aac7b44499bc56506bcf5ed89ec42bc09", null ],
+    [ "operator>>", "AMReX__Box_8H.html#a8fe989ba19337100a8bbc4f569ee4e47", null ],
     [ "refine", "AMReX__Box_8H.html#aeda82776b77d98746dcda422ab7586a3", null ],
     [ "refine", "AMReX__Box_8H.html#abb7cbdfb8c8ec3d94bec38fcf10b92db", null ],
     [ "shift", "AMReX__Box_8H.html#ac305cd6b4b0f79bcbef6ad1be4d7a06e", null ],

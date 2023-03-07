@@ -485,45 +485,43 @@
 <codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>mapper(mapper_),<sp/>ratio(ratio_)</highlight></codeline>
 <codeline lineno="7"><highlight class="normal">{}</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal">InterpolaterBoxCoarsener::~InterpolaterBoxCoarsener<sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal">Box</highlight></codeline>
-<codeline lineno="12"><highlight class="normal">InterpolaterBoxCoarsener::doit<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="13"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mapper-&gt;CoarseBox(<ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>,<sp/>ratio);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal">BoxConverter*</highlight></codeline>
-<codeline lineno="18"><highlight class="normal">InterpolaterBoxCoarsener::clone<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="19"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>InterpolaterBoxCoarsener(mapper,<sp/>ratio);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal">InterpolaterBoxCoarsener</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">InterpBase::BoxCoarsener<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio)</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>InterpolaterBoxCoarsener(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>ratio);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal">Vector&lt;int&gt;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">InterpBase::GetBCArray<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BCRec&gt;&amp;<sp/>bcr)</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>bc(2*AMREX_SPACEDIM*bcr.size());</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/>bcr.size();<sp/>n++)</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>b_rec<sp/>=<sp/>bcr[n].vect();</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>0;<sp/>m<sp/>&lt;<sp/>2*AMREX_SPACEDIM;<sp/>m++)</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bc[2*AMREX_SPACEDIM*n<sp/>+<sp/>m]<sp/>=<sp/>b_rec[m];</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bc;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">Box</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">InterpolaterBoxCoarsener::doit<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="11"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mapper-&gt;CoarseBox(<ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>,<sp/>ratio);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">BoxConverter*</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">InterpolaterBoxCoarsener::clone<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="17"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>InterpolaterBoxCoarsener(mapper,<sp/>ratio);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">InterpolaterBoxCoarsener</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">InterpBase::BoxCoarsener<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>InterpolaterBoxCoarsener(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>ratio);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">Vector&lt;int&gt;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">InterpBase::GetBCArray<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BCRec&gt;&amp;<sp/>bcr)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>bc(2*AMREX_SPACEDIM*bcr.size());</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/>bcr.size();<sp/>n++)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>b_rec<sp/>=<sp/>bcr[n].vect();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>0;<sp/>m<sp/>&lt;<sp/>2*AMREX_SPACEDIM;<sp/>m++)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bc[2*AMREX_SPACEDIM*n<sp/>+<sp/>m]<sp/>=<sp/>b_rec[m];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bc;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.cpp"/>
   </compounddef>

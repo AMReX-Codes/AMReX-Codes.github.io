@@ -1,7 +1,6 @@
 var structamrex_1_1FabArrayBase_1_1FabArrayStats =
 [
-    [ "FabArrayStats", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ac86e663f7c3fde319223f352e67b8bde", null ],
-    [ "print", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ac7a3b634768f8a95e0aa31ffcc826cee", null ],
+    [ "print", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a84cad9d66ad27523679ae8c2b6b5d37e", null ],
     [ "recordBuild", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ae05279827e8393a4494478d1885e2c2b", null ],
     [ "recordDelete", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a117c2d4187d31c7a6e0c6da477e381d0", null ],
     [ "recordMaxNumBAUse", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a6fc4a42952792e21c6af56f1b7d38799", null ],

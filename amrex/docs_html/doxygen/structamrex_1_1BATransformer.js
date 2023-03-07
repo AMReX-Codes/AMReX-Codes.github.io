@@ -8,7 +8,7 @@ var structamrex_1_1BATransformer =
       [ "indexType_coarsenRatio", "structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feba3e10d52c08b4ae924eb9c9c4c42386b6", null ],
       [ "bndryReg", "structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feba15f56c267485f29a6a84bcfce877f804", null ]
     ] ],
-    [ "BATransformer", "structamrex_1_1BATransformer.html#a01b3fde8a32e8985cf9afade2ce1afd6", null ],
+    [ "BATransformer", "structamrex_1_1BATransformer.html#a34546a5ba0006584f390d2a051f25a3a", null ],
     [ "BATransformer", "structamrex_1_1BATransformer.html#a0d5404cf30e094f664ab13a32024777d", null ],
     [ "BATransformer", "structamrex_1_1BATransformer.html#a1d26c72183fc41c34c8b647b2672993e", null ],
     [ "coarsen", "structamrex_1_1BATransformer.html#a888900af671b00ababfa6b1e5934bca5", null ],

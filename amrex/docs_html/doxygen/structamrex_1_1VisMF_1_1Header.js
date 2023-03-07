@@ -8,9 +8,9 @@ var structamrex_1_1VisMF_1_1Header =
       [ "NoFabHeaderFAMinMax_v1", "structamrex_1_1VisMF_1_1Header.html#aa4469030a55d4e3be552189f7d06b54daea230534883ebe9d77fc2c31aeab4589", null ]
     ] ],
     [ "Header", "structamrex_1_1VisMF_1_1Header.html#ac047b91f6a9bf22efc30801bfc4b4452", null ],
-    [ "Header", "structamrex_1_1VisMF_1_1Header.html#a2bd7f35c8f6e9d56b50648024cfac5f2", null ],
+    [ "Header", "structamrex_1_1VisMF_1_1Header.html#a8a0e1ec0ea1ff9f6327b2e9685ce7824", null ],
     [ "Header", "structamrex_1_1VisMF_1_1Header.html#acdfb696b35b3fe342f5040041f59a301", null ],
-    [ "CalculateMinMax", "structamrex_1_1VisMF_1_1Header.html#a67ebe2f805154bc932ce0d58aebf9e62", null ],
+    [ "CalculateMinMax", "structamrex_1_1VisMF_1_1Header.html#a89f8804d6faa52091fcde2844952fa93", null ],
     [ "m_ba", "structamrex_1_1VisMF_1_1Header.html#ab62ef15c4a342cc3eb61e116b23bd285", null ],
     [ "m_famax", "structamrex_1_1VisMF_1_1Header.html#a7f2c6b837b0a29af54ae8280eb42c8c9", null ],
     [ "m_famin", "structamrex_1_1VisMF_1_1Header.html#afaf3496aa1e0bce82336411d0ee67fb6", null ],

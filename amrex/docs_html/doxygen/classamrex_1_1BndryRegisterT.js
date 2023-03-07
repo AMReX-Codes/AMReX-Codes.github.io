@@ -1,9 +1,9 @@
 var classamrex_1_1BndryRegisterT =
 [
     [ "value_type", "classamrex_1_1BndryRegisterT.html#ac60614a22752704216c93192f96a4f92", null ],
-    [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html#af78eeba652abe61dd6b4225f8b8dd1b0", null ],
+    [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html#a6723dc52b95f787f439cd19109d41086", null ],
     [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html#a669440b13ff12d665b4a732a77aa6658", null ],
-    [ "~BndryRegisterT", "classamrex_1_1BndryRegisterT.html#a051c0fcdc1710dedffe67af4f31d680d", null ],
+    [ "~BndryRegisterT", "classamrex_1_1BndryRegisterT.html#a2d267bc0d735366bae8c6843d4cc79e3", null ],
     [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html#a2922ba0d4eff802a4460e33c950a1ad9", null ],
     [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html#a13afc3531affff7230330514f2b0725a", null ],
     [ "boxes", "classamrex_1_1BndryRegisterT.html#a50efdc257f760e9e25399c37af9e6cc1", null ],

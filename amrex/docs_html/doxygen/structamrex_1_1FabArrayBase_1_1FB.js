@@ -1,7 +1,6 @@
 var structamrex_1_1FabArrayBase_1_1FB =
 [
     [ "FB", "structamrex_1_1FabArrayBase_1_1FB.html#afaefecbeba6b82464c68f2903f8444ea", null ],
-    [ "~FB", "structamrex_1_1FabArrayBase_1_1FB.html#a3a5bf414a1fa823843b3c35d2ee5bbc9", null ],
     [ "bytes", "structamrex_1_1FabArrayBase_1_1FB.html#a7350ce3c86017261950af6f94802d343", null ],
     [ "define_epo", "structamrex_1_1FabArrayBase_1_1FB.html#a53df06970b8cf1cb353ec184bb5422ef", null ],
     [ "define_fb", "structamrex_1_1FabArrayBase_1_1FB.html#a782fbc8576a01acde04fd3e8c6686c4b", null ],

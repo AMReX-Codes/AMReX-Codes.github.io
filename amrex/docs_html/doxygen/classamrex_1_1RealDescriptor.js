@@ -1,7 +1,7 @@
 var classamrex_1_1RealDescriptor =
 [
-    [ "RealDescriptor", "classamrex_1_1RealDescriptor.html#a5b76b8b48ca89f49fcb5d08d7f919677", null ],
-    [ "RealDescriptor", "classamrex_1_1RealDescriptor.html#af61d40bfa02ed076c84b183449123310", null ],
+    [ "RealDescriptor", "classamrex_1_1RealDescriptor.html#a9dbe5ae2ad6763590e469c1a74036b53", null ],
+    [ "RealDescriptor", "classamrex_1_1RealDescriptor.html#ae7a8d4505859f386a09ef7339b27a984", null ],
     [ "clone", "classamrex_1_1RealDescriptor.html#ae74530e4178f5afa7918c4ca43939224", null ],
     [ "convertFromNativeDoubleFormat", "classamrex_1_1RealDescriptor.html#a8d3e02daedf046920036514587034b2e", null ],
     [ "convertFromNativeFloatFormat", "classamrex_1_1RealDescriptor.html#aa5b07184bf42f9d39fcaccf6e9ca0fc6", null ],
@@ -15,7 +15,7 @@ var classamrex_1_1RealDescriptor =
     [ "format", "classamrex_1_1RealDescriptor.html#add111caab7a47e1e54409f0fe0f531d5", null ],
     [ "formatarray", "classamrex_1_1RealDescriptor.html#a1da9a838223819cf642f6a8288616c51", null ],
     [ "formatarray", "classamrex_1_1RealDescriptor.html#ad827bfc5b6baadddd3c1b913f46057f3", null ],
-    [ "newRealDescriptor", "classamrex_1_1RealDescriptor.html#a8950b0885e9d4a06d55ab2556dc71131", null ],
+    [ "newRealDescriptor", "classamrex_1_1RealDescriptor.html#ab94bb7aa5faab13c6cd95f1fe9109649", null ],
     [ "numBytes", "classamrex_1_1RealDescriptor.html#af8ad7b8bf71293f96dba2d963d446c21", null ],
     [ "operator!=", "classamrex_1_1RealDescriptor.html#ac17cd9e2f12e571dd7564e25844ff71a", null ],
     [ "operator==", "classamrex_1_1RealDescriptor.html#a834fb65342114ff30939f55642575f36", null ],
