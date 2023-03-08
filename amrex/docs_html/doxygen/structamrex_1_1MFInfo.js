@@ -2,6 +2,7 @@ var structamrex_1_1MFInfo =
 [
     [ "SetAlloc", "structamrex_1_1MFInfo.html#a983cd10420d59f361b7420da90de5066", null ],
     [ "SetArena", "structamrex_1_1MFInfo.html#a8d77528f27f99ad698aa26c78da7e979", null ],
+    [ "SetTag", "structamrex_1_1MFInfo.html#a810a0fb9b39d3a0d313f44d2b4d09ef2", null ],
     [ "SetTag", "structamrex_1_1MFInfo.html#addb772907b0ba233d79468968d823b80", null ],
     [ "SetTag", "structamrex_1_1MFInfo.html#af21be827e6eb2fd48530caecff10482a", null ],
     [ "SetTag", "structamrex_1_1MFInfo.html#a09865d39fb552bb0fa800934f1b1fa6d", null ],
