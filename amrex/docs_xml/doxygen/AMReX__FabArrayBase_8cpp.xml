@@ -4422,7 +4422,7 @@
 <codeline lineno="2466"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2467"><highlight class="normal">CheckRcvStats<sp/>(Vector&lt;MPI_Status&gt;&amp;<sp/>recv_stats,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;std::size_t&gt;&amp;<sp/>recv_size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag)</highlight></codeline>
 <codeline lineno="2468"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>n<sp/>=<sp/>recv_size.size();<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="2469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>n<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(recv_size.size());<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="2470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(recv_size[i]<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="2471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>count<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="2472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmp_count<sp/>=<sp/>0;</highlight></codeline>
@@ -4552,7 +4552,7 @@
 <codeline lineno="2596"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2597"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2598"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2599"><highlight class="normal">FabArrayBase::isFusingCandidate<sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
+<codeline lineno="2599"><highlight class="normal">FabArrayBase::isFusingCandidate<sp/>()<sp/>const<sp/>noexcept<sp/></highlight><highlight class="comment">//<sp/>NOLINT(readability-convert-member-functions-to-static)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2600"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2601"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2602"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>fine<sp/>tuned<sp/>on<sp/>MI100.</highlight><highlight class="normal"></highlight></codeline>

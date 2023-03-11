@@ -14,7 +14,7 @@ var classamrex_1_1TagBox =
     [ "~TagBox", "classamrex_1_1TagBox.html#a46499df9c37906b8d12c9561945e1671", null ],
     [ "TagBox", "classamrex_1_1TagBox.html#adc981d8086ea65ef19383c04acacace3", null ],
     [ "TagBox", "classamrex_1_1TagBox.html#a1c163cf21eb64a1c2032d5ba1acb2594", null ],
-    [ "buffer", "classamrex_1_1TagBox.html#aa6324edaf14ada2c319e1a5c92062331", null ],
+    [ "buffer", "classamrex_1_1TagBox.html#af103bf562a87e04ba76cd763005c2539", null ],
     [ "coarsen", "classamrex_1_1TagBox.html#a4c5cdfe01aa0372001178bc376795e47", null ],
     [ "get_itags", "classamrex_1_1TagBox.html#a43dbc9ccdad55205e4a95d7ccf6f3691", null ],
     [ "operator=", "classamrex_1_1TagBox.html#a5c795ae93bec04fe82069450ebd7fa41", null ],

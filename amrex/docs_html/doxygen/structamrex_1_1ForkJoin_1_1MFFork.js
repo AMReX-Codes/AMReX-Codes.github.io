@@ -1,6 +1,7 @@
 var structamrex_1_1ForkJoin_1_1MFFork =
 [
     [ "MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html#a34adaed2dce7ad0a962488bee88e6589", null ],
+    [ "~MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html#a4bbeb1749eac4a25a1d01a42cc2e08df", null ],
     [ "MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html#a963d59d69d1624a4fc0bc1806a6f8588", null ],
     [ "MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html#a9f9fa0710f16b9dff7c3002b6b23744c", null ],
     [ "MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html#a67f00ed8c48e03e4b18dcecaa19b14d1", null ],

@@ -1656,13 +1656,13 @@
 <codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>localStringsCopy.size();<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pfStrings<sp/>&lt;&lt;<sp/>localStringsCopy[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/>pfStringsSize<sp/>=<sp/>pfStrings.str().size();</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/>pfStringsSize<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(pfStrings.str().size());</highlight></codeline>
 <codeline lineno="719"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="720"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;pfStringsSize,<sp/>1);</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"></highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/>Vector&lt;char&gt;<sp/>pfCharArray(pfStringsSize<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="723"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strcpy(pfCharArray.dataPtr(),<sp/>pfStrings.str().c_str());<sp/><sp/></highlight><highlight class="comment">//<sp/>null<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strncpy(pfCharArray.dataPtr(),<sp/>pfStrings.str().c_str(),<sp/>pfCharArray.size());<sp/><sp/></highlight><highlight class="comment">//<sp/>null<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="725"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(pfCharArray.dataPtr(),<sp/>pfCharArray.size());</highlight></codeline>
 <codeline lineno="727"><highlight class="normal"></highlight></codeline>
@@ -1720,9 +1720,9 @@
 <codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>sendStrings.size();<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ossSendStrings<sp/>&lt;&lt;<sp/>sendStrings[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/>sendStringsSize<sp/>=<sp/>ossSendStrings.str().size();</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/>sendStringsSize<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ossSendStrings.str().size());</highlight></codeline>
 <codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/>sendCharArray.resize(sendStringsSize<sp/>+<sp/>1);</highlight></codeline>
-<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strcpy(sendCharArray.dataPtr(),<sp/>ossSendStrings.str().c_str());<sp/><sp/></highlight><highlight class="comment">//<sp/>null<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strncpy(sendCharArray.dataPtr(),<sp/>ossSendStrings.str().c_str(),<sp/>sendCharArray.size());<sp/><sp/></highlight><highlight class="comment">//<sp/>null<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="785"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="786"><highlight class="normal"></highlight></codeline>
 <codeline lineno="787"><highlight class="normal"><sp/><sp/>Vector&lt;int&gt;<sp/>nChars(nProcs,<sp/>0);</highlight></codeline>
@@ -1773,13 +1773,13 @@
 <codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>syncedStrings.size();<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syncedStrStr<sp/>&lt;&lt;<sp/>syncedStrings[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/>syncedStringsSize<sp/>=<sp/>syncedStrStr.str().size();</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/>syncedStringsSize<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(syncedStrStr.str().size());</highlight></codeline>
 <codeline lineno="836"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="837"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;syncedStringsSize,<sp/>1);</highlight></codeline>
 <codeline lineno="838"><highlight class="normal"></highlight></codeline>
 <codeline lineno="839"><highlight class="normal"><sp/><sp/>Vector&lt;char&gt;<sp/>syncedCharArray(syncedStringsSize<sp/>+<sp/>1);</highlight></codeline>
 <codeline lineno="840"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strcpy(syncedCharArray.dataPtr(),<sp/>syncedStrStr.str().c_str());<sp/><sp/></highlight><highlight class="comment">//<sp/>null<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strncpy(syncedCharArray.dataPtr(),<sp/>syncedStrStr.str().c_str(),<sp/>syncedCharArray.size());<sp/><sp/></highlight><highlight class="comment">//<sp/>null<sp/>terminated</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="842"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="843"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(syncedCharArray.dataPtr(),<sp/>syncedCharArray.size());</highlight></codeline>
 <codeline lineno="844"><highlight class="normal"></highlight></codeline>

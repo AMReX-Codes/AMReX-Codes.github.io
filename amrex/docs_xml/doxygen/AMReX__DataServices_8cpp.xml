@@ -2563,7 +2563,7 @@
 <codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>fileNameLengthPadded<sp/>+=<sp/>fileNameLengthPadded<sp/>%<sp/>8;<sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>alignment<sp/>on<sp/>the<sp/>t3e</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/>fileNameCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[fileNameLengthPadded];</highlight></codeline>
 <codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(fileNameCharPtr,<sp/>ds-&gt;<ref refid="classamrex_1_1DataServices_1a2150ba5a6169670f1cfcebc9f7596b27" kindref="member">fileName</ref>.c_str());</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(fileNameCharPtr,<sp/>ds-&gt;<ref refid="classamrex_1_1DataServices_1a2150ba5a6169670f1cfcebc9f7596b27" kindref="member">fileName</ref>.c_str(),<sp/>fileNameLengthPadded);</highlight></codeline>
 <codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="460"><highlight class="normal"></highlight></codeline>
 <codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(fileNameCharPtr,<sp/>fileNameLengthPadded,0);</highlight></codeline>
@@ -2675,7 +2675,7 @@
 <codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"></highlight></codeline>
 <codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(derivedCharPtr,<sp/>derivedLengthPadded,<sp/>0);</highlight></codeline>
@@ -2729,7 +2729,7 @@
 <codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="626"><highlight class="normal"></highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(derivedCharPtr,<sp/>derivedLengthPadded,<sp/>0);</highlight></codeline>
@@ -2787,7 +2787,7 @@
 <codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(derivedCharPtr,<sp/>derivedLengthPadded,<sp/>0);</highlight></codeline>
 <codeline lineno="685"><highlight class="normal"></highlight></codeline>
@@ -2836,7 +2836,7 @@
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(derivedCharPtr,<sp/>derivedLengthPadded,<sp/>0);</highlight></codeline>
 <codeline lineno="734"><highlight class="normal"></highlight></codeline>
@@ -2888,7 +2888,7 @@
 <codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(derivedCharPtr,<sp/>derivedLengthPadded,<sp/>0);</highlight></codeline>
 <codeline lineno="786"><highlight class="normal"></highlight></codeline>
@@ -2952,7 +2952,7 @@
 <codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBox<sp/>=<sp/>0;<sp/>iBox<sp/>&lt;<sp/>pointBoxArraySize;<sp/>++iBox)<sp/>{</highlight></codeline>
 <codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pointBoxArrayPtr[iBox]<sp/>=<sp/>pointBoxArrayTempPtr[iBox];</highlight></codeline>
 <codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3040,7 +3040,7 @@
 <codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedLengthPadded<sp/>+=<sp/>derivedLengthPadded<sp/>%<sp/>8;</highlight></codeline>
 <codeline lineno="933"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>derivedCharPtr<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[derivedLengthPadded];</highlight></codeline>
 <codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(derivedCharPtr,<sp/>derivedTemp.c_str());</highlight></codeline>
+<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strncpy(derivedCharPtr,<sp/>derivedTemp.c_str(),<sp/>derivedLengthPadded);</highlight></codeline>
 <codeline lineno="936"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iBox(0);<sp/>iBox<sp/>&lt;<sp/>lineBoxArraySize;<sp/>++iBox)<sp/>{</highlight></codeline>
 <codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lineBoxArrayPtr[iBox]<sp/>=<sp/>lineBoxArrayTempPtr[iBox];</highlight></codeline>
 <codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

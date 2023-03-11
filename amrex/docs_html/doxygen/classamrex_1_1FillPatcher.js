@@ -1,8 +1,8 @@
 var classamrex_1_1FillPatcher =
 [
     [ "FillPatcher", "classamrex_1_1FillPatcher.html#af190f9e264e08dd6fec696c4ff84c53b", null ],
-    [ "fill", "classamrex_1_1FillPatcher.html#ad1b6281e67325dc9e99fedc7b08e0b14", null ],
-    [ "fillCoarseFineBoundary", "classamrex_1_1FillPatcher.html#ab5b77e740f3c652055c218e494c0168c", null ],
+    [ "fill", "classamrex_1_1FillPatcher.html#a93e5303eea72dd1c6c8469f75ea51247", null ],
+    [ "fillCoarseFineBoundary", "classamrex_1_1FillPatcher.html#a93d1f3a709bbf485e19c948875fc6c0c", null ],
     [ "fillRK", "classamrex_1_1FillPatcher.html#aa756e7fa531116007159b132f0312577", null ],
     [ "getFPinfo", "classamrex_1_1FillPatcher.html#ad5c0afcb0f98eda5ed211fa3e232d6ad", null ],
     [ "storeRKCoarseData", "classamrex_1_1FillPatcher.html#ad059e9960589afeff57d54307acd2dca", null ],

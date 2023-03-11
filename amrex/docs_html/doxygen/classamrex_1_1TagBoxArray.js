@@ -1,8 +1,8 @@
 var classamrex_1_1TagBoxArray =
 [
     [ "TagType", "classamrex_1_1TagBoxArray.html#aacc3ef7b971c8c55ba4a0bb74492b019", null ],
-    [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#a904fcd1905c4871508426269dd4cc14d", null ],
-    [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#a7f8015bb7729283383dd0d3b0265e0ea", null ],
+    [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#a7615520c69175032ee2326eb094cbc77", null ],
+    [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#ad56f5409a87394e53ea7acda127347cc", null ],
     [ "~TagBoxArray", "classamrex_1_1TagBoxArray.html#a64e4bff8da8d8c89a2e893b483161910", null ],
     [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#ad2857940d22b1f8c7718cc530bb29d3e", null ],
     [ "TagBoxArray", "classamrex_1_1TagBoxArray.html#a1b309c4b244d311888eb013b34693620", null ],

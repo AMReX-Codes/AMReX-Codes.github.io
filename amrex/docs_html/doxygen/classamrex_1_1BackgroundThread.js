@@ -2,8 +2,12 @@ var classamrex_1_1BackgroundThread =
 [
     [ "BackgroundThread", "classamrex_1_1BackgroundThread.html#a276804e5d463c6c46c248701f73f18c7", null ],
     [ "~BackgroundThread", "classamrex_1_1BackgroundThread.html#ab5ad8734e492ca7784f7fa8af2d4c29e", null ],
+    [ "BackgroundThread", "classamrex_1_1BackgroundThread.html#ad8890dc2d74b85c2c76944b9fe74b9bf", null ],
+    [ "BackgroundThread", "classamrex_1_1BackgroundThread.html#af44fe9acf8dd7a7c6815ce8380134849", null ],
     [ "do_job", "classamrex_1_1BackgroundThread.html#a7ef8784994644d4a4fa8a46205610b2b", null ],
     [ "Finish", "classamrex_1_1BackgroundThread.html#a1087e92b5b216fe4574e45078338cd51", null ],
+    [ "operator=", "classamrex_1_1BackgroundThread.html#a84fe07d6505966071f15d2f65509baa7", null ],
+    [ "operator=", "classamrex_1_1BackgroundThread.html#ac0f5a3c8b889af8ac29ab19ccf3b288b", null ],
     [ "Submit", "classamrex_1_1BackgroundThread.html#a31e717cddbcc5e4079da2d35d11a5c68", null ],
     [ "Submit", "classamrex_1_1BackgroundThread.html#aa62257343be0d75867496c765d0d959e", null ],
     [ "m_clearing", "classamrex_1_1BackgroundThread.html#a50eaee402e1e16b45a4e535eda4f2860", null ],
