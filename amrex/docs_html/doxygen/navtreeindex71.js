@@ -1,5 +1,7 @@
 var NAVTREEINDEX71 =
 {
+"structamrex_1_1Array1D.html#ac6077168c97aa136885181c663a772ac":[2,0,0,72,4],
+"structamrex_1_1Array1D.html#ad937d10f88d93f07604c7c9c2daae3ec":[2,0,0,72,11],
 "structamrex_1_1Array1D.html#adc6a1c42a02a07645636a297b6b28a6b":[2,0,0,72,5],
 "structamrex_1_1Array1D.html#adde36e9756eb2859617a63cc2513b08b":[2,0,0,72,10],
 "structamrex_1_1Array1D.html#ae9cf5dcb6f1457ab4fd18d97efd91be2":[2,0,0,72,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX71 =
 "structamrex_1_1BinIterator.html#acc4e6d1fb03e2741685948dcf3ee4878":[2,0,0,424,5],
 "structamrex_1_1BinIterator.html#acd28c9a2c758287d2a7d6b27d595121a":[2,0,0,424,6],
 "structamrex_1_1BinIterator_1_1iterator.html":[2,0,0,424,0],
-"structamrex_1_1BinIterator_1_1iterator.html#a1547e74c5752d256ba49fd25b2c7a045":[2,0,0,424,0,1],
-"structamrex_1_1BinIterator_1_1iterator.html#a203d3f6da36fafad340372cb87394dce":[2,0,0,424,0,7],
-"structamrex_1_1BinIterator_1_1iterator.html#a4dacf767fe235d9ee43292d67bec16c3":[2,0,0,424,0,3]
+"structamrex_1_1BinIterator_1_1iterator.html#a1547e74c5752d256ba49fd25b2c7a045":[2,0,0,424,0,1]
 };

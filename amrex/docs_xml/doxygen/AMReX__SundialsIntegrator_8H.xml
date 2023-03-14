@@ -59,7 +59,7 @@
         <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="175">
+      <node id="176">
         <label>sunnonlinsol/sunnonlinsol_fixedpoint.h</label>
       </node>
       <node id="29">
@@ -92,6 +92,16 @@
         <label>AMReX_GpuKernelInfo.H</label>
         <link refid="AMReX__GpuKernelInfo_8H"/>
         <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>AMReX_Sundials_Core.H</label>
+        <link refid="AMReX__Sundials__Core_8H"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
         </childnode>
       </node>
       <node id="100">
@@ -238,15 +248,17 @@
       <node id="161">
         <label>AMReX_NVector_MultiFab.H</label>
         <link refid="AMReX__NVector__MultiFab_8H"/>
+        <childnode refid="24" relation="include">
+        </childnode>
         <childnode refid="141" relation="include">
         </childnode>
         <childnode refid="47" relation="include">
         </childnode>
         <childnode refid="162" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
         <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -322,7 +334,7 @@
         <childnode refid="39" relation="include">
         </childnode>
       </node>
-      <node id="172">
+      <node id="170">
         <label>sundials/sundials_context.h</label>
       </node>
       <node id="71">
@@ -613,7 +625,7 @@
       <node id="20">
         <label>string</label>
       </node>
-      <node id="176">
+      <node id="177">
         <label>sundials/sundials_types.h</label>
       </node>
       <node id="99">
@@ -789,24 +801,28 @@
         </childnode>
         <childnode refid="161" relation="include">
         </childnode>
-        <childnode refid="170" relation="include">
-        </childnode>
-        <childnode refid="174" relation="include">
+        <childnode refid="172" relation="include">
         </childnode>
         <childnode refid="175" relation="include">
         </childnode>
         <childnode refid="176" relation="include">
         </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
       </node>
       <node id="126">
         <label>driver_types.h</label>
       </node>
-      <node id="171">
+      <node id="173">
         <label>AMReX_SUNMemory.H</label>
         <link refid="AMReX__SUNMemory_8H"/>
-        <childnode refid="172" relation="include">
+        <childnode refid="61" relation="include">
         </childnode>
-        <childnode refid="173" relation="include">
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
         </childnode>
       </node>
       <node id="98">
@@ -825,16 +841,16 @@
         <childnode refid="40" relation="include">
         </childnode>
       </node>
-      <node id="170">
+      <node id="172">
         <label>AMReX_Sundials.H</label>
         <link refid="AMReX__Sundials_8H"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="61" relation="include">
-        </childnode>
         <childnode refid="161" relation="include">
         </childnode>
-        <childnode refid="171" relation="include">
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
         </childnode>
       </node>
       <node id="25">
@@ -1087,7 +1103,7 @@
       <node id="11">
         <label>cstdio</label>
       </node>
-      <node id="169">
+      <node id="171">
         <label>sundials/sundials_nvector.h</label>
       </node>
       <node id="153">
@@ -1599,7 +1615,7 @@
         <childnode refid="44" relation="include">
         </childnode>
       </node>
-      <node id="174">
+      <node id="175">
         <label>sunlinsol/sunlinsol_spgmr.h</label>
       </node>
       <node id="24">
@@ -1915,7 +1931,7 @@
       <node id="34">
         <label>type_traits</label>
       </node>
-      <node id="173">
+      <node id="174">
         <label>sundials/sundials_memory.h</label>
       </node>
       <node id="42">
@@ -2404,7 +2420,7 @@
 <codeline lineno="217"><highlight class="normal"></highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1SundialsIntegrator_1a6001354f5d925662cf0de25a29190e9d" kindref="member">NVar</ref>;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sunindextype<sp/><ref refid="namespaceamrex_1ab8f44b56e5ac2f53bcfe742891c1c79c" kindref="member">length</ref><sp/>=<sp/>get_length(i);</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N_Vector<sp/>nvi<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1sundials_1aceec8efc0387451add043de594e2db80" kindref="member">amrex::sundials::N_VMake_MultiFab</ref>(<ref refid="namespaceamrex_1ab8f44b56e5ac2f53bcfe742891c1c79c" kindref="member">length</ref>,<sp/>&amp;S_new[i]);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N_Vector<sp/>nvi<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1sundials_1aa448557aba9190f3de7151a4293004c9" kindref="member">amrex::sundials::N_VMake_MultiFab</ref>(<ref refid="namespaceamrex_1ab8f44b56e5ac2f53bcfe742891c1c79c" kindref="member">length</ref>,<sp/>&amp;S_new[i]);</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1SundialsIntegrator_1a418b59c318ed0316d241cf9231314544" kindref="member">nv_many_arr</ref>[i]<sp/>=<sp/>nvi;</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
@@ -2569,7 +2585,7 @@
 <codeline lineno="382"><highlight class="normal"></highlight></codeline>
 <codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1SundialsIntegrator_1a6001354f5d925662cf0de25a29190e9d" kindref="member">NVar</ref>;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sunindextype<sp/><ref refid="namespaceamrex_1ab8f44b56e5ac2f53bcfe742891c1c79c" kindref="member">length</ref><sp/>=<sp/>get_length(i);</highlight></codeline>
-<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N_Vector<sp/>nvi<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1sundials_1aceec8efc0387451add043de594e2db80" kindref="member">amrex::sundials::N_VMake_MultiFab</ref>(<ref refid="namespaceamrex_1ab8f44b56e5ac2f53bcfe742891c1c79c" kindref="member">length</ref>,<sp/>&amp;S_new[i]);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N_Vector<sp/>nvi<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1sundials_1aa448557aba9190f3de7151a4293004c9" kindref="member">amrex::sundials::N_VMake_MultiFab</ref>(<ref refid="namespaceamrex_1ab8f44b56e5ac2f53bcfe742891c1c79c" kindref="member">length</ref>,<sp/>&amp;S_new[i]);</highlight></codeline>
 <codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1SundialsIntegrator_1a418b59c318ed0316d241cf9231314544" kindref="member">nv_many_arr</ref>[i]<sp/>=<sp/>nvi;</highlight></codeline>
 <codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="388"><highlight class="normal"></highlight></codeline>
