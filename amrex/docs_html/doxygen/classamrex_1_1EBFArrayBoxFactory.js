@@ -1,7 +1,7 @@
 var classamrex_1_1EBFArrayBoxFactory =
 [
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#ae76b4a906830e7b5094edc438e6cc9b9", null ],
-    [ "~EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#ad501654118cdfebf0f2b0d68fb5a6cc1", null ],
+    [ "~EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#acc29524f4cabd3655de95618b8744ef7", null ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#aff3ee653b5be6f3b58ec1c34ae2f461f", null ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#aad2e2bde5474a8a144c900d5bfaa5e8c", null ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html#aa671c88f9bbc88f7824352ef14fedc45", null ],

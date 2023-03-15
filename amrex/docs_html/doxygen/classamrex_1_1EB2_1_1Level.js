@@ -1,8 +1,6 @@
 var classamrex_1_1EB2_1_1Level =
 [
     [ "Level", "classamrex_1_1EB2_1_1Level.html#ac843646825df5f720267a7c641204301", null ],
-    [ "Level", "classamrex_1_1EB2_1_1Level.html#ad592cb78732b05e45be18327923b7d3e", null ],
-    [ "Level", "classamrex_1_1EB2_1_1Level.html#acdaab7a95f7844763aadfd9f22134658", null ],
     [ "boxArray", "classamrex_1_1EB2_1_1Level.html#ac2625b7ac69e478b4ca5b11c74f6827b", null ],
     [ "buildCellFlag", "classamrex_1_1EB2_1_1Level.html#adbbdc98f272b71363491d9a348e1f92a", null ],
     [ "coarsenFromFine", "classamrex_1_1EB2_1_1Level.html#a8244e442a7b8e9f14056fa883f557c9c", null ],
@@ -28,8 +26,6 @@ var classamrex_1_1EB2_1_1Level =
     [ "getEBIndexSpace", "classamrex_1_1EB2_1_1Level.html#a1c5bf0b16ab52e799b8830fd149c0f62", null ],
     [ "isAllRegular", "classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066", null ],
     [ "isOK", "classamrex_1_1EB2_1_1Level.html#a09608e5c4f86b678ac2c665090366d91", null ],
-    [ "operator=", "classamrex_1_1EB2_1_1Level.html#a3ad78d565e99b94235b3afade60d9fed", null ],
-    [ "operator=", "classamrex_1_1EB2_1_1Level.html#abae36260177c7e79251005e56d741d5c", null ],
     [ "prepareForCoarsening", "classamrex_1_1EB2_1_1Level.html#ac040458ac6f5ac51b303915a6dd66eb5", null ],
     [ "write_to_chkpt_file", "classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1", null ],
     [ "m_allregular", "classamrex_1_1EB2_1_1Level.html#a16651c9d026bf4c7876a890be6e85253", null ],

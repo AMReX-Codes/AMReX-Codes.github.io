@@ -7,7 +7,7 @@ var classamrex_1_1EBCellFlagFab =
     [ "EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html#a950b4a82b4c1eb79a628f7f85509d97d", null ],
     [ "EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html#a328da9c6a1ffe5ff87003fdc9d5a7e9d", null ],
     [ "EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html#aa21ee05268cabb67bb200801168253b9", null ],
-    [ "~EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html#af5b0c96224743754c1ec14e8200dd43d", null ],
+    [ "~EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html#a56cf5fc06dc4b6e09eeed8f5139b4f50", null ],
     [ "EBCellFlagFab", "classamrex_1_1EBCellFlagFab.html#af6a0b6f99232ecdb6c7e7353c2166c8a", null ],
     [ "getNumCoveredCells", "classamrex_1_1EBCellFlagFab.html#accfba3397c54fc70f5355fe72e53aef5", null ],
     [ "getNumCutCells", "classamrex_1_1EBCellFlagFab.html#abfc0c19edd24b4583d39b256c3916364", null ],

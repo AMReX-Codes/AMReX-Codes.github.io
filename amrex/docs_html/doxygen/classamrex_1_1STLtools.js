@@ -10,7 +10,7 @@ var classamrex_1_1STLtools =
     [ "read_ascii_stl_file", "classamrex_1_1STLtools.html#aa4f438da64a6ea3b7520112aac9f8fd3", null ],
     [ "read_binary_stl_file", "classamrex_1_1STLtools.html#aca6050ea96a310625fe20e9f9594680a", null ],
     [ "read_stl_file", "classamrex_1_1STLtools.html#abde98e341a2edf239bfa987ce47ed2be", null ],
-    [ "updateIntercept", "classamrex_1_1STLtools.html#a107f822bd5f003022a6b22e247126f0b", null ],
+    [ "updateIntercept", "classamrex_1_1STLtools.html#ade00ed9461b4c9782dd363cb75dc84ae", null ],
     [ "allcovered", "classamrex_1_1STLtools.html#ad56ce2bf01da43520e270f2ae570f29a", null ],
     [ "allregular", "classamrex_1_1STLtools.html#a071a8fb28babb5af263c2aa74a0d979b", null ],
     [ "m_boundry_is_outside", "classamrex_1_1STLtools.html#ae50a6d985147b0ae607e688e120f2935", null ],

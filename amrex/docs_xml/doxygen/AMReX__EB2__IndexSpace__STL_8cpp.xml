@@ -1544,6 +1544,8 @@
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
       </node>
       <node id="48">
         <label>iosfwd</label>
@@ -2271,7 +2273,7 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__EB2__IndexSpace__STL_8H" kindref="compound">AMReX_EB2_IndexSpace_STL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">EB2<sp/>{</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex_1_1EB2" kindref="compound">amrex::EB2</ref><sp/>{</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1abe85200c4d1b12e00b1c39640553f064" kindref="member">IndexSpaceSTL::IndexSpaceSTL</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>stl_file,<sp/>Real<sp/>stl_scale,</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array&lt;Real,3&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>stl_center,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stl_reverse_normal,</highlight></codeline>
@@ -2341,7 +2343,7 @@
 <codeline lineno="70"><highlight class="normal"><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a4106393335714ad0351ccf212d479cdf" kindref="member">IndexSpaceSTL::getLevel</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>geom)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::find(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>),<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>),<sp/>geom.Domain());</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>std::distance(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>.begin(),<sp/>it);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>std::distance(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>.begin(),<sp/>it);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ab14caa115cde8da650b6587b8e73dd02" kindref="member">m_stllevel</ref>[i];</highlight></codeline>
 <codeline lineno="75"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
@@ -2349,7 +2351,7 @@
 <codeline lineno="78"><highlight class="normal"><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1afa9591f706505991554b147f3d2a137b" kindref="member">IndexSpaceSTL::getGeometry</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>dom)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="79"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::find(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>),<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>),<sp/>dom);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>std::distance(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>.begin(),<sp/>it);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>std::distance(<ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a92801c71e56e5fdb7873f8f4af0542ac" kindref="member">m_domain</ref>.begin(),<sp/>it);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a60957b371c1e6c775ebb2e18bbbc2c99" kindref="member">m_geom</ref>[i];</highlight></codeline>
 <codeline lineno="83"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
@@ -2359,7 +2361,7 @@
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;IndexSpaceSTL::addFineLevels:<sp/>todo&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp"/>
   </compounddef>

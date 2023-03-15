@@ -1392,7 +1392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="208" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="208" bodyend="212"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="214" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="214" bodyend="218"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__Random_8cpp_1a5eda724d6b6a9ddba6328fc28698964c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1411,7 +1411,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="214" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="214" bodyend="218"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="220" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="220" bodyend="224"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__Random_8cpp_1a12c16cae3c80d3004856c006d2a4a2a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1430,7 +1430,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="220" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="220" bodyend="223"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="226" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="226" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__Random_8cpp_1af7786727a4dfac68a7b0bcf67f62f61e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -1443,7 +1443,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="227" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="227" bodyend="230"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="233" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="233" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__Random_8cpp_1a61da6a9297e0e72c5db8a53520594ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>amrex::Long</type>
@@ -1460,7 +1460,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="233" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="233" bodyend="236"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" line="239" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp" bodystart="239" bodyend="242"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1538,173 +1538,179 @@
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>generators.resize(nthreads);</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>init_seed<sp/>=<sp/>cpu_seed<sp/>+<sp/>tid*nprocs;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>generators[tid].seed(init_seed);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>ResizeRandomSeed(gpu_seed);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">ignore_unused</ref>(gpu_seed);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a6a4ed5dc1eeb3e5b409eb8975c9e829b" kindref="member">RandomNormal</ref><sp/>(Real<sp/>mean,<sp/>Real<sp/>stddev)</highlight></codeline>
-<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::normal_distribution&lt;Real&gt;<sp/>distribution(mean,<sp/>stddev);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a384bf7a8791d85fe1ae4153eee61d71e" kindref="member">Random</ref><sp/>()</highlight></codeline>
-<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;Real&gt;<sp/>distribution(0.0,<sp/>1.0);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aadec079fd8e2cdca36f7f49355e33864" kindref="member">RandomPoisson</ref><sp/>(Real<sp/>lambda)</highlight></codeline>
-<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::poisson_distribution&lt;unsigned<sp/>int&gt;<sp/>distribution(lambda);</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a20796a80df81ee204983811cc8a1b705" kindref="member">Random_int</ref><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;unsigned<sp/>int&gt;<sp/>distribution(0,<sp/>n-1);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal">ULong<sp/><ref refid="namespaceamrex_1a83b723afb07da54500bc1dc47a43f636" kindref="member">Random_long</ref><sp/>(ULong<sp/>n)</highlight></codeline>
-<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;ULong&gt;<sp/>distribution(0,<sp/>n-1);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><ref refid="namespaceamrex_1ad1b283df95b292f478597bc503170459" kindref="member">SaveRandomState</ref><sp/>(std::ostream&amp;<sp/>os)</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nthreads;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>generators[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><ref refid="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" kindref="member">RestoreRandomState</ref><sp/>(std::istream&amp;<sp/>is,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads_old,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstep_old)</highlight></codeline>
-<codeline lineno="131"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(nthreads,<sp/>nthreads_old);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>generators[i];</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nthreads<sp/>&gt;<sp/>nthreads_old)<sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">MyProc</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>nthreads_old;<sp/>i<sp/>&lt;<sp/>nthreads;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>seed<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">MyProc</ref>+1<sp/>+<sp/>i*<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;ULong&gt;::max</ref>()/</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nstep_old+1)</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nthreads)*</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>))<sp/></highlight><highlight class="comment">//<sp/>avoid<sp/>overflow</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seed<sp/>+=<sp/>nstep_old*nthreads*<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>generators[i].seed(seed);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><ref refid="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" kindref="member">UniqueRandomSubset</ref><sp/>(<ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref><sp/>&amp;uSet,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>poolSize,</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printSet)</highlight></codeline>
-<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(setSize<sp/>&gt;<sp/>poolSize)<sp/>{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">Abort</ref>(</highlight><highlight class="stringliteral">&quot;****<sp/>Error<sp/>in<sp/>UniqueRandomSubset:<sp/><sp/>setSize<sp/>&gt;<sp/>poolSize.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/>std::set&lt;int&gt;<sp/>copySet;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref><sp/>uSetTemp;</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(copySet.size())<sp/>&lt;<sp/>setSize)<sp/>{</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1a20796a80df81ee204983811cc8a1b705" kindref="member">Random_int</ref>(poolSize));</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(copySet.find(r)<sp/>==<sp/>copySet.end())<sp/>{</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>copySet.insert(r);</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uSetTemp.push_back(r);</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/>uSet<sp/>=<sp/>uSetTemp;</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(printSet)<sp/>{</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>uSet.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;uSet[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>uSet[i]<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex__omp__module_1ad65feb81483b21194d98cfba40c0b8bb" kindref="member">omp_in_parallel</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;It<sp/>is<sp/>not<sp/>safe<sp/>to<sp/>call<sp/>amrex::InitRandom<sp/>inside<sp/>a<sp/>threaded<sp/>region.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>init_seed<sp/>=<sp/>cpu_seed<sp/>+<sp/>tid*nprocs;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>generators[tid].seed(init_seed);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>ResizeRandomSeed(gpu_seed);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">ignore_unused</ref>(gpu_seed);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a6a4ed5dc1eeb3e5b409eb8975c9e829b" kindref="member">RandomNormal</ref><sp/>(Real<sp/>mean,<sp/>Real<sp/>stddev)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>std::normal_distribution&lt;Real&gt;<sp/>distribution(mean,<sp/>stddev);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">Real<sp/><ref refid="namespaceamrex_1a384bf7a8791d85fe1ae4153eee61d71e" kindref="member">Random</ref><sp/>()</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;Real&gt;<sp/>distribution(0.0,<sp/>1.0);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aadec079fd8e2cdca36f7f49355e33864" kindref="member">RandomPoisson</ref><sp/>(Real<sp/>lambda)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::poisson_distribution&lt;unsigned<sp/>int&gt;<sp/>distribution(lambda);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a20796a80df81ee204983811cc8a1b705" kindref="member">Random_int</ref><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;unsigned<sp/>int&gt;<sp/>distribution(0,<sp/>n-1);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">ULong<sp/><ref refid="namespaceamrex_1a83b723afb07da54500bc1dc47a43f636" kindref="member">Random_long</ref><sp/>(ULong<sp/>n)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_int_distribution&lt;ULong&gt;<sp/>distribution(0,<sp/>n-1);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution(generators[tid]);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="namespaceamrex_1ad1b283df95b292f478597bc503170459" kindref="member">SaveRandomState</ref><sp/>(std::ostream&amp;<sp/>os)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nthreads;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>generators[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" kindref="member">RestoreRandomState</ref><sp/>(std::istream&amp;<sp/>is,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads_old,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstep_old)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(nthreads,<sp/>nthreads_old);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>generators[i];</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nthreads<sp/>&gt;<sp/>nthreads_old)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">MyProc</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>nthreads_old;<sp/>i<sp/>&lt;<sp/>nthreads;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>seed<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">MyProc</ref>+1<sp/>+<sp/>i*<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;ULong&gt;::max</ref>()/</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nstep_old+1)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nthreads)*</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>))<sp/></highlight><highlight class="comment">//<sp/>avoid<sp/>overflow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>seed<sp/>+=<sp/>nstep_old*nthreads*<ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">NProcs</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>generators[i].seed(seed);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><ref refid="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" kindref="member">UniqueRandomSubset</ref><sp/>(<ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref><sp/>&amp;uSet,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>poolSize,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>printSet)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(setSize<sp/>&gt;<sp/>poolSize)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">Abort</ref>(</highlight><highlight class="stringliteral">&quot;****<sp/>Error<sp/>in<sp/>UniqueRandomSubset:<sp/><sp/>setSize<sp/>&gt;<sp/>poolSize.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>std::set&lt;int&gt;<sp/>copySet;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref><sp/>uSetTemp;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(copySet.size())<sp/>&lt;<sp/>setSize)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1a20796a80df81ee204983811cc8a1b705" kindref="member">Random_int</ref>(poolSize));</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(copySet.find(r)<sp/>==<sp/>copySet.end())<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>copySet.insert(r);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uSetTemp.push_back(r);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a609b6464779180bb47c23d308d6c1a95" kindref="member">ResetRandomSeed</ref><sp/>(ULong<sp/>cpu_seed,<sp/>ULong<sp/>gpu_seed)</highlight></codeline>
-<codeline lineno="176"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">InitRandom</ref>(cpu_seed,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>(),<sp/>gpu_seed);</highlight></codeline>
-<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><ref refid="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" kindref="member">DeallocateRandomSeedDevArray</ref><sp/>()</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>uSet<sp/>=<sp/>uSetTemp;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(printSet)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>uSet.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;uSet[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/><sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>uSet[i]<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a609b6464779180bb47c23d308d6c1a95" kindref="member">ResetRandomSeed</ref><sp/>(ULong<sp/>cpu_seed,<sp/>ULong<sp/>gpu_seed)</highlight></codeline>
 <codeline lineno="182"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rand_engine_descr)<sp/>{</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>rand_engine_descr;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand_engine_descr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1ae5aa4a92b1c9940d028c38628ec7a866" kindref="member">gpu_rand_state</ref><sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(<ref refid="namespaceamrex_1ae5aa4a92b1c9940d028c38628ec7a866" kindref="member">gpu_rand_state</ref>);</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae5aa4a92b1c9940d028c38628ec7a866" kindref="member">gpu_rand_state</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">InitRandom</ref>(cpu_seed,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">ParallelDescriptor::NProcs</ref>(),<sp/>gpu_seed);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><ref refid="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" kindref="member">DeallocateRandomSeedDevArray</ref><sp/>()</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rand_engine_descr)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>rand_engine_descr;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand_engine_descr<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"></highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fortran<sp/>entry<sp/>points<sp/>for<sp/>amrex::Random().</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(AMREX_XSDK)<sp/>&amp;&amp;<sp/>!defined(BL_NO_FORT)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><ref refid="AMReX__Random_8cpp_1a7149b75200fd1c2399da882ca3a148bb" kindref="member">BL_FORT_PROC_DECL</ref>(BLUTILINITRAND,blutilinitrand)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>sd)</highlight></codeline>
-<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::ULong<sp/>seed<sp/>=<sp/>*sd;</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">amrex::InitRandom</ref>(seed);</highlight></codeline>
-<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"></highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><ref refid="AMReX__Random_8cpp_1a7149b75200fd1c2399da882ca3a148bb" kindref="member">BL_FORT_PROC_DECL</ref>(BLINITRAND,blinitrand)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>sd)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1ae5aa4a92b1c9940d028c38628ec7a866" kindref="member">gpu_rand_state</ref><sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(<ref refid="namespaceamrex_1ae5aa4a92b1c9940d028c38628ec7a866" kindref="member">gpu_rand_state</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae5aa4a92b1c9940d028c38628ec7a866" kindref="member">gpu_rand_state</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fortran<sp/>entry<sp/>points<sp/>for<sp/>amrex::Random().</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(AMREX_XSDK)<sp/>&amp;&amp;<sp/>!defined(BL_NO_FORT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><ref refid="AMReX__Random_8cpp_1a7149b75200fd1c2399da882ca3a148bb" kindref="member">BL_FORT_PROC_DECL</ref>(BLUTILINITRAND,blutilinitrand)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>sd)</highlight></codeline>
 <codeline lineno="215"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::ULong<sp/>seed<sp/>=<sp/>*sd;</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">amrex::InitRandom</ref>(seed);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><ref refid="AMReX__Random_8cpp_1a7149b75200fd1c2399da882ca3a148bb" kindref="member">BL_FORT_PROC_DECL</ref>(BLUTILRAND,blutilrand)(amrex::Real*<sp/>rn)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><ref refid="AMReX__Random_8cpp_1a7149b75200fd1c2399da882ca3a148bb" kindref="member">BL_FORT_PROC_DECL</ref>(BLINITRAND,blinitrand)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>sd)</highlight></codeline>
 <codeline lineno="221"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>*rn<sp/>=<sp/><ref refid="namespaceamrex_1a384bf7a8791d85fe1ae4153eee61d71e" kindref="member">amrex::Random</ref>();</highlight></codeline>
-<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::ULong<sp/>seed<sp/>=<sp/>*sd;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1b2c12e9a133d26ba2bd4b978a95df44" kindref="member">amrex::InitRandom</ref>(seed);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="AMReX__Random_8cpp_1af7786727a4dfac68a7b0bcf67f62f61e" kindref="member">amrex_random</ref><sp/>()</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a384bf7a8791d85fe1ae4153eee61d71e" kindref="member">amrex::Random</ref>();</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><ref refid="AMReX__Random_8cpp_1a7149b75200fd1c2399da882ca3a148bb" kindref="member">BL_FORT_PROC_DECL</ref>(BLUTILRAND,blutilrand)(amrex::Real*<sp/>rn)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>*rn<sp/>=<sp/><ref refid="namespaceamrex_1a384bf7a8791d85fe1ae4153eee61d71e" kindref="member">amrex::Random</ref>();</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>for<sp/>Fortran,<sp/>which<sp/>doesn&apos;t<sp/>have<sp/>unsigned<sp/>long.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Long<sp/><ref refid="AMReX__Random_8cpp_1a61da6a9297e0e72c5db8a53520594ac5" kindref="member">amrex_random_int</ref><sp/>(amrex::Long<sp/>n)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="AMReX__Random_8cpp_1af7786727a4dfac68a7b0bcf67f62f61e" kindref="member">amrex_random</ref><sp/>()</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">amrex::Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1a20796a80df81ee204983811cc8a1b705" kindref="member">amrex::Random_int</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">amrex::ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(n)));</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a384bf7a8791d85fe1ae4153eee61d71e" kindref="member">amrex::Random</ref>();</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>for<sp/>Fortran,<sp/>which<sp/>doesn&apos;t<sp/>have<sp/>unsigned<sp/>long.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Long<sp/><ref refid="AMReX__Random_8cpp_1a61da6a9297e0e72c5db8a53520594ac5" kindref="member">amrex_random_int</ref><sp/>(amrex::Long<sp/>n)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">amrex::Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1a20796a80df81ee204983811cc8a1b705" kindref="member">amrex::Random_int</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">amrex::ULong</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(n)));</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Random.cpp"/>
   </compounddef>

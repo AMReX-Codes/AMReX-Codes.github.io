@@ -1528,6 +1528,8 @@
         </childnode>
         <childnode refid="38" relation="include">
         </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
       <node id="24">
         <label>iosfwd</label>
@@ -2344,25 +2346,25 @@
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>eb_to_pvd.WriteEBVTP(cpu);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eb_to_pvd.WritePVTP(nProcs);</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(mf_ba);<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>sfab<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">EBFArrayBox<sp/></highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mf_ba[mfi]);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>my_flag<sp/>=<sp/>sfab.getEBCellFlagFab();</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box<sp/>&amp;<sp/>bx<sp/>=<sp/>mfi.validbox();</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(my_flag.getType(bx)<sp/>==<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942" kindref="member">FabType::covered</ref><sp/>||</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>my_flag.getType(bx)<sp/>==<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">FabType::regular</ref>)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eb_to_pvd.EBGridCoverage(cpu,<sp/>problo,<sp/>dx,<sp/>bx,<sp/>my_flag.const_array());</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1EBToPVD_1aa55d2d01fac1d3f0d6d489ec74f0698a" kindref="member">EBToPVD::WritePVTP</ref>(nProcs);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(mf_ba);<sp/>mfi.isValid();<sp/>++mfi)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>sfab<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">EBFArrayBox<sp/></highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mf_ba[mfi]);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>my_flag<sp/>=<sp/>sfab.getEBCellFlagFab();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box<sp/>&amp;<sp/>bx<sp/>=<sp/>mfi.validbox();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(my_flag.getType(bx)<sp/>==<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942" kindref="member">FabType::covered</ref><sp/>||</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>my_flag.getType(bx)<sp/>==<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">FabType::regular</ref>)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eb_to_pvd.EBGridCoverage(cpu,<sp/>problo,<sp/>dx,<sp/>bx,<sp/>my_flag.const_array());</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.cpp"/>
   </compounddef>
