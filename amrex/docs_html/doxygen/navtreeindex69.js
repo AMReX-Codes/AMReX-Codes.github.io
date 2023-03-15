@@ -1,5 +1,12 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex__ebcellflag__module.html#a4734800da1613de79878005a47689862":[1,0,5,11],
+"namespaceamrex__ebcellflag__module.html#a4e837dbfa10cc1075d4c603eddcda32a":[1,0,5,3],
+"namespaceamrex__ebcellflag__module.html#a5f10bb6cffaf7551730ef8bd3e73b6f1":[1,0,5,5],
+"namespaceamrex__ebcellflag__module.html#a60377c7710b1b811e651e3acc8ad6f66":[1,0,5,17],
+"namespaceamrex__ebcellflag__module.html#a6bfc43005eb226bc2f194fd9d1ddd480":[1,0,5,10],
+"namespaceamrex__ebcellflag__module.html#a6fa46fba286ea97c6408222d70ad589d":[1,0,5,12],
+"namespaceamrex__ebcellflag__module.html#a796a0d50302dc72114c9cf2999849084":[1,0,5,24],
 "namespaceamrex__ebcellflag__module.html#a7d30f95878f595d82cb984b91bd3a766":[1,0,5,2],
 "namespaceamrex__ebcellflag__module.html#a81e54bd33c97780b54376e8b462612c6":[1,0,5,1],
 "namespaceamrex__ebcellflag__module.html#a8b548f4c7a7bf3d667af5b6059fb6255":[1,0,5,13],
@@ -242,12 +249,5 @@ var NAVTREEINDEX69 =
 "namespacemembers_w.html":[1,1,0,22],
 "namespacemembers_x.html":[1,1,0,23],
 "namespacemembers_y.html":[1,1,0,24],
-"namespacemembers_z.html":[1,1,0,25],
-"namespaceparticle__detail.html":[1,0,20],
-"namespaceparticle__detail.html#a037d69b06fff9ac32219c2a17886a88b":[1,0,20,7],
-"namespaceparticle__detail.html#a22e1685e4b065657f4bdd7dbe71d34d7":[1,0,20,1],
-"namespaceparticle__detail.html#a2a43b6df160cae87f7c97c45c1f750d1":[1,0,20,3],
-"namespaceparticle__detail.html#a30a6f3594be5d404180737352c8c375d":[1,0,20,8],
-"namespaceparticle__detail.html#a32c79228797f0b67784cf06d5767df2a":[1,0,20,6],
-"namespaceparticle__detail.html#ab8c27dbb3112cb2f7270253d878d30a4":[1,0,20,5]
+"namespacemembers_z.html":[1,1,0,25]
 };

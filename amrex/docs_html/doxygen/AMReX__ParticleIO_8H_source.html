@@ -796,7 +796,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    Long maxnextid;</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    HdrFile &gt;&gt; maxnextid;</div>
-<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#ab73a81949960df2b97ddffaec46491b7">  698</a></span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(maxnextid &gt; 0);</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(maxnextid &gt; 0);</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    ParticleType::NextID(maxnextid);</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordtype">int</span> finest_level_in_file;</div>
@@ -806,7 +806,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">// Determine whether this is a dual-grid restart or not.</span></div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;DistributionMapping&gt;</a> old_dms(finest_level_in_file + 1);</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BoxArray&gt;</a> old_bas(finest_level_in_file + 1);</div>
-<div class="line"><a name="l00708"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a75cec62d0988157c36c1cad225236a9d">  708</a></span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BoxArray&gt;</a> particle_box_arrays(finest_level_in_file + 1);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BoxArray&gt;</a> particle_box_arrays(finest_level_in_file + 1);</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordtype">bool</span> dual_grid = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="keywordtype">bool</span> have_pheaders = <span class="keyword">false</span>;</div>
@@ -827,17 +827,17 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level_in_file; lev++)</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        {</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            old_dms[lev] = ParticleDistributionMap(lev);</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            old_bas[lev] = ParticleBoxArray(lev);</div>
+<div class="line"><a name="l00729"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#ab73a81949960df2b97ddffaec46491b7">  729</a></span>&#160;            old_bas[lev] = ParticleBoxArray(lev);</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            std::string phdr_name = fullname;</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            phdr_name = <a class="code" href="namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250">amrex::Concatenate</a>(phdr_name + <span class="stringliteral">&quot;/Level_&quot;</span>, lev, 1);</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            phdr_name += <span class="stringliteral">&quot;/Particle_H&quot;</span>;</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            <span class="keywordflow">if</span> (! <a class="code" href="namespaceamrex.html#a51791a9a04ee140c71cee50d3615ed35">amrex::FileExists</a>(phdr_name)) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            Vector&lt;char&gt; phdr_chars;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <a class="code" href="classamrex_1_1Vector.html">Vector&lt;char&gt;</a> phdr_chars;</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a4736dec48acb46827a04cdca7b4045d7">ParallelDescriptor::ReadAndBcastFile</a>(phdr_name, phdr_chars);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            std::string phdr_string(phdr_chars.dataPtr());</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            std::istringstream phdr_file(phdr_string, std::istringstream::in);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            std::string phdr_string(phdr_chars.<a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a>());</div>
+<div class="line"><a name="l00739"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a75cec62d0988157c36c1cad225236a9d">  739</a></span>&#160;            std::istringstream phdr_file(phdr_string, std::istringstream::in);</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            <span class="keywordflow">if</span> (lev &gt; finestLevel())</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            {</div>
@@ -855,17 +855,17 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <span class="keywordflow">if</span> (dual_grid) {</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finestLevel(); lev++) {</div>
-<div class="line"><a name="l00757"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a0e505f93fc9e92c5de2b23f240b5e8e9">  757</a></span>&#160;            <span class="comment">// this can happen if there are no particles at a given level in the checkpoint</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            <span class="comment">// this can happen if there are no particles at a given level in the checkpoint</span></div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            <span class="keywordflow">if</span> (particle_box_arrays[lev].<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>() == 0) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a56a586c50e7e206bc8b6fe4e42236ab5">  759</a></span>&#160;                particle_box_arrays[lev] = <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a>(Geom(lev).Domain());</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                particle_box_arrays[lev] = BoxArray(Geom(lev).Domain());</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            }</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            SetParticleBoxArray(lev, particle_box_arrays[lev]);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> pdm(particle_box_arrays[lev]);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            DistributionMapping pdm(particle_box_arrays[lev]);</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            SetParticleDistributionMap(lev, pdm);</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        }</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    }</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
-<div class="line"><a name="l00767"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a471e8dc79b6f170e96c6022938ce21a1">  767</a></span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> ngrids(finest_level_in_file+1);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    Vector&lt;int&gt; ngrids(finest_level_in_file+1);</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level_in_file; lev++) {</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        HdrFile &gt;&gt; ngrids[lev];</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(ngrids[lev] &gt; 0);</div>
@@ -882,13 +882,13 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        Vector&lt;int&gt;  count(ngrids[lev]);</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        Vector&lt;Long&gt; where(ngrids[lev]);</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ngrids[lev]; i++) {</div>
-<div class="line"><a name="l00784"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a03f7777b10381a804dec6ebfd4d80539">  784</a></span>&#160;            HdrFile &gt;&gt; which[i] &gt;&gt; count[i] &gt;&gt; where[i];</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            HdrFile &gt;&gt; which[i] &gt;&gt; count[i] &gt;&gt; where[i];</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        }</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> grids_to_read;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        <span class="keywordflow">if</span> (lev &lt;= finestLevel()) {</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        Vector&lt;int&gt; grids_to_read;</div>
+<div class="line"><a name="l00788"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a0e505f93fc9e92c5de2b23f240b5e8e9">  788</a></span>&#160;        <span class="keywordflow">if</span> (lev &lt;= finestLevel()) {</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*m_dummy_mf[lev]); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) {</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                grids_to_read.push_back(mfi.index());</div>
+<div class="line"><a name="l00790"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a56a586c50e7e206bc8b6fe4e42236ab5">  790</a></span>&#160;                grids_to_read.push_back(mfi.index());</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            }</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
@@ -896,7 +896,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="comment">// on finer levels, and put them in the right place via Redistribute()</span></div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> rank = <a class="code" href="namespaceamrex_1_1MPMD.html#a61222da774be88a4ba57947bce9b0847">ParallelDescriptor::MyProc</a>();</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> NReaders = MaxReaders();</div>
+<div class="line"><a name="l00798"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a471e8dc79b6f170e96c6022938ce21a1">  798</a></span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> NReaders = MaxReaders();</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            <span class="keywordflow">if</span> (rank &gt;= NReaders) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160; </div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Navg = ngrids[lev] / NReaders;</div>
@@ -906,18 +906,18 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            <span class="keywordflow">if</span> (rank &lt; Nleft) {</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                lo = rank*(Navg + 1);</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                hi = lo + Navg + 1;</div>
-<div class="line"><a name="l00808"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#ae6b5ae78b3e63e7e8437e4ac42126b2e">  808</a></span>&#160;            }</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            }</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                lo = rank * Navg + Nleft;</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                hi = lo + Navg;</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            }</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo; i &lt; hi; ++i) {</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                grids_to_read.push_back(i);</div>
+<div class="line"><a name="l00815"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a03f7777b10381a804dec6ebfd4d80539">  815</a></span>&#160;                grids_to_read.push_back(i);</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            }</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        }</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> igrid = 0; igrid &lt; static_cast&lt;int&gt;(grids_to_read.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()); ++igrid) {</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> igrid = 0; igrid &lt; static_cast&lt;int&gt;(grids_to_read.size()); ++igrid) {</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> grid = grids_to_read[igrid];</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160; </div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            <span class="keywordflow">if</span> (count[grid] &lt;= 0) <span class="keywordflow">continue</span>;</div>
@@ -936,8 +936,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160; </div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            std::ifstream ParticleFile;</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
-<div class="line"><a name="l00838"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#adfff4f76c09775c81000065854225590">  838</a></span>&#160;            ParticleFile.open(name.c_str(), std::ios::in | std::ios::binary);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            ParticleFile.open(name.c_str(), std::ios::in | std::ios::binary);</div>
+<div class="line"><a name="l00839"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#ae6b5ae78b3e63e7e8437e4ac42126b2e">  839</a></span>&#160; </div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;            <span class="keywordflow">if</span> (!ParticleFile.good())</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                <a class="code" href="namespaceamrex.html#a0dc9fca5d8d1322524d13793f5b663d0">amrex::FileOpenFailed</a>(name);</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
@@ -965,9 +965,9 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                msg += how;</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(msg.c_str());</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            }</div>
-<div class="line"><a name="l00867"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#af6179b66026582beae80c33be1c9cac5">  867</a></span>&#160; </div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;            ParticleFile.close();</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#adfff4f76c09775c81000065854225590">  869</a></span>&#160; </div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <span class="keywordflow">if</span> (!ParticleFile.good())</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;ParticleContainer::Restart(): problem reading particles&quot;</span>);</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        }</div>
@@ -996,29 +996,29 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator&gt;</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> RTYPE&gt;</div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</div>
-<div class="line"><a name="l00899"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#abca7b579b46563636a76dbc73c071a61">  899</a></span>&#160;::ReadParticles (<span class="keywordtype">int</span> cnt, <span class="keywordtype">int</span> grd, <span class="keywordtype">int</span> lev, std::ifstream&amp; ifs,</div>
+<div class="line"><a name="l00898"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#af6179b66026582beae80c33be1c9cac5">  898</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer.html">ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator&gt;</a></div>
+<div class="line"><a name="l00899"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#abca7b579b46563636a76dbc73c071a61">  899</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer.html">::ReadParticles</a> (<span class="keywordtype">int</span> cnt, <span class="keywordtype">int</span> grd, <span class="keywordtype">int</span> lev, std::ifstream&amp; ifs,</div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                 <span class="keywordtype">int</span> finest_level_in_file, <span class="keywordtype">bool</span> convert_ids)</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;{</div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::ReadParticles()&quot;</span>);</div>
 <div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(cnt &gt; 0);</div>
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(lev &lt; <span class="keywordtype">int</span>(m_particles.size()));</div>
-<div class="line"><a name="l00905"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a10396d3ecdfb69e187092d6c5043fa2b">  905</a></span>&#160; </div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160; </div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;    <span class="comment">// First read in the integer data in binary.  We do not store</span></div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    <span class="comment">// the m_lev and m_grid data on disk.  We can easily recreate</span></div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    <span class="comment">// that given the structure of the checkpoint file.</span></div>
 <div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> iChunkSize = 2 + NStructInt + NumIntComps();</div>
 <div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> istuff(cnt*iChunkSize);</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    <a class="code" href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">readIntData</a>(istuff.dataPtr(), istuff.size(), ifs, FPC::NativeIntDescriptor());</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    <a class="code" href="namespaceamrex.html#af8ec915a2cffc7c342e1f15e52cbd697">readIntData</a>(istuff.<a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a>(), istuff.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>(), ifs, FPC::NativeIntDescriptor());</div>
 <div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    <span class="comment">// Then the real data in binary.</span></div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rChunkSize = AMREX_SPACEDIM + NStructReal + NumRealComps();</div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;RTYPE&gt;</a> rstuff(cnt*rChunkSize);</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    ReadParticleRealData(rstuff.dataPtr(), rstuff.size(), ifs);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    ReadParticleRealData(rstuff.<a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a>(), rstuff.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>(), ifs);</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160; </div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    <span class="comment">// Now reassemble the particles.</span></div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    <span class="keywordtype">int</span>*   iptr = istuff.dataPtr();</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    RTYPE* rptr = rstuff.dataPtr();</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    <span class="keywordtype">int</span>*   iptr = istuff.<a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a>();</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    RTYPE* rptr = rstuff.<a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a>();</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160; </div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <a class="code" href="structamrex_1_1Particle.html">ParticleType</a> p;</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    <a class="code" href="structamrex_1_1ParticleLocData.html">ParticleLocData</a> pld;</div>
@@ -1034,14 +1034,14 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::map&lt;std::pair&lt;int, int&gt;</a>,</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                    std::vector&lt;Gpu::HostVector&lt;int&gt; &gt; &gt; &gt; host_int_attribs;</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    host_int_attribs.reserve(15);</div>
+<div class="line"><a name="l00936"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#a10396d3ecdfb69e187092d6c5043fa2b">  936</a></span>&#160;    host_int_attribs.reserve(15);</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    host_int_attribs.resize(finest_level_in_file+1);</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160; </div>
-<div class="line"><a name="l00939"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#af2a7013064975d755dfca3ae72ab4504">  939</a></span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cnt; i++) {</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cnt; i++) {</div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        <span class="keywordflow">if</span> (convert_ids) {</div>
-<div class="line"><a name="l00941"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#acfd42ea6e5478cb242aa1173ff3f2600">  941</a></span>&#160;            std::int32_t  xi, yi;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;            std::int32_t  xi, yi;</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            std::uint32_t xu, yu;</div>
-<div class="line"><a name="l00943"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#aa844fae29584f23e9af9457a1b248b2b">  943</a></span>&#160;            xi = iptr[0];</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;            xi = iptr[0];</div>
 <div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;            yi = iptr[1];</div>
 <div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(&amp;xu, &amp;xi, <span class="keyword">sizeof</span>(xi));</div>
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(&amp;yu, &amp;yi, <span class="keyword">sizeof</span>(yi));</div>
@@ -1068,11 +1068,11 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160; </div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; NStructReal; j++)</div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        {</div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;            p.<a class="code" href="structamrex_1_1Particle.html#a7000ae4ed79c3c7b0c4cb9d73588ed17">rdata</a>(j) = ParticleReal(*rptr);</div>
+<div class="line"><a name="l00970"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#af2a7013064975d755dfca3ae72ab4504">  970</a></span>&#160;            p.<a class="code" href="structamrex_1_1Particle.html#a7000ae4ed79c3c7b0c4cb9d73588ed17">rdata</a>(j) = ParticleReal(*rptr);</div>
 <div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;            ++rptr;</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        }</div>
+<div class="line"><a name="l00972"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#acfd42ea6e5478cb242aa1173ff3f2600">  972</a></span>&#160;        }</div>
 <div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160; </div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;        locateParticle(p, pld, 0, finestLevel(), 0);</div>
+<div class="line"><a name="l00974"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer.html#aa844fae29584f23e9af9457a1b248b2b">  974</a></span>&#160;        locateParticle(p, pld, 0, finestLevel(), 0);</div>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160; </div>
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;        std::pair&lt;int, int&gt; ind(grd, pld.<a class="code" href="structamrex_1_1ParticleLocData.html#a963b4d0da43b9378de88dc4956581e83">m_tile</a>);</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160; </div>
@@ -1291,8 +1291,6 @@ $(document).ready(function(){initNavTree('AMReX__ParticleIO_8H_source.html','');
 <div class="ttc" id="aAMReX__WriteBinaryParticleData_8H_html"><div class="ttname"><a href="AMReX__WriteBinaryParticleData_8H.html">AMReX_WriteBinaryParticleData.H</a></div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleData_8H_html_a12a3ce07de86dc6516f6713ccae6a7fb"><div class="ttname"><a href="AMReX__WriteBinaryParticleData_8H.html#a12a3ce07de86dc6516f6713ccae6a7fb">WriteBinaryParticleDataAsync</a></div><div class="ttdeci">void WriteBinaryParticleDataAsync(PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, bool is_checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:616</div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleData_8H_html_aba0912a8cfc460dd0ca81a9dadf16d59"><div class="ttname"><a href="AMReX__WriteBinaryParticleData_8H.html#aba0912a8cfc460dd0ca81a9dadf16d59">WriteBinaryParticleDataSync</a></div><div class="ttdeci">void WriteBinaryParticleDataSync(PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f, bool is_checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:336</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.H:529</div></div>
-<div class="ttc" id="aclassamrex_1_1DistributionMapping_html"><div class="ttname"><a href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a></div><div class="ttdoc">Calculates the distribution of FABs to MPI processes.</div><div class="ttdef"><b>Definition:</b> AMReX_DistributionMapping.H:42</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html"><div class="ttname"><a href="classamrex_1_1MFIter.html">amrex::MFIter</a></div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:57</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html_a61b9a1d5eda39765d1db9b9b936558c7"><div class="ttname"><a href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">amrex::MFIter::isValid</a></div><div class="ttdeci">bool isValid() const noexcept</div><div class="ttdoc">Is the iterator valid i.e. is it associated with a FAB?</div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:141</div></div>
 <div class="ttc" id="aclassamrex_1_1MultiFab_html"><div class="ttname"><a href="classamrex_1_1MultiFab.html">amrex::MultiFab</a></div><div class="ttdoc">A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...</div><div class="ttdef"><b>Definition:</b> AMReX_MultiFab.H:40</div></div>

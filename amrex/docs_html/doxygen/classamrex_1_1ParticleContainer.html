@@ -241,6 +241,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac966982633d558c1421d83b5b64e07db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db">Redistribute</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_min=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev_max=-1, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nGrow=0, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> local=0, bool remove_negative=true)</td></tr>
 <tr class="memdesc:ac966982633d558c1421d83b5b64e07db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redistribute puts all the particles back in the right places (for some value of right)  <a href="classamrex_1_1ParticleContainer.html#ac966982633d558c1421d83b5b64e07db">More...</a><br /></td></tr>
 <tr class="separator:ac966982633d558c1421d83b5b64e07db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b17db1445c4862044f5d08cd73f340"><td class="memTemplParams" colspan="2">template&lt;class index_type &gt; </td></tr>
+<tr class="memitem:a98b17db1445c4862044f5d08cd73f340"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a98b17db1445c4862044f5d08cd73f340">ReorderParticles</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, const index_type *permutations)</td></tr>
+<tr class="memdesc:a98b17db1445c4862044f5d08cd73f340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reorder particles on the tile given by lev and mfi using a the permutations array.  <a href="classamrex_1_1ParticleContainer.html#a98b17db1445c4862044f5d08cd73f340">More...</a><br /></td></tr>
+<tr class="separator:a98b17db1445c4862044f5d08cd73f340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4428040e15c152f66bc08de6d44bcc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#aa4428040e15c152f66bc08de6d44bcc5">SortParticlesForDeposition</a> (<a class="el" href="classamrex_1_1IntVect.html">IntVect</a> idx_type)</td></tr>
+<tr class="memdesc:aa4428040e15c152f66bc08de6d44bcc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort particles on each tile such that particles adjacent in memory are likely to map to adjacent cells. This ordering can be beneficial for performance on GPU when deposition quantities onto a grid.  <a href="classamrex_1_1ParticleContainer.html#aa4428040e15c152f66bc08de6d44bcc5">More...</a><br /></td></tr>
+<tr class="separator:aa4428040e15c152f66bc08de6d44bcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7af39cfe3a9d135aa624798a31762da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a7af39cfe3a9d135aa624798a31762da7">SortParticlesByCell</a> ()</td></tr>
 <tr class="memdesc:a7af39cfe3a9d135aa624798a31762da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the particles on each tile by cell, using Fortran ordering.  <a href="classamrex_1_1ParticleContainer.html#a7af39cfe3a9d135aa624798a31762da7">More...</a><br /></td></tr>
 <tr class="separator:a7af39cfe3a9d135aa624798a31762da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -487,6 +494,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </td></tr>
 <tr class="memitem:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a579c73fe0e3815a17b0cb7136a5d3788">addParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local)</td></tr>
 <tr class="separator:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b17db1445c4862044f5d08cd73f340"><td class="memTemplParams" colspan="2">template&lt;class index_type &gt; </td></tr>
+<tr class="memitem:a98b17db1445c4862044f5d08cd73f340"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a98b17db1445c4862044f5d08cd73f340">ReorderParticles</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, const index_type *permutations)</td></tr>
+<tr class="separator:a98b17db1445c4862044f5d08cd73f340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt; &amp; &gt;::value &gt;::type * &gt; </td></tr>
 <tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a1d348d13ab6055c04952389e33274fe9">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a1d348d13ab6055c04952389e33274fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4774,6 +4784,93 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
 
 </div>
 </div>
+<a id="a98b17db1445c4862044f5d08cd73f340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b17db1445c4862044f5d08cd73f340">&#9670;&nbsp;</a></span>ReorderParticles() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;class index_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt, Allocator &gt;::ReorderParticles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;&#160;</td>
+          <td class="paramname"><em>mfi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const index_type *&#160;</td>
+          <td class="paramname"><em>permutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reorder particles on the tile given by lev and mfi using a the permutations array. </p>
+<p>permutations is a pointer to an array on the GPU of size numParticles() with permutations[new index] = old index.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lev</td><td></td></tr>
+    <tr><td class="paramname">mfi</td><td></td></tr>
+    <tr><td class="paramname">permutations</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98b17db1445c4862044f5d08cd73f340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b17db1445c4862044f5d08cd73f340">&#9670;&nbsp;</a></span>ReorderParticles() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;class index_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt, Allocator &gt;::ReorderParticles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;&#160;</td>
+          <td class="paramname"><em>mfi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const index_type *&#160;</td>
+          <td class="paramname"><em>permutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0e98d8607c64975b15e782c6c446228e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e98d8607c64975b15e782c6c446228e">&#9670;&nbsp;</a></span>reserveData()</h2>
 
@@ -5201,6 +5298,35 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
 </div><div class="memdoc">
 
 <p>Sort the particles on each tile by cell, using Fortran ordering. </p>
+
+</div>
+</div>
+<a id="aa4428040e15c152f66bc08de6d44bcc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4428040e15c152f66bc08de6d44bcc5">&#9670;&nbsp;</a></span>SortParticlesForDeposition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParticleContainer::SortParticlesForDeposition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a>&#160;</td>
+          <td class="paramname"><em>idx_type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort particles on each tile such that particles adjacent in memory are likely to map to adjacent cells. This ordering can be beneficial for performance on GPU when deposition quantities onto a grid. </p>
+<p>idx_type = {0, 0, 0}: Sort particles to a cell centered grid idx_type = {1, 1, 1}: Sort particles to a node centered grid idx_type = {2, 2, 2}: Compromise between a cell and node centered grid. This last option uses more memory than the fist two. Mixed versions are also possible.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx_type</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

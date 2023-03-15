@@ -2345,6 +2345,8 @@ var namespaceamrex =
     [ "PD_fconvert", "namespaceamrex.html#aeac895c53859e6eec3df7c9df01bd000", null ],
     [ "PD_fixdenormals", "namespaceamrex.html#a46b2531f5151b258164051481bd82055", null ],
     [ "periodicShift", "namespaceamrex.html#a48b0e0bc9bd17bdcba18aa237718737f", null ],
+    [ "PermutationForDeposition", "namespaceamrex.html#a2e4af4bb3015a4534ca0efc19aba6dcf", null ],
+    [ "PermutationForDeposition", "namespaceamrex.html#aa3b7121562bd99a99563aac383bc6303", null ],
     [ "permute_real_word_order", "namespaceamrex.html#a2f266c27494ab2cfcbeaa04283a409af", null ],
     [ "placementDelete", "namespaceamrex.html#af6da468471baec434494c96d522891b3", null ],
     [ "placementDelete", "namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1", null ],

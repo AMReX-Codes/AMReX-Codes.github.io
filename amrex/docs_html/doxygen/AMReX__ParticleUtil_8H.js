@@ -25,5 +25,7 @@ var AMReX__ParticleUtil_8H =
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a16b2ad610aeda065996254dcb64e1210", null ],
     [ "numTilesInBox", "AMReX__ParticleUtil_8H.html#a77b016483c8263c1a67e93d79d31da4c", null ],
     [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#a866fe0479b95fae68d4728835bf6ea68", null ],
+    [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#a2e4af4bb3015a4534ca0efc19aba6dcf", null ],
+    [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#aa3b7121562bd99a99563aac383bc6303", null ],
     [ "SameIteratorsOK", "AMReX__ParticleUtil_8H.html#ac8512b687a529806d0f382cf7c9eee97", null ]
 ];
