@@ -1972,7 +1972,7 @@
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal">AmrCore&amp;<sp/>AmrCore::operator=<sp/>(AmrCore&amp;&amp;<sp/>rhs)<sp/>noexcept</highlight></codeline>
 <codeline lineno="61"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>AmrMesh::operator=(std::move(rhs));</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>AmrMesh::operator=(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">AmrMesh&amp;&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(rhs));</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_PARTICLES</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>m_gdb<sp/>=<sp/>std::move(rhs.m_gdb);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_gdb-&gt;m_amrcore<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>

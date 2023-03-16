@@ -5,7 +5,6 @@ var classamrex_1_1ArrayOfStructs =
     [ "ParticleType", "classamrex_1_1ArrayOfStructs.html#abc588eb242c81ef9d492e7d9ec759b1a", null ],
     [ "ParticleVector", "classamrex_1_1ArrayOfStructs.html#af66049acde2b283b60693042d0f47a63", null ],
     [ "RealType", "classamrex_1_1ArrayOfStructs.html#aa1d5cf31ace27020a023285202c95d9e", null ],
-    [ "ArrayOfStructs", "classamrex_1_1ArrayOfStructs.html#aa8125d6563f3d6b885d0fa95d5d4b0b9", null ],
     [ "back", "classamrex_1_1ArrayOfStructs.html#ad36d2f8f9a2ad22b014bd31cdb9f4fed", null ],
     [ "back", "classamrex_1_1ArrayOfStructs.html#a37f92bf84821719d67fe814fddf6f700", null ],
     [ "begin", "classamrex_1_1ArrayOfStructs.html#ad7d0aa7c4705b9bf580f66322d182d79", null ],

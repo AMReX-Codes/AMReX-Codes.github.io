@@ -1,7 +1,6 @@
 var classamrex_1_1AmrParGDB =
 [
     [ "AmrParGDB", "classamrex_1_1AmrParGDB.html#ac5b326613074f25002466af98f19e6fc", null ],
-    [ "~AmrParGDB", "classamrex_1_1AmrParGDB.html#a9033da091d0ea861c81a9d5a20faa777", null ],
     [ "boxArray", "classamrex_1_1AmrParGDB.html#a666fea50f53de421e82df451634ce24d", null ],
     [ "boxArray", "classamrex_1_1AmrParGDB.html#abb29e90ead2f9e0f58107004d7ea5bd7", null ],
     [ "ClearParticleBoxArray", "classamrex_1_1AmrParGDB.html#a76c8a601849fe4005080010ce009b5eb", null ],

@@ -1,7 +1,9 @@
 var classamrex_1_1ParGDBBase =
 [
-    [ "ParGDBBase", "classamrex_1_1ParGDBBase.html#a171c8c5102570df045417e87ee2458c8", null ],
-    [ "~ParGDBBase", "classamrex_1_1ParGDBBase.html#adf64b954c8a5f29d4163808d9d17e5b7", null ],
+    [ "ParGDBBase", "classamrex_1_1ParGDBBase.html#a44d260e41238ecaac2ceed23ebc9549b", null ],
+    [ "~ParGDBBase", "classamrex_1_1ParGDBBase.html#a6be4676bb80006afb09e37c10511669c", null ],
+    [ "ParGDBBase", "classamrex_1_1ParGDBBase.html#ab4a1898d07bb08bd764669ed327b24e8", null ],
+    [ "ParGDBBase", "classamrex_1_1ParGDBBase.html#aa7332b1c8959dba312c23e42e79046fb", null ],
     [ "boxArray", "classamrex_1_1ParGDBBase.html#ab08c75051c8758512c7f4bb38b34ea17", null ],
     [ "boxArray", "classamrex_1_1ParGDBBase.html#adb877cb42f2e3904c825bcbe61cf374a", null ],
     [ "ClearParticleBoxArray", "classamrex_1_1ParGDBBase.html#ad10177b9dd49f6d6366c9b0ce55164e2", null ],
@@ -16,6 +18,8 @@ var classamrex_1_1ParGDBBase =
     [ "maxLevel", "classamrex_1_1ParGDBBase.html#a2da3b6ec6f3dff255917d3a0bfbde3d5", null ],
     [ "MaxRefRatio", "classamrex_1_1ParGDBBase.html#ad560744e3d6fec70a33ad2829fc7f43e", null ],
     [ "OnSameGrids", "classamrex_1_1ParGDBBase.html#aab39a042c6f9193b4de46b9b8071821d", null ],
+    [ "operator=", "classamrex_1_1ParGDBBase.html#abd1065cb24af64963c6fb93d16405345", null ],
+    [ "operator=", "classamrex_1_1ParGDBBase.html#a33753ebd2ade110a7d28012be9531299", null ],
     [ "ParticleBoxArray", "classamrex_1_1ParGDBBase.html#a5f864861309d414c90883f2ab60ee5e1", null ],
     [ "ParticleBoxArray", "classamrex_1_1ParGDBBase.html#adfd4f1260ff855da465e189ebac005e8", null ],
     [ "ParticleDistributionMap", "classamrex_1_1ParGDBBase.html#a2a790ed2ecbbb8fcb0488789f005daed", null ],

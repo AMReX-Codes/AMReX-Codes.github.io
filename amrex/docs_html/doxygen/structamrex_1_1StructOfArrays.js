@@ -2,7 +2,6 @@ var structamrex_1_1StructOfArrays =
 [
     [ "IntVector", "structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333", null ],
     [ "RealVector", "structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca", null ],
-    [ "StructOfArrays", "structamrex_1_1StructOfArrays.html#a57df42616f65e9718d0ee6f0248b8e19", null ],
     [ "define", "structamrex_1_1StructOfArrays.html#ab198677876af6342b7811a2dd6bbed6e", null ],
     [ "GetIntData", "structamrex_1_1StructOfArrays.html#a0713765da8db746084c4b0d7d9e3230b", null ],
     [ "GetIntData", "structamrex_1_1StructOfArrays.html#a32f1b56e5d68299fc49813648903e884", null ],

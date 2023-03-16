@@ -1,7 +1,7 @@
 var classamrex_1_1AmrParticleLocator =
 [
     [ "BinIteratorFactory", "classamrex_1_1AmrParticleLocator.html#a881e6459bd149cf677a5dd72a3804579", null ],
-    [ "AmrParticleLocator", "classamrex_1_1AmrParticleLocator.html#aefb49e5bc3f38e0997e1632fdaab701f", null ],
+    [ "AmrParticleLocator", "classamrex_1_1AmrParticleLocator.html#aec9acdf68bd0adbfc4c474a31c3e26f1", null ],
     [ "AmrParticleLocator", "classamrex_1_1AmrParticleLocator.html#ad2a127ebe13698da13cae956519b2173", null ],
     [ "AmrParticleLocator", "classamrex_1_1AmrParticleLocator.html#a06d216fc9cf978fc5c842675468b2ca5", null ],
     [ "build", "classamrex_1_1AmrParticleLocator.html#a0545b0fdaadd8f5deedff78cbb39d41f", null ],
