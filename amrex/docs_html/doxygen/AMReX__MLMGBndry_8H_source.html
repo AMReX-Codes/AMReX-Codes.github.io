@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMGBndry_8H_source.html',''); 
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="comment">// Internal bndry.</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            bctag[face] = <a class="code" href="AMReX__LO__BCTYPES_8H.html#a874725e18b8a17a13d2200cea4c11c47">AMREX_LO_DIRICHLET</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            bloc[face]  = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(ratio &gt; 0 ? Real(0.5)*ratio*dx[dir]</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            bloc[face]  = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(ratio &gt; 0 ? Real(0.5)*<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ratio)*dx[dir]</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                   : interior_bloc[dir]);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="comment">// If this is next to another same level box, bloc is</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="comment">// wrong.  But it doesn&#39;t matter, because we also have</span></div>

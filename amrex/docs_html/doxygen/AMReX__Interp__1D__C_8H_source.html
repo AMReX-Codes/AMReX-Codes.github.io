@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__1D__C_8H_source.html','
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(bx);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(bx);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> Real rx = Real(1.)/ratio[0];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> Real rx = Real(1.)/Real(ratio[0]);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('AMReX__Interp__1D__C_8H_source.html','
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (i-ii*ratio[0] == 0) {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,0,0,n) = <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>(ii,0,0,n);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Real <span class="keyword">const</span> w = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i-ii*ratio[0]) * (Real(1.)/ratio[0]);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Real <span class="keyword">const</span> w = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i-ii*ratio[0]) * (Real(1.)/Real(ratio[0]));</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,0,0,n) = (Real(1.)-w) * <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>(ii,0,0,n) + w * <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>(ii+1,0,0,n);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>

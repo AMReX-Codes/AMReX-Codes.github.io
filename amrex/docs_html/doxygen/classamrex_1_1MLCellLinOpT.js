@@ -11,7 +11,7 @@ var classamrex_1_1MLCellLinOpT =
     [ "RT", "classamrex_1_1MLCellLinOpT.html#a4cd7bb9cadbccdb52688ef33ddfd8d5c", null ],
     [ "StateMode", "classamrex_1_1MLCellLinOpT.html#afaa558995ac0e6dace1b2539572250a7", null ],
     [ "MLCellLinOpT", "classamrex_1_1MLCellLinOpT.html#ab6bc4d82971ae75fc206df8d00d15ef6", null ],
-    [ "~MLCellLinOpT", "classamrex_1_1MLCellLinOpT.html#ada8b44ce7756d2d6665e0a1c53da372b", null ],
+    [ "~MLCellLinOpT", "classamrex_1_1MLCellLinOpT.html#aaa89b0307d84d1687ece7880403c5689", null ],
     [ "MLCellLinOpT", "classamrex_1_1MLCellLinOpT.html#a54558ff60dc7b62ac803e8dd8a5c1816", null ],
     [ "MLCellLinOpT", "classamrex_1_1MLCellLinOpT.html#ab75b6f4249c1408041b529732b179d32", null ],
     [ "addInhomogNeumannFlux", "classamrex_1_1MLCellLinOpT.html#a7b267ba339a135bfb4352e4273f4706a", null ],

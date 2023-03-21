@@ -420,11 +420,11 @@
         </childnode>
         <childnode refid="130" relation="include">
         </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
         <childnode refid="58" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="42" relation="include">
         </childnode>
@@ -2526,7 +2526,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__OpenBC_8H" kindref="compound">AMReX_OpenBC.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__LOUtil__K_8H" kindref="compound">AMReX_LOUtil_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{<sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">openbc<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex_1_1openbc" kindref="compound">amrex::openbc</ref><sp/>{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="10" refid="namespaceamrex_1_1openbc_1a64049f3606c3c05adb718242b9bb48a3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1openbc_1a64049f3606c3c05adb718242b9bb48a3" kindref="member">scale_moments</ref><sp/>(<ref refid="structamrex_1_1GpuArray" kindref="compound">openbc::Moments::array_type</ref>&amp;<sp/>mom)</highlight></codeline>
@@ -2636,7 +2636,7 @@
 <codeline lineno="114" refid="namespaceamrex_1_1openbc_1acce74b37bc2ee4518cb6bd2d058f2b53" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1openbc_1acce74b37bc2ee4518cb6bd2d058f2b53" kindref="member">interp_coef</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii,<sp/>Real*<sp/><ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>crse_ratio)</highlight></codeline>
 <codeline lineno="115"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(<ref refid="namespaceamrex_1_1openbc_1adde2e79c224bebd89be90830c87b7a74" kindref="member">openbc::P</ref><sp/>==<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;openbc::P<sp/>is<sp/>assumed<sp/>to<sp/>be<sp/>3<sp/>here&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>xint<sp/>=<sp/>(ii-i*crse_ratio<sp/>+<sp/>Real(0.5))/</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crse_ratio);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>xint<sp/>=<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ii-i*crse_ratio)<sp/>+<sp/>Real(0.5))/</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(crse_ratio);</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>Real<sp/>x[]<sp/>=<sp/>{-3._rt,<sp/>-2._rt,<sp/>-1._rt,<sp/>0._rt,<sp/>1._rt,<sp/>2._rt,<sp/>3._rt,<sp/>4._rt};</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>poly_interp_coeff&lt;8&gt;(xint,<sp/>x,<sp/>c);</highlight></codeline>
 <codeline lineno="120"><highlight class="normal">}</highlight></codeline>
@@ -2683,7 +2683,7 @@
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
 <codeline lineno="162"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>

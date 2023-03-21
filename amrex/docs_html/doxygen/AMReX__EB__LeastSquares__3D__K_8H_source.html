@@ -131,9 +131,9 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (ii == jj)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                 <span class="keywordflow">if</span> (sum1 &lt;= 0.)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                 <span class="keywordflow">if</span> (sum1 &lt;= Real(0.0))</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                 {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                     p[ii] = 0.0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                     p[ii] = Real(0.0);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                     ising = 1;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                 } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     p[ii] = <a class="code" href="namespaceamrex.html#afe1175c09892da177b5f5ecaf36936ab">std::sqrt</a>(sum1);</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (ising == 0)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   aa(jj,ii) = sum1 / p[ii];</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   aa(jj,ii) = 0.0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   aa(jj,ii) = Real(0.0);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = ii+1; jj &lt; neq; jj++)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;           aa(ii,jj) = 0.0;       <span class="comment">// Zero upper triangle</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;           aa(ii,jj) = Real(0.0);       <span class="comment">// Zero upper triangle</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;           aa(ii,jj) = aa(jj,ii);  <span class="comment">// Zero upper triangle</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; neq; irow++)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; neq; icol++)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            AtA(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            AtA(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 36; irow++)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
@@ -261,14 +261,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;       }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;       <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;       {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          b(ii) = 0.0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          b(ii) = Real(0.0);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;       }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (AtA(neq-1,neq-1) &gt; 0.)</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;       b(neq-1) = b(neq-1) / AtA(neq-1,neq-1);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;       b(neq-1) = 0.0;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;       b(neq-1) = Real(0.0);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = neq-2; ii &gt;= 0; ii--)</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
@@ -281,7 +281,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;       }</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;       <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;       {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;          b(ii) = 0.0;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;          b(ii) = Real(0.0);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;       }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
@@ -296,7 +296,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; neq; irow++)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; neq; icol++)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            AtA(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            AtA(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 54; irow++)</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
@@ -388,14 +388,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;       }</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;       <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;       {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;          b(ii) = 0.0;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;          b(ii) = Real(0.0);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;       }</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (AtA(neq-1,neq-1) &gt; 0.)</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;       b(neq-1) = b(neq-1) / AtA(neq-1,neq-1);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;       b(neq-1) = 0.0;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;       b(neq-1) = Real(0.0);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = neq-2; ii &gt;= 0; ii--)</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    {</div>
@@ -408,7 +408,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;       }</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;       <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;       {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;          b(ii) = 0.0;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;          b(ii) = Real(0.0);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;       }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
@@ -431,7 +431,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 36; irow++)</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment">//  Columns 0-3: [e x y z]</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i; ii++) <span class="comment">// Normal to face</span></div>
@@ -441,18 +441,18 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            {</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(kk-(k-1)) + 9*(ii-(i-1));</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i) + 0.5;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i) + Real(0.5);</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0);</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1) - yloc_on_xface;</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2) - zloc_on_xface;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,kk).isRegular())</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                    Amatrix(a_ind+18,0) = 1.0;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                    Amatrix(a_ind+18,0) = Real(1.0);</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    Amatrix(a_ind+18,1) = x_off + bcent(ii,jj,kk,0);</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    Amatrix(a_ind+18,2) = y_off + bcent(ii,jj,kk,1) - yloc_on_xface;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    Amatrix(a_ind+18,3) = z_off + bcent(ii,jj,kk,2) - zloc_on_xface;</div>
@@ -512,7 +512,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 36; irow++)</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment">//  Columns 0-2: [e x y]</span></div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j; jj++) <span class="comment">// Normal to face</span></div>
@@ -523,17 +523,17 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                <span class="keywordtype">int</span> a_ind  = (ii-(i-1)) + 3*(kk-(k-1)) + 9*(jj-(j-1));</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) + 0.5;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) + Real(0.5);</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k);</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0) - xloc_on_yface;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2) - zloc_on_yface;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,kk).isRegular())</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                {</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    Amatrix(a_ind+18,0) = 1.0;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    Amatrix(a_ind+18,0) = Real(1.0);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                    Amatrix(a_ind+18,1) = x_off + bcent(ii,jj,kk,0) - xloc_on_yface;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    Amatrix(a_ind+18,2) = y_off + bcent(ii,jj,kk,1);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    Amatrix(a_ind+18,3) = z_off + bcent(ii,jj,kk,2) - zloc_on_yface;</div>
@@ -593,7 +593,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 36; irow++)</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="comment">//  Columns 0-3: [e x y z]</span></div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = k-1; kk &lt;= k; kk++) <span class="comment">// Normal to face</span></div>
@@ -607,16 +607,16 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k) + 0.5;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k) + Real(0.5);</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0) - xloc_on_zface;</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1) - yloc_on_zface;</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2);</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,kk).isRegular())</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                {</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    Amatrix(a_ind+18,0) = 1.0;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    Amatrix(a_ind+18,0) = Real(1.0);</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                    Amatrix(a_ind+18,1) = x_off + bcent(ii,jj,kk,0) - xloc_on_zface;</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    Amatrix(a_ind+18,2) = y_off + bcent(ii,jj,kk,1) - yloc_on_zface;</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    Amatrix(a_ind+18,3) = z_off + bcent(ii,jj,kk,2);</div>
@@ -677,7 +677,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 54; irow++)</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="comment">//  Columns 0-3: [e x y z]</span></div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = k-1; kk &lt;= k+1; kk++)</div>
@@ -692,14 +692,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) - bcent(i,j,k,1);</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k) - bcent(i,j,k,2);</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,kk).isRegular())</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                {</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                    Amatrix(a_ind+27,0) = 1.0;</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                    Amatrix(a_ind+27,0) = Real(1.0);</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                    Amatrix(a_ind+27,1) = x_off + bcent(ii,jj,kk,0);</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                    Amatrix(a_ind+27,2) = y_off + bcent(ii,jj,kk,1);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                    Amatrix(a_ind+27,3) = z_off + bcent(ii,jj,kk,2);</div>
@@ -766,7 +766,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 54; irow++)</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> im = (i &gt; domhi_x) ? 2 : 1;</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ip = 2 - im;</div>
@@ -801,32 +801,32 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(kk-(k-1)) + 9*(ii-(i-im));</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i) + 0.5;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i) + Real(0.5);</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k);</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != 1.0 || vfrac(ii+2,jj,kk) != 1.0) )</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != Real(1.0) || vfrac(ii+2,jj,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != 1.0 || vfrac(ii-2,jj,kk) != 1.0))</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != Real(1.0) || vfrac(ii-2,jj,kk) != Real(1.0)))</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                }</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != 1.0 || vfrac(ii,jj+2,kk) != 1.0) )</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != Real(1.0) || vfrac(ii,jj+2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != 1.0 || vfrac(ii,jj-2,kk) != 1.0) )</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != Real(1.0) || vfrac(ii,jj-2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                }</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                <span class="keywordflow">if</span>(on_z_face){</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != 1.0 || vfrac(ii,jj,kk+2) != 1.0) )</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != Real(1.0) || vfrac(ii,jj,kk+2) != Real(1.0)) )</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != 1.0 || vfrac(ii,jj,kk-2) != 1.0) )</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != Real(1.0) || vfrac(ii,jj,kk-2) != Real(1.0)) )</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                }</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160; </div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0);</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1) - yloc_on_xface;</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2) - zloc_on_xface;</div>
@@ -838,7 +838,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y &amp;&amp;</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    domlo_z &lt;= kk &amp;&amp; kk &lt;= domhi_z)</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                {</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    Amatrix(a_ind+27,0) = 1.0;</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    Amatrix(a_ind+27,0) = Real(1.0);</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    Amatrix(a_ind+27,1) = x_off + bcent(ii,jj,kk,0);</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                    Amatrix(a_ind+27,2) = y_off + bcent(ii,jj,kk,1) - yloc_on_xface;</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                    Amatrix(a_ind+27,3) = z_off + bcent(ii,jj,kk,2) - zloc_on_xface;</div>
@@ -875,7 +875,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*  phi_val;</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != 0.0)</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != Real(0.0))</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                        rhs(irow) += Amatrix(a_ind+27,irow)*phieb(ii,jj,kk,n);</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;               }</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            }</div>
@@ -908,7 +908,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 54; irow++)</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jm = (j &gt; domhi_y) ? 2 : 1;</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jp = 2 - jm;</div>
@@ -943,31 +943,31 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                <span class="keywordtype">int</span> a_ind  = (ii-(i-1)) + 3*(kk-(k-1)) + 9*(jj-(j-jm));</div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160; </div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) + 0.5;</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) + Real(0.5);</div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k);</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != 1.0 || vfrac(ii+2,jj,kk) != 1.0) )</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != Real(1.0) || vfrac(ii+2,jj,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != 1.0 || vfrac(ii-2,jj,kk) != 1.0))</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != Real(1.0) || vfrac(ii-2,jj,kk) != Real(1.0)))</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                }</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160; </div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != 1.0 || vfrac(ii,jj+2,kk) != 1.0) )</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != Real(1.0) || vfrac(ii,jj+2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != 1.0 || vfrac(ii,jj-2,kk) != 1.0) )</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != Real(1.0) || vfrac(ii,jj-2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                }</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160; </div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                <span class="keywordflow">if</span>(on_z_face){</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != 1.0 || vfrac(ii,jj,kk+2) != 1.0) )</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != Real(1.0) || vfrac(ii,jj,kk+2) != Real(1.0)) )</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != 1.0 || vfrac(ii,jj,kk-2) != 1.0) )</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != Real(1.0) || vfrac(ii,jj,kk-2) != Real(1.0)) )</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                }</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0) - xloc_on_yface;</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1);</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2) - zloc_on_yface;</div>
@@ -979,7 +979,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y &amp;&amp;</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                    domlo_z &lt;= kk &amp;&amp; kk &lt;= domhi_z)</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                {</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                    Amatrix(a_ind+27,0) = 1.0;</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                    Amatrix(a_ind+27,0) = Real(1.0);</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                    Amatrix(a_ind+27,1) = x_off + bcent(ii,jj,kk,0) - xloc_on_yface;</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                    Amatrix(a_ind+27,2) = y_off + bcent(ii,jj,kk,1);</div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                    Amatrix(a_ind+27,3) = z_off + bcent(ii,jj,kk,2) - zloc_on_yface;</div>
@@ -1016,7 +1016,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160; </div>
 <div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*  phi_val;</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160; </div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != 0.0)</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != Real(0.0))</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                        rhs(irow) += Amatrix(a_ind+27,irow)*phieb(ii,jj,kk,n);</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                }</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;             }</div>
@@ -1049,7 +1049,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160; </div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 54; irow++)</div>
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160; </div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> km = (k &gt; domhi_z) ? 2 : 1;</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> kp = 2 - km;</div>
@@ -1086,30 +1086,30 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160; </div>
 <div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k) + 0.5;</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k) + Real(0.5);</div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160; </div>
 <div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != 1.0 || vfrac(ii+2,jj,kk) != 1.0) )</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != Real(1.0) || vfrac(ii+2,jj,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != 1.0 || vfrac(ii-2,jj,kk) != 1.0))</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != Real(1.0) || vfrac(ii-2,jj,kk) != Real(1.0)))</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;                }</div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160; </div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != 1.0 || vfrac(ii,jj+2,kk) != 1.0) )</div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != Real(1.0) || vfrac(ii,jj+2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != 1.0 || vfrac(ii,jj-2,kk) != 1.0) )</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != Real(1.0) || vfrac(ii,jj-2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;                }</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160; </div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;                <span class="keywordflow">if</span>(on_z_face){</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != 1.0 || vfrac(ii,jj,kk+2) != 1.0) )</div>
+<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != Real(1.0) || vfrac(ii,jj,kk+2) != Real(1.0)) )</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != 1.0 || vfrac(ii,jj,kk-2) != 1.0) )</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != Real(1.0) || vfrac(ii,jj,kk-2) != Real(1.0)) )</div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;                }</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160; </div>
-<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0) - xloc_on_zface;</div>
 <div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1) - yloc_on_zface ;</div>
 <div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2);</div>
@@ -1121,7 +1121,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y &amp;&amp;</div>
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;                    domlo_z &lt;= kk &amp;&amp; kk &lt;= domhi_z)</div>
 <div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;                {</div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;                    Amatrix(a_ind+27,0) = 1.0;</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;                    Amatrix(a_ind+27,0) = Real(1.0);</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;                    Amatrix(a_ind+27,1) = x_off + bcent(ii,jj,kk,0) - xloc_on_zface;</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;                    Amatrix(a_ind+27,2) = y_off + bcent(ii,jj,kk,1) - yloc_on_zface;</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;                    Amatrix(a_ind+27,3) = z_off + bcent(ii,jj,kk,2);</div>
@@ -1159,7 +1159,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160; </div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*  phi_val;</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160; </div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != 0.0)</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != Real(0.0))</div>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;                        rhs(irow) += Amatrix(a_ind+27,irow)*phieb(ii,jj,kk,n);</div>
 <div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;                }</div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;             }</div>
@@ -1191,7 +1191,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160; </div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 54; irow++)</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 10; icol++)</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            Amatrix(irow,icol) =  Real(0.0);</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160; </div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    <span class="comment">//  Columns 0-3: [e x y z]</span></div>
 <div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = k-1; kk &lt;= k+1; kk++)</div>
@@ -1228,27 +1228,27 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;                Real z_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(kk-k) - bcent(i,j,k,2);</div>
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160; </div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != 1.0 || vfrac(ii+2,jj,kk) != 1.0) )</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,kk) != Real(1.0) || vfrac(ii+2,jj,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != 1.0 || vfrac(ii-2,jj,kk) != 1.0))</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,kk) != Real(1.0) || vfrac(ii-2,jj,kk) != Real(1.0)))</div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;                }</div>
 <div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160; </div>
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != 1.0 || vfrac(ii,jj+2,kk) != 1.0) )</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,kk) != Real(1.0) || vfrac(ii,jj+2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != 1.0 || vfrac(ii,jj-2,kk) != 1.0) )</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,kk) != Real(1.0) || vfrac(ii,jj-2,kk) != Real(1.0)) )</div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;                }</div>
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160; </div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;                <span class="keywordflow">if</span>(on_z_face){</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != 1.0 || vfrac(ii,jj,kk+2) != 1.0) )</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;                    <span class="keywordflow">if</span> (kk &lt; domlo_z &amp;&amp; (vfrac(ii,jj,kk+1) != Real(1.0) || vfrac(ii,jj,kk+2) != Real(1.0)) )</div>
 <div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != 1.0 || vfrac(ii,jj,kk-2) != 1.0) )</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;                    <span class="keywordflow">if</span> (kk &gt; domhi_z &amp;&amp; (vfrac(ii,jj,kk-1) != Real(1.0) || vfrac(ii,jj,kk-2) != Real(1.0)) )</div>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;                }</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160; </div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;                Amatrix(a_ind,0) = Real(1.0);</div>
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,kk,0);</div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,kk,1);</div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;                Amatrix(a_ind,3) = z_off + ccent(ii,jj,kk,2);</div>
@@ -1258,7 +1258,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y &amp;&amp;</div>
 <div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;                    domlo_z &lt;= kk &amp;&amp; kk &lt;= domhi_z)</div>
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;                {</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;                    Amatrix(a_ind+27,0) = 1.0;</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;                    Amatrix(a_ind+27,0) = Real(1.0);</div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;                    Amatrix(a_ind+27,1) = x_off + bcent(ii,jj,kk,0);</div>
 <div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;                    Amatrix(a_ind+27,2) = y_off + bcent(ii,jj,kk,1);</div>
 <div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;                    Amatrix(a_ind+27,3) = z_off + bcent(ii,jj,kk,2);</div>
@@ -1296,7 +1296,7 @@ $(document).ready(function(){initNavTree('AMReX__EB__LeastSquares__3D__K_8H_sour
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160; </div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*  phi_val;</div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160; </div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != 0.0)</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,kk).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+27,irow) != Real(0.0))</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;                        rhs(irow) += Amatrix(a_ind+27,irow)*phieb(ii,jj,kk,n);</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;                }</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;             }</div>

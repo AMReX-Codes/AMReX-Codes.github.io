@@ -304,11 +304,11 @@
         </childnode>
         <childnode refid="130" relation="include">
         </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
         <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
@@ -1960,10 +1960,10 @@
 <codeline lineno="47"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal">AmrCore::AmrCore<sp/>(AmrCore&amp;&amp;<sp/>rhs)<sp/>noexcept</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>AmrMesh(std::move(rhs))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>AmrMesh(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">AmrMesh&amp;&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(rhs))</highlight></codeline>
 <codeline lineno="51"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_PARTICLES</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>m_gdb<sp/>=<sp/>std::move(rhs.m_gdb);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>m_gdb<sp/>=<sp/>std::move(rhs.m_gdb);<sp/></highlight><highlight class="comment">//<sp/>NOLINT(cppcoreguidelines-prefer-member-initializer)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>m_gdb-&gt;m_amrcore<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal">}</highlight></codeline>

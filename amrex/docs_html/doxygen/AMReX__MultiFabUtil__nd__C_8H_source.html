@@ -125,8 +125,8 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil__nd__C_8H_source.h
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> ihi = 0, jhi = 0, khi = 0;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Real weight = (coord - gd.ProbLo(dir)) / gd.CellSize(dir);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> dirhi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(weight + Real(0.5)));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> dirlo = dirhi-1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">auto</span> dirhi = std::floor(weight + Real(0.5));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">auto</span> dirlo = dirhi-Real(1.);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    weight -= dirlo+Real(0.5);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (weight &lt; 0.5) {</div>

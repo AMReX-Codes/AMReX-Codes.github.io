@@ -8,7 +8,7 @@ var classamrex_1_1BndryDataT =
       [ "outside_domain", "classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a60efc76c5d4cabbf71077b1aa4700077", null ],
       [ "NumMaskVals", "classamrex_1_1BndryDataT.html#ac96be78c84438c0c74a235d969972846a139601a0038d30ced2a28a0e4f6763e7", null ]
     ] ],
-    [ "BndryDataT", "classamrex_1_1BndryDataT.html#aef1b9a752ba721b32bc578e98322bf9c", null ],
+    [ "BndryDataT", "classamrex_1_1BndryDataT.html#a18326b434a399d2ae2bf82938e6cb77b", null ],
     [ "BndryDataT", "classamrex_1_1BndryDataT.html#ae449a1eee7596c48ad129d92e02e79c4", null ],
     [ "~BndryDataT", "classamrex_1_1BndryDataT.html#a5516fe31e846fc0e58ac78628938940b", null ],
     [ "BndryDataT", "classamrex_1_1BndryDataT.html#a48956cc70261a5b28ab7a2559d2df611", null ],

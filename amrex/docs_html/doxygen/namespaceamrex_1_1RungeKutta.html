@@ -103,9 +103,6 @@ $(document).ready(function(){initNavTree('namespaceamrex_1_1RungeKutta.html','')
 <div class="title">amrex::RungeKutta Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Functions for Runge-Kutta methods.  
-<a href="namespaceamrex_1_1RungeKutta.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -115,6 +112,7 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1RungeKutta_1_1PostStageNoOp.html">PostStageNoOp</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions for Runge-Kutta methods.  <a href="structamrex_1_1RungeKutta_1_1PostStageNoOp.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -132,14 +130,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:af07c90c5bce95ed34b87a09e4d45f7b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time stepping with RK4.  <a href="namespaceamrex_1_1RungeKutta.html#af07c90c5bce95ed34b87a09e4d45f7b2">More...</a><br /></td></tr>
 <tr class="separator:af07c90c5bce95ed34b87a09e4d45f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Functions for Runge-Kutta methods. </p>
-<p>This namespace <a class="el" href="namespaceamrex_1_1RungeKutta.html" title="Functions for Runge-Kutta methods.">RungeKutta</a> has functions for a number RK methods, RK2, RK3 and RK4. Here, RK2 refers to the explicit trapezoid rule, RK3 refers to the SSPRK3 (<a href="https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Third-order_Strong_Stability_Preserving_Runge-Kutta_(SSPRK3)">https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Third-order_Strong_Stability_Preserving_Runge-Kutta_(SSPRK3)</a>), and RK4 is the classical fourth-order method (<a href="https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Classic_fourth-order_method">https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Classic_fourth-order_method</a>). The function templates take the old data in FabArray/MultiFab as input, and evolve the system for one time step. The result is stored in another FabArray/MultiFab. These two FabArrays must have ghost cells if they are needed for evaluating the right-hand side. The functions take three callable objects for computing the right-hand side, filling ghost cells, and optionally post-processing RK stage results. For RK3 and RK4, they also need a callable object for storing the data needed for filling coarse/fine boundaries in AMR simulations.</p>
-<p>The callable object for right-hand side has the signature of <code>void(int stage, MF&amp; dudt, MF const&amp; u, Real t, Real dt)</code>, where <code>stage</code> is the RK stage number starting from 1, <code>dudt</code> is the output, <code>u</code> is the input, <code>t</code> is the first-order approximate time of the stage, and <code>dt</code> is the sub-time step, which can be used for reflux operations in AMR simulations.</p>
-<p>The callable object for filling ghost cells has the signature of <code>void(int stage, MF&amp; u, Real t)</code>, where <code>stage</code> is the RK stage number starting from 1, <code>u</code> is a FabArray/MultiFab whose ghost cells need to be filled, and <code>t</code> is the first-order approximate time of the data at that stage. The <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> class can be useful for implementing such a callable. See <a class="el" href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41" title="Evolve one step with Runge-Kutta (2, 3, or 4)">AmrLevel::RK</a> for an example.</p>
-<p>The callable object for post-processing stage results is optional. It's no-op by default. Its function signature is <code>void(int stage, MF&amp; u)</code>, where <code>stage</code> is the RK stage number and <code>u</code> is the result of that stage.</p>
-<p>For RK3 and RK4, one must also provide a callable object with the signature of <code>void(Array&lt;MF,order&gt; const&amp; rkk)</code>, where <code>order</code> is the RK order and <code>rkk</code> contains the right-hand side at all the RK stages. The <a class="el" href="classamrex_1_1FillPatcher.html" title="FillPatcher is for filling a fine level MultiFab/FabArray.">FillPatcher</a> class can be useful for implementing such a callable. See <a class="el" href="classamrex_1_1AmrLevel.html#a95aea02fe7abbf3d1e5cd58ee5ff7d41" title="Evolve one step with Runge-Kutta (2, 3, or 4)">AmrLevel::RK</a> for an example. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a107281bb7995f80eb6db6fb405809ea2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a107281bb7995f80eb6db6fb405809ea2">&#9670;&nbsp;</a></span>RK2()</h2>
 

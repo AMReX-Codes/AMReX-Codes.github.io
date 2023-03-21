@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Parser_8H_source.html'
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// For all implicit functions, &gt;0: body; =0: boundary; &lt;0: fluid</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> { <span class="keyword">namespace </span>EB2 {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1EB2.html">amrex::EB2</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classamrex_1_1EB2_1_1ParserIF.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classamrex_1_1EB2_1_1ParserIF.html">ParserIF</a></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    : <span class="keyword">public</span> <a class="code" href="structamrex_1_1GPUable.html">amrex::GPUable</a></div>
@@ -122,9 +122,9 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Parser_8H_source.html'
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classamrex_1_1EB2_1_1ParserIF.html#a287e8b10d180da705ff141acc9c58363">   21</a></span>&#160;    amrex::Real <a class="code" href="classamrex_1_1EB2_1_1ParserIF.html#a287e8b10d180da705ff141acc9c58363">operator() </a>(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(amrex::Real x, amrex::Real y,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                         amrex::Real z)) <span class="keyword">const</span> noexcept {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 2)</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">m_parser</a>({x,y,Real(0.0)});</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">m_parser</a>({x,y,Real(0.0)}));</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">m_parser</a>({x,y,z});</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">m_parser</a>({x,y,z}));</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Parser_8H_source.html'
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">   35</a></span>&#160;    <a class="code" href="structamrex_1_1ParserExecutor.html">ParserExecutor&lt;3&gt;</a> <a class="code" href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">m_parser</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__EB2__IF__Base_8H_html"><div class="ttname"><a href="AMReX__EB2__IF__Base_8H.html">AMReX_EB2_IF_Base.H</a></div></div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Parser_8H_source.html'
 <div class="ttc" id="aclassamrex_1_1EB2_1_1ParserIF_html_a0ee1bc4aa5ddc1e1c59c6e3b4965630c"><div class="ttname"><a href="classamrex_1_1EB2_1_1ParserIF.html#a0ee1bc4aa5ddc1e1c59c6e3b4965630c">amrex::EB2::ParserIF::m_parser</a></div><div class="ttdeci">ParserExecutor&lt; 3 &gt; m_parser</div><div class="ttdef"><b>Definition:</b> AMReX_EB2_IF_Parser.H:35</div></div>
 <div class="ttc" id="aclassamrex_1_1EB2_1_1ParserIF_html_a287e8b10d180da705ff141acc9c58363"><div class="ttname"><a href="classamrex_1_1EB2_1_1ParserIF.html#a287e8b10d180da705ff141acc9c58363">amrex::EB2::ParserIF::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Real operator()(AMREX_D_DECL(amrex::Real x, amrex::Real y, amrex::Real z)) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_EB2_IF_Parser.H:21</div></div>
 <div class="ttc" id="aclassamrex_1_1EB2_1_1ParserIF_html_a8333bdcc5ed38d5ab573c555221897a4"><div class="ttname"><a href="classamrex_1_1EB2_1_1ParserIF.html#a8333bdcc5ed38d5ab573c555221897a4">amrex::EB2::ParserIF::ParserIF</a></div><div class="ttdeci">ParserIF(const ParserExecutor&lt; 3 &gt; &amp;a_parser)</div><div class="ttdef"><b>Definition:</b> AMReX_EB2_IF_Parser.H:16</div></div>
-<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
+<div class="ttc" id="anamespaceamrex_1_1EB2_html"><div class="ttname"><a href="namespaceamrex_1_1EB2.html">amrex::EB2</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayBase.H:29</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9de48c04056551924746c42f9eda3c8f"><div class="ttname"><a href="namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f">amrex::RealArray</a></div><div class="ttdeci">Array&lt; Real, AMREX_SPACEDIM &gt; RealArray</div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:25</div></div>
 <div class="ttc" id="astructamrex_1_1GPUable_html"><div class="ttname"><a href="structamrex_1_1GPUable.html">amrex::GPUable</a></div><div class="ttdef"><b>Definition:</b> AMReX_EB2_IF_Base.H:11</div></div>
 <div class="ttc" id="astructamrex_1_1ParserExecutor_html"><div class="ttname"><a href="structamrex_1_1ParserExecutor.html">amrex::ParserExecutor&lt; 3 &gt;</a></div></div>

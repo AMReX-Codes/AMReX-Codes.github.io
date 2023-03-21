@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('AMReX__InterpFaceReg__2D__C_8H_source.
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a88afcd348f99c86370fb0bae46f7d73f">slope</a>(i,j,0,n) = dc;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            Real yoff = (j - jc*rr[1] + Real(0.5)) / Real(rr[1]) - Real(0.5);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            Real yoff = (<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(j - jc*rr[1]) + Real(0.5)) / Real(rr[1]) - Real(0.5);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,0,n+scomp) = <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>(ic,jc,0,n) + yoff * <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a88afcd348f99c86370fb0bae46f7d73f">slope</a>(i,j,0,n) * sfy;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('AMReX__InterpFaceReg__2D__C_8H_source.
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a88afcd348f99c86370fb0bae46f7d73f">slope</a>(i,j,0,n) = dc;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            Real xoff = (i - ic*rr[0] + Real(0.5)) / Real(rr[0]) - Real(0.5);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            Real xoff = (<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(i - ic*rr[0]) + Real(0.5)) / Real(rr[0]) - Real(0.5);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a34fe8aaa018dd660e1e0cedd75ae040b">fine</a>(i,j,0,n+scomp) = <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a952c6efe16374645210c3308f3b335f6">crse</a>(ic,jc,0,n) + xoff * <a class="code" href="AMReX__InterpFaceRegister_8cpp.html#a88afcd348f99c86370fb0bae46f7d73f">slope</a>(i,j,0,n) * sfx;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>

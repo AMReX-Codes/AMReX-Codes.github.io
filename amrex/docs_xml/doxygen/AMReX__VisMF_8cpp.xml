@@ -354,11 +354,11 @@
         </childnode>
         <childnode refid="124" relation="include">
         </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
         <childnode refid="54" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
@@ -2547,7 +2547,7 @@
 <codeline lineno="513"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;</highlight></codeline>
 <codeline lineno="514"><highlight class="normal">VisMF::GetFab<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>compIndex)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="515"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(m_pa[compIndex][fabIndex]<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(m_pa[compIndex][fabIndex]<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pa[compIndex][fabIndex]<sp/>=<sp/>VisMF::readFAB(fabIndex,<sp/>m_fafabname,<sp/>m_hdr,<sp/>compIndex);</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*m_pa[compIndex][fabIndex];</highlight></codeline>
@@ -2557,7 +2557,7 @@
 <codeline lineno="523"><highlight class="normal">VisMF::clear<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>compIndex)</highlight></codeline>
 <codeline lineno="524"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_pa[compIndex][fabIndex];</highlight></codeline>
-<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pa[compIndex][fabIndex]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pa[compIndex][fabIndex]<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="527"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"></highlight></codeline>
 <codeline lineno="529"><highlight class="normal">Long</highlight></codeline>
@@ -4130,7 +4130,7 @@
 <codeline lineno="2096"><highlight class="normal">VisMF::clear<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex)</highlight></codeline>
 <codeline lineno="2097"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2098"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/>0,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_pa.size());<sp/>ncomp<sp/>&lt;<sp/>N;<sp/>++ncomp)<sp/>{</highlight></codeline>
-<codeline lineno="2099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear(ncomp,<sp/>fabIndex);</highlight></codeline>
+<codeline lineno="2099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear(fabIndex,<sp/>ncomp);</highlight></codeline>
 <codeline lineno="2100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2101"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2102"><highlight class="normal"></highlight></codeline>
@@ -4139,7 +4139,7 @@
 <codeline lineno="2105"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/>0,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_pa.size());<sp/>ncomp<sp/>&lt;<sp/>N;<sp/>++ncomp)<sp/>{</highlight></codeline>
 <codeline lineno="2107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex<sp/>=<sp/>0,<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_pa[ncomp].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>());<sp/>fabIndex<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>;<sp/>++fabIndex)<sp/>{</highlight></codeline>
-<codeline lineno="2108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear(ncomp,<sp/>fabIndex);</highlight></codeline>
+<codeline lineno="2108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear(fabIndex,<sp/>ncomp);</highlight></codeline>
 <codeline lineno="2109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2111"><highlight class="normal">}</highlight></codeline>

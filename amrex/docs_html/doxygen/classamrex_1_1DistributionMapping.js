@@ -13,7 +13,7 @@ var classamrex_1_1DistributionMapping =
       [ "SFC", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8ad783c9afd6b9c9388ebbb4498c6b39e4", null ],
       [ "RRSFC", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a75876358b1ba6c4d337b466fc4404217", null ]
     ] ],
-    [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a47426065fbbdddda79a4dbaff28cfb13", null ],
+    [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a5b29dfab26c50e7623e9ac1933f4fe27", null ],
     [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a46d444147384008abb31507e25a6d191", null ],
     [ "DistributionMapping", "classamrex_1_1DistributionMapping.html#a640d5ea0d462f3e133fba13902dbb5fd", null ],
     [ "~DistributionMapping", "classamrex_1_1DistributionMapping.html#aa68c8981b7dcfbaddbc6d3e8f36dd9a5", null ],

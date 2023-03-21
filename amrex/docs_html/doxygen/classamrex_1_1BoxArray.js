@@ -1,7 +1,7 @@
 var classamrex_1_1BoxArray =
 [
     [ "RefID", "structamrex_1_1BoxArray_1_1RefID.html", "structamrex_1_1BoxArray_1_1RefID" ],
-    [ "BoxArray", "classamrex_1_1BoxArray.html#ad666fe6cebd7a6cefb1914ecc807c08d", null ],
+    [ "BoxArray", "classamrex_1_1BoxArray.html#a16d5410c4beb4a7376d57d6d17b7d201", null ],
     [ "BoxArray", "classamrex_1_1BoxArray.html#ae51fad2f4cc75e0d49934bd8cbbec39a", null ],
     [ "BoxArray", "classamrex_1_1BoxArray.html#ac1ed271c8bba3f4a6f874f9aed33f5d6", null ],
     [ "~BoxArray", "classamrex_1_1BoxArray.html#ac969ef57c4c67c6dd624e9f261f2afb4", null ],

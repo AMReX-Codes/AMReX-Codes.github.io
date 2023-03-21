@@ -1,8 +1,5 @@
 var NAVTREEINDEX79 =
 {
-"structamrex_1_1TheFaArenaDeleter.html#a621695c7c205f29b1b389a3ae6518d9b":[2,0,0,120,1],
-"structamrex_1_1TileSize.html":[2,0,0,180],
-"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,180,0],
 "structamrex_1_1TileSize.html#a8daad07261e670c91e3d6788f152f668":[2,0,0,180,1],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html":[2,0,0,225,0],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html#a1c9e814cfa3e13889f8fecc6a71824fc":[2,0,0,225,0,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1iparser__f1.html#a6c15d096fef998fd70fbd4ce5083c67a":[2,0,0,306,1],
 "structamrex_1_1iparser__f1.html#ae6489e0fb7a5a08fe269c3d428baacaf":[2,0,0,306,0],
 "structamrex_1_1iparser__f1.html#aea0c3322f1c0b3db9546d784b3ef0dd9":[2,0,0,306,2],
-"structamrex_1_1iparser__f2.html":[2,0,0,307]
+"structamrex_1_1iparser__f2.html":[2,0,0,307],
+"structamrex_1_1iparser__f2.html#a2016f7f5bdedd5d88d71ca5582f69d69":[2,0,0,307,2],
+"structamrex_1_1iparser__f2.html#ab8456a1837941171bfb1d32c3cc682b0":[2,0,0,307,1],
+"structamrex_1_1iparser__f2.html#ad9ac5f10f25fff1c94c9278ed534f916":[2,0,0,307,3]
 };
