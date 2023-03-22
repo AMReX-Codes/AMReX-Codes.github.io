@@ -1,5 +1,7 @@
 var NAVTREEINDEX38 =
 {
+"classamrex_1_1FabArrayBase.html#a15c2b54df8386a9d38216410edce884c":[2,0,0,124,114],
+"classamrex_1_1FabArrayBase.html#a16240683aaab59d05d3659c64723890f":[2,0,0,124,36],
 "classamrex_1_1FabArrayBase.html#a16c472ffe97ca76e2ffa59ffceec0931":[2,0,0,124,56],
 "classamrex_1_1FabArrayBase.html#a1bb6a09ada00b5b7a900d8fecbf92e3c":[2,0,0,124,19],
 "classamrex_1_1FabArrayBase.html#a1cba13cd9d7009299774b13eb2f49484":[2,0,0,124,122],
@@ -247,7 +249,5 @@ var NAVTREEINDEX38 =
 "classamrex_1_1FillPatchIterator.html#abf62b3ab66cfdfcba665f1a1d55a2e1f":[2,0,0,21,1],
 "classamrex_1_1FillPatchIterator.html#ad4440122fa2d2e2f66a50fba97d62586":[2,0,0,21,11],
 "classamrex_1_1FillPatchIterator.html#ade3e9c0f92befd31e9f3991e09e56ea4":[2,0,0,21,8],
-"classamrex_1_1FillPatchIterator.html#aebdca878a23ab164decbcdd3bc1a9a20":[2,0,0,21,0],
-"classamrex_1_1FillPatchIteratorHelper.html":[2,0,0,22],
-"classamrex_1_1FillPatchIteratorHelper.html#a01e9092eaa18c9803bd850d15dbd64c8":[2,0,0,22,3]
+"classamrex_1_1FillPatchIterator.html#aebdca878a23ab164decbcdd3bc1a9a20":[2,0,0,21,0]
 };

@@ -52,6 +52,7 @@ var AMReX__ParallelDescriptor_8H =
     [ "MyTeamLead", "AMReX__ParallelDescriptor_8H.html#a564fb3e90a09a47e8213cdd2de4a2634", null ],
     [ "NProcs", "AMReX__ParallelDescriptor_8H.html#aa191723b5d24ceaf64e9d49f542cfcc2", null ],
     [ "NProcs", "AMReX__ParallelDescriptor_8H.html#a7fe765fcc8bfc4c409483424a83fccf8", null ],
+    [ "NProcsPerNode", "AMReX__ParallelDescriptor_8H.html#adc47cf4d3591db8037d74afe5bdfcbb0", null ],
     [ "NTeams", "AMReX__ParallelDescriptor_8H.html#af2f4fc272303fdc7f363d88ffd292c4c", null ],
     [ "RankInLeadComm", "AMReX__ParallelDescriptor_8H.html#a0719939ecc6b26843399e2af4d660f14", null ],
     [ "ReadAndBcastFile", "AMReX__ParallelDescriptor_8H.html#a4736dec48acb46827a04cdca7b4045d7", null ],

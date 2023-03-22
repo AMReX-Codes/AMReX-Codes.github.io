@@ -66,6 +66,7 @@ var namespaceamrex_1_1ParallelDescriptor =
     [ "MyTeamLead", "namespaceamrex_1_1ParallelDescriptor.html#a564fb3e90a09a47e8213cdd2de4a2634", null ],
     [ "NProcs", "namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2", null ],
     [ "NProcs", "namespaceamrex_1_1ParallelDescriptor.html#a7fe765fcc8bfc4c409483424a83fccf8", null ],
+    [ "NProcsPerNode", "namespaceamrex_1_1ParallelDescriptor.html#adc47cf4d3591db8037d74afe5bdfcbb0", null ],
     [ "NTeams", "namespaceamrex_1_1ParallelDescriptor.html#af2f4fc272303fdc7f363d88ffd292c4c", null ],
     [ "RankInLeadComm", "namespaceamrex_1_1ParallelDescriptor.html#a0719939ecc6b26843399e2af4d660f14", null ],
     [ "ReadAndBcastFile", "namespaceamrex_1_1ParallelDescriptor.html#a4736dec48acb46827a04cdca7b4045d7", null ],
@@ -172,6 +173,7 @@ var namespaceamrex_1_1ParallelDescriptor =
     [ "m_MinTag", "namespaceamrex_1_1ParallelDescriptor.html#afecc43d92a1965138657ac90451f9ac6", null ],
     [ "m_mpi_ops", "namespaceamrex_1_1ParallelDescriptor.html#a3461c9bae69de0e75d147ae431f938d4", null ],
     [ "m_mpi_types", "namespaceamrex_1_1ParallelDescriptor.html#a1b5ef1a376307bde13dbe55d2f88da41", null ],
+    [ "m_nprocs_per_node", "namespaceamrex_1_1ParallelDescriptor.html#a2efa14fb9d9ac2f6288d17e6890132ac", null ],
     [ "m_Team", "namespaceamrex_1_1ParallelDescriptor.html#a387acd4f26462ef60c5de9d87ef15c67", null ],
     [ "use_gpu_aware_mpi", "namespaceamrex_1_1ParallelDescriptor.html#a0157ac983f712e7d9bf90cb5f8fe95cb", null ]
 ];
