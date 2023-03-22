@@ -2205,26 +2205,26 @@
 <codeline lineno="19"><highlight class="normal">HypreABecLap2::~HypreABecLap2<sp/>()</highlight></codeline>
 <codeline lineno="20"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_BoomerAMGDestroy(<ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref>);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructMatrixDestroy(A);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>HYPRE_SStructVectorDestroy(b);<sp/><sp/>//<sp/>done<sp/>in<sp/>solve()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>b<sp/>=<sp/>NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>b<sp/>=<sp/>nullptr;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>HYPRE_SStructVectorDestroy(x);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>x<sp/>=<sp/>NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>x<sp/>=<sp/>nullptr;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructGraphDestroy(graph);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>graph<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>graph<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructStencilDestroy(stencil);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>stencil<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>stencil<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructGridDestroy(hgrid);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>hgrid<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>hgrid<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal">HypreABecLap2::solve<sp/>(MultiFab&amp;<sp/>soln,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>rhs,<sp/>Real<sp/>reltol,<sp/>Real<sp/>abstol,</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxiter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a9f6fb58eb396dd06df45ba7787548b32" kindref="member">BndryData</ref>&amp;<sp/>bndry,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_bndry_order)</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref><sp/>==<sp/>NULL<sp/>||<sp/>m_bndry<sp/>!=<sp/>&amp;bndry<sp/>||<sp/>m_maxorder<sp/>!=<sp/>max_bndry_order)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref><sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>||<sp/>m_bndry<sp/>!=<sp/>&amp;bndry<sp/>||<sp/>m_maxorder<sp/>!=<sp/>max_bndry_order)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bndry<sp/>=<sp/>&amp;bndry;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_maxorder<sp/>=<sp/>max_bndry_order;</highlight></codeline>
@@ -2296,9 +2296,9 @@
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>to<sp/>do<sp/>this<sp/>repeatedly<sp/>to<sp/>avoid<sp/>memory<sp/>leak<sp/>due<sp/>to<sp/>Hypre<sp/>bug</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructVectorDestroy(b);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>b<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>b<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructVectorDestroy(x);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
 <codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
@@ -2468,7 +2468,7 @@
 <codeline lineno="282"><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_ParCSRMatrix<sp/>par_A;</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_SStructMatrixGetObject(A,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)<sp/>&amp;par_A);</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_BoomerAMGSetup(<ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref>,<sp/>par_A,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_BoomerAMGSetup(<ref refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kindref="member">solver</ref>,<sp/>par_A,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="286"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"></highlight></codeline>
 <codeline lineno="288"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>

@@ -2,8 +2,12 @@ var classamrex_1_1PETScABecLap =
 [
     [ "PETScABecLap", "classamrex_1_1PETScABecLap.html#ab2a0a84e3b1491619ab3ed49306ffdeb", null ],
     [ "~PETScABecLap", "classamrex_1_1PETScABecLap.html#a91d8873af4b7e4fc30dceb416fb300cc", null ],
+    [ "PETScABecLap", "classamrex_1_1PETScABecLap.html#ae834b28c54502bd846c75a933cd86e4e", null ],
+    [ "PETScABecLap", "classamrex_1_1PETScABecLap.html#a6d1500243e6bcc0c8546240f4fb1ae6d", null ],
     [ "getSolution", "classamrex_1_1PETScABecLap.html#a29c773ff5410f84e04566b1ed48c38bc", null ],
     [ "loadVectors", "classamrex_1_1PETScABecLap.html#a12f8c2e606928f4ba9bf4cc909e830ae", null ],
+    [ "operator=", "classamrex_1_1PETScABecLap.html#ab0a8a31da058bc8f88a49f49c42ad703", null ],
+    [ "operator=", "classamrex_1_1PETScABecLap.html#a40dd9fb9d880d6ff54429144e6efbed3", null ],
     [ "prepareSolver", "classamrex_1_1PETScABecLap.html#ad1eb894ae4a104ea04c6be69d08b4e1f", null ],
     [ "setACoeffs", "classamrex_1_1PETScABecLap.html#aec0887e36eeb2fb1f1ba62f3877c8ef5", null ],
     [ "setBCoeffs", "classamrex_1_1PETScABecLap.html#ab8caebdccf7fca99b02b592379019228", null ],

@@ -260,7 +260,7 @@
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>bf1,<sp/>bf2;</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1a552276d715b5fb007fa8045a2f8dc713" kindref="member">detail::comp_bf</ref>(bf1,<sp/>bf2,<sp/>sb,<sp/>dx[0],<sp/>bctype[cdir],<sp/>bcl[cdir],<sp/>bho);</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,0)<sp/>+=<sp/>bf1*b[0](i,j,k);</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(-1,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(-1,0)<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(1,0)<sp/>+=<sp/>bf2*b[0](i,j,k);</highlight></codeline>
 <codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"></highlight></codeline>
@@ -269,7 +269,7 @@
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>bf1,<sp/>bf2;</highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1a552276d715b5fb007fa8045a2f8dc713" kindref="member">detail::comp_bf</ref>(bf1,<sp/>bf2,<sp/>sb,<sp/>dx[0],<sp/>bctype[cdir],<sp/>bcl[cdir],<sp/>bho);</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,0)<sp/>+=<sp/>bf1*b[0](i+1,j,k);</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(1,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(1,0)<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(-1,0)<sp/>+=<sp/>bf2*b[0](i+1,j,k);</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
@@ -278,7 +278,7 @@
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>bf1,<sp/>bf2;</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1a552276d715b5fb007fa8045a2f8dc713" kindref="member">detail::comp_bf</ref>(bf1,<sp/>bf2,<sp/>sb,<sp/>dx[1],<sp/>bctype[cdir],<sp/>bcl[cdir],<sp/>bho);</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,0)<sp/>+=<sp/>bf1*b[1](i,j,k);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,-1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,-1)<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,1)<sp/>+=<sp/>bf2*b[1](i,j,k);</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight></codeline>
@@ -287,7 +287,7 @@
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>bf1,<sp/>bf2;</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1a552276d715b5fb007fa8045a2f8dc713" kindref="member">detail::comp_bf</ref>(bf1,<sp/>bf2,<sp/>sb,<sp/>dx[1],<sp/>bctype[cdir],<sp/>bcl[cdir],<sp/>bho);</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,0)<sp/>+=<sp/>bf1*b[1](i,j+1,k);</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,1)<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_tmp(0,-1)<sp/>+=<sp/>bf2*b[1](i,j+1,k);</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="271"><highlight class="normal"></highlight></codeline>
