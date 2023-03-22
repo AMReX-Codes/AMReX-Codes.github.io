@@ -1,5 +1,6 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex__filcc__module.html#ac02f1497ed02f3ad826d93843aaf7a1e":[1,0,7,5],
 "namespaceamrex__filcc__module.html#ac06bb6294d56c80760256fef18826ce7":[1,0,7,3],
 "namespaceamrex__filcc__module.html#af264a5dd15ec5e7eb561cddfd9c06fcb":[1,0,7,2],
 "namespaceamrex__filcc__module.html#af9397b56e5ef0e39930f6f57588c8686":[1,0,7,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX69 =
 "namespacesdcquadrature__mod.html#a8926569834e03ad73326955f04c8f3eb":[1,0,21,23],
 "namespacesdcquadrature__mod.html#a8e53936d3fd7c9e7c1870a499156cd87":[1,0,21,14],
 "namespacesdcquadrature__mod.html#a95aa940d0fc9d580c3facf460de23d21":[1,0,21,22],
-"namespacesdcquadrature__mod.html#aa7cccac0d6dc3b28a4dc2a329214a698":[1,0,21,20],
-"namespacesdcquadrature__mod.html#aac87ed7a643061e124406a48d5ac55c1":[1,0,21,24]
+"namespacesdcquadrature__mod.html#aa7cccac0d6dc3b28a4dc2a329214a698":[1,0,21,20]
 };

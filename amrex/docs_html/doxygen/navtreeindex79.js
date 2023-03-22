@@ -1,5 +1,6 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,180,0],
 "structamrex_1_1TileSize.html#a8daad07261e670c91e3d6788f152f668":[2,0,0,180,1],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html":[2,0,0,225,0],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html#a1c9e814cfa3e13889f8fecc6a71824fc":[2,0,0,225,0,0],
@@ -137,8 +138,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,5,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1iparser__f1.html#aea0c3322f1c0b3db9546d784b3ef0dd9":[2,0,0,306,2],
 "structamrex_1_1iparser__f2.html":[2,0,0,307],
 "structamrex_1_1iparser__f2.html#a2016f7f5bdedd5d88d71ca5582f69d69":[2,0,0,307,2],
-"structamrex_1_1iparser__f2.html#ab8456a1837941171bfb1d32c3cc682b0":[2,0,0,307,1],
-"structamrex_1_1iparser__f2.html#ad9ac5f10f25fff1c94c9278ed534f916":[2,0,0,307,3]
+"structamrex_1_1iparser__f2.html#ab8456a1837941171bfb1d32c3cc682b0":[2,0,0,307,1]
 };

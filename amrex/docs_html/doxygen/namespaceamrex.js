@@ -1648,7 +1648,7 @@ var namespaceamrex =
     [ "InterpCrseFineBndryEMfield", "namespaceamrex.html#ad4b250931d7e5f375e7da2ebc1ea0ac0", null ],
     [ "InterpCrseFineBndryEMfield", "namespaceamrex.html#a331b0725efb68a4f9224f12e6d6df4dd", null ],
     [ "InterpFace", "namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59", null ],
-    [ "InterpFace", "namespaceamrex.html#a1d7f6d6df53f481b7faaed3dd85bd498", null ],
+    [ "InterpFace", "namespaceamrex.html#a4262e98515dcf57af2a075ccc914dba8", null ],
     [ "InterpFillFab", "namespaceamrex.html#aabdb646a3159210a31ec8dc806eaf7bb", null ],
     [ "InterpFromCoarseLevel", "namespaceamrex.html#a665aff71f29d05e954c3cb414b5e9349", null ],
     [ "InterpFromCoarseLevel", "namespaceamrex.html#abed62fa77c3def575a20c8c9efa33805", null ],

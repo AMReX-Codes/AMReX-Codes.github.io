@@ -1,5 +1,6 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1ParticleLocData.html#ad76df9c28985f6f2702043b28fa56d35":[2,0,0,465,2],
 "structamrex_1_1ParticleTile.html":[2,0,0,474],
 "structamrex_1_1ParticleTile.html#a094ecbaf29e3d8786d48786dda4ad8af":[2,0,0,474,53],
 "structamrex_1_1ParticleTile.html#a0b5daeed890ad1681d6d5efb263d1d45":[2,0,0,474,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1TheFaArenaDeleter.html":[2,0,0,120],
 "structamrex_1_1TheFaArenaDeleter.html#a27f45496b5f43b097780b5ca62f10b64":[2,0,0,120,0],
 "structamrex_1_1TheFaArenaDeleter.html#a621695c7c205f29b1b389a3ae6518d9b":[2,0,0,120,1],
-"structamrex_1_1TileSize.html":[2,0,0,180],
-"structamrex_1_1TileSize.html#a0fd1080269de0184755a627c3ce1875d":[2,0,0,180,0]
+"structamrex_1_1TileSize.html":[2,0,0,180]
 };
