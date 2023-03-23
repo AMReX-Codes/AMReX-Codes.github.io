@@ -210,6 +210,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad77d84b98f56e41c5736e58f9c5772a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ad77d84b98f56e41c5736e58f9c5772a2">Reflux</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dir, Real <a class="el" href="namespaceamrex.html#a1a42959e8a21d09d8bcf385c75ad4ec6">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nc, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="separator:ad77d84b98f56e41c5736e58f9c5772a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4230b5a0ec42a59e2f6e48e51ca77f83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#a4230b5a0ec42a59e2f6e48e51ca77f83">OverwriteFlux</a> (<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; const &amp;crse_fluxes, Real <a class="el" href="namespaceamrex.html#a1a42959e8a21d09d8bcf385c75ad4ec6">scale</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
+<tr class="memdesc:a4230b5a0ec42a59e2f6e48e51ca77f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite the coarse flux at the coarse/fine interface (and the interface only) with the fine flux stored in the <a class="el" href="classamrex_1_1FluxRegister.html" title="Flux Register.">FluxRegister</a>.  <a href="classamrex_1_1FluxRegister.html#a4230b5a0ec42a59e2f6e48e51ca77f83">More...</a><br /></td></tr>
 <tr class="separator:a4230b5a0ec42a59e2f6e48e51ca77f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1a936eb5769156da6cb7d2dac23b4d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FluxRegister.html#ab1a936eb5769156da6cb7d2dac23b4d3">ClearInternalBorders</a> (const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;crse_geom)</td></tr>
 <tr class="memdesc:ab1a936eb5769156da6cb7d2dac23b4d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set internal borders to zero.  <a href="classamrex_1_1FluxRegister.html#ab1a936eb5769156da6cb7d2dac23b4d3">More...</a><br /></td></tr>
@@ -1498,6 +1499,18 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Overwrite the coarse flux at the coarse/fine interface (and the interface only) with the fine flux stored in the <a class="el" href="classamrex_1_1FluxRegister.html" title="Flux Register.">FluxRegister</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">crse_fluxes</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> pointers to coarse fluxes. </td></tr>
+    <tr><td class="paramname">scale</td><td>scaling factor by which the fine flux is multiplied. </td></tr>
+    <tr><td class="paramname">destcomp</td><td>starting component in coarse flux <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> </td></tr>
+    <tr><td class="paramname">numcomp</td><td>number of components </td></tr>
+    <tr><td class="paramname">crse_geom</td><td>coarse <a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
