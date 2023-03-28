@@ -85,7 +85,7 @@ var searchData=
   ['_7einnards_8835',['~innards',['../structamrex_1_1Any_1_1innards.html#a905490b0c2263d9d274a1c9b7d362c89',1,'amrex::Any::innards']]],
   ['_7einnards_5fbase_8836',['~innards_base',['../structamrex_1_1Any_1_1innards__base.html#ac2a0d84b48c0f50c6c608405c442d3ee',1,'amrex::Any::innards_base']]],
   ['_7einsitubridge_8837',['~InSituBridge',['../classamrex_1_1InSituBridge.html#a826dc660a178377d78530da110fb8eed',1,'amrex::InSituBridge']]],
-  ['_7eintegratorbase_8838',['~IntegratorBase',['../classamrex_1_1IntegratorBase.html#a9bcad149736f2fc82ca342a2e0f24fc6',1,'amrex::IntegratorBase']]],
+  ['_7eintegratorbase_8838',['~IntegratorBase',['../classamrex_1_1IntegratorBase.html#ab552abbdc6f529d492e5912b8af6f3a3',1,'amrex::IntegratorBase']]],
   ['_7einterpbase_8839',['~InterpBase',['../classamrex_1_1InterpBase.html#a73cb181d9364c6005abfcfdb54037291',1,'amrex::InterpBase']]],
   ['_7einterpbndrydatat_8840',['~InterpBndryDataT',['../classamrex_1_1InterpBndryDataT.html#a62be51bb2441bc950b73e4ced3870ed9',1,'amrex::InterpBndryDataT']]],
   ['_7elaunchsafeguard_8841',['~LaunchSafeGuard',['../structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95',1,'amrex::Gpu::LaunchSafeGuard']]],
