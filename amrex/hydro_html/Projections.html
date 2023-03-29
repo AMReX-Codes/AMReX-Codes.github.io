@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projection Methods &mdash; amrex-hydro 22.01-dev documentation</title>
+  <title>Projection Methods &mdash; amrex-hydro 23.04-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -13,9 +13,6 @@
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -31,14 +28,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> amrex-hydro
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-hydro
           </a>
               <div class="version">
-                22.01-dev
+                23.04-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -75,7 +76,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Projection Methods</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Projections.rst.txt" rel="nofollow"> View page source</a>
@@ -179,7 +180,7 @@ velocity fields. The projection classes use AMReX’s linear solvers internally.
 Both classes provide member functions <code class="docutils literal notranslate"><span class="pre">getLinOp</span></code> and <code class="docutils literal notranslate"><span class="pre">getMLMG</span></code> to
 access the underlying objects and allow for modification of the linear operator
 and multigrid properties if needed.
-Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v22.01-dev)"><span>Linear Solvers</span></a>
+Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v23.04-dev)"><span>Linear Solvers</span></a>
 section of AMReX’s documentation.</p>
 <p>Both Projector classes provide the following parameters, which can be set in an
 inputs file or on the command line. For the MacProjector, these must be preceeded by
@@ -274,16 +275,16 @@ that come from coarser data with member function
 <p>The code below is taken from <code class="docutils literal notranslate"><span class="pre">AMReX-Hydro/Tests/MAC_Projection_EB/main.cpp</span></code>,
 and demonstrates how to set up the MACProjector object and use it to perform a MAC projection.</p>
 <details class="summary-code-example-macprojector-object-setup-and-mac-projection">
-<summary>Code Example - MacProjector object setup and MAC projection.</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="n">ng_ebs</span><span class="p">,</span><span class="w"> </span><span class="n">ebs</span><span class="p">);</span><span class="w"></span>
+<summary>Code Example - MacProjector object setup and MAC projection.</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="n">ng_ebs</span><span class="p">,</span><span class="w"> </span><span class="n">ebs</span><span class="p">);</span>
 
 <span class="c1">// allocate face-centered velocities and face-centered beta coefficient</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">vel</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">                      </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">                      </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vel</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="w">    </span><span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
 <span class="w">    </span><span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// set beta to 1</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 
 <span class="c1">// If we want to use phi elsewhere, we must create an array in which to return the solution</span>
 <span class="c1">// MultiFab phi_inout(grids, dmap, 1, 1, MFInfo(), factory);</span>
@@ -293,20 +294,20 @@ and demonstrates how to set up the MACProjector object and use it to perform a M
 <span class="c1">// Set S here ...</span>
 
 <span class="c1">// set initial velocity to U=(1,0,0)</span>
-<span class="n">AMREX_D_TERM</span><span class="p">(</span><span class="n">vel</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);,</span><span class="w"></span>
-<span class="w">             </span><span class="n">vel</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);,</span><span class="w"></span>
-<span class="w">             </span><span class="n">vel</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">););</span><span class="w"></span>
+<span class="n">AMREX_D_TERM</span><span class="p">(</span><span class="n">vel</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);,</span>
+<span class="w">             </span><span class="n">vel</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);,</span>
+<span class="w">             </span><span class="n">vel</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">););</span>
 
-<span class="n">LPInfo</span><span class="w"> </span><span class="n">lp_info</span><span class="p">;</span><span class="w"></span>
+<span class="n">LPInfo</span><span class="w"> </span><span class="n">lp_info</span><span class="p">;</span>
 
 <span class="c1">// If we want to use hypre to solve the full problem we do not need to coarsen the GMG stencils</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_hypre_as_full_solver</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">lp_info</span><span class="p">.</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_hypre_as_full_solver</span><span class="p">)</span>
+<span class="w">    </span><span class="n">lp_info</span><span class="p">.</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
 <span class="c1">// Note that when we build with USE_EB = TRUE, we must specify whether the quantities are located</span>
 <span class="c1">//  at centers (MLMG::Location::CellCenter, MLMG::Location::FaceCenter) or</span>
 <span class="c1">//  centroids (MLMG::Location::CellCentroid, MLMG::Location::FaceCentroid).</span>
-<span class="n">MacProjector</span><span class="w"> </span><span class="nf">macproj</span><span class="p">({</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)},</span><span class="w">       </span><span class="c1">// mac velocity</span>
+<span class="n">MacProjector</span><span class="w"> </span><span class="n">macproj</span><span class="p">({</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)},</span><span class="w">       </span><span class="c1">// mac velocity</span>
 <span class="w">                     </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">,</span><span class="w">       </span><span class="c1">// Location of vel</span>
 <span class="w">                     </span><span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">beta</span><span class="p">)},</span><span class="w"> </span><span class="c1">// beta</span>
 <span class="w">                     </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">,</span><span class="w">       </span><span class="c1">// Location of beta</span>
@@ -326,33 +327,33 @@ and demonstrates how to set up the MACProjector object and use it to perform a M
 <span class="c1">//                      MLMG::Location::CellCenter);      // Location of S</span>
 
 <span class="c1">// Set bottom-solver to use hypre instead of native BiCGStab</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_hypre_as_full_solver</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">use_hypre_as_bottom_solver</span><span class="p">)</span><span class="w"></span>
-<span class="w">   </span><span class="n">macproj</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_hypre_as_full_solver</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">use_hypre_as_bottom_solver</span><span class="p">)</span>
+<span class="w">   </span><span class="n">macproj</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span><span class="p">);</span>
 
 <span class="c1">// Set boundary conditions.</span>
 <span class="c1">//  Here we use Neumann on the low x-face, Dirichlet on the high x-face,</span>
 <span class="c1">//  and periodic in the other two directions</span>
 <span class="c1">//  (the first argument is for the low end, the second is for the high end)</span>
 <span class="c1">// Note that Dirichlet and Neumann boundary conditions are assumed to be homogeneous.</span>
-<span class="n">macproj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span><span class="w"></span>
-<span class="w">                    </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span><span class="w"></span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">                    </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
 
-<span class="n">macproj</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span><span class="w"></span>
-<span class="n">macproj</span><span class="p">.</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="n">bottom_verbose</span><span class="p">);</span><span class="w"></span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="n">bottom_verbose</span><span class="p">);</span>
 
 <span class="c1">// Define the relative tolerance</span>
-<span class="n">Real</span><span class="w"> </span><span class="n">reltol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-8</span><span class="p">;</span><span class="w"></span>
+<span class="n">Real</span><span class="w"> </span><span class="n">reltol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-8</span><span class="p">;</span>
 
 <span class="c1">// Define the absolute tolerance; note that this argument is optional</span>
-<span class="n">Real</span><span class="w"> </span><span class="n">abstol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-15</span><span class="p">;</span><span class="w"></span>
+<span class="n">Real</span><span class="w"> </span><span class="n">abstol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-15</span><span class="p">;</span>
 
 <span class="c1">// Solve for phi and subtract from the velocity to make it divergence-free</span>
 <span class="c1">// Here, we specify that velocities are at face centers</span>
-<span class="n">macproj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="n">reltol</span><span class="p">,</span><span class="n">abstol</span><span class="p">,</span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">);</span><span class="w"></span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="n">reltol</span><span class="p">,</span><span class="n">abstol</span><span class="p">,</span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">);</span>
 
 <span class="c1">// If we want to use phi elsewhere, we can pass in an array in which to return the solution</span>
 <span class="c1">// macproj.project({&amp;phi_inout},reltol,abstol,MLMG::Location::FaceCenter);</span>
@@ -409,57 +410,57 @@ and demonstrates how to set up the NodalProjector object and use it to perform a
 <span class="c1">// Create the cell-centered velocity field we want to project.</span>
 <span class="c1">// Set velocity field to (1,0,0) including ghost cells for this example</span>
 <span class="c1">//</span>
-<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w"></span>
-<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Create the cell-centered sigma field and set it to 1 for this example</span>
 <span class="c1">//</span>
-<span class="n">MultiFab</span><span class="w"> </span><span class="nf">sigma</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w"></span>
-<span class="n">sigma</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">sigma</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">sigma</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Create cell-centered contributions to RHS and set it to zero for this example</span>
 <span class="c1">//</span>
-<span class="n">MultiFab</span><span class="w"> </span><span class="nf">S_cc</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w"></span>
-<span class="n">S_cc</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">S_cc</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">S_cc</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Create node-centered contributions to RHS and set it to zero for this example</span>
 <span class="c1">//</span>
 <span class="k">const</span><span class="w"> </span><span class="n">BoxArray</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nd_grids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheNodeVector</span><span class="p">());</span><span class="w"> </span><span class="c1">// nodal grids</span>
-<span class="n">MultiFab</span><span class="w"> </span><span class="nf">S_nd</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w"></span>
-<span class="n">S_nd</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">S_nd</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">S_nd</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Setup linear operator, AKA the nodal Laplacian</span>
 <span class="c1">//</span>
-<span class="n">LPInfo</span><span class="w"> </span><span class="n">lp_info</span><span class="p">;</span><span class="w"></span>
+<span class="n">LPInfo</span><span class="w"> </span><span class="n">lp_info</span><span class="p">;</span>
 
 <span class="c1">// If we want to use hypre to solve the full problem we do not need to coarsen the GMG stencils</span>
 <span class="c1">// if (use_hypre_as_full_solver)</span>
 <span class="c1">//    lp_info.setMaxCoarseningLevel(0);</span>
 
 <span class="c1">// Setup nodal projector object</span>
-<span class="n">Hydro</span><span class="o">::</span><span class="n">NodalProjector</span><span class="w"> </span><span class="nf">nodal_proj</span><span class="p">({</span><span class="n">vel</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">sigma</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="n">lp_info</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">rhs_cc</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">rhs_nd</span><span class="p">});</span><span class="w"></span>
+<span class="n">Hydro</span><span class="o">::</span><span class="n">NodalProjector</span><span class="w"> </span><span class="nf">nodal_proj</span><span class="p">({</span><span class="n">vel</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">sigma</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="n">lp_info</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">rhs_cc</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">rhs_nd</span><span class="p">});</span>
 
 <span class="c1">// Set boundary conditions.</span>
 <span class="c1">// Here we use Neumann on the low x-face, Dirichlet on the high x-face,</span>
 <span class="c1">// and periodic in the other two directions</span>
 <span class="c1">// (the first argument is for the low end, the second is for the high end)</span>
 <span class="c1">// Note that Dirichlet boundary conditions are assumed to be homogeneous (i.e. phi = 0)</span>
-<span class="n">nodal_proj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span><span class="w"></span>
-<span class="w">                       </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span><span class="w"></span>
-<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span><span class="w"></span>
+<span class="n">nodal_proj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">                       </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
 
 <span class="c1">//</span>
 <span class="c1">// Solve div( sigma * grad(phi) ) = RHS</span>
 <span class="c1">//</span>
-<span class="n">nodal_proj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="w"> </span><span class="n">reltol</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="p">);</span><span class="w"></span>
+<span class="n">nodal_proj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="w"> </span><span class="n">reltol</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="p">);</span>
 
 <span class="c1">// Optionally, the projection can return the resulting phi and/or phi can be used to provide</span>
 <span class="c1">// an initial guess if available.</span>
