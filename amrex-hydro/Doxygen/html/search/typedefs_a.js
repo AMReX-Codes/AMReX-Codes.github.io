@@ -1,18 +1,7 @@
 var searchData=
 [
-  ['manageddevicevector_16854',['ManagedDeviceVector',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Gpu.html#af22f411b79da7033051cdfa1539e21be',1,'amrex::Gpu']]],
-  ['managedvector_16855',['ManagedVector',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Gpu.html#ab2661b6ddd9751b7e197a9d619dabc7b',1,'amrex::Gpu']]],
-  ['mapofcopycomtagcontainers_16856',['MapOfCopyComTagContainers',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1FabArrayBase.html#a70b58356e2e49c69d54eed3850a9c231',1,'amrex::FabArrayBase::MapOfCopyComTagContainers()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MultiFab.html#a9abff4a4be6d566975e62a4682960b96',1,'amrex::MultiFab::MapOfCopyComTagContainers()'],['https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1FabArrayBase_1_1CopyComTag.html#ac93e9be5fadb2a282072412f8801a271',1,'amrex::FabArrayBase::CopyComTag::MapOfCopyComTagContainers()']]],
-  ['maxressteadyclock_16857',['MaxResSteadyClock',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ae337b46a7ca54b353861635503079536',1,'amrex']]],
-  ['mlabeclaplacian_16858',['MLABecLaplacian',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa9c032480d2659c266fb23d70800f6a5',1,'amrex']]],
-  ['mlalaplacian_16859',['MLALaplacian',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#afd71b3eea629ca099ace90909350cc56',1,'amrex']]],
-  ['mlcellabeclap_16860',['MLCellABecLap',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a2116fd8f117dd8ebb01e6a3b99c7947e',1,'amrex']]],
-  ['mlcelllinop_16861',['MLCellLinOp',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a6d2f435b4a824073e4ba2c714ff4770b',1,'amrex']]],
-  ['mlcgsolver_16862',['MLCGSolver',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#adc786fadc751afd641a3d05650467dfc',1,'amrex']]],
-  ['mllinop_16863',['MLLinOp',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a6cfa07a78393bb456aa7d33ced04fb46',1,'amrex']]],
-  ['mlmg_16864',['MLMG',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a77b48f471801c4f6a597804a89c3b543',1,'amrex']]],
-  ['mlmgbndry_16865',['MLMGBndry',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9',1,'amrex']]],
-  ['mlpoisson_16866',['MLPoisson',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a339ac1b3381df4095a659ec2b7980cb3',1,'amrex']]],
-  ['multifabid_16867',['MultiFabId',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a270e267cbd0e472dd8297d46a9c76854',1,'amrex']]],
-  ['mypariter_16868',['MyParIter',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1NeighborParticleContainer.html#a4f7f3ca7bf951e7ec6fce594005694da',1,'amrex::NeighborParticleContainer']]]
+  ['lipair_16922',['LIpair',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1DistributionMapping.html#a8bc191492d7a25e16f586ef1e625649c',1,'amrex::DistributionMapping']]],
+  ['list_5ftype_16923',['list_type',['https://amrex-codes.github.io/amrex/doxygen/structamrex_1_1CompileTimeOptions.html#ade5844430b8549754df043e3cf4d870d',1,'amrex::CompileTimeOptions']]],
+  ['localcopy_5ft_16924',['LocalCopy_t',['https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1NonLocalBC.html#a4b44aa3d7a205826948ced4323d0be80',1,'amrex::NonLocalBC']]],
+  ['location_16925',['Location',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLABecLaplacianT.html#aed1bdc13923f234ac4e4c6425210db69',1,'amrex::MLABecLaplacianT::Location()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLALaplacianT.html#aedfa751b8cf7f0d06a43e71b6e7795cf',1,'amrex::MLALaplacianT::Location()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLCellABecLapT.html#a97dd28df6c3a612116bc4d4f95fb98fb',1,'amrex::MLCellABecLapT::Location()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLCellLinOpT.html#ac93e5fc5cf3373e6711f1328b051b997',1,'amrex::MLCellLinOpT::Location()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLLinOpT.html#ac1e86de83222345c43a378d8698c9543',1,'amrex::MLLinOpT::Location()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLMGT.html#a4adf824fc2842cb7a07dcc0395627629',1,'amrex::MLMGT::Location()'],['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1MLPoissonT.html#aee09d92cf1cb6a1f95ccadead11ccac4',1,'amrex::MLPoissonT::Location()']]]
 ];
