@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1NonLocalBC.html#a3e287397f6bc7e5d1f687412232b2708">Image</a>([&amp;dtos](<span class="keyword">auto</span>&amp;&amp; i) { <span class="keywordflow">return</span> dtos.Inverse(i); }, box);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;static_assert(IsIndexMapping&lt;MultiBlockIndexMapping&gt;(),</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;static_assert(IsIndexMapping&lt;MultiBlockIndexMapping&gt;(), <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;              <span class="stringliteral">&quot;MultiBlockIndexMapping is expected to satisfy IndexMapping&quot;</span>);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">//                                                    [class.MultiBlockCommMetaData]</span></div>
@@ -273,8 +273,8 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;static_assert(std::is_trivially_default_constructible&lt;Identity&gt;::value );</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;static_assert(std::is_trivially_copy_assignable&lt;Identity&gt;::value );</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;static_assert(std::is_trivially_copy_constructible&lt;Identity&gt;::value );</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;static_assert(IsIndexMapping&lt;Identity&gt;() );</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;static_assert(IsFabProjection&lt;Identity, FArrayBox&gt;() );</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;static_assert(IsIndexMapping&lt;Identity&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;static_assert(IsFabProjection&lt;Identity, FArrayBox&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">//                                                     [FabProjection.MapComponents]</span></div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
@@ -297,9 +297,9 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;};</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;static_assert(std::is_trivially_copy_assignable&lt;MapComponents&lt;Identity&gt;&gt;() );</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;static_assert(std::is_trivially_copy_constructible&lt;MapComponents&lt;Identity&gt;&gt;() );</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;static_assert(IsFabProjection&lt;MapComponents&lt;Identity&gt;, <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&gt;() );</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;static_assert(std::is_trivially_copy_assignable&lt;MapComponents&lt;Identity&gt;&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;static_assert(std::is_trivially_copy_constructible&lt;MapComponents&lt;Identity&gt;&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;static_assert(IsFabProjection&lt;MapComponents&lt;Identity&gt;, <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">//                                      [FabProjection.MapComponents.SwapComponents]</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
@@ -349,10 +349,10 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;static_assert(<span class="keyword">sizeof</span>(<a class="code" href="namespaceamrex_1_1NonLocalBC.html#adc23e3a1b040b4f68b4429a2a40e00d6">DynamicSwapComponents</a>) == 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) );</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;static_assert(<span class="keyword">sizeof</span>(SwapComponents&lt;0, -1&gt;) == <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) );</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;static_assert(<span class="keyword">sizeof</span>(SwapComponents&lt;-1, 1&gt;) == <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) );</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;static_assert(std::is_trivially_default_constructible&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;&gt;() );</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;static_assert(std::is_trivially_copy_assignable&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;&gt;() );</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;static_assert(std::is_trivially_copy_constructible&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;&gt;() );</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;static_assert(IsFabProjection&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;, <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&gt;() );</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;static_assert(std::is_trivially_default_constructible&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;static_assert(std::is_trivially_copy_assignable&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;static_assert(std::is_trivially_copy_constructible&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;static_assert(IsFabProjection&lt;MapComponents&lt;Identity, SwapComponents&lt;0, 1&gt;&gt;, <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&gt;() ); <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;static_assert(swap_indices&lt;0, 1&gt;(0) == 1 );</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;static_assert(swap_indices&lt;0, 1&gt;(1) == 0 );</div>
@@ -531,7 +531,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;}</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;static_assert(IsDataPacking&lt;PackComponents, FArrayBox&gt;(),</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;static_assert(IsDataPacking&lt;PackComponents, FArrayBox&gt;(), <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;              <span class="stringliteral">&quot;PackComponents is expected to satisfy the concept DataPacking.&quot;</span>);</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="comment">//                                    [DataPacking.ApplyDtosAndProjectionOnReciever]</span></div>
@@ -586,7 +586,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBC_8H_source.html','');
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;}</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;static_assert(IsDataPacking&lt;ApplyDtosAndProjectionOnReciever&lt;&gt;, <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&gt;(),</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;static_assert(IsDataPacking&lt;ApplyDtosAndProjectionOnReciever&lt;&gt;, <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&gt;(), <span class="comment">// NOLINT(bugprone-throw-keyword-missing)</span></div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;              <span class="stringliteral">&quot;ApplyDtosAndProjectionOnReciever&lt;&gt; is expected to satisfy the DataPacking concept.&quot;</span>);</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="comment">//                                                             [ParallelCopy_nowait]</span></div>

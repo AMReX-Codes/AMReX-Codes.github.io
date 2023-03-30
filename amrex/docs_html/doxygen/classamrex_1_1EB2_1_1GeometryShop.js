@@ -1,10 +1,8 @@
 var classamrex_1_1EB2_1_1GeometryShop =
 [
     [ "FunctionType", "classamrex_1_1EB2_1_1GeometryShop.html#aa9d8c656e7a0aa9ce8efa32053f74f4a", null ],
-    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#a8d0e98aa0055c316ec02df67ccf8ad14", null ],
-    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#aa3f7eaaa1fa10feca580f6dec09c4d93", null ],
-    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#a13e6bb30cba81e1ddd38214483fa3c88", null ],
-    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#aa1672800db9b7441c3963efbd1b9dfa9", null ],
+    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#a5cd1275a72a0d42d7058bbb4da6f3e8d", null ],
+    [ "GeometryShop", "classamrex_1_1EB2_1_1GeometryShop.html#a3772b6627894ab939396feac8bc1c356", null ],
     [ "fillFab", "classamrex_1_1EB2_1_1GeometryShop.html#ab0feb076743b2a454e181404861c9ed9", null ],
     [ "fillFab", "classamrex_1_1EB2_1_1GeometryShop.html#a21626bdeb656074c2e675969aec678bb", null ],
     [ "fillFab_Cpu", "classamrex_1_1EB2_1_1GeometryShop.html#a99bd263dac37b6f756eced9182e49eb0", null ],
