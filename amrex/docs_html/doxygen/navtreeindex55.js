@@ -1,9 +1,5 @@
 var NAVTREEINDEX55 =
 {
-"classamrex_1_1ref__wrapper.html#a1dc8e939592c5c6be1754bf8486bafc9":[2,0,0,450,7],
-"classamrex_1_1ref__wrapper.html#a48fae2c492bcad7afe1baed7ed0bfc64":[2,0,0,450,6],
-"classamrex_1_1ref__wrapper.html#a6ef60ec5e218aac28651028686253c1b":[2,0,0,450,10],
-"classamrex_1_1ref__wrapper.html#a8ae7d0c30828a710034c7992f0383c12":[2,0,0,450,5],
 "classamrex_1_1ref__wrapper.html#a8c3a6304e4d37687fb6c62fa26d7ebe5":[2,0,0,450,4],
 "classamrex_1_1ref__wrapper.html#a8d68a19e8e692c80582c0e2a4470c7ae":[2,0,0,450,3],
 "classamrex_1_1ref__wrapper.html#a8f3f054ecab74f9b3e738e5591b32e91":[2,0,0,450,2],
@@ -249,5 +245,9 @@ var NAVTREEINDEX55 =
 "functions_e.html":[2,3,0,5],
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
-"functions_f.html":[2,3,0,6]
+"functions_f.html":[2,3,0,6],
+"functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
+"functions_func_b.html":[2,3,1,1],
+"functions_func_c.html":[2,3,1,2]
 };

@@ -60,8 +60,6 @@ var classamrex_1_1Geometry =
     [ "domain", "classamrex_1_1Geometry.html#a52477661ac7c7ccbd93f397340176c74", null ],
     [ "is_periodic", "classamrex_1_1Geometry.html#a84b1ad3fef8594c10d9ff2000505b20a", null ],
     [ "prob_domain", "classamrex_1_1Geometry.html#af62cd34804aea5643a6fc2205495b7a2", null ],
-    [ "roundoff_hi_d", "classamrex_1_1Geometry.html#a8fc1a2451a70d708a79d077e01c85a55", null ],
-    [ "roundoff_hi_f", "classamrex_1_1Geometry.html#a52912a524ac17a8607dbce5d834c8702", null ],
-    [ "roundoff_lo_d", "classamrex_1_1Geometry.html#aecef2f5bb7de3875c51ffd1419cee96c", null ],
-    [ "roundoff_lo_f", "classamrex_1_1Geometry.html#af89d216d7151829c93718832267cc981", null ]
+    [ "roundoff_hi", "classamrex_1_1Geometry.html#a7b910ad6d9743cd015e54449fcc2da78", null ],
+    [ "roundoff_lo", "classamrex_1_1Geometry.html#a00586ef08697068f26b1a8002a3fb8ac", null ]
 ];
