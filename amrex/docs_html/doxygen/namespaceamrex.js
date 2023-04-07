@@ -1066,7 +1066,9 @@ var namespaceamrex =
       [ "PARSER_POW_M1", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a6959884c4754748c098c6cf1e1d7f15e", null ],
       [ "PARSER_POW_P1", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589aba931b8a257cc61167d87f8f0c2a4894", null ],
       [ "PARSER_POW_P2", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a44be2664933f05ef4a513d624e6c2094", null ],
-      [ "PARSER_POW_P3", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a0b1f0dc2037efb1f7674c9fdca44b561", null ]
+      [ "PARSER_POW_P3", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a0b1f0dc2037efb1f7674c9fdca44b561", null ],
+      [ "PARSER_COMP_ELLINT_1", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a396843df4fbe8fdc7fb395e61f7fcbf5", null ],
+      [ "PARSER_COMP_ELLINT_2", "namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a43db7cb27778d6ef769014bcf7d9825e", null ]
     ] ],
     [ "parser_f2_t", "namespaceamrex.html#a0075507273391e5967b9d869daed98bc", [
       [ "PARSER_POW", "namespaceamrex.html#a0075507273391e5967b9d869daed98bca7b172eaccc69212b5526d8a1675b2399", null ],
@@ -2306,6 +2308,8 @@ var namespaceamrex =
     [ "parser_math_acos", "namespaceamrex.html#aefee20e5a68eb0e134e5b8a25a45b4b4", null ],
     [ "parser_math_asin", "namespaceamrex.html#a914656d851c249d6787f813ea09a6626", null ],
     [ "parser_math_atan", "namespaceamrex.html#a2bd581231b46b3a5a62d99e00e743622", null ],
+    [ "parser_math_comp_ellint_1", "namespaceamrex.html#abec1b60762ebf83a7597d70c0e32aaa5", null ],
+    [ "parser_math_comp_ellint_2", "namespaceamrex.html#a7f39381b8634177fe59bf13bc7769de8", null ],
     [ "parser_math_cos", "namespaceamrex.html#ad9c5d0a6539470f7560f822714b7c75b", null ],
     [ "parser_math_cosh", "namespaceamrex.html#a22b01fd56b83bc1cad5dc2fb17b023b4", null ],
     [ "parser_math_exp", "namespaceamrex.html#a8f3d6e0107012526c3465c75a12f5459", null ],

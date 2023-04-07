@@ -17,5 +17,7 @@ var dir_c57a0b80d3194904f9a46aa63df75f33 =
     [ "Error.h", "Error_8h.html", [
       [ "Error", "classhacc_1_1Error.html", "classhacc_1_1Error" ]
     ] ],
-    [ "TimingStats.h", "TimingStats_8h.html", "TimingStats_8h" ]
+    [ "TimingStats.h", "TimingStats_8h.html", "TimingStats_8h" ],
+    [ "verbosity.cpp", "verbosity_8cpp.html", "verbosity_8cpp" ],
+    [ "verbosity.h", "verbosity_8h.html", "verbosity_8h" ]
 ];

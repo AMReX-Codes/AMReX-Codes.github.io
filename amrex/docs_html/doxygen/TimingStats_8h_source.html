@@ -160,57 +160,61 @@ $(document).ready(function(){initNavTree('TimingStats_8h_source.html',''); initR
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &lt;mpi.h&gt;</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// lightweight timing statistics from MPI_Wtime() calls</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// C header only, no static variables</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// prints maximum, average/mean, minimum, and stddev</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">inline</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="TimingStats_8h.html#a1c668481793d875c07edda33c3d1d87f">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="TimingStats_8h.html#a1c668481793d875c07edda33c3d1d87f">printTimingStats</a>(<a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm,        <span class="comment">// comm for MPI_Allreduce()</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">char</span> *preamble, <span class="comment">// text at beginning of line</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                      <span class="keywordtype">double</span> dt)            <span class="comment">// delta t in seconds</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">int</span> myrank, nranks;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">min</a>, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, avg, var, stdev;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  MPI_Comm_rank(comm, &amp;myrank);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  MPI_Comm_size(comm, &amp;nranks);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  MPI_Allreduce(&amp;dt, &amp;<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>, 1, MPI_DOUBLE, MPI_MAX, comm);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  MPI_Allreduce(&amp;dt, &amp;<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">min</a>, 1, MPI_DOUBLE, MPI_MIN, comm);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  MPI_Allreduce(&amp;dt, &amp;<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, 1, MPI_DOUBLE, MPI_SUM, comm);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  avg = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>/nranks;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  dt -= avg;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  dt *= dt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  MPI_Allreduce(&amp;dt, &amp;var, 1, MPI_DOUBLE, MPI_SUM, comm);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  var *= 1.0/nranks;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  stdev = <a class="code" href="namespaceamrex.html#afe1175c09892da177b5f5ecaf36936ab">sqrt</a>(var);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">if</span>(myrank==0) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    printf(<span class="stringliteral">&quot;%s  max %.3es  avg %.3es  min %.3es  dev %.3es\n&quot;</span>,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;           preamble, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>, avg, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">min</a>, stdev);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  MPI_Barrier(comm);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="verbosity_8h.html">verbosity.h</a>&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// lightweight timing statistics from MPI_Wtime() calls</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// C header only, no static variables</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// prints maximum, average/mean, minimum, and stddev</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">inline</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="TimingStats_8h.html#a1c668481793d875c07edda33c3d1d87f">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="TimingStats_8h.html#a1c668481793d875c07edda33c3d1d87f">printTimingStats</a>(<a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm,        <span class="comment">// comm for MPI_Allreduce()</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">char</span> *preamble, <span class="comment">// text at beginning of line</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                      <span class="keywordtype">double</span> dt)            <span class="comment">// delta t in seconds</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">int</span> myrank, nranks;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">min</a>, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, avg, var, stdev;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  MPI_Comm_rank(comm, &amp;myrank);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  MPI_Comm_size(comm, &amp;nranks);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  MPI_Allreduce(&amp;dt, &amp;<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>, 1, MPI_DOUBLE, MPI_MAX, comm);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  MPI_Allreduce(&amp;dt, &amp;<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">min</a>, 1, MPI_DOUBLE, MPI_MIN, comm);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  MPI_Allreduce(&amp;dt, &amp;<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>, 1, MPI_DOUBLE, MPI_SUM, comm);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  avg = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>/nranks;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  dt -= avg;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  dt *= dt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  MPI_Allreduce(&amp;dt, &amp;var, 1, MPI_DOUBLE, MPI_SUM, comm);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  var *= 1.0/nranks;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  stdev = <a class="code" href="namespaceamrex.html#afe1175c09892da177b5f5ecaf36936ab">sqrt</a>(var);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span>(myrank==0 &amp;&amp; <a class="code" href="verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7">verbosity</a>() &gt; 0) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    printf(<span class="stringliteral">&quot;%s  max %.3es  avg %.3es  min %.3es  dev %.3es\n&quot;</span>,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;           preamble, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>, avg, <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">min</a>, stdev);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HACC_TIMINGSTATS_H</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  MPI_Barrier(comm);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HACC_TIMINGSTATS_H</span></div>
 <div class="ttc" id="aAMReX__ccse-mpi_8H_html_a68c509d4adb3f4a1d6fe3a9b0b87c7b9"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a></div><div class="ttdeci">int MPI_Comm</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:47</div></div>
-<div class="ttc" id="aTimingStats_8h_html_a1c668481793d875c07edda33c3d1d87f"><div class="ttname"><a href="TimingStats_8h.html#a1c668481793d875c07edda33c3d1d87f">printTimingStats</a></div><div class="ttdeci">void printTimingStats(MPI_Comm comm, const char *preamble, double dt)</div><div class="ttdef"><b>Definition:</b> TimingStats.h:71</div></div>
+<div class="ttc" id="aTimingStats_8h_html_a1c668481793d875c07edda33c3d1d87f"><div class="ttname"><a href="TimingStats_8h.html#a1c668481793d875c07edda33c3d1d87f">printTimingStats</a></div><div class="ttdeci">void printTimingStats(MPI_Comm comm, const char *preamble, double dt)</div><div class="ttdef"><b>Definition:</b> TimingStats.h:73</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">amrex::detail::min</a></div><div class="ttdeci">@ min</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:18</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:17</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">amrex::detail::sum</a></div><div class="ttdeci">@ sum</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:19</div></div>
 <div class="ttc" id="anamespaceamrex_html_afe1175c09892da177b5f5ecaf36936ab"><div class="ttname"><a href="namespaceamrex.html#afe1175c09892da177b5f5ecaf36936ab">amrex::sqrt</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GpuComplex&lt; T &gt; sqrt(const GpuComplex&lt; T &gt; &amp;a_z) noexcept</div><div class="ttdoc">Return the square root of a complex number.</div><div class="ttdef"><b>Definition:</b> AMReX_GpuComplex.H:370</div></div>
+<div class="ttc" id="averbosity_8cpp_html_ae37c5205501d8800e493a60c7f701ac7"><div class="ttname"><a href="verbosity_8cpp.html#ae37c5205501d8800e493a60c7f701ac7">verbosity</a></div><div class="ttdeci">int verbosity()</div><div class="ttdef"><b>Definition:</b> verbosity.cpp:4</div></div>
+<div class="ttc" id="averbosity_8h_html"><div class="ttname"><a href="verbosity_8h.html">verbosity.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -45,6 +45,7 @@ var amrex__iparser_8tab_8nolint_8H =
     [ "YYMAXUTOK", "amrex__iparser_8tab_8nolint_8H.html#af3f5ed4bc4517eff0ef1b17541192a58", null ],
     [ "yynerrs", "amrex__iparser_8tab_8nolint_8H.html#a956a31a9c729bfe871bb770d99e1942d", null ],
     [ "YYNNTS", "amrex__iparser_8tab_8nolint_8H.html#af54ae9e588f0ecc32eabbfdf1959df10", null ],
+    [ "YYNOMEM", "amrex__iparser_8tab_8nolint_8H.html#a27b488ebf10b5a700a29d773c955fd90", null ],
     [ "YYNRULES", "amrex__iparser_8tab_8nolint_8H.html#aceaba8997dc3867478ae3b816647eb7c", null ],
     [ "YYNSTATES", "amrex__iparser_8tab_8nolint_8H.html#a2c387ba2caaade8bf8f78ed30023f79f", null ],
     [ "YYNTOKENS", "amrex__iparser_8tab_8nolint_8H.html#a75d260730a6c379a94ea28f63a7b9275", null ],
