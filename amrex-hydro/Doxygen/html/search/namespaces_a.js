@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sdcquadrature_5fmod_9525',['sdcquadrature_mod',['https://amrex-codes.github.io/amrex/doxygen/namespacesdcquadrature__mod.html',1,'']]]
+  ['sdcquadrature_5fmod_9534',['sdcquadrature_mod',['https://amrex-codes.github.io/amrex/doxygen/namespacesdcquadrature__mod.html',1,'']]]
 ];

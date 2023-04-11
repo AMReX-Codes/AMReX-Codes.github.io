@@ -140,8 +140,6 @@ var namespaces_dup =
         [ "amrex_partition_helper", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#ac21ab25e49c31a58b678ab25626397d3", null ],
         [ "amrex_stable_partition_helper", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#a685da3e1082796b88fdcd226e6cd923d", null ],
         [ "apply_impl", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676", null ],
-        [ "bisect_prob_hi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#a0213dbae1995cd2830f4309c85f4cbdb", null ],
-        [ "bisect_prob_lo", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#a22f28be2277f42d7a03a9e08a27ef688", null ],
         [ "build_par_for_nblocks", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#ad2a58bfacc6c0c5c71c5af8f54270061", null ],
         [ "call_f", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#ac02794506750edcf0d39acedf4ddb19d", null ],
         [ "call_f", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1detail.html#a519b3f165b5af90bb1676efdf8851b28", null ],
@@ -2212,6 +2210,8 @@ var namespaces_dup =
       [ "parser_math_acos", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aefee20e5a68eb0e134e5b8a25a45b4b4", null ],
       [ "parser_math_asin", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a914656d851c249d6787f813ea09a6626", null ],
       [ "parser_math_atan", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a2bd581231b46b3a5a62d99e00e743622", null ],
+      [ "parser_math_comp_ellint_1", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#abec1b60762ebf83a7597d70c0e32aaa5", null ],
+      [ "parser_math_comp_ellint_2", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a7f39381b8634177fe59bf13bc7769de8", null ],
       [ "parser_math_cos", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ad9c5d0a6539470f7560f822714b7c75b", null ],
       [ "parser_math_cosh", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a22b01fd56b83bc1cad5dc2fb17b023b4", null ],
       [ "parser_math_exp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a8f3d6e0107012526c3465c75a12f5459", null ],
@@ -2618,6 +2618,8 @@ var namespaces_dup =
       [ "PARSER_ASSIGN", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ad9039fea6c6d400df4ca8e5fef35b883ac0862fc2f508fb56ae7cae7fc86a282c", null ],
       [ "PARSER_ATAN", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589adcff340768238477e235ec55d511e0ac", null ],
       [ "PARSER_CEIL", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589abacc88377d1f207fe9d1aab1cdfbbaa5", null ],
+      [ "PARSER_COMP_ELLINT_1", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a396843df4fbe8fdc7fb395e61f7fcbf5", null ],
+      [ "PARSER_COMP_ELLINT_2", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a43db7cb27778d6ef769014bcf7d9825e", null ],
       [ "PARSER_COS", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a146c14c8d7badfe1adbfa704245f686e", null ],
       [ "PARSER_COSH", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3a7f6659e1b5842a0322fcdd8ad89589a1c44c6c982e5f5394b02f66a59cbcbf0", null ],
       [ "PARSER_DIV", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ad9039fea6c6d400df4ca8e5fef35b883aa5ff06ac4391a65f278df5a954d5a6d2", null ],
@@ -2965,7 +2967,7 @@ var namespaces_dup =
       [ "fab_to_fab_atomic_add", "https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html#ab1edc85caabaea9ac0a3b1e5cf851f17", null ],
       [ "fab_to_fab_atomic_cpy", "https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html#afc1b915037c4dab142f1df60d412713e", null ],
       [ "fbv_copy", "https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html#a57582f00e55a4d632cb774c1c04b8e4e", null ],
-      [ "getBoundaryBoxes", "https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html#a0fa3d037e44a1dbda0ab9b7362a2d9c1", null ]
+      [ "getBoundaryBoxes", "https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020", null ]
     ] ],
     [ "EBGodunov", "namespaceEBGodunov.html", [
       [ "ComputeAdvectiveVel", "namespaceEBGodunov.html#a6e2ba5616ba9119c5bb121aab68079ae", null ],
