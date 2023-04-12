@@ -1,5 +1,7 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1TinyProfiler_1_1MemProcStats.html#a1c9e814cfa3e13889f8fecc6a71824fc":[2,0,0,225,0,0],
+"structamrex_1_1TinyProfiler_1_1MemProcStats.html#a294ace43655d2f9f98de17aa39ae94ed":[2,0,0,225,0,1],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html#a2bf69c6701f401ca00d5e5ad3b999d0d":[2,0,0,225,0,5],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html#a330cc4e231f61e998afb4546138fa0c3":[2,0,0,225,0,8],
 "structamrex_1_1TinyProfiler_1_1MemProcStats.html#a84205dd6fc19fda21f2932003ee62a85":[2,0,0,225,0,2],
@@ -133,8 +135,8 @@ var NAVTREEINDEX79 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[2,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[2,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[2,0,0,0,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ad3adafe44d04fd011602994a46bd459e":[2,0,0,3,10,0],
 "structamrex_1_1detail_1_1unwrap.html":[2,0,0,3,7],
 "structamrex_1_1detail_1_1unwrap.html#a79b4bca3c8ca101115685fbcd2aec734":[2,0,0,3,7,0],
-"structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html":[2,0,0,3,8],
-"structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html#a81dc4abe9ba0c404026f43e1fdc3da90":[2,0,0,3,8,0],
-"structamrex_1_1iparser__assign.html":[2,0,0,309]
+"structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html":[2,0,0,3,8]
 };

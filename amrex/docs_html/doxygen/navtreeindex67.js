@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"namespaceamrex_1_1ParallelDescriptor.html#ae9b60ea81eb861f883e02edaa5876d08":[1,0,0,31,150],
+"namespaceamrex_1_1ParallelDescriptor.html#aed1beec464cfce027998bc7a249a09b5":[1,0,0,31,67],
 "namespaceamrex_1_1ParallelDescriptor.html#aef0dcb327a050f0a04520c31486687a8":[1,0,0,31,82],
 "namespaceamrex_1_1ParallelDescriptor.html#af2f4fc272303fdc7f363d88ffd292c4c":[1,0,0,31,64],
 "namespaceamrex_1_1ParallelDescriptor.html#af4996999fa16efb8ab255e1d26ab2163":[1,0,0,31,68],
@@ -223,14 +225,14 @@ var NAVTREEINDEX67 =
 "namespaceamrex_1_1disabled.html":[1,0,0,7],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[1,0,0,7,3],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[1,0,0,607],
-"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[1,0,0,7,2],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[1,0,0,606],
+"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[1,0,0,7,2],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[1,0,0,7,4],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[1,0,0,608],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[1,0,0,602],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[1,0,0,7,0],
-"namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[1,0,0,605],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[1,0,0,7,1],
+"namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[1,0,0,605],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[1,0,0,609],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[1,0,0,7,5],
 "namespaceamrex_1_1experimental.html":[1,0,0,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX67 =
 "namespaceamrex_1_1experimental.html#a8bffa0012acdc4bc3a84b6a814c22312":[1,0,0,9,13],
 "namespaceamrex_1_1experimental.html#a936d1ab3c6ad4beccb1257838f81ed52":[1,0,0,9,6],
 "namespaceamrex_1_1experimental.html#a970dba67d6c6c51517b334cd6933ab27":[1,0,0,9,1],
-"namespaceamrex_1_1experimental.html#aa205157a164414e21e2a682ed66a8c5c":[1,0,0,9,14],
-"namespaceamrex_1_1experimental.html#adc7223f52b21184b5f94cb7a31793c31":[1,0,0,9,15],
-"namespaceamrex_1_1experimental.html#ae165e70b88ac0d6c683db44eb113e2f4":[1,0,0,9,9]
+"namespaceamrex_1_1experimental.html#aa205157a164414e21e2a682ed66a8c5c":[1,0,0,9,14]
 };
