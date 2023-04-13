@@ -502,6 +502,7 @@ var namespaces_dup =
         [ "cospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d", null ],
         [ "cospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7", null ],
         [ "pi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3", null ],
+        [ "powi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe", null ],
         [ "sincos", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27", null ],
         [ "sincos", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30", null ],
         [ "sincospi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a", null ],
