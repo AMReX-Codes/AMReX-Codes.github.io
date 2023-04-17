@@ -128,8 +128,8 @@ var hierarchy =
     [ "amrex::Array4MaskCopyTag< T0, T1 >", "structamrex_1_1Array4MaskCopyTag.html", null ],
     [ "amrex::Array4PairTag< T >", "structamrex_1_1Array4PairTag.html", null ],
     [ "amrex::Array4Tag< T >", "structamrex_1_1Array4Tag.html", null ],
-    [ "amrex::ArrayOfStructs< NReal, NInt, Allocator >", "classamrex_1_1ArrayOfStructs.html", null ],
-    [ "amrex::ArrayOfStructs< NStructReal, NStructInt, DefaultAllocator >", "classamrex_1_1ArrayOfStructs.html", null ],
+    [ "amrex::ArrayOfStructs< T_ParticleType, Allocator >", "classamrex_1_1ArrayOfStructs.html", null ],
+    [ "amrex::ArrayOfStructs< ParticleType, DefaultAllocator >", "classamrex_1_1ArrayOfStructs.html", null ],
     [ "amrex::AssignGrid< BinIteratorFactory >", "structamrex_1_1AssignGrid.html", null ],
     [ "amrex::AssignGrid< amrex::DenseBinIteratorFactory< amrex::Box > >", "structamrex_1_1AssignGrid.html", null ],
     [ "AssignGridFilter", "structAssignGridFilter.html", null ],
@@ -246,7 +246,8 @@ var hierarchy =
     [ "amrex::Neighbors< ParticleType >::const_iterator", "structamrex_1_1Neighbors_1_1const__iterator.html", null ],
     [ "amrex::ConstParticleCPUWrapper", "structamrex_1_1ConstParticleCPUWrapper.html", null ],
     [ "amrex::ConstParticleIDWrapper", "structamrex_1_1ConstParticleIDWrapper.html", null ],
-    [ "amrex::ConstParticleTileData< NStructReal, NStructInt, NArrayReal, NArrayInt >", "structamrex_1_1ConstParticleTileData.html", null ],
+    [ "amrex::ConstParticleTileData< T_ParticleType, NArrayReal, NArrayInt >", "structamrex_1_1ConstParticleTileData.html", null ],
+    [ "amrex::ConstParticleTileData< SoAParticleBase, NArrayReal, NArrayInt >", "structamrex_1_1ConstParticleTileData.html", null ],
     [ "amrex::CoordSys", "classamrex_1_1CoordSys.html", [
       [ "amrex::Geometry", "classamrex_1_1Geometry.html", null ]
     ] ],
@@ -296,7 +297,6 @@ var hierarchy =
     [ "amrex::Gpu::Deleter", "structamrex_1_1Gpu_1_1Deleter.html", null ],
     [ "amrex::DenseBinIteratorFactory< T >", "structamrex_1_1DenseBinIteratorFactory.html", null ],
     [ "amrex::DenseBins< T >", "classamrex_1_1DenseBins.html", null ],
-    [ "amrex::DenseBins< amrex::Particle >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DenseBins< ParticleType >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DeriveList", "classamrex_1_1DeriveList.html", null ],
     [ "amrex::DeriveRec", "classamrex_1_1DeriveRec.html", null ],
@@ -469,12 +469,12 @@ var hierarchy =
     [ "amrex::GpuArray< bool, N >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< const int *, NArrayInt >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< const ParticleReal *, NArrayReal >", "structamrex_1_1GpuArray.html", null ],
-    [ "amrex::GpuArray< int *, NArrayInt >", "structamrex_1_1GpuArray.html", null ],
+    [ "amrex::GpuArray< int *, NAI >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int, 2 >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int, 3 >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int, 4 >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< int, AMREX_GPU_MAX_STREAMS >", "structamrex_1_1GpuArray.html", null ],
-    [ "amrex::GpuArray< ParticleReal *, NArrayReal >", "structamrex_1_1GpuArray.html", null ],
+    [ "amrex::GpuArray< ParticleReal *, NAR >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< ParticleReal, AMREX_SPACEDIM >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< Real, 3 >", "structamrex_1_1GpuArray.html", null ],
     [ "amrex::GpuArray< Real, AMREX_SPACEDIM >", "structamrex_1_1GpuArray.html", null ],
@@ -523,7 +523,8 @@ var hierarchy =
     ] ],
     [ "amrex::IntDescriptor", "classamrex_1_1IntDescriptor.html", null ],
     [ "std::integral_constant", null, [
-      [ "amrex::GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ]
+      [ "amrex::GpuTupleSize< GpuTuple< Ts... > >", "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+      [ "is_soa_particle< T >", "structis__soa__particle.html", null ]
     ] ],
     [ "amrex::IntegratorBase< T >", "classamrex_1_1IntegratorBase.html", [
       [ "amrex::FEIntegrator< T >", "classamrex_1_1FEIntegrator.html", null ],
@@ -645,6 +646,8 @@ var hierarchy =
     [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", null ],
     [ "amrex::LogicalOr< T >", "structamrex_1_1LogicalOr.html", null ],
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", null ],
+    [ "make_particle< T_ParticleType, Enable >", "structmake__particle.html", null ],
+    [ "make_particle< T_ParticleType, typename std::enable_if< is_soa_particle< T_ParticleType >::value >::type >", "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html", null ],
     [ "amrex::Gpu::Managed", "structamrex_1_1Gpu_1_1Managed.html", null ],
     [ "amrex::NonLocalBC::MapComponents< Base, Map >", "structamrex_1_1NonLocalBC_1_1MapComponents.html", null ],
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", null ],
@@ -659,16 +662,16 @@ var hierarchy =
     [ "amrex::ForkJoin::MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html", null ],
     [ "amrex::MFInfo", "structamrex_1_1MFInfo.html", null ],
     [ "amrex::MFIter", "classamrex_1_1MFIter.html", [
-      [ "amrex::ParIterBase< false, NStructReal, 0, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase.html", [
-        [ "amrex::ParIter< NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIter.html", null ]
+      [ "amrex::ParIterBase_impl< false, T_ParticleType, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase__impl.html", [
+        [ "amrex::ParIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIter__impl.html", null ]
       ] ],
-      [ "amrex::ParIterBase< true, NStructReal, 0, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase.html", [
-        [ "amrex::ParConstIter< NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParConstIter.html", null ]
+      [ "amrex::ParIterBase_impl< true, T_ParticleType, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase__impl.html", [
+        [ "amrex::ParConstIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParConstIter__impl.html", null ]
       ] ],
       [ "amrex::FabSetIter", "classamrex_1_1FabSetIter.html", null ],
       [ "amrex::FillPatchIterator", "classamrex_1_1FillPatchIterator.html", null ],
       [ "amrex::MultiMaskIter", "classamrex_1_1MultiMaskIter.html", null ],
-      [ "amrex::ParIterBase< is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIterBase.html", null ]
+      [ "amrex::ParIterBase_impl< is_const, T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIterBase__impl.html", null ]
     ] ],
     [ "amrex::MFItInfo", "structamrex_1_1MFItInfo.html", null ],
     [ "amrex::Minimum< T >", "structamrex_1_1Minimum.html", null ],
@@ -800,18 +803,15 @@ var hierarchy =
     [ "amrex::ParticleBufferMap", "classamrex_1_1ParticleBufferMap.html", null ],
     [ "amrex::ParticleCommData", "structamrex_1_1ParticleCommData.html", null ],
     [ "amrex::ParticleContainerBase", "classamrex_1_1ParticleContainerBase.html", [
-      [ "amrex::ParticleContainer< NStructReal, 0, 0, 0, DefaultAllocator >", "classamrex_1_1ParticleContainer.html", [
-        [ "amrex::AmrParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1AmrParticleContainer.html", null ]
+      [ "amrex::ParticleContainer_impl< T_ParticleType, 0, 0, DefaultAllocator >", "classamrex_1_1ParticleContainer__impl.html", [
+        [ "amrex::AmrParticleContainer_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1AmrParticleContainer__impl.html", null ]
       ] ],
-      [ "amrex::ParticleContainer< AMREX_SPACEDIM >", "classamrex_1_1ParticleContainer.html", [
+      [ "amrex::ParticleContainer_impl< T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator >", "classamrex_1_1ParticleContainer__impl.html", [
+        [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >", "classamrex_1_1NeighborParticleContainer.html", null ],
         [ "amrex::TracerParticleContainer", "classamrex_1_1TracerParticleContainer.html", [
           [ "amrex::AmrTracerParticleContainer", "classamrex_1_1AmrTracerParticleContainer.html", null ]
         ] ]
-      ] ],
-      [ "amrex::ParticleContainer< NStructReal, NStructInt, 0, 0 >", "classamrex_1_1ParticleContainer.html", [
-        [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >", "classamrex_1_1NeighborParticleContainer.html", null ]
-      ] ],
-      [ "amrex::ParticleContainer< T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt, Allocator >", "classamrex_1_1ParticleContainer.html", null ]
+      ] ]
     ] ],
     [ "amrex::ParticleCopyOp", "structamrex_1_1ParticleCopyOp.html", null ],
     [ "amrex::ParticleCopyPlan", "structamrex_1_1ParticleCopyPlan.html", null ],
@@ -820,8 +820,9 @@ var hierarchy =
     [ "amrex::ParticleInitType< NStructReal, NStructInt, NArrayReal, NArrayInt >", "structamrex_1_1ParticleInitType.html", null ],
     [ "amrex::ParticleLocator< Bins >", "classamrex_1_1ParticleLocator.html", null ],
     [ "amrex::ParticleLocData", "structamrex_1_1ParticleLocData.html", null ],
-    [ "amrex::ParticleTile< NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "structamrex_1_1ParticleTile.html", null ],
-    [ "amrex::ParticleTileData< NStructReal, NStructInt, NArrayReal, NArrayInt >", "structamrex_1_1ParticleTileData.html", null ],
+    [ "amrex::ParticleTile< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "structamrex_1_1ParticleTile.html", null ],
+    [ "amrex::ParticleTileData< T_ParticleType, NArrayReal, NArrayInt >", "structamrex_1_1ParticleTileData.html", null ],
+    [ "amrex::ParticleTileData< SoAParticleBase, NArrayReal, NArrayInt >", "structamrex_1_1ParticleTileData.html", null ],
     [ "amrex::PCData< FAB >", "structamrex_1_1PCData.html", null ],
     [ "amrex::Periodicity", "classamrex_1_1Periodicity.html", null ],
     [ "amrex::VisMF::PersistentIFStream", "structamrex_1_1VisMF_1_1PersistentIFStream.html", null ],
@@ -898,6 +899,10 @@ var hierarchy =
     [ "amrex::IntVect::shift_hasher", "classamrex_1_1IntVect_1_1shift__hasher.html", null ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", null ],
     [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", null ],
+    [ "amrex::SoAParticleBase", "structamrex_1_1SoAParticleBase.html", [
+      [ "amrex::ConstSoAParticle< T_NArrayReal, T_NArrayInt >", "structamrex_1_1ConstSoAParticle.html", null ],
+      [ "amrex::SoAParticle< T_NArrayReal, T_NArrayInt >", "structamrex_1_1SoAParticle.html", null ]
+    ] ],
     [ "amrex::SparseBinIteratorFactory< T >", "structamrex_1_1SparseBinIteratorFactory.html", null ],
     [ "amrex::SparseBins< T >", "classamrex_1_1SparseBins.html", null ],
     [ "amrex::EB2::SplineIF", "classamrex_1_1EB2_1_1SplineIF.html", null ],

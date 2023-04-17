@@ -5,14 +5,7 @@
     <includes refid="AMReX__ParticleTile_8H" local="no">AMReX_ParticleTile.H</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <declname>NStructReal</declname>
-        <defname>NStructReal</defname>
-      </param>
-      <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <declname>NStructInt</declname>
-        <defname>NStructInt</defname>
+        <type>typename T_ParticleType</type>
       </param>
       <param>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -32,14 +25,14 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1ac2e43ee8e3a01151dc70824f6f79b44d" prot="public" static="no">
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1ab2be35f77e9e2ed231e5406b9f011dc3" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
         <type>Allocator&lt; T &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::AllocatorType =  Allocator&lt;T&gt;</definition>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::AllocatorType =  Allocator&lt;T&gt;</definition>
         <argsstring></argsstring>
         <name>AllocatorType</name>
         <briefdescription>
@@ -48,11 +41,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="253" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="253" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="607" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="607" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a5483516f2556f3f7b8573562d3c9960d" prot="public" static="no">
-        <type><ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NStructReal, NStructInt &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::ParticleType =  Particle&lt;NStructReal, NStructInt&gt;</definition>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" prot="public" static="no">
+        <type>T_ParticleType</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::ParticleType =  T_ParticleType</definition>
         <argsstring></argsstring>
         <name>ParticleType</name>
         <briefdescription>
@@ -61,11 +54,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="255" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="255" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="609" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="609" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a85053ba927a183f72d714140f906614e" prot="public" static="no">
-        <type><ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NStructReal+NArrayReal, NStructInt+NArrayInt &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::SuperParticleType =  Particle&lt;NStructReal + NArrayReal, NStructInt + NArrayInt&gt;</definition>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" prot="public" static="no">
+        <type>typename ParticleType::RealType</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::RealType =  typename ParticleType::RealType</definition>
+        <argsstring></argsstring>
+        <name>RealType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="612" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="612" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1acdece46bb48b940977bf9efe198779c4" prot="public" static="no">
+        <type><ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; <ref refid="structamrex_1_1ParticleTile_1af37f9208b1b9908daad6789415d20f81" kindref="member">NStructReal</ref>+NArrayReal, <ref refid="structamrex_1_1ParticleTile_1a2e52440bc21e01affff077fff37edb44" kindref="member">NStructInt</ref>+NArrayInt &gt;</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::SuperParticleType =  Particle&lt;NStructReal + NArrayReal, NStructInt + NArrayInt&gt;</definition>
         <argsstring></argsstring>
         <name>SuperParticleType</name>
         <briefdescription>
@@ -74,11 +80,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="259" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="259" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="617" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="617" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a7eb3695771d4b220b840a1cac81b29ff" prot="public" static="no">
-        <type><ref refid="classamrex_1_1ArrayOfStructs" kindref="compound">ArrayOfStructs</ref>&lt; NStructReal, NStructInt, Allocator &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::AoS =  ArrayOfStructs&lt;NStructReal, NStructInt, Allocator&gt;</definition>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1aa6a333dba629d9e27e73d6a083e6723b" prot="public" static="no">
+        <type><ref refid="classamrex_1_1ArrayOfStructs" kindref="compound">ArrayOfStructs</ref>&lt; <ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref>, Allocator &gt;</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::AoS =  ArrayOfStructs&lt;ParticleType, Allocator&gt;</definition>
         <argsstring></argsstring>
         <name>AoS</name>
         <briefdescription>
@@ -87,24 +93,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="261" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="261" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="619" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="619" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1aa25203ed24adf960a987ce5ef7220b44" prot="public" static="no">
-        <type>typename <ref refid="classamrex_1_1ArrayOfStructs_1af66049acde2b283b60693042d0f47a63" kindref="member">AoS::ParticleVector</ref></type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::ParticleVector =  typename AoS::ParticleVector</definition>
-        <argsstring></argsstring>
-        <name>ParticleVector</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="262" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="262" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1ade1b30ff7538bb2df769629138cad8b9" prot="public" static="no">
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1aa1c3e53b94d58cccb5d29cf33dea056b" prot="public" static="no">
         <type><ref refid="structamrex_1_1StructOfArrays" kindref="compound">StructOfArrays</ref>&lt; NArrayReal, NArrayInt, Allocator &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::SoA =  StructOfArrays&lt;NArrayReal, NArrayInt, Allocator&gt;</definition>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::SoA =  StructOfArrays&lt;NArrayReal, NArrayInt, Allocator&gt;</definition>
         <argsstring></argsstring>
         <name>SoA</name>
         <briefdescription>
@@ -113,11 +106,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="264" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="264" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="622" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="622" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a91dc7ec131347b6fd962980f8323dae1" prot="public" static="no">
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1adf1dfc735a7f9d3508e434da7e87b632" prot="public" static="no">
         <type>typename <ref refid="structamrex_1_1StructOfArrays_1ab3198bb12bd084d439c9b75f4f76c0ca" kindref="member">SoA::RealVector</ref></type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::RealVector =  typename SoA::RealVector</definition>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::RealVector =  typename SoA::RealVector</definition>
         <argsstring></argsstring>
         <name>RealVector</name>
         <briefdescription>
@@ -126,11 +119,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="265" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="265" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="623" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="623" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a2716cfe81286d96640e5bb44d151d9b5" prot="public" static="no">
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1ab198bf3467e469c8c1bfa13f1c53799a" prot="public" static="no">
         <type>typename <ref refid="structamrex_1_1StructOfArrays_1a402275e8f3db925ba4fb6e60e391b333" kindref="member">SoA::IntVector</ref></type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::IntVector =  typename SoA::IntVector</definition>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::IntVector =  typename SoA::IntVector</definition>
         <argsstring></argsstring>
         <name>IntVector</name>
         <briefdescription>
@@ -139,11 +132,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="266" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="266" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="624" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="624" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a23fa6ccbaf739013d56b3cd99d230a60" prot="public" static="no">
-        <type><ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::ParticleTileDataType =  ParticleTileData&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</definition>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a00d52f45cf7e8a4b3c30cfb48e7bca78" prot="public" static="no">
+        <type>typename ParticleType::StorageParticleType</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::StorageParticleType =  typename ParticleType::StorageParticleType</definition>
+        <argsstring></argsstring>
+        <name>StorageParticleType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="625" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="625" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a0aeb55b6a15d10428c88a314412914c5" prot="public" static="no">
+        <type><ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref>&lt; <ref refid="structamrex_1_1ParticleTile_1a00d52f45cf7e8a4b3c30cfb48e7bca78" kindref="member">StorageParticleType</ref>, NArrayReal, NArrayInt &gt;</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::ParticleTileDataType =  ParticleTileData&lt;StorageParticleType, NArrayReal, NArrayInt&gt;</definition>
         <argsstring></argsstring>
         <name>ParticleTileDataType</name>
         <briefdescription>
@@ -152,11 +158,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="268" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="268" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="627" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="627" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1af2db570b27f95df100aa7239ea025a4c" prot="public" static="no">
-        <type><ref refid="structamrex_1_1ConstParticleTileData" kindref="compound">ConstParticleTileData</ref>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::ConstParticleTileDataType =  ConstParticleTileData&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</definition>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a45e1a00c0cf61da02993d8b31b4cb431" prot="public" static="no">
+        <type><ref refid="structamrex_1_1ConstParticleTileData" kindref="compound">ConstParticleTileData</ref>&lt; <ref refid="structamrex_1_1ParticleTile_1a00d52f45cf7e8a4b3c30cfb48e7bca78" kindref="member">StorageParticleType</ref>, NArrayReal, NArrayInt &gt;</type>
+        <definition>using amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::ConstParticleTileDataType =  ConstParticleTileData&lt;StorageParticleType, NArrayReal, NArrayInt&gt;</definition>
         <argsstring></argsstring>
         <name>ConstParticleTileDataType</name>
         <briefdescription>
@@ -165,13 +171,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="269" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="269" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="628" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="628" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a3798066d8330b035b0679a18bcf55747" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a7d38648767509798f1fab24a293b49eb" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>constexpr int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::NAR</definition>
+        <definition>constexpr int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NAR</definition>
         <argsstring></argsstring>
         <name>NAR</name>
         <initializer>= NArrayReal</initializer>
@@ -181,11 +187,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="256" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="256" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="610" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="610" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a234f66d81e35ea602712a866f65b82c2" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a27974d2d46e3698a69b1997e905072e8" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>constexpr int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::NAI</definition>
+        <definition>constexpr int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NAI</definition>
         <argsstring></argsstring>
         <name>NAI</name>
         <initializer>= NArrayInt</initializer>
@@ -195,13 +201,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="257" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="257" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="611" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="611" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1af37f9208b1b9908daad6789415d20f81" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NStructReal</definition>
+        <argsstring></argsstring>
+        <name>NStructReal</name>
+        <initializer>= ParticleType::NReal</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="614" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="614" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a2e52440bc21e01affff077fff37edb44" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NStructInt</definition>
+        <argsstring></argsstring>
+        <name>NStructInt</name>
+        <initializer>= ParticleType::NInt</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="615" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="615" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a8f0eac18a93093f25e053d2b69b65296" prot="private" static="no" mutable="no">
-        <type><ref refid="structamrex_1_1ParticleTile_1a7eb3695771d4b220b840a1cac81b29ff" kindref="member">AoS</ref></type>
-        <definition>AoS amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_aos_tile</definition>
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a434377380cf9f4dd45362080837b6ec4" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1ParticleTile_1aa6a333dba629d9e27e73d6a083e6723b" kindref="member">AoS</ref></type>
+        <definition>AoS amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_aos_tile</definition>
         <argsstring></argsstring>
         <name>m_aos_tile</name>
         <briefdescription>
@@ -210,11 +244,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="650" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="650" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1132" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1132" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a1a6ff23c8a31ec5d6485b55adf176e9e" prot="private" static="no" mutable="no">
-        <type><ref refid="structamrex_1_1ParticleTile_1ade1b30ff7538bb2df769629138cad8b9" kindref="member">SoA</ref></type>
-        <definition>SoA amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_soa_tile</definition>
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1acfdbf84efe0aae5266a28545a2e45480" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1ParticleTile_1aa1c3e53b94d58cccb5d29cf33dea056b" kindref="member">SoA</ref></type>
+        <definition>SoA amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_soa_tile</definition>
         <argsstring></argsstring>
         <name>m_soa_tile</name>
         <briefdescription>
@@ -223,11 +257,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="651" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="651" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1133" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1133" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1acddd7cc57b44806b3c83f7b9690c9a58" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1ad4a6e09ba4f2ef496ba35c3dac4c19b4" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_defined</definition>
+        <definition>bool amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_defined</definition>
         <argsstring></argsstring>
         <name>m_defined</name>
         <briefdescription>
@@ -236,11 +270,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="653" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="653" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1135" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1135" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a094ecbaf29e3d8786d48786dda4ad8af" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a6e6255a32ada9fcf2655a94d474ece11" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref>&lt; ParticleReal *, Allocator&lt; ParticleReal * &gt; &gt;</type>
-        <definition>amrex::PODVector&lt;ParticleReal*, Allocator&lt;ParticleReal*&gt; &gt; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_r_ptrs</definition>
+        <definition>amrex::PODVector&lt;ParticleReal*, Allocator&lt;ParticleReal*&gt; &gt; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_r_ptrs</definition>
         <argsstring></argsstring>
         <name>m_runtime_r_ptrs</name>
         <briefdescription>
@@ -249,11 +283,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="655" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="655" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1137" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1137" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1ad8c76875f9314245f35d586b4fda19f2" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1ae172244722fde937a7ba5a8a60a5ff99" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, Allocator&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt; &gt;</type>
-        <definition>amrex::PODVector&lt;int*, Allocator&lt;int*&gt; &gt; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_i_ptrs</definition>
+        <definition>amrex::PODVector&lt;int*, Allocator&lt;int*&gt; &gt; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_i_ptrs</definition>
         <argsstring></argsstring>
         <name>m_runtime_i_ptrs</name>
         <briefdescription>
@@ -262,11 +296,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="656" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="656" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1138" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1138" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a9e1b4ef4d4f1f4525bcead40545085c6" prot="private" static="no" mutable="yes">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1aa1f069375a3a442593c218fc4911de6d" prot="private" static="no" mutable="yes">
         <type><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref>&lt; const ParticleReal *, Allocator&lt; const ParticleReal * &gt; &gt;</type>
-        <definition>amrex::PODVector&lt;const ParticleReal*, Allocator&lt;const ParticleReal*&gt; &gt; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_r_cptrs</definition>
+        <definition>amrex::PODVector&lt;const ParticleReal*, Allocator&lt;const ParticleReal*&gt; &gt; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_r_cptrs</definition>
         <argsstring></argsstring>
         <name>m_runtime_r_cptrs</name>
         <briefdescription>
@@ -275,11 +309,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="658" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="658" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1140" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1140" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1aab1e925a9417621e4a7c5b219176a145" prot="private" static="no" mutable="yes">
+      <memberdef kind="variable" id="structamrex_1_1ParticleTile_1a168b67cee9983016eb4a811d740523e2" prot="private" static="no" mutable="yes">
         <type><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref>&lt; const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, Allocator&lt; const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt; &gt;</type>
-        <definition>amrex::PODVector&lt;const int*, Allocator&lt;const int*&gt; &gt; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_i_cptrs</definition>
+        <definition>amrex::PODVector&lt;const int*, Allocator&lt;const int*&gt; &gt; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_runtime_i_cptrs</definition>
         <argsstring></argsstring>
         <name>m_runtime_i_cptrs</name>
         <briefdescription>
@@ -288,13 +322,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="659" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="659" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1141" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1141" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a4064ea6c328ec75ac8c1a961bd384a29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a5f53da65081eb94bf1c8742a1497df5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::ParticleTile</definition>
+        <definition>amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::ParticleTile</definition>
         <argsstring>()</argsstring>
         <name>ParticleTile</name>
         <briefdescription>
@@ -303,11 +337,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="271" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="271" bodyend="273"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="630" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="630" bodyend="632"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a1e83f5e3c25e0173f368ffad4cc2c4be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1abc7127e222d300082ca177f987d847a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::define</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::define</definition>
         <argsstring>(int a_num_runtime_real, int a_num_runtime_int)</argsstring>
         <name>define</name>
         <param>
@@ -324,11 +358,351 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="275" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="275" bodyend="283"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="634" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="634" bodyend="642"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a52cd6c8037edb1070014f00b4bf2dce1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1ParticleTile_1a7eb3695771d4b220b840a1cac81b29ff" kindref="member">AoS</ref> &amp;</type>
-        <definition>AoS&amp; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs</definition>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a33119f9e393c1a106f5319fd52194d8c" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleCPUWrapper" kindref="compound">ParticleCPUWrapper</ref></type>
+        <definition>ParticleCPUWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::cpu</definition>
+        <argsstring>(int index) &amp;</argsstring>
+        <name>cpu</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="648" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="648" bodyend="651"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a6f24db0bb920f8cecc9b426ce0168a2d" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ConstParticleCPUWrapper" kindref="compound">ConstParticleCPUWrapper</ref></type>
+        <definition>ConstParticleCPUWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::cpu</definition>
+        <argsstring>(int index) const &amp;</argsstring>
+        <name>cpu</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="655" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="655" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a33119f9e393c1a106f5319fd52194d8c" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleCPUWrapper" kindref="compound">ParticleCPUWrapper</ref></type>
+        <definition>ParticleCPUWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::cpu</definition>
+        <argsstring>(int index) &amp;</argsstring>
+        <name>cpu</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="663" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="663" bodyend="666"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a6f24db0bb920f8cecc9b426ce0168a2d" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ConstParticleCPUWrapper" kindref="compound">ConstParticleCPUWrapper</ref></type>
+        <definition>ConstParticleCPUWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::cpu</definition>
+        <argsstring>(int index) const &amp;</argsstring>
+        <name>cpu</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="671" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="671" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad1ac3088678666f863651cb9444861da" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleIDWrapper" kindref="compound">ParticleIDWrapper</ref></type>
+        <definition>ParticleIDWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::id</definition>
+        <argsstring>(int index) &amp;</argsstring>
+        <name>id</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="680" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="680" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac4c38495b79b9cfacd2a74c4eb066008" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ConstParticleIDWrapper" kindref="compound">ConstParticleIDWrapper</ref></type>
+        <definition>ConstParticleIDWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::id</definition>
+        <argsstring>(int index) const &amp;</argsstring>
+        <name>id</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="687" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="687" bodyend="691"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad1ac3088678666f863651cb9444861da" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleIDWrapper" kindref="compound">ParticleIDWrapper</ref></type>
+        <definition>ParticleIDWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::id</definition>
+        <argsstring>(int index) &amp;</argsstring>
+        <name>id</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="695" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="695" bodyend="698"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac4c38495b79b9cfacd2a74c4eb066008" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ConstParticleIDWrapper" kindref="compound">ConstParticleIDWrapper</ref></type>
+        <definition>ConstParticleIDWrapper amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::id</definition>
+        <argsstring>(int index) const &amp;</argsstring>
+        <name>id</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="702" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="702" bodyend="705"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a22317fa4912b8aefb91ebbd7bf3025a2" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" kindref="member">RealType</ref> &amp;</type>
+        <definition>RealType&amp; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::pos</definition>
+        <argsstring>(int index, int position_index) &amp;</argsstring>
+        <name>pos</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>position_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="710" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="710" bodyend="718"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a23c16364b5ad5dac919ead6c5b1597bb" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" kindref="member">RealType</ref></type>
+        <definition>RealType amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::pos</definition>
+        <argsstring>(int index, int position_index) const &amp;</argsstring>
+        <name>pos</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>position_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="721" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="721" bodyend="726"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a22317fa4912b8aefb91ebbd7bf3025a2" prot="public" static="no" const="no" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" kindref="member">RealType</ref> &amp;</type>
+        <definition>RealType&amp; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::pos</definition>
+        <argsstring>(int index, int position_index) &amp;</argsstring>
+        <name>pos</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>position_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="729" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="729" bodyend="732"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a23c16364b5ad5dac919ead6c5b1597bb" prot="public" static="no" const="yes" explicit="no" inline="yes" refqual="lvalue" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" kindref="member">RealType</ref></type>
+        <definition>RealType amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::pos</definition>
+        <argsstring>(int index, int position_index) const &amp;</argsstring>
+        <name>pos</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>position_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="736" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="736" bodyend="740"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a15a5c73d1aaced5789c24576eabe384d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParticleTile_1aa6a333dba629d9e27e73d6a083e6723b" kindref="member">AoS</ref> &amp;</type>
+        <definition>AoS&amp; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs</definition>
         <argsstring>()</argsstring>
         <name>GetArrayOfStructs</name>
         <briefdescription>
@@ -337,11 +711,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="285" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="285" bodyend="285"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="743" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="743" bodyend="743"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac9b86c734da62b380179dd3ef2e70693" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="structamrex_1_1ParticleTile_1a7eb3695771d4b220b840a1cac81b29ff" kindref="member">AoS</ref> &amp;</type>
-        <definition>const AoS&amp; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs</definition>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a01fa9d2a9c7ad522f53a96ba6aa770a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structamrex_1_1ParticleTile_1aa6a333dba629d9e27e73d6a083e6723b" kindref="member">AoS</ref> &amp;</type>
+        <definition>const AoS&amp; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs</definition>
         <argsstring>() const</argsstring>
         <name>GetArrayOfStructs</name>
         <briefdescription>
@@ -350,11 +724,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="286" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="286" bodyend="286"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="744" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="744" bodyend="744"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a6f01478455e0c466802fa9939dbd886e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1ParticleTile_1ade1b30ff7538bb2df769629138cad8b9" kindref="member">SoA</ref> &amp;</type>
-        <definition>SoA&amp; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays</definition>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a9bc22bda551e1d2089c81b93c2b0d794" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParticleTile_1aa1c3e53b94d58cccb5d29cf33dea056b" kindref="member">SoA</ref> &amp;</type>
+        <definition>SoA&amp; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays</definition>
         <argsstring>()</argsstring>
         <name>GetStructOfArrays</name>
         <briefdescription>
@@ -363,11 +737,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="288" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="288" bodyend="288"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="746" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="746" bodyend="746"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a610da4ef20dc389abc7a8e3899b27f25" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="structamrex_1_1ParticleTile_1ade1b30ff7538bb2df769629138cad8b9" kindref="member">SoA</ref> &amp;</type>
-        <definition>const SoA&amp; amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays</definition>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a865f181bef3a750aaae3437c4e91dd33" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structamrex_1_1ParticleTile_1aa1c3e53b94d58cccb5d29cf33dea056b" kindref="member">SoA</ref> &amp;</type>
+        <definition>const SoA&amp; amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays</definition>
         <argsstring>() const</argsstring>
         <name>GetStructOfArrays</name>
         <briefdescription>
@@ -376,11 +750,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="289" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="289" bodyend="289"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="747" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="747" bodyend="747"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ab75e4f108f8fa384c92ebf166364dcb4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1abe6aa2080bb4a68eaded92e7e3e6efd6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::empty</definition>
+        <definition>bool amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::empty</definition>
         <argsstring>() const</argsstring>
         <name>empty</name>
         <briefdescription>
@@ -389,11 +763,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="291" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="291" bodyend="291"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="749" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="749" bodyend="749"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1af4d312e43c46e2ebd366dc0963fd3896" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a018f4eff694e9e492907b1e1637212e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type>std::size_t</type>
-        <definition>std::size_t amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::size</definition>
+        <definition>std::size_t amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::size</definition>
         <argsstring>() const</argsstring>
         <name>size</name>
         <briefdescription>
@@ -403,11 +787,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="298" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="298" bodyend="298"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="757" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="757" bodyend="757"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a2bb2587e5a871a984e2b70df0cf0d870" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a018f4eff694e9e492907b1e1637212e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="760" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="760" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a52c606e8e79c30dc5780d28e998642ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::numParticles</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numParticles</definition>
         <argsstring>() const</argsstring>
         <name>numParticles</name>
         <briefdescription>
@@ -417,11 +834,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="304" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="304" bodyend="304"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="767" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="767" bodyend="767"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1aaad86fa450d536a282fced6fb08f2f5f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a52c606e8e79c30dc5780d28e998642ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::numRealParticles</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numParticles</definition>
+        <argsstring>() const</argsstring>
+        <name>numParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="770" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="770" bodyend="770"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1adda7eec04d9a263b3b14d738e7e7d8e4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numRealParticles</definition>
         <argsstring>() const</argsstring>
         <name>numRealParticles</name>
         <briefdescription>
@@ -431,11 +881,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="310" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="310" bodyend="310"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="777" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="777" bodyend="777"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a6ee9585203e4a15e176050a56a7b1dbf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1adda7eec04d9a263b3b14d738e7e7d8e4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::numNeighborParticles</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numRealParticles</definition>
+        <argsstring>() const</argsstring>
+        <name>numRealParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="780" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="780" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad989545a49f5c50bcf87ef9a2903df1e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numNeighborParticles</definition>
         <argsstring>() const</argsstring>
         <name>numNeighborParticles</name>
         <briefdescription>
@@ -445,11 +928,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="316" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="316" bodyend="316"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="787" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="787" bodyend="787"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad22f5d43f1349d670667abd6134c82a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad989545a49f5c50bcf87ef9a2903df1e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::numTotalParticles</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numNeighborParticles</definition>
+        <argsstring>() const</argsstring>
+        <name>numNeighborParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="790" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="790" bodyend="790"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac69aae78682106ffcc9574317acca52a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt;!T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numTotalParticles</definition>
         <argsstring>() const</argsstring>
         <name>numTotalParticles</name>
         <briefdescription>
@@ -459,11 +975,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="322" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="322" bodyend="322"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="797" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="797" bodyend="797"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a53a33bf9b266e526bfaf7dfa0ff2b813" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac69aae78682106ffcc9574317acca52a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval><ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref></defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; T::is_soa_particle, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::numTotalParticles</definition>
+        <argsstring>() const</argsstring>
+        <name>numTotalParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="800" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="800" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a3418dd871a28056a9d8aa3ba12a016f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::setNumNeighbors</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::setNumNeighbors</definition>
         <argsstring>(int num_neighbors)</argsstring>
         <name>setNumNeighbors</name>
         <param>
@@ -476,11 +1015,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="324" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="324" bodyend="328"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="802" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="802" bodyend="806"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a0b5daeed890ad1681d6d5efb263d1d45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1adcbba064f0dae8019dd01e63080810f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::getNumNeighbors</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::getNumNeighbors</definition>
         <argsstring>()</argsstring>
         <name>getNumNeighbors</name>
         <briefdescription>
@@ -489,11 +1028,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="330" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="330" bodyend="334"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="808" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="808" bodyend="812"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a94f3a4f391bfb3dac770717d5a9270b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1aad932266bb874a93f00fc2920ff69548" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::resize</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::resize</definition>
         <argsstring>(std::size_t count)</argsstring>
         <name>resize</name>
         <param>
@@ -506,15 +1045,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="336" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="336" bodyend="340"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="814" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="814" bodyend="818"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a28e1684c3daf3114705c8737fa0b526b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad6f03a5e4f72fafea7add31560607486" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back</definition>
         <argsstring>(const ParticleType &amp;p)</argsstring>
         <name>push_back</name>
         <param>
-          <type>const <ref refid="structamrex_1_1ParticleTile_1a5483516f2556f3f7b8573562d3c9960d" kindref="member">ParticleType</ref> &amp;</type>
+          <type>const <ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref> &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -524,9 +1063,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="345" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="345" bodyend="345"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="823" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="823" bodyend="823"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1aaa22f040138b37b71974429c01c46772" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a58ff9d1415aa8e4eee3fd76955d36429" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -548,11 +1087,11 @@
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back</definition>
         <argsstring>(const SuperParticleType &amp;sp)</argsstring>
         <name>push_back</name>
         <param>
-          <type>const <ref refid="structamrex_1_1ParticleTile_1a85053ba927a183f72d714140f906614e" kindref="member">SuperParticleType</ref> &amp;</type>
+          <type>const <ref refid="structamrex_1_1ParticleTile_1acdece46bb48b940977bf9efe198779c4" kindref="member">SuperParticleType</ref> &amp;</type>
           <declname>sp</declname>
         </param>
         <briefdescription>
@@ -562,11 +1101,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="352" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="352" bodyend="374"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="830" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="830" bodyend="852"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1abe65fea82c76b01d25b580cb51d010b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1af54fdaaae348f3ef6c4f9ec72ed5d7aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
         <argsstring>(int comp, ParticleReal v)</argsstring>
         <name>push_back_real</name>
         <param>
@@ -584,11 +1123,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="380" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="380" bodyend="382"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="858" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="858" bodyend="860"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac44fade5412c189846d84078b4175e09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a920fbf546aa0d61637897696c29bf54c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
         <argsstring>(const std::array&lt; ParticleReal, NArrayReal &gt; &amp;v)</argsstring>
         <name>push_back_real</name>
         <param>
@@ -602,11 +1141,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="388" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="388" bodyend="392"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="866" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="866" bodyend="870"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad16a71f65f177e64acc2a9a569e2aa4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a2ac59039f3803da57f27367c22c71c12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
         <argsstring>(int comp, const ParticleReal *beg, const ParticleReal *end)</argsstring>
         <name>push_back_real</name>
         <param>
@@ -628,11 +1167,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="398" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="398" bodyend="401"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="876" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="876" bodyend="879"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a774121fa851e79cfc14f2e17e005b1b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ab23ddb423d3fb51829919af42de5a48f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
         <argsstring>(int comp, amrex::Vector&lt; amrex::ParticleReal &gt;::const_iterator beg, amrex::Vector&lt; amrex::ParticleReal &gt;::const_iterator end)</argsstring>
         <name>push_back_real</name>
         <param>
@@ -654,11 +1193,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="407" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="407" bodyend="409"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="885" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="885" bodyend="887"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a59a1bf76033055a3e1dd0dbbb3d61447" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a0273a779aabd06b96f98466ee8553d14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
         <argsstring>(int comp, amrex::Vector&lt; amrex::ParticleReal &gt; const &amp;vec)</argsstring>
         <name>push_back_real</name>
         <param>
@@ -676,11 +1215,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="415" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="415" bodyend="417"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="893" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="893" bodyend="895"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a1013ca03cb3abee5f186d0d2c36d91ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad62dabd419e0030589fc00e5e1880f5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_real</definition>
         <argsstring>(int comp, std::size_t npar, ParticleReal v)</argsstring>
         <name>push_back_real</name>
         <param>
@@ -702,11 +1241,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="423" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="423" bodyend="426"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="901" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="901" bodyend="904"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a9e7cea5a0daeb5e0c68ef9ad5553b52a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac46b6f7938c08ba5c71b24c97d8f72a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
         <argsstring>(int comp, int v)</argsstring>
         <name>push_back_int</name>
         <param>
@@ -724,11 +1263,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="432" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="432" bodyend="434"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="910" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="910" bodyend="912"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a84f0480fe10a0695abf74e9f8b397454" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ab1acd5ea97873b2886a1d5b1cca48aab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
         <argsstring>(const std::array&lt; int, NArrayInt &gt; &amp;v)</argsstring>
         <name>push_back_int</name>
         <param>
@@ -742,11 +1281,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="440" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="440" bodyend="444"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="918" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="918" bodyend="922"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a58d94753478e65af1b75a010eec7a1d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1adeb45488fb08fe702e74efadfe55d8d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
         <argsstring>(int comp, const int *beg, const int *end)</argsstring>
         <name>push_back_int</name>
         <param>
@@ -768,11 +1307,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="450" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="450" bodyend="453"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="928" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="928" bodyend="931"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a41bd5591adda272727766198be952f6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a8ed93fa556cb0e6d76ab31855179c490" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
         <argsstring>(int comp, amrex::Vector&lt; int &gt;::const_iterator beg, amrex::Vector&lt; int &gt;::const_iterator end)</argsstring>
         <name>push_back_int</name>
         <param>
@@ -794,11 +1333,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="459" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="459" bodyend="461"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="937" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="937" bodyend="939"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ae59092b40a00ff0e7e0bd287b07079ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a83112560fe0053d36f1d4e2377d82a23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
         <argsstring>(int comp, amrex::Vector&lt; int &gt; const &amp;vec)</argsstring>
         <name>push_back_int</name>
         <param>
@@ -816,11 +1355,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="467" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="467" bodyend="469"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="945" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="945" bodyend="947"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a9216fb4aafebb089b04bda28d871e059" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad303886262e966726980ee5bf9202cfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::push_back_int</definition>
         <argsstring>(int comp, std::size_t npar, int v)</argsstring>
         <name>push_back_int</name>
         <param>
@@ -842,11 +1381,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="475" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="475" bodyend="478"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="953" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="953" bodyend="956"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1af5d8ef589ad837a1592c6abfa2f2dfdc" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a01a4c2d3cd20e84801f49f31c8305349" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::NumRealComps</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NumRealComps</definition>
         <argsstring>() const noexcept</argsstring>
         <name>NumRealComps</name>
         <briefdescription>
@@ -855,11 +1394,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="480" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="480" bodyend="480"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="958" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="958" bodyend="958"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ae11d1c29beed7de669f820c987d745b2" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a036135b388b4a68fc8fdac9e6c5572f5" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::NumIntComps</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NumIntComps</definition>
         <argsstring>() const noexcept</argsstring>
         <name>NumIntComps</name>
         <briefdescription>
@@ -868,11 +1407,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="482" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="482" bodyend="482"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="960" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="960" bodyend="960"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad475b60507ef0209053f4918daaae582" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a94b4d2e5f90cdfc640740a2dc1b8be4e" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::NumRuntimeRealComps</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NumRuntimeRealComps</definition>
         <argsstring>() const noexcept</argsstring>
         <name>NumRuntimeRealComps</name>
         <briefdescription>
@@ -881,11 +1420,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="484" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="484" bodyend="484"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="962" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="962" bodyend="962"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1af963358e57d7687246bc221d43736307" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1abbd0ed100a7511e702da44782d06f360" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::NumRuntimeIntComps</definition>
+        <definition>int amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::NumRuntimeIntComps</definition>
         <argsstring>() const noexcept</argsstring>
         <name>NumRuntimeIntComps</name>
         <briefdescription>
@@ -894,11 +1433,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="486" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="486" bodyend="486"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="964" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="964" bodyend="964"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a45869795e913fccf95c5e2e4dd7bdb38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a7ff65a82757f35dd00d2ce7435be5a71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::shrink_to_fit</definition>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::shrink_to_fit</definition>
         <argsstring>()</argsstring>
         <name>shrink_to_fit</name>
         <briefdescription>
@@ -907,11 +1446,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="488" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="488" bodyend="502"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="966" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="966" bodyend="980"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac941d888f17e8bbac20d4e97c2de1180" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a3a9ab299dccc5bc6e57018fddb101099" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>Long</type>
-        <definition>Long amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::capacity</definition>
+        <definition>Long amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::capacity</definition>
         <argsstring>() const</argsstring>
         <name>capacity</name>
         <briefdescription>
@@ -920,15 +1459,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="504" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="504" bodyend="520"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="982" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="982" bodyend="998"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a19e08486f33c6c8536f591608a882dff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ad48c6a1915a792354e2a6060e91d8f01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::swap</definition>
-        <argsstring>(ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt; &amp;other)</argsstring>
+        <definition>void amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::swap</definition>
+        <argsstring>(ParticleTile&lt; ParticleType, NArrayReal, NArrayInt, Allocator &gt; &amp;other)</argsstring>
         <name>swap</name>
         <param>
-          <type><ref refid="structamrex_1_1ParticleTile" kindref="compound">ParticleTile</ref>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt; &amp;</type>
+          <type><ref refid="structamrex_1_1ParticleTile" kindref="compound">ParticleTile</ref>&lt; <ref refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" kindref="member">ParticleType</ref>, NArrayReal, NArrayInt, Allocator &gt; &amp;</type>
           <declname>other</declname>
         </param>
         <briefdescription>
@@ -937,11 +1476,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="522" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="522" bodyend="536"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1000" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1000" bodyend="1014"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1ac2003b52b2e11d272ed2100829a23389" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1ParticleTile_1a23fa6ccbaf739013d56b3cd99d230a60" kindref="member">ParticleTileDataType</ref></type>
-        <definition>ParticleTileDataType amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::getParticleTileData</definition>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a4f939dec8914785b6fbc7b02f5d0b202" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParticleTile_1a0aeb55b6a15d10428c88a314412914c5" kindref="member">ParticleTileDataType</ref></type>
+        <definition>ParticleTileDataType amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::getParticleTileData</definition>
         <argsstring>()</argsstring>
         <name>getParticleTileData</name>
         <briefdescription>
@@ -950,11 +1489,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="538" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="538" bodyend="591"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1016" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1016" bodyend="1071"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1ParticleTile_1adb525e5db24040c9692f59ec5984a8bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1ParticleTile_1af2db570b27f95df100aa7239ea025a4c" kindref="member">ConstParticleTileDataType</ref></type>
-        <definition>ConstParticleTileDataType amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::getConstParticleTileData</definition>
+      <memberdef kind="function" id="structamrex_1_1ParticleTile_1a7e6f09a853acf5ffd1d4d365ebd60d35" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ParticleTile_1a45e1a00c0cf61da02993d8b31b4cb431" kindref="member">ConstParticleTileDataType</ref></type>
+        <definition>ConstParticleTileDataType amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::getConstParticleTileData</definition>
         <argsstring>() const</argsstring>
         <name>getConstParticleTileData</name>
         <briefdescription>
@@ -963,7 +1502,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="593" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="593" bodyend="646"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="1073" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="1073" bodyend="1128"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -971,39 +1510,23 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="5">
+      <node id="6">
         <label>amrex::PODVector&lt; const ParticleReal *, DefaultAllocator&lt; const ParticleReal * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>amrex::ArrayOfStructs&lt; NStructReal, NStructInt, DefaultAllocator &gt;</label>
-        <link refid="classamrex_1_1ArrayOfStructs"/>
-      </node>
-      <node id="11">
-        <label>DefaultAllocator&lt; int * &gt;</label>
-        <link refid="classamrex_1_1ArenaAllocator"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>amrex::PODVector&lt; int *, DefaultAllocator&lt; int * &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
-        <label>amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <label>amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;</label>
         <link refid="structamrex_1_1ParticleTile"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>m_aos_tile</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
           <edgelabel>m_runtime_r_ptrs</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>m_runtime_r_cptrs</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_aos_tile</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>m_runtime_i_cptrs</edgelabel>
@@ -1015,13 +1538,25 @@
           <edgelabel>m_soa_tile</edgelabel>
         </childnode>
       </node>
-      <node id="2">
-        <label>amrex::PODVector&lt; ParticleReal *, DefaultAllocator&lt; ParticleReal * &gt; &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="3" relation="public-inheritance">
+      <node id="11">
+        <label>DefaultAllocator&lt; int * &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="10">
+        <label>amrex::PODVector&lt; int *, DefaultAllocator&lt; int * &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::PODVector&lt; ParticleReal *, DefaultAllocator&lt; ParticleReal * &gt; &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
         <label>amrex::ArenaAllocatorTraits</label>
         <link refid="structamrex_1_1ArenaAllocatorTraits"/>
       </node>
@@ -1031,22 +1566,26 @@
         <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
+      <node id="2">
+        <label>amrex::ArrayOfStructs&lt; ParticleType, DefaultAllocator &gt;</label>
+        <link refid="classamrex_1_1ArrayOfStructs"/>
+      </node>
+      <node id="4">
         <label>DefaultAllocator&lt; ParticleReal * &gt;</label>
         <link refid="classamrex_1_1ArenaAllocator"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
         <label>DefaultAllocator&lt; const int * &gt;</label>
         <link refid="classamrex_1_1ArenaAllocator"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>DefaultAllocator&lt; const ParticleReal * &gt;</label>
         <link refid="classamrex_1_1ArenaAllocator"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
       <node id="12">
@@ -1054,65 +1593,85 @@
         <link refid="structamrex_1_1StructOfArrays"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="250" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="251" bodyend="660"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" line="604" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="605" bodyend="1142"/>
     <listofallmembers>
-      <member refid="structamrex_1_1ParticleTile_1ac2e43ee8e3a01151dc70824f6f79b44d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>AllocatorType</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a7eb3695771d4b220b840a1cac81b29ff" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>AoS</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ac941d888f17e8bbac20d4e97c2de1180" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>capacity</name></member>
-      <member refid="structamrex_1_1ParticleTile_1af2db570b27f95df100aa7239ea025a4c" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ConstParticleTileDataType</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a1e83f5e3c25e0173f368ffad4cc2c4be" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>define</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ab75e4f108f8fa384c92ebf166364dcb4" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>empty</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a52cd6c8037edb1070014f00b4bf2dce1" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetArrayOfStructs</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ac9b86c734da62b380179dd3ef2e70693" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetArrayOfStructs</name></member>
-      <member refid="structamrex_1_1ParticleTile_1adb525e5db24040c9692f59ec5984a8bd" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>getConstParticleTileData</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a0b5daeed890ad1681d6d5efb263d1d45" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>getNumNeighbors</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ac2003b52b2e11d272ed2100829a23389" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>getParticleTileData</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a6f01478455e0c466802fa9939dbd886e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetStructOfArrays</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a610da4ef20dc389abc7a8e3899b27f25" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetStructOfArrays</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a2716cfe81286d96640e5bb44d151d9b5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>IntVector</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a8f0eac18a93093f25e053d2b69b65296" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_aos_tile</name></member>
-      <member refid="structamrex_1_1ParticleTile_1acddd7cc57b44806b3c83f7b9690c9a58" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_defined</name></member>
-      <member refid="structamrex_1_1ParticleTile_1aab1e925a9417621e4a7c5b219176a145" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_i_cptrs</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ad8c76875f9314245f35d586b4fda19f2" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_i_ptrs</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a9e1b4ef4d4f1f4525bcead40545085c6" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_r_cptrs</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a094ecbaf29e3d8786d48786dda4ad8af" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_r_ptrs</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a1a6ff23c8a31ec5d6485b55adf176e9e" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_soa_tile</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a234f66d81e35ea602712a866f65b82c2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NAI</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a3798066d8330b035b0679a18bcf55747" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NAR</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ae11d1c29beed7de669f820c987d745b2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumIntComps</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a6ee9585203e4a15e176050a56a7b1dbf" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numNeighborParticles</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a2bb2587e5a871a984e2b70df0cf0d870" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numParticles</name></member>
-      <member refid="structamrex_1_1ParticleTile_1af5d8ef589ad837a1592c6abfa2f2dfdc" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumRealComps</name></member>
-      <member refid="structamrex_1_1ParticleTile_1aaad86fa450d536a282fced6fb08f2f5f" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numRealParticles</name></member>
-      <member refid="structamrex_1_1ParticleTile_1af963358e57d7687246bc221d43736307" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumRuntimeIntComps</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ad475b60507ef0209053f4918daaae582" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumRuntimeRealComps</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ad22f5d43f1349d670667abd6134c82a2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numTotalParticles</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a4064ea6c328ec75ac8c1a961bd384a29" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleTile</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a23fa6ccbaf739013d56b3cd99d230a60" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleTileDataType</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a5483516f2556f3f7b8573562d3c9960d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleType</name></member>
-      <member refid="structamrex_1_1ParticleTile_1aa25203ed24adf960a987ce5ef7220b44" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleVector</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a28e1684c3daf3114705c8737fa0b526b" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back</name></member>
-      <member refid="structamrex_1_1ParticleTile_1aaa22f040138b37b71974429c01c46772" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a9e7cea5a0daeb5e0c68ef9ad5553b52a" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a84f0480fe10a0695abf74e9f8b397454" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a58d94753478e65af1b75a010eec7a1d7" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a41bd5591adda272727766198be952f6e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ae59092b40a00ff0e7e0bd287b07079ca" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a9216fb4aafebb089b04bda28d871e059" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
-      <member refid="structamrex_1_1ParticleTile_1abe65fea82c76b01d25b580cb51d010b2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ac44fade5412c189846d84078b4175e09" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ad16a71f65f177e64acc2a9a569e2aa4f" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a774121fa851e79cfc14f2e17e005b1b2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a59a1bf76033055a3e1dd0dbbb3d61447" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a1013ca03cb3abee5f186d0d2c36d91ba" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a91dc7ec131347b6fd962980f8323dae1" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>RealVector</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a94f3a4f391bfb3dac770717d5a9270b5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>resize</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a53a33bf9b266e526bfaf7dfa0ff2b813" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>setNumNeighbors</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a45869795e913fccf95c5e2e4dd7bdb38" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>shrink_to_fit</name></member>
-      <member refid="structamrex_1_1ParticleTile_1af4d312e43c46e2ebd366dc0963fd3896" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>size</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ade1b30ff7538bb2df769629138cad8b9" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SoA</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a85053ba927a183f72d714140f906614e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SuperParticleType</name></member>
-      <member refid="structamrex_1_1ParticleTile_1a19e08486f33c6c8536f591608a882dff" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>swap</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ab2be35f77e9e2ed231e5406b9f011dc3" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>AllocatorType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1aa6a333dba629d9e27e73d6a083e6723b" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>AoS</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a3a9ab299dccc5bc6e57018fddb101099" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>capacity</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a45e1a00c0cf61da02993d8b31b4cb431" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ConstParticleTileDataType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a33119f9e393c1a106f5319fd52194d8c" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>cpu</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a6f24db0bb920f8cecc9b426ce0168a2d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>cpu</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a33119f9e393c1a106f5319fd52194d8c" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>cpu</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a6f24db0bb920f8cecc9b426ce0168a2d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>cpu</name></member>
+      <member refid="structamrex_1_1ParticleTile_1abc7127e222d300082ca177f987d847a5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>define</name></member>
+      <member refid="structamrex_1_1ParticleTile_1abe6aa2080bb4a68eaded92e7e3e6efd6" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>empty</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a15a5c73d1aaced5789c24576eabe384d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetArrayOfStructs</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a01fa9d2a9c7ad522f53a96ba6aa770a8" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetArrayOfStructs</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a7e6f09a853acf5ffd1d4d365ebd60d35" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>getConstParticleTileData</name></member>
+      <member refid="structamrex_1_1ParticleTile_1adcbba064f0dae8019dd01e63080810f8" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>getNumNeighbors</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a4f939dec8914785b6fbc7b02f5d0b202" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>getParticleTileData</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a9bc22bda551e1d2089c81b93c2b0d794" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetStructOfArrays</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a865f181bef3a750aaae3437c4e91dd33" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>GetStructOfArrays</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad1ac3088678666f863651cb9444861da" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>id</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ac4c38495b79b9cfacd2a74c4eb066008" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>id</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad1ac3088678666f863651cb9444861da" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>id</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ac4c38495b79b9cfacd2a74c4eb066008" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>id</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ab198bf3467e469c8c1bfa13f1c53799a" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>IntVector</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a434377380cf9f4dd45362080837b6ec4" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_aos_tile</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad4a6e09ba4f2ef496ba35c3dac4c19b4" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_defined</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a168b67cee9983016eb4a811d740523e2" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_i_cptrs</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ae172244722fde937a7ba5a8a60a5ff99" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_i_ptrs</name></member>
+      <member refid="structamrex_1_1ParticleTile_1aa1f069375a3a442593c218fc4911de6d" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_r_cptrs</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a6e6255a32ada9fcf2655a94d474ece11" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_runtime_r_ptrs</name></member>
+      <member refid="structamrex_1_1ParticleTile_1acfdbf84efe0aae5266a28545a2e45480" prot="private" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>m_soa_tile</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a27974d2d46e3698a69b1997e905072e8" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NAI</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a7d38648767509798f1fab24a293b49eb" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NAR</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a2e52440bc21e01affff077fff37edb44" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NStructInt</name></member>
+      <member refid="structamrex_1_1ParticleTile_1af37f9208b1b9908daad6789415d20f81" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NStructReal</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a036135b388b4a68fc8fdac9e6c5572f5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumIntComps</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad989545a49f5c50bcf87ef9a2903df1e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numNeighborParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad989545a49f5c50bcf87ef9a2903df1e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numNeighborParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a52c606e8e79c30dc5780d28e998642ac" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a52c606e8e79c30dc5780d28e998642ac" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a01a4c2d3cd20e84801f49f31c8305349" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumRealComps</name></member>
+      <member refid="structamrex_1_1ParticleTile_1adda7eec04d9a263b3b14d738e7e7d8e4" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numRealParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1adda7eec04d9a263b3b14d738e7e7d8e4" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numRealParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1abbd0ed100a7511e702da44782d06f360" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumRuntimeIntComps</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a94b4d2e5f90cdfc640740a2dc1b8be4e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>NumRuntimeRealComps</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ac69aae78682106ffcc9574317acca52a" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numTotalParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ac69aae78682106ffcc9574317acca52a" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>numTotalParticles</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a5f53da65081eb94bf1c8742a1497df5d" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleTile</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a0aeb55b6a15d10428c88a314412914c5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleTileDataType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a806d428c54ec86cc7e61edf954105f6f" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>ParticleType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a22317fa4912b8aefb91ebbd7bf3025a2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>pos</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a23c16364b5ad5dac919ead6c5b1597bb" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>pos</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a22317fa4912b8aefb91ebbd7bf3025a2" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>pos</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a23c16364b5ad5dac919ead6c5b1597bb" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>pos</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad6f03a5e4f72fafea7add31560607486" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a58ff9d1415aa8e4eee3fd76955d36429" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ac46b6f7938c08ba5c71b24c97d8f72a5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ab1acd5ea97873b2886a1d5b1cca48aab" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
+      <member refid="structamrex_1_1ParticleTile_1adeb45488fb08fe702e74efadfe55d8d7" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a8ed93fa556cb0e6d76ab31855179c490" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a83112560fe0053d36f1d4e2377d82a23" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad303886262e966726980ee5bf9202cfb" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_int</name></member>
+      <member refid="structamrex_1_1ParticleTile_1af54fdaaae348f3ef6c4f9ec72ed5d7aa" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a920fbf546aa0d61637897696c29bf54c" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a2ac59039f3803da57f27367c22c71c12" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ab23ddb423d3fb51829919af42de5a48f" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a0273a779aabd06b96f98466ee8553d14" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad62dabd419e0030589fc00e5e1880f5a" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>push_back_real</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a043db0d4cd2205027b4308f459496b79" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>RealType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1adf1dfc735a7f9d3508e434da7e87b632" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>RealVector</name></member>
+      <member refid="structamrex_1_1ParticleTile_1aad932266bb874a93f00fc2920ff69548" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>resize</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a3418dd871a28056a9d8aa3ba12a016f6" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>setNumNeighbors</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a7ff65a82757f35dd00d2ce7435be5a71" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>shrink_to_fit</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a018f4eff694e9e492907b1e1637212e5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>size</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a018f4eff694e9e492907b1e1637212e5" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>size</name></member>
+      <member refid="structamrex_1_1ParticleTile_1aa1c3e53b94d58cccb5d29cf33dea056b" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SoA</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a00d52f45cf7e8a4b3c30cfb48e7bca78" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>StorageParticleType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1acdece46bb48b940977bf9efe198779c4" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SuperParticleType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1ad48c6a1915a792354e2a6060e91d8f01" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>swap</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

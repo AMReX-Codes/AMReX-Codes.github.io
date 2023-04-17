@@ -201,7 +201,8 @@ var NAVTREEINDEX0 =
 "AMReX__AmrParticleInSituBridge_8H.html":[3,0,0,5,7,13],
 "AMReX__AmrParticleInSituBridge_8H_source.html":[3,0,0,5,7,13],
 "AMReX__AmrParticles_8H.html":[3,0,0,1,6],
-"AMReX__AmrParticles_8H.html#a9610a39b43057d1e9e78c4d5156965ef":[3,0,0,1,6,2],
+"AMReX__AmrParticles_8H.html#a627d8e166404664a72a94d6d65a77424":[3,0,0,1,6,2],
+"AMReX__AmrParticles_8H.html#a9610a39b43057d1e9e78c4d5156965ef":[3,0,0,1,6,3],
 "AMReX__AmrParticles_8H_source.html":[3,0,0,1,6],
 "AMReX__Amr_8H.html":[3,0,0,0,1],
 "AMReX__Amr_8H_source.html":[3,0,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "AMReX__AmrvisConstants_8H.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390":[3,0,0,5,0,2,2,1],
 "AMReX__AmrvisConstants_8H.html#abfcccc9773d8b5535441ca5b3cc4f0cfae7fe174117a8bd8847e7530391fb5fdc":[3,0,0,5,0,2,2,4],
 "AMReX__AmrvisConstants_8H.html#ad1b86e35dd69c62c7458b98276f001ae":[3,0,0,5,0,2,14],
-"AMReX__AmrvisConstants_8H.html#adb827b646ad912c5cc378614fb69d5a9":[3,0,0,5,0,2,19],
-"AMReX__AmrvisConstants_8H.html#add3703a58d6eb9d9c897e80f0bb3f8db":[3,0,0,5,0,2,12]
+"AMReX__AmrvisConstants_8H.html#adb827b646ad912c5cc378614fb69d5a9":[3,0,0,5,0,2,19]
 };

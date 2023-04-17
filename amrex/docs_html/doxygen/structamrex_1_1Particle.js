@@ -1,6 +1,8 @@
 var structamrex_1_1Particle =
 [
+    [ "ConstType", "structamrex_1_1Particle.html#af636a99b3002811b638a300d34333028", null ],
     [ "RealType", "structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26", null ],
+    [ "StorageParticleType", "structamrex_1_1Particle.html#a60efba6078d3acb0c2911e1a91a67a7b", null ],
     [ "atomicSetID", "structamrex_1_1Particle.html#aee07d2004dda8bc468e3310ccd7eacb1", null ],
     [ "cpu", "structamrex_1_1Particle.html#ae42faee1dffc3e271f04bebfd70235ce", null ],
     [ "cpu", "structamrex_1_1Particle.html#ab0e3d47b1fe618f1438aaa2167875b9b", null ],
@@ -26,6 +28,7 @@ var structamrex_1_1Particle =
     [ "rvec", "structamrex_1_1Particle.html#a9480daac8e7f5482e3330f610d04ad7a", null ],
     [ "rvec", "structamrex_1_1Particle.html#a729d8ca45fc82f0f14064c9600778865", null ],
     [ "UnprotectedNextID", "structamrex_1_1Particle.html#a90b34785c758b4423ca560d3796fcd7a", null ],
+    [ "is_soa_particle", "structamrex_1_1Particle.html#a36d180f8a098909299fe912363cd096f", null ],
     [ "NInt", "structamrex_1_1Particle.html#ad437c33b5c87125048830cee2775b50c", null ],
     [ "NReal", "structamrex_1_1Particle.html#aae7d12b94a847462c64456654db316e7", null ],
     [ "the_next_id", "structamrex_1_1Particle.html#a46b64285f66ebd66e86258462b440c51", null ]

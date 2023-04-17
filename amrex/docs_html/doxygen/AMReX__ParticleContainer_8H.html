@@ -97,7 +97,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainer_8H.html','');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">AMReX_ParticleContainer.H File Reference</div>  </div>
 </div><!--header-->
@@ -136,8 +137,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainer_8H.html','');
 <code>#include &lt;<a class="el" href="AMReX__SparseBins_8H_source.html">AMReX_SparseBins.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__ParticleTransformation_8H_source.html">AMReX_ParticleTransformation.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__ParticleMesh_8H_source.html">AMReX_ParticleMesh.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__ParIter_8H_source.html">AMReX_ParIter.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__OpenMP_8H_source.html">AMReX_OpenMP.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__ParIter_8H_source.html">AMReX_ParIter.H</a>&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
@@ -169,14 +170,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleInitType.html">amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct used to pass initial data into the various Init methods. This struct is used to pass initial data into the various Init methods of the particle container. That data should be initialized in the order real struct data, int struct data, real array data, int array data. If fewer components are specified than the template parameters specify for, a given component, then the extra values will be set to zero. If more components are specified, it is a compile-time error.  <a href="structamrex_1_1ParticleInitType.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt, Allocator &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured AMR hierarchy.  <a href="classamrex_1_1ParticleContainer.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured AMR hierarchy.  <a href="classamrex_1_1ParticleContainer__impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a1543c22ecbd1f8946a5d7b37d08fd7f8"><td class="memTemplParams" colspan="2">template&lt;int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </td></tr>
+<tr class="memitem:a1543c22ecbd1f8946a5d7b37d08fd7f8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1543c22ecbd1f8946a5d7b37d08fd7f8">amrex::ParticleContainerPureSoA</a> = ParticleContainer_impl&lt; SoAParticle&lt; T_NArrayReal, T_NArrayInt &gt;, T_NArrayReal, T_NArrayInt, Allocator &gt;</td></tr>
+<tr class="separator:a1543c22ecbd1f8946a5d7b37d08fd7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

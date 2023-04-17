@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"AMReX__CoordSys_8H.html":[3,0,0,2,54],
 "AMReX__CoordSys_8H_source.html":[3,0,0,2,54],
 "AMReX__CoordSys_8cpp.html":[3,0,0,2,53],
 "AMReX__CoordSys_8cpp.html#a4058fe437a44e4e9367221fbd9fa9e3c":[3,0,0,2,53,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "AMReX__EBFluxRegister__2D__C_8H.html#abd990a563d63d022c9b09433c621015f":[3,0,0,4,72,2],
 "AMReX__EBFluxRegister__2D__C_8H.html#ac9df63fc752ddecfc0659aa645670462":[3,0,0,4,72,6],
 "AMReX__EBFluxRegister__2D__C_8H_source.html":[3,0,0,4,72],
-"AMReX__EBFluxRegister__3D__C_8H.html":[3,0,0,4,73],
-"AMReX__EBFluxRegister__3D__C_8H.html#a0c65969b354bed7478ab5716942fdbad":[3,0,0,4,73,9]
+"AMReX__EBFluxRegister__3D__C_8H.html":[3,0,0,4,73]
 };

@@ -5,14 +5,7 @@
     <includes refid="AMReX__ArrayOfStructs_8H" local="no">AMReX_ArrayOfStructs.H</includes>
     <templateparamlist>
       <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <declname>NReal</declname>
-        <defname>NReal</defname>
-      </param>
-      <param>
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <declname>NInt</declname>
-        <defname>NInt</defname>
+        <type>typename T_ParticleType</type>
       </param>
       <param>
         <type>template&lt; class &gt; class</type>
@@ -22,9 +15,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" prot="public" static="no">
-        <type><ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NReal, NInt &gt;</type>
-        <definition>using amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::ParticleType =  Particle&lt;NReal, NInt&gt;</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" prot="public" static="no">
+        <type>T_ParticleType</type>
+        <definition>using amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::ParticleType =  T_ParticleType</definition>
         <argsstring></argsstring>
         <name>ParticleType</name>
         <briefdescription>
@@ -35,9 +28,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="15" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="15" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" prot="public" static="no">
-        <type>typename <ref refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kindref="member">ParticleType::RealType</ref></type>
-        <definition>using amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::RealType =  typename ParticleType::RealType</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" prot="public" static="no">
+        <type>typename ParticleType::RealType</type>
+        <definition>using amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::RealType =  typename ParticleType::RealType</definition>
         <argsstring></argsstring>
         <name>RealType</name>
         <briefdescription>
@@ -48,9 +41,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="16" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1af66049acde2b283b60693042d0f47a63" prot="public" static="no">
-        <type><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref>&lt; <ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref>, Allocator&lt; <ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref> &gt; &gt;</type>
-        <definition>using amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::ParticleVector =  amrex::PODVector&lt;ParticleType, Allocator&lt;ParticleType&gt; &gt;</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1aa361f73ebc2bf0a48753c69a277f4075" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">amrex::PODVector</ref>&lt; <ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref>, Allocator&lt; <ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &gt; &gt;</type>
+        <definition>using amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::ParticleVector =  amrex::PODVector&lt;ParticleType, Allocator&lt;ParticleType&gt; &gt;</definition>
         <argsstring></argsstring>
         <name>ParticleVector</name>
         <briefdescription>
@@ -61,9 +54,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="18" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="18" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1ac2741bc5f1b89ee198700f1cba670dd7" prot="public" static="no">
+      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1ab633fb0409feac5e4f6630b0d307a116" prot="public" static="no">
         <type>typename <ref refid="classamrex_1_1PODVector_1ac6db97322538232bff8ba94dbecb0bcf" kindref="member">ParticleVector::iterator</ref></type>
-        <definition>using amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::Iterator =  typename ParticleVector::iterator</definition>
+        <definition>using amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::Iterator =  typename ParticleVector::iterator</definition>
         <argsstring></argsstring>
         <name>Iterator</name>
         <briefdescription>
@@ -74,9 +67,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="20" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="20" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1a7709dae637e7f685849f914eb85381d3" prot="public" static="no">
+      <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1a022bf3d340c54c4014aa949c8942307a" prot="public" static="no">
         <type>typename <ref refid="classamrex_1_1PODVector_1a56a171f1a3aae0c9e557639027f8fbf5" kindref="member">ParticleVector::const_iterator</ref></type>
-        <definition>using amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::ConstIterator =  typename ParticleVector::const_iterator</definition>
+        <definition>using amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::ConstIterator =  typename ParticleVector::const_iterator</definition>
         <argsstring></argsstring>
         <name>ConstIterator</name>
         <briefdescription>
@@ -89,12 +82,12 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="classamrex_1_1ArrayOfStructs_1aed93f37a99ede3b5df705cce1e7ca92c" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1ArrayOfStructs_1a566da28aaf6d6cb87b9dc2b2fbf1c889" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>constexpr int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::SizeInReal</definition>
+        <definition>constexpr int amrex::ArrayOfStructs&lt; ParticleType, Allocator &gt;::SizeInReal</definition>
         <argsstring></argsstring>
         <name>SizeInReal</name>
-        <initializer>= sizeof(<ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref>) / sizeof(<ref refid="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" kindref="member">RealType</ref>)</initializer>
+        <initializer>= sizeof(<ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref>) / sizeof(<ref refid="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" kindref="member">RealType</ref>)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -105,9 +98,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classamrex_1_1ArrayOfStructs_1a9ea585dd011f20723588e8161d0165a2" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1ArrayOfStructs_1a3306e52c6281fde864a8d33a9b53d72c" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::m_num_neighbor_particles</definition>
+        <definition>int amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::m_num_neighbor_particles</definition>
         <argsstring></argsstring>
         <name>m_num_neighbor_particles</name>
         <initializer>{0}</initializer>
@@ -121,9 +114,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1ArrayOfStructs_1abf026bb176af595118df03fd00e2bc13" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1af66049acde2b283b60693042d0f47a63" kindref="member">ParticleVector</ref></type>
-        <definition>ParticleVector amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::m_data</definition>
+      <memberdef kind="variable" id="classamrex_1_1ArrayOfStructs_1aa4b53535c25e645281539b7b5b4f9194" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1aa361f73ebc2bf0a48753c69a277f4075" kindref="member">ParticleVector</ref></type>
+        <definition>ParticleVector amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::m_data</definition>
         <argsstring></argsstring>
         <name>m_data</name>
         <briefdescription>
@@ -136,9 +129,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aca90df559820dca991d840cdbb2d0065" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1af66049acde2b283b60693042d0f47a63" kindref="member">ParticleVector</ref> &amp;</type>
-        <definition>const ParticleVector&amp; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::operator()</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aef53c61df8507acf2d71d4a0ef53641b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1aa361f73ebc2bf0a48753c69a277f4075" kindref="member">ParticleVector</ref> &amp;</type>
+        <definition>const ParticleVector&amp; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::operator()</definition>
         <argsstring>() const</argsstring>
         <name>operator()</name>
         <briefdescription>
@@ -149,9 +142,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="25" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="25" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a81f3bcb36d422cd9639788892a72cf7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1af66049acde2b283b60693042d0f47a63" kindref="member">ParticleVector</ref> &amp;</type>
-        <definition>ParticleVector&amp; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::operator()</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a0e05fe63baa231bab1d6506626e9be58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1aa361f73ebc2bf0a48753c69a277f4075" kindref="member">ParticleVector</ref> &amp;</type>
+        <definition>ParticleVector&amp; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::operator()</definition>
         <argsstring>()</argsstring>
         <name>operator()</name>
         <briefdescription>
@@ -162,9 +155,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="26" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="26" bodyend="26"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a7a9b6970d5ac53fb7570233f3c2cd775" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1af332a589a51f1028800331fe10fc9985" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::size_t</type>
-        <definition>std::size_t amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::size</definition>
+        <definition>std::size_t amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::size</definition>
         <argsstring>() const</argsstring>
         <name>size</name>
         <briefdescription>
@@ -176,9 +169,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="32" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="32" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a6941975c9fe7c6550e721a821ad74126" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a97dc58478a9add0babfd5503f5655876" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::numParticles</definition>
+        <definition>int amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::numParticles</definition>
         <argsstring>() const</argsstring>
         <name>numParticles</name>
         <briefdescription>
@@ -190,9 +183,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="38" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="38" bodyend="38"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a6310988f0c7b51a1f5a6c8118ae6b50b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ab9d2ce3721f6d4039d09f4464683c5e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::numRealParticles</definition>
+        <definition>int amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::numRealParticles</definition>
         <argsstring>() const</argsstring>
         <name>numRealParticles</name>
         <briefdescription>
@@ -204,9 +197,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="44" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="44" bodyend="44"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ac7cc35718320929a366b86cfec00ec9c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a2b17bacea66d302e68ec631032d97300" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::numNeighborParticles</definition>
+        <definition>int amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::numNeighborParticles</definition>
         <argsstring>() const</argsstring>
         <name>numNeighborParticles</name>
         <briefdescription>
@@ -218,9 +211,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="50" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="50" bodyend="50"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aa92327fa3e4a245ab138fd50f6c26677" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a5a933c9ef33ad84f474f9c6b2b90b2a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::numTotalParticles</definition>
+        <definition>int amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::numTotalParticles</definition>
         <argsstring>() const</argsstring>
         <name>numTotalParticles</name>
         <briefdescription>
@@ -232,9 +225,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="56" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="56" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ab6e880100a1eb14ff3e8947ed3ae3585" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a3b1f7c4d9324b6ce179d86299b1ba853" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::setNumNeighbors</definition>
+        <definition>void amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::setNumNeighbors</definition>
         <argsstring>(int num_neighbors)</argsstring>
         <name>setNumNeighbors</name>
         <param>
@@ -249,9 +242,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="58" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="58" bodyend="63"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a65783d9bdd76147429b951340172a9aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a14f5a4f0a39ea2920cc01b2001f34e89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::getNumNeighbors</definition>
+        <definition>int amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::getNumNeighbors</definition>
         <argsstring>()</argsstring>
         <name>getNumNeighbors</name>
         <briefdescription>
@@ -262,9 +255,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="65" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="65" bodyend="65"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a6c30c9355f65515df6db2c86aea1c854" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a356f63835bfba5626b9e6cd884d895d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::empty</definition>
+        <definition>bool amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::empty</definition>
         <argsstring>() const</argsstring>
         <name>empty</name>
         <briefdescription>
@@ -275,9 +268,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="67" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="67" bodyend="67"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a10f767213e765b4181e266d54cf1ce25" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" kindref="member">RealType</ref> *</type>
-        <definition>const RealType* amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::data</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a0cc4a4eec9862094613fc473d47772da" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" kindref="member">RealType</ref> *</type>
+        <definition>const RealType* amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::data</definition>
         <argsstring>() const</argsstring>
         <name>data</name>
         <briefdescription>
@@ -288,9 +281,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="69" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="69" bodyend="69"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ad9567338fa6475300215e4ec70dac80d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" kindref="member">RealType</ref> *</type>
-        <definition>RealType* amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::data</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a1a9468da26825f7bea289fe9a8f8b7b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" kindref="member">RealType</ref> *</type>
+        <definition>RealType* amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::data</definition>
         <argsstring>()</argsstring>
         <name>data</name>
         <briefdescription>
@@ -301,9 +294,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="70" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="70" bodyend="70"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1abd007454d443b9871abc0fdced9087b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" kindref="member">RealType</ref> *</type>
-        <definition>const RealType* amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::dataPtr</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aa87264cc3eaa4bcb7aee264af871ba4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" kindref="member">RealType</ref> *</type>
+        <definition>const RealType* amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::dataPtr</definition>
         <argsstring>() const</argsstring>
         <name>dataPtr</name>
         <briefdescription>
@@ -314,9 +307,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="72" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="72" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a138bf451321239ddca61f471a3364b14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" kindref="member">RealType</ref> *</type>
-        <definition>RealType* amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::dataPtr</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1abbb7a073dc1a2738c392ba7c9e58e3f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" kindref="member">RealType</ref> *</type>
+        <definition>RealType* amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::dataPtr</definition>
         <argsstring>()</argsstring>
         <name>dataPtr</name>
         <briefdescription>
@@ -327,9 +320,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="73" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="73" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ab74612f3b12fcb9e90a750545efd3149" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1afc2b7495c6a6dd710c763ae48cd505e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
-        <definition>std::pair&lt;int,int&gt; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::dataShape</definition>
+        <definition>std::pair&lt;int,int&gt; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::dataShape</definition>
         <argsstring>() const</argsstring>
         <name>dataShape</name>
         <briefdescription>
@@ -340,13 +333,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="75" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="75" bodyend="77"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a92ed68fdf4560419b02707461df781d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a58e47ec80be71f10f50fe234408ed886" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::push_back</definition>
+        <definition>void amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::push_back</definition>
         <argsstring>(const ParticleType &amp;p)</argsstring>
         <name>push_back</name>
         <param>
-          <type>const <ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -357,9 +350,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="79" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="79" bodyend="79"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a948130cfb396aec89aa8963f3d067b03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aa1831ea3b91c1a77740583f99542ee26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::pop_back</definition>
+        <definition>void amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::pop_back</definition>
         <argsstring>()</argsstring>
         <name>pop_back</name>
         <briefdescription>
@@ -370,9 +363,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="80" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="80" bodyend="80"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ac814687e5fd72d77a18498ab1833fe33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a121a968277c299409b1b6e98fa2d8b08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::empty</definition>
+        <definition>bool amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::empty</definition>
         <argsstring>()</argsstring>
         <name>empty</name>
         <briefdescription>
@@ -383,9 +376,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="81" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="81" bodyend="81"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a37f92bf84821719d67fe814fddf6f700" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref> &amp;</type>
-        <definition>const ParticleType&amp; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::back</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aa3c489e0d03d2e1b8986325317a04a33" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &amp;</type>
+        <definition>const ParticleType&amp; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::back</definition>
         <argsstring>() const</argsstring>
         <name>back</name>
         <briefdescription>
@@ -396,9 +389,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="83" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="83" bodyend="83"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ad36d2f8f9a2ad22b014bd31cdb9f4fed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref> &amp;</type>
-        <definition>ParticleType&amp; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::back</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a3e895ae30030ef47d3796f4dee1769a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &amp;</type>
+        <definition>ParticleType&amp; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::back</definition>
         <argsstring>()</argsstring>
         <name>back</name>
         <briefdescription>
@@ -409,9 +402,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="84" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="84" bodyend="84"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a0aa7c75dec9e031f693caa2dd59d8b9d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref> &amp;</type>
-        <definition>const ParticleType&amp; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::operator[]</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aefa7a0fd1aca91d891859b5fabe22a07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &amp;</type>
+        <definition>const ParticleType&amp; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::operator[]</definition>
         <argsstring>(int i) const</argsstring>
         <name>operator[]</name>
         <param>
@@ -426,9 +419,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="86" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="86" bodyend="86"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a560039040383714fc329a465afa041c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" kindref="member">ParticleType</ref> &amp;</type>
-        <definition>ParticleType&amp; amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::operator[]</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a2fb608a08b57c27a7784ccd6be56bb30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &amp;</type>
+        <definition>ParticleType&amp; amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::operator[]</definition>
         <argsstring>(int i)</argsstring>
         <name>operator[]</name>
         <param>
@@ -443,13 +436,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="87" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="87" bodyend="87"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a5dc0c88b0bd97c248ca177a5cce313ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a9d58bc62739f9b5ccf48bf911af39065" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::swap</definition>
-        <argsstring>(ArrayOfStructs&lt; NReal, NInt &gt; &amp;other)</argsstring>
+        <definition>void amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::swap</definition>
+        <argsstring>(ArrayOfStructs&lt; ParticleType &gt; &amp;other)</argsstring>
         <name>swap</name>
         <param>
-          <type><ref refid="classamrex_1_1ArrayOfStructs" kindref="compound">ArrayOfStructs</ref>&lt; NReal, NInt &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1ArrayOfStructs" kindref="compound">ArrayOfStructs</ref>&lt; <ref refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" kindref="member">ParticleType</ref> &gt; &amp;</type>
           <declname>other</declname>
         </param>
         <briefdescription>
@@ -460,9 +453,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="89" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="89" bodyend="92"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ac608a07a6864c8bfc21e33c7d74aee01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ac161821048b627db36b021dc2671ede0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::resize</definition>
+        <definition>void amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::resize</definition>
         <argsstring>(size_t count)</argsstring>
         <name>resize</name>
         <param>
@@ -477,17 +470,17 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="94" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="94" bodyend="94"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a63474a82cab53812bed4e70deba119d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classamrex_1_1ArrayOfStructs_1ac2741bc5f1b89ee198700f1cba670dd7" kindref="member">Iterator</ref></type>
-        <definition>Iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::erase</definition>
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ae74cdb62144ce25c901b6df72013dc89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ArrayOfStructs_1ab633fb0409feac5e4f6630b0d307a116" kindref="member">Iterator</ref></type>
+        <definition>Iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::erase</definition>
         <argsstring>(ConstIterator first, ConstIterator second)</argsstring>
         <name>erase</name>
         <param>
-          <type><ref refid="classamrex_1_1ArrayOfStructs_1a7709dae637e7f685849f914eb85381d3" kindref="member">ConstIterator</ref></type>
+          <type><ref refid="classamrex_1_1ArrayOfStructs_1a022bf3d340c54c4014aa949c8942307a" kindref="member">ConstIterator</ref></type>
           <declname>first</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1ArrayOfStructs_1a7709dae637e7f685849f914eb85381d3" kindref="member">ConstIterator</ref></type>
+          <type><ref refid="classamrex_1_1ArrayOfStructs_1a022bf3d340c54c4014aa949c8942307a" kindref="member">ConstIterator</ref></type>
           <declname>second</declname>
         </param>
         <briefdescription>
@@ -498,18 +491,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="96" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="96" bodyend="96"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1af03ace2eb869a046f8efdf546da14c7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aa9a72f88e2cfb4bcbf98ef2f7ae5834a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class InputIt</type>
           </param>
         </templateparamlist>
         <type>void</type>
-        <definition>void amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::insert</definition>
+        <definition>void amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::insert</definition>
         <argsstring>(Iterator pos, InputIt first, InputIt last)</argsstring>
         <name>insert</name>
         <param>
-          <type><ref refid="classamrex_1_1ArrayOfStructs_1ac2741bc5f1b89ee198700f1cba670dd7" kindref="member">Iterator</ref></type>
+          <type><ref refid="classamrex_1_1ArrayOfStructs_1ab633fb0409feac5e4f6630b0d307a116" kindref="member">Iterator</ref></type>
           <declname>pos</declname>
         </param>
         <param>
@@ -528,9 +521,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="99" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="99" bodyend="99"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1ad7d0aa7c4705b9bf580f66322d182d79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a62e4c34a0bea528c7e0a3e1c0023ea04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1PODVector_1ac6db97322538232bff8ba94dbecb0bcf" kindref="member">ParticleVector::iterator</ref></type>
-        <definition>ParticleVector::iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::begin</definition>
+        <definition>ParticleVector::iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::begin</definition>
         <argsstring>()</argsstring>
         <name>begin</name>
         <briefdescription>
@@ -541,9 +534,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="101" column="40" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="101" bodyend="101"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a9ba716870dcb26aecdb6a8ce761dd71a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a075eae591eb5b0de619099aaa3e18119" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1PODVector_1a56a171f1a3aae0c9e557639027f8fbf5" kindref="member">ParticleVector::const_iterator</ref></type>
-        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::begin</definition>
+        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::begin</definition>
         <argsstring>() const</argsstring>
         <name>begin</name>
         <briefdescription>
@@ -554,9 +547,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="102" column="46" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="102" bodyend="102"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1abcc5a37084868a1e0fa2ff5420ad9f20" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a36e94e3ffe5960cc40d35b5e9c23d072" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1PODVector_1a56a171f1a3aae0c9e557639027f8fbf5" kindref="member">ParticleVector::const_iterator</ref></type>
-        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::cbegin</definition>
+        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::cbegin</definition>
         <argsstring>() const</argsstring>
         <name>cbegin</name>
         <briefdescription>
@@ -567,9 +560,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="103" column="46" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="103" bodyend="103"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a0b633d8f82b827347151560f4441e7ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a873f640763a9782db4c3b207c11e01ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1PODVector_1ac6db97322538232bff8ba94dbecb0bcf" kindref="member">ParticleVector::iterator</ref></type>
-        <definition>ParticleVector::iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::end</definition>
+        <definition>ParticleVector::iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::end</definition>
         <argsstring>()</argsstring>
         <name>end</name>
         <briefdescription>
@@ -580,9 +573,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="105" column="40" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="105" bodyend="105"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a1a5fb8fe1cede3a3449eed49d15df709" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aa2a7d293afbee43a583574e79e025ef4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1PODVector_1a56a171f1a3aae0c9e557639027f8fbf5" kindref="member">ParticleVector::const_iterator</ref></type>
-        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::end</definition>
+        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::end</definition>
         <argsstring>() const</argsstring>
         <name>end</name>
         <briefdescription>
@@ -593,9 +586,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="106" column="46" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="106" bodyend="106"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1aedde9080a7be9f4da9bb3bae947477c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ArrayOfStructs_1a87d91479ddcd7e9a311164a66c752a8e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1PODVector_1a56a171f1a3aae0c9e557639027f8fbf5" kindref="member">ParticleVector::const_iterator</ref></type>
-        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;::cend</definition>
+        <definition>ParticleVector::const_iterator amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;::cend</definition>
         <argsstring>() const</argsstring>
         <name>cend</name>
         <briefdescription>
@@ -612,13 +605,6 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1">
-        <label>amrex::ArrayOfStructs&lt; NReal, NInt, Allocator &gt;</label>
-        <link refid="classamrex_1_1ArrayOfStructs"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>m_data</edgelabel>
-        </childnode>
-      </node>
       <node id="3">
         <label>DefaultAllocator&lt; ParticleType &gt;</label>
         <link refid="classamrex_1_1ArenaAllocator"/>
@@ -629,6 +615,13 @@
         <label>amrex::ArenaAllocatorTraits</label>
         <link refid="structamrex_1_1ArenaAllocatorTraits"/>
       </node>
+      <node id="1">
+        <label>amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;</label>
+        <link refid="classamrex_1_1ArrayOfStructs"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
       <node id="2">
         <label>amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
@@ -638,46 +631,46 @@
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="13" bodyend="113"/>
     <listofallmembers>
-      <member refid="classamrex_1_1ArrayOfStructs_1a37f92bf84821719d67fe814fddf6f700" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>back</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ad36d2f8f9a2ad22b014bd31cdb9f4fed" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>back</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ad7d0aa7c4705b9bf580f66322d182d79" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>begin</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a9ba716870dcb26aecdb6a8ce761dd71a" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>begin</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1abcc5a37084868a1e0fa2ff5420ad9f20" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>cbegin</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1aedde9080a7be9f4da9bb3bae947477c2" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>cend</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a7709dae637e7f685849f914eb85381d3" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>ConstIterator</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a10f767213e765b4181e266d54cf1ce25" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>data</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ad9567338fa6475300215e4ec70dac80d" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>data</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1abd007454d443b9871abc0fdced9087b4" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>dataPtr</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a138bf451321239ddca61f471a3364b14" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>dataPtr</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ab74612f3b12fcb9e90a750545efd3149" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>dataShape</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a6c30c9355f65515df6db2c86aea1c854" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>empty</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ac814687e5fd72d77a18498ab1833fe33" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>empty</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a0b633d8f82b827347151560f4441e7ec" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>end</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a1a5fb8fe1cede3a3449eed49d15df709" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>end</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a63474a82cab53812bed4e70deba119d9" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>erase</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a65783d9bdd76147429b951340172a9aa" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>getNumNeighbors</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1af03ace2eb869a046f8efdf546da14c7a" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>insert</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ac2741bc5f1b89ee198700f1cba670dd7" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>Iterator</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1abf026bb176af595118df03fd00e2bc13" prot="private" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>m_data</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a9ea585dd011f20723588e8161d0165a2" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>m_num_neighbor_particles</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ac7cc35718320929a366b86cfec00ec9c" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numNeighborParticles</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a6941975c9fe7c6550e721a821ad74126" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numParticles</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a6310988f0c7b51a1f5a6c8118ae6b50b" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numRealParticles</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1aa92327fa3e4a245ab138fd50f6c26677" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numTotalParticles</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1aca90df559820dca991d840cdbb2d0065" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator()</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a81f3bcb36d422cd9639788892a72cf7a" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator()</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a0aa7c75dec9e031f693caa2dd59d8b9d" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator[]</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a560039040383714fc329a465afa041c9" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator[]</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1abc588eb242c81ef9d492e7d9ec759b1a" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>ParticleType</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1af66049acde2b283b60693042d0f47a63" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>ParticleVector</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a948130cfb396aec89aa8963f3d067b03" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>pop_back</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a92ed68fdf4560419b02707461df781d5" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>push_back</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1aa1d5cf31ace27020a023285202c95d9e" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>RealType</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ac608a07a6864c8bfc21e33c7d74aee01" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>resize</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1ab6e880100a1eb14ff3e8947ed3ae3585" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>setNumNeighbors</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a7a9b6970d5ac53fb7570233f3c2cd775" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>size</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1aed93f37a99ede3b5df705cce1e7ca92c" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>SizeInReal</name></member>
-      <member refid="classamrex_1_1ArrayOfStructs_1a5dc0c88b0bd97c248ca177a5cce313ee" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>swap</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa3c489e0d03d2e1b8986325317a04a33" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>back</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a3e895ae30030ef47d3796f4dee1769a9" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>back</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a62e4c34a0bea528c7e0a3e1c0023ea04" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>begin</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a075eae591eb5b0de619099aaa3e18119" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>begin</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a36e94e3ffe5960cc40d35b5e9c23d072" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>cbegin</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a87d91479ddcd7e9a311164a66c752a8e" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>cend</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a022bf3d340c54c4014aa949c8942307a" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>ConstIterator</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a0cc4a4eec9862094613fc473d47772da" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>data</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a1a9468da26825f7bea289fe9a8f8b7b2" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>data</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa87264cc3eaa4bcb7aee264af871ba4b" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1abbb7a073dc1a2738c392ba7c9e58e3f1" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1afc2b7495c6a6dd710c763ae48cd505e1" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>dataShape</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a356f63835bfba5626b9e6cd884d895d0" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>empty</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a121a968277c299409b1b6e98fa2d8b08" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>empty</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a873f640763a9782db4c3b207c11e01ff" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>end</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa2a7d293afbee43a583574e79e025ef4" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>end</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1ae74cdb62144ce25c901b6df72013dc89" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>erase</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a14f5a4f0a39ea2920cc01b2001f34e89" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>getNumNeighbors</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa9a72f88e2cfb4bcbf98ef2f7ae5834a" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>insert</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1ab633fb0409feac5e4f6630b0d307a116" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>Iterator</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa4b53535c25e645281539b7b5b4f9194" prot="private" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>m_data</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a3306e52c6281fde864a8d33a9b53d72c" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>m_num_neighbor_particles</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a2b17bacea66d302e68ec631032d97300" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numNeighborParticles</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a97dc58478a9add0babfd5503f5655876" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numParticles</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1ab9d2ce3721f6d4039d09f4464683c5e7" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numRealParticles</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a5a933c9ef33ad84f474f9c6b2b90b2a8" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>numTotalParticles</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aef53c61df8507acf2d71d4a0ef53641b" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a0e05fe63baa231bab1d6506626e9be58" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aefa7a0fd1aca91d891859b5fabe22a07" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a2fb608a08b57c27a7784ccd6be56bb30" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a4b5292eeb84fe912addcc353c568cbce" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>ParticleType</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa361f73ebc2bf0a48753c69a277f4075" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>ParticleVector</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1aa1831ea3b91c1a77740583f99542ee26" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>pop_back</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a58e47ec80be71f10f50fe234408ed886" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>push_back</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a4bd47d382fa8b63c31eafb763d31194c" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>RealType</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1ac161821048b627db36b021dc2671ede0" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>resize</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a3b1f7c4d9324b6ce179d86299b1ba853" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>setNumNeighbors</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1af332a589a51f1028800331fe10fc9985" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>size</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a566da28aaf6d6cb87b9dc2b2fbf1c889" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>SizeInReal</name></member>
+      <member refid="classamrex_1_1ArrayOfStructs_1a9d58bc62739f9b5ccf48bf911af39065" prot="public" virt="non-virtual"><scope>amrex::ArrayOfStructs</scope><name>swap</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -8,6 +8,7 @@ var AMReX__Particle_8H =
     [ "ParticleBase< T, 0, NInt >", "structamrex_1_1ParticleBase_3_01T_00_010_00_01NInt_01_4.html", "structamrex_1_1ParticleBase_3_01T_00_010_00_01NInt_01_4" ],
     [ "ParticleBase< T, NReal, 0 >", "structamrex_1_1ParticleBase_3_01T_00_01NReal_00_010_01_4.html", "structamrex_1_1ParticleBase_3_01T_00_01NReal_00_010_01_4" ],
     [ "ParticleBase< T, 0, 0 >", "structamrex_1_1ParticleBase_3_01T_00_010_00_010_01_4.html", "structamrex_1_1ParticleBase_3_01T_00_010_00_010_01_4" ],
+    [ "SoAParticleBase", "structamrex_1_1SoAParticleBase.html", "structamrex_1_1SoAParticleBase" ],
     [ "Particle", "structamrex_1_1Particle.html", "structamrex_1_1Particle" ],
     [ "operator<<", "AMReX__Particle_8H.html#a6ee44abe4e92e171a76c83cc8edfdec8", null ],
     [ "operator<<", "AMReX__Particle_8H.html#ab4ab9b3e6200e633cbf452f97880f267", null ],

@@ -2,12 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classamrex_1_1MFIter" kind="class" language="C++" prot="public">
     <compoundname>amrex::MFIter</compoundname>
-    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; false, NStructReal, 0, 0, 0, DefaultAllocator &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; true, NStructReal, 0, 0, 0, DefaultAllocator &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParIterBase__impl" prot="public" virt="non-virtual">amrex::ParIterBase_impl&lt; false, T_ParticleType, 0, 0, DefaultAllocator &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParIterBase__impl" prot="public" virt="non-virtual">amrex::ParIterBase_impl&lt; true, T_ParticleType, 0, 0, DefaultAllocator &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1FabSetIter" prot="public" virt="non-virtual">amrex::FabSetIter</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1FillPatchIterator" prot="public" virt="non-virtual">amrex::FillPatchIterator</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1MultiMaskIter" prot="public" virt="non-virtual">amrex::MultiMaskIter</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParIterBase__impl" prot="public" virt="non-virtual">amrex::ParIterBase_impl&lt; is_const, T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;</derivedcompoundref>
     <includes refid="AMReX__MFIter_8H" local="no">AMReX_MFIter.H</includes>
     <innerclass refid="structamrex_1_1MFIter_1_1DeviceSync" prot="protected">amrex::MFIter::DeviceSync</innerclass>
       <sectiondef kind="public-type">
@@ -976,20 +976,14 @@
         <link refid="classamrex_1_1MFIter"/>
       </node>
       <node id="4">
-        <label>amrex::ParIterBase&lt; true, NStructReal, 0, 0, 0, DefaultAllocator &gt;</label>
-        <link refid="classamrex_1_1ParIterBase"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
-        <link refid="classamrex_1_1ParIterBase"/>
+        <label>amrex::ParIterBase_impl&lt; true, T_ParticleType, 0, 0, DefaultAllocator &gt;</label>
+        <link refid="classamrex_1_1ParIterBase__impl"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
-        <label>amrex::ParConstIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
-        <link refid="classamrex_1_1ParConstIter"/>
+        <label>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1ParConstIter__impl"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
@@ -999,15 +993,21 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="9">
+        <label>amrex::ParIterBase_impl&lt; is_const, T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1ParIterBase__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
-        <label>amrex::ParIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
-        <link refid="classamrex_1_1ParIter"/>
+        <label>amrex::ParIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1ParIter__impl"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
-        <label>amrex::ParIterBase&lt; false, NStructReal, 0, 0, 0, DefaultAllocator &gt;</label>
-        <link refid="classamrex_1_1ParIterBase"/>
+        <label>amrex::ParIterBase_impl&lt; false, T_ParticleType, 0, 0, DefaultAllocator &gt;</label>
+        <link refid="classamrex_1_1ParIterBase__impl"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
