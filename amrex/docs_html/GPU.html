@@ -167,7 +167,7 @@ threads are used to perform parallelization techniques, like tiling.
 The most common <code class="docutils literal notranslate"><span class="pre">X</span></code> is <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>.  On GPUs, AMReX requires <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>
 and can be further combined with other parallel GPU languages, including
 <code class="docutils literal notranslate"><span class="pre">OpenACC</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>, to control the offloading of subroutines
-to the GPU.  This <code class="docutils literal notranslate"><span class="pre">MPI+CUDA+X</span></code> GPU strategy has been developed
+to the GPU.  This <code class="docutils literal notranslate"><span class="pre">MPI+X+Y</span></code> GPU strategy has been developed
 to give users the maximum flexibility to find the best combination of
 portability, readability and performance for their applications.</p>
 <p>Presented here is an overview of important features of AMReX’s GPU strategy.
@@ -527,8 +527,9 @@ AutoLarge</p></td>
 <p>Most GPU related classes and functions are in <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">Gpu</span></code>,
 which is inside <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">amrex</span></code>. For example, the GPU configuration
 class <code class="docutils literal notranslate"><span class="pre">Device</span></code> can be referenced to at <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::Device</span></code>.</p>
-<p>For portability, AMReX defines some macros for CUDA function qualifiers
-and they should be preferred to allow execution with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>.
+<p>For portability, AMReX defines some macros for CUDA/HIP function qualifiers
+and they should be preferred to allow execution when <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">USE_HIP=FALSE</span></code>.
 These include:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define AMREX_GPU_HOST        __host__</span>
 <span class="cp">#define AMREX_GPU_DEVICE      __device__</span>
@@ -538,15 +539,20 @@ These include:</p>
 </div>
 <p>Note that when AMReX is not built with <code class="docutils literal notranslate"><span class="pre">CUDA/HIP/SYCL</span></code>,
 these macros expand to empty space.</p>
-<p>When AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, the preprocessor
-macros <code class="docutils literal notranslate"><span class="pre">AMREX_USE_CUDA</span></code> and <code class="docutils literal notranslate"><span class="pre">AMREX_USE_GPU</span></code> are defined for
-conditional programming.  When AMReX is compiled with
-<code class="docutils literal notranslate"><span class="pre">USE_ACC=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_USE_ACC</span></code> is defined.  When AMReX is
-compiled with <code class="docutils literal notranslate"><span class="pre">USE_OMP_OFFLOAD=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_USE_OMP_OFFLOAD</span></code> is
-defined.</p>
+<p>When AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP=TRUE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">USE_SYCL=TRUE</span></code>, or <code class="docutils literal notranslate"><span class="pre">USE_ACC=TRUE</span></code>  the preprocessor
+macros <code class="docutils literal notranslate"><span class="pre">AMREX_USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_USE_HIP</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_USE_SYCL</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">AMREX_USE_ACC</span></code> respectively are defined for
+conditional programming, as well as <code class="docutils literal notranslate"><span class="pre">AMREX_USE_GPU</span></code>.
+This <code class="docutils literal notranslate"><span class="pre">AMREX_USE_GPU</span></code> definition can be used in application code
+if different functionality should be used when AMReX is built with
+GPU support.
+When AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_OMP_OFFLOAD=TRUE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AMREX_USE_OMP_OFFLOAD</span></code> is defined.</p>
 <p>In addition to AMReX’s preprocessor macros, CUDA provides the
 <code class="docutils literal notranslate"><span class="pre">__CUDA_ARCH__</span></code> macro which is only defined when in device code.
-<code class="docutils literal notranslate"><span class="pre">__CUDA_ARCH__</span></code> should be used when a <code class="docutils literal notranslate"><span class="pre">__host__</span> <span class="pre">__device__</span></code>
+HIP and Sycl provide similar macros.
+<code class="docutils literal notranslate"><span class="pre">AMREX_DEVICE_COMPILE</span></code> should be used when a <code class="docutils literal notranslate"><span class="pre">__host__</span> <span class="pre">__device__</span></code>
 function requires separate code for the CPU and GPU implementations.</p>
 </section>
 <section id="memory-allocation">
@@ -679,8 +685,9 @@ code to synchronize. The resulting <code class="code highlight cpp c++ docutils 
 “async-safe”, meaning it can be safely used in asynchronous code
 regions that contain both CPU work and GPU launches, including
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loops.</p>
-<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span><span class="w"></span></code> is also portable. When built without <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, the
-object only stores and handles the CPU version of the data.</p>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span><span class="w"></span></code> is also portable. When AMReX is compiled without
+GPU support, the object only stores and handles the CPU version of
+the data.</p>
 <p>An example using <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AsyncArray</span><span class="w"></span></code> is given below,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span><span class="w"> </span><span class="n">h_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
 <span class="n">AsyncArray</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="w"> </span><span class="n">aa_s</span><span class="p">(</span><span class="o">&amp;</span><span class="n">h_s</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Build AsyncArray of size 1</span>
@@ -761,7 +768,7 @@ conditions.</p>
 <h2>MultiFab Reductions<a class="headerlink" href="#multifab-reductions" title="Permalink to this heading"></a></h2>
 <p>AMReX provides functions for performing standard reduction operations on
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFabs</span><span class="w"></span></code>, including <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">sum</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">max</span><span class="w"></span></code>.
-When <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, these functions automatically implement the
+When AMReX is built with GPU support, these functions automatically implement the
 corresponding reductions on GPUs in an efficient manner.</p>
 <p>Function template <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParReduce</span><span class="w"></span></code> can be used to implement user-defined
 reduction functions over <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>s.  For example, the following
@@ -916,13 +923,13 @@ One can adjust it with <code class="code highlight cpp c++ docutils literal high
 <section id="kernel-launch">
 <span id="sec-gpu-launch"></span><h1>Kernel Launch<a class="headerlink" href="#kernel-launch" title="Permalink to this heading"></a></h1>
 <p>In this section, how to offload work to the GPU will be demonstrated.
-AMReX supports offloading work with CUDA, OpenACC, or OpenMP.</p>
-<p>When using CUDA, AMReX provides users with portable C++ function calls or
-C++ macros that launch a user-defined lambda function.  When compiled without CUDA,
-the lambda function is ran on the CPU. When compiled with CUDA, the launch function
+AMReX supports offloading work with CUDA, HIP, SYCL, OpenACC, or OpenMP.</p>
+<p>When using CUDA, HIP, or SYCL, AMReX provides users with portable C++ function calls or
+C++ macros that launch a user-defined lambda function.  When compiled without CUDA/HIP/SYCL,
+the lambda function is ran on the CPU. When compiled with CUDA/HIP/SYCL, the launch function
 prepares and launches the lambda function on the GPU. The preparation includes
-calculating the appropriate number of blocks and threads, selecting the CUDA stream
-and defining the appropriate work chunk for each CUDA thread.</p>
+calculating the appropriate number of blocks and threads, selecting the CUDA stream or HIP stream
+or SYCL queue, and defining the appropriate work chunk for each GPU thread.</p>
 <p>When using OpenACC or OpenMP offloading pragmas, the users add the appropriate
 pragmas to their work loops and functions to offload to the GPU.  These work
 in conjunction with AMReX’s internal CUDA-based memory management, described
@@ -958,8 +965,8 @@ possible to allow efficient utilization of GPU hardware.</p>
 because they contain optimizations for both CPU and GPU variations of nested
 loops.  For example, on the GPU the spatial coordinate loops are reduced to a single
 loop and the component loop is moved to these inner most loop.  AMReX’s launch functions
-apply the appropriate optimizations for <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code> in a
-compact and readable format.</p>
+apply the appropriate optimizations for compiling both with and without GPU support
+in a compact and readable format.</p>
 <p>AMReX also provides a variation of the launch function that is implemented as a
 C++ macro.  It behaves identically to the function, but hides the lambda function
 from the user.  There are some subtle differences between the two implementations,
@@ -1000,7 +1007,8 @@ launch function.</p>
 <p><code class="docutils literal notranslate"><span class="pre">amrex::ParallelFor()</span></code> expands into different variations of a quadruply-nested
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span><span class="w"></span></code> loop depending dimensionality and whether it is being implemented on CPU or GPU.
 The best way to understand this function is to take a look at the 4D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">ParallelFor</span><span class="w"></span></code>
-that is implemented when <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>. A simplified version is reproduced here:</p>
+that is implemented when AMReX is compiled without GPU support, such as <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>.
+A simplified version is reproduced here:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">ParallelFor</span><span class="w"> </span><span class="p">(</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ncomp</span><span class="p">,</span><span class="w"> </span><span class="cm">/* LAMBDA FUNCTION */</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Dim3</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">lbound</span><span class="p">(</span><span class="n">box</span><span class="p">);</span><span class="w"></span>
@@ -1027,7 +1035,7 @@ must be able to be copied onto the device.  In this example, the
 lambda function captures a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span><span class="w"></span></code> object, <code class="docutils literal notranslate"><span class="pre">fab</span></code>, that defines
 how to access the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>.  The macro uses <code class="docutils literal notranslate"><span class="pre">fab</span></code> to
 increment the value of each cell within the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span><span class="w"> </span><span class="n">bx</span><span class="w"></span></code>.  If
-<code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, this incrementation is performed on the GPU, with
+AMReX is compiled with GPU support, this incrementation is performed on the GPU, with
 GPU optimized loops.</p>
 <p>This 4D launch can also be used to work over any sequential set of components, by passing the
 number of consecutive components and adding the iterator to the starting component:
@@ -1199,26 +1207,26 @@ with OpenMP for GPU offloading, consult the OpenMP user’s guide.</p>
 </section>
 <section id="kernel-launch-details">
 <h2>Kernel launch details<a class="headerlink" href="#kernel-launch-details" title="Permalink to this heading"></a></h2>
-<p>CUDA kernel calls are asynchronous and they return before the kernel
+<p>CUDA (and HIP) kernel calls are asynchronous and they return before the kernel
 is finished on the GPU. So the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loop finishes iterating on
 the CPU and is ready to move on to the next work before the actual
 work completes on the GPU.  To guarantee consistency,
 there is an implicit device synchronization (a GPU barrier) in
 the destructor of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code>.  This ensures that all GPU work
 inside of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loop will complete before code outside of
-the loop is executed. Any CUDA kernel launches made outside of an
+the loop is executed. Any kernel launches made outside of an
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loop must ensure appropriate device synchronization
 occurs. This can be done by calling <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">()</span><span class="w"></span></code>.</p>
-<p>CUDA supports multiple streams and kernels. Kernels launched in the
+<p>CUDA and HIP supports multiple streams and kernels. Kernels launched in the
 same stream are executed sequentially, but different streams of kernel
 launches may be run in parallel.  For each iteration of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code>,
-AMReX uses a different CUDA stream (up to 16 streams in total).  This
+AMReX uses a different GPU stream (up to 4 streams in total).  This
 allows each iteration of an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loop to run independently,
 but in the expected sequence, and maximize the use of GPU parallelism.
-However, AMReX uses the default CUDA stream outside of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code>
+However, AMReX uses the default GPU stream outside of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code>
 loops.</p>
 <p>Launching kernels with AMReX’s launch macros or functions implement
-a C++ lambda function. Lambdas functions used with CUDA have some
+a C++ lambda function. Lambdas functions used for launches on the GPU have some
 restrictions the user must understand.  First, the function enclosing the
 extended lambda must not have private or protected access within its parent
 class,  otherwise the code will not compile.  This can be fixed by changing
@@ -1362,14 +1370,15 @@ work regions (<code class="docutils literal notranslate"><span class="pre">tbx</
 dependencies between the two (<code class="docutils literal notranslate"><span class="pre">q</span></code>). This makes it difficult to put
 them into a single GPU kernel, so two separate kernels will be
 launched, one for each function.</p>
-<p>As we have discussed, AMReX uses multiple CUDA streams for launching
+<p>As we have discussed, AMReX uses multiple CUDA streams or HIP streams
+or SYCL queues for launching
 kernels.  Because <code class="docutils literal notranslate"><span class="pre">q</span></code> is used inside <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loops, multiple
 GPU kernels on different streams are accessing its data.  This creates
 a race condition.  One way to fix this is to move <code class="docutils literal notranslate"><span class="pre">FArrayBox</span> <span class="pre">q</span></code>
 inside the loop to make it local to each loop and use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Elixir</span><span class="w"></span></code> to
 make it async-safe (see Section <a class="reference internal" href="#sec-gpu-classes-elixir"><span class="std std-ref">Elixir</span></a>).  This
 strategy works well for GPU.  However it is not optimal for OpenMP CPU
-threads when CUDA is not used, because of the memory allocation inside
+threads when the GPU is not used, because of the memory allocation inside
 OpenMP parallel region.  It turns out it is actually unnecessary to
 make <code class="docutils literal notranslate"><span class="pre">FArrayBox</span> <span class="pre">q</span></code> local to each iteration when <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Elixir</span><span class="w"></span></code> is
 used to extend the life of its floating point data.  The code below
@@ -1427,13 +1436,13 @@ all GPU launches within an <code class="code highlight cpp c++ docutils literal 
 before continuing work.</p>
 <p>However, due to asynchronicity, determining the source of the error
 can be difficult.  Even if GPU kernels launched earlier in the code
-result in a CUDA error, the error may not be output at a nearby call to
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_GPU_ERROR_CHECK</span><span class="p">()</span><span class="w"></span></code> by the CPU.  When tracking down a CUDA
-launch error, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">synchronize</span><span class="p">()</span><span class="w"></span></code>,
+result in a CUDA error or HIP error, the error may not be output at
+a nearby call to <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_GPU_ERROR_CHECK</span><span class="p">()</span><span class="w"></span></code> by the CPU.
+When tracking down a CUDA launch error, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">synchronize</span><span class="p">()</span><span class="w"></span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronize</span><span class="p">()</span><span class="w"></span></code>, or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">streamSynchronizeAll</span><span class="p">()</span><span class="w"></span></code> can
 be used to synchronize the device, the current GPU stream, or all GPU
 streams, respectively, and track down the specific launch that causes the
-error.</p>
+error. This error-checking macro will not return any information for SYCL.</p>
 </section>
 <section id="particle-support">
 <h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this heading"></a></h1>
@@ -1591,7 +1600,8 @@ describing how much free memory there is and what was requested.</p></td>
 <tr class="row-even"><td><p>the_arena_is_managed</p></td>
 <td><p>Whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span><span class="w"></span></code> allocates managed memory.</p></td>
 <td><p>Bool</p></td>
-<td><p>True</p></td>
+<td><p>True (CUDA/SYCL)
+False (HIP)</p></td>
 </tr>
 </tbody>
 </table>
