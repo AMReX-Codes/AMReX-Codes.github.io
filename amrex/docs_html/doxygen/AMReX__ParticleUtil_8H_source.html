@@ -909,9 +909,9 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf">Gpu::Device::streamSynchronize</a>();</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;}</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> index_type, <span class="keyword">class</span> pos_struct&gt;</div>
-<div class="line"><a name="l00885"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa3b7121562bd99a99563aac383bc6303">  885</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a2e4af4bb3015a4534ca0efc19aba6dcf">PermutationForDeposition</a> (<a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a>&amp; perm, index_type nitems,</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                               pos_struct <span class="keyword">const</span>* v, <a class="code" href="classamrex_1_1Box.html">Box</a> bx, <a class="code" href="classamrex_1_1Geometry.html">Geometry</a> geom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> idx_type)</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> index_type, <span class="keyword">class</span> PTile&gt;</div>
+<div class="line"><a name="l00885"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">  885</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a2e4af4bb3015a4534ca0efc19aba6dcf">PermutationForDeposition</a> (<a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a>&amp; perm, index_type nitems,</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                               <span class="keyword">const</span> PTile&amp; ptile, <a class="code" href="classamrex_1_1Box.html">Box</a> bx, <a class="code" href="classamrex_1_1Geometry.html">Geometry</a> geom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> idx_type)</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;{</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(idx_type.<a class="code" href="classamrex_1_1IntVect.html#ae3c7940850b880ae2d83dab12e73434a">allGE</a>(<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0)) &amp;&amp; idx_type.<a class="code" href="classamrex_1_1IntVect.html#a9bfc5b4da499c3d53789bd0a3ceb2eda">allLE</a>(<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(2)));</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
@@ -932,28 +932,32 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ref_product = <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(refine_vect[0], * refine_vect[1], * refine_vect[2]);</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ref_offset(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(1, refine_vect[0], refine_vect[0] * refine_vect[1]));</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    PermutationForDeposition&lt;index_type&gt;(perm, nitems, bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * ref_product,</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (index_type idx) noexcept</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;        {</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;            <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv = ((v[idx].pos() - pos_offset) * dxi).round();</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160; </div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_coarse = iv / refine_vect;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_remainder = iv - iv_coarse * refine_vect;</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>(bx.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>());</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#ad903f958ca90c11bcf4e67941cb3e66a">min</a>(bx.<a class="code" href="classamrex_1_1Box.html#aa2ebf79e721706ee01738c9bb1cc13e7">bigEnd</a>());</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            <span class="keywordflow">return</span> bx.<a class="code" href="classamrex_1_1Box.html#a25e69da739e85d34b6788ddb21955c86">index</a>(iv_coarse) + bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * (iv_remainder * ref_offset).<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>();</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        });</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;}</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160; </div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160; </div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;}</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160; </div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// include guard</span></div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    <span class="keyword">auto</span> ptd = ptile.getConstParticleTileData();</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    <span class="keyword">using</span> ParticleType = <span class="keyword">typename</span> PTile::ParticleType::ConstType;</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    PermutationForDeposition&lt;index_type&gt;(perm, nitems, bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * ref_product,</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (index_type idx) noexcept</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;            {</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,idx);</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv = ((p.pos() - pos_offset) * dxi).round();</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160; </div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_coarse = iv / refine_vect;</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_remainder = iv - iv_coarse * refine_vect;</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160; </div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>(bx.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>());</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#ad903f958ca90c11bcf4e67941cb3e66a">min</a>(bx.<a class="code" href="classamrex_1_1Box.html#aa2ebf79e721706ee01738c9bb1cc13e7">bigEnd</a>());</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                <span class="keywordflow">return</span> bx.<a class="code" href="classamrex_1_1Box.html#a25e69da739e85d34b6788ddb21955c86">index</a>(iv_coarse) + bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * (iv_remainder * ref_offset).<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>();</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        });</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;}</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160; </div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;}</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160; </div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// include guard</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:558</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
