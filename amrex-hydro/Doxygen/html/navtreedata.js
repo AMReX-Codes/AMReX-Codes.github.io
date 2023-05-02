@@ -65,20 +65,20 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"hydro__constants_8H_source.html",
-"namespaceamrex.html#a023801a9417fb6bd2f74787e89124a8c",
-"namespaceamrex.html#a2a143a183f01010f7f57ca6025fc0b81",
-"namespaceamrex.html#a4fd8c266e07ac4dce013e0210727d3ab",
-"namespaceamrex.html#a77b016483c8263c1a67e93d79d31da4c",
-"namespaceamrex.html#a9d2e38bd2809143536efe0db90492957",
-"namespaceamrex.html#ac19201bf459a388c3e8988fe9b54e6cb",
-"namespaceamrex.html#ae5dab25e68f818f498a07a4507d7360ea80fa3bd42760cb2a3c1bdfdff06b6a12",
-"namespaceamrex_1_1BGColor.html#a8e336a13c3edc33f8190fd9f150ef19f",
-"namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d",
-"namespaceamrex_1_1ParallelDescriptor.html#ae1fd5fb334fd246fe4509d9809c734ef",
-"namespaceamrex_1_1openbc.html#acc33b913d7ecfb81353190b3ce2e95df",
-"namespaceamrex__parmparse__module.html#a1e0986fe43e8763bc1cef87cfef5e206"
+"FOR__PAPER_2hydro__redistribution_8cpp.html",
+"hydro__godunov__plm_8H.html#ad7beaa3659e4fc3ea1dc0f3a97d025f7",
+"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49a467c9f3fa7bc494399821d9327b05845",
+"namespaceamrex.html#a35e6a4a987e55646e4f33c6827554dea",
+"namespaceamrex.html#a5b26a31faefa1749b9fb899d1818244b",
+"namespaceamrex.html#a8420e5daa7ea328100bbd5355c290f45",
+"namespaceamrex.html#aa5a1f4f1c5cbe7672f12c62b9db96746",
+"namespaceamrex.html#ace26a2763f9834a0e4e2369463dd7452",
+"namespaceamrex.html#aee80b212d35c9fafe26f01f76ce6b672",
+"namespaceamrex_1_1EB2_1_1Type.html#ad02e320d1e8e105e0f531f235bd8fce4",
+"namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877",
+"namespaceamrex_1_1SundialsUserFun.html#a547d76fae87f15799e5ccc3bd63f678e",
+"namespaceamrex_1_1tri__geom__ops.html#a3ab1370ee2778b840c9976bec576a66e",
+"namespacesdcquadrature__mod.html#ae2185088b6449f7811b072576236dabd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

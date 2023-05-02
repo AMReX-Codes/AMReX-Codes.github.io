@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keepvalidfilter_8891',['KeepValidFilter',['https://amrex-codes.github.io/amrex/doxygen/structKeepValidFilter.html',1,'']]],
-  ['kernelinfo_8892',['KernelInfo',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]]
+  ['keepvalidfilter_8907',['KeepValidFilter',['https://amrex-codes.github.io/amrex/doxygen/structKeepValidFilter.html',1,'']]],
+  ['kernelinfo_8908',['KernelInfo',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]]
 ];
