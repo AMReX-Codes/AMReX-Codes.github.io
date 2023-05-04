@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,6 +76,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#fsnapshot">fsnapshot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fnan">fnan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fextrema">fextrema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faverage">faverage</a></li>
 </ul>
 </li>
 </ul>
@@ -351,6 +353,22 @@ Typing <code class="docutils literal notranslate"><span class="pre">./fextrema.g
 <span class="go">                   0.03                       1          2.349724636         8.277319027e-17          1.157052145         8.277319027e-17          1.156713078           0.03595941273                    1         8.277319027e-17         0.4924203149         8.277319027e-17         0.4922760141           0.01530367099                    1         -0.005172583789       0.005172583789         -0.005172583789       0.005172583789         -0.005287367803       0.005287367803         -0.005287367803       0.005287367803         -0.004924487345        0.05687549245</span>
 </pre></div>
 </div>
+</section>
+<section id="faverage">
+<h2>faverage<a class="headerlink" href="#faverage" title="Permalink to this heading"></a></h2>
+<p>Compute the lateral average of a variable in a plotfile, with optional
+density weighting.  For 2-d, a profile <span class="math notranslate nohighlight">\(f(y)\)</span> is returned where
+the average was done over <span class="math notranslate nohighlight">\(x\)</span>.  For 3-d, a profile <span class="math notranslate nohighlight">\(f(z)\)</span>
+is returned where the average was done over <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><strong>How to build and run</strong></p>
+<p>In <code class="docutils literal notranslate"><span class="pre">amrex/Tools/Plotfile</span></code>, type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">programs=faverage</span></code> and then <code class="docutils literal notranslate"><span class="pre">./faverage.gnu.ex</span></code> to run.
+Typing <code class="docutils literal notranslate"><span class="pre">./faverage.gnu.ex</span></code> without inputs will bring up usage and options.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@:~/AMReX/amrex/Tools/Plotfile$ </span>./faverage.gnu.ex -v density plt0000000
+</pre></div>
+</div>
+<p>will compute the average density as a function of height, outputting a data file
+<code class="docutils literal notranslate"><span class="pre">plt0000000.slice</span></code>.</p>
 </section>
 </section>
 
