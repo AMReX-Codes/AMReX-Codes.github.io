@@ -156,9 +156,9 @@ var NAVTREEINDEX =
 "structamrex_1_1MaybeDeviceRunnable.html",
 "structamrex_1_1ParserExeADD__PP.html#af297a176eb8b3d166a861ab9fe49984a",
 "structamrex_1_1ParticleCopyPlan.html#abfa960b63b48835c96d12a8754327b10",
-"structamrex_1_1SoAParticle.html#a94db0caad28e89b51f28359d9f4cbca7",
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737",
-"structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html"
+"structamrex_1_1SoAParticle.html#a8d6c15b2cd00fcee655a8b9b90a29e8d",
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1",
+"structmake__particle.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

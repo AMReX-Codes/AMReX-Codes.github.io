@@ -1,5 +1,7 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[2,0,0,0,5,8],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[2,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[2,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[2,0,0,0,5,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX80 =
 "structdistribution__t.html#af6a7bae9b4cb830d7c37076561f1417c":[2,0,17,7],
 "structhacc_1_1AlignedAllocator_1_1rebind.html":[2,0,10,0,0],
 "structhacc_1_1AlignedAllocator_1_1rebind.html#a96ecc5d534254a7cab53bdfa4d78db8e":[2,0,10,0,0,0],
-"structis__soa__particle.html":[2,0,20],
-"structmake__particle.html":[2,0,22],
-"structmake__particle.html#a8f0911901c0819ea99040d1974667ded":[2,0,22,0]
+"structis__soa__particle.html":[2,0,20]
 };
