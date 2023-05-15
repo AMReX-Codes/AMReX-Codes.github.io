@@ -163,7 +163,7 @@ var classamrex_1_1ParticleContainer__impl =
     [ "h_redistribute_real_comp", "classamrex_1_1ParticleContainer__impl.html#a57ebfe4573d0b452f26d79487b27f777", null ],
     [ "HdrFileNamePrePost", "classamrex_1_1ParticleContainer__impl.html#ae602784a400d24208e630e6a4a3bb593", null ],
     [ "levelDirectoriesCreated", "classamrex_1_1ParticleContainer__impl.html#abc3bb198f7deade3b5fe19571d93f60a", null ],
-    [ "m_bins", "classamrex_1_1ParticleContainer__impl.html#a8e4fed07796f492138d54521756fda9a", null ],
+    [ "m_bins", "classamrex_1_1ParticleContainer__impl.html#aea57bac0fbc2e0010a08d22d05a0ce20", null ],
     [ "m_num_runtime_int", "classamrex_1_1ParticleContainer__impl.html#a4bb9a447cd518ba745a8a43dfd25d433", null ],
     [ "m_num_runtime_real", "classamrex_1_1ParticleContainer__impl.html#ac3e4b2c7781ed73e7e2d3d07d0a66f0b", null ],
     [ "m_particles", "classamrex_1_1ParticleContainer__impl.html#ab371be261c8d73ec686c09a436431d2d", null ],

@@ -1720,6 +1720,8 @@ var namespaceamrex =
     [ "isEmpty", "namespaceamrex.html#abb63128824cf099d9c02ef49c3288713", null ],
     [ "isEmpty", "namespaceamrex.html#a923303ed68b75a5a2e65f20876e25a7a", null ],
     [ "isMFIterSafe", "namespaceamrex.html#a6a1aa0c151c5fe560ebb86c99194bfc3", null ],
+    [ "IsParticleTileData", "namespaceamrex.html#a29b0aae252a7a287f7975fa1995b0298", null ],
+    [ "IsParticleTileData", "namespaceamrex.html#a69911bccde2f992eb93a426d24557e11", null ],
     [ "isSame", "namespaceamrex.html#aa47fc757d0d25899f61d37329d2d5769", null ],
     [ "knapsack", "namespaceamrex.html#a7c149cd13c0bd6bcd97464f0406a600b", null ],
     [ "launch", "namespaceamrex.html#a88f0ca28352c28006022a3fd9fde564b", null ],

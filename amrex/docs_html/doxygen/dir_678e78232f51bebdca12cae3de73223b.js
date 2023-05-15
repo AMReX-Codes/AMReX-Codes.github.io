@@ -3,10 +3,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_ArrayOfStructs.H", "AMReX__ArrayOfStructs_8H.html", [
       [ "ArrayOfStructs", "classamrex_1_1ArrayOfStructs.html", "classamrex_1_1ArrayOfStructs" ]
     ] ],
-    [ "AMReX_BinIterator.H", "AMReX__BinIterator_8H.html", [
-      [ "BinIterator", "structamrex_1_1BinIterator.html", "structamrex_1_1BinIterator" ],
-      [ "iterator", "structamrex_1_1BinIterator_1_1iterator.html", "structamrex_1_1BinIterator_1_1iterator" ]
-    ] ],
+    [ "AMReX_BinIterator.H", "AMReX__BinIterator_8H.html", "AMReX__BinIterator_8H" ],
     [ "AMReX_DenseBins.H", "AMReX__DenseBins_8H.html", "AMReX__DenseBins_8H" ],
     [ "AMReX_MakeParticle.H", "AMReX__MakeParticle_8H.html", [
       [ "is_soa_particle", "structis__soa__particle.html", null ],

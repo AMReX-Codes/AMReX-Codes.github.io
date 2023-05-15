@@ -298,6 +298,7 @@ var hierarchy =
     [ "amrex::DenseBinIteratorFactory< T >", "structamrex_1_1DenseBinIteratorFactory.html", null ],
     [ "amrex::DenseBins< T >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DenseBins< ParticleType >", "classamrex_1_1DenseBins.html", null ],
+    [ "amrex::DenseBins< typename amrex::ParticleTileData >", "classamrex_1_1DenseBins.html", null ],
     [ "amrex::DeriveList", "classamrex_1_1DeriveList.html", null ],
     [ "amrex::DeriveRec", "classamrex_1_1DeriveRec.html", null ],
     [ "amrex::DescriptorList", "classamrex_1_1DescriptorList.html", null ],

@@ -1,7 +1,7 @@
 var structamrex_1_1BinMapper =
 [
     [ "BinMapper", "structamrex_1_1BinMapper.html#a2fc716ebcdf02dabc5c00fbc19419155", null ],
-    [ "operator()", "structamrex_1_1BinMapper.html#a3690f68c531d8d64d62a620b5a564a99", null ],
+    [ "operator()", "structamrex_1_1BinMapper.html#a6112736395d0049cf00285ae69353608", null ],
     [ "m_bin_type_array", "structamrex_1_1BinMapper.html#a32a3a6e1b23801796736f10c13fe0600", null ],
     [ "m_dxi_p", "structamrex_1_1BinMapper.html#af1f0a8c52e0ba9142abfcdba68c4562e", null ],
     [ "m_hi_p", "structamrex_1_1BinMapper.html#a09e1a7b318d980843013d446fe2c5d4f", null ],
