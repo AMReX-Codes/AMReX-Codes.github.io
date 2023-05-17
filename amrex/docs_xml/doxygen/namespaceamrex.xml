@@ -299,11 +299,11 @@
     <innerclass refid="structamrex_1_1ParserExeNumber" prot="public">amrex::ParserExeNumber</innerclass>
     <innerclass refid="structamrex_1_1ParserExeSymbol" prot="public">amrex::ParserExeSymbol</innerclass>
     <innerclass refid="structamrex_1_1ParserExeADD" prot="public">amrex::ParserExeADD</innerclass>
-    <innerclass refid="structamrex_1_1ParserExeSUB" prot="public">amrex::ParserExeSUB</innerclass>
+    <innerclass refid="structamrex_1_1ParserExeSUB__F" prot="public">amrex::ParserExeSUB_F</innerclass>
+    <innerclass refid="structamrex_1_1ParserExeSUB__B" prot="public">amrex::ParserExeSUB_B</innerclass>
     <innerclass refid="structamrex_1_1ParserExeMUL" prot="public">amrex::ParserExeMUL</innerclass>
     <innerclass refid="structamrex_1_1ParserExeDIV__F" prot="public">amrex::ParserExeDIV_F</innerclass>
     <innerclass refid="structamrex_1_1ParserExeDIV__B" prot="public">amrex::ParserExeDIV_B</innerclass>
-    <innerclass refid="structamrex_1_1ParserExeNEG" prot="public">amrex::ParserExeNEG</innerclass>
     <innerclass refid="structamrex_1_1ParserExeF1" prot="public">amrex::ParserExeF1</innerclass>
     <innerclass refid="structamrex_1_1ParserExeF2__F" prot="public">amrex::ParserExeF2_F</innerclass>
     <innerclass refid="structamrex_1_1ParserExeF2__B" prot="public">amrex::ParserExeF2_B</innerclass>
@@ -315,7 +315,6 @@
     <innerclass refid="structamrex_1_1ParserExeSUB__PP" prot="public">amrex::ParserExeSUB_PP</innerclass>
     <innerclass refid="structamrex_1_1ParserExeMUL__PP" prot="public">amrex::ParserExeMUL_PP</innerclass>
     <innerclass refid="structamrex_1_1ParserExeDIV__PP" prot="public">amrex::ParserExeDIV_PP</innerclass>
-    <innerclass refid="structamrex_1_1ParserExeNEG__P" prot="public">amrex::ParserExeNEG_P</innerclass>
     <innerclass refid="structamrex_1_1ParserExeADD__VN" prot="public">amrex::ParserExeADD_VN</innerclass>
     <innerclass refid="structamrex_1_1ParserExeSUB__VN" prot="public">amrex::ParserExeSUB_VN</innerclass>
     <innerclass refid="structamrex_1_1ParserExeMUL__VN" prot="public">amrex::ParserExeMUL_VN</innerclass>
@@ -324,10 +323,11 @@
     <innerclass refid="structamrex_1_1ParserExeSUB__PN" prot="public">amrex::ParserExeSUB_PN</innerclass>
     <innerclass refid="structamrex_1_1ParserExeMUL__PN" prot="public">amrex::ParserExeMUL_PN</innerclass>
     <innerclass refid="structamrex_1_1ParserExeDIV__PN" prot="public">amrex::ParserExeDIV_PN</innerclass>
+    <innerclass refid="structamrex_1_1ParserExeSquare" prot="public">amrex::ParserExeSquare</innerclass>
+    <innerclass refid="structamrex_1_1ParserExePOWI" prot="public">amrex::ParserExePOWI</innerclass>
     <innerclass refid="structamrex_1_1ParserExeIF" prot="public">amrex::ParserExeIF</innerclass>
     <innerclass refid="structamrex_1_1ParserExeJUMP" prot="public">amrex::ParserExeJUMP</innerclass>
     <innerclass refid="structamrex_1_1ParserStack" prot="public">amrex::ParserStack</innerclass>
-    <innerclass refid="unionamrex_1_1parser__nvp" prot="public">amrex::parser_nvp</innerclass>
     <innerclass refid="structamrex_1_1parser__node" prot="public">amrex::parser_node</innerclass>
     <innerclass refid="structamrex_1_1parser__number" prot="public">amrex::parser_number</innerclass>
     <innerclass refid="structamrex_1_1parser__symbol" prot="public">amrex::parser_symbol</innerclass>
@@ -1367,8 +1367,15 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a189e5dd912a73230a7d07ad077f8bfe3" prot="public">
-          <name>PARSER_EXE_SUB</name>
+        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a58d8a1e2338a0136e6cdfd56c6cc3dff" prot="public">
+          <name>PARSER_EXE_SUB_F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49ad128e6d075eb69fd93126e2e25a97256" prot="public">
+          <name>PARSER_EXE_SUB_B</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -1390,13 +1397,6 @@
         </enumvalue>
         <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a467c9f3fa7bc494399821d9327b05845" prot="public">
           <name>PARSER_EXE_DIV_B</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49ae3e91968b49e9296b383960123c9a78c" prot="public">
-          <name>PARSER_EXE_NEG</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -1479,13 +1479,6 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a8947ddf5cdc0b75778b2962bb3767fc5" prot="public">
-          <name>PARSER_EXE_NEG_P</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a1044c34c6cf2464a5a7d3915828db764" prot="public">
           <name>PARSER_EXE_ADD_VN</name>
           <briefdescription>
@@ -1542,6 +1535,20 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a5e517dacd4952e08078b4c01130a83ee" prot="public">
+          <name>PARSER_EXE_SQUARE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49a0d4daa650d2d51c5b0e9a48b41461e7a" prot="public">
+          <name>PARSER_EXE_POWI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="namespaceamrex_1a0f600e600176e6bc4444aaea08ca1c49ade505eeebd4b9a047f99dd00200376f1" prot="public">
           <name>PARSER_EXE_IF</name>
           <briefdescription>
@@ -1562,14 +1569,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="21" bodyend="53"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="21" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="21" bodyend="54"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589" prot="public" static="no" strong="no">
         <type></type>
         <name>parser_f1_t</name>
         <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a3fb34ef0b3bf8980039c8b7938964511" prot="public">
           <name>PARSER_SQRT</name>
-          <initializer>= 1</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -1659,6 +1665,27 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a0168c8658e4afe3e386ce0bfe8a3fc83" prot="public">
+          <name>PARSER_ASINH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589af07f7cbfe5ca616030f0f25c9a7bf167" prot="public">
+          <name>PARSER_ACOSH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a54156fc39786dde748a8721d4a9ed0ed" prot="public">
+          <name>PARSER_ATANH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589ae01afc57c89c498c5363a6be1fd64eab" prot="public">
           <name>PARSER_ABS</name>
           <briefdescription>
@@ -1675,48 +1702,6 @@
         </enumvalue>
         <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589abacc88377d1f207fe9d1aab1cdfbbaa5" prot="public">
           <name>PARSER_CEIL</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a694d2e1b1cd6961ea07b123547a0f88d" prot="public">
-          <name>PARSER_POW_M3</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589af3809c32926c5365d39bd5264042e3ae" prot="public">
-          <name>PARSER_POW_M2</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a6959884c4754748c098c6cf1e1d7f15e" prot="public">
-          <name>PARSER_POW_M1</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589aba931b8a257cc61167d87f8f0c2a4894" prot="public">
-          <name>PARSER_POW_P1</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a44be2664933f05ef4a513d624e6c2094" prot="public">
-          <name>PARSER_POW_P2</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1a3a7f6659e1b5842a0322fcdd8ad89589a0b1f0dc2037efb1f7674c9fdca44b561" prot="public">
-          <name>PARSER_POW_P3</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -1742,14 +1727,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="23" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="23" bodyend="48"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="24" bodyend="46"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1a0075507273391e5967b9d869daed98bc" prot="public" static="no" strong="no">
         <type></type>
         <name>parser_f2_t</name>
         <enumvalue id="namespaceamrex_1a0075507273391e5967b9d869daed98bca7b172eaccc69212b5526d8a1675b2399" prot="public">
           <name>PARSER_POW</name>
-          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a0075507273391e5967b9d869daed98bca4426cecc68dbdc158b088f0cebfb79a7" prot="public">
+          <name>PARSER_ATAN2</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -1852,7 +1843,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="50" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="50" bodyend="65"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="73" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="73" bodyend="89"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1a2a6ee79bf3b5c5b67de8ef46a663051b" prot="public" static="no" strong="no">
         <type></type>
@@ -1870,14 +1861,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="67" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="67" bodyend="69"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="110" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="110" bodyend="112"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883" prot="public" static="no" strong="no">
         <type></type>
         <name>parser_node_t</name>
         <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ae9fa1ed2645825d754693a50b5dbee64" prot="public">
           <name>PARSER_NUMBER</name>
-          <initializer>= 1</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -1918,13 +1908,6 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a6429047d5b0bf3a06a6b6375b39f4159" prot="public">
-          <name>PARSER_NEG</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a67341a513537b8aa38737d076a142649" prot="public">
           <name>PARSER_F1</name>
           <briefdescription>
@@ -1960,76 +1943,13 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a0b5cc0f9de072091ceee304bbc358040" prot="public">
-          <name>PARSER_ADD_VP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ac49c16fd05dd693a9cc948e30cf48cb1" prot="public">
-          <name>PARSER_ADD_PP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883aa2b83120a5db07be0ad4fe6ad9c16b05" prot="public">
-          <name>PARSER_SUB_VP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a8d1d89048963fcb37253727fec77fcd6" prot="public">
-          <name>PARSER_SUB_PP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a933cecbebd1feeb97ae914db16cbf57f" prot="public">
-          <name>PARSER_MUL_VP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ab2d70451fe0f516e9dd8376c8d4b81e3" prot="public">
-          <name>PARSER_MUL_PP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a79b5ef7712fa2cb254d44b42ed767d2d" prot="public">
-          <name>PARSER_DIV_VP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883a0dddd04ba4439c819abb459d82d8c6b6" prot="public">
-          <name>PARSER_DIV_PP</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1ad9039fea6c6d400df4ca8e5fef35b883ae9cc9d5dd84411ef2efd22a0c1f775ea" prot="public">
-          <name>PARSER_NEG_P</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="71" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="71" bodyend="93"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="119" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="119" bodyend="131"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebc" prot="public" static="no" strong="yes">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -4726,6 +4646,118 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="22" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1aeaf83c12cb19017e55b62be15d3f4369" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view amrex::parser_f1_s[]</definition>
+        <argsstring>[]</argsstring>
+        <name>parser_f1_s</name>
+        <initializer>=
+{
+    &quot;sqrt&quot;,
+    &quot;<ref refid="namespaceamrex_1ad7188a3015dcffc0938b6cb74def1c7f" kindref="member">exp</ref>&quot;,
+    &quot;<ref refid="namespaceamrex_1a377e86dc25bb181be031ad2f80cb2984" kindref="member">log</ref>&quot;,
+    &quot;log10&quot;,
+    &quot;sin&quot;,
+    &quot;cos&quot;,
+    &quot;tan&quot;,
+    &quot;asin&quot;,
+    &quot;acos&quot;,
+    &quot;atan&quot;,
+    &quot;sinh&quot;,
+    &quot;cosh&quot;,
+    &quot;tanh&quot;,
+    &quot;asinh&quot;,
+    &quot;acosh&quot;,
+    &quot;atanh&quot;,
+    &quot;<ref refid="namespaceamrex_1a4f298e1c3407710de306d440bc79e84e" kindref="member">abs</ref>&quot;,
+    &quot;floor&quot;,
+    &quot;ceil&quot;,
+    &quot;comp_ellint_1&quot;,
+    &quot;comp_ellint_2&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="48" column="35" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1ae56e28f5753ecf0f394683c95ef2303f" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view amrex::parser_f2_s[]</definition>
+        <argsstring>[]</argsstring>
+        <name>parser_f2_s</name>
+        <initializer>=
+{
+    &quot;pow&quot;,
+    &quot;atan2&quot;,
+    &quot;gt&quot;,
+    &quot;lt&quot;,
+    &quot;geq&quot;,
+    &quot;leq&quot;,
+    &quot;eq&quot;,
+    &quot;neq&quot;,
+    &quot;and&quot;,
+    &quot;or&quot;,
+    &quot;heaviside&quot;,
+    &quot;jn&quot;,
+    &quot;<ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">min</ref>&quot;,
+    &quot;<ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">max</ref>&quot;,
+    &quot;fmod&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="91" column="35" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a6ce73c7041e01915b29e6be148bad28d" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view amrex::parser_f3_s[]</definition>
+        <argsstring>[]</argsstring>
+        <name>parser_f3_s</name>
+        <initializer>=
+{
+    &quot;if&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="114" column="35" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a8c0892ef7e1f02a2857500ab15a932ab" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view amrex::parser_node_s[]</definition>
+        <argsstring>[]</argsstring>
+        <name>parser_node_s</name>
+        <initializer>=
+{
+    &quot;number&quot;,
+    &quot;symbol&quot;,
+    &quot;add&quot;,
+    &quot;sub&quot;,
+    &quot;mul&quot;,
+    &quot;div&quot;,
+    &quot;f1&quot;,
+    &quot;f2&quot;,
+    &quot;f3&quot;,
+    &quot;assign&quot;,
+    &quot;list&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="133" column="35" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1ab94176a43e7b3dfd0b44158c671268b9" prot="public" static="no" mutable="no">
         <type><ref refid="classamrex_1_1EBCellConservativeLinear" kindref="compound">EBCellConservativeLinear</ref></type>
@@ -35947,31 +35979,10 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser_Y.H" line="247" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser_Y.H" bodystart="247" bodyend="251"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a574c4a0db361d43e446dfa175af1da77" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>static int amrex::parser_local_symbol_index</definition>
-        <argsstring>(struct parser_symbol *sym, Vector&lt; char * &gt; &amp;local_variables)</argsstring>
-        <name>parser_local_symbol_index</name>
-        <param>
-          <type>struct <ref refid="structamrex_1_1parser__symbol" kindref="compound">parser_symbol</ref> *</type>
-          <declname>sym</declname>
-        </param>
-        <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char * &gt; &amp;</type>
-          <declname>local_variables</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" line="5" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" bodystart="5" bodyend="14"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a8f9f11532fcac876d2ebe7ec52423587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ab427f00335de584d8602aec963d5e730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::parser_compile_exe_size</definition>
-        <argsstring>(struct parser_node *node, char *&amp;p, std::size_t &amp;exe_size, int &amp;max_stack_size, int &amp;stack_size, Vector&lt; char * &gt; &amp;local_variables)</argsstring>
+        <argsstring>(struct parser_node *node, char *&amp;p, std::size_t &amp;exe_size, int &amp;max_stack_size, int &amp;stack_size, Vector&lt; char const * &gt; &amp;local_variables)</argsstring>
         <name>parser_compile_exe_size</name>
         <param>
           <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -35994,7 +36005,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>stack_size</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char * &gt; &amp;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char const * &gt; &amp;</type>
           <declname>local_variables</declname>
         </param>
         <briefdescription>
@@ -36003,7 +36014,32 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" line="17" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" bodystart="17" bodyend="743" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" declline="478" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" line="7" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" bodystart="7" bodyend="563" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" declline="510" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ad8610e10a0a8b9cafad8a53f47c05da6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::parser_exe_print</definition>
+        <argsstring>(char const *p, Vector&lt; std::string &gt; const &amp;vars, Vector&lt; char const * &gt; const &amp;locals)</argsstring>
+        <name>parser_exe_print</name>
+        <param>
+          <type>char const *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt; const &amp;</type>
+          <declname>vars</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char const * &gt; const &amp;</type>
+          <declname>locals</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" line="641" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.cpp" bodystart="641" bodyend="1065" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" declline="539" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad8b4ee29b3ed76cab2179ad13c01c19b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
@@ -36024,7 +36060,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="227" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="227" bodyend="476"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="231" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="231" bodyend="508"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad0968c4da0c27c9762dbd61dcc89e270" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::size_t</type>
@@ -36049,11 +36085,11 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="482" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="482" bodyend="492"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="514" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="514" bodyend="525"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1acf885867dc254ba5616d1b910c2f0f96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::parser_compile</definition>
+      <memberdef kind="function" id="namespaceamrex_1afc63f0f94a713d245e1660797a99af63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char const  * &gt;</type>
+        <definition>Vector&lt;char const*&gt; amrex::parser_compile</definition>
         <argsstring>(struct amrex_parser *parser, char *p)</argsstring>
         <name>parser_compile</name>
         <param>
@@ -36070,7 +36106,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="495" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="495" bodyend="503"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" line="528" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Exe.H" bodystart="528" bodyend="537"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad611b2a5542fba47b36125c772d02700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36087,7 +36123,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="26" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="26" bodyend="29" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="158" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="26" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="26" bodyend="29" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="208" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae51f56e5de666bd486e02809fb95826a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__symbol" kindref="compound">parser_symbol</ref> *</type>
@@ -36104,7 +36140,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="32" bodyend="39" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="159" declcolumn="21"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="32" bodyend="41" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="209" declcolumn="21"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a54e375fb078fbde3c46609319674551f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36129,7 +36165,24 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="42" bodyend="49" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="160" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="44" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="44" bodyend="57" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="210" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a59fa51e57d91b3fde27a4ee69d81b584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+        <definition>struct parser_node * amrex::parser_newneg</definition>
+        <argsstring>(struct parser_node *n)</argsstring>
+        <name>parser_newneg</name>
+        <param>
+          <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="60" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="60" bodyend="67" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="212" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af52966118e944ed96c7d6ed24c08d837" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36146,7 +36199,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="52" bodyend="58" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="162" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="70" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="70" bodyend="78" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="213" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad839d03442a4323dfb7b2b9578b6b9fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36163,7 +36216,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="61" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="61" bodyend="64" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="163" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="81" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="81" bodyend="84" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="214" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af7520cc9fa8b9a8de8e845d02b75db77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36184,7 +36237,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="67" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="67" bodyend="74" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="164" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="87" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="87" bodyend="94" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="215" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1a35a66f1f45aa77d0be9afe8def5501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36209,7 +36262,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="77" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="77" bodyend="85" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="165" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="97" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="97" bodyend="105" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="216" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6762c0fee754bd1ce564f76ef81253b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36238,7 +36291,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="88" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="88" bodyend="98" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="167" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="108" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="108" bodyend="118" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="218" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a63cdcee7f7165d07558abfd490a3cf8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36259,7 +36312,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="101" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="101" bodyend="108" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="169" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="121" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="121" bodyend="128" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="220" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af77166ee4bf8e84e0628c8d6ef96f055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36280,7 +36333,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="111" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="111" bodyend="122" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="170" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="131" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="131" bodyend="142" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="221" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae66dc6e64e2bbaeb5e33f845f1021f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1amrex__parser" kindref="compound">amrex_parser</ref> *</type>
@@ -36293,7 +36346,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="127" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="127" bodyend="144" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="185" declcolumn="20"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="147" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="147" bodyend="165" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="236" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2f20d75c59ef143705ccaeaef9897c17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36310,7 +36363,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="147" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="147" bodyend="151" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="186" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="168" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="168" bodyend="172" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="237" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa04d33642e47699eedfa904aa011b199" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::size_t</type>
@@ -36327,7 +36380,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="155" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="155" bodyend="161"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="176" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="176" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9ec644ecf6ca85c38caddcdca5543c99" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -36348,7 +36401,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="165" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="165" bodyend="170"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="186" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="186" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af09002432ee048d8be86ce24cac1b230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1amrex__parser" kindref="compound">amrex_parser</ref> *</type>
@@ -36365,7 +36418,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="173" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="173" bodyend="183" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="188" declcolumn="20"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="194" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="194" bodyend="204" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="239" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a70b4e8ec482471a9d5c1a2b17c2420b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::size_t</type>
@@ -36382,7 +36435,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="186" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="186" bodyend="251" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="199" declcolumn="13"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="207" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="207" bodyend="253" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="250" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad3b98b9aec198e9456f562949577675c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36407,7 +36460,28 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="254" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="254" bodyend="355" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="189" declcolumn="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="256" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="256" bodyend="334" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="240" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aaa47ebc7570db6460238b4a73824c682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::parser_node_equal</definition>
+        <argsstring>(struct parser_node *a, struct parser_node *b)</argsstring>
+        <name>parser_node_equal</name>
+        <param>
+          <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="632" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="632" bodyend="671" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="262" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5f9cf029d313196bd5c43c1d272ea9fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36424,12 +36498,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="378" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="378" bodyend="1182" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="198" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="674" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="674" bodyend="1335" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="249" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a06594171e7a4be2ffa644282ffb4318c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae464cacf2815f9d735eeb2038c4540dd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void amrex::parser_ast_print_f1</definition>
-        <argsstring>(struct parser_f1 *f1, std::string const &amp;space, AllPrint &amp;printer)</argsstring>
+        <argsstring>(struct parser_f1 *f1, std::string const &amp;space, std::ostream &amp;printer)</argsstring>
         <name>parser_ast_print_f1</name>
         <param>
           <type>struct <ref refid="structamrex_1_1parser__f1" kindref="compound">parser_f1</ref> *</type>
@@ -36440,7 +36514,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>space</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AllPrint" kindref="compound">AllPrint</ref> &amp;</type>
+          <type>std::ostream &amp;</type>
           <declname>printer</declname>
         </param>
         <briefdescription>
@@ -36449,12 +36523,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1186" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1186" bodyend="1218"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1339" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1339" bodyend="1343"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a5e499cb244d7c4453e040dbed04999f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a948dd1dfa6da8d14fab0077d80396882" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void amrex::parser_ast_print_f2</definition>
-        <argsstring>(struct parser_f2 *f2, std::string const &amp;space, AllPrint &amp;printer)</argsstring>
+        <argsstring>(struct parser_f2 *f2, std::string const &amp;space, std::ostream &amp;printer)</argsstring>
         <name>parser_ast_print_f2</name>
         <param>
           <type>struct <ref refid="structamrex_1_1parser__f2" kindref="compound">parser_f2</ref> *</type>
@@ -36465,7 +36539,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>space</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AllPrint" kindref="compound">AllPrint</ref> &amp;</type>
+          <type>std::ostream &amp;</type>
           <declname>printer</declname>
         </param>
         <briefdescription>
@@ -36474,12 +36548,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1222" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1222" bodyend="1273"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1347" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1347" bodyend="1352"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ada212d97189e97f78572fc6c64c888d2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a002ad6e06c5affc234b5bc1bfb2a4c09" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void amrex::parser_ast_print_f3</definition>
-        <argsstring>(struct parser_f3 *f3, std::string const &amp;space, AllPrint &amp;printer)</argsstring>
+        <argsstring>(struct parser_f3 *f3, std::string const &amp;space, std::ostream &amp;printer)</argsstring>
         <name>parser_ast_print_f3</name>
         <param>
           <type>struct <ref refid="structamrex_1_1parser__f3" kindref="compound">parser_f3</ref> *</type>
@@ -36490,7 +36564,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>space</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AllPrint" kindref="compound">AllPrint</ref> &amp;</type>
+          <type>std::ostream &amp;</type>
           <declname>printer</declname>
         </param>
         <briefdescription>
@@ -36499,12 +36573,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1277" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1277" bodyend="1290"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1356" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1356" bodyend="1363"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a66ddc6ab338df01029fd9257eaac0d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a87c0a8afac2fbe12cb2ac48e663ed0d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::parser_ast_print</definition>
-        <argsstring>(struct parser_node *node, std::string const &amp;space, AllPrint &amp;printer)</argsstring>
+        <argsstring>(struct parser_node *node, std::string const &amp;space, std::ostream &amp;printer)</argsstring>
         <name>parser_ast_print</name>
         <param>
           <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
@@ -36515,7 +36589,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>space</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1AllPrint" kindref="compound">AllPrint</ref> &amp;</type>
+          <type>std::ostream &amp;</type>
           <declname>printer</declname>
         </param>
         <briefdescription>
@@ -36524,7 +36598,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1293" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1293" bodyend="1384" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="200" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1366" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1366" bodyend="1405" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="251" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6815d583f941a297bbef6d77214829c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -36541,7 +36615,24 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1387" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1387" bodyend="1440" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="205" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1408" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1408" bodyend="1449" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="256" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a3519067af5edf22a956910ef7ee7ce47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::parser_ast_sort</definition>
+        <argsstring>(struct parser_node *node)</argsstring>
+        <name>parser_ast_sort</name>
+        <param>
+          <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1451" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1451" bodyend="1492" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="257" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aee105e6b691d9fa51fef6e50c7ebb155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36566,7 +36657,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1443" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1443" bodyend="1504" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="201" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1495" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1495" bodyend="1532" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="252" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a406674d4bafc2a2a465b8127fa8f9f5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36591,7 +36682,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1506" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1506" bodyend="1558" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="202" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1534" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1534" bodyend="1572" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="253" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae1d40846503356e1e1201c614163ea54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36616,7 +36707,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1560" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1560" bodyend="1611" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="203" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1574" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1574" bodyend="1611" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="254" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2287c28084a10ac6a9cfb4b2a50892fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36641,7 +36732,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1614" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1614" bodyend="1617" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="191" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1614" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1614" bodyend="1617" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="242" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4051597b502fed03ea3b07d5f6cbb042" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36666,7 +36757,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1620" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1620" bodyend="1624" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="192" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1620" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1620" bodyend="1625" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="243" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a53d306308d380a6d874ad24396fa7673" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -36683,7 +36774,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1627" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1627" bodyend="1632" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="193" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1628" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1628" bodyend="1634" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="244" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa4683ef8db99a703c386785fc95e1d29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::set&lt; std::string &gt;</type>
@@ -36700,7 +36791,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1635" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1635" bodyend="1644" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="194" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1637" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1637" bodyend="1646" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="245" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a511dc2f5222b878782000339b1858f3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -36717,7 +36808,45 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1647" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1647" bodyend="1650" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="195" declcolumn="5"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1649" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1649" bodyend="1652" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="246" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a953b2c149c67e1e516421d279f2fc22a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double amrex::parser_get_number</definition>
+        <argsstring>(struct parser_node *node)</argsstring>
+        <name>parser_get_number</name>
+        <param>
+          <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1654" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1654" bodyend="1658" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="260" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a031546532f5b81bd867039b219562b95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::parser_set_number</definition>
+        <argsstring>(struct parser_node *node, double v)</argsstring>
+        <name>parser_set_number</name>
+        <param>
+          <type>struct <ref refid="structamrex_1_1parser__node" kindref="compound">parser_node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" line="1660" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.cpp" bodystart="1660" bodyend="1664" declfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" declline="261" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8f3d6e0107012526c3465c75a12f5459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36739,7 +36868,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="211" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="211" bodyend="211"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="267" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="267" bodyend="267"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aba3dcfe04cce2c0ea7fdbe3b2ed9e87a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36761,7 +36890,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="215" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="215" bodyend="215"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="271" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="271" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aaa7d9660ad9a94bcb47fd4de04acd3a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36783,7 +36912,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="219" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="219" bodyend="219"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="275" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="275" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a658f0f07d0553e3d21650fb5a198048e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36805,7 +36934,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="223" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="223" bodyend="223"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="279" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="279" bodyend="279"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad9c5d0a6539470f7560f822714b7c75b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36827,7 +36956,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="227" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="227" bodyend="227"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="283" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="283" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a62570906aab0550c65f8a971dff0e58a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36849,7 +36978,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="231" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="231" bodyend="231"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="287" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="287" bodyend="287"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a914656d851c249d6787f813ea09a6626" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36871,7 +37000,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="235" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="235" bodyend="235"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="291" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="291" bodyend="291"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aefee20e5a68eb0e134e5b8a25a45b4b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36893,7 +37022,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="239" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="239" bodyend="239"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="295" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="295" bodyend="295"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2bd581231b46b3a5a62d99e00e743622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36915,7 +37044,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="243" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="243" bodyend="243"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="299" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="299" bodyend="299"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a249f102bab7043232da73dcc4d33612e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36937,7 +37066,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="247" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="247" bodyend="247"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="303" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="303" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a22b01fd56b83bc1cad5dc2fb17b023b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36959,7 +37088,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="251" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="251" bodyend="251"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="307" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="307" bodyend="307"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa087ffc694106cd11e7196bdb42b72a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36981,7 +37110,73 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="255" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="255" bodyend="255"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="311" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="311" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ad3f7885c55e5c6c0f671cace29421690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" kindref="member">AMREX_NO_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_NO_INLINE T amrex::parser_math_asinh</definition>
+        <argsstring>(T a)</argsstring>
+        <name>parser_math_asinh</name>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="315" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="315" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae08bf7de3948219b7c52cfb9e0a61a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" kindref="member">AMREX_NO_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_NO_INLINE T amrex::parser_math_acosh</definition>
+        <argsstring>(T a)</argsstring>
+        <name>parser_math_acosh</name>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="319" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="319" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ac9199cb52898d7f521ae0d291917866a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" kindref="member">AMREX_NO_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_NO_INLINE T amrex::parser_math_atanh</definition>
+        <argsstring>(T a)</argsstring>
+        <name>parser_math_atanh</name>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="323" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="323" bodyend="323"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abec1b60762ebf83a7597d70c0e32aaa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -37003,7 +37198,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="259" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="259" bodyend="268"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="327" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="327" bodyend="336"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7f39381b8634177fe59bf13bc7769de8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -37025,7 +37220,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="272" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="272" bodyend="281"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="340" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="340" bodyend="349"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa73033601c86e80eaaefc3201cb140af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -37051,7 +37246,33 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="285" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="285" bodyend="285"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="353" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae58842a73522988e8e20316c56e3c0b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" kindref="member">AMREX_NO_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_NO_INLINE T amrex::parser_math_atan2</definition>
+        <argsstring>(T a, T b)</argsstring>
+        <name>parser_math_atan2</name>
+        <param>
+          <type>T</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="357" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="357" bodyend="357"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a43535087747b0d92f5e11040d600be5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -37077,7 +37298,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="289" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="289" bodyend="300"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="361" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="361" bodyend="372"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a28d9f515eaa0f8b6c464afd9e8e26839" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
@@ -37098,7 +37319,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="303" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="303" bodyend="334"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="375" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="375" bodyend="403"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9ad43c67a92cbfee740c7219dede60de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
@@ -37123,7 +37344,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="337" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="337" bodyend="372"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="406" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="406" bodyend="443"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac8fc246b5e107c0247b09a8c97395063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
@@ -37152,7 +37373,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="375" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="375" bodyend="379"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" line="446" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser_Y.H" bodystart="446" bodyend="450"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abb1adff31f71c9985f21b703a4374f20" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>

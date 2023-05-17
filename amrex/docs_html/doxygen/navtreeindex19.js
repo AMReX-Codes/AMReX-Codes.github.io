@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__Sundials__Core_8cpp.html#a9073bde66b70bda0c4d46655775c684d":[3,0,0,5,8,3,2],
+"AMReX__Sundials__Core_8cpp.html#ab2ee62c0a1b082b5f9438f56b0146c9d":[3,0,0,5,8,3,1],
+"AMReX__Sundials__Core_8cpp.html#abf6b47f72923c8ef9f360c6a93289a18":[3,0,0,5,8,3,0],
 "AMReX__TableData_8H.html":[3,0,0,2,243],
 "AMReX__TableData_8H.html#a250b5d3b18b57c96185794d45778bceb":[3,0,0,2,243,6],
 "AMReX__TableData_8H.html#a4029184a4112d69c3caea45d6b375f65":[3,0,0,2,243,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__YAFluxRegister__1D__K_8H.html#ad3b5be86618428780e4c8d65b50e92ef":[3,0,0,3,20,0],
 "AMReX__YAFluxRegister__1D__K_8H_source.html":[3,0,0,3,20],
 "AMReX__YAFluxRegister__2D__K_8H.html":[3,0,0,3,21],
-"AMReX__YAFluxRegister__2D__K_8H.html#a022123f91218b914a5c94f972669cb57":[3,0,0,3,21,0],
-"AMReX__YAFluxRegister__2D__K_8H.html#a8e5424db64aba9748df778a60884c7b9":[3,0,0,3,21,1],
-"AMReX__YAFluxRegister__2D__K_8H_source.html":[3,0,0,3,21],
-"AMReX__YAFluxRegister__3D__K_8H.html":[3,0,0,3,22]
+"AMReX__YAFluxRegister__2D__K_8H.html#a022123f91218b914a5c94f972669cb57":[3,0,0,3,21,0]
 };

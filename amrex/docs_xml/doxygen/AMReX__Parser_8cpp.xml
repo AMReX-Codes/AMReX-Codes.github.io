@@ -185,7 +185,7 @@
         <childnode refid="37" relation="include">
         </childnode>
       </node>
-      <node id="93">
+      <node id="94">
         <label>stdlib.h</label>
       </node>
       <node id="44">
@@ -235,7 +235,7 @@
       <node id="36">
         <label>cmath</label>
       </node>
-      <node id="92">
+      <node id="93">
         <label>errno.h</label>
       </node>
       <node id="11">
@@ -263,7 +263,7 @@
       <node id="69">
         <label>numeric</label>
       </node>
-      <node id="95">
+      <node id="96">
         <label>amrex_parser.tab.h</label>
         <link refid="amrex__parser_8tab_8h"/>
       </node>
@@ -469,6 +469,9 @@
         <childnode refid="39" relation="include">
         </childnode>
       </node>
+      <node id="89">
+        <label>string_view</label>
+      </node>
       <node id="15">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
@@ -492,7 +495,7 @@
       <node id="76">
         <label>sys/types.h</label>
       </node>
-      <node id="91">
+      <node id="92">
         <label>string.h</label>
       </node>
       <node id="70">
@@ -642,7 +645,7 @@
         <childnode refid="49" relation="include">
         </childnode>
       </node>
-      <node id="94">
+      <node id="95">
         <label>unistd.h</label>
       </node>
       <node id="63">
@@ -727,6 +730,8 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
         <childnode refid="37" relation="include">
         </childnode>
       </node>
@@ -782,9 +787,9 @@
         <link refid="AMReX__Parser_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="89" relation="include">
+        <childnode refid="90" relation="include">
         </childnode>
-        <childnode refid="95" relation="include">
+        <childnode refid="96" relation="include">
         </childnode>
         <childnode refid="38" relation="include">
         </childnode>
@@ -830,11 +835,9 @@
       <node id="40">
         <label>climits</label>
       </node>
-      <node id="89">
+      <node id="90">
         <label>amrex_parser.lex.h</label>
         <link refid="amrex__parser_8lex_8h"/>
-        <childnode refid="90" relation="include">
-        </childnode>
         <childnode refid="91" relation="include">
         </childnode>
         <childnode refid="92" relation="include">
@@ -842,6 +845,8 @@
         <childnode refid="93" relation="include">
         </childnode>
         <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
         </childnode>
       </node>
       <node id="78">
@@ -906,7 +911,7 @@
       <node id="73">
         <label>curand.h</label>
       </node>
-      <node id="90">
+      <node id="91">
         <label>stdio.h</label>
       </node>
       <node id="87">
@@ -1038,63 +1043,72 @@
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><ref refid="classamrex_1_1Parser_1ac7f2281fb9a99b8c410d9cbc0b20b67b" kindref="member">Parser::registerVariables</ref><sp/>(Vector&lt;std::string&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vars)</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_nvars<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vars.size());</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_nvars;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2287c28084a10ac6a9cfb4b2a50892fc" kindref="member">parser_regvar</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser,<sp/>vars[i].c_str(),<sp/>i);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a217d48dc80e0448899823a0d47460d8b" kindref="member">Parser::print</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="77"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a53d306308d380a6d874ad24396fa7673" kindref="member">parser_print</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><ref refid="classamrex_1_1Parser_1ae8f69b337a650c2a73a3aa33dad35064" kindref="member">Parser::depth</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="85"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a511dc2f5222b878782000339b1858f3c" kindref="member">parser_depth</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a27dc3946de52071f374c1a11e6182bad" kindref="member">Parser::maxStackSize</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="95"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_max_stack_size;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal">std::string</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a39e13b29c0ab51b5a27264c706a1d7a8" kindref="member">Parser::expr</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="105"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_expression;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string{};</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal">std::set&lt;std::string&gt;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a0dfb30d6386a630f676982f25fb24a06" kindref="member">Parser::symbols</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="115"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aa4683ef8db99a703c386785fc95e1d29" kindref="member">parser_get_symbols</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::set&lt;std::string&gt;{};</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Parser_1a38fbb1b724d2f5ea93477b942c1b589c" kindref="member">m_vars</ref><sp/>=<sp/>vars;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_nvars<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vars.size());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_nvars;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2287c28084a10ac6a9cfb4b2a50892fc" kindref="member">parser_regvar</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser,<sp/>vars[i].c_str(),<sp/>i);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a217d48dc80e0448899823a0d47460d8b" kindref="member">Parser::print</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="78"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a53d306308d380a6d874ad24396fa7673" kindref="member">parser_print</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="classamrex_1_1Parser_1ae8f69b337a650c2a73a3aa33dad35064" kindref="member">Parser::depth</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="86"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a511dc2f5222b878782000339b1858f3c" kindref="member">parser_depth</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a27dc3946de52071f374c1a11e6182bad" kindref="member">Parser::maxStackSize</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="96"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_max_stack_size;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">std::string</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a39e13b29c0ab51b5a27264c706a1d7a8" kindref="member">Parser::expr</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="106"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_expression;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string{};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">std::set&lt;std::string&gt;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="classamrex_1_1Parser_1a0dfb30d6386a630f676982f25fb24a06" kindref="member">Parser::symbols</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="116"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aa4683ef8db99a703c386785fc95e1d29" kindref="member">parser_get_symbols</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_parser);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::set&lt;std::string&gt;{};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><ref refid="classamrex_1_1Parser_1aa3e51f354702ada83a42fa17d6450ff1" kindref="member">Parser::printExe</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="126"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_host_executor)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad8610e10a0a8b9cafad8a53f47c05da6" kindref="member">parser_exe_print</ref>(<ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_host_executor,<sp/><ref refid="classamrex_1_1Parser_1a38fbb1b724d2f5ea93477b942c1b589c" kindref="member">m_vars</ref>,<sp/><ref refid="classamrex_1_1Parser_1a24953b8ef5ef372c2ca196d8592053e1" kindref="member">m_data</ref>-&gt;m_locals);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.cpp"/>
   </compounddef>
