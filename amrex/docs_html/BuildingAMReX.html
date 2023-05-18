@@ -540,8 +540,8 @@ The list of available options is reported in the <a class="reference internal" h
 </tr>
 <tr class="row-odd"><td><p>AMReX_SPACEDIM</p></td>
 <td><p>Dimension of AMReX build</p></td>
-<td><p>3</p></td>
-<td><p>1, 2, 3</p></td>
+<td><p>3 <code class="docutils literal notranslate"><span class="pre">;</span></code>-separated list</p></td>
+<td><p>“1;2;3”</p></td>
 </tr>
 <tr class="row-even"><td><p>USE_XSDK_DEFAULTS</p></td>
 <td><p>Use xSDK defaults settings</p></td>
@@ -818,16 +818,25 @@ the following line in the appropriate CMakeLists.txt file:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>amrex</p></td>
-<td><p>AMReX library</p></td>
+<tr class="row-even"><td><p>amrex_1d</p></td>
+<td><p>AMReX library in 1D</p></td>
 </tr>
-<tr class="row-odd"><td><p>Flags_CXX</p></td>
+<tr class="row-odd"><td><p>amrex_2d</p></td>
+<td><p>AMReX library in 2D</p></td>
+</tr>
+<tr class="row-even"><td><p>amrex_3d</p></td>
+<td><p>AMReX library in 3D</p></td>
+</tr>
+<tr class="row-odd"><td><p>amrex</p></td>
+<td><p>AMReX library (alias, points to last dim)</p></td>
+</tr>
+<tr class="row-even"><td><p>Flags_CXX</p></td>
 <td><p>C++ flags preset (interface)</p></td>
 </tr>
-<tr class="row-even"><td><p>Flags_Fortran</p></td>
+<tr class="row-odd"><td><p>Flags_Fortran</p></td>
 <td><p>Fortran flags preset (interface)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Flags_FPE</p></td>
+<tr class="row-even"><td><p>Flags_FPE</p></td>
 <td><p>Floating Point Exception flags (interface)</p></td>
 </tr>
 </tbody>
@@ -935,7 +944,7 @@ A list of AMReX component names and related configure options are shown in the t
 </table>
 <p>As an example, consider the following CMake code:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">AMReX</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">3D</span><span class="w"> </span><span class="s">EB</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span><span class="w"> </span><span class="s">Foo</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">AMReX::amrex</span><span class="w"> </span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">Foo</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">AMReX::amrex_3d</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The code in the snippet above checks whether an AMReX installation with 3D and Embedded Boundary support

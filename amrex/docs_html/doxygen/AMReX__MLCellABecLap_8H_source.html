@@ -746,109 +746,119 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;std::unique_ptr&lt;Hypre&gt;</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;<a class="code" href="namespaceamrex.html#af5a050719637ed453c73af4d4ca48c8d">MLCellABecLapT&lt;MF&gt;::makeHypre</a> (<a class="code" href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f">Hypre::Interface</a> hypre_interface)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoxArray.html">BoxArray</a>&amp; ba = this-&gt;m_grids[0].back();</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&amp; dm = this-&gt;m_dmap[0].back();</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; geom = this-&gt;m_geom[0].back();</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; factory = *(this-&gt;m_factory[0].back());</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm = this-&gt;BottomCommunicator();</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mglev = this-&gt;NMGLevels(0)-1;</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keyword">auto</span> om = getOversetMask(0, mglev);</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordflow">if</span> constexpr (!std::is_same&lt;MF,MultiFab&gt;()) {</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;MLCellABecLap Hypre interface only supports MultiFab&quot;</span>);</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        <span class="keyword">const</span> BoxArray&amp; ba = this-&gt;m_grids[0].back();</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        <span class="keyword">const</span> DistributionMapping&amp; dm = this-&gt;m_dmap[0].back();</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="keyword">const</span> Geometry&amp; geom = this-&gt;m_geom[0].back();</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; factory = *(this-&gt;m_factory[0].back());</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        <a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm = this-&gt;BottomCommunicator();</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keyword">auto</span> hypre_solver = <a class="code" href="namespaceamrex.html#af5a050719637ed453c73af4d4ca48c8d">amrex::makeHypre</a>(ba, dm, geom, comm, hypre_interface, om);</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> mglev = this-&gt;NMGLevels(0)-1;</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    hypre_solver-&gt;setScalars(getAScalar(), getBScalar());</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        <span class="keyword">auto</span> om = getOversetMask(0, mglev);</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <span class="keyword">auto</span> ac = getACoeffs(0, mglev);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="keywordflow">if</span> (ac)</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    {</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        hypre_solver-&gt;setACoeffs(*ac);</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    }</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    {</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        MultiFab alpha(ba,dm,1,0,MFInfo(),factory);</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        alpha.setVal(0.0);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        hypre_solver-&gt;setACoeffs(alpha);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    }</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keyword">auto</span> bc = getBCoeffs(0, mglev);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keywordflow">if</span> (bc[0])</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    {</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        hypre_solver-&gt;setBCoeffs(bc);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    }</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    {</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        Array&lt;MultiFab,AMREX_SPACEDIM&gt; beta;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        {</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            beta[idim].define(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(ba,<a class="code" href="classamrex_1_1IntVect.html#af53e6b9cce7d60edaaf9a8bf721f0eaa">IntVect::TheDimensionVector</a>(idim)),</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                              dm, 1, 0, MFInfo(), factory);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            beta[idim].setVal(1.0);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        }</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        hypre_solver-&gt;setBCoeffs(<a class="code" href="namespaceamrex.html#a1c2496ecb409639e8639cf01881d0acb">amrex::GetArrOfConstPtrs</a>(beta));</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    }</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    hypre_solver-&gt;setIsMatrixSingular(this-&gt;isBottomSingular());</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordflow">return</span> hypre_solver;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;}</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        <span class="keyword">auto</span> hypre_solver = <a class="code" href="namespaceamrex.html#af5a050719637ed453c73af4d4ca48c8d">amrex::makeHypre</a>(ba, dm, geom, comm, hypre_interface, om);</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        hypre_solver-&gt;setScalars(getAScalar(), getBScalar());</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="keyword">auto</span> ac = getACoeffs(0, mglev);</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="keywordflow">if</span> (ac)</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        {</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            hypre_solver-&gt;setACoeffs(*ac);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        }</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        {</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            MultiFab alpha(ba,dm,1,0,MFInfo(),factory);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            alpha.setVal(0.0);</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            hypre_solver-&gt;setACoeffs(alpha);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        }</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        <span class="keyword">auto</span> bc = getBCoeffs(0, mglev);</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <span class="keywordflow">if</span> (bc[0])</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        {</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;            hypre_solver-&gt;setBCoeffs(bc);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        }</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        {</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            Array&lt;MultiFab,AMREX_SPACEDIM&gt; beta;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                beta[idim].define(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(ba,<a class="code" href="classamrex_1_1IntVect.html#af53e6b9cce7d60edaaf9a8bf721f0eaa">IntVect::TheDimensionVector</a>(idim)),</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                              dm, 1, 0, MFInfo(), factory);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                beta[idim].setVal(1.0);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            }</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            hypre_solver-&gt;setBCoeffs(<a class="code" href="namespaceamrex.html#a1c2496ecb409639e8639cf01881d0acb">amrex::GetArrOfConstPtrs</a>(beta));</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        }</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        hypre_solver-&gt;setIsMatrixSingular(this-&gt;isBottomSingular());</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_PETSC</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;std::unique_ptr&lt;PETScABecLap&gt;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;MLCellABecLapT&lt;MF&gt;::makePETSc ()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba = this-&gt;m_grids[0].back();</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keyword">const</span> DistributionMapping&amp; dm = this-&gt;m_dmap[0].back();</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keyword">const</span> Geometry&amp; geom = this-&gt;m_geom[0].back();</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; factory = *(this-&gt;m_factory[0].back());</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm = this-&gt;BottomCommunicator();</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keyword">auto</span> petsc_solver = <a class="code" href="namespaceamrex.html#abbd0e7692c28626659b75637c2c63528">makePetsc</a>(ba, dm, geom, comm);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    petsc_solver-&gt;setScalars(getAScalar(), getBScalar());</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mglev = this-&gt;NMGLevels(0)-1;</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keyword">auto</span> ac = getACoeffs(0, mglev);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordflow">if</span> (ac)</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    {</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        petsc_solver-&gt;setACoeffs(*ac);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    }</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        MultiFab alpha(ba,dm,1,0,MFInfo(),factory);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        alpha.setVal(0.0);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        petsc_solver-&gt;setACoeffs(alpha);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    }</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keyword">auto</span> bc = getBCoeffs(0, mglev);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="keywordflow">if</span> (bc[0])</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    {</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        petsc_solver-&gt;setBCoeffs(bc);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    }</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        Array&lt;MultiFab,AMREX_SPACEDIM&gt; beta;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        {</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            beta[idim].define(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(ba,<a class="code" href="classamrex_1_1IntVect.html#af53e6b9cce7d60edaaf9a8bf721f0eaa">IntVect::TheDimensionVector</a>(idim)),</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                              dm, 1, 0, MFInfo(), factory);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            beta[idim].setVal(1.0);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <span class="keywordflow">return</span> hypre_solver;</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    }</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;}</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_PETSC</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;std::unique_ptr&lt;PETScABecLap&gt;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;MLCellABecLapT&lt;MF&gt;::makePETSc ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keywordflow">if</span> constexpr (!std::is_same&lt;MF,MultiFab&gt;()) {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;MLCellABecLap PETSc interface only supports MultiFab&quot;</span>);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="keyword">const</span> BoxArray&amp; ba = this-&gt;m_grids[0].back();</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="keyword">const</span> DistributionMapping&amp; dm = this-&gt;m_dmap[0].back();</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="keyword">const</span> Geometry&amp; geom = this-&gt;m_geom[0].back();</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; factory = *(this-&gt;m_factory[0].back());</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm = this-&gt;BottomCommunicator();</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keyword">auto</span> petsc_solver = <a class="code" href="namespaceamrex.html#abbd0e7692c28626659b75637c2c63528">makePetsc</a>(ba, dm, geom, comm);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        petsc_solver-&gt;setScalars(getAScalar(), getBScalar());</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> mglev = this-&gt;NMGLevels(0)-1;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keyword">auto</span> ac = getACoeffs(0, mglev);</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keywordflow">if</span> (ac)</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        {</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            petsc_solver-&gt;setACoeffs(*ac);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        }</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        {</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            MultiFab alpha(ba,dm,1,0,MFInfo(),factory);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            alpha.setVal(0.0);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            petsc_solver-&gt;setACoeffs(alpha);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        }</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="keyword">auto</span> bc = getBCoeffs(0, mglev);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="keywordflow">if</span> (bc[0])</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            petsc_solver-&gt;setBCoeffs(bc);</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        }</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        petsc_solver-&gt;setBCoeffs(<a class="code" href="namespaceamrex.html#a1c2496ecb409639e8639cf01881d0acb">amrex::GetArrOfConstPtrs</a>(beta));</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    }</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <span class="keywordflow">return</span> petsc_solver;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;}</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>MLCellABecLapT&lt;MultiFab&gt;;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
-<div class="line"><a name="l00746"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a2116fd8f117dd8ebb01e6a3b99c7947e">  746</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1MLCellABecLapT.html">MLCellABecLap</a> = <a class="code" href="classamrex_1_1MLCellABecLapT.html">MLCellABecLapT&lt;MultiFab&gt;</a>;</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;}</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160; </div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        {</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            Array&lt;MultiFab,AMREX_SPACEDIM&gt; beta;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            {</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                beta[idim].define(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(ba,<a class="code" href="classamrex_1_1IntVect.html#af53e6b9cce7d60edaaf9a8bf721f0eaa">IntVect::TheDimensionVector</a>(idim)),</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                                  dm, 1, 0, MFInfo(), factory);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                beta[idim].setVal(1.0);</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            }</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;            petsc_solver-&gt;setBCoeffs(<a class="code" href="namespaceamrex.html#a1c2496ecb409639e8639cf01881d0acb">amrex::GetArrOfConstPtrs</a>(beta));</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        }</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        <span class="keywordflow">return</span> petsc_solver;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    }</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;}</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>MLCellABecLapT&lt;MultiFab&gt;;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160; </div>
+<div class="line"><a name="l00756"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a2116fd8f117dd8ebb01e6a3b99c7947e">  756</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1MLCellABecLapT.html">MLCellABecLap</a> = <a class="code" href="classamrex_1_1MLCellABecLapT.html">MLCellABecLapT&lt;MultiFab&gt;</a>;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160; </div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;}</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:558</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__GpuLaunch_8nolint_8H_html_a75c5025bd1ba39794c9f3ce7212ed7ae"><div class="ttname"><a href="AMReX__GpuLaunch_8nolint_8H.html#a75c5025bd1ba39794c9f3ce7212ed7ae">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_PARALLEL_FOR_3D(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.nolint.H:55</div></div>
@@ -863,14 +873,11 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:104</div></div>
 <div class="ttc" id="aAMReX__ccse-mpi_8H_html_a68c509d4adb3f4a1d6fe3a9b0b87c7b9"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a></div><div class="ttdeci">int MPI_Comm</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:47</div></div>
 <div class="ttc" id="aclassamrex_1_1BoundCond_html"><div class="ttname"><a href="classamrex_1_1BoundCond.html">amrex::BoundCond</a></div><div class="ttdoc">Maintain an identifier for boundary condition types.</div><div class="ttdef"><b>Definition:</b> AMReX_BoundCond.H:21</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.H:529</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html"><div class="ttname"><a href="classamrex_1_1Box.html">amrex::Box</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:38</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html_a0b71343932dcc55cb16d1b2b95973114"><div class="ttname"><a href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">amrex::Box::contains</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE bool contains(const IntVect &amp;p) const noexcept</div><div class="ttdoc">Returns true if argument is contained within Box.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:217</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html_a897f7f0ada1479ce3786259b6db62e9c"><div class="ttname"><a href="classamrex_1_1Box.html#a897f7f0ada1479ce3786259b6db62e9c">amrex::Box::coarsen</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE Box &amp; coarsen(int ref_ratio) noexcept</div><div class="ttdoc">Coarsen Box by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo/ratio ...</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:678</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html_ae21bfb6075d5baa204b0b6647c31c409"><div class="ttname"><a href="classamrex_1_1Box.html#ae21bfb6075d5baa204b0b6647c31c409">amrex::Box::coarsenable</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE bool coarsenable(const IntVect &amp;refrat, const IntVect &amp;min_width) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:715</div></div>
-<div class="ttc" id="aclassamrex_1_1DistributionMapping_html"><div class="ttname"><a href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a></div><div class="ttdoc">Calculates the distribution of FABs to MPI processes.</div><div class="ttdef"><b>Definition:</b> AMReX_DistributionMapping.H:42</div></div>
 <div class="ttc" id="aclassamrex_1_1FabFactory_html"><div class="ttname"><a href="classamrex_1_1FabFactory.html">amrex::FabFactory</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabFactory.H:49</div></div>
-<div class="ttc" id="aclassamrex_1_1Geometry_html"><div class="ttname"><a href="classamrex_1_1Geometry.html">amrex::Geometry</a></div><div class="ttdoc">Rectangular problem domain geometry.</div><div class="ttdef"><b>Definition:</b> AMReX_Geometry.H:73</div></div>
 <div class="ttc" id="aclassamrex_1_1Hypre_html_af08fbb42b4509a32e7f20a6101dfd13f"><div class="ttname"><a href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f">amrex::Hypre::Interface</a></div><div class="ttdeci">Interface</div><div class="ttdef"><b>Definition:</b> AMReX_Hypre.H:21</div></div>
 <div class="ttc" id="aclassamrex_1_1IntVect_html"><div class="ttname"><a href="classamrex_1_1IntVect.html">amrex::IntVect</a></div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:47</div></div>
 <div class="ttc" id="aclassamrex_1_1IntVect_html_ab58021983f7ea091fa42717851af0a3a"><div class="ttname"><a href="classamrex_1_1IntVect.html#ab58021983f7ea091fa42717851af0a3a">amrex::IntVect::dim3</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 dim3() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:128</div></div>
