@@ -1,5 +1,8 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1SoAParticle.html#a3756c36bbd9c983a71008537cd238cf5":[2,0,0,436,18],
+"structamrex_1_1SoAParticle.html#a3f85e00a49d46ad2446cc39e7c921742":[2,0,0,436,21],
+"structamrex_1_1SoAParticle.html#a434aff759965a8d6427692220e95b093":[2,0,0,436,19],
 "structamrex_1_1SoAParticle.html#a4892e7cb73b23e77466bcbebda4916f1":[2,0,0,436,17],
 "structamrex_1_1SoAParticle.html#a600cf748b1767ee5cc0e838718d300a0":[2,0,0,436,2],
 "structamrex_1_1SoAParticle.html#a69e0e87f9818bf12a60e2a2c2419ca4a":[2,0,0,436,13],
@@ -246,8 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1algoim_1_1BoundingBox.html#a5ddb29896fb93ee72d69b9545d3453b1":[2,0,0,0,3,1],
 "structamrex_1_1algoim_1_1BoundingBox.html#a77b0f6867f6784ee3d987eb3de9ac2f8":[2,0,0,0,3,2],
 "structamrex_1_1algoim_1_1BoundingBox.html#a7a62e727685b8e1d48309139944ab28f":[2,0,0,0,3,5],
-"structamrex_1_1algoim_1_1BoundingBox.html#aeb237522d3043c217b69e736554b4791":[2,0,0,0,3,3],
-"structamrex_1_1algoim_1_1BoundingBox.html#af29ddffe552640cdadd8dec27b352074":[2,0,0,0,3,0],
-"structamrex_1_1algoim_1_1EBPlane.html":[2,0,0,0,0],
-"structamrex_1_1algoim_1_1EBPlane.html#a289724cd28f09eb3d384c5a9f432c082":[2,0,0,0,0,4]
+"structamrex_1_1algoim_1_1BoundingBox.html#aeb237522d3043c217b69e736554b4791":[2,0,0,0,3,3]
 };
