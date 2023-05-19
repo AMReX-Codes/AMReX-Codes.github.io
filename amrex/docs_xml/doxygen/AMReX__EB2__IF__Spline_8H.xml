@@ -1464,7 +1464,7 @@
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34" refid="classamrex_1_1EB2_1_1SplineIF_1aef6edefbdd33552d70ce613e418b468d" refkind="member"><highlight class="normal"><sp/><sp/>amrex::Real<sp/><ref refid="classamrex_1_1EB2_1_1SplineIF_1aef6edefbdd33552d70ce613e418b468d" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a9de48c04056551924746c42f9eda3c8f" kindref="member">amrex::RealArray</ref>&amp;<sp/>p)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealVect" kindref="compound">amrex::RealVect</ref><sp/>cp;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1distFcnElement2d" kindref="compound">distFcnElement2d</ref><sp/>*<sp/>closesetGeomElement;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1distFcnElement2d" kindref="compound">distFcnElement2d</ref><sp/>*<sp/>closesetGeomElement<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>dist;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>dist<sp/>=<sp/>1.0e29_rt;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealVect" kindref="compound">amrex::RealVect</ref><sp/>x(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(p[0],<sp/>p[1],<sp/>p[2]));</highlight></codeline>
@@ -1475,7 +1475,7 @@
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closesetGeomElement<sp/>=<sp/>geom;</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>side<sp/>=<sp/>closesetGeomElement-&gt;<ref refid="classamrex_1_1distFcnElement2d_1adf53d0ff573fc7bb5d59ede162b78efd" kindref="member">cpside</ref>(x,cp);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>side<sp/>=<sp/>closesetGeomElement<sp/>?<sp/>closesetGeomElement-&gt;<ref refid="classamrex_1_1distFcnElement2d_1adf53d0ff573fc7bb5d59ede162b78efd" kindref="member">cpside</ref>(x,cp)<sp/>:<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dist*side;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
