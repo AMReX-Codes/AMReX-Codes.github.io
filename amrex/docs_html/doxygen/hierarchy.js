@@ -354,9 +354,11 @@ var hierarchy =
       [ "amrex::FabArray< IArrayBox >", "classamrex_1_1FabArray.html", [
         [ "amrex::iMultiFab", "classamrex_1_1iMultiFab.html", null ]
       ] ],
+      [ "amrex::LayoutData< amrex::PODVector< HYPRE_Int > >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::PODVector< Int > >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< HYPRE_Int >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::GpuArray< amrex::MLCellLinOpT::BCTL, 2 *AMREX_SPACEDIM > * >", "classamrex_1_1LayoutData.html", null ],
+      [ "amrex::LayoutData< amrex::PODVector< int > >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< GFab >", "classamrex_1_1LayoutData.html", [
         [ "amrex::EB2::MultiGFab", "classamrex_1_1EB2_1_1MultiGFab.html", null ]
       ] ],
@@ -503,6 +505,7 @@ var hierarchy =
     ] ],
     [ "amrex::HypreIJIface", "classamrex_1_1HypreIJIface.html", null ],
     [ "amrex::HypreNodeLap", "classamrex_1_1HypreNodeLap.html", null ],
+    [ "amrex::HypreSolver< MSS >", "classamrex_1_1HypreSolver.html", null ],
     [ "amrex::NonLocalBC::Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", null ],
     [ "amrex::IFABio", "classamrex_1_1IFABio.html", null ],
     [ "amrex::BlockMutex::state_t::II", "structamrex_1_1BlockMutex_1_1state__t_1_1II.html", null ],
@@ -1005,6 +1008,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< FAB * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::WeightedBox >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< Real, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::IndexType >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::size_t >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< MultiFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Box >", "classamrex_1_1Vector.html", null ],
@@ -1045,6 +1049,7 @@ var hierarchy =
       [ "amrex::Vector< int >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< int, amrex::PODVector< amrex::IntVect > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, amrex::Vector< amrex::Vector< amrex::NeighborParticleContainer::NeighborCopyTag > > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::iMultiFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Box > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::FabArrayId > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< MPI_Request >", "classamrex_1_1Vector.html", null ],
@@ -1057,6 +1062,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::NeighborParticleContainer::NeighborCommTag >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< RT > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::iMultiFab > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::LayoutData< HYPRE_Int > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::ForkJoin::ComponentSet >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vertex >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< int, amrex::IntVect > >", "classamrex_1_1Vector.html", null ],
@@ -1105,6 +1111,7 @@ var hierarchy =
       [ "amrex::Vector< std::unique_ptr< amrex::MLMGBndryT< MF > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Setbuf_Char_Type >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Array< MF, AMREX_SPACEDIM > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::FabArray< amrex::BaseFab< HYPRE_Int > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::pair< void *, amrex::Arena * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< T > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::distFcnElement2d * >", "classamrex_1_1Vector.html", null ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__YAFluxRegister__1D__K_8H_source.html":[3,0,0,3,20],
+"AMReX__YAFluxRegister__2D__K_8H.html":[3,0,0,3,21],
+"AMReX__YAFluxRegister__2D__K_8H.html#a022123f91218b914a5c94f972669cb57":[3,0,0,3,21,0],
 "AMReX__YAFluxRegister__2D__K_8H.html#a8e5424db64aba9748df778a60884c7b9":[3,0,0,3,21,1],
 "AMReX__YAFluxRegister__2D__K_8H_source.html":[3,0,0,3,21],
 "AMReX__YAFluxRegister__3D__K_8H.html":[3,0,0,3,22],
@@ -246,8 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__mempool__mod_8F90.html#a5fa8471df4c357d0eaeb409be5103a10":[3,0,0,2,170,43],
 "AMReX__mempool__mod_8F90.html#a616f74b36b41fe3efc1129f2b31696d6":[3,0,0,2,170,22],
 "AMReX__mempool__mod_8F90.html#a6a8fdfb73fbb212ceb3eb35cbd6b7bdf":[3,0,0,2,170,34],
-"AMReX__mempool__mod_8F90.html#a6d8b7261d54ef467614fc895789808f5":[3,0,0,2,170,20],
-"AMReX__mempool__mod_8F90.html#a6eea46c67f82e6aa657bde8929bd44ca":[3,0,0,2,170,35],
-"AMReX__mempool__mod_8F90.html#a78c97371c252f07a69a789c19934af17":[3,0,0,2,170,28],
-"AMReX__mempool__mod_8F90.html#a791f09eee564747f6d2edf9734f0be4e":[3,0,0,2,170,10]
+"AMReX__mempool__mod_8F90.html#a6d8b7261d54ef467614fc895789808f5":[3,0,0,2,170,20]
 };

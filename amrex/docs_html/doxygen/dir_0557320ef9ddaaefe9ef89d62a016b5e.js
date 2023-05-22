@@ -24,5 +24,6 @@ var dir_0557320ef9ddaaefe9ef89d62a016b5e =
     [ "AMReX_HypreNodeLap.cpp", "AMReX__HypreNodeLap_8cpp.html", null ],
     [ "AMReX_HypreNodeLap.H", "AMReX__HypreNodeLap_8H.html", [
       [ "HypreNodeLap", "classamrex_1_1HypreNodeLap.html", "classamrex_1_1HypreNodeLap" ]
-    ] ]
+    ] ],
+    [ "AMReX_HypreSolver.H", "AMReX__HypreSolver_8H.html", "AMReX__HypreSolver_8H" ]
 ];

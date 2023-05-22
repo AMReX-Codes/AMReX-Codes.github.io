@@ -76,6 +76,7 @@ var namespaceamrex_1_1detail =
     [ "memMoveImpl", "namespaceamrex_1_1detail.html#ad3182cae322a165690f9c9b302667783", null ],
     [ "memMoveImpl", "namespaceamrex_1_1detail.html#a07dd38ddad743d46fe67991eda9a8d9e", null ],
     [ "memMoveImpl", "namespaceamrex_1_1detail.html#a5541d5d1234082fe2ab2e7ef35385227", null ],
+    [ "pack_matrix_gpu", "namespaceamrex_1_1detail.html#ab8aa339fca5416d16202578d9560f96d", null ],
     [ "ParallelFor_doit", "namespaceamrex_1_1detail.html#a3f8fddb521eea2e91972e8a665d0e1cc", null ],
     [ "read_fab", "namespaceamrex_1_1detail.html#aa3870bf45fd14f87c3674a996cae2752", null ],
     [ "Reduce", "namespaceamrex_1_1detail.html#a11b496ac41b8e46fe7f1adf74392dcfb", null ],
