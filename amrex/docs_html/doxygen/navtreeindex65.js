@@ -1,5 +1,12 @@
 var NAVTREEINDEX65 =
 {
+"namespaceamrex_1_1Amrvis.html#a6e9bd3958932d9e9fb25aa2f0fc16f4e":[1,0,0,1,20],
+"namespaceamrex_1_1Amrvis.html#a7164dae8bec54366e19c0b66c23ccbd6":[1,0,0,1,16],
+"namespaceamrex_1_1Amrvis.html#a731717eed90ce2d39970e786e2486b1c":[1,0,0,1,18],
+"namespaceamrex_1_1Amrvis.html#a8303de7f87d7f9247ba6399dcf4d2493":[1,0,0,1,5],
+"namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9":[1,0,0,1,4],
+"namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a2a1665b43e87adbb056f0862849da4d9":[1,0,0,1,4,0],
+"namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a95964ed9144e700e0653441316633db6":[1,0,0,1,4,1],
 "namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a970c9283c08d1ad380beb8cb5fbcfcb0":[1,0,0,1,4,4],
 "namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9ad1deacdbc35862f4535786f40e328d12":[1,0,0,1,4,2],
 "namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9ae30e7b84e8b143de05b852dde1174bb3":[1,0,0,1,4,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX65 =
 "namespaceamrex_1_1Gpu.html#afb3bc7b25afb38fc8f371f3bc4966483":[1,0,0,15,62],
 "namespaceamrex_1_1Gpu.html#afcf7e4c0387e3a7e0552b832fe587303":[1,0,0,15,73],
 "namespaceamrex_1_1Gpu_1_1Atomic.html":[1,0,0,15,0],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a170f55f8b9bd412d07a2ab2e825a4ee8":[1,0,0,15,0,7],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a1ca14857c9072d782f6e4a98592ba2b6":[1,0,0,15,0,20],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a36a87ab5fbe799714dcc825134aa6027":[1,0,0,15,0,9],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a3794cd96c4a2f4b00db9cc1e5d66af87":[1,0,0,15,0,6],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a428330a4e7622c16d943003ad97e54a0":[1,0,0,15,0,1],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0":[1,0,0,15,0,12],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a53a66f5fe06e3b8839cb0f79f0d0ea3d":[1,0,0,15,0,11],
-"namespaceamrex_1_1Gpu_1_1Atomic.html#a53c8ca8f4c92a40ec4eee06b385f6ef7":[1,0,0,15,0,18]
+"namespaceamrex_1_1Gpu_1_1Atomic.html#a170f55f8b9bd412d07a2ab2e825a4ee8":[1,0,0,15,0,7]
 };

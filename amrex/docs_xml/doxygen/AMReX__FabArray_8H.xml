@@ -6532,7 +6532,7 @@
 <codeline lineno="3136" refid="classamrex_1_1FabArray_1a6cca07036c0a49c4ad881c9138a4041f" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1FabArray_1a6cca07036c0a49c4ad881c9138a4041f" kindref="member">FabArray&lt;FAB&gt;::FillBoundaryAndSync_finish</ref><sp/>()</highlight></codeline>
 <codeline lineno="3137"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="3138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FillBoundaryAndSync_finish()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="3139"><highlight class="normal"><sp/><sp/><sp/><sp/>FillBoundary_finish();</highlight></codeline>
+<codeline lineno="3139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1afe22ad727872227b4f95e3dad1e36814" kindref="member">FillBoundary_finish</ref>();</highlight></codeline>
 <codeline lineno="3140"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3141"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3142"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>FAB&gt;</highlight></codeline>
@@ -6577,7 +6577,7 @@
 <codeline lineno="3181" refid="classamrex_1_1FabArray_1adbc8db61cee190b8779c871001f78057" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1FabArray_1adbc8db61cee190b8779c871001f78057" kindref="member">FabArray&lt;FAB&gt;::OverrideSync_finish</ref><sp/>()</highlight></codeline>
 <codeline lineno="3182"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="3183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;OverrideSync_finish()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="3184"><highlight class="normal"><sp/><sp/><sp/><sp/>FillBoundary_finish();</highlight></codeline>
+<codeline lineno="3184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1afe22ad727872227b4f95e3dad1e36814" kindref="member">FillBoundary_finish</ref>();</highlight></codeline>
 <codeline lineno="3185"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3186"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3187"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>FAB&gt;</highlight></codeline>
@@ -6672,7 +6672,7 @@
 <codeline lineno="3276"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArray::EnforcePeriodicity&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="3277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(period.<ref refid="classamrex_1_1Periodicity_1a6f3139a13faee557751404e44ab09042" kindref="member">isAnyPeriodic</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="3278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FBEP_nowait(0,<sp/>nComp(),<sp/>nGrowVect(),<sp/>period,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="3279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FillBoundary_finish();<sp/></highlight><highlight class="comment">//<sp/>unsafe<sp/>unless<sp/>isAnyPeriodic()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1afe22ad727872227b4f95e3dad1e36814" kindref="member">FillBoundary_finish</ref>();<sp/></highlight><highlight class="comment">//<sp/>unsafe<sp/>unless<sp/>isAnyPeriodic()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3280"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="3281"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3282"><highlight class="normal"></highlight></codeline>
@@ -6683,7 +6683,7 @@
 <codeline lineno="3287"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArray::EnforcePeriodicity&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="3288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(period.<ref refid="classamrex_1_1Periodicity_1a6f3139a13faee557751404e44ab09042" kindref="member">isAnyPeriodic</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="3289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FBEP_nowait(scomp,<sp/>ncomp,<sp/>nGrowVect(),<sp/>period,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="3290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FillBoundary_finish();<sp/></highlight><highlight class="comment">//<sp/>unsafe<sp/>unless<sp/>isAnyPeriodic()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1afe22ad727872227b4f95e3dad1e36814" kindref="member">FillBoundary_finish</ref>();<sp/></highlight><highlight class="comment">//<sp/>unsafe<sp/>unless<sp/>isAnyPeriodic()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="3292"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3293"><highlight class="normal"></highlight></codeline>
@@ -6695,7 +6695,7 @@
 <codeline lineno="3299"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArray::EnforcePeriodicity&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="3300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(period.<ref refid="classamrex_1_1Periodicity_1a6f3139a13faee557751404e44ab09042" kindref="member">isAnyPeriodic</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="3301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FBEP_nowait(scomp,<sp/>ncomp,<sp/>nghost,<sp/>period,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="3302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FillBoundary_finish();<sp/></highlight><highlight class="comment">//<sp/>unsafe<sp/>unless<sp/>isAnyPeriodic()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1afe22ad727872227b4f95e3dad1e36814" kindref="member">FillBoundary_finish</ref>();<sp/></highlight><highlight class="comment">//<sp/>unsafe<sp/>unless<sp/>isAnyPeriodic()</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3303"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="3304"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="3305"><highlight class="normal"></highlight></codeline>

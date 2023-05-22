@@ -20,6 +20,7 @@
     <innerclass refid="structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" prot="public">amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1NoLocalCopy" prot="public">amrex::NonLocalBC::NoLocalCopy</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1DoLocalCopy" prot="public">amrex::NonLocalBC::DoLocalCopy</innerclass>
+    <innernamespace refid="namespaceamrex_1_1NonLocalBC_1_1detail">amrex::NonLocalBC::detail</innernamespace>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1a165fdced073fa98b961fd6aaceb213d5" prot="public" static="no">
         <templateparamlist>
@@ -260,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="7" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="7" bodyend="69" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="438" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="41" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="41" bodyend="103" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="438" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a62685cb385ba3363c973d758cbb7cde8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -282,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="71" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="71" bodyend="85" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="442" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="105" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="105" bodyend="119" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="442" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a5ccb53a5bfee4c68f588b17d3642c2c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -304,12 +305,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="87" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="87" bodyend="101" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="445" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="121" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="121" bodyend="135" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="445" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ac09ca9edc6d06054f9f1c62d5627c916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ab11bf269e7aebae89bdc5d7d178bb12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>template <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref></type>
         <definition>template MultiBlockCommMetaData amrex::NonLocalBC::ParallelCopy</definition>
-        <argsstring>(FabArray&lt; FArrayBox &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FArrayBox &gt; &amp;src, int destcomp, int srccomp, int numcomp, const IntVect &amp;ngrow, MultiBlockIndexMapping, Identity)</argsstring>
+        <argsstring>(FabArray&lt; FArrayBox &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FArrayBox &gt; &amp;src, int destcomp, int srccomp, int numcomp, const IntVect &amp;ngrow, MultiBlockIndexMapping const &amp;, Identity const &amp;)</argsstring>
         <name>ParallelCopy</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
@@ -340,10 +341,10 @@
           <declname>ngrow</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping" kindref="compound">MultiBlockIndexMapping</ref></type>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping" kindref="compound">MultiBlockIndexMapping</ref> const &amp;</type>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1NonLocalBC_1_1Identity" kindref="compound">Identity</ref></type>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1Identity" kindref="compound">Identity</ref> const &amp;</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -351,9 +352,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="104" column="33" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" declline="104" declcolumn="33"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="138" column="33" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" declline="138" declcolumn="33"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1aa6be3491a9a1910deae05e761d3ebea7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a56d136063b9c85d97111978faff29c87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DTOS</type>
@@ -361,10 +362,10 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;::value, <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt;</type>
         <definition>std::enable_if_t&lt;IsCallableR&lt;Dim3, DTOS, Dim3&gt;::value, IntVect&gt; amrex::NonLocalBC::Apply</definition>
-        <argsstring>(DTOS dtos, const IntVect &amp;iv)</argsstring>
+        <argsstring>(DTOS const &amp;dtos, const IntVect &amp;iv)</argsstring>
         <name>Apply</name>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
         </param>
         <param>
@@ -394,7 +395,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="102" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="102" bodyend="106"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a3e287397f6bc7e5d1f687412232b2708" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a7f43ddf52003ccef3fd4189be4b4e26a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DTOS</type>
@@ -402,10 +403,10 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
         <definition>std::enable_if_t&lt;IsCallableR&lt;Dim3, DTOS, Dim3&gt;::value &amp;&amp; !IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::Image</definition>
-        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <argsstring>(DTOS const &amp;dtos, const Box &amp;box)</argsstring>
         <name>Image</name>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
         </param>
         <param>
@@ -434,7 +435,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="118" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="118" bodyend="129"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a4f28a3fa34cfce9e1c6f4b8ea3a44a91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afc017cb71584ee0d0505c7ecf92a79de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DTOS</type>
@@ -442,10 +443,10 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;::value &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
         <definition>std::enable_if_t&lt;IsCallableR&lt;Dim3, DTOS, Dim3&gt;::value &amp;&amp; IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::Image</definition>
-        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <argsstring>(DTOS const &amp;dtos, const Box &amp;box)</argsstring>
         <name>Image</name>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
         </param>
         <param>
@@ -474,7 +475,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="141" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="141" bodyend="148"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ab5e8045c0d301e29fd1c232abf924d70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a72f58b54718389e636ab3b07295eebac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DTOS</type>
@@ -482,10 +483,10 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" kindref="compound">HasInverseMemFn</ref>&lt; DTOS &gt;::value, <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt;</type>
         <definition>std::enable_if_t&lt;HasInverseMemFn&lt;DTOS&gt;::value, IntVect&gt; amrex::NonLocalBC::ApplyInverse</definition>
-        <argsstring>(DTOS dtos, const IntVect &amp;iv)</argsstring>
+        <argsstring>(DTOS const &amp;dtos, const IntVect &amp;iv)</argsstring>
         <name>ApplyInverse</name>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
         </param>
         <param>
@@ -515,7 +516,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="163" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="163" bodyend="166"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ae5f39fd429a1bfa804335a7504378c42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ab444df90b90c40442170ef5db4b0bea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DTOS</type>
@@ -523,10 +524,10 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" kindref="compound">HasInverseMemFn</ref>&lt; DTOS &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
         <definition>std::enable_if_t&lt;HasInverseMemFn&lt;DTOS&gt;::value &amp;&amp; !IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::InverseImage</definition>
-        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <argsstring>(DTOS const &amp;dtos, const Box &amp;box)</argsstring>
         <name>InverseImage</name>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
         </param>
         <param>
@@ -555,7 +556,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="178" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="178" bodyend="181"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a0a2e09e00c9000f73ebe01690728a656" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad979c6dbf27225b1f20a986185e2977b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DTOS</type>
@@ -563,10 +564,10 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" kindref="compound">HasInverseMemFn</ref>&lt; DTOS &gt;::value &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
         <definition>std::enable_if_t&lt;HasInverseMemFn&lt;DTOS&gt;::value &amp;&amp; IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::InverseImage</definition>
-        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <argsstring>(DTOS const &amp;dtos, const Box &amp;box)</argsstring>
         <name>InverseImage</name>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
         </param>
         <param>
@@ -595,7 +596,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="193" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="193" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1af7d3777cd0f7fc47815d6f14621fade6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a3cd3a3fb3e0b792ebdb724cc5725176d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -611,7 +612,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::local_copy_cpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{}) noexcept</argsstring>
         <name>local_copy_cpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -638,12 +639,12 @@
           <declname>local_tags</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -655,7 +656,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="493" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="493" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a50fbbda2ae1dbeaf3eb02f1361a22a3d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a4039bcfeee7e444019168686df8dfe36" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -671,7 +672,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_cpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{}) noexcept</argsstring>
         <name>unpack_recv_buffer_cpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -698,12 +699,12 @@
           <declname>recv_cctc</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -715,7 +716,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="499" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="499" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afebb9f386e2018a4623ef8014d2b79e9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a4ea4e6f4775e59312efdc7e5e42788c3" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -731,7 +732,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::local_copy_gpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{}) noexcept</argsstring>
         <name>local_copy_gpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -758,12 +759,12 @@
           <declname>local_tags</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -775,7 +776,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="507" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="507" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a55ad6d6378fb54ec7d36f079a2289e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ab6a98a57dd1e0440eac5dee97d79d326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -791,7 +792,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_gpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{})</argsstring>
         <name>unpack_recv_buffer_gpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -818,12 +819,12 @@
           <declname>recv_cctc</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -1424,7 +1425,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="844" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="844" bodyend="851"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a40c1732c6480edd3a08cfd8f679bcab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a9c2fff17888a770c492a1c014fee2b73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename FAB</type>
@@ -1440,7 +1441,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::ParallelCopy</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, SrcComp srccomp, DestComp destcomp, NumComps numcomp, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, SrcComp srccomp, DestComp destcomp, NumComps numcomp, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{})</argsstring>
         <name>ParallelCopy</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -1467,12 +1468,12 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -1554,7 +1555,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="879" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="879" bodyend="888"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a4549660e08708a82f10a4aba9450c72a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a5984b6f2bffd16fd4a1737326e32aef0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename FAB</type>
@@ -1570,7 +1571,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::ParallelCopy</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, int srccomp, int destcomp, int numcomp, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, int srccomp, int destcomp, int numcomp, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{})</argsstring>
         <name>ParallelCopy</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -1597,12 +1598,12 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -1684,7 +1685,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="916" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="916" bodyend="919"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a6333b0c5fd3197cbde280572b731af6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1aedc887605744ff53411090ea98c15a04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename FAB</type>
@@ -1700,7 +1701,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsIndexMapping" kindref="compound">IsIndexMapping</ref>&lt; DTOS &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;), <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsIndexMapping&lt;DTOS&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;),MultiBlockCommMetaData&gt; amrex::NonLocalBC::ParallelCopy</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FAB &gt; &amp;src, SrcComp srccomp, DestComp destcomp, NumComps numcomp, const IntVect &amp;ngrow, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FAB &gt; &amp;src, SrcComp srccomp, DestComp destcomp, NumComps numcomp, const IntVect &amp;ngrow, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{})</argsstring>
         <name>ParallelCopy</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -1731,12 +1732,12 @@
           <declname>ngrow</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -1826,7 +1827,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="953" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="953" bodyend="958"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a34fa00229ec4e1e128e0722f10ce1bf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1af874a9f4652076f42120db672af7f447" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename FAB</type>
@@ -1842,7 +1843,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsIndexMapping" kindref="compound">IsIndexMapping</ref>&lt; DTOS &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;), <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
         <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsIndexMapping&lt;DTOS&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;),MultiBlockCommMetaData&gt; amrex::NonLocalBC::ParallelCopy</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FAB &gt; &amp;src, int srccomp, int destcomp, int numcomp, const IntVect &amp;ngrow, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FAB &gt; &amp;src, int srccomp, int destcomp, int numcomp, const IntVect &amp;ngrow, DTOS const &amp;dtos=DTOS{}, Proj const &amp;proj=Proj{})</argsstring>
         <name>ParallelCopy</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -1873,12 +1874,12 @@
           <declname>ngrow</declname>
         </param>
         <param>
-          <type>DTOS</type>
+          <type>DTOS const &amp;</type>
           <declname>dtos</declname>
           <defval>DTOS{}</defval>
         </param>
         <param>
-          <type>Proj</type>
+          <type>Proj const &amp;</type>
           <declname>proj</declname>
           <defval>Proj{}</defval>
         </param>
@@ -2159,6 +2160,511 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1031" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1031" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ab1089b238bcca4ae52a70fd9bdf8518e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;), <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref> &gt;</type>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3,DTOS,Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj,FAB&gt;), CommHandler&gt; amrex::NonLocalBC::FillBoundary_nowait</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, const FabArrayBase::CommMetaData &amp;cmd, int scomp, int ncomp, DTOS const &amp;dtos, Proj const &amp;proj=Proj{})</argsstring>
+        <name>FillBoundary_nowait</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>DTOS const &amp;</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>Proj const &amp;</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Start communication to fill boundary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This starts communication to fill ghost cells of a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. This function is supposed to be used together with FillBoundary_finish and makeFillBoundaryMetaData as follows. <verbatim>    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
+    // The metadata cmd can be cached and reused on a MultiFab/FabArray with
+    // the same BoxArray and DistributionMapping.
+    auto handler = FillBoundary_nowait(mf, cmd, scomp, ncomp, dtos, proj);
+    // Independent computation can be performed.
+    FillBoundary_finish(std::move(handler), mf, cmd, scomp, ncomp, dtos, proj);
+</verbatim></para>
+<para>The FillBoundary capability here is more flexible than <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&apos;s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>FAB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab/FabArray type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DTOS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index mapping from destination from source. See SphThetaPhiRIndexMapping for an example. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component mapping from source to destination. See SphThetaPhiRComponentMapping for an example.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FabArray/MultiFab whose ghost cells need to be filled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>communication metadata. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index mapping. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>component mapping.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref> object needed for calling FillBoundary_finish. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1075" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1075" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afe22ad727872227b4f95e3dad1e36814" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3,DTOS,Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj,FAB&gt;)&gt; amrex::NonLocalBC::FillBoundary_finish</definition>
+        <argsstring>(CommHandler handler, FabArray&lt; FAB &gt; &amp;mf, const FabArrayBase::CommMetaData &amp;cmd, int scomp, int ncomp, DTOS const &amp;dtos, Proj const &amp;proj=Proj{})</argsstring>
+        <name>FillBoundary_finish</name>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>DTOS const &amp;</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>Proj const &amp;</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Finish communication started by FillBoundary_nowait. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This finishes the communication to fill ghost cells of a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. This function is supposed to be used together with FillBoundary_nowait and makeFillBoundaryMetaData as follows. <verbatim>    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
+    // The metadata cmd can be cached and reused on a MultiFab/FabArray with
+    // the same BoxArray and DistributionMapping.
+    auto handler = FillBoundary_nowait(mf, cmd, scomp, ncomp, dtos, proj);
+    // Independent computation can be performed.
+    FillBoundary_finish(std::move(handler), mf, cmd, scomp, ncomp, dtos, proj);
+</verbatim></para>
+<para>The FillBoundary capability here is more flexible than <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&apos;s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>FAB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab/FabArray type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DTOS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index mapping from destination from source. See SphThetaPhiRIndexMapping for an example. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component mapping from source to destination. See SphThetaPhiRComponentMapping for an example.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref> returned by FillBoundary_nowait. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FabArray/MultiFab whose ghost cells need to be filled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>communication metadata. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index mapping </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>component mapping </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1118" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1118" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afc89a1b931348146e70b8e54e95ffd41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3,DTOS,Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj,FAB&gt;)&gt; amrex::NonLocalBC::FillBoundary</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, const FabArrayBase::CommMetaData &amp;cmd, int scomp, int ncomp, DTOS const &amp;dtos, Proj const &amp;proj=Proj{})</argsstring>
+        <name>FillBoundary</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>DTOS const &amp;</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>Proj const &amp;</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Fill ghost cells for FabArray/MultiFab. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This fills ghost cells of a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. This function is supposed to be used together with makeFillBoundaryMetaData as follows. <verbatim>    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
+    // The metadata cmd can be cached and reused on a MultiFab/FabArray with
+    // the same BoxArray and DistributionMapping.
+    FillBoundary_finish(mf, cmd, scomp, ncomp, dtos, proj);
+</verbatim></para>
+<para>The FillBoundary capability here is more flexible than <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&apos;s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>FAB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab/FabArray type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DTOS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index mapping from destination from source. See SphThetaPhiRIndexMapping for an example. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Component mapping from source to destination. See SphThetaPhiRComponentMapping for an example.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FabArray/MultiFab whose ghost cells need to be filled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>communication metadata. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>starting component. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of components. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index mapping. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>component mapping. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1158" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="1158" bodyend="1164"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a273df272494afdcf1d9275ab5ed13e77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;), <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &gt;</type>
+        <definition>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3,DTOS,Dim3&gt;), FabArrayBase::CommMetaData&gt; amrex::NonLocalBC::makeFillBoundaryMetaData</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, IntVect const &amp;nghost, Geometry const &amp;geom, DTOS const &amp;dtos)</argsstring>
+        <name>makeFillBoundaryMetaData</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>DTOS const &amp;</type>
+          <declname>dtos</declname>
+        </param>
+        <briefdescription>
+<para>Make metadata for FillBoundary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>FAB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>MultiFab/FabArray type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DTOS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index mapping from destination from source. See SphThetaPhiRIndexMapping for an example.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>FabArray/MultiFab whose ghost cells need to be filled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nghost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ghost cells to be filled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> object that contains the domain information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>index mapping.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>communication metadata </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="1184" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1184" declcolumn="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

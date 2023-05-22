@@ -54,6 +54,7 @@ var classamrex_1_1FabArrayBase =
     [ "clearThisBD", "classamrex_1_1FabArrayBase.html#a1033b7779ec8b48b594b158fbabe13b4", null ],
     [ "define", "classamrex_1_1FabArrayBase.html#ad5c3a8098f8bb8aec61ed6b213340169", null ],
     [ "define", "classamrex_1_1FabArrayBase.html#a79b45950358798ae16a0dc928b8ee0ba", null ],
+    [ "define_fb_metadata", "classamrex_1_1FabArrayBase.html#a2099ffa4c81398ed273722ce2ff7b6f3", null ],
     [ "DistributionMap", "classamrex_1_1FabArrayBase.html#abd59469241abaab18e1c2db8b7ceb4ed", null ],
     [ "empty", "classamrex_1_1FabArrayBase.html#ab96a1c213fe6e5f402c4e006608564f5", null ],
     [ "fabbox", "classamrex_1_1FabArrayBase.html#adce0fffa78b25dbbfa1f82701e579425", null ],

@@ -1,5 +1,12 @@
 var NAVTREEINDEX57 =
 {
+"globals_z.html":[3,1,0,24],
+"hierarchy.html":[2,2],
+"index.html":[],
+"index.html":[0],
+"index.html#Overview":[0,0,0],
+"index.html#amrex_explained":[0,0,4],
+"index.html#contribute":[0,0,2],
 "index.html#development":[0,0,1],
 "index.html#migration_from_boxlib":[0,0,5],
 "index.html#tutorials":[0,0,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX57 =
 "namespaceamrex.html#a0c0dc9355722e150b88c6fc71422288e":[1,0,0,2046],
 "namespaceamrex.html#a0c65969b354bed7478ab5716942fdbad":[1,0,0,856],
 "namespaceamrex.html#a0ca24d0cad7a50b4e33d7e1cf2d62cf4":[1,0,0,866],
-"namespaceamrex.html#a0cccddb84fe8782da9ad7a41659db4a0":[1,0,0,1068],
-"namespaceamrex.html#a0d15e184f35001014b0941ed211b16ad":[1,0,0,2132],
-"namespaceamrex.html#a0d4c71dff64b8653b9f679f934b66290":[1,0,0,2024],
-"namespaceamrex.html#a0d50b358feee8de5a27ba594b7e2930a":[1,0,0,1621],
-"namespaceamrex.html#a0dace3a79fc48a8b02686c10363b70a9":[1,0,0,1140],
-"namespaceamrex.html#a0dc1c41fb0c471ba140aa8046670d247":[1,0,0,1017],
-"namespaceamrex.html#a0dc972d04970bb21c8988fb02790526c":[1,0,0,2112],
-"namespaceamrex.html#a0dc9fca5d8d1322524d13793f5b663d0":[1,0,0,899]
+"namespaceamrex.html#a0cccddb84fe8782da9ad7a41659db4a0":[1,0,0,1068]
 };
