@@ -8,7 +8,7 @@ var structamrex_1_1StructOfArrays =
     [ "GetIntData", "structamrex_1_1StructOfArrays.html#a32f1b56e5d68299fc49813648903e884", null ],
     [ "GetIntData", "structamrex_1_1StructOfArrays.html#abf1c48c61fb3ccc48c3663e987b6aed3", null ],
     [ "GetIntData", "structamrex_1_1StructOfArrays.html#abbe15736b28057529d48ed51ff290b99", null ],
-    [ "getNumNeighbors", "structamrex_1_1StructOfArrays.html#ae3cc8d8bbcf1909fb45ae2a6f722d676", null ],
+    [ "getNumNeighbors", "structamrex_1_1StructOfArrays.html#a1dfdbf37585cc21bbdcdbd94145b7a09", null ],
     [ "GetRealData", "structamrex_1_1StructOfArrays.html#aaa669dc405e332237db26feb68ffb257", null ],
     [ "GetRealData", "structamrex_1_1StructOfArrays.html#a852422beff887d7d8d82cb21e7190dce", null ],
     [ "GetRealData", "structamrex_1_1StructOfArrays.html#a10c0a0dea4cddd7bfec98c2f14a2292e", null ],

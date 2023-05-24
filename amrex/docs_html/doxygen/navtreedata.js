@@ -150,15 +150,15 @@ var NAVTREEINDEX =
 "namespacemembers_func_p.html",
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac",
 "structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed",
-"structamrex_1_1DistributionMapping_1_1RefID.html#a27efe3d5f7340241a0b4d2e2df7814b1",
-"structamrex_1_1FabArrayBase_1_1TileArray.html#a6dfaf13cb2e2e2c8e57d0ef3451e6b84",
-"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html#af63cb8e7547e202d476c57cd5da8ec08",
-"structamrex_1_1MFItInfo.html#a23dbb25432836874b6aa0885ff91e1c5",
-"structamrex_1_1Order_1_1C.html",
-"structamrex_1_1ParticleBase_3_01T_00_010_00_01NInt_01_4.html",
-"structamrex_1_1ReduceOpMax.html#af69ee6eb252dae9acb0706eb7a31492b",
-"structamrex_1_1VisMF_1_1Header.html#a89f8804d6faa52091fcde2844952fa93",
-"structamrex_1_1parser__f3.html#af480e24f7880857ba4ee5710e1e2f823"
+"structamrex_1_1DistributionMapping_1_1Ref.html#ae47a673a2d7c94e3483b90b58444be0c",
+"structamrex_1_1FabArrayBase_1_1TileArray.html#a37311b356baf90979545e588fa7f6b6f",
+"structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01long_01_4.html#adde9b03b0fc2f8bdfeb8a2e4f47af15d",
+"structamrex_1_1MFItInfo.html#a0db9178bd13b45f862fe31e197f75ec8",
+"structamrex_1_1NumComps.html#a51d8b50d57ee8a52833c414ae13a5381",
+"structamrex_1_1ParticleBase_3_01T_00_010_00_010_01_4.html#a0721aeee066f4dce4294ef22a899d6e9",
+"structamrex_1_1Reduce_1_1detail_1_1iterate__box.html",
+"structamrex_1_1VisMF_1_1Header.html#abfc04c1de628cba28c97f597fd5e9448",
+"structamrex_1_1parser__symbol.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
