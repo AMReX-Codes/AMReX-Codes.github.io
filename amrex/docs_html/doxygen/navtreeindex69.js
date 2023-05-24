@@ -1,5 +1,7 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex__acc__module.html#a7537721c18f228fca42f0db3e75a4470":[1,0,1,0],
+"namespaceamrex__acc__module.html#a7eb8614e7eeb5eca0fea6ecaf6ad999a":[1,0,1,1],
 "namespaceamrex__acc__module.html#aafbf079c34c708eb6c38b72a05c77249":[1,0,1,3],
 "namespaceamrex__acc__module.html#ae6e5f688f216b146a2cc609ec638a462":[1,0,1,2],
 "namespaceamrex__bc__types__module.html":[1,0,2],
@@ -222,8 +224,8 @@ var NAVTREEINDEX69 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[1,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[1,0,18,6],
 "namespacehacc.html":[1,0,19],
-"namespacemembers.html":[1,1,0],
 "namespacemembers.html":[1,1,0,0],
+"namespacemembers.html":[1,1,0],
 "namespacemembers_a.html":[1,1,0,1],
 "namespacemembers_b.html":[1,1,0,2],
 "namespacemembers_c.html":[1,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX69 =
 "namespacemembers_func_l.html":[1,1,1,11],
 "namespacemembers_func_m.html":[1,1,1,12],
 "namespacemembers_func_n.html":[1,1,1,13],
-"namespacemembers_func_o.html":[1,1,1,14],
-"namespacemembers_func_p.html":[1,1,1,15],
-"namespacemembers_func_q.html":[1,1,1,16]
+"namespacemembers_func_o.html":[1,1,1,14]
 };
