@@ -1,5 +1,7 @@
 var NAVTREEINDEX70 =
 {
+"namespacemembers_func_n.html":[1,1,1,13],
+"namespacemembers_func_o.html":[1,1,1,14],
 "namespacemembers_func_p.html":[1,1,1,15],
 "namespacemembers_func_q.html":[1,1,1,16],
 "namespacemembers_func_r.html":[1,1,1,17],
@@ -25,8 +27,8 @@ var NAVTREEINDEX70 =
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,20],
 "namespacemembers_v.html":[1,1,0,21],
-"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars.html":[1,1,2],
+"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX70 =
 "structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f":[2,0,0,473,0],
 "structamrex_1_1AmrAssignGrid.html#a89b80b8bcfbde11575362e5c6f6ea420":[2,0,0,473,2],
 "structamrex_1_1AmrAssignGrid.html#aeeb70bfe8962e6d51abe7422d22cd4f5":[2,0,0,473,1],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html":[2,0,0,396,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a036873b2f2c1d06f877458c6e3369f13":[2,0,0,396,0,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a18e4c53a74f5623786c5dadbe087f209":[2,0,0,396,0,3]
+"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html":[2,0,0,396,0]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX71 =
 {
+"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a036873b2f2c1d06f877458c6e3369f13":[2,0,0,396,0,0],
+"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a18e4c53a74f5623786c5dadbe087f209":[2,0,0,396,0,3],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac":[2,0,0,396,0,2],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#ab54c62846a8614acc3d677a975186569":[2,0,0,396,0,5],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#ae53eccbcdd637ad1dcbdc0be4e895dc8":[2,0,0,396,0,4],
@@ -86,8 +88,8 @@ var NAVTREEINDEX71 =
 "structamrex_1_1Array2D.html#ac3b0f0863090dfd120326dccff60fb81":[2,0,0,73,10],
 "structamrex_1_1Array2D.html#ad663a1d8bd1165b26303ff63b0cfafbe":[2,0,0,73,19],
 "structamrex_1_1Array2D.html#aedd8fdf9c40df37ea0f9f74e8c2417d4":[2,0,0,73,2],
-"structamrex_1_1Array2D.html#afcd28b7fb56119e276e8e2c50b271d71":[2,0,0,73,5],
 "structamrex_1_1Array2D.html#afcd28b7fb56119e276e8e2c50b271d71":[2,0,0,73,4],
+"structamrex_1_1Array2D.html#afcd28b7fb56119e276e8e2c50b271d71":[2,0,0,73,5],
 "structamrex_1_1Array2D.html#afd8b853ff1742083599a018e439274ac":[2,0,0,73,9],
 "structamrex_1_1Array3D.html":[2,0,0,74],
 "structamrex_1_1Array3D.html#a1cc1a081cc2f368f2f262e27ab2ce0c6":[2,0,0,74,16],
@@ -105,8 +107,8 @@ var NAVTREEINDEX71 =
 "structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0":[2,0,0,74,22],
 "structamrex_1_1Array3D.html#a95521eae522931f98cbb29c0daba5b35":[2,0,0,74,1],
 "structamrex_1_1Array3D.html#ab58dde651cfad3f07ffdfb42d66e1c3b":[2,0,0,74,8],
-"structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,74,6],
 "structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,74,7],
+"structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[2,0,0,74,6],
 "structamrex_1_1Array3D.html#ace0391dec6f0b2c90c125db136ad86b0":[2,0,0,74,18],
 "structamrex_1_1Array3D.html#adfb237ca22c5441c5f708a1f8470ba5b":[2,0,0,74,21],
 "structamrex_1_1Array3D.html#ae7c4e83776aa2f4f136bd43d5e7ba4f5":[2,0,0,74,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX71 =
 "structamrex_1_1BATcoarsenRatio.html#acfcb2e2b086e18b7a8fc355d0179dbcf":[2,0,0,100,2],
 "structamrex_1_1BATindexType.html":[2,0,0,99],
 "structamrex_1_1BATindexType.html#a276c46d26f6db6df336883ccc6ada8db":[2,0,0,99,3],
-"structamrex_1_1BATindexType.html#a7e570ffae7114709f8cfc3647243629f":[2,0,0,99,6],
-"structamrex_1_1BATindexType.html#a94cc8c83f1dd9de4e2d1ab9a3d67e056":[2,0,0,99,5],
-"structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[2,0,0,99,1]
+"structamrex_1_1BATindexType.html#a7e570ffae7114709f8cfc3647243629f":[2,0,0,99,6]
 };
