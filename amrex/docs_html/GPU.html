@@ -624,7 +624,7 @@ a separate arena, the behavior of <code class="code highlight cpp c++ docutils l
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Managed_Arena</span><span class="p">()</span><span class="w"></span></code> can be changed with
 <code class="docutils literal notranslate"><span class="pre">amrex.the_device_arena_release_threshold</span></code> or
 <code class="docutils literal notranslate"><span class="pre">amrex.the_managed_arena_release_threshold</span></code>.  Note that the units for all
-the parameter discussed above are bytes.  All these areans also have a
+the parameter discussed above are bytes.  All these arenas also have a
 member function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">freeUnused</span><span class="p">()</span><span class="w"></span></code> that can be used to manually release
 unused memory back to the system.</p>
 <p>If you want to print out the current memory usage
@@ -1098,7 +1098,7 @@ element: <code class="code highlight cpp c++ docutils literal highlight-c++"><sp
 <h2>GPU block size<a class="headerlink" href="#gpu-block-size" title="Permalink to this heading"></a></h2>
 <p>By default, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span><span class="w"></span></code> launches <code class="docutils literal notranslate"><span class="pre">AMREX_GPU_MAX_THREADS</span></code> threads
 per GPU block, where <code class="docutils literal notranslate"><span class="pre">AMREX_GPU_MAX_THREADS</span></code> is a compile-time constant
-with a default value of 256.  The users can also explcitly specify the
+with a default value of 256.  The users can also explicitly specify the
 number of threads per block by <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParallelFor</span><span class="o">&lt;</span><span class="n">MY_BLOCK_SIZE</span><span class="o">&gt;</span><span class="p">(...)</span><span class="w"></span></code>, where
 <code class="docutils literal notranslate"><span class="pre">MY_BLOCK_SIZE</span></code> is a multiple of the warp size (e.g., 128).  This allows
 the users to do performance tuning for individual kernels.</p>

@@ -184,7 +184,7 @@ there is the option to use</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Note, however, that the solver behaviour is the same regardless of which functions you
+<p>Note, however, that the solver behavior is the same regardless of which functions you
 use to set the coefficients. These functions solely copy the constant value(s) to a MultiFab
 internal to <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> and so no appreciable efficiency gains can be expected.</p>
 <p>For <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLNodeLaplacian</span><span class="w"></span></code>,
@@ -292,9 +292,9 @@ The <code class="code highlight cpp c++ docutils literal highlight-c++"><span cl
 <p>Here <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">crse</span><span class="w"></span></code> contains the Dirichlet boundary
 values at the coarse resolution, and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"> </span><span class="n">crse_ratio</span><span class="w"></span></code> (e.g., 2)
 is the refinement ratio between the coarsest solver level and the AMR
-level below it.  The MultiFab crse does not need to have ghost cells itself.
-If the coarse grid bc’s for the solve are identically zero, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">nullptr</span><span class="w"></span></code>
-can be passed instead of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">crse</span><span class="w"></span></code>.</p>
+level below it.  The MultiFab <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">crse</span><span class="w"></span></code> does not need to have ghost cells
+itself. If the coarse grid bc’s for the solve are identically zero,
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">nullptr</span><span class="w"></span></code> can be passed instead of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">crse</span><span class="w"></span></code>.</p>
 <p>3) Cell-centered solvers only:
 before the solve one must always call the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLLinOp</span><span class="w"></span></code> member function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setLevelBC</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">MultiFab</span><span class="o">*</span><span class="w"> </span><span class="n">levelbcdata</span><span class="p">,</span><span class="w"></span>
@@ -382,7 +382,7 @@ bottom solver to a new <code class="code highlight cpp c++ docutils literal high
 fewer, larger grids, to allow for additional coarsening.</p></li>
 <li><p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidation</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"></span></code> (by default true) can be used
 continue to transfer a multigrid problem to fewer MPI ranks.
-There are more setting sucsh as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationGridSize</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>,
+There are more setting such as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationGridSize</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>,
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationRatio</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>, and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationStrategy</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>, to give control over how this
 process works.</p></li>
