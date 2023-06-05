@@ -1,6 +1,6 @@
 var classamrex_1_1HypreSolver =
 [
-    [ "HypreSolver", "classamrex_1_1HypreSolver.html#a9f5e3fa4e868885bf902b1358ed615ad", null ],
+    [ "HypreSolver", "classamrex_1_1HypreSolver.html#a040c586415a3e08b8d7c329cc6e861f5", null ],
     [ "fill_global_id", "classamrex_1_1HypreSolver.html#a42977b56e153d54d2503424197a077ce", null ],
     [ "fill_local_id", "classamrex_1_1HypreSolver.html#a392367fb9a32935314eb968bb2362f2d", null ],
     [ "fill_matrix", "classamrex_1_1HypreSolver.html#a6a50362b35729e2f0dc0df5cba4010df", null ],

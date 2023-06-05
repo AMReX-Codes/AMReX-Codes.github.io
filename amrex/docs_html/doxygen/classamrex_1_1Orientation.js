@@ -4,7 +4,7 @@ var classamrex_1_1Orientation =
       [ "low", "classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255", null ],
       [ "high", "classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8", null ]
     ] ],
-    [ "Orientation", "classamrex_1_1Orientation.html#a0e13eddedaa354f45c92ba866851f147", null ],
+    [ "Orientation", "classamrex_1_1Orientation.html#a4706129433791b27ed00bd69b4cff5f7", null ],
     [ "Orientation", "classamrex_1_1Orientation.html#a382d3782efffb9d5c5d132f5758b7cb5", null ],
     [ "Orientation", "classamrex_1_1Orientation.html#a377b4d3db6c833a77b181d4329d4c530", null ],
     [ "Orientation", "classamrex_1_1Orientation.html#a77e0b0c3ba62b33380805f6d6da3ca5e", null ],

@@ -1,6 +1,6 @@
 var classamrex_1_1RealBox =
 [
-    [ "RealBox", "classamrex_1_1RealBox.html#a55c5bf3adcae6114a3b58ea0141393cd", null ],
+    [ "RealBox", "classamrex_1_1RealBox.html#a0c94da578ae78f612f3c7a1295edb272", null ],
     [ "RealBox", "classamrex_1_1RealBox.html#a08455d95f7a26778ba42b5d023d16eec", null ],
     [ "RealBox", "classamrex_1_1RealBox.html#a4fad8ad2d3ec608a2c1f2fb205ddda86", null ],
     [ "RealBox", "classamrex_1_1RealBox.html#ac0a2462c4b6cf7119c7946140d4ba979", null ],

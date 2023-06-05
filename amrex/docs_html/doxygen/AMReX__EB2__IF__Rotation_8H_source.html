@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Rotation_8H_source.htm
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Note that angle is measured in radians</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM==2)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">inline</span> Real operator() (<span class="keyword">const</span> <a class="code" href="namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f">RealArray</a>&amp; p) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    [[nodiscard]] <span class="keyword">inline</span> Real operator() (<span class="keyword">const</span> <a class="code" href="namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f">RealArray</a>&amp; p) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        Real x =  p[0]*<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#ab51c69319d7d35dc43124c3692af67ee">m_cos_angle</a> + p[1]*<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">m_sin_angle</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Real y = -p[0]*<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">m_sin_angle</a> + p[1]*<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#ab51c69319d7d35dc43124c3692af67ee">m_cos_angle</a>;</div>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Rotation_8H_source.htm
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    template &lt;class U=F, typename std::enable_if&lt;IsGPUable&lt;U&gt;::value,<span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keyword">inline</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keyword">inline</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Real operator() (Real x, Real y) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#abdaf7ef0894bbc027482f233e7fadf74">m_f</a>( x*<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#ab51c69319d7d35dc43124c3692af67ee">m_cos_angle</a> + y*<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">m_sin_angle</a>,</div>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Rotation_8H_source.htm
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM==3)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">inline</span> Real operator() (<span class="keyword">const</span> <a class="code" href="namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f">RealArray</a>&amp; p) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    [[nodiscard]] <span class="keyword">inline</span> Real operator() (<span class="keyword">const</span> <a class="code" href="namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f">RealArray</a>&amp; p) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#a2e57f52a7f9f0b9b64c98c2c0cb48fed">m_dir</a>) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">case</span>(0):</div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Rotation_8H_source.htm
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    template &lt;class U=F, typename std::enable_if&lt;IsGPUable&lt;U&gt;::value,<span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keyword">inline</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keyword">inline</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    Real operator() (Real x, Real y, Real z) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="classamrex_1_1EB2_1_1RotationIF.html#a2e57f52a7f9f0b9b64c98c2c0cb48fed">m_dir</a>) {</div>

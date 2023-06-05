@@ -888,7 +888,7 @@ var namespaceamrex =
     [ "TracerParIter", "namespaceamrex.html#a2172ed493dfadbd34d5cdb72995f96af", null ],
     [ "Tuple", "namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8", null ],
     [ "TypeAt", "namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f", null ],
-    [ "UserFillBox", "namespaceamrex.html#a88dd51c88bb54ed73ede55336a7519c3", null ],
+    [ "UserFillBox", "namespaceamrex.html#a98089f12c4b65ccc7c3eee58254f9184", null ],
     [ "YAFluxRegister", "namespaceamrex.html#a9418cfdd8457daebb1c971d4e38ceb17", null ],
     [ "BottomSolver", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4", [
       [ "Default", "namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67", null ],

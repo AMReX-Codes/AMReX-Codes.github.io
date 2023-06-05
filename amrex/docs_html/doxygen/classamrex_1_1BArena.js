@@ -1,10 +1,10 @@
 var classamrex_1_1BArena =
 [
-    [ "alloc", "classamrex_1_1BArena.html#a87bb0b513c8ceae7ae87362130281ef3", null ],
-    [ "free", "classamrex_1_1BArena.html#a0c28fb6078c851560f3d8972351f3b07", null ],
-    [ "isDevice", "classamrex_1_1BArena.html#a8f04d0c847c95e5f796abe1e28fb12c8", null ],
-    [ "isDeviceAccessible", "classamrex_1_1BArena.html#adc538e1b83f0180cef20824d976f5964", null ],
-    [ "isHostAccessible", "classamrex_1_1BArena.html#aec7c11de8ca3627c0dc8835b41504b21", null ],
-    [ "isManaged", "classamrex_1_1BArena.html#af912a3f7a3822ab75b82d9dfb4dd8ad7", null ],
-    [ "isPinned", "classamrex_1_1BArena.html#a7e9aaad3e6bf3a770551ffc0e6f9cf7f", null ]
+    [ "alloc", "classamrex_1_1BArena.html#ac5b992935b798555e12f3ed280420c5b", null ],
+    [ "free", "classamrex_1_1BArena.html#a423a57e61bf30c0dd08c5b03042306ff", null ],
+    [ "isDevice", "classamrex_1_1BArena.html#abf63d084f8e220d01d53b543f7f93bc6", null ],
+    [ "isDeviceAccessible", "classamrex_1_1BArena.html#ad0656effeaa29bac32c44198b8922f0f", null ],
+    [ "isHostAccessible", "classamrex_1_1BArena.html#a84fc546372485495fe7eca80c08764e6", null ],
+    [ "isManaged", "classamrex_1_1BArena.html#a56c8b6538282b4a56466b9053065b3e0", null ],
+    [ "isPinned", "classamrex_1_1BArena.html#a4089e5008457c5f04ee4acfc430b3f37", null ]
 ];

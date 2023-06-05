@@ -10,6 +10,7 @@ var classamrex_1_1BoxList =
     [ "BoxList", "classamrex_1_1BoxList.html#a30479ce1f63ba9843fe6d5253b6c3fb9", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#a54773484ed81f097deb889555b7ca24b", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#afe00f77bc420a45f32d484d982e02072", null ],
+    [ "~BoxList", "classamrex_1_1BoxList.html#a65e7da9a77d7d7f5ebffbeecd8b3bf51", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#a57ceea7a76c84d3befd6ec06c059bbe7", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#a6603dcbdc28135b48e5bfa98b942da73", null ],
     [ "accrete", "classamrex_1_1BoxList.html#ae852e0ee71d6645fb6cbb1765547d65a", null ],

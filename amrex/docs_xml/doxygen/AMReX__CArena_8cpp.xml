@@ -1443,7 +1443,7 @@
 <codeline lineno="39"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a1bc87d17826c27e1b3ec8c623554db04" kindref="member">CArena::alloc</ref><sp/>(std::size_t<sp/>nbytes)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a8d55773acd31606b385f0a524587bd1d" kindref="member">CArena::alloc</ref><sp/>(std::size_t<sp/>nbytes)</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(<ref refid="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" kindref="member">carena_mutex</ref>);</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
@@ -1457,7 +1457,7 @@
 <codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Long</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classamrex_1_1CArena_1a7ec2fcdaa0d06d1fceb739d0e1661751" kindref="member">m_used</ref>+nbytes)<sp/>&gt;=<sp/><ref refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kindref="member">arena_info</ref>.<ref refid="structamrex_1_1ArenaInfo_1a3e4fb9cf84bc98cccf0d32e99ecd4ccc" kindref="member">release_threshold</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CArena_1a5d453f5a9a96ede674a4ef4d8a40382c" kindref="member">freeUnused_protected</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CArena_1a496e3022b2c758f0f8cde7b20f954066" kindref="member">freeUnused_protected</ref>();</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
@@ -1532,7 +1532,7 @@
 <codeline lineno="128"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"></highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a25daba71946da8de04af9ec8fe21dfad" kindref="member">CArena::free</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vp)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a92c318e660a559a2c8d4dc75ba2bc658" kindref="member">CArena::free</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>vp)</highlight></codeline>
 <codeline lineno="132"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vp<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
@@ -1622,14 +1622,14 @@
 <codeline lineno="218"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal">std::size_t</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a1452ccfc21b50919047fdaf5c3a5497f" kindref="member">CArena::freeUnused</ref><sp/>()</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a7e9429cce47c95ae5f8d8d379ffe6184" kindref="member">CArena::freeUnused</ref><sp/>()</highlight></codeline>
 <codeline lineno="222"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(<ref refid="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" kindref="member">carena_mutex</ref>);</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1CArena_1a5d453f5a9a96ede674a4ef4d8a40382c" kindref="member">freeUnused_protected</ref>();</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1CArena_1a496e3022b2c758f0f8cde7b20f954066" kindref="member">freeUnused_protected</ref>();</highlight></codeline>
 <codeline lineno="225"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"></highlight></codeline>
 <codeline lineno="227"><highlight class="normal">std::size_t</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a5d453f5a9a96ede674a4ef4d8a40382c" kindref="member">CArena::freeUnused_protected</ref><sp/>()</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><ref refid="classamrex_1_1CArena_1a496e3022b2c758f0f8cde7b20f954066" kindref="member">CArena::freeUnused_protected</ref><sp/>()</highlight></codeline>
 <codeline lineno="229"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>nbytes<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CArena_1ad1b240a0437cfcaee6788096d93a1674" kindref="member">m_alloc</ref>.erase(std::remove_if(<ref refid="classamrex_1_1CArena_1ad1b240a0437cfcaee6788096d93a1674" kindref="member">m_alloc</ref>.begin(),<sp/><ref refid="classamrex_1_1CArena_1ad1b240a0437cfcaee6788096d93a1674" kindref="member">m_alloc</ref>.end(),</highlight></codeline>

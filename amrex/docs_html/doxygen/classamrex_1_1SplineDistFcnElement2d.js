@@ -1,7 +1,7 @@
 var classamrex_1_1SplineDistFcnElement2d =
 [
-    [ "SplineDistFcnElement2d", "classamrex_1_1SplineDistFcnElement2d.html#a2df8a24015e10c03f98ec762cbc263d9", null ],
-    [ "~SplineDistFcnElement2d", "classamrex_1_1SplineDistFcnElement2d.html#a43c9b81d90768c78201c785b70185583", null ],
+    [ "SplineDistFcnElement2d", "classamrex_1_1SplineDistFcnElement2d.html#a0fcf2acf8322d4abeb0a469639510f1c", null ],
+    [ "~SplineDistFcnElement2d", "classamrex_1_1SplineDistFcnElement2d.html#a97f5555182978426366a185beee19805", null ],
     [ "calc_D", "classamrex_1_1SplineDistFcnElement2d.html#acfaa366856b5d181ef31e271d810a461", null ],
     [ "cpdist", "classamrex_1_1SplineDistFcnElement2d.html#a50880c22f1474e901e3440b9a48e8e12", null ],
     [ "cpside", "classamrex_1_1SplineDistFcnElement2d.html#a389169c4cebb80cc37e4684f8936931a", null ],

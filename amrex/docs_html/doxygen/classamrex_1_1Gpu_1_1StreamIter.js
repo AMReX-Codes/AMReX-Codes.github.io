@@ -1,7 +1,7 @@
 var classamrex_1_1Gpu_1_1StreamIter =
 [
-    [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#acbb08d62d7e2e5793251972749e5b8f2", null ],
-    [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#a2b778e17ed8bc8a84f80466e82ed36b0", null ],
+    [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#ad1e005cac4e3e6d15766802cba5b183a", null ],
+    [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#afce690e05e05809c2b1cd96c1c7ad395", null ],
     [ "~StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#a08fc187035cb7994ed7b74652d1ae60a", null ],
     [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#a9cf45fbf148f2bfa9d9abfe9951180fd", null ],
     [ "StreamIter", "classamrex_1_1Gpu_1_1StreamIter.html#a64c0f94193da32d65e2fcbf3f22ae362", null ],

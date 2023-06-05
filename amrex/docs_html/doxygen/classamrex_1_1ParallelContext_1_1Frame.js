@@ -15,6 +15,8 @@ var classamrex_1_1ParallelContext_1_1Frame =
     [ "MyID", "classamrex_1_1ParallelContext_1_1Frame.html#afc192eadbbc8aaafa7ff32cacdc8488b", null ],
     [ "MyProc", "classamrex_1_1ParallelContext_1_1Frame.html#a2fe4785cdf596f485e0087fcdf771579", null ],
     [ "NProcs", "classamrex_1_1ParallelContext_1_1Frame.html#a9b529bc7c103b596cb3c24ce70c28e93", null ],
+    [ "operator=", "classamrex_1_1ParallelContext_1_1Frame.html#add7bceedba4bbaf9f2172c82e2775c04", null ],
+    [ "operator=", "classamrex_1_1ParallelContext_1_1Frame.html#a4167f396f181d93b61fbb630eca5f0b1", null ],
     [ "set_ofs_name", "classamrex_1_1ParallelContext_1_1Frame.html#a1bc1579142503db5584556389166c169", null ],
     [ "comm", "classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f", null ],
     [ "group", "classamrex_1_1ParallelContext_1_1Frame.html#a2cb41a80f7a3c545e1e537bf84acbbc9", null ],

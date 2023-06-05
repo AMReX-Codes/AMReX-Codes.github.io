@@ -1,6 +1,9 @@
 var classamrex_1_1Arena =
 [
     [ "~Arena", "classamrex_1_1Arena.html#a327e7541e6291ce735c03392b21931b6", null ],
+    [ "Arena", "classamrex_1_1Arena.html#a2e2407d56d1710a0029928c776b27682", null ],
+    [ "Arena", "classamrex_1_1Arena.html#a57de8f5ef86cceadc9f1c00bc7ea7790", null ],
+    [ "Arena", "classamrex_1_1Arena.html#a3e2c87e60ea734fe6be6e49d124d5a76", null ],
     [ "align", "classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e", null ],
     [ "alloc", "classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e", null ],
     [ "allocate_system", "classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb", null ],
@@ -17,6 +20,8 @@ var classamrex_1_1Arena =
     [ "isHostAccessible", "classamrex_1_1Arena.html#a40d897685d407918d2d6143b5301a525", null ],
     [ "isManaged", "classamrex_1_1Arena.html#a7119489f4464f902d907f6dfe9716909", null ],
     [ "isPinned", "classamrex_1_1Arena.html#a336e271c5a07296e4c2866d194111784", null ],
+    [ "operator=", "classamrex_1_1Arena.html#a36dd09d6200de89dd8bb25b1cd223cb5", null ],
+    [ "operator=", "classamrex_1_1Arena.html#ab5c2f212500abb488cf4d14245c29aee", null ],
     [ "PrintUsage", "classamrex_1_1Arena.html#a506a68384da30629323d0839f13812c2", null ],
     [ "PrintUsageToFiles", "classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402", null ],
     [ "registerForProfiling", "classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f", null ],

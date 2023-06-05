@@ -1,6 +1,7 @@
 var classamrex_1_1EB2_1_1PolynomialIF =
 [
     [ "PolynomialIF", "classamrex_1_1EB2_1_1PolynomialIF.html#aded08a08d53e73aa84431822f8b76374", null ],
+    [ "~PolynomialIF", "classamrex_1_1EB2_1_1PolynomialIF.html#a38e787076c1c09ba8ea35d1815d97ea4", null ],
     [ "PolynomialIF", "classamrex_1_1EB2_1_1PolynomialIF.html#a3ee4eff332df3bbfcff89267a7c9bf62", null ],
     [ "PolynomialIF", "classamrex_1_1EB2_1_1PolynomialIF.html#a18f10f3de6a91418664b73f1c86d7461", null ],
     [ "operator()", "classamrex_1_1EB2_1_1PolynomialIF.html#a8af866d6a7ef190529d3f3d174054b3d", null ],

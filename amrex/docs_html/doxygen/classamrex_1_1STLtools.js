@@ -5,7 +5,7 @@ var classamrex_1_1STLtools =
     [ "fillFab", "classamrex_1_1STLtools.html#aefcdeb44ca0770702422b5f7eb289234", null ],
     [ "getBoxType", "classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70", null ],
     [ "getIntercept", "classamrex_1_1STLtools.html#addae911a258f776f2bf862da19290953", null ],
-    [ "isGPUable", "classamrex_1_1STLtools.html#aa864a279180d86f25903352bd93b9393", null ],
+    [ "isGPUable", "classamrex_1_1STLtools.html#ad1e74ed017c04e4c073999b1ab577858", null ],
     [ "prepare", "classamrex_1_1STLtools.html#a137269ba305483a92bf01d19ec1fd07c", null ],
     [ "read_ascii_stl_file", "classamrex_1_1STLtools.html#aa4f438da64a6ea3b7520112aac9f8fd3", null ],
     [ "read_binary_stl_file", "classamrex_1_1STLtools.html#aca6050ea96a310625fe20e9f9594680a", null ],

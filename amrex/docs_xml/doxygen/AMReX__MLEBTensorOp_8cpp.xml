@@ -1220,6 +1220,8 @@
         </childnode>
         <childnode refid="64" relation="include">
         </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
       <node id="120">
         <label>tuple</label>
@@ -2580,7 +2582,7 @@
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLEBTensorOp_1ac6b1462f39aa6a60a2bfd0cd6e687aee" kindref="member">define</ref>(a_geom,<sp/>a_grids,<sp/>a_dmap,<sp/>a_info,<sp/>a_factory);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1a5efda34c10df7a5f5d4c738a60c04e9f" kindref="member">MLEBTensorOp::~MLEBTensorOp</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1a5b8a6d18ce74de4a05c5f66bfecd40ba" kindref="member">MLEBTensorOp::~MLEBTensorOp</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1ac6b1462f39aa6a60a2bfd0cd6e687aee" kindref="member">MLEBTensorOp::define</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Geometry&gt;&amp;<sp/>a_geom,</highlight></codeline>
@@ -2690,7 +2692,7 @@
 <codeline lineno="136"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1adb58fe08c96787422aaf6449a03a76e8" kindref="member">MLEBTensorOp::prepareForSolve</ref><sp/>()</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1a16a71281b7dfd14b0f89a2c50fc327bb" kindref="member">MLEBTensorOp::prepareForSolve</ref><sp/>()</highlight></codeline>
 <codeline lineno="140"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>(<ref refid="classamrex_1_1MLEBTensorOp_1a1ac24f61712e93b25ebcd55639f30ce2" kindref="member">m_has_kappa</ref><sp/>==<sp/><ref refid="classamrex_1_1MLEBTensorOp_1aed368e6d9fa6a5cb5b193e4368d39cb7" kindref="member">m_has_eb_kappa</ref>,</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;MLEBTensorOp:<sp/>must<sp/>call<sp/>both<sp/>setBulkViscosity<sp/>and<sp/>setEBBulkViscosity<sp/>or<sp/>none.&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -2751,7 +2753,7 @@
 <codeline lineno="197"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"></highlight></codeline>
 <codeline lineno="199"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1a492bdb86a17eff7aa7b01a99d68eefed" kindref="member">MLEBTensorOp::apply</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev,<sp/>MultiFab&amp;<sp/>out,<sp/>MultiFab&amp;<sp/>in,<sp/>BCMode<sp/>bc_mode,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><ref refid="classamrex_1_1MLEBTensorOp_1a11ebb75b0246b6a3df2dbc44d2cdb2ab" kindref="member">MLEBTensorOp::apply</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev,<sp/>MultiFab&amp;<sp/>out,<sp/>MultiFab&amp;<sp/>in,<sp/>BCMode<sp/>bc_mode,</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StateMode<sp/>s_mode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a9214b7c07d9c296122f7418f73f798e9" kindref="member">MLMGBndry</ref>*<sp/>bndry)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="202"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MLEBTensorOp::apply()&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -3062,7 +3064,7 @@
 <codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;MLEBTensorOp::compFlux()<sp/>unknown<sp/>location<sp/>for<sp/>fluxes.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"></highlight></codeline>
 <codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/><ref refid="classamrex_1_1MLEBTensorOp_1ad5e85d6b70f2ee501328d4ec5efb0771" kindref="member">getNComp</ref>();</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/><ref refid="classamrex_1_1MLEBTensorOp_1a88ced4b56c0bcae8b8d191ed461efb97" kindref="member">getNComp</ref>();</highlight></codeline>
 <codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLCellLinOpT_1ae7f32e1b953ea4ef5643501e91560d32" kindref="member">MLEBABecLap::compFlux</ref>(amrlev,<sp/>fluxes,<sp/>sol,<sp/>loc);</highlight></codeline>
 <codeline lineno="513"><highlight class="normal"></highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mglev<sp/>&gt;=<sp/><ref refid="classamrex_1_1MLEBTensorOp_1a1ab2cb2c4fcbbbf0e3fdedad325fd6b9" kindref="member">m_kappa</ref>[amrlev].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>

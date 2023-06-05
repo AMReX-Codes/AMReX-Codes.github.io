@@ -1,7 +1,7 @@
 var classamrex_1_1LineDistFcnElement2d =
 [
-    [ "LineDistFcnElement2d", "classamrex_1_1LineDistFcnElement2d.html#ae5738f0b2294b39e4ef7c3f1c4909958", null ],
-    [ "~LineDistFcnElement2d", "classamrex_1_1LineDistFcnElement2d.html#a8c38e66a7f7ce454427cb311b0062ff0", null ],
+    [ "LineDistFcnElement2d", "classamrex_1_1LineDistFcnElement2d.html#a4f4e886cb99ae23f57dbb402b5cbb910", null ],
+    [ "~LineDistFcnElement2d", "classamrex_1_1LineDistFcnElement2d.html#a9b5d43a1548c7f7c5629d3f503c8c890", null ],
     [ "cpdist", "classamrex_1_1LineDistFcnElement2d.html#ac9429e79b55e8f6b054280c924829a94", null ],
     [ "cpside", "classamrex_1_1LineDistFcnElement2d.html#a2f9b947ad192d901f99d0bdd392196bc", null ],
     [ "newDistFcnElement2d", "classamrex_1_1LineDistFcnElement2d.html#a557c0955469be67746ebf22ad98ba341", null ],
