@@ -1,9 +1,5 @@
 var NAVTREEINDEX70 =
 {
-"namespaceamrex__parmparse__module.html#a9f0c429d324a66ca1e016da303a54380":[1,0,16,43],
-"namespaceamrex__parmparse__module.html#aa2b6623e9c82e688c1ace4430d3a0edf":[1,0,16,42],
-"namespaceamrex__parmparse__module.html#aac33f326044379b5aa26666d546563e8":[1,0,16,28],
-"namespaceamrex__parmparse__module.html#ab19ca0a4f0bea4114b9a25f29e0b0eac":[1,0,16,25],
 "namespaceamrex__parmparse__module.html#ac7eb4f4fb08fb1fe22d895d4ea48e90f":[1,0,16,32],
 "namespaceamrex__parmparse__module.html#acd6de264c2861656373e7e218ad56eb5":[1,0,16,47],
 "namespaceamrex__parmparse__module.html#ad1323834ed5f154750a5c048591417d4":[1,0,16,23],
@@ -23,8 +19,8 @@ var NAVTREEINDEX70 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[1,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[1,0,18,6],
 "namespacehacc.html":[1,0,19],
-"namespacemembers.html":[1,1,0,0],
 "namespacemembers.html":[1,1,0],
+"namespacemembers.html":[1,1,0,0],
 "namespacemembers_a.html":[1,1,0,1],
 "namespacemembers_b.html":[1,1,0,2],
 "namespacemembers_c.html":[1,1,0,3],
@@ -74,8 +70,8 @@ var NAVTREEINDEX70 =
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,20],
 "namespacemembers_v.html":[1,1,0,21],
-"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars.html":[1,1,2],
+"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX70 =
 "structFilterVirt.html#afae2fe13dafb05fa3cbe4ccf30373dde":[2,0,19,0],
 "structKeepValidFilter.html":[2,0,21],
 "structKeepValidFilter.html#af4bf053d8e8024c447f42ee722e08eb5":[2,0,21,0],
-"structMPI__Status.html":[2,0,24]
+"structMPI__Status.html":[2,0,24],
+"structN__VectorContent__MultiFab__notptr.html":[2,0,25],
+"structN__VectorContent__MultiFab__notptr.html#a1af6ce9e83db0135a45c4b2bc7afc31b":[2,0,25,2],
+"structN__VectorContent__MultiFab__notptr.html#a3930a0d9ef7c3da19db85349319d0cc6":[2,0,25,1],
+"structN__VectorContent__MultiFab__notptr.html#a7a833bea16a8f29bab8bc283d5eb4c23":[2,0,25,0]
 };

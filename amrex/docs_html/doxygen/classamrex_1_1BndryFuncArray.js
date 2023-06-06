@@ -1,5 +1,6 @@
 var classamrex_1_1BndryFuncArray =
 [
+    [ "BndryFuncArray", "classamrex_1_1BndryFuncArray.html#a480ea3785a61dabbed36488898ad6bf8", null ],
     [ "BndryFuncArray", "classamrex_1_1BndryFuncArray.html#a401d9a024e51575c667c94cb438e1d06", null ],
     [ "BndryFuncArray", "classamrex_1_1BndryFuncArray.html#a7c65dd2144dc47720940d650b688dd30", null ],
     [ "operator()", "classamrex_1_1BndryFuncArray.html#a689ef6effdce75ce81a6a3cb43941c0c", null ],

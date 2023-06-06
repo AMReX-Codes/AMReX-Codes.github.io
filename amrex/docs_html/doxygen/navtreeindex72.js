@@ -1,9 +1,5 @@
 var NAVTREEINDEX72 =
 {
-"structamrex_1_1BARef.html#a6d54f5af3411a20df87cec16abf974f8":[2,0,0,97,19],
-"structamrex_1_1BARef.html#a706eeeb8f176a08d3774dd488715bfc1":[2,0,0,97,24],
-"structamrex_1_1BARef.html#a734b995447c10c9d1c7b743aaa30e345":[2,0,0,97,23],
-"structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc":[2,0,0,97,3],
 "structamrex_1_1BARef.html#a7a41d2a79c7b1a0f9b36ffa0afbc6b49":[2,0,0,97,2],
 "structamrex_1_1BARef.html#a850d8df48213b59d82ab683351d2805e":[2,0,0,97,4],
 "structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f":[2,0,0,97,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX72 =
 "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aee9e9e8e6778816545b4523b1bb0056e":[2,0,0,457,1],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html":[2,0,0,454],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a20054ec96a4caf67051d57e923579a8e":[2,0,0,454,5],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a530916a537dcc4b424694411b430833e":[2,0,0,454,3]
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a530916a537dcc4b424694411b430833e":[2,0,0,454,3],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a59c2843f59e6ba99661a6d26958b6f08":[2,0,0,454,4],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a7bdcc3eb6bbb219b65280bd41b97b774":[2,0,0,454,0],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab6759853d755a1a01624618efeb177b0":[2,0,0,454,1],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ac8950252d5f3400022f97669a5ae9f66":[2,0,0,454,6]
 };
