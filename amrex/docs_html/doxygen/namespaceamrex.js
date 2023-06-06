@@ -181,6 +181,7 @@ var namespaceamrex =
     [ "Gpu", "namespaceamrex_1_1Gpu.html", "namespaceamrex_1_1Gpu" ],
     [ "HostDevice", "namespaceamrex_1_1HostDevice.html", "namespaceamrex_1_1HostDevice" ],
     [ "InSituUtils", "namespaceamrex_1_1InSituUtils.html", "namespaceamrex_1_1InSituUtils" ],
+    [ "IntParticleIds", "namespaceamrex_1_1IntParticleIds.html", null ],
     [ "Lazy", "namespaceamrex_1_1Lazy.html", [
       [ "Func", "namespaceamrex_1_1Lazy.html#ac520a3dfdc05eaffb3b4eea05eea5668", null ],
       [ "FuncQue", "namespaceamrex_1_1Lazy.html#a17dde5bdf675b748b4cff2f01edd7fc5", null ],
@@ -189,6 +190,7 @@ var namespaceamrex =
       [ "QueueReduction", "namespaceamrex_1_1Lazy.html#a48f09e6d45685ddcaa72f6424891b9e4", null ],
       [ "reduction_queue", "namespaceamrex_1_1Lazy.html#aaf84a070bebdd187b4edacd264604b5f", null ]
     ] ],
+    [ "LongParticleIds", "namespaceamrex_1_1LongParticleIds.html", null ],
     [ "machine", "namespaceamrex_1_1machine.html", [
       [ "Finalize", "namespaceamrex_1_1machine.html#a80498796973f6b853437e50ba873a6d1", null ],
       [ "find_best_nbh", "namespaceamrex_1_1machine.html#afa7cf247ac1fb3972693835d136c00f1", null ],

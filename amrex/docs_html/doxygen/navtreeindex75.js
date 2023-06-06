@@ -1,5 +1,7 @@
 var NAVTREEINDEX75 =
 {
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a2a001842d80f5aba37cb7fb9ae90bbac":[2,0,0,5,12,1],
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[2,0,0,5,12,2],
 "structamrex_1_1Gpu_1_1GraphSafeGuard.html#a982a397f67b04e0cbf321b1e9ed77ea6":[2,0,0,5,12,0],
 "structamrex_1_1Gpu_1_1GridSize.html":[2,0,0,5,19],
 "structamrex_1_1Gpu_1_1GridSize.html#a34ceb81cdda9c8d6009bc86cfbd7581f":[2,0,0,5,19,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX75 =
 "structamrex_1_1IsStoreAtomic.html":[2,0,0,259],
 "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,369],
 "structamrex_1_1LPInfo.html":[2,0,0,413],
-"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[2,0,0,413,18],
-"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,413,21],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,413,22]
+"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[2,0,0,413,18]
 };
