@@ -530,12 +530,13 @@ replaces one row in the matrix sent to hypre from AMReX by a row that sets the v
 <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">hypre</a> Hypre Reference Manual for full details on the usage of the parameters described briefly above.</p>
 <p>AMReX can also use <a class="reference external" href="https://www.mcs.anl.gov/petsc/">PETSc</a> as a bottom solver for cell-centered
 problems. To build PETSc, follow the next steps:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="o">-</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/petsc/petsc.git</span>
-<span class="mf">2.</span><span class="o">-</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">petsc</span><span class="w"></span>
-<span class="mf">3.</span><span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">configure</span><span class="w"> </span><span class="o">--</span><span class="n">download</span><span class="o">-</span><span class="n">hypre</span><span class="o">=</span><span class="n">yes</span><span class="w"> </span><span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="n">build_dir</span><span class="w"></span>
-<span class="mf">4.</span><span class="o">-</span><span class="w"> </span><span class="n">Follow</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">petsc</span><span class="w"></span>
-<span class="mf">5.</span><span class="o">-</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">PETSC</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="o">--</span><span class="w"></span>
-<span class="w">    </span><span class="n">PETSC_DIR</span><span class="o">=/</span><span class="n">petsc_path</span><span class="o">/</span><span class="n">petsc</span><span class="o">/</span><span class="n">build_dir</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>1.- git clone https://github.com/petsc/petsc.git
+2.- cd petsc
+3.- ./configure --prefix=build_dir
+4.- Invoke the ``make all&#39;&#39; command given at the end of the previous command output
+5.- Invoke the ``make install&#39;&#39; command given at the end of the previous command output
+6.- Create an environment variable with the PETSC directory --
+    PETSC_DIR=/petsc_path/petsc/build_dir
 </pre></div>
 </div>
 <p>To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>
