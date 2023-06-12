@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"AMReX__BackgroundThread_8H_source.html":[3,0,0,2,15],
 "AMReX__BackgroundThread_8cpp.html":[3,0,0,2,14],
 "AMReX__BaseFabUtility_8H.html":[3,0,0,2,20],
 "AMReX__BaseFabUtility_8H.html#a4b8ad062bb5e1980e5f9094e47d71420":[3,0,0,2,20,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "AMReX__Conduit__Blueprint_8cpp.html#af70ff73cf1857e1a859a1fbac9ef10b0":[3,0,0,5,1,0,0],
 "AMReX__Conduit__Blueprint_8cpp.html#afd44b852de9a30f6417dfc233d76ef3a":[3,0,0,5,1,0,1],
 "AMReX__Conduit__Blueprint__ParticlesI_8H.html":[3,0,0,5,1,2],
-"AMReX__Conduit__Blueprint__ParticlesI_8H.html#a35f365c499c5bd6750dee317b4a99c09":[3,0,0,5,1,2,1]
+"AMReX__Conduit__Blueprint__ParticlesI_8H.html#a35f365c499c5bd6750dee317b4a99c09":[3,0,0,5,1,2,1],
+"AMReX__Conduit__Blueprint__ParticlesI_8H.html#acbd817ae9ca1a59105be27f3bcc2d1fd":[3,0,0,5,1,2,0]
 };

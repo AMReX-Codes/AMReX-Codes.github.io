@@ -349,223 +349,229 @@ $(document).ready(function(){initNavTree('AMReX__YAFluxRegister_8H_source.html',
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Array4BoxTag&lt;T&gt;</a> &gt; tags;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordtype">bool</span> run_on_gpu = <a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>();</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; domainbox = m_crse_geom.Domain();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#pragma omp parallel if (!run_on_gpu)</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            std::vector&lt; std::pair&lt;int,Box&gt; &gt; isects;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(m_cfp_mask); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = mfi.fabbox();</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">if</span> (!domainbox.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(bx))  <span class="comment">// part of the box is outside periodic boundary</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a>&amp; fab = m_cfp_mask[mfi];</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; arr = m_cfp_mask.array(mfi);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; iv : pshifts)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        <span class="keywordflow">if</span> (iv != <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>())</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                            cfba.<a class="code" href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">intersections</a>(bx+iv, isects);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; is : isects)</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                            {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; ibx = is.second - iv;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                <span class="keywordflow">if</span> (run_on_gpu) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                    tags.push_back({arr,ibx});</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                    fab.template setVal&lt;RunOn::Host&gt;(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0), ibx);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                            }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                        }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(tags, 1,</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, <a class="code" href="structamrex_1_1Array4BoxTag.html">Array4BoxTag&lt;T&gt;</a> <span class="keyword">const</span>&amp; tag) noexcept</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            tag.<a class="code" href="structamrex_1_1Array4BoxTag.html#a0a4d3f31679a1d0edccfb7d2699763f4">dfab</a>(i,j,k,n) = <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        });</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#af9d5717b63e6c3f0cfb79d33862e44c0">  310</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#af9d5717b63e6c3f0cfb79d33862e44c0">YAFluxRegisterT&lt;MF&gt;::reset</a> ()</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    m_crse_data.setVal(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0));</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    m_cfpatch.setVal(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0));</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#ab499670f73f11f117350646d2d154867">  318</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ab499670f73f11f117350646d2d154867">YAFluxRegisterT&lt;MF&gt;::CrseAdd</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1MFIter.html">MFIter</a>&amp; mfi,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                              <span class="keyword">const</span> std::array&lt;FAB const*, AMREX_SPACEDIM&gt;&amp; flux,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                              <span class="keyword">const</span> Real* dx, Real dt, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(m_crse_data.nComp() == flux[0]-&gt;nComp());</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (m_crse_fab_flag[mfi.LocalIndex()] == <a class="code" href="namespaceamrex__eb__flux__reg__nd__module.html#a533c926df2a1660325d87978063391ad">crse_cell</a>) {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span>;  <span class="comment">// this coarse fab is not close to fine fabs.</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nc = m_crse_data.nComp();</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> dtdx = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/dx[0]);,</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                 <span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> dtdy = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/dx[1]);,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                 <span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> dtdz = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/dx[2]););</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* fx = flux[0];,</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                 <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* fy = flux[1];,</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                 <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* fz = flux[2];);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keyword">auto</span> fab = m_crse_data.array(mfi);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> flag = m_crse_flag.const_array(mfi);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> fxarr = fx-&gt;const_array();,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                 <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> fyarr = fy-&gt;const_array();,</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                 <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> fzarr = fz-&gt;const_array(););</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a2c1652a738f35c5b1769bedd0d6a0602">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</a> ( runon, bx, tbx,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <a class="code" href="namespaceamrex.html#ad3b5be86618428780e4c8d65b50e92ef">yafluxreg_crseadd</a>(tbx, fab, flag, <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(fxarr,fyarr,fzarr),</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                          <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(dtdx,dtdy,dtdz),nc);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    });</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#a9eea47bda999a0731934a386b05b3978">  353</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a9eea47bda999a0731934a386b05b3978">YAFluxRegisterT&lt;MF&gt;::FineAdd</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1MFIter.html">MFIter</a>&amp; mfi,</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                              <span class="keyword">const</span> std::array&lt;FAB const*, AMREX_SPACEDIM&gt;&amp; a_flux,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                              <span class="keyword">const</span> Real* dx, Real dt, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(m_cfpatch.nComp() == a_flux[0]-&gt;nComp());</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> li = mfi.LocalIndex();</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;FAB*&gt;</a>&amp; cfp_fabs = m_cfp_fab[li];</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">if</span> (cfp_fabs.empty()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(tbx, m_ratio);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; fbx = <a class="code" href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a>(bx, m_ratio);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nc = m_cfpatch.nComp();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> ratio = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(m_ratio[0],*m_ratio[1],*m_ratio[2]));</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    std::array&lt;T,AMREX_SPACEDIM&gt; dtdx{{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/(dx[0]*ratio)),</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                                                    <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/(dx[1]*ratio)),</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                                    <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/(dx[2]*ratio)))}};</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">const</span> <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> rr = m_ratio.dim3();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(run_on_gpu, tags);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; domainbox = m_crse_geom.Domain();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">#pragma omp parallel if (!run_on_gpu)</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            std::vector&lt; std::pair&lt;int,Box&gt; &gt; isects;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(m_cfp_mask); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = mfi.fabbox();</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">if</span> (!domainbox.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(bx))  <span class="comment">// part of the box is outside periodic boundary</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a>&amp; fab = m_cfp_mask[mfi];</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; arr = m_cfp_mask.array(mfi);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; iv : pshifts)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                        <span class="keywordflow">if</span> (iv != <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>())</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                            cfba.<a class="code" href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">intersections</a>(bx+iv, isects);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; is : isects)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                            {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; ibx = is.second - iv;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                <span class="keywordflow">if</span> (run_on_gpu) {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                                    tags.push_back({arr,ibx});</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                                } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                    fab.template setVal&lt;RunOn::Host&gt;(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0), ibx);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                            }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                        }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <a class="code" href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a>(tags, 1,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, <a class="code" href="structamrex_1_1Array4BoxTag.html">Array4BoxTag&lt;T&gt;</a> <span class="keyword">const</span>&amp; tag) noexcept</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            tag.<a class="code" href="structamrex_1_1Array4BoxTag.html#a0a4d3f31679a1d0edccfb7d2699763f4">dfab</a>(i,j,k,n) = <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        });</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#af9d5717b63e6c3f0cfb79d33862e44c0">  316</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#af9d5717b63e6c3f0cfb79d33862e44c0">YAFluxRegisterT&lt;MF&gt;::reset</a> ()</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    m_crse_data.setVal(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    m_cfpatch.setVal(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0));</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#ab499670f73f11f117350646d2d154867">  324</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ab499670f73f11f117350646d2d154867">YAFluxRegisterT&lt;MF&gt;::CrseAdd</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1MFIter.html">MFIter</a>&amp; mfi,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                              <span class="keyword">const</span> std::array&lt;FAB const*, AMREX_SPACEDIM&gt;&amp; flux,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                              <span class="keyword">const</span> Real* dx, Real dt, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(m_crse_data.nComp() == flux[0]-&gt;nComp());</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">if</span> (m_crse_fab_flag[mfi.LocalIndex()] == <a class="code" href="namespaceamrex__eb__flux__reg__nd__module.html#a533c926df2a1660325d87978063391ad">crse_cell</a>) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">return</span>;  <span class="comment">// this coarse fab is not close to fine fabs.</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nc = m_crse_data.nComp();</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> dtdx = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/dx[0]);,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                 <span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> dtdy = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/dx[1]);,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                 <span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> dtdz = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/dx[2]););</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* fx = flux[0];,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                 <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* fy = flux[1];,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                 <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* fz = flux[2];);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keyword">auto</span> fab = m_crse_data.array(mfi);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> flag = m_crse_flag.const_array(mfi);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> fxarr = fx-&gt;const_array();,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                 <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> fyarr = fy-&gt;const_array();,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                 <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> fzarr = fz-&gt;const_array(););</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a2c1652a738f35c5b1769bedd0d6a0602">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</a> ( runon, bx, tbx,</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <a class="code" href="namespaceamrex.html#ad3b5be86618428780e4c8d65b50e92ef">yafluxreg_crseadd</a>(tbx, fab, flag, <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(fxarr,fyarr,fzarr),</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                          <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(dtdx,dtdy,dtdz),nc);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    });</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#a9eea47bda999a0731934a386b05b3978">  359</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a9eea47bda999a0731934a386b05b3978">YAFluxRegisterT&lt;MF&gt;::FineAdd</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1MFIter.html">MFIter</a>&amp; mfi,</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                              <span class="keyword">const</span> std::array&lt;FAB const*, AMREX_SPACEDIM&gt;&amp; a_flux,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                              <span class="keyword">const</span> Real* dx, Real dt, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> runon) noexcept</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;{</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(m_cfpatch.nComp() == a_flux[0]-&gt;nComp());</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> li = mfi.LocalIndex();</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;FAB*&gt;</a>&amp; cfp_fabs = m_cfp_fab[li];</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">if</span> (cfp_fabs.empty()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(tbx, m_ratio);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; fbx = <a class="code" href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a>(bx, m_ratio);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nc = m_cfpatch.nComp();</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    std::array&lt;FAB const*,AMREX_SPACEDIM&gt; flux{{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(a_flux[0],a_flux[1],a_flux[2])}};</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordtype">bool</span> use_gpu = (runon == <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>) &amp;&amp; <a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>();</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(use_gpu);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    std::array&lt;FAB,AMREX_SPACEDIM&gt; ftmp;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (fbx != tbx) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(!use_gpu);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; b = <a class="code" href="namespaceamrex.html#a83ce813a4f22bd122dfa0d93671ecb4e">amrex::surroundingNodes</a>(fbx,idim);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            ftmp[idim].resize(b,nc);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            ftmp[idim].template setVal&lt;RunOn::Host&gt;(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0));</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            ftmp[idim].template copy&lt;RunOn::Host&gt;(*a_flux[idim]);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            flux[idim] = &amp;ftmp[idim];</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        }</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(bx.<a class="code" href="classamrex_1_1Box.html#a62e60d27acbb5b50cf826534b87510f4">cellCentered</a>());</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim=0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; lobx = <a class="code" href="namespaceamrex.html#aae360b0fe88c8af72c293906e6e7d3c3">amrex::adjCellLo</a>(bx, idim);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; hibx = <a class="code" href="namespaceamrex.html#a6b84705b46b7a57e78bb865c63eacab9">amrex::adjCellHi</a>(bx, idim);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = flux[idim];</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a>* cfp : cfp_fabs)</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        {</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; lobx_is = lobx &amp; cfp-&gt;box();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> side = 0;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                <span class="keywordflow">if</span> (lobx_is.<a class="code" href="classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97">ok</a>())</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                    <span class="keyword">auto</span> d = cfp-&gt;array();</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    <span class="keyword">auto</span> dtdxs = dtdx[idim];</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    <span class="keywordtype">int</span> dirside = idim*2+side;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> farr = <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>-&gt;const_array();</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a2c1652a738f35c5b1769bedd0d6a0602">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</a>(runon, lobx_is, tmpbox,</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                        <a class="code" href="namespaceamrex.html#a8e5424db64aba9748df778a60884c7b9">yafluxreg_fineadd</a>(tmpbox, d, farr, dtdxs, nc, dirside, rr);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    });</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                }</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            }</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; hibx_is = hibx &amp; cfp-&gt;box();</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> side = 1;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="keywordflow">if</span> (hibx_is.<a class="code" href="classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97">ok</a>())</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    <span class="keyword">auto</span> d = cfp-&gt;array();</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    <span class="keyword">auto</span> dtdxs = dtdx[idim];</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                    <span class="keywordtype">int</span> dirside = idim*2+side;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                    <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> farr = <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>-&gt;const_array();</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a2c1652a738f35c5b1769bedd0d6a0602">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</a>(runon, hibx_is, tmpbox,</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                    {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                        <a class="code" href="namespaceamrex.html#a8e5424db64aba9748df778a60884c7b9">yafluxreg_fineadd</a>(tmpbox, d, farr, dtdxs, nc, dirside, rr);</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                    });</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                }</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            }</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        }</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#a29bbf0848629975e74b0412adf5cbcf6">  434</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a29bbf0848629975e74b0412adf5cbcf6">YAFluxRegisterT&lt;MF&gt;::Reflux</a> (MF&amp; state, <span class="keywordtype">int</span> dc)</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;{</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">if</span> (!m_cfp_mask.empty())</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    {</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = m_ncomp;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(m_cfpatch); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        {</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = m_cfpatch[mfi].box();</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span> maskfab = m_cfp_mask.array(mfi);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            <span class="keyword">auto</span>       cfptfab = m_cfpatch.array(mfi);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            {</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                cfptfab(i,j,k,n) *= maskfab(i,j,k);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            });</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        }</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    m_crse_data.ParallelCopy(m_cfpatch, m_crse_geom.periodicity(), <a class="code" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa10289ce78187f199681fabf1c9956399">FabArrayBase::ADD</a>);</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(state.nComp() &gt;= dc + m_ncomp);</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a>(state, m_crse_data, 0, dc, m_ncomp, 0);</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;}</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a> ratio = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(m_ratio[0],*m_ratio[1],*m_ratio[2]));</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    std::array&lt;T,AMREX_SPACEDIM&gt; dtdx{{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/(dx[0]*ratio)),</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                                    <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/(dx[1]*ratio)),</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                                    <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a><span class="keyword">&gt;</span>(dt/(dx[2]*ratio)))}};</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">const</span> <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> rr = m_ratio.dim3();</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    std::array&lt;FAB const*,AMREX_SPACEDIM&gt; flux{{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(a_flux[0],a_flux[1],a_flux[2])}};</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">bool</span> use_gpu = (runon == <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>) &amp;&amp; <a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>();</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(use_gpu);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    std::array&lt;FAB,AMREX_SPACEDIM&gt; ftmp;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (fbx != tbx) {</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(!use_gpu);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; b = <a class="code" href="namespaceamrex.html#a83ce813a4f22bd122dfa0d93671ecb4e">amrex::surroundingNodes</a>(fbx,idim);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            ftmp[idim].resize(b,nc);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            ftmp[idim].template setVal&lt;RunOn::Host&gt;(<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">T</a>(0.0));</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            ftmp[idim].template copy&lt;RunOn::Host&gt;(*a_flux[idim]);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            flux[idim] = &amp;ftmp[idim];</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(bx.<a class="code" href="classamrex_1_1Box.html#a62e60d27acbb5b50cf826534b87510f4">cellCentered</a>());</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim=0; idim &lt; AMREX_SPACEDIM; ++idim)</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; lobx = <a class="code" href="namespaceamrex.html#aae360b0fe88c8af72c293906e6e7d3c3">amrex::adjCellLo</a>(bx, idim);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; hibx = <a class="code" href="namespaceamrex.html#a6b84705b46b7a57e78bb865c63eacab9">amrex::adjCellHi</a>(bx, idim);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a> <span class="keyword">const</span>* <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a> = flux[idim];</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a96ad5ba6f6b373c04d31d704bb04d872">FAB</a>* cfp : cfp_fabs)</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; lobx_is = lobx &amp; cfp-&gt;box();</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> side = 0;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                <span class="keywordflow">if</span> (lobx_is.<a class="code" href="classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97">ok</a>())</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                    <span class="keyword">auto</span> d = cfp-&gt;array();</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="keyword">auto</span> dtdxs = dtdx[idim];</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                    <span class="keywordtype">int</span> dirside = idim*2+side;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                    <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> farr = <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>-&gt;const_array();</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a2c1652a738f35c5b1769bedd0d6a0602">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</a>(runon, lobx_is, tmpbox,</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                    {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                        <a class="code" href="namespaceamrex.html#a8e5424db64aba9748df778a60884c7b9">yafluxreg_fineadd</a>(tmpbox, d, farr, dtdxs, nc, dirside, rr);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                    });</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            {</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; hibx_is = hibx &amp; cfp-&gt;box();</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> side = 1;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                <span class="keywordflow">if</span> (hibx_is.<a class="code" href="classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97">ok</a>())</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                    <span class="keyword">auto</span> d = cfp-&gt;array();</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                    <span class="keyword">auto</span> dtdxs = dtdx[idim];</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                    <span class="keywordtype">int</span> dirside = idim*2+side;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                    <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> farr = <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>-&gt;const_array();</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a2c1652a738f35c5b1769bedd0d6a0602">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</a>(runon, hibx_is, tmpbox,</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    {</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                        <a class="code" href="namespaceamrex.html#a8e5424db64aba9748df778a60884c7b9">yafluxreg_fineadd</a>(tmpbox, d, farr, dtdxs, nc, dirside, rr);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    });</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                }</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        }</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    }</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;}</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#a29bbf0848629975e74b0412adf5cbcf6">  440</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a29bbf0848629975e74b0412adf5cbcf6">YAFluxRegisterT&lt;MF&gt;::Reflux</a> (MF&amp; state, <span class="keywordtype">int</span> dc)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;{</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">if</span> (!m_cfp_mask.empty())</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = m_ncomp;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(m_cfpatch); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        {</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = m_cfpatch[mfi].box();</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span> maskfab = m_cfp_mask.array(mfi);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keyword">auto</span>       cfptfab = m_cfpatch.array(mfi);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            {</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                cfptfab(i,j,k,n) *= maskfab(i,j,k);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            });</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        }</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    }</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;MF&amp;</div>
-<div class="line"><a name="l00462"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb">  462</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb">YAFluxRegisterT&lt;MF&gt;::getFineData</a> ()</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;{</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordflow">return</span> m_cfpatch;</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;MF&amp;</div>
-<div class="line"><a name="l00469"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#ac9027c1a21fd7ec198393939ff2d4be2">  469</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ac9027c1a21fd7ec198393939ff2d4be2">YAFluxRegisterT&lt;MF&gt;::getCrseData</a> ()</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;{</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">return</span> m_crse_data;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;}</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
-<div class="line"><a name="l00474"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9418cfdd8457daebb1c971d4e38ceb17">  474</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html">YAFluxRegister</a> = <a class="code" href="classamrex_1_1YAFluxRegisterT.html">YAFluxRegisterT&lt;MultiFab&gt;</a>;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;}</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    m_crse_data.ParallelCopy(m_cfpatch, m_crse_geom.periodicity(), <a class="code" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cffa10289ce78187f199681fabf1c9956399">FabArrayBase::ADD</a>);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(state.nComp() &gt;= dc + m_ncomp);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a>(state, m_crse_data, 0, dc, m_ncomp, 0);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;}</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;MF&amp;</div>
+<div class="line"><a name="l00468"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb">  468</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb">YAFluxRegisterT&lt;MF&gt;::getFineData</a> ()</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;{</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">return</span> m_cfpatch;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;}</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;MF&amp;</div>
+<div class="line"><a name="l00475"></a><span class="lineno"><a class="line" href="classamrex_1_1YAFluxRegisterT.html#ac9027c1a21fd7ec198393939ff2d4be2">  475</a></span>&#160;<a class="code" href="classamrex_1_1YAFluxRegisterT.html#ac9027c1a21fd7ec198393939ff2d4be2">YAFluxRegisterT&lt;MF&gt;::getCrseData</a> ()</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;{</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordflow">return</span> m_crse_data;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;}</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00480"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9418cfdd8457daebb1c971d4e38ceb17">  480</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1YAFluxRegisterT.html">YAFluxRegister</a> = <a class="code" href="classamrex_1_1YAFluxRegisterT.html">YAFluxRegisterT&lt;MultiFab&gt;</a>;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;}</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:39</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__Geometry_8H_html"><div class="ttname"><a href="AMReX__Geometry_8H.html">AMReX_Geometry.H</a></div></div>
@@ -578,11 +584,11 @@ $(document).ready(function(){initNavTree('AMReX__YAFluxRegister_8H_source.html',
 <div class="ttc" id="aAMReX__YAFluxRegister__K_8H_html"><div class="ttname"><a href="AMReX__YAFluxRegister__K_8H.html">AMReX_YAFluxRegister_K.H</a></div></div>
 <div class="ttc" id="aAMReX__iMultiFab_8H_html"><div class="ttname"><a href="AMReX__iMultiFab_8H.html">AMReX_iMultiFab.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html"><div class="ttname"><a href="classamrex_1_1BoxArray.html">amrex::BoxArray</a></div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.H:529</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html_a1a6bba7ce3f3a648d9c1fb8815f7a3af"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">amrex::BoxArray::intersections</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; int, Box &gt; &gt; intersections(const Box &amp;bx) const</div><div class="ttdoc">Return intersections of Box and BoxArray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:1131</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html_a9cfc3c2251e61eb1f1defb1e57badeb1"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a9cfc3c2251e61eb1f1defb1e57badeb1">amrex::BoxArray::complementIn</a></div><div class="ttdeci">BoxList complementIn(const Box &amp;b) const</div><div class="ttdoc">Return box - boxarray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:1259</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html_ab905a7751a6378467cf96c78c1ac880d"><div class="ttname"><a href="classamrex_1_1BoxArray.html#ab905a7751a6378467cf96c78c1ac880d">amrex::BoxArray::coarsen</a></div><div class="ttdeci">BoxArray &amp; coarsen(int refinement_ratio)</div><div class="ttdoc">Coarsen each Box in the BoxArray to the specified ratio.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:645</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxArray_html_a1a6bba7ce3f3a648d9c1fb8815f7a3af"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a1a6bba7ce3f3a648d9c1fb8815f7a3af">amrex::BoxArray::intersections</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; int, Box &gt; &gt; intersections(const Box &amp;bx) const</div><div class="ttdoc">Return intersections of Box and BoxArray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:1132</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxArray_html_a9cfc3c2251e61eb1f1defb1e57badeb1"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a9cfc3c2251e61eb1f1defb1e57badeb1">amrex::BoxArray::complementIn</a></div><div class="ttdeci">BoxList complementIn(const Box &amp;b) const</div><div class="ttdoc">Return box - boxarray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:1260</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxArray_html_ab905a7751a6378467cf96c78c1ac880d"><div class="ttname"><a href="classamrex_1_1BoxArray.html#ab905a7751a6378467cf96c78c1ac880d">amrex::BoxArray::coarsen</a></div><div class="ttdeci">BoxArray &amp; coarsen(int refinement_ratio)</div><div class="ttdoc">Coarsen each Box in the BoxArray to the specified ratio.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:646</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_ac492bfeacfc03ff2dcb5375e5422d417"><div class="ttname"><a href="classamrex_1_1BoxArray.html#ac492bfeacfc03ff2dcb5375e5422d417">amrex::BoxArray::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdoc">Return the number of boxes in the BoxArray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.H:576</div></div>
-<div class="ttc" id="aclassamrex_1_1BoxArray_html_ae3fba31af025b800aef97da09bc4113c"><div class="ttname"><a href="classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c">amrex::BoxArray::uniqify</a></div><div class="ttdeci">void uniqify()</div><div class="ttdoc">Make ourselves unique.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:1535</div></div>
+<div class="ttc" id="aclassamrex_1_1BoxArray_html_ae3fba31af025b800aef97da09bc4113c"><div class="ttname"><a href="classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c">amrex::BoxArray::uniqify</a></div><div class="ttdeci">void uniqify()</div><div class="ttdoc">Make ourselves unique.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.cpp:1534</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxList_html"><div class="ttname"><a href="classamrex_1_1BoxList.html">amrex::BoxList</a></div><div class="ttdoc">A class for managing a List of Boxes that share a common IndexType. This class implements operations ...</div><div class="ttdef"><b>Definition:</b> AMReX_BoxList.H:53</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxList_html_ac4030d4780cc8ca926857c82819c1c42"><div class="ttname"><a href="classamrex_1_1BoxList.html#ac4030d4780cc8ca926857c82819c1c42">amrex::BoxList::size</a></div><div class="ttdeci">Long size() const noexcept</div><div class="ttdoc">The number of Boxes in this BoxList.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxList.H:110</div></div>
 <div class="ttc" id="aclassamrex_1_1BoxList_html_af1451e74b2d7de70b58b9979e21aeb49"><div class="ttname"><a href="classamrex_1_1BoxList.html#af1451e74b2d7de70b58b9979e21aeb49">amrex::BoxList::join</a></div><div class="ttdeci">void join(const BoxList &amp;blist)</div><div class="ttdoc">Join the BoxList to ourselves.</div></div>
@@ -600,11 +606,11 @@ $(document).ready(function(){initNavTree('AMReX__YAFluxRegister_8H_source.html',
 <div class="ttc" id="aclassamrex_1_1MFIter_html_a61b9a1d5eda39765d1db9b9b936558c7"><div class="ttname"><a href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">amrex::MFIter::isValid</a></div><div class="ttdeci">bool isValid() const noexcept</div><div class="ttdoc">Is the iterator valid i.e. is it associated with a FAB?</div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:141</div></div>
 <div class="ttc" id="aclassamrex_1_1Vector_html"><div class="ttname"><a href="classamrex_1_1Vector.html">amrex::Vector&lt; int &gt;</a></div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html">amrex::YAFluxRegisterT</a></div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:29</div></div>
-<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a00e42aad2911705689a1abd3857146bb"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb">amrex::YAFluxRegisterT::getFineData</a></div><div class="ttdeci">MF &amp; getFineData()</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:462</div></div>
+<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a00e42aad2911705689a1abd3857146bb"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a00e42aad2911705689a1abd3857146bb">amrex::YAFluxRegisterT::getFineData</a></div><div class="ttdeci">MF &amp; getFineData()</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:468</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a166ac40711474ecc9d054bdf63632675"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a166ac40711474ecc9d054bdf63632675">amrex::YAFluxRegisterT::m_cfp_fab</a></div><div class="ttdeci">Vector&lt; Vector&lt; FAB * &gt; &gt; m_cfp_fab</div><div class="ttdoc">The size of this is (# of local fine grids (# of crse/fine patches for that grid))</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:84</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a1bc7ad69316f063b0e10812ff7f06705"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a1bc7ad69316f063b0e10812ff7f06705">amrex::YAFluxRegisterT::m_crse_fab_flag</a></div><div class="ttdeci">Vector&lt; int &gt; m_crse_fab_flag</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:80</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a266eca2069ccb69be79badf962e3902b"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a266eca2069ccb69be79badf962e3902b">amrex::YAFluxRegisterT::m_cfpatch</a></div><div class="ttdeci">MF m_cfpatch</div><div class="ttdoc">This is built on crse/fine patches.</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:82</div></div>
-<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a29bbf0848629975e74b0412adf5cbcf6"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a29bbf0848629975e74b0412adf5cbcf6">amrex::YAFluxRegisterT::Reflux</a></div><div class="ttdeci">void Reflux(MF &amp;state, int dc=0)</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:434</div></div>
+<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a29bbf0848629975e74b0412adf5cbcf6"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a29bbf0848629975e74b0412adf5cbcf6">amrex::YAFluxRegisterT::Reflux</a></div><div class="ttdeci">void Reflux(MF &amp;state, int dc=0)</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:440</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a3597f5caa96ed6c401d35158a5228fa7"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a3597f5caa96ed6c401d35158a5228fa7">amrex::YAFluxRegisterT::m_fine_geom</a></div><div class="ttdeci">Geometry m_fine_geom</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:87</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a3cc8f2331d48facc82d8d85c31bab3f1"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a3cc8f2331d48facc82d8d85c31bab3f1">amrex::YAFluxRegisterT::m_ratio</a></div><div class="ttdeci">IntVect m_ratio</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:90</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a493f364171c018374a110d24f0c9b7c3"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a493f364171c018374a110d24f0c9b7c3">amrex::YAFluxRegisterT::define</a></div><div class="ttdeci">void define(const BoxArray &amp;fba, const BoxArray &amp;cba, const DistributionMapping &amp;fdm, const DistributionMapping &amp;cdm, const Geometry &amp;fgeom, const Geometry &amp;cgeom, const IntVect &amp;ref_ratio, int fine_lev, int nvar)</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:106</div></div>
@@ -619,18 +625,18 @@ $(document).ready(function(){initNavTree('AMReX__YAFluxRegister_8H_source.html',
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a98d014f8977101cb5406c3437897763ca4438d5a5594d291716164dd529a902cd"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca4438d5a5594d291716164dd529a902cd">amrex::YAFluxRegisterT::fine_cell</a></div><div class="ttdeci">@ fine_cell</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:73</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a98d014f8977101cb5406c3437897763ca5c0ed298da0038126a31182eb1385392"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca5c0ed298da0038126a31182eb1385392">amrex::YAFluxRegisterT::crse_cell</a></div><div class="ttdeci">@ crse_cell</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:73</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a98d014f8977101cb5406c3437897763ca95ed02b2c9b5b5a936871917a0da3d52"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a98d014f8977101cb5406c3437897763ca95ed02b2c9b5b5a936871917a0da3d52">amrex::YAFluxRegisterT::crse_fine_boundary_cell</a></div><div class="ttdeci">@ crse_fine_boundary_cell</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:73</div></div>
-<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a9eea47bda999a0731934a386b05b3978"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a9eea47bda999a0731934a386b05b3978">amrex::YAFluxRegisterT::FineAdd</a></div><div class="ttdeci">void FineAdd(const MFIter &amp;mfi, const std::array&lt; FAB const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn runon) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:353</div></div>
+<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_a9eea47bda999a0731934a386b05b3978"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#a9eea47bda999a0731934a386b05b3978">amrex::YAFluxRegisterT::FineAdd</a></div><div class="ttdeci">void FineAdd(const MFIter &amp;mfi, const std::array&lt; FAB const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn runon) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:359</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_aadc0fd498bbbe602b6468b9624b322cf"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#aadc0fd498bbbe602b6468b9624b322cf">amrex::YAFluxRegisterT::FineHasWork</a></div><div class="ttdeci">bool FineHasWork(const MFIter &amp;mfi) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:63</div></div>
-<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ab499670f73f11f117350646d2d154867"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ab499670f73f11f117350646d2d154867">amrex::YAFluxRegisterT::CrseAdd</a></div><div class="ttdeci">void CrseAdd(const MFIter &amp;mfi, const std::array&lt; FAB const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn runon) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:318</div></div>
-<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ac9027c1a21fd7ec198393939ff2d4be2"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ac9027c1a21fd7ec198393939ff2d4be2">amrex::YAFluxRegisterT::getCrseData</a></div><div class="ttdeci">MF &amp; getCrseData()</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:469</div></div>
+<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ab499670f73f11f117350646d2d154867"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ab499670f73f11f117350646d2d154867">amrex::YAFluxRegisterT::CrseAdd</a></div><div class="ttdeci">void CrseAdd(const MFIter &amp;mfi, const std::array&lt; FAB const *, AMREX_SPACEDIM &gt; &amp;flux, const Real *dx, Real dt, RunOn runon) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:324</div></div>
+<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ac9027c1a21fd7ec198393939ff2d4be2"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ac9027c1a21fd7ec198393939ff2d4be2">amrex::YAFluxRegisterT::getCrseData</a></div><div class="ttdeci">MF &amp; getCrseData()</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:475</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ad0aa87622ba3aa5a30c21fe56eeb3c33"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ad0aa87622ba3aa5a30c21fe56eeb3c33">amrex::YAFluxRegisterT::m_cfp_mask</a></div><div class="ttdeci">MF m_cfp_mask</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:83</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ad3d68c63ff831153ffc01bf39298a1fe"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ad3d68c63ff831153ffc01bf39298a1fe">amrex::YAFluxRegisterT::m_cfp_localindex</a></div><div class="ttdeci">Vector&lt; int &gt; m_cfp_localindex</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:85</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_ae4ccc72afbdaefad1add5c84f52ded78"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#ae4ccc72afbdaefad1add5c84f52ded78">amrex::YAFluxRegisterT::T</a></div><div class="ttdeci">typename MF::value_type T</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:32</div></div>
 <div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_af33672ac47d288fbe42c788ddb8f953a"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#af33672ac47d288fbe42c788ddb8f953a">amrex::YAFluxRegisterT::m_ncomp</a></div><div class="ttdeci">int m_ncomp</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:92</div></div>
-<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_af9d5717b63e6c3f0cfb79d33862e44c0"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#af9d5717b63e6c3f0cfb79d33862e44c0">amrex::YAFluxRegisterT::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:310</div></div>
+<div class="ttc" id="aclassamrex_1_1YAFluxRegisterT_html_af9d5717b63e6c3f0cfb79d33862e44c0"><div class="ttname"><a href="classamrex_1_1YAFluxRegisterT.html#af9d5717b63e6c3f0cfb79d33862e44c0">amrex::YAFluxRegisterT::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> AMReX_YAFluxRegister.H:316</div></div>
 <div class="ttc" id="aclassamrex_1_1iMultiFab_html"><div class="ttname"><a href="classamrex_1_1iMultiFab.html">amrex::iMultiFab</a></div><div class="ttdef"><b>Definition:</b> AMReX_iMultiFab.H:32</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a7a05369cacb826ba5546b4dd507c49dd"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">amrex::Gpu::inLaunchRegion</a></div><div class="ttdeci">bool inLaunchRegion() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuControl.H:82</div></div>
-<div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdoc">return the rank number local to the current Parallel Context</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:129</div></div>
+<div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a33162ef233c092e9e6fd75ab291b9b29"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">amrex::ParallelDescriptor::MyProc</a></div><div class="ttdeci">int MyProc() noexcept</div><div class="ttdoc">return the rank number local to the current Parallel Context</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:125</div></div>
 <div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_acc0c2cceab5a58cafa4ae6e68be50d24"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">amrex::SundialsUserFun::f</a></div><div class="ttdeci">static int f(realtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:40</div></div>
 <div class="ttc" id="anamespaceamrex__eb__flux__reg__nd__module_html_a248ca933a7707ac5dfe93b484be5c2cc"><div class="ttname"><a href="namespaceamrex__eb__flux__reg__nd__module.html#a248ca933a7707ac5dfe93b484be5c2cc">amrex_eb_flux_reg_nd_module::crse_fine_boundary_cell</a></div><div class="ttdeci">integer, parameter crse_fine_boundary_cell</div><div class="ttdef"><b>Definition:</b> AMReX_EBFluxRegister_nd.F90:8</div></div>
 <div class="ttc" id="anamespaceamrex__eb__flux__reg__nd__module_html_a533c926df2a1660325d87978063391ad"><div class="ttname"><a href="namespaceamrex__eb__flux__reg__nd__module.html#a533c926df2a1660325d87978063391ad">amrex_eb_flux_reg_nd_module::crse_cell</a></div><div class="ttdeci">integer, parameter crse_cell</div><div class="ttdef"><b>Definition:</b> AMReX_EBFluxRegister_nd.F90:7</div></div>

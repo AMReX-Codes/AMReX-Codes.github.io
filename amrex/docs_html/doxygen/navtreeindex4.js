@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"AMReX__EBFluxRegister__2D__C_8H_source.html":[3,0,0,4,72],
 "AMReX__EBFluxRegister__3D__C_8H.html":[3,0,0,4,73],
 "AMReX__EBFluxRegister__3D__C_8H.html#a0c65969b354bed7478ab5716942fdbad":[3,0,0,4,73,9],
 "AMReX__EBFluxRegister__3D__C_8H.html#a15dc2901e84865ab7ca819e913967f1d":[3,0,0,4,73,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6":[3,0,0,2,80,4],
 "AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6a3de07fb14bde47411225509d67e0bda1":[3,0,0,2,80,4,0],
 "AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6a86e193c43ac00a14b0943baf3433c6d0":[3,0,0,2,80,4,2],
-"AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6a8d7828a9196bfb084013996640e84bd4":[3,0,0,2,80,4,1]
+"AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6a8d7828a9196bfb084013996640e84bd4":[3,0,0,2,80,4,1],
+"AMReX__FACopyDescriptor_8H_source.html":[3,0,0,2,80]
 };

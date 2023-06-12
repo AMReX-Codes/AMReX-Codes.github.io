@@ -1,6 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"AMReX__PlotFileUtilHDF5_8cpp.html#a35cb6e91489172228a5e86d0e274e911":[3,0,0,5,2,3,7],
 "AMReX__PlotFileUtilHDF5_8cpp.html#a8db0da70de1a3125e8b33af200a3db88":[3,0,0,5,2,3,0],
 "AMReX__PlotFileUtilHDF5_8cpp.html#aa3fc410d182f902647727772313eb291":[3,0,0,5,2,3,10],
 "AMReX__PlotFileUtilHDF5_8cpp.html#aaf22588c7b0bb6c22716656d04ed0122":[3,0,0,5,2,3,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX18 =
 "AMReX__SundialsIntegrator_8H.html#aa64fc5cec19aa33eb07abd22a5e388de":[3,0,0,5,8,5,3],
 "AMReX__SundialsIntegrator_8H.html#ab6ef23c14197ba199f01448789486e7d":[3,0,0,5,8,5,4],
 "AMReX__SundialsIntegrator_8H.html#acc0c2cceab5a58cafa4ae6e68be50d24":[3,0,0,5,8,5,2],
-"AMReX__SundialsIntegrator_8H_source.html":[3,0,0,5,8,5]
+"AMReX__SundialsIntegrator_8H_source.html":[3,0,0,5,8,5],
+"AMReX__Sundials_8H.html":[3,0,0,5,8,2]
 };
