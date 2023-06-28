@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"AMReX__FACopyDescriptor_8H.html#a9f13be15ca764e94680df68d8b9505d6a8d7828a9196bfb084013996640e84bd4":[3,0,0,2,80,4,1],
+"AMReX__FACopyDescriptor_8H_source.html":[3,0,0,2,80],
 "AMReX__FArrayBox_8H.html":[3,0,0,2,82],
 "AMReX__FArrayBox_8H.html#abda821661019fb0a77eb3a9706dc7330":[3,0,0,2,82,3],
 "AMReX__FArrayBox_8H_source.html":[3,0,0,2,82],
@@ -29,7 +31,6 @@ var NAVTREEINDEX5 =
 "AMReX__FPC_8cpp.html":[3,0,0,2,107],
 "AMReX__FabArrayBase_8H.html":[3,0,0,2,74],
 "AMReX__FabArrayBase_8H.html#a8bf3fd2af3f97b6e13b0b7be0a4dcaa7":[3,0,0,2,74,18],
-"AMReX__FabArrayBase_8H.html#ad2ec28e533d93f8d4103d67a4402f00b":[3,0,0,2,74,19],
 "AMReX__FabArrayBase_8H_source.html":[3,0,0,2,74],
 "AMReX__FabArrayBase_8cpp.html":[3,0,0,2,73],
 "AMReX__FabArrayCommI_8H.html":[3,0,0,2,75],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "AMReX__FillPatchUtil__2d_8F90.html#afa375bc80d75801dec94e9bf3b15634a":[3,0,0,1,15,0],
 "AMReX__FillPatchUtil__3d_8F90.html":[3,0,0,1,16],
 "AMReX__FillPatchUtil__3d_8F90.html#a06ca9af32fa59679e92c5c6fe1affca6":[3,0,0,1,16,1],
-"AMReX__FillPatchUtil__3d_8F90.html#a7d7a0a1fb2030c9490447872df2c47b7":[3,0,0,1,16,0],
-"AMReX__FillPatchUtil__F_8H.html":[3,0,0,1,17]
+"AMReX__FillPatchUtil__3d_8F90.html#a7d7a0a1fb2030c9490447872df2c47b7":[3,0,0,1,16,0]
 };

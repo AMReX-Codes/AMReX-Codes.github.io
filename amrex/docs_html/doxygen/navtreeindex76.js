@@ -1,5 +1,6 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a":[2,0,0,413,13],
 "structamrex_1_1LPInfo.html#a4a7b1b85ca071370a9a98488be7dd5dc":[2,0,0,413,10],
 "structamrex_1_1LPInfo.html#a50655cba9bb48a63c7f0913e0ba8e21a":[2,0,0,413,6],
 "structamrex_1_1LPInfo.html#a5969085705dd33f4ed532326141d4c78":[2,0,0,413,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1NonLocalBC_1_1CommHandler.html":[2,0,0,9,12],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#a18b34e7c60c895b063c694f7745190ae":[2,0,0,9,12,2],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#aa8135050d54b2e8cf0216b9038c4ab8b":[2,0,0,9,12,0],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,9,12,1],
-"structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[2,0,0,9,17]
+"structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,9,12,1]
 };

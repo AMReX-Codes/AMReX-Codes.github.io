@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__Sundials_8H.html":[3,0,0,5,8,2],
 "AMReX__Sundials_8H_source.html":[3,0,0,5,8,2],
 "AMReX__Sundials__Core_8H.html":[3,0,0,5,8,4],
 "AMReX__Sundials__Core_8H.html#a9073bde66b70bda0c4d46655775c684d":[3,0,0,5,8,4,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__XYPlotDataList_8H.html":[3,0,0,5,0,11],
 "AMReX__XYPlotDataList_8H_source.html":[3,0,0,5,0,11],
 "AMReX__XYPlotDataList_8cpp.html":[3,0,0,5,0,10],
-"AMReX__YAFluxRegister_8H.html":[3,0,0,3,19],
-"AMReX__YAFluxRegister_8H.html#a9418cfdd8457daebb1c971d4e38ceb17":[3,0,0,3,19,1]
+"AMReX__YAFluxRegister_8H.html":[3,0,0,3,19]
 };
