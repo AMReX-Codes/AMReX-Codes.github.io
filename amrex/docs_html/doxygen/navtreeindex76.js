@@ -1,5 +1,14 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1IsStoreAtomic.html":[2,0,0,259],
+"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,369],
+"structamrex_1_1LPInfo.html":[2,0,0,413],
+"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[2,0,0,413,18],
+"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,413,21],
+"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,413,22],
+"structamrex_1_1LPInfo.html#a2adef9e34d1e183d6fe240d63ac5e62a":[2,0,0,413,4],
+"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[2,0,0,413,25],
+"structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad":[2,0,0,413,2],
 "structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a":[2,0,0,413,13],
 "structamrex_1_1LPInfo.html#a4a7b1b85ca071370a9a98488be7dd5dc":[2,0,0,413,10],
 "structamrex_1_1LPInfo.html#a50655cba9bb48a63c7f0913e0ba8e21a":[2,0,0,413,6],
@@ -240,14 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1NonLocalBC_1_1CommData.html":[2,0,0,9,11],
 "structamrex_1_1NonLocalBC_1_1CommData.html#a003cda29a508c69f8a9cb1ee80c7b72b":[2,0,0,9,11,5],
 "structamrex_1_1NonLocalBC_1_1CommData.html#a013fcdb6969b2114c8a41b59a75ce564":[2,0,0,9,11,1],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876":[2,0,0,9,11,0],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a482a19ba37661846afa0f40688702f95":[2,0,0,9,11,6],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a4e23f4023dc19cf04cce947add6a27a8":[2,0,0,9,11,4],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a543e95dcf88e9bc9ec1a944364639037":[2,0,0,9,11,7],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a7043829d46fc0b8fe144d8f94a2d8580":[2,0,0,9,11,3],
-"structamrex_1_1NonLocalBC_1_1CommData.html#adacc0eb8f4427cd400d829a713149d17":[2,0,0,9,11,2],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html":[2,0,0,9,12],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#a18b34e7c60c895b063c694f7745190ae":[2,0,0,9,12,2],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#aa8135050d54b2e8cf0216b9038c4ab8b":[2,0,0,9,12,0],
-"structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[2,0,0,9,12,1]
+"structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876":[2,0,0,9,11,0]
 };

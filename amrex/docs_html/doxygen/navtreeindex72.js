@@ -1,5 +1,14 @@
 var NAVTREEINDEX72 =
 {
+"structamrex_1_1BARef.html#a299f5f87c10a06d86f32289928792d07":[2,0,0,97,8],
+"structamrex_1_1BARef.html#a4fe6e97cf649dbce6fd8703dc1b53a02":[2,0,0,97,0],
+"structamrex_1_1BARef.html#a5944e840877ab3c3a9aa28d2bd5d1399":[2,0,0,97,21],
+"structamrex_1_1BARef.html#a65dc0d94878bc8772f54d69c57430979":[2,0,0,97,31],
+"structamrex_1_1BARef.html#a6d54f5af3411a20df87cec16abf974f8":[2,0,0,97,19],
+"structamrex_1_1BARef.html#a706eeeb8f176a08d3774dd488715bfc1":[2,0,0,97,24],
+"structamrex_1_1BARef.html#a734b995447c10c9d1c7b743aaa30e345":[2,0,0,97,23],
+"structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc":[2,0,0,97,3],
+"structamrex_1_1BARef.html#a7a41d2a79c7b1a0f9b36ffa0afbc6b49":[2,0,0,97,2],
 "structamrex_1_1BARef.html#a850d8df48213b59d82ab683351d2805e":[2,0,0,97,4],
 "structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f":[2,0,0,97,1],
 "structamrex_1_1BARef.html#a88374d21f3cf26914235a3136df641f7":[2,0,0,97,20],
@@ -180,8 +189,8 @@ var NAVTREEINDEX72 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[2,0,0,476,20],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[2,0,0,476,13],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[2,0,0,476,7],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[2,0,0,476,4],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[2,0,0,476,3],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[2,0,0,476,4],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[2,0,0,476,1],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[2,0,0,476,18],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[2,0,0,476,5],
@@ -240,14 +249,5 @@ var NAVTREEINDEX72 =
 "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html":[2,0,0,457],
 "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a46cff55b388d9aaefe81cd3a8a6d7648":[2,0,0,457,2],
 "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a4cd4035b5290c6ab844dcb8568c020dc":[2,0,0,457,3],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ac7df2f9de658c06efefb501e8544e9c5":[2,0,0,457,0],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aee9e9e8e6778816545b4523b1bb0056e":[2,0,0,457,1],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html":[2,0,0,454],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a20054ec96a4caf67051d57e923579a8e":[2,0,0,454,5],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a530916a537dcc4b424694411b430833e":[2,0,0,454,3],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a59c2843f59e6ba99661a6d26958b6f08":[2,0,0,454,4],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a7bdcc3eb6bbb219b65280bd41b97b774":[2,0,0,454,0],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab6759853d755a1a01624618efeb177b0":[2,0,0,454,1],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ac8950252d5f3400022f97669a5ae9f66":[2,0,0,454,6],
-"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#acf82f34218d15ed26f163a36979c5a30":[2,0,0,454,2]
+"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ac7df2f9de658c06efefb501e8544e9c5":[2,0,0,457,0]
 };

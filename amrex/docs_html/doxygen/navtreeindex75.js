@@ -1,5 +1,14 @@
 var NAVTREEINDEX75 =
 {
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#aac93b82b3c746e0c6183e801898b3271":[2,0,0,5,20,1],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[2,0,0,5,20,0],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#aec6fe7611547a4813a4f2d79d341675a":[2,0,0,5,20,7],
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html":[2,0,0,5,12],
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a2a001842d80f5aba37cb7fb9ae90bbac":[2,0,0,5,12,1],
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a6988aa8a1462464a612470f422835404":[2,0,0,5,12,2],
+"structamrex_1_1Gpu_1_1GraphSafeGuard.html#a982a397f67b04e0cbf321b1e9ed77ea6":[2,0,0,5,12,0],
+"structamrex_1_1Gpu_1_1GridSize.html":[2,0,0,5,19],
+"structamrex_1_1Gpu_1_1GridSize.html#a34ceb81cdda9c8d6009bc86cfbd7581f":[2,0,0,5,19,0],
 "structamrex_1_1Gpu_1_1GridSize.html#a6c6f30d2bbabe2960fa682d624e70659":[2,0,0,5,19,1],
 "structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017":[2,0,0,5,19,2],
 "structamrex_1_1Gpu_1_1Handler.html":[2,0,0,5,40],
@@ -240,14 +249,5 @@ var NAVTREEINDEX75 =
 "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,237],
 "structamrex_1_1IsMultiFabIterator.html":[2,0,0,245],
 "structamrex_1_1IsPolymorphicArenaAllocator.html":[2,0,0,152],
-"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,165],
-"structamrex_1_1IsStoreAtomic.html":[2,0,0,259],
-"structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,369],
-"structamrex_1_1LPInfo.html":[2,0,0,413],
-"structamrex_1_1LPInfo.html#a0699fbe06a739f9b44ba27daa2cc2307":[2,0,0,413,18],
-"structamrex_1_1LPInfo.html#a152aad4c314ba51947044170a8ccd3a5":[2,0,0,413,21],
-"structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b":[2,0,0,413,22],
-"structamrex_1_1LPInfo.html#a2adef9e34d1e183d6fe240d63ac5e62a":[2,0,0,413,4],
-"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[2,0,0,413,25],
-"structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad":[2,0,0,413,2]
+"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,165]
 };

@@ -1,5 +1,10 @@
 var NAVTREEINDEX20 =
 {
+"AMReX__WritePlotFile_8cpp.html#a5d56ac97c4674967e38c97cb056a1f9b":[3,0,0,5,0,8,1],
+"AMReX__XYPlotDataList_8H.html":[3,0,0,5,0,11],
+"AMReX__XYPlotDataList_8H_source.html":[3,0,0,5,0,11],
+"AMReX__XYPlotDataList_8cpp.html":[3,0,0,5,0,10],
+"AMReX__YAFluxRegister_8H.html":[3,0,0,3,19],
 "AMReX__YAFluxRegister_8H.html#a9418cfdd8457daebb1c971d4e38ceb17":[3,0,0,3,19,1],
 "AMReX__YAFluxRegister_8H_source.html":[3,0,0,3,19],
 "AMReX__YAFluxRegister__1D__K_8H.html":[3,0,0,3,20],
@@ -244,10 +249,5 @@ var NAVTREEINDEX20 =
 "AMReX__mempool__mod_8F90.html#a07ba766a64e809e4be6c014aad7d19e6":[3,0,0,2,170,21],
 "AMReX__mempool__mod_8F90.html#a0e05b26a99ee9bfcd67d3bcf92f5c2c8":[3,0,0,2,170,17],
 "AMReX__mempool__mod_8F90.html#a23bae64c87fe27a0ba910ec43a9533d3":[3,0,0,2,170,33],
-"AMReX__mempool__mod_8F90.html#a29e17f13c7452069bf3d97542e49408d":[3,0,0,2,170,45],
-"AMReX__mempool__mod_8F90.html#a2b5ada4df017deb8b5ab35daf32ee166":[3,0,0,2,170,15],
-"AMReX__mempool__mod_8F90.html#a3fc8f0cceacb6dcb6bac79950dcc81f2":[3,0,0,2,170,11],
-"AMReX__mempool__mod_8F90.html#a472bb83258a0d92b0e083a9c39d7acc0":[3,0,0,2,170,38],
-"AMReX__mempool__mod_8F90.html#a47590a2b614ca1a020c77a019a93253d":[3,0,0,2,170,7],
-"AMReX__mempool__mod_8F90.html#a52df12c154901553f7481a5ddd08b16f":[3,0,0,2,170,16]
+"AMReX__mempool__mod_8F90.html#a29e17f13c7452069bf3d97542e49408d":[3,0,0,2,170,45]
 };

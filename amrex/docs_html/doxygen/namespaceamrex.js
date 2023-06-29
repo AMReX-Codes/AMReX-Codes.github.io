@@ -360,6 +360,11 @@ var namespaceamrex =
       [ "mlpoisson_gsrb_os", "namespaceamrex_1_1TwoD.html#a987c939b4effecdac441a9211d1979e9", null ],
       [ "mlpoisson_normalize", "namespaceamrex_1_1TwoD.html#a42e901e88111cafb3b84f39d0032e0a0", null ]
     ] ],
+    [ "VectorGrowthStrategy", "namespaceamrex_1_1VectorGrowthStrategy.html", [
+      [ "GetGrowthFactor", "namespaceamrex_1_1VectorGrowthStrategy.html#a8ef1324687971e98cff6d9df253b95fa", null ],
+      [ "Initialize", "namespaceamrex_1_1VectorGrowthStrategy.html#a220176c8289f1b22577adf0500f09561", null ],
+      [ "growth_factor", "namespaceamrex_1_1VectorGrowthStrategy.html#a03d109d27d848ed9f9a2bf219dd34a42", null ]
+    ] ],
     [ "Amr", "classamrex_1_1Amr.html", "classamrex_1_1Amr" ],
     [ "AmrLevel", "classamrex_1_1AmrLevel.html", "classamrex_1_1AmrLevel" ],
     [ "FillPatchIterator", "classamrex_1_1FillPatchIterator.html", "classamrex_1_1FillPatchIterator" ],
