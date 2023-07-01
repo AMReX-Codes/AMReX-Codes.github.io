@@ -1,5 +1,16 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#a9c6c44b27898e0c3147cbcd6e9ea6dee":[2,0,0,172,2],
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#aa2956bcbc0e2ccbdb4ac624927e96de5":[2,0,0,172,0],
+"structamrex_1_1IsBaseFab.html":[2,0,0,234],
+"structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html":[2,0,0,235],
+"structamrex_1_1IsCallable.html":[2,0,0,251],
+"structamrex_1_1IsCallableR.html":[2,0,0,252],
+"structamrex_1_1IsFabArray.html":[2,0,0,236],
+"structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,237],
+"structamrex_1_1IsMultiFabIterator.html":[2,0,0,245],
+"structamrex_1_1IsPolymorphicArenaAllocator.html":[2,0,0,152],
+"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,165],
 "structamrex_1_1IsStoreAtomic.html":[2,0,0,259],
 "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html":[2,0,0,369],
 "structamrex_1_1LPInfo.html":[2,0,0,413],
@@ -238,16 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1Neighbors_1_1iterator.html#a60e15a72d1935e19d3a9912f232c9c0d":[2,0,0,428,1,3],
 "structamrex_1_1Neighbors_1_1iterator.html#a7a4551cfd44eb8d3855dc639c91d92a7":[2,0,0,428,1,8],
 "structamrex_1_1Neighbors_1_1iterator.html#aa3897bfacd517fe8022b39be48c6bb2e":[2,0,0,428,1,4],
-"structamrex_1_1Neighbors_1_1iterator.html#aaf05d2993eabd39dee90939a4e8d3b80":[2,0,0,428,1,1],
-"structamrex_1_1Neighbors_1_1iterator.html#ab3d7b85eaaaa3603c37bcbdff9b9790a":[2,0,0,428,1,5],
-"structamrex_1_1Neighbors_1_1iterator.html#ac7a495a607b210cd274adf1f4318ebb0":[2,0,0,428,1,2],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html":[2,0,0,9,15],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a86713118d056b9b6aecf7c588915b7a4":[2,0,0,9,15,0],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#a961b07dcb0ecaf46a06c9e792f6e451f":[2,0,0,9,15,1],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#aca8782125cabf6d92e994f234ab7519b":[2,0,0,9,15,3],
-"structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html#af5e6237a29344dbd4ff748c0bf22cdb7":[2,0,0,9,15,2],
-"structamrex_1_1NonLocalBC_1_1CommData.html":[2,0,0,9,11],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a003cda29a508c69f8a9cb1ee80c7b72b":[2,0,0,9,11,5],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a013fcdb6969b2114c8a41b59a75ce564":[2,0,0,9,11,1],
-"structamrex_1_1NonLocalBC_1_1CommData.html#a1bef6147ea1eda449fa5872d533d1876":[2,0,0,9,11,0]
+"structamrex_1_1Neighbors_1_1iterator.html#aaf05d2993eabd39dee90939a4e8d3b80":[2,0,0,428,1,1]
 };

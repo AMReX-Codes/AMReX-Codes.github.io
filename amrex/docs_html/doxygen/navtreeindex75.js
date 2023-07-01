@@ -1,5 +1,16 @@
 var NAVTREEINDEX75 =
 {
+"structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[2,0,0,5,24,3],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,5,24,4],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[2,0,0,5,24,10],
+"structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,5,10],
+"structamrex_1_1Gpu_1_1DeviceToHost.html":[2,0,0,5,9],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html":[2,0,0,5,20],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a08f6a3b8fe37c3a6c070a86b6771abf4":[2,0,0,5,20,4],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a37cfbe8246a2b757ee9753ee96f03385":[2,0,0,5,20,3],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a383b070cb13bc99de64062941d521149":[2,0,0,5,20,5],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a59e4685120009f8432768699e898fd98":[2,0,0,5,20,6],
+"structamrex_1_1Gpu_1_1ExecutionConfig.html#a6aae308317a5d0b1f713f8f5e6da30e0":[2,0,0,5,20,2],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#aac93b82b3c746e0c6183e801898b3271":[2,0,0,5,20,1],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#abe1e6e1f5ba30f2630030521cd1f2a2f":[2,0,0,5,20,0],
 "structamrex_1_1Gpu_1_1ExecutionConfig.html#aec6fe7611547a4813a4f2d79d341675a":[2,0,0,5,20,7],
@@ -238,16 +249,5 @@ var NAVTREEINDEX75 =
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#ab8dfe9dbb67acf14bbbfe3c2b756fa3d":[2,0,0,173,2],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html#ae7e9955973785a29d321ba4680fafce3":[2,0,0,173,0],
 "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html":[2,0,0,172],
-"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#a8d75a5692239f0e1c9ad6f2c7e22a34a":[2,0,0,172,1],
-"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#a9c6c44b27898e0c3147cbcd6e9ea6dee":[2,0,0,172,2],
-"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#aa2956bcbc0e2ccbdb4ac624927e96de5":[2,0,0,172,0],
-"structamrex_1_1IsBaseFab.html":[2,0,0,234],
-"structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html":[2,0,0,235],
-"structamrex_1_1IsCallable.html":[2,0,0,251],
-"structamrex_1_1IsCallableR.html":[2,0,0,252],
-"structamrex_1_1IsFabArray.html":[2,0,0,236],
-"structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html":[2,0,0,237],
-"structamrex_1_1IsMultiFabIterator.html":[2,0,0,245],
-"structamrex_1_1IsPolymorphicArenaAllocator.html":[2,0,0,152],
-"structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html":[2,0,0,165]
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#a8d75a5692239f0e1c9ad6f2c7e22a34a":[2,0,0,172,1]
 };

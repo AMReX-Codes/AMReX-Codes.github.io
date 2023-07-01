@@ -15,7 +15,9 @@ var AMReX__PODVector_8H =
     [ "memMoveImpl", "AMReX__PODVector_8H.html#ad3182cae322a165690f9c9b302667783", null ],
     [ "memMoveImpl", "AMReX__PODVector_8H.html#a07dd38ddad743d46fe67991eda9a8d9e", null ],
     [ "memMoveImpl", "AMReX__PODVector_8H.html#a5541d5d1234082fe2ab2e7ef35385227", null ],
+    [ "SetGrowthFactor", "AMReX__PODVector_8H.html#ae40903e99ce2fa70dfcfbc71e8e1f9d1", null ],
     [ "uninitializedFillNImpl", "AMReX__PODVector_8H.html#a0076aea64837f78fff89e17e088c9500", null ],
     [ "uninitializedFillNImpl", "AMReX__PODVector_8H.html#a16990f636fe5fdc926d637efe2871f36", null ],
-    [ "uninitializedFillNImpl", "AMReX__PODVector_8H.html#a4de20535e729f578e9f521074cd131a9", null ]
+    [ "uninitializedFillNImpl", "AMReX__PODVector_8H.html#a4de20535e729f578e9f521074cd131a9", null ],
+    [ "ValidateUserInput", "AMReX__PODVector_8H.html#a55450ed37c6677fb96a9f9c724553739", null ]
 ];
