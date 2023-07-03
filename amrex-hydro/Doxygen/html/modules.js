@@ -5,6 +5,6 @@ var modules =
     [ "MOL", "group__MOL.html", null ],
     [ "Godunov", "group__Godunov.html", null ],
     [ "Utilities", "group__Utilities.html", "group__Utilities" ],
-    [ "Redistribution", "group__Redistribution.html", "group__Redistribution" ],
+    [ "Redistribution", "group__Redistribution.html", null ],
     [ "BDS", "group__BDS.html", "group__BDS" ]
 ];
