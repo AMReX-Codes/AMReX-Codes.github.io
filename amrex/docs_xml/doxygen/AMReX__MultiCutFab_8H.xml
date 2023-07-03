@@ -7,6 +7,9 @@
     <includes refid="AMReX__FArrayBox_8H" local="no">AMReX_FArrayBox.H</includes>
     <includes refid="AMReX__EBCellFlag_8H" local="no">AMReX_EBCellFlag.H</includes>
     <includedby refid="AMReX__EB2__Level_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.H</includedby>
+    <includedby refid="AMReX__EB__FluxRedistribute_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp</includedby>
+    <includedby refid="AMReX__EB__Redistribution_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.cpp</includedby>
+    <includedby refid="AMReX__EB__Redistribution_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H</includedby>
     <includedby refid="AMReX__EB__utils_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp</includedby>
     <includedby refid="AMReX__EBDataCollection_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EBDataCollection.cpp</includedby>
     <includedby refid="AMReX__EBFArrayBox_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp</includedby>
@@ -155,19 +158,11 @@
         <link refid="AMReX__FArrayBox_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
         <childnode refid="133" relation="include">
         </childnode>
         <childnode refid="150" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
         <childnode refid="57" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="128">
@@ -1914,11 +1909,11 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="20">
+      <node id="27">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFArrayBox.cpp</label>
         <link refid="AMReX__EBFArrayBox_8cpp"/>
       </node>
-      <node id="22">
+      <node id="29">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_MultiCutFab.cpp</label>
         <link refid="AMReX__MultiCutFab_8cpp"/>
       </node>
@@ -1929,36 +1924,44 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
       </node>
-      <node id="15">
+      <node id="22">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_chkpt_file.H</label>
         <link refid="AMReX__EB2__Level__chkpt__file_8H"/>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp</label>
         <link refid="AMReX__EB2_8cpp"/>
       </node>
-      <node id="10">
+      <node id="17">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H</label>
         <link refid="AMReX__EB__utils_8H"/>
-        <childnode refid="11" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="21">
+      <node id="28">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMultiFabUtil.cpp</label>
         <link refid="AMReX__EBMultiFabUtil_8cpp"/>
       </node>
@@ -1966,16 +1969,28 @@
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpace_STL.cpp</label>
         <link refid="AMReX__EB2__IndexSpace__STL_8cpp"/>
       </node>
-      <node id="19">
+      <node id="26">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBDataCollection.cpp</label>
         <link refid="AMReX__EBDataCollection_8cpp"/>
       </node>
-      <node id="17">
+      <node id="13">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp</label>
+        <link refid="AMReX__EB__RedistributionApply_8cpp"/>
+      </node>
+      <node id="11">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_FluxRedistribute.cpp</label>
+        <link refid="AMReX__EB__FluxRedistribute_8cpp"/>
+      </node>
+      <node id="15">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistribute.cpp</label>
+        <link refid="AMReX__EB__StateRedistribute_8cpp"/>
+      </node>
+      <node id="24">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.H</label>
         <link refid="AMReX__EB2__Level__STL_8H"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -1986,9 +2001,33 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
+      <node id="10">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.H</label>
+        <link refid="AMReX__EB__Redistribution_8H"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
       <node id="4">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp</label>
         <link refid="AMReX__algoim_8cpp"/>
+      </node>
+      <node id="12">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_Redistribution.cpp</label>
+        <link refid="AMReX__EB__Redistribution_8cpp"/>
+      </node>
+      <node id="16">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistUtils.cpp</label>
+        <link refid="AMReX__EB__StateRedistUtils_8cpp"/>
       </node>
       <node id="3">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H</label>
@@ -2003,24 +2042,26 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="12">
+      <node id="19">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFabFactory.cpp</label>
         <link refid="AMReX__EBFabFactory_8cpp"/>
       </node>
-      <node id="13">
+      <node id="20">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.cpp</label>
         <link refid="AMReX__WriteEBSurface_8cpp"/>
       </node>
-      <node id="14">
+      <node id="21">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.cpp</label>
         <link refid="AMReX__EB2__Level_8cpp"/>
       </node>
-      <node id="18">
+      <node id="25">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_STL.cpp</label>
         <link refid="AMReX__EB2__Level__STL_8cpp"/>
       </node>
@@ -2029,15 +2070,15 @@
         <link refid="AMReX__EB2__Level_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -2052,11 +2093,15 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="18">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp</label>
         <link refid="AMReX__EB__utils_8cpp"/>
       </node>
-      <node id="16">
+      <node id="14">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_StateRedistItracker.cpp</label>
+        <link refid="AMReX__EB__StateRedistItracker_8cpp"/>
+      </node>
+      <node id="23">
         <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level_chkpt_file.cpp</label>
         <link refid="AMReX__EB2__Level__chkpt__file_8cpp"/>
       </node>

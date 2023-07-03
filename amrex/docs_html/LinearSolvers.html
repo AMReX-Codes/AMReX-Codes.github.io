@@ -487,13 +487,13 @@ call <code class="code highlight cpp c++ docutils literal highlight-c++"><span c
 passed to the constructor of a linear operator to disable the
 coarsening completely.  In that case the bottom solver is solving the
 residual correction form of the original problem. To build Hypre, follow the next steps:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="o">-</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/hypre-space/hypre.git</span>
-<span class="mf">2.</span><span class="o">-</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">hypre</span><span class="o">/</span><span class="n">src</span><span class="w"></span>
-<span class="mf">3.</span><span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">configure</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">hypre</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">configure</span><span class="w"> </span><span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">bigint</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="mf">4.</span><span class="o">-</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">install</span><span class="w"></span>
-<span class="mf">5.</span><span class="o">-</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">environment</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">HYPRE</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="o">--</span><span class="w"></span>
-<span class="w">    </span><span class="n">HYPRE_DIR</span><span class="o">=/</span><span class="n">hypre_path</span><span class="o">/</span><span class="n">hypre</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">hypre</span><span class="w"></span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.- git clone https://github.com/hypre-space/hypre.git</span>
+<span class="go">2.- cd hypre/src</span>
+<span class="go">3.- ./configure</span>
+<span class="go">    (if you want to build hypre with long long int, do ./configure --enable-bigint )</span>
+<span class="go">4.- make install</span>
+<span class="go">5.- Create an environment variable with the HYPRE directory --</span>
+<span class="go">    HYPRE_DIR=/hypre_path/hypre/src/hypre</span>
 </pre></div>
 </div>
 <p>To use hypre, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system.
@@ -530,13 +530,13 @@ replaces one row in the matrix sent to hypre from AMReX by a row that sets the v
 <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">hypre</a> Hypre Reference Manual for full details on the usage of the parameters described briefly above.</p>
 <p>AMReX can also use <a class="reference external" href="https://www.mcs.anl.gov/petsc/">PETSc</a> as a bottom solver for cell-centered
 problems. To build PETSc, follow the next steps:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>1.- git clone https://github.com/petsc/petsc.git
-2.- cd petsc
-3.- ./configure --prefix=build_dir
-4.- Invoke the ``make all&#39;&#39; command given at the end of the previous command output
-5.- Invoke the ``make install&#39;&#39; command given at the end of the previous command output
-6.- Create an environment variable with the PETSC directory --
-    PETSC_DIR=/petsc_path/petsc/build_dir
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.- git clone https://github.com/petsc/petsc.git</span>
+<span class="go">2.- cd petsc</span>
+<span class="go">3.- ./configure --prefix=build_dir</span>
+<span class="go">4.- Invoke the ``make all&#39;&#39; command given at the end of the previous command output</span>
+<span class="go">5.- Invoke the ``make install&#39;&#39; command given at the end of the previous command output</span>
+<span class="go">6.- Create an environment variable with the PETSC directory --</span>
+<span class="go">    PETSC_DIR=/petsc_path/petsc/build_dir</span>
 </pre></div>
 </div>
 <p>To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>

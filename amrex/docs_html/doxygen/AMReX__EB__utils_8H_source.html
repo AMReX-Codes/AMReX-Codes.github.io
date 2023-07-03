@@ -109,70 +109,36 @@ $(document).ready(function(){initNavTree('AMReX__EB__utils_8H_source.html',''); 
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__EB2__GeometryShop_8H.html">AMReX_EB2_GeometryShop.H</a>&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM &gt; 1)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> single_level_redistribute (MultiFab&amp; div_tmp_in, MultiFab&amp; div_out,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                    <span class="keywordtype">int</span> div_comp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> Geometry&amp; geom);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> single_level_weighted_redistribute (MultiFab&amp; div_tmp_in, MultiFab&amp; div_out, <span class="keyword">const</span> MultiFab&amp; weights,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                             <span class="keywordtype">int</span> div_comp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> Geometry&amp; geom);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> apply_flux_redistribution ( <span class="keyword">const</span> Box&amp; bx,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                     Array4&lt;Real      &gt; <span class="keyword">const</span>&amp; div,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                     Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; divc,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                     Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; wt,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                     <span class="keywordtype">int</span> icomp,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                     <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                     Array4&lt;EBCellFlag const&gt; <span class="keyword">const</span>&amp; flags,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                     Array4&lt;Real const&gt;    <span class="keyword">const</span>&amp; vfrac,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                     <span class="keyword">const</span> Geometry &amp; geom);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201402L)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    [[deprecated]]</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> single_level_redistribute (<span class="keywordtype">int</span> lev, MultiFab&amp; div_tmp_in, MultiFab&amp; div_out,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                           <span class="keywordtype">int</span> div_comp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> Vector&lt;Geometry&gt;&amp; geom)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    { single_level_redistribute(div_tmp_in, div_out, div_comp, ncomp, geom[lev]); }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201402L)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    [[deprecated]]</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> single_level_weighted_redistribute (<span class="keywordtype">int</span> lev, MultiFab&amp; div_tmp_in, MultiFab&amp; div_out, <span class="keyword">const</span> MultiFab&amp; weights,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                    <span class="keywordtype">int</span> div_comp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> Vector&lt;Geometry&gt;&amp; geom)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    { single_level_weighted_redistribute(div_tmp_in, div_out, weights, div_comp, ncomp, geom[lev]); }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> G&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a432c3b4f5a385efd93de62c6402e2b0a">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a432c3b4f5a385efd93de62c6402e2b0a">FillImpFunc</a> (<a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; mf, G <span class="keyword">const</span>&amp; gshop, <a class="code" href="classamrex_1_1Geometry.html">Geometry</a> <span class="keyword">const</span>&amp; geom)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(mf.<a class="code" href="classamrex_1_1FabArrayBase.html#a641ffe22574cc57f3544687b3e23d174">is_nodal</a>());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> G&gt;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a432c3b4f5a385efd93de62c6402e2b0a">   25</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a432c3b4f5a385efd93de62c6402e2b0a">FillImpFunc</a> (<a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; mf, G <span class="keyword">const</span>&amp; gshop, <a class="code" href="classamrex_1_1Geometry.html">Geometry</a> <span class="keyword">const</span>&amp; geom)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(mf.<a class="code" href="classamrex_1_1FabArrayBase.html#a641ffe22574cc57f3544687b3e23d174">is_nodal</a>());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classamrex_1_1Box.html">Box</a> bounding_box = geom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        bounding_box.<a class="code" href="classamrex_1_1Box.html#a03f85bbf6bb509deb7614715d02856d6">surroundingNodes</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">extend_domain_face</a> = <a class="code" href="namespaceamrex_1_1EB2.html#a2258b3042676370ae01a2968e6962765">EB2::ExtendDomainFace</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">extend_domain_face</a> || geom.<a class="code" href="classamrex_1_1Geometry.html#aed68387cf6235047891119eb57ee878e">isPeriodic</a>(idim)) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                bounding_box.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(mf.<a class="code" href="classamrex_1_1FabArrayBase.html#a0598988ee34f3885bd6d2a4787a8f427">nGrowVect</a>()[idim]);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++ mfi) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            gshop.fillFab(mf[mfi], geom, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>, bounding_box);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ae21d913402ed0c78cccf9819ea8a69c7">FillSignedDistance</a> (MultiFab&amp; mf, EB2::Level <span class="keyword">const</span>&amp; ls_lev,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                             EBFArrayBoxFactory <span class="keyword">const</span>&amp; eb_fac, <span class="keywordtype">int</span> refratio,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                             <span class="keywordtype">bool</span> fluid_has_positive_sign=<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classamrex_1_1Box.html">Box</a> bounding_box = geom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        bounding_box.<a class="code" href="classamrex_1_1Box.html#a03f85bbf6bb509deb7614715d02856d6">surroundingNodes</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">extend_domain_face</a> = <a class="code" href="namespaceamrex_1_1EB2.html#a2258b3042676370ae01a2968e6962765">EB2::ExtendDomainFace</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">extend_domain_face</a> || geom.<a class="code" href="classamrex_1_1Geometry.html#aed68387cf6235047891119eb57ee878e">isPeriodic</a>(idim)) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                bounding_box.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(mf.<a class="code" href="classamrex_1_1FabArrayBase.html#a0598988ee34f3885bd6d2a4787a8f427">nGrowVect</a>()[idim]);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">for</span>(<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(mf); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++ mfi) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            gshop.fillFab(mf[mfi], geom, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>, bounding_box);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ae21d913402ed0c78cccf9819ea8a69c7">FillSignedDistance</a> (MultiFab&amp; mf, EB2::Level <span class="keyword">const</span>&amp; ls_lev,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                             EBFArrayBoxFactory <span class="keyword">const</span>&amp; eb_fac, <span class="keywordtype">int</span> refratio,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                             <span class="keywordtype">bool</span> fluid_has_positive_sign=<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ae21d913402ed0c78cccf9819ea8a69c7">FillSignedDistance</a> (MultiFab&amp; mf, <span class="keywordtype">bool</span> fluid_has_positive_sign=<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ae21d913402ed0c78cccf9819ea8a69c7">FillSignedDistance</a> (MultiFab&amp; mf, <span class="keywordtype">bool</span> fluid_has_positive_sign=<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
 <div class="ttc" id="aAMReX__EB2_8H_html"><div class="ttname"><a href="AMReX__EB2_8H.html">AMReX_EB2.H</a></div></div>
@@ -193,8 +159,8 @@ $(document).ready(function(){initNavTree('AMReX__EB__utils_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_1_1EB2_html_a900c8b65fe13dca2d107ec8ae396b7b7"><div class="ttname"><a href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">amrex::EB2::extend_domain_face</a></div><div class="ttdeci">AMREX_EXPORT bool extend_domain_face</div><div class="ttdef"><b>Definition:</b> AMReX_EB2.cpp:24</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">amrex::RunOn::Gpu</a></div><div class="ttdeci">@ Gpu</div></div>
-<div class="ttc" id="anamespaceamrex_html_a432c3b4f5a385efd93de62c6402e2b0a"><div class="ttname"><a href="namespaceamrex.html#a432c3b4f5a385efd93de62c6402e2b0a">amrex::FillImpFunc</a></div><div class="ttdeci">void FillImpFunc(MultiFab &amp;mf, G const &amp;gshop, Geometry const &amp;geom)</div><div class="ttdoc">Fill MultiFab with implicit function.</div><div class="ttdef"><b>Definition:</b> AMReX_EB_utils.H:59</div></div>
-<div class="ttc" id="anamespaceamrex_html_ae21d913402ed0c78cccf9819ea8a69c7"><div class="ttname"><a href="namespaceamrex.html#ae21d913402ed0c78cccf9819ea8a69c7">amrex::FillSignedDistance</a></div><div class="ttdeci">void FillSignedDistance(MultiFab &amp;mf, bool fluid_has_positive_sign)</div><div class="ttdoc">Fill MultiFab with signed distance.</div><div class="ttdef"><b>Definition:</b> AMReX_EB_utils.cpp:282</div></div>
+<div class="ttc" id="anamespaceamrex_html_a432c3b4f5a385efd93de62c6402e2b0a"><div class="ttname"><a href="namespaceamrex.html#a432c3b4f5a385efd93de62c6402e2b0a">amrex::FillImpFunc</a></div><div class="ttdeci">void FillImpFunc(MultiFab &amp;mf, G const &amp;gshop, Geometry const &amp;geom)</div><div class="ttdoc">Fill MultiFab with implicit function.</div><div class="ttdef"><b>Definition:</b> AMReX_EB_utils.H:25</div></div>
+<div class="ttc" id="anamespaceamrex_html_ae21d913402ed0c78cccf9819ea8a69c7"><div class="ttname"><a href="namespaceamrex.html#ae21d913402ed0c78cccf9819ea8a69c7">amrex::FillSignedDistance</a></div><div class="ttdeci">void FillSignedDistance(MultiFab &amp;mf, bool fluid_has_positive_sign)</div><div class="ttdoc">Fill MultiFab with signed distance.</div><div class="ttdef"><b>Definition:</b> AMReX_EB_utils.cpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
