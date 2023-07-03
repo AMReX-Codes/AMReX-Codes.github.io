@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helper functions &mdash; amrex-hydro 23.06-dev documentation</title>
+  <title>Helper functions &mdash; amrex-hydro 23.08-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -12,6 +12,8 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -20,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="References" href="references.html" />
-    <link rel="prev" title="Redistribution" href="Redistribution.html" /> 
+    <link rel="prev" title="Projection Methods" href="Projections.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +37,7 @@
             amrex-hydro
           </a>
               <div class="version">
-                23.06-dev
+                23.08-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -51,7 +53,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Schemes.html">Advection Schemes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Projections.html">Projection Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Helper functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#notation">Notation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#slopes">Slopes</a></li>
@@ -188,7 +189,7 @@ that enforces no new maxima or minima when the state is predicted to the face ce
 <section id="boundary-conditions">
 <span id="bcs"></span><h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading"></a></h2>
 <p>AMReX-Hydro uses underlying AMReX functionality in implementing boundary conditions
-(see AMReX’s documentation section <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-boundary" title="(in amrex v23.06-dev)"><span>Boundary Conditions</span></a>).
+(see AMReX’s documentation section <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html#sec-basics-boundary" title="(in amrex v23.08-dev)"><span>Boundary Conditions</span></a>).
 Physical boundary conditions, such as
 inflow, outflow, slip/no-slip walls, etc., and are ultimately linked to
 mathematical Dirichlet or Neumann conditions.
@@ -299,13 +300,13 @@ and then those used when embedded boundaries are present.</p>
 <p>Intensive fluxes are computed from the advective velocity, <span class="math notranslate nohighlight">\(\U^{MAC}\)</span>, and edge states, <span class="math notranslate nohighlight">\(s\)</span>,
 by defining</p>
 <div class="math notranslate nohighlight" id="equation-flux-eq1">
-<span class="eqno">(18)<a class="headerlink" href="#equation-flux-eq1" title="Permalink to this equation"></a></span>\[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}}\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-flux-eq1" title="Permalink to this equation"></a></span>\[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2}} = u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}}\]</div>
 <p>on all x-faces,</p>
 <div class="math notranslate nohighlight" id="equation-flux-eq2">
-<span class="eqno">(19)<a class="headerlink" href="#equation-flux-eq2" title="Permalink to this equation"></a></span>\[F_{i,j-\frac{1}{2},k}^{y,n+\frac{1}{2}} = v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j-\frac{1}{2},k}^{n+\frac{1}{2}}\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-flux-eq2" title="Permalink to this equation"></a></span>\[F_{i,j-\frac{1}{2},k}^{y,n+\frac{1}{2}} = v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j-\frac{1}{2},k}^{n+\frac{1}{2}}\]</div>
 <p>on all y-faces, and</p>
 <div class="math notranslate nohighlight" id="equation-flux-eq3">
-<span class="eqno">(20)<a class="headerlink" href="#equation-flux-eq3" title="Permalink to this equation"></a></span>\[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}}\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-flux-eq3" title="Permalink to this equation"></a></span>\[F_{i,j,k-\frac{1}{2}}^{z,n+\frac{1}{2}} = w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n+\frac{1}{2}}\]</div>
 <p>on all z-faces.</p>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -448,7 +449,7 @@ If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to b
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Redistribution.html" class="btn btn-neutral float-left" title="Redistribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Projections.html" class="btn btn-neutral float-left" title="Projection Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="references.html" class="btn btn-neutral float-right" title="References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
