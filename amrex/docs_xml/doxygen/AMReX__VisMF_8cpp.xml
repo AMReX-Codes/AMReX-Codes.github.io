@@ -2803,7 +2803,7 @@
 <codeline lineno="772"><highlight class="normal"></highlight></codeline>
 <codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ioffset<sp/>==<sp/>nmtags[<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>(comm)]);</highlight></codeline>
 <codeline lineno="774"><highlight class="normal"></highlight></codeline>
-<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>recvdata(mf.size()*2*m_ncomp);</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Real&gt;<sp/>recvdata(std::size_t(mf.size())*2*m_ncomp);</highlight></codeline>
 <codeline lineno="776"><highlight class="normal"></highlight></codeline>
 <codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a5e661a1af9130dd8449e7f730864271c" kindref="member">BL_COMM_PROFILE</ref>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a211110d15cfcd5d09168c6d415476ce6" kindref="member">BLProfiler::Gatherv</ref>,<sp/>recvdata.size()<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(Real),</highlight></codeline>
 <codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>(comm),<sp/>BLProfiler::BeforeCall());</highlight></codeline>
