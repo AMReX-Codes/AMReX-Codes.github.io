@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advection schemes &mdash; amrex-hydro 23.08-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projection Methods" href="Projections.html" />
+    <link rel="prev" title="Installation Guide" href="Install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-hydro
+          </a>
+              <div class="version">
+                23.08-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advection Schemes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notation">Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-of-lines-mol">Method of Lines (MOL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-mac-api-ref-mol-extrapveltofaces">Pre-MAC (API ref. MOL::ExtrapVelToFaces)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-mac-api-ref-mol-computeedgestate">Post-MAC (API ref. MOL::ComputeEdgeState)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#method-of-lines-with-embedded-boundaries-ebmol">Method of Lines with Embedded Boundaries (EBMOL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-mac-api-ref-ebmol-extrapveltofaces">Pre-MAC (API ref. EBMOL::ExtrapVelToFaces)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-mac-api-ref-ebmol-computeedgestate">Post-MAC (API ref. EBMOL::ComputeEdgeState)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#godunov-methods">Godunov Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-mac-api-ref-godunov-extrapveltofaces">Pre-MAC (API ref. Godunov::ExtrapVelToFaces)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-mac-api-ref-godnuov-computeedgestate">Post-MAC (API ref. Godnuov::ComputeEdgeState)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#godunov-with-embedded-boundaries-ebgodunov">Godunov with Embedded Boundaries (EBGodunov)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-mac-api-ref-ebgodunov-extrapveltofaces">Pre-MAC (API ref. EBGodunov::ExtrapVelToFaces)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-mac-api-ref-ebgondunov-computeedgestate">Post-MAC (API ref. EBGondunov::ComputeEdgestate)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bds-algorithm">BDS Algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Pre-MAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-mac">Post-MAC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Projections.html">Projection Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Utilities.html">Helper functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-hydro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Advection schemes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Schemes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="math notranslate nohighlight">
+\[\newcommand{\half}{\frac{1}{2}}
+\newcommand{\nph}{{n + \half}}
+\newcommand{\nmh}{{n - \frac{1}{2}}}
+\newcommand{\iphj}{{i+\frac{1}{2},j,k}}
+\newcommand{\ijph}{{i,j+\frac{1}{2}},k}
+\newcommand{\imhj}{{i-\frac{1}{2},j,k}}
+\newcommand{\ijmh}{{i,j-\frac{1}{2}},k}
+\newcommand{\ijkmh}{{i,j,k-\frac{1}{2}}}
+\newcommand{\ijkph}{{i,j,k+\frac{1}{2}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\del}{\nabla}
+\newcommand{\AN}{[(U \cdot \nabla)U]^{n+\frac{1}{2}}}
+\newcommand{\npk}{{n + \frac{p+\half}{R}}}
+\newcommand{\nak}{{n + \frac{p}{R}}}
+\newcommand{\nmk}{{n + \frac{p-\half}{R}}}
+\newcommand{\iph}{i+\half}
+\newcommand{\imh}{i-\half}
+\newcommand{\ipmh}{i\pm\half}
+\newcommand{\jph}{j+\half}
+\newcommand{\jmh}{j-\half}
+\newcommand{\jpmh}{j\pm\half}
+\newcommand{\kph}{k+\half}
+\newcommand{\kmh}{k-\half}
+\newcommand{\GMAC}{C \rightarrow E}
+\newcommand{\DMAC}{E \rightarrow C}
+\newcommand{\U}{\boldsymbol{U}}
+\newcommand{\F}{\boldsymbol{F}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\shalf}{\sfrac{1}{2}}
+\newcommand\hathat[1]{\widehat{\widehat{#1}}}
+\newcommand\hairbow[1]{\overset{\bowtie}{#1}}
+\newcommand\widebreve[1]{\overset{\smile}{#1}}
+\newcommand{\vol}{\mathcal{V}}
+\newcommand{\area}{\mathcal{A}}\]</div>
+<section id="advection-schemes">
+<span id="schemes"></span><h1>Advection schemes<a class="headerlink" href="#advection-schemes" title="Permalink to this heading"></a></h1>
+<p>In AMReX-Hydro, the fundamental algorithm is either a Method-of-Lines (MOL) or Godunov approach.
+Each method provides functions for two separate usages:</p>
+<ol class="arabic simple">
+<li><p><strong>Construct values of the normal velocity at the centroid on each cell face, termed “Pre-MAC” or
+extrapolated velocity.</strong>
+Typically, this velocity is later MAC projected before being used as the advective velocity.
+(Information on the MAC projection is in the <a class="reference internal" href="Projections.html#mac-proj"><span class="std std-ref">MAC Projection</span></a> section.)</p></li>
+<li><p><strong>Construct states on faces, termed “edge states” or “Post-MAC.”</strong>
+These are typically later used to make fluxes which are
+then differenced to create the advective term.
+(Information on how fluxes and the convective term are constructed from edge states is given in the
+<a class="reference internal" href="Utilities.html#fluxes"><span class="std std-ref">Computing Fluxes</span></a> and <a class="reference internal" href="Utilities.html#advective-term"><span class="std std-ref">Constructing the advective term</span></a> sections.)</p></li>
+</ol>
+<p>Domain boundary conditions affect the computation of these pre- and post-MAC states in
+the same way for all advection methods, and this is described in the <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a> section.
+Note that while these routines ensure that the resulting computed states obey the boundary
+conditions, they also still require input with filled grow cells.
+All schemes also use the same routines to construct fluxes and then the convective term.</p>
+<p>Next, we provide notation, and
+then detail the available advection schemes in EB-regular, as well as EB-aware form when available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a cell and all of its neighbors have volume fraction of 1 (i.e. they
+are not cut or covered cells), the EB methodology will return exactly the same answer (to machine
+precision) as the non-EB methodology. Here we define neighbor to mean any cell that would be
+involved in the calculation of the face-based state, and the extent of the resulting neighborhood
+varies depending on the order of the slope used.</p>
+</div>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this heading"></a></h2>
+<p>Here we use <span class="math notranslate nohighlight">\((i,j,k)\)</span> to denote cell centers (or centroids for EB),
+and thus <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k)\)</span> denotes the lower x-face of the <span class="math notranslate nohighlight">\((i,j,k)\)</span>-th cell,
+<span class="math notranslate nohighlight">\((i,j+\frac{1}{2},k)\)</span> denotes the upper y-face of the <span class="math notranslate nohighlight">\((i,j,k)\)</span>-th cell, etc.</p>
+<p>Super- or subscript <span class="math notranslate nohighlight">\(L\)</span> (for left) indicates a state that has been extrapolated from values at lower x indices.
+<span class="math notranslate nohighlight">\(R\)</span> (for right) indicates extrapolation higher x indices.
+For example, for the x-face located at <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span>, <span class="math notranslate nohighlight">\(L\)</span> indicates extrapolation from
+the <span class="math notranslate nohighlight">\((i,j,k)\)</span>-th cell center/centroid, and
+<span class="math notranslate nohighlight">\(R\)</span> extrapolation from the <span class="math notranslate nohighlight">\((i+1,j,k)\)</span>-th cell center/centroid.</p>
+<p>Similarly, for the y-dimension, <span class="math notranslate nohighlight">\(F\)</span> (for forward) indicates a state that has been extrapolated from values at lower y indices and
+<span class="math notranslate nohighlight">\(B\)</span> (for back) indicates extrapolation from higher y indices.
+And for the third dimension,
+<span class="math notranslate nohighlight">\(D\)</span> (for down) indicates a state that has been extrapolated from values at lower z indices.
+<span class="math notranslate nohighlight">\(U\)</span> (for up) indicates extrapolation from higher z indices.</p>
+<p><span class="math notranslate nohighlight">\(\U^{MAC}\)</span> is the MAC-projected velocity at face centers (or centroids for EB).</p>
+<p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/group__Utilities.html#ga57d5ce9bc3bca16e249c611342f3c550">Utils/hydro_constants.H</a>. This is an empirically determined constant that works well for flows where velocities are on the order of 1.</p>
+</section>
+<section id="method-of-lines-mol">
+<span id="mol"></span><h2>Method of Lines (MOL)<a class="headerlink" href="#method-of-lines-mol" title="Permalink to this heading"></a></h2>
+<p>The procedure for computing MAC velocities and edge states with MOL involves extrapolation in space only,
+and does not involve any time derivatives. All slope computations use
+second-order limited slopes as described in <a class="reference internal" href="Utilities.html#slopes"><span class="std std-ref">Slopes</span></a>.</p>
+<p>These alogrithms are applied in the MOL namespace. For API documentation, see
+<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html">Doxygen: MOL Namespace</a>.</p>
+<section id="pre-mac-api-ref-mol-extrapveltofaces">
+<h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-mol-extrapveltofaces" title="Permalink to this heading"></a></h3>
+<p>For computing the pre-MAC edge states to be MAC-projected, we define on
+every x-face:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+u_L &amp;=&amp; u_{i-1,j,k} + \frac{\Delta x}{2} {u^x}_{i-1,j,k}, \\
+u_R &amp;=&amp; u_{i,j,k}   - \frac{\Delta x}{2} {u^x}_{i,j,k}, \end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u^x\)</span> are the (limited) slopes in the x-direction.</p>
+<p>Boundary conditions are applied (as decribed in <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a>).
+Then, at each face we upwind based on <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_{i-\frac{1}{2},j,k} =
+\begin{cases}
+0, &amp; \mathrm{if} \; u_L &lt; 0 \;\; \mathrm{and} \;\; u_R &gt; 0 \; \mathrm{else} \\
+u_L, &amp; \mathrm{if} \; u_L + u_R \ge  \varepsilon  \; \mathrm{else} \\
+u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
+0
+\end{cases}\end{split}\]</div>
+<p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
+<span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
+</section>
+<section id="post-mac-api-ref-mol-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-mol-computeedgestate" title="Permalink to this heading"></a></h3>
+<p>Once we have the MAC-projected velocities, we extrapolate all quantities to
+faces as above:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+s_L &amp;=&amp; s^{i-1,j,k} + \frac{\Delta x}{2} {s^x}_{i-1,j,k}, \\
+s_R &amp;=&amp; s^{i,j,k}   - \frac{\Delta x}{2} {s^x}_{i,j,k},   \end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s^x\)</span> are the (limited) slopes in the x-direction.</p>
+<p>Boundary conditions are applied (as decribed in <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a>).
+Then, at each face, we upwind based on <span class="math notranslate nohighlight">\(u^{MAC}_{i-\frac{1}{2},j,k}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_{i-\frac{1}{2},j,k} =
+\begin{cases}
+s_L, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
+s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
+\frac{1}{2}(s_L + s_R),
+\end{cases}\end{split}\]</div>
+</section>
+</section>
+<section id="method-of-lines-with-embedded-boundaries-ebmol">
+<span id="ebmol"></span><h2>Method of Lines with Embedded Boundaries (EBMOL)<a class="headerlink" href="#method-of-lines-with-embedded-boundaries-ebmol" title="Permalink to this heading"></a></h2>
+<p>AMReX-Hydro has also implemented an embedded boundary (EB) aware version of the MOL algorithm
+discussed above.
+All slope computations use second-order limited slopes as described in <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a>.</p>
+<section id="pre-mac-api-ref-ebmol-extrapveltofaces">
+<h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a7add53a153ade9c5cb83e79a61ad1929">EBMOL::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-ebmol-extrapveltofaces" title="Permalink to this heading"></a></h3>
+<p>For computing the pre-MAC edge states to be MAC-projected, we define on every x-face with non-zero area fraction:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+u_L &amp;=&amp; u_{i-1,j,k} + \delta_x \; {u^x}_{i-1,j,k} + \delta_y \; {u^y}_{i-1,j,k} + \delta z \; {u^z}_{i-1,j,k} , \\
+u_R &amp;=&amp; u_{i,j,k}   - \delta_x \; {u^x}_{i,j,k}   - \delta_y \; {u^y}_{i,j,k}   - \delta z \; {u^z}_{i,j,k} ,\end{aligned}\end{split}\]</div>
+<p>where we calculate <span class="math notranslate nohighlight">\(u^x\)</span>, <span class="math notranslate nohighlight">\(u^y\)</span> and <span class="math notranslate nohighlight">\(u^z\)</span> as described in <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a>,
+and <span class="math notranslate nohighlight">\(\delta_x\)</span>, <span class="math notranslate nohighlight">\(\delta_y\)</span>, and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from
+the cell centroid to the face centroid of the face at <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k).\)</span></p>
+<p>Boundary conditions are applied (as decribed in <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a>).
+Then, at each face we upwind based on <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_{i-\frac{1}{2},j,k} =
+\begin{cases}
+0, &amp; \mathrm{if} \; u_L &lt; 0 \;\; \mathrm{and} \;\; u_R &gt; 0 \; \mathrm{else} \\
+u_L, &amp; \mathrm{if} \; u_L + u_R \ge  \varepsilon  \; \mathrm{else} \\
+u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
+0
+\end{cases}\end{split}\]</div>
+<p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
+<span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
+</section>
+<section id="post-mac-api-ref-ebmol-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a94df1b279b45eac5141dfe0dff0a79bc">EBMOL::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-ebmol-computeedgestate" title="Permalink to this heading"></a></h3>
+<p>Once we have the MAC-projected velocities, we predict all quantities to faces with non-zero area fractions as above:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+s_L &amp;=&amp; s_{i-1,j,k} + \delta_x \; {s^x}_{i-1,j,k} + \delta_y \; {s^y}_{i-1,j,k} + \delta z \; {s^z}_{i-1,j,k} , \\
+s_R &amp;=&amp; s_{i,j,k}   - \delta_x \; {s^x}_{i,j,k}   - \delta_y \; {s^y}_{i,j,k}   - \delta z \; {s^z}_{i,j,k} ,\end{aligned}\end{split}\]</div>
+<p>where we calculate <span class="math notranslate nohighlight">\(s^x\)</span>, <span class="math notranslate nohighlight">\(s^y\)</span> and <span class="math notranslate nohighlight">\(s^z\)</span> as described in <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a>,
+and <span class="math notranslate nohighlight">\(\delta_x\)</span>, <span class="math notranslate nohighlight">\(\delta_y\)</span>, and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from
+the cell centroid to the face centroid of the face at <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k).\)</span></p>
+<p>Boundary conditions are applied (as decribed in <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a>).
+Then, at each face we then upwind based on <span class="math notranslate nohighlight">\(u^{MAC}_{i-\frac{1}{2},j,k}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_{i-\frac{1}{2},j,k} =
+\begin{cases}
+s_L, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
+s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
+\frac{1}{2}(s_L + s_R),
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\half}{\frac{1}{2}}
+\newcommand{\nph}{{n + \half}}
+\newcommand{\nmh}{{n - \frac{1}{2}}}
+\newcommand{\iphj}{{i+\frac{1}{2},j,k}}
+\newcommand{\ijph}{{i,j+\frac{1}{2}},k}
+\newcommand{\imhj}{{i-\frac{1}{2},j,k}}
+\newcommand{\ijmh}{{i,j-\frac{1}{2}},k}
+\newcommand{\ijkmh}{{i,j,k-\frac{1}{2}}}
+\newcommand{\ijkph}{{i,j,k+\frac{1}{2}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\del}{\nabla}
+\newcommand{\AN}{[(U \cdot \nabla)U]^{n+\frac{1}{2}}}
+\newcommand{\npk}{{n + \frac{p+\half}{R}}}
+\newcommand{\nak}{{n + \frac{p}{R}}}
+\newcommand{\nmk}{{n + \frac{p-\half}{R}}}
+\newcommand{\iph}{i+\half}
+\newcommand{\imh}{i-\half}
+\newcommand{\ipmh}{i\pm\half}
+\newcommand{\jph}{j+\half}
+\newcommand{\jmh}{j-\half}
+\newcommand{\jpmh}{j\pm\half}
+\newcommand{\kph}{k+\half}
+\newcommand{\kmh}{k-\half}
+\newcommand{\GMAC}{C \rightarrow E}
+\newcommand{\DMAC}{E \rightarrow C}
+\newcommand{\U}{\boldsymbol{U}}
+\newcommand{\F}{\boldsymbol{F}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\shalf}{\sfrac{1}{2}}
+\newcommand\hathat[1]{\widehat{\widehat{#1}}}
+\newcommand\hairbow[1]{\overset{\bowtie}{#1}}
+\newcommand\widebreve[1]{\overset{\smile}{#1}}
+\newcommand{\vol}{\mathcal{V}}
+\newcommand{\area}{\mathcal{A}}\]</div>
+</section>
+</section>
+<section id="godunov-methods">
+<span id="godunov"></span><h2>Godunov Methods<a class="headerlink" href="#godunov-methods" title="Permalink to this heading"></a></h2>
+<p>AMReX-Hydro’s implementation uses dimenensionally unsplit algorithms with full corner coupling in 3D,
+with the option to use either piecewise linear (PLM) <span id="id1">[<a class="reference internal" href="references.html#id25" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id24" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>
+or piecewise parabolic (PPM) <span id="id2">[<a class="reference internal" href="references.html#id18" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id27" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> reconstructions of the state.</p>
+<p>These alogrithms are applied in the Godunov namespace. For API documentation, see
+<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html">Doxygen: Godunov Namespace</a>.</p>
+<section id="pre-mac-api-ref-godunov-extrapveltofaces">
+<span id="godunov-pre-mac"></span><h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#a1c1dcedd6781260bd8322588e1290d94">Godunov::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-godunov-extrapveltofaces" title="Permalink to this heading"></a></h3>
+<p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
+in space and time. For each face, we extrapolate the normal velocity
+component from the centers of the cells on either side to the face, creating left (L)
+and right (R) states. For face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> this gives</p>
+<div class="math notranslate nohighlight" id="equation-eq1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq1" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{u}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} \approx &amp; u_{i,j,k}^n + \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
+ = &amp; u_{i,j,k}^n + \left( \frac{dx}{2} - u^n_{i,j,k} \frac{dt}{2} \right) (u_x^{n,lim})_{i,j,k} \\
+ &amp; + \frac{dt}{2} (-(\widehat{v u_y})_{i,j,k} - (\widehat{w u_z})_{i,j,k} + F_{x,i,j,k}^n)\end{split}\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, and</p>
+<div class="math notranslate nohighlight" id="equation-eq2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation"></a></span>\[\begin{split} \tilde{u}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} \approx &amp; u_{i+1,j,k}^n - \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
+ = &amp; u_{i+1,j,k}^n - \left( \frac{dx}{2} + u^n_{i+1,j,k} \frac{dt}{2} \right)(u^{n,lim}_x)_{i+1,j,k} \\
+ &amp; + \frac{dt}{2} (-(\widehat{v u_y})_{i+1,j,k} - (\widehat{w u_z})_{i+1,j,k} + F_{x,i+1,j,k}^n)\end{split}\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Here, <span class="math notranslate nohighlight">\(\F\)</span> is the sum of forcing terms, which typically
+might include viscous, gravitational, and the pressure gradient terms.</p>
+<p>If the parameter <code class="docutils literal notranslate"><span class="pre">use_ppm</span></code> is false, the first derivatives normal to the face (in this
+case <span class="math notranslate nohighlight">\(u_x^{n,lim}\)</span>) are evaluated using a monotonicity-limited fourth-order
+slope approximation as described in <a class="reference internal" href="Utilities.html#slopes"><span class="std std-ref">Slopes</span></a>.
+Otherwise the Piecewise Parabolic Method  (PPM) <span id="id3">[<a class="reference internal" href="references.html#id18" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id27" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> is used
+to compute</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{u}_{i+\frac{1}{2},j,k}^{L} = &amp; u_{i,j,k}^n + \left( \frac{dx}{2} - u^n_{i,j,k} \frac{dt}{2} \right) (u_x^{n,lim})_{i,j,k} \\
+\hat{u}_{i+\frac{1}{2},j,k}^{R} = &amp; u_{i+1,j,k}^n - \left( \frac{dx}{2} + u^n_{i+1,j,k} \frac{dt}{2} \right)(u^{n,lim}_x)_{i+1,j,k}\end{split}\]</div>
+<p>The transverse derivative terms (<span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and <span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
+are evaluated using a three step process: first extrapolating all velocity components
+to the transverse faces from the cell centers on either side (either via PLM or PPM),
+applying boundary conditions
+and then choosing between these states using the upwinding procedure
+defined below.  In particular, in the <span class="math notranslate nohighlight">\(y\)</span> direction we define</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\widehat{\boldsymbol{U}}^F_{i,j+\frac{1}{2},k} = &amp; \boldsymbol{U}_{i,j,k}^n +
+\left( \frac{dy}{2} - \frac{dt}{2} v_{i,j,k}^n \right)
+(\boldsymbol{U}^{n,lim}_y)_{i,j,k}  \;\;\;\\\widehat{\boldsymbol{U}}^B_{i,j+\frac{1}{2},k} = &amp; \boldsymbol{U}_{i,j+1,k}^n -
+\left( \frac{dy}{2} + \frac{dt}{2} v_{i,j+1,k}^n \right)
+(\boldsymbol{U}^{n,lim}_y)_{i,j+1,k} \;\;\;\end{aligned}\end{align} \]</div>
+<p>Values are similarly traced from <span class="math notranslate nohighlight">\((i,j,k)\)</span> and <span class="math notranslate nohighlight">\((i,j,k+1)\)</span>
+to the <span class="math notranslate nohighlight">\((i,j,k+\frac{1}{2})\)</span> faces to define
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^D_{i,j,k+\frac{1}{2}}\)</span> and
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
+<p>If the parameter <code class="docutils literal notranslate"><span class="pre">use_forces_in_trans</span></code> is true, the forcing terms (<span class="math notranslate nohighlight">\(\F\)</span> in
+Eqs. <a class="reference internal" href="#equation-eq1">(1)</a> and <a class="reference internal" href="#equation-eq2">(2)</a>) are added to <span class="math notranslate nohighlight">\(\widehat{\U}\)</span> now. Otherwise, they are included later in the the
+formation of the edge state.</p>
+<p>Next, boundary conditions are enforced on domain faces as decribed in <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a> #2.
+Note that this means face-based values lying within the physical boundary but not exactly on the
+boundary face (e.g. values located on the y-faces of ghost cells abutting the x-boundary but not on the y-boundary)
+do not have boundary conditions enforced at this point.</p>
+<p>Now, we define a normal advective velocity on the face
+(suppressing the <span class="math notranslate nohighlight">\(({i,j+\frac{1}{2},k})\)</span> spatial indices on front and back
+states here and in the next equation):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\widehat{v}^{adv}_{{i,j+\frac{1}{2},k}} = \left\{\begin{array}{lll}
+ \widehat{v}^F &amp; \mbox{if $\widehat{v}^F &gt; 0, \;\; \widehat{v}^F + \widehat{v}^B
+ &gt; \varepsilon $} \\
+ 0   &amp; \mbox{if $\widehat{v}^F \leq 0, \widehat{v}^B \geq  0$ or
+$ \lvert \widehat{v}^F + \widehat{v}^B \rvert &lt; \varepsilon $ } \\
+ \widehat{v}^B &amp; \mbox{if $\widehat{v}^B &lt; 0, \;\; \widehat{v}^F + \widehat{v}^B
+ &lt; \varepsilon $ .} \end{array} \right.\end{split}\]</div>
+<p>We now upwind <span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}\)</span> based on <span class="math notranslate nohighlight">\(\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\widehat{\boldsymbol{U}}_{{i,j+\frac{1}{2},k}} = \left\{\begin{array}{lll}
+ \widehat{\boldsymbol{U}}^F &amp; \mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} &gt; \varepsilon $} \\
+ \widehat{\boldsymbol{U}}^B &amp; \mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} &lt; - \varepsilon $} \\
+ \frac{1}{2} (\widehat{\boldsymbol{U}}^F + \widehat{\boldsymbol{U}}^B)  &amp; \mbox{otherwise}
+\end{array} \right.\end{split}\]</div>
+<p>In 3D, we complete the intermediate transverse-face centered states by accounting for transverse corner coupling
+following <span id="id4">[<a class="reference internal" href="references.html#id25" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id24" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>. For example, for <span class="math notranslate nohighlight">\(u\)</span> predicted to y-faces we modify
+with a factor of the z-derivative at cell centers</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\breve{u}_{i,j+\half,k}^{F} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j,k} \\
+          = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F}
+        - \frac{dt}{3} \left( \frac{\hat{u}_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \hat{u}_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half} }{dz} \right) \\
+            &amp; + \frac{dt}{3} \left( \frac{\hat{w}^{adv}_{i,j,k+\half} - \hat{w}^{adv}_{i,j,k-\half}}{dz} \right) u_{i,j,k} \\
+\breve{u}_{i,j+\half,k}^{B} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j+1,k} \\
+          = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B}
+        - \frac{dt}{3} \left( \frac{\hat{u}_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \hat{u}_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz} \right) \\
+            &amp; + \frac{dt}{3} \left( \frac{\hat{w}^{adv}_{i,j+1,k+\half} - \hat{w}^{adv}_{i,j+1,k-\half}}{dz} \right) u_{i,j+1,k} \\\end{split}\]</div>
+<p>and then apply boundary conditions on domian faces before upwinding according to
+<span class="math notranslate nohighlight">\(\hat{v}_{i,j+\frac{1}{2},k}^{adv}\)</span> as was done above for <span class="math notranslate nohighlight">\(\widehat{\U}\)</span>.
+<span class="math notranslate nohighlight">\(\widebreve{\boldsymbol{U}}_{{i,j-\frac{1}{2},k}}, \widebreve{\boldsymbol{U}}_{i,j,k+\frac{1}{2}}\)</span>
+and <span class="math notranslate nohighlight">\(\widebreve{\boldsymbol{U}}_{i,j,k-\frac{1}{2}}\)</span> are constructed in a similar manner.
+For 2D, we take <span class="math notranslate nohighlight">\(\widebreve{\U} = \widehat{\U}\)</span>.</p>
+<p>We use these upwind values to form the transverse derivatives in Eqs. <a class="reference internal" href="#equation-eq1">(1)</a> and <a class="reference internal" href="#equation-eq2">(2)</a> :</p>
+<div class="math notranslate nohighlight" id="equation-trans">
+<span class="eqno">(3)<a class="headerlink" href="#equation-trans" title="Permalink to this equation"></a></span>\[ (\widehat{v u_y})_{i,j,k} = \frac{1}{2dy} ( \hat{v}_{{i,j+\frac{1}{2},k}}^{adv} +
+\hat{v}_{{i,j-\frac{1}{2},k}}^{adv} ) ( \breve{u}_{{i,j+\frac{1}{2},k}} - \breve{u}_{{i,j-\frac{1}{2},k}} )\]</div>
+<div class="math notranslate nohighlight">
+\[(\widehat{w u_z})_{i,j,k} = \frac{1}{2dz} (\hat{w}_{i,j,k+\frac{1}{2}}^{adv} +
+\hat{w}_{i,j,k-\frac{1}{2}}^{adv} ) ( \breve{u}_{i,j,k+\frac{1}{2}} - \breve{u}_{i,j,k-\frac{1}{2}} )\]</div>
+<p>We now have all the terms needed to form <span class="math notranslate nohighlight">\(\tilde{u}\)</span>.
+If <code class="docutils literal notranslate"><span class="pre">use_forces_in_trans</span></code> is false, the forcing terms were not included in the computation of the
+transverse deriviates and are instead included at this point.
+We apply boundary conditions on domain faces,
+including preventing backflow (as decribed in <a class="reference internal" href="Utilities.html#bcs"><span class="std std-ref">Boundary conditions</span></a> #2 &amp; 3).</p>
+<p>The normal velocity at each face is then determined by an upwinding procedure
+based on the states predicted from the cell centers on either side.  The
+procedure is similar to that described above, i.e.
+(suppressing the (<span class="math notranslate nohighlight">\(i+\frac{1}{2},j,k\)</span>) indices)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{u}^{n+\frac{1}{2}}_{{i+\frac{1}{2},j,k}} = \left\{\begin{array}{lll}
+\tilde{u}^{L,n+\frac{1}{2}}
+&amp; \mbox{if $\tilde{u}^{L,n+\frac{1}{2}} &gt; 0$ and $ \tilde{u}^{L,n+\frac{1}{2}} +
+\tilde{u}^{R,n+\frac{1}{2}} &gt; \varepsilon $} \\
+0 &amp; \mbox{if $\tilde{u}^{L,n+\frac{1}{2}} \leq 0, \tilde{u}^{R,n+\frac{1}{2}} \geq  0$ or
+$ | \tilde{u}^{L,n+\frac{1}{2}} + \tilde{u}^{R,n+\frac{1}{2}} | &lt; \varepsilon $ } \\
+\tilde{u}^{R,n+\frac{1}{2}}
+&amp; \mbox{if $\tilde{u}^{R,n+\frac{1}{2}} &lt; 0$ and $\tilde{u}^{L,n+\frac{1}{2}}
++ \tilde{u}^{R,n+\frac{1}{2}} &lt; \varepsilon $}
+\end{array} \right.\end{split}\]</div>
+<p>We follow a similar
+procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n+\frac{1}{2}}_{i,j+\frac{1}{2},k}\)</span>
+and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to this unique value of
+normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
+</section>
+<section id="post-mac-api-ref-godnuov-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html#addea54945ce554f8b4e28dabc1c74222">Godnuov::ComputeEdgeState</a>)<a class="headerlink" href="#post-mac-api-ref-godnuov-computeedgestate" title="Permalink to this heading"></a></h3>
+<p>Here, the face-centered advective velocity field, which we will call <span class="math notranslate nohighlight">\(\U^{MAC}\)</span>, is already known.
+Typically, this is the MAC projection of <span class="math notranslate nohighlight">\(\U^{MAC,*}\)</span>, which would have been computed via the Pre-MAC
+procedure detailed above.
+We extrapolate all quantities to faces as above:</p>
+<div class="math notranslate nohighlight" id="equation-eq3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{s}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx s_{i,j,k}^n + \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
+ &amp; = s_{i,j,k}^n + \left( \frac{dx}{2} - s^n_{i,j,k} \frac{dt}{2} \right) (s_x^{n,lim})_{i,j,k} \\
+ &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\end{split}\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, and</p>
+<div class="math notranslate nohighlight" id="equation-eq4">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation"></a></span>\[\begin{split} \tilde{s}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx s_{i+1,j,k}^n - \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
+ &amp; = s_{i+1,j,k}^n - \left( \frac{dx}{2} + s^n_{i+1,j,k} \frac{dt}{2} \right)(s^{n,lim}_x)_{i+1,j,k} \\
+ &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\end{split}\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Details of how these terms are computed are analogous to the Pre-MAC case.</p>
+<p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u^{MAC}_{i-\frac{1}{2},j,k}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{s}_{i-\frac{1}{2},j,k}^{n+\frac{1}{2}} =
+\begin{cases}
+\tilde{s}_L, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
+\tilde{s}_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
+\frac{1}{2}(\tilde{s}_L + \tilde{s}_R),
+\end{cases}\end{split}\]</div>
+</section>
+</section>
+<section id="godunov-with-embedded-boundaries-ebgodunov">
+<span id="ebgodunov"></span><h2>Godunov with Embedded Boundaries (EBGodunov)<a class="headerlink" href="#godunov-with-embedded-boundaries-ebgodunov" title="Permalink to this heading"></a></h2>
+<p>AMReX-Hydro contains an embedded boundary (EB) aware version of the Godunov algorithm
+discussed above, although with fewer options available.
+This EB implementation employs a piecewise linear method (PLM) <span id="id5">[]</span>, and
+always includes any forcing terms <em>after</em> the computation of the transverse terms.
+EBGodunov attempts to use fourth-order limited slopes wherever possible, as described in <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a>.</p>
+<section id="pre-mac-api-ref-ebgodunov-extrapveltofaces">
+<span id="pre-mac"></span><h3>Pre-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#abea06da38cd7e2c6a6ed94d761c4e996">EBGodunov::ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-api-ref-ebgodunov-extrapveltofaces" title="Permalink to this heading"></a></h3>
+<p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
+in space and time. For each face with a non-zero area fraction, we extrapolate the normal velocity
+component from the centroids of the cells on either side to the face centroid, creating left (L)
+and right (R) states. For face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> this gives</p>
+<div class="math notranslate nohighlight" id="equation-eq1-ebg">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq1-ebg" title="Permalink to this equation"></a></span>\[\tilde{u}_{i+\frac{1}{2},j,k}^{L,\frac{1}{2}} = \hat{u}_{i+\frac{1}{2},j,k}^{L} +
+\frac{dt}{2} \; (-(\widehat{v u_y})_{i,j,k} - (\widehat{w u_z})_{i,j,k} + F_{x,i,j,k}^n)\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, where</p>
+<div class="math notranslate nohighlight" id="equation-eq1-ebg2">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq1-ebg2" title="Permalink to this equation"></a></span>\[\hat{u}_{i+\frac{1}{2},j,k}^{L} = u_{i,j,k}^n +
+\left( \delta_x - \frac{dt}{2} u_{i,j,k}^n \right)
+\; {u^x}_{i,j,k} +  \delta_y \; {u^y}_{i,j,k} + \delta_z \; {u^z}_{i,j,k}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq2-ebg">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq2-ebg" title="Permalink to this equation"></a></span>\[\tilde{u}_{i+\frac{1}{2},j,k}^{R,\frac{1}{2}} = \hat{u}_{i+\frac{1}{2},j,k}^{R} +
+\frac{dt}{2} (-(\widehat{v u_y})_{i+1,j,k} - (\widehat{w u_z})_{i+1,j,k} + F_{x,i+1,j,k}^n)\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k),\)</span> where</p>
+<div class="math notranslate nohighlight" id="equation-eq2-ebg2">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq2-ebg2" title="Permalink to this equation"></a></span>\[\hat{u}_{i+\frac{1}{2},j,k}^{R} = u_{i+1,j,k}^n +
+\left(\delta_x  - \frac{dt}{2} u_{i,j,k}^n \right)
+\; {u^x}_{i+1,j,k} +  \delta_y \; {u^y}_{i+1,j,k} + \delta_z \; {u^z}_{i+1,j,k}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(F\)</span> is the sum of forcing terms;
+<span class="math notranslate nohighlight">\(\delta_x,\)</span> <span class="math notranslate nohighlight">\(\delta_y\)</span> and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector
+from the cell centroid to the face centroid of the <span class="math notranslate nohighlight">\(x\)</span>-face at <span class="math notranslate nohighlight">\((i-\half,j,k)\)</span>;
+and the slopes <span class="math notranslate nohighlight">\((u^x,u^y,u^z)\)</span> are calculated as described in the <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a> section.</p>
+<p>The transverse derivative terms ( <span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and <span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
+are evaluated by first extrapolating all velocity components
+to the face centroids of the transverse faces from the cell centers on either side,
+applying boundary conditions on domain faces, and then choosing between these states using the upwinding procedure
+defined below.  In particular, in the <span class="math notranslate nohighlight">\(y\)</span> direction we define
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^F_{i,j+\frac{1}{2},k}\)</span> and
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^B_{i,j+\frac{1}{2},k}\)</span>
+analogously to how we defined
+<span class="math notranslate nohighlight">\(\hat{u}_{i+\frac{1}{2},j,k}^{R}\)</span> and <span class="math notranslate nohighlight">\(\hat{u}_{i+\frac{1}{2},j,k}^{L}\)</span>,
+but here on the y-faces and including all three velocity components.
+Values are similarly traced from <span class="math notranslate nohighlight">\((i,j,k)\)</span> and <span class="math notranslate nohighlight">\((i,j,k+1)\)</span>
+to the <span class="math notranslate nohighlight">\((i,j,k+\frac{1}{2})\)</span> faces to define
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^D_{i,j,k+\frac{1}{2}}\)</span> and
+<span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
+<p>In this upwinding procedure we first define a normal advective
+velocity on the face
+(suppressing the <span class="math notranslate nohighlight">\(({i,j+\frac{1}{2},k})\)</span> spatial indices on front and back
+states here and in the next equation):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\widehat{v}^{adv}_{{i,j+\frac{1}{2},k}} = \left\{\begin{array}{lll}
+ \widehat{v}^F &amp; \mbox{if $\widehat{v}^F &gt; 0, \;\; \widehat{v}^F + \widehat{v}^B
+ &gt; \varepsilon $} \\
+ 0   &amp; \mbox{if $\widehat{v}^F \leq 0, \widehat{v}^B \geq  0$ or
+$ | \widehat{v}^F + \widehat{v}^B | &lt; \varepsilon $ } \\
+ \widehat{v}^B &amp; \mbox{if $\widehat{v}^B &lt; 0, \;\; \widehat{v}^F + \widehat{v}^B
+ &lt; \varepsilon $ .} \end{array} \right.\end{split}\]</div>
+<p>We now upwind <span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}\)</span> based on <span class="math notranslate nohighlight">\(\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\widehat{\boldsymbol{U}}_{{i,j+\frac{1}{2},k}} = \left\{\begin{array}{lll}
+ \widehat{\boldsymbol{U}}^F &amp; \mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} &gt; 0$} \\
+\frac{1}{2} (\widehat{\boldsymbol{U}}^F + \widehat{\boldsymbol{U}}^B)  &amp; \mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} = 0
+$} \\
+ \widehat{\boldsymbol{U}}^B &amp;
+\mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} &lt; 0$} \end{array} \right.\end{split}\]</div>
+<p>In 3D, we modify the intermediate transverse-face centered states to accounting for transverse corner coupling.
+For example, for <span class="math notranslate nohighlight">\(u\)</span> predicted to y-faces we add a factor of the z-derivative</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\breve{u}_{i,j+\half,k}^{F} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F} -  \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j,k}  \\
+          = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F}
+        - \frac{dt}{3}   \left[ \left( \frac{\alpha_{i,j,k+\half} \hat{u}_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \alpha_{i,j,k-\half} \hat{u}_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half}}{dz\ \kappa_{i,j,k}} \right) \right. \\
+             &amp; - \left. \left( \frac{\alpha_{i,j,k+\half} \hat{w}^{adv}_{i,j,k+\half} - \alpha_{i,j,k-\half} \hat{w}^{adv}_{i,j,k-\half}}{dz\ \kappa_{i,j,k}} \right) u_{i,j,k} \right] \\
+\breve{u}_{i,j+\half,k}^{B} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j+1,k} \\
+          = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{B}
+        - \frac{dt}{3} \left[ \left( \frac{\alpha_{i,j+1,k+\half} \hat{u}_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \alpha_{i,j+1,k-\half} \hat{u}_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz\ \kappa_{i,j+1,k}} \right) \right. \\
+            &amp; - \left. \left( \frac{\alpha_{i,j+1,k+\half} \hat{w}^{adv}_{i,j+1,k+\half} - \alpha_{i,j+1,k-\half} \hat{w}^{adv}_{i,j+1,k-\half}}{dz\ \kappa_{i,j+1,k}} \right) u_{i,j+1,k} \right]\\\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(alpha\)</span> are cell face area fractions and <span class="math notranslate nohighlight">\(kappa\)</span> is the cell volume fraction.
+Then we apply boundary conditions on domain faces before upwinding according to
+<span class="math notranslate nohighlight">\(\hat{v}_{i,j+\frac{1}{2},k}^{adv}\)</span> as was done above for <span class="math notranslate nohighlight">\(\widehat{\U}\)</span>.
+<span class="math notranslate nohighlight">\(\widebreve{\boldsymbol{U}}_{{i,j-\frac{1}{2},k}}, \widebreve{\boldsymbol{U}}_{i,j,k+\frac{1}{2}}\)</span>
+and <span class="math notranslate nohighlight">\(\widebreve{\boldsymbol{U}}_{i,j,k-\frac{1}{2}}\)</span> are constructed in a similar manner.
+For 2D, we take <span class="math notranslate nohighlight">\(\widebreve{\U} = \widehat{\U}\)</span>.</p>
+<p>If any of the four faces that contribute to the transverse derivatives for a particular
+cell have zero area, all of the transverse <em>and</em> forcing terms are identically set to 0.  For example,
+when constructing <span class="math notranslate nohighlight">\(\tilde{u}_{i+\half,j,k}^{L,\nph}\)</span>, if any of the areas
+<span class="math notranslate nohighlight">\(a_{i,\jph,k}, a_{i,\jmh,k}, a_{i,j,\kmh}\)</span> or <span class="math notranslate nohighlight">\(a_{i,j,\kph}\)</span> are zero, then we simply define</p>
+<div class="math notranslate nohighlight" id="equation-eq2-ebg3">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq2-ebg3" title="Permalink to this equation"></a></span>\[\tilde{u}_{i+\half,j,k}^{L,\nph} = \hat{u}_{i+\half,j,k}^{L}\]</div>
+<p>and use this in the upwinding step given by Eq. <a class="reference internal" href="#equation-eb-finalupwind">(11)</a>.</p>
+<p>For cut faces (i.e. faces intersecting the EB), <span class="math notranslate nohighlight">\(\widebreve{\U}\)</span> and <span class="math notranslate nohighlight">\(\widehat{\U}_{ad}\)</span> are linearly extrapolated
+from face centroids to face centers. Then the transverse derivatives are constructed from these face centered values
+using the same formulas as for the non-EB case (Eq. <a class="reference internal" href="#equation-trans">(3)</a>).</p>
+<p>The normal velocity at each face is then determined by an upwinding procedure
+based on the states predicted from the cells on either side.  The
+procedure is similar to that described above, i.e.
+(suppressing the (<span class="math notranslate nohighlight">\(i+\frac{1}{2},j,k\)</span>) indices)</p>
+<div class="math notranslate nohighlight" id="equation-eb-finalupwind">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eb-finalupwind" title="Permalink to this equation"></a></span>\[\begin{split} \tilde{u}^{n+\frac{1}{2}}_{{i+\frac{1}{2},j,k}} = \left\{\begin{array}{lll}
+ \tilde{u}^{L,n+\frac{1}{2}}
+ &amp; \mbox{if $\tilde{u}^{L,n+\frac{1}{2}} &gt; 0$ and $ \tilde{u}^{L,n+\frac{1}{2}} +
+ \tilde{u}^{R,n+\frac{1}{2}} &gt; \varepsilon $} \\
+ 0 &amp; \mbox{if $\tilde{u}^{L,n+\frac{1}{2}} \leq 0, \tilde{u}^{R,n+\frac{1}{2}} \geq  0$ or
+ $ | \tilde{u}^{L,n+\frac{1}{2}} + \tilde{u}^{R,n+\frac{1}{2}} | &lt; \varepsilon$ } \\
+ \tilde{u}^{R,n+\frac{1}{2}}
+ &amp; \mbox{if $\tilde{u}^{R,n+\frac{1}{2}} &lt; 0$ and $\tilde{u}^{L,n+\frac{1}{2}}
+ + \tilde{u}^{R,n+\frac{1}{2}} &lt; \varepsilon $}
+ \end{array} \right.\end{split}\]</div>
+<p>We follow a similar
+procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n+\frac{1}{2}}_{i,j+\frac{1}{2},k}\)</span>
+and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to these unique values of
+normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
+</section>
+<section id="post-mac-api-ref-ebgondunov-computeedgestate">
+<h3>Post-MAC (API ref. <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBGodunov.html#afb5b3b4bcea09a8aeeb568ddde3a46e4">EBGondunov::ComputeEdgestate</a>)<a class="headerlink" href="#post-mac-api-ref-ebgondunov-computeedgestate" title="Permalink to this heading"></a></h3>
+<p>Here, the face-centered advective velocity field, which we will call <span class="math notranslate nohighlight">\(\U^{MAC}\)</span>, is already known.
+Typically, this is the MAC projection of <span class="math notranslate nohighlight">\(\U^{MAC,*}\)</span>, which would have been computed via the Pre-MAC
+procedure detailed above.
+Now we predict all quantities to faces. Let the
+scalar <span class="math notranslate nohighlight">\(s\)</span> represent any advected quantities as well as all three velocity
+components.  We now extrapolate <span class="math notranslate nohighlight">\(s\)</span> from cell centroids to face centroids
+as described in Sec. <a class="reference internal" href="#pre-mac"><span class="std std-ref">Pre-MAC (API ref. EBGodunov::ExtrapVelToFaces)</span></a>. For example, on face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> we define</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq1">
+<span class="eqno">(12)<a class="headerlink" href="#equation-postebg-eq1" title="Permalink to this equation"></a></span>\[\tilde{s}_{i+\half,j,k}^{L,\nph} = \hat{s}_{i+\half,j,k}^{L}
+ + \frac{dt}{2} \; (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, where</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq2">
+<span class="eqno">(13)<a class="headerlink" href="#equation-postebg-eq2" title="Permalink to this equation"></a></span>\[\hat{s}_{i+\half,j,k}^{L} = s_{i,j,k}^n +
+ \left( \delta_x - \frac{dt}{2} u_{i,j,k}^n \right)
+ \; {s^x}_{i,j,k} +  \delta_y \; {s^y}_{i,j,k} + \delta_z \; {s^z}_{i,j,k}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\tilde{s}_{i+\half,j,k}^{R,\nph} = \hat{s}_{i+\half,j,k}^{R}
++ \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k),\)</span> where</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq3">
+<span class="eqno">(14)<a class="headerlink" href="#equation-postebg-eq3" title="Permalink to this equation"></a></span>\[\hat{u}_{i+\half,j,k}^{R} = u_{i+1,j,k}^n +
+     \left(\delta_x  - \frac{dt}{2} u_{i,j,k}^n \right)
+  \; {s^x}_{i+1,j,k} +  \delta_y \; {s^y}_{i+1,j,k} + \delta_z \; {s^z}_{i+1,j,k}\]</div>
+<p>Here again <span class="math notranslate nohighlight">\(\delta_x,\)</span> <span class="math notranslate nohighlight">\(\delta_y\)</span> and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance
+vector from the cell centroid to the face centroid of the <span class="math notranslate nohighlight">\(x\)</span>-face at <span class="math notranslate nohighlight">\((i-\half,j,k)\)</span>,
+and the slopes <span class="math notranslate nohighlight">\((u^x,u^y,u^z)\)</span> are calculated as decribded in the <a class="reference internal" href="Utilities.html#ebslopes"><span class="std std-ref">EB Slopes</span></a> section.</p>
+<p>The transverse terms are computed exactly as described earlier for the Pre-MAC case, except for the upwinding process.
+Where we previously used the predicted states themselves to upwind, we now use the component of the
+advective velocity normal to the face in question.</p>
+<p>We upwind <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span> and <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{L,\nph}\)</span> using the
+normal component of <span class="math notranslate nohighlight">\(\U^{MAC}\)</span> to define <span class="math notranslate nohighlight">\(\tilde{s}_{i+\half,j,k}^{\nph}.\)</span>  Again, suppressing
+the subscripts, we define</p>
+<div class="math notranslate nohighlight" id="equation-postebg-eq5">
+<span class="eqno">(15)<a class="headerlink" href="#equation-postebg-eq5" title="Permalink to this equation"></a></span>\[\begin{split}\tilde{s}^{\nph} = \left\{\begin{array}{lll}
+  \tilde{s}^{L,\nph}              &amp; \mbox{if $u^{MAC} &gt; \varepsilon $}  \\
+  \tilde{s}^{R,\nph}  &amp; \mbox{if $u^{MAC} &lt; \varepsilon $} \\
+\frac{1}{2} (\tilde{s}^{L,\nph} + \tilde{s}^{R,\nph}) &amp; \mbox{otherwise}
+\end{array} \right.\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\half}{\frac{1}{2}}
+\newcommand{\nph}{{n + \half}}
+\newcommand{\nmh}{{n - \frac{1}{2}}}
+\newcommand{\iphj}{{i+\frac{1}{2},j,k}}
+\newcommand{\ijph}{{i,j+\frac{1}{2}},k}
+\newcommand{\imhj}{{i-\frac{1}{2},j,k}}
+\newcommand{\ijmh}{{i,j-\frac{1}{2}},k}
+\newcommand{\ijkmh}{{i,j,k-\frac{1}{2}}}
+\newcommand{\ijkph}{{i,j,k+\frac{1}{2}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\del}{\nabla}
+\newcommand{\AN}{[(U \cdot \nabla)U]^{n+\frac{1}{2}}}
+\newcommand{\npk}{{n + \frac{p+\half}{R}}}
+\newcommand{\nak}{{n + \frac{p}{R}}}
+\newcommand{\nmk}{{n + \frac{p-\half}{R}}}
+\newcommand{\iph}{i+\half}
+\newcommand{\imh}{i-\half}
+\newcommand{\ipmh}{i\pm\half}
+\newcommand{\jph}{j+\half}
+\newcommand{\jmh}{j-\half}
+\newcommand{\jpmh}{j\pm\half}
+\newcommand{\kph}{k+\half}
+\newcommand{\kmh}{k-\half}
+\newcommand{\GMAC}{C \rightarrow E}
+\newcommand{\DMAC}{E \rightarrow C}
+\newcommand{\U}{\boldsymbol{U}}
+\newcommand{\F}{\boldsymbol{F}}
+\newcommand{\dt}{\Delta t}
+\newcommand{\shalf}{\sfrac{1}{2}}
+\newcommand\hathat[1]{\widehat{\widehat{#1}}}
+\newcommand\hairbow[1]{\overset{\bowtie}{#1}}
+\newcommand\widebreve[1]{\overset{\smile}{#1}}
+\newcommand{\vol}{\mathcal{V}}
+\newcommand{\area}{\mathcal{A}}\]</div>
+</section>
+</section>
+<section id="bds-algorithm">
+<h2>BDS Algorithm<a class="headerlink" href="#bds-algorithm" title="Permalink to this heading"></a></h2>
+<p>The Bell-Dawson-Shubin (BDS) algorithm is a higher order Godunov method for scalar
+conservation laws in multiple dimensions. Satisfying the maximum principal for
+constant coefficient linear advection, the BDS routine provides
+accurate resolution for smooth problems while avoiding undershoot and overshoot
+for non-smooth profiles. Additional details and comparisons to other
+schemes can be found in <span id="id6">[<a class="reference internal" href="references.html#id30" title="A. Nonaka, S. May, A. S. Almgren, and J. B. Bell. A three-dimensional, unsplit godunov method for scalar conservation laws. SIAM Journal on Scientific Computing, 33(4):2039-2062, 2011. URL: https://ccse.lbl.gov/Publications/nonaka/BDS_3d.pdf, arXiv:https://doi.org/10.1137/100809520, doi:10.1137/100809520.">Nonaka <em>et al.</em>, 2011</a>]</span> and references therein.</p>
+<p>This implementation of BDS closely follows the Godunov approach and leverages some of the
+same code.
+The difference appears in the computation of edge states given face-centered velocities,
+i.e. the Post-MAC computation.
+Currently, periodic, Dirichlet, and outflow (extrapolation)
+boundary conditions are supported. Embedded boundaries are not supported within BDS at
+this time.
+If additional functionality is desired, or if questions remain after reading this guide,
+further help is available by submitting an issue through
+<a class="reference external" href="https://github.com/AMReX-Codes/AMReX-Hydro/issues/new">Github</a></p>
+<section id="id7">
+<h3>Pre-MAC<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<p>The BDS routine follows the Godunov PLM method to extrapolate velocities to cell faces,
+see <a class="reference internal" href="#godunov-pre-mac"><span class="std std-ref">Godunov Methods: Pre-MAC</span></a>.</p>
+</section>
+<section id="post-mac">
+<h3>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this heading"></a></h3>
+<p>In the notation below,
+<span class="math notranslate nohighlight">\(s\)</span> is a scalar field of the form <span class="math notranslate nohighlight">\(s=s(x,y,z,t)\)</span>
+and <span class="math notranslate nohighlight">\({\U}=(u,v,w)\)</span> represents a known face-centered velocity field, typically the projected velocity field from the Pre-MAC step (<span class="math notranslate nohighlight">\(\U^{MAC}\)</span>).
+<span class="math notranslate nohighlight">\(s^n_{ijk}\)</span> represents the average value of <span class="math notranslate nohighlight">\(s\)</span> over the cell with index <span class="math notranslate nohighlight">\((ijk)\)</span> at
+time <span class="math notranslate nohighlight">\(t^n\)</span>. At each face the normal velocity (e.g., <span class="math notranslate nohighlight">\(u_{i+1/2,j,k}\)</span>) is assumed constant
+over the time step.</p>
+<p>Obtaining the edge states is a two step process:</p>
+<ul class="simple">
+<li><p><strong>Step 1</strong>: Construct a limited piecewise trilinear (bilinear in 2D) representation of the solution in
+each grid cell of the form,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+s_{ijk}(x,y,z) &amp;=&amp; s_{ijk} + s_{x,ijk}\cdot(x-x_i) + s_{y,ijk}\cdot(y-y_j) + s_{z,ijk}\cdot(z-z_k) \nonumber \\
+&amp;&amp; + s_{xy,ijk}\cdot(x-x_i)(y-y_j) + s_{xz,ijk}\cdot(x-x_i)(z-z_k) \nonumber \\
+&amp;&amp; + s_{yz,ijk}\cdot(y-y_j)(z-z_k) + s_{xyz,ijk}\cdot(x-x_i)(y-y_j)(z-z_k).
+\end{eqnarray}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>Step 2</strong>: Construct edge states <span class="math notranslate nohighlight">\(s_{i+1/2,j,k}\)</span>, etc. by integrating the limited
+piecewise trilinear (bilinear in 2D) profiles over the space-time region determined by the characteristic
+domain of dependence of the face.
+We enforce no inflow at an outflow face as described in the post-MAC <a class="reference internal" href="Utilities.html#no-inflow-at-outflow"><span class="std std-ref">Boundary Conditions Section</span></a>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Install.html" class="btn btn-neutral float-left" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Projections.html" class="btn btn-neutral float-right" title="Projection Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX-Hydro Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

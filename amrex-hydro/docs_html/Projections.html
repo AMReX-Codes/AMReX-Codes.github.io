@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projection Methods &mdash; amrex-hydro 23.08-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Helper functions" href="Utilities.html" />
+    <link rel="prev" title="Advection schemes" href="Schemes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex-hydro
+          </a>
+              <div class="version">
+                23.08-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Schemes.html">Advection Schemes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Projection Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mac-projection">MAC Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nodal-projection">Nodal Projection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Utilities.html">Helper functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-hydro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Projection Methods</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Projections.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="projection-methods">
+<span id="projections"></span><h1>Projection Methods<a class="headerlink" href="#projection-methods" title="Permalink to this heading"></a></h1>
+<p>Here, we first include a brief discussion of projection methodology for incompressible and low Mach number flow.
+Details of AMReX-Hydro’s implementation of projections follow.</p>
+<p>The compressible Navier-Stokes equations can be written in the form:</p>
+<div class="math notranslate nohighlight">
+\[{{\bf U}}_t + \nabla \cdot F({{\bf U}}) = S\]</div>
+<p>where <span class="math notranslate nohighlight">\({{\bf U}}\)</span> is a vector of conserved quantities, <span class="math notranslate nohighlight">\({{\bf U}}= (\rho, \rho u,
+\rho E)\)</span>, with <span class="math notranslate nohighlight">\(\rho\)</span> the density, <span class="math notranslate nohighlight">\(u\)</span> the velocity, <span class="math notranslate nohighlight">\(E\)</span> the total
+energy per unit mass, and <span class="math notranslate nohighlight">\(S\)</span> are source terms. This system
+can be expressed as a coupled set of advection/diffusion equations:</p>
+<div class="math notranslate nohighlight">
+\[{\bf q}_t + A({\bf q}) \nabla {\bf q} + D = {\cal S}\]</div>
+<p>where <span class="math notranslate nohighlight">\({\bf q}\)</span> are called the primitive variables, <span class="math notranslate nohighlight">\(A\)</span> is the advective
+flux Jacobian, <span class="math notranslate nohighlight">\(A \equiv \partial F / \partial U\)</span>, <span class="math notranslate nohighlight">\(D\)</span> are diffusion terms,
+and <span class="math notranslate nohighlight">\({\cal S}\)</span> are the transformed sources. The eigenvalues of the
+matrix <span class="math notranslate nohighlight">\(A\)</span> are the characteristic speeds—the real-valued speeds at which
+information propagates in the system, <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(u
+\pm c\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is the sound speed. Solution methods for the
+compressible equations that are strictly conservative make use of this wave-nature to compute advective fluxes
+at the interfaces of grid cells. Diffusive fluxes can be computed
+either implicit or explicit in time, and are added to the advective fluxes,
+and used, along with the source terms to update the state in time. An
+excellent introduction to these methods is provided by LeVeque’s book
+<span id="id1">[<a class="reference internal" href="references.html#id3" title="Randall J LeVeque. Finite volume methods for hyperbolic problems. Volume 31. Cambridge university press, 2002.">LeVeque, 2002</a>]</span>. The timestep for these methods is limited by all three processes
+and their numerical implementation. Typically, advection terms are treated
+time-explicitly, and the time step will be constrained by the time
+it takes for the maximum characteristic speed to traverse one grid cell.
+However, in low speed flow applications, it can be shown the acoustics
+transport very little energy in the system. As a result, the time-step
+restrictions arising from numerical treatement of the advection terms
+can be unnecessarily limited, even if A-stable methods are used to incorporate
+the diffusion and source terms.</p>
+<p>In contrast, solving incompressible or low Mach number systems
+typically involves a stage where one or more
+advection-like equations are solved (representing, e.g. conservation of mass and
+momentum), and coupling that advance with a divergence constraint on the velocity field.
+For example, the equations of invicid constant-density incompressible flow
+are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+{{\bf U}}_t = &amp; -{{\bf U}}\cdot \nabla {{\bf U}}- \frac{1}{\rho}\nabla p \label{eq:incompressible_u} \\
+\nabla \cdot {{\bf U}} = &amp;\  0 \end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\({{\bf U}}\)</span> represents the velocity vector
+and <span class="math notranslate nohighlight">\(p\)</span> is the dynamical pressure. The time-evolution equation for
+the velocity (Eq. [eq:incompressible_u]) can be solved using
+techniques similar to those developed for compressible hydrodynamics,
+updating the old velocity, <span class="math notranslate nohighlight">\({{\bf U}}^n\)</span>, to the new time-level, <span class="math notranslate nohighlight">\({{\bf U}}^\star\)</span>.
+Here the “<span class="math notranslate nohighlight">\(^\star\)</span>” indicates that the updated velocity does not, in
+general, satisfy the divergence constraint. A projection method will
+take this updated velocity and force it to obey the constraint
+equation. The basic idea follows from the fact that any vector
+field can be expressed as the sum of a divergence-free quantity and
+the gradient of a scalar. For the velocity, we can write:</p>
+<div class="math notranslate nohighlight">
+\[{{\bf U}}^\star = {{\bf U}}^d + \nabla \phi \label{eq:decomposition}\]</div>
+<p>where <span class="math notranslate nohighlight">\({{\bf U}}^d\)</span> is the divergence free portion of the velocity vector,
+<span class="math notranslate nohighlight">\({{\bf U}}^\star\)</span>, and <span class="math notranslate nohighlight">\(\phi\)</span> is a scalar. Taking the divergence of
+Eq. ([eq:decomposition]), we have</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \phi = \nabla \cdot {{\bf U}}^\star\]</div>
+<p>(where we used <span class="math notranslate nohighlight">\(\nabla \cdot {{\bf U}}^d = 0\)</span>).
+With appropriate boundary conditions, this Poisson equation can be
+solved for <span class="math notranslate nohighlight">\(\phi\)</span>, and the final, divergence-free velocity can
+be computed as</p>
+<div class="math notranslate nohighlight">
+\[{{\bf U}}^{n+1} = {{\bf U}}^\star - \nabla \phi\]</div>
+<p>Because soundwaves are filtered, the timestep constraint now depends only
+on <span class="math notranslate nohighlight">\(|{{\bf U}}|\)</span>.</p>
+<p>Extensions to variable-density incompressible
+flows <span id="id2">[<a class="reference internal" href="references.html#id7" title="J. B. Bell and D. L. Marcus. A second-order projection method for variable-density flows. Journal of Computational Physics, 101:334-348, 1992.">Bell and Marcus, 1992</a>]</span> involve a slightly different
+decomposition of the velocity field and, as a result, a slightly
+different, variable-coefficient Poisson equation.
+There are also a variety of different ways
+to express what is being projected <span id="id3">[<a class="reference internal" href="references.html#id13" title="A. S. Almgren, J. B. Bell, and W. Y. Crutchfield. Approximate projection methods: part I. Inviscid analysis. SIAM J. Sci. Comput., 22(4):1139–59, 2000.">Almgren <em>et al.</em>, 2000</a>]</span>,
+and different discretizations of the divergence and gradient operators
+lead to slightly different mathematical properties of the methods
+(leading to “approximate
+projections” <span id="id4">[<a class="reference internal" href="references.html#id11" title="A. S. Almgren, J. B. Bell, and W. G. Szymczak. A numerical method for the incompressible Navier-Stokes equations based on an approximate projection. SIAM J. Sci. Comput., 17(2):358–369, March 1996.">Almgren <em>et al.</em>, 1996</a>]</span>).</p>
+<p>For second-order methods, two projections are typically done per timestep.
+First, the ‘MAC’ projection <span id="id5">[<a class="reference internal" href="references.html#id12" title="J. B. Bell, P. Colella, and L. H. Howell. An efficient second-order projection method for viscous incompressible flow. In Proceedings of the Tenth AIAA Computational Fluid Dynamics Conference, 360–367. AIAA, June 1991.">Bell <em>et al.</em>, 1991</a>]</span>
+operates on the half-time, edge-centered advective velocities, making
+sure that they satisfy the divergence constraint. These advective
+velocities are used to construct the fluxes through the interfaces to
+advance the solution to the new time. The second projection
+operates on the cell-centered velocities at the new time, again
+enforcing the divergence constraint.</p>
+<p>AMReX-Hydro provides two projection classes: the <code class="docutils literal notranslate"><span class="pre">MacProjector</span></code> class
+for face-centered velocity fields and <code class="docutils literal notranslate"><span class="pre">NodalProjector</span></code> for cell-centered
+velocity fields. The projection classes use AMReX’s linear solvers internally.
+Both classes provide member functions <code class="docutils literal notranslate"><span class="pre">getLinOp</span></code> and <code class="docutils literal notranslate"><span class="pre">getMLMG</span></code> to
+access the underlying objects and allow for modification of the linear operator
+and multigrid properties if needed.
+Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v23.08-dev)"><span>Linear Solvers</span></a>
+section of AMReX’s documentation.</p>
+<p>Both Projector classes provide the following parameters, which can be set in an
+inputs file or on the command line. For the MacProjector, these must be preceeded by
+“mac_proj.”, or for the NodalProjector, “nodal_proj.”</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>Description</p></td>
+<td><p>Type</p></td>
+<td><p>Default</p></td>
+</tr>
+<tr class="row-even"><td><p>verbose</p></td>
+<td><p>Verbosity in nodal projection</p></td>
+<td><p>Int</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>bottom_verbose</p></td>
+<td><p>Verbosity of the bottom solver in nodal projection</p></td>
+<td><p>Int</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>maxiter</p></td>
+<td><p>Maximum number of iterations</p></td>
+<td><p>Int</p></td>
+<td><p>MAC: 200
+Nodal: 100</p></td>
+</tr>
+<tr class="row-odd"><td><p>bottom_maxiter</p></td>
+<td><p>Maximum number of iterations in the bottom solver
+if using bicg, cg, bicgcg or cgbicg</p></td>
+<td><p>Int</p></td>
+<td><p>MAC: 200
+Nodal: 100</p></td>
+</tr>
+<tr class="row-even"><td><p>bottom_solver</p></td>
+<td><p>Which bottom solver to use.
+Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</p></td>
+<td><p>String</p></td>
+<td><p>bicgcg</p></td>
+</tr>
+<tr class="row-odd"><td><p>bottom_rtol</p></td>
+<td><p>Relative tolerance</p></td>
+<td><p>Real</p></td>
+<td><p>1.0e-4</p></td>
+</tr>
+<tr class="row-even"><td><p>bottom_atol</p></td>
+<td><p>Absolute tolerance, a negative number means it won’t be used</p></td>
+<td><p>Real</p></td>
+<td><p>-1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>num_pre_smooth</p></td>
+<td><p>Number of smoother iterations when going down the V-cycle</p></td>
+<td><p>Int</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>num_post_smooth</p></td>
+<td><p>Number of smoother iterations when going up the V-cycle</p></td>
+<td><p>Int</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<section id="mac-projection">
+<span id="mac-proj"></span><h2>MAC Projection<a class="headerlink" href="#mac-projection" title="Permalink to this heading"></a></h2>
+<p>For a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> defined on faces, i.e.
+<span class="math notranslate nohighlight">\(u\)</span> is defined on x-faces, <span class="math notranslate nohighlight">\(v\)</span> is defined on y-faces,
+and <span class="math notranslate nohighlight">\(w\)</span> is defined on z-faces, AMReX-Hydro provides an exact projection
+we refer to as a MAC projection. For this we solve</p>
+<div class="math notranslate nohighlight">
+\[D( \beta \nabla \phi) = D(U^*) - S\]</div>
+<p>for <span class="math notranslate nohighlight">\(\phi\)</span> and then set</p>
+<div class="math notranslate nohighlight">
+\[U = U^* - \beta \nabla \phi\]</div>
+<p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to satisfy
+<span class="math notranslate nohighlight">\(D(U) = S\)</span>.  For incompressible flow,  <span class="math notranslate nohighlight">\(S = 0\)</span>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">MacProjector</span></code> class can be defined and used to perform the MAC projection without explicitly
+calling the solver directly.  In addition to solving the Poisson equation (either variable or
+constant coefficient),
+the MacProjector internally computes the divergence of the vector field, <span class="math notranslate nohighlight">\(D(U^*)\)</span>,
+to compute the right-hand-side, and after the solve, subtracts the weighted gradient term to
+make the vector field result satisfy the divergence constraint.</p>
+<p>In the simplest form of the call, <span class="math notranslate nohighlight">\(S\)</span> is assumed to be zero and does not need to be specified.
+Typically, the user does not allocate the solution array, but it is also possible to create and pass
+in the solution array and have <span class="math notranslate nohighlight">\(\phi\)</span> returned as well as <span class="math notranslate nohighlight">\(U\)</span>.</p>
+<p>The MacProjector class defaults to homogeneous Dirichlet or Neumann boundary conditions at domain
+boundaries; for this case nothing further needs to be done.
+Non-homogeneous Dirichlet or Neumann boundary conditions at domain boundaries are set with
+member function <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">setLevelBC</span>&#160; <span class="pre">(int</span> <span class="pre">amrlev,</span> <span class="pre">const</span> <span class="pre">amrex::MultiFab*</span> <span class="pre">levelbcdata)</span></code>.</p>
+<p>If the MAC projection base level doesn’t cover the full domain, one must pass boundary conditions
+that come from coarser data with member function
+<code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">setCoarseFineBC</span> <span class="pre">(const</span> <span class="pre">amrex::MultiFab*</span> <span class="pre">crse,</span> <span class="pre">int</span> <span class="pre">crse_ratio)</span></code></p>
+<p>The code below is taken from <code class="docutils literal notranslate"><span class="pre">AMReX-Hydro/Tests/MAC_Projection_EB/main.cpp</span></code>,
+and demonstrates how to set up the MACProjector object and use it to perform a MAC projection.</p>
+<details class="summary-code-example-macprojector-object-setup-and-mac-projection">
+<summary>Code Example - MacProjector object setup and MAC projection.</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span><span class="w"> </span><span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="n">ng_ebs</span><span class="p">,</span><span class="w"> </span><span class="n">ebs</span><span class="p">);</span>
+
+<span class="c1">// allocate face-centered velocities and face-centered beta coefficient</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">idim</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">idim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vel</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="w"> </span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="w">    </span><span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="w">    </span><span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// set beta to 1</span>
+<span class="p">}</span>
+
+<span class="c1">// If we want to use phi elsewhere, we must create an array in which to return the solution</span>
+<span class="c1">// MultiFab phi_inout(grids, dmap, 1, 1, MFInfo(), factory);</span>
+
+<span class="c1">// If we want to supply a non-zero S we must allocate and fill it outside the solver</span>
+<span class="c1">// MultiFab S(grids, dmap, 1, 0, MFInfo(), factory);</span>
+<span class="c1">// Set S here ...</span>
+
+<span class="c1">// set initial velocity to U=(1,0,0)</span>
+<span class="n">AMREX_D_TERM</span><span class="p">(</span><span class="n">vel</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);,</span>
+<span class="w">             </span><span class="n">vel</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);,</span>
+<span class="w">             </span><span class="n">vel</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">););</span>
+
+<span class="n">LPInfo</span><span class="w"> </span><span class="n">lp_info</span><span class="p">;</span>
+
+<span class="c1">// If we want to use hypre to solve the full problem we do not need to coarsen the GMG stencils</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_hypre_as_full_solver</span><span class="p">)</span>
+<span class="w">    </span><span class="n">lp_info</span><span class="p">.</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// Note that when we build with USE_EB = TRUE, we must specify whether the quantities are located</span>
+<span class="c1">//  at centers (MLMG::Location::CellCenter, MLMG::Location::FaceCenter) or</span>
+<span class="c1">//  centroids (MLMG::Location::CellCentroid, MLMG::Location::FaceCentroid).</span>
+<span class="n">MacProjector</span><span class="w"> </span><span class="n">macproj</span><span class="p">({</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)},</span><span class="w">       </span><span class="c1">// mac velocity</span>
+<span class="w">                     </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">,</span><span class="w">       </span><span class="c1">// Location of vel</span>
+<span class="w">                     </span><span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">beta</span><span class="p">)},</span><span class="w"> </span><span class="c1">// beta</span>
+<span class="w">                     </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">,</span><span class="w">       </span><span class="c1">// Location of beta</span>
+<span class="w">                     </span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">CellCenter</span><span class="p">,</span><span class="w">       </span><span class="c1">// Location of solution variable phi</span>
+<span class="w">                     </span><span class="p">{</span><span class="n">geom</span><span class="p">},</span><span class="w">                           </span><span class="c1">// the geometry object</span>
+<span class="w">                     </span><span class="n">lp_info</span><span class="p">);</span><span class="w">                         </span><span class="c1">// structure for passing info to the operator</span>
+
+<span class="c1">// Here we specify the desired divergence S</span>
+<span class="c1">// MacProjector macproj({amrex::GetArrOfPtrs(vel)},       // mac velocity</span>
+<span class="c1">//                      MLMG::Location::FaceCenter,       // Location of vel</span>
+<span class="c1">//                      {amrex::GetArrOfConstPtrs(beta)}, // beta</span>
+<span class="c1">//                      MLMG::Location::FaceCenter,       // Location of beta</span>
+<span class="c1">//                      MLMG::Location::CellCenter,       // Location of solution variable phi</span>
+<span class="c1">//                      {geom},                           // the geometry object</span>
+<span class="c1">//                      lp_info,                          // structure for passing info to the operator</span>
+<span class="c1">//                      {&amp;S},                             // defines the specified RHS divergence</span>
+<span class="c1">//                      MLMG::Location::CellCenter);      // Location of S</span>
+
+<span class="c1">// Set bottom-solver to use hypre instead of native BiCGStab</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_hypre_as_full_solver</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">use_hypre_as_bottom_solver</span><span class="p">)</span>
+<span class="w">   </span><span class="n">macproj</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span><span class="p">);</span>
+
+<span class="c1">// Set boundary conditions.</span>
+<span class="c1">//  Here we use Neumann on the low x-face, Dirichlet on the high x-face,</span>
+<span class="c1">//  and periodic in the other two directions</span>
+<span class="c1">//  (the first argument is for the low end, the second is for the high end)</span>
+<span class="c1">// Note that Dirichlet and Neumann boundary conditions are assumed to be homogeneous.</span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">                    </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
+
+<span class="n">macproj</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="n">bottom_verbose</span><span class="p">);</span>
+
+<span class="c1">// Define the relative tolerance</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">reltol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-8</span><span class="p">;</span>
+
+<span class="c1">// Define the absolute tolerance; note that this argument is optional</span>
+<span class="n">Real</span><span class="w"> </span><span class="n">abstol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-15</span><span class="p">;</span>
+
+<span class="c1">// Solve for phi and subtract from the velocity to make it divergence-free</span>
+<span class="c1">// Here, we specify that velocities are at face centers</span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="n">reltol</span><span class="p">,</span><span class="n">abstol</span><span class="p">,</span><span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCenter</span><span class="p">);</span>
+
+<span class="c1">// If we want to use phi elsewhere, we can pass in an array in which to return the solution</span>
+<span class="c1">// macproj.project({&amp;phi_inout},reltol,abstol,MLMG::Location::FaceCenter);</span>
+</pre></div>
+</div>
+</details><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="nodal-projection">
+<span id="nodal-proj"></span><h2>Nodal Projection<a class="headerlink" href="#nodal-projection" title="Permalink to this heading"></a></h2>
+<p>For a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> defined with all components co-located on cell centers,
+AMReX-Hydro provides an approximate projection we refer to as a nodal projection.
+Velocity divergence and pressure are defined on nodes, and the pressure gradient is defined
+at cell centers as the cell average of face-based values. It is the use of this cell-averaged
+pressure gradient that makes this projection approximate rather than exact.</p>
+<p>As with the MAC projection, consider that we want to solve</p>
+<div class="math notranslate nohighlight">
+\[D( \beta \nabla \phi) = D(U^*) - S\]</div>
+<p>for <span class="math notranslate nohighlight">\(\phi\)</span> and then set</p>
+<div class="math notranslate nohighlight">
+\[U = U^* - \beta \nabla \phi\]</div>
+<p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field defined on cell centers and we want to satisfy
+<span class="math notranslate nohighlight">\(D(U) = S\)</span>.  For incompressible flow,  <span class="math notranslate nohighlight">\(S = 0\)</span>.</p>
+<p>Currently this nodal approximate projection does not exist in a separate
+operator like the MAC projection; instead we demonstrate below the steps needed
+to compute the approximate projection.  This means we must</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">NodalProjector</span></code> class can be used to solve the nodal projection without explicitly
+calling the linear solver. In addtion to solving the nodal variable coefficient Poisson
+equation, it internally computes the right-hand-side,
+including the the divergence of the vector field, <span class="math notranslate nohighlight">\(D(U^*)\)</span>,
+and also subtracts the weighted gradient term to make the vector field result satisfy the
+divergence constraint.</p>
+<p>The NodalProjector class does not provide defaults for domain boundary conditions, and thus
+member function <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">setLevelBC</span>&#160; <span class="pre">(int</span> <span class="pre">amrlev,</span> <span class="pre">const</span> <span class="pre">amrex::MultiFab*</span> <span class="pre">levelbcdata)</span></code>
+must always be called.</p>
+<p>The code below is taken from <code class="docutils literal notranslate"><span class="pre">AMReX-Hydro/Tests/Nodal_Projection_EB/main.cpp</span></code>,
+and demonstrates how to set up the NodalProjector object and use it to perform a nodal projection.</p>
+<details class="summary-example-code-nodalprojector-object-setup-and-nodal-projection">
+<summary>Example Code - NodalProjector object setup and nodal projection.</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Given a cell-centered velocity (vel) field, a cell-centered</span>
+<span class="c1">// scalar field (sigma) field, and a source term S (either node-</span>
+<span class="c1">// or cell-centered )solve:</span>
+<span class="c1">//</span>
+<span class="c1">//   div( sigma * grad(phi) ) = div(vel) - S</span>
+<span class="c1">//</span>
+<span class="c1">// and then perform the projection:</span>
+<span class="c1">//</span>
+<span class="c1">//     vel = vel - sigma * grad(phi)</span>
+<span class="c1">//</span>
+
+<span class="c1">//</span>
+<span class="c1">// Create the cell-centered velocity field we want to project.</span>
+<span class="c1">// Set velocity field to (1,0,0) including ghost cells for this example</span>
+<span class="c1">//</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">vel</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">AMREX_SPACEDIM</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Create the cell-centered sigma field and set it to 1 for this example</span>
+<span class="c1">//</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">sigma</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">sigma</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Create cell-centered contributions to RHS and set it to zero for this example</span>
+<span class="c1">//</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">S_cc</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">S_cc</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Create node-centered contributions to RHS and set it to zero for this example</span>
+<span class="c1">//</span>
+<span class="k">const</span><span class="w"> </span><span class="n">BoxArray</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nd_grids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="w"> </span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheNodeVector</span><span class="p">());</span><span class="w"> </span><span class="c1">// nodal grids</span>
+<span class="n">MultiFab</span><span class="w"> </span><span class="nf">S_nd</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span><span class="w"> </span><span class="n">dmap</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MFInfo</span><span class="p">(),</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span>
+<span class="n">S_nd</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Setup linear operator, AKA the nodal Laplacian</span>
+<span class="c1">//</span>
+<span class="n">LPInfo</span><span class="w"> </span><span class="n">lp_info</span><span class="p">;</span>
+
+<span class="c1">// If we want to use hypre to solve the full problem we do not need to coarsen the GMG stencils</span>
+<span class="c1">// if (use_hypre_as_full_solver)</span>
+<span class="c1">//    lp_info.setMaxCoarseningLevel(0);</span>
+
+<span class="c1">// Setup nodal projector object</span>
+<span class="n">Hydro</span><span class="o">::</span><span class="n">NodalProjector</span><span class="w"> </span><span class="nf">nodal_proj</span><span class="p">({</span><span class="n">vel</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">sigma</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">geom</span><span class="p">},</span><span class="w"> </span><span class="n">lp_info</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">rhs_cc</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">rhs_nd</span><span class="p">});</span>
+
+<span class="c1">// Set boundary conditions.</span>
+<span class="c1">// Here we use Neumann on the low x-face, Dirichlet on the high x-face,</span>
+<span class="c1">// and periodic in the other two directions</span>
+<span class="c1">// (the first argument is for the low end, the second is for the high end)</span>
+<span class="c1">// Note that Dirichlet boundary conditions are assumed to be homogeneous (i.e. phi = 0)</span>
+<span class="n">nodal_proj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="w">                       </span><span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
+
+<span class="c1">//</span>
+<span class="c1">// Solve div( sigma * grad(phi) ) = RHS</span>
+<span class="c1">//</span>
+<span class="n">nodal_proj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="w"> </span><span class="n">reltol</span><span class="p">,</span><span class="w"> </span><span class="n">abstol</span><span class="p">);</span>
+
+<span class="c1">// Optionally, the projection can return the resulting phi and/or phi can be used to provide</span>
+<span class="c1">// an initial guess if available.</span>
+<span class="c1">//</span>
+<span class="c1">// MultiFab phi(nd_grids, dmap, 1, 1, MFInfo(), factory);</span>
+<span class="c1">// phi.setVal(0.0); // Must initialize phi; we simply set to 0 for this example.</span>
+<span class="c1">// nodal_proj.project( {&amp;phi}, reltol, abstol);</span>
+</pre></div>
+</div>
+</details><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Schemes.html" class="btn btn-neutral float-left" title="Advection schemes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Utilities.html" class="btn btn-neutral float-right" title="Helper functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX-Hydro Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
