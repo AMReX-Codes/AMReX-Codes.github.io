@@ -1202,6 +1202,12 @@ var namespaces_dup =
       [ "amrex_avgdown_nodes", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a22c4f54ca2715e093218b8c504cd9a73", null ],
       [ "amrex_avgdown_with_vol", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ac094c7f6f35727205b4986aae651c761", null ],
       [ "amrex_avgdown_with_vol", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a73105d96fa345efe695b754359eacc4b", null ],
+      [ "amrex_calc_alpha_stencil", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a7213e403116fdea6dc4dda865eaf18e6", null ],
+      [ "amrex_calc_centroid_limiter", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a08be6a2bc4956941feb31ccb0ddc2167", null ],
+      [ "amrex_calc_xslope", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aba62b0734dec9b69bdc82781f4e87151", null ],
+      [ "amrex_calc_xslope_extdir", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a89f81b000b34e7c57e481ba09a2f77eb", null ],
+      [ "amrex_calc_yslope", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a43724c1f3c9745b893de6823b5bfef51", null ],
+      [ "amrex_calc_yslope_extdir", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a147f251f83a5f9c022d66a1595f7cb0b", null ],
       [ "amrex_compute_convective_difference", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a4979a24456c6009e315e62d0f0d1ee66", null ],
       [ "amrex_compute_convective_difference", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a6b6af662717df11ef0cc1122f068e809", null ],
       [ "amrex_compute_divergence", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a6f8556f4e163951fd7c4aa1debf4435e", null ],
@@ -1217,6 +1223,8 @@ var namespaces_dup =
       [ "amrex_fill_slice_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a02764a19b02ad5aa59766eaba8cde224", null ],
       [ "amrex_first_order_extrap_cpu", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ae764daf3d8010df29bc0fb4b6833f0c8", null ],
       [ "amrex_first_order_extrap_gpu", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a9570ea1b5e3ab8070aee754ccbcf28a2", null ],
+      [ "amrex_flux_redistribute", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a2997746786ac52f67e2d900ad628b54e", null ],
+      [ "amrex_flux_redistribute", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a8cb738d9f1f698007c0f56b7a0088083", null ],
       [ "amrex_interpolate_cic", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa90dde62ffe45aa35b5dd015043019a8", null ],
       [ "amrex_iparser_delete", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a79e084d7248e50fe5cd9f6037db2b2e1", null ],
       [ "amrex_iparser_new", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a414ba7de5a008178d4fa0953a6e69073", null ],
@@ -1229,6 +1237,14 @@ var namespaces_dup =
       [ "amrex_setvol", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a5be48241dfac16941f5f4c66fdd7d584", null ],
       [ "amrex_setvol", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa84527498d84c7d3eeb6ac347f35fc57", null ],
       [ "Apply", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a72ba0f3bd5880d4218b4bfe93373edf6", null ],
+      [ "apply_flux_redistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aefd8bdd7a185cff23fc99fb94a8a17d0", null ],
+      [ "apply_flux_redistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a343494dfc1c9121c4d236ed0f774e39a", null ],
+      [ "ApplyInitialRedistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aec9402ad077cb5bc93ffbc075444ff28", null ],
+      [ "ApplyInitialRedistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3b6321255042c11a132cbdf44d65b65b", null ],
+      [ "ApplyMLRedistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a70390697b3721ab63d2e9c71903c3818", null ],
+      [ "ApplyMLRedistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ac1c7f59ccbbc76cb915eba446cfe0fe2", null ],
+      [ "ApplyRedistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ad09a07e5d11a8076d60a359707ccb53e", null ],
+      [ "ApplyRedistribution", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3aa0394c2e3540b3f382a2fe14ae60e3", null ],
       [ "arg", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a9f3abe7a79b333248fb3183d9a9df7de", null ],
       [ "Assert", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a346451f63cf84dc86251d9b8263655c8", null ],
       [ "Assert_host", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a7316f24daca402f64791688d4c49148e", null ],
@@ -1377,8 +1393,8 @@ var namespaces_dup =
       [ "eb_compute_divergence", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa59d455887dcc9ddd95b58158df99a8d", null ],
       [ "EB_computeDivergence", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aac572002c16db8070f5ffaf6afaf1b87", null ],
       [ "EB_computeDivergence", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a5c82ba2090dd0accf9b02cf8aca324b7", null ],
-      [ "eb_flux_reg_crseadd_va", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ad88229550040a794c1b560b1db6ecdc2", null ],
-      [ "eb_flux_reg_crseadd_va", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa15c295b806f5850e12b44898ed71150", null ],
+      [ "eb_flux_reg_crseadd_va", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ae0bbc58f6b9468fa1aded42eff20dcd5", null ],
+      [ "eb_flux_reg_crseadd_va", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ad65a167177bb171c3ac5fbd726a3d0c1", null ],
       [ "eb_flux_reg_fineadd_dm", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a5c2977ac92fe83060eb9443dde71cdd5", null ],
       [ "eb_flux_reg_fineadd_va_xhi", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#abd990a563d63d022c9b09433c621015f", null ],
       [ "eb_flux_reg_fineadd_va_xlo", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a15dc2901e84865ab7ca819e913967f1d", null ],
@@ -1726,12 +1742,15 @@ var namespaces_dup =
       [ "makeFineMask_doit", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a549567bbb4fc6d2e53d5a0c03fe62a81", null ],
       [ "MakeFuncPctTimesMF", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aaae16c4ac3245574456ee8dc48c261be", null ],
       [ "makeHypre", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#af5a050719637ed453c73af4d4ca48c8d", null ],
+      [ "MakeITracker", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a48d0da8ea1955807973d77a627c4d3a3", null ],
       [ "makePetsc", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#abbd0e7692c28626659b75637c2c63528", null ],
       [ "makePolymorphic", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ab49a5b78f3e95aa357d0471eee56336d", null ],
       [ "MakeSimilarDM", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#adc0569d3487d998596b2a11392bddaca", null ],
       [ "MakeSimilarDM", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aca8ca3ed7e01a5c954d6c70cae7b94a0", null ],
       [ "makeSingleCellBox", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a6979a9a48d8e468954ffe6aa2b9c807a", null ],
       [ "makeSlab", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a0fd13ebbd8053059b57a7e2010704b07", null ],
+      [ "MakeStateRedistUtils", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a1415c2b7be8fa468b572da6a5b8ce2dc", null ],
+      [ "MakeStateRedistUtils", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a0472d1147267486256bc020afa8670d2", null ],
       [ "makeTuple", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a546f82ad84c1f122bb9bf89dcaa2b7a3", null ],
       [ "makeXDim3", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a8338a320488a4b26607928529d25c1a5", null ],
       [ "match", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a89eb9459b4109c4f9a9b3225abae29f8", null ],
@@ -2408,6 +2427,8 @@ var namespaces_dup =
       [ "shift", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ac305cd6b4b0f79bcbef6ad1be4d7a06e", null ],
       [ "shift", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ace26a2763f9834a0e4e2369463dd7452", null ],
       [ "SimpleRemoveOverlap", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a1ebc8341ffa9cc6f20e707bfb36ce253", null ],
+      [ "single_level_redistribute", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a03abd966dfb25986b3cf03c84f0027a1", null ],
+      [ "single_level_weighted_redistribute", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa3e0c2d6c6d25bd6068cc3347d94d89c", null ],
       [ "single_product", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aad1bedfbf5b00ed85060a201b5e19ffb", null ],
       [ "single_task", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae", null ],
       [ "single_task", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919", null ],
@@ -2418,6 +2439,8 @@ var namespaces_dup =
       [ "StablePartition", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a52a83682c1d3c6b56f1fba2bbaaed439", null ],
       [ "StablePartition", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a57310fe9971a6396f436f596efa45226", null ],
       [ "StablePartition", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ab4fdc897c184681028ce35c12fead8c5", null ],
+      [ "StateRedistribute", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a4ce1202a361f22a3e49b7858677f1a63", null ],
+      [ "StateRedistribute", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#af6b3b2e70700895f38f2a779553407e6", null ],
       [ "Subtract", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#afeebec2f58b85bfde5b88b30810cd82d", null ],
       [ "Subtract", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a54b8b46deca518b441b849bbd1ceda02", null ],
       [ "sum_fine_to_coarse", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ab67331acff75bf2840f409750b1ada66", null ],
@@ -2543,6 +2566,7 @@ var namespaces_dup =
       [ "cell_cons_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aacee8b90ed4ac329d2aaef7fcbc8ef22", null ],
       [ "cell_quartic_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#abac483ba9c2744a548a0fbd09c679165", null ],
       [ "eb_cell_cons_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a41e516952807b4f4cda43c228af03826", null ],
+      [ "eb_covered_val", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a7e0f258a02602680779facdad15ec448", null ],
       [ "eb_lincc_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#ab94176a43e7b3dfd0b44158c671268b9", null ],
       [ "eb_mf_cell_cons_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#aff791fa855110d40cd7eb2bffb62e15e", null ],
       [ "eb_mf_lincc_interp", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex.html#a2ca444883f79b387fa2373ba33b7f969", null ],
@@ -2989,8 +3013,8 @@ var namespaces_dup =
       [ "amrex_c_null_char_array", "https://amrex-codes.github.io/amrex/doxygen/namespaceamrex__string__module.html#a624a8f56ebfb3afaeb6658ef1c343616", null ]
     ] ],
     [ "BDS", "namespaceBDS.html", [
-      [ "ComputeConc", "namespaceBDS.html#a8f15920329b58787dc01e20ec1a72b55", null ],
-      [ "ComputeEdgeState", "namespaceBDS.html#af698b6387a476422a364e69f899c0b63", null ],
+      [ "ComputeConc", "namespaceBDS.html#a36a3df1a1967d24daa61c2717a74de39", null ],
+      [ "ComputeEdgeState", "namespaceBDS.html#af379bf507045216a70bdc96a8d899047", null ],
       [ "ComputeSlopes", "namespaceBDS.html#adf462f5a6d17bb0f4fc80e6ee10041a4", null ]
     ] ],
     [ "detail", null, [
@@ -3002,10 +3026,10 @@ var namespaces_dup =
       [ "getBoundaryBoxes", "https://amrex-codes.github.io/amrex/doxygen/namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020", null ]
     ] ],
     [ "EBGodunov", "namespaceEBGodunov.html", [
-      [ "ComputeAdvectiveVel", "namespaceEBGodunov.html#a6e2ba5616ba9119c5bb121aab68079ae", null ],
-      [ "ComputeEdgeState", "namespaceEBGodunov.html#ad780b533e724044521c95d183db570b8", null ],
+      [ "ComputeAdvectiveVel", "namespaceEBGodunov.html#a3758e980aabde94e5921582929725c22", null ],
+      [ "ComputeEdgeState", "namespaceEBGodunov.html#a68fb83435cdac171e8b61d758e8fa02f", null ],
       [ "ExtrapVelToFaces", "namespaceEBGodunov.html#a8ddef748d58de683cc8efb04b55874f8", null ],
-      [ "ExtrapVelToFacesOnBox", "namespaceEBGodunov.html#a2f73e971b7f50a63819817adcb5c7d69", null ]
+      [ "ExtrapVelToFacesOnBox", "namespaceEBGodunov.html#ade15191522b651ebbfb6bc3b4ca646a9", null ]
     ] ],
     [ "EBGodunovBC", "namespaceEBGodunovBC.html", [
       [ "SetXBCs", "namespaceEBGodunovBC.html#a201fb4a4c48f82f653fd5fb61090bcef", null ],
@@ -3029,16 +3053,16 @@ var namespaces_dup =
       [ "hydro_ebmol_yedge_state_extdir", "namespaceEBMOL.html#a5d0b60d61b6303c1d25f02fd5f775b93", null ]
     ] ],
     [ "EBPLM", "namespaceEBPLM.html", [
-      [ "PredictStateOnXFace", "namespaceEBPLM.html#a080aa9e4283250cfec3727983eae5376", null ],
-      [ "PredictStateOnYFace", "namespaceEBPLM.html#a63b73cfa3470b0c640b959f07b7e3378", null ],
-      [ "PredictVelOnXFace", "namespaceEBPLM.html#a0e53588f70b0d145b8faa5fe75b8a05e", null ],
-      [ "PredictVelOnYFace", "namespaceEBPLM.html#a8ca1ff009a5779706bf59ca89bc6d7b8", null ]
+      [ "PredictStateOnXFace", "namespaceEBPLM.html#a97bb7cd8a8fb1a343f148749837b9571", null ],
+      [ "PredictStateOnYFace", "namespaceEBPLM.html#ab1caecdf771995821b71a48af7450d51", null ],
+      [ "PredictVelOnXFace", "namespaceEBPLM.html#a07c063f273ba90263916e02c48996b17", null ],
+      [ "PredictVelOnYFace", "namespaceEBPLM.html#a6ac635cf3773a81cb2003d486f1ef989", null ]
     ] ],
     [ "Godunov", "namespaceGodunov.html", [
-      [ "ComputeAdvectiveVel", "namespaceGodunov.html#aea3d7e45ff84f43669b4c624673291c8", null ],
-      [ "ComputeEdgeState", "namespaceGodunov.html#af56644de6792488e91624da28f52e299", null ],
+      [ "ComputeAdvectiveVel", "namespaceGodunov.html#aaa75c1e196ec4b01c4b75de53b5f9662", null ],
+      [ "ComputeEdgeState", "namespaceGodunov.html#a1df130555e56abd00fd891407b0918e5", null ],
       [ "ExtrapVelToFaces", "namespaceGodunov.html#a051c7ac172a54677f06cb32e09590646", null ],
-      [ "ExtrapVelToFacesOnBox", "namespaceGodunov.html#a02f769e2d602c99c8a459d594bf5b55e", null ]
+      [ "ExtrapVelToFacesOnBox", "namespaceGodunov.html#abc8781334706412827b351a5c766b76a", null ]
     ] ],
     [ "GodunovCornerCouple", "namespaceGodunovCornerCouple.html", [
       [ "AddCornerCoupleTermXY", "namespaceGodunovCornerCouple.html#a17e90a76c6bd319162c4e472c99e614f", null ],
@@ -3050,19 +3074,19 @@ var namespaces_dup =
     ] ],
     [ "Hydro", "namespaceHydro.html", "namespaceHydro" ],
     [ "HydroBC", "namespaceHydroBC.html", [
-      [ "SetXEdgeBCs", "namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a", null ],
-      [ "SetYEdgeBCs", "namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab", null ]
+      [ "SetXEdgeBCs", "namespaceHydroBC.html#a45d3b23f98379c982fee1b1b72ae2d6a", null ],
+      [ "SetYEdgeBCs", "namespaceHydroBC.html#ab483be498f1f0c98923a5e6cde92841a", null ]
     ] ],
     [ "HydroUtils", "namespaceHydroUtils.html", [
-      [ "ComputeConvectiveTerm", "namespaceHydroUtils.html#a9d491a26b6816bc1137fcc051ab78f56", null ],
-      [ "ComputeDivergence", "namespaceHydroUtils.html#a0f59801cda64952e4b63910b1f42c455", null ],
-      [ "ComputeFluxes", "namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7", null ],
-      [ "ComputeFluxesOnBoxFromState", "namespaceHydroUtils.html#a8294a08d71cfe5fb8e409509b95abe97", null ],
-      [ "ComputeFluxesOnBoxFromState", "namespaceHydroUtils.html#a3ad45754255ae27bfbeaed64af598104", null ],
-      [ "ExtrapVelToFaces", "group__Utilities.html#gaf10d45e3d883f1c204a2bc5c9387bf16", null ]
+      [ "ComputeConvectiveTerm", "namespaceHydroUtils.html#a0742bbe8fac4178460020a4073724d51", null ],
+      [ "ComputeDivergence", "namespaceHydroUtils.html#a1d3afb180dbd69d0f79f30f74b2a5112", null ],
+      [ "ComputeFluxes", "namespaceHydroUtils.html#aa5cb5bc85975721c20ff752999c24113", null ],
+      [ "ComputeFluxesOnBoxFromState", "namespaceHydroUtils.html#a8087106d4f5f6fac3bcef51888394d18", null ],
+      [ "ComputeFluxesOnBoxFromState", "namespaceHydroUtils.html#aa9816da359c0c7d42e730cb0237bd5ae", null ],
+      [ "ExtrapVelToFaces", "group__Utilities.html#ga3f2c8287675ad7acb5879edcf1385af6", null ]
     ] ],
     [ "MOL", "namespaceMOL.html", [
-      [ "ComputeEdgeState", "namespaceMOL.html#a52c37e57c6f658058bac4bc5232824fa", null ],
+      [ "ComputeEdgeState", "namespaceMOL.html#adee159fbd7c101d690868db1fd6c7992", null ],
       [ "ExtrapVelToFaces", "namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748", null ],
       [ "ExtrapVelToFacesBox", "namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad", null ],
       [ "hydro_mol_xedge_state", "namespaceMOL.html#a0af7e22f67c73814e7968b5bd6e02e8a", null ],
@@ -3081,8 +3105,8 @@ var namespaces_dup =
     [ "PLM", "namespacePLM.html", [
       [ "PredictStateOnXFace", "namespacePLM.html#a27d3106050ecc051c39cd1702f6615a7", null ],
       [ "PredictStateOnYFace", "namespacePLM.html#a1107e8578e71e86ef2d86c10729baa34", null ],
-      [ "PredictVelOnXFace", "namespacePLM.html#ad2856cbb4c67bc257b75340044ae7229", null ],
-      [ "PredictVelOnYFace", "namespacePLM.html#ad7beaa3659e4fc3ea1dc0f3a97d025f7", null ]
+      [ "PredictVelOnXFace", "namespacePLM.html#afeb22ababa43de8f3531036c184fa252", null ],
+      [ "PredictVelOnYFace", "namespacePLM.html#ae54d2ede855ab22249f6b3166bb215c6", null ]
     ] ],
     [ "PPM", "namespacePPM.html", "namespacePPM" ],
     [ "sdcquadrature_mod", null, [

@@ -1,9 +1,9 @@
 var classHydro_1_1NodalProjector =
 [
-    [ "NodalProjector", "classHydro_1_1NodalProjector.html#a1be4605f5de1c04f1acc5fbedd441c52", null ],
-    [ "NodalProjector", "classHydro_1_1NodalProjector.html#ac9672e276e365730cfb6e3e7261865a6", null ],
-    [ "NodalProjector", "classHydro_1_1NodalProjector.html#adedff9f914ab2b2a838bdd3099eab598", null ],
-    [ "averageDown", "classHydro_1_1NodalProjector.html#ab39d6d4e8ad363bf201e56a014e811f0", null ],
+    [ "NodalProjector", "classHydro_1_1NodalProjector.html#a219adbfe97a55251ead89933019ba2bb", null ],
+    [ "NodalProjector", "classHydro_1_1NodalProjector.html#a04173a645594d28dfd95a1642dfdb2a4", null ],
+    [ "NodalProjector", "classHydro_1_1NodalProjector.html#aceb54cb364c01ef46ae8812f01aae1bd", null ],
+    [ "averageDown", "classHydro_1_1NodalProjector.html#ad2ed09eb30e599c57c2dbda8b432da2c", null ],
     [ "computeRHS", "classHydro_1_1NodalProjector.html#a824e5fe65ce0686420c541bf2b9cb259", null ],
     [ "computeSyncResidual", "classHydro_1_1NodalProjector.html#a5221f76002b9956012a08bd322f98c22", null ],
     [ "define", "classHydro_1_1NodalProjector.html#a38a812c65555815f51370b2a1b63bbda", null ],
