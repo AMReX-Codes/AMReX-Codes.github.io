@@ -236,6 +236,52 @@
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>m_domain.insert(m_domain.begin(),<sp/>fine_isp.<ref refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a961c595a3d22b06da38b244becb9f3e3" kindref="member">m_domain</ref>.begin(),<sp/>fine_isp.<ref refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a961c595a3d22b06da38b244becb9f3e3" kindref="member">m_domain</ref>.end());</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ngrow.insert(m_ngrow.begin(),<sp/>fine_isp.<ref refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a49bcede42d9af444fdc2894b3454b63a" kindref="member">m_ngrow</ref>.begin(),<sp/>fine_isp.<ref refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a49bcede42d9af444fdc2894b3454b63a" kindref="member">m_ngrow</ref>.end());</highlight></codeline>
 <codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>G&gt;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a6a7071824d8cf842a187f86b15683537" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a6a7071824d8cf842a187f86b15683537" kindref="member">IndexSpaceImp&lt;G&gt;::addRegularCoarseLevels</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_new_coarse_levels)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_new_coarse_levels<sp/>&lt;=<sp/>0)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nlevs_old<sp/>=<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(m_gslevel.size());</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs_new<sp/>=<sp/>nlevs_old<sp/>+<sp/>num_new_coarse_levels;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;GShopLevel&lt;G&gt;</ref>&gt;<sp/>new_gslevel;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>new_gslevel.reserve(nlevs_new);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Geometry&gt;</ref><sp/>new_geom;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>new_geom.reserve(nlevs_new);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Box&gt;</ref><sp/>new_domain;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>new_domain.reserve(nlevs_new);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref><sp/>new_ngrow;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>new_ngrow.reserve(nlevs_new);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>num_new_coarse_levels;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rr<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>(num_new_coarse_levels-ilev);<sp/></highlight><highlight class="comment">//<sp/>2^(num_new_coarse_levels-ilev)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_geom.push_back(<ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(m_geom[0],<sp/>rr));</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_domain.push_back(new_geom.back().Domain());</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_ngrow.push_back(m_ngrow[0]);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gslevel.push_back(<ref refid="classamrex_1_1EB2_1_1GShopLevel" kindref="compound">GShopLevel&lt;G&gt;::makeAllRegular</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>new_geom.back()));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs_old;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gslevel.emplace_back(std::move(m_gslevel[ilev]));</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_geom.push_back<sp/><sp/>(m_geom<sp/><sp/>[ilev]);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_domain.push_back(m_domain[ilev]);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_ngrow.push_back<sp/>(m_ngrow<sp/>[ilev]);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(new_gslevel,<sp/>m_gslevel);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(new_geom<sp/><sp/><sp/>,<sp/>m_geom);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(new_domain<sp/>,<sp/>m_domain);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(new_ngrow<sp/><sp/>,<sp/>m_ngrow);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>num_new_coarse_levels-1;<sp/>ilev<sp/>&gt;=<sp/>0;<sp/>--ilev)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_gslevel[ilev].buildCutCellMask(m_gslevel[ilev+1]);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_IndexSpaceI.H"/>
   </compounddef>

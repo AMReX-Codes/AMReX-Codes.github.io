@@ -6,6 +6,7 @@ var classamrex_1_1EB2_1_1IndexSpaceImp =
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ac2dc5fdef32fb9bbd2843e6b2d91ac97", null ],
     [ "~IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a558c69009ebc8f80f380a6578604e27c", null ],
     [ "addFineLevels", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a5be42585336a617690b28a56e5c3bc1e", null ],
+    [ "addRegularCoarseLevels", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a6a7071824d8cf842a187f86b15683537", null ],
     [ "coarsestDomain", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a9be6074a1d3f4bfd16e454eda2e4acc3", null ],
     [ "getGeometry", "classamrex_1_1EB2_1_1IndexSpaceImp.html#ac216284322537eefb6a3817e784a716d", null ],
     [ "getLevel", "classamrex_1_1EB2_1_1IndexSpaceImp.html#a1eeaab4266c11166a3072eea2f888f52", null ],

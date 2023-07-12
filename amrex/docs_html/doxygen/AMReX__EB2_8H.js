@@ -3,6 +3,7 @@ var AMReX__EB2_8H =
     [ "IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", "classamrex_1_1EB2_1_1IndexSpace" ],
     [ "IndexSpaceImp", "classamrex_1_1EB2_1_1IndexSpaceImp.html", "classamrex_1_1EB2_1_1IndexSpaceImp" ],
     [ "addFineLevels", "AMReX__EB2_8H.html#a72554dbd2be4d423812d6207b9c61aa3", null ],
+    [ "addRegularCoarseLevels", "AMReX__EB2_8H.html#a0847e43de0f68d0a78bb75f9a6fefcd9", null ],
     [ "Build", "AMReX__EB2_8H.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc", null ],
     [ "Build", "AMReX__EB2_8H.html#a027cac750cb881076f90fdcf0e9c5adc", null ],
     [ "BuildFromChkptFile", "AMReX__EB2_8H.html#afb0afb98a8713d8031d524dd41ef94de", null ],

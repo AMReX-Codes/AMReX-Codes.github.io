@@ -3768,6 +3768,7 @@
     <member refid="classamrex_1_1EBDataCollection_1aca26ce33e69ffb0b4314fc8df4074d80" kind="variable"><name>m_areafrac</name></member>
     <member refid="classamrex_1_1EBDataCollection_1a214bc0754b038960bcc1f574a448671d" kind="variable"><name>m_facecent</name></member>
     <member refid="classamrex_1_1EBDataCollection_1a32f7036b775769c3f0c6957b499fe169" kind="variable"><name>m_edgecent</name></member>
+    <member refid="classamrex_1_1EBDataCollection_1a319997acfc8739b7d32879751198026b" kind="variable"><name>m_cutcellmask</name></member>
     <member refid="classamrex_1_1EBDataCollection_1a279c06d895ec6ef61086ec173d57281d" kind="function"><name>EBDataCollection</name></member>
     <member refid="classamrex_1_1EBDataCollection_1ac0a68c8f5a6914b596f4c47f43d2f6aa" kind="function"><name>~EBDataCollection</name></member>
     <member refid="classamrex_1_1EBDataCollection_1ac8cfe908c7bcdc5b940444e767ceb37b" kind="function"><name>EBDataCollection</name></member>
@@ -3784,6 +3785,7 @@
     <member refid="classamrex_1_1EBDataCollection_1adb2dec585ef401908ca3e596eb62e851" kind="function"><name>getAreaFrac</name></member>
     <member refid="classamrex_1_1EBDataCollection_1ad0ed659e56764e900bd11fa12ec33eeb" kind="function"><name>getFaceCent</name></member>
     <member refid="classamrex_1_1EBDataCollection_1ae1609fd745b2bfb480969127a18318b2" kind="function"><name>getEdgeCent</name></member>
+    <member refid="classamrex_1_1EBDataCollection_1a9cac1024f42f36d74533776ad058b392" kind="function"><name>getCutCellMask</name></member>
   </compound>
   <compound refid="classamrex_1_1EBFArrayBox" kind="class"><name>amrex::EBFArrayBox</name>
     <member refid="classamrex_1_1EBFArrayBox_1adb16573267dc8b4b6dca43cc2f4d23d9" kind="variable"><name>m_ebcellflag</name></member>
@@ -3842,6 +3844,8 @@
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a7f0f20e75035bba303139745b047a7be" kind="function"><name>DistributionMap</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a670346a2500ca06de456913bcc43d4d2" kind="function"><name>boxArray</name></member>
     <member refid="classamrex_1_1EBFArrayBoxFactory_1a699118eee56fc9250d4ae940fff8cf18" kind="function"><name>Geom</name></member>
+    <member refid="classamrex_1_1EBFArrayBoxFactory_1ac605571d4b1f88b7a1993dca18017f53" kind="function"><name>hasEBInfo</name></member>
+    <member refid="classamrex_1_1EBFArrayBoxFactory_1a5691e8d50f28f584e9d3b3c47cacd3d4" kind="function"><name>getCutCellMask</name></member>
   </compound>
   <compound refid="classamrex_1_1EBFluxRegister" kind="class"><name>amrex::EBFluxRegister</name>
     <member refid="classamrex_1_1EBFluxRegister_1ae202afe28157891442668596f24fe460" kind="variable"><name>m_cfp_inside_mask</name></member>
@@ -5204,6 +5208,7 @@
     <member refid="classamrex_1_1EB2_1_1GShopLevel_1a4c79b3b07e6bd33f132fa7030dd7d5ca" kind="function"><name>GShopLevel</name></member>
     <member refid="classamrex_1_1EB2_1_1GShopLevel_1a008434e6394b5ae980fc9aaab639cdf8" kind="function"><name>GShopLevel</name></member>
     <member refid="classamrex_1_1EB2_1_1GShopLevel_1a014eda53f91496efc4cbf702c944ca00" kind="function"><name>define_fine</name></member>
+    <member refid="classamrex_1_1EB2_1_1GShopLevel_1a1c7eac75922b8dc60252b2f5612f94e4" kind="function"><name>makeAllRegular</name></member>
   </compound>
   <compound refid="structamrex_1_1Gpu_1_1Handler" kind="struct"><name>amrex::Gpu::Handler</name>
     <member refid="structamrex_1_1Gpu_1_1Handler_1a277a46596f8e67342709552121787bc5" kind="variable"><name>numActiveThreads</name></member>
@@ -5626,6 +5631,7 @@
     <member refid="classamrex_1_1EB2_1_1IndexSpace_1a683092cb9c842fb986c79f0aedcd05bb" kind="function"><name>getGeometry</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpace_1a7795703119c27937004c54f50532a369" kind="function"><name>coarsestDomain</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpace_1a346cc897525e434cd311f4b303d6b898" kind="function"><name>addFineLevels</name></member>
+    <member refid="classamrex_1_1EB2_1_1IndexSpace_1a7fb0a3782aceccca024eebde7a8b292b" kind="function"><name>addRegularCoarseLevels</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpace_1a5a3c0ce524a4c0bff9901548d9e8648d" kind="function"><name>push</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpace_1aff6283995254b7660c80cd420d99886b" kind="function"><name>erase</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpace_1a45b714be9d0d45f3ecb339085a73c6ec" kind="function"><name>pop</name></member>
@@ -5649,6 +5655,7 @@
     <member refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1afb59a8649d374054b28322ebd3674428" kind="function"><name>getGeometry</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1a9036393886a9f3aaee8c3a987d2cada3" kind="function"><name>coarsestDomain</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1ad224ca5a5ff6adf64c814338375835bc" kind="function"><name>addFineLevels</name></member>
+    <member refid="classamrex_1_1EB2_1_1IndexSpaceChkptFile_1a26a8d00be225eff4a34576e5bb4cacfa" kind="function"><name>addRegularCoarseLevels</name></member>
   </compound>
   <compound refid="classamrex_1_1EB2_1_1IndexSpaceImp" kind="class"><name>amrex::EB2::IndexSpaceImp</name>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a025225cea3416a0f7b91e3c5e8424f59" kind="typedef"><name>F</name></member>
@@ -5670,6 +5677,7 @@
     <member refid="classamrex_1_1EB2_1_1IndexSpaceImp_1ac216284322537eefb6a3817e784a716d" kind="function"><name>getGeometry</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a9be6074a1d3f4bfd16e454eda2e4acc3" kind="function"><name>coarsestDomain</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a5be42585336a617690b28a56e5c3bc1e" kind="function"><name>addFineLevels</name></member>
+    <member refid="classamrex_1_1EB2_1_1IndexSpaceImp_1a6a7071824d8cf842a187f86b15683537" kind="function"><name>addRegularCoarseLevels</name></member>
   </compound>
   <compound refid="classamrex_1_1EB2_1_1IndexSpaceSTL" kind="class"><name>amrex::EB2::IndexSpaceSTL</name>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1ab14caa115cde8da650b6587b8e73dd02" kind="variable"><name>m_stllevel</name></member>
@@ -5686,6 +5694,7 @@
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1afa9591f706505991554b147f3d2a137b" kind="function"><name>getGeometry</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a31582dfcbca6d0e4a6094119722c6d2f" kind="function"><name>coarsestDomain</name></member>
     <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1a91c9991bc2691ccf3603be8005954c83" kind="function"><name>addFineLevels</name></member>
+    <member refid="classamrex_1_1EB2_1_1IndexSpaceSTL_1af24a9105766a527cf4e5f12118e58ca3" kind="function"><name>addRegularCoarseLevels</name></member>
   </compound>
   <compound refid="classamrex_1_1IndexType" kind="class"><name>amrex::IndexType</name>
     <member refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" kind="enum"><name>CellIndex</name></member>
@@ -6327,9 +6336,12 @@
     <member refid="classamrex_1_1EB2_1_1Level_1a26945ad6833c8275b375cec03a60cad0" kind="variable"><name>m_areafrac</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a2e965cf11727327d842176406b65ac14" kind="variable"><name>m_facecent</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a58881e32864c4c8dedf033f9364438ee" kind="variable"><name>m_edgecent</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1a19f4bfc4f5fd05b24a2ad32e4247f07f" kind="variable"><name>m_cutcellmask</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a16651c9d026bf4c7876a890be6e85253" kind="variable"><name>m_allregular</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1acdef1c2b11c62f8e02b1a4806de74376" kind="variable"><name>m_ok</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1a8ca77bd2758bddbc9d71e12a1c317418" kind="variable"><name>m_has_eb_info</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a4e89aa75cb75a863666efa8df2f74e9b" kind="variable"><name>m_parent</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1acd9942090fa93b0eb048fbd2026d9b3c" kind="friend"><name>GShopLevel</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1aa6d87378cd84dcd63696879f1a006066" kind="function"><name>isAllRegular</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a09608e5c4f86b678ac2c665090366d91" kind="function"><name>isOK</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a7d35fe220526a3427bc11672e79c921f" kind="function"><name>fillEBCellFlag</name></member>
@@ -6352,12 +6364,16 @@
     <member refid="classamrex_1_1EB2_1_1Level_1ac2625b7ac69e478b4ca5b11c74f6827b" kind="function"><name>boxArray</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1ac93ed636c144b7c065bb092b03b0cde7" kind="function"><name>DistributionMap</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1ac843646825df5f720267a7c641204301" kind="function"><name>Level</name></member>
-    <member refid="classamrex_1_1EB2_1_1Level_1ac040458ac6f5ac51b303915a6dd66eb5" kind="function"><name>prepareForCoarsening</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1a1f72985a64a6353ac131eb89728f7ba9" kind="function"><name>prepareForCoarsening</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1abb45241bcd62cecd1f2e43a3c93cdf7c" kind="function"><name>Geom</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a1c5bf0b16ab52e799b8830fd149c0f62" kind="function"><name>getEBIndexSpace</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a7c96f2171467f960c184e3f093f9e3b1" kind="function"><name>write_to_chkpt_file</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1a7954f6b9a0dfcb4a5bbac4f2b5a4001b" kind="function"><name>hasEBInfo</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1a2475ff0518c5fb3e8f60b66ab728c4a0" kind="function"><name>fillCutCellMask</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1a8244e442a7b8e9f14056fa883f557c9c" kind="function"><name>coarsenFromFine</name></member>
     <member refid="classamrex_1_1EB2_1_1Level_1adbbdc98f272b71363491d9a348e1f92a" kind="function"><name>buildCellFlag</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1adbf8ba38ca81cc69d1abc5e1dfc25999" kind="function"><name>buildCutCellMask</name></member>
+    <member refid="classamrex_1_1EB2_1_1Level_1aa134f8da748d28d9c016c9ccf35e0276" kind="function"><name>setRegularLevel</name></member>
   </compound>
   <compound refid="classamrex_1_1LevelBld" kind="class"><name>amrex::LevelBld</name>
     <member refid="classamrex_1_1LevelBld_1a11d53f835040bd5752faa947cfd9cdb9" kind="function"><name>~LevelBld</name></member>
@@ -13579,6 +13595,7 @@
     <member refid="namespaceamrex_1_1EB2_1ab08bb163ec9d566ce748dd6c4a7f0385" kind="function"><name>TopIndexSpaceIfPresent</name></member>
     <member refid="namespaceamrex_1_1EB2_1a027cac750cb881076f90fdcf0e9c5adc" kind="function"><name>Build</name></member>
     <member refid="namespaceamrex_1_1EB2_1a72554dbd2be4d423812d6207b9c61aa3" kind="function"><name>addFineLevels</name></member>
+    <member refid="namespaceamrex_1_1EB2_1a0847e43de0f68d0a78bb75f9a6fefcd9" kind="function"><name>addRegularCoarseLevels</name></member>
     <member refid="namespaceamrex_1_1EB2_1afb0afb98a8713d8031d524dd41ef94de" kind="function"><name>BuildFromChkptFile</name></member>
     <member refid="namespaceamrex_1_1EB2_1a24ca6e81d1f15a678a6cb8ecb82de63e" kind="function"><name>maxCoarseningLevel</name></member>
     <member refid="namespaceamrex_1_1EB2_1acb02398d0c8b02dae840acf4f35b886c" kind="function"><name>maxCoarseningLevel</name></member>
