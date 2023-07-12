@@ -1,5 +1,6 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1SrcComp.html#aa5c3f7babca38810fa13e9b419f9649b":[2,0,0,81,1],
 "structamrex_1_1StateData_1_1TimeInterval.html":[2,0,0,26,0],
 "structamrex_1_1StateData_1_1TimeInterval.html#a93562832d8584826a1f57b96049a788c":[2,0,0,26,0,0],
 "structamrex_1_1StateData_1_1TimeInterval.html#add8128cb7af0fe0a981329a09e5fee37":[2,0,0,26,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1algoim_1_1PsiCode.html#a791226bc3dff2637e4a5dacb30c25ec0":[2,0,0,0,2,2],
 "structamrex_1_1algoim_1_1PsiCode.html#a80ddd826639ec72c71ba72a3c6dfc09a":[2,0,0,0,2,5],
 "structamrex_1_1algoim_1_1PsiCode.html#ac85d103050ea6acd04b2a2b4e55ee8d4":[2,0,0,0,2,1],
-"structamrex_1_1algoim_1_1QuadratureRule.html":[2,0,0,0,1],
-"structamrex_1_1algoim_1_1QuadratureRule.html#a93e5266e3de3f1d636f081e118526ea2":[2,0,0,0,1,2]
+"structamrex_1_1algoim_1_1QuadratureRule.html":[2,0,0,0,1]
 };

@@ -7,6 +7,7 @@ var classamrex_1_1Gpu_1_1Device =
     [ "deviceName", "classamrex_1_1Gpu_1_1Device.html#a63664c0cdd03b7ebcc475e542c45282d", null ],
     [ "devicePropMajor", "classamrex_1_1Gpu_1_1Device.html#aff182b0690355fc54cde1842964fc7db", null ],
     [ "devicePropMinor", "classamrex_1_1Gpu_1_1Device.html#a53e232320568f93d7c3dece18c9d6807", null ],
+    [ "deviceVendor", "classamrex_1_1Gpu_1_1Device.html#a756e125c87b0efc96386031d3eae7402", null ],
     [ "Finalize", "classamrex_1_1Gpu_1_1Device.html#a5bf574c7d8adff1fc0593e06d9007078", null ],
     [ "freeMemAvailable", "classamrex_1_1Gpu_1_1Device.html#a92efa21af9b7ae2cb3ee5710922c8bac", null ],
     [ "gpuStream", "classamrex_1_1Gpu_1_1Device.html#a680de321352372444327d831bb6d989f", null ],

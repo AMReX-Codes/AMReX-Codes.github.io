@@ -1,5 +1,6 @@
 var NAVTREEINDEX82 =
 {
+"structyy__buffer__state.html#a9d60c60af6e1a6f69de16871fd64f85f":[2,0,32,0],
 "structyy__buffer__state.html#abf5c70eea75581b58c0ee7bd31b14490":[2,0,32,9],
 "structyy__trans__info.html":[2,0,33],
 "structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[2,0,33,1],
