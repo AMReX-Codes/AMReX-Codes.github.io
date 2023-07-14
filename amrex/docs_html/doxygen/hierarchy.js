@@ -333,6 +333,11 @@ var hierarchy =
     [ "amrex::ErrorRec::ErrorFunc2", "classamrex_1_1ErrorRec_1_1ErrorFunc2.html", null ],
     [ "amrex::ErrorList", "classamrex_1_1ErrorList.html", null ],
     [ "amrex::ErrorRec", "classamrex_1_1ErrorRec.html", null ],
+    [ "std::exception", null, [
+      [ "std::runtime_error", null, [
+        [ "amrex::MLMGT< MF >::error", "classamrex_1_1MLMGT_1_1error.html", null ]
+      ] ]
+    ] ],
     [ "amrex::Scan::Type::Exclusive", "structamrex_1_1Scan_1_1Type_1_1Exclusive.html", null ],
     [ "amrex::Gpu::ExecutionConfig", "structamrex_1_1Gpu_1_1ExecutionConfig.html", null ],
     [ "amrex::expect", "classamrex_1_1expect.html", null ],

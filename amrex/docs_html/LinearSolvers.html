@@ -387,6 +387,28 @@ There are more setting such as <code class="code highlight cpp c++ docutils lite
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">LPInfo</span><span class="o">::</span><span class="n">setConsolidationStrategy</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"></span></code>, to give control over how this
 process works.</p></li>
 </ul>
+<p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MLMG</span><span class="o">::</span><span class="n">setThrowException</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"></span></code> controls whether multigrid failure results
+in aborting (default) or throwing an exception, whereby control will return to the calling
+application. The application code must catch the exception:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">mlmg</span><span class="p">.</span><span class="n">solve</span><span class="p">(...);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">error</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Print</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">//Prints description of error</span>
+
+<span class="w">    </span><span class="c1">// Do something else...</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that exceptions that are not caught are passed up the calling chain so that
+application codes using specialized solvers relying on MLMG can still catch the exception.
+For example, using AMReX-Hydro’s <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">NodalProjector</span><span class="w"></span></code></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">nodal_projector</span><span class="p">.</span><span class="n">project</span><span class="p">(...);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MLMG</span><span class="o">::</span><span class="n">error</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Do something else...</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 </section>
 <section id="boundary-stencils-for-cell-centered-solvers">
 <h1>Boundary Stencils for Cell-Centered Solvers<a class="headerlink" href="#boundary-stencils-for-cell-centered-solvers" title="Permalink to this heading"></a></h1>

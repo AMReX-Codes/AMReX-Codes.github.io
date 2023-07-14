@@ -228,7 +228,7 @@ var NAVTREEINDEX11 =
 "AMReX__MLMGBndry_8H.html#a9214b7c07d9c296122f7418f73f798e9":[3,0,0,6,0,45,1],
 "AMReX__MLMGBndry_8H_source.html":[3,0,0,6,0,45],
 "AMReX__MLMG_8H.html":[3,0,0,6,0,40],
-"AMReX__MLMG_8H.html#a77b48f471801c4f6a597804a89c3b543":[3,0,0,6,0,40,1],
+"AMReX__MLMG_8H.html#a77b48f471801c4f6a597804a89c3b543":[3,0,0,6,0,40,2],
 "AMReX__MLMG_8H_source.html":[3,0,0,6,0,40],
 "AMReX__MLMG_8cpp.html":[3,0,0,6,0,39],
 "AMReX__MLMG__1D__K_8H.html":[3,0,0,6,0,41],

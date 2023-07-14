@@ -1,5 +1,6 @@
 var classamrex_1_1MLMGT =
 [
+    [ "error", "classamrex_1_1MLMGT_1_1error.html", null ],
     [ "BCMode", "classamrex_1_1MLMGT.html#ab0aa1d27d42faff94c85af0b3a9a3b39", null ],
     [ "BottomSolver", "classamrex_1_1MLMGT.html#a970cecc8fdf04c68cd458e27d20b1708", null ],
     [ "FAB", "classamrex_1_1MLMGT.html#ab107b2d2cb0c6a491b20f55a0c820848", null ],
@@ -82,6 +83,7 @@ var classamrex_1_1MLMGT =
     [ "setNSolveGridSize", "classamrex_1_1MLMGT.html#a52db13d6134d518279dce357d082ed35", null ],
     [ "setPostSmooth", "classamrex_1_1MLMGT.html#a6207d80df231723fb69683f66f5ce6d0", null ],
     [ "setPreSmooth", "classamrex_1_1MLMGT.html#a198deef7be3c836a4e4262aeeb0d70ac", null ],
+    [ "setThrowException", "classamrex_1_1MLMGT.html#a891052eaf3fafd326e6509c4bb1996bf", null ],
     [ "setVerbose", "classamrex_1_1MLMGT.html#a583837639457c1be71a4293604fb461d", null ],
     [ "solve", "classamrex_1_1MLMGT.html#a6736230495796a2feeaa3aae95dd7abb", null ],
     [ "solve", "classamrex_1_1MLMGT.html#afa3e2aa5b90524633ea96626119fe9ab", null ],
@@ -127,6 +129,7 @@ var classamrex_1_1MLMGT =
     [ "sol", "classamrex_1_1MLMGT.html#ab6f5f94d1d7ce12cb556b0cab630f5af", null ],
     [ "sol_is_alias", "classamrex_1_1MLMGT.html#acb90259a394dcc6252806b5a533ec9fc", null ],
     [ "solve_called", "classamrex_1_1MLMGT.html#a2b20154bea5f4c9076bc6d50529a44b2", null ],
+    [ "throw_exception", "classamrex_1_1MLMGT.html#aa5a72eccc4e6ab6e6b2ac7dcfdd2ce7f", null ],
     [ "timer", "classamrex_1_1MLMGT.html#adb7400b1c29d0f33ed67e2a81702ed8a", null ],
     [ "verbose", "classamrex_1_1MLMGT.html#abc5cadb87add794dca040e5cebff0fe2", null ]
 ];

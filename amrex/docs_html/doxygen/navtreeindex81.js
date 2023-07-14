@@ -1,5 +1,8 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1algoim_1_1PsiCode.html#a791226bc3dff2637e4a5dacb30c25ec0":[2,0,0,0,2,2],
+"structamrex_1_1algoim_1_1PsiCode.html#a80ddd826639ec72c71ba72a3c6dfc09a":[2,0,0,0,2,5],
+"structamrex_1_1algoim_1_1PsiCode.html#ac85d103050ea6acd04b2a2b4e55ee8d4":[2,0,0,0,2,1],
 "structamrex_1_1algoim_1_1QuadratureRule.html":[2,0,0,0,1],
 "structamrex_1_1algoim_1_1QuadratureRule.html#a93e5266e3de3f1d636f081e118526ea2":[2,0,0,0,1,2],
 "structamrex_1_1algoim_1_1QuadratureRule.html#ab49f0d215d0f61cdc48cefdfda4ed845":[2,0,0,0,1,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX81 =
 "structyy__buffer__state.html#a10c4fcd8be759e6bf11e6d3e8cdb0307":[2,0,32,1],
 "structyy__buffer__state.html#a4360acfb226a1fc240ab2be17dd6beda":[2,0,32,8],
 "structyy__buffer__state.html#a451d39697f006f3922c1f43cf79286b4":[2,0,32,4],
-"structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[2,0,32,7],
-"structyy__buffer__state.html#a70fd925d37a2f0454fbd0def675d106c":[2,0,32,5],
-"structyy__buffer__state.html#a80ce2431c70dc4f89ced487f18449465":[2,0,32,10],
-"structyy__buffer__state.html#a818e94bc9c766e683c60df1e9fd01199":[2,0,32,2]
+"structyy__buffer__state.html#a63d2afbb1d79a3fc63df9e12626f827d":[2,0,32,7]
 };
