@@ -16,7 +16,6 @@ var classamrex_1_1NeighborParticleContainer =
     [ "ParticleTile", "classamrex_1_1NeighborParticleContainer.html#a88e27f1bb35a55e5fb6555057e1e25ac", null ],
     [ "ParticleType", "classamrex_1_1NeighborParticleContainer.html#ab9497648313d317adc40bc7bebb5ca2d", null ],
     [ "ParticleVector", "classamrex_1_1NeighborParticleContainer.html#ade2385ed6d6005f38a31d3709b55fc4c", null ],
-    [ "SendBuffer", "classamrex_1_1NeighborParticleContainer.html#afcfe4393ad4cb1e555c5dff902c6901d", null ],
     [ "SuperParticleType", "classamrex_1_1NeighborParticleContainer.html#a1c6baf08ed7bdeb1d7a7acf30eefad52", null ],
     [ "NeighborParticleContainer", "classamrex_1_1NeighborParticleContainer.html#aec6aa68d7cccf38bf8f2ece89e2e47ad", null ],
     [ "NeighborParticleContainer", "classamrex_1_1NeighborParticleContainer.html#a85456475575ab6d83ef479080e989a74", null ],

@@ -56,7 +56,6 @@ var namespaceamrex_1_1Gpu =
     [ "ManagedVector", "namespaceamrex_1_1Gpu.html#ab2661b6ddd9751b7e197a9d619dabc7b", null ],
     [ "NonManagedDeviceVector", "namespaceamrex_1_1Gpu.html#a2388c83afe31a41fc38fab133d98a1be", null ],
     [ "PinnedVector", "namespaceamrex_1_1Gpu.html#a6e76d121ad2e1030d86ccbc9a47f6fde", null ],
-    [ "PolymorphicVector", "namespaceamrex_1_1Gpu.html#a577de7f575fb4991814e3ee2b5af0cdf", null ],
     [ "blockReduce", "namespaceamrex_1_1Gpu.html#a06351ce8c083138d26fa7653a0c63d7b", null ],
     [ "blockReduce_partial", "namespaceamrex_1_1Gpu.html#ab9a50b1a64ebde8610e71103d50c9ff4", null ],
     [ "blockReduceMax", "namespaceamrex_1_1Gpu.html#a60fd190b91e286384cf13808993fea3d", null ],

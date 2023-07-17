@@ -144,7 +144,8 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="structamrex_1_1ParticleTile.html#a434377380cf9f4dd45362080837b6ec4">amrex::ParticleTile&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;</a>
 </li>
 <li>m_ar
-: <a class="el" href="classamrex_1_1Cluster.html#a609327af6ac8ee5902c0c7d0a6629772">amrex::Cluster</a>
+: <a class="el" href="structamrex_1_1ArenaAllocatorBase.html#a67effac8e5c965d78a9914ff4f1649c5">amrex::ArenaAllocatorBase&lt; T, AR &gt;</a>
+, <a class="el" href="classamrex_1_1Cluster.html#a609327af6ac8ee5902c0c7d0a6629772">amrex::Cluster</a>
 </li>
 <li>m_areafrac
 : <a class="el" href="structamrex_1_1EB2_1_1Face.html#ad57b1101b621679c1fb014db5c6beb43">amrex::EB2::Face</a>
@@ -164,7 +165,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="structamrex_1_1DataAllocator.html#a901b7f1e68950afc823ebc10c093cb94">amrex::DataAllocator</a>
 , <a class="el" href="structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f">amrex::DataDeleter</a>
 , <a class="el" href="structamrex_1_1Gpu_1_1Deleter.html#ae9df9a5aa76b646a0d8fb039033289f0">amrex::Gpu::Deleter</a>
-, <a class="el" href="classamrex_1_1PolymorphicArenaAllocator.html#a5e1d7e4cf4f82598c50747dd3515f735">amrex::PolymorphicArenaAllocator&lt; T &gt;</a>
+, <a class="el" href="structamrex_1_1PolymorphicArenaWrapper.html#a9f2221690b1d215e8f683e84753bbde5">amrex::PolymorphicArenaWrapper</a>
 </li>
 <li>m_arrays
 : <a class="el" href="classamrex_1_1FabArray.html#ab4bfa4857f5d074015204b6caa0cfcf7">amrex::FabArray&lt; FAB &gt;</a>
@@ -1918,6 +1919,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_ptr
 : <a class="el" href="classamrex_1_1Any.html#ae7a9bb6b1bb859d01987340327e8d570">amrex::Any</a>
+, <a class="el" href="structamrex_1_1FatPtr.html#acb61a285c530ab7badab8ba4c096eb4b">amrex::FatPtr&lt; T &gt;</a>
 </li>
 <li>m_ptr_owner
 : <a class="el" href="classamrex_1_1TableData.html#ab5597f20d8438b42ae63b65f92a642a3">amrex::TableData&lt; T, N &gt;</a>
@@ -2127,6 +2129,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classamrex_1_1CArena_1_1Node.html#a3eefad51a3f5c77dfba6bfa8f42e8909">amrex::CArena::Node</a>
 , <a class="el" href="structamrex_1_1ConstParticleTileData.html#a4981ac43889bbde5f5d254c7fd5b3dee">amrex::ConstParticleTileData&lt; T_ParticleType, NArrayReal, NArrayInt &gt;</a>
 , <a class="el" href="classamrex_1_1EB2_1_1PolynomialIF.html#a1a226866e5efa7580c4f117e1c45e386">amrex::EB2::PolynomialIF</a>
+, <a class="el" href="structamrex_1_1FatPtr.html#a686115184123b7683f8ecfeda3cec126">amrex::FatPtr&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#aeec4be8fd894735d9acaa7de8c62d63a">amrex::Gpu::Buffer&lt; T, &gt;</a>
 , <a class="el" href="structamrex_1_1IParserStack.html#a61b50c1e4b1a9ae178034bf0bb29f5b8">amrex::IParserStack&lt; N &gt;</a>
 , <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a3a15d388a4307d1a6af319e8244b7d1e">amrex::ParallelDescriptor::ProcessTeam</a>
@@ -2363,9 +2366,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_use_gauss_seidel
 : <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a1dd0f2250ddf96f66c4163f0f99e1f1d">amrex::MLNodeLaplacian</a>
 </li>
-<li>m_use_gpu_aware_mpi
-: <a class="el" href="classamrex_1_1PolymorphicAllocator.html#a17194831c5f2740968428a41f16a41fc">amrex::PolymorphicAllocator&lt; T &gt;</a>
-</li>
 <li>m_use_harmonic_average
 : <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ac1b3d5d3a2cde86e476ffb95f17b0fef">amrex::MLNodeLaplacian</a>
 </li>
@@ -2534,7 +2534,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classamrex_1_1Box.html#a2654197a010a7c531c68fa9851160c65">amrex::Box</a>
 </li>
 <li>makeSolvable()
-: <a class="el" href="classamrex_1_1MLMGT.html#a6dc8cde9b0768dd1f82dbc0a658e76f4">amrex::MLMGT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1MLMGT.html#a74aa5d200cbee55ce7f454618d2d1789">amrex::MLMGT&lt; MF &gt;</a>
 </li>
 <li>makeSubCommunicator()
 : <a class="el" href="classamrex_1_1MLLinOpT.html#ad05360dc7ba30a94505918519dea299c">amrex::MLLinOpT&lt; MF &gt;</a>
@@ -2673,8 +2673,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc">amrex::LPInfo</a>
 </li>
 <li>max_size()
-: <a class="el" href="classamrex_1_1PODVector.html#abf630d0bfa81c94458b031d299c5d6ef">amrex::PODVector&lt; T, Allocator &gt;</a>
-, <a class="el" href="classhacc_1_1AlignedAllocator.html#a2d07c9246eff9fc235e24ac818e3c473">hacc::AlignedAllocator&lt; T, N &gt;</a>
+: <a class="el" href="classhacc_1_1AlignedAllocator.html#a2d07c9246eff9fc235e24ac818e3c473">hacc::AlignedAllocator&lt; T, N &gt;</a>
 </li>
 <li>maxabs()
 : <a class="el" href="classamrex_1_1BaseFab.html#a67147a4e532939aaab59f3d83ae93361">amrex::BaseFab&lt; T &gt;</a>
@@ -2846,7 +2845,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="structamrex_1_1ParticleInterpolator_1_1Base.html#a16ffb6a02e08b69ed20ea248aaca4fcf">amrex::ParticleInterpolator::Base&lt; Derived, WeightType &gt;</a>
 </li>
 <li>Message()
-: <a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#acea647a271a17e8dca657744ea034f92">amrex::ParallelDescriptor::Message</a>
+: <a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a363e000ef4af66dac4cbb855507c421b">amrex::ParallelDescriptor::Message</a>
 </li>
 <li>message_int
 : <a class="el" href="classamrex_1_1Amr.html#a37d45dad31dd3b070c0a14578937365b">amrex::Amr</a>
@@ -2859,11 +2858,11 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classamrex_1_1MFCellConsLinInterp.html#a3143da788fef06af1498167b5d05a065">amrex::MFCellConsLinInterp</a>
 </li>
 <li>MFFork()
-: <a class="el" href="structamrex_1_1ForkJoin_1_1MFFork.html#a34adaed2dce7ad0a962488bee88e6589">amrex::ForkJoin::MFFork</a>
+: <a class="el" href="structamrex_1_1ForkJoin_1_1MFFork.html#a67f00ed8c48e03e4b18dcecaa19b14d1">amrex::ForkJoin::MFFork</a>
 </li>
 <li>MFIter
 : <a class="el" href="classamrex_1_1FabArrayBase.html#a11fd6aa3197ac10c8fb27ee5a5c96d57">amrex::FabArrayBase</a>
-, <a class="el" href="classamrex_1_1MFIter.html#ae7623281ac9e772db1fc5085a64aeeca">amrex::MFIter</a>
+, <a class="el" href="classamrex_1_1MFIter.html#aac055187a5b4d7200fc77827dc28a76c">amrex::MFIter</a>
 </li>
 <li>mfiter_tile_size
 : <a class="el" href="classamrex_1_1FabArrayBase.html#a0b167b63030177e95b45822b38732fec">amrex::FabArrayBase</a>
@@ -2917,7 +2916,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="structamrex_1_1algoim_1_1BoundingBox.html#a12d172b57d7ec240c1b12600be045820">amrex::algoim::BoundingBox&lt; N &gt;</a>
 , <a class="el" href="classamrex_1_1BaseFab.html#aeb7994e6d44cea18d2b9a0b92f641b64">amrex::BaseFab&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1iMultiFab.html#a3668c019d451591659bdde40d4933b92">amrex::iMultiFab</a>
-, <a class="el" href="classamrex_1_1IntVect.html#aa105b435548bdacb7a82cb174610a4f9">amrex::IntVect</a>
+, <a class="el" href="classamrex_1_1IntVect.html#ad903f958ca90c11bcf4e67941cb3e66a">amrex::IntVect</a>
 , <a class="el" href="classamrex_1_1MultiFab.html#a540eb1714a5eece782de2a4afdd62c8e">amrex::MultiFab</a>
 , <a class="el" href="classamrex_1_1RealVect.html#a7da81c75533a97e32fed875a93f6a7c8">amrex::RealVect</a>
 , <a class="el" href="classamrex_1_1VisMF.html#ae085e236dab30e007b0618d4e4ef6c2d">amrex::VisMF</a>
@@ -2970,7 +2969,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classBLProfStats.html#ae1b239768583ca1b1f592d3527e5e36f">BLProfStats</a>
 </li>
 <li>minus()
-: <a class="el" href="classamrex_1_1BaseFab.html#a2cafb2b37fd53db25b7ae67bc8e3eecd">amrex::BaseFab&lt; T &gt;</a>
+: <a class="el" href="classamrex_1_1BaseFab.html#a18ae3e9b17daaf81946b264928babfb6">amrex::BaseFab&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1iMultiFab.html#a7cf1d225d4d822d1a7abb2b0f2a0c531">amrex::iMultiFab</a>
 , <a class="el" href="classamrex_1_1MultiFab.html#a1bc09d7836dcd4500472fa853a8fcd22">amrex::MultiFab</a>
 </li>
@@ -2979,25 +2978,25 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="classamrex_1_1STLtools.html#ad0e62c6693f9f0100b33547ddef29fa2">amrex::STLtools</a>
 </li>
 <li>MLABecLaplacianT()
-: <a class="el" href="classamrex_1_1MLABecLaplacianT.html#afc885b7be043f3de2fa34de950743987">amrex::MLABecLaplacianT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1MLABecLaplacianT.html#ab4e68066e0f668c0272d29a86023221d">amrex::MLABecLaplacianT&lt; MF &gt;</a>
 , <a class="el" href="classamrex_1_1MLLinOpT.html#aae889d9617524451e9e7daeb85f6d22c">amrex::MLLinOpT&lt; MF &gt;</a>
 </li>
 <li>MLALaplacianT()
 : <a class="el" href="classamrex_1_1MLALaplacianT.html#aaf4ce25b100d0bc3740d52c2883f56b6">amrex::MLALaplacianT&lt; MF &gt;</a>
 </li>
 <li>MLCellABecLapT()
-: <a class="el" href="classamrex_1_1MLCellABecLapT.html#a37eddbe9290f0102dc09e24e022f038d">amrex::MLCellABecLapT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1MLCellABecLapT.html#a5f871352ed5f3af819701d945c2de871">amrex::MLCellABecLapT&lt; MF &gt;</a>
 </li>
 <li>MLCellLinOpT()
 : <a class="el" href="classamrex_1_1MLCellLinOpT.html#ab6bc4d82971ae75fc206df8d00d15ef6">amrex::MLCellLinOpT&lt; MF &gt;</a>
 </li>
 <li>MLCGSolverT()
-: <a class="el" href="classamrex_1_1MLCGSolverT.html#a877dda86118302b3f3b08fed8db57b03">amrex::MLCGSolverT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1MLCGSolverT.html#ac9a3353d649e44294c57d703d55dcdcd">amrex::MLCGSolverT&lt; MF &gt;</a>
 , <a class="el" href="classamrex_1_1MLLinOpT.html#a7d74bb864e0e5e676d689302876b3da3">amrex::MLLinOpT&lt; MF &gt;</a>
 , <a class="el" href="classamrex_1_1MLMGT.html#a7d74bb864e0e5e676d689302876b3da3">amrex::MLMGT&lt; MF &gt;</a>
 </li>
 <li>MLEBABecLap()
-: <a class="el" href="classamrex_1_1MLEBABecLap.html#ab031eeb28437e6aaa8bed95a12448321">amrex::MLEBABecLap</a>
+: <a class="el" href="classamrex_1_1MLEBABecLap.html#a14181cc0ff70a2ed471cdb3a3fc2bdb6">amrex::MLEBABecLap</a>
 </li>
 <li>MLEBNodeFDLaplacian()
 : <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a6442123515a236dc0a9947517279c8c8">amrex::MLEBNodeFDLaplacian</a>
@@ -3006,7 +3005,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classamrex_1_1MLEBTensorOp.html#adccad5fb53a52c9b7227847cfc4a636d">amrex::MLEBTensorOp</a>
 </li>
 <li>MLLinOpT()
-: <a class="el" href="classamrex_1_1MLLinOpT.html#a709f5c12d16e1e5e191a1d56df622173">amrex::MLLinOpT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1MLLinOpT.html#ab768833f0df0eb419284243a6940153e">amrex::MLLinOpT&lt; MF &gt;</a>
 </li>
 <li>MLMGBndryT()
 : <a class="el" href="classamrex_1_1MLMGBndryT.html#ae61807ee9974355077b5bc78d35895d8">amrex::MLMGBndryT&lt; MF &gt;</a>
@@ -3029,7 +3028,7 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>MLPoissonT
 : <a class="el" href="classamrex_1_1MLLinOpT.html#a4314fcd3e8cf089757c3c88e923f9a2b">amrex::MLLinOpT&lt; MF &gt;</a>
-, <a class="el" href="classamrex_1_1MLPoissonT.html#aa704b533c4daad5126cfabe71901aeeb">amrex::MLPoissonT&lt; MF &gt;</a>
+, <a class="el" href="classamrex_1_1MLPoissonT.html#ae8bb112b8e057c31f2b2960ddbb42c57">amrex::MLPoissonT&lt; MF &gt;</a>
 </li>
 <li>MLResNormInf()
 : <a class="el" href="classamrex_1_1MLMGT.html#a0368b810b665e00fdb1490f57eb331e0">amrex::MLMGT&lt; MF &gt;</a>
@@ -3052,9 +3051,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>mom
 : <a class="el" href="structamrex_1_1openbc_1_1Moments.html#a8479610f91f050e03aa5738c513500d2">amrex::openbc::Moments</a>
-</li>
-<li>MoveAssignmentDoIt()
-: <a class="el" href="classamrex_1_1PODVector.html#af344a2609581e4d8a2150493765c89fb">amrex::PODVector&lt; T, Allocator &gt;</a>
 </li>
 <li>mpi_comm
 : <a class="el" href="classamrex_1_1SundialsIntegrator.html#a9e2a6925e89dabd666bfe6d700f8c638">amrex::SundialsIntegrator&lt; T &gt;</a>
@@ -3090,10 +3086,10 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 : <a class="el" href="classamrex_1_1MultiCutFab.html#a6e72abb71404d338b7ddc2570277c430">amrex::MultiCutFab</a>
 </li>
 <li>multiFab()
-: <a class="el" href="classamrex_1_1FabSetT.html#a0dd0ab51c70e9efaada3883aab1b8b56">amrex::FabSetT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1FabSetT.html#aaf12adc6f28b696da9085672a5507a83">amrex::FabSetT&lt; MF &gt;</a>
 </li>
 <li>MultiFab()
-: <a class="el" href="classamrex_1_1MultiFab.html#a2c97960be1543778b979eb2a22c2b5d0">amrex::MultiFab</a>
+: <a class="el" href="classamrex_1_1MultiFab.html#a19ec88a3ec56e2af03e7d127f8edb79e">amrex::MultiFab</a>
 </li>
 <li>MultiFabCopyDescriptor()
 : <a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html#af99970f65ef4914fc7b4269d4d13429e">amrex::MultiFabCopyDescriptor</a>

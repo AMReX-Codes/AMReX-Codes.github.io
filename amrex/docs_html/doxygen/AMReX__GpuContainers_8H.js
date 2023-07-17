@@ -10,7 +10,6 @@ var AMReX__GpuContainers_8H =
     [ "ManagedVector", "AMReX__GpuContainers_8H.html#ab2661b6ddd9751b7e197a9d619dabc7b", null ],
     [ "NonManagedDeviceVector", "AMReX__GpuContainers_8H.html#a2388c83afe31a41fc38fab133d98a1be", null ],
     [ "PinnedVector", "AMReX__GpuContainers_8H.html#a6e76d121ad2e1030d86ccbc9a47f6fde", null ],
-    [ "PolymorphicVector", "AMReX__GpuContainers_8H.html#a577de7f575fb4991814e3ee2b5af0cdf", null ],
     [ "copy", "AMReX__GpuContainers_8H.html#afb3bc7b25afb38fc8f371f3bc4966483", null ],
     [ "copy", "AMReX__GpuContainers_8H.html#abea324bd9a4533e4f54614f6a7d410d1", null ],
     [ "copy", "AMReX__GpuContainers_8H.html#a2c1110b22670288daa9e2a01cbb70fbb", null ],

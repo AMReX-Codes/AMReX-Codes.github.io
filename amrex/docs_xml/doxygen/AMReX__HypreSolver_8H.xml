@@ -628,6 +628,8 @@
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
       </node>
       <node id="101">
         <label>AMReX_GpuError.H</label>
@@ -2458,15 +2460,15 @@
 <codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nrows<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncols_vec.<ref refid="classamrex_1_1PODVector_1aab4feefd754fb80185d22c9a6708caea" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncols_vec.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(nrows);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncols_vec.<ref refid="classamrex_1_1PODVector_1ac5114811535bc90b00c115260f83b20c" kindref="member">resize</ref>(nrows);</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_Int*<sp/>ncols<sp/>=<sp/>ncols_vec.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>();</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"></highlight></codeline>
 <codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cols_vec.<ref refid="classamrex_1_1PODVector_1aab4feefd754fb80185d22c9a6708caea" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cols_vec.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(Long(nrows)*MSS,<sp/>-1);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cols_vec.<ref refid="classamrex_1_1PODVector_1ac5114811535bc90b00c115260f83b20c" kindref="member">resize</ref>(Long(nrows)*MSS,<sp/>-1);</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_Int*<sp/>cols<sp/>=<sp/>cols_vec.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>();</highlight></codeline>
 <codeline lineno="454"><highlight class="normal"></highlight></codeline>
 <codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_vec.<ref refid="classamrex_1_1PODVector_1aab4feefd754fb80185d22c9a6708caea" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_vec.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(Long(nrows)*MSS);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_vec.<ref refid="classamrex_1_1PODVector_1ac5114811535bc90b00c115260f83b20c" kindref="member">resize</ref>(Long(nrows)*MSS);</highlight></codeline>
 <codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_Real*<sp/>mat<sp/>=<sp/>mat_vec.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>();</highlight></codeline>
 <codeline lineno="458"><highlight class="normal"></highlight></codeline>
 <codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Array4&lt;HYPRE_Int const&gt;</ref>&gt;<sp/>gid_v(m_nvars);</highlight></codeline>
@@ -2584,9 +2586,9 @@
 <codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nrows<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1PODVector_1aab4feefd754fb80185d22c9a6708caea" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(nrows);</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1PODVector_1ac5114811535bc90b00c115260f83b20c" kindref="member">resize</ref>(nrows);</highlight></codeline>
 <codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvec.<ref refid="classamrex_1_1PODVector_1aab4feefd754fb80185d22c9a6708caea" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvec.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(nrows);</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bvec.<ref refid="classamrex_1_1PODVector_1ac5114811535bc90b00c115260f83b20c" kindref="member">resize</ref>(nrows);</highlight></codeline>
 <codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>xp<sp/>=<sp/>xvec.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>();</highlight></codeline>
 <codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>bp<sp/>=<sp/>bvec.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>();</highlight></codeline>
 <codeline lineno="579"><highlight class="normal"></highlight></codeline>
@@ -2639,7 +2641,7 @@
 <codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nrows<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1PODVector_1aab4feefd754fb80185d22c9a6708caea" kindref="member">clear</ref>();</highlight></codeline>
-<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(nrows);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xvec.<ref refid="classamrex_1_1PODVector_1ac5114811535bc90b00c115260f83b20c" kindref="member">resize</ref>(nrows);</highlight></codeline>
 <codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>xp<sp/>=<sp/>xvec.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>();</highlight></codeline>
 <codeline lineno="631"><highlight class="normal"></highlight></codeline>
 <codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_Int<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>rows<sp/>=<sp/>m_global_id_vec[mfi].data();</highlight></codeline>

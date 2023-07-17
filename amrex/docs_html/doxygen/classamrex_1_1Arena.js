@@ -6,6 +6,7 @@ var classamrex_1_1Arena =
     [ "Arena", "classamrex_1_1Arena.html#a3e2c87e60ea734fe6be6e49d124d5a76", null ],
     [ "align", "classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e", null ],
     [ "alloc", "classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e", null ],
+    [ "alloc_in_place", "classamrex_1_1Arena.html#aabdec69d9448201fc6c85635ea6f18b7", null ],
     [ "allocate_system", "classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb", null ],
     [ "arenaInfo", "classamrex_1_1Arena.html#a1af72a36a13904de0715917915db1f6b", null ],
     [ "deallocate_system", "classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694", null ],
@@ -25,6 +26,7 @@ var classamrex_1_1Arena =
     [ "PrintUsage", "classamrex_1_1Arena.html#a506a68384da30629323d0839f13812c2", null ],
     [ "PrintUsageToFiles", "classamrex_1_1Arena.html#aa1cfbcfa1c41ac7e45bf469e93db7402", null ],
     [ "registerForProfiling", "classamrex_1_1Arena.html#a99982885760cd861e6e860dea40ea64f", null ],
+    [ "shrink_in_place", "classamrex_1_1Arena.html#a1fec80ed73e43de305a5e232e0b551a6", null ],
     [ "align_size", "classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7", null ],
     [ "arena_info", "classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1", null ]
 ];

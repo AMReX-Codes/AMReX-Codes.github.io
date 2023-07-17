@@ -93,23 +93,35 @@ var hierarchy =
       [ "amrex::CArena", "classamrex_1_1CArena.html", null ],
       [ "amrex::PArena", "classamrex_1_1PArena.html", null ]
     ] ],
-    [ "amrex::ArenaAllocatorTraits", "structamrex_1_1ArenaAllocatorTraits.html", [
+    [ "amrex::ArenaAllocatorBase< T, AR >", "structamrex_1_1ArenaAllocatorBase.html", null ],
+    [ "amrex::ArenaAllocatorBase< T, ArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
       [ "amrex::ArenaAllocator< T >", "classamrex_1_1ArenaAllocator.html", [
         [ "amrex::PODVector< ParticleReal *, DefaultAllocator< ParticleReal * > >", "classamrex_1_1PODVector.html", null ],
         [ "amrex::PODVector< ParticleType, DefaultAllocator< ParticleType > >", "classamrex_1_1PODVector.html", null ],
         [ "amrex::PODVector< int *, DefaultAllocator< int * > >", "classamrex_1_1PODVector.html", null ],
         [ "amrex::PODVector< const int *, DefaultAllocator< const int * > >", "classamrex_1_1PODVector.html", null ],
         [ "amrex::PODVector< const ParticleReal *, DefaultAllocator< const ParticleReal * > >", "classamrex_1_1PODVector.html", null ]
-      ] ],
-      [ "amrex::AsyncArenaAllocator< T >", "classamrex_1_1AsyncArenaAllocator.html", null ],
-      [ "amrex::DeviceArenaAllocator< T >", "classamrex_1_1DeviceArenaAllocator.html", null ],
-      [ "amrex::ManagedArenaAllocator< T >", "classamrex_1_1ManagedArenaAllocator.html", null ],
-      [ "amrex::PinnedArenaAllocator< T >", "classamrex_1_1PinnedArenaAllocator.html", null ],
+      ] ]
+    ] ],
+    [ "amrex::ArenaAllocatorBase< T, AsyncArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
+      [ "amrex::AsyncArenaAllocator< T >", "classamrex_1_1AsyncArenaAllocator.html", null ]
+    ] ],
+    [ "amrex::ArenaAllocatorBase< T, DeviceArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
+      [ "amrex::DeviceArenaAllocator< T >", "classamrex_1_1DeviceArenaAllocator.html", null ]
+    ] ],
+    [ "amrex::ArenaAllocatorBase< T, ManagedArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
+      [ "amrex::ManagedArenaAllocator< T >", "classamrex_1_1ManagedArenaAllocator.html", null ]
+    ] ],
+    [ "amrex::ArenaAllocatorBase< T, PinnedArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
+      [ "amrex::PinnedArenaAllocator< T >", "classamrex_1_1PinnedArenaAllocator.html", null ]
+    ] ],
+    [ "amrex::ArenaAllocatorBase< T, PolymorphicArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
       [ "amrex::PolymorphicArenaAllocator< T >", "classamrex_1_1PolymorphicArenaAllocator.html", [
         [ "amrex::PODVector< char, amrex::PolymorphicArenaAllocator< char > >", "classamrex_1_1PODVector.html", null ]
       ] ]
     ] ],
     [ "amrex::ArenaInfo", "structamrex_1_1ArenaInfo.html", null ],
+    [ "amrex::ArenaWrapper", "structamrex_1_1ArenaWrapper.html", null ],
     [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", null ],
     [ "amrex::Array2D< T, XLO, XHI, YLO, YHI, ORDER >", "structamrex_1_1Array2D.html", null ],
     [ "amrex::Array3D< T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER >", "structamrex_1_1Array3D.html", null ],
@@ -135,6 +147,7 @@ var hierarchy =
     [ "AssignGridFilter", "structAssignGridFilter.html", null ],
     [ "amrex::InSituUtils::assignOp< n_t >", "structamrex_1_1InSituUtils_1_1assignOp.html", null ],
     [ "amrex::MFUtil::AsymmetricGhost< T >", "structamrex_1_1MFUtil_1_1AsymmetricGhost.html", null ],
+    [ "amrex::AsyncArenaWrapper", "structamrex_1_1AsyncArenaWrapper.html", null ],
     [ "amrex::Gpu::AsyncArray< T, >", "classamrex_1_1Gpu_1_1AsyncArray.html", null ],
     [ "amrex::Gpu::AtomicAdd< T >", "structamrex_1_1Gpu_1_1AtomicAdd.html", null ],
     [ "amrex::Gpu::AtomicLogicalAnd< T >", "structamrex_1_1Gpu_1_1AtomicLogicalAnd.html", null ],
@@ -306,6 +319,7 @@ var hierarchy =
     [ "amrex::detail::Detector< Default, AlwaysVoid, Op, Args >", "structamrex_1_1detail_1_1Detector.html", null ],
     [ "amrex::detail::Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", null ],
     [ "amrex::Gpu::Device", "classamrex_1_1Gpu_1_1Device.html", null ],
+    [ "amrex::DeviceArenaWrapper", "structamrex_1_1DeviceArenaWrapper.html", null ],
     [ "amrex::Gpu::DeviceScalar< T, >", "structamrex_1_1Gpu_1_1DeviceScalar.html", null ],
     [ "amrex::MFIter::DeviceSync", "structamrex_1_1MFIter_1_1DeviceSync.html", null ],
     [ "amrex::Gpu::DeviceToDevice", "structamrex_1_1Gpu_1_1DeviceToDevice.html", null ],
@@ -415,12 +429,14 @@ var hierarchy =
       [ "amrex::EB2::IsGPUable< D, Enable >", "structamrex_1_1EB2_1_1IsGPUable.html", null ],
       [ "amrex::HasAtomicAdd< T, Enable >", "structamrex_1_1HasAtomicAdd.html", null ],
       [ "amrex::HasMultiComp< A, Enable >", "structamrex_1_1HasMultiComp.html", null ],
+      [ "amrex::IsArenaAllocator< T, Enable >", "structamrex_1_1IsArenaAllocator.html", null ],
       [ "amrex::IsBaseFab< A, Enable >", "structamrex_1_1IsBaseFab.html", null ],
       [ "amrex::IsFabArray< A, Enable >", "structamrex_1_1IsFabArray.html", null ],
       [ "amrex::IsPolymorphicArenaAllocator< T >", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ]
     ] ],
+    [ "amrex::FatPtr< T >", "structamrex_1_1FatPtr.html", null ],
     [ "amrex::FBData< FAB >", "structamrex_1_1FBData.html", null ],
     [ "amrex::FilccCell", "structamrex_1_1FilccCell.html", null ],
     [ "amrex::FilfcFace", "structamrex_1_1FilfcFace.html", null ],
@@ -658,6 +674,7 @@ var hierarchy =
     [ "make_particle< T_ParticleType, Enable >", "structmake__particle.html", null ],
     [ "make_particle< T_ParticleType, typename std::enable_if< is_soa_particle< T_ParticleType >::value >::type >", "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html", null ],
     [ "amrex::Gpu::Managed", "structamrex_1_1Gpu_1_1Managed.html", null ],
+    [ "amrex::ManagedArenaWrapper", "structamrex_1_1ManagedArenaWrapper.html", null ],
     [ "amrex::NonLocalBC::MapComponents< Base, Map >", "structamrex_1_1NonLocalBC_1_1MapComponents.html", null ],
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::MaskComps", "structamrex_1_1NeighborParticleContainer_1_1MaskComps.html", null ],
     [ "amrex::Maximum< T >", "structamrex_1_1Maximum.html", null ],
@@ -839,11 +856,12 @@ var hierarchy =
     [ "amrex::PhysBCFunct< F >", "classamrex_1_1PhysBCFunct.html", null ],
     [ "amrex::PhysBCFunctNoOp", "classamrex_1_1PhysBCFunctNoOp.html", null ],
     [ "amrex::Gpu::Pinned", "structamrex_1_1Gpu_1_1Pinned.html", null ],
+    [ "amrex::PinnedArenaWrapper", "structamrex_1_1PinnedArenaWrapper.html", null ],
     [ "amrex::PlotFileData", "classamrex_1_1PlotFileData.html", null ],
     [ "amrex::PlotFileDataImpl", "classamrex_1_1PlotFileDataImpl.html", null ],
     [ "amrex::Plus< T >", "structamrex_1_1Plus.html", null ],
     [ "sdcquadrature_mod::poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", null ],
-    [ "amrex::PolymorphicAllocator< T >", "classamrex_1_1PolymorphicAllocator.html", null ],
+    [ "amrex::PolymorphicArenaWrapper", "structamrex_1_1PolymorphicArenaWrapper.html", null ],
     [ "amrex::EB2::PolynomialIF", "classamrex_1_1EB2_1_1PolynomialIF.html", null ],
     [ "amrex::EB2::PolyTerm", "classamrex_1_1EB2_1_1PolyTerm.html", null ],
     [ "amrex::RungeKutta::PostStageNoOp", "structamrex_1_1RungeKutta_1_1PostStageNoOp.html", null ],
@@ -982,6 +1000,7 @@ var hierarchy =
       [ "amrex::HasAtomicAdd< unsigned int >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html", null ],
       [ "amrex::HasAtomicAdd< unsigned long long >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html", null ],
       [ "amrex::HasMultiComp< A, Enable >::type", "structamrex_1_1HasMultiComp_1_1type.html", null ],
+      [ "amrex::IsArenaAllocator< T, std::enable_if_t< std::is_base_of< ArenaAllocatorBase< typename T::value_type, typename T::arena_wrapper_type >, T >::value > >", "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01Arenf7a529952ff72724d9f0c41e12d355f1.html", null ],
       [ "amrex::IsBaseFab< D, typename std::enable_if< std::is_base_of< BaseFab< typename D::value_type >, D >::value >::type >", "structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html", null ],
       [ "amrex::IsFabArray< D, typename std::enable_if< std::is_base_of< FabArray< typename D::FABType::value_type >, D >::value >::type >", "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html", null ],
       [ "amrex::IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],

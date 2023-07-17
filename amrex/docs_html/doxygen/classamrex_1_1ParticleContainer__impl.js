@@ -16,7 +16,6 @@ var classamrex_1_1ParticleContainer__impl =
     [ "ParticleVector", "classamrex_1_1ParticleContainer__impl.html#a28f457b9a3b5745e6b3c997d9b93628d", null ],
     [ "RealType", "classamrex_1_1ParticleContainer__impl.html#ad91625dad13bf6046a7001752e6def20", null ],
     [ "RealVector", "classamrex_1_1ParticleContainer__impl.html#a2d48efd6dd5142225bf86a4c8ad00070", null ],
-    [ "SendBuffer", "classamrex_1_1ParticleContainer__impl.html#a3317be3adeb7578bd54cc3cc6e9d2112", null ],
     [ "SoA", "classamrex_1_1ParticleContainer__impl.html#ac181af77e407fc9fe30b9226232c37e9", null ],
     [ "SuperParticleType", "classamrex_1_1ParticleContainer__impl.html#a322e97ecbd7c5f07ca6f5f1b2fe9035d", null ],
     [ "ParticleContainer_impl", "classamrex_1_1ParticleContainer__impl.html#ac0a4478de1b84ceb63ce2613b6125d3a", null ],
