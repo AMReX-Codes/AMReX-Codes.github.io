@@ -473,9 +473,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:add7b8b32755bc2ffd24623957b797d23"><td class="memItemLeft" align="right" valign="top">static std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#add7b8b32755bc2ffd24623957b797d23">getEntries</a> (const std::string &amp;prefix=std::string())</td></tr>
 <tr class="memdesc:add7b8b32755bc2ffd24623957b797d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns [prefix.]* parameters.  <a href="classamrex_1_1ParmParse.html#add7b8b32755bc2ffd24623957b797d23">More...</a><br /></td></tr>
 <tr class="separator:add7b8b32755bc2ffd24623957b797d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82fad6b017d8adc7c7c5fb7d4db71284"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a82fad6b017d8adc7c7c5fb7d4db71284">setMultiLineSupport</a> (bool b)</td></tr>
-<tr class="memdesc:a82fad6b017d8adc7c7c5fb7d4db71284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control multi-line support.  <a href="classamrex_1_1ParmParse.html#a82fad6b017d8adc7c7c5fb7d4db71284">More...</a><br /></td></tr>
-<tr class="separator:a82fad6b017d8adc7c7c5fb7d4db71284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5998fd0e44f742cf1154536dd56045"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aae5998fd0e44f742cf1154536dd56045">appendTable</a> (<a class="el" href="classamrex_1_1ParmParse.html#aee38792d71e1760bfc55a29a64ef36f5">ParmParse::Table</a> &amp;tab)</td></tr>
 <tr class="separator:aae5998fd0e44f742cf1154536dd56045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -531,8 +528,10 @@ Friends</h2></td></tr>
 <p>cell_size = 0.5 0.75</p>
 <p>plot.var = Density 1 10</p>
 <p>plot.var = Energy 5 12</p>
-<p>bigarray = 1 2 3 4 5 6 7 8 </p><pre class="fragment">       9 10 11 12
-</pre><p> aBox = ((0,0) (5,5))</p>
+<p>bigarray = 1 2 3 4 5 6 7 8 \ 9 10 11 12</p>
+<p>multi_line_string = "This is a
+                         multi-line string."</p>
+<p>aBox = ((0,0) (5,5))</p>
 <p>test = apple "boy blue" 10 20 30 40</p>
 <p>FILE = prob_file</p>
 <p>Preprocessing of AMREX_SPACEDIM is supported. It supports <a class="el" href="amrex__parser_8lex_8nolint_8H.html#ad4a65b873df5c05570846b5413b41dfd">if</a>, #elif, #else, and #endif. The condition must be <code>AMREX_SPACEDIM op D</code>, where op is &gt;, &lt;, &gt;=, &lt;=, or ==, and D is 1, 2, or 3. The parentheses around the condition are optional. Some examples are shown below.</p>
@@ -4903,44 +4902,6 @@ template&lt;typename T , std::enable_if_t&lt;!IsStdVector&lt; T &gt;::value, int
 </div><div class="memdoc">
 
 <p>Remove given name from the table. </p>
-
-</div>
-</div>
-<a id="a82fad6b017d8adc7c7c5fb7d4db71284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82fad6b017d8adc7c7c5fb7d4db71284">&#9670;&nbsp;</a></span>setMultiLineSupport()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::ParmParse::setMultiLineSupport </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>b</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Control multi-line support. </p>
-<p>By default, <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files.">ParmParse</a> supports multi-line values. For example, </p><pre class="fragment">    plot_vars = dens vx vy vx
-                energy entropy
-</pre><p> This can be disabled by calling this function setMultiLineSupport(false) before <a class="el" href="namespaceamrex.html#a187cdb4f4273fdf9bcad01ac8e3fcc4d">amrex::Initialize()</a>. This can avoid errors in inputs like, </p><pre class="fragment">    algo.current_deposition = direct
-
-    # Enable galilean
-    psatd.use_default_v_galilean # Unfortunately we forgot = 1
-</pre><p> With multi-line support, this is equivalent to </p><pre class="fragment">    algo.current_deposition = direct psatd.use_default_v_galilean
-</pre><p> With multi-line support disabled, it will abort. Note that after multi-line support is disabled, one is still allowed to have </p><pre class="fragment">    f = "x + y
-         + sin(z)"
-</pre><p> because here what's inside the pair of double quotes is considered a single string. </p>
 
 </div>
 </div>

@@ -122,7 +122,6 @@ var classamrex_1_1ParmParse =
     [ "queryktharr", "classamrex_1_1ParmParse.html#a6e6c42c0329b3346c6fd85f1af871e91", null ],
     [ "QueryUnusedInputs", "classamrex_1_1ParmParse.html#a821d000e2b1d1aa6dc9e18d0b54e0df7", null ],
     [ "remove", "classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81", null ],
-    [ "setMultiLineSupport", "classamrex_1_1ParmParse.html#a82fad6b017d8adc7c7c5fb7d4db71284", null ],
     [ "setPrefix", "classamrex_1_1ParmParse.html#a97b7fee85e0a5c10246c53379b7f44df", null ],
     [ "table", "classamrex_1_1ParmParse.html#ab4f43a6024e50a1c5f9110d29ae42904", null ],
     [ "Frame", "classamrex_1_1ParmParse.html#aee3a66b0ddf3b769f015c89b610db0c7", null ],
