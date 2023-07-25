@@ -201,13 +201,14 @@ thread, each thread using a box with lo = hi.</p></td>
 <li><p>C++ macros and GPU extended lambdas are used to provide performance
 portability while making the code as understandable as possible to
 science-focused code teams.</p></li>
-<li><p>AMReX utilizes GPU managed memory to automatically handle memory
+<li><p>AMReX can utilize GPU managed memory to automatically handle memory
 movement for mesh and particle data.  Simple data structures, such
 as <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IntVect</span><span class="w"></span></code>s can be passed by value and complex data structures, such as
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>es, have specialized AMReX classes to handle the
 data movement for the user.  Tests have shown CUDA managed memory
 to be efficient and reliable, especially when applications remove
-any unnecessary data accesses.</p></li>
+any unnecessary data accesses. However, managed memory is not used by
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> by default.</p></li>
 <li><p>Application teams should strive to keep mesh and particle data structures
 on the GPU for as long as possible, minimizing movement back to the CPU.
 This strategy lends itself to AMReX applications readily; the mesh and
@@ -591,10 +592,10 @@ to two functions:</p>
 </pre></div>
 </div>
 <p><code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span><span class="w"></span></code> is used for memory allocation of data in
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code>.  By default, it allocates managed memory.  This can be changed with
-a boolean runtime parameter <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed</span></code>.
-Therefore the data in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> is placed in
-managed memory by default and is accessible from both CPU host and GPU device.
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code>.  By default, it allocates device memory.  This can be changed with
+a boolean runtime parameter <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed=1</span></code>.
+When managed memory is enabled, the data in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> is placed in
+device memory by default and is accessible from both CPU host and GPU device.
 This allows application codes to develop their GPU capability
 gradually. The behavior of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Managed_Arena</span><span class="p">()</span><span class="w"></span></code> likewise depends on the
 <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed</span></code> parameter. If <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed=0</span></code>,
@@ -746,12 +747,12 @@ allocations and deallocations when (for example) resizing vectors.</p>
 </tr>
 </tbody>
 </table>
-<p>These classes behave identically to an
+<p>These classes behave almost identically to an
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="w"></span></code>, (see <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>), except that they
 can only hold “plain-old-data” objects (e.g. Reals, integers, amrex Particles,
 etc… ). If you want a resizable vector that doesn’t use a memory Arena,
 simply use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="w"></span></code>.</p>
-<p>Note that, even if the data in the vector is  managed and available on GPUs,
+<p>Note that, even if the data in the vector is managed and available on GPUs,
 the member functions of e.g. <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Gpu</span><span class="o">::</span><span class="n">ManagedVector</span><span class="w"></span></code> are not.
 To use the data on the GPU, it is necessary to pass the underlying data pointer
 in to the GPU kernels. The managed data pointer can be accessed using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">data</span><span class="p">()</span><span class="w"></span></code>
@@ -857,8 +858,8 @@ include <code class="code highlight cpp c++ docutils literal highlight-c++"><spa
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">setVal</span><span class="w"></span></code>.</p>
 <p>All <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"></span></code> objects in <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FAB</span><span class="o">&gt;</span><span class="w"></span></code> are allocated in
 CPU memory, including <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">IArrayBox</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>, which are
-derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code>, although the array data contained are
-allocated in managed memory.  We cannot pass a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code> object by
+derived from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code>, and the array data contained are
+allocated in either device or managed memory.  We cannot pass a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="w"></span></code> object by
 value because they do not have copy constructor.  However, we can make
 an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span><span class="w"></span></code> using member function <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">BaseFab</span><span class="o">::</span><span class="n">array</span><span class="p">()</span><span class="w"></span></code>, and pass it
 by value to GPU kernels. In GPU device code, we can use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span><span class="w"></span></code>
@@ -1087,7 +1088,7 @@ An example of a 1D function launch is given here:</p>
 </pre></div>
 </div>
 <p>Instead of passing an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Array4</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="o">::</span><span class="n">dataPtr</span><span class="p">()</span><span class="w"></span></code> is called to obtain a
-CUDA managed pointer to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> data.  This is an alternative way to access
+pointer to the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> data.  This is an alternative way to access
 the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> data on the GPU. Instead of passing a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Box</span><span class="w"></span></code> to define the loop
 bounds, a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">long</span><span class="w"></span></code> or <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="kt">int</span><span class="w"></span></code> number of elements is passed to bound the single
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">for</span><span class="w"></span></code> loop.  This construct can be used to work on any contiguous set of memory by
@@ -1163,13 +1164,13 @@ a Fortran function is given here:</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">plusone_acc</span></code> is a CPU host function.  The
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> reference
 from <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">[]</span><span class="w"></span></code> is a reference to a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> in host
-memory with data that has been placed in managed CUDA memory.
+memory with data that has been placed in GPU memory.
 <code class="docutils literal notranslate"><span class="pre">BL_TO_FORTRAN_BOX</span></code> and <code class="docutils literal notranslate"><span class="pre">BL_TO_FORTRAN_ANYD</span></code> behave identically
 to implementations used on the CPU.  These macros return the
 individual components of the AMReX C++ objects to allow passing to
 the Fortran function.</p>
 <p>The corresponding OpenACC labelled loop in <code class="docutils literal notranslate"><span class="pre">plusone_acc</span></code> is:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s managed data</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s GPU data</span>
 
 <span class="c">!$acc kernels deviceptr(dat)</span>
 <span class="k">do       </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
@@ -1183,13 +1184,13 @@ the Fortran function.</p>
 </pre></div>
 </div>
 <p>Since the data pointer passed to <code class="docutils literal notranslate"><span class="pre">plusone_acc</span></code> points to
-unified memory, OpenACC can be told the data is available on the
+device memory, OpenACC can be told the data is available on the
 device using the <code class="docutils literal notranslate"><span class="pre">deviceptr</span></code> construct.  For further details
 about OpenACC programming, consult the OpenACC user’s guide.</p>
 <p>The OpenMP implementation of this loop is similar, only requiring
 changing the pragmas utilized to obtain the proper offloading. The
 OpenMP labelled version of this loop is:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s managed data</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!dat = pointer to fab&#39;s GPU data</span>
 
 <span class="c">!$omp target teams distribute parallel do collapse(3) schedule(static,1) is_device_ptr(dat)</span>
 <span class="k">do       </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
@@ -1239,7 +1240,7 @@ not work as intended.  For example,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">Box</span><span class="w"> </span><span class="n">bx</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w">                           </span><span class="c1">// Unmanaged integer created on the host.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w">                           </span><span class="c1">// integer created on the host.</span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">amrex</span><span class="o">::</span><span class="n">launch</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="n">AMREX_GPU_DEVICE</span><span class="w"> </span><span class="p">(</span><span class="n">Box</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">tbx</span><span class="p">)</span><span class="w"></span>
@@ -1447,8 +1448,8 @@ error. This error-checking macro will not return any information for SYCL.</p>
 <section id="particle-support">
 <h1>Particle Support<a class="headerlink" href="#particle-support" title="Permalink to this heading"></a></h1>
 <p id="sec-gpu-particle">As with <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code>, particle data stored in AMReX <code class="docutils literal notranslate"><span class="pre">ParticleContainer</span></code> classes are
-stored in unified memory when AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>. This means that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">dataPtr</span><span class="w"></span></code> associated with particles
-is managed and can be passed into GPU kernels. These kernels can be launched with a variety of approaches,
+stored in GPU memory when AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>. This means that the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">dataPtr</span><span class="w"></span></code> associated with particles
+can be passed into GPU kernels. These kernels can be launched with a variety of approaches,
 including Cuda C / Fortran and OpenACC. An example Fortran particle subroutine offloaded via OpenACC might
 look like the following:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">push_position_boris</span><span class="p">(</span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">structs</span><span class="p">,</span><span class="w"> </span><span class="n">uxp</span><span class="p">,</span><span class="w"> </span><span class="n">uyp</span><span class="p">,</span><span class="w"> </span><span class="n">uzp</span><span class="p">,</span><span class="w"> </span><span class="n">gaminv</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"></span>
@@ -1478,7 +1479,7 @@ look like the following:</p>
 </pre></div>
 </div>
 <p>Note the use of the <code class="code highlight fortran docutils literal highlight-fortran"><span class="c">!$acc parallel deviceptr</span></code> clause to specify which data has been placed
-in managed memory. This instructs OpenACC to treat those variables as if they already live on
+in device memory. This instructs OpenACC to treat those variables as if they already live on
 the device, bypassing the usual copies. For complete examples of a particle code that has been ported
 to GPUs using Cuda, OpenACC, and OpenMP, please see the tutorial <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#electromagneticpic">Electromagnetic PIC</a>.</p>
 <p>GPU-aware implementations of many common particle operations are provided with AMReX, including neighbor list
@@ -1600,8 +1601,7 @@ describing how much free memory there is and what was requested.</p></td>
 <tr class="row-even"><td><p>the_arena_is_managed</p></td>
 <td><p>Whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span><span class="w"></span></code> allocates managed memory.</p></td>
 <td><p>Bool</p></td>
-<td><p>True (CUDA/SYCL)
-False (HIP)</p></td>
+<td><p>False</p></td>
 </tr>
 </tbody>
 </table>
