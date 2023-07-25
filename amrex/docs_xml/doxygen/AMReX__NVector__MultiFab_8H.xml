@@ -2092,9 +2092,9 @@
     </invincdepgraph>
     <innerclass refid="structN__VectorContent__MultiFab__notptr" prot="public">N_VectorContent_MultiFab_notptr</innerclass>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="AMReX__NVector__MultiFab_8H_1a6284583a7a39d02af336b4fb1b1a3033" prot="public" static="no">
-        <type>struct <ref refid="structN__VectorContent__MultiFab__notptr" kindref="compound">N_VectorContent_MultiFab_notptr</ref> *</type>
-        <definition>typedef struct N_VectorContent_MultiFab_notptr* N_VectorContent_MultiFab</definition>
+      <memberdef kind="typedef" id="AMReX__NVector__MultiFab_8H_1abd74ded69b457e740f7ae23530d10bbc" prot="public" static="no">
+        <type><ref refid="structN__VectorContent__MultiFab__notptr" kindref="compound">N_VectorContent_MultiFab_notptr</ref> *</type>
+        <definition>using N_VectorContent_MultiFab =  N_VectorContent_MultiFab_notptr*</definition>
         <argsstring></argsstring>
         <name>N_VectorContent_MultiFab</name>
         <briefdescription>
@@ -2103,7 +2103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" line="39" column="46" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" bodystart="39" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" line="39" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" bodystart="39" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -2325,7 +2325,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" line="62" column="6" declfile="/home/runner/work/amrex/amrex/Src/Extern/SUNDIALS/AMReX_NVector_MultiFab.H" declline="62" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__NVector__MultiFab_8H_1a782b175e4d69fa934dbc70bfc0d0a5b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__NVector__MultiFab_8H_1a6284583a7a39d02af336b4fb1b1a3033" kindref="member">N_VectorContent_MultiFab</ref></type>
+        <type><ref refid="AMReX__NVector__MultiFab_8H_1abd74ded69b457e740f7ae23530d10bbc" kindref="member">N_VectorContent_MultiFab</ref></type>
         <definition>N_VectorContent_MultiFab N_VGetContent_MultiFab</definition>
         <argsstring>(N_Vector v)</argsstring>
         <name>N_VGetContent_MultiFab</name>
@@ -2862,7 +2862,7 @@
 <codeline lineno="36" refid="structN__VectorContent__MultiFab__notptr_1a3930a0d9ef7c3da19db85349319d0cc6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref><sp/>*<ref refid="structN__VectorContent__MultiFab__notptr_1a3930a0d9ef7c3da19db85349319d0cc6" kindref="member">mf</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>wrapped<sp/>MultiFab<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39" refid="AMReX__NVector__MultiFab_8H_1a6284583a7a39d02af336b4fb1b1a3033" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structN__VectorContent__MultiFab__notptr" kindref="compound">N_VectorContent_MultiFab_notptr</ref><sp/>*<ref refid="AMReX__NVector__MultiFab_8H_1a6284583a7a39d02af336b4fb1b1a3033" kindref="member">N_VectorContent_MultiFab</ref>;</highlight></codeline>
+<codeline lineno="39" refid="AMReX__NVector__MultiFab_8H_1abd74ded69b457e740f7ae23530d10bbc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="structN__VectorContent__MultiFab__notptr" kindref="compound">N_VectorContent_MultiFab</ref><sp/>=<sp/><ref refid="structN__VectorContent__MultiFab__notptr" kindref="compound">N_VectorContent_MultiFab_notptr</ref>*;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------</highlight></codeline>
 <codeline lineno="42"><highlight class="comment"><sp/>*<sp/>Exported<sp/>functions</highlight></codeline>
@@ -2877,11 +2877,11 @@
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sunindextype<sp/>nGhost,</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::sundials::Context*<sp/>sunctx<sp/>=<sp/><ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">The_Sundials_Context</ref>());</highlight></codeline>
 <codeline lineno="53" refid="AMReX__NVector__MultiFab_8H_1aaf0de2f4b863ba751222595831b9314f" refkind="member"><highlight class="normal">N_Vector<sp/><ref refid="namespaceamrex_1_1sundials_1aa448557aba9190f3de7151a4293004c9" kindref="member">N_VMake_MultiFab</ref>(sunindextype<sp/>vec_length,</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref><sp/>*<ref refid="structN__VectorContent__MultiFab__notptr_1a3930a0d9ef7c3da19db85349319d0cc6" kindref="member">mf</ref>,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref><sp/>*mf,</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::sundials::Context*<sp/>sunctx<sp/>=<sp/><ref refid="namespaceamrex_1_1sundials_1a9073bde66b70bda0c4d46655775c684d" kindref="member">The_Sundials_Context</ref>());</highlight></codeline>
 <codeline lineno="56" refid="AMReX__NVector__MultiFab_8H_1ab487da921f382c8a63e52c65978b3110" refkind="member"><highlight class="normal">sunindextype<sp/><ref refid="namespaceamrex_1_1sundials_1a48461856ef0250658c5a2ebf41d98edc" kindref="member">N_VGetLength_MultiFab</ref>(N_Vector<sp/>v);</highlight></codeline>
 <codeline lineno="57" refid="AMReX__NVector__MultiFab_8H_1adb42a96803b3467ba1c753387d272319" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1sundials_1a83ab40ea0b031a6e4bd372e4eb2ee2f1" kindref="member">N_VGetOwnMF_MultiFab</ref>(N_Vector<sp/>v);</highlight></codeline>
-<codeline lineno="58" refid="AMReX__NVector__MultiFab_8H_1a7f45f86ca16d6dea2ece5647fec419ac" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1sundials_1ae60dd0ee3c2077eebc0dc19ca19eca74" kindref="member">N_VSetOwnMF_MultiFab</ref>(N_Vector<sp/>v,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structN__VectorContent__MultiFab__notptr_1a1af6ce9e83db0135a45c4b2bc7afc31b" kindref="member">own_mf</ref>);</highlight></codeline>
+<codeline lineno="58" refid="AMReX__NVector__MultiFab_8H_1a7f45f86ca16d6dea2ece5647fec419ac" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1sundials_1ae60dd0ee3c2077eebc0dc19ca19eca74" kindref="member">N_VSetOwnMF_MultiFab</ref>(N_Vector<sp/>v,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>own_mf);</highlight></codeline>
 <codeline lineno="59" refid="AMReX__NVector__MultiFab_8H_1a39d187a15d024905002aac73113f8a5f" refkind="member"><highlight class="normal">N_Vector<sp/><ref refid="namespaceamrex_1_1sundials_1a60ae513faa57f10e9b4aa46cf655b832" kindref="member">N_VCloneEmpty_MultiFab</ref>(N_Vector<sp/>w);</highlight></codeline>
 <codeline lineno="60" refid="AMReX__NVector__MultiFab_8H_1a99845c3cd975af5b30463e5e75a9ada5" refkind="member"><highlight class="normal">N_Vector<sp/><ref refid="namespaceamrex_1_1sundials_1a1ca520b2e907a435625fdb9c78e78d33" kindref="member">N_VClone_MultiFab</ref>(N_Vector<sp/>w);</highlight></codeline>
 <codeline lineno="61" refid="AMReX__NVector__MultiFab_8H_1a2ae8a56c86fee6f45dd629d97deb6df2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1sundials_1abffe63203970e83625b191d35d5b1cd4" kindref="member">N_VDestroy_MultiFab</ref>(N_Vector<sp/>v);</highlight></codeline>

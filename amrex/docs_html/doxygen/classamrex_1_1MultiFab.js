@@ -1,7 +1,7 @@
 var classamrex_1_1MultiFab =
 [
-    [ "CopyComTagsContainer", "classamrex_1_1MultiFab.html#a0945ab26050100412261a7e5e51e65bc", null ],
-    [ "MapOfCopyComTagContainers", "classamrex_1_1MultiFab.html#a9abff4a4be6d566975e62a4682960b96", null ],
+    [ "CopyComTagsContainer", "classamrex_1_1MultiFab.html#a1124d24928511321f4381ebd60b0c15b", null ],
+    [ "MapOfCopyComTagContainers", "classamrex_1_1MultiFab.html#a26137d0a3c8a4a024bf811fbaac6208d", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#abcce72db937ae8e326d2cb14cb114e7d", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#a19ec88a3ec56e2af03e7d127f8edb79e", null ],
     [ "MultiFab", "classamrex_1_1MultiFab.html#a89ca350582ac479d9278fa2e0ec1a9c2", null ],

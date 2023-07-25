@@ -463,7 +463,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a6535e02b29e8d7bcf706a29480625a46">  362</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a486219b28139a9445f213969c5324167">blockReduceSum</a> (T source) noexcept</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUB)</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">typedef</span> cub::BlockReduce&lt;T,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">using</span> BlockReduce = cub::BlockReduce&lt;T,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::TempStorage temp_storage;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
@@ -472,7 +472,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">return</span> BlockReduce(temp_storage).Sum(source);</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keyword">typedef</span> rocprim::block_reduce&lt;T,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keyword">using</span> BlockReduce = rocprim::block_reduce&lt;T,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::storage_type temp_storage;</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    BlockReduce().reduce(source, source, temp_storage, rocprim::plus&lt;T&gt;());</div>
@@ -513,7 +513,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a5f398c68426376a50cd0a17af032a904">  412</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a4c26ead15b942c1c4a0195ca7483a315">blockReduceMin</a> (T source) noexcept</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;{</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUB)</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keyword">typedef</span> cub::BlockReduce&lt;T,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keyword">using</span> BlockReduce = cub::BlockReduce&lt;T,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::TempStorage temp_storage;</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
@@ -522,7 +522,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">return</span> BlockReduce(temp_storage).Reduce(source, <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a775473b1fa3e7d661e3ac6cde59b6018">cub::Min</a>());</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">typedef</span> rocprim::block_reduce&lt;T,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">using</span> BlockReduce = rocprim::block_reduce&lt;T,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::storage_type temp_storage;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    BlockReduce().reduce(source, source, temp_storage, rocprim::minimum&lt;T&gt;());</div>
@@ -563,7 +563,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00462"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a132c08cd6614796306908e0155ac58b2">  462</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu.html#a60fd190b91e286384cf13808993fea3d">blockReduceMax</a> (T source) noexcept</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;{</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUB)</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keyword">typedef</span> cub::BlockReduce&lt;T,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keyword">using</span> BlockReduce = cub::BlockReduce&lt;T,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::TempStorage temp_storage;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
@@ -572,7 +572,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordflow">return</span> BlockReduce(temp_storage).Reduce(source, <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">cub::Max</a>());</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keyword">typedef</span> rocprim::block_reduce&lt;T,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keyword">using</span> BlockReduce = rocprim::block_reduce&lt;T,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::storage_type temp_storage;</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    BlockReduce().reduce(source, source, temp_storage, rocprim::maximum&lt;T&gt;());</div>
@@ -613,7 +613,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="keywordtype">int</span> blockReduceLogicalAnd (<span class="keywordtype">int</span> source) noexcept</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;{</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUB)</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keyword">typedef</span> cub::BlockReduce&lt;int,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keyword">using</span> BlockReduce = cub::BlockReduce&lt;int,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::TempStorage temp_storage;</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
@@ -622,7 +622,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">return</span> BlockReduce(temp_storage).Reduce(source, <a class="code" href="structamrex_1_1LogicalAnd.html">amrex::LogicalAnd&lt;int&gt;</a>());</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keyword">typedef</span> rocprim::block_reduce&lt;int,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keyword">using</span> BlockReduce = rocprim::block_reduce&lt;int,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::storage_type temp_storage;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    BlockReduce().reduce(source, source, temp_storage, <a class="code" href="structamrex_1_1LogicalAnd.html">amrex::LogicalAnd&lt;int&gt;</a>());</div>
@@ -661,7 +661,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="keywordtype">int</span> blockReduceLogicalOr (<span class="keywordtype">int</span> source) noexcept</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;{</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUB)</span></div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keyword">typedef</span> cub::BlockReduce&lt;int,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keyword">using</span> BlockReduce = cub::BlockReduce&lt;int,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::TempStorage temp_storage;</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
@@ -670,7 +670,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keywordflow">return</span> BlockReduce(temp_storage).Reduce(source, <a class="code" href="structamrex_1_1LogicalOr.html">amrex::LogicalOr&lt;int&gt;</a>());</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keyword">typedef</span> rocprim::block_reduce&lt;int,BLOCKDIMX&gt; BlockReduce;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keyword">using</span> BlockReduce = rocprim::block_reduce&lt;int,BLOCKDIMX&gt;;</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    __shared__ <span class="keyword">typename</span> BlockReduce::storage_type temp_storage;</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    __syncthreads();</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    BlockReduce().reduce(source, source, temp_storage, <a class="code" href="structamrex_1_1LogicalOr.html">amrex::LogicalOr&lt;int&gt;</a>());</div>

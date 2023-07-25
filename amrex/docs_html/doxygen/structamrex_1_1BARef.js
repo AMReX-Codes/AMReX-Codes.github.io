@@ -1,6 +1,6 @@
 var structamrex_1_1BARef =
 [
-    [ "HashType", "structamrex_1_1BARef.html#a4fe6e97cf649dbce6fd8703dc1b53a02", null ],
+    [ "HashType", "structamrex_1_1BARef.html#a59cc4e634f9108fb676919f94f8ff55f", null ],
     [ "BARef", "structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f", null ],
     [ "BARef", "structamrex_1_1BARef.html#a7a41d2a79c7b1a0f9b36ffa0afbc6b49", null ],
     [ "BARef", "structamrex_1_1BARef.html#a789502091a9bdb1518f980349e484bfc", null ],

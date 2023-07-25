@@ -1944,7 +1944,7 @@
 <codeline lineno="74" refid="namespacedetail_1a64fb439cf906e12eddb15e737070a293" refkind="member"><highlight class="normal"><ref refid="namespacedetail_1a6fd0b0eaa86bb8985f5471f13b76ce44" kindref="member">fab_to_fab</ref><sp/>(Vector&lt;Array4CopyTag&lt;T0,<sp/>T1&gt;<sp/>&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>copy_tags,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/>F<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1acc0c2cceab5a58cafa4ae6e68be50d24" kindref="member">f</ref>,<sp/>Vector&lt;Array4Tag&lt;int&gt;<sp/>&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>masks)</highlight></codeline>
 <codeline lineno="76"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Array4MaskCopyTag&lt;T0,<sp/>T1&gt;<sp/>TagType;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TagType<sp/>=<sp/>Array4MaskCopyTag&lt;T0,<sp/>T1&gt;;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;TagType&gt;<sp/>tags;</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>copy_tags.size();</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>tags.reserve(N);</highlight></codeline>
@@ -2146,7 +2146,7 @@
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N_locs<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_thread_safe<sp/>=<sp/>TheFB.<ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a0d33ba955e754e4749cbb8337082bb0d" kindref="member">m_threadsafe_loc</ref>;</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4CopyTag" kindref="compound">Array4CopyTag&lt;value_type&gt;</ref><sp/>TagType;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TagType<sp/>=<sp/><ref refid="structamrex_1_1Array4CopyTag" kindref="compound">Array4CopyTag&lt;value_type&gt;</ref>;</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;TagType&gt;</ref><sp/>loc_copy_tags;</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>loc_copy_tags.reserve(N_locs);</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"></highlight></codeline>
@@ -2207,7 +2207,7 @@
 <codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N_locs<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_thread_safe<sp/>=<sp/>thecmd.<ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a0d33ba955e754e4749cbb8337082bb0d" kindref="member">m_threadsafe_loc</ref>;</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"></highlight></codeline>
-<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4BoxTag" kindref="compound">Array4BoxTag&lt;value_type&gt;</ref><sp/>TagType;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TagType<sp/>=<sp/><ref refid="structamrex_1_1Array4BoxTag" kindref="compound">Array4BoxTag&lt;value_type&gt;</ref>;</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;TagType&gt;</ref><sp/>loc_setval_tags;</highlight></codeline>
 <codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>loc_setval_tags.reserve(N_locs);</highlight></codeline>
 <codeline lineno="343"><highlight class="normal"></highlight></codeline>
@@ -2235,7 +2235,7 @@
 <codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>RcvTags<sp/>=<sp/>*(thecmd.<ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a8a30e2336976ffe878c2c6558ecce70d" kindref="member">m_RcvTags</ref>);</highlight></codeline>
 <codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_thread_safe<sp/>=<sp/>thecmd.<ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a45f8bde679589b1086b07cc3faba6740" kindref="member">m_threadsafe_rcv</ref>;</highlight></codeline>
 <codeline lineno="367"><highlight class="normal"></highlight></codeline>
-<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4BoxTag" kindref="compound">Array4BoxTag&lt;value_type&gt;</ref><sp/>TagType;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TagType<sp/>=<sp/><ref refid="structamrex_1_1Array4BoxTag" kindref="compound">Array4BoxTag&lt;value_type&gt;</ref>;</highlight></codeline>
 <codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;TagType&gt;</ref><sp/>rcv_setval_tags;</highlight></codeline>
 <codeline lineno="370"><highlight class="normal"></highlight></codeline>
 <codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>RcvTags.begin();<sp/>it<sp/>!=<sp/>RcvTags.end();<sp/>++it)<sp/>{</highlight></codeline>
@@ -2619,7 +2619,7 @@
 <codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="750"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="751"><highlight class="normal"></highlight></codeline>
-<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4CopyTag" kindref="compound">Array4CopyTag&lt;BUF, value_type&gt;</ref><sp/>TagType;</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TagType<sp/>=<sp/><ref refid="structamrex_1_1Array4CopyTag" kindref="compound">Array4CopyTag&lt;BUF, value_type&gt;</ref>;</highlight></codeline>
 <codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;TagType&gt;</ref><sp/>snd_copy_tags;</highlight></codeline>
 <codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>N_snds;<sp/>++j)</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2682,7 +2682,7 @@
 <codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="813"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="814"><highlight class="normal"></highlight></codeline>
-<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4CopyTag" kindref="compound">Array4CopyTag&lt;value_type, BUF&gt;</ref><sp/>TagType;</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TagType<sp/>=<sp/><ref refid="structamrex_1_1Array4CopyTag" kindref="compound">Array4CopyTag&lt;value_type, BUF&gt;</ref>;</highlight></codeline>
 <codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;TagType&gt;</ref><sp/>recv_copy_tags;</highlight></codeline>
 <codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_copy_tags.reserve(N_rcvs);</highlight></codeline>
 <codeline lineno="818"><highlight class="normal"></highlight></codeline>

@@ -5,7 +5,7 @@ var classamrex_1_1DistributionMapping =
     [ "Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", "structamrex_1_1DistributionMapping_1_1Ref" ],
     [ "RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", "structamrex_1_1DistributionMapping_1_1RefID" ],
     [ "LIpair", "classamrex_1_1DistributionMapping.html#a8bc191492d7a25e16f586ef1e625649c", null ],
-    [ "PVMF", "classamrex_1_1DistributionMapping.html#a55afc17fcc72abd4f0f9bf4bd305ce4b", null ],
+    [ "PVMF", "classamrex_1_1DistributionMapping.html#ae7db7ce924b3d22ba729d57da40f2262", null ],
     [ "Strategy", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8", [
       [ "UNDEFINED", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6ad808286f21d2e4851a30703a30d063", null ],
       [ "ROUNDROBIN", "classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a787ff5451e57a2271607a0143b75a38d", null ],

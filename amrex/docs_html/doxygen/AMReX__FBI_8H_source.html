@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="namespacedetail.html#a64fb439cf906e12eddb15e737070a293">   74</a></span>&#160;<a class="code" href="namespacedetail.html#a6fd0b0eaa86bb8985f5471f13b76ce44">fab_to_fab</a> (Vector&lt;Array4CopyTag&lt;T0, T1&gt; &gt; <span class="keyword">const</span>&amp; copy_tags, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">int</span> ncomp, F &amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>, Vector&lt;Array4Tag&lt;int&gt; &gt; <span class="keyword">const</span>&amp; masks)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">typedef</span> Array4MaskCopyTag&lt;T0, T1&gt; TagType;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">using</span> TagType = Array4MaskCopyTag&lt;T0, T1&gt;;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Vector&lt;TagType&gt; tags;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N = copy_tags.size();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    tags.reserve(N);</div>
@@ -377,7 +377,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">bool</span> is_thread_safe = TheFB.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d">m_threadsafe_loc</a>;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type&gt;</a> TagType;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">using</span> TagType = <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type&gt;</a>;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> loc_copy_tags;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    loc_copy_tags.reserve(N_locs);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
@@ -438,7 +438,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">bool</span> is_thread_safe = thecmd.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d">m_threadsafe_loc</a>;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structamrex_1_1Array4BoxTag.html">Array4BoxTag&lt;value_type&gt;</a> TagType;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">using</span> TagType = <a class="code" href="structamrex_1_1Array4BoxTag.html">Array4BoxTag&lt;value_type&gt;</a>;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> loc_setval_tags;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    loc_setval_tags.reserve(N_locs);</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
@@ -466,7 +466,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; RcvTags = *(thecmd.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a8a30e2336976ffe878c2c6558ecce70d">m_RcvTags</a>);</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">bool</span> is_thread_safe = thecmd.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a45f8bde679589b1086b07cc3faba6740">m_threadsafe_rcv</a>;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structamrex_1_1Array4BoxTag.html">Array4BoxTag&lt;value_type&gt;</a> TagType;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">using</span> TagType = <a class="code" href="structamrex_1_1Array4BoxTag.html">Array4BoxTag&lt;value_type&gt;</a>;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> rcv_setval_tags;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = RcvTags.begin(); it != RcvTags.end(); ++it) {</div>
@@ -850,7 +850,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    }</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;BUF, value_type&gt;</a> TagType;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <span class="keyword">using</span> TagType = <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;BUF, value_type&gt;</a>;</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> snd_copy_tags;</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; N_snds; ++j)</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    {</div>
@@ -913,7 +913,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    }</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type, BUF&gt;</a> TagType;</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keyword">using</span> TagType = <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type, BUF&gt;</a>;</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> recv_copy_tags;</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    recv_copy_tags.reserve(N_rcvs);</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>

@@ -143,8 +143,8 @@ $(document).ready(function(){initNavTree('AMReX__IntegratorBase_8H_source.html',
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Saxpy (T&amp; Y, <span class="keyword">const</span> amrex::Real a, T&amp; X)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// Calculate Y += a * X using a particle-level saxpy function supplied by the particle container T</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classamrex_1_1ParIter__impl.html">amrex::ParIter&lt;T::NStructReal, T::NStructInt, T::NArrayReal, T::NArrayInt&gt;</a> TParIter;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="structamrex_1_1Particle.html">amrex::Particle&lt;T::NStructReal, T::NStructInt&gt;</a> ParticleType;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">using</span> TParIter = <a class="code" href="classamrex_1_1ParIter__impl.html">amrex::ParIter&lt;T::NStructReal, T::NStructInt, T::NArrayReal, T::NArrayInt&gt;</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">using</span> ParticleType = <a class="code" href="structamrex_1_1Particle.html">amrex::Particle&lt;T::NStructReal, T::NStructInt&gt;</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">int</span> lev = 0;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        TParIter pty(Y, lev);</div>

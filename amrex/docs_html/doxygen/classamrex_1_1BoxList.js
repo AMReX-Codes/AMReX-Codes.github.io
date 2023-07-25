@@ -1,7 +1,7 @@
 var classamrex_1_1BoxList =
 [
-    [ "const_iterator", "classamrex_1_1BoxList.html#a9ac637c8d0a5920984658586a6b56a18", null ],
-    [ "iterator", "classamrex_1_1BoxList.html#ab64ed06fbfbfc6342465290e3d86c107", null ],
+    [ "const_iterator", "classamrex_1_1BoxList.html#adf0575e48f46e057b423a516c7328f93", null ],
+    [ "iterator", "classamrex_1_1BoxList.html#ad652e92fe1eaacabb971a11038426ff6", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#a31584546393b5ff7f420e6bffd8486bd", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#a128274e71f12eceb9980758522776803", null ],
     [ "BoxList", "classamrex_1_1BoxList.html#a1c27b6ccc4493126a264598cebbb88b7", null ],

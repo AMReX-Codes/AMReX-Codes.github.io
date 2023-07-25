@@ -1,7 +1,7 @@
 var classamrex_1_1DeriveRec =
 [
     [ "StateRange", "structamrex_1_1DeriveRec_1_1StateRange.html", "structamrex_1_1DeriveRec_1_1StateRange" ],
-    [ "DeriveBoxMap", "classamrex_1_1DeriveRec.html#a8bd26ba5e222a0c05971df574d307f7f", null ],
+    [ "DeriveBoxMap", "classamrex_1_1DeriveRec.html#a7f8f64bd1d7de66c8300def033e45fb9", null ],
     [ "~DeriveRec", "classamrex_1_1DeriveRec.html#a3efcbfca10808d1a81e899f4d3448501", null ],
     [ "DeriveRec", "classamrex_1_1DeriveRec.html#a945183ba64e9317e961f3b43f0308989", null ],
     [ "DeriveRec", "classamrex_1_1DeriveRec.html#a8f3e251a40da8254934ff5e7a30cfc44", null ],

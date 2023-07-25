@@ -1,6 +1,6 @@
 var classamrex_1_1TagBox =
 [
-    [ "TagType", "classamrex_1_1TagBox.html#aa3eab6b001470948ab883ec074459049", null ],
+    [ "TagType", "classamrex_1_1TagBox.html#a86719d9e271cd75e3e6d1fa728c385c1", null ],
     [ "TagVal", "classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffa", [
       [ "CLEAR", "classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814", null ],
       [ "BUF", "classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa5c2d81c416e8ee0e1bd9d475e73d31cf", null ],

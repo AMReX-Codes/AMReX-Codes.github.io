@@ -150,7 +150,7 @@ var searchData=
   ['setboxes_7411',['setBoxes',['../classamrex_1_1BndryRegisterT.html#a31f3e491669d858c7c73e04d2ad6cb00',1,'amrex::BndryRegisterT']]],
   ['setboxtype_7412',['SetBoxType',['../classamrex_1_1BaseFab.html#a70a02b9f0a717280df913cead8729dbc',1,'amrex::BaseFab']]],
   ['setbuf_7413',['setBuf',['../classamrex_1_1VisMF.html#a0ab15576cd65ae5152ba609b54b24550',1,'amrex::VisMF']]],
-  ['setbuf_5fchar_5ftype_7414',['Setbuf_Char_Type',['../classamrex_1_1VisMFBuffer.html#a66e3544d644d980b6a46fe9dacd90fd3',1,'amrex::VisMFBuffer']]],
+  ['setbuf_5fchar_5ftype_7414',['Setbuf_Char_Type',['../classamrex_1_1VisMFBuffer.html#a49a155dcc41cf64677c1b57df5dcfcb2',1,'amrex::VisMFBuffer']]],
   ['setbulkviscosity_7415',['setBulkViscosity',['../classamrex_1_1MLTensorOp.html#acbe31c08085ba7b2e1b6ae53e22b688c',1,'amrex::MLTensorOp::setBulkViscosity(int amrlev, Real kappa)'],['../classamrex_1_1MLTensorOp.html#a89529e15aedc1628aaa544645a9a8b39',1,'amrex::MLTensorOp::setBulkViscosity(int amrlev, const Array&lt; MultiFab const *, AMREX_SPACEDIM &gt; &amp;kappa)'],['../classamrex_1_1MLEBTensorOp.html#a0e7d54919f40ee816e333ba1d531ecb8',1,'amrex::MLEBTensorOp::setBulkViscosity(int amrlev, Real kappa)'],['../classamrex_1_1MLEBTensorOp.html#a386cf912b2462e16023d9dd81c527552',1,'amrex::MLEBTensorOp::setBulkViscosity(int amrlev, const Array&lt; MultiFab const *, AMREX_SPACEDIM &gt; &amp;kappa)']]],
   ['setcfstrategy_7416',['setCFStrategy',['../classamrex_1_1MLMGT.html#a42792f43ae4cc1ee24acf959aa647958',1,'amrex::MLMGT']]],
   ['setcheckfilepositions_7417',['SetCheckFilePositions',['../classamrex_1_1VisMF.html#a5fa42d848c0d0dc397ddf05fd16c5e16',1,'amrex::VisMF']]],

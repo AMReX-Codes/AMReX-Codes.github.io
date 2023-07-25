@@ -1,8 +1,8 @@
 var AMReX_8H =
 [
     [ "AMReX", "classamrex_1_1AMReX.html", "classamrex_1_1AMReX" ],
-    [ "ErrorHandler", "AMReX_8H.html#aa944154cc363fe5103f6638e3726d2ca", null ],
-    [ "PTR_TO_VOID_FUNC", "AMReX_8H.html#ace4078f79e7a204048a9fb654f6bd5d6", null ],
+    [ "ErrorHandler", "AMReX_8H.html#af6f45c130cacf67455811e9b4829f432", null ],
+    [ "PTR_TO_VOID_FUNC", "AMReX_8H.html#a364202ccae0ac53c5c0d1440b8c06dd2", null ],
     [ "Abort", "AMReX_8H.html#ab84b536be78c7500a973ff184511a3d7", null ],
     [ "Abort", "AMReX_8H.html#ad26f2328bf66aa9678347a6055a25431", null ],
     [ "Assert", "AMReX_8H.html#a346451f63cf84dc86251d9b8263655c8", null ],

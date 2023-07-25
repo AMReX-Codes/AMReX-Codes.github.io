@@ -1,7 +1,7 @@
 var searchData=
 [
   ['self_17540',['Self',['../structamrex_1_1ParticleTileData.html#a3db02853f88b6daab07d024e148538d3',1,'amrex::ParticleTileData']]],
-  ['setbuf_5fchar_5ftype_17541',['Setbuf_Char_Type',['../classamrex_1_1VisMFBuffer.html#a66e3544d644d980b6a46fe9dacd90fd3',1,'amrex::VisMFBuffer']]],
+  ['setbuf_5fchar_5ftype_17541',['Setbuf_Char_Type',['../classamrex_1_1VisMFBuffer.html#a49a155dcc41cf64677c1b57df5dcfcb2',1,'amrex::VisMFBuffer']]],
   ['size_5ftype_17542',['size_type',['../classamrex_1_1PODVector.html#a9303944a518a80618dd3f19c92a8a0f2',1,'amrex::PODVector::size_type()'],['../classhacc_1_1AlignedAllocator.html#ad6bd455548ae6962f2293a67aa289721',1,'hacc::AlignedAllocator::size_type()']]],
   ['soa_17543',['SoA',['../classamrex_1_1ParIterBase__impl.html#a7cdb89a3c60abd3ca22b43b703340763',1,'amrex::ParIterBase_impl::SoA()'],['../classamrex_1_1ParIter__impl.html#a6a6895b8d72e580efbc4e0f660545f29',1,'amrex::ParIter_impl::SoA()'],['../classamrex_1_1ParConstIter__impl.html#af18943913a49a09db97f9ac241767a7b',1,'amrex::ParConstIter_impl::SoA()'],['../classamrex_1_1ParticleContainer__impl.html#ac181af77e407fc9fe30b9226232c37e9',1,'amrex::ParticleContainer_impl::SoA()'],['../structamrex_1_1ParticleTile.html#aa1c3e53b94d58cccb5d29cf33dea056b',1,'amrex::ParticleTile::SoA()']]],
   ['soaref_17544',['SoARef',['../classamrex_1_1ParIterBase__impl.html#acc71e36170cf16af0c85312e7b5021a9',1,'amrex::ParIterBase_impl']]],

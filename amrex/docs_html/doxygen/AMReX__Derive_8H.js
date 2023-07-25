@@ -3,7 +3,7 @@ var AMReX__Derive_8H =
     [ "DeriveRec", "classamrex_1_1DeriveRec.html", "classamrex_1_1DeriveRec" ],
     [ "StateRange", "structamrex_1_1DeriveRec_1_1StateRange.html", "structamrex_1_1DeriveRec_1_1StateRange" ],
     [ "DeriveList", "classamrex_1_1DeriveList.html", "classamrex_1_1DeriveList" ],
-    [ "DeriveFunc", "AMReX__Derive_8H.html#a046a83e139b61c9ec447bd89eed50967", null ],
-    [ "DeriveFunc3D", "AMReX__Derive_8H.html#abf838b25d605cefbf6150bc883f4741d", null ],
-    [ "DeriveFuncFab", "AMReX__Derive_8H.html#a193c40127f1734f83e3bb23cab534a24", null ]
+    [ "DeriveFunc", "AMReX__Derive_8H.html#ac7d6bf4b6824f474320123285acc5065", null ],
+    [ "DeriveFunc3D", "AMReX__Derive_8H.html#a008867a6f88e4144e28dfb6a738f5549", null ],
+    [ "DeriveFuncFab", "AMReX__Derive_8H.html#a7f6a90da175c5d3eb9612d6934849087", null ]
 ];
