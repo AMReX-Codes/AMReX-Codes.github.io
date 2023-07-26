@@ -36,7 +36,7 @@ var classamrex_1_1ArrayOfStructs =
     [ "resize", "classamrex_1_1ArrayOfStructs.html#ac161821048b627db36b021dc2671ede0", null ],
     [ "setNumNeighbors", "classamrex_1_1ArrayOfStructs.html#a3b1f7c4d9324b6ce179d86299b1ba853", null ],
     [ "size", "classamrex_1_1ArrayOfStructs.html#af332a589a51f1028800331fe10fc9985", null ],
-    [ "swap", "classamrex_1_1ArrayOfStructs.html#a9d58bc62739f9b5ccf48bf911af39065", null ],
+    [ "swap", "classamrex_1_1ArrayOfStructs.html#ae4184b987b9dfa9b4b3284a7e5c2d927", null ],
     [ "m_data", "classamrex_1_1ArrayOfStructs.html#aa4b53535c25e645281539b7b5b4f9194", null ],
     [ "m_num_neighbor_particles", "classamrex_1_1ArrayOfStructs.html#a3306e52c6281fde864a8d33a9b53d72c", null ],
     [ "SizeInReal", "classamrex_1_1ArrayOfStructs.html#a566da28aaf6d6cb87b9dc2b2fbf1c889", null ]
