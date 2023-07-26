@@ -7,8 +7,6 @@ var AMReX__ParticleUtil_8H =
     [ "call_f", "AMReX__ParticleUtil_8H.html#a69f6d963fd6d0b1fe704f4979f8c423f", null ],
     [ "call_f", "AMReX__ParticleUtil_8H.html#a9cc281840b58581a0e856c044fc4ad70", null ],
     [ "call_f", "AMReX__ParticleUtil_8H.html#aa57201fe45bf39f1e900649ffadc1bd1", null ],
-    [ "call_f", "AMReX__ParticleUtil_8H.html#ad3abec17c3f1b659cd1034de83a0a72b", null ],
-    [ "call_f", "AMReX__ParticleUtil_8H.html#a15b5d534e19b47570f8bd085645e959b", null ],
     [ "clearEmptyEntries", "AMReX__ParticleUtil_8H.html#aece8b1e2716e84a5261e988b9e9b1ef2", null ],
     [ "computeNeighborProcs", "AMReX__ParticleUtil_8H.html#ac6d35da48f520c8ae3f429aee03601c9", null ],
     [ "computeRefFac", "AMReX__ParticleUtil_8H.html#ad2e9cbb8f28bbbba7378ec7bf4654b89", null ],
