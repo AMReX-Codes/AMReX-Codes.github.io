@@ -3296,7 +3296,7 @@
 <codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/>hid_t<sp/>dxpl_col,<sp/>dxpl_ind,<sp/>dcpl_int,<sp/>dcpl_real;</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/>dxpl_col<sp/>=<sp/>H5Pcreate(H5P_DATASET_XFER);</highlight></codeline>
 <codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/>dxpl_ind<sp/>=<sp/>H5Pcreate(H5P_DATASET_XFER);</highlight></codeline>
-<codeline lineno="594"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Pset_dxpl_mpio(dxpl_col,<sp/>H5FD_MPIO_COLLECTIVE);</highlight></codeline>
 <codeline lineno="596"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/>dcpl_int<sp/><sp/>=<sp/>H5Pcreate(H5P_DATASET_CREATE);</highlight></codeline>
@@ -3426,7 +3426,7 @@
 <codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>my_mfi_cnt++;</highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="723"><highlight class="normal"></highlight></codeline>
-<codeline lineno="724"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="724"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Collect<sp/>the<sp/>number<sp/>of<sp/>mf<sp/>and<sp/>total<sp/>size<sp/>of<sp/>mf<sp/>from<sp/>each<sp/>rank</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgather(&amp;my_mfi_cnt,<sp/>1,<sp/>ParallelDescriptor::Mpi_typemap&lt;int&gt;::type(),<sp/>&amp;(all_mfi_cnt[0]),<sp/>1,</highlight></codeline>
 <codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Mpi_typemap&lt;int&gt;::type(),<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
@@ -3472,7 +3472,7 @@
 <codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Sclose(int_dset_space);</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"></highlight></codeline>
 <codeline lineno="769"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>the<sp/>real<sp/>data</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="770"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="770"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgather(&amp;my_mfi_real_total_size,<sp/>1,<sp/>ParallelDescriptor::Mpi_typemap&lt;ULong&gt;::type(),</highlight></codeline>
 <codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;(all_mfi_real_total_size[0]),<sp/>1,<sp/>ParallelDescriptor::Mpi_typemap&lt;ULong&gt;::type(),<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
 <codeline lineno="773"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
@@ -3701,10 +3701,10 @@
 <codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
 <codeline lineno="997"><highlight class="normal"></highlight></codeline>
 <codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/>fapl<sp/>=<sp/>H5Pcreate<sp/>(H5P_FILE_ACCESS);</highlight></codeline>
-<codeline lineno="999"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1000"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="999"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1000"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
 <codeline lineno="1001"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1002"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(fapl);</highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl);</highlight></codeline>
 <codeline lineno="1003"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1004"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/>fid<sp/>=<sp/>H5Fopen(fullname.c_str(),<sp/>H5F_ACC_RDONLY,<sp/>fapl);</highlight></codeline>

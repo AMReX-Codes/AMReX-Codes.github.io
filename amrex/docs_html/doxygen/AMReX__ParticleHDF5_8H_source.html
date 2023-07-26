@@ -692,7 +692,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    hid_t dxpl_col, dxpl_ind, dcpl_int, dcpl_real;</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    dxpl_col = H5Pcreate(H5P_DATASET_XFER);</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    dxpl_ind = H5Pcreate(H5P_DATASET_XFER);</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    H5Pset_dxpl_mpio(dxpl_col, H5FD_MPIO_COLLECTIVE);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    dcpl_int  = H5Pcreate(H5P_DATASET_CREATE);</div>
@@ -822,7 +822,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        my_mfi_cnt++;</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    }</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="preprocessor">    #ifdef BL_USE_MPI</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="preprocessor">    #ifdef AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="comment">// Collect the number of mf and total size of mf from each rank</span></div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    MPI_Allgather(&amp;my_mfi_cnt, 1, ParallelDescriptor::Mpi_typemap&lt;int&gt;::type(), &amp;(all_mfi_cnt[0]), 1,</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                  ParallelDescriptor::Mpi_typemap&lt;int&gt;::type(), <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>());</div>
@@ -868,7 +868,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    H5Sclose(int_dset_space);</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160; </div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="comment">// Create the real data</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="preprocessor">    #ifdef BL_USE_MPI</span></div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="preprocessor">    #ifdef AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    MPI_Allgather(&amp;my_mfi_real_total_size, 1, ParallelDescriptor::Mpi_typemap&lt;ULong&gt;::type(),</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                  &amp;(all_mfi_real_total_size[0]), 1, ParallelDescriptor::Mpi_typemap&lt;ULong&gt;::type(), <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>());</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;<span class="preprocessor">    #else</span></div>
@@ -1097,10 +1097,10 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    <span class="keywordtype">int</span> ret;</div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160; </div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;    fapl = H5Pcreate (H5P_FILE_ACCESS);</div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;<span class="preprocessor">#ifdef BL_USE_MPI</span></div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f">SetHDF5fapl</a>(fapl, <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>());</div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_MPI</span></div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#ac148316b96fef0ab1889c68ef992617f">SetHDF5fapl</a>(fapl, <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>());</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f">SetHDF5fapl</a>(fapl);</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#ac148316b96fef0ab1889c68ef992617f">SetHDF5fapl</a>(fapl);</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160; </div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;    fid = H5Fopen(fullname.c_str(), H5F_ACC_RDONLY, fapl);</div>
@@ -1618,8 +1618,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="ttc" id="aAMReX__ParticlesHDF5_8H_html_ae596f242e9a476a0fed5359ac59d0111"><div class="ttname"><a href="AMReX__ParticlesHDF5_8H.html#ae596f242e9a476a0fed5359ac59d0111">CheckpointPostHDF5</a></div><div class="ttdeci">void CheckpointPostHDF5()</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:129</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:104</div></div>
-<div class="ttc" id="aAMReX__WriteBinaryParticleDataHDF5_8H_html_a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f"><div class="ttname"><a href="AMReX__WriteBinaryParticleDataHDF5_8H.html#a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f">SetHDF5fapl</a></div><div class="ttdeci">static void SetHDF5fapl(hid_t fapl)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleDataHDF5.H:82</div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleDataHDF5_8H_html_aad63ab7770ca222d4e42f2cd5ddcf0bb"><div class="ttname"><a href="AMReX__WriteBinaryParticleDataHDF5_8H.html#aad63ab7770ca222d4e42f2cd5ddcf0bb">ReadHDF5Attr</a></div><div class="ttdeci">static int ReadHDF5Attr(hid_t loc, const char *name, void *data, hid_t dtype)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleDataHDF5.H:59</div></div>
+<div class="ttc" id="aAMReX__WriteBinaryParticleDataHDF5_8H_html_ac148316b96fef0ab1889c68ef992617f"><div class="ttname"><a href="AMReX__WriteBinaryParticleDataHDF5_8H.html#ac148316b96fef0ab1889c68ef992617f">SetHDF5fapl</a></div><div class="ttdeci">static void SetHDF5fapl(hid_t fapl, MPI_Comm comm)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleDataHDF5.H:80</div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleDataHDF5_8H_html_af49a282f1f2f1b91b081e9c0512b3c12"><div class="ttname"><a href="AMReX__WriteBinaryParticleDataHDF5_8H.html#af49a282f1f2f1b91b081e9c0512b3c12">WriteHDF5ParticleDataSync</a></div><div class="ttdeci">void WriteHDF5ParticleDataSync(PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, const std::string &amp;compression, F &amp;&amp;f, bool is_checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleDataHDF5.H:115</div></div>
 <div class="ttc" id="aAMReX__WriteBinaryParticleData_8H_html"><div class="ttname"><a href="AMReX__WriteBinaryParticleData_8H.html">AMReX_WriteBinaryParticleData.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1Print_html"><div class="ttname"><a href="classamrex_1_1Print.html">amrex::Print</a></div><div class="ttdoc">This class provides the user with a few print options.</div><div class="ttdef"><b>Definition:</b> AMReX_Print.H:35</div></div>

@@ -90,14 +90,18 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" line="59" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" bodystart="59" bodyend="77"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void SetHDF5fapl</definition>
-        <argsstring>(hid_t fapl)</argsstring>
+        <argsstring>(hid_t fapl, MPI_Comm comm)</argsstring>
         <name>SetHDF5fapl</name>
         <param>
           <type>hid_t</type>
           <declname>fapl</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -105,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" line="82" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" bodystart="82" bodyend="113"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" line="80" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HDF5/AMReX_WriteBinaryParticleDataHDF5.H" bodystart="80" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="AMReX__WriteBinaryParticleDataHDF5_8H_1af49a282f1f2f1b91b081e9c0512b3c12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -258,13 +262,13 @@
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
 <codeline lineno="77"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(hid_t<sp/>fapl,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(hid_t<sp/>fapl,<sp/><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref><sp/>comm)</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82" refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(hid_t<sp/>fapl)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(hid_t<sp/>fapl)</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>H5Pset_fapl_mpio(fapl,<sp/>comm,<sp/>MPI_INFO_NULL);</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Alignment<sp/>and<sp/>metadata<sp/>block<sp/>size</highlight><highlight class="normal"></highlight></codeline>
@@ -563,10 +567,10 @@
 <codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/>pc.nOutFilesPrePost<sp/>=<sp/>nOutFiles;</highlight></codeline>
 <codeline lineno="382"><highlight class="normal"></highlight></codeline>
 <codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>fapl<sp/>=<sp/>H5Pcreate<sp/>(H5P_FILE_ACCESS);</highlight></codeline>
-<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
 <codeline lineno="386"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1a8c8ef69fdd4c2c1e7ec80dbb0ba9f53f" kindref="member">SetHDF5fapl</ref>(fapl);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__WriteBinaryParticleDataHDF5_8H_1ac148316b96fef0ab1889c68ef992617f" kindref="member">SetHDF5fapl</ref>(fapl);</highlight></codeline>
 <codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="389"><highlight class="normal"></highlight></codeline>
 <codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HDF5_ASYNC</highlight><highlight class="normal"></highlight></codeline>
