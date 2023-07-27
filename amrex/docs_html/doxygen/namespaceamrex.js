@@ -271,11 +271,8 @@ var namespaceamrex =
       [ "Sum", "namespaceamrex_1_1ParallelReduce.html#a83b6af463895bccfbf4ae0606041cd33", null ]
     ] ],
     [ "particle_detail", "namespaceamrex_1_1particle__detail.html", [
-      [ "call_f", "namespaceamrex_1_1particle__detail.html#a65186e4833f2244e0ce2833c7a451411", null ],
-      [ "call_f", "namespaceamrex_1_1particle__detail.html#a8ad1218314e1057e845dfff8878b7ec3", null ],
-      [ "call_f", "namespaceamrex_1_1particle__detail.html#a69f6d963fd6d0b1fe704f4979f8c423f", null ],
-      [ "call_f", "namespaceamrex_1_1particle__detail.html#a9cc281840b58581a0e856c044fc4ad70", null ],
-      [ "call_f", "namespaceamrex_1_1particle__detail.html#aa57201fe45bf39f1e900649ffadc1bd1", null ],
+      [ "call_f", "namespaceamrex_1_1particle__detail.html#a4fc575fa169519c925f33d6bb746d598", null ],
+      [ "call_f", "namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294", null ],
       [ "clearEmptyEntries", "namespaceamrex_1_1particle__detail.html#aece8b1e2716e84a5261e988b9e9b1ef2", null ]
     ] ],
     [ "ParticleInterpolator", "namespaceamrex_1_1ParticleInterpolator.html", "namespaceamrex_1_1ParticleInterpolator" ],

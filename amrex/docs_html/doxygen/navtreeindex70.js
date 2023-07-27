@@ -1,12 +1,5 @@
 var NAVTREEINDEX70 =
 {
-"namespaceamrex__lo__util__module.html":[1,0,11],
-"namespaceamrex__lo__util__module.html#a9b3a8d158e19f71d1af1ebe894c7d3de":[1,0,11,0],
-"namespaceamrex__mempool__module.html":[1,0,12],
-"namespaceamrex__mempool__module.html#a07ba766a64e809e4be6c014aad7d19e6":[1,0,12,21],
-"namespaceamrex__mempool__module.html#a0e05b26a99ee9bfcd67d3bcf92f5c2c8":[1,0,12,17],
-"namespaceamrex__mempool__module.html#a2b5ada4df017deb8b5ab35daf32ee166":[1,0,12,15],
-"namespaceamrex__mempool__module.html#a3fc8f0cceacb6dcb6bac79950dcc81f2":[1,0,12,11],
 "namespaceamrex__mempool__module.html#a47590a2b614ca1a020c77a019a93253d":[1,0,12,7],
 "namespaceamrex__mempool__module.html#a52df12c154901553f7481a5ddd08b16f":[1,0,12,16],
 "namespaceamrex__mempool__module.html#a616f74b36b41fe3efc1129f2b31696d6":[1,0,12,22],
@@ -141,8 +134,8 @@ var NAVTREEINDEX70 =
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,20],
 "namespacemembers_v.html":[1,1,0,21],
-"namespacemembers_vars.html":[1,1,2],
 "namespacemembers_vars.html":[1,1,2,0],
+"namespacemembers_vars.html":[1,1,2],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -249,5 +242,12 @@ var NAVTREEINDEX70 =
 "structBLProfStats_1_1TimeRange.html#acc1a0426cbe4ab8ec7294472aacc285e":[2,0,15,3,7],
 "structBLProfStats_1_1TimeRange.html#ad7149f52ad0ed15f773104fd20d34ff7":[2,0,15,3,2],
 "structBLProfStats_1_1TimeRange.html#ae8cf710c0d69005c259ce278c92f0d48":[2,0,15,3,6],
-"structBLProfStats_1_1TimeRangeCompare.html":[2,0,15,4]
+"structBLProfStats_1_1TimeRangeCompare.html":[2,0,15,4],
+"structBLProfStats_1_1TimeRangeCompare.html#a9773758cbd910ac77b995b586462c0ce":[2,0,15,4,0],
+"structCommProfStats_1_1BarrierEntry.html":[2,0,16,0],
+"structCommProfStats_1_1BarrierEntry.html#a1330c7cc1ff74140f7a408663d21b537":[2,0,16,0,0],
+"structCommProfStats_1_1BarrierEntry.html#a14d594f7a0f3360a1efbe5621869d37e":[2,0,16,0,3],
+"structCommProfStats_1_1BarrierEntry.html#a44cad8e418f7be7c01a8d8fb75f90865":[2,0,16,0,5],
+"structCommProfStats_1_1BarrierEntry.html#a8323a9d1128d230d3cd3ec5d448f7577":[2,0,16,0,1],
+"structCommProfStats_1_1BarrierEntry.html#aa4edfb42a1c77e953234b83e0f87ce6f":[2,0,16,0,4]
 };
