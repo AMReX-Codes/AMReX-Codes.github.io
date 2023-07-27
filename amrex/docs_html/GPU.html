@@ -1559,14 +1559,7 @@ where <cite>N</cite> is the total number of MPI ranks/GPUs you want to use. (See
 AMReX will attempt to do the best job it can assigning MPI ranks to GPUs by
 doing round robin assignment. This may be suboptimal because this assignment
 scheme would not be aware of locality benefits that come from having an MPI
-rank be on the same socket as the GPU it is managing. If you know the hardware
-layout of the system you’re running on, specifically the number of GPUs per
-socket (<cite>M</cite>) and number of GPUs per node (<cite>N</cite>), you can set the preprocessor
-defines <cite>-DAMREX_GPUS_PER_SOCKET=M</cite> and <cite>-DAMREX_GPUS_PER_NODE=N</cite>, which are
-exposed in the GNU Make system through the variables <cite>GPUS_PER_SOCKET</cite> and
-<cite>GPUS_PER_NODE</cite> respectively (see an example in <cite>Tools/GNUMake/sites/Make.olcf</cite>).
-Then AMReX can ensure that each MPI rank selects a GPU on the same socket as
-that rank (assuming your MPI implementation supports MPI 3.)</p>
+rank be on the same socket as the GPU it is managing.</p>
 </li>
 </ul>
 </section>

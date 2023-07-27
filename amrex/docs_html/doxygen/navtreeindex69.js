@@ -1,5 +1,17 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex_1_1fudetail.html#a509cfe3f501626b82899a0607f82a0c0":[1,0,0,14,36],
+"namespaceamrex_1_1fudetail.html#a536db69e62a9ed5048b6ee48dbb34f18":[1,0,0,14,28],
+"namespaceamrex_1_1fudetail.html#a5f4b1211dc0900c0f69987454ec85ada":[1,0,0,14,24],
+"namespaceamrex_1_1fudetail.html#a616e25fb4b45f5288d74db1984fa904a":[1,0,0,14,19],
+"namespaceamrex_1_1fudetail.html#a6f0611e4209b6386875aa2190eb77ce0":[1,0,0,14,20],
+"namespaceamrex_1_1fudetail.html#a75ae0dd863b3cf62c2b8b6be06147359":[1,0,0,14,0],
+"namespaceamrex_1_1fudetail.html#a794d2b1adeaabd6feb0ab8dd6d4ff842":[1,0,0,14,6],
+"namespaceamrex_1_1fudetail.html#a7d979b16fd84d1c691f6763c846775fc":[1,0,0,14,15],
+"namespaceamrex_1_1fudetail.html#a8a5e1c553c8809c6ac943a5cf5807451":[1,0,0,14,22],
+"namespaceamrex_1_1fudetail.html#a8c7c9b910c8e3e73f887e8a02e1acaab":[1,0,0,14,27],
+"namespaceamrex_1_1fudetail.html#a9324c78d4b453dd9f88580ef747cdd30":[1,0,0,14,4],
+"namespaceamrex_1_1fudetail.html#a93c9887c337e8dbe5dd84ddd97f1b0b7":[1,0,0,14,7],
 "namespaceamrex_1_1fudetail.html#a956d1f2590b24b14299b64f450359b6c":[1,0,0,14,10],
 "namespaceamrex_1_1fudetail.html#aa0a24159faf6dc62695bc3e1758aa1bf":[1,0,0,14,41],
 "namespaceamrex_1_1fudetail.html#aa6f390b174acee81ffe7acf835d7c89d":[1,0,0,14,13],
@@ -237,17 +249,5 @@ var NAVTREEINDEX69 =
 "namespaceamrex__lo__bctypes__module.html":[1,0,10],
 "namespaceamrex__lo__bctypes__module.html#a118ae5f596ac220a65e83e0232a26291":[1,0,10,0],
 "namespaceamrex__lo__bctypes__module.html#a2a3913e1bdf84ec1e4ae0bf2b1468b15":[1,0,10,2],
-"namespaceamrex__lo__bctypes__module.html#a4784276d4f8804fc020fa185cb8f3e8c":[1,0,10,5],
-"namespaceamrex__lo__bctypes__module.html#a561d8bd51bf23bc8b3cc34b0061e4375":[1,0,10,3],
-"namespaceamrex__lo__bctypes__module.html#a8ccfcd48862f934880fae54a1b361808":[1,0,10,4],
-"namespaceamrex__lo__bctypes__module.html#aace6b018ab12cf7950ce9fa43315264f":[1,0,10,7],
-"namespaceamrex__lo__bctypes__module.html#ae57c995809ba0ed96cd8666e01a1950e":[1,0,10,1],
-"namespaceamrex__lo__bctypes__module.html#af64f16e71c4cbd71d10e5e0f1c231247":[1,0,10,6],
-"namespaceamrex__lo__util__module.html":[1,0,11],
-"namespaceamrex__lo__util__module.html#a9b3a8d158e19f71d1af1ebe894c7d3de":[1,0,11,0],
-"namespaceamrex__mempool__module.html":[1,0,12],
-"namespaceamrex__mempool__module.html#a07ba766a64e809e4be6c014aad7d19e6":[1,0,12,21],
-"namespaceamrex__mempool__module.html#a0e05b26a99ee9bfcd67d3bcf92f5c2c8":[1,0,12,17],
-"namespaceamrex__mempool__module.html#a2b5ada4df017deb8b5ab35daf32ee166":[1,0,12,15],
-"namespaceamrex__mempool__module.html#a3fc8f0cceacb6dcb6bac79950dcc81f2":[1,0,12,11]
+"namespaceamrex__lo__bctypes__module.html#a4784276d4f8804fc020fa185cb8f3e8c":[1,0,10,5]
 };
