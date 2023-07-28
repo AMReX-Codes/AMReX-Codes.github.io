@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticleDataAdaptor_8H_sourc
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span>AmrParticleDataAdaptor : <span class="keyword">public</span> sensei::DataAdaptor</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticleDataAdaptor_8H_sourc
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">int</span> SetDataSource(</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Amr *amr,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</a> * particles,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;</a> * particles,</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;int&gt;&gt; &amp; rStructs = {},</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">const</span> std::map&lt;std::string, int&gt; &amp; iStructs = {},</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;int&gt;&gt; &amp; rArrays = {},</div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticleDataAdaptor_8H_sourc
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  AmrParticleDataAdaptor()</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_meshAdaptor = <a class="code" href="classamrex_1_1AmrDataAdaptor.html#a41f3c8b6a7d66e0b17a4e9869c8c9b40">AmrDataAdaptor::New</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    m_particleAdaptor = ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::New();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    m_particleAdaptor = ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::New();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  ~AmrParticleDataAdaptor()</div>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('AMReX__AmrParticleDataAdaptor_8H_sourc
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;* m_particleAdaptor;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;* m_particleAdaptor;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  AmrDataAdaptor* m_meshAdaptor;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">const</span> std::string m_meshName = <span class="stringliteral">&quot;mesh&quot;</span>;</div>

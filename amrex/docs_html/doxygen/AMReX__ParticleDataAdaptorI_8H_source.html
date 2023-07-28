@@ -119,20 +119,20 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;*</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::New()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;*</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::New()</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">auto</span> result = <span class="keyword">new</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">auto</span> result = <span class="keyword">new</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  result-&gt;InitializeObjectBase();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// senseiNewMacro(ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// senseiNewMacro(ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;);</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::SetDataSource(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</a> * particles,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::SetDataSource(</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;</a> * particles,</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;int&gt;&gt; &amp; rStructs,</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> std::map&lt;std::string, int&gt; &amp; iStructs,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;int&gt;&gt; &amp; rArrays,</div>
@@ -153,21 +153,21 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::SetArrayNames(</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::SetArrayNames(</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;int&gt;&gt; &amp; rStructs,</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">const</span> std::map&lt;std::string, int&gt; &amp; iStructs,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> std::map&lt;std::string, std::vector&lt;int&gt;&gt; &amp; rArrays,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">const</span> std::map&lt;std::string, int&gt; &amp; iArrays)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(rStructs.size() &lt;= NStructReal)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(rStructs.size() &lt;= ParticleType::NReal)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// check that no indices from the rStructs map exceed allowable value</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> s : rStructs)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : s.second)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(i &gt;= NStructReal)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(i &gt;= ParticleType::NReal)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;          SENSEI_ERROR(<span class="stringliteral">&quot;rStruct index exceeds internal storage size&quot;</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          <span class="keywordflow">return</span> -1;</div>
@@ -182,12 +182,12 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span>(iStructs.size() &lt;= NStructInt)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span>(iStructs.size() &lt;= ParticleType::NInt)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// check that no indices from the iStructs map exceed allowable value</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> s : iStructs)</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordflow">if</span>(s.second &gt;= NStructInt)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordflow">if</span>(s.second &gt;= ParticleType::NInt)</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;          SENSEI_ERROR(<span class="stringliteral">&quot;iStructs index exceeds internal storage size&quot;</span>);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          <span class="keywordflow">return</span> -1;</div>
@@ -244,8 +244,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetNumberOfMeshes(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;numMeshes)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetNumberOfMeshes(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;numMeshes)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  numMeshes = 1;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">return</span> 0;</div>
@@ -253,8 +253,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &lt; 3</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetMeshName(</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetMeshName(</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>, std::string &amp;meshName)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  meshName = m_particlesName;</div>
@@ -264,8 +264,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &lt; 3</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetMeshHasGhostNodes(</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetMeshHasGhostNodes(</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keyword">const</span> std::string &amp;meshName,</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">int</span> &amp;nLayers)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
@@ -276,8 +276,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &lt; 3</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetMeshHasGhostCells(</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetMeshHasGhostCells(</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keyword">const</span> std::string &amp;meshName,</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordtype">int</span> &amp;nLayers)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
@@ -288,8 +288,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &lt; 3</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetNumberOfArrays(</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetNumberOfArrays(</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keyword">const</span> std::string &amp;meshName,</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordtype">int</span> association,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;numberOfArrays)</div>
@@ -307,8 +307,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &lt; 3</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetArrayName(</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetArrayName(</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keyword">const</span> std::string &amp;meshName,</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordtype">int</span> association,</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index,</div>
@@ -350,8 +350,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetMesh(</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetMesh(</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keyword">const</span> std::string &amp;meshName,</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">bool</span> structureOnly,</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  svtkDataObject *&amp;mesh)</div>
@@ -385,8 +385,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddGhostNodesArray(</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddGhostNodesArray(</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  svtkDataObject*,</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keyword">const</span> std::string &amp;meshName)</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
@@ -399,8 +399,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;template &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddGhostCellsArray(</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;template &lt;typename ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddGhostCellsArray(</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  svtkDataObject*,</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  const std::<span class="keywordtype">string</span> &amp;meshName)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div>
@@ -413,8 +413,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;template &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddArray(</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;template &lt;typename ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddArray(</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  svtkDataObject* mesh,</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  const std::<span class="keywordtype">string</span> &amp;meshName,</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keywordtype">int</span> association,</div>
@@ -457,8 +457,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::ReleaseData()</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::ReleaseData()</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  this-&gt;m_particles = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="keywordflow">return</span> 0;</div>
@@ -466,8 +466,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">#if SENSEI_VERSION_MAJOR &gt;= 3</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::GetMeshMetadata(</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::GetMeshMetadata(</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>,</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  sensei::MeshMetadataPtr &amp;metadata)</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;{</div>
@@ -746,8 +746,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;svtkPolyData* ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::BuildParticles()</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;svtkPolyData* ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::BuildParticles()</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;{</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  <span class="comment">// return particle data pd</span></div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  svtkPolyData* pd  = svtkPolyData::New();</div>
@@ -783,21 +783,21 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;  <span class="comment">// loop over levels in the particle container</span></div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; particles.size();  lev++)</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;  {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, lev); pti.isValid(); ++pti)</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    {</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;      <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;      {</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; part = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd, i);</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        {</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;          <span class="comment">// add a vertex type cell</span></div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;          vertex-&gt;InsertNextCell(1);</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;          vertex-&gt;InsertCellPoint(ptId);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;          <span class="comment">// copy the partilce coordinates</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;          <span class="comment">// copy the particle coordinates</span></div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;          pCoords[0] = part.pos(0);</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;          pCoords[1] = <a class="code" href="AMReX__REAL_8H.html#acb6d48305132f6aa2ad69f1aaa78e4c6">amrex_particle_real</a>(0);</div>
@@ -830,8 +830,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;}</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddParticlesIDArray(</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddParticlesIDArray(</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;  svtkDataObject* mesh)</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;{</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;  <span class="keyword">auto</span> svtk_particles = <span class="keyword">dynamic_cast&lt;</span>svtkPolyData*<span class="keyword">&gt;</span>(mesh);</div>
@@ -848,17 +848,17 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  <span class="keywordtype">int</span> *partIds = idArray-&gt;GetPointer(0);</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;  <span class="comment">// loop over particles and append their cpu value to the list</span></div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;  <span class="keywordtype">long</span> ptId = 0;</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt; particles.size(); ++level)</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;  {</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    {</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;      <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;      {</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd, i);</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        {</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;          partIds[i] = part.id();</div>
@@ -875,8 +875,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;}</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddParticlesCPUArray(</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddParticlesCPUArray(</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;  svtkDataObject* mesh)</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;{</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;  <span class="keyword">auto</span> svtk_particles = <span class="keyword">dynamic_cast&lt;</span>svtkPolyData*<span class="keyword">&gt;</span>(mesh);</div>
@@ -893,16 +893,16 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;  <span class="keywordtype">int</span>* partCpu = cpuArray-&gt;GetPointer(0);</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="comment">// loop over particles and append their cpu value to the list</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt; particles.size(); ++level)</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  {</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    {</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;      <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;      {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd, i);</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        {</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;          partCpu[i] = part.cpu();</div>
@@ -919,8 +919,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;}</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160; </div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddParticlesSOARealArray(</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddParticlesSOARealArray(</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;  <span class="keyword">const</span> std::string &amp;arrayName,</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;  svtkDataObject* mesh)</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;{</div>
@@ -964,7 +964,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;  <span class="keywordtype">double</span>* pData = data-&gt;GetPointer(0);</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160; </div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level &lt; this-&gt;m_particles-&gt;numLevels(); ++level)</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;  {</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
@@ -1006,8 +1006,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;}</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddParticlesSOAIntArray(</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddParticlesSOAIntArray(</div>
 <div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;  <span class="keyword">const</span> std::string &amp;arrayName,</div>
 <div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;  svtkDataObject* mesh)</div>
 <div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;{</div>
@@ -1039,7 +1039,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;  <span class="keywordtype">int</span>* pData = data-&gt;GetPointer(0);</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160; </div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;  <span class="comment">// fill array</span></div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level&lt; this-&gt;m_particles-&gt;numLevels(); level++)</div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;  {</div>
 <div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
@@ -1077,8 +1077,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;}</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160; </div>
 <div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddParticlesAOSRealArray(</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddParticlesAOSRealArray(</div>
 <div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;  <span class="keyword">const</span> std::string &amp;arrayName,</div>
 <div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;  svtkDataObject* mesh)</div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;{</div>
@@ -1101,7 +1101,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;  <span class="comment">// check that the indices are within the templated storage spec</span></div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : indices)</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;  {</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    <span class="keywordflow">if</span> (i &gt;= NStructReal)</div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    <span class="keywordflow">if</span> (i &gt;= ParticleType::NReal)</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;    {</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;      SENSEI_ERROR(<span class="stringliteral">&quot;Index out of bounds for real AOS named \&quot;&quot;</span> &lt;&lt; arrayName &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;      <span class="keywordflow">return</span> -1;</div>
@@ -1125,113 +1125,120 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;  <span class="keywordtype">double</span> *pData = data-&gt;GetPointer(0);</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160; </div>
-<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;  <span class="comment">// copy the data from each level</span></div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
-<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level&lt;particles.size();level++)</div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;  {</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;    {</div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160; </div>
-<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;      <span class="comment">// shuffle from the AMReX component order</span></div>
-<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; nComps; ++j)</div>
-<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;      {</div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        {</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;          <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;          {</div>
-<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;            pData[i*nComps + j] = part.rdata(indices[j]);</div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;          }</div>
-<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        }</div>
-<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;      }</div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;      pData += numReal * nComps;</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;    }</div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;  }</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160; </div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;  <span class="comment">// get the block of the mesh</span></div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;  <span class="keywordtype">int</span> rank = 0;</div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;  MPI_Comm_rank(this-&gt;GetCommunicator(), &amp;rank);</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160; </div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;  <span class="keyword">auto</span> blocks = <span class="keyword">dynamic_cast&lt;</span>svtkMultiBlockDataSet*<span class="keyword">&gt;</span>(mesh);</div>
+<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;  <span class="keywordflow">if</span> constexpr(!ParticleType::is_soa_particle) {</div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160; </div>
+<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;  <span class="comment">// copy the data from each level</span></div>
+<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level&lt;particles.size();level++)</div>
+<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;  {</div>
+<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
+<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;    {</div>
+<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160; </div>
+<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
+<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;      <span class="comment">// shuffle from the AMReX component order</span></div>
+<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; nComps; ++j)</div>
+<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;      {</div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
+<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;        {</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;          <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;          {</div>
+<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;            pData[i*nComps + j] = part.rdata(indices[j]);</div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;          }</div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;        }</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;      }</div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;      pData += numReal * nComps;</div>
+<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;    }</div>
+<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;  }</div>
+<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160; </div>
+<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;  <span class="comment">// get the block of the mesh</span></div>
+<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;  <span class="keywordtype">int</span> rank = 0;</div>
+<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;  MPI_Comm_rank(this-&gt;GetCommunicator(), &amp;rank);</div>
 <div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160; </div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;  <span class="keyword">auto</span> block = <span class="keyword">dynamic_cast&lt;</span>svtkPolyData*<span class="keyword">&gt;</span>(blocks-&gt;GetBlock(rank));</div>
-<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;  block-&gt;GetPointData()-&gt;AddArray(data);</div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160; </div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;}</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160; </div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;::AddParticlesAOSIntArray(</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;  <span class="keyword">const</span> std::string &amp;arrayName,</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;  svtkDataObject* mesh)</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;{</div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;  <span class="comment">// get the particles from the particle container</span></div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; particles = this-&gt;m_particles-&gt;GetParticles();</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160; </div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;  <span class="keyword">auto</span> nptsOnProc = this-&gt;m_particles-&gt;TotalNumberOfParticles(<span class="keyword">true</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160; </div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;  <span class="comment">// check that the name of the struct data is listed in the m_intStructs</span></div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;  IntDataMapType::iterator ait = m_intStructs.find(arrayName);</div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;  <span class="keywordflow">if</span> (ait == m_intStructs.end())</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;  {</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    SENSEI_ERROR(<span class="stringliteral">&quot;No int AOS named \&quot;&quot;</span> &lt;&lt; arrayName &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;  }</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160; </div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;  <span class="comment">// get the index of the struct on the particles</span></div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;  <span class="keywordtype">int</span> index = ait-&gt;second;</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160; </div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;  <span class="comment">// check that the index are within the templated storage spec</span></div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;  <span class="keywordflow">if</span>(index &gt;= NStructInt)</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;  {</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    SENSEI_ERROR(<span class="stringliteral">&quot;Index out of bounds for int AOS named \&quot;&quot;</span> &lt;&lt; arrayName &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;  }</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160; </div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;  <span class="comment">// allocate svtkArray</span></div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;  svtkNew&lt;svtkIntArray&gt; data;</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;  data-&gt;SetName(arrayName.c_str());</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;  data-&gt;SetNumberOfComponents(1);</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;  data-&gt;SetNumberOfValues(nptsOnProc);</div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;  <span class="keywordtype">int</span>* pData = data-&gt;GetPointer(0);</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160; </div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;;</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level&lt;particles.size(); ++level)</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;  {</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;    {</div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160; </div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;      <span class="keywordtype">long</span> <span class="keywordtype">long</span> numReal = pti.numParticles();</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;      {</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;        <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;        {</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;          pData[i] = part.idata(index);</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;        }</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;      }</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;      pData += numReal;</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    }</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;  }</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160; </div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;  <span class="comment">// get the block of the mesh</span></div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;  <span class="keywordtype">int</span> rank = 0;</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;  MPI_Comm_rank(this-&gt;GetCommunicator(), &amp;rank);</div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160; </div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;  <span class="keyword">auto</span> blocks = <span class="keyword">dynamic_cast&lt;</span>svtkMultiBlockDataSet*<span class="keyword">&gt;</span>(mesh);</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;  <span class="keyword">auto</span> blocks = <span class="keyword">dynamic_cast&lt;</span>svtkMultiBlockDataSet*<span class="keyword">&gt;</span>(mesh);</div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160; </div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;  <span class="keyword">auto</span> block = <span class="keyword">dynamic_cast&lt;</span>svtkPolyData*<span class="keyword">&gt;</span>(blocks-&gt;GetBlock(rank));</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;  block-&gt;GetPointData()-&gt;AddArray(data);</div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160; </div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;  }</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;}</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;<span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;<span class="keywordtype">int</span> ParticleDataAdaptor&lt;ParticleType, NArrayReal, NArrayInt&gt;::AddParticlesAOSIntArray(</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;  <span class="keyword">const</span> std::string &amp;arrayName,</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;  svtkDataObject* mesh)</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;{</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;  <span class="comment">// get the particles from the particle container</span></div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; particles = this-&gt;m_particles-&gt;GetParticles();</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160; </div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;  <span class="keyword">auto</span> nptsOnProc = this-&gt;m_particles-&gt;TotalNumberOfParticles(<span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160; </div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;  <span class="comment">// check that the name of the struct data is listed in the m_intStructs</span></div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;  IntDataMapType::iterator ait = m_intStructs.find(arrayName);</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;  <span class="keywordflow">if</span> (ait == m_intStructs.end())</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;  {</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    SENSEI_ERROR(<span class="stringliteral">&quot;No int AOS named \&quot;&quot;</span> &lt;&lt; arrayName &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;  }</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160; </div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;  <span class="comment">// get the index of the struct on the particles</span></div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;  <span class="keywordtype">int</span> index = ait-&gt;second;</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160; </div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;  <span class="comment">// check that the index are within the templated storage spec</span></div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;  <span class="keywordflow">if</span>(index &gt;= ParticleType::NInt)</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;  {</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;    SENSEI_ERROR(<span class="stringliteral">&quot;Index out of bounds for int AOS named \&quot;&quot;</span> &lt;&lt; arrayName &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;  }</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160; </div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;  <span class="keywordflow">if</span> constexpr(!ParticleType::is_soa_particle) {</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160; </div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;  <span class="comment">// allocate svtkArray</span></div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;  svtkNew&lt;svtkIntArray&gt; data;</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;  data-&gt;SetName(arrayName.c_str());</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;  data-&gt;SetNumberOfComponents(1);</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;  data-&gt;SetNumberOfValues(nptsOnProc);</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;  <span class="keywordtype">int</span>* pData = data-&gt;GetPointer(0);</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160; </div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;  <span class="keyword">using</span> MyParIter = ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt&gt;;</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = 0; level&lt;particles.size(); ++level)</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;  {</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    {</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160; </div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;      <span class="keywordtype">long</span> <span class="keywordtype">long</span> numReal = pti.numParticles();</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;      {</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;        {</div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;          pData[i] = part.idata(index);</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        }</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;      }</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;      pData += numReal;</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    }</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;  }</div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160; </div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  <span class="keyword">auto</span> block = <span class="keyword">dynamic_cast&lt;</span>svtkPolyData*<span class="keyword">&gt;</span>(blocks-&gt;GetBlock(rank));</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;  block-&gt;GetPointData()-&gt;AddArray(data);</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160; </div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  <span class="comment">// get the block of the mesh</span></div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;  <span class="keywordtype">int</span> rank = 0;</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;  MPI_Comm_rank(this-&gt;GetCommunicator(), &amp;rank);</div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160; </div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;}</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160; </div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;}</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;  <span class="keyword">auto</span> blocks = <span class="keyword">dynamic_cast&lt;</span>svtkMultiBlockDataSet*<span class="keyword">&gt;</span>(mesh);</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160; </div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;  <span class="keyword">auto</span> block = <span class="keyword">dynamic_cast&lt;</span>svtkPolyData*<span class="keyword">&gt;</span>(blocks-&gt;GetBlock(rank));</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;  block-&gt;GetPointData()-&gt;AddArray(data);</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160; </div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;  }</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160; </div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;}</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160; </div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;}</div>
 <div class="ttc" id="aAMReX__InSituUtils_8H_html"><div class="ttname"><a href="AMReX__InSituUtils_8H.html">AMReX_InSituUtils.H</a></div></div>
 <div class="ttc" id="aAMReX__ParticleDataAdaptor_8H_html"><div class="ttname"><a href="AMReX__ParticleDataAdaptor_8H.html">AMReX_ParticleDataAdaptor.H</a></div></div>
 <div class="ttc" id="aAMReX__REAL_8H_html_acb6d48305132f6aa2ad69f1aaa78e4c6"><div class="ttname"><a href="AMReX__REAL_8H.html#acb6d48305132f6aa2ad69f1aaa78e4c6">amrex_particle_real</a></div><div class="ttdeci">double amrex_particle_real</div><div class="ttdef"><b>Definition:</b> AMReX_REAL.H:64</div></div>
@@ -1241,6 +1248,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="ttc" id="aclassamrex_1_1ParticleContainer__impl_html_acc848dd448ee14b682067617d3664ee2"><div class="ttname"><a href="classamrex_1_1ParticleContainer__impl.html#acc848dd448ee14b682067617d3664ee2">amrex::ParticleContainer_impl::GetParticles</a></div><div class="ttdeci">const Vector&lt; ParticleLevel &gt; &amp; GetParticles() const</div><div class="ttdoc">Return the underyling Vector (over AMR levels) of ParticleLevels. Const version.</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleContainer.H:973</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:17</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
+<div class="ttc" id="astructmake__particle_html"><div class="ttname"><a href="structmake__particle.html">make_particle</a></div><div class="ttdef"><b>Definition:</b> AMReX_MakeParticle.H:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
