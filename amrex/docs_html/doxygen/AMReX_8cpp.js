@@ -6,6 +6,7 @@ var AMReX_8cpp =
     [ "exename", "AMReX_8cpp.html#aa338ee7ebd729e662154160b02022599", null ],
     [ "handle_sigabrt", "AMReX_8cpp.html#a3a98219f9b87a480845ee50702a3629f", null ],
     [ "handle_sigfpe", "AMReX_8cpp.html#a76f46dd5ad75e671af01785a297624c6", null ],
+    [ "handle_sigill", "AMReX_8cpp.html#ad45524f2293e6c912869fda4bc83d3d9", null ],
     [ "handle_sigint", "AMReX_8cpp.html#ab2bbc5f6bf5d703bf0762b24b3c6f36e", null ],
     [ "handle_sigsegv", "AMReX_8cpp.html#a4702b3f550d0d533a0f2afffc700296e", null ],
     [ "handle_sigterm", "AMReX_8cpp.html#a836c83c423a648668af41b8498a0f413", null ],

@@ -131,7 +131,8 @@ NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_tra
 use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>s in
 <code class="docutils literal notranslate"><span class="pre">MulitFab</span></code>s and arrays allocated by <code class="docutils literal notranslate"><span class="pre">bl_allocate</span></code> to signaling NaNs when it is compiled
 with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
-One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.</p>
+One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.
+Note for Macs, M1 and M2 chips using Arm64 architecture are not able to trap division by zero.</p>
 <p>One can get more information than the backtrace of the call stack by
 instrumenting the code.  Here is an example.
 You know the line <code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">rho</span> <span class="pre">=</span> <span class="pre">state(cell,0);</span></code> is causing a segfault.  You
