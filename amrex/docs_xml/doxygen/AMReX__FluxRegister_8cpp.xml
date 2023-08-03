@@ -2870,7 +2870,7 @@
 <codeline lineno="739"><highlight class="normal"></highlight></codeline>
 <codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>cdomain<sp/>=<sp/>crse_geom.Domain();</highlight></codeline>
 <codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(crse_geom.isPeriodic(idim))<sp/>cdomain.grow(idim,<sp/>1);</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(crse_geom.isPeriodic(idim))<sp/>{<sp/>cdomain.grow(idim,<sp/>1);<sp/>}</highlight></codeline>
 <codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="744"><highlight class="normal"></highlight></codeline>
 <codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>run_on_gpu<sp/>=<sp/><ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>();</highlight></codeline>
