@@ -204,7 +204,7 @@ $(document).ready(function(){initNavTree('AMReX__InterpBndryData_8H_source.html'
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (max_order==3 || max_order==1)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="structamrex_1_1MFItInfo.html">MFItInfo</a> info;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>()) info.<a class="code" href="structamrex_1_1MFItInfo.html#a3eca2eae7ba9555f07544739396d8f57">SetDynamic</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>()) { info.<a class="code" href="structamrex_1_1MFItInfo.html#a3eca2eae7ba9555f07544739396d8f57">SetDynamic</a>(<span class="keyword">true</span>); }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif</span></div>

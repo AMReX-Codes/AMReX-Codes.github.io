@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                      pc.ParticleDistributionMap(lev),</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                      mf.nComp(), mf.nGrowVect());</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf) mf_pointer-&gt;ParallelCopy(mf,0,0,mf.nComp(),mf.nGrowVect(),mf.nGrowVect());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf) {mf_pointer-&gt;ParallelCopy(mf,0,0,mf.nComp(),mf.nGrowVect(),mf.nGrowVect()); }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> plo = pc.Geom(lev).ProbLoArray();</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxi = pc.Geom(lev).InvCellSizeArray();</div>
@@ -255,7 +255,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleMesh_8H_source.html',''
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        });</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf) <span class="keyword">delete</span> mf_pointer;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf) { <span class="keyword">delete</span> mf_pointer; }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
