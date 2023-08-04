@@ -372,10 +372,10 @@ $(document).ready(function(){initNavTree('AMReX__EB2__2D__C_8H_source.html','');
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// By default, all neighbors are already set.</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">auto</span> flg = cflag(i,j,k);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (apx(i  ,j  ,k) == 0.0_rt) flg.setDisconnected(-1, 0, 0);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (apx(i+1,j  ,k) == 0.0_rt) flg.setDisconnected( 1, 0, 0);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">if</span> (apy(i  ,j  ,k) == 0.0_rt) flg.setDisconnected( 0,-1, 0);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> (apy(i  ,j+1,k) == 0.0_rt) flg.setDisconnected( 0, 1, 0);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (apx(i  ,j  ,k) == 0.0_rt) { flg.setDisconnected(-1, 0, 0); }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (apx(i+1,j  ,k) == 0.0_rt) { flg.setDisconnected( 1, 0, 0); }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">if</span> (apy(i  ,j  ,k) == 0.0_rt) { flg.setDisconnected( 0,-1, 0); }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> (apy(i  ,j+1,k) == 0.0_rt) { flg.setDisconnected( 0, 1, 0); }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> ((apx(i,j  ,k) == 0.0_rt || apy(i-1,j,k) == 0.0_rt) &amp;&amp;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        (apx(i,j-1,k) == 0.0_rt || apy(i  ,j,k) == 0.0_rt))</div>
