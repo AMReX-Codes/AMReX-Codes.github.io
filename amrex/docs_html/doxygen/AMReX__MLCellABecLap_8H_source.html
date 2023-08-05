@@ -338,7 +338,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="classamrex_1_1MLCellABecLapT.html#ae9730b505209a9fc2f255dd6cf9ea177">  238</a></span>&#160;<a class="code" href="classamrex_1_1MLCellABecLapT.html#ae9730b505209a9fc2f255dd6cf9ea177">MLCellABecLapT&lt;MF&gt;::update</a> ()</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;{</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classamrex_1_1MLCellLinOpT.html">MLCellLinOpT&lt;MF&gt;::needsUpdate</a>()) <a class="code" href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">MLCellLinOpT&lt;MF&gt;::update</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classamrex_1_1MLCellLinOpT.html">MLCellLinOpT&lt;MF&gt;::needsUpdate</a>()) { <a class="code" href="classamrex_1_1MLCellLinOpT.html#a4482485699afcfc64adb1f8179714636">MLCellLinOpT&lt;MF&gt;::update</a>(); }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
@@ -378,7 +378,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">bool</span> has_inhomog_neumann = this-&gt;hasInhomogNeumannBC();</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">bool</span> has_robin = this-&gt;hasRobinBC();</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (!has_inhomog_neumann &amp;&amp; !has_robin) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (!has_inhomog_neumann &amp;&amp; !has_robin) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">int</span> ncomp = this-&gt;getNComp();</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mglev = 0;</div>
@@ -403,7 +403,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bndry = *(this-&gt;m_bndry_sol[amrlev]);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <a class="code" href="structamrex_1_1MFItInfo.html">MFItInfo</a> mfi_info;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>()) mfi_info.<a class="code" href="structamrex_1_1MFItInfo.html#a3eca2eae7ba9555f07544739396d8f57">SetDynamic</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>()) { mfi_info.<a class="code" href="structamrex_1_1MFItInfo.html#a3eca2eae7ba9555f07544739396d8f57">SetDynamic</a>(<span class="keyword">true</span>); }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
@@ -430,7 +430,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bvhi = bndry.bndryValues(ohi).array(mfi);</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordtype">bool</span> outside_domain_lo = !(domain.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(blo));</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordtype">bool</span> outside_domain_hi = !(domain.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(bhi));</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">if</span> ((!outside_domain_lo) &amp;&amp; (!outside_domain_hi)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">if</span> ((!outside_domain_lo) &amp;&amp; (!outside_domain_hi)) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; ncomp; ++icomp) {</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoundCond.html">BoundCond</a> bctlo = bdcv[icomp][olo];</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keyword">const</span> <a class="code" href="classamrex_1_1BoundCond.html">BoundCond</a> bcthi = bdcv[icomp][ohi];</div>
@@ -610,7 +610,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordtype">bool</span> has_inhomog_neumann = this-&gt;hasInhomogNeumannBC();</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordtype">bool</span> has_robin = this-&gt;hasRobinBC();</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">if</span> (!has_inhomog_neumann &amp;&amp; !has_robin) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">if</span> (!has_inhomog_neumann &amp;&amp; !has_robin) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keywordtype">int</span> ncomp = this-&gt;getNComp();</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mglev = 0;</div>
@@ -626,7 +626,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; bndry = *this-&gt;m_bndry_sol[amrlev];</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <a class="code" href="structamrex_1_1MFItInfo.html">MFItInfo</a> mfi_info;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>()) mfi_info.<a class="code" href="structamrex_1_1MFItInfo.html#a3eca2eae7ba9555f07544739396d8f57">SetDynamic</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>()) { mfi_info.<a class="code" href="structamrex_1_1MFItInfo.html#a3eca2eae7ba9555f07544739396d8f57">SetDynamic</a>(<span class="keyword">true</span>); }</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
@@ -734,7 +734,7 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap_8H_source.html','
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; osm = m_overset_mask[amrlev][0]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>(bx, ncomp, i, j, k, n,</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                {</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                    <span class="keywordflow">if</span> (osm(i,j,k) == 0) rfab(i,j,k,n) = <a class="code" href="classamrex_1_1MLCellABecLapT.html#a7294b2967cfff2e5dd03e746871646ec">RT</a>(0.0);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                    <span class="keywordflow">if</span> (osm(i,j,k) == 0) { rfab(i,j,k,n) = <a class="code" href="classamrex_1_1MLCellABecLapT.html#a7294b2967cfff2e5dd03e746871646ec">RT</a>(0.0); }</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                });</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            }</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        }</div>
