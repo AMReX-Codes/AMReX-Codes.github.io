@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAsyncArray_8H_source.html','
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classamrex_1_1Gpu_1_1AsyncArray.html#a19e80d7e6014ed527622b7e69399569b">   32</a></span>&#160;    <a class="code" href="classamrex_1_1Gpu_1_1AsyncArray.html#a19e80d7e6014ed527622b7e69399569b">AsyncArray</a> (T <span class="keyword">const</span>* h_p, <span class="keyword">const</span> std::size_t n)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (n == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classamrex_1_1Gpu_1_1AsyncArray.html#a51d329542fc90dfadcbe838a312a5470">h_data</a> = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(<a class="code" href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">The_Pinned_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">alloc</a>(n*<span class="keyword">sizeof</span>(T)));</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(<a class="code" href="classamrex_1_1Gpu_1_1AsyncArray.html#a51d329542fc90dfadcbe838a312a5470">h_data</a>, h_p, n*<span class="keyword">sizeof</span>(T));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAsyncArray_8H_source.html','
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    template &lt;typename U = T, typename std::enable_if&lt;std::is_standard_layout&lt;U&gt;::value &amp;&amp; std::is_trivial&lt;U&gt;::value,<span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classamrex_1_1Gpu_1_1AsyncArray.html#afea82268e2d2995085c150e9865923a3">   47</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classamrex_1_1Gpu_1_1AsyncArray.html#afea82268e2d2995085c150e9865923a3">AsyncArray</a> (<span class="keyword">const</span> std::size_t n)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (n == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
@@ -221,7 +221,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuAsyncArray_8H_source.html','
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classamrex_1_1Gpu_1_1AsyncArray.html#a8b192b54f34ecf9a231c4877a5625a6d">  121</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1Gpu_1_1AsyncArray.html#a8b192b54f34ecf9a231c4877a5625a6d">copyToHost</a> (T* h_p, std::size_t n)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (n == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classamrex_1_1Gpu_1_1AsyncArray.html#a8faf9b9425340e64e8849fad230ca590">d_data</a>)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>

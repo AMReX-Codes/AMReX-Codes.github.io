@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1detail.html#a3f8fddb521eea2e91972e8a665d0e1cc">  149</a></span>&#160;<a class="code" href="namespaceamrex_1_1detail.html#a3f8fddb521eea2e91972e8a665d0e1cc">ParallelFor_doit</a> (<a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagType&gt;</a> <span class="keyword">const</span>&amp; tags, F &amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ntags = tags.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (ntags == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (ntags == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">int</span> ntotwarps = 0;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> nwarps;</div>
@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('AMReX__TagParallelFor_8H_source.html',
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">int</span> g_tid = blockDim.x*blockIdx.x + threadIdx.x;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">int</span> g_wid = g_tid / <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (g_wid &gt;= ntotwarps) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (g_wid &gt;= ntotwarps) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordtype">int</span> tag_id = <a class="code" href="namespaceamrex.html#a6d6b1086f3f7b77f820cac8d8005ac38">amrex::bisect</a>(d_nwarps, 0, ntags, g_wid);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>

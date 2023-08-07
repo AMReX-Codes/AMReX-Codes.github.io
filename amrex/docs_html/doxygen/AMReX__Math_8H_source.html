@@ -280,24 +280,25 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">  189</a></span>&#160;constexpr T <a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a> (T x) noexcept</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> constexpr (Power &lt; 0)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> constexpr (Power &lt; 0) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> T(1)/<a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a>&lt;-Power&gt;(x);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 0)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 0) {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">//note: 0^0 is implementation-defined, but most compilers return 1</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> T(1);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 1)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 1) {</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> x;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 2)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 2) {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">return</span> x*x;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power%2 == 0)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power%2 == 0) {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> powi&lt;2&gt;(powi&lt;Power/2&gt;(x));</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> x*<a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a>&lt;Power-1&gt;(x);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:116</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>

@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('AMReX__PCI_8H_source.html',''); initRe
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                             <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp, <a class="code" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a> op)</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> N_locs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(thecpc.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8">m_LocTags</a>-&gt;size());</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">bool</span> is_thread_safe = thecpc.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d">m_threadsafe_loc</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (is_thread_safe)</div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('AMReX__PCI_8H_source.html',''); initRe
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                             <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp, <a class="code" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a> op)</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> N_locs = thecpc.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8">m_LocTags</a>-&gt;size();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (N_locs == 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> is_thread_safe = thecpc.<a class="code" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d">m_threadsafe_loc</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">using</span> TagType = <a class="code" href="structamrex_1_1Array4CopyTag.html">Array4CopyTag&lt;value_type&gt;</a>;</div>

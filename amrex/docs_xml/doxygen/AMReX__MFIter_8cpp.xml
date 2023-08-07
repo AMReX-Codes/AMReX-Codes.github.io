@@ -2106,7 +2106,7 @@
 <codeline lineno="216"><highlight class="normal"><ref refid="namespaceamrex_1a8117ae9942e01445ea7fe62d2f190c64" kindref="member">MFIter::Finalize</ref><sp/>()</highlight></codeline>
 <codeline lineno="217"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>avoid<sp/>double<sp/>finalize</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(finalized)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(finalized)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>finalized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mark<sp/>as<sp/>invalid</highlight><highlight class="normal"></highlight></codeline>
@@ -2352,7 +2352,7 @@
 <codeline lineno="462"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>bx<sp/>=<sp/>tilebox();</highlight></codeline>
 <codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>ngv{a_ng};</highlight></codeline>
-<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a_ng<sp/>&lt;<sp/>-100)<sp/>ngv<sp/>=<sp/>fabArray.nGrowVect();</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a_ng<sp/>&lt;<sp/>-100)<sp/>{<sp/>ngv<sp/>=<sp/>fabArray.nGrowVect();<sp/>}</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>vbx<sp/>=<sp/>validbox();</highlight></codeline>
 <codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d=0;<sp/>d&lt;AMREX_SPACEDIM;<sp/>++d)<sp/>{</highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.smallEnd(d)<sp/>==<sp/>vbx.smallEnd(d))<sp/>{</highlight></codeline>
@@ -2385,7 +2385,7 @@
 <codeline lineno="495"><highlight class="normal">MFIter::grownnodaltilebox<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a_ng)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="496"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>ngv(a_ng);</highlight></codeline>
-<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a_ng<sp/>&lt;<sp/>-100)<sp/>ngv<sp/>=<sp/>fabArray.nGrowVect();</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a_ng<sp/>&lt;<sp/>-100)<sp/>{<sp/>ngv<sp/>=<sp/>fabArray.nGrowVect();<sp/>}</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>grownnodaltilebox(dir,<sp/>ngv);</highlight></codeline>
 <codeline lineno="500"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight></codeline>
@@ -2393,7 +2393,7 @@
 <codeline lineno="503"><highlight class="normal">MFIter::grownnodaltilebox<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir,<sp/>IntVect<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_ng)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="504"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dir<sp/>&lt;<sp/>AMREX_SPACEDIM);</highlight></codeline>
-<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dir<sp/>&lt;<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tilebox(IntVect::TheNodeVector(),<sp/>a_ng);</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dir<sp/>&lt;<sp/>0)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tilebox(IntVect::TheNodeVector(),<sp/>a_ng);<sp/>}</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tilebox(IntVect::TheDimensionVector(dir),<sp/>a_ng);</highlight></codeline>
 <codeline lineno="508"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"></highlight></codeline>
