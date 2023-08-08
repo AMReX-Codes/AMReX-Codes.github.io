@@ -563,7 +563,7 @@ $(document).ready(function(){initNavTree('AMReX__Array_8H_source.html',''); init
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00872"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af440a21a377ce21aced4b2360d34f09d">  872</a></span>&#160;    std::array&lt;T const*,AMREX_SPACEDIM&gt; <a class="code" href="namespaceamrex.html#a1c2496ecb409639e8639cf01881d0acb">GetArrOfConstPtrs</a> (<span class="keyword">const</span> std::array&lt;T*,AMREX_SPACEDIM&gt;&amp; a) noexcept</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    {</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        <span class="keywordflow">return</span> {{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(a.data(), a.data()+1, a.data()+2)}};</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        <span class="keywordflow">return</span> {{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(a[0], a[1], a[2])}};</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    }</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160; </div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
