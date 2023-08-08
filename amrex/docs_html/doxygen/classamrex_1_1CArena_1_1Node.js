@@ -6,6 +6,7 @@ var classamrex_1_1CArena_1_1Node =
     [ "block", "classamrex_1_1CArena_1_1Node.html#a644086075ae8e03798c85ae56205c953", null ],
     [ "coalescable", "classamrex_1_1CArena_1_1Node.html#a9d48386ac6a4c17d1e2b4eb8ad13e221", null ],
     [ "mem_stat", "classamrex_1_1CArena_1_1Node.html#a11142e8a0afd07d7a851c73c92afe0a8", null ],
+    [ "mem_stat", "classamrex_1_1CArena_1_1Node.html#a982d4802a2066548ebdef6bbe1864a24", null ],
     [ "operator<", "classamrex_1_1CArena_1_1Node.html#a3d53e0dac699c533be3ddb44eda51cd4", null ],
     [ "operator==", "classamrex_1_1CArena_1_1Node.html#a88b16dbe8f6f315955cdde15cbd71e7e", null ],
     [ "owner", "classamrex_1_1CArena_1_1Node.html#abef15ce1cbccdaa8dc7aa6a6bb4a0609", null ],

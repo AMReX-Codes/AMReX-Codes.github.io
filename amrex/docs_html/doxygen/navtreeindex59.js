@@ -1,5 +1,9 @@
 var NAVTREEINDEX59 =
 {
+"namespaceamrex.html#a1ffc05df0359580bd1fc89982cbaf264":[1,0,0,1297],
+"namespaceamrex.html#a20796a80df81ee204983811cc8a1b705":[1,0,0,1889],
+"namespaceamrex.html#a2079e72d4d0c28adef63dabe23fc630e":[1,0,0,2133],
+"namespaceamrex.html#a2081a3d338ad899832ab632c44a12eb5":[1,0,0,579],
 "namespaceamrex.html#a20f22656c1c33ddd41b9bf6ff16ce05a":[1,0,0,876],
 "namespaceamrex.html#a210e45f0c136c51a835032cc34cfb0a1":[1,0,0,1926],
 "namespaceamrex.html#a2116fd8f117dd8ebb01e6a3b99c7947e":[1,0,0,558],
@@ -245,9 +249,5 @@ var NAVTREEINDEX59 =
 "namespaceamrex.html#a41e90635b7223dba2b68e165ed924031":[1,0,0,1434],
 "namespaceamrex.html#a41eccb4f00e6cb720abc8eddc7b3544d":[1,0,0,1317],
 "namespaceamrex.html#a41fa60232e37cb8f8a8d11012a2d6e7a":[1,0,0,1408],
-"namespaceamrex.html#a4237359b0f955fdfe663f996ae1742ab":[1,0,0,1630],
-"namespaceamrex.html#a4252562789c375cc55a545cd278cf212":[1,0,0,1945],
-"namespaceamrex.html#a42624827c89b4341f0f95486188ba5c3":[1,0,0,732],
-"namespaceamrex.html#a4262e98515dcf57af2a075ccc914dba8":[1,0,0,1151],
-"namespaceamrex.html#a4263e1c84766d552c3e4dda3dadc9158":[1,0,0,1279]
+"namespaceamrex.html#a4237359b0f955fdfe663f996ae1742ab":[1,0,0,1630]
 };
