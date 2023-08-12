@@ -406,6 +406,7 @@ var hierarchy =
     [ "amrex::FabFactory< FArrayBox >", "classamrex_1_1FabFactory.html", [
       [ "amrex::EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html", null ]
     ] ],
+    [ "amrex::FabFillNoOp", "structamrex_1_1FabFillNoOp.html", null ],
     [ "amrex::FabInfo", "structamrex_1_1FabInfo.html", null ],
     [ "amrex::FABio", "classamrex_1_1FABio.html", [
       [ "amrex::FABio_8bit", "classamrex_1_1FABio__8bit.html", null ],
