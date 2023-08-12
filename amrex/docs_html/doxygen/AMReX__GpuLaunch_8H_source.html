@@ -258,41 +258,42 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#ac21b6d1625e2f56c27d364434a5c49f4">  157</a></span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#ac21b6d1625e2f56c27d364434a5c49f4">makeExecutionConfig</a> (Long N) noexcept</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="structamrex_1_1Gpu_1_1ExecutionConfig.html">ExecutionConfig</a> ec(dim3{}, dim3{});</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        ec.<a class="code" href="structamrex_1_1Gpu_1_1ExecutionConfig.html#a383b070cb13bc99de64062941d521149">numBlocks</a>.x = (<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(N,Long(1)) + MT - 1) / MT;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        ec.numThreads.x = MT;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(MT % <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a> == 0);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">return</span> ec;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> MT&gt;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    ExecutionConfig</div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a96329917c7544347d421e3a216fb58a1">  168</a></span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#ac21b6d1625e2f56c27d364434a5c49f4">makeExecutionConfig</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; box) noexcept</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="structamrex_1_1Gpu_1_1ExecutionConfig.html">ExecutionConfig</a> ec(dim3{}, dim3{});</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        ec.<a class="code" href="structamrex_1_1Gpu_1_1ExecutionConfig.html#a383b070cb13bc99de64062941d521149">numBlocks</a>.x = (<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(box.numPts(),Long(1)) + MT - 1) / MT;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        ec.numThreads.x = MT;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(MT % <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a> == 0);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> ec;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        Long numBlocks = (<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(N,Long(1)) + MT - 1) / MT;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">// ensure that blockDim.x*gridDim.x does not overflow</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        numBlocks = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(numBlocks, Long(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;unsigned int&gt;::max</a>()/MT));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">// ensure that the maximum grid size of 2^31-1 won&#39;t be exceeded</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        numBlocks = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(numBlocks, Long(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;int&gt;::max</a>()));</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        ec.numBlocks.x = numBlocks;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ec.numThreads.x = MT;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(MT % <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a> == 0);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> ec;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> MT&gt;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    ExecutionConfig</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu.html#a96329917c7544347d421e3a216fb58a1">  173</a></span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#ac21b6d1625e2f56c27d364434a5c49f4">makeExecutionConfig</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; box) noexcept</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> makeExecutionConfig&lt;MT&gt;(box.numPts());</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchMacrosG_8H.html">AMReX_GpuLaunchMacrosG.H</a>&gt;</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchFunctsG_8H.html">AMReX_GpuLaunchFunctsG.H</a>&gt;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchMacrosC_8H.html">AMReX_GpuLaunchMacrosC.H</a>&gt;</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchFunctsC_8H.html">AMReX_GpuLaunchFunctsC.H</a>&gt;</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunch_8nolint_8H.html">AMReX_GpuLaunch.nolint.H</a>&gt;</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__CTOParallelForImpl_8H.html">AMReX_CTOParallelForImpl.H</a>&gt;</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchMacrosG_8H.html">AMReX_GpuLaunchMacrosG.H</a>&gt;</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchFunctsG_8H.html">AMReX_GpuLaunchFunctsG.H</a>&gt;</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchMacrosC_8H.html">AMReX_GpuLaunchMacrosC.H</a>&gt;</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunchFunctsC_8H.html">AMReX_GpuLaunchFunctsC.H</a>&gt;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuLaunch_8nolint_8H.html">AMReX_GpuLaunch.nolint.H</a>&gt;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__CTOParallelForImpl_8H.html">AMReX_CTOParallelForImpl.H</a>&gt;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Algorithm_8H_html"><div class="ttname"><a href="AMReX__Algorithm_8H.html">AMReX_Algorithm.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html"><div class="ttname"><a href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
@@ -341,6 +342,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ac21b6d1625e2f56c27d364434a5c49f4"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ac21b6d1625e2f56c27d364434a5c49f4">amrex::Gpu::makeExecutionConfig</a></div><div class="ttdeci">ExecutionConfig makeExecutionConfig(Long N) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:157</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ae2cf1d72cec1f6929ea0405c70ce2f45"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ae2cf1d72cec1f6929ea0405c70ce2f45">amrex::Gpu::getThreadBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE Box getThreadBox(const Box &amp;bx, Long offset) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:104</div></div>
 <div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_aa64fc5cec19aa33eb07abd22a5e388de"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#aa64fc5cec19aa33eb07abd22a5e388de">amrex::SundialsUserFun::f0</a></div><div class="ttdeci">static int f0(realtype t, N_Vector y, N_Vector ydot, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:30</div></div>
+<div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">amrex::detail::min</a></div><div class="ttdeci">@ min</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:18</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:17</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a006c22eb1e141a0784faa415c00a49c4"><div class="ttname"><a href="namespaceamrex.html#a006c22eb1e141a0784faa415c00a49c4">amrex::launch_host</a></div><div class="ttdeci">void launch_host(L &amp;&amp;f0) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:64</div></div>
