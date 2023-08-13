@@ -1,5 +1,7 @@
 var NAVTREEINDEX81 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[2,0,0,0,1,0,1],
+"structamrex_1_1amrex__KSP.html":[2,0,0,401],
 "structamrex_1_1amrex__KSP.html#a68cac9efc3dadb1e51c33b9d726916e8":[2,0,0,401,5],
 "structamrex_1_1amrex__KSP.html#a86adf29edda60b11a0d52179a48c6dcc":[2,0,0,401,3],
 "structamrex_1_1amrex__KSP.html#ac9f5ff4629908ee4118f3e7ae1cf76bc":[2,0,0,401,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX81 =
 "unionAMREX__IPARSERSTYPE.html":[2,0,12],
 "unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac":[2,0,12,3],
 "unionAMREX__IPARSERSTYPE.html#a8105da3c7746493ffd665cd25bb19ca8":[2,0,12,5],
-"unionAMREX__IPARSERSTYPE.html#a99cdaa1f0d3cc968417ed03723f93d44":[2,0,12,1],
-"unionAMREX__IPARSERSTYPE.html#ac48b057f41120f01148091d4dabe428f":[2,0,12,0],
-"unionAMREX__IPARSERSTYPE.html#ad9dcbf264629390633902acf208145ba":[2,0,12,2]
+"unionAMREX__IPARSERSTYPE.html#a99cdaa1f0d3cc968417ed03723f93d44":[2,0,12,1]
 };
