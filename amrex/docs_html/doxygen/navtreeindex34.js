@@ -1,5 +1,16 @@
 var NAVTREEINDEX34 =
 {
+"classamrex_1_1DenseBins.html#ac7b31f16c880c16927e8a3e2e75c6481":[2,0,0,436,13],
+"classamrex_1_1DenseBins.html#ace91724777a08f267ca7515117ebe620":[2,0,0,436,3],
+"classamrex_1_1DenseBins.html#ad40e15a5e019a0a7afa527c6226e7675":[2,0,0,436,27],
+"classamrex_1_1DenseBins.html#ad70b443fd8e65a368e1fed776614b0e4":[2,0,0,436,26],
+"classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3":[2,0,0,436,17],
+"classamrex_1_1DenseBins.html#adc3312bc6833ee75d50cac14234e662b":[2,0,0,436,7],
+"classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924":[2,0,0,436,0],
+"classamrex_1_1DenseBins.html#af113e9e077a9aed3c6696adabcefa899":[2,0,0,436,23],
+"classamrex_1_1DenseBins.html#af1561b37e307d49631e3fc2ee1b68212":[2,0,0,436,22],
+"classamrex_1_1DenseBins.html#af98199a3fd0f724083761ddea28e4606":[2,0,0,436,16],
+"classamrex_1_1DeriveList.html":[2,0,0,24],
 "classamrex_1_1DeriveList.html#a037563cc456f0d1110303104c1caa678":[2,0,0,24,10],
 "classamrex_1_1DeriveList.html#a31ca60cd539cff86b71aa646f45cbcb6":[2,0,0,24,5],
 "classamrex_1_1DeriveList.html#a438fe416440bd85fb95b732dc8c2224f":[2,0,0,24,4],
@@ -238,16 +249,5 @@ var NAVTREEINDEX34 =
 "classamrex_1_1EB2_1_1GFab.html#aecb6512d999fbe92fe04a2982ef86b8a":[2,0,0,4,49,8],
 "classamrex_1_1EB2_1_1GFab.html#aeda8ad7ebda39d029e5e7253b9ee1b6d":[2,0,0,4,49,14],
 "classamrex_1_1EB2_1_1GFab.html#af4864d4b179756bbd81ac48e98f640c9":[2,0,0,4,49,10],
-"classamrex_1_1EB2_1_1GFab.html#af9797a5116b69e9eb6668727518fd88f":[2,0,0,4,49,4],
-"classamrex_1_1EB2_1_1GFab.html#afe9842c5d2fff8d3701db43a0a8762ab":[2,0,0,4,49,3],
-"classamrex_1_1EB2_1_1GShopLevel.html":[2,0,0,4,45],
-"classamrex_1_1EB2_1_1GShopLevel.html#a008434e6394b5ae980fc9aaab639cdf8":[2,0,0,4,45,2],
-"classamrex_1_1EB2_1_1GShopLevel.html#a014eda53f91496efc4cbf702c944ca00":[2,0,0,4,45,3],
-"classamrex_1_1EB2_1_1GShopLevel.html#a1c7eac75922b8dc60252b2f5612f94e4":[2,0,0,4,45,4],
-"classamrex_1_1EB2_1_1GShopLevel.html#a4c79b3b07e6bd33f132fa7030dd7d5ca":[2,0,0,4,45,1],
-"classamrex_1_1EB2_1_1GShopLevel.html#aa46078b91c8b535cdf6a212f061eb2a3":[2,0,0,4,45,0],
-"classamrex_1_1EB2_1_1GeometryShop.html":[2,0,0,4,2],
-"classamrex_1_1EB2_1_1GeometryShop.html#a1ae5ec19a6ac23d6aee924e0e628a5eb":[2,0,0,4,2,9],
-"classamrex_1_1EB2_1_1GeometryShop.html#a21626bdeb656074c2e675969aec678bb":[2,0,0,4,2,4],
-"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,2,15]
+"classamrex_1_1EB2_1_1GFab.html#af9797a5116b69e9eb6668727518fd88f":[2,0,0,4,49,4]
 };

@@ -124,6 +124,8 @@ Macros</h2></td></tr>
 <tr class="separator:af0d8b69cc9585ca09e00607a8ead0f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a8e9294d731b70d00a258e8a9d6d222"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuError_8H.html#a6a8e9294d731b70d00a258e8a9d6d222">AMREX_CUDA_SAFE_CALL</a>(call)</td></tr>
 <tr class="separator:a6a8e9294d731b70d00a258e8a9d6d222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b54260d06f5eb0f1fe5f7862962c4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuError_8H.html#aa4b54260d06f5eb0f1fe5f7862962c4a">AMREX_CURAND_SAFE_CALL</a>(x)</td></tr>
+<tr class="separator:aa4b54260d06f5eb0f1fe5f7862962c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff2d29ad26ba217734430c3d36f42dd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuError_8H.html#aff2d29ad26ba217734430c3d36f42dd1">AMREX_GPU_ERROR_CHECK</a>()&#160;&#160;&#160;<a class="el" href="namespaceamrex_1_1Gpu.html#a8e72d3661b320758c41e4a548b80beec">amrex::Gpu::ErrorCheck</a>(__FILE__, __LINE__)</td></tr>
 <tr class="separator:aff2d29ad26ba217734430c3d36f42dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -172,6 +174,28 @@ Variables</h2></td></tr>
 <div class="line"><a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">        amrex::Abort</a>(errStr); \</div>
 <div class="line">    }}</div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition:</b> AMReX.cpp:209</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa4b54260d06f5eb0f1fe5f7862962c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b54260d06f5eb0f1fe5f7862962c4a">&#9670;&nbsp;</a></span>AMREX_CURAND_SAFE_CALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_CURAND_SAFE_CALL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { <span class="keywordflow">if</span>((x)!=CURAND_STATUS_SUCCESS) { \</div>
+<div class="line">    std::string errStr(std::string(<span class="stringliteral">&quot;CURAND error in file &quot;</span>) + __FILE__  \</div>
+<div class="line">                       + <span class="stringliteral">&quot; line &quot;</span> + std::to_string(__LINE__));          <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">\</a></div>
+<div class="line"><a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">    amrex::Abort</a>(errStr); }} <span class="keywordflow">while</span>(0)</div>
 </div><!-- fragment -->
 </div>
 </div>

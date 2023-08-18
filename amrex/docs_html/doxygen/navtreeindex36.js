@@ -1,5 +1,16 @@
 var NAVTREEINDEX36 =
 {
+"classamrex_1_1EB2_1_1TranslationIF.html#ad60a8f2183833795feaa68311075a69f":[2,0,0,4,38,0],
+"classamrex_1_1EB2_1_1UnionIF.html":[2,0,0,4,40],
+"classamrex_1_1EB2_1_1UnionIF.html#a632fe276ada0d4f9325b521ec1507fa0":[2,0,0,4,40,2],
+"classamrex_1_1EB2_1_1UnionIF.html#a6fd43131f6c2086e402a05dd5b4f5e0d":[2,0,0,4,40,0],
+"classamrex_1_1EB2_1_1UnionIF.html#ac1f454172200f68f6572ca2b2bae01a4":[2,0,0,4,40,3],
+"classamrex_1_1EB2_1_1UnionIF.html#ad7d30bca0252b6df844781049ce9e96f":[2,0,0,4,40,1],
+"classamrex_1_1EBCellConservativeLinear.html":[2,0,0,384],
+"classamrex_1_1EBCellConservativeLinear.html#a1973ad32936dfb82245776b45e4247db":[2,0,0,384,1],
+"classamrex_1_1EBCellConservativeLinear.html#a47aef6594f54746b09c4230b68f4e978":[2,0,0,384,0],
+"classamrex_1_1EBCellFlag.html":[2,0,0,377],
+"classamrex_1_1EBCellFlag.html#a024616425bcecbfc85fa2d13135f04f8":[2,0,0,377,23],
 "classamrex_1_1EBCellFlag.html#a04138b2c02fa080cd6531cd7361a37a3":[2,0,0,377,18],
 "classamrex_1_1EBCellFlag.html#a0a1397794bc5591a597619e3632ad878":[2,0,0,377,47],
 "classamrex_1_1EBCellFlag.html#a12b461c8a170594d3f9ba3ea7cbedd12":[2,0,0,377,3],
@@ -238,16 +249,5 @@ var NAVTREEINDEX36 =
 "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a598f453d141e3c4a494e3e66d0f6aa37":[2,0,0,38,0,12],
 "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a6248c805a2c4965a0db817e5a302f701":[2,0,0,38,0,7],
 "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a696ccaf269d8a90f242321b54dd2d4d0":[2,0,0,38,0,11],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#a95fde6ed4cbd0d479c01ab85c85b05c7":[2,0,0,38,0,0],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#aa59001ba1d22901660c6b11236600175":[2,0,0,38,0,10],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#adf129595f3f9954c26bf412aa0089ec7":[2,0,0,38,0,9],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#ae9e899a6e621a194470e4c30fdb2810b":[2,0,0,38,0,8],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#af70f30880c5c75a565485bc4f588ac90":[2,0,0,38,0,3],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html":[2,0,0,38,1],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a02a3fc42ec877b30c62f546c68f89ba1":[2,0,0,38,1,1],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a0a96ab151cdade77a13d8742e58fced0":[2,0,0,38,1,2],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a0ee48a9c3d106d7f7c7e4f7c00d1f997":[2,0,0,38,1,7],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a3bd2e525c3ae032c8df6dfad15a4ee3f":[2,0,0,38,1,8],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a3e10daec10c4fe4ffb4c4dfc44191fae":[2,0,0,38,1,9],
-"classamrex_1_1ErrorRec_1_1ErrorFunc2.html#a4d92e57562f4077cc2e7d218ac39b540":[2,0,0,38,1,6]
+"classamrex_1_1ErrorRec_1_1ErrorFunc.html#a95fde6ed4cbd0d479c01ab85c85b05c7":[2,0,0,38,0,0]
 };

@@ -14,6 +14,8 @@ var AMReX__MultiFabUtil_8cpp =
     [ "average_node_to_cellcenter", "AMReX__MultiFabUtil_8cpp.html#ad64dcd62b16d9022d914f067d30d7918", null ],
     [ "computeDivergence", "AMReX__MultiFabUtil_8cpp.html#ab36700aa1e60f78cbb544a7593de37af", null ],
     [ "computeGradient", "AMReX__MultiFabUtil_8cpp.html#af1f7462a23b5cde85daacbd1d3a357f9", null ],
+    [ "FillRandom", "AMReX__MultiFabUtil_8cpp.html#a10bd6ff61966130ea99ab9faa410da13", null ],
+    [ "FillRandomNormal", "AMReX__MultiFabUtil_8cpp.html#a0b5cc6671c574fc82057046c73789ee5", null ],
     [ "FourthOrderInterpFromFineToCoarse", "AMReX__MultiFabUtil_8cpp.html#adde5cec8cf83a5e5970cf61cd12e6bb7", null ],
     [ "get_slice_data", "AMReX__MultiFabUtil_8cpp.html#a3a431197f206b148529308a7796d5039", null ],
     [ "makeFineMask", "AMReX__MultiFabUtil_8cpp.html#af97d55742a96cb9e934e06c45ec22f03", null ],

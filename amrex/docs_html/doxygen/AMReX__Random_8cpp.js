@@ -6,6 +6,8 @@ var AMReX__Random_8cpp =
     [ "BL_FORT_PROC_DECL", "AMReX__Random_8cpp.html#a7149b75200fd1c2399da882ca3a148bb", null ],
     [ "BL_FORT_PROC_DECL", "AMReX__Random_8cpp.html#a12c16cae3c80d3004856c006d2a4a2a8", null ],
     [ "DeallocateRandomSeedDevArray", "AMReX__Random_8cpp.html#abce0125a244f443854b1c4a2709c5990", null ],
+    [ "FillRandom", "AMReX__Random_8cpp.html#a2cd741b1ea369e4c69c1e47048fe4225", null ],
+    [ "FillRandomNormal", "AMReX__Random_8cpp.html#a9edda343dfe7f1dbbd5dcfc2095afac5", null ],
     [ "InitRandom", "AMReX__Random_8cpp.html#a1b2c12e9a133d26ba2bd4b978a95df44", null ],
     [ "Random", "AMReX__Random_8cpp.html#a384bf7a8791d85fe1ae4153eee61d71e", null ],
     [ "Random_int", "AMReX__Random_8cpp.html#a20796a80df81ee204983811cc8a1b705", null ],
@@ -16,5 +18,6 @@ var AMReX__Random_8cpp =
     [ "RestoreRandomState", "AMReX__Random_8cpp.html#ae45a9a3a96e46d7b15173894b25134fc", null ],
     [ "SaveRandomState", "AMReX__Random_8cpp.html#ad1b283df95b292f478597bc503170459", null ],
     [ "UniqueRandomSubset", "AMReX__Random_8cpp.html#aa2c1209819cd8dd79499c2b9f088120e", null ],
+    [ "gpu_rand_generator", "AMReX__Random_8cpp.html#ac50ac3d634bf065d58f0b0203fa6ef13", null ],
     [ "gpu_rand_state", "AMReX__Random_8cpp.html#ae5aa4a92b1c9940d028c38628ec7a866", null ]
 ];

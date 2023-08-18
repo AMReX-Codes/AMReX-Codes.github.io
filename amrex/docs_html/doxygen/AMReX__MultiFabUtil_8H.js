@@ -26,6 +26,8 @@ var AMReX__MultiFabUtil_8H =
     [ "cast", "AMReX__MultiFabUtil_8H.html#a24aa5b51c299dd1337df192681f47e0e", null ],
     [ "computeDivergence", "AMReX__MultiFabUtil_8H.html#ab36700aa1e60f78cbb544a7593de37af", null ],
     [ "computeGradient", "AMReX__MultiFabUtil_8H.html#af1f7462a23b5cde85daacbd1d3a357f9", null ],
+    [ "FillRandom", "AMReX__MultiFabUtil_8H.html#a10bd6ff61966130ea99ab9faa410da13", null ],
+    [ "FillRandomNormal", "AMReX__MultiFabUtil_8H.html#a0b5cc6671c574fc82057046c73789ee5", null ],
     [ "FourthOrderInterpFromFineToCoarse", "AMReX__MultiFabUtil_8H.html#adde5cec8cf83a5e5970cf61cd12e6bb7", null ],
     [ "get_cell_data", "AMReX__MultiFabUtil_8H.html#a2a50a85d7bbd84f5b4116132d9dc5815", null ],
     [ "get_line_data", "AMReX__MultiFabUtil_8H.html#a7f08bece47186514a8d7ec979e4b87ca", null ],
