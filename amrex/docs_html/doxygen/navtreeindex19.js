@@ -1,5 +1,10 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__SDCquadrature_8F90.html#af9d037887b4d9c8c4156bcab10d93e2a":[3,0,0,8,0,10],
+"AMReX__SDCstruct_8H.html":[3,0,0,8,2],
+"AMReX__SDCstruct_8H.html#aa4537c0cb365dd94581644db2d20ed83":[3,0,0,8,2,1],
+"AMReX__SDCstruct_8H_source.html":[3,0,0,8,2],
+"AMReX__SDCstruct_8cpp.html":[3,0,0,8,1],
 "AMReX__SPACE_8H.html":[3,0,0,2,243],
 "AMReX__SPACE_8H.html#a0b7ddb9849ee5fa527f9e01c94ca3b90":[3,0,0,2,243,10],
 "AMReX__SPACE_8H.html#a0f6e08da05c7a50aacffb4b0e9389705":[3,0,0,2,243,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__Version_8cpp.html#ad4158723bb78d3d5f19e396a20c0ce2d":[3,0,0,2,260,0],
 "AMReX__VisMFBuffer_8H.html":[3,0,0,2,263],
 "AMReX__VisMFBuffer_8H_source.html":[3,0,0,2,263],
-"AMReX__VisMF_8H.html":[3,0,0,2,262],
-"AMReX__VisMF_8H.html#a1637e435aecce22da819f6df77982d2f":[3,0,0,2,262,7],
-"AMReX__VisMF_8H.html#a35e6a4a987e55646e4f33c6827554dea":[3,0,0,2,262,8],
-"AMReX__VisMF_8H.html#aa3870bf45fd14f87c3674a996cae2752":[3,0,0,2,262,12],
-"AMReX__VisMF_8H.html#aa5838751a7a525b60158ebdae7e8919f":[3,0,0,2,262,13],
-"AMReX__VisMF_8H.html#aadb6da61ab59ea2923bdf326e791654a":[3,0,0,2,262,5]
+"AMReX__VisMF_8H.html":[3,0,0,2,262]
 };

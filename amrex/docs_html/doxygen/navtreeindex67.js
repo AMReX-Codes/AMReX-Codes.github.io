@@ -1,5 +1,12 @@
 var NAVTREEINDEX67 =
 {
+"namespaceamrex_1_1NonLocalBC.html#a4039bcfeee7e444019168686df8dfe36":[1,0,0,26,61],
+"namespaceamrex_1_1NonLocalBC.html#a4b44aa3d7a205826948ced4323d0be80":[1,0,0,26,21],
+"namespaceamrex_1_1NonLocalBC.html#a4ea4e6f4775e59312efdc7e5e42788c3":[1,0,0,26,38],
+"namespaceamrex_1_1NonLocalBC.html#a51fb0add78ab242015474585b0f7207e":[1,0,0,26,49],
+"namespaceamrex_1_1NonLocalBC.html#a569fc178d4aad983c5bdd14a8f69127e":[1,0,0,26,31],
+"namespaceamrex_1_1NonLocalBC.html#a56d136063b9c85d97111978faff29c87":[1,0,0,26,26],
+"namespaceamrex_1_1NonLocalBC.html#a57dca62d2b38257c9da61d6a1f0ed9d8":[1,0,0,26,50],
 "namespaceamrex_1_1NonLocalBC.html#a5984b6f2bffd16fd4a1737326e32aef0":[1,0,0,26,45],
 "namespaceamrex_1_1NonLocalBC.html#a5ccb53a5bfee4c68f588b17d3642c2c5":[1,0,0,26,53],
 "namespaceamrex_1_1NonLocalBC.html#a5e37435a999c0eb51e29139501d7ca49":[1,0,0,26,56],
@@ -242,12 +249,5 @@ var NAVTREEINDEX67 =
 "namespaceamrex_1_1ParallelDescriptor.html#adc47cf4d3591db8037d74afe5bdfcbb0":[1,0,0,33,65],
 "namespaceamrex_1_1ParallelDescriptor.html#adc6941c4330302993547bfb867a1df31":[1,0,0,33,56],
 "namespaceamrex_1_1ParallelDescriptor.html#ae1fd5fb334fd246fe4509d9809c734ef":[1,0,0,33,93],
-"namespaceamrex_1_1ParallelDescriptor.html#ae4f551d40d14c8bbfaff946737d15abf":[1,0,0,33,23],
-"namespaceamrex_1_1ParallelDescriptor.html#ae5535234864d34bb770977848d5a3db9":[1,0,0,33,94],
-"namespaceamrex_1_1ParallelDescriptor.html#ae6927a6804e22fedb86c1fe19d6567fc":[1,0,0,33,8],
-"namespaceamrex_1_1ParallelDescriptor.html#ae7e03fbd86dab31d19593df2ad5adde6":[1,0,0,33,156],
-"namespaceamrex_1_1ParallelDescriptor.html#ae9b60ea81eb861f883e02edaa5876d08":[1,0,0,33,153],
-"namespaceamrex_1_1ParallelDescriptor.html#aed1beec464cfce027998bc7a249a09b5":[1,0,0,33,70],
-"namespaceamrex_1_1ParallelDescriptor.html#aef0dcb327a050f0a04520c31486687a8":[1,0,0,33,85],
-"namespaceamrex_1_1ParallelDescriptor.html#af2f4fc272303fdc7f363d88ffd292c4c":[1,0,0,33,67]
+"namespaceamrex_1_1ParallelDescriptor.html#ae4f551d40d14c8bbfaff946737d15abf":[1,0,0,33,23]
 };
