@@ -690,16 +690,16 @@ var hierarchy =
     [ "amrex::ForkJoin::MFFork", "structamrex_1_1ForkJoin_1_1MFFork.html", null ],
     [ "amrex::MFInfo", "structamrex_1_1MFInfo.html", null ],
     [ "amrex::MFIter", "classamrex_1_1MFIter.html", [
-      [ "amrex::ParIterBase_impl< false, T_ParticleType, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase__impl.html", [
-        [ "amrex::ParIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIter__impl.html", null ]
+      [ "amrex::ParIterBase_impl< true, T_ParticleType, 0, 0, DefaultAllocator, DefaultAssignor >", "classamrex_1_1ParIterBase__impl.html", [
+        [ "amrex::ParConstIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1ParConstIter__impl.html", null ]
       ] ],
-      [ "amrex::ParIterBase_impl< true, T_ParticleType, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase__impl.html", [
-        [ "amrex::ParConstIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParConstIter__impl.html", null ]
+      [ "amrex::ParIterBase_impl< false, T_ParticleType, 0, 0, DefaultAllocator, DefaultAssignor >", "classamrex_1_1ParIterBase__impl.html", [
+        [ "amrex::ParIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1ParIter__impl.html", null ]
       ] ],
       [ "amrex::FabSetIter", "classamrex_1_1FabSetIter.html", null ],
       [ "amrex::FillPatchIterator", "classamrex_1_1FillPatchIterator.html", null ],
       [ "amrex::MultiMaskIter", "classamrex_1_1MultiMaskIter.html", null ],
-      [ "amrex::ParIterBase_impl< is_const, T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIterBase__impl.html", null ]
+      [ "amrex::ParIterBase_impl< is_const, T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1ParIterBase__impl.html", null ]
     ] ],
     [ "amrex::MFItInfo", "structamrex_1_1MFItInfo.html", null ],
     [ "amrex::Minimum< T >", "structamrex_1_1Minimum.html", null ],
