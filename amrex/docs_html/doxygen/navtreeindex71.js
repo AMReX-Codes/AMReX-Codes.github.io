@@ -150,7 +150,7 @@ var NAVTREEINDEX71 =
 "structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[2,0,0,482,3],
 "structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f":[2,0,0,482,0],
 "structamrex_1_1AmrAssignGrid.html#a89b80b8bcfbde11575362e5c6f6ea420":[2,0,0,482,2],
-"structamrex_1_1AmrAssignGrid.html#abd759935ef686d942139a4b78af85870":[2,0,0,482,1],
+"structamrex_1_1AmrAssignGrid.html#ad3a3cdbea65412db0766f9377e4f6662":[2,0,0,482,1],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html":[2,0,0,405,0],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a036873b2f2c1d06f877458c6e3369f13":[2,0,0,405,0,0],
 "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a18e4c53a74f5623786c5dadbe087f209":[2,0,0,405,0,3],
