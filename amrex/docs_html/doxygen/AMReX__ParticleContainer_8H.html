@@ -170,7 +170,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleInitType.html">amrex::ParticleInitType&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct used to pass initial data into the various Init methods. This struct is used to pass initial data into the various Init methods of the particle container. That data should be initialized in the order real struct data, int struct data, real array data, int array data. If fewer components are specified than the template parameters specify for, a given component, then the extra values will be set to zero. If more components are specified, it is a compile-time error.  <a href="structamrex_1_1ParticleInitType.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured AMR hierarchy.  <a href="classamrex_1_1ParticleContainer__impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -181,9 +181,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a1543c22ecbd1f8946a5d7b37d08fd7f8"><td class="memTemplParams" colspan="2">template&lt;int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </td></tr>
-<tr class="memitem:a1543c22ecbd1f8946a5d7b37d08fd7f8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1543c22ecbd1f8946a5d7b37d08fd7f8">amrex::ParticleContainerPureSoA</a> = ParticleContainer_impl&lt; SoAParticle&lt; T_NArrayReal, T_NArrayInt &gt;, T_NArrayReal, T_NArrayInt, Allocator &gt;</td></tr>
-<tr class="separator:a1543c22ecbd1f8946a5d7b37d08fd7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf16cda543680572b2d60a5518b7fb55"><td class="memTemplParams" colspan="2">template&lt;int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class CellAssignor  = DefaultAssignor&gt; </td></tr>
+<tr class="memitem:adf16cda543680572b2d60a5518b7fb55"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#adf16cda543680572b2d60a5518b7fb55">amrex::ParticleContainerPureSoA</a> = ParticleContainer_impl&lt; SoAParticle&lt; T_NArrayReal, T_NArrayInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</td></tr>
+<tr class="separator:adf16cda543680572b2d60a5518b7fb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

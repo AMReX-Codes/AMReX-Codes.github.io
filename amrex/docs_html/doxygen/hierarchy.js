@@ -307,6 +307,7 @@ var hierarchy =
     [ "amrex::DataLayoutPolicyRaw< ParticleType< Types... >, DataLayout::AoS >", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html", null ],
     [ "amrex::DataLayoutPolicyRaw< ParticleType< Types... >, DataLayout::SoA >", "structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html", null ],
     [ "amrex::DataServices", "classamrex_1_1DataServices.html", null ],
+    [ "amrex::DefaultAssignor", "structamrex_1_1DefaultAssignor.html", null ],
     [ "amrex::Gpu::Deleter", "structamrex_1_1Gpu_1_1Deleter.html", null ],
     [ "amrex::DenseBinIteratorFactory< T >", "structamrex_1_1DenseBinIteratorFactory.html", null ],
     [ "amrex::DenseBins< T >", "classamrex_1_1DenseBins.html", null ],
@@ -830,10 +831,10 @@ var hierarchy =
     [ "amrex::ParticleBufferMap", "classamrex_1_1ParticleBufferMap.html", null ],
     [ "amrex::ParticleCommData", "structamrex_1_1ParticleCommData.html", null ],
     [ "amrex::ParticleContainerBase", "classamrex_1_1ParticleContainerBase.html", [
-      [ "amrex::ParticleContainer_impl< T_ParticleType, 0, 0, DefaultAllocator >", "classamrex_1_1ParticleContainer__impl.html", [
-        [ "amrex::AmrParticleContainer_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1AmrParticleContainer__impl.html", null ]
+      [ "amrex::ParticleContainer_impl< T_ParticleType, 0, 0, DefaultAllocator, DefaultAssignor >", "classamrex_1_1ParticleContainer__impl.html", [
+        [ "amrex::AmrParticleContainer_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1AmrParticleContainer__impl.html", null ]
       ] ],
-      [ "amrex::ParticleContainer_impl< T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator >", "classamrex_1_1ParticleContainer__impl.html", [
+      [ "amrex::ParticleContainer_impl< T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor >", "classamrex_1_1ParticleContainer__impl.html", [
         [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >", "classamrex_1_1NeighborParticleContainer.html", null ],
         [ "amrex::TracerParticleContainer", "classamrex_1_1TracerParticleContainer.html", [
           [ "amrex::AmrTracerParticleContainer", "classamrex_1_1AmrTracerParticleContainer.html", null ]

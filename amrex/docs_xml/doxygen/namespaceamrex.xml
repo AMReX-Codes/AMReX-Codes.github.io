@@ -473,6 +473,7 @@
     <innerclass refid="structamrex_1_1ParticleTile" prot="public">amrex::ParticleTile</innerclass>
     <innerclass refid="structamrex_1_1BinMapper" prot="public">amrex::BinMapper</innerclass>
     <innerclass refid="structamrex_1_1GetParticleBin" prot="public">amrex::GetParticleBin</innerclass>
+    <innerclass refid="structamrex_1_1DefaultAssignor" prot="public">amrex::DefaultAssignor</innerclass>
     <innerclass refid="structamrex_1_1SparseBinIteratorFactory" prot="public">amrex::SparseBinIteratorFactory</innerclass>
     <innerclass refid="classamrex_1_1SparseBins" prot="public">amrex::SparseBins</innerclass>
     <innerclass refid="structamrex_1_1StructOfArrays" prot="public">amrex::StructOfArrays</innerclass>
@@ -2475,7 +2476,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H" line="23" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H" bodystart="27" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespaceamrex_1a627d8e166404664a72a94d6d65a77424" prot="public" static="no">
+      <memberdef kind="typedef" id="namespaceamrex_1a419832e55be898fd5de9051fdf08cb05" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -2506,9 +2507,13 @@
             <defname>Allocator</defname>
             <defval>DefaultAllocator</defval>
           </param>
+          <param>
+            <type>class CellAssignor</type>
+            <defval>DefaultAssignor</defval>
+          </param>
         </templateparamlist>
-        <type><ref refid="classamrex_1_1AmrParticleContainer__impl" kindref="compound">AmrParticleContainer_impl</ref>&lt; <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator &gt;</type>
-        <definition>using amrex::AmrParticleContainer = typedef AmrParticleContainer_impl&lt;Particle&lt;T_NStructReal, T_NStructInt&gt;, T_NArrayReal, T_NArrayInt, Allocator&gt;</definition>
+        <type><ref refid="classamrex_1_1AmrParticleContainer__impl" kindref="compound">AmrParticleContainer_impl</ref>&lt; <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</type>
+        <definition>using amrex::AmrParticleContainer = typedef AmrParticleContainer_impl&lt;Particle&lt;T_NStructReal, T_NStructInt&gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor&gt;</definition>
         <argsstring></argsstring>
         <name>AmrParticleContainer</name>
         <briefdescription>
@@ -3587,7 +3592,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson.H" line="1011" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson.H" bodystart="1011" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespaceamrex_1a6bed54c912b2795724c1d3c3ba082651" prot="public" static="no">
+      <memberdef kind="typedef" id="namespaceamrex_1a7c419a2c3aef781f1415b7ebd1f138d0" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -3618,9 +3623,13 @@
             <defname>Allocator</defname>
             <defval>DefaultAllocator</defval>
           </param>
+          <param>
+            <type>class CellAssignor</type>
+            <defval>DefaultAssignor</defval>
+          </param>
         </templateparamlist>
-        <type><ref refid="classamrex_1_1ParticleContainer__impl" kindref="compound">ParticleContainer_impl</ref>&lt; <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator &gt;</type>
-        <definition>using amrex::ParticleContainer = typedef ParticleContainer_impl&lt;Particle&lt;T_NStructReal, T_NStructInt&gt;, T_NArrayReal, T_NArrayInt, Allocator&gt;</definition>
+        <type><ref refid="classamrex_1_1ParticleContainer__impl" kindref="compound">ParticleContainer_impl</ref>&lt; <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; T_NStructReal, T_NStructInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</type>
+        <definition>using amrex::ParticleContainer = typedef ParticleContainer_impl&lt;Particle&lt;T_NStructReal, T_NStructInt&gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor&gt;</definition>
         <argsstring></argsstring>
         <name>ParticleContainer</name>
         <briefdescription>
@@ -3629,7 +3638,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="24" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="26" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1ade44c40744fada09d2f74b0fc3018ed0" prot="public" static="no">
         <templateparamlist>
@@ -3677,7 +3686,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="254" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="254" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="256" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="256" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a015a4c9dbff75fec4081981d1ac471e4" prot="public" static="no">
         <templateparamlist>
@@ -3715,7 +3724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="258" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="258" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="260" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="260" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a2d305b9139fd71b059b3ccc82e4daccb" prot="public" static="no">
         <templateparamlist>
@@ -3759,7 +3768,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="262" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="262" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="264" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="264" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a0bb485c3fc03e02b765bb6954b292455" prot="public" static="no">
         <templateparamlist>
@@ -3790,7 +3799,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="265" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="265" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="267" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="267" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a49ef2da66720ea948b502abd26ba40c1" prot="public" static="no">
         <templateparamlist>
@@ -3834,7 +3843,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="269" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="269" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="271" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="271" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a76cd5e059c7084327b5aaf5385c58162" prot="public" static="no">
         <templateparamlist>
@@ -3865,9 +3874,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="272" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="272" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="274" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="274" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="namespaceamrex_1a1543c22ecbd1f8946a5d7b37d08fd7f8" prot="public" static="no">
+      <memberdef kind="typedef" id="namespaceamrex_1adf16cda543680572b2d60a5518b7fb55" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -3885,9 +3894,13 @@
             <defname>Allocator</defname>
             <defval>DefaultAllocator</defval>
           </param>
+          <param>
+            <type>class CellAssignor</type>
+            <defval>DefaultAssignor</defval>
+          </param>
         </templateparamlist>
-        <type><ref refid="classamrex_1_1ParticleContainer__impl" kindref="compound">ParticleContainer_impl</ref>&lt; <ref refid="structamrex_1_1SoAParticle" kindref="compound">SoAParticle</ref>&lt; T_NArrayReal, T_NArrayInt &gt;, T_NArrayReal, T_NArrayInt, Allocator &gt;</type>
-        <definition>using amrex::ParticleContainerPureSoA = typedef ParticleContainer_impl&lt;SoAParticle&lt;T_NArrayReal, T_NArrayInt&gt;, T_NArrayReal, T_NArrayInt, Allocator&gt;</definition>
+        <type><ref refid="classamrex_1_1ParticleContainer__impl" kindref="compound">ParticleContainer_impl</ref>&lt; <ref refid="structamrex_1_1SoAParticle" kindref="compound">SoAParticle</ref>&lt; T_NArrayReal, T_NArrayInt &gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor &gt;</type>
+        <definition>using amrex::ParticleContainerPureSoA = typedef ParticleContainer_impl&lt;SoAParticle&lt;T_NArrayReal, T_NArrayInt&gt;, T_NArrayReal, T_NArrayInt, Allocator, CellAssignor&gt;</definition>
         <argsstring></argsstring>
         <name>ParticleContainerPureSoA</name>
         <briefdescription>
@@ -3896,7 +3909,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="1400" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="1400" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="1402" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="1402" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a2172ed493dfadbd34d5cdb72995f96af" prot="public" static="no">
         <type><ref refid="namespaceamrex_1a49ef2da66720ea948b502abd26ba40c1" kindref="member">ParIter</ref>&lt; AMREX_SPACEDIM &gt;</type>
@@ -25213,6 +25226,40 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchGlobal.H" line="15" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchGlobal.H" bodystart="15" bodyend="16"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aebdb1061e38b083e817f1450d9aef34c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>amrex_launch_bounds_max_threads</declname>
+            <defname>amrex_launch_bounds_max_threads</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>min_blocks</declname>
+            <defname>min_blocks</defname>
+          </param>
+          <param>
+            <type>class L</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>amrex::__launch_bounds__</definition>
+        <argsstring>(amrex_launch_bounds_max_threads, min_blocks) AMREX_GPU_GLOBAL void launch_global(L f0)</argsstring>
+        <name>__launch_bounds__</name>
+        <param>
+          <type>amrex_launch_bounds_max_threads</type>
+        </param>
+        <param>
+          <type>min_blocks</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchGlobal.H" line="19" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchGlobal.H" bodystart="19" bodyend="20"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -44575,7 +44622,7 @@ Returns the index of the first element for which f is 0. </para>
         <argsstring>(const ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt; &amp;pc, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, conduit::Node &amp;res, const std::string &amp;topology_name)</argsstring>
         <name>ParticleContainerToBlueprint</name>
         <param>
-          <type>const <ref refid="namespaceamrex_1a6bed54c912b2795724c1d3c3ba082651" kindref="member">ParticleContainer</ref>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7c419a2c3aef781f1415b7ebd1f138d0" kindref="member">ParticleContainer</ref>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt; &amp;</type>
           <declname>pc</declname>
         </param>
         <param>
@@ -69051,7 +69098,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="578" declcolumn="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="593" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac6d35da48f520c8ae3f429aee03601c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -69072,7 +69119,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="580" declcolumn="8"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="595" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acad483c5f0e30f9cd471ad05e1920320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -69614,7 +69661,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="381" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="381" bodyend="389"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="395" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="395" bodyend="403"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8d4982679d65bfe0ea15633d2c6bbca1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -69656,9 +69703,9 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="393" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="393" bodyend="428"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="407" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="407" bodyend="442"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a866fe0479b95fae68d4728835bf6ea68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1acc32428f7be3f26ac16d5089365ca7a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename PTile</type>
@@ -69666,10 +69713,13 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <param>
             <type>typename PLocator</type>
           </param>
+          <param>
+            <type>typename CellAssignor</type>
+          </param>
         </templateparamlist>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>int amrex::partitionParticlesByDest</definition>
-        <argsstring>(PTile &amp;ptile, const PLocator &amp;ploc, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;plo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;phi, const GpuArray&lt; ParticleReal, AMREX_SPACEDIM &gt; &amp;rlo, const GpuArray&lt; ParticleReal, AMREX_SPACEDIM &gt; &amp;rhi, const GpuArray&lt; int, AMREX_SPACEDIM &gt; &amp;is_per, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</argsstring>
+        <argsstring>(PTile &amp;ptile, const PLocator &amp;ploc, CellAssignor &amp;&amp;assignor, const ParticleBufferMap &amp;pmap, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;plo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;phi, const GpuArray&lt; ParticleReal, AMREX_SPACEDIM &gt; &amp;rlo, const GpuArray&lt; ParticleReal, AMREX_SPACEDIM &gt; &amp;rhi, const GpuArray&lt; int, AMREX_SPACEDIM &gt; &amp;is_per, int lev, int gid, int, int lev_min, int lev_max, int nGrow, bool remove_negative)</argsstring>
         <name>partitionParticlesByDest</name>
         <param>
           <type>PTile &amp;</type>
@@ -69678,6 +69728,10 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         <param>
           <type>const PLocator &amp;</type>
           <declname>ploc</declname>
+        </param>
+        <param>
+          <type>CellAssignor &amp;&amp;</type>
+          <declname>assignor</declname>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1ParticleBufferMap" kindref="compound">ParticleBufferMap</ref> &amp;</type>
@@ -69736,7 +69790,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="434" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="434" bodyend="552"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="448" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="448" bodyend="567"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac8512b687a529806d0f382cf7c9eee97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -69765,7 +69819,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="557" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="557" bodyend="566"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="572" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="572" bodyend="581"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2a6f51f01e9f0350a8b447ee451d0efb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -69787,7 +69841,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="569" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="569" bodyend="576"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="584" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="584" bodyend="591"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2e4af4bb3015a4534ca0efc19aba6dcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -69824,7 +69878,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="596" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="596" bodyend="675"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="611" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="611" bodyend="690"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad434592fa38d501d9db9bfb648bb9140" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -69869,7 +69923,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="678" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="678" bodyend="716"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="693" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="693" bodyend="731"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1983ce5560b8e4e34d4f0a8ade1fa640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

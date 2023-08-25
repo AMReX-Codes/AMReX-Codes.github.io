@@ -700,6 +700,7 @@ var annotated_dup =
       [ "ParticleTile", "structamrex_1_1ParticleTile.html", "structamrex_1_1ParticleTile" ],
       [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
       [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
+      [ "DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
       [ "SparseBinIteratorFactory", "structamrex_1_1SparseBinIteratorFactory.html", "structamrex_1_1SparseBinIteratorFactory" ],
       [ "SparseBins", "classamrex_1_1SparseBins.html", "classamrex_1_1SparseBins" ],
       [ "StructOfArrays", "structamrex_1_1StructOfArrays.html", "structamrex_1_1StructOfArrays" ],

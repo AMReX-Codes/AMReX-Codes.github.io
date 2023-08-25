@@ -2,6 +2,7 @@ var AMReX__ParticleUtil_8H =
 [
     [ "BinMapper", "structamrex_1_1BinMapper.html", "structamrex_1_1BinMapper" ],
     [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
+    [ "DefaultAssignor", "structamrex_1_1DefaultAssignor.html", "structamrex_1_1DefaultAssignor" ],
     [ "clearEmptyEntries", "AMReX__ParticleUtil_8H.html#aece8b1e2716e84a5261e988b9e9b1ef2", null ],
     [ "computeNeighborProcs", "AMReX__ParticleUtil_8H.html#ac6d35da48f520c8ae3f429aee03601c9", null ],
     [ "computeRefFac", "AMReX__ParticleUtil_8H.html#ad2e9cbb8f28bbbba7378ec7bf4654b89", null ],
@@ -17,7 +18,7 @@ var AMReX__ParticleUtil_8H =
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a9624cde7b9ad11a1692714a8a2cf4d5c", null ],
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a16b2ad610aeda065996254dcb64e1210", null ],
     [ "numTilesInBox", "AMReX__ParticleUtil_8H.html#a77b016483c8263c1a67e93d79d31da4c", null ],
-    [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#a866fe0479b95fae68d4728835bf6ea68", null ],
+    [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#acc32428f7be3f26ac16d5089365ca7a8", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ad434592fa38d501d9db9bfb648bb9140", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#a2e4af4bb3015a4534ca0efc19aba6dcf", null ],
     [ "SameIteratorsOK", "AMReX__ParticleUtil_8H.html#ac8512b687a529806d0f382cf7c9eee97", null ]

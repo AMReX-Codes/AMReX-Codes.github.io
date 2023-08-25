@@ -3,7 +3,7 @@ var structamrex_1_1AssignGrid =
     [ "AssignGrid", "structamrex_1_1AssignGrid.html#a1bd70aaccbb5c15a1663392b4c03360c", null ],
     [ "AssignGrid", "structamrex_1_1AssignGrid.html#a24db83c35c302d84990f03e69c03df17", null ],
     [ "operator()", "structamrex_1_1AssignGrid.html#a9419d75629148fc18d2272e774ec5fda", null ],
-    [ "operator()", "structamrex_1_1AssignGrid.html#aeeeff45d30fbcfa02cf857a230de1333", null ],
+    [ "operator()", "structamrex_1_1AssignGrid.html#a07489dcdb2a5056009496744bd5495a9", null ],
     [ "m_bif", "structamrex_1_1AssignGrid.html#a77181b274a07f3858b98e49e102d95b7", null ],
     [ "m_bin_size", "structamrex_1_1AssignGrid.html#a3bf69089e03f40d7b20e53cee6099727", null ],
     [ "m_domain", "structamrex_1_1AssignGrid.html#a63782cb4dceff5b3b6df900b00e1ba81", null ],

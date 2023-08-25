@@ -1,5 +1,8 @@
 var NAVTREEINDEX73 =
 {
+"structamrex_1_1BlockMutex.html#a5dd0ffbdeea32e60081285deaf2923ec":[2,0,0,92,8],
+"structamrex_1_1BlockMutex.html#a6ecc59b2420e534d8288d4dbc46bcb72":[2,0,0,92,1],
+"structamrex_1_1BlockMutex.html#ab5a49fbd49c206ff3f03ee616e60b990":[2,0,0,92,9],
 "structamrex_1_1BlockMutex.html#abd55deb11f6e1a89fa7e6ba517c581ff":[2,0,0,92,7],
 "structamrex_1_1BlockMutex.html#ad0e65d9bf77725b6bad2a6794d6e2fee":[2,0,0,92,5],
 "structamrex_1_1BlockMutex.html#adbef3193b3d4efdeacc00a4c0bf0d396":[2,0,0,92,4],
@@ -43,8 +46,8 @@ var NAVTREEINDEX73 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[2,0,0,485,20],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[2,0,0,485,13],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[2,0,0,485,7],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[2,0,0,485,3],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[2,0,0,485,4],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[2,0,0,485,3],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[2,0,0,485,1],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[2,0,0,485,18],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[2,0,0,485,5],
@@ -124,6 +127,8 @@ var NAVTREEINDEX73 =
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#aac6b529d04666c7ab12e389631ddc1e0":[2,0,0,465,1],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ab1aeeebdc685a58e0b7442c5530421ed":[2,0,0,465,8],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#ae6c55b3e29153895034d41ff9b7fb6a7":[2,0,0,465,6],
+"structamrex_1_1DefaultAssignor.html":[2,0,0,490],
+"structamrex_1_1DefaultAssignor.html#a045213828ba94399e0ae088919d31c4c":[2,0,0,490,0],
 "structamrex_1_1DefinitelyNotHostRunnable.html":[2,0,0,257],
 "structamrex_1_1DenseBinIteratorFactory.html":[2,0,0,435],
 "structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625":[2,0,0,435,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX73 =
 "structamrex_1_1FBData.html#a8a3cfe25482c47ca2e7bef67a9012713":[2,0,0,121,3],
 "structamrex_1_1FBData.html#a938e0208e00afba91947616b5e70d600":[2,0,0,121,12],
 "structamrex_1_1FBData.html#ac37fd86847fa215e7b422a70cb40d62d":[2,0,0,121,9],
-"structamrex_1_1FBData.html#ac562fa064a61bafbf187dbf6f37d00ce":[2,0,0,121,8],
-"structamrex_1_1FBData.html#acaa3ee8877ff8fb497dc7bf091870075":[2,0,0,121,5],
-"structamrex_1_1FBData.html#ad2ab165dff9bdbdedaf65405a2bee07a":[2,0,0,121,1],
-"structamrex_1_1FBData.html#af44e5964682abeb59937bec1038cdc9e":[2,0,0,121,10],
-"structamrex_1_1FabArrayBase_1_1BDKey.html":[2,0,0,124,0],
-"structamrex_1_1FabArrayBase_1_1BDKey.html#a2bbbd3ee02d682c985d8f2dfb744bf10":[2,0,0,124,0,1]
+"structamrex_1_1FBData.html#ac562fa064a61bafbf187dbf6f37d00ce":[2,0,0,121,8]
 };

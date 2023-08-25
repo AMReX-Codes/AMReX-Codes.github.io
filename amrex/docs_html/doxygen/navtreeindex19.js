@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__SDCquadrature_8F90.html#ae2185088b6449f7811b072576236dabd":[3,0,0,8,0,2],
 "AMReX__SDCquadrature_8F90.html#af9d037887b4d9c8c4156bcab10d93e2a":[3,0,0,8,0,10],
 "AMReX__SDCstruct_8H.html":[3,0,0,8,2],
 "AMReX__SDCstruct_8H.html#aa4537c0cb365dd94581644db2d20ed83":[3,0,0,8,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__Version_8cpp.html":[3,0,0,2,260],
 "AMReX__Version_8cpp.html#ad4158723bb78d3d5f19e396a20c0ce2d":[3,0,0,2,260,0],
 "AMReX__VisMFBuffer_8H.html":[3,0,0,2,263],
-"AMReX__VisMFBuffer_8H_source.html":[3,0,0,2,263],
-"AMReX__VisMF_8H.html":[3,0,0,2,262]
+"AMReX__VisMFBuffer_8H_source.html":[3,0,0,2,263]
 };
