@@ -12,11 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7002dc89"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -97,7 +97,7 @@
            <div itemprop="articleBody">
              
   <section id="forkjoin">
-<span id="tutorials-forkjoin"></span><h1>Forkjoin<a class="headerlink" href="#forkjoin" title="Permalink to this heading"></a></h1>
+<span id="tutorials-forkjoin"></span><h1>Forkjoin<a class="headerlink" href="#forkjoin" title="Link to this heading"></a></h1>
 <p>There are two examples in the Tutorials/ForkJoin directory.</p>
 <p><strong>ForkJoin/Simple</strong>: demonstrates how to construct a <code class="docutils literal notranslate"><span class="pre">ForkJoin</span></code> object, specify
 configuration parameters, register MultiFabs with different access
@@ -107,7 +107,7 @@ including nested fork-joins, heterogeneous tasks, customized MultiFab
 component splitting, and reusing <code class="docutils literal notranslate"><span class="pre">ForkJoin</span></code> objects for multiple
 invocations.</p>
 <section id="general-concepts">
-<h2><strong>General Concepts</strong><a class="headerlink" href="#general-concepts" title="Permalink to this heading"></a></h2>
+<h2><strong>General Concepts</strong><a class="headerlink" href="#general-concepts" title="Link to this heading"></a></h2>
 <p>An AMReX program consists of a set of MPI ranks cooperating together on
 distributed data.
 Typically, all of the ranks in a job compute in a bulk-synchronous,
@@ -123,7 +123,7 @@ After all of the forked child tasks complete, they synchronize
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Example of a fork-join operation where the parent task’s MPI processes (ranks) are
 split into two independent child tasks that execute in parallel and
-then join to resume execution of the parent task.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+then join to resume execution of the parent task.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The fork-join operation can also be invoked in a nested fashion,
@@ -136,7 +136,7 @@ large communication overheads.</p>
 <a class="reference internal image-reference" href="_images/nested_fork_join_tasks.png"><img alt="Nested Fork-Join Tasks" src="_images/nested_fork_join_tasks.png" style="width: 436.8px; height: 589.6px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Example of nested fork-join operations where a child task is further
-split into more subtasks.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+split into more subtasks.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The fork-join operation is accomplished by:</p>
@@ -153,7 +153,7 @@ other during subtask collectives (e.g. for <code class="docutils literal notrans
 in the root task.</p>
 </section>
 <section id="forkjoin-simple">
-<h2><strong>ForkJoin/Simple</strong><a class="headerlink" href="#forkjoin-simple" title="Permalink to this heading"></a></h2>
+<h2><strong>ForkJoin/Simple</strong><a class="headerlink" href="#forkjoin-simple" title="Link to this heading"></a></h2>
 <p>The main function in this tutorial is in <code class="docutils literal notranslate"><span class="pre">MyTest.cpp:runTest()</span></code>.
 It does the following things:</p>
 <p>1. Create a <code class="docutils literal notranslate"><span class="pre">ForkJoin</span></code> object: the constructor takes the number of
@@ -185,7 +185,7 @@ of the subtask from the calling task.</p>
 <a class="reference internal image-reference" href="_images/mf_remap_hires.png"><img alt="Examples of how to register MultiFabs" src="_images/mf_remap_hires.png" style="width: 840.0000000000001px; height: 350.07000000000005px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Examples of how a MultiFab can be registered for a fork-join operation
-with varying Strategy and Intent.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+with varying Strategy and Intent.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>During registration, the number of ghost cells in each dimension is
@@ -203,7 +203,7 @@ component bounds of a registered MultiFab.
 The tutorial’s <code class="docutils literal notranslate"><span class="pre">myFunction</span></code> demonstrates these capabilities.</p>
 </section>
 <section id="forkjoin-mlmg">
-<h2><strong>ForkJoin/MLMG</strong><a class="headerlink" href="#forkjoin-mlmg" title="Permalink to this heading"></a></h2>
+<h2><strong>ForkJoin/MLMG</strong><a class="headerlink" href="#forkjoin-mlmg" title="Link to this heading"></a></h2>
 <p>This tutorial demonstrates some more advanced fork-join usage:</p>
 <ol class="arabic simple">
 <li><p>Nested fork-join: <code class="docutils literal notranslate"><span class="pre">top_fork()</span></code> invokes the first level fork-join,
