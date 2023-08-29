@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projection Methods &mdash; amrex-hydro 23.08-dev documentation</title>
+  <title>Projection Methods &mdash; amrex-hydro 23.09-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -12,11 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7002dc89"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -37,7 +37,7 @@
             amrex-hydro
           </a>
               <div class="version">
-                23.08-dev
+                23.09-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -89,7 +89,7 @@
            <div itemprop="articleBody">
              
   <section id="projection-methods">
-<span id="projections"></span><h1>Projection Methods<a class="headerlink" href="#projection-methods" title="Permalink to this heading"></a></h1>
+<span id="projections"></span><h1>Projection Methods<a class="headerlink" href="#projection-methods" title="Link to this heading"></a></h1>
 <p>Here, we first include a brief discussion of projection methodology for incompressible and low Mach number flow.
 Details of AMReX-Hydro’s implementation of projections follow.</p>
 <p>The compressible Navier-Stokes equations can be written in the form:</p>
@@ -181,7 +181,7 @@ velocity fields. The projection classes use AMReX’s linear solvers internally.
 Both classes provide member functions <code class="docutils literal notranslate"><span class="pre">getLinOp</span></code> and <code class="docutils literal notranslate"><span class="pre">getMLMG</span></code> to
 access the underlying objects and allow for modification of the linear operator
 and multigrid properties if needed.
-Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v23.08-dev)"><span>Linear Solvers</span></a>
+Details of the linear solver implementations are in the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/LinearSolvers_Chapter.html#chap-linearsolvers" title="(in amrex v23.09-dev)"><span>Linear Solvers</span></a>
 section of AMReX’s documentation.</p>
 <p>Both Projector classes provide the following parameters, which can be set in an
 inputs file or on the command line. For the MacProjector, these must be preceeded by
@@ -245,7 +245,7 @@ Options are bicgcg, bicgstab, cg, cgbicg, smoother or hypre</p></td>
 </tbody>
 </table>
 <section id="mac-projection">
-<span id="mac-proj"></span><h2>MAC Projection<a class="headerlink" href="#mac-projection" title="Permalink to this heading"></a></h2>
+<span id="mac-proj"></span><h2>MAC Projection<a class="headerlink" href="#mac-projection" title="Link to this heading"></a></h2>
 <p>For a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> defined on faces, i.e.
 <span class="math notranslate nohighlight">\(u\)</span> is defined on x-faces, <span class="math notranslate nohighlight">\(v\)</span> is defined on y-faces,
 and <span class="math notranslate nohighlight">\(w\)</span> is defined on z-faces, AMReX-Hydro provides an exact projection
@@ -366,7 +366,7 @@ and demonstrates how to set up the MACProjector object and use it to perform a M
 </div>
 </section>
 <section id="nodal-projection">
-<span id="nodal-proj"></span><h2>Nodal Projection<a class="headerlink" href="#nodal-projection" title="Permalink to this heading"></a></h2>
+<span id="nodal-proj"></span><h2>Nodal Projection<a class="headerlink" href="#nodal-projection" title="Link to this heading"></a></h2>
 <p>For a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> defined with all components co-located on cell centers,
 AMReX-Hydro provides an approximate projection we refer to as a nodal projection.
 Velocity divergence and pressure are defined on nodes, and the pressure gradient is defined

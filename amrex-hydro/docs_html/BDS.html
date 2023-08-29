@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BDS Algorithm &mdash; amrex-hydro 23.08-dev documentation</title>
+  <title>BDS Algorithm &mdash; amrex-hydro 23.09-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -12,11 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7002dc89"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -35,7 +35,7 @@
             amrex-hydro
           </a>
               <div class="version">
-                23.08-dev
+                23.09-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -118,7 +118,7 @@
 \newcommand{\vol}{\mathcal{V}}
 \newcommand{\area}{\mathcal{A}}\]</div>
 <section id="bds-algorithm">
-<h1>BDS Algorithm<a class="headerlink" href="#bds-algorithm" title="Permalink to this heading"></a></h1>
+<h1>BDS Algorithm<a class="headerlink" href="#bds-algorithm" title="Link to this heading"></a></h1>
 <p>The Bell-Dawson-Shubin (BDS) algorithm is a higher order Godunov method for scalar
 conservation laws in multiple dimensions. Satisfying the maximum principal for
 constant coefficient linear advection, the BDS routine provides
@@ -136,12 +136,12 @@ If additional functionality is desired, or if questions remain after reading thi
 further help is available by submitting an issue through
 <a class="reference external" href="https://github.com/AMReX-Codes/AMReX-Hydro/issues/new">Github</a></p>
 <section id="pre-mac">
-<h2>Pre-MAC<a class="headerlink" href="#pre-mac" title="Permalink to this heading"></a></h2>
+<h2>Pre-MAC<a class="headerlink" href="#pre-mac" title="Link to this heading"></a></h2>
 <p>The BDS routine follows the Godunov PLM method to extrapolate velocities to cell faces,
 see <a class="reference internal" href="Schemes.html#godunov-pre-mac"><span class="std std-ref">Godunov Methods: Pre-MAC</span></a>.</p>
 </section>
 <section id="post-mac">
-<h2>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this heading"></a></h2>
+<h2>Post-MAC<a class="headerlink" href="#post-mac" title="Link to this heading"></a></h2>
 <p>In the notation below,
 <span class="math notranslate nohighlight">\(s\)</span> is a scalar field of the form <span class="math notranslate nohighlight">\(s=s(x,y,z,t)\)</span>
 and <span class="math notranslate nohighlight">\({\U}=(u,v,w)\)</span> represents a known face-centered velocity field, typically the projected velocity field from the Pre-MAC step (<span class="math notranslate nohighlight">\(\U^{MAC}\)</span>).
