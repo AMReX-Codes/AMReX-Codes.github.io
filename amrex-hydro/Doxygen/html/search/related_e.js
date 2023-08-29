@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ubound_17406',['ubound',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Box.html#a031934b6cad9ff387f032bffd6b0dfbb',1,'amrex::Box']]]
+  ['tabledata_17485',['TableData',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1TableData.html#ab86aed6fee723c8367af1d8cdfcbeff7',1,'amrex::TableData']]]
 ];

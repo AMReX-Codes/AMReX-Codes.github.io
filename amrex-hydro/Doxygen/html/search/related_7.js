@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lbound_17375',['lbound',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Box.html#afc31b87ed841fb33cc7a5403621abbc0',1,'amrex::Box']]],
-  ['length_17376',['length',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1Box.html#a3ef34ad1300996b2a366a00d116ca4d2',1,'amrex::Box']]]
+  ['ifabio_17455',['IFABio',['https://amrex-codes.github.io/amrex/doxygen/classamrex_1_1IArrayBox.html#aa6992d0759e5941d7b43d81c03c73afd',1,'amrex::IArrayBox']]]
 ];

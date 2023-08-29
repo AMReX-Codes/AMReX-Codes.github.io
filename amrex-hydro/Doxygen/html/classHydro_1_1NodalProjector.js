@@ -4,6 +4,7 @@ var classHydro_1_1NodalProjector =
     [ "NodalProjector", "classHydro_1_1NodalProjector.html#a04173a645594d28dfd95a1642dfdb2a4", null ],
     [ "NodalProjector", "classHydro_1_1NodalProjector.html#aceb54cb364c01ef46ae8812f01aae1bd", null ],
     [ "averageDown", "classHydro_1_1NodalProjector.html#ad2ed09eb30e599c57c2dbda8b432da2c", null ],
+    [ "calcGradPhi", "classHydro_1_1NodalProjector.html#a3a2166183188d53c17442adab59897e4", null ],
     [ "computeRHS", "classHydro_1_1NodalProjector.html#a824e5fe65ce0686420c541bf2b9cb259", null ],
     [ "computeSyncResidual", "classHydro_1_1NodalProjector.html#a5221f76002b9956012a08bd322f98c22", null ],
     [ "define", "classHydro_1_1NodalProjector.html#a38a812c65555815f51370b2a1b63bbda", null ],
