@@ -787,7 +787,7 @@ $(document).ready(function(){initNavTree('AMReX__MLABecLaplacian_8H_source.html'
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = this-&gt;getNComp();</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; </div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>() &amp;&amp; out.isFusingCandidate()) {</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; xma = in.const_arrays();</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; yma = out.arrays();</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ama = acoef.arrays();</div>
@@ -897,7 +897,7 @@ $(document).ready(function(){initNavTree('AMReX__MLABecLaplacian_8H_source.html'
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1MLABecLaplacianT.html#a5709a608f0c8d3f1bab91ff0ab584d2b">RT</a> alpha = m_a_scalar;</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>() &amp;&amp; sol.isFusingCandidate()</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()</div>
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        &amp;&amp; (this-&gt;m_overset_mask[amrlev][mglev] || regular_coarsening))</div>
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;    {</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; m0ma = mm0.<a class="code" href="classamrex_1_1MultiMask.html#abdb76ca06cc3de8e3378357d115aa723">const_arrays</a>();</div>
@@ -1159,7 +1159,7 @@ $(document).ready(function(){initNavTree('AMReX__MLABecLaplacian_8H_source.html'
 <div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = getNComp();</div>
 <div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160; </div>
 <div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>() &amp;&amp; mf.isFusingCandidate()) {</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>()) {</div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ma = mf.arrays();</div>
 <div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ama = acoef.const_arrays();</div>
 <div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;        <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; bxma = bxcoef.const_arrays();,</div>
