@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advection schemes &mdash; amrex-hydro 23.09-dev documentation</title>
+  <title>Advection schemes &mdash; amrex-hydro 23.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -14,7 +14,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=7002dc89"></script>
+        <script src="_static/documentation_options.js?v=94759461"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -37,7 +37,7 @@
             amrex-hydro
           </a>
               <div class="version">
-                23.09-dev
+                23.10-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -331,8 +331,8 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 <section id="godunov-methods">
 <span id="godunov"></span><h2>Godunov Methods<a class="headerlink" href="#godunov-methods" title="Link to this heading"></a></h2>
 <p>AMReX-Hydro’s implementation uses dimenensionally unsplit algorithms with full corner coupling in 3D,
-with the option to use either piecewise linear (PLM) <span id="id1">[<a class="reference internal" href="references.html#id25" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id24" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>
-or piecewise parabolic (PPM) <span id="id2">[<a class="reference internal" href="references.html#id18" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id27" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> reconstructions of the state.</p>
+with the option to use either piecewise linear (PLM) <span id="id1">[<a class="reference internal" href="references.html#id26" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id25" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>
+or piecewise parabolic (PPM) <span id="id2">[<a class="reference internal" href="references.html#id19" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id28" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> reconstructions of the state.</p>
 <p>These alogrithms are applied in the Godunov namespace. For API documentation, see
 <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html">Doxygen: Godunov Namespace</a>.</p>
 <section id="pre-mac-api-ref-godunov-extrapveltofaces">
@@ -355,7 +355,7 @@ might include viscous, gravitational, and the pressure gradient terms.</p>
 <p>If the parameter <code class="docutils literal notranslate"><span class="pre">use_ppm</span></code> is false, the first derivatives normal to the face (in this
 case <span class="math notranslate nohighlight">\(u_x^{n,lim}\)</span>) are evaluated using a monotonicity-limited fourth-order
 slope approximation as described in <a class="reference internal" href="Utilities.html#slopes"><span class="std std-ref">Slopes</span></a>.
-Otherwise the Piecewise Parabolic Method  (PPM) <span id="id3">[<a class="reference internal" href="references.html#id18" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id27" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> is used
+Otherwise the Piecewise Parabolic Method  (PPM) <span id="id3">[<a class="reference internal" href="references.html#id19" title="P. Colella and P. R. Woodward. The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations. Journal of Computational Physics, 54:174-201, September 1984. doi:10.1016/0021-9991(84)90143-8.">Colella and Woodward, 1984</a>, <a class="reference internal" href="references.html#id28" title="G. H. Miller and P. Colella. A Conservative Three-Dimensional Eulerian Method for Coupled Solid-Fluid Shock  Capturing. Journal of Computational Physics, 183:26-82, November 2002. doi:10.1006/jcph.2002.7158.">Miller and Colella, 2002</a>]</span> is used
 to compute</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\hat{u}_{i+\frac{1}{2},j,k}^{L} = &amp; u_{i,j,k}^n + \left( \frac{dx}{2} - u^n_{i,j,k} \frac{dt}{2} \right) (u_x^{n,lim})_{i,j,k} \\
@@ -402,7 +402,7 @@ $ \lvert \widehat{v}^F + \widehat{v}^B \rvert &lt; \varepsilon $ } \\
  \frac{1}{2} (\widehat{\boldsymbol{U}}^F + \widehat{\boldsymbol{U}}^B)  &amp; \mbox{otherwise}
 \end{array} \right.\end{split}\]</div>
 <p>In 3D, we complete the intermediate transverse-face centered states by accounting for transverse corner coupling
-following <span id="id4">[<a class="reference internal" href="references.html#id25" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id24" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>. For example, for <span class="math notranslate nohighlight">\(u\)</span> predicted to y-faces we modify
+following <span id="id4">[<a class="reference internal" href="references.html#id26" title="Jeff Saltzman. An unsplit 3d upwind method for hyperbolic conservation laws. Journal of Computational Physics, 115(1):153-168, 1994. URL: https://www.sciencedirect.com/science/article/pii/S0021999184711843, doi:https://doi.org/10.1006/jcph.1994.1184.">Saltzman, 1994</a>, <a class="reference internal" href="references.html#id25" title="P. Colella. Multidimensional upwind methods for hyperbolic conservation laws. Journal of Computational Physics, 87:171-200, March 1990. doi:10.1016/0021-9991(90)90233-Q.">Colella, 1990</a>]</span>. For example, for <span class="math notranslate nohighlight">\(u\)</span> predicted to y-faces we modify
 with a factor of the z-derivative at cell centers</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\breve{u}_{i,j+\half,k}^{F} = &amp; \hat{u}_{i,j+\frac{1}{2},k}^{F} - \frac{dt}{3} \left( \hat{w}^{adv} u_z \right)_{i,j,k} \\
@@ -676,7 +676,7 @@ conservation laws in multiple dimensions. Satisfying the maximum principal for
 constant coefficient linear advection, the BDS routine provides
 accurate resolution for smooth problems while avoiding undershoot and overshoot
 for non-smooth profiles. Additional details and comparisons to other
-schemes can be found in <span id="id6">[<a class="reference internal" href="references.html#id30" title="A. Nonaka, S. May, A. S. Almgren, and J. B. Bell. A three-dimensional, unsplit godunov method for scalar conservation laws. SIAM Journal on Scientific Computing, 33(4):2039-2062, 2011. URL: https://ccse.lbl.gov/Publications/nonaka/BDS_3d.pdf, arXiv:https://doi.org/10.1137/100809520, doi:10.1137/100809520.">Nonaka <em>et al.</em>, 2011</a>]</span> and references therein.</p>
+schemes can be found in <span id="id6">[<a class="reference internal" href="references.html#id31" title="A. Nonaka, S. May, A. S. Almgren, and J. B. Bell. A three-dimensional, unsplit godunov method for scalar conservation laws. SIAM Journal on Scientific Computing, 33(4):2039-2062, 2011. URL: https://ccse.lbl.gov/Publications/nonaka/BDS_3d.pdf, arXiv:https://doi.org/10.1137/100809520, doi:10.1137/100809520.">Nonaka <em>et al.</em>, 2011</a>]</span> and references therein.</p>
 <p>This implementation of BDS closely follows the Godunov approach and leverages some of the
 same code.
 The difference appears in the computation of edge states given face-centered velocities,
