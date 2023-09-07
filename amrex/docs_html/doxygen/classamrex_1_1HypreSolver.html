@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('classamrex_1_1HypreSolver.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>Solve Ax = b using HYPRE's generic IJ matrix format where A is a sparse matrix specified using the compressed sparse row (CSR) format.  
+ <a href="classamrex_1_1HypreSolver.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AMReX__HypreSolver_8H_source.html">AMReX_HypreSolver.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -186,7 +189,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae747e84281f7636b354d847962c0cc4f"><td class="memItemLeft" align="right" valign="top">HYPRE_IJVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreSolver.html#ae747e84281f7636b354d847962c0cc4f">m_x</a> = nullptr</td></tr>
 <tr class="separator:ae747e84281f7636b354d847962c0cc4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;int MSS&gt;<br />
+class amrex::HypreSolver&lt; MSS &gt;</h3>
+
+<p>Solve Ax = b using HYPRE's generic IJ matrix format where A is a sparse matrix specified using the compressed sparse row (CSR) format. </p>
+<p>An example of using <a class="el" href="classamrex_1_1HypreSolver.html" title="Solve Ax = b using HYPRE&#39;s generic IJ matrix format where A is a sparse matrix specified using the co...">HypreSolver</a> to solve Poisson's equation is located in Tests/LinearSolvers/Hypre </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a040c586415a3e08b8d7c329cc6e861f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a040c586415a3e08b8d7c329cc6e861f5">&#9670;&nbsp;</a></span>HypreSolver()</h2>
 
@@ -258,6 +267,27 @@ template&lt;class Marker , class Filler &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_index_type</td><td>nodality of the data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_nghost</td><td>number of ghosts cells </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_geom</td><td><a class="el" href="classamrex_1_1Geometry.html" title="Rectangular problem domain geometry.">Geometry</a> of problem domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_grids</td><td><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> of computational grids </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_dmap</td><td><a class="el" href="classamrex_1_1DistributionMapping.html" title="Calculates the distribution of FABs to MPI processes.">DistributionMapping</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_marker</td><td>functor that returns whether the variable n at (i,j,k) in <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a> boxno (local index) is valid (i.e., not exactly on Dirichlet boundary). function signature: <div class="fragment"><div class="line">(<span class="keywordtype">int</span> boxno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) -&gt; bool</div>
+</div><!-- fragment --> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_filler</td><td>functor that fills the row in the matrix A for variable n at (i,j,k) in <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a> boxno (local index) using the CSR format. function signature: <div class="fragment"><div class="line"><span class="comment">// [in ] gid    gid[n] is the id for variable n at (i,j,k)</span></div>
+<div class="line"><span class="comment">// [out] ncols  # of non-zero columns in this row.</span></div>
+<div class="line"><span class="comment">// [out] cols   array of indices of columns with a non-zero matrix element in this row.</span></div>
+<div class="line"><span class="comment">// [out] mat    array of (non-zero) matrix elements in this row.</span></div>
+<div class="line">(<span class="keywordtype">int</span> boxno, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, Array4&lt;HYPRE_Int const&gt; <span class="keyword">const</span>* gid, HYPRE_Int&amp; ncols, HYPRE_Int* cols, HYPRE_Real* mat)</div>
+</div><!-- fragment --> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_verbose</td><td>HYPRE verbosity (default 0) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_options_namespace</td><td>namespace to use when parsing runtime input parameters (default "hypre") </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -558,6 +588,17 @@ template&lt;class MF , std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Solve Ax=b</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">a_soln</td><td>the solution (i.e. x) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a_rhs</td><td>the right-hand side (i.e. b) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rel_tol</td><td>relative convergence tolerance </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abs_tol</td><td>absolute convergence tolerance </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_iter</td><td>maximum number of iterations </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
