@@ -1,5 +1,6 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1IParserExeDIV__VN.html":[3,0,0,302],
 "structamrex_1_1IParserExeDIV__VN.html#a4454e177442a6dcd3837e39b6179c998":[3,0,0,302,0],
 "structamrex_1_1IParserExeDIV__VN.html#accbcddfb39948cf7bd290118c5c8b976":[3,0,0,302,1],
 "structamrex_1_1IParserExeDIV__VP.html":[3,0,0,292],
@@ -248,6 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1ManagedArenaWrapper.html#ae8cffea4066cf1272ba88649a9813bc7":[3,0,0,156,0],
 "structamrex_1_1Maximum.html":[3,0,0,146],
 "structamrex_1_1Maximum.html#a8917775ae9df37b7e67730e881451d35":[3,0,0,146,0],
-"structamrex_1_1MaybeDeviceRunnable.html":[3,0,0,255],
-"structamrex_1_1MaybeHostDeviceRunnable.html":[3,0,0,256]
+"structamrex_1_1MaybeDeviceRunnable.html":[3,0,0,255]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX82 =
 {
+"structhacc_1_1AlignedAllocator_1_1rebind.html#a96ecc5d534254a7cab53bdfa4d78db8e":[3,0,10,0,0,0],
 "structis__soa__particle.html":[3,0,20],
 "structmake__particle.html":[3,0,22],
 "structmake__particle.html#a8f0911901c0819ea99040d1974667ded":[3,0,22,0],

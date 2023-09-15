@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"functions_type_h.html":[3,3,3,5],
 "functions_type_i.html":[3,3,3,6],
 "functions_type_l.html":[3,3,3,7],
 "functions_type_m.html":[3,3,3,8],
@@ -118,8 +119,8 @@ var NAVTREEINDEX57 =
 "globals_z.html":[4,1,0,24],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html":[3,0,7,8],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__delete__cp__char.html#aed6352ced14952145ea0dd0bd4723bdb":[3,0,7,8,0],
 "interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html":[3,0,7,6],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html#a99846b43a41a77557855585ac13555e3":[3,0,7,6,0],
-"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__counts.html":[3,0,7,3]
+"interfaceamrex__parmparse__module_1_1amrex__parmparse__get__bool.html#a99846b43a41a77557855585ac13555e3":[3,0,7,6,0]
 };
