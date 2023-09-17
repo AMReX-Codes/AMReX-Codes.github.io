@@ -1,5 +1,7 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1Maximum.html#a8917775ae9df37b7e67730e881451d35":[3,0,0,146,0],
+"structamrex_1_1MaybeDeviceRunnable.html":[3,0,0,255],
 "structamrex_1_1MaybeHostDeviceRunnable.html":[3,0,0,256],
 "structamrex_1_1MemProfiler_1_1Builds.html":[3,0,0,184,0],
 "structamrex_1_1MemProfiler_1_1Builds.html#a2756a5fbf45d016bd03416184543526b":[3,0,0,184,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1ParserExeADD__PN.html#a4cdc6228051c575d7a4397fa8bb076fb":[3,0,0,345,0],
 "structamrex_1_1ParserExeADD__PN.html#a56d500ab92f6615f3087792709558d42":[3,0,0,345,1],
 "structamrex_1_1ParserExeADD__PP.html":[3,0,0,337],
-"structamrex_1_1ParserExeADD__PP.html#a029d2d2b4f84a851b54e7152d02f64e7":[3,0,0,337,0],
-"structamrex_1_1ParserExeADD__PP.html#ae018d95c7129bf499a131fb284bde1dc":[3,0,0,337,2],
-"structamrex_1_1ParserExeADD__PP.html#af297a176eb8b3d166a861ab9fe49984a":[3,0,0,337,1]
+"structamrex_1_1ParserExeADD__PP.html#a029d2d2b4f84a851b54e7152d02f64e7":[3,0,0,337,0]
 };

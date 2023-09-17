@@ -29,6 +29,7 @@ var classamrex_1_1EB2_1_1Level =
     [ "hasEBInfo", "classamrex_1_1EB2_1_1Level.html#a7954f6b9a0dfcb4a5bbac4f2b5a4001b", null ],
     [ "isAllRegular", "classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066", null ],
     [ "isOK", "classamrex_1_1EB2_1_1Level.html#a09608e5c4f86b678ac2c665090366d91", null ],
+    [ "nGrowVect", "classamrex_1_1EB2_1_1Level.html#a292f4e9beba78cb32fd18b72fc06fd9d", null ],
     [ "prepareForCoarsening", "classamrex_1_1EB2_1_1Level.html#a1f72985a64a6353ac131eb89728f7ba9", null ],
     [ "setRegularLevel", "classamrex_1_1EB2_1_1Level.html#aa134f8da748d28d9c016c9ccf35e0276", null ],
     [ "write_to_chkpt_file", "classamrex_1_1EB2_1_1Level.html#a7c96f2171467f960c184e3f093f9e3b1", null ],

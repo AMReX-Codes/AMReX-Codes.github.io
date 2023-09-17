@@ -4,6 +4,7 @@ var classamrex_1_1EBDataCollection =
     [ "~EBDataCollection", "classamrex_1_1EBDataCollection.html#ac0a68c8f5a6914b596f4c47f43d2f6aa", null ],
     [ "EBDataCollection", "classamrex_1_1EBDataCollection.html#ac8cfe908c7bcdc5b940444e767ceb37b", null ],
     [ "EBDataCollection", "classamrex_1_1EBDataCollection.html#a37fa70dac3bcfbd63a096961c0a97899", null ],
+    [ "extendDataOutsideDomain", "classamrex_1_1EBDataCollection.html#a49ed9d07cf0f8fc92b793d52190ad6f4", null ],
     [ "getAreaFrac", "classamrex_1_1EBDataCollection.html#adb2dec585ef401908ca3e596eb62e851", null ],
     [ "getBndryArea", "classamrex_1_1EBDataCollection.html#a8f2facb9d8f388bd34a905d3249dec3f", null ],
     [ "getBndryCent", "classamrex_1_1EBDataCollection.html#a79f870b65936034e5471d628fbd6d9fb", null ],
