@@ -16,6 +16,7 @@ var classamrex_1_1EBCellFlagFab =
     [ "getType", "classamrex_1_1EBCellFlagFab.html#a5fbbd6cfac2268f9286c156e7ecd7ea6", null ],
     [ "operator=", "classamrex_1_1EBCellFlagFab.html#aefb6078482dc1c3623fd1ca2c5e85df3", null ],
     [ "operator=", "classamrex_1_1EBCellFlagFab.html#ab8c1b6ba13749dcf960f79bdcc67958b", null ],
+    [ "resetType", "classamrex_1_1EBCellFlagFab.html#a624ea91ea2b7bf09dcf7702764afb41a", null ],
     [ "setType", "classamrex_1_1EBCellFlagFab.html#a57d4f25c01e84b842b1456dee7985600", null ],
     [ "m_type", "classamrex_1_1EBCellFlagFab.html#a625c1eeed8e477ce6df628fdf55059a9", null ],
     [ "m_typemap", "classamrex_1_1EBCellFlagFab.html#a914a481cd7a1365cd6e02ebdf629131d", null ]
