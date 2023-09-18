@@ -2626,62 +2626,63 @@
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg3<sp/>=<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">grow</ref>(bx,3);</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg4<sp/>=<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">grow</ref>(bx,4);</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"></highlight></codeline>
-<codeline lineno="259"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>assume<sp/>that<sp/>in<sp/>2D<sp/>a<sp/>cell<sp/>will<sp/>only<sp/>need<sp/>at<sp/>most<sp/>3<sp/>neighbors<sp/>to<sp/>merge<sp/>with,<sp/>and<sp/>we</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>use<sp/>the<sp/>first<sp/>component<sp/>of<sp/>this<sp/>for<sp/>the<sp/>number<sp/>of<sp/>neighbors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>itracker(i,j,n)<sp/>holds<sp/>the<sp/>identifier<sp/>for<sp/>(r,s),<sp/>the<sp/>nth<sp/>neighbor<sp/>of<sp/>(i,j)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IArrayBox<sp/>itracker(bxg4,4,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>assume<sp/>that<sp/>in<sp/>3D<sp/>a<sp/>cell<sp/>will<sp/>only<sp/>need<sp/>at<sp/>most<sp/>7<sp/>neighbors<sp/>to<sp/>merge<sp/>with,<sp/>and<sp/>we</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>use<sp/>the<sp/>first<sp/>component<sp/>of<sp/>this<sp/>for<sp/>the<sp/>number<sp/>of<sp/>neighbors</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="268"><highlight class="normal"></highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>itracker(i,j,k,n)<sp/>holds<sp/>the<sp/>identifier<sp/>for<sp/>(r,s,t),<sp/>the<sp/>nth<sp/>neighbor<sp/>of<sp/>(i,j,k)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IArrayBox<sp/>itracker(bxg4,8,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>nrs_fab(bxg4,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>alpha_fab(bxg3,2,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
-<codeline lineno="274"><highlight class="normal"></highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Total<sp/>volume<sp/>of<sp/>all<sp/>cells<sp/>in<sp/>my<sp/>nbhd</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>nbhd_vol_fab(bxg3,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"></highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Centroid<sp/>of<sp/>my<sp/>nbhd</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>cent_hat_fab(bxg3,AMREX_SPACEDIM,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"></highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;int&gt;<sp/>itr<sp/>=<sp/>itracker.array();</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;int<sp/>const&gt;<sp/>itr_const<sp/>=<sp/>itracker.const_array();</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>nrs<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>nrs_fab.array();</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>nrs_const<sp/>=<sp/>nrs_fab.const_array();</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"></highlight></codeline>
-<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>alpha<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>alpha_fab.array();</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>alpha_const<sp/>=<sp/>alpha_fab.const_array();</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"></highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>nbhd_vol<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>nbhd_vol_fab.array();</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>nbhd_vol_const<sp/>=<sp/>nbhd_vol_fab.const_array();</highlight></codeline>
-<codeline lineno="292"><highlight class="normal"></highlight></codeline>
-<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>cent_hat<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>cent_hat_fab.array();</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>cent_hat_const<sp/>=<sp/>cent_hat_fab.const_array();</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"></highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(bx,ncomp,</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/>noexcept</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>U_out(i,j,k,n)<sp/>=<sp/>0.;</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"></highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a48d0da8ea1955807973d77a627c4d3a3" kindref="member">MakeITracker</ref>(bx,<sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(apx,<sp/>apy,<sp/>apz),<sp/>vfrac,<sp/>itr,<sp/>lev_geom,<sp/>target_volfrac);</highlight></codeline>
-<codeline lineno="303"><highlight class="normal"></highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1415c2b7be8fa468b572da6a5b8ce2dc" kindref="member">MakeStateRedistUtils</ref>(bx,<sp/>flag,<sp/>vfrac,<sp/>ccc,<sp/>itr,<sp/>nrs,<sp/>alpha,<sp/>nbhd_vol,<sp/>cent_hat,</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lev_geom,<sp/>target_volfrac);</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"></highlight></codeline>
-<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4ce1202a361f22a3e49b7858677f1a63" kindref="member">StateRedistribute</ref>(bx,<sp/>ncomp,<sp/>U_out,<sp/>U_in,<sp/>flag,<sp/>vfrac,</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(fcx,<sp/>fcy,<sp/>fcz),<sp/>ccc,<sp/><sp/>d_bcrec_ptr,</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>itr_const,<sp/>nrs_const,<sp/>alpha_const,<sp/>nbhd_vol_const,</highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cent_hat_const,<sp/>lev_geom,<sp/>srd_max_order);</highlight></codeline>
-<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"></highlight></codeline>
-<codeline lineno="313"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bxg5<sp/>=<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">grow</ref>(bx,5);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>assume<sp/>that<sp/>in<sp/>2D<sp/>a<sp/>cell<sp/>will<sp/>only<sp/>need<sp/>at<sp/>most<sp/>3<sp/>neighbors<sp/>to<sp/>merge<sp/>with,<sp/>and<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>use<sp/>the<sp/>first<sp/>component<sp/>of<sp/>this<sp/>for<sp/>the<sp/>number<sp/>of<sp/>neighbors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>itracker(i,j,n)<sp/>holds<sp/>the<sp/>identifier<sp/>for<sp/>(r,s),<sp/>the<sp/>nth<sp/>neighbor<sp/>of<sp/>(i,j)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IArrayBox<sp/>itracker(bxg5,4,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>assume<sp/>that<sp/>in<sp/>3D<sp/>a<sp/>cell<sp/>will<sp/>only<sp/>need<sp/>at<sp/>most<sp/>7<sp/>neighbors<sp/>to<sp/>merge<sp/>with,<sp/>and<sp/>we</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>use<sp/>the<sp/>first<sp/>component<sp/>of<sp/>this<sp/>for<sp/>the<sp/>number<sp/>of<sp/>neighbors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>itracker(i,j,k,n)<sp/>holds<sp/>the<sp/>identifier<sp/>for<sp/>(r,s,t),<sp/>the<sp/>nth<sp/>neighbor<sp/>of<sp/>(i,j,k)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IArrayBox<sp/>itracker(bxg5,8,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>nrs_fab(bxg5,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>alpha_fab(bxg4,2,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Total<sp/>volume<sp/>of<sp/>all<sp/>cells<sp/>in<sp/>my<sp/>nbhd</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>nbhd_vol_fab(bxg3,1,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Centroid<sp/>of<sp/>my<sp/>nbhd</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>cent_hat_fab(bxg3,AMREX_SPACEDIM,<ref refid="namespaceamrex_1ad371ec91e94c5131b6002127a1008157" kindref="member">The_Async_Arena</ref>());</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;int&gt;<sp/>itr<sp/>=<sp/>itracker.array();</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;int<sp/>const&gt;<sp/>itr_const<sp/>=<sp/>itracker.const_array();</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>nrs<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>nrs_fab.array();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>nrs_const<sp/>=<sp/>nrs_fab.const_array();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>alpha<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>alpha_fab.array();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>alpha_const<sp/>=<sp/>alpha_fab.const_array();</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>nbhd_vol<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>nbhd_vol_fab.array();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>nbhd_vol_const<sp/>=<sp/>nbhd_vol_fab.const_array();</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/><sp/><sp/><sp/><sp/><sp/>&gt;<sp/>cent_hat<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>cent_hat_fab.array();</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/>cent_hat_const<sp/>=<sp/>cent_hat_fab.const_array();</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(bx,ncomp,</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/>noexcept</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>U_out(i,j,k,n)<sp/>=<sp/>0.;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a48d0da8ea1955807973d77a627c4d3a3" kindref="member">MakeITracker</ref>(bx,<sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(apx,<sp/>apy,<sp/>apz),<sp/>vfrac,<sp/>itr,<sp/>lev_geom,<sp/>target_volfrac);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1415c2b7be8fa468b572da6a5b8ce2dc" kindref="member">MakeStateRedistUtils</ref>(bx,<sp/>flag,<sp/>vfrac,<sp/>ccc,<sp/>itr,<sp/>nrs,<sp/>alpha,<sp/>nbhd_vol,<sp/>cent_hat,</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lev_geom,<sp/>target_volfrac);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4ce1202a361f22a3e49b7858677f1a63" kindref="member">StateRedistribute</ref>(bx,<sp/>ncomp,<sp/>U_out,<sp/>U_in,<sp/>flag,<sp/>vfrac,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(fcx,<sp/>fcy,<sp/>fcz),<sp/>ccc,<sp/><sp/>d_bcrec_ptr,</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>itr_const,<sp/>nrs_const,<sp/>alpha_const,<sp/>nbhd_vol_const,</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cent_hat_const,<sp/>lev_geom,<sp/>srd_max_order);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_RedistributionApply.cpp"/>
   </compounddef>
