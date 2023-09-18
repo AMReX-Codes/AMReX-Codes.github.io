@@ -1,5 +1,8 @@
 var NAVTREEINDEX55 =
 {
+"classamrex_1_1VisMF.html#a806512ed6337ff31d9eb6f63f94ce792":[3,0,0,273,88],
+"classamrex_1_1VisMF.html#a8645f0e85a9ccda7b565b6fbabb5bac3":[3,0,0,273,28],
+"classamrex_1_1VisMF.html#a87ed18b9e628d872b53b55a5b3fed710":[3,0,0,273,21],
 "classamrex_1_1VisMF.html#a8807abfd4ec1e3790a765096f2d6b724":[3,0,0,273,75],
 "classamrex_1_1VisMF.html#a882c0b2883ef4da0ba1b314a8f620d6c":[3,0,0,273,8],
 "classamrex_1_1VisMF.html#a887f01ad484d73b2eaab8ef3e9568d88":[3,0,0,273,45],
@@ -246,8 +249,5 @@ var NAVTREEINDEX55 =
 "classhacc_1_1AlignedAllocator.html#aa85cb38a8a671ea721f4f8d96b5d061e":[3,0,10,0,3],
 "classhacc_1_1AlignedAllocator.html#ac9a51efd884cb5eb1e8ec10d6fff7d41":[3,0,10,0,7],
 "classhacc_1_1AlignedAllocator.html#ad5df7bcf7989386441a7b8fc73a81cc4":[3,0,10,0,16],
-"classhacc_1_1AlignedAllocator.html#ad6bd455548ae6962f2293a67aa289721":[3,0,10,0,6],
-"classhacc_1_1AlignedAllocator.html#adb796755df810806e1a03865482fc669":[3,0,10,0,15],
-"classhacc_1_1Dfft.html":[3,0,10,1],
-"classhacc_1_1Dfft.html#a09b95c8056554177f0d12989a4e4347a":[3,0,10,1,13]
+"classhacc_1_1AlignedAllocator.html#ad6bd455548ae6962f2293a67aa289721":[3,0,10,0,6]
 };

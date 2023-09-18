@@ -1,5 +1,8 @@
 var NAVTREEINDEX82 =
 {
+"structdistribution__t.html#a971ee0fe2ddf42e0669273a5ebda1512":[3,0,17,1],
+"structdistribution__t.html#aadae10ad5bacae5bceadd4eea37b12c6":[3,0,17,3],
+"structdistribution__t.html#ab7383f9179b519721f4dffdd185c055a":[3,0,17,10],
 "structdistribution__t.html#ad0fc01a1d38109451e446decb6cf91c5":[3,0,17,4],
 "structdistribution__t.html#af6a7bae9b4cb830d7c37076561f1417c":[3,0,17,7],
 "structhacc_1_1AlignedAllocator_1_1rebind.html":[3,0,10,0,0],

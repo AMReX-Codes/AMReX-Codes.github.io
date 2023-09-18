@@ -1,5 +1,8 @@
 var NAVTREEINDEX70 =
 {
+"namespaceamrex__error__module.html":[2,0,6],
+"namespaceamrex__error__module.html#a1a83328a0c70eaabd8ab9e1f041e581a":[2,0,6,5],
+"namespaceamrex__error__module.html#a2a571a1f40bbc502243adb182b8f29a6":[2,0,6,8],
 "namespaceamrex__error__module.html#a37d3d2303e183b835660cf63a47ecbaf":[2,0,6,9],
 "namespaceamrex__error__module.html#a3c0db0a8f73560694a95e3be546ad0fc":[2,0,6,4],
 "namespaceamrex__error__module.html#ae185e11336f0cf6a77886c17c89a89b7":[2,0,6,7],
@@ -130,8 +133,8 @@ var NAVTREEINDEX70 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0,0],
 "namespacemembers.html":[2,1,0],
+"namespacemembers.html":[2,1,0,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX70 =
 "namespacesdcquadrature__mod.html#aca3c8a3144793139f180db29ce39153c":[2,0,21,17],
 "namespacesdcquadrature__mod.html#aca9a2cd134b3750fabf403d738255f79":[2,0,21,8],
 "namespacesdcquadrature__mod.html#ae2185088b6449f7811b072576236dabd":[2,0,21,2],
-"namespacesdcquadrature__mod.html#af9d037887b4d9c8c4156bcab10d93e2a":[2,0,21,10],
-"pages.html":[],
-"structAssignGridFilter.html":[3,0,14],
-"structAssignGridFilter.html#a067cf16cb382b143e8c1891468548937":[3,0,14,2]
+"namespacesdcquadrature__mod.html#af9d037887b4d9c8c4156bcab10d93e2a":[2,0,21,10]
 };
