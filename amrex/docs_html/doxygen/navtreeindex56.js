@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"classhacc_1_1AlignedAllocator.html#ad5df7bcf7989386441a7b8fc73a81cc4":[3,0,10,0,16],
+"classhacc_1_1AlignedAllocator.html#ad6bd455548ae6962f2293a67aa289721":[3,0,10,0,6],
 "classhacc_1_1AlignedAllocator.html#adb796755df810806e1a03865482fc669":[3,0,10,0,15],
 "classhacc_1_1Dfft.html":[3,0,10,1],
 "classhacc_1_1Dfft.html#a09b95c8056554177f0d12989a4e4347a":[3,0,10,1,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "functions_p.html":[3,3,0,16],
 "functions_q.html":[3,3,0,17],
 "functions_r.html":[3,3,0,18],
-"functions_rela.html":[3,3,6],
-"functions_s.html":[3,3,0,19],
-"functions_t.html":[3,3,0,20]
+"functions_rela.html":[3,3,6]
 };

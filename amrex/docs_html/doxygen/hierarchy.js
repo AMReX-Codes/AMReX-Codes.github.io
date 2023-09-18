@@ -691,10 +691,10 @@ var hierarchy =
     [ "amrex::MFInfo", "structamrex_1_1MFInfo.html", null ],
     [ "amrex::MFIter", "classamrex_1_1MFIter.html", [
       [ "amrex::ParIterBase_impl< true, T_ParticleType, 0, 0, DefaultAllocator, DefaultAssignor >", "classamrex_1_1ParIterBase__impl.html", [
-        [ "amrex::ParConstIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1ParConstIter__impl.html", null ]
+        [ "amrex::ParConstIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor >", "classamrex_1_1ParConstIter__impl.html", null ]
       ] ],
       [ "amrex::ParIterBase_impl< false, T_ParticleType, 0, 0, DefaultAllocator, DefaultAssignor >", "classamrex_1_1ParIterBase__impl.html", [
-        [ "amrex::ParIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor >", "classamrex_1_1ParIter__impl.html", null ]
+        [ "amrex::ParIter_impl< T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor >", "classamrex_1_1ParIter__impl.html", null ]
       ] ],
       [ "amrex::FabSetIter", "classamrex_1_1FabSetIter.html", null ],
       [ "amrex::FillPatchIterator", "classamrex_1_1FillPatchIterator.html", null ],

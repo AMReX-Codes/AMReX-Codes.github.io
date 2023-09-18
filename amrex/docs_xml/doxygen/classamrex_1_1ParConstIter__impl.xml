@@ -27,14 +27,14 @@
         <defval><ref refid="namespaceamrex_1a179fafc569924202b166896b608cd5c2" kindref="member">DefaultAllocator</ref></defval>
       </param>
       <param>
-        <type>class CellAssignor</type>
+        <type>class T_CellAssignor</type>
         <defval><ref refid="structamrex_1_1DefaultAssignor" kindref="compound">DefaultAssignor</ref></defval>
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a09fe982d14487cedafb0c7fc3b58c156" prot="public" static="no">
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a9bce0c0d40443b40b8789eaafdab6b16" prot="public" static="no">
         <type>T_ParticleType</type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::ParticleType =  T_ParticleType</definition>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::ParticleType =  T_ParticleType</definition>
         <argsstring></argsstring>
         <name>ParticleType</name>
         <briefdescription>
@@ -43,26 +43,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="148" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="148" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1afa08f4db85a79ddc1c2929da99dfecbb" prot="public" static="no">
-        <type><ref refid="classamrex_1_1ParticleContainer__impl" kindref="compound">ParticleContainer_impl</ref>&lt; <ref refid="classamrex_1_1ParConstIter__impl_1a09fe982d14487cedafb0c7fc3b58c156" kindref="member">ParticleType</ref>, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::ContainerType =  ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</definition>
-        <argsstring></argsstring>
-        <name>ContainerType</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="149" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="149" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a83ba8c672796d169c2930bbdf32cb00f" prot="public" static="no">
-        <type>typename <ref refid="classamrex_1_1ParticleContainer__impl_1aad727cb5c9b392a0ec2c7bbabdf22576" kindref="member">ContainerType::ParticleTileType</ref></type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::ParticleTileType =  typename ContainerType::ParticleTileType</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1ad794d2f114cc35fb92cf8eb8ff6a36c5" prot="public" static="no">
+        <type>T_CellAssignor</type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::CellAssignor =  T_CellAssignor</definition>
         <argsstring></argsstring>
-        <name>ParticleTileType</name>
+        <name>CellAssignor</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -71,11 +58,11 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="150" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="150" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1ab0c7f3321e3908d69a6b2f5dca3248cc" prot="public" static="no">
-        <type>typename <ref refid="classamrex_1_1ParticleContainer__impl_1a3995a8f437ce88e5a973f4f2f97501bf" kindref="member">ContainerType::AoS</ref></type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::AoS =  typename ContainerType::AoS</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a249fe77aabcf704a5e7ec73f779c4c49" prot="public" static="no">
+        <type><ref refid="classamrex_1_1ParticleContainer__impl" kindref="compound">ParticleContainer_impl</ref>&lt; <ref refid="classamrex_1_1ParConstIter__impl_1a9bce0c0d40443b40b8789eaafdab6b16" kindref="member">ParticleType</ref>, NArrayReal, NArrayInt, Allocator, <ref refid="classamrex_1_1ParConstIter__impl_1ad794d2f114cc35fb92cf8eb8ff6a36c5" kindref="member">CellAssignor</ref> &gt;</type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::ContainerType =  ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</definition>
         <argsstring></argsstring>
-        <name>AoS</name>
+        <name>ContainerType</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -84,11 +71,11 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="151" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="151" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1ad56fb073e645e1a351800dc4f86c8fc5" prot="public" static="no">
-        <type>typename <ref refid="classamrex_1_1ParticleContainer__impl_1a69ff052875e307b7cb9ca774912b4003" kindref="member">ContainerType::SoA</ref></type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::SoA =  typename ContainerType::SoA</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a0e6990627e509337037b468a0f01234e" prot="public" static="no">
+        <type>typename <ref refid="classamrex_1_1ParticleContainer__impl_1aad727cb5c9b392a0ec2c7bbabdf22576" kindref="member">ContainerType::ParticleTileType</ref></type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::ParticleTileType =  typename ContainerType::ParticleTileType</definition>
         <argsstring></argsstring>
-        <name>SoA</name>
+        <name>ParticleTileType</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -97,11 +84,11 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="152" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="152" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1abbde64ebdff45fd1e4e3145d5f8bd0d4" prot="public" static="no">
-        <type>typename SoA::RealVector</type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::RealVector =  typename SoA::RealVector</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a16cd3b4f2109ac557d4e7b31519f6aa6" prot="public" static="no">
+        <type>typename <ref refid="classamrex_1_1ParticleContainer__impl_1a3995a8f437ce88e5a973f4f2f97501bf" kindref="member">ContainerType::AoS</ref></type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::AoS =  typename ContainerType::AoS</definition>
         <argsstring></argsstring>
-        <name>RealVector</name>
+        <name>AoS</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -110,11 +97,11 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="153" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="153" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a0fd5254f1f1c41d9e73b009b5de169d9" prot="public" static="no">
-        <type>typename SoA::IntVector</type>
-        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::IntVector =  typename SoA::IntVector</definition>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a9e7d45b7517d58230f82a78bd934c06e" prot="public" static="no">
+        <type>typename <ref refid="classamrex_1_1ParticleContainer__impl_1a69ff052875e307b7cb9ca774912b4003" kindref="member">ContainerType::SoA</ref></type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::SoA =  typename ContainerType::SoA</definition>
         <argsstring></argsstring>
-        <name>IntVector</name>
+        <name>SoA</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -123,15 +110,41 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="154" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="154" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1a72430e9d94dd233685e062cfa94f1ee0" prot="public" static="no">
+        <type>typename SoA::RealVector</type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::RealVector =  typename SoA::RealVector</definition>
+        <argsstring></argsstring>
+        <name>RealVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="155" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1ParConstIter__impl_1ae6b60527dc650e6fd9cc30ea98dc5dfd" prot="public" static="no">
+        <type>typename SoA::IntVector</type>
+        <definition>using amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::IntVector =  typename SoA::IntVector</definition>
+        <argsstring></argsstring>
+        <name>IntVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="156" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="156" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1ParConstIter__impl_1abc84c82c70acfb7d433f9e3683aa01e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ParConstIter__impl_1ad0552847dcd847dda664468873c739e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::ParConstIter_impl</definition>
+        <definition>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::ParConstIter_impl</definition>
         <argsstring>(ContainerType const &amp;pc, int level)</argsstring>
         <name>ParConstIter_impl</name>
         <param>
-          <type><ref refid="classamrex_1_1ParConstIter__impl_1afa08f4db85a79ddc1c2929da99dfecbb" kindref="member">ContainerType</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1ParConstIter__impl_1a249fe77aabcf704a5e7ec73f779c4c49" kindref="member">ContainerType</ref> const &amp;</type>
           <declname>pc</declname>
         </param>
         <param>
@@ -144,15 +157,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="156" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="156" bodyend="158"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="158" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="158" bodyend="160"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ParConstIter__impl_1a139a0fd987d3686f64e1f650a8461fd0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ParConstIter__impl_1ab9fdad990241bb4c86fc0695fc367fb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;::ParConstIter_impl</definition>
+        <definition>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;::ParConstIter_impl</definition>
         <argsstring>(ContainerType const &amp;pc, int level, MFItInfo &amp;info)</argsstring>
         <name>ParConstIter_impl</name>
         <param>
-          <type><ref refid="classamrex_1_1ParConstIter__impl_1afa08f4db85a79ddc1c2929da99dfecbb" kindref="member">ContainerType</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1ParConstIter__impl_1a249fe77aabcf704a5e7ec73f779c4c49" kindref="member">ContainerType</ref> const &amp;</type>
           <declname>pc</declname>
         </param>
         <param>
@@ -169,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="160" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="160" bodyend="162"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="162" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="162" bodyend="164"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -188,7 +201,7 @@
         <link refid="classamrex_1_1MFIter"/>
       </node>
       <node id="1">
-        <label>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</label>
+        <label>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;</label>
         <link refid="classamrex_1_1ParConstIter__impl"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -297,6 +310,12 @@
         </childnode>
         <childnode refid="25" relation="usage">
           <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, T_CellAssignor &gt;</label>
+        <link refid="classamrex_1_1ParConstIter__impl"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
@@ -461,12 +480,6 @@
           <edgelabel>m_bat</edgelabel>
         </childnode>
       </node>
-      <node id="1">
-        <label>amrex::ParConstIter_impl&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor &gt;</label>
-        <link refid="classamrex_1_1ParConstIter__impl"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="12">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
@@ -603,16 +616,17 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="143" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="145" bodyend="163"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" line="144" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParIter.H" bodystart="146" bodyend="165"/>
     <listofallmembers>
       <member refid="classamrex_1_1MFIter_1af5cf94bce73f6da744dd94acc46cdf38a96650cf6d7f0f21d0f4b118ae897d008" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>AllBoxes</name></member>
       <member refid="classamrex_1_1MFIter_1ab2fc387b6146040c8efcef278b258f78" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>allow_multiple_mfiters</name></member>
       <member refid="classamrex_1_1MFIter_1a3a8a7a77b913c5ddc8b352f2610e9cd1" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>allowMultipleMFIters</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1ab0c7f3321e3908d69a6b2f5dca3248cc" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>AoS</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1a16cd3b4f2109ac557d4e7b31519f6aa6" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>AoS</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1a3e2e432386c006d01aa96bb942308e2c" prot="private" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>AoSRef</name></member>
       <member refid="classamrex_1_1MFIter_1a65b335b52bc54d9eaf7030a4fce20cf8" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>beginIndex</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1ad794d2f114cc35fb92cf8eb8ff6a36c5" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>CellAssignor</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1ab05cd8a7a4ce76b61265c9f1dbf9f176" prot="private" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ContainerRef</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1afa08f4db85a79ddc1c2929da99dfecbb" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ContainerType</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1a249fe77aabcf704a5e7ec73f779c4c49" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ContainerType</name></member>
       <member refid="classamrex_1_1MFIter_1abfba09b9f27138141e9758d1a8ea2e4b" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>currentIndex</name></member>
       <member refid="classamrex_1_1MFIter_1a46b0a938c3d5f41c379d0adc7bf19c0d" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>depth</name></member>
       <member refid="classamrex_1_1MFIter_1a55734d57f0abbb384833f35c1a5422ef" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>device_sync</name></member>
@@ -638,7 +652,7 @@
       <member refid="classamrex_1_1MFIter_1aa69f73dbf7931e2d0a3889de2db4a42b" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>index</name></member>
       <member refid="classamrex_1_1MFIter_1ac482cbbf5ecee6f2593a3e4437623082" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>index_map</name></member>
       <member refid="classamrex_1_1MFIter_1addaa9305a4ee5dda972e835164b70e29" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>Initialize</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1a0fd5254f1f1c41d9e73b009b5de169d9" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>IntVector</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1ae6b60527dc650e6fd9cc30ea98dc5dfd" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>IntVector</name></member>
       <member refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>isValid</name></member>
       <member refid="classamrex_1_1MFIter_1a3658deeec368fbc6be8f9555ac37bab5" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>length</name></member>
       <member refid="classamrex_1_1MFIter_1a8a8cdb1fbae0dace9fcc0dc622c3409d" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>local_index_map</name></member>
@@ -674,18 +688,18 @@
       <member refid="classamrex_1_1ParIterBase__impl_1a30d5373e2129c7e4b5a63b992ca91d97" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>operator++</name></member>
       <member refid="classamrex_1_1MFIter_1ab35d3c7298d61ba3c7d2844c402dd6fc" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>operator=</name></member>
       <member refid="classamrex_1_1MFIter_1a61f66e0c8dd6b23c672213d1393f59da" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>operator=</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1abc84c82c70acfb7d433f9e3683aa01e4" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParConstIter_impl</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1a139a0fd987d3686f64e1f650a8461fd0" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParConstIter_impl</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1ad0552847dcd847dda664468873c739e6" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParConstIter_impl</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1ab9fdad990241bb4c86fc0695fc367fb4" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParConstIter_impl</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1afaf6edbba5eee7ad8ec59e92e4971efc" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParIterBase_impl</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1ac21aae96f4f5422d636525b0572777b6" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParIterBase_impl</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1a402bb1d61e0fb2712faa900103289695" prot="private" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleTilePtr</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1ae1cd2b3f0228bc3e4b25d87b29053929" prot="private" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleTileRef</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1a83ba8c672796d169c2930bbdf32cb00f" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleTileType</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1a09fe982d14487cedafb0c7fc3b58c156" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleType</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1a0e6990627e509337037b468a0f01234e" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleTileType</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1a9bce0c0d40443b40b8789eaafdab6b16" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleType</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1a9eb90934f537a8f10811e014520cc116" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>ParticleVector</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1a40d448c9de4fde0c1a475780ebc33ea7" prot="private" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>PCType</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1abbde64ebdff45fd1e4e3145d5f8bd0d4" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>RealVector</name></member>
-      <member refid="classamrex_1_1ParConstIter__impl_1ad56fb073e645e1a351800dc4f86c8fc5" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>SoA</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1a72430e9d94dd233685e062cfa94f1ee0" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>RealVector</name></member>
+      <member refid="classamrex_1_1ParConstIter__impl_1a9e7d45b7517d58230f82a78bd934c06e" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>SoA</name></member>
       <member refid="classamrex_1_1ParIterBase__impl_1adcd2d4ee749aa26d37c7f12ea984f3a3" prot="private" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>SoARef</name></member>
       <member refid="classamrex_1_1MFIter_1a6387ff79e8fcfbfdcfbc7dd8d8e78621" prot="protected" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>streams</name></member>
       <member refid="classamrex_1_1MFIter_1a8a7f84508a19797af16e5f3f6b13523c" prot="public" virt="non-virtual"><scope>amrex::ParConstIter_impl</scope><name>theFabArrayBase</name></member>
