@@ -17,6 +17,7 @@
         <script src="_static/documentation_options.js?v=94759461"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -54,14 +55,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FFTW_Tutorial.html">FFTW</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ML/PYTORCH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#running-an-amrex-application-with-a-pytorch-model"><strong>Running an AMReX application with a PyTorch model</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#beta-decay"><strong>Beta Decay</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beta-decay-reaction"><strong>Beta Decay Reaction</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pre-trained-model"><strong>Pre-trained Model</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-an-amrex-application-with-a-pytorch-model"><strong>Running an AMReX application with a PyTorch model</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
@@ -98,45 +98,55 @@
            <div itemprop="articleBody">
              
   <section id="ml-pytorch">
-<h1>ML/PYTORCH<a class="headerlink" href="#ml-pytorch" title="Link to this heading"></a></h1>
-<p>The overall goal of machine learning models in this context is to accelerate computationally expensive kernels/routines as part of an AMReX simulation.
+<span id="tutorials-ml"></span><h1>ML/PYTORCH<a class="headerlink" href="#ml-pytorch" title="Link to this heading"></a></h1>
+<p>The overall goal of this machine learning tutorial is to accelerate computationally expensive point-wise kernels/routines within an AMReX simulation.
 This tutorial demonstrates how to interface a pre-trained PyTorch machine learning model to an AMReX simulation by querying inputs from and supplying outputs to an AMReX MultiFab.
-Here we use a 1-input, 2-output model to illustrate the interface between the PyTorch model and a MultiFab.</p>
-<p>PyTorch is a commonly used machine learning package with a C++ API library called LibTorch.
+PyTorch is a commonly used machine learning package with a C++ API library called LibTorch.
 Located in the directory <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/ML/PYTORCH</span></code>, this example uses a machine learning model to solve a radioactive beta decay problem.
-To begin, we initialize data on a MultiFab, then copy the data into a PyTorch tensor, then we call the pre-trained model to compute the outputs, and finally we load the result back into a MultiFab.
-The program runs on either only the CPU or both the CPU and GPU.</p>
+Here we use a 1-input, 2-output model to illustrate the interface between the PyTorch model and a MultiFab.</p>
+<section id="beta-decay-reaction">
+<h2><strong>Beta Decay Reaction</strong><a class="headerlink" href="#beta-decay-reaction" title="Link to this heading"></a></h2>
+<p>In this example, the machine learning model is a regression model pre-trained to solve a two-component ODE system describing beta decay.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial X_0}{\partial t} = -X_0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial X_1}{\partial t} = X_0\]</div>
+<div class="math notranslate nohighlight">
+\[X_0(0) = 1; ~~~ X_1(0) = 0\]</div>
+<p>In the context of the pytorch model, the input is a time step <code class="docutils literal notranslate"><span class="pre">dt</span></code> and output is the two-component solution of the ODE system at time <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">dt</span></code>.</p>
+</section>
+<section id="pre-trained-model">
+<h2><strong>Pre-trained Model</strong><a class="headerlink" href="#pre-trained-model" title="Link to this heading"></a></h2>
+<p>The TorchScript model that is included in this example is located at <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec/model.pt</span></code>.
+If you wish to change the model, edit the <code class="docutils literal notranslate"><span class="pre">model_file</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">inputs</span></code>.</p>
+</section>
 <section id="running-an-amrex-application-with-a-pytorch-model">
 <h2><strong>Running an AMReX application with a PyTorch model</strong><a class="headerlink" href="#running-an-amrex-application-with-a-pytorch-model" title="Link to this heading"></a></h2>
+<p>To begin, we initialize a MultiFab full of data representing different <code class="docutils literal notranslate"><span class="pre">dt</span></code> values, then copy this data into a PyTorch tensor, then call the pre-trained model to compute the outputs, and finally load the result back into a MultiFab.
+The model can be evaluated on the CPU or GPU.</p>
 <p>Below is a step-by-step guide to successfully run an AMReX program that uses a PyTorch model. It will require the model to have been saved as a TorchScript. In this example the TorchScript file is <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>. For more information on TorchScript, please see their <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">intro tutorial</a>.</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p>Before compiling, either a CPU or CUDA version of LibTorch (PyTorch C++ library) must be downloaded into <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/</span></code>. To download the CPU-only version of <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> and rename it to <code class="docutils literal notranslate"><span class="pre">libtorch_cpu</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.9.0%2Bcpu.zip</span>
-<span class="go">unzip libtorch-cxx11-abi-shared-with-deps-1.9.0+cpu.zip</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-2.0.1%2Bcpu.zip</span>
+<span class="go">unzip libtorch-cxx11-abi-shared-with-deps-2.0.1+cpu.zip</span>
 <span class="go">mv libtorch libtorch_cpu</span>
 </pre></div>
 </div>
-<p>Similarly, the CUDA 11.1 version of <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> can be downloaded and renamed to <code class="docutils literal notranslate"><span class="pre">libtorch_cuda</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget https://download.pytorch.org/libtorch/cu111/libtorch-cxx11-abi-shared-with-deps-1.9.0%2Bcu111.zip</span>
-<span class="go">unzip libtorch-cxx11-abi-shared-with-deps-1.9.0+cu111.zip</span>
+<p>Similarly, the CUDA 11.8 version of <code class="docutils literal notranslate"><span class="pre">libtorch</span></code> can be downloaded and renamed to <code class="docutils literal notranslate"><span class="pre">libtorch_cuda</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wget https://download.pytorch.org/libtorch/cu118/libtorch-cxx11-abi-shared-with-deps-2.0.1%2Bcu118.zip</span>
+<span class="go">unzip libtorch-cxx11-abi-shared-with-deps-2.0.1+cu118.zip</span>
 <span class="go">mv libtorch libtorch_cuda</span>
 </pre></div>
 </div>
 <p>You can also check the website, <a class="reference external" href="https://pytorch.org/get-started/locally/">PyTorch</a> to download the latest version of LibTorch.</p>
 </li>
-<li><p>Go to <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec</span></code> to compile the executable. If using GPU, compile with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>. Run <code class="docutils literal notranslate"><span class="pre">make</span></code> and it should result in an executable named <code class="docutils literal notranslate"><span class="pre">main2d.gnu.MPI.CUDA.ex</span></code></p></li>
-<li><p>Then you can run the example: <code class="docutils literal notranslate"><span class="pre">./main2d.gnu.MPI.CUDA.ex</span> <span class="pre">inputs</span></code>.</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec</span></code> to compile the executable.
+Run <code class="docutils literal notranslate"><span class="pre">make</span></code> and optionally <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code> and it should result in an executable named, e.g., <code class="docutils literal notranslate"><span class="pre">main2d.gnu.MPI.CUDA.ex</span></code></p></li>
+<li><p>Then you can run the example, e.g., <code class="docutils literal notranslate"><span class="pre">./main2d.gnu.MPI.CUDA.ex</span> <span class="pre">inputs</span></code> or <code class="docutils literal notranslate"><span class="pre">mpiexec</span> <span class="pre">-n</span> <span class="pre">4</span> <span class="pre">./main2d.gnu.MPI.ex</span> <span class="pre">inputs</span></code>.
+There will be two plotfiles, <code class="docutils literal notranslate"><span class="pre">plt_inputs</span></code> (containing <code class="docutils literal notranslate"><span class="pre">dt</span></code>) and <code class="docutils literal notranslate"><span class="pre">plt_outputs</span></code> (containing <code class="docutils literal notranslate"><span class="pre">X_0</span></code> and <code class="docutils literal notranslate"><span class="pre">X_1</span></code> at the final time).</p></li>
 </ol>
 </div></blockquote>
-</section>
-<section id="beta-decay">
-<h2><strong>Beta Decay</strong><a class="headerlink" href="#beta-decay" title="Link to this heading"></a></h2>
-<p>In this example, the machine learning model is a regression model pre-trained to solve a two-component ODE system describing beta decay. The input is a time step <code class="docutils literal notranslate"><span class="pre">dt</span></code> and output is the two-component solution of the ODE system at time <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">dt</span></code>.</p>
-</section>
-<section id="pre-trained-model">
-<h2><strong>Pre-trained Model</strong><a class="headerlink" href="#pre-trained-model" title="Link to this heading"></a></h2>
-<p>The TorchScript model that is included in this example is located at <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec/model.pt</span></code>. If you wish to change the model, edit the <code class="docutils literal notranslate"><span class="pre">model_file</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">ML/PYTORCH/Exec/inputs</span></code> to your desired PyTorch model file location.</p>
 </section>
 </section>
 
