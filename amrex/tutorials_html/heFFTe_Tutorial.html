@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SDC &mdash; amrex 23.10-dev documentation</title>
+  <title>heFFTe &mdash; amrex 23.10-dev documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SENSEI" href="SENSEI_Tutorial.html" />
-    <link rel="prev" title="Python" href="Python_Tutorial.html" /> 
+    <link rel="next" title="LinearSolvers" href="LinearSolvers_Tutorial.html" />
+    <link rel="prev" title="GPU" href="GPU_Tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,16 +57,17 @@
 <li class="toctree-l1"><a class="reference internal" href="FFTW_Tutorial.html">FFTW</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="heFFTe_Tutorial.html">heFFTe</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">heFFTe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic">Basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poisson">Poisson</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Python_Tutorial.html">Python</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SDC</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#misdc-adr-2d"><strong>MISDC_ADR_2d</strong></a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
@@ -86,9 +87,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">SDC</li>
+      <li class="breadcrumb-item active">heFFTe</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/SDC_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/heFFTe_Tutorial.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -96,33 +97,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="sdc">
-<span id="tutorials-sdc"></span><h1>SDC<a class="headerlink" href="#sdc" title="Link to this heading"></a></h1>
-<section id="misdc-adr-2d">
-<h2><strong>MISDC_ADR_2d</strong><a class="headerlink" href="#misdc-adr-2d" title="Link to this heading"></a></h2>
-<p>This tutorial presents an example of using a “multi-implicit” spectral
-deferred corrections (MISDC) integrator to solve a simple scalar
-advection-diffusion-reaction equation in two dimensions.  Both
-diffusion and reaction terms are treated implicitly but solved for
-independently in an operator splitting fashion.  The advection is
-treated explicitly.  The relative strengths of the three terms can be
-adjusted by changing the coefficients a,d, and r in inputs_2d.</p>
-<p>The advection operator is a 4th-order centered difference in flux
-form.  The diffusion operator is a 2nd order discretization of the
-Laplacian, and the implicit diffusion solve is done using
-multigrid. The “reaction” term here is just a simple linear damping
-hence the implicit solve is trivial.  See the routines in
-functions_2d.f90 for the code that evaluates the rhs terms.</p>
-<p>The simple form of the equation allows for an exact solution of the
-PDE in a periodic geometry. There is a flag called “plot_err” in
-main.cpp, which if set equal 1 will cause the code to output the error
-in the solution for plotting.  If the advection term is omitted (a=0),
-then an exact solution to the method of lines ODE is computed and used
-to compute the error.  Hence the error in this case will scale in dt
-with the order of the time integrator.</p>
-<p>This code can also be run as an IMEX advection-diffusion example
-simply by setting Npieces=2 in main.cpp.  This should also be
-equivalent to setting r=0.</p>
+  <section id="heffte">
+<span id="tutorials-heffte"></span><h1>heFFTe<a class="headerlink" href="#heffte" title="Link to this heading"></a></h1>
+<p>These tutorials demonstrate how to heFFTe to solve for and manipulate Fourier transform data using multiple MPI ranks/GPUs.</p>
+<p>There are two heFFTe tutorials, <code class="docutils literal notranslate"><span class="pre">Basic</span></code> and <code class="docutils literal notranslate"><span class="pre">Poisson</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Basic</span></code> tutorial: The tutorial found in <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/heFFTe/Basic</span></code> is
+useful if the objective is to simply take a forward FFT of data, and the DFT’s ordering in k-space
+matters to the user.  This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>, takes a forward FFT,
+and then redistributes the data in k-space where the center cell in the domain corresponds to the k=0 mode.
+The results are written to a plot file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Poisson</span></code> tutorial: This tutorial: <code class="docutils literal notranslate"><span class="pre">amrex-tutorials/ExampleCodes/heFFTe/Poisson</span></code>
+solves a Poisson equation with periodic boundary conditions.  In it, both a forward FFT and reverse FFT
+are called to solve the equation, however, no reordering of the DFT data in k-space is performed.</p></li>
+</ul>
+<p>We note that both backends, fftw and cufft, assume a row-major ordering of data; since a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code> is column major,
+the output to the spectral array is spatially-transposed.</p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="basic">
+<span id="section-heffte-tutorial-heffte-basic"></span><h2>Basic<a class="headerlink" href="#basic" title="Link to this heading"></a></h2>
+<p>This tutorial initializes a 3D or 2D <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span></code>, takes a forward FFT,
+and then redistributes the data in k-space where the center cell in the domain corresponds to the k=0 mode.
+The results are written to a plot file.</p>
+</section>
+<section id="poisson">
+<span id="section-heffte-tutorial-heffte-pois"></span><h2>Poisson<a class="headerlink" href="#poisson" title="Link to this heading"></a></h2>
+<p>In this test case we set up a right hand side (rhs), call the forward transform,
+modify the coefficients, then call the backward solver and output the solution
+to the discrete Poisson equation.</p>
 </section>
 </section>
 
@@ -130,8 +133,8 @@ equivalent to setting r=0.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Python_Tutorial.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="SENSEI_Tutorial.html" class="btn btn-neutral float-right" title="SENSEI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GPU_Tutorial.html" class="btn btn-neutral float-left" title="GPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="LinearSolvers_Tutorial.html" class="btn btn-neutral float-right" title="LinearSolvers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
