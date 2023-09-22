@@ -682,14 +682,14 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : pmap)</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;      {</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="comment">// loop over particles in ParticleTile</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = kv.second.GetArrayOfStructs();</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;parts = aos();</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <span class="keyword">auto</span>&amp; particle_tile = kv.second;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="keyword">auto</span> ptd = particle_tile.getConstParticleTileData();</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        <span class="comment">// visit only the &quot;real&quot; particles, skip the &quot;neighbor&quot; particles.</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> numReal = aos.numRealParticles();</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> numReal = particle_tile.numRealParticles();</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        {</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = parts[i];</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = ptd[i];</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;          <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;          {</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
@@ -970,7 +970,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    {</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;      <span class="keyword">auto</span>&amp; particle_attributes = pti.GetStructOfArrays();</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;      <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;      <span class="comment">// shuffle from the AMReX component order</span></div>
@@ -982,7 +982,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        {</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = ptd[i];</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;          <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;          {</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            pData[i*nComps + j] = realData[i];</div>
@@ -1045,7 +1045,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <span class="keywordflow">for</span> (MyParIter pti(*this-&gt;m_particles, level); pti.isValid(); ++pti)</div>
 <div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    {</div>
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;      <span class="keyword">auto</span>&amp; particle_attributes = pti.GetStructOfArrays();</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;      <span class="keyword">auto</span>&amp; aos = pti.GetArrayOfStructs();</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;      <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160; </div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;      <span class="keyword">auto</span> numReal = pti.numParticles();</div>
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;      <span class="comment">// shuffle from the AMReX component order</span></div>
@@ -1054,7 +1054,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleDataAdaptorI_8H_source.
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160; </div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0; i &lt; numReal; ++i)</div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;      {</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = aos[i];</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;part = ptd[i];</div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;        <span class="keywordflow">if</span> (part.id() &gt; 0)</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        {</div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;          pData[i] = intData[i];</div>

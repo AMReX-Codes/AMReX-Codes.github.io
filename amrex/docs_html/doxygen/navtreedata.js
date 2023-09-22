@@ -159,8 +159,8 @@ var NAVTREEINDEX =
 "structamrex_1_1ParserExeADD.html#ae9780c323f695d1c05f0da89b404f3f5",
 "structamrex_1_1ParticleCopyPlan.html#a996c810aea3ffa99a480dffa839230c3",
 "structamrex_1_1SoAParticle.html#a69e0e87f9818bf12a60e2a2c2419ca4a",
-"structamrex_1_1algoim_1_1EBPlane.html#aa39038dcf72fcf8a8b57513432875bf2",
-"structdistribution__t.html#a8bdbbba2982ae871ad4c0f389ca78959"
+"structamrex_1_1algoim_1_1EBPlane.html#a3ae6123f45aee26c756d2105c8c903ab",
+"structdistribution__t.html#a48496ef186f85b7d82d83592b366c03f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -785,7 +785,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <a class="code" href="structamrex_1_1ParticleTile.html">ParticleTileType</a> ptile;</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    CreateVirtualParticles(level, ptile);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    ptile.<a class="code" href="structamrex_1_1ParticleTile.html#a15a5c73d1aaced5789c24576eabe384d">GetArrayOfStructs</a>().<a class="code" href="classamrex_1_1ArrayOfStructs.html#ae4184b987b9dfa9b4b3284a7e5c2d927">swap</a>(virts);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    ptile.<a class="code" href="structamrex_1_1ParticleTile.html#a15a5c73d1aaced5789c24576eabe384d">GetArrayOfStructs</a>().swap(virts);</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;}</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
@@ -1744,8 +1744,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;                <span class="keywordflow">if</span> (npart != 0) {</div>
 <div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;                    Long last = npart - 1;</div>
 <div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;                    Long pindex = 0;</div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;                    <span class="keywordflow">while</span> (pindex &lt;= last) {</div>
-<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;                        <span class="keyword">auto</span> ptd = particle_tile-&gt;getParticleTileData();</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;                    <span class="keyword">auto</span> ptd = particle_tile-&gt;getParticleTileData();</div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;                    <span class="keywordflow">while</span> (pindex &lt;= last) {</div>
 <div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;                        <a class="code" href="classamrex_1_1ParticleContainer__impl.html#af9086e3760f0e461a8aa1cb5cbe2b608">ParticleType</a> p(ptd,pindex);</div>
 <div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160; </div>
 <div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;                        <span class="keywordflow">if</span> ((remove_negative == <span class="keyword">false</span>) &amp;&amp; (p.id() &lt; 0)) {</div>
@@ -1760,7 +1760,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;                            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = 0; comp &lt; NumIntComps(); comp++) {</div>
 <div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;                                soa.GetIntData(comp)[pindex] = soa.GetIntData(comp)[last];</div>
 <div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;                            }</div>
-<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;                            correctCellVectors(last, pindex, grid, aos[pindex]);</div>
+<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;                            correctCellVectors(last, pindex, grid, ptd[pindex]);</div>
 <div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;                            --last;</div>
 <div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;                            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;                        }</div>
@@ -1776,7 +1776,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;                            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = 0; comp &lt; NumIntComps(); comp++) {</div>
 <div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;                                soa.GetIntData(comp)[pindex] = soa.GetIntData(comp)[last];</div>
 <div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;                            }</div>
-<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;                            correctCellVectors(last, pindex, grid, aos[pindex]);</div>
+<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;                            correctCellVectors(last, pindex, grid, ptd[pindex]);</div>
 <div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;                            --last;</div>
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;                            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;                        }</div>
@@ -1830,7 +1830,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;                            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp = 0; comp &lt; NumIntComps(); comp++) {</div>
 <div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;                                soa.GetIntData(comp)[pindex] = soa.GetIntData(comp)[last];</div>
 <div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;                            }</div>
-<div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;                            correctCellVectors(last, pindex, grid, aos[pindex]);</div>
+<div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;                            correctCellVectors(last, pindex, grid, ptd[pindex]);</div>
 <div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;                            --last;</div>
 <div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;                            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;                        }</div>
@@ -2297,341 +2297,343 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l02206"></a><span class="lineno"> 2206</span>&#160;              <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_tile = kv.second;</div>
 <div class="line"><a name="l02207"></a><span class="lineno"> 2207</span>&#160; </div>
 <div class="line"><a name="l02208"></a><span class="lineno"> 2208</span>&#160;              <span class="keyword">auto</span>&amp; dst_tile = GetParticles(host_lev)[std::make_pair(grid,tile)];</div>
-<div class="line"><a name="l02209"></a><span class="lineno"> 2209</span>&#160;              <span class="keyword">auto</span> old_size = dst_tile.GetArrayOfStructs().<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
+<div class="line"><a name="l02209"></a><span class="lineno"> 2209</span>&#160;              <span class="keyword">auto</span> old_size = dst_tile.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
 <div class="line"><a name="l02210"></a><span class="lineno"> 2210</span>&#160;              <span class="keyword">auto</span> new_size = old_size + src_tile.size();</div>
 <div class="line"><a name="l02211"></a><span class="lineno"> 2211</span>&#160;              dst_tile.resize(new_size);</div>
 <div class="line"><a name="l02212"></a><span class="lineno"> 2212</span>&#160; </div>
-<div class="line"><a name="l02213"></a><span class="lineno"> 2213</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
-<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;                             src_tile.begin(), src_tile.end(),</div>
-<div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;                             dst_tile.GetArrayOfStructs().begin() + old_size);</div>
-<div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160; </div>
-<div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumRealComps(); ++i) {</div>
-<div class="line"><a name="l02218"></a><span class="lineno"> 2218</span>&#160;                  <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
-<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;                                 host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
-<div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;                                 host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
-<div class="line"><a name="l02221"></a><span class="lineno"> 2221</span>&#160;                                 dst_tile.GetStructOfArrays().GetRealData(i).begin() + old_size);</div>
-<div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;              }</div>
-<div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160; </div>
-<div class="line"><a name="l02224"></a><span class="lineno"> 2224</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumIntComps(); ++i) {</div>
-<div class="line"><a name="l02225"></a><span class="lineno"> 2225</span>&#160;                  <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
-<div class="line"><a name="l02226"></a><span class="lineno"> 2226</span>&#160;                                 host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
-<div class="line"><a name="l02227"></a><span class="lineno"> 2227</span>&#160;                                 host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
-<div class="line"><a name="l02228"></a><span class="lineno"> 2228</span>&#160;                                 dst_tile.GetStructOfArrays().GetIntData(i).begin() + old_size);</div>
-<div class="line"><a name="l02229"></a><span class="lineno"> 2229</span>&#160;              }</div>
-<div class="line"><a name="l02230"></a><span class="lineno"> 2230</span>&#160;            }</div>
-<div class="line"><a name="l02231"></a><span class="lineno"> 2231</span>&#160;          }</div>
-<div class="line"><a name="l02232"></a><span class="lineno"> 2232</span>&#160; </div>
-<div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::Device::streamSynchronize</a>();</div>
-<div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160; </div>
-<div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;        <a class="code" href="AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224">BL_PROFILE_VAR_STOP</a>(blp_copy);</div>
-<div class="line"><a name="l02237"></a><span class="lineno"> 2237</span>&#160;    }</div>
-<div class="line"><a name="l02238"></a><span class="lineno"> 2238</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l02239"></a><span class="lineno"> 2239</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(not_ours,lev_min,lev_max,nGrow,local);</div>
-<div class="line"><a name="l02240"></a><span class="lineno"> 2240</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02241"></a><span class="lineno"> 2241</span>&#160;}</div>
-<div class="line"><a name="l02242"></a><span class="lineno"> 2242</span>&#160; </div>
-<div class="line"><a name="l02243"></a><span class="lineno"> 2243</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02244"></a><span class="lineno"> 2244</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02245"></a><span class="lineno"> 2245</span>&#160;<span class="keywordtype">bool</span></div>
-<div class="line"><a name="l02246"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a6dc15bf7eabf4bf856b9296c39da773f"> 2246</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::OK</a> (<span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, <span class="keywordtype">int</span> nGrow)<span class="keyword"> const</span></div>
-<div class="line"><a name="l02247"></a><span class="lineno"> 2247</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l02248"></a><span class="lineno"> 2248</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::OK()&quot;</span>);</div>
-<div class="line"><a name="l02249"></a><span class="lineno"> 2249</span>&#160; </div>
-<div class="line"><a name="l02250"></a><span class="lineno"> 2250</span>&#160;    <span class="keywordflow">if</span> (lev_max == -1) {</div>
-<div class="line"><a name="l02251"></a><span class="lineno"> 2251</span>&#160;        lev_max = finestLevel();</div>
-<div class="line"><a name="l02252"></a><span class="lineno"> 2252</span>&#160;}</div>
-<div class="line"><a name="l02253"></a><span class="lineno"> 2253</span>&#160; </div>
-<div class="line"><a name="l02254"></a><span class="lineno"> 2254</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a>(*<span class="keyword">this</span>, lev_min, lev_max, nGrow) == 0);</div>
-<div class="line"><a name="l02255"></a><span class="lineno"> 2255</span>&#160;}</div>
-<div class="line"><a name="l02256"></a><span class="lineno"> 2256</span>&#160; </div>
-<div class="line"><a name="l02257"></a><span class="lineno"> 2257</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02258"></a><span class="lineno"> 2258</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02259"></a><span class="lineno"> 2259</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02260"></a><span class="lineno"> 2260</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</a></div>
-<div class="line"><a name="l02261"></a><span class="lineno"> 2261</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">::AddParticlesAtLevel</a> (AoS&amp; particles, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> nGrow)</div>
-<div class="line"><a name="l02262"></a><span class="lineno"> 2262</span>&#160;{</div>
-<div class="line"><a name="l02263"></a><span class="lineno"> 2263</span>&#160;    ParticleTileType ptile;</div>
-<div class="line"><a name="l02264"></a><span class="lineno"> 2264</span>&#160;    ptile.GetArrayOfStructs().swap(particles);</div>
-<div class="line"><a name="l02265"></a><span class="lineno"> 2265</span>&#160;    AddParticlesAtLevel(ptile, level, nGrow);</div>
-<div class="line"><a name="l02266"></a><span class="lineno"> 2266</span>&#160;}</div>
-<div class="line"><a name="l02267"></a><span class="lineno"> 2267</span>&#160; </div>
-<div class="line"><a name="l02268"></a><span class="lineno"> 2268</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02269"></a><span class="lineno"> 2269</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02270"></a><span class="lineno"> 2270</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02271"></a><span class="lineno"> 2271</span>&#160;ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</div>
-<div class="line"><a name="l02272"></a><span class="lineno"> 2272</span>&#160;::AddParticlesAtLevel (ParticleTileType&amp; particles, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> nGrow)</div>
-<div class="line"><a name="l02273"></a><span class="lineno"> 2273</span>&#160;{</div>
-<div class="line"><a name="l02274"></a><span class="lineno"> 2274</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::AddParticlesAtLevel()&quot;</span>);</div>
-<div class="line"><a name="l02275"></a><span class="lineno"> 2275</span>&#160; </div>
-<div class="line"><a name="l02276"></a><span class="lineno"> 2276</span>&#160;    <span class="keywordflow">if</span> (<span class="keywordtype">int</span>(m_particles.size()) &lt; level+1)</div>
-<div class="line"><a name="l02277"></a><span class="lineno"> 2277</span>&#160;    {</div>
-<div class="line"><a name="l02278"></a><span class="lineno"> 2278</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#acafd26c0f64d958aed9ee56043c4f10e">Verbose</a>())</div>
-<div class="line"><a name="l02279"></a><span class="lineno"> 2279</span>&#160;        {</div>
-<div class="line"><a name="l02280"></a><span class="lineno"> 2280</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;ParticleContainer::AddParticlesAtLevel resizing m_particles from &quot;</span></div>
-<div class="line"><a name="l02281"></a><span class="lineno"> 2281</span>&#160;                           &lt;&lt; m_particles.size()</div>
-<div class="line"><a name="l02282"></a><span class="lineno"> 2282</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot; to &quot;</span></div>
-<div class="line"><a name="l02283"></a><span class="lineno"> 2283</span>&#160;                           &lt;&lt; level+1 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l02284"></a><span class="lineno"> 2284</span>&#160;        }</div>
-<div class="line"><a name="l02285"></a><span class="lineno"> 2285</span>&#160;        m_particles.resize(level+1);</div>
-<div class="line"><a name="l02286"></a><span class="lineno"> 2286</span>&#160;        m_dummy_mf.resize(level+1);</div>
-<div class="line"><a name="l02287"></a><span class="lineno"> 2287</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; level+1; ++lev) {</div>
-<div class="line"><a name="l02288"></a><span class="lineno"> 2288</span>&#160;            RedefineDummyMF(lev);</div>
-<div class="line"><a name="l02289"></a><span class="lineno"> 2289</span>&#160;        }</div>
-<div class="line"><a name="l02290"></a><span class="lineno"> 2290</span>&#160;    }</div>
-<div class="line"><a name="l02291"></a><span class="lineno"> 2291</span>&#160; </div>
-<div class="line"><a name="l02292"></a><span class="lineno"> 2292</span>&#160;    <span class="keyword">auto</span>&amp; ptile = DefineAndReturnParticleTile(level, 0, 0);</div>
-<div class="line"><a name="l02293"></a><span class="lineno"> 2293</span>&#160;    <span class="keywordtype">int</span> old_np = ptile.size();</div>
-<div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;    <span class="keywordtype">int</span> num_to_add = particles.size();</div>
-<div class="line"><a name="l02295"></a><span class="lineno"> 2295</span>&#160;    <span class="keywordtype">int</span> new_np = old_np + num_to_add;</div>
-<div class="line"><a name="l02296"></a><span class="lineno"> 2296</span>&#160;    ptile.resize(new_np);</div>
-<div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160;    <a class="code" href="namespaceamrex.html#a2c694692aaba3c4e23ab3067eab1ba44">amrex::copyParticles</a>(ptile, particles, 0, old_np, num_to_add);</div>
-<div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160;    Redistribute(level, level, nGrow);</div>
-<div class="line"><a name="l02299"></a><span class="lineno"> 2299</span>&#160;    particles.resize(0);</div>
-<div class="line"><a name="l02300"></a><span class="lineno"> 2300</span>&#160;}</div>
-<div class="line"><a name="l02301"></a><span class="lineno"> 2301</span>&#160; </div>
-<div class="line"><a name="l02302"></a><span class="lineno"> 2302</span>&#160;<span class="comment">// This is the single-level version for cell-centered density</span></div>
-<div class="line"><a name="l02303"></a><span class="lineno"> 2303</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02304"></a><span class="lineno"> 2304</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02305"></a><span class="lineno"> 2305</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02306"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a4c80f516f077fac4d03733dd10038d91"> 2306</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
-<div class="line"><a name="l02307"></a><span class="lineno"> 2307</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">AssignCellDensitySingleLevel</a> (<span class="keywordtype">int</span> rho_index,</div>
-<div class="line"><a name="l02308"></a><span class="lineno"> 2308</span>&#160;                              <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; mf_to_be_filled,</div>
-<div class="line"><a name="l02309"></a><span class="lineno"> 2309</span>&#160;                              <span class="keywordtype">int</span>       lev,</div>
-<div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;                              <span class="keywordtype">int</span>       ncomp,</div>
-<div class="line"><a name="l02311"></a><span class="lineno"> 2311</span>&#160;                              <span class="keywordtype">int</span>       particle_lvl_offset)<span class="keyword"> const</span></div>
-<div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::AssignCellDensitySingleLevel()&quot;</span>);</div>
-<div class="line"><a name="l02314"></a><span class="lineno"> 2314</span>&#160; </div>
-<div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160;    <span class="keywordflow">if</span> (rho_index != 0) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;AssignCellDensitySingleLevel only works if rho_index = 0&quot;</span>); }</div>
+<div class="line"><a name="l02213"></a><span class="lineno"> 2213</span>&#160;              <span class="keywordflow">if</span> constexpr(! ParticleType::is_soa_particle) {</div>
+<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;                  <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
+<div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;                                 src_tile.begin(), src_tile.end(),</div>
+<div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;                                 dst_tile.GetArrayOfStructs().begin() + old_size);</div>
+<div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;              }</div>
+<div class="line"><a name="l02218"></a><span class="lineno"> 2218</span>&#160; </div>
+<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumRealComps(); ++i) {</div>
+<div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;                  <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
+<div class="line"><a name="l02221"></a><span class="lineno"> 2221</span>&#160;                                 host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
+<div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;                                 host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
+<div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160;                                 dst_tile.GetStructOfArrays().GetRealData(i).begin() + old_size);</div>
+<div class="line"><a name="l02224"></a><span class="lineno"> 2224</span>&#160;              }</div>
+<div class="line"><a name="l02225"></a><span class="lineno"> 2225</span>&#160; </div>
+<div class="line"><a name="l02226"></a><span class="lineno"> 2226</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumIntComps(); ++i) {</div>
+<div class="line"><a name="l02227"></a><span class="lineno"> 2227</span>&#160;                  <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
+<div class="line"><a name="l02228"></a><span class="lineno"> 2228</span>&#160;                                 host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
+<div class="line"><a name="l02229"></a><span class="lineno"> 2229</span>&#160;                                 host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
+<div class="line"><a name="l02230"></a><span class="lineno"> 2230</span>&#160;                                 dst_tile.GetStructOfArrays().GetIntData(i).begin() + old_size);</div>
+<div class="line"><a name="l02231"></a><span class="lineno"> 2231</span>&#160;              }</div>
+<div class="line"><a name="l02232"></a><span class="lineno"> 2232</span>&#160;            }</div>
+<div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160;          }</div>
+<div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160; </div>
+<div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::Device::streamSynchronize</a>();</div>
+<div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02237"></a><span class="lineno"> 2237</span>&#160; </div>
+<div class="line"><a name="l02238"></a><span class="lineno"> 2238</span>&#160;        <a class="code" href="AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224">BL_PROFILE_VAR_STOP</a>(blp_copy);</div>
+<div class="line"><a name="l02239"></a><span class="lineno"> 2239</span>&#160;    }</div>
+<div class="line"><a name="l02240"></a><span class="lineno"> 2240</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l02241"></a><span class="lineno"> 2241</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(not_ours,lev_min,lev_max,nGrow,local);</div>
+<div class="line"><a name="l02242"></a><span class="lineno"> 2242</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02243"></a><span class="lineno"> 2243</span>&#160;}</div>
+<div class="line"><a name="l02244"></a><span class="lineno"> 2244</span>&#160; </div>
+<div class="line"><a name="l02245"></a><span class="lineno"> 2245</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02246"></a><span class="lineno"> 2246</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02247"></a><span class="lineno"> 2247</span>&#160;<span class="keywordtype">bool</span></div>
+<div class="line"><a name="l02248"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a6dc15bf7eabf4bf856b9296c39da773f"> 2248</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::OK</a> (<span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, <span class="keywordtype">int</span> nGrow)<span class="keyword"> const</span></div>
+<div class="line"><a name="l02249"></a><span class="lineno"> 2249</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l02250"></a><span class="lineno"> 2250</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::OK()&quot;</span>);</div>
+<div class="line"><a name="l02251"></a><span class="lineno"> 2251</span>&#160; </div>
+<div class="line"><a name="l02252"></a><span class="lineno"> 2252</span>&#160;    <span class="keywordflow">if</span> (lev_max == -1) {</div>
+<div class="line"><a name="l02253"></a><span class="lineno"> 2253</span>&#160;        lev_max = finestLevel();</div>
+<div class="line"><a name="l02254"></a><span class="lineno"> 2254</span>&#160;}</div>
+<div class="line"><a name="l02255"></a><span class="lineno"> 2255</span>&#160; </div>
+<div class="line"><a name="l02256"></a><span class="lineno"> 2256</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a>(*<span class="keyword">this</span>, lev_min, lev_max, nGrow) == 0);</div>
+<div class="line"><a name="l02257"></a><span class="lineno"> 2257</span>&#160;}</div>
+<div class="line"><a name="l02258"></a><span class="lineno"> 2258</span>&#160; </div>
+<div class="line"><a name="l02259"></a><span class="lineno"> 2259</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02260"></a><span class="lineno"> 2260</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02261"></a><span class="lineno"> 2261</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02262"></a><span class="lineno"> 2262</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</a></div>
+<div class="line"><a name="l02263"></a><span class="lineno"> 2263</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">::AddParticlesAtLevel</a> (AoS&amp; particles, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> nGrow)</div>
+<div class="line"><a name="l02264"></a><span class="lineno"> 2264</span>&#160;{</div>
+<div class="line"><a name="l02265"></a><span class="lineno"> 2265</span>&#160;    ParticleTileType ptile;</div>
+<div class="line"><a name="l02266"></a><span class="lineno"> 2266</span>&#160;    ptile.GetArrayOfStructs().swap(particles);</div>
+<div class="line"><a name="l02267"></a><span class="lineno"> 2267</span>&#160;    AddParticlesAtLevel(ptile, level, nGrow);</div>
+<div class="line"><a name="l02268"></a><span class="lineno"> 2268</span>&#160;}</div>
+<div class="line"><a name="l02269"></a><span class="lineno"> 2269</span>&#160; </div>
+<div class="line"><a name="l02270"></a><span class="lineno"> 2270</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02271"></a><span class="lineno"> 2271</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02272"></a><span class="lineno"> 2272</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02273"></a><span class="lineno"> 2273</span>&#160;ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</div>
+<div class="line"><a name="l02274"></a><span class="lineno"> 2274</span>&#160;::AddParticlesAtLevel (ParticleTileType&amp; particles, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> nGrow)</div>
+<div class="line"><a name="l02275"></a><span class="lineno"> 2275</span>&#160;{</div>
+<div class="line"><a name="l02276"></a><span class="lineno"> 2276</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::AddParticlesAtLevel()&quot;</span>);</div>
+<div class="line"><a name="l02277"></a><span class="lineno"> 2277</span>&#160; </div>
+<div class="line"><a name="l02278"></a><span class="lineno"> 2278</span>&#160;    <span class="keywordflow">if</span> (<span class="keywordtype">int</span>(m_particles.size()) &lt; level+1)</div>
+<div class="line"><a name="l02279"></a><span class="lineno"> 2279</span>&#160;    {</div>
+<div class="line"><a name="l02280"></a><span class="lineno"> 2280</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#acafd26c0f64d958aed9ee56043c4f10e">Verbose</a>())</div>
+<div class="line"><a name="l02281"></a><span class="lineno"> 2281</span>&#160;        {</div>
+<div class="line"><a name="l02282"></a><span class="lineno"> 2282</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;ParticleContainer::AddParticlesAtLevel resizing m_particles from &quot;</span></div>
+<div class="line"><a name="l02283"></a><span class="lineno"> 2283</span>&#160;                           &lt;&lt; m_particles.size()</div>
+<div class="line"><a name="l02284"></a><span class="lineno"> 2284</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot; to &quot;</span></div>
+<div class="line"><a name="l02285"></a><span class="lineno"> 2285</span>&#160;                           &lt;&lt; level+1 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l02286"></a><span class="lineno"> 2286</span>&#160;        }</div>
+<div class="line"><a name="l02287"></a><span class="lineno"> 2287</span>&#160;        m_particles.resize(level+1);</div>
+<div class="line"><a name="l02288"></a><span class="lineno"> 2288</span>&#160;        m_dummy_mf.resize(level+1);</div>
+<div class="line"><a name="l02289"></a><span class="lineno"> 2289</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; level+1; ++lev) {</div>
+<div class="line"><a name="l02290"></a><span class="lineno"> 2290</span>&#160;            RedefineDummyMF(lev);</div>
+<div class="line"><a name="l02291"></a><span class="lineno"> 2291</span>&#160;        }</div>
+<div class="line"><a name="l02292"></a><span class="lineno"> 2292</span>&#160;    }</div>
+<div class="line"><a name="l02293"></a><span class="lineno"> 2293</span>&#160; </div>
+<div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;    <span class="keyword">auto</span>&amp; ptile = DefineAndReturnParticleTile(level, 0, 0);</div>
+<div class="line"><a name="l02295"></a><span class="lineno"> 2295</span>&#160;    <span class="keywordtype">int</span> old_np = ptile.size();</div>
+<div class="line"><a name="l02296"></a><span class="lineno"> 2296</span>&#160;    <span class="keywordtype">int</span> num_to_add = particles.size();</div>
+<div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160;    <span class="keywordtype">int</span> new_np = old_np + num_to_add;</div>
+<div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160;    ptile.resize(new_np);</div>
+<div class="line"><a name="l02299"></a><span class="lineno"> 2299</span>&#160;    <a class="code" href="namespaceamrex.html#a2c694692aaba3c4e23ab3067eab1ba44">amrex::copyParticles</a>(ptile, particles, 0, old_np, num_to_add);</div>
+<div class="line"><a name="l02300"></a><span class="lineno"> 2300</span>&#160;    Redistribute(level, level, nGrow);</div>
+<div class="line"><a name="l02301"></a><span class="lineno"> 2301</span>&#160;    particles.resize(0);</div>
+<div class="line"><a name="l02302"></a><span class="lineno"> 2302</span>&#160;}</div>
+<div class="line"><a name="l02303"></a><span class="lineno"> 2303</span>&#160; </div>
+<div class="line"><a name="l02304"></a><span class="lineno"> 2304</span>&#160;<span class="comment">// This is the single-level version for cell-centered density</span></div>
+<div class="line"><a name="l02305"></a><span class="lineno"> 2305</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02306"></a><span class="lineno"> 2306</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02307"></a><span class="lineno"> 2307</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02308"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a4c80f516f077fac4d03733dd10038d91"> 2308</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
+<div class="line"><a name="l02309"></a><span class="lineno"> 2309</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">AssignCellDensitySingleLevel</a> (<span class="keywordtype">int</span> rho_index,</div>
+<div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;                              <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; mf_to_be_filled,</div>
+<div class="line"><a name="l02311"></a><span class="lineno"> 2311</span>&#160;                              <span class="keywordtype">int</span>       lev,</div>
+<div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160;                              <span class="keywordtype">int</span>       ncomp,</div>
+<div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;                              <span class="keywordtype">int</span>       particle_lvl_offset)<span class="keyword"> const</span></div>
+<div class="line"><a name="l02314"></a><span class="lineno"> 2314</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::AssignCellDensitySingleLevel()&quot;</span>);</div>
 <div class="line"><a name="l02316"></a><span class="lineno"> 2316</span>&#160; </div>
-<div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160;    <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>* mf_pointer;</div>
+<div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160;    <span class="keywordflow">if</span> (rho_index != 0) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;AssignCellDensitySingleLevel only works if rho_index = 0&quot;</span>); }</div>
 <div class="line"><a name="l02318"></a><span class="lineno"> 2318</span>&#160; </div>
-<div class="line"><a name="l02319"></a><span class="lineno"> 2319</span>&#160;    <span class="keywordflow">if</span> (OnSameGrids(lev, mf_to_be_filled)) {</div>
-<div class="line"><a name="l02320"></a><span class="lineno"> 2320</span>&#160;      <span class="comment">// If we are already working with the internal mf defined on the</span></div>
-<div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;      <span class="comment">// particle_box_array, then we just work with this.</span></div>
-<div class="line"><a name="l02322"></a><span class="lineno"> 2322</span>&#160;      mf_pointer = &amp;mf_to_be_filled;</div>
-<div class="line"><a name="l02323"></a><span class="lineno"> 2323</span>&#160;    }</div>
-<div class="line"><a name="l02324"></a><span class="lineno"> 2324</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02325"></a><span class="lineno"> 2325</span>&#160;      <span class="comment">// If mf_to_be_filled is not defined on the particle_box_array, then we need</span></div>
-<div class="line"><a name="l02326"></a><span class="lineno"> 2326</span>&#160;      <span class="comment">// to make a temporary here and copy into mf_to_be_filled at the end.</span></div>
-<div class="line"><a name="l02327"></a><span class="lineno"> 2327</span>&#160;      mf_pointer = <span class="keyword">new</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>(ParticleBoxArray(lev),</div>
-<div class="line"><a name="l02328"></a><span class="lineno"> 2328</span>&#160;                                ParticleDistributionMap(lev),</div>
-<div class="line"><a name="l02329"></a><span class="lineno"> 2329</span>&#160;                                ncomp, mf_to_be_filled.<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>());</div>
-<div class="line"><a name="l02330"></a><span class="lineno"> 2330</span>&#160;    }</div>
-<div class="line"><a name="l02331"></a><span class="lineno"> 2331</span>&#160; </div>
-<div class="line"><a name="l02332"></a><span class="lineno"> 2332</span>&#160;    <span class="comment">// We must have ghost cells for each FAB so that a particle in one grid can spread</span></div>
-<div class="line"><a name="l02333"></a><span class="lineno"> 2333</span>&#160;    <span class="comment">// its effect to an adjacent grid by first putting the value into ghost cells of its</span></div>
-<div class="line"><a name="l02334"></a><span class="lineno"> 2334</span>&#160;    <span class="comment">// own grid.  The mf-&gt;SumBoundary call then adds the value from one grid&#39;s ghost cell</span></div>
-<div class="line"><a name="l02335"></a><span class="lineno"> 2335</span>&#160;    <span class="comment">// to another grid&#39;s valid region.</span></div>
-<div class="line"><a name="l02336"></a><span class="lineno"> 2336</span>&#160;    <span class="keywordflow">if</span> (mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>() &lt; 1) {</div>
-<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;       <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Must have at least one ghost cell when in AssignCellDensitySingleLevel&quot;</span>);</div>
-<div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160;    }</div>
-<div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160; </div>
-<div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> strttime = <a class="code" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a>();</div>
+<div class="line"><a name="l02319"></a><span class="lineno"> 2319</span>&#160;    <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>* mf_pointer;</div>
+<div class="line"><a name="l02320"></a><span class="lineno"> 2320</span>&#160; </div>
+<div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;    <span class="keywordflow">if</span> (OnSameGrids(lev, mf_to_be_filled)) {</div>
+<div class="line"><a name="l02322"></a><span class="lineno"> 2322</span>&#160;      <span class="comment">// If we are already working with the internal mf defined on the</span></div>
+<div class="line"><a name="l02323"></a><span class="lineno"> 2323</span>&#160;      <span class="comment">// particle_box_array, then we just work with this.</span></div>
+<div class="line"><a name="l02324"></a><span class="lineno"> 2324</span>&#160;      mf_pointer = &amp;mf_to_be_filled;</div>
+<div class="line"><a name="l02325"></a><span class="lineno"> 2325</span>&#160;    }</div>
+<div class="line"><a name="l02326"></a><span class="lineno"> 2326</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02327"></a><span class="lineno"> 2327</span>&#160;      <span class="comment">// If mf_to_be_filled is not defined on the particle_box_array, then we need</span></div>
+<div class="line"><a name="l02328"></a><span class="lineno"> 2328</span>&#160;      <span class="comment">// to make a temporary here and copy into mf_to_be_filled at the end.</span></div>
+<div class="line"><a name="l02329"></a><span class="lineno"> 2329</span>&#160;      mf_pointer = <span class="keyword">new</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>(ParticleBoxArray(lev),</div>
+<div class="line"><a name="l02330"></a><span class="lineno"> 2330</span>&#160;                                ParticleDistributionMap(lev),</div>
+<div class="line"><a name="l02331"></a><span class="lineno"> 2331</span>&#160;                                ncomp, mf_to_be_filled.<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>());</div>
+<div class="line"><a name="l02332"></a><span class="lineno"> 2332</span>&#160;    }</div>
+<div class="line"><a name="l02333"></a><span class="lineno"> 2333</span>&#160; </div>
+<div class="line"><a name="l02334"></a><span class="lineno"> 2334</span>&#160;    <span class="comment">// We must have ghost cells for each FAB so that a particle in one grid can spread</span></div>
+<div class="line"><a name="l02335"></a><span class="lineno"> 2335</span>&#160;    <span class="comment">// its effect to an adjacent grid by first putting the value into ghost cells of its</span></div>
+<div class="line"><a name="l02336"></a><span class="lineno"> 2336</span>&#160;    <span class="comment">// own grid.  The mf-&gt;SumBoundary call then adds the value from one grid&#39;s ghost cell</span></div>
+<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;    <span class="comment">// to another grid&#39;s valid region.</span></div>
+<div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160;    <span class="keywordflow">if</span> (mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>() &lt; 1) {</div>
+<div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160;       <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Must have at least one ghost cell when in AssignCellDensitySingleLevel&quot;</span>);</div>
+<div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;    }</div>
 <div class="line"><a name="l02341"></a><span class="lineno"> 2341</span>&#160; </div>
-<div class="line"><a name="l02342"></a><span class="lineno"> 2342</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxi              = Geom(lev).InvCellSizeArray();</div>
-<div class="line"><a name="l02343"></a><span class="lineno"> 2343</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> plo              = Geom(lev).ProbLoArray();</div>
-<div class="line"><a name="l02344"></a><span class="lineno"> 2344</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> pdxi             = Geom(lev + particle_lvl_offset).InvCellSizeArray();</div>
-<div class="line"><a name="l02345"></a><span class="lineno"> 2345</span>&#160; </div>
-<div class="line"><a name="l02346"></a><span class="lineno"> 2346</span>&#160;    <span class="keywordflow">if</span> (Geom(lev).isAnyPeriodic() &amp;&amp; ! Geom(lev).isAllPeriodic())</div>
-<div class="line"><a name="l02347"></a><span class="lineno"> 2347</span>&#160;    {</div>
-<div class="line"><a name="l02348"></a><span class="lineno"> 2348</span>&#160;        <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;AssignCellDensitySingleLevel: problem must be periodic in no or all directions&quot;</span>);</div>
-<div class="line"><a name="l02349"></a><span class="lineno"> 2349</span>&#160;    }</div>
-<div class="line"><a name="l02350"></a><span class="lineno"> 2350</span>&#160; </div>
-<div class="line"><a name="l02351"></a><span class="lineno"> 2351</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArray.html#a9235d60131ff0d5f81450896420fe691">setVal</a>(0);</div>
+<div class="line"><a name="l02342"></a><span class="lineno"> 2342</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> strttime = <a class="code" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a>();</div>
+<div class="line"><a name="l02343"></a><span class="lineno"> 2343</span>&#160; </div>
+<div class="line"><a name="l02344"></a><span class="lineno"> 2344</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxi              = Geom(lev).InvCellSizeArray();</div>
+<div class="line"><a name="l02345"></a><span class="lineno"> 2345</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> plo              = Geom(lev).ProbLoArray();</div>
+<div class="line"><a name="l02346"></a><span class="lineno"> 2346</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> pdxi             = Geom(lev + particle_lvl_offset).InvCellSizeArray();</div>
+<div class="line"><a name="l02347"></a><span class="lineno"> 2347</span>&#160; </div>
+<div class="line"><a name="l02348"></a><span class="lineno"> 2348</span>&#160;    <span class="keywordflow">if</span> (Geom(lev).isAnyPeriodic() &amp;&amp; ! Geom(lev).isAllPeriodic())</div>
+<div class="line"><a name="l02349"></a><span class="lineno"> 2349</span>&#160;    {</div>
+<div class="line"><a name="l02350"></a><span class="lineno"> 2350</span>&#160;        <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;AssignCellDensitySingleLevel: problem must be periodic in no or all directions&quot;</span>);</div>
+<div class="line"><a name="l02351"></a><span class="lineno"> 2351</span>&#160;    }</div>
 <div class="line"><a name="l02352"></a><span class="lineno"> 2352</span>&#160; </div>
-<div class="line"><a name="l02353"></a><span class="lineno"> 2353</span>&#160;    <span class="keyword">using</span> <a class="code" href="classamrex_1_1ParConstIter__impl.html">ParConstIter</a> = <a class="code" href="classamrex_1_1ParConstIter__impl.html">ParConstIter_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator&gt;</a>;</div>
-<div class="line"><a name="l02354"></a><span class="lineno"> 2354</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l02355"></a><span class="lineno"> 2355</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02357"></a><span class="lineno"> 2357</span>&#160;    {</div>
-<div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;        <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a> local_rho;</div>
-<div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParConstIter__impl.html">ParConstIter</a> pti(*<span class="keyword">this</span>, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
-<div class="line"><a name="l02360"></a><span class="lineno"> 2360</span>&#160;            <span class="keyword">const</span> Long np = pti.numParticles();</div>
-<div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;            <span class="keyword">auto</span> ptd = pti.GetParticleTile().getConstParticleTileData();</div>
-<div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160;            <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = (*mf_pointer)[pti];</div>
-<div class="line"><a name="l02363"></a><span class="lineno"> 2363</span>&#160;            <span class="keyword">auto</span> rhoarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
-<div class="line"><a name="l02364"></a><span class="lineno"> 2364</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l02365"></a><span class="lineno"> 2365</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> tile_box;</div>
-<div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>())</div>
-<div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160;            {</div>
-<div class="line"><a name="l02368"></a><span class="lineno"> 2368</span>&#160;                tile_box = pti.tilebox();</div>
-<div class="line"><a name="l02369"></a><span class="lineno"> 2369</span>&#160;                tile_box.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>());</div>
-<div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;                local_rho.<a class="code" href="classamrex_1_1FArrayBox.html#ae32a072e143825062dac1ee2e9c24f79">resize</a>(tile_box,ncomp);</div>
-<div class="line"><a name="l02371"></a><span class="lineno"> 2371</span>&#160;                local_rho.<a class="code" href="classamrex_1_1BaseFab.html#ab24f1f5f55a90b31121560df9c333fa7">setVal</a>&lt;RunOn::Host&gt;(0.0);</div>
-<div class="line"><a name="l02372"></a><span class="lineno"> 2372</span>&#160;                rhoarr = local_rho.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
-<div class="line"><a name="l02373"></a><span class="lineno"> 2373</span>&#160;            }</div>
-<div class="line"><a name="l02374"></a><span class="lineno"> 2374</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02375"></a><span class="lineno"> 2375</span>&#160; </div>
-<div class="line"><a name="l02376"></a><span class="lineno"> 2376</span>&#160;            <span class="keywordflow">if</span> (particle_lvl_offset == 0)</div>
-<div class="line"><a name="l02377"></a><span class="lineno"> 2377</span>&#160;            {</div>
-<div class="line"><a name="l02378"></a><span class="lineno"> 2378</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div>
-<div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;                {</div>
-<div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;                    <span class="keyword">auto</span> p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,i);</div>
-<div class="line"><a name="l02381"></a><span class="lineno"> 2381</span>&#160;                    <a class="code" href="namespaceamrex.html#a00779f2a650345e29919bda485417d90">amrex_deposit_cic</a>(p, ncomp, rhoarr, plo, dxi);</div>
-<div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;                });</div>
-<div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;            }</div>
-<div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;            {</div>
-<div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div>
-<div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;                {</div>
-<div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160;                    <span class="keyword">auto</span> p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,i);</div>
-<div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;                    <a class="code" href="namespaceamrex.html#ab2c2bcf642851e4903e3c9449f857e14">amrex_deposit_particle_dx_cic</a>(p, ncomp, rhoarr, plo, dxi, pdxi);</div>
-<div class="line"><a name="l02390"></a><span class="lineno"> 2390</span>&#160;                });</div>
-<div class="line"><a name="l02391"></a><span class="lineno"> 2391</span>&#160;            }</div>
-<div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160; </div>
-<div class="line"><a name="l02393"></a><span class="lineno"> 2393</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l02394"></a><span class="lineno"> 2394</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>())</div>
-<div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;            {</div>
-<div class="line"><a name="l02396"></a><span class="lineno"> 2396</span>&#160;                fab.<a class="code" href="classamrex_1_1BaseFab.html#a3dc96c01f9f3d24110fa50e53e93e1b0">atomicAdd</a>&lt;RunOn::Host&gt;(local_rho, tile_box, tile_box, 0, 0, ncomp);</div>
-<div class="line"><a name="l02397"></a><span class="lineno"> 2397</span>&#160;            }</div>
-<div class="line"><a name="l02398"></a><span class="lineno"> 2398</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02399"></a><span class="lineno"> 2399</span>&#160;        }</div>
-<div class="line"><a name="l02400"></a><span class="lineno"> 2400</span>&#160;    }</div>
-<div class="line"><a name="l02401"></a><span class="lineno"> 2401</span>&#160; </div>
-<div class="line"><a name="l02402"></a><span class="lineno"> 2402</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArray.html#a3df70423b7ec841f351f1e2b1b9cd8d4">SumBoundary</a>(Geom(lev).periodicity());</div>
+<div class="line"><a name="l02353"></a><span class="lineno"> 2353</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArray.html#a9235d60131ff0d5f81450896420fe691">setVal</a>(0);</div>
+<div class="line"><a name="l02354"></a><span class="lineno"> 2354</span>&#160; </div>
+<div class="line"><a name="l02355"></a><span class="lineno"> 2355</span>&#160;    <span class="keyword">using</span> <a class="code" href="classamrex_1_1ParConstIter__impl.html">ParConstIter</a> = <a class="code" href="classamrex_1_1ParConstIter__impl.html">ParConstIter_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator&gt;</a>;</div>
+<div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l02357"></a><span class="lineno"> 2357</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;    {</div>
+<div class="line"><a name="l02360"></a><span class="lineno"> 2360</span>&#160;        <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a> local_rho;</div>
+<div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParConstIter__impl.html">ParConstIter</a> pti(*<span class="keyword">this</span>, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
+<div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160;            <span class="keyword">const</span> Long np = pti.numParticles();</div>
+<div class="line"><a name="l02363"></a><span class="lineno"> 2363</span>&#160;            <span class="keyword">auto</span> ptd = pti.GetParticleTile().getConstParticleTileData();</div>
+<div class="line"><a name="l02364"></a><span class="lineno"> 2364</span>&#160;            <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = (*mf_pointer)[pti];</div>
+<div class="line"><a name="l02365"></a><span class="lineno"> 2365</span>&#160;            <span class="keyword">auto</span> rhoarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
+<div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160;            <a class="code" href="classamrex_1_1Box.html">Box</a> tile_box;</div>
+<div class="line"><a name="l02368"></a><span class="lineno"> 2368</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>())</div>
+<div class="line"><a name="l02369"></a><span class="lineno"> 2369</span>&#160;            {</div>
+<div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;                tile_box = pti.tilebox();</div>
+<div class="line"><a name="l02371"></a><span class="lineno"> 2371</span>&#160;                tile_box.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>());</div>
+<div class="line"><a name="l02372"></a><span class="lineno"> 2372</span>&#160;                local_rho.<a class="code" href="classamrex_1_1FArrayBox.html#ae32a072e143825062dac1ee2e9c24f79">resize</a>(tile_box,ncomp);</div>
+<div class="line"><a name="l02373"></a><span class="lineno"> 2373</span>&#160;                local_rho.<a class="code" href="classamrex_1_1BaseFab.html#ab24f1f5f55a90b31121560df9c333fa7">setVal</a>&lt;RunOn::Host&gt;(0.0);</div>
+<div class="line"><a name="l02374"></a><span class="lineno"> 2374</span>&#160;                rhoarr = local_rho.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
+<div class="line"><a name="l02375"></a><span class="lineno"> 2375</span>&#160;            }</div>
+<div class="line"><a name="l02376"></a><span class="lineno"> 2376</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02377"></a><span class="lineno"> 2377</span>&#160; </div>
+<div class="line"><a name="l02378"></a><span class="lineno"> 2378</span>&#160;            <span class="keywordflow">if</span> (particle_lvl_offset == 0)</div>
+<div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;            {</div>
+<div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div>
+<div class="line"><a name="l02381"></a><span class="lineno"> 2381</span>&#160;                {</div>
+<div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;                    <span class="keyword">auto</span> p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,i);</div>
+<div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;                    <a class="code" href="namespaceamrex.html#a00779f2a650345e29919bda485417d90">amrex_deposit_cic</a>(p, ncomp, rhoarr, plo, dxi);</div>
+<div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;                });</div>
+<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;            }</div>
+<div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;            {</div>
+<div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div>
+<div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;                {</div>
+<div class="line"><a name="l02390"></a><span class="lineno"> 2390</span>&#160;                    <span class="keyword">auto</span> p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,i);</div>
+<div class="line"><a name="l02391"></a><span class="lineno"> 2391</span>&#160;                    <a class="code" href="namespaceamrex.html#ab2c2bcf642851e4903e3c9449f857e14">amrex_deposit_particle_dx_cic</a>(p, ncomp, rhoarr, plo, dxi, pdxi);</div>
+<div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160;                });</div>
+<div class="line"><a name="l02393"></a><span class="lineno"> 2393</span>&#160;            }</div>
+<div class="line"><a name="l02394"></a><span class="lineno"> 2394</span>&#160; </div>
+<div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l02396"></a><span class="lineno"> 2396</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">Gpu::notInLaunchRegion</a>())</div>
+<div class="line"><a name="l02397"></a><span class="lineno"> 2397</span>&#160;            {</div>
+<div class="line"><a name="l02398"></a><span class="lineno"> 2398</span>&#160;                fab.<a class="code" href="classamrex_1_1BaseFab.html#a3dc96c01f9f3d24110fa50e53e93e1b0">atomicAdd</a>&lt;RunOn::Host&gt;(local_rho, tile_box, tile_box, 0, 0, ncomp);</div>
+<div class="line"><a name="l02399"></a><span class="lineno"> 2399</span>&#160;            }</div>
+<div class="line"><a name="l02400"></a><span class="lineno"> 2400</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02401"></a><span class="lineno"> 2401</span>&#160;        }</div>
+<div class="line"><a name="l02402"></a><span class="lineno"> 2402</span>&#160;    }</div>
 <div class="line"><a name="l02403"></a><span class="lineno"> 2403</span>&#160; </div>
-<div class="line"><a name="l02404"></a><span class="lineno"> 2404</span>&#160;    <span class="comment">// If ncomp &gt; 1, first divide the momenta (component n)</span></div>
-<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;    <span class="comment">// by the mass (component 0) in order to get velocities.</span></div>
-<div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;    <span class="comment">// Be careful not to divide by zero.</span></div>
-<div class="line"><a name="l02407"></a><span class="lineno"> 2407</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt; ncomp; n++)</div>
-<div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;    {</div>
-<div class="line"><a name="l02409"></a><span class="lineno"> 2409</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*mf_pointer); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
-<div class="line"><a name="l02410"></a><span class="lineno"> 2410</span>&#160;        {</div>
-<div class="line"><a name="l02411"></a><span class="lineno"> 2411</span>&#160;            (*mf_pointer)[mfi].protected_divide&lt;RunOn::Device&gt;((*mf_pointer)[mfi],0,n,1);</div>
-<div class="line"><a name="l02412"></a><span class="lineno"> 2412</span>&#160;        }</div>
-<div class="line"><a name="l02413"></a><span class="lineno"> 2413</span>&#160;    }</div>
-<div class="line"><a name="l02414"></a><span class="lineno"> 2414</span>&#160; </div>
-<div class="line"><a name="l02415"></a><span class="lineno"> 2415</span>&#160;    <span class="comment">// Only multiply the first component by (1/vol) because this converts mass</span></div>
-<div class="line"><a name="l02416"></a><span class="lineno"> 2416</span>&#160;    <span class="comment">// to density. If there are additional components (like velocity), we don&#39;t</span></div>
-<div class="line"><a name="l02417"></a><span class="lineno"> 2417</span>&#160;    <span class="comment">// want to divide those by volume.</span></div>
-<div class="line"><a name="l02418"></a><span class="lineno"> 2418</span>&#160;    <span class="keyword">const</span> Real* dx = Geom(lev).CellSize();</div>
-<div class="line"><a name="l02419"></a><span class="lineno"> 2419</span>&#160;    <span class="keyword">const</span> Real vol = <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(dx[0], *dx[1], *dx[2]);</div>
-<div class="line"><a name="l02420"></a><span class="lineno"> 2420</span>&#160; </div>
-<div class="line"><a name="l02421"></a><span class="lineno"> 2421</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1MultiFab.html#aa9158374809b83cfd40a8092d4e63bdd">mult</a>(Real(1.0)/vol, 0, 1, mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>());</div>
+<div class="line"><a name="l02404"></a><span class="lineno"> 2404</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArray.html#a3df70423b7ec841f351f1e2b1b9cd8d4">SumBoundary</a>(Geom(lev).periodicity());</div>
+<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160; </div>
+<div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;    <span class="comment">// If ncomp &gt; 1, first divide the momenta (component n)</span></div>
+<div class="line"><a name="l02407"></a><span class="lineno"> 2407</span>&#160;    <span class="comment">// by the mass (component 0) in order to get velocities.</span></div>
+<div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;    <span class="comment">// Be careful not to divide by zero.</span></div>
+<div class="line"><a name="l02409"></a><span class="lineno"> 2409</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt; ncomp; n++)</div>
+<div class="line"><a name="l02410"></a><span class="lineno"> 2410</span>&#160;    {</div>
+<div class="line"><a name="l02411"></a><span class="lineno"> 2411</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(*mf_pointer); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
+<div class="line"><a name="l02412"></a><span class="lineno"> 2412</span>&#160;        {</div>
+<div class="line"><a name="l02413"></a><span class="lineno"> 2413</span>&#160;            (*mf_pointer)[mfi].protected_divide&lt;RunOn::Device&gt;((*mf_pointer)[mfi],0,n,1);</div>
+<div class="line"><a name="l02414"></a><span class="lineno"> 2414</span>&#160;        }</div>
+<div class="line"><a name="l02415"></a><span class="lineno"> 2415</span>&#160;    }</div>
+<div class="line"><a name="l02416"></a><span class="lineno"> 2416</span>&#160; </div>
+<div class="line"><a name="l02417"></a><span class="lineno"> 2417</span>&#160;    <span class="comment">// Only multiply the first component by (1/vol) because this converts mass</span></div>
+<div class="line"><a name="l02418"></a><span class="lineno"> 2418</span>&#160;    <span class="comment">// to density. If there are additional components (like velocity), we don&#39;t</span></div>
+<div class="line"><a name="l02419"></a><span class="lineno"> 2419</span>&#160;    <span class="comment">// want to divide those by volume.</span></div>
+<div class="line"><a name="l02420"></a><span class="lineno"> 2420</span>&#160;    <span class="keyword">const</span> Real* dx = Geom(lev).CellSize();</div>
+<div class="line"><a name="l02421"></a><span class="lineno"> 2421</span>&#160;    <span class="keyword">const</span> Real vol = <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(dx[0], *dx[1], *dx[2]);</div>
 <div class="line"><a name="l02422"></a><span class="lineno"> 2422</span>&#160; </div>
-<div class="line"><a name="l02423"></a><span class="lineno"> 2423</span>&#160;    <span class="comment">// If mf_to_be_filled is not defined on the particle_box_array, then we need</span></div>
-<div class="line"><a name="l02424"></a><span class="lineno"> 2424</span>&#160;    <span class="comment">// to copy here from mf_pointer into mf_to_be_filled.</span></div>
-<div class="line"><a name="l02425"></a><span class="lineno"> 2425</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf_to_be_filled)</div>
-<div class="line"><a name="l02426"></a><span class="lineno"> 2426</span>&#160;    {</div>
-<div class="line"><a name="l02427"></a><span class="lineno"> 2427</span>&#160;        mf_to_be_filled.<a class="code" href="classamrex_1_1FabArray.html#a4d5c152276e1e70438c9d7072cb7c6f0">ParallelCopy</a>(*mf_pointer,0,0,ncomp,0,0);</div>
-<div class="line"><a name="l02428"></a><span class="lineno"> 2428</span>&#160;        <span class="keyword">delete</span> mf_pointer;</div>
-<div class="line"><a name="l02429"></a><span class="lineno"> 2429</span>&#160;    }</div>
-<div class="line"><a name="l02430"></a><span class="lineno"> 2430</span>&#160; </div>
-<div class="line"><a name="l02431"></a><span class="lineno"> 2431</span>&#160;    <span class="keywordflow">if</span> (m_verbose &gt; 1)</div>
-<div class="line"><a name="l02432"></a><span class="lineno"> 2432</span>&#160;    {</div>
-<div class="line"><a name="l02433"></a><span class="lineno"> 2433</span>&#160;        <span class="keyword">auto</span> stoptime = <a class="code" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a>() - strttime;</div>
-<div class="line"><a name="l02434"></a><span class="lineno"> 2434</span>&#160; </div>
-<div class="line"><a name="l02435"></a><span class="lineno"> 2435</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">ParallelReduce::Max</a>(stoptime, <a class="code" href="namespaceamrex_1_1ParallelContext.html#ab3843bd69bcb263dfdebb3d668dea1ba">ParallelContext::IOProcessorNumberSub</a>(),</div>
-<div class="line"><a name="l02436"></a><span class="lineno"> 2436</span>&#160;                            <a class="code" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
-<div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160; </div>
-<div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;ParticleContainer::AssignCellDensitySingleLevel) time: &quot;</span></div>
-<div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160;                       &lt;&lt; stoptime &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;    }</div>
-<div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;}</div>
-<div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160; </div>
-<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02446"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#ad63342357e709b83e4bfde15bcf89329"> 2446</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::Interpolate</a> (<a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;std::unique_ptr&lt;MultiFab&gt; &gt;&amp; mesh_data,</div>
-<div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;                                                                                <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max)</div>
-<div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;{</div>
-<div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::Interpolate()&quot;</span>);</div>
-<div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = lev_min; lev &lt;= lev_max; ++lev) {</div>
-<div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;        InterpolateSingleLevel(*mesh_data[lev], lev);</div>
-<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;    }</div>
-<div class="line"><a name="l02453"></a><span class="lineno"> 2453</span>&#160;}</div>
-<div class="line"><a name="l02454"></a><span class="lineno"> 2454</span>&#160; </div>
-<div class="line"><a name="l02455"></a><span class="lineno"> 2455</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02456"></a><span class="lineno"> 2456</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02457"></a><span class="lineno"> 2457</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02458"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a29b6422b2431a0aa570db8356f3e5209"> 2458</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
-<div class="line"><a name="l02459"></a><span class="lineno"> 2459</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">InterpolateSingleLevel</a> (<a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; mesh_data, <span class="keywordtype">int</span> lev)</div>
-<div class="line"><a name="l02460"></a><span class="lineno"> 2460</span>&#160;{</div>
-<div class="line"><a name="l02461"></a><span class="lineno"> 2461</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::InterpolateSingleLevel()&quot;</span>);</div>
-<div class="line"><a name="l02462"></a><span class="lineno"> 2462</span>&#160; </div>
-<div class="line"><a name="l02463"></a><span class="lineno"> 2463</span>&#160;    <span class="keywordflow">if</span> (mesh_data.<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>() &lt; 1) {</div>
-<div class="line"><a name="l02464"></a><span class="lineno"> 2464</span>&#160;        <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Must have at least one ghost cell when in InterpolateSingleLevel&quot;</span>);</div>
-<div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;    }</div>
-<div class="line"><a name="l02466"></a><span class="lineno"> 2466</span>&#160; </div>
-<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; gm = Geom(lev);</div>
-<div class="line"><a name="l02468"></a><span class="lineno"> 2468</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>     plo = gm.<a class="code" href="classamrex_1_1Geometry.html#a2cbf2a8943849597fdcb06608416d0db">ProbLoArray</a>();</div>
-<div class="line"><a name="l02469"></a><span class="lineno"> 2469</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>     dxi = gm.<a class="code" href="classamrex_1_1CoordSys.html#ad30ea5aed12689007843a59201563409">InvCellSizeArray</a>();</div>
-<div class="line"><a name="l02470"></a><span class="lineno"> 2470</span>&#160; </div>
-<div class="line"><a name="l02471"></a><span class="lineno"> 2471</span>&#160;    <span class="keyword">using</span> <a class="code" href="classamrex_1_1ParIter__impl.html">ParIter</a> = <a class="code" href="classamrex_1_1ParIter__impl.html">ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator&gt;</a>;</div>
+<div class="line"><a name="l02423"></a><span class="lineno"> 2423</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1MultiFab.html#aa9158374809b83cfd40a8092d4e63bdd">mult</a>(Real(1.0)/vol, 0, 1, mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>());</div>
+<div class="line"><a name="l02424"></a><span class="lineno"> 2424</span>&#160; </div>
+<div class="line"><a name="l02425"></a><span class="lineno"> 2425</span>&#160;    <span class="comment">// If mf_to_be_filled is not defined on the particle_box_array, then we need</span></div>
+<div class="line"><a name="l02426"></a><span class="lineno"> 2426</span>&#160;    <span class="comment">// to copy here from mf_pointer into mf_to_be_filled.</span></div>
+<div class="line"><a name="l02427"></a><span class="lineno"> 2427</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf_to_be_filled)</div>
+<div class="line"><a name="l02428"></a><span class="lineno"> 2428</span>&#160;    {</div>
+<div class="line"><a name="l02429"></a><span class="lineno"> 2429</span>&#160;        mf_to_be_filled.<a class="code" href="classamrex_1_1FabArray.html#a4d5c152276e1e70438c9d7072cb7c6f0">ParallelCopy</a>(*mf_pointer,0,0,ncomp,0,0);</div>
+<div class="line"><a name="l02430"></a><span class="lineno"> 2430</span>&#160;        <span class="keyword">delete</span> mf_pointer;</div>
+<div class="line"><a name="l02431"></a><span class="lineno"> 2431</span>&#160;    }</div>
+<div class="line"><a name="l02432"></a><span class="lineno"> 2432</span>&#160; </div>
+<div class="line"><a name="l02433"></a><span class="lineno"> 2433</span>&#160;    <span class="keywordflow">if</span> (m_verbose &gt; 1)</div>
+<div class="line"><a name="l02434"></a><span class="lineno"> 2434</span>&#160;    {</div>
+<div class="line"><a name="l02435"></a><span class="lineno"> 2435</span>&#160;        <span class="keyword">auto</span> stoptime = <a class="code" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a>() - strttime;</div>
+<div class="line"><a name="l02436"></a><span class="lineno"> 2436</span>&#160; </div>
+<div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a4a6e235c6fc2013e52d7f1b59bc71bb0">ParallelReduce::Max</a>(stoptime, <a class="code" href="namespaceamrex_1_1ParallelContext.html#ab3843bd69bcb263dfdebb3d668dea1ba">ParallelContext::IOProcessorNumberSub</a>(),</div>
+<div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;                            <a class="code" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
+<div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160; </div>
+<div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;ParticleContainer::AssignCellDensitySingleLevel) time: &quot;</span></div>
+<div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;                       &lt;&lt; stoptime &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160;    }</div>
+<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;}</div>
+<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160; </div>
+<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02446"></a><span class="lineno"> 2446</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02448"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#ad63342357e709b83e4bfde15bcf89329"> 2448</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::Interpolate</a> (<a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;std::unique_ptr&lt;MultiFab&gt; &gt;&amp; mesh_data,</div>
+<div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;                                                                                <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max)</div>
+<div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;{</div>
+<div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::Interpolate()&quot;</span>);</div>
+<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = lev_min; lev &lt;= lev_max; ++lev) {</div>
+<div class="line"><a name="l02453"></a><span class="lineno"> 2453</span>&#160;        InterpolateSingleLevel(*mesh_data[lev], lev);</div>
+<div class="line"><a name="l02454"></a><span class="lineno"> 2454</span>&#160;    }</div>
+<div class="line"><a name="l02455"></a><span class="lineno"> 2455</span>&#160;}</div>
+<div class="line"><a name="l02456"></a><span class="lineno"> 2456</span>&#160; </div>
+<div class="line"><a name="l02457"></a><span class="lineno"> 2457</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02458"></a><span class="lineno"> 2458</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02459"></a><span class="lineno"> 2459</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02460"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a29b6422b2431a0aa570db8356f3e5209"> 2460</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
+<div class="line"><a name="l02461"></a><span class="lineno"> 2461</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">InterpolateSingleLevel</a> (<a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; mesh_data, <span class="keywordtype">int</span> lev)</div>
+<div class="line"><a name="l02462"></a><span class="lineno"> 2462</span>&#160;{</div>
+<div class="line"><a name="l02463"></a><span class="lineno"> 2463</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::InterpolateSingleLevel()&quot;</span>);</div>
+<div class="line"><a name="l02464"></a><span class="lineno"> 2464</span>&#160; </div>
+<div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;    <span class="keywordflow">if</span> (mesh_data.<a class="code" href="classamrex_1_1FabArrayBase.html#a92cef599b0ae34401a5463ec6fddc606">nGrow</a>() &lt; 1) {</div>
+<div class="line"><a name="l02466"></a><span class="lineno"> 2466</span>&#160;        <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(<span class="stringliteral">&quot;Must have at least one ghost cell when in InterpolateSingleLevel&quot;</span>);</div>
+<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;    }</div>
+<div class="line"><a name="l02468"></a><span class="lineno"> 2468</span>&#160; </div>
+<div class="line"><a name="l02469"></a><span class="lineno"> 2469</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; gm = Geom(lev);</div>
+<div class="line"><a name="l02470"></a><span class="lineno"> 2470</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>     plo = gm.<a class="code" href="classamrex_1_1Geometry.html#a2cbf2a8943849597fdcb06608416d0db">ProbLoArray</a>();</div>
+<div class="line"><a name="l02471"></a><span class="lineno"> 2471</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>     dxi = gm.<a class="code" href="classamrex_1_1CoordSys.html#ad30ea5aed12689007843a59201563409">InvCellSizeArray</a>();</div>
 <div class="line"><a name="l02472"></a><span class="lineno"> 2472</span>&#160; </div>
-<div class="line"><a name="l02473"></a><span class="lineno"> 2473</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l02474"></a><span class="lineno"> 2474</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l02475"></a><span class="lineno"> 2475</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02476"></a><span class="lineno"> 2476</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter__impl.html">ParIter</a> pti(*<span class="keyword">this</span>, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti)</div>
-<div class="line"><a name="l02477"></a><span class="lineno"> 2477</span>&#160;    {</div>
-<div class="line"><a name="l02478"></a><span class="lineno"> 2478</span>&#160;        <span class="keyword">auto</span>&amp; particles = pti.<a class="code" href="classamrex_1_1ParIterBase__impl.html#a71c746f6d3c895885b57ee891b828959">GetArrayOfStructs</a>();</div>
-<div class="line"><a name="l02479"></a><span class="lineno"> 2479</span>&#160;        <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
-<div class="line"><a name="l02480"></a><span class="lineno"> 2480</span>&#160;        <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = mesh_data[pti];</div>
-<div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fabarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
-<div class="line"><a name="l02482"></a><span class="lineno"> 2482</span>&#160;        <span class="keyword">const</span> Long np = particles.numParticles();</div>
-<div class="line"><a name="l02483"></a><span class="lineno"> 2483</span>&#160; </div>
-<div class="line"><a name="l02484"></a><span class="lineno"> 2484</span>&#160;        <span class="keywordtype">int</span> nComp = fab.<a class="code" href="classamrex_1_1BaseFab.html#ae16c6f70417dc8f84e2196afe27b2b15">nComp</a>();</div>
-<div class="line"><a name="l02485"></a><span class="lineno"> 2485</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
-<div class="line"><a name="l02486"></a><span class="lineno"> 2486</span>&#160;        {</div>
-<div class="line"><a name="l02487"></a><span class="lineno"> 2487</span>&#160;            <span class="keyword">auto</span> p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,i);</div>
-<div class="line"><a name="l02488"></a><span class="lineno"> 2488</span>&#160;            <a class="code" href="namespaceamrex.html#aa90dde62ffe45aa35b5dd015043019a8">amrex_interpolate_cic</a>(p, nComp, fabarr, plo, dxi);</div>
-<div class="line"><a name="l02489"></a><span class="lineno"> 2489</span>&#160;        });</div>
-<div class="line"><a name="l02490"></a><span class="lineno"> 2490</span>&#160;    }</div>
-<div class="line"><a name="l02491"></a><span class="lineno"> 2491</span>&#160;}</div>
-<div class="line"><a name="l02492"></a><span class="lineno"> 2492</span>&#160; </div>
-<div class="line"><a name="l02493"></a><span class="lineno"> 2493</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02494"></a><span class="lineno"> 2494</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02496"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a7aa82330403064a8174b9b6acc5357d3"> 2496</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
-<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ResizeRuntimeRealComp</a> (<span class="keywordtype">int</span> new_size, <span class="keywordtype">bool</span> communicate)</div>
-<div class="line"><a name="l02498"></a><span class="lineno"> 2498</span>&#160;{</div>
-<div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;    <span class="keywordtype">int</span> old_size = m_num_runtime_real;</div>
-<div class="line"><a name="l02500"></a><span class="lineno"> 2500</span>&#160; </div>
-<div class="line"><a name="l02501"></a><span class="lineno"> 2501</span>&#160;    m_runtime_comps_defined = (new_size &gt; 0);</div>
-<div class="line"><a name="l02502"></a><span class="lineno"> 2502</span>&#160;    m_num_runtime_real = new_size;</div>
-<div class="line"><a name="l02503"></a><span class="lineno"> 2503</span>&#160;    <span class="keywordtype">int</span> cur_size = h_redistribute_real_comp.size();</div>
-<div class="line"><a name="l02504"></a><span class="lineno"> 2504</span>&#160;    h_redistribute_real_comp.resize(cur_size-old_size+new_size, communicate);</div>
-<div class="line"><a name="l02505"></a><span class="lineno"> 2505</span>&#160;    SetParticleSize();</div>
-<div class="line"><a name="l02506"></a><span class="lineno"> 2506</span>&#160; </div>
-<div class="line"><a name="l02507"></a><span class="lineno"> 2507</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; numLevels(); ++lev) {</div>
-<div class="line"><a name="l02508"></a><span class="lineno"> 2508</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter__impl.html">ParIterType</a> pti(*<span class="keyword">this</span>,lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
-<div class="line"><a name="l02509"></a><span class="lineno"> 2509</span>&#160;            <span class="keyword">auto</span>&amp; tile = DefineAndReturnParticleTile(lev, pti);</div>
-<div class="line"><a name="l02510"></a><span class="lineno"> 2510</span>&#160;            <span class="keyword">auto</span> np = tile.numParticles();</div>
-<div class="line"><a name="l02511"></a><span class="lineno"> 2511</span>&#160;            <span class="keywordflow">if</span> (np &gt; 0 &amp;&amp; new_size &gt; old_size) {</div>
-<div class="line"><a name="l02512"></a><span class="lineno"> 2512</span>&#160;                <span class="keyword">auto</span>&amp; soa = tile.GetStructOfArrays();</div>
-<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160;                soa.resize(np);</div>
-<div class="line"><a name="l02514"></a><span class="lineno"> 2514</span>&#160;            }</div>
-<div class="line"><a name="l02515"></a><span class="lineno"> 2515</span>&#160;        }</div>
-<div class="line"><a name="l02516"></a><span class="lineno"> 2516</span>&#160;    }</div>
-<div class="line"><a name="l02517"></a><span class="lineno"> 2517</span>&#160;}</div>
-<div class="line"><a name="l02518"></a><span class="lineno"> 2518</span>&#160; </div>
-<div class="line"><a name="l02519"></a><span class="lineno"> 2519</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l02520"></a><span class="lineno"> 2520</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l02521"></a><span class="lineno"> 2521</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02522"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#adc824cdc4c493f19c98882f4d94d4d26"> 2522</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
-<div class="line"><a name="l02523"></a><span class="lineno"> 2523</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ResizeRuntimeIntComp</a> (<span class="keywordtype">int</span> new_size, <span class="keywordtype">bool</span> communicate)</div>
-<div class="line"><a name="l02524"></a><span class="lineno"> 2524</span>&#160;{</div>
-<div class="line"><a name="l02525"></a><span class="lineno"> 2525</span>&#160;    <span class="keywordtype">int</span> old_size = m_num_runtime_int;</div>
-<div class="line"><a name="l02526"></a><span class="lineno"> 2526</span>&#160; </div>
-<div class="line"><a name="l02527"></a><span class="lineno"> 2527</span>&#160;    m_runtime_comps_defined = (new_size &gt; 0);</div>
-<div class="line"><a name="l02528"></a><span class="lineno"> 2528</span>&#160;    m_num_runtime_int = new_size;</div>
-<div class="line"><a name="l02529"></a><span class="lineno"> 2529</span>&#160;    <span class="keywordtype">int</span> cur_size = h_redistribute_int_comp.size();</div>
-<div class="line"><a name="l02530"></a><span class="lineno"> 2530</span>&#160;    h_redistribute_int_comp.resize(cur_size-old_size+new_size, communicate);</div>
-<div class="line"><a name="l02531"></a><span class="lineno"> 2531</span>&#160;    SetParticleSize();</div>
-<div class="line"><a name="l02532"></a><span class="lineno"> 2532</span>&#160; </div>
-<div class="line"><a name="l02533"></a><span class="lineno"> 2533</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; numLevels(); ++lev) {</div>
-<div class="line"><a name="l02534"></a><span class="lineno"> 2534</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter__impl.html">ParIterType</a> pti(*<span class="keyword">this</span>,lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
-<div class="line"><a name="l02535"></a><span class="lineno"> 2535</span>&#160;            <span class="keyword">auto</span>&amp; tile = DefineAndReturnParticleTile(lev, pti);</div>
-<div class="line"><a name="l02536"></a><span class="lineno"> 2536</span>&#160;            <span class="keyword">auto</span> np = tile.numParticles();</div>
-<div class="line"><a name="l02537"></a><span class="lineno"> 2537</span>&#160;            <span class="keywordflow">if</span> (np &gt; 0 &amp;&amp; new_size &gt; old_size) {</div>
-<div class="line"><a name="l02538"></a><span class="lineno"> 2538</span>&#160;                <span class="keyword">auto</span>&amp; soa = tile.GetStructOfArrays();</div>
-<div class="line"><a name="l02539"></a><span class="lineno"> 2539</span>&#160;                soa.resize(np);</div>
-<div class="line"><a name="l02540"></a><span class="lineno"> 2540</span>&#160;            }</div>
-<div class="line"><a name="l02541"></a><span class="lineno"> 2541</span>&#160;        }</div>
-<div class="line"><a name="l02542"></a><span class="lineno"> 2542</span>&#160;    }</div>
-<div class="line"><a name="l02543"></a><span class="lineno"> 2543</span>&#160;}</div>
+<div class="line"><a name="l02473"></a><span class="lineno"> 2473</span>&#160;    <span class="keyword">using</span> <a class="code" href="classamrex_1_1ParIter__impl.html">ParIter</a> = <a class="code" href="classamrex_1_1ParIter__impl.html">ParIter_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator&gt;</a>;</div>
+<div class="line"><a name="l02474"></a><span class="lineno"> 2474</span>&#160; </div>
+<div class="line"><a name="l02475"></a><span class="lineno"> 2475</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l02476"></a><span class="lineno"> 2476</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l02477"></a><span class="lineno"> 2477</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02478"></a><span class="lineno"> 2478</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter__impl.html">ParIter</a> pti(*<span class="keyword">this</span>, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti)</div>
+<div class="line"><a name="l02479"></a><span class="lineno"> 2479</span>&#160;    {</div>
+<div class="line"><a name="l02480"></a><span class="lineno"> 2480</span>&#160;        <span class="keyword">auto</span>&amp; particles = pti.<a class="code" href="classamrex_1_1ParIterBase__impl.html#a71c746f6d3c895885b57ee891b828959">GetArrayOfStructs</a>();</div>
+<div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;        <span class="keyword">auto</span> ptd = pti.GetParticleTile().getParticleTileData();</div>
+<div class="line"><a name="l02482"></a><span class="lineno"> 2482</span>&#160;        <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = mesh_data[pti];</div>
+<div class="line"><a name="l02483"></a><span class="lineno"> 2483</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> fabarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
+<div class="line"><a name="l02484"></a><span class="lineno"> 2484</span>&#160;        <span class="keyword">const</span> Long np = particles.numParticles();</div>
+<div class="line"><a name="l02485"></a><span class="lineno"> 2485</span>&#160; </div>
+<div class="line"><a name="l02486"></a><span class="lineno"> 2486</span>&#160;        <span class="keywordtype">int</span> nComp = fab.<a class="code" href="classamrex_1_1BaseFab.html#ae16c6f70417dc8f84e2196afe27b2b15">nComp</a>();</div>
+<div class="line"><a name="l02487"></a><span class="lineno"> 2487</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
+<div class="line"><a name="l02488"></a><span class="lineno"> 2488</span>&#160;        {</div>
+<div class="line"><a name="l02489"></a><span class="lineno"> 2489</span>&#160;            <span class="keyword">auto</span> p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,i);</div>
+<div class="line"><a name="l02490"></a><span class="lineno"> 2490</span>&#160;            <a class="code" href="namespaceamrex.html#aa90dde62ffe45aa35b5dd015043019a8">amrex_interpolate_cic</a>(p, nComp, fabarr, plo, dxi);</div>
+<div class="line"><a name="l02491"></a><span class="lineno"> 2491</span>&#160;        });</div>
+<div class="line"><a name="l02492"></a><span class="lineno"> 2492</span>&#160;    }</div>
+<div class="line"><a name="l02493"></a><span class="lineno"> 2493</span>&#160;}</div>
+<div class="line"><a name="l02494"></a><span class="lineno"> 2494</span>&#160; </div>
+<div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02498"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#a7aa82330403064a8174b9b6acc5357d3"> 2498</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
+<div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ResizeRuntimeRealComp</a> (<span class="keywordtype">int</span> new_size, <span class="keywordtype">bool</span> communicate)</div>
+<div class="line"><a name="l02500"></a><span class="lineno"> 2500</span>&#160;{</div>
+<div class="line"><a name="l02501"></a><span class="lineno"> 2501</span>&#160;    <span class="keywordtype">int</span> old_size = m_num_runtime_real;</div>
+<div class="line"><a name="l02502"></a><span class="lineno"> 2502</span>&#160; </div>
+<div class="line"><a name="l02503"></a><span class="lineno"> 2503</span>&#160;    m_runtime_comps_defined = (new_size &gt; 0);</div>
+<div class="line"><a name="l02504"></a><span class="lineno"> 2504</span>&#160;    m_num_runtime_real = new_size;</div>
+<div class="line"><a name="l02505"></a><span class="lineno"> 2505</span>&#160;    <span class="keywordtype">int</span> cur_size = h_redistribute_real_comp.size();</div>
+<div class="line"><a name="l02506"></a><span class="lineno"> 2506</span>&#160;    h_redistribute_real_comp.resize(cur_size-old_size+new_size, communicate);</div>
+<div class="line"><a name="l02507"></a><span class="lineno"> 2507</span>&#160;    SetParticleSize();</div>
+<div class="line"><a name="l02508"></a><span class="lineno"> 2508</span>&#160; </div>
+<div class="line"><a name="l02509"></a><span class="lineno"> 2509</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; numLevels(); ++lev) {</div>
+<div class="line"><a name="l02510"></a><span class="lineno"> 2510</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter__impl.html">ParIterType</a> pti(*<span class="keyword">this</span>,lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
+<div class="line"><a name="l02511"></a><span class="lineno"> 2511</span>&#160;            <span class="keyword">auto</span>&amp; tile = DefineAndReturnParticleTile(lev, pti);</div>
+<div class="line"><a name="l02512"></a><span class="lineno"> 2512</span>&#160;            <span class="keyword">auto</span> np = tile.numParticles();</div>
+<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160;            <span class="keywordflow">if</span> (np &gt; 0 &amp;&amp; new_size &gt; old_size) {</div>
+<div class="line"><a name="l02514"></a><span class="lineno"> 2514</span>&#160;                <span class="keyword">auto</span>&amp; soa = tile.GetStructOfArrays();</div>
+<div class="line"><a name="l02515"></a><span class="lineno"> 2515</span>&#160;                soa.resize(np);</div>
+<div class="line"><a name="l02516"></a><span class="lineno"> 2516</span>&#160;            }</div>
+<div class="line"><a name="l02517"></a><span class="lineno"> 2517</span>&#160;        }</div>
+<div class="line"><a name="l02518"></a><span class="lineno"> 2518</span>&#160;    }</div>
+<div class="line"><a name="l02519"></a><span class="lineno"> 2519</span>&#160;}</div>
+<div class="line"><a name="l02520"></a><span class="lineno"> 2520</span>&#160; </div>
+<div class="line"><a name="l02521"></a><span class="lineno"> 2521</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l02522"></a><span class="lineno"> 2522</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l02523"></a><span class="lineno"> 2523</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l02524"></a><span class="lineno"><a class="line" href="classamrex_1_1ParticleContainer__impl.html#adc824cdc4c493f19c98882f4d94d4d26"> 2524</a></span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;::</a></div>
+<div class="line"><a name="l02525"></a><span class="lineno"> 2525</span>&#160;<a class="code" href="classamrex_1_1ParticleContainer__impl.html">ResizeRuntimeIntComp</a> (<span class="keywordtype">int</span> new_size, <span class="keywordtype">bool</span> communicate)</div>
+<div class="line"><a name="l02526"></a><span class="lineno"> 2526</span>&#160;{</div>
+<div class="line"><a name="l02527"></a><span class="lineno"> 2527</span>&#160;    <span class="keywordtype">int</span> old_size = m_num_runtime_int;</div>
+<div class="line"><a name="l02528"></a><span class="lineno"> 2528</span>&#160; </div>
+<div class="line"><a name="l02529"></a><span class="lineno"> 2529</span>&#160;    m_runtime_comps_defined = (new_size &gt; 0);</div>
+<div class="line"><a name="l02530"></a><span class="lineno"> 2530</span>&#160;    m_num_runtime_int = new_size;</div>
+<div class="line"><a name="l02531"></a><span class="lineno"> 2531</span>&#160;    <span class="keywordtype">int</span> cur_size = h_redistribute_int_comp.size();</div>
+<div class="line"><a name="l02532"></a><span class="lineno"> 2532</span>&#160;    h_redistribute_int_comp.resize(cur_size-old_size+new_size, communicate);</div>
+<div class="line"><a name="l02533"></a><span class="lineno"> 2533</span>&#160;    SetParticleSize();</div>
+<div class="line"><a name="l02534"></a><span class="lineno"> 2534</span>&#160; </div>
+<div class="line"><a name="l02535"></a><span class="lineno"> 2535</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; numLevels(); ++lev) {</div>
+<div class="line"><a name="l02536"></a><span class="lineno"> 2536</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter__impl.html">ParIterType</a> pti(*<span class="keyword">this</span>,lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
+<div class="line"><a name="l02537"></a><span class="lineno"> 2537</span>&#160;            <span class="keyword">auto</span>&amp; tile = DefineAndReturnParticleTile(lev, pti);</div>
+<div class="line"><a name="l02538"></a><span class="lineno"> 2538</span>&#160;            <span class="keyword">auto</span> np = tile.numParticles();</div>
+<div class="line"><a name="l02539"></a><span class="lineno"> 2539</span>&#160;            <span class="keywordflow">if</span> (np &gt; 0 &amp;&amp; new_size &gt; old_size) {</div>
+<div class="line"><a name="l02540"></a><span class="lineno"> 2540</span>&#160;                <span class="keyword">auto</span>&amp; soa = tile.GetStructOfArrays();</div>
+<div class="line"><a name="l02541"></a><span class="lineno"> 2541</span>&#160;                soa.resize(np);</div>
+<div class="line"><a name="l02542"></a><span class="lineno"> 2542</span>&#160;            }</div>
+<div class="line"><a name="l02543"></a><span class="lineno"> 2543</span>&#160;        }</div>
+<div class="line"><a name="l02544"></a><span class="lineno"> 2544</span>&#160;    }</div>
+<div class="line"><a name="l02545"></a><span class="lineno"> 2545</span>&#160;}</div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a100d10b382fff9099a61671e766e1f19"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a100d10b382fff9099a61671e766e1f19">BL_PROFILE_VAR_START</a></div><div class="ttdeci">#define BL_PROFILE_VAR_START(vname)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:569</div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:558</div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a82c334c787872a6bbacabe9a38389224"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a82c334c787872a6bbacabe9a38389224">BL_PROFILE_VAR_STOP</a></div><div class="ttdeci">#define BL_PROFILE_VAR_STOP(vname)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:570</div></div>
@@ -2650,7 +2652,6 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:129</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:104</div></div>
 <div class="ttc" id="aclassamrex_1_1AllPrint_html"><div class="ttname"><a href="classamrex_1_1AllPrint.html">amrex::AllPrint</a></div><div class="ttdoc">Print on all processors of the default communicator.</div><div class="ttdef"><b>Definition:</b> AMReX_Print.H:117</div></div>
-<div class="ttc" id="aclassamrex_1_1ArrayOfStructs_html_ae4184b987b9dfa9b4b3284a7e5c2d927"><div class="ttname"><a href="classamrex_1_1ArrayOfStructs.html#ae4184b987b9dfa9b4b3284a7e5c2d927">amrex::ArrayOfStructs::swap</a></div><div class="ttdeci">void swap(ArrayOfStructs &amp;other)</div><div class="ttdef"><b>Definition:</b> AMReX_ArrayOfStructs.H:89</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a3dc96c01f9f3d24110fa50e53e93e1b0"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a3dc96c01f9f3d24110fa50e53e93e1b0">amrex::BaseFab::atomicAdd</a></div><div class="ttdeci">BaseFab&lt; T &gt; &amp; atomicAdd(const BaseFab&lt; T &gt; &amp;x) noexcept</div><div class="ttdoc">Atomic FAB addition (a[i] &lt;- a[i] + b[i]).</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:2887</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a757e00b16f837e3d092aeb625a9dfa6a"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">amrex::BaseFab::array</a></div><div class="ttdeci">AMREX_FORCE_INLINE Array4&lt; T const  &gt; array() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:380</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_ab24f1f5f55a90b31121560df9c333fa7"><div class="ttname"><a href="classamrex_1_1BaseFab.html#ab24f1f5f55a90b31121560df9c333fa7">amrex::BaseFab::setVal</a></div><div class="ttdeci">void setVal(T const &amp;x, const Box &amp;bx, int dcomp, int ncomp) noexcept</div><div class="ttdoc">The setVal functions set sub-regions in the BaseFab to a constant value. This most general form speci...</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:1836</div></div>
@@ -2828,13 +2829,13 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="ttc" id="astructamrex_1_1ParticleLocData_html_a9f48ea741ddeb412ac869174a1f6dac9"><div class="ttname"><a href="structamrex_1_1ParticleLocData.html#a9f48ea741ddeb412ac869174a1f6dac9">amrex::ParticleLocData::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleContainer.H:91</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleLocData_html_ad662500121fee7c74a07d58b96c1f0dd"><div class="ttname"><a href="structamrex_1_1ParticleLocData.html#ad662500121fee7c74a07d58b96c1f0dd">amrex::ParticleLocData::m_tilebox</a></div><div class="ttdeci">Box m_tilebox</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleContainer.H:96</div></div>
 <div class="ttc" id="astructamrex_1_1ParticleLocData_html_ad76df9c28985f6f2702043b28fa56d35"><div class="ttname"><a href="structamrex_1_1ParticleLocData.html#ad76df9c28985f6f2702043b28fa56d35">amrex::ParticleLocData::m_gridbox</a></div><div class="ttdeci">Box m_gridbox</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleContainer.H:95</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html"><div class="ttname"><a href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:640</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html_a15a5c73d1aaced5789c24576eabe384d"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#a15a5c73d1aaced5789c24576eabe384d">amrex::ParticleTile::GetArrayOfStructs</a></div><div class="ttdeci">AoS &amp; GetArrayOfStructs()</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:737</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html_a4f939dec8914785b6fbc7b02f5d0b202"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#a4f939dec8914785b6fbc7b02f5d0b202">amrex::ParticleTile::getParticleTileData</a></div><div class="ttdeci">ParticleTileDataType getParticleTileData()</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:1046</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html_a80fc21d171f28db059190e234fa36642"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#a80fc21d171f28db059190e234fa36642">amrex::ParticleTile::numParticles</a></div><div class="ttdeci">int numParticles() const</div><div class="ttdoc">Returns the number of real particles (excluding neighbors)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:762</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html_aad932266bb874a93f00fc2920ff69548"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#aad932266bb874a93f00fc2920ff69548">amrex::ParticleTile::resize</a></div><div class="ttdeci">void resize(std::size_t count)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:828</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html_abc7127e222d300082ca177f987d847a5"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#abc7127e222d300082ca177f987d847a5">amrex::ParticleTile::define</a></div><div class="ttdeci">void define(int a_num_runtime_real, int a_num_runtime_int)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:667</div></div>
-<div class="ttc" id="astructamrex_1_1ParticleTile_html_abe6aa2080bb4a68eaded92e7e3e6efd6"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#abe6aa2080bb4a68eaded92e7e3e6efd6">amrex::ParticleTile::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:743</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html"><div class="ttname"><a href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:646</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html_a15a5c73d1aaced5789c24576eabe384d"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#a15a5c73d1aaced5789c24576eabe384d">amrex::ParticleTile::GetArrayOfStructs</a></div><div class="ttdeci">AoS &amp; GetArrayOfStructs()</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:746</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html_a4f939dec8914785b6fbc7b02f5d0b202"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#a4f939dec8914785b6fbc7b02f5d0b202">amrex::ParticleTile::getParticleTileData</a></div><div class="ttdeci">ParticleTileDataType getParticleTileData()</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:1055</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html_a80fc21d171f28db059190e234fa36642"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#a80fc21d171f28db059190e234fa36642">amrex::ParticleTile::numParticles</a></div><div class="ttdeci">int numParticles() const</div><div class="ttdoc">Returns the number of real particles (excluding neighbors)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:771</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html_aad932266bb874a93f00fc2920ff69548"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#aad932266bb874a93f00fc2920ff69548">amrex::ParticleTile::resize</a></div><div class="ttdeci">void resize(std::size_t count)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:837</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html_abc7127e222d300082ca177f987d847a5"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#abc7127e222d300082ca177f987d847a5">amrex::ParticleTile::define</a></div><div class="ttdeci">void define(int a_num_runtime_real, int a_num_runtime_int)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:676</div></div>
+<div class="ttc" id="astructamrex_1_1ParticleTile_html_abe6aa2080bb4a68eaded92e7e3e6efd6"><div class="ttname"><a href="structamrex_1_1ParticleTile.html#abe6aa2080bb4a68eaded92e7e3e6efd6">amrex::ParticleTile::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTile.H:752</div></div>
 <div class="ttc" id="astructamrex_1_1Particle_html"><div class="ttname"><a href="structamrex_1_1Particle.html">amrex::Particle</a></div><div class="ttdoc">The struct used to store particles.</div><div class="ttdef"><b>Definition:</b> AMReX_Particle.H:240</div></div>
 <div class="ttc" id="astructamrex_1_1Particle_html_a1b1f1b307acf1e1762ee8aa31a1a6938"><div class="ttname"><a href="structamrex_1_1Particle.html#a1b1f1b307acf1e1762ee8aa31a1a6938">amrex::Particle::id</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE ParticleIDWrapper id() &amp;</div><div class="ttdef"><b>Definition:</b> AMReX_Particle.H:260</div></div>
 <div class="ttc" id="astructamrex_1_1Particle_html_a6974466bbe1639c042ea8079b1ee163c"><div class="ttname"><a href="structamrex_1_1Particle.html#a6974466bbe1639c042ea8079b1ee163c">amrex::Particle::pos</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RealVect pos() const &amp;</div><div class="ttdef"><b>Definition:</b> AMReX_Particle.H:283</div></div>

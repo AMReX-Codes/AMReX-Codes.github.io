@@ -74,6 +74,8 @@ var dir_678e78232f51bebdca12cae3de73223b =
       [ "ConstSoAParticle", "structamrex_1_1ConstSoAParticle.html", "structamrex_1_1ConstSoAParticle" ],
       [ "SoAParticle", "structamrex_1_1SoAParticle.html", "structamrex_1_1SoAParticle" ],
       [ "ConstParticleTileData", "structamrex_1_1ConstParticleTileData.html", "structamrex_1_1ConstParticleTileData" ],
+      [ "ThisParticleTileHasNoParticleVector", "structamrex_1_1ThisParticleTileHasNoParticleVector.html", null ],
+      [ "ThisParticleTileHasNoAoS", "structamrex_1_1ThisParticleTileHasNoAoS.html", "structamrex_1_1ThisParticleTileHasNoAoS" ],
       [ "ParticleTile", "structamrex_1_1ParticleTile.html", "structamrex_1_1ParticleTile" ]
     ] ],
     [ "AMReX_ParticleTransformation.H", "AMReX__ParticleTransformation_8H.html", "AMReX__ParticleTransformation_8H" ],
