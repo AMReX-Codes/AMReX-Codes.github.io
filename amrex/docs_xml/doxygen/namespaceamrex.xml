@@ -13286,7 +13286,7 @@
 <parametername>N</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>an interger specifying the 1D for loop&apos;s range. </para>
+<para>an integer specifying the 1D for loop&apos;s range. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -13777,7 +13777,7 @@
 <parametername direction="in">src_ba</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> associatied with the src <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. </para>
+<para>The <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> associated with the src <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -16021,7 +16021,7 @@
 <parametername>local</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>If true, MPI communciation is skipped. </para>
+<para>If true, MPI communication is skipped. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -30505,7 +30505,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This performs reduction over a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&apos;s valid and specified ghost regions. For example, the code below computes the minimum of the first <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> and the maximum of the second <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. <verbatim>    auto const&amp; ma1 = mf1.const_arrays();
-    auot const&amp; ma2 = mf2.const_arrays();
+    auto const&amp; ma2 = mf2.const_arrays();
     GpuTuple&lt;Real,Real&gt; mm = ParReduce(TypeList&lt;ReduceOpMin,ReduceOpMax&gt;{},
                                        TypeList&lt;Real,Real&gt;{},
                                        mf1, mf1.nGrowVect(),
@@ -30544,7 +30544,7 @@
 <parametername>F</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callable type like a lambda funcion</para>
+<para>callable type like a lambda function</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -30687,7 +30687,7 @@
 <parametername>F</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callable type like a lambda funcion</para>
+<para>callable type like a lambda function</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -30796,7 +30796,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This performs reduction over a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&apos;s valid and specified ghost regions and components. For example, the code below computes the minimum of the first <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> and the maximum of the second <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. <verbatim>    auto const&amp; ma1 = mf1.const_arrays();
-    auot const&amp; ma2 = mf2.const_arrays();
+    auto const&amp; ma2 = mf2.const_arrays();
     GpuTuple&lt;Real,Real&gt; mm = ParReduce(TypeList&lt;ReduceOpMin,ReduceOpMax&gt;{},
                                        TypeList&lt;Real,Real&gt;{},
                                        mf1, mf1.nGrowVect(), mf1.nComp(),
@@ -30835,7 +30835,7 @@
 <parametername>F</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callable type like a lambda funcion</para>
+<para>callable type like a lambda function</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -30985,7 +30985,7 @@
 <parametername>F</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callable type like a lambda funcion</para>
+<para>callable type like a lambda function</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -31094,7 +31094,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This performs reduction over a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&apos;s valid region. For example, the code below computes the minimum of the first <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> and the maximum of the second <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. <verbatim>    auto const&amp; ma1 = mf1.const_arrays();
-    auot const&amp; ma2 = mf2.const_arrays();
+    auto const&amp; ma2 = mf2.const_arrays();
     GpuTuple&lt;Real,Real&gt; mm = ParReduce(TypeList&lt;ReduceOpMin,ReduceOpMax&gt;{},
                                        TypeList&lt;Real,Real&gt;{}, mf1,
     [=] AMREX_GPU_DEVICE (int box_no, int i, int j, int k) noexcept
@@ -31132,7 +31132,7 @@
 <parametername>F</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callable type like a lambda funcion</para>
+<para>callable type like a lambda function</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -31262,7 +31262,7 @@
 <parametername>F</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>callable type like a lambda funcion</para>
+<para>callable type like a lambda function</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -35747,7 +35747,7 @@ Returns the index of the first element for which f is 0. </para>
 <para>Read iMultiFab/FabArray&lt;IArrayBox&gt; </para>
         </briefdescription>
         <detaileddescription>
-<para>This reads an iMultiFab/FabArray&lt;IArrayBox&gt; from disk. If it has been fully defined, the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on the disk must match the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> in the given iMultiFab/FabArray&lt;IArrayBox&gt; object. If it is only constructed with the default constructor, the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on the disk will be used and a new <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> will be made. When this funciton is used to restart a calculation from checkpoint files, one should use a fully defined iMultiFab/FabArray&lt;IArrayBox&gt; except for the first one in a series of iMultiFab/MultiFab objects that share the same BoxArray/DistributionMapping. This will ensure that they share the same BoxArray/DistributionMapping after restart.</para>
+<para>This reads an iMultiFab/FabArray&lt;IArrayBox&gt; from disk. If it has been fully defined, the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on the disk must match the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> in the given iMultiFab/FabArray&lt;IArrayBox&gt; object. If it is only constructed with the default constructor, the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on the disk will be used and a new <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> will be made. When this function is used to restart a calculation from checkpoint files, one should use a fully defined iMultiFab/FabArray&lt;IArrayBox&gt; except for the first one in a series of iMultiFab/MultiFab objects that share the same BoxArray/DistributionMapping. This will ensure that they share the same BoxArray/DistributionMapping after restart.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>fa</parametername>
@@ -41105,7 +41105,7 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>ls_lev</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>is an <ref refid="classamrex_1_1EB2_1_1Level" kindref="compound">EB2::Level</ref> obejct with an implicit function. This is at the same level as mf. </para>
+<para>is an <ref refid="classamrex_1_1EB2_1_1Level" kindref="compound">EB2::Level</ref> object with an implicit function. This is at the same level as mf. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -41113,7 +41113,7 @@ Returns the index of the first element for which f is 0. </para>
 <parametername>eb_fac</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>is an <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> object containing EB informaiton. </para>
+<para>is an <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> object containing EB information. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
