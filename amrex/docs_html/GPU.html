@@ -1634,23 +1634,23 @@ by “amrex” in your <code class="code highlight cpp c++ docutils literal high
 <tbody>
 <tr class="row-even"><td><p>use_gpu_aware_mpi</p></td>
 <td><p>Whether to use GPU memory for communication buffers during MPI calls.
-If true, the buffers will use device memory. If false, they will use
-pinned memory. In practice, we find it is usually not worth it to use
-GPU aware MPI.</p></td>
+If true, the buffers will use device memory. If false (i.e., 0), they
+will use pinned memory. In practice, we find it is not always worth
+it to use GPU aware MPI.</p></td>
 <td><p>Bool</p></td>
-<td><p>False</p></td>
+<td><p>0</p></td>
 </tr>
 <tr class="row-odd"><td><p>abort_on_out_of_gpu_memory</p></td>
 <td><p>If the size of free memory on the GPU is less than the size of a
 requested allocation, AMReX will call AMReX::Abort() with an error
 describing how much free memory there is and what was requested.</p></td>
 <td><p>Bool</p></td>
-<td><p>False</p></td>
+<td><p>0</p></td>
 </tr>
 <tr class="row-even"><td><p>the_arena_is_managed</p></td>
 <td><p>Whether <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">The_Arena</span><span class="p">()</span><span class="w"></span></code> allocates managed memory.</p></td>
 <td><p>Bool</p></td>
-<td><p>False</p></td>
+<td><p>0</p></td>
 </tr>
 </tbody>
 </table>
