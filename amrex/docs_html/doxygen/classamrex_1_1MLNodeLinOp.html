@@ -114,10 +114,11 @@ Inheritance diagram for amrex::MLNodeLinOp:</div>
  <div class="center">
   <img src="classamrex_1_1MLNodeLinOp.png" usemap="#amrex::MLNodeLinOp_map" alt=""/>
   <map id="amrex::MLNodeLinOp_map" name="amrex::MLNodeLinOp_map">
-<area href="classamrex_1_1MLLinOpT.html" alt="amrex::MLLinOpT&lt; MF &gt;" shape="rect" coords="204,0,398,24"/>
+<area href="classamrex_1_1MLLinOpT.html" alt="amrex::MLLinOpT&lt; MF &gt;" shape="rect" coords="306,0,500,24"/>
 <area href="classamrex_1_1MLEBNodeFDLaplacian.html" alt="amrex::MLEBNodeFDLaplacian" shape="rect" coords="0,112,194,136"/>
-<area href="classamrex_1_1MLNodeLaplacian.html" alt="amrex::MLNodeLaplacian" shape="rect" coords="204,112,398,136"/>
-<area href="classamrex_1_1MLNodeTensorLaplacian.html" alt="amrex::MLNodeTensorLaplacian" shape="rect" coords="408,112,602,136"/>
+<area href="classamrex_1_1MLNodeABecLaplacian.html" alt="amrex::MLNodeABecLaplacian" shape="rect" coords="204,112,398,136"/>
+<area href="classamrex_1_1MLNodeLaplacian.html" alt="amrex::MLNodeLaplacian" shape="rect" coords="408,112,602,136"/>
+<area href="classamrex_1_1MLNodeTensorLaplacian.html" alt="amrex::MLNodeTensorLaplacian" shape="rect" coords="612,112,806,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -157,6 +158,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8dcf3f92d3ef1932e03ad470e29d1517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2032ea2a9fd37bb9179bc442d4949514"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a2032ea2a9fd37bb9179bc442d4949514">define</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;a_geom, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &gt; &amp;a_grids, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &gt; &amp;a_dmap, const <a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;a_info=<a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a>(), const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1FabFactory.html">FabFactory</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; const * &gt; &amp;a_factory={}, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_eb_limit_coarsening=-1)</td></tr>
 <tr class="separator:a2032ea2a9fd37bb9179bc442d4949514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2ee340ce60a3e241d9d06e4d14db59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#acf2ee340ce60a3e241d9d06e4d14db59">setSmoothNumSweeps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nsweeps) noexcept</td></tr>
+<tr class="separator:acf2ee340ce60a3e241d9d06e4d14db59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85ee06a6171baffc7d8ba4e7470a44ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#a85ee06a6171baffc7d8ba4e7470a44ef">setLevelBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *=nullptr) final</td></tr>
 <tr class="separator:a85ee06a6171baffc7d8ba4e7470a44ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2fbffffd5da85d5d31c81bae2db67e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLNodeLinOp.html#abc2fbffffd5da85d5d31c81bae2db67e">apply</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;out, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;in, <a class="el" href="structamrex_1_1LinOpEnumType.html#ac0ca2bfc9c5a1de7514545be0058b627">BCMode</a> bc_mode, <a class="el" href="structamrex_1_1LinOpEnumType.html#a1afeea6c44c6989ddd2ef9f7ad67b2b8">StateMode</a> s_mode, const <a class="el" href="namespaceamrex.html#a9214b7c07d9c296122f7418f73f798e9">MLMGBndry</a> *bndry=nullptr) const final</td></tr>
@@ -1198,7 +1201,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a732fecdd892bfe194c84bab01af655b6">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a489a483e778214ee6a0943001d816b80">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a978a4e15703a7ddf71c557eba128dcbe">amrex::MLEBNodeFDLaplacian</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#a732fecdd892bfe194c84bab01af655b6">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a489a483e778214ee6a0943001d816b80">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a3872730e2ac7d69c58f2708d5454bb39">amrex::MLNodeABecLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a978a4e15703a7ddf71c557eba128dcbe">amrex::MLEBNodeFDLaplacian</a>.</p>
 
 </div>
 </div>
@@ -1284,7 +1287,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#af00aee37c0b544681bc9883ccd96656d">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a34d08ccf80dad6eead2922c6a41cee16">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#af851a769ccbcd52c5950734a24067440">amrex::MLEBNodeFDLaplacian</a>.</p>
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#af00aee37c0b544681bc9883ccd96656d">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a34d08ccf80dad6eead2922c6a41cee16">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a47a17a53556ce90250db12c55ae5e115">amrex::MLNodeABecLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#af851a769ccbcd52c5950734a24067440">amrex::MLEBNodeFDLaplacian</a>.</p>
 
 </div>
 </div>
@@ -1334,7 +1337,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#aa734b354f866f78f860ae30f1ad9a2ad">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#abb1b82912ef073dd81315503552625e1">amrex::MLNodeLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a375d3d3edaa7f6d3a16bf7a8456027f7">amrex::MLEBNodeFDLaplacian</a>.</p>
+<p>Implemented in <a class="el" href="classamrex_1_1MLNodeTensorLaplacian.html#aa734b354f866f78f860ae30f1ad9a2ad">amrex::MLNodeTensorLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#abb1b82912ef073dd81315503552625e1">amrex::MLNodeLaplacian</a>, <a class="el" href="classamrex_1_1MLNodeABecLaplacian.html#a7f342b270636e50520e1f99d1ded49f1">amrex::MLNodeABecLaplacian</a>, and <a class="el" href="classamrex_1_1MLEBNodeFDLaplacian.html#a375d3d3edaa7f6d3a16bf7a8456027f7">amrex::MLEBNodeFDLaplacian</a>.</p>
 
 </div>
 </div>
@@ -1868,6 +1871,32 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf2ee340ce60a3e241d9d06e4d14db59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2ee340ce60a3e241d9d06e4d14db59">&#9670;&nbsp;</a></span>setSmoothNumSweeps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLNodeLinOp::setSmoothNumSweeps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nsweeps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

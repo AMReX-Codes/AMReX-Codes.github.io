@@ -44,7 +44,6 @@ var classamrex_1_1MLNodeLaplacian =
     [ "setNormalizationThreshold", "classamrex_1_1MLNodeLaplacian.html#a5184c0395e2b615863f958c9a057f6d2", null ],
     [ "setRZCorrection", "classamrex_1_1MLNodeLaplacian.html#ad6fc7d27c22cd096b77b9bb7d2b4f66d", null ],
     [ "setSigma", "classamrex_1_1MLNodeLaplacian.html#a4cbcb13e082363d597268b6523f72470", null ],
-    [ "setSmoothNumSweeps", "classamrex_1_1MLNodeLaplacian.html#a57edd583b6861bbf48d34a52aae4cbfe", null ],
     [ "unimposeNeumannBC", "classamrex_1_1MLNodeLaplacian.html#ae3ee387befb4f982cceda3997021d5c6", null ],
     [ "updateVelocity", "classamrex_1_1MLNodeLaplacian.html#a6bf02dee201be3491d55e71b1e98b72c", null ],
     [ "m_const_sigma", "classamrex_1_1MLNodeLaplacian.html#a48fe991cb1c369e8fd56fda63ff27e43", null ],

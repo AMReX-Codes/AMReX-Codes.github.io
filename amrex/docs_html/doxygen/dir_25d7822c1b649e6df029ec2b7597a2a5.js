@@ -52,6 +52,14 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLMG_3D_K.H", "AMReX__MLMG__3D__K_8H.html", "AMReX__MLMG__3D__K_8H" ],
     [ "AMReX_MLMG_K.H", "AMReX__MLMG__K_8H.html", null ],
     [ "AMReX_MLMGBndry.H", "AMReX__MLMGBndry_8H.html", "AMReX__MLMGBndry_8H" ],
+    [ "AMReX_MLNodeABecLap_1D_K.H", "AMReX__MLNodeABecLap__1D__K_8H.html", "AMReX__MLNodeABecLap__1D__K_8H" ],
+    [ "AMReX_MLNodeABecLap_2D_K.H", "AMReX__MLNodeABecLap__2D__K_8H.html", "AMReX__MLNodeABecLap__2D__K_8H" ],
+    [ "AMReX_MLNodeABecLap_3D_K.H", "AMReX__MLNodeABecLap__3D__K_8H.html", "AMReX__MLNodeABecLap__3D__K_8H" ],
+    [ "AMReX_MLNodeABecLap_K.H", "AMReX__MLNodeABecLap__K_8H.html", null ],
+    [ "AMReX_MLNodeABecLaplacian.cpp", "AMReX__MLNodeABecLaplacian_8cpp.html", null ],
+    [ "AMReX_MLNodeABecLaplacian.H", "AMReX__MLNodeABecLaplacian_8H.html", [
+      [ "MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", "classamrex_1_1MLNodeABecLaplacian" ]
+    ] ],
     [ "AMReX_MLNodeLap_1D_K.H", "AMReX__MLNodeLap__1D__K_8H.html", "AMReX__MLNodeLap__1D__K_8H" ],
     [ "AMReX_MLNodeLap_2D_K.H", "AMReX__MLNodeLap__2D__K_8H.html", "AMReX__MLNodeLap__2D__K_8H" ],
     [ "AMReX_MLNodeLap_3D_K.H", "AMReX__MLNodeLap__3D__K_8H.html", "AMReX__MLNodeLap__3D__K_8H" ],

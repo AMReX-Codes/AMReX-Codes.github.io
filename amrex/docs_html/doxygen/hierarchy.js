@@ -216,6 +216,7 @@ var hierarchy =
     [ "amrex::BoxList", "classamrex_1_1BoxList.html", [
       [ "amrex::BoxDomain", "classamrex_1_1BoxDomain.html", null ]
     ] ],
+    [ "amrex::btUnit", "classamrex_1_1btUnit.html", null ],
     [ "amrex::Gpu::Buffer< T, >", "classamrex_1_1Gpu_1_1Buffer.html", null ],
     [ "amrex::MemProfiler::Builds", "structamrex_1_1MemProfiler_1_1Builds.html", null ],
     [ "amrex::MemProfiler::Bytes", "structamrex_1_1MemProfiler_1_1Bytes.html", null ],
@@ -719,6 +720,7 @@ var hierarchy =
       ] ],
       [ "amrex::MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", [
         [ "amrex::MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", null ],
+        [ "amrex::MLNodeABecLaplacian", "classamrex_1_1MLNodeABecLaplacian.html", null ],
         [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", null ],
         [ "amrex::MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", null ]
       ] ]

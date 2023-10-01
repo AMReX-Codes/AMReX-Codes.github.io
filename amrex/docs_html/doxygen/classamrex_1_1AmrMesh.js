@@ -32,6 +32,7 @@ var classamrex_1_1AmrMesh =
     [ "InitAmrMesh", "classamrex_1_1AmrMesh.html#ab789a53b0b0d3e5bddbf489ed751aee2", null ],
     [ "LevelDefined", "classamrex_1_1AmrMesh.html#a08cfede00ef133a4756ac22a7ea7bfe7", null ],
     [ "MakeBaseGrids", "classamrex_1_1AmrMesh.html#ac7d0ce87a8047dcdf7b45d4232121881", null ],
+    [ "MakeDistributionMap", "classamrex_1_1AmrMesh.html#abf07e71ebb90aa135bd78e4965536d04", null ],
     [ "MakeNewGrids", "classamrex_1_1AmrMesh.html#acb422930e8e69fc386727f45607e114b", null ],
     [ "MakeNewGrids", "classamrex_1_1AmrMesh.html#a0bf56e73af1dfffcba7bfcadad887751", null ],
     [ "MakeNewLevelFromScratch", "classamrex_1_1AmrMesh.html#a2b313b548c5c16a75ad21b053f9fc1b0", null ],

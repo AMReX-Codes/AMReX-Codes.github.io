@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classamrex_1_1btUnit" kind="class" language="C++" prot="public">
+    <compoundname>amrex::btUnit</compoundname>
+    <includes refid="AMReX__Bittree_8H" local="no">AMReX_Bittree.H</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1btUnit_1ab474ed08790246bc8253d185c7181554" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::btUnit::bcPeriodic</definition>
+        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <name>bcPeriodic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="70" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a83ed80c2a28a3d07755f30836c40fea2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::btUnit::btRefine</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, std::vector&lt; int &gt; &amp;btTags, int max_crse, int lbase, Vector&lt; BoxArray &gt; &amp;grids, Vector&lt; DistributionMapping &gt; &amp;dmap, MPI_Comm comm)</argsstring>
+        <name>btRefine</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <declname>btTags</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>max_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lbase</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>New Bittree mesh is generated.</para>
+<para>This makes use of BT library functions and as well as routines adapted from Flash-X that enforce Octree nesting. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="25" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="33" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a80a95b36d998be55d68a098fe3c0396e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::btUnit::btCalculateGrids</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, int lbase, int &amp;new_finest, Vector&lt; BoxArray &gt; &amp;new_grids, Vector&lt; IntVect &gt; const &amp;max_grid_size)</argsstring>
+        <name>btCalculateGrids</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lbase</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <declname>new_finest</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>new_grids</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; const &amp;</type>
+          <declname>max_grid_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates new box arrays to match the new Bittree mesh. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="30" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="82" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a098976a69257ce8a42295c2989924256" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::btUnit::btCalculateLevel</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, int lev, BoxArray &amp;ba, IntVect const &amp;max_grid_size)</argsstring>
+        <name>btCalculateLevel</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>max_grid_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a box array based on Bittree. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="35" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="101" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a31e488c8f3ddac61738c5ae6c9bbd6bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::btUnit::getBitid</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, bool updated, int lev, int idx_on_lev)</argsstring>
+        <name>getBitid</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>updated</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>idx_on_lev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="41" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a277062b70457af753c6ef590e62f31da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::btUnit::getIndex</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, bool updated, int lev, int bitid)</argsstring>
+        <name>getIndex</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>updated</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>bitid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="43" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="140" bodyend="143"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a06e9105e806892e8d474ad0e11901888" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::btUnit::btCheckRefine</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, std::vector&lt; int &gt; &amp;btTags, int max_crse, int lbase, Vector&lt; BoxArray &gt; &amp;grids, Vector&lt; DistributionMapping &gt; &amp;dmap, MPI_Comm comm)</argsstring>
+        <name>btCheckRefine</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <declname>btTags</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>max_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lbase</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Implements the logic which ensures the generated Bittree adheres to a strict octree structure with no more than one level difference between surrounding leaf blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="48" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="155" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1ae84ba5a5a4efc2469f7da66f356f76a8" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::btUnit::btCheckDerefine</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, std::vector&lt; int &gt; &amp;btTags, int max_crse, int lbase, Vector&lt; BoxArray &gt; &amp;grids, Vector&lt; DistributionMapping &gt; &amp;dmap, MPI_Comm comm)</argsstring>
+        <name>btCheckDerefine</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &amp;</type>
+          <declname>btTags</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>max_crse</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lbase</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Implements the logic which ensures the generated Bittree adheres to a strict octree structure with no more than one level difference between surrounding leaf blocks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="54" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="220" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1a7ef41847051eeace441ad337e4e09083" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::btUnit::checkNeighborsRefine</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, bittree::MortonTree::Block b)</argsstring>
+        <name>checkNeighborsRefine</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>bittree::MortonTree::Block</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="61" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="283" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1btUnit_1adbfaee89d0e0ab8ecab1a3acc4546438" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+        <definition>std::vector&lt; int &gt; amrex::btUnit::neighIntCoords</definition>
+        <argsstring>(bittree::BittreeAmr *const mesh, unsigned lev, unsigned *lcoord, int *gCell)</argsstring>
+        <name>neighIntCoords</name>
+        <param>
+          <type>bittree::BittreeAmr *const</type>
+          <declname>mesh</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>unsigned *</type>
+          <declname>lcoord</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>gCell</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculate integer coordinates of neighbors, taking into account BCs. Currently assuming Periodic in all directions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="63" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.cpp" bodystart="342" bodyend="375"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" line="22" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/Bittree/AMReX_Bittree.H" bodystart="22" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1btUnit_1ab474ed08790246bc8253d185c7181554" prot="public" virt="non-virtual"><scope>amrex::btUnit</scope><name>bcPeriodic</name></member>
+      <member refid="classamrex_1_1btUnit_1a80a95b36d998be55d68a098fe3c0396e" prot="public" virt="non-virtual"><scope>amrex::btUnit</scope><name>btCalculateGrids</name></member>
+      <member refid="classamrex_1_1btUnit_1a098976a69257ce8a42295c2989924256" prot="public" virt="non-virtual"><scope>amrex::btUnit</scope><name>btCalculateLevel</name></member>
+      <member refid="classamrex_1_1btUnit_1ae84ba5a5a4efc2469f7da66f356f76a8" prot="private" virt="non-virtual"><scope>amrex::btUnit</scope><name>btCheckDerefine</name></member>
+      <member refid="classamrex_1_1btUnit_1a06e9105e806892e8d474ad0e11901888" prot="private" virt="non-virtual"><scope>amrex::btUnit</scope><name>btCheckRefine</name></member>
+      <member refid="classamrex_1_1btUnit_1a83ed80c2a28a3d07755f30836c40fea2" prot="public" virt="non-virtual"><scope>amrex::btUnit</scope><name>btRefine</name></member>
+      <member refid="classamrex_1_1btUnit_1a7ef41847051eeace441ad337e4e09083" prot="private" virt="non-virtual"><scope>amrex::btUnit</scope><name>checkNeighborsRefine</name></member>
+      <member refid="classamrex_1_1btUnit_1a31e488c8f3ddac61738c5ae6c9bbd6bf" prot="public" virt="non-virtual"><scope>amrex::btUnit</scope><name>getBitid</name></member>
+      <member refid="classamrex_1_1btUnit_1a277062b70457af753c6ef590e62f31da" prot="public" virt="non-virtual"><scope>amrex::btUnit</scope><name>getIndex</name></member>
+      <member refid="classamrex_1_1btUnit_1adbfaee89d0e0ab8ecab1a3acc4546438" prot="private" virt="non-virtual"><scope>amrex::btUnit</scope><name>neighIntCoords</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
