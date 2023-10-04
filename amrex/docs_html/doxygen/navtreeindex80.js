@@ -1,5 +1,8 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1RedistributeUnpackPolicy.html":[3,0,0,474],
+"structamrex_1_1RedistributeUnpackPolicy.html#a8511545f28339259917a04b655a30aab":[3,0,0,474,0],
+"structamrex_1_1ReduceOpLogicalAnd.html":[3,0,0,216],
 "structamrex_1_1ReduceOpLogicalAnd.html#a18be9b2403fd9d77004b01b32e26f523":[3,0,0,216,0],
 "structamrex_1_1ReduceOpLogicalAnd.html#a40400d357324e9f3b5f17192cab3281b":[3,0,0,216,1],
 "structamrex_1_1ReduceOpLogicalAnd.html#ab2e8bb4b35603b81737b82cf9b495636":[3,0,0,216,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1VectorTag.html":[3,0,0,232],
 "structamrex_1_1VectorTag.html#a3769fec569be6c2c4379be5bdd1329b6":[3,0,0,232,2],
 "structamrex_1_1VectorTag.html#a39f4b6f8eff085cdbe1c56f1c637f932":[3,0,0,232,0],
-"structamrex_1_1VectorTag.html#ad0d6dc44218f3617cbd739d953ea577d":[3,0,0,232,1],
-"structamrex_1_1VisMF_1_1FabOnDisk.html":[3,0,0,273,0],
-"structamrex_1_1VisMF_1_1FabOnDisk.html#a2592709514015ee6c2e68a254a2b5806":[3,0,0,273,0,2],
-"structamrex_1_1VisMF_1_1FabOnDisk.html#a3384af022eabbdadda0f20d0bda79ebe":[3,0,0,273,0,3]
+"structamrex_1_1VectorTag.html#ad0d6dc44218f3617cbd739d953ea577d":[3,0,0,232,1]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX73 =
 {
+"structamrex_1_1BATindexType.html#a94cc8c83f1dd9de4e2d1ab9a3d67e056":[3,0,0,99,5],
+"structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[3,0,0,99,1],
+"structamrex_1_1BATindexType.html#abf80252f8910cfd2746917fc4bf65bed":[3,0,0,99,0],
 "structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8":[3,0,0,99,7],
 "structamrex_1_1BATindexType.html#aea913ddadc5577027865110d5e0a27ab":[3,0,0,99,2],
 "structamrex_1_1BATindexType.html#af9fb7b334dc4037e902f2ce77c7ffee9":[3,0,0,99,4],
@@ -131,8 +134,8 @@ var NAVTREEINDEX73 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[3,0,0,487,20],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[3,0,0,487,13],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[3,0,0,487,7],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,487,4],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,487,3],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,487,4],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[3,0,0,487,1],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[3,0,0,487,18],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[3,0,0,487,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX73 =
 "structamrex_1_1DistributionMapping_1_1LIpairLT.html#ad2e3150718e10a60670b28b1b77c02be":[3,0,0,118,1,0],
 "structamrex_1_1DistributionMapping_1_1Ref.html":[3,0,0,118,2],
 "structamrex_1_1DistributionMapping_1_1Ref.html#a1dcb03b5134dc17a5304929686a573dc":[3,0,0,118,2,0],
-"structamrex_1_1DistributionMapping_1_1Ref.html#a2f337d4047cb7af6c2c86b6a56ff0523":[3,0,0,118,2,7],
-"structamrex_1_1DistributionMapping_1_1Ref.html#a641af651d7da7e96317d1544a12caf7c":[3,0,0,118,2,2],
-"structamrex_1_1DistributionMapping_1_1Ref.html#a71bfe2565cefe2ceb8ad882db3ebabc3":[3,0,0,118,2,8],
-"structamrex_1_1DistributionMapping_1_1Ref.html#a89d87a77852f51756c34d02d92cf8656":[3,0,0,118,2,6]
+"structamrex_1_1DistributionMapping_1_1Ref.html#a2f337d4047cb7af6c2c86b6a56ff0523":[3,0,0,118,2,7]
 };

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadraturerule_9887',['QuadratureRule',['../structamrex_1_1algoim_1_1QuadratureRule.html',1,'amrex::algoim']]]
+  ['quadraturerule_9888',['QuadratureRule',['../structamrex_1_1algoim_1_1QuadratureRule.html',1,'amrex::algoim']]]
 ];
