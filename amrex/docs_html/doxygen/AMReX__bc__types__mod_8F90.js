@@ -2,6 +2,7 @@ var AMReX__bc__types__mod_8F90 =
 [
     [ "amrex_bc_bogus", "AMReX__bc__types__mod_8F90.html#ab480fd31227317f2aa8691adfece03ae", null ],
     [ "amrex_bc_ext_dir", "AMReX__bc__types__mod_8F90.html#a07483ec0c0dfe550ae285951efd6e408", null ],
+    [ "amrex_bc_ext_dir_cc", "AMReX__bc__types__mod_8F90.html#a76a68630423608a157801aa21291f71d", null ],
     [ "amrex_bc_foextrap", "AMReX__bc__types__mod_8F90.html#a8bd6c0b90bfafbb918a126727059f29e", null ],
     [ "amrex_bc_hoextrap", "AMReX__bc__types__mod_8F90.html#a23db950272f0f85aabf73bc7f1f94a29", null ],
     [ "amrex_bc_hoextrapcc", "AMReX__bc__types__mod_8F90.html#aee2a7cc451466fa5382312cbf6e1c04b", null ],

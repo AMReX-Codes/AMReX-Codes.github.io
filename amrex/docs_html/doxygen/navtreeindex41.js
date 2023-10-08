@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"classamrex_1_1Hypre.html#ace6b42d6b4d28b5aeb6d0ae4ced033f1":[3,0,0,395,18],
+"classamrex_1_1Hypre.html#ad64dd52bc29882baff668896c2dde9cd":[3,0,0,395,7],
 "classamrex_1_1Hypre.html#ade6e731e7392a70b13f66c6656631cdf":[3,0,0,395,10],
 "classamrex_1_1Hypre.html#ae6d9ce8d191fe74154cb322a83647c65":[3,0,0,395,15],
 "classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f":[3,0,0,395,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "classamrex_1_1IParser.html#ac4ce16b2a7b27e417a149740858b3482":[3,0,0,276,2],
 "classamrex_1_1IParser.html#ac7dbdbff476753fbfa9fdb49e27fb9f6":[3,0,0,276,8],
 "classamrex_1_1IParser.html#aec5f0bb22e4084d50b12adbda2cc56ff":[3,0,0,276,1],
-"classamrex_1_1InSituBridge.html":[3,0,0,410],
-"classamrex_1_1InSituBridge.html#a093ff6109c501d8b6fd3fa102e0710d4":[3,0,0,410,8],
-"classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2":[3,0,0,410,11]
+"classamrex_1_1InSituBridge.html":[3,0,0,410]
 };

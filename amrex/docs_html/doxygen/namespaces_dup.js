@@ -10,6 +10,7 @@ var namespaces_dup =
     [ "amrex_bc_types_module", "namespaceamrex__bc__types__module.html", [
       [ "amrex_bc_bogus", "namespaceamrex__bc__types__module.html#ab480fd31227317f2aa8691adfece03ae", null ],
       [ "amrex_bc_ext_dir", "namespaceamrex__bc__types__module.html#a07483ec0c0dfe550ae285951efd6e408", null ],
+      [ "amrex_bc_ext_dir_cc", "namespaceamrex__bc__types__module.html#a76a68630423608a157801aa21291f71d", null ],
       [ "amrex_bc_foextrap", "namespaceamrex__bc__types__module.html#a8bd6c0b90bfafbb918a126727059f29e", null ],
       [ "amrex_bc_hoextrap", "namespaceamrex__bc__types__module.html#a23db950272f0f85aabf73bc7f1f94a29", null ],
       [ "amrex_bc_hoextrapcc", "namespaceamrex__bc__types__module.html#aee2a7cc451466fa5382312cbf6e1c04b", null ],

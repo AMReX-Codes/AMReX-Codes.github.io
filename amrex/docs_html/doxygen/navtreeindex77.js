@@ -1,5 +1,8 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4a91efbc33209256821c57a53ef9ddbc51":[3,0,0,424,1,1],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4ad1a130e88790663b2124d7dbd3e9f81e":[3,0,0,424,1,0],
+"structamrex_1_1LinOpEnumType.html#acc2058c2f5b3c370c08f75fc71ff3bb4af5c101b5f19e97166e7531ffa1c706c4":[3,0,0,424,1,2],
 "structamrex_1_1LogicalAnd.html":[3,0,0,147],
 "structamrex_1_1LogicalAnd.html#a5c318952861df63dc7c10b951dc3e434":[3,0,0,147,0],
 "structamrex_1_1LogicalOr.html":[3,0,0,148],
@@ -246,8 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#a952e8acf8b0d5176442546ca16c789ee":[3,0,0,9,2,1],
 "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html#af8970386ed97a77fdb26348c6ae02871":[3,0,0,9,2,0],
 "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html":[3,0,0,9,16],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html":[3,0,0,9,14],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html#a30d08fef2b14e838731f87056d78a617":[3,0,0,9,14,0],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html#abde0cfb7cbd64033b3462d65905c5831":[3,0,0,9,14,2],
-"structamrex_1_1NonLocalBC_1_1PackComponents.html#ace297f67083473f1a5777f7cfd1a0135":[3,0,0,9,14,1]
+"structamrex_1_1NonLocalBC_1_1PackComponents.html":[3,0,0,9,14]
 };

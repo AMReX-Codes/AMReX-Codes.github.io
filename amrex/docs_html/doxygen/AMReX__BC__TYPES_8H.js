@@ -2,6 +2,7 @@ var AMReX__BC__TYPES_8H =
 [
     [ "BOGUS_BC", "AMReX__BC__TYPES_8H.html#ab783b95b6d96f08d8ec4680ae5c47879", null ],
     [ "EXT_DIR", "AMReX__BC__TYPES_8H.html#aab37e552c88a7ebe4df8c39cbd04b8f7", null ],
+    [ "EXT_DIR_CC", "AMReX__BC__TYPES_8H.html#a0ec2ece811cb32cfd0ed7224af0a5104", null ],
     [ "FOEXTRAP", "AMReX__BC__TYPES_8H.html#aa7be6070c4e0ff8a1efa011bb352ed5b", null ],
     [ "HOEXTRAP", "AMReX__BC__TYPES_8H.html#ab3f2cb808193937a3651291078955292", null ],
     [ "HOEXTRAPCC", "AMReX__BC__TYPES_8H.html#a64b07b4a69819f26234681bd3d948681", null ],

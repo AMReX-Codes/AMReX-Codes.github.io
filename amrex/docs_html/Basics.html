@@ -2185,10 +2185,22 @@ multiple components before the call to ghost cell routines.</p>
 <dt>int_dir</dt><dd><p>Interior, including periodic boundary</p>
 </dd>
 <dt>ext_dir</dt><dd><p>“External Dirichlet”. It is the user’s responsibility to write a routine
-to fill ghost cells (more details below).</p>
+to fill ghost cells (more details below). The boundary location
+is on the domain face even when the data inside the domain are
+cell-centered.</p>
+</dd>
+<dt>ext_dir_cc</dt><dd><p>“External Dirichlet”. It is the user’s responsibility to write a routine
+to fill ghost cells (more details below). The boundary location
+is at the cell center of ghost cells outside the domain.</p>
 </dd>
 <dt>foextrap</dt><dd><p>“First Order Extrapolation”
 First order extrapolation from last cell in interior.</p>
+</dd>
+<dt>hoextrap</dt><dd><p>“High Order Extrapolation”. The boundary location is on the domain
+face even when the data inside the domain are cell-centered.</p>
+</dd>
+<dt>hoextrapcc</dt><dd><p>“High Order Extrapolation” The boundary location is at the cell
+center of ghost cells outside the domain.</p>
 </dd>
 <dt>reflect_even</dt><dd><p>Reflection from interior cells with sign
 unchanged, <span class="math notranslate nohighlight">\(q(-i) = q(i)\)</span>.</p>
