@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"distribution__c_8h.html#a64253c22eb99fc415cba42265baeea36":[4,0,0,5,10,7,13],
 "distribution__c_8h.html#a6afadfd1cd0901bb32ca9647d46adc7f":[4,0,0,5,10,7,12],
 "distribution__c_8h.html#a7b0f2b195f7d06701725c2306c4f4e4b":[4,0,0,5,10,7,16],
 "distribution__c_8h.html#a7c0f9a6535b098a4228ddee3070b4d9f":[4,0,0,5,10,7,14],
@@ -32,8 +33,8 @@ var NAVTREEINDEX57 =
 "functions_enum.html":[3,3,4],
 "functions_eval.html":[3,3,5],
 "functions_f.html":[3,3,0,6],
-"functions_func.html":[3,3,1],
 "functions_func.html":[3,3,1,0],
+"functions_func.html":[3,3,1],
 "functions_func_b.html":[3,3,1,1],
 "functions_func_c.html":[3,3,1,2],
 "functions_func_d.html":[3,3,1,3],
@@ -94,8 +95,8 @@ var NAVTREEINDEX57 =
 "functions_type_v.html":[3,3,3,15],
 "functions_u.html":[3,3,0,21],
 "functions_v.html":[3,3,0,22],
-"functions_vars.html":[3,3,2,0],
 "functions_vars.html":[3,3,2],
+"functions_vars.html":[3,3,2,0],
 "functions_vars_a.html":[3,3,2,1],
 "functions_vars_b.html":[3,3,2,2],
 "functions_vars_c.html":[3,3,2,3],
@@ -200,8 +201,8 @@ var NAVTREEINDEX57 =
 "globals_z.html":[4,1,0,24],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#a8f51143acfdbd20a8cb98f7cf81ac103":[3,0,5,0,2],
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#aa4c809c38414c0a2b7f35b7c80db61fe":[3,0,5,0,0],
 "interfaceamrex__mempool__module_1_1amrex__allocate.html#ac14432cf9370f7e0e02f0417b5baffce":[3,0,5,0,1],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#ac6bcf5d23b46095d0cfe4b81ee378058":[3,0,5,0,14],
-"interfaceamrex__mempool__module_1_1amrex__allocate.html#af37026fa3f140bb0de1fdbabf1098d41":[3,0,5,0,5]
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#ac6bcf5d23b46095d0cfe4b81ee378058":[3,0,5,0,14]
 };

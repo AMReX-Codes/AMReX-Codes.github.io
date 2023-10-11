@@ -1,5 +1,6 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1PolymorphicArray4.html#acff822d47e6b715aab55ddfc948a3c68":[3,0,0,78,1],
 "structamrex_1_1PolymorphicArray4.html#adb67d55309309993e9b7e4e06df514de":[3,0,0,78,2],
 "structamrex_1_1RandomEngine.html":[3,0,0,210],
 "structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c":[3,0,0,210,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1ValLocPair.html#a6dd5061fc9493324891e45f9a7d371d5":[3,0,0,271,5],
 "structamrex_1_1ValLocPair.html#a9771bd9643659218372d99e54cb37f52":[3,0,0,271,9],
 "structamrex_1_1ValLocPair.html#ab5e449549896fdf8698e0bab593a5b92":[3,0,0,271,2],
-"structamrex_1_1ValLocPair.html#aff566a74b1ae5b546689bdfc7d66d4db":[3,0,0,271,3],
-"structamrex_1_1VectorTag.html":[3,0,0,232]
+"structamrex_1_1ValLocPair.html#aff566a74b1ae5b546689bdfc7d66d4db":[3,0,0,271,3]
 };

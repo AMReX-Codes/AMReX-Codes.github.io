@@ -1,5 +1,6 @@
 var NAVTREEINDEX73 =
 {
+"structamrex_1_1BATcoarsenRatio.html#acfcb2e2b086e18b7a8fc355d0179dbcf":[3,0,0,100,2],
 "structamrex_1_1BATindexType.html":[3,0,0,99],
 "structamrex_1_1BATindexType.html#a276c46d26f6db6df336883ccc6ada8db":[3,0,0,99,3],
 "structamrex_1_1BATindexType.html#a7e570ffae7114709f8cfc3647243629f":[3,0,0,99,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX73 =
 "structamrex_1_1Disjunction_3_01B1_01_4.html":[3,0,0,266],
 "structamrex_1_1DistributionMapping_1_1LIpairGT.html":[3,0,0,118,0],
 "structamrex_1_1DistributionMapping_1_1LIpairGT.html#a99082f49ab07519b28572cf77064832e":[3,0,0,118,0,0],
-"structamrex_1_1DistributionMapping_1_1LIpairLT.html":[3,0,0,118,1],
-"structamrex_1_1DistributionMapping_1_1LIpairLT.html#ad2e3150718e10a60670b28b1b77c02be":[3,0,0,118,1,0]
+"structamrex_1_1DistributionMapping_1_1LIpairLT.html":[3,0,0,118,1]
 };

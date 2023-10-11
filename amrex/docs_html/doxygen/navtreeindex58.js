@@ -1,5 +1,6 @@
 var NAVTREEINDEX58 =
 {
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#af37026fa3f140bb0de1fdbabf1098d41":[3,0,5,0,5],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html":[3,0,5,1],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a2530dd0d3b54cee4edb6921760f45905":[3,0,5,1,5],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a6003d603a35f9dd4fa8fd70b24a9080b":[3,0,5,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX58 =
 "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ad3a5a5721de497d1bc95f49759f05a08":[2,0,0,607,7],
 "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ade505eeebd4b9a047f99dd00200376f1":[2,0,0,607,30],
 "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ae8298a287437468a3ae7cdebb845082d":[2,0,0,607,15],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ae8d143cd5deeffcc76ba9094cd848678":[2,0,0,607,17],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49af6f81328f5f2e9f06525dd7151a713eb":[2,0,0,607,19]
+"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ae8d143cd5deeffcc76ba9094cd848678":[2,0,0,607,17]
 };

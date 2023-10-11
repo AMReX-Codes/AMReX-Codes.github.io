@@ -1,5 +1,6 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1openbc_1_1Moments.html#adb6657fa49f022a5f02ab1a51fafeac0":[3,0,0,10,0,4],
 "structamrex_1_1openbc_1_1Moments.html#ae6db912d553d631bb09b61be167b59e9":[3,0,0,10,0,3],
 "structamrex_1_1parser__assign.html":[3,0,0,360],
 "structamrex_1_1parser__assign.html#a325d96e7d2b35e89cb12c6a5fa0db023":[3,0,0,360,1],
