@@ -1480,9 +1480,13 @@ portable way.</p>
 <p>To help debugging, we often use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Assert</span><span class="w"></span></code> and
 <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">amrex</span><span class="o">::</span><span class="n">Abort</span><span class="w"></span></code>.  These functions are GPU safe and can be used in
 GPU kernels.  However, implementing these functions requires additional
-GPU registers, which will reduce overall performance.  Therefore, it
-is preferred to implement such calls in debug mode only by wrapping the
-calls using <code class="docutils literal notranslate"><span class="pre">#ifdef</span> <span class="pre">AMREX_DEBUG</span></code>.</p>
+GPU registers, which will reduce overall performance.  Therefore, by
+default these functions and the macro <code class="docutils literal notranslate"><span class="pre">AMREX_ALWAYS_ASSERT</span></code> are no-ops
+for optimized builds (e.g., <code class="docutils literal notranslate"><span class="pre">DEBUG=FALSE</span></code> using the GNU Make build
+system) when called from kernels run on GPU. Calls to these functions from
+GPU kernels are active for debug builds and can optionally be activated
+at compile time for optimized builds (e.g., <code class="docutils literal notranslate"><span class="pre">DEBUG=FALSE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">USE_ASSERTION=TRUE</span></code> using the GNU Make build system).</p>
 <p>In CPU code, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">AMREX_GPU_ERROR_CHECK</span><span class="p">()</span><span class="w"></span></code> can be called
 to check the health of previous GPU launches.  This call
 looks up the return message from the most recently completed GPU
