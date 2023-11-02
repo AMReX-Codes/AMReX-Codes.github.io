@@ -1,5 +1,13 @@
 var NAVTREEINDEX69 =
 {
+"namespaceamrex_1_1algoim.html#a82ccbc9a6ef0f35640533a4432e150a7":[2,0,0,0,28],
+"namespaceamrex_1_1algoim.html#a83f836cfcb795ee2e7cf5f031f4e33a5":[2,0,0,0,23],
+"namespaceamrex_1_1algoim.html#a856a505f1340baf94d02a7585b467e1a":[2,0,0,0,42],
+"namespaceamrex_1_1algoim.html#a906f3ea1a1f5abffc2ce63a2f18c3097":[2,0,0,0,36],
+"namespaceamrex_1_1algoim.html#a90a6f014a413b05f96c519b9dcab59dd":[2,0,0,0,25],
+"namespaceamrex_1_1algoim.html#a9817cf5b40676379c03bacf057a7a11c":[2,0,0,0,21],
+"namespaceamrex_1_1algoim.html#a9ddd20373173f3218e9adf472a02f119":[2,0,0,0,14],
+"namespaceamrex_1_1algoim.html#aa2dc15a8317387997b7599ac5dfb3b36":[2,0,0,0,16],
 "namespaceamrex_1_1algoim.html#aa393d743c81287bc86ed10b61b86013d":[2,0,0,0,40],
 "namespaceamrex_1_1algoim.html#ad07a32fe98faf4bf2b079e31d5a63fc2":[2,0,0,0,41],
 "namespaceamrex_1_1algoim.html#ad4374cfcd9fd0dcc582d0b7221c7d699":[2,0,0,0,32],
@@ -71,12 +79,12 @@ var NAVTREEINDEX69 =
 "namespaceamrex_1_1detail.html#af2dd4ad4f928e269d1bc2dce24f48b92":[2,0,0,6,55],
 "namespaceamrex_1_1detail.html#afd0b9d029d68b514e004d7c4fccfbe42":[2,0,0,6,41],
 "namespaceamrex_1_1disabled.html":[2,0,0,7],
-"namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,638],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,7,3],
+"namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,638],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,637],
-"namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,639],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
+"namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,639],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,633],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,636],
@@ -241,13 +249,5 @@ var NAVTREEINDEX69 =
 "namespaceamrex_1_1tri__geom__ops.html#ac4a987e664e5b08e291676b2ba5802c7":[2,0,0,44,5],
 "namespaceamrex__acc__module.html":[2,0,1],
 "namespaceamrex__acc__module.html#a7537721c18f228fca42f0db3e75a4470":[2,0,1,0],
-"namespaceamrex__acc__module.html#a7eb8614e7eeb5eca0fea6ecaf6ad999a":[2,0,1,1],
-"namespaceamrex__acc__module.html#aafbf079c34c708eb6c38b72a05c77249":[2,0,1,3],
-"namespaceamrex__acc__module.html#ae6e5f688f216b146a2cc609ec638a462":[2,0,1,2],
-"namespaceamrex__bc__types__module.html":[2,0,2],
-"namespaceamrex__bc__types__module.html#a07483ec0c0dfe550ae285951efd6e408":[2,0,2,1],
-"namespaceamrex__bc__types__module.html#a20bfec4cecd51e1c95967ecb1be2eff4":[2,0,2,9],
-"namespaceamrex__bc__types__module.html#a23db950272f0f85aabf73bc7f1f94a29":[2,0,2,4],
-"namespaceamrex__bc__types__module.html#a336381129e79b6664787523cb2e99b83":[2,0,2,13],
-"namespaceamrex__bc__types__module.html#a69e53421456fb8b53c4ff4ec9173026b":[2,0,2,8]
+"namespaceamrex__acc__module.html#a7eb8614e7eeb5eca0fea6ecaf6ad999a":[2,0,1,1]
 };

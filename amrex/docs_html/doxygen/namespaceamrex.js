@@ -223,7 +223,9 @@ var namespaceamrex =
       [ "get_max_threads", "namespaceamrex_1_1OpenMP.html#ade36032ab5920b203a693a1cc44bd82a", null ],
       [ "get_num_threads", "namespaceamrex_1_1OpenMP.html#ab20933abbde0f4d52baff34fd3d0f10a", null ],
       [ "get_thread_num", "namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032", null ],
-      [ "in_parallel", "namespaceamrex_1_1OpenMP.html#ac4d826cf1b5dd7b16d2e1d54a73ff935", null ]
+      [ "in_parallel", "namespaceamrex_1_1OpenMP.html#ac4d826cf1b5dd7b16d2e1d54a73ff935", null ],
+      [ "init_threads", "namespaceamrex_1_1OpenMP.html#a85b3cb8e31b3a821d9ee9bcc5a2fb6d9", null ],
+      [ "set_num_threads", "namespaceamrex_1_1OpenMP.html#aaeee8e96a1a1222c5fe65bf996f4b840", null ]
     ] ],
     [ "Order", "namespaceamrex_1_1Order.html", "namespaceamrex_1_1Order" ],
     [ "ParallelAllGather", "namespaceamrex_1_1ParallelAllGather.html", [
@@ -2163,6 +2165,7 @@ var namespaceamrex =
     [ "numParticlesOutOfRange", "namespaceamrex.html#a9624cde7b9ad11a1692714a8a2cf4d5c", null ],
     [ "numParticlesOutOfRange", "namespaceamrex.html#a16b2ad610aeda065996254dcb64e1210", null ],
     [ "numTilesInBox", "namespaceamrex.html#a77b016483c8263c1a67e93d79d31da4c", null ],
+    [ "numUniquePhysicalCores", "namespaceamrex.html#ae675dc0a879b2652b42833f5999ee6b2", null ],
     [ "ONES_COMP_NEG", "namespaceamrex.html#aaca313b52afc9cee08eb9198f24286d6", null ],
     [ "openFile", "namespaceamrex.html#a4355fba810ff159e931e6b35e3d0dd59", null ],
     [ "operator!=", "namespaceamrex.html#a8e766038223d0266729aaf683f0b45be", null ],

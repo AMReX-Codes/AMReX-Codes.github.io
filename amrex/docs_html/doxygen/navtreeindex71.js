@@ -1,5 +1,13 @@
 var NAVTREEINDEX71 =
 {
+"namespacemembers_func_q.html":[2,1,1,16],
+"namespacemembers_func_r.html":[2,1,1,17],
+"namespacemembers_func_s.html":[2,1,1,18],
+"namespacemembers_func_t.html":[2,1,1,19],
+"namespacemembers_func_u.html":[2,1,1,20],
+"namespacemembers_func_v.html":[2,1,1,21],
+"namespacemembers_func_w.html":[2,1,1,22],
+"namespacemembers_func_y.html":[2,1,1,23],
 "namespacemembers_g.html":[2,1,0,7],
 "namespacemembers_h.html":[2,1,0,8],
 "namespacemembers_i.html":[2,1,0,9],
@@ -16,8 +24,8 @@ var NAVTREEINDEX71 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars.html":[2,1,2,0],
+"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX71 =
 "structamrex_1_1AmrAssignGrid.html":[3,0,0,484],
 "structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[3,0,0,484,3],
 "structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f":[3,0,0,484,0],
-"structamrex_1_1AmrAssignGrid.html#a89b80b8bcfbde11575362e5c6f6ea420":[3,0,0,484,2],
-"structamrex_1_1AmrAssignGrid.html#ad3a3cdbea65412db0766f9377e4f6662":[3,0,0,484,1],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html":[3,0,0,406,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a036873b2f2c1d06f877458c6e3369f13":[3,0,0,406,0,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a18e4c53a74f5623786c5dadbe087f209":[3,0,0,406,0,3],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac":[3,0,0,406,0,2],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#ab54c62846a8614acc3d677a975186569":[3,0,0,406,0,5],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#ae53eccbcdd637ad1dcbdc0be4e895dc8":[3,0,0,406,0,4],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#aeb6b0e7cb1bbac77e4f65e96e4f8a4d5":[3,0,0,406,0,1]
+"structamrex_1_1AmrAssignGrid.html#a89b80b8bcfbde11575362e5c6f6ea420":[3,0,0,484,2]
 };
