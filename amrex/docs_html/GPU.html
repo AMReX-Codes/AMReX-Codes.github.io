@@ -607,11 +607,10 @@ if different functionality should be used when AMReX is built with
 GPU support.
 When AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_OMP_OFFLOAD=TRUE</span></code>,
 <code class="docutils literal notranslate"><span class="pre">AMREX_USE_OMP_OFFLOAD</span></code> is defined.</p>
-<p>In addition to AMReX’s preprocessor macros, CUDA provides the
-<code class="docutils literal notranslate"><span class="pre">__CUDA_ARCH__</span></code> macro which is only defined when in device code.
-HIP and Sycl provide similar macros.
-<code class="docutils literal notranslate"><span class="pre">AMREX_DEVICE_COMPILE</span></code> should be used when a <code class="docutils literal notranslate"><span class="pre">__host__</span> <span class="pre">__device__</span></code>
-function requires separate code for the CPU and GPU implementations.</p>
+<p>The macros <code class="docutils literal notranslate"><span class="pre">AMREX_IF_ON_DEVICE((code_for_device))</span></code> and
+<code class="docutils literal notranslate"><span class="pre">AMREX_IF_ON_HOST((code_for_host))</span></code> should be used when a
+<code class="docutils literal notranslate"><span class="pre">__host__</span> <span class="pre">__device__</span></code> function requires separate code for the
+CPU and GPU implementations.</p>
 </section>
 <section id="memory-allocation">
 <span id="sec-gpu-memory"></span><h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this heading"></a></h1>

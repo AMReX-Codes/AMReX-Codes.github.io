@@ -109,34 +109,63 @@ $(document).ready(function(){initNavTree('AMReX__GpuQualifiers_8H_source.html','
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;hip/hip_runtime.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">   11</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST __host__</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">   12</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE __device__</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">   13</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL __global__</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">   14</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE __host__ __device__</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aff21ae9744a0237efd27fd1b8cbc16f1">   15</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT __constant__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) &amp;&amp; (defined(AMREX_CXX_PGI) || defined(AMREX_CXX_NVHPC))</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;nv/target&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AMREX_IF_ON_DEVICE(CODE) NV_IF_TARGET(NV_IS_DEVICE, CODE)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define AMREX_IF_ON_HOST(CODE) NV_IF_TARGET(NV_IS_HOST, CODE)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a75280e866b52a64be26a4e332f00e845">   17</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED __managed__</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af6046c971c96ea0d02afe9ff80426144">   18</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED __device__ __managed__</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a57609a8d4ed3ca830395e1198e3730af">   32</a></span>&#160;<span class="preprocessor">#define AMREX_DEVICE_COMPILE (__CUDA_ARCH__ || __HIP_DEVICE_COMPILE__ || __SYCL_DEVICE_ONLY__)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"># include &lt;sycl/sycl.hpp&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">   17</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST __host__</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">   18</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE __device__</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">   19</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL __global__</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">   20</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE __host__ __device__</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aff21ae9744a0237efd27fd1b8cbc16f1">   21</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT __constant__</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a75280e866b52a64be26a4e332f00e845">   23</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED __managed__</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af6046c971c96ea0d02afe9ff80426144">   24</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED __device__ __managed__</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a57609a8d4ed3ca830395e1198e3730af">   38</a></span>&#160;<span class="preprocessor">#define AMREX_DEVICE_COMPILE (__CUDA_ARCH__ || __HIP_DEVICE_COMPILE__ || __SYCL_DEVICE_ONLY__)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Remove surrounding parentheses if present</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af7dba2756f65b1f41c7b64c56d9e986b">   41</a></span>&#160;<span class="preprocessor">#define AMREX_IMPL_STRIP_PARENS(X) AMREX_IMPL_ESC(AMREX_IMPL_ISH X)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#ae292e85e28efad4fd2e63e5c99f03d1b">   42</a></span>&#160;<span class="preprocessor">#define AMREX_IMPL_ISH(...) AMREX_IMPL_ISH __VA_ARGS__</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#ad5857d8569e86283c259299132c3ebb2">   43</a></span>&#160;<span class="preprocessor">#define AMREX_IMPL_ESC(...) AMREX_IMPL_ESC_(__VA_ARGS__)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aee87011b9a4474166f85a7ebbf5efb5f">   44</a></span>&#160;<span class="preprocessor">#define AMREX_IMPL_ESC_(...) AMREX_IMPL_VAN_##__VA_ARGS__</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a54627b9496bb9e8251a1f5a2d7048039">   45</a></span>&#160;<span class="preprocessor">#define AMREX_IMPL_VAN_AMREX_IMPL_ISH</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#if !defined(AMREX_IF_ON_DEVICE) &amp;&amp; !defined(AMREX_IF_ON_HOST)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#if (defined(AMREX_USE_CUDA) &amp;&amp; defined(__CUDA_ARCH__)) ||         \</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">    (defined(AMREX_USE_HIP) &amp;&amp; defined(__HIP_DEVICE_COMPILE__)) || \</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    (defined(AMREX_USE_SYCL) &amp;&amp; defined(__SYCL_DEVICE_ONLY__))</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define AMREX_IF_ON_DEVICE(CODE) \</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">  { AMREX_IMPL_STRIP_PARENS(CODE) }</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define AMREX_IF_ON_HOST(CODE) \</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">  {}</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">   56</a></span>&#160;<span class="preprocessor">#define AMREX_IF_ON_DEVICE(CODE) \</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">  {}</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">   58</a></span>&#160;<span class="preprocessor">#define AMREX_IF_ON_HOST(CODE) \</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">  { AMREX_IMPL_STRIP_PARENS(CODE) }</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"># include &lt;sycl/sycl.hpp&gt;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,5 +1,15 @@
 var NAVTREEINDEX36 =
 {
+"classamrex_1_1EB2_1_1PolynomialIF.html#a3ee4eff332df3bbfcff89267a7c9bf62":[3,0,0,4,30,2],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a600f1123f1d043690d51b722060dca71":[3,0,0,4,30,6],
+"classamrex_1_1EB2_1_1PolynomialIF.html#a8af866d6a7ef190529d3f3d174054b3d":[3,0,0,4,30,4],
+"classamrex_1_1EB2_1_1PolynomialIF.html#ab7dabb0bff8ee7a62ab1b97108429374":[3,0,0,4,30,9],
+"classamrex_1_1EB2_1_1PolynomialIF.html#ad957f17b324e9e51370e72b065d6684c":[3,0,0,4,30,10],
+"classamrex_1_1EB2_1_1PolynomialIF.html#adb20f13a740421e91b3b1eb3e95672b1":[3,0,0,4,30,8],
+"classamrex_1_1EB2_1_1PolynomialIF.html#aded08a08d53e73aa84431822f8b76374":[3,0,0,4,30,0],
+"classamrex_1_1EB2_1_1PolynomialIF.html#ae8b070201e27ab25f01a5378a671e4aa":[3,0,0,4,30,7],
+"classamrex_1_1EB2_1_1RotationIF.html":[3,0,0,4,31],
+"classamrex_1_1EB2_1_1RotationIF.html#a2e57f52a7f9f0b9b64c98c2c0cb48fed":[3,0,0,4,31,2],
 "classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877":[3,0,0,4,31,4],
 "classamrex_1_1EB2_1_1RotationIF.html#ab51c69319d7d35dc43124c3692af67ee":[3,0,0,4,31,1],
 "classamrex_1_1EB2_1_1RotationIF.html#abdaf7ef0894bbc027482f233e7fadf74":[3,0,0,4,31,3],
@@ -239,15 +249,5 @@ var NAVTREEINDEX36 =
 "classamrex_1_1EBToPVD.html#a2f2cc7f01b96bcdd7c3f7d3ecffeee20":[3,0,0,386,1],
 "classamrex_1_1EBToPVD.html#a37d083bd92c41f07f8e14c4ace3496e5":[3,0,0,386,14],
 "classamrex_1_1EBToPVD.html#a3da49389826f1bbe7fcc5082d1e641a7":[3,0,0,386,13],
-"classamrex_1_1EBToPVD.html#a4fc94184dd7d26f8ccb2fccdd8367474":[3,0,0,386,6],
-"classamrex_1_1EBToPVD.html#a692701cba27f352589066c9024d388a7":[3,0,0,386,7],
-"classamrex_1_1EBToPVD.html#a8e98228d4e26f46aaad5dca2c60d21b2":[3,0,0,386,2],
-"classamrex_1_1EBToPVD.html#a9795643b31358ac5f35c30f291d15adf":[3,0,0,386,10],
-"classamrex_1_1EBToPVD.html#a98aef451a26944bbc183885f613370e3":[3,0,0,386,4],
-"classamrex_1_1EBToPVD.html#aa55d2d01fac1d3f0d6d489ec74f0698a":[3,0,0,386,11],
-"classamrex_1_1EBToPVD.html#aaa06cb6a74aa4b0f59ba1a5108665870":[3,0,0,386,12],
-"classamrex_1_1EBToPVD.html#ad8094e8ba844bca4f39cecff49aa5b86":[3,0,0,386,5],
-"classamrex_1_1EBToPVD.html#ae6256aa448020ec87249a19972bc3b63":[3,0,0,386,3],
-"classamrex_1_1EBToPVD.html#aee45f02c64e45397af7d92d3557e26e6":[3,0,0,386,0],
-"classamrex_1_1EBToPVD.html#af56069dd01a4a44b7f471f70f051887b":[3,0,0,386,8]
+"classamrex_1_1EBToPVD.html#a4fc94184dd7d26f8ccb2fccdd8367474":[3,0,0,386,6]
 };

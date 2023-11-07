@@ -5,7 +5,6 @@ var namespaceamrex_1_1Gpu_1_1Atomic =
       [ "atomic_op_if", "namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a3b1604f8c0fb00d92059f55290de9efd", null ]
     ] ],
     [ "Add", "namespaceamrex_1_1Gpu_1_1Atomic.html#a428330a4e7622c16d943003ad97e54a0", null ],
-    [ "Add_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#a871db6df623d9b7cb89aee1f961af275", null ],
     [ "Add_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#a629c38eebdf637b06b26049acae626c8", null ],
     [ "Add_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#aa2cd0bf29a9ed71679b41a3e54765d39", null ],
     [ "AddNoRet", "namespaceamrex_1_1Gpu_1_1Atomic.html#ab69d18587a5c75ca3ce1f48708e865b1", null ],
