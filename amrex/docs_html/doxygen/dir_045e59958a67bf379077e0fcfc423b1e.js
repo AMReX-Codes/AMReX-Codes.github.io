@@ -62,9 +62,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     ] ],
     [ "AMReX_BoxList.cpp", "AMReX__BoxList_8cpp.html", null ],
     [ "AMReX_BoxList.H", "AMReX__BoxList_8H.html", "AMReX__BoxList_8H" ],
-    [ "AMReX_CArena.cpp", "AMReX__CArena_8cpp.html", [
-      [ "MemStat", "structamrex_1_1MemStat.html", "structamrex_1_1MemStat" ]
-    ] ],
+    [ "AMReX_CArena.cpp", "AMReX__CArena_8cpp.html", "AMReX__CArena_8cpp" ],
     [ "AMReX_CArena.H", "AMReX__CArena_8H.html", [
       [ "CArena", "classamrex_1_1CArena.html", "classamrex_1_1CArena" ],
       [ "Node", "classamrex_1_1CArena_1_1Node.html", "classamrex_1_1CArena_1_1Node" ],

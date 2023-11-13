@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"classamrex_1_1RealVect.html#a12a8ba870c44c0b8df87fbf476ba0240":[3,0,0,212,61],
+"classamrex_1_1RealVect.html#a1e1ca0e6dc8c1ffe047d20716a80ded5":[3,0,0,212,55],
 "classamrex_1_1RealVect.html#a1fca01b7216175d3cd1f366840f46373":[3,0,0,212,59],
 "classamrex_1_1RealVect.html#a2662b0dc461f4bb3f54cfa456dd2dcd1":[3,0,0,212,20],
 "classamrex_1_1RealVect.html#a29bd7850951ae800d2bfd13ec8a3d593":[3,0,0,212,41],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "classamrex_1_1StateDescriptor.html#a426236914671d1e988849aa8c1435c01":[3,0,0,28,16],
 "classamrex_1_1StateDescriptor.html#a4316157b8036d764b2c4eab037fc03f3":[3,0,0,28,37],
 "classamrex_1_1StateDescriptor.html#a441b52239a3fe61b2d2fa90f6174ef7a":[3,0,0,28,34],
-"classamrex_1_1StateDescriptor.html#a45c110d37b26e0c322c1af1089ecbfea":[3,0,0,28,24],
-"classamrex_1_1StateDescriptor.html#a507dc54afbf20a888ba1dab3cd62c040":[3,0,0,28,38],
-"classamrex_1_1StateDescriptor.html#a5ac46df4129e909631702c6cf11c0df7":[3,0,0,28,23]
+"classamrex_1_1StateDescriptor.html#a45c110d37b26e0c322c1af1089ecbfea":[3,0,0,28,24]
 };

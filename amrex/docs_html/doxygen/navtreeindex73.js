@@ -1,5 +1,8 @@
 var NAVTREEINDEX73 =
 {
+"structamrex_1_1BARef.html#af9368a5b73dd3adff290c1dfc5bc4b88":[3,0,0,97,15],
+"structamrex_1_1BATbndryReg.html":[3,0,0,102],
+"structamrex_1_1BATbndryReg.html#a18c09cc04f0e7aa632e619fcc3824025":[3,0,0,102,5],
 "structamrex_1_1BATbndryReg.html#a201dbe5429e6cfe411c1396a54ae3d7f":[3,0,0,102,6],
 "structamrex_1_1BATbndryReg.html#a454faaea656ecae94058378aa39792e8":[3,0,0,102,0],
 "structamrex_1_1BATbndryReg.html#a4a773656b90b2b8db99098519f4baed0":[3,0,0,102,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX73 =
 "structamrex_1_1DefinitelyNotHostRunnable.html":[3,0,0,257],
 "structamrex_1_1DenseBinIteratorFactory.html":[3,0,0,437],
 "structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625":[3,0,0,437,2],
-"structamrex_1_1DenseBinIteratorFactory.html#a08f5000a813c49c45a7f7c7476360106":[3,0,0,437,6],
-"structamrex_1_1DenseBinIteratorFactory.html#a484b45fe28140ce6f64c77687981ac81":[3,0,0,437,3],
-"structamrex_1_1DenseBinIteratorFactory.html#a7a3c874d8fe6985c716cf458a47af87d":[3,0,0,437,0],
-"structamrex_1_1DenseBinIteratorFactory.html#a86bd9751f73a297822528a06e967334a":[3,0,0,437,4]
+"structamrex_1_1DenseBinIteratorFactory.html#a08f5000a813c49c45a7f7c7476360106":[3,0,0,437,6]
 };

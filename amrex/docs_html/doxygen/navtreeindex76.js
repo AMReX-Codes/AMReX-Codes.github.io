@@ -1,5 +1,8 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1Gpu_1_1HostToDevice.html":[3,0,0,5,8],
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,5,11],
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[3,0,0,5,11,0],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,5,11,2],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[3,0,0,5,11,1],
 "structamrex_1_1Gpu_1_1Managed.html":[3,0,0,5,21],
@@ -246,8 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a":[3,0,0,423,13],
 "structamrex_1_1LPInfo.html#a4a7b1b85ca071370a9a98488be7dd5dc":[3,0,0,423,10],
 "structamrex_1_1LPInfo.html#a50655cba9bb48a63c7f0913e0ba8e21a":[3,0,0,423,6],
-"structamrex_1_1LPInfo.html#a5969085705dd33f4ed532326141d4c78":[3,0,0,423,3],
-"structamrex_1_1LPInfo.html#a5fc5c419284399b3b4536bab8a917f28":[3,0,0,423,17],
-"structamrex_1_1LPInfo.html#a60ea99c73f17852d0e41ea154b86841a":[3,0,0,423,20],
-"structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5":[3,0,0,423,16]
+"structamrex_1_1LPInfo.html#a5969085705dd33f4ed532326141d4c78":[3,0,0,423,3]
 };

@@ -1,10 +1,11 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12":[4,0,0,5,7,13,6],
 "AMReX__RegionsProfStats_8cpp.html#a82ff102a1952ad4ab549505b10f24456":[4,0,0,5,7,13,11],
 "AMReX__RegionsProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef":[4,0,0,5,7,13,8],
 "AMReX__RegionsProfStats_8cpp.html#a9eaad985fc3700bfc26c0ce411504f81":[4,0,0,5,7,13,12],
-"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,7,13,4],
 "AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,7,13,3],
+"AMReX__RegionsProfStats_8cpp.html#ad95a90df3183f801a5e0bac586118388":[4,0,0,5,7,13,4],
 "AMReX__RegionsProfStats_8cpp.html#adf40b37aa3d31187890635b3b571403c":[4,0,0,5,7,13,0],
 "AMReX__RungeKutta_8H.html":[4,0,0,2,241],
 "AMReX__RungeKutta_8H.html#a04628ed5d5e6a12c16a387c1aa38fe88":[4,0,0,2,241,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__ValLocPair_8H_source.html":[4,0,0,2,257],
 "AMReX__VectorIO_8H.html":[4,0,0,2,260],
 "AMReX__VectorIO_8H.html#a01a43d1a99e96ce0f348dc5659029a6e":[4,0,0,2,260,12],
-"AMReX__VectorIO_8H.html#a1950e496a6aafaad04f6b147af3bd6e1":[4,0,0,2,260,9],
-"AMReX__VectorIO_8H.html#a2e3bdcedf2e665446f241d3d34cb5b31":[4,0,0,2,260,10]
+"AMReX__VectorIO_8H.html#a1950e496a6aafaad04f6b147af3bd6e1":[4,0,0,2,260,9]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1LPInfo.html#a5fc5c419284399b3b4536bab8a917f28":[3,0,0,423,17],
+"structamrex_1_1LPInfo.html#a60ea99c73f17852d0e41ea154b86841a":[3,0,0,423,20],
+"structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5":[3,0,0,423,16],
 "structamrex_1_1LPInfo.html#a92aabd4e7880bf08c8d9195ebf723512":[3,0,0,423,19],
 "structamrex_1_1LPInfo.html#a9c3339a35d018641c2d340cee364755e":[3,0,0,423,9],
 "structamrex_1_1LPInfo.html#aa03ac62b9591746b85f0591485a25335":[3,0,0,423,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#aa8135050d54b2e8cf0216b9038c4ab8b":[3,0,0,9,12,0],
 "structamrex_1_1NonLocalBC_1_1CommHandler.html#adfa07b567a77f261fb60efa5a54f505c":[3,0,0,9,12,1],
 "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html":[3,0,0,9,17],
-"structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[3,0,0,9,0],
-"structamrex_1_1NonLocalBC_1_1Identity.html":[3,0,0,9,5],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a0a03a9cf27f2ed969f918c7946e68659":[3,0,0,9,5,2],
-"structamrex_1_1NonLocalBC_1_1Identity.html#a2be194ea3baaf9a996c82b946bf54803":[3,0,0,9,5,1]
+"structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html":[3,0,0,9,0]
 };
