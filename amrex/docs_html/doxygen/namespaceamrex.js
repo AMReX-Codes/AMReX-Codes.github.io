@@ -272,11 +272,11 @@ var namespaceamrex =
     [ "Scan", "namespaceamrex_1_1Scan.html", "namespaceamrex_1_1Scan" ],
     [ "sundials", "namespaceamrex_1_1sundials.html", "namespaceamrex_1_1sundials" ],
     [ "SundialsUserFun", "namespaceamrex_1_1SundialsUserFun.html", [
-      [ "f", "namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24", null ],
-      [ "f0", "namespaceamrex_1_1SundialsUserFun.html#aa64fc5cec19aa33eb07abd22a5e388de", null ],
-      [ "f_fast", "namespaceamrex_1_1SundialsUserFun.html#ab6ef23c14197ba199f01448789486e7d", null ],
-      [ "PostStoreStage", "namespaceamrex_1_1SundialsUserFun.html#a6ed8a931c8d21be6b9f89205384c24ce", null ],
-      [ "ProcessStage", "namespaceamrex_1_1SundialsUserFun.html#a547d76fae87f15799e5ccc3bd63f678e", null ]
+      [ "f", "namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4", null ],
+      [ "f0", "namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746", null ],
+      [ "f_fast", "namespaceamrex_1_1SundialsUserFun.html#adb78c084cdaae955251f38e7baf92231", null ],
+      [ "PostStoreStage", "namespaceamrex_1_1SundialsUserFun.html#ac9b6c103cf1410b3700b2f02c30a70e6", null ],
+      [ "ProcessStage", "namespaceamrex_1_1SundialsUserFun.html#afb63918874e856006233ab3ba806b8b8", null ]
     ] ],
     [ "system", "namespaceamrex_1_1system.html", [
       [ "abort_on_unused_inputs", "namespaceamrex_1_1system.html#a2314c673c7fb0a745f50244795666cd5", null ],

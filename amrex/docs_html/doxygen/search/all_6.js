@@ -1,10 +1,10 @@
 var searchData=
 [
   ['f_2853',['F',['../structamrex_1_1Order_1_1F.html',1,'amrex::Order']]],
-  ['f_2854',['f',['../namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24',1,'amrex::SundialsUserFun::f()'],['../structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467',1,'amrex::algoim::ImplicitIntegral::f()']]],
+  ['f_2854',['f',['../namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4',1,'amrex::SundialsUserFun::f()'],['../structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467',1,'amrex::algoim::ImplicitIntegral::f()']]],
   ['f_2855',['F',['../classamrex_1_1EB2_1_1IndexSpaceImp.html#a025225cea3416a0f7b91e3c5e8424f59',1,'amrex::EB2::IndexSpaceImp']]],
-  ['f_2856',['f',['../structamrex_1_1SundialsUserData.html#ad012b5f651c04796b616c1d6acb9bd37',1,'amrex::SundialsUserData::f()'],['../classSDCstruct.html#a5a011f47199f9e9fef68cdba47a1f7f7',1,'SDCstruct::f()']]],
-  ['f0_2857',['f0',['../namespaceamrex_1_1SundialsUserFun.html#aa64fc5cec19aa33eb07abd22a5e388de',1,'amrex::SundialsUserFun::f0()'],['../structamrex_1_1SundialsUserData.html#a4e825ce3a349ec2e2d02cbf6c53cd646',1,'amrex::SundialsUserData::f0()']]],
+  ['f_2856',['f',['../structamrex_1_1SundialsUserData.html#a61b88d4a6c8c392c9517b753193dcded',1,'amrex::SundialsUserData::f()'],['../classSDCstruct.html#a5a011f47199f9e9fef68cdba47a1f7f7',1,'SDCstruct::f()']]],
+  ['f0_2857',['f0',['../namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746',1,'amrex::SundialsUserFun::f0()'],['../structamrex_1_1SundialsUserData.html#a5d5293a622af824bd4b2b5878b689a4a',1,'amrex::SundialsUserData::f0()']]],
   ['f1_2858',['F1',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda5afea46882b06768ac8563d462999735',1,'F1():&#160;amrex_iparser.tab.h'],['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1a5afea46882b06768ac8563d462999735',1,'F1():&#160;amrex_parser.tab.h']]],
   ['f1_2859',['f1',['../unionAMREX__IPARSERSTYPE.html#a99cdaa1f0d3cc968417ed03723f93d44',1,'AMREX_IPARSERSTYPE::f1()'],['../unionAMREX__PARSERSTYPE.html#ae4b2f9e1858ec2244f20bb23fae6da2b',1,'AMREX_PARSERSTYPE::f1()']]],
   ['f2_2860',['F2',['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1aa3c13a70de6599f4470373ec46d4f6bf',1,'amrex_parser.tab.h']]],
@@ -13,7 +13,7 @@ var searchData=
   ['f3_2863',['F3',['../amrex__iparser_8tab_8h.html#aeb75f4c5a547df067e70d41ee5ce67fda10a5417c8e696606af65ec28c5fb2495',1,'amrex_iparser.tab.h']]],
   ['f3_2864',['f3',['../unionAMREX__PARSERSTYPE.html#a75d477cdab0c70b4d8bb6e949274b5f2',1,'AMREX_PARSERSTYPE::f3()'],['../unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac',1,'AMREX_IPARSERSTYPE::f3()']]],
   ['f3_2865',['F3',['../amrex__parser_8tab_8h.html#a7c9fb69a1bfdccacc3cff362cbb3c2f1a10a5417c8e696606af65ec28c5fb2495',1,'amrex_parser.tab.h']]],
-  ['f_5ffast_2866',['f_fast',['../namespaceamrex_1_1SundialsUserFun.html#ab6ef23c14197ba199f01448789486e7d',1,'amrex::SundialsUserFun::f_fast()'],['../structamrex_1_1SundialsUserData.html#a659bc01817a51dcbd4f3b159ec298ecb',1,'amrex::SundialsUserData::f_fast()']]],
+  ['f_5ffast_2866',['f_fast',['../namespaceamrex_1_1SundialsUserFun.html#adb78c084cdaae955251f38e7baf92231',1,'amrex::SundialsUserFun::f_fast()'],['../structamrex_1_1SundialsUserData.html#a39073e8c6edea33ac31d4e5f210f3b98',1,'amrex::SundialsUserData::f_fast()']]],
   ['f_5fnodes_2867',['F_nodes',['../classamrex_1_1FEIntegrator.html#a4068613bcf39366eadab0ad2a6d42013',1,'amrex::FEIntegrator::F_nodes()'],['../classamrex_1_1RKIntegrator.html#a71b3d620a58461d753803014c39b0c20',1,'amrex::RKIntegrator::F_nodes()']]],
   ['f_5fuser_2868',['f_user',['../classamrex_1_1CpuBndryFuncFab.html#a44a9eb954199def1d1965689f79c0801',1,'amrex::CpuBndryFuncFab']]],
   ['fab_2869',['fab',['../structamrex_1_1MLMGABCTag.html#ace2b963f746066f720dccceaa563db4c',1,'amrex::MLMGABCTag']]],

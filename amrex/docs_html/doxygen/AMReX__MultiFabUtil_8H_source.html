@@ -305,7 +305,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                               , <span class="keywordtype">int</span>&gt; FOO = 0&gt;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    BaseFab&lt;T&gt;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="namespaceamrex.html#abd054b552350fba9a54c301c899bd1b8">ReduceToPlane</a> (<span class="keywordtype">int</span> direction, Box <span class="keyword">const</span>&amp; domain, FabArray&lt;FAB&gt; <span class="keyword">const</span>&amp; mf, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="namespaceamrex.html#abd054b552350fba9a54c301c899bd1b8">ReduceToPlane</a> (<span class="keywordtype">int</span> direction, Box <span class="keyword">const</span>&amp; domain, FabArray&lt;FAB&gt; <span class="keyword">const</span>&amp; mf, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    Gpu::HostVector&lt;Real&gt; <a class="code" href="namespaceamrex.html#a882a700cf7fab66ee3ce8de37de3ef73">sumToLine</a> (MultiFab <span class="keyword">const</span>&amp; mf, <span class="keywordtype">int</span> icomp, <span class="keywordtype">int</span> ncomp,</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                     Box <span class="keyword">const</span>&amp; domain, <span class="keywordtype">int</span> direction, <span class="keywordtype">bool</span> local = <span class="keyword">false</span>);</div>
@@ -563,7 +563,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;Real</div>
 <div class="line"><a name="l00637"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ac69a4b4233f10007191d780450271dd2">  637</a></span>&#160;<a class="code" href="namespaceamrex.html#ac69a4b4233f10007191d780450271dd2">NormHelper</a> (<span class="keyword">const</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; x, <span class="keywordtype">int</span> xcomp,</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; y, <span class="keywordtype">int</span> ycomp,</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            F &amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>,</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            F &amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>,</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            <span class="keywordtype">int</span> numcomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost, <span class="keywordtype">bool</span> local)</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;{</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(x.<a class="code" href="classamrex_1_1FabArrayBase.html#a4bb7e999eee8c04f07573269b54e39d0">boxArray</a>() == y.<a class="code" href="classamrex_1_1FabArrayBase.html#a4bb7e999eee8c04f07573269b54e39d0">boxArray</a>());</div>
@@ -582,7 +582,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; xfab = xma[box_no];</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; yfab = yma[box_no];</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; numcomp; ++n) {</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                t += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                t += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;            }</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            <span class="keywordflow">return</span> t;</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        });</div>
@@ -599,7 +599,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; yfab = y.<a class="code" href="classamrex_1_1FabArray.html#a0af1d5ec31ed2b73f391952c5d45660a">const_array</a>(mfi);</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            <a class="code" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, numcomp, i, j, k, n,</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            {</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                sm += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                sm += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;            });</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        }</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    }</div>
@@ -617,7 +617,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;               <span class="keyword">const</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; x, <span class="keywordtype">int</span> xcomp,</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;               <span class="keyword">const</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>&amp; y, <span class="keywordtype">int</span> ycomp,</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;               Pred &amp;&amp; pf,</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;               F &amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>,</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;               F &amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>,</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;               <span class="keywordtype">int</span> numcomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost, <span class="keywordtype">bool</span> local)</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;{</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(x.<a class="code" href="classamrex_1_1FabArrayBase.html#a4bb7e999eee8c04f07573269b54e39d0">boxArray</a>() == y.<a class="code" href="classamrex_1_1FabArrayBase.html#a4bb7e999eee8c04f07573269b54e39d0">boxArray</a>());</div>
@@ -641,7 +641,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; xfab = xma[box_no];</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; yfab = yma[box_no];</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; numcomp; ++n) {</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                    t += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                    t += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                }</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            }</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            <span class="keywordflow">return</span> t;</div>
@@ -661,7 +661,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            <a class="code" href="AMReX__Loop_8nolint_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c">AMREX_LOOP_4D</a>(bx, numcomp, i, j, k, n,</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            {</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                <span class="keywordflow">if</span> (pf(mfab(i,j,k))) {</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    sm += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    sm += <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(xfab(i,j,k,xcomp+n) , yfab(i,j,k,ycomp+n));</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                }</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;            });</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        }</div>
@@ -943,7 +943,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;                           , <span class="keywordtype">int</span>&gt; FOO&gt;</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;BaseFab&lt;T&gt;</div>
-<div class="line"><a name="l01027"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abd054b552350fba9a54c301c899bd1b8"> 1027</a></span>&#160;<a class="code" href="namespaceamrex.html#abd054b552350fba9a54c301c899bd1b8">ReduceToPlane</a> (<span class="keywordtype">int</span> direction, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; domain, <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a> <span class="keyword">const</span>&amp; mf, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>)</div>
+<div class="line"><a name="l01027"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abd054b552350fba9a54c301c899bd1b8"> 1027</a></span>&#160;<a class="code" href="namespaceamrex.html#abd054b552350fba9a54c301c899bd1b8">ReduceToPlane</a> (<span class="keywordtype">int</span> direction, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; domain, <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a> <span class="keyword">const</span>&amp; mf, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>)</div>
 <div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;{</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> domain2d = domain;</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;    domain2d.<a class="code" href="classamrex_1_1Box.html#aee288fef5b1c6314b82132b17adf1d15">setRange</a>(direction, 0);</div>
@@ -991,7 +991,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;                    k += blo.z;</div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;                    j += blo.y;</div>
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = blo.x + tid; i &lt; blo.x+len.x; i += nthreads) {</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;                        Op().local_update(tmp, <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(box_no,i,j,k));</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;                        Op().local_update(tmp, <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(box_no,i,j,k));</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;                    }</div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;                    p = ar.ptr(0,j,k);</div>
 <div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (direction == 1) {</div>
@@ -1000,7 +1000,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;                    k += blo.z;</div>
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;                    i += blo.x;</div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = blo.y + tid; j &lt; blo.y+len.y; j += nthreads) {</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                        Op().local_update(tmp, <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(box_no,i,j,k));</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                        Op().local_update(tmp, <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(box_no,i,j,k));</div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;                    }</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;                    p = ar.ptr(i,0,k);</div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -1009,7 +1009,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;                    j += blo.y;</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;                    i += blo.x;</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = blo.z + tid; k &lt; blo.z+len.z; k += nthreads) {</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;                        Op().local_update(tmp, <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(box_no,i,j,k));</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;                        Op().local_update(tmp, <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(box_no,i,j,k));</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;                    }</div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;                    p = ar.ptr(i,j,0);</div>
 <div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;                }</div>
@@ -1024,17 +1024,17 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;            <span class="keywordflow">if</span> (direction == 0) {</div>
 <div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                <a class="code" href="AMReX__Loop_8nolint_8H.html#a03b436b41a98f86757c053a372a7947f">AMREX_LOOP_3D</a>(bx, i, j, k,</div>
 <div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                {</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;                    Op().local_update(ar(0,j,k), <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(box_no,i,j,k));</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;                    Op().local_update(ar(0,j,k), <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(box_no,i,j,k));</div>
 <div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;                });</div>
 <div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (direction == 1) {</div>
 <div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;                <a class="code" href="AMReX__Loop_8nolint_8H.html#a03b436b41a98f86757c053a372a7947f">AMREX_LOOP_3D</a>(bx, i, j, k,</div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;                {</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;                    Op().local_update(ar(i,0,k), <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(box_no,i,j,k));</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;                    Op().local_update(ar(i,0,k), <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(box_no,i,j,k));</div>
 <div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;                });</div>
 <div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;                <a class="code" href="AMReX__Loop_8nolint_8H.html#a03b436b41a98f86757c053a372a7947f">AMREX_LOOP_3D</a>(bx, i, j, k,</div>
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;                {</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;                    Op().local_update(ar(i,j,0), <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">f</a>(box_no,i,j,k));</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;                    Op().local_update(ar(i,j,0), <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(box_no,i,j,k));</div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;                });</div>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;            }</div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -1133,7 +1133,7 @@ $(document).ready(function(){initNavTree('AMReX__MultiFabUtil_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_ae1a0966ad8daf3a49564123b8dbdb3fa"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">amrex::Gpu::gpuStream</a></div><div class="ttdeci">gpuStream_t gpuStream() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:220</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelAllReduce_html_a8f0fba40aa737060c0ac09832c9bf877"><div class="ttname"><a href="namespaceamrex_1_1ParallelAllReduce.html#a8f0fba40aa737060c0ac09832c9bf877">amrex::ParallelAllReduce::Sum</a></div><div class="ttdeci">void Sum(T &amp;v, MPI_Comm comm)</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:204</div></div>
 <div class="ttc" id="anamespaceamrex_1_1ParallelContext_html_a3735bb2b55dab8f232227611c6d25bb8"><div class="ttname"><a href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">amrex::ParallelContext::CommunicatorSub</a></div><div class="ttdeci">MPI_Comm CommunicatorSub() noexcept</div><div class="ttdoc">sub-communicator for current frame</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelContext.H:70</div></div>
-<div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_acc0c2cceab5a58cafa4ae6e68be50d24"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#acc0c2cceab5a58cafa4ae6e68be50d24">amrex::SundialsUserFun::f</a></div><div class="ttdeci">static int f(realtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:42</div></div>
+<div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_a192b851aaf774703482c2ec82d9b4cf4"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">amrex::SundialsUserFun::f</a></div><div class="ttdeci">static int f(sunrealtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:42</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0b5cc6671c574fc82057046c73789ee5"><div class="ttname"><a href="namespaceamrex.html#a0b5cc6671c574fc82057046c73789ee5">amrex::FillRandomNormal</a></div><div class="ttdeci">void FillRandomNormal(MultiFab &amp;mf, int scomp, int ncomp, Real mean, Real stddev)</div><div class="ttdoc">Fill MultiFab with random numbers from nornmal distribution.</div><div class="ttdef"><b>Definition:</b> AMReX_MultiFabUtil.cpp:1203</div></div>
 <div class="ttc" id="anamespaceamrex_html_a10bd6ff61966130ea99ab9faa410da13"><div class="ttname"><a href="namespaceamrex.html#a10bd6ff61966130ea99ab9faa410da13">amrex::FillRandom</a></div><div class="ttdeci">void FillRandom(MultiFab &amp;mf, int scomp, int ncomp)</div><div class="ttdoc">Fill MultiFab with random numbers from uniform distribution.</div><div class="ttdef"><b>Definition:</b> AMReX_MultiFabUtil.cpp:1190</div></div>

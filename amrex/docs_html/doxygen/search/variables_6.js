@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['f_15656',['f',['../structamrex_1_1SundialsUserData.html#ad012b5f651c04796b616c1d6acb9bd37',1,'amrex::SundialsUserData::f()'],['../structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467',1,'amrex::algoim::ImplicitIntegral::f()'],['../classSDCstruct.html#a5a011f47199f9e9fef68cdba47a1f7f7',1,'SDCstruct::f()']]],
-  ['f0_15657',['f0',['../structamrex_1_1SundialsUserData.html#a4e825ce3a349ec2e2d02cbf6c53cd646',1,'amrex::SundialsUserData']]],
+  ['f_15656',['f',['../structamrex_1_1SundialsUserData.html#a61b88d4a6c8c392c9517b753193dcded',1,'amrex::SundialsUserData::f()'],['../structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467',1,'amrex::algoim::ImplicitIntegral::f()'],['../classSDCstruct.html#a5a011f47199f9e9fef68cdba47a1f7f7',1,'SDCstruct::f()']]],
+  ['f0_15657',['f0',['../structamrex_1_1SundialsUserData.html#a5d5293a622af824bd4b2b5878b689a4a',1,'amrex::SundialsUserData']]],
   ['f1_15658',['f1',['../unionAMREX__IPARSERSTYPE.html#a99cdaa1f0d3cc968417ed03723f93d44',1,'AMREX_IPARSERSTYPE::f1()'],['../unionAMREX__PARSERSTYPE.html#ae4b2f9e1858ec2244f20bb23fae6da2b',1,'AMREX_PARSERSTYPE::f1()']]],
   ['f2_15659',['f2',['../unionAMREX__IPARSERSTYPE.html#ad9dcbf264629390633902acf208145ba',1,'AMREX_IPARSERSTYPE::f2()'],['../unionAMREX__PARSERSTYPE.html#acbb8a4de3b0dd43de372b6c1070c6d2b',1,'AMREX_PARSERSTYPE::f2()']]],
   ['f3_15660',['f3',['../unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac',1,'AMREX_IPARSERSTYPE::f3()'],['../unionAMREX__PARSERSTYPE.html#a75d477cdab0c70b4d8bb6e949274b5f2',1,'AMREX_PARSERSTYPE::f3()']]],
-  ['f_5ffast_15661',['f_fast',['../structamrex_1_1SundialsUserData.html#a659bc01817a51dcbd4f3b159ec298ecb',1,'amrex::SundialsUserData']]],
+  ['f_5ffast_15661',['f_fast',['../structamrex_1_1SundialsUserData.html#a39073e8c6edea33ac31d4e5f210f3b98',1,'amrex::SundialsUserData']]],
   ['f_5fnodes_15662',['F_nodes',['../classamrex_1_1FEIntegrator.html#a4068613bcf39366eadab0ad2a6d42013',1,'amrex::FEIntegrator::F_nodes()'],['../classamrex_1_1RKIntegrator.html#a71b3d620a58461d753803014c39b0c20',1,'amrex::RKIntegrator::F_nodes()']]],
   ['f_5fuser_15663',['f_user',['../classamrex_1_1CpuBndryFuncFab.html#a44a9eb954199def1d1965689f79c0801',1,'amrex::CpuBndryFuncFab']]],
   ['fab_15664',['fab',['../structamrex_1_1MLMGABCTag.html#ace2b963f746066f720dccceaa563db4c',1,'amrex::MLMGABCTag']]],
