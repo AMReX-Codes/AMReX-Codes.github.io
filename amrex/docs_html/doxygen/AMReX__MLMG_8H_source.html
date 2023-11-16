@@ -624,7 +624,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            }</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            linop.compGrad(alev, <a class="code" href="namespaceamrex.html#a3d178420751d1cce6bd2661d614fbb33">GetArrOfPtrs</a>(grad_sol), sol[alev], a_loc);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                a_grad_sol[alev][idim]-&gt;LocalCopy(grad_sol, 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                a_grad_sol[alev][idim]-&gt;LocalCopy(grad_sol[idim], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            }</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        }</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    }</div>
