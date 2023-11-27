@@ -36,6 +36,7 @@ var namespaceamrex_1_1detail =
     [ "amrex_partition_helper", "namespaceamrex_1_1detail.html#ac21ab25e49c31a58b678ab25626397d3", null ],
     [ "amrex_stable_partition_helper", "namespaceamrex_1_1detail.html#a685da3e1082796b88fdcd226e6cd923d", null ],
     [ "apply_impl", "namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676", null ],
+    [ "applyRobinBCTermsCoeffs", "namespaceamrex_1_1detail.html#a291f4a64951d7b0faabda32ef45084f0", null ],
     [ "build_par_for_nblocks", "namespaceamrex_1_1detail.html#ad2a58bfacc6c0c5c71c5af8f54270061", null ],
     [ "call_f", "namespaceamrex_1_1detail.html#ac02794506750edcf0d39acedf4ddb19d", null ],
     [ "call_f", "namespaceamrex_1_1detail.html#a519b3f165b5af90bb1676efdf8851b28", null ],
