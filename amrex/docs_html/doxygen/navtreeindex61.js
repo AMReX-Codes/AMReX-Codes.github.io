@@ -247,7 +247,7 @@ var NAVTREEINDEX61 =
 "namespaceamrex.html#a78af1eb5d5bfbed5aea780ed03314482":[2,0,0,1656],
 "namespaceamrex.html#a78cad9c755cd6495ea035b4417392c23":[2,0,0,1747],
 "namespaceamrex.html#a78ee47545ca66e809f4f680e7513cbd5":[2,0,0,2107],
-"namespaceamrex.html#a78f180e5d6b1326d28084aa66f23d184":[2,0,0,734],
 "namespaceamrex.html#a78f4c0cd2b7b0dc31e655a7856ebd56c":[2,0,0,1054],
-"namespaceamrex.html#a79754df2fe2ff8642af6d3a015518866":[2,0,0,1651]
+"namespaceamrex.html#a79754df2fe2ff8642af6d3a015518866":[2,0,0,1651],
+"namespaceamrex.html#a7988f7b57a94160eb8c67bae01179773":[2,0,0,1126]
 };

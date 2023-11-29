@@ -1,13 +1,13 @@
 var AMReX__MultiFabUtil_8cpp =
 [
-    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#a81eb35454a0283290bc8e7e5da0a80f2", null ],
+    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#addbad02ba532c5786c26d83c864ffeff", null ],
     [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8cpp.html#ab843405531b26d824c1133128452afcb", null ],
     [ "average_down", "AMReX__MultiFabUtil_8cpp.html#a62368c6c303e36dc51ded56d7881920e", null ],
     [ "average_down", "AMReX__MultiFabUtil_8cpp.html#a21e594569f8a9ba321155a5ecd7ce4ce", null ],
     [ "average_down_edges", "AMReX__MultiFabUtil_8cpp.html#a3d6739058267b9ba2aed9936247f49fe", null ],
     [ "average_down_edges", "AMReX__MultiFabUtil_8cpp.html#ab744a797b85135257add34a49c96c734", null ],
     [ "average_down_edges", "AMReX__MultiFabUtil_8cpp.html#a84e55e433b2972354d98a0684f7f1394", null ],
-    [ "average_edge_to_cellcenter", "AMReX__MultiFabUtil_8cpp.html#a78f180e5d6b1326d28084aa66f23d184", null ],
+    [ "average_edge_to_cellcenter", "AMReX__MultiFabUtil_8cpp.html#ae993b889bb9c1feed61788d148fd4920", null ],
     [ "average_face_to_cellcenter", "AMReX__MultiFabUtil_8cpp.html#a5c1981b67416871bbb9ea30a9de5bbcf", null ],
     [ "average_face_to_cellcenter", "AMReX__MultiFabUtil_8cpp.html#abdb4a7a5967743f8bce82ac78128963d", null ],
     [ "average_face_to_cellcenter", "AMReX__MultiFabUtil_8cpp.html#a95f27241ad83b39ffc015be064f382e7", null ],

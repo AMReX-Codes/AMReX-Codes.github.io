@@ -1,6 +1,6 @@
 var AMReX__MultiFabUtil_8H =
 [
-    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8H.html#a81eb35454a0283290bc8e7e5da0a80f2", null ],
+    [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8H.html#addbad02ba532c5786c26d83c864ffeff", null ],
     [ "average_cellcenter_to_face", "AMReX__MultiFabUtil_8H.html#ab843405531b26d824c1133128452afcb", null ],
     [ "average_down", "AMReX__MultiFabUtil_8H.html#a5eed60d257307d60b712f3d5ffd7cf49", null ],
     [ "average_down", "AMReX__MultiFabUtil_8H.html#a2b8d8a68104aadc30564aeb092961205", null ],
@@ -17,7 +17,7 @@ var AMReX__MultiFabUtil_8H =
     [ "average_down_faces", "AMReX__MultiFabUtil_8H.html#a444e92d4213a53739768571a4bb72ce3", null ],
     [ "average_down_faces", "AMReX__MultiFabUtil_8H.html#ac0212832fb955bf32b6ce4cb2779c930", null ],
     [ "average_down_nodal", "AMReX__MultiFabUtil_8H.html#aff7bc26e4e82b323802d4b6d546101fc", null ],
-    [ "average_edge_to_cellcenter", "AMReX__MultiFabUtil_8H.html#a78f180e5d6b1326d28084aa66f23d184", null ],
+    [ "average_edge_to_cellcenter", "AMReX__MultiFabUtil_8H.html#ae993b889bb9c1feed61788d148fd4920", null ],
     [ "average_face_to_cellcenter", "AMReX__MultiFabUtil_8H.html#ad4e5fca4f820c83a5c237daf08f9b4a0", null ],
     [ "average_face_to_cellcenter", "AMReX__MultiFabUtil_8H.html#a5c1981b67416871bbb9ea30a9de5bbcf", null ],
     [ "average_face_to_cellcenter", "AMReX__MultiFabUtil_8H.html#abdb4a7a5967743f8bce82ac78128963d", null ],

@@ -191,46 +191,46 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T&gt;</a>{p, <a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">amrex::begin</a>(bx), <a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">amrex::end</a>(bx), ncomp};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value&gt;::type</div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">  143</a></span>&#160;<a class="code" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T* <span class="keyword">const</span> <span class="comment">/*ptr*/</span>, Long <span class="comment">/*n*/</span>)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{}</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;std::enable_if_t&lt;std::is_trivially_default_constructible&lt;T&gt;::value</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                 &amp;&amp; !std::is_arithmetic&lt;T&gt;::value&gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a01561352ac771218ab7ba04e356a044d">  149</a></span>&#160;<a class="code" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T* <span class="keyword">const</span> ptr, Long n)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (Long i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">new</span> (ptr+i) T;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;std::enable_if_t&lt;!std::is_trivially_default_constructible&lt;T&gt;::value&gt;</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aad9c01992bb029868be5de579b7317ad">  158</a></span>&#160;<a class="code" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T* <span class="keyword">const</span> ptr, Long n)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a> ( n, i,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">new</span> (ptr+i) T;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    });</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;std::is_trivially_destructible&lt;T&gt;::value&gt;::type</div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">  168</a></span>&#160;<a class="code" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">placementDelete</a> (T* <span class="keyword">const</span> <span class="comment">/*ptr*/</span>, Long <span class="comment">/*n*/</span>)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{}</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;!std::is_trivially_destructible&lt;T&gt;::value&gt;::type</div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af6da468471baec434494c96d522891b3">  173</a></span>&#160;<a class="code" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">placementDelete</a> (T* <span class="keyword">const</span> ptr, Long n)</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a> (n, i,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        (ptr+i)-&gt;~T();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    });</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value&gt;::type</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">   95</a></span>&#160;<a class="code" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T* <span class="keyword">const</span> <span class="comment">/*ptr*/</span>, Long <span class="comment">/*n*/</span>)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;std::enable_if_t&lt;std::is_trivially_default_constructible&lt;T&gt;::value</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                 &amp;&amp; !std::is_arithmetic&lt;T&gt;::value&gt;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a01561352ac771218ab7ba04e356a044d">  101</a></span>&#160;<a class="code" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T* <span class="keyword">const</span> ptr, Long n)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (Long i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">new</span> (ptr+i) T;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;std::enable_if_t&lt;!std::is_trivially_default_constructible&lt;T&gt;::value&gt;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aad9c01992bb029868be5de579b7317ad">  110</a></span>&#160;<a class="code" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T* <span class="keyword">const</span> ptr, Long n)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a> ( n, i,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">new</span> (ptr+i) T;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    });</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;std::is_trivially_destructible&lt;T&gt;::value&gt;::type</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">  120</a></span>&#160;<a class="code" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">placementDelete</a> (T* <span class="keyword">const</span> <span class="comment">/*ptr*/</span>, Long <span class="comment">/*n*/</span>)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;!std::is_trivially_destructible&lt;T&gt;::value&gt;::type</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af6da468471baec434494c96d522891b3">  125</a></span>&#160;<a class="code" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">placementDelete</a> (T* <span class="keyword">const</span> ptr, Long n)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a> (n, i,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        (ptr+i)-&gt;~T();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    });</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classamrex_1_1BaseFab.html">  182</a></span>&#160;<span class="keyword">class </span><a class="code" href="classamrex_1_1BaseFab.html">BaseFab</a></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    : <span class="keyword">public</span> <a class="code" href="structamrex_1_1DataAllocator.html">DataAllocator</a></div>
@@ -3836,7 +3836,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="ttc" id="aAMReX__Utility_8H_html"><div class="ttname"><a href="AMReX__Utility_8H.html">AMReX_Utility.H</a></div></div>
 <div class="ttc" id="aamrex__iparser_8tab_8nolint_8H_html_af07d89f5ceaea0c7c8252cc41fd75f37"><div class="ttname"><a href="amrex__iparser_8tab_8nolint_8H.html#af07d89f5ceaea0c7c8252cc41fd75f37">free</a></div><div class="ttdeci">void free(void *)</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html"><div class="ttname"><a href="classamrex_1_1Arena.html">amrex::Arena</a></div><div class="ttdoc">A virtual base class for objects that manage their own dynamic memory allocation.</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.H:87</div></div>
-<div class="ttc" id="aclassamrex_1_1BaseFab_html"><div class="ttname"><a href="classamrex_1_1BaseFab.html">amrex::BaseFab</a></div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:184</div></div>
+<div class="ttc" id="aclassamrex_1_1BaseFab_html"><div class="ttname"><a href="classamrex_1_1BaseFab.html">amrex::BaseFab</a></div><div class="ttdoc">A FortranArrayBox(FAB)-like object.</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:184</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a02d3c8e98d8d4b237eabc0ce1756fc33"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a02d3c8e98d8d4b237eabc0ce1756fc33">amrex::BaseFab::maskGE</a></div><div class="ttdeci">int maskGE(BaseFab&lt; int &gt; &amp;mask, T const &amp;val, int comp=0) const noexcept</div><div class="ttdoc">Same as above except mark cells with value greater than or equal to val.</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:2841</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a051da6643de6a48ee66ec046d560033a"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a051da6643de6a48ee66ec046d560033a">amrex::BaseFab::saxpy</a></div><div class="ttdeci">BaseFab&lt; T &gt; &amp; saxpy(T a, const BaseFab&lt; T &gt; &amp;x, const Box &amp;srcbox, const Box &amp;destbox, int srccomp, int destcomp, int numcomp=1) noexcept</div><div class="ttdoc">FAB SAXPY (y[i] &lt;- y[i] + a * x[i]), in place.</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:2897</div></div>
 <div class="ttc" id="aclassamrex_1_1BaseFab_html_a08ef88a8fe68f56114c7a647c04772bd"><div class="ttname"><a href="classamrex_1_1BaseFab.html#a08ef88a8fe68f56114c7a647c04772bd">amrex::BaseFab::copy</a></div><div class="ttdeci">BaseFab&lt; T &gt; &amp; copy(const BaseFab&lt; T &gt; &amp;src, Box bx, SrcComp scomp, DestComp dcomp, NumComps ncomp) noexcept</div><div class="ttdoc">Do nothing if bx does not intersect with src fab.</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:3654</div></div>
@@ -4065,7 +4065,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="ttc" id="anamespaceamrex_html_a652bd22fb8cfcdfeaa4ac62e81a41fe6"><div class="ttname"><a href="namespaceamrex.html#a652bd22fb8cfcdfeaa4ac62e81a41fe6">amrex::BaseFab_Initialize</a></div><div class="ttdeci">void BaseFab_Initialize()</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.cpp:28</div></div>
 <div class="ttc" id="anamespaceamrex_html_a67b24cef9df62e8cced041445b239e86"><div class="ttname"><a href="namespaceamrex.html#a67b24cef9df62e8cced041445b239e86">amrex::BaseFab_Finalize</a></div><div class="ttdeci">void BaseFab_Finalize()</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.cpp:57</div></div>
 <div class="ttc" id="anamespaceamrex_html_a71600c8a528e0f1863154e4cf0183cbc"><div class="ttname"><a href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:272</div></div>
-<div class="ttc" id="anamespaceamrex_html_a73fec27a7206dd9a1eb9cb593936f784"><div class="ttname"><a href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">amrex::placementNew</a></div><div class="ttdeci">std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt;::type placementNew(T *const, Long)</div><div class="ttdoc">A Fortran Array-like Object BaseFab emulates the Fortran array concept. Useful operations can be perf...</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:143</div></div>
+<div class="ttc" id="anamespaceamrex_html_a73fec27a7206dd9a1eb9cb593936f784"><div class="ttname"><a href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">amrex::placementNew</a></div><div class="ttdeci">std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt;::type placementNew(T *const, Long)</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:95</div></div>
 <div class="ttc" id="anamespaceamrex_html_a765c5cc6e670eb707740d51c99e7b35e"><div class="ttname"><a href="namespaceamrex.html#a765c5cc6e670eb707740d51c99e7b35e">amrex::ResetTotalBytesAllocatedInFabsHWM</a></div><div class="ttdeci">void ResetTotalBytesAllocatedInFabsHWM() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.cpp:132</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7c4d4d9ce4fe6fe6b1fcbbf297893347"><div class="ttname"><a href="namespaceamrex.html#a7c4d4d9ce4fe6fe6b1fcbbf297893347">amrex::ParallelFor</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt; ParallelFor(TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_CTOParallelForImpl.H:97</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7cb1edb123daa9e2146ae0db8e2ed910"><div class="ttname"><a href="namespaceamrex.html#a7cb1edb123daa9e2146ae0db8e2ed910">amrex::boxDiff</a></div><div class="ttdeci">BoxList boxDiff(const Box &amp;b1in, const Box &amp;b2)</div><div class="ttdoc">Returns BoxList defining the compliment of b2 in b1in.</div></div>
@@ -4081,7 +4081,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFab_8H_source.html',''); in
 <div class="ttc" id="anamespaceamrex_html_ad888998563a26e9b66682405b749228d"><div class="ttname"><a href="namespaceamrex.html#ad888998563a26e9b66682405b749228d">amrex::private_total_bytes_allocated_in_fabs</a></div><div class="ttdeci">Long private_total_bytes_allocated_in_fabs</div><div class="ttdoc">total bytes at any given time</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.cpp:17</div></div>
 <div class="ttc" id="anamespaceamrex_html_adc54dbf8448fdb9207beb1761e07b80d"><div class="ttname"><a href="namespaceamrex.html#adc54dbf8448fdb9207beb1761e07b80d">amrex::atomic_total_cells_allocated_in_fabs_hwm</a></div><div class="ttdeci">std::atomic&lt; Long &gt; atomic_total_cells_allocated_in_fabs_hwm</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.cpp:16</div></div>
 <div class="ttc" id="anamespaceamrex_html_ae096acad3cf4e038809c53d73c0c57c8"><div class="ttname"><a href="namespaceamrex.html#ae096acad3cf4e038809c53d73c0c57c8">amrex::update_fab_stats</a></div><div class="ttdeci">void update_fab_stats(Long n, Long s, size_t szt) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.cpp:144</div></div>
-<div class="ttc" id="anamespaceamrex_html_aee305735e81ee2d836ea3043c2e5baa1"><div class="ttname"><a href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">amrex::placementDelete</a></div><div class="ttdeci">std::enable_if&lt; std::is_trivially_destructible&lt; T &gt;::value &gt;::type placementDelete(T *const, Long)</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:168</div></div>
+<div class="ttc" id="anamespaceamrex_html_aee305735e81ee2d836ea3043c2e5baa1"><div class="ttname"><a href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">amrex::placementDelete</a></div><div class="ttdeci">std::enable_if&lt; std::is_trivially_destructible&lt; T &gt;::value &gt;::type placementDelete(T *const, Long)</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:120</div></div>
 <div class="ttc" id="anamespaceamrex_html_afe930d74045516fece8591f173e57007"><div class="ttname"><a href="namespaceamrex.html#afe930d74045516fece8591f173e57007">amrex::Array</a></div><div class="ttdeci">std::array&lt; T, N &gt; Array</div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:23</div></div>
 <div class="ttc" id="astructamrex_1_1Array4_html"><div class="ttname"><a href="structamrex_1_1Array4.html">amrex::Array4</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:61</div></div>
 <div class="ttc" id="astructamrex_1_1Array4_html_a0951dd1a1e6d5b4f5a41c4cae335f6f1"><div class="ttname"><a href="structamrex_1_1Array4.html#a0951dd1a1e6d5b4f5a41c4cae335f6f1">amrex::Array4::ptr</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T * ptr(int i, int j, int k) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:149</div></div>

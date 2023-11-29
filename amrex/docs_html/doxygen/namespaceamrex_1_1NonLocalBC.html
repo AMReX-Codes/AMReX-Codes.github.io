@@ -588,11 +588,11 @@ template&lt;typename FAB , typename DTOS , typename Proj  = Identity&gt; </div>
 </div><div class="memdoc">
 
 <p>Fill ghost cells for FabArray/MultiFab. </p>
-<p>This fills ghost cells of a <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>. This function is supposed to be used together with makeFillBoundaryMetaData as follows. </p><pre class="fragment">    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
+<p>This fills ghost cells of a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. This function is supposed to be used together with makeFillBoundaryMetaData as follows. </p><pre class="fragment">    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
     // The metadata cmd can be cached and reused on a MultiFab/FabArray with
     // the same BoxArray and DistributionMapping.
     FillBoundary_finish(mf, cmd, scomp, ncomp, dtos, proj);
-</pre><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
+</pre><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FAB</td><td>MultiFab/FabArray type </td></tr>
@@ -674,13 +674,13 @@ template&lt;typename FAB , typename DTOS , typename Proj  = Identity&gt; </div>
 </div><div class="memdoc">
 
 <p>Finish communication started by FillBoundary_nowait. </p>
-<p>This finishes the communication to fill ghost cells of a <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>. This function is supposed to be used together with FillBoundary_nowait and makeFillBoundaryMetaData as follows. </p><pre class="fragment">    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
+<p>This finishes the communication to fill ghost cells of a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. This function is supposed to be used together with FillBoundary_nowait and makeFillBoundaryMetaData as follows. </p><pre class="fragment">    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
     // The metadata cmd can be cached and reused on a MultiFab/FabArray with
     // the same BoxArray and DistributionMapping.
     auto handler = FillBoundary_nowait(mf, cmd, scomp, ncomp, dtos, proj);
     // Independent computation can be performed.
     FillBoundary_finish(std::move(handler), mf, cmd, scomp, ncomp, dtos, proj);
-</pre><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
+</pre><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FAB</td><td>MultiFab/FabArray type </td></tr>
@@ -757,13 +757,13 @@ template&lt;typename FAB , typename DTOS , typename Proj  = Identity&gt; </div>
 </div><div class="memdoc">
 
 <p>Start communication to fill boundary. </p>
-<p>This starts communication to fill ghost cells of a <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>. This function is supposed to be used together with FillBoundary_finish and makeFillBoundaryMetaData as follows. </p><pre class="fragment">    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
+<p>This starts communication to fill ghost cells of a <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>. This function is supposed to be used together with FillBoundary_finish and makeFillBoundaryMetaData as follows. </p><pre class="fragment">    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
     // The metadata cmd can be cached and reused on a MultiFab/FabArray with
     // the same BoxArray and DistributionMapping.
     auto handler = FillBoundary_nowait(mf, cmd, scomp, ncomp, dtos, proj);
     // Independent computation can be performed.
     FillBoundary_finish(std::move(handler), mf, cmd, scomp, ncomp, dtos, proj);
-</pre><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
+</pre><p>The FillBoundary capability here is more flexible than <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>'s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FAB</td><td>MultiFab/FabArray type </td></tr>
@@ -1889,7 +1889,7 @@ template&lt;typename FAB , typename DataPacking &gt; </div>
     <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The Multifab that is going to be filled with received data.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">handler</td><td>This object holds all data buffers that need to be kept alive as long as the data transaction is not done.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>The communication meta data object holds spatial information about FAB boxes that need to be filled.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data_packing</td><td>A CPO that controls behaviour of unpacking the received buffer to the destination <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_packing</td><td>A CPO that controls behaviour of unpacking the received buffer to the destination <a class="el" href="classamrex_1_1FabArray.html" title="An Array of FortranArrayBox(FAB)-like Objects.">FabArray</a>.</td></tr>
   </table>
   </dd>
 </dl>
