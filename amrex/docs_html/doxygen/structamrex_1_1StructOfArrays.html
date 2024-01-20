@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!--title>AMReX: amrex::StructOfArrays&lt; NReal, NInt, Allocator &gt; Struct Template Reference</title-->
+<!--title>AMReX: amrex::StructOfArrays&lt; NReal, NInt, Allocator, use64BitIdCpu &gt; Struct Template Reference</title-->
 <title>AMReX: Block-Structured AMR Software Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('structamrex_1_1StructOfArrays.html',''
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="structamrex_1_1StructOfArrays-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">amrex::StructOfArrays&lt; NReal, NInt, Allocator &gt; Struct Template Reference</div>  </div>
+<div class="title">amrex::StructOfArrays&lt; NReal, NInt, Allocator, use64BitIdCpu &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -110,109 +110,135 @@ $(document).ready(function(){initNavTree('structamrex_1_1StructOfArrays.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab3198bb12bd084d439c9b75f4f76c0ca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a> = <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt; ParticleReal, Allocator&lt; ParticleReal &gt; &gt;</td></tr>
-<tr class="separator:ab3198bb12bd084d439c9b75f4f76c0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a402275e8f3db925ba4fb6e60e391b333"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a> = <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, Allocator&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt;</td></tr>
-<tr class="separator:a402275e8f3db925ba4fb6e60e391b333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6874dec9cbf05e59a6bc7367c5d22f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a> = <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt; uint64_t, Allocator&lt; uint64_t &gt; &gt;</td></tr>
+<tr class="separator:af6874dec9cbf05e59a6bc7367c5d22f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a7383c365c4e4f4c6fd7eed23e8c59"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a> = <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt; ParticleReal, Allocator&lt; ParticleReal &gt; &gt;</td></tr>
+<tr class="separator:a17a7383c365c4e4f4c6fd7eed23e8c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1be308a287422ae2a6580556249eb3d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a> = <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, Allocator&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt;</td></tr>
+<tr class="separator:af1be308a287422ae2a6580556249eb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab198677876af6342b7811a2dd6bbed6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ab198677876af6342b7811a2dd6bbed6e">define</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_num_runtime_real, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_num_runtime_int)</td></tr>
-<tr class="separator:ab198677876af6342b7811a2dd6bbed6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910364653d0aee372ea5d30dbd98e34c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a910364653d0aee372ea5d30dbd98e34c">NumRealComps</a> () const noexcept</td></tr>
-<tr class="separator:a910364653d0aee372ea5d30dbd98e34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a812e8db38b02a923e33de9d31a4978ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a812e8db38b02a923e33de9d31a4978ba">NumIntComps</a> () const noexcept</td></tr>
-<tr class="separator:a812e8db38b02a923e33de9d31a4978ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa669dc405e332237db26feb68ffb257"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>, NReal &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aaa669dc405e332237db26feb68ffb257">GetRealData</a> ()</td></tr>
-<tr class="separator:aaa669dc405e332237db26feb68ffb257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0713765da8db746084c4b0d7d9e3230b"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>, NInt &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a0713765da8db746084c4b0d7d9e3230b">GetIntData</a> ()</td></tr>
-<tr class="separator:a0713765da8db746084c4b0d7d9e3230b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a852422beff887d7d8d82cb21e7190dce"><td class="memItemLeft" align="right" valign="top">const std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>, NReal &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a852422beff887d7d8d82cb21e7190dce">GetRealData</a> () const</td></tr>
-<tr class="separator:a852422beff887d7d8d82cb21e7190dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32f1b56e5d68299fc49813648903e884"><td class="memItemLeft" align="right" valign="top">const std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>, NInt &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a32f1b56e5d68299fc49813648903e884">GetIntData</a> () const</td></tr>
-<tr class="separator:a32f1b56e5d68299fc49813648903e884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10c0a0dea4cddd7bfec98c2f14a2292e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a10c0a0dea4cddd7bfec98c2f14a2292e">GetRealData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index)</td></tr>
-<tr class="separator:a10c0a0dea4cddd7bfec98c2f14a2292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76f073678406c1191acd44dd1cf562d1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a76f073678406c1191acd44dd1cf562d1">GetRealData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const</td></tr>
-<tr class="separator:a76f073678406c1191acd44dd1cf562d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf1c48c61fb3ccc48c3663e987b6aed3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#abf1c48c61fb3ccc48c3663e987b6aed3">GetIntData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index)</td></tr>
-<tr class="separator:abf1c48c61fb3ccc48c3663e987b6aed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbe15736b28057529d48ed51ff290b99"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#abbe15736b28057529d48ed51ff290b99">GetIntData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const</td></tr>
-<tr class="separator:abbe15736b28057529d48ed51ff290b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a480b74499d8a9eafa9c81d5404287c80"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a480b74499d8a9eafa9c81d5404287c80">size</a> () const</td></tr>
-<tr class="memdesc:a480b74499d8a9eafa9c81d5404287c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of particles (real and neighbor)  <a href="structamrex_1_1StructOfArrays.html#a480b74499d8a9eafa9c81d5404287c80">More...</a><br /></td></tr>
-<tr class="separator:a480b74499d8a9eafa9c81d5404287c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cd10b883dfbaa396d69935cf9783596"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a9cd10b883dfbaa396d69935cf9783596">empty</a> () const</td></tr>
-<tr class="memdesc:a9cd10b883dfbaa396d69935cf9783596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the SoA is empty (i.e. has <a class="el" href="structamrex_1_1StructOfArrays.html#a480b74499d8a9eafa9c81d5404287c80" title="Returns the total number of particles (real and neighbor)">size()</a> == 0)  <a href="structamrex_1_1StructOfArrays.html#a9cd10b883dfbaa396d69935cf9783596">More...</a><br /></td></tr>
-<tr class="separator:a9cd10b883dfbaa396d69935cf9783596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed3ffbe932f69885df6a16a067758eed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aed3ffbe932f69885df6a16a067758eed">numParticles</a> () const</td></tr>
-<tr class="memdesc:aed3ffbe932f69885df6a16a067758eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of real particles (excluding neighbors)  <a href="structamrex_1_1StructOfArrays.html#aed3ffbe932f69885df6a16a067758eed">More...</a><br /></td></tr>
-<tr class="separator:aed3ffbe932f69885df6a16a067758eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab35d588a41d6e7d2c14ae957ea8d5d99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ab35d588a41d6e7d2c14ae957ea8d5d99">numRealParticles</a> () const</td></tr>
-<tr class="memdesc:ab35d588a41d6e7d2c14ae957ea8d5d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of real particles (excluding neighbors)  <a href="structamrex_1_1StructOfArrays.html#ab35d588a41d6e7d2c14ae957ea8d5d99">More...</a><br /></td></tr>
-<tr class="separator:ab35d588a41d6e7d2c14ae957ea8d5d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dcab6a884a05d6548547b8359758611"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a2dcab6a884a05d6548547b8359758611">numNeighborParticles</a> () const</td></tr>
-<tr class="memdesc:a2dcab6a884a05d6548547b8359758611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of neighbor particles (excluding reals)  <a href="structamrex_1_1StructOfArrays.html#a2dcab6a884a05d6548547b8359758611">More...</a><br /></td></tr>
-<tr class="separator:a2dcab6a884a05d6548547b8359758611"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dab7a711b3b967a56646e6c30ae5904"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a9dab7a711b3b967a56646e6c30ae5904">numTotalParticles</a> () const</td></tr>
-<tr class="memdesc:a9dab7a711b3b967a56646e6c30ae5904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of particles (real and neighbor)  <a href="structamrex_1_1StructOfArrays.html#a9dab7a711b3b967a56646e6c30ae5904">More...</a><br /></td></tr>
-<tr class="separator:a9dab7a711b3b967a56646e6c30ae5904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f04d6f94a8930f6be295a36603ca7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a6f04d6f94a8930f6be295a36603ca7d2">setNumNeighbors</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_neighbors)</td></tr>
-<tr class="separator:a6f04d6f94a8930f6be295a36603ca7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dfdbf37585cc21bbdcdbd94145b7a09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a1dfdbf37585cc21bbdcdbd94145b7a09">getNumNeighbors</a> () const</td></tr>
-<tr class="separator:a1dfdbf37585cc21bbdcdbd94145b7a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe8cb769562c897b6ab86683cf0d716e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#abe8cb769562c897b6ab86683cf0d716e">resize</a> (size_t count)</td></tr>
-<tr class="separator:abe8cb769562c897b6ab86683cf0d716e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04e229de2a830b849d1900050b383f8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; ParticleReal *, NReal &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a04e229de2a830b849d1900050b383f8d">realarray</a> ()</td></tr>
-<tr class="separator:a04e229de2a830b849d1900050b383f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6c1e19e9551116263efb5381f3f6bb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *, NInt &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ae6c1e19e9551116263efb5381f3f6bb7">intarray</a> ()</td></tr>
-<tr class="separator:ae6c1e19e9551116263efb5381f3f6bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad692d209aa517fa028bd98aa14f0b96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aad692d209aa517fa028bd98aa14f0b96">define</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_num_runtime_real, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> a_num_runtime_int)</td></tr>
+<tr class="separator:aad692d209aa517fa028bd98aa14f0b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b104504a3540a44182a1ad408d5cfa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a6b104504a3540a44182a1ad408d5cfa7">NumRealComps</a> () const noexcept</td></tr>
+<tr class="separator:a6b104504a3540a44182a1ad408d5cfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8037383212b93e6a701d263167baa31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#af8037383212b93e6a701d263167baa31">NumIntComps</a> () const noexcept</td></tr>
+<tr class="separator:af8037383212b93e6a701d263167baa31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcfe0eee137e2a2d22126d2fbda1fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a0dcfe0eee137e2a2d22126d2fbda1fcd">GetIdCPUData</a> ()</td></tr>
+<tr class="separator:a0dcfe0eee137e2a2d22126d2fbda1fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44390e5c68da1d50f5536428bf7da802"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>, NReal &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a44390e5c68da1d50f5536428bf7da802">GetRealData</a> ()</td></tr>
+<tr class="separator:a44390e5c68da1d50f5536428bf7da802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2086bc5faf11d372ebcbe728e46c19d9"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>, NInt &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a2086bc5faf11d372ebcbe728e46c19d9">GetIntData</a> ()</td></tr>
+<tr class="separator:a2086bc5faf11d372ebcbe728e46c19d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf532986a54772ea640a2ab38b7cff9e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aaf532986a54772ea640a2ab38b7cff9e">GetIdCPUData</a> () const</td></tr>
+<tr class="separator:aaf532986a54772ea640a2ab38b7cff9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86408aeae996a4c711dca10a4d7cbc4e"><td class="memItemLeft" align="right" valign="top">const std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>, NReal &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a86408aeae996a4c711dca10a4d7cbc4e">GetRealData</a> () const</td></tr>
+<tr class="separator:a86408aeae996a4c711dca10a4d7cbc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296f7ff58cbcaa84b993ba66b8374e07"><td class="memItemLeft" align="right" valign="top">const std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>, NInt &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a296f7ff58cbcaa84b993ba66b8374e07">GetIntData</a> () const</td></tr>
+<tr class="separator:a296f7ff58cbcaa84b993ba66b8374e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d7e9441c59e88b42978df7d9d1817c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ac2d7e9441c59e88b42978df7d9d1817c">GetRealData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index)</td></tr>
+<tr class="separator:ac2d7e9441c59e88b42978df7d9d1817c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a15a6ca35075933960a3c28f1d3581"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ac4a15a6ca35075933960a3c28f1d3581">GetRealData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const</td></tr>
+<tr class="separator:ac4a15a6ca35075933960a3c28f1d3581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48f25cece8baf87dfe542bbdb53cf13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ab48f25cece8baf87dfe542bbdb53cf13">GetIntData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index)</td></tr>
+<tr class="separator:ab48f25cece8baf87dfe542bbdb53cf13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172af3e9e6cc7eeee5093772634020dd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a172af3e9e6cc7eeee5093772634020dd">GetIntData</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const</td></tr>
+<tr class="separator:a172af3e9e6cc7eeee5093772634020dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e85fbd1e4fa4bb5a42340a9f43f725"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ae0e85fbd1e4fa4bb5a42340a9f43f725">size</a> () const</td></tr>
+<tr class="memdesc:ae0e85fbd1e4fa4bb5a42340a9f43f725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of particles (real and neighbor)  <a href="structamrex_1_1StructOfArrays.html#ae0e85fbd1e4fa4bb5a42340a9f43f725">More...</a><br /></td></tr>
+<tr class="separator:ae0e85fbd1e4fa4bb5a42340a9f43f725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193e31f7db819b274b09730561007716"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a193e31f7db819b274b09730561007716">empty</a> () const</td></tr>
+<tr class="memdesc:a193e31f7db819b274b09730561007716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the SoA is empty (i.e. has <a class="el" href="structamrex_1_1StructOfArrays.html#ae0e85fbd1e4fa4bb5a42340a9f43f725" title="Returns the total number of particles (real and neighbor)">size()</a> == 0)  <a href="structamrex_1_1StructOfArrays.html#a193e31f7db819b274b09730561007716">More...</a><br /></td></tr>
+<tr class="separator:a193e31f7db819b274b09730561007716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f411b26eab317ad15c998f4a72e863"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a82f411b26eab317ad15c998f4a72e863">numParticles</a> () const</td></tr>
+<tr class="memdesc:a82f411b26eab317ad15c998f4a72e863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of real particles (excluding neighbors)  <a href="structamrex_1_1StructOfArrays.html#a82f411b26eab317ad15c998f4a72e863">More...</a><br /></td></tr>
+<tr class="separator:a82f411b26eab317ad15c998f4a72e863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d3cee84ea6fbae0bf95bcd36c536fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#ac6d3cee84ea6fbae0bf95bcd36c536fa">numRealParticles</a> () const</td></tr>
+<tr class="memdesc:ac6d3cee84ea6fbae0bf95bcd36c536fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of real particles (excluding neighbors)  <a href="structamrex_1_1StructOfArrays.html#ac6d3cee84ea6fbae0bf95bcd36c536fa">More...</a><br /></td></tr>
+<tr class="separator:ac6d3cee84ea6fbae0bf95bcd36c536fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaecde6af6e4779bf8bb2d786dec40fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#afaecde6af6e4779bf8bb2d786dec40fd">numNeighborParticles</a> () const</td></tr>
+<tr class="memdesc:afaecde6af6e4779bf8bb2d786dec40fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of neighbor particles (excluding reals)  <a href="structamrex_1_1StructOfArrays.html#afaecde6af6e4779bf8bb2d786dec40fd">More...</a><br /></td></tr>
+<tr class="separator:afaecde6af6e4779bf8bb2d786dec40fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e05a661b50a2637a764ccadfb23f53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a15e05a661b50a2637a764ccadfb23f53">numTotalParticles</a> () const</td></tr>
+<tr class="memdesc:a15e05a661b50a2637a764ccadfb23f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of particles (real and neighbor)  <a href="structamrex_1_1StructOfArrays.html#a15e05a661b50a2637a764ccadfb23f53">More...</a><br /></td></tr>
+<tr class="separator:a15e05a661b50a2637a764ccadfb23f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cb98e187a840616cfd0c681f596ab2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a06cb98e187a840616cfd0c681f596ab2">setNumNeighbors</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_neighbors)</td></tr>
+<tr class="separator:a06cb98e187a840616cfd0c681f596ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9d45bcfbc55a087faa7c61ecd5c3c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a0c9d45bcfbc55a087faa7c61ecd5c3c5">getNumNeighbors</a> () const</td></tr>
+<tr class="separator:a0c9d45bcfbc55a087faa7c61ecd5c3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c13115f149d9491c7b58e8086d6d4b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a4c13115f149d9491c7b58e8086d6d4b5">resize</a> (size_t count)</td></tr>
+<tr class="separator:a4c13115f149d9491c7b58e8086d6d4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f25acba9b5d155bac10a12a0facb168"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a5f25acba9b5d155bac10a12a0facb168">idcpuarray</a> ()</td></tr>
+<tr class="separator:a5f25acba9b5d155bac10a12a0facb168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4ecbdbcb5f14edb160e4404b16c3e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; ParticleReal *, NReal &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a5f4ecbdbcb5f14edb160e4404b16c3e4">realarray</a> ()</td></tr>
+<tr class="separator:a5f4ecbdbcb5f14edb160e4404b16c3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa458068c84a4240f72d3b1dd1fa59c9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *, NInt &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aa458068c84a4240f72d3b1dd1fa59c9e">intarray</a> ()</td></tr>
+<tr class="separator:aa458068c84a4240f72d3b1dd1fa59c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7db5f7869add58ecbebac952fc75e1ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a7db5f7869add58ecbebac952fc75e1ff">m_num_neighbor_particles</a> {0}</td></tr>
-<tr class="separator:a7db5f7869add58ecbebac952fc75e1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c77c12736c976f0848d534b810cdc34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a8c77c12736c976f0848d534b810cdc34">m_num_neighbor_particles</a> {0}</td></tr>
+<tr class="separator:a8c77c12736c976f0848d534b810cdc34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa9ae6d2054d75f3a9d34c3fb630e6804"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>, NReal &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aa9ae6d2054d75f3a9d34c3fb630e6804">m_rdata</a></td></tr>
-<tr class="separator:aa9ae6d2054d75f3a9d34c3fb630e6804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64d3bf6ebedba481365cd4a9d0072ce9"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>, NInt &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a64d3bf6ebedba481365cd4a9d0072ce9">m_idata</a></td></tr>
-<tr class="separator:a64d3bf6ebedba481365cd4a9d0072ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adefc562d67fd0e640e80a8ee068948a5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#adefc562d67fd0e640e80a8ee068948a5">m_runtime_rdata</a></td></tr>
-<tr class="separator:adefc562d67fd0e640e80a8ee068948a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7668bc0907c454a0959603288a2b9873"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a7668bc0907c454a0959603288a2b9873">m_runtime_idata</a></td></tr>
-<tr class="separator:a7668bc0907c454a0959603288a2b9873"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a031f0da90c07aa74bbb399db39b378a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a031f0da90c07aa74bbb399db39b378a8">m_defined</a> {false}</td></tr>
-<tr class="separator:a031f0da90c07aa74bbb399db39b378a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62679baf18972e398b3c6f5148fc9087"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a62679baf18972e398b3c6f5148fc9087">m_idcpu</a></td></tr>
+<tr class="separator:a62679baf18972e398b3c6f5148fc9087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffa30601135a22b5e4f9ac283b06aa1"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>, NReal &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#aaffa30601135a22b5e4f9ac283b06aa1">m_rdata</a></td></tr>
+<tr class="separator:aaffa30601135a22b5e4f9ac283b06aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017be53b64346d557da975c2a473a5a3"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>, NInt &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a017be53b64346d557da975c2a473a5a3">m_idata</a></td></tr>
+<tr class="separator:a017be53b64346d557da975c2a473a5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179e1b7074dc1c6f3fe55ee3222839de"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a179e1b7074dc1c6f3fe55ee3222839de">m_runtime_rdata</a></td></tr>
+<tr class="separator:a179e1b7074dc1c6f3fe55ee3222839de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ad5fb2e51e43137e1b26ce70119735"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a10ad5fb2e51e43137e1b26ce70119735">m_runtime_idata</a></td></tr>
+<tr class="separator:a10ad5fb2e51e43137e1b26ce70119735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f4405dacee92bf69d837b35ca6d238"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1StructOfArrays.html#a27f4405dacee92bf69d837b35ca6d238">m_defined</a> {false}</td></tr>
+<tr class="separator:a27f4405dacee92bf69d837b35ca6d238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a402275e8f3db925ba4fb6e60e391b333"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a402275e8f3db925ba4fb6e60e391b333">&#9670;&nbsp;</a></span>IntVector</h2>
+<a id="af6874dec9cbf05e59a6bc7367c5d22f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6874dec9cbf05e59a6bc7367c5d22f7">&#9670;&nbsp;</a></span>IdCPU</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::<a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a> =  <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, Allocator&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::<a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a> =  <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt;uint64_t, Allocator&lt;uint64_t&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ab3198bb12bd084d439c9b75f4f76c0ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3198bb12bd084d439c9b75f4f76c0ca">&#9670;&nbsp;</a></span>RealVector</h2>
+<a id="af1be308a287422ae2a6580556249eb3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1be308a287422ae2a6580556249eb3d">&#9670;&nbsp;</a></span>IntVector</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::<a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a> =  <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt;ParticleReal, Allocator&lt;ParticleReal&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::<a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a> =  <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, Allocator&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17a7383c365c4e4f4c6fd7eed23e8c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a7383c365c4e4f4c6fd7eed23e8c59">&#9670;&nbsp;</a></span>RealVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::<a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a> =  <a class="el" href="classamrex_1_1PODVector.html">amrex::PODVector</a>&lt;ParticleReal, Allocator&lt;ParticleReal&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,19 +246,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab198677876af6342b7811a2dd6bbed6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab198677876af6342b7811a2dd6bbed6e">&#9670;&nbsp;</a></span>define()</h2>
+<a id="aad692d209aa517fa028bd98aa14f0b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad692d209aa517fa028bd98aa14f0b96">&#9670;&nbsp;</a></span>define()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::define </td>
+          <td class="memname">void <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::define </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>a_num_runtime_real</em>, </td>
@@ -258,19 +284,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a9cd10b883dfbaa396d69935cf9783596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cd10b883dfbaa396d69935cf9783596">&#9670;&nbsp;</a></span>empty()</h2>
+<a id="a193e31f7db819b274b09730561007716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a193e31f7db819b274b09730561007716">&#9670;&nbsp;</a></span>empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::empty </td>
+          <td class="memname">bool <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -283,23 +309,23 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 </table>
 </div><div class="memdoc">
 
-<p>Returns whether the SoA is empty (i.e. has <a class="el" href="structamrex_1_1StructOfArrays.html#a480b74499d8a9eafa9c81d5404287c80" title="Returns the total number of particles (real and neighbor)">size()</a> == 0) </p>
+<p>Returns whether the SoA is empty (i.e. has <a class="el" href="structamrex_1_1StructOfArrays.html#ae0e85fbd1e4fa4bb5a42340a9f43f725" title="Returns the total number of particles (real and neighbor)">size()</a> == 0) </p>
 
 </div>
 </div>
-<a id="a0713765da8db746084c4b0d7d9e3230b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0713765da8db746084c4b0d7d9e3230b">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[1/4]</span></h2>
+<a id="a0dcfe0eee137e2a2d22126d2fbda1fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcfe0eee137e2a2d22126d2fbda1fcd">&#9670;&nbsp;</a></span>GetIdCPUData() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>, NInt&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetIntData </td>
+          <td class="memname"><a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetIdCPUData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -314,19 +340,74 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a32f1b56e5d68299fc49813648903e884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32f1b56e5d68299fc49813648903e884">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[2/4]</span></h2>
+<a id="aaf532986a54772ea640a2ab38b7cff9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf532986a54772ea640a2ab38b7cff9e">&#9670;&nbsp;</a></span>GetIdCPUData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>, NInt&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetIntData </td>
+          <td class="memname">const <a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetIdCPUData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get access to the particle id/cpu Arrays </p>
+
+</div>
+</div>
+<a id="a2086bc5faf11d372ebcbe728e46c19d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2086bc5faf11d372ebcbe728e46c19d9">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>, NInt&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetIntData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a296f7ff58cbcaa84b993ba66b8374e07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a296f7ff58cbcaa84b993ba66b8374e07">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>, NInt&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetIntData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -342,19 +423,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="abf1c48c61fb3ccc48c3663e987b6aed3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf1c48c61fb3ccc48c3663e987b6aed3">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[3/4]</span></h2>
+<a id="ab48f25cece8baf87dfe542bbdb53cf13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48f25cece8baf87dfe542bbdb53cf13">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetIntData </td>
+          <td class="memname"><a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetIntData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -377,19 +458,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="abbe15736b28057529d48ed51ff290b99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbe15736b28057529d48ed51ff290b99">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[4/4]</span></h2>
+<a id="a172af3e9e6cc7eeee5093772634020dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172af3e9e6cc7eeee5093772634020dd">&#9670;&nbsp;</a></span>GetIntData() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetIntData </td>
+          <td class="memname">const <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetIntData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -413,19 +494,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a1dfdbf37585cc21bbdcdbd94145b7a09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dfdbf37585cc21bbdcdbd94145b7a09">&#9670;&nbsp;</a></span>getNumNeighbors()</h2>
+<a id="a0c9d45bcfbc55a087faa7c61ecd5c3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9d45bcfbc55a087faa7c61ecd5c3c5">&#9670;&nbsp;</a></span>getNumNeighbors()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::getNumNeighbors </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::getNumNeighbors </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -440,19 +521,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="aaa669dc405e332237db26feb68ffb257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa669dc405e332237db26feb68ffb257">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[1/4]</span></h2>
+<a id="a44390e5c68da1d50f5536428bf7da802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44390e5c68da1d50f5536428bf7da802">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>, NReal&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetRealData </td>
+          <td class="memname">std::array&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>, NReal&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetRealData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -467,19 +548,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a852422beff887d7d8d82cb21e7190dce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a852422beff887d7d8d82cb21e7190dce">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[2/4]</span></h2>
+<a id="a86408aeae996a4c711dca10a4d7cbc4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86408aeae996a4c711dca10a4d7cbc4e">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::array&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>, NReal&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetRealData </td>
+          <td class="memname">const std::array&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>, NReal&gt;&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetRealData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -495,19 +576,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a10c0a0dea4cddd7bfec98c2f14a2292e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10c0a0dea4cddd7bfec98c2f14a2292e">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[3/4]</span></h2>
+<a id="ac2d7e9441c59e88b42978df7d9d1817c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d7e9441c59e88b42978df7d9d1817c">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetRealData </td>
+          <td class="memname"><a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetRealData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -530,19 +611,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a76f073678406c1191acd44dd1cf562d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76f073678406c1191acd44dd1cf562d1">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[4/4]</span></h2>
+<a id="ac4a15a6ca35075933960a3c28f1d3581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a15a6ca35075933960a3c28f1d3581">&#9670;&nbsp;</a></span>GetRealData() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::GetRealData </td>
+          <td class="memname">const <a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>&amp; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::GetRealData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -565,19 +646,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="ae6c1e19e9551116263efb5381f3f6bb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6c1e19e9551116263efb5381f3f6bb7">&#9670;&nbsp;</a></span>intarray()</h2>
+<a id="a5f25acba9b5d155bac10a12a0facb168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f25acba9b5d155bac10a12a0facb168">&#9670;&nbsp;</a></span>idcpuarray()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>*, NInt&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::intarray </td>
+          <td class="memname">uint64_t* <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::idcpuarray </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -592,19 +673,46 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a812e8db38b02a923e33de9d31a4978ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a812e8db38b02a923e33de9d31a4978ba">&#9670;&nbsp;</a></span>NumIntComps()</h2>
+<a id="aa458068c84a4240f72d3b1dd1fa59c9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa458068c84a4240f72d3b1dd1fa59c9e">&#9670;&nbsp;</a></span>intarray()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::NumIntComps </td>
+          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>*, NInt&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::intarray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8037383212b93e6a701d263167baa31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8037383212b93e6a701d263167baa31">&#9670;&nbsp;</a></span>NumIntComps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::NumIntComps </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -619,19 +727,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a2dcab6a884a05d6548547b8359758611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dcab6a884a05d6548547b8359758611">&#9670;&nbsp;</a></span>numNeighborParticles()</h2>
+<a id="afaecde6af6e4779bf8bb2d786dec40fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaecde6af6e4779bf8bb2d786dec40fd">&#9670;&nbsp;</a></span>numNeighborParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::numNeighborParticles </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::numNeighborParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -648,19 +756,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="aed3ffbe932f69885df6a16a067758eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed3ffbe932f69885df6a16a067758eed">&#9670;&nbsp;</a></span>numParticles()</h2>
+<a id="a82f411b26eab317ad15c998f4a72e863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f411b26eab317ad15c998f4a72e863">&#9670;&nbsp;</a></span>numParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::numParticles </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::numParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -677,19 +785,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a910364653d0aee372ea5d30dbd98e34c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a910364653d0aee372ea5d30dbd98e34c">&#9670;&nbsp;</a></span>NumRealComps()</h2>
+<a id="a6b104504a3540a44182a1ad408d5cfa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b104504a3540a44182a1ad408d5cfa7">&#9670;&nbsp;</a></span>NumRealComps()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::NumRealComps </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::NumRealComps </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -704,19 +812,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="ab35d588a41d6e7d2c14ae957ea8d5d99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab35d588a41d6e7d2c14ae957ea8d5d99">&#9670;&nbsp;</a></span>numRealParticles()</h2>
+<a id="ac6d3cee84ea6fbae0bf95bcd36c536fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d3cee84ea6fbae0bf95bcd36c536fa">&#9670;&nbsp;</a></span>numRealParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::numRealParticles </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::numRealParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -733,19 +841,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a9dab7a711b3b967a56646e6c30ae5904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dab7a711b3b967a56646e6c30ae5904">&#9670;&nbsp;</a></span>numTotalParticles()</h2>
+<a id="a15e05a661b50a2637a764ccadfb23f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e05a661b50a2637a764ccadfb23f53">&#9670;&nbsp;</a></span>numTotalParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::numTotalParticles </td>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::numTotalParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -762,19 +870,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a04e229de2a830b849d1900050b383f8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04e229de2a830b849d1900050b383f8d">&#9670;&nbsp;</a></span>realarray()</h2>
+<a id="a5f4ecbdbcb5f14edb160e4404b16c3e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4ecbdbcb5f14edb160e4404b16c3e4">&#9670;&nbsp;</a></span>realarray()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;ParticleReal*, NReal&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::realarray </td>
+          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;ParticleReal*, NReal&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::realarray </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -789,19 +897,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="abe8cb769562c897b6ab86683cf0d716e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe8cb769562c897b6ab86683cf0d716e">&#9670;&nbsp;</a></span>resize()</h2>
+<a id="a4c13115f149d9491c7b58e8086d6d4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c13115f149d9491c7b58e8086d6d4b5">&#9670;&nbsp;</a></span>resize()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::resize </td>
+          <td class="memname">void <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::resize </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>count</em></td><td>)</td>
@@ -817,19 +925,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a6f04d6f94a8930f6be295a36603ca7d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f04d6f94a8930f6be295a36603ca7d2">&#9670;&nbsp;</a></span>setNumNeighbors()</h2>
+<a id="a06cb98e187a840616cfd0c681f596ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06cb98e187a840616cfd0c681f596ab2">&#9670;&nbsp;</a></span>setNumNeighbors()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::setNumNeighbors </td>
+          <td class="memname">void <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::setNumNeighbors </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>num_neighbors</em></td><td>)</td>
@@ -845,19 +953,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a480b74499d8a9eafa9c81d5404287c80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a480b74499d8a9eafa9c81d5404287c80">&#9670;&nbsp;</a></span>size()</h2>
+<a id="ae0e85fbd1e4fa4bb5a42340a9f43f725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e85fbd1e4fa4bb5a42340a9f43f725">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::size </td>
+          <td class="memname">std::size_t <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -875,19 +983,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a031f0da90c07aa74bbb399db39b378a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a031f0da90c07aa74bbb399db39b378a8">&#9670;&nbsp;</a></span>m_defined</h2>
+<a id="a27f4405dacee92bf69d837b35ca6d238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f4405dacee92bf69d837b35ca6d238">&#9670;&nbsp;</a></span>m_defined</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::m_defined {false}</td>
+          <td class="memname">bool <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_defined {false}</td>
         </tr>
       </table>
   </td>
@@ -899,19 +1007,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a64d3bf6ebedba481365cd4a9d0072ce9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64d3bf6ebedba481365cd4a9d0072ce9">&#9670;&nbsp;</a></span>m_idata</h2>
+<a id="a017be53b64346d557da975c2a473a5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017be53b64346d557da975c2a473a5a3">&#9670;&nbsp;</a></span>m_idata</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a>, NInt&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::m_idata</td>
+          <td class="memname">std::array&lt; <a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a>, NInt&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_idata</td>
         </tr>
       </table>
   </td>
@@ -923,35 +1031,19 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a7db5f7869add58ecbebac952fc75e1ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7db5f7869add58ecbebac952fc75e1ff">&#9670;&nbsp;</a></span>m_num_neighbor_particles</h2>
+<a id="a62679baf18972e398b3c6f5148fc9087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62679baf18972e398b3c6f5148fc9087">&#9670;&nbsp;</a></span>m_idcpu</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::m_num_neighbor_particles {0}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa9ae6d2054d75f3a9d34c3fb630e6804"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9ae6d2054d75f3a9d34c3fb630e6804">&#9670;&nbsp;</a></span>m_rdata</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>, NReal&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::m_rdata</td>
+          <td class="memname"><a class="el" href="structamrex_1_1StructOfArrays.html#af6874dec9cbf05e59a6bc7367c5d22f7">IdCPU</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_idcpu</td>
         </tr>
       </table>
   </td>
@@ -963,19 +1055,35 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="a7668bc0907c454a0959603288a2b9873"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7668bc0907c454a0959603288a2b9873">&#9670;&nbsp;</a></span>m_runtime_idata</h2>
+<a id="a8c77c12736c976f0848d534b810cdc34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c77c12736c976f0848d534b810cdc34">&#9670;&nbsp;</a></span>m_num_neighbor_particles</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_num_neighbor_particles {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaffa30601135a22b5e4f9ac283b06aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaffa30601135a22b5e4f9ac283b06aa1">&#9670;&nbsp;</a></span>m_rdata</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#a402275e8f3db925ba4fb6e60e391b333">IntVector</a> &gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::m_runtime_idata</td>
+          <td class="memname">std::array&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>, NReal&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_rdata</td>
         </tr>
       </table>
   </td>
@@ -987,19 +1095,43 @@ template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = Defau
 
 </div>
 </div>
-<a id="adefc562d67fd0e640e80a8ee068948a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adefc562d67fd0e640e80a8ee068948a5">&#9670;&nbsp;</a></span>m_runtime_rdata</h2>
+<a id="a10ad5fb2e51e43137e1b26ce70119735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ad5fb2e51e43137e1b26ce70119735">&#9670;&nbsp;</a></span>m_runtime_idata</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#ab3198bb12bd084d439c9b75f4f76c0ca">RealVector</a>&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator &gt;::m_runtime_rdata</td>
+          <td class="memname">std::vector&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#af1be308a287422ae2a6580556249eb3d">IntVector</a> &gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_runtime_idata</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a179e1b7074dc1c6f3fe55ee3222839de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179e1b7074dc1c6f3fe55ee3222839de">&#9670;&nbsp;</a></span>m_runtime_rdata</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NReal, int NInt, template&lt; class &gt; class Allocator = DefaultAllocator, bool use64BitIdCpu = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structamrex_1_1StructOfArrays.html#a17a7383c365c4e4f4c6fd7eed23e8c59">RealVector</a>&gt; <a class="el" href="structamrex_1_1StructOfArrays.html">amrex::StructOfArrays</a>&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;::m_runtime_rdata</td>
         </tr>
       </table>
   </td>

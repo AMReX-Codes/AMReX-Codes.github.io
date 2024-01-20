@@ -8,7 +8,7 @@ var structamrex_1_1ParticleTile =
     [ "ParticleType", "structamrex_1_1ParticleTile.html#a806d428c54ec86cc7e61edf954105f6f", null ],
     [ "RealType", "structamrex_1_1ParticleTile.html#a043db0d4cd2205027b4308f459496b79", null ],
     [ "RealVector", "structamrex_1_1ParticleTile.html#adf1dfc735a7f9d3508e434da7e87b632", null ],
-    [ "SoA", "structamrex_1_1ParticleTile.html#aa1c3e53b94d58cccb5d29cf33dea056b", null ],
+    [ "SoA", "structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b", null ],
     [ "StorageParticleType", "structamrex_1_1ParticleTile.html#a00d52f45cf7e8a4b3c30cfb48e7bca78", null ],
     [ "SuperParticleType", "structamrex_1_1ParticleTile.html#acdece46bb48b940977bf9efe198779c4", null ],
     [ "ParticleTile", "structamrex_1_1ParticleTile.html#a070fcef33e908cba36039a6fdf1d1c53", null ],

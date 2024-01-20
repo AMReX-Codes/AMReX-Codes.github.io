@@ -10,5 +10,8 @@ var AMReX__Extension_8H =
     [ "AMREX_NO_UNIQUE_ADDRESS", "AMReX__Extension_8H.html#a4239dc930ea8f47a20ebf1aca31dc602", null ],
     [ "AMREX_NODISCARD", "AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717", null ],
     [ "AMREX_PRAGMA_SIMD", "AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b", null ],
-    [ "AMREX_RESTRICT", "AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58", null ]
+    [ "AMREX_RESTRICT", "AMReX__Extension_8H.html#a97eafbdde3320b2e8981a1d1d3936f58", null ],
+    [ "AMREX_TO_STRING", "AMReX__Extension_8H.html#ad2c72e8e91eb7b58825d655ce1f8e4e3", null ],
+    [ "AMREX_TO_STRING_HELPER", "AMReX__Extension_8H.html#ad364164004a90add06331ef7114e2f6f", null ],
+    [ "AMREX_UNROLL_LOOP", "AMReX__Extension_8H.html#a25a2291e5a93fd75b0b94b0a5d0826fd", null ]
 ];

@@ -482,6 +482,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa1f8f3a9048c2da47559555e5cc7e43"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#afa1f8f3a9048c2da47559555e5cc7e43">atomicAdd</a> (const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;src, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;srcbox, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;destbox, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp=1) noexcept</td></tr>
 <tr class="memdesc:afa1f8f3a9048c2da47559555e5cc7e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomically add srcbox region of src FAB to destbox region of this FAB. The srcbox and destbox must be same size.  <a href="classamrex_1_1BaseFab.html#afa1f8f3a9048c2da47559555e5cc7e43">More...</a><br /></td></tr>
 <tr class="separator:afa1f8f3a9048c2da47559555e5cc7e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1bc23a87d40ff55f8fcec600b0054b"><td class="memTemplParams" colspan="2">template&lt;RunOn run_on&gt; </td></tr>
+<tr class="memitem:a1a1bc23a87d40ff55f8fcec600b0054b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a1a1bc23a87d40ff55f8fcec600b0054b">lockAdd</a> (const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;src, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;srcbox, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;destbox, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp) noexcept</td></tr>
+<tr class="memdesc:a1a1bc23a87d40ff55f8fcec600b0054b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomically add srcbox region of src FAB to destbox region of this FAB. The srcbox and destbox must be same size. When OMP is on, this uses OMP locks in the implementation and it's usually faster than atomicAdd.  <a href="classamrex_1_1BaseFab.html#a1a1bc23a87d40ff55f8fcec600b0054b">More...</a><br /></td></tr>
+<tr class="separator:a1a1bc23a87d40ff55f8fcec600b0054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051da6643de6a48ee66ec046d560033a"><td class="memTemplParams" colspan="2">template&lt;RunOn run_on&gt; </td></tr>
 <tr class="memitem:a051da6643de6a48ee66ec046d560033a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a051da6643de6a48ee66ec046d560033a">saxpy</a> (T a, const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;x, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;srcbox, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;destbox, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> srccomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> destcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> numcomp=1) noexcept</td></tr>
 <tr class="memdesc:a051da6643de6a48ee66ec046d560033a"><td class="mdescLeft">&#160;</td><td class="mdescRight">FAB SAXPY (y[i] &lt;- y[i] + a * x[i]), in place.  <a href="classamrex_1_1BaseFab.html#a051da6643de6a48ee66ec046d560033a">More...</a><br /></td></tr>
@@ -786,6 +790,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a4e65169d29942cf3adde870d63a91834"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a4e65169d29942cf3adde870d63a91834">shared_memory</a> = false</td></tr>
 <tr class="memdesc:a4e65169d29942cf3adde870d63a91834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the memory allocated in shared memory?  <a href="classamrex_1_1BaseFab.html#a4e65169d29942cf3adde870d63a91834">More...</a><br /></td></tr>
 <tr class="separator:a4e65169d29942cf3adde870d63a91834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b228a35989fd32f481b43adfa43a2ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a0b228a35989fd32f481b43adfa43a2ec">alloc_stream</a> {}</td></tr>
+<tr class="separator:a0b228a35989fd32f481b43adfa43a2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -4315,6 +4321,72 @@ template&lt;RunOn run_on&gt; </div>
 </div><div class="memdoc">
 
 <p>Version of <a class="el" href="classamrex_1_1BaseFab.html#af49fda526f1f93ba846db273906cd29b" title="Linear interpolation / extrapolation. Result is (t2-t)/(t2-t1)*f1 + (t-t1)/(t2-t1)*f2 Data is taken f...">linInterp()</a> in which b, b1, &amp; b2 are the same. </p>
+
+</div>
+</div>
+<a id="a1a1bc23a87d40ff55f8fcec600b0054b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a1bc23a87d40ff55f8fcec600b0054b">&#9670;&nbsp;</a></span>lockAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;RunOn run_on&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp; <a class="el" href="classamrex_1_1BaseFab.html">amrex::BaseFab</a>&lt; T &gt;::lockAdd </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;&#160;</td>
+          <td class="paramname"><em>srcbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;&#160;</td>
+          <td class="paramname"><em>destbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>srccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>destcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>numcomp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atomically add srcbox region of src FAB to destbox region of this FAB. The srcbox and destbox must be same size. When OMP is on, this uses OMP locks in the implementation and it's usually faster than atomicAdd. </p>
 
 </div>
 </div>
@@ -8936,6 +9008,30 @@ template&lt;class U &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0b228a35989fd32f481b43adfa43a2ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b228a35989fd32f481b43adfa43a2ec">&#9670;&nbsp;</a></span>alloc_stream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> <a class="el" href="classamrex_1_1BaseFab.html">amrex::BaseFab</a>&lt; T &gt;::alloc_stream {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8e95d8cfaadfe53080ae0092b53202fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e95d8cfaadfe53080ae0092b53202fb">&#9670;&nbsp;</a></span>domain</h2>
 

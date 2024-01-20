@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Types of Profiling &mdash; amrex 23.00-dev documentation</title>
+  <title>Types of Profiling &mdash; amrex 24.02-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -38,7 +38,7 @@
             amrex
           </a>
               <div class="version">
-                23.00-dev
+                24.02-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -74,6 +74,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Types of Profiling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tiny-profiling">Tiny Profiling</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#output">Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hot-spots-and-load-balance">Hot Spots and Load Balance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#full-profiling">Full Profiling</a><ul>
@@ -200,6 +201,38 @@ timers as possible, such as immediately before or after writing a checkpoint.</p
 it is also recommended to wrap any <code class="docutils literal notranslate"><span class="pre">BL_PROFILE_TINY_FLUSH();</span></code> calls in
 informative <code class="docutils literal notranslate"><span class="pre">amrex::Print()</span></code> lines to ensure accurate identification of each
 set of timers.</p>
+</section>
+<section id="hot-spots-and-load-balance">
+<h3>Hot Spots and Load Balance<a class="headerlink" href="#hot-spots-and-load-balance" title="Permalink to this heading"></a></h3>
+<p>The output of TinyProfiler can help us to identify hot spots. For example,
+the following output shows the top three hot spots of a linear solver test
+running on 4 MPI processes.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">Name                                         NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %</span>
+<span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">MLPoisson::Fsmooth()                            560     0.4775     0.4793     0.4815  34.97%</span>
+<span class="go">MLPoisson::Fapply()                             114     0.1103      0.113     0.1167   8.48%</span>
+<span class="go">FabArray::Xpay()                                109        0.1     0.1013     0.1038   7.54%</span>
+</pre></div>
+</div>
+<p>In this test, there are 16 boxes evenly distributed among 4 MPI processes. The
+output above shows that the load is perfectly balanced. However, if the load
+is not balanced, the results can be very different and sometimes
+misleading. For example, if we put 2, 2, 6 and 6 boxes on processes 0, 1, 2
+and 3, respectively, the top three hot spots now include two MPI
+communication functions, <code class="docutils literal notranslate"><span class="pre">FillBoundary</span></code> and <code class="docutils literal notranslate"><span class="pre">ParallelCopy</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">Name                                         NCalls  Excl. Min  Excl. Avg  Excl. Max   Max %</span>
+<span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">FillBoundary_finish()                           607    0.01568     0.3367     0.6574  41.97%</span>
+<span class="go">MLPoisson::Fsmooth()                            560     0.2133     0.4047     0.5973  38.13%</span>
+<span class="go">FabArray::ParallelCopy_finish()                 231   0.002977    0.09748     0.1895  12.10%</span>
+</pre></div>
+</div>
+<p>The reason that the MPI communication appears slow is that the lightly
+loaded processes have to wait for messages sent by the heavily loaded
+processes. See also <a class="reference internal" href="#sec-profopts"><span class="std std-ref">Profiling Options</span></a> for a diagnostic option that may
+provide more insight on the load imbalance.</p>
 </section>
 </section>
 <section id="full-profiling">

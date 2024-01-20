@@ -4,6 +4,8 @@ var AMReX__TypeTraits_8H =
     [ "IsBaseFab< D, typename std::enable_if< std::is_base_of< BaseFab< typename D::value_type >, D >::value >::type >", "structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html", null ],
     [ "IsFabArray", "structamrex_1_1IsFabArray.html", null ],
     [ "IsFabArray< D, typename std::enable_if< std::is_base_of< FabArray< typename D::FABType::value_type >, D >::value >::type >", "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html", null ],
+    [ "IsMultiFabLike", "structamrex_1_1IsMultiFabLike.html", null ],
+    [ "IsMultiFabLike< M, std::enable_if_t< IsFabArray_v< M > &&IsBaseFab_v< typename M::fab_type > > >", "structamrex_1_1IsMultiFabLike_3_01M_00_01std_1_1enable__if__t_3_01IsFabArray__v_3_01M_01_4_01_6_1b79f12933d87e47a77b2c36839b7d8d.html", null ],
     [ "HasAtomicAdd", "structamrex_1_1HasAtomicAdd.html", null ],
     [ "HasAtomicAdd< int >", "structamrex_1_1HasAtomicAdd_3_01int_01_4.html", null ],
     [ "HasAtomicAdd< long >", "structamrex_1_1HasAtomicAdd_3_01long_01_4.html", null ],
@@ -40,5 +42,6 @@ var AMReX__TypeTraits_8H =
     [ "Negation", "AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa", null ],
     [ "Void_t", "AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94", null ],
     [ "IsBaseFab_v", "AMReX__TypeTraits_8H.html#aa264b7308102fabb2a7356eea1800644", null ],
-    [ "IsFabArray_v", "AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515", null ]
+    [ "IsFabArray_v", "AMReX__TypeTraits_8H.html#a36e5941ad0614ee76ddb49b9bcc2c515", null ],
+    [ "IsMultiFabLike_v", "AMReX__TypeTraits_8H.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce", null ]
 ];

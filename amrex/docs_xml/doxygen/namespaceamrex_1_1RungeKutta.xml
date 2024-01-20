@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="159" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="159" bodyend="181"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="158" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="158" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1a8375e990286224b1183ba166695978e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="197" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="197" bodyend="231"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="196" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="196" bodyend="230"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1af07c90c5bce95ed34b87a09e4d45f7b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -381,13 +381,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="247" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="247" bodyend="288"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="246" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="246" bodyend="287"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Functions for Runge-Kutta methods. </para>
     </briefdescription>
     <detaileddescription>
+<para>This namespace <ref refid="namespaceamrex_1_1RungeKutta" kindref="compound">RungeKutta</ref> has functions for a number RK methods, RK2, RK3 and RK4. Here, RK2 refers to the explicit trapezoid rule, RK3 refers to the SSPRK3 (<ulink url="https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Third-order_Strong_Stability_Preserving_Runge-Kutta_(SSPRK3)">https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Third-order_Strong_Stability_Preserving_Runge-Kutta_(SSPRK3)</ulink>), and RK4 is the classical fourth-order method (<ulink url="https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Classic_fourth-order_method">https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods#Classic_fourth-order_method</ulink>). The function templates take the old data in FabArray/MultiFab as input, and evolve the system for one time step. The result is stored in another FabArray/MultiFab. These two FabArrays must have ghost cells if they are needed for evaluating the right-hand side. The functions take three callable objects for computing the right-hand side, filling ghost cells, and optionally post-processing RK stage results. For RK3 and RK4, they also need a callable object for storing the data needed for filling coarse/fine boundaries in AMR simulations.</para>
+<para>The callable object for right-hand side has the signature of <computeroutput>void(int stage, MF&amp; dudt, MF const&amp; u, Real t, Real dt)</computeroutput>, where <computeroutput>stage</computeroutput> is the RK stage number starting from 1, <computeroutput>dudt</computeroutput> is the output, <computeroutput>u</computeroutput> is the input, <computeroutput>t</computeroutput> is the first-order approximate time of the stage, and <computeroutput>dt</computeroutput> is the sub-time step, which can be used for reflux operations in AMR simulations.</para>
+<para>The callable object for filling ghost cells has the signature of <computeroutput>void(int stage, MF&amp; u, Real t)</computeroutput>, where <computeroutput>stage</computeroutput> is the RK stage number starting from 1, <computeroutput>u</computeroutput> is a FabArray/MultiFab whose ghost cells need to be filled, and <computeroutput>t</computeroutput> is the first-order approximate time of the data at that stage. The <ref refid="classamrex_1_1FillPatcher" kindref="compound">FillPatcher</ref> class can be useful for implementing such a callable. See <ref refid="classamrex_1_1AmrLevel_1a95aea02fe7abbf3d1e5cd58ee5ff7d41" kindref="member">AmrLevel::RK</ref> for an example.</para>
+<para>The callable object for post-processing stage results is optional. It&apos;s no-op by default. Its function signature is <computeroutput>void(int stage, MF&amp; u)</computeroutput>, where <computeroutput>stage</computeroutput> is the RK stage number and <computeroutput>u</computeroutput> is the result of that stage.</para>
+<para>For RK3 and RK4, one must also provide a callable object with the signature of <computeroutput>void(Array&lt;MF,order&gt; const&amp; rkk)</computeroutput>, where <computeroutput>order</computeroutput> is the RK order and <computeroutput>rkk</computeroutput> contains the right-hand side at all the RK stages. The <ref refid="classamrex_1_1FillPatcher" kindref="compound">FillPatcher</ref> class can be useful for implementing such a callable. See <ref refid="classamrex_1_1AmrLevel_1a95aea02fe7abbf3d1e5cd58ee5ff7d41" kindref="member">AmrLevel::RK</ref> for an example. </para>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="7" column="1"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="49" column="1"/>
   </compounddef>
 </doxygen>

@@ -9,6 +9,7 @@ var AMReX__ParticleUtil_8H =
     [ "enforcePeriodic", "AMReX__ParticleUtil_8H.html#a8d4982679d65bfe0ea15633d2c6bbca1", null ],
     [ "EnsureThreadSafeTiles", "AMReX__ParticleUtil_8H.html#a2a6f51f01e9f0350a8b447ee451d0efb", null ],
     [ "getParticleCell", "AMReX__ParticleUtil_8H.html#a6e7a7d55a9760a9b62a5675badced0e1", null ],
+    [ "getParticleCell", "AMReX__ParticleUtil_8H.html#a04427e35cff35a816668c7954717bac3", null ],
     [ "getParticleGrid", "AMReX__ParticleUtil_8H.html#a7137fe4c56ae26940acfef9783458ec1", null ],
     [ "getTileIndex", "AMReX__ParticleUtil_8H.html#aede00a5fe66df6418eb44590a33296a2", null ],
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#acad483c5f0e30f9cd471ad05e1920320", null ],

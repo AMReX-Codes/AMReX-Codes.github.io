@@ -81,8 +81,6 @@ var classamrex_1_1ParticleContainer__impl =
     [ "InitOnePerCell", "classamrex_1_1ParticleContainer__impl.html#aeb89e96cb9e2697c5ffeb7b7c99d16c9", null ],
     [ "InitRandom", "classamrex_1_1ParticleContainer__impl.html#a77e8bc7ae893a6e46b8feae5e1c4f7df", null ],
     [ "InitRandomPerBox", "classamrex_1_1ParticleContainer__impl.html#afd47ecec7c2df08b3b44e73601cc5944", null ],
-    [ "Interpolate", "classamrex_1_1ParticleContainer__impl.html#ad63342357e709b83e4bfde15bcf89329", null ],
-    [ "InterpolateSingleLevel", "classamrex_1_1ParticleContainer__impl.html#a29b6422b2431a0aa570db8356f3e5209", null ],
     [ "locateParticle", "classamrex_1_1ParticleContainer__impl.html#adbb82df3ca78abd2e90644d15b35e464", null ],
     [ "locateParticle", "classamrex_1_1ParticleContainer__impl.html#a721df7b847160e02567c879da742f2cd", null ],
     [ "make_alike", "classamrex_1_1ParticleContainer__impl.html#a2dddaa556802219ee7e7e7898d7b811c", null ],

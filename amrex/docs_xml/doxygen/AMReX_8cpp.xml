@@ -42,7 +42,7 @@
       <node id="141">
         <label>list</label>
       </node>
-      <node id="133">
+      <node id="134">
         <label>AMReX_BLFort.H</label>
         <link refid="AMReX__BLFort_8H"/>
         <childnode refid="3" relation="include">
@@ -986,7 +986,7 @@
         <childnode refid="68" relation="include">
         </childnode>
       </node>
-      <node id="134">
+      <node id="133">
         <label>AMReX_MemPool.H</label>
         <link refid="AMReX__MemPool_8H"/>
         <childnode refid="3" relation="include">
@@ -1554,6 +1554,10 @@
         </childnode>
         <childnode refid="36" relation="include">
         </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
         <childnode refid="37" relation="include">
         </childnode>
         <childnode refid="38" relation="include">
@@ -1645,7 +1649,7 @@
         </childnode>
         <childnode refid="49" relation="include">
         </childnode>
-        <childnode refid="133" relation="include">
+        <childnode refid="134" relation="include">
         </childnode>
         <childnode refid="78" relation="include">
         </childnode>
@@ -1657,7 +1661,7 @@
         </childnode>
         <childnode refid="47" relation="include">
         </childnode>
-        <childnode refid="134" relation="include">
+        <childnode refid="133" relation="include">
         </childnode>
         <childnode refid="135" relation="include">
         </childnode>
@@ -2691,7 +2695,7 @@
 <codeline lineno="462"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="463"><highlight class="normal"></highlight></codeline>
 <codeline lineno="464"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1OpenMP_1a85b3cb8e31b3a821d9ee9bcc5a2fb6d9" kindref="member">amrex::OpenMP::init_threads</ref>();</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a187cdb4f4273fdf9bcad01ac8e3fcc4d" kindref="member">amrex::OpenMP::Initialize</ref>();</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"></highlight></codeline>
 <codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>status<sp/>output</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1system_1ae936d602185921239af1aa72bdec1cbd" kindref="member">system::verbose</ref><sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
@@ -3046,99 +3050,103 @@
 <codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8117ae9942e01445ea7fe62d2f190c64" kindref="member">Gpu::Device::Finalize</ref>();</highlight></codeline>
 <codeline lineno="818"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="819"><highlight class="normal"></highlight></codeline>
-<codeline lineno="820"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_UPCXX)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/>upcxx::finalize();</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8117ae9942e01445ea7fe62d2f190c64" kindref="member">amrex::OpenMP::Finalize</ref>();</highlight></codeline>
 <codeline lineno="822"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="823"><highlight class="normal"></highlight></codeline>
-<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set_new_handler(prev_new_handler);</highlight></codeline>
-<codeline lineno="825"><highlight class="normal"></highlight></codeline>
-<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1add2f0f36ce80f2f3934e3a8ec2a966df" kindref="member">amrex::OutStream</ref>().precision(prev_out_precision);</highlight></codeline>
-<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1e213ab52cdac41e691ab49370b30a34" kindref="member">amrex::ErrorStream</ref>().precision(prev_err_precision);</highlight></codeline>
-<codeline lineno="828"><highlight class="normal"></highlight></codeline>
-<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_ioproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>();</highlight></codeline>
-<codeline lineno="830"><highlight class="normal"></highlight></codeline>
-<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>shut<sp/>down<sp/>MPI<sp/>if<sp/>GASNet<sp/>is<sp/>still<sp/>using<sp/>MPI<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="832"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GASNET_CONDUIT_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a990d0a17b08dcd68a0d77a7b35cfebaf" kindref="member">ParallelDescriptor::EndParallel</ref>();</highlight></codeline>
-<codeline lineno="834"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="835"><highlight class="normal"></highlight></codeline>
-<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1system_1ae936d602185921239af1aa72bdec1cbd" kindref="member">amrex::system::verbose</ref><sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>is_ioproc)<sp/>{</highlight></codeline>
-<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1add2f0f36ce80f2f3934e3a8ec2a966df" kindref="member">amrex::OutStream</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;AMReX<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1ad4158723bb78d3d5f19e396a20c0ce2d" kindref="member">amrex::Version</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>finalized&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="839"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="840"><highlight class="normal"></highlight></codeline>
-<codeline lineno="841"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="842"><highlight class="normal"><ref refid="namespaceamrex_1add2f0f36ce80f2f3934e3a8ec2a966df" kindref="member">amrex::OutStream</ref><sp/>()</highlight></codeline>
-<codeline lineno="843"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="namespaceamrex_1_1system_1a94b8de2ec8af3b8975c7d280254f29cf" kindref="member">system::osout</ref>;</highlight></codeline>
-<codeline lineno="845"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="846"><highlight class="normal"></highlight></codeline>
-<codeline lineno="847"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><ref refid="namespaceamrex_1a1e213ab52cdac41e691ab49370b30a34" kindref="member">amrex::ErrorStream</ref><sp/>()</highlight></codeline>
-<codeline lineno="849"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="namespaceamrex_1_1system_1a1ec641702551464f7feaa4f4f225f2d7" kindref="member">system::oserr</ref>;</highlight></codeline>
-<codeline lineno="851"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="852"><highlight class="normal"></highlight></codeline>
-<codeline lineno="853"><highlight class="normal">std::string</highlight></codeline>
-<codeline lineno="854"><highlight class="normal"><ref refid="namespaceamrex_1a0b2451baea738a8717530466c13f37fe" kindref="member">amrex::get_command</ref><sp/>()</highlight></codeline>
-<codeline lineno="855"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>command_line;</highlight></codeline>
-<codeline lineno="857"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="858"><highlight class="normal"></highlight></codeline>
-<codeline lineno="859"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="860"><highlight class="normal"><ref refid="namespaceamrex_1a0f3d8f755663a93f3953f7cda5590cac" kindref="member">amrex::command_argument_count</ref><sp/>()</highlight></codeline>
-<codeline lineno="861"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(command_arguments.size())-1;</highlight></codeline>
-<codeline lineno="863"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="864"><highlight class="normal"></highlight></codeline>
-<codeline lineno="865"><highlight class="normal">std::string</highlight></codeline>
-<codeline lineno="866"><highlight class="normal"><ref refid="namespaceamrex_1a566544464dedd2d70fe9969fc79658cd" kindref="member">amrex::get_command_argument</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number)</highlight></codeline>
-<codeline lineno="867"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(number<sp/>&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(command_arguments.size()))<sp/>{</highlight></codeline>
-<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>command_arguments[number];</highlight></codeline>
-<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string();</highlight></codeline>
-<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="873"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="874"><highlight class="normal"></highlight></codeline>
-<codeline lineno="875"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref></highlight></codeline>
-<codeline lineno="876"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="877"><highlight class="normal"></highlight></codeline>
-<codeline lineno="878"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1ac0662c8a56afbc04493004cebe490826" kindref="member">AMReX::AMReX</ref><sp/>()</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_geom(new<sp/>Geometry())</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_UPCXX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/>upcxx::finalize();</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="827"><highlight class="normal"></highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set_new_handler(prev_new_handler);</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"></highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1add2f0f36ce80f2f3934e3a8ec2a966df" kindref="member">amrex::OutStream</ref>().precision(prev_out_precision);</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1e213ab52cdac41e691ab49370b30a34" kindref="member">amrex::ErrorStream</ref>().precision(prev_err_precision);</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"></highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_ioproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>();</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"></highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>shut<sp/>down<sp/>MPI<sp/>if<sp/>GASNet<sp/>is<sp/>still<sp/>using<sp/>MPI<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="836"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GASNET_CONDUIT_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a990d0a17b08dcd68a0d77a7b35cfebaf" kindref="member">ParallelDescriptor::EndParallel</ref>();</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="839"><highlight class="normal"></highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1system_1ae936d602185921239af1aa72bdec1cbd" kindref="member">amrex::system::verbose</ref><sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>is_ioproc)<sp/>{</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1add2f0f36ce80f2f3934e3a8ec2a966df" kindref="member">amrex::OutStream</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;AMReX<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1ad4158723bb78d3d5f19e396a20c0ce2d" kindref="member">amrex::Version</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>finalized&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="843"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"></highlight></codeline>
+<codeline lineno="845"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><ref refid="namespaceamrex_1add2f0f36ce80f2f3934e3a8ec2a966df" kindref="member">amrex::OutStream</ref><sp/>()</highlight></codeline>
+<codeline lineno="847"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="namespaceamrex_1_1system_1a94b8de2ec8af3b8975c7d280254f29cf" kindref="member">system::osout</ref>;</highlight></codeline>
+<codeline lineno="849"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"></highlight></codeline>
+<codeline lineno="851"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><ref refid="namespaceamrex_1a1e213ab52cdac41e691ab49370b30a34" kindref="member">amrex::ErrorStream</ref><sp/>()</highlight></codeline>
+<codeline lineno="853"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="namespaceamrex_1_1system_1a1ec641702551464f7feaa4f4f225f2d7" kindref="member">system::oserr</ref>;</highlight></codeline>
+<codeline lineno="855"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"></highlight></codeline>
+<codeline lineno="857"><highlight class="normal">std::string</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><ref refid="namespaceamrex_1a0b2451baea738a8717530466c13f37fe" kindref="member">amrex::get_command</ref><sp/>()</highlight></codeline>
+<codeline lineno="859"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>command_line;</highlight></codeline>
+<codeline lineno="861"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="862"><highlight class="normal"></highlight></codeline>
+<codeline lineno="863"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><ref refid="namespaceamrex_1a0f3d8f755663a93f3953f7cda5590cac" kindref="member">amrex::command_argument_count</ref><sp/>()</highlight></codeline>
+<codeline lineno="865"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(command_arguments.size())-1;</highlight></codeline>
+<codeline lineno="867"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="868"><highlight class="normal"></highlight></codeline>
+<codeline lineno="869"><highlight class="normal">std::string</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><ref refid="namespaceamrex_1a566544464dedd2d70fe9969fc79658cd" kindref="member">amrex::get_command_argument</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number)</highlight></codeline>
+<codeline lineno="871"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(number<sp/>&lt;<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(command_arguments.size()))<sp/>{</highlight></codeline>
+<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>command_arguments[number];</highlight></codeline>
+<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string();</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="877"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"></highlight></codeline>
+<codeline lineno="879"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref></highlight></codeline>
 <codeline lineno="880"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="881"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="882"><highlight class="normal"></highlight></codeline>
-<codeline lineno="883"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1aadaaabd7881bbce62f2b282789482259" kindref="member">AMReX::~AMReX</ref><sp/>()</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"></highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1ac0662c8a56afbc04493004cebe490826" kindref="member">AMReX::AMReX</ref><sp/>()</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_geom(new<sp/>Geometry())</highlight></codeline>
 <codeline lineno="884"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AMReX_1a723c404098736351072f4a99daf9bddb" kindref="member">m_geom</ref>;</highlight></codeline>
-<codeline lineno="886"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="887"><highlight class="normal"></highlight></codeline>
-<codeline lineno="888"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="889"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1aacd757c228bab84f39dc148cc5777624" kindref="member">AMReX::push</ref><sp/>(AMReX*<sp/>pamrex)</highlight></codeline>
-<codeline lineno="890"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(<ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.begin(),<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end(),</highlight></codeline>
-<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;AMReX&gt;&amp;<sp/>x)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>return<sp/>x.get()<sp/>==<sp/>pamrex;<sp/>});</highlight></codeline>
-<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.emplace_back(pamrex);</highlight></codeline>
-<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r+1<sp/>!=<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1EB2_1adeed62ac81d87a16c489f15eb4b9e214" kindref="member">std::rotate</ref>(r,<sp/>r+1,<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end());</highlight></codeline>
-<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="899"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="900"><highlight class="normal"></highlight></codeline>
-<codeline lineno="901"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="902"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1a745d2d5f1157d1c3cb6b620f5544e01d" kindref="member">AMReX::erase</ref><sp/>(AMReX*<sp/>pamrex)</highlight></codeline>
-<codeline lineno="903"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(<ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.begin(),<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end(),</highlight></codeline>
-<codeline lineno="905"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;AMReX&gt;&amp;<sp/>x)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>return<sp/>x.get()<sp/>==<sp/>pamrex;<sp/>});</highlight></codeline>
-<codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.erase(r);</highlight></codeline>
-<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="910"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="911"><highlight class="normal"></highlight></codeline>
-<codeline lineno="912"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="885"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"></highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1aadaaabd7881bbce62f2b282789482259" kindref="member">AMReX::~AMReX</ref><sp/>()</highlight></codeline>
+<codeline lineno="888"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AMReX_1a723c404098736351072f4a99daf9bddb" kindref="member">m_geom</ref>;</highlight></codeline>
+<codeline lineno="890"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"></highlight></codeline>
+<codeline lineno="892"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1aacd757c228bab84f39dc148cc5777624" kindref="member">AMReX::push</ref><sp/>(AMReX*<sp/>pamrex)</highlight></codeline>
+<codeline lineno="894"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(<ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.begin(),<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end(),</highlight></codeline>
+<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;AMReX&gt;&amp;<sp/>x)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>return<sp/>x.get()<sp/>==<sp/>pamrex;<sp/>});</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.emplace_back(pamrex);</highlight></codeline>
+<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r+1<sp/>!=<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1EB2_1adeed62ac81d87a16c489f15eb4b9e214" kindref="member">std::rotate</ref>(r,<sp/>r+1,<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end());</highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="903"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="904"><highlight class="normal"></highlight></codeline>
+<codeline lineno="905"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><ref refid="classamrex_1_1AMReX_1a745d2d5f1157d1c3cb6b620f5544e01d" kindref="member">AMReX::erase</ref><sp/>(AMReX*<sp/>pamrex)</highlight></codeline>
+<codeline lineno="907"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::find_if(<ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.begin(),<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end(),</highlight></codeline>
+<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;AMReX&gt;&amp;<sp/>x)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>return<sp/>x.get()<sp/>==<sp/>pamrex;<sp/>});</highlight></codeline>
+<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AMReX_1ad7909bf4e2448edc26489e346cb367ac" kindref="member">m_instance</ref>.erase(r);</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="914"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="915"><highlight class="normal"></highlight></codeline>
+<codeline lineno="916"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp"/>
   </compounddef>

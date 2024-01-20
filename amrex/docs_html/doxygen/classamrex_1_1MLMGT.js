@@ -3,9 +3,10 @@ var classamrex_1_1MLMGT =
     [ "error", "classamrex_1_1MLMGT_1_1error.html", null ],
     [ "BCMode", "classamrex_1_1MLMGT.html#ab0aa1d27d42faff94c85af0b3a9a3b39", null ],
     [ "BottomSolver", "classamrex_1_1MLMGT.html#a970cecc8fdf04c68cd458e27d20b1708", null ],
-    [ "FAB", "classamrex_1_1MLMGT.html#ab107b2d2cb0c6a491b20f55a0c820848", null ],
+    [ "FAB", "classamrex_1_1MLMGT.html#ac98bb20aa53afac0cac33e9788913474", null ],
     [ "Location", "classamrex_1_1MLMGT.html#a4adf824fc2842cb7a07dcc0395627629", null ],
-    [ "RT", "classamrex_1_1MLMGT.html#a6f2787379b378f8c52186302cf7825c5", null ],
+    [ "MFType", "classamrex_1_1MLMGT.html#a12ae4c265af099934e18adc0ba18f99f", null ],
+    [ "RT", "classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd", null ],
     [ "CFStrategy", "classamrex_1_1MLMGT.html#a96d1fcb72314606739f67225750197b9", [
       [ "none", "classamrex_1_1MLMGT.html#a96d1fcb72314606739f67225750197b9a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
       [ "ghostnodes", "classamrex_1_1MLMGT.html#a96d1fcb72314606739f67225750197b9abddf1f772a4b8a67379933a3664a17c2", null ]
@@ -46,6 +47,7 @@ var classamrex_1_1MLMGT =
     [ "getGradSolution", "classamrex_1_1MLMGT.html#a0c8c8fa9cab0b1b68c896ae1de53f5dd", null ],
     [ "getInitResidual", "classamrex_1_1MLMGT.html#a612f7c8a01b41fa882b5fb1f579c4a6c", null ],
     [ "getInitRHS", "classamrex_1_1MLMGT.html#adcbc9d3987820fcf8769b0aa62eb96b7", null ],
+    [ "getLinOp", "classamrex_1_1MLMGT.html#af5f7553981d365fe77fb8426182f8179", null ],
     [ "getNumCGIters", "classamrex_1_1MLMGT.html#a99cb7db62a7f9ea8f30cd18904bdbfef", null ],
     [ "getNumIters", "classamrex_1_1MLMGT.html#a61fe6fb0ec89735cd73871cfb53a25b9", null ],
     [ "getResidualHistory", "classamrex_1_1MLMGT.html#a6083fa5fed480a49fde5c03c325f84ee", null ],
@@ -65,6 +67,7 @@ var classamrex_1_1MLMGT =
     [ "operator=", "classamrex_1_1MLMGT.html#a8c2f30c718f6a141afce34a7061b46b8", null ],
     [ "prepareForNSolve", "classamrex_1_1MLMGT.html#a69cb002038ef5460b92042d6921396b1", null ],
     [ "prepareForSolve", "classamrex_1_1MLMGT.html#a99e382a66a897864e0c3b4dffe9e1cd9", null ],
+    [ "prepareLinOp", "classamrex_1_1MLMGT.html#a929a91b1f9969e79f186bb7a1a073f69", null ],
     [ "ResNormInf", "classamrex_1_1MLMGT.html#adec5922c106684ff36cd96378f8c26fa", null ],
     [ "setAlwaysUseBNorm", "classamrex_1_1MLMGT.html#a9e64f7c34ec5abddc37f653b110a3230", null ],
     [ "setBottomMaxIter", "classamrex_1_1MLMGT.html#afc23f31b4eca82ba3272587a8a9998ed", null ],

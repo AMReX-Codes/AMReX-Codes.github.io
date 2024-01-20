@@ -18,6 +18,5 @@ var AMReX__Random_8cpp =
     [ "RestoreRandomState", "AMReX__Random_8cpp.html#ae45a9a3a96e46d7b15173894b25134fc", null ],
     [ "SaveRandomState", "AMReX__Random_8cpp.html#ad1b283df95b292f478597bc503170459", null ],
     [ "UniqueRandomSubset", "AMReX__Random_8cpp.html#aa2c1209819cd8dd79499c2b9f088120e", null ],
-    [ "gpu_rand_generator", "AMReX__Random_8cpp.html#ac50ac3d634bf065d58f0b0203fa6ef13", null ],
     [ "gpu_rand_state", "AMReX__Random_8cpp.html#ae5aa4a92b1c9940d028c38628ec7a866", null ]
 ];

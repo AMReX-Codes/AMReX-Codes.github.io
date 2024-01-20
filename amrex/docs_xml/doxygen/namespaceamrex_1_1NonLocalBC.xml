@@ -2492,7 +2492,7 @@
 <para>This fills ghost cells of a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>. This function is supposed to be used together with makeFillBoundaryMetaData as follows. <verbatim>    auto cmd = makeFillBoundaryMetaData(mf, mf.nGrowVect, geom, dtos);
     // The metadata cmd can be cached and reused on a MultiFab/FabArray with
     // the same BoxArray and DistributionMapping.
-    FillBoundary_finish(mf, cmd, scomp, ncomp, dtos, proj);
+    FillBoundary(mf, cmd, scomp, ncomp, dtos, proj);
 </verbatim></para>
 <para>The FillBoundary capability here is more flexible than <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&apos;s FillBoundary member functions, which only fill ghost cells inside the domain and ghost cells at periodic boundaries. The FillBoundary here can be used to fill non-local domain boundaries (e.g., in spherical and cylindrical coordinates) given appropriate index and component mappings.</para>
 <para><parameterlist kind="templateparam"><parameteritem>

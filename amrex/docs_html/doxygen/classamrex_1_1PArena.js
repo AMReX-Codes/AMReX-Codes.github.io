@@ -11,6 +11,7 @@ var classamrex_1_1PArena =
     [ "isHostAccessible", "classamrex_1_1PArena.html#ac052582015bfe8bc0e29565fb901f238", null ],
     [ "isManaged", "classamrex_1_1PArena.html#a5bc7b26bd1f96e5d87de04034e23a4bb", null ],
     [ "isPinned", "classamrex_1_1PArena.html#a8edd3549a2cf5e689d5078e5f355b8a1", null ],
+    [ "isStreamOrderedArena", "classamrex_1_1PArena.html#a608c3335c824b9524c374173358bf25a", null ],
     [ "operator=", "classamrex_1_1PArena.html#a6fe163ca93657b9af53a856a50e3587c", null ],
     [ "operator=", "classamrex_1_1PArena.html#a3266cb4ba41c7414db7c8a56b3c857d5", null ]
 ];

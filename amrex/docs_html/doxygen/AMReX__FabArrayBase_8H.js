@@ -18,5 +18,9 @@ var AMReX__FabArrayBase_8H =
     [ "PolarB", "structamrex_1_1FabArrayBase_1_1PolarB.html", "structamrex_1_1FabArrayBase_1_1PolarB" ],
     [ "ParForInfo", "structamrex_1_1FabArrayBase_1_1ParForInfo.html", "structamrex_1_1FabArrayBase_1_1ParForInfo" ],
     [ "FabArrayStats", "structamrex_1_1FabArrayBase_1_1FabArrayStats.html", "structamrex_1_1FabArrayBase_1_1FabArrayStats" ],
+    [ "boxArray", "AMReX__FabArrayBase_8H.html#a6d0e162407f49aab99ec9a1bcddf0f21", null ],
+    [ "DistributionMap", "AMReX__FabArrayBase_8H.html#a0789b1c22e6f47037f987b73cf2b898b", null ],
+    [ "nComp", "AMReX__FabArrayBase_8H.html#a0cef8b304e3c55a8d985c2a8907da9e4", null ],
+    [ "nGrowVect", "AMReX__FabArrayBase_8H.html#a28fbc0acd8368951bb043d23d5c0727e", null ],
     [ "operator<<", "AMReX__FabArrayBase_8H.html#a8bf3fd2af3f97b6e13b0b7be0a4dcaa7", null ]
 ];

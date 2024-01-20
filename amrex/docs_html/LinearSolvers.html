@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MLMG and Linear Operator Classes &mdash; amrex 23.00-dev documentation</title>
+  <title>MLMG and Linear Operator Classes &mdash; amrex 24.02-dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
       <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -39,7 +39,7 @@
             amrex
           </a>
               <div class="version">
-                23.00-dev
+                24.02-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -472,14 +472,17 @@ or inflow velocity conditions on the EB faces.</p>
 </pre></div>
 </div>
 <p>where coeff can be a real number (i.e. the value is the same at every cell)
-or is the MultiFab holding the coefficient of the gradient at each cell with an EB face.</p>
+or a MultiFab holding the coefficient of the gradient at each cell with an EB face.
+In other words, coeff is <span class="math notranslate nohighlight">\(\beta\)</span> in the canonical form given in equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>
+located at the EB surface centroid.</p>
 <p>To set inhomogeneous Dirichlet boundary conditions, call</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span><span class="w"> </span><span class="n">phi_on_eb</span><span class="p">,</span><span class="w"> </span><span class="n">coeff</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where phi_on_eb is the MultiFab holding the Dirichlet values in every cut cell,
-and coeff again is a real number (i.e. the value is the same at every cell)
-or a MultiFab holding the coefficient of the gradient at each cell with an EB face.</p>
+and coeff again is a real number
+or a MultiFab holding the coefficient of the gradient at each cell with an EB face,
+i.e. <span class="math notranslate nohighlight">\(\beta\)</span> in equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a> located at the EB surface centroid.</p>
 <p>Currently there are options to define the face-based coefficients on
 face centers vs face centroids, and to interpret the solution variable
 as being defined on cell centers vs cell centroids.</p>
