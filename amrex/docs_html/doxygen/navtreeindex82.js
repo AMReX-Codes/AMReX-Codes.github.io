@@ -1,5 +1,7 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1WeightedBoxList.html#ade62e0019a5532341887838a1d6b0b44":[3,0,0,117,3],
+"structamrex_1_1WeightedBoxList.html#af182f43dc9ced3e1b9bb6e702c8071f6":[3,0,0,117,0],
 "structamrex_1_1XDim3.html":[3,0,0,115],
 "structamrex_1_1XDim3.html#a7355367151105a356ebfa4ecb841a86c":[3,0,0,115,0],
 "structamrex_1_1XDim3.html#ab7d76c217833bd5f7ac309ae9b32b2ed":[3,0,0,115,2],
@@ -22,8 +24,8 @@ var NAVTREEINDEX82 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[3,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[3,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[3,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[3,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[3,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[3,0,0,0,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX82 =
 "structamrex__parmparse__module_1_1amrex__parmparse.html#ac0d76e840454ccdf657b39a423876e5a":[3,0,7,0,19],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#acaacc2e448d7ecbac9fbcb817e39b125":[3,0,7,0,12],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#ad660c077f1712d497852f995827fbead":[3,0,7,0,25],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#ad7d6f97565596d31e0c64d3797f3b128":[3,0,7,0,13],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#adbc27a8477adf06772e50c9063e3f450":[3,0,7,0,22],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#add4580d98996e6b8f6339611f0313adb":[3,0,7,0,24]
+"structamrex__parmparse__module_1_1amrex__parmparse.html#ad7d6f97565596d31e0c64d3797f3b128":[3,0,7,0,13]
 };

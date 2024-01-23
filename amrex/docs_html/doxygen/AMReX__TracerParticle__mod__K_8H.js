@@ -1,6 +1,7 @@
 var AMReX__TracerParticle__mod__K_8H =
 [
     [ "cic_interpolate", "AMReX__TracerParticle__mod__K_8H.html#a3f6c9273719cac9f85a15a3c6c89e7eb", null ],
+    [ "cic_interpolate_cc", "AMReX__TracerParticle__mod__K_8H.html#ae24d8dfbee87195aeb693a8cc2459da7", null ],
     [ "cic_interpolate_cc_mapped_z", "AMReX__TracerParticle__mod__K_8H.html#aa91339a18a1b77f30234f7717f882399", null ],
     [ "cic_interpolate_mapped_z", "AMReX__TracerParticle__mod__K_8H.html#a047ddeeac5cfd57caf201dd5c654d249", null ],
     [ "cic_interpolate_nd", "AMReX__TracerParticle__mod__K_8H.html#a0dfc6d3b63fda10491506e29ce5da0fe", null ],

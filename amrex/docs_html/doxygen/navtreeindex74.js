@@ -1,5 +1,7 @@
 var NAVTREEINDEX74 =
 {
+"structamrex_1_1BinMapper.html#aa13006c74c21b3e90f81412d731f3b35":[3,0,0,498,7],
+"structamrex_1_1BinMapper.html#af1f0a8c52e0ba9142abfcdba68c4562e":[3,0,0,498,3],
 "structamrex_1_1BinPolicy_1_1GPUBinPolicy.html":[3,0,0,2,0],
 "structamrex_1_1BinPolicy_1_1OpenMPBinPolicy.html":[3,0,0,2,1],
 "structamrex_1_1BinPolicy_1_1SerialBinPolicy.html":[3,0,0,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX74 =
 "structamrex_1_1EBCellFlagFab_1_1NumCells.html#a9ed4b276208f75158208ea1a89d740a9":[3,0,0,381,0,1],
 "structamrex_1_1EBCellFlagFab_1_1NumCells.html#ab794bf217ff64b685fdb1fd750957630":[3,0,0,381,0,3],
 "structamrex_1_1EBCellFlagFab_1_1NumCells.html#ae2bc4b62a5716e7bfc8bed303aefb5ef":[3,0,0,381,0,0],
-"structamrex_1_1EBCellFlagFab_1_1NumCells.html#ae58c0b7189a097d963bb36dfff3a88f6":[3,0,0,381,0,2],
-"structamrex_1_1FBData.html":[3,0,0,121],
-"structamrex_1_1FBData.html#a12405182d3038f333d621aaf7ba0de9f":[3,0,0,121,0]
+"structamrex_1_1EBCellFlagFab_1_1NumCells.html#ae58c0b7189a097d963bb36dfff3a88f6":[3,0,0,381,0,2]
 };

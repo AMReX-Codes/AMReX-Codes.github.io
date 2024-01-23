@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['datalayout_17858',['DataLayout',['../namespaceamrex.html#a83d03eb75adb29c552bae0a3d625895b',1,'amrex']]],
-  ['direction_17859',['Direction',['../namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69',1,'amrex']]],
-  ['dsrequesttype_17860',['DSRequestType',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9',1,'amrex::DataServices']]]
+  ['datalayout_17859',['DataLayout',['../namespaceamrex.html#a83d03eb75adb29c552bae0a3d625895b',1,'amrex']]],
+  ['direction_17860',['Direction',['../namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69',1,'amrex']]],
+  ['dsrequesttype_17861',['DSRequestType',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9',1,'amrex::DataServices']]]
 ];

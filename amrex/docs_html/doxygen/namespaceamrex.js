@@ -1297,6 +1297,7 @@ var namespaceamrex =
     [ "cholsol_np10", "namespaceamrex.html#ab067b4a2be7601fdfd12c7f27a3995d6", null ],
     [ "cholsol_np6", "namespaceamrex.html#acf9c618e150988aaad39352da8a136b2", null ],
     [ "cic_interpolate", "namespaceamrex.html#a3f6c9273719cac9f85a15a3c6c89e7eb", null ],
+    [ "cic_interpolate_cc", "namespaceamrex.html#ae24d8dfbee87195aeb693a8cc2459da7", null ],
     [ "cic_interpolate_nd", "namespaceamrex.html#a0dfc6d3b63fda10491506e29ce5da0fe", null ],
     [ "Clamp", "namespaceamrex.html#ac7da8611787662eeb7b9e4a098ceac22", null ],
     [ "clz", "namespaceamrex.html#af820e227c1b2f49c687fb9362afd86bb", null ],
