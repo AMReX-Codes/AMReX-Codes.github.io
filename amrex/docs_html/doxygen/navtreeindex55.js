@@ -1,5 +1,13 @@
 var NAVTREEINDEX55 =
 {
+"classamrex_1_1TableData.html#aaefd3fa7d99d2cb2298ae67184d54cda":[3,0,0,225,13],
+"classamrex_1_1TableData.html#ab5597f20d8438b42ae63b65f92a642a3":[3,0,0,225,26],
+"classamrex_1_1TableData.html#ab86aed6fee723c8367af1d8cdfcbeff7":[3,0,0,225,22],
+"classamrex_1_1TableData.html#ac260d9b8c8ee7402a39b5842d57ae98d":[3,0,0,225,25],
+"classamrex_1_1TableData.html#ad8fa98358a7d0e71821d2f76ad257da6":[3,0,0,225,10],
+"classamrex_1_1TableData.html#ad9f120fdecb5405e8b77f84a56208736":[3,0,0,225,4],
+"classamrex_1_1TableData.html#afb1b643b640638baf1151246dd44114b":[3,0,0,225,11],
+"classamrex_1_1TagBox.html":[3,0,0,65],
 "classamrex_1_1TagBox.html#a00b44af3c3dc783226e28adc117e93e5":[3,0,0,65,6],
 "classamrex_1_1TagBox.html#a194d49c2adb475dabf1de3a7bc717b7a":[3,0,0,65,16],
 "classamrex_1_1TagBox.html#a1c163cf21eb64a1c2032d5ba1acb2594":[3,0,0,65,9],
@@ -241,13 +249,5 @@ var NAVTREEINDEX55 =
 "classamrex_1_1VisMFBuffer.html#a6408b3042dc48515b0c3722c43826f03":[3,0,0,276,4],
 "classamrex_1_1VisMFBuffer.html#a6c234740f9ed2f0a3c3fc3cea35f7f2f":[3,0,0,276,2],
 "classamrex_1_1VisMFBuffer.html#ab8b3e050b7f01e4270b0185d0d0e0497":[3,0,0,276,5],
-"classamrex_1_1WeightedBox.html":[3,0,0,116],
-"classamrex_1_1WeightedBox.html#a0835a7597d5398b00aede057c5961992":[3,0,0,116,5],
-"classamrex_1_1WeightedBox.html#a19720ff54b3ba0b9180de7f0b0bbfa76":[3,0,0,116,4],
-"classamrex_1_1WeightedBox.html#a5a49d0ecc04ce9c84d5cc0e68fd04675":[3,0,0,116,1],
-"classamrex_1_1WeightedBox.html#a881623a58303364995413ce41b090c0d":[3,0,0,116,0],
-"classamrex_1_1WeightedBox.html#ac8ca6a64321140bc39bd7458da778941":[3,0,0,116,3],
-"classamrex_1_1WeightedBox.html#afafaad5f1bf1628a4beb4550bbb8a89b":[3,0,0,116,2],
-"classamrex_1_1XYPlotDataList.html":[3,0,0,395],
-"classamrex_1_1XYPlotDataList.html#a0eed5ea2a8a29466eef5434f09752ebf":[3,0,0,395,30]
+"classamrex_1_1WeightedBox.html":[3,0,0,116]
 };

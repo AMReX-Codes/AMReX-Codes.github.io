@@ -1,5 +1,13 @@
 var NAVTREEINDEX41 =
 {
+"classamrex_1_1Gpu_1_1Buffer.html#abca1f758989aa579fa68900a014619fe":[3,0,0,5,7,11],
+"classamrex_1_1Gpu_1_1Buffer.html#aca5acc3051c0c94e3668e5e5b5f17c17":[3,0,0,5,7,13],
+"classamrex_1_1Gpu_1_1Buffer.html#aeec4be8fd894735d9acaa7de8c62d63a":[3,0,0,5,7,16],
+"classamrex_1_1Gpu_1_1Buffer.html#af613bc8ff56b5c8e598e90cd8c61f6b0":[3,0,0,5,7,15],
+"classamrex_1_1Gpu_1_1Device.html":[3,0,0,5,15],
+"classamrex_1_1Gpu_1_1Device.html#a02723429d759214d88aab6044423995e":[3,0,0,5,15,32],
+"classamrex_1_1Gpu_1_1Device.html#a049b80f650443158297dbc0fb19c304e":[3,0,0,5,15,35],
+"classamrex_1_1Gpu_1_1Device.html#a075aaf3af23ffd79ae8025ab4fa19f62":[3,0,0,5,15,23],
 "classamrex_1_1Gpu_1_1Device.html#a1bc8d3f83c8bce5e14d50e06667d28ce":[3,0,0,5,15,25],
 "classamrex_1_1Gpu_1_1Device.html#a246378e3da5672c3a23a3dadc117edee":[3,0,0,5,15,20],
 "classamrex_1_1Gpu_1_1Device.html#a287c97156ce50cfda229da5b2d9a00a8":[3,0,0,5,15,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX41 =
 "classamrex_1_1HypreIJIface.html#adee4e26d0112560a0d334844d548a91f":[3,0,0,401,29],
 "classamrex_1_1HypreIJIface.html#ae48880d1c8d1b08f9eeec413c152478a":[3,0,0,401,28],
 "classamrex_1_1HypreIJIface.html#ae6598d193c7640eac64bfc15ff2ad8a0":[3,0,0,401,38],
-"classamrex_1_1HypreIJIface.html#ae6fb3e32e3041f2cee891a7b52f7088e":[3,0,0,401,27],
-"classamrex_1_1HypreIJIface.html#af24450dfdae7450d10455cae431fb457":[3,0,0,401,30],
-"classamrex_1_1HypreIJIface.html#af2a5eaf05419e462af43e6dbac0f7e32":[3,0,0,401,57],
-"classamrex_1_1HypreIJIface.html#af635b8debb95a35dc7f5201129d4cd5b":[3,0,0,401,13],
-"classamrex_1_1HypreIJIface.html#afae6f2e6cca5494f6eb268b7454f3246":[3,0,0,401,60],
-"classamrex_1_1HypreIJIface.html#afc8bf8cd33edcff622b73c46392efbde":[3,0,0,401,2],
-"classamrex_1_1HypreIJIface.html#afd57a1fed363b002efd0870b9121d808":[3,0,0,401,56],
-"classamrex_1_1HypreIJIface.html#afd785510c002ae90c0406adea27abb4e":[3,0,0,401,19],
-"classamrex_1_1HypreNodeLap.html":[3,0,0,402]
+"classamrex_1_1HypreIJIface.html#ae6fb3e32e3041f2cee891a7b52f7088e":[3,0,0,401,27]
 };

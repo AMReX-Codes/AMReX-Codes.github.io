@@ -3186,6 +3186,33 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeList.H" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeList.H" bodystart="32" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1ad714b2c2b55d9cd35a788e0d861f5979" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>template&lt; class... &gt; class</type>
+            <declname>TParam</declname>
+            <defname>TParam</defname>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a11fcc5e72789252d6182a7d15233725f" kindref="member">TypeAt</ref>&lt; 0, decltype(<ref refid="namespaceamrex_1_1detail_1ad5568d6d500edc6ee5938dca76c1caa8" kindref="member">detail::TApply</ref>&lt; TParam &gt;((<ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt;&gt;{}+...+<ref refid="namespaceamrex_1_1detail_1af01333ae8cd22a78600a759f8cc32089" kindref="member">detail::SingleTypeMultiplier</ref>(Types{}))))&gt;</type>
+        <definition>using amrex::TypeMultiplier = typedef TypeAt&lt;0, decltype(detail::TApply&lt;TParam&gt;( (TypeList&lt;&gt;{} + ... + detail::SingleTypeMultiplier(Types{})) ))&gt;</definition>
+        <argsstring></argsstring>
+        <name>TypeMultiplier</name>
+        <briefdescription>
+<para>Return the first template argument with the later arguments applied to it. Types of the form T[N] are expanded to T, T, T, T, ... (N times with N &gt;= 1). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example, TypeMultiplier&lt;ReduceData, Real[4], int[2], Long&gt; is an alias to the type ReduceData&lt;Real, Real, Real, Real, int, int, Long&gt;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeList.H" line="197" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeList.H" bodystart="199" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" prot="public" static="no">
         <templateparamlist>
           <param>
@@ -34311,6 +34338,70 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" line="1057" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RealVect.H" bodystart="1057" bodyend="1061"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2d133ef4334729455eef75bfa196dca9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ps</declname>
+            <defname>Ps</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Ts... &gt;</type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE GpuTuple&lt;Ts...&gt; amrex::IdentityTuple</definition>
+        <argsstring>(GpuTuple&lt; Ts... &gt;, ReduceOps&lt; Ps... &gt;) noexcept</argsstring>
+        <name>IdentityTuple</name>
+        <param>
+          <type><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Ts... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref>&lt; Ps... &gt;</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> containing the identity element for each operation in <ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref>. For example 0, +inf and -inf for <ref refid="structamrex_1_1ReduceOpSum" kindref="compound">ReduceOpSum</ref>, <ref refid="structamrex_1_1ReduceOpMin" kindref="compound">ReduceOpMin</ref> and <ref refid="structamrex_1_1ReduceOpMax" kindref="compound">ReduceOpMax</ref> respectively. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1285" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1285" bodyend="1290"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a055961d372c3be97281e3a40c7f6bf25" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Ps</declname>
+            <defname>Ps</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Ts... &gt;</type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE GpuTuple&lt;Ts...&gt; amrex::IdentityTuple</definition>
+        <argsstring>(GpuTuple&lt; Ts... &gt;, TypeList&lt; Ps... &gt;) noexcept</argsstring>
+        <name>IdentityTuple</name>
+        <param>
+          <type><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Ts... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>&lt; Ps... &gt;</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> containing the identity element for each ReduceOp in <ref refid="structamrex_1_1TypeList" kindref="compound">TypeList</ref>. For example 0, +inf and -inf for <ref refid="structamrex_1_1ReduceOpSum" kindref="compound">ReduceOpSum</ref>, <ref refid="structamrex_1_1ReduceOpMin" kindref="compound">ReduceOpMin</ref> and <ref refid="structamrex_1_1ReduceOpMax" kindref="compound">ReduceOpMax</ref> respectively. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" line="1299" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Reduce.H" bodystart="1299" bodyend="1304"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aba62b0734dec9b69bdc82781f4e87151" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> Real</type>
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex::amrex_calc_xslope</definition>
@@ -34859,6 +34950,30 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="376" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="376" bodyend="379"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aca24c318d20f5354a5f74cf0eb32cce8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Ts... &gt;</type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE GpuTuple&lt;Ts...&gt; amrex::MakeZeroTuple</definition>
+        <argsstring>(GpuTuple&lt; Ts... &gt;) noexcept</argsstring>
+        <name>MakeZeroTuple</name>
+        <param>
+          <type><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Ts... &gt;</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> containing all zeros. Note that a default-constructed <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> can have uninitialized values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="390" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="390" bodyend="393"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aca65f803ae9e0c199552d38482b6dbdc" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -34939,7 +35054,7 @@ Returns the index of the first element for which f is 0. </para>
         // dst and src are either MultiFab or fMultiFab
         auto tt = CartesianProduct(TypeList&lt;MultiFab,fMultiFab&gt;{},
                                    TypeList&lt;MultiFab,fMultiFab&gt;{});
-        bool r = ForEachUtil(tt, [&amp;] (auto t) -&gt; bool
+        bool r = ForEachUntil(tt, [&amp;] (auto t) -&gt; bool
         {
             using MF0 = TypeAt&lt;0,decltype(t)&gt;;
             using MF1 = TypeAt&lt;1,decltype(t)&gt;;

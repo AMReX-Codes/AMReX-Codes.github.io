@@ -132,6 +132,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a11fcc5e72789252d6182a7d15233725f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">amrex::TypeAt</a> = typename detail::TypeListGet&lt; I, T &gt;::type</td></tr>
 <tr class="memdesc:a11fcc5e72789252d6182a7d15233725f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type at position I of a <a class="el" href="structamrex_1_1TypeList.html" title="Struct for holding types.">TypeList</a>.  <a href="namespaceamrex.html#a11fcc5e72789252d6182a7d15233725f">More...</a><br /></td></tr>
 <tr class="separator:a11fcc5e72789252d6182a7d15233725f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad714b2c2b55d9cd35a788e0d861f5979"><td class="memTemplParams" colspan="2">template&lt;template&lt; class... &gt; class TParam, class... Types&gt; </td></tr>
+<tr class="memitem:ad714b2c2b55d9cd35a788e0d861f5979"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad714b2c2b55d9cd35a788e0d861f5979">amrex::TypeMultiplier</a> = TypeAt&lt; 0, decltype(detail::TApply&lt; TParam &gt;((TypeList&lt;&gt;{}+...+detail::SingleTypeMultiplier(Types{}))))&gt;</td></tr>
+<tr class="memdesc:ad714b2c2b55d9cd35a788e0d861f5979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the first template argument with the later arguments applied to it. Types of the form T[N] are expanded to T, T, T, T, ... (N times with N &gt;= 1).  <a href="namespaceamrex.html#ad714b2c2b55d9cd35a788e0d861f5979">More...</a><br /></td></tr>
+<tr class="separator:ad714b2c2b55d9cd35a788e0d861f5979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -163,6 +167,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a9d736b217af3b87bef2bffd4dd55edff"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9d736b217af3b87bef2bffd4dd55edff">amrex::CartesianProduct</a> (Ls...)</td></tr>
 <tr class="memdesc:a9d736b217af3b87bef2bffd4dd55edff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cartesian Product of TypeLists.  <a href="namespaceamrex.html#a9d736b217af3b87bef2bffd4dd55edff">More...</a><br /></td></tr>
 <tr class="separator:a9d736b217af3b87bef2bffd4dd55edff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad867a3bb23fa15988044c68bf1266b7c"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t N&gt; </td></tr>
+<tr class="memitem:ad867a3bb23fa15988044c68bf1266b7c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ad867a3bb23fa15988044c68bf1266b7c">amrex::detail::SingleTypeMultiplier_impl</a> ()</td></tr>
+<tr class="separator:ad867a3bb23fa15988044c68bf1266b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01333ae8cd22a78600a759f8cc32089"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t N&gt; </td></tr>
+<tr class="memitem:af01333ae8cd22a78600a759f8cc32089"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af01333ae8cd22a78600a759f8cc32089">amrex::detail::SingleTypeMultiplier</a> (const T(&amp;)[N])</td></tr>
+<tr class="separator:af01333ae8cd22a78600a759f8cc32089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5675d735314e418d7eb80a17ef3f135"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ab5675d735314e418d7eb80a17ef3f135"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ab5675d735314e418d7eb80a17ef3f135">amrex::detail::SingleTypeMultiplier</a> (T)</td></tr>
+<tr class="separator:ab5675d735314e418d7eb80a17ef3f135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5568d6d500edc6ee5938dca76c1caa8"><td class="memTemplParams" colspan="2">template&lt;template&lt; class... &gt; class TParam, class... Args&gt; </td></tr>
+<tr class="memitem:ad5568d6d500edc6ee5938dca76c1caa8"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ad5568d6d500edc6ee5938dca76c1caa8">amrex::detail::TApply</a> (TypeList&lt; Args... &gt;)</td></tr>
+<tr class="separator:ad5568d6d500edc6ee5938dca76c1caa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

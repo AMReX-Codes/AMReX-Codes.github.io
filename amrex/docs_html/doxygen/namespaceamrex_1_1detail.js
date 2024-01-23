@@ -78,8 +78,12 @@ var namespaceamrex_1_1detail =
     [ "Reduce", "namespaceamrex_1_1detail.html#a59bb763ea3df042d86d6906cc9ccfc77", null ],
     [ "removeDupDoit", "namespaceamrex_1_1detail.html#ae9c414dd7bc47e48d6fe4e6361b1b723", null ],
     [ "shrink_in_place", "namespaceamrex_1_1detail.html#ac4854f7e5c0443cfadeb4a652286a18f", null ],
+    [ "SingleTypeMultiplier", "namespaceamrex_1_1detail.html#af01333ae8cd22a78600a759f8cc32089", null ],
+    [ "SingleTypeMultiplier", "namespaceamrex_1_1detail.html#ab5675d735314e418d7eb80a17ef3f135", null ],
+    [ "SingleTypeMultiplier_impl", "namespaceamrex_1_1detail.html#ad867a3bb23fa15988044c68bf1266b7c", null ],
     [ "tagparfor_call_f", "namespaceamrex_1_1detail.html#a759738bf4cd5871bbdf8f7317043dd90", null ],
     [ "tagparfor_call_f", "namespaceamrex_1_1detail.html#a926fe273db7aaa817471c44983bf42e4", null ],
+    [ "TApply", "namespaceamrex_1_1detail.html#ad5568d6d500edc6ee5938dca76c1caa8", null ],
     [ "tuple_copy", "namespaceamrex_1_1detail.html#a813577e3d9b0ad5b7795dd9351160f9a", null ],
     [ "tuple_copy", "namespaceamrex_1_1detail.html#a796da28b12c3448559ad1af823e855af", null ],
     [ "uninitializedFillNImpl", "namespaceamrex_1_1detail.html#a1ec1f5b314ec018aecc0e091949ff60e", null ]

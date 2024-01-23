@@ -1,5 +1,13 @@
 var NAVTREEINDEX40 =
 {
+"classamrex_1_1FillPatcher.html#aeef4e08d1768a02cae4c25c4c5cfd1d5":[3,0,0,42,12],
+"classamrex_1_1FillPatcher.html#af190f9e264e08dd6fec696c4ff84c53b":[3,0,0,42,0],
+"classamrex_1_1FluxRegister.html":[3,0,0,44],
+"classamrex_1_1FluxRegister.html#a02d8b5cbd5285fbddccbbb415cba051c":[3,0,0,44,3],
+"classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7":[3,0,0,44,0],
+"classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7a6ddca7001a16a7ff26dc0c2c3910ae3a":[3,0,0,44,0,1],
+"classamrex_1_1FluxRegister.html#a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613":[3,0,0,44,0,0],
+"classamrex_1_1FluxRegister.html#a0c8efd8e75a881af49dbfc1e6bdc5184":[3,0,0,44,33],
 "classamrex_1_1FluxRegister.html#a13861fcb5290d2ce4fe7e6510d3fee34":[3,0,0,44,25],
 "classamrex_1_1FluxRegister.html#a1632f69b9bb40407c6622d6841c48938":[3,0,0,44,16],
 "classamrex_1_1FluxRegister.html#a1fdafda5f1518b4eabb95c307ca5635e":[3,0,0,44,28],
@@ -241,13 +249,5 @@ var NAVTREEINDEX40 =
 "classamrex_1_1Gpu_1_1Buffer.html#a7b869239107727018d22a622ed29161d":[3,0,0,5,7,6],
 "classamrex_1_1Gpu_1_1Buffer.html#a8da30f072b1f36168523d0db2e1f8330":[3,0,0,5,7,4],
 "classamrex_1_1Gpu_1_1Buffer.html#a9efbbaef8b00982c3e56b0e557d4f739":[3,0,0,5,7,9],
-"classamrex_1_1Gpu_1_1Buffer.html#ab2a42ebf52c9f805e2936c17ffb8297a":[3,0,0,5,7,8],
-"classamrex_1_1Gpu_1_1Buffer.html#abca1f758989aa579fa68900a014619fe":[3,0,0,5,7,11],
-"classamrex_1_1Gpu_1_1Buffer.html#aca5acc3051c0c94e3668e5e5b5f17c17":[3,0,0,5,7,13],
-"classamrex_1_1Gpu_1_1Buffer.html#aeec4be8fd894735d9acaa7de8c62d63a":[3,0,0,5,7,16],
-"classamrex_1_1Gpu_1_1Buffer.html#af613bc8ff56b5c8e598e90cd8c61f6b0":[3,0,0,5,7,15],
-"classamrex_1_1Gpu_1_1Device.html":[3,0,0,5,15],
-"classamrex_1_1Gpu_1_1Device.html#a02723429d759214d88aab6044423995e":[3,0,0,5,15,32],
-"classamrex_1_1Gpu_1_1Device.html#a049b80f650443158297dbc0fb19c304e":[3,0,0,5,15,35],
-"classamrex_1_1Gpu_1_1Device.html#a075aaf3af23ffd79ae8025ab4fa19f62":[3,0,0,5,15,23]
+"classamrex_1_1Gpu_1_1Buffer.html#ab2a42ebf52c9f805e2936c17ffb8297a":[3,0,0,5,7,8]
 };

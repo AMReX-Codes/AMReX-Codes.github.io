@@ -30,6 +30,7 @@ var AMReX__Tuple_8H =
     [ "INVOKE", "AMReX__Tuple_8H.html#af2dd4ad4f928e269d1bc2dce24f48b92", null ],
     [ "make_tuple", "AMReX__Tuple_8H.html#aa989894bc9a9c24c61dfb1b56a38fb4a", null ],
     [ "makeTuple", "AMReX__Tuple_8H.html#a546f82ad84c1f122bb9bf89dcaa2b7a3", null ],
+    [ "MakeZeroTuple", "AMReX__Tuple_8H.html#aca24c318d20f5354a5f74cf0eb32cce8", null ],
     [ "Tie", "AMReX__Tuple_8H.html#a38e3e5431e2c612ce6e6b4aac3ededf2", null ],
     [ "tuple_copy", "AMReX__Tuple_8H.html#a813577e3d9b0ad5b7795dd9351160f9a", null ],
     [ "tuple_copy", "AMReX__Tuple_8H.html#a796da28b12c3448559ad1af823e855af", null ],

@@ -1,5 +1,17 @@
 var NAVTREEINDEX67 =
 {
+"namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7":[2,0,0,8,99],
+"namespaceamrex_1_1EB2.html#a97bb46ef943ca61f6c69345a636c8f91":[2,0,0,8,65],
+"namespaceamrex_1_1EB2.html#a9b7e8df1d1bc60db9850f4a8abc067cd":[2,0,0,8,93],
+"namespaceamrex_1_1EB2.html#aa6d8b9ccdeea03640db903d130f9af47":[2,0,0,8,101],
+"namespaceamrex_1_1EB2.html#aa7338d977a75ba57af4d72210ed906d1":[2,0,0,8,84],
+"namespaceamrex_1_1EB2.html#ab08bb163ec9d566ce748dd6c4a7f0385":[2,0,0,8,96],
+"namespaceamrex_1_1EB2.html#ab93166de851db0edebb5ae2569b88cc1":[2,0,0,8,67],
+"namespaceamrex_1_1EB2.html#acb02398d0c8b02dae840acf4f35b886c":[2,0,0,8,89],
+"namespaceamrex_1_1EB2.html#aceb9b2336e3a1251dca7ab15420dbfcd":[2,0,0,8,70],
+"namespaceamrex_1_1EB2.html#ad4baf361d00889173d59e758d4db781a":[2,0,0,8,66],
+"namespaceamrex_1_1EB2.html#ad5118c9d34449d5fcba10d141751b0d6":[2,0,0,8,56],
+"namespaceamrex_1_1EB2.html#ad7f55d0b557cb48b84323df22a77d9d0":[2,0,0,8,98],
 "namespaceamrex_1_1EB2.html#adeed62ac81d87a16c489f15eb4b9e214":[2,0,0,8,91],
 "namespaceamrex_1_1EB2.html#ae3a379167092afad59e2ece6617e7e46":[2,0,0,8,74],
 "namespaceamrex_1_1EB2.html#ae3dd30a7f30d52e12f0f8ef8eb57f7fc":[2,0,0,8,63],
@@ -237,17 +249,5 @@ var NAVTREEINDEX67 =
 "namespaceamrex_1_1Morton.html":[2,0,0,23],
 "namespaceamrex_1_1Morton.html#a16988bc3300f11fdee381c8ef8bc80f6":[2,0,0,23,4],
 "namespaceamrex_1_1Morton.html#a9b7572e0a75bb2c5274809e9e1edffba":[2,0,0,23,3],
-"namespaceamrex_1_1Morton.html#ab09eae83b5060972f2f437bd7dba115a":[2,0,0,23,1],
-"namespaceamrex_1_1Morton.html#acbda6a326e80b22c8e947f504a89f459":[2,0,0,23,0],
-"namespaceamrex_1_1Morton.html#ae3e56c34dacdffe240410a3f6a7a9252":[2,0,0,23,2],
-"namespaceamrex_1_1NonLocalBC.html":[2,0,0,25],
-"namespaceamrex_1_1NonLocalBC.html#a0050536eff7fd3244ef573e961858999":[2,0,0,25,25],
-"namespaceamrex_1_1NonLocalBC.html#a0fa70005c1319e11f11266ae94abe4bb":[2,0,0,25,39],
-"namespaceamrex_1_1NonLocalBC.html#a101b2f07560880fda8bab055214f3222":[2,0,0,25,55],
-"namespaceamrex_1_1NonLocalBC.html#a165fdced073fa98b961fd6aaceb213d5":[2,0,0,25,20],
-"namespaceamrex_1_1NonLocalBC.html#a22290d0dc38cd0254f5d14100fec970f":[2,0,0,25,32],
-"namespaceamrex_1_1NonLocalBC.html#a2457a717c906cb9f086a39faea4da88d":[2,0,0,25,22],
-"namespaceamrex_1_1NonLocalBC.html#a273df272494afdcf1d9275ab5ed13e77":[2,0,0,25,41],
-"namespaceamrex_1_1NonLocalBC.html#a291d1c78ece15e2eb717acc0ec36835d":[2,0,0,25,42],
-"namespaceamrex_1_1NonLocalBC.html#a2d9ef1abd51b6a59a2938c4aefbe3456":[2,0,0,25,60]
+"namespaceamrex_1_1Morton.html#ab09eae83b5060972f2f437bd7dba115a":[2,0,0,23,1]
 };
