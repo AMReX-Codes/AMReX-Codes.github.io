@@ -359,6 +359,8 @@ var annotated_dup =
       [ "Maximum", "structamrex_1_1Maximum.html", "structamrex_1_1Maximum" ],
       [ "LogicalAnd", "structamrex_1_1LogicalAnd.html", "structamrex_1_1LogicalAnd" ],
       [ "LogicalOr", "structamrex_1_1LogicalOr.html", "structamrex_1_1LogicalOr" ],
+      [ "Multiplies", "structamrex_1_1Multiplies.html", "structamrex_1_1Multiplies" ],
+      [ "Divides", "structamrex_1_1Divides.html", "structamrex_1_1Divides" ],
       [ "GeometryData", "structamrex_1_1GeometryData.html", "structamrex_1_1GeometryData" ],
       [ "Geometry", "classamrex_1_1Geometry.html", "classamrex_1_1Geometry" ],
       [ "FatPtr", "structamrex_1_1FatPtr.html", "structamrex_1_1FatPtr" ],

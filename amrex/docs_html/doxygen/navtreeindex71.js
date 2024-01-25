@@ -1,5 +1,13 @@
 var NAVTREEINDEX71 =
 {
+"namespaceamrex__ebcellflag__module.html#a4734800da1613de79878005a47689862":[2,0,5,11],
+"namespaceamrex__ebcellflag__module.html#a4e837dbfa10cc1075d4c603eddcda32a":[2,0,5,3],
+"namespaceamrex__ebcellflag__module.html#a5f10bb6cffaf7551730ef8bd3e73b6f1":[2,0,5,5],
+"namespaceamrex__ebcellflag__module.html#a60377c7710b1b811e651e3acc8ad6f66":[2,0,5,17],
+"namespaceamrex__ebcellflag__module.html#a6bfc43005eb226bc2f194fd9d1ddd480":[2,0,5,10],
+"namespaceamrex__ebcellflag__module.html#a6fa46fba286ea97c6408222d70ad589d":[2,0,5,12],
+"namespaceamrex__ebcellflag__module.html#a796a0d50302dc72114c9cf2999849084":[2,0,5,24],
+"namespaceamrex__ebcellflag__module.html#a7d30f95878f595d82cb984b91bd3a766":[2,0,5,2],
 "namespaceamrex__ebcellflag__module.html#a81e54bd33c97780b54376e8b462612c6":[2,0,5,1],
 "namespaceamrex__ebcellflag__module.html#a8b548f4c7a7bf3d667af5b6059fb6255":[2,0,5,13],
 "namespaceamrex__ebcellflag__module.html#a94fd726efde06cd88152ae586400d5ec":[2,0,5,9],
@@ -145,8 +153,8 @@ var NAVTREEINDEX71 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0,0],
 "namespacemembers.html":[2,1,0],
+"namespacemembers.html":[2,1,0,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -197,8 +205,8 @@ var NAVTREEINDEX71 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars.html":[2,1,2,0],
+"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX71 =
 "namespaces.html":[2,0],
 "namespacesdcquadrature__mod.html":[2,0,21],
 "namespacesdcquadrature__mod.html#a0ffbe7bf11e56b416c5631c0b38321b6":[2,0,21,5],
-"namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837":[2,0,21,12],
-"namespacesdcquadrature__mod.html#a19abe9c6ef21541b666b72dd131373b3":[2,0,21,3],
-"namespacesdcquadrature__mod.html#a36963c5b419723010d58909d4528c0dc":[2,0,21,1],
-"namespacesdcquadrature__mod.html#a3b6ebab50bdb3680467e36128f5e4f53":[2,0,21,16],
-"namespacesdcquadrature__mod.html#a45feaecc2f3ca60142ec3cbdcc49c288":[2,0,21,11],
-"namespacesdcquadrature__mod.html#a48ed5f48f95b69c47de925a1a865a89c":[2,0,21,9],
-"namespacesdcquadrature__mod.html#a507876cf6308356bcab599968824c4a9":[2,0,21,4],
-"namespacesdcquadrature__mod.html#a5996afecb06f0cfbc667e1fc7eff3f08":[2,0,21,15],
-"namespacesdcquadrature__mod.html#a62cfff98d5899c5934e7b29264eaaeef":[2,0,21,19]
+"namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837":[2,0,21,12]
 };

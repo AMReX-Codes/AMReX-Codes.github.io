@@ -9,6 +9,8 @@ var namespaceamrex_1_1Gpu_1_1Atomic =
     [ "Add_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#aa2cd0bf29a9ed71679b41a3e54765d39", null ],
     [ "AddNoRet", "namespaceamrex_1_1Gpu_1_1Atomic.html#ab69d18587a5c75ca3ce1f48708e865b1", null ],
     [ "CAS", "namespaceamrex_1_1Gpu_1_1Atomic.html#a3794cd96c4a2f4b00db9cc1e5d66af87", null ],
+    [ "Divide", "namespaceamrex_1_1Gpu_1_1Atomic.html#a95225444c8b981eefd0e44bf763dfe19", null ],
+    [ "Divide_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#a6bd8e274f3c060b8f34e508ca531f527", null ],
     [ "Exch", "namespaceamrex_1_1Gpu_1_1Atomic.html#a170f55f8b9bd412d07a2ab2e825a4ee8", null ],
     [ "If", "namespaceamrex_1_1Gpu_1_1Atomic.html#ac8138a7c3dfae65f72813c07b8e5e856", null ],
     [ "If_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#a36a87ab5fbe799714dcc825134aa6027", null ],
@@ -23,5 +25,7 @@ var namespaceamrex_1_1Gpu_1_1Atomic =
     [ "Min_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#a53c8ca8f4c92a40ec4eee06b385f6ef7", null ],
     [ "Min_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#aa1ce598721adb1e2dcc9986951186d0b", null ],
     [ "Min_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#a1ca14857c9072d782f6e4a98592ba2b6", null ],
-    [ "Min_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#ad60dc3c4771055fc434211d284769767", null ]
+    [ "Min_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#ad60dc3c4771055fc434211d284769767", null ],
+    [ "Multiply", "namespaceamrex_1_1Gpu_1_1Atomic.html#a57da8c33bc706892e873bca4ff05f7ab", null ],
+    [ "Multiply_device", "namespaceamrex_1_1Gpu_1_1Atomic.html#afe7501c4ae1afec6af85f031a949dbc3", null ]
 ];

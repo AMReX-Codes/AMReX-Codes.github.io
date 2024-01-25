@@ -158,7 +158,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
       [ "Minimum", "structamrex_1_1Minimum.html", "structamrex_1_1Minimum" ],
       [ "Maximum", "structamrex_1_1Maximum.html", "structamrex_1_1Maximum" ],
       [ "LogicalAnd", "structamrex_1_1LogicalAnd.html", "structamrex_1_1LogicalAnd" ],
-      [ "LogicalOr", "structamrex_1_1LogicalOr.html", "structamrex_1_1LogicalOr" ]
+      [ "LogicalOr", "structamrex_1_1LogicalOr.html", "structamrex_1_1LogicalOr" ],
+      [ "Multiplies", "structamrex_1_1Multiplies.html", "structamrex_1_1Multiplies" ],
+      [ "Divides", "structamrex_1_1Divides.html", "structamrex_1_1Divides" ]
     ] ],
     [ "AMReX_Geometry.cpp", "AMReX__Geometry_8cpp.html", "AMReX__Geometry_8cpp" ],
     [ "AMReX_Geometry.H", "AMReX__Geometry_8H.html", "AMReX__Geometry_8H" ],

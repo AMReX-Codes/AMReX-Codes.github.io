@@ -162,6 +162,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a3794cd96c4a2f4b00db9cc1e5d66af87"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3794cd96c4a2f4b00db9cc1e5d66af87"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a3794cd96c4a2f4b00db9cc1e5d66af87">CAS</a> (T *const address, T compare, T const val) noexcept</td></tr>
 <tr class="separator:a3794cd96c4a2f4b00db9cc1e5d66af87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7501c4ae1afec6af85f031a949dbc3"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:afe7501c4ae1afec6af85f031a949dbc3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#afe7501c4ae1afec6af85f031a949dbc3">Multiply_device</a> (T *const prod, T const value) noexcept</td></tr>
+<tr class="separator:afe7501c4ae1afec6af85f031a949dbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57da8c33bc706892e873bca4ff05f7ab"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a57da8c33bc706892e873bca4ff05f7ab"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a57da8c33bc706892e873bca4ff05f7ab">Multiply</a> (T *const prod, T const value) noexcept</td></tr>
+<tr class="separator:a57da8c33bc706892e873bca4ff05f7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd8e274f3c060b8f34e508ca531f527"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a6bd8e274f3c060b8f34e508ca531f527"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a6bd8e274f3c060b8f34e508ca531f527">Divide_device</a> (T *const quot, T const value) noexcept</td></tr>
+<tr class="separator:a6bd8e274f3c060b8f34e508ca531f527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95225444c8b981eefd0e44bf763dfe19"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a95225444c8b981eefd0e44bf763dfe19"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a95225444c8b981eefd0e44bf763dfe19">Divide</a> (T *const quot, T const value) noexcept</td></tr>
+<tr class="separator:a95225444c8b981eefd0e44bf763dfe19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a428330a4e7622c16d943003ad97e54a0"></a>
@@ -342,6 +354,82 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype">T const&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95225444c8b981eefd0e44bf763dfe19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95225444c8b981eefd0e44bf763dfe19">&#9670;&nbsp;</a></span>Divide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T amrex::Gpu::Atomic::Divide </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>quot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bd8e274f3c060b8f34e508ca531f527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd8e274f3c060b8f34e508ca531f527">&#9670;&nbsp;</a></span>Divide_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T amrex::Gpu::Atomic::Divide_device </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>quot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -934,6 +1022,82 @@ template&lt;class T &gt; </div>
           <td>(</td>
           <td class="paramtype">T *const&#160;</td>
           <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57da8c33bc706892e873bca4ff05f7ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57da8c33bc706892e873bca4ff05f7ab">&#9670;&nbsp;</a></span>Multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T amrex::Gpu::Atomic::Multiply </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>prod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe7501c4ae1afec6af85f031a949dbc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7501c4ae1afec6af85f031a949dbc3">&#9670;&nbsp;</a></span>Multiply_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::enable_if_t&lt; sizeof(T)==sizeof(int), int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T amrex::Gpu::Atomic::Multiply_device </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>prod</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

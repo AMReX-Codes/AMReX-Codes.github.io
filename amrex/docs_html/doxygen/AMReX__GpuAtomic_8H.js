@@ -14,6 +14,8 @@ var AMReX__GpuAtomic_8H =
     [ "atomic_op", "AMReX__GpuAtomic_8H.html#a2819a77a9810eefb910390f23d2a698f", null ],
     [ "atomic_op_if", "AMReX__GpuAtomic_8H.html#a3b1604f8c0fb00d92059f55290de9efd", null ],
     [ "CAS", "AMReX__GpuAtomic_8H.html#a3794cd96c4a2f4b00db9cc1e5d66af87", null ],
+    [ "Divide", "AMReX__GpuAtomic_8H.html#a95225444c8b981eefd0e44bf763dfe19", null ],
+    [ "Divide_device", "AMReX__GpuAtomic_8H.html#a6bd8e274f3c060b8f34e508ca531f527", null ],
     [ "Exch", "AMReX__GpuAtomic_8H.html#a170f55f8b9bd412d07a2ab2e825a4ee8", null ],
     [ "If", "AMReX__GpuAtomic_8H.html#ac8138a7c3dfae65f72813c07b8e5e856", null ],
     [ "If_device", "AMReX__GpuAtomic_8H.html#a36a87ab5fbe799714dcc825134aa6027", null ],
@@ -28,5 +30,7 @@ var AMReX__GpuAtomic_8H =
     [ "Min_device", "AMReX__GpuAtomic_8H.html#a53c8ca8f4c92a40ec4eee06b385f6ef7", null ],
     [ "Min_device", "AMReX__GpuAtomic_8H.html#aa1ce598721adb1e2dcc9986951186d0b", null ],
     [ "Min_device", "AMReX__GpuAtomic_8H.html#a1ca14857c9072d782f6e4a98592ba2b6", null ],
-    [ "Min_device", "AMReX__GpuAtomic_8H.html#ad60dc3c4771055fc434211d284769767", null ]
+    [ "Min_device", "AMReX__GpuAtomic_8H.html#ad60dc3c4771055fc434211d284769767", null ],
+    [ "Multiply", "AMReX__GpuAtomic_8H.html#a57da8c33bc706892e873bca4ff05f7ab", null ],
+    [ "Multiply_device", "AMReX__GpuAtomic_8H.html#afe7501c4ae1afec6af85f031a949dbc3", null ]
 ];

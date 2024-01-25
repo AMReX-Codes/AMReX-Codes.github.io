@@ -1,5 +1,9 @@
 var NAVTREEINDEX27 =
 {
+"classCommProfStats.html#ab58dec894c1338d3e1691e0770507811":[3,0,16,83],
+"classCommProfStats.html#ab5b0c11f3980a18ad4d42d9de9c4af6a":[3,0,16,51],
+"classCommProfStats.html#ab7a4932c02acf98ae36a27c00f553094":[3,0,16,79],
+"classCommProfStats.html#abaab22e72988e0a65438fde205822073":[3,0,16,88],
 "classCommProfStats.html#abfb633bdb2ee1411565556f31c867a32":[3,0,16,93],
 "classCommProfStats.html#ac2f5f0735dd866d4d9dddd8e9192c94f":[3,0,16,60],
 "classCommProfStats.html#acfb90e6b7303a7d0bec5cec72b70aed7":[3,0,16,40],
@@ -138,10 +142,10 @@ var NAVTREEINDEX27 =
 "classamrex_1_1AMReX.html#ac0662c8a56afbc04493004cebe490826":[3,0,0,67,0],
 "classamrex_1_1AMReX.html#ad7909bf4e2448edc26489e346cb367ac":[3,0,0,67,13],
 "classamrex_1_1AMReX.html#ad8198c112ee47aabbd7239cbcf054427":[3,0,0,67,3],
-"classamrex_1_1AllPrint.html":[3,0,0,207],
-"classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a":[3,0,0,207,0],
-"classamrex_1_1AllPrintToFile.html":[3,0,0,209],
-"classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728":[3,0,0,209,0],
+"classamrex_1_1AllPrint.html":[3,0,0,209],
+"classamrex_1_1AllPrint.html#aea174ee088ce5e27479e1c0a7445d75a":[3,0,0,209,0],
+"classamrex_1_1AllPrintToFile.html":[3,0,0,211],
+"classamrex_1_1AllPrintToFile.html#a458d380fa6223f8ecbc5eecef4080728":[3,0,0,211,0],
 "classamrex_1_1Amr.html":[3,0,0,19],
 "classamrex_1_1Amr.html#a004dd1aadb752b3913f83f1d4bd825a3":[3,0,0,19,118],
 "classamrex_1_1Amr.html#a006c720b7d8ecf6e603785ab0b82bced":[3,0,0,19,140],
@@ -245,9 +249,5 @@ var NAVTREEINDEX27 =
 "classamrex_1_1Amr.html#a8101a391189955c50c7a36d359f3f5ed":[3,0,0,19,74],
 "classamrex_1_1Amr.html#a8440e6564a766f2aa1cf0670450b8523":[3,0,0,19,104],
 "classamrex_1_1Amr.html#a846cd945ebbc286b3488690b2105794a":[3,0,0,19,122],
-"classamrex_1_1Amr.html#a850f1090f6ca9e8b954eeb61dff6ddb1":[3,0,0,19,3],
-"classamrex_1_1Amr.html#a8727954d78b0edddf953091df0cdcb8f":[3,0,0,19,83],
-"classamrex_1_1Amr.html#a8a241b0a149dd4f2b15a83c5724d4153":[3,0,0,19,121],
-"classamrex_1_1Amr.html#a8a39d13c1163b1e2bb81ea1494479301":[3,0,0,19,1],
-"classamrex_1_1Amr.html#a8a6cfcdb14e8d28779382ac6406ab2ca":[3,0,0,19,130]
+"classamrex_1_1Amr.html#a850f1090f6ca9e8b954eeb61dff6ddb1":[3,0,0,19,3]
 };
