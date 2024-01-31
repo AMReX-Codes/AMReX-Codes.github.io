@@ -13,5 +13,6 @@ var AMReX__Particle_8H =
     [ "operator<<", "AMReX__Particle_8H.html#a6ee44abe4e92e171a76c83cc8edfdec8", null ],
     [ "operator<<", "AMReX__Particle_8H.html#ab4ab9b3e6200e633cbf452f97880f267", null ],
     [ "operator<<", "AMReX__Particle_8H.html#a637e0edc81c99a33f11e048fa4f7fc09", null ],
-    [ "operator<<", "AMReX__Particle_8H.html#ab612cdff7b506fd2884de82a842e95b8", null ]
+    [ "operator<<", "AMReX__Particle_8H.html#ab612cdff7b506fd2884de82a842e95b8", null ],
+    [ "SetParticleIDandCPU", "AMReX__Particle_8H.html#a6076dc93e17aef13f76bd835e89ce265", null ]
 ];

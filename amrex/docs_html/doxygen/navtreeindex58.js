@@ -1,5 +1,6 @@
 var NAVTREEINDEX58 =
 {
+"functions_vars_o.html":[3,3,2,15],
 "functions_vars_p.html":[3,3,2,16],
 "functions_vars_q.html":[3,3,2,17],
 "functions_vars_r.html":[3,3,2,18],
@@ -16,13 +17,13 @@ var NAVTREEINDEX58 =
 "functions_y.html":[3,3,0,25],
 "functions_z.html":[3,3,0,26],
 "functions_~.html":[3,3,0,27],
-"globals.html":[4,1,0,0],
 "globals.html":[4,1,0],
+"globals.html":[4,1,0,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6],
 "globals_defs.html":[4,1,6,0],
+"globals_defs.html":[4,1,6],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -90,8 +91,8 @@ var NAVTREEINDEX58 =
 "globals_z.html":[4,1,0,24],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX58 =
 "interfacesdcquadrature__mod_1_1poly__eval.html#ab38d996c6f957cb170aa2ca9fa135a74":[3,0,11,0,0],
 "modules.html":[1],
 "namespaceamrex.html":[2,0,0],
-"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2127],
-"namespaceamrex.html#a002ad6e06c5affc234b5bc1bfb2a4c09":[2,0,0,1849]
+"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2128]
 };

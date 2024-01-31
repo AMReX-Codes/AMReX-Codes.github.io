@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"namespaceamrex_1_1EB2.html#a72554dbd2be4d423812d6207b9c61aa3":[2,0,0,8,58],
+"namespaceamrex_1_1EB2.html#a776834bcd184c08736ed55f7fb2e3ddf":[2,0,0,8,86],
 "namespaceamrex_1_1EB2.html#a82d4783a176cefd7ff69a7d61215a8c9":[2,0,0,8,94],
 "namespaceamrex_1_1EB2.html#a853647130b0422fbb57870513c44b89b":[2,0,0,8,57],
 "namespaceamrex_1_1EB2.html#a8791492ceba31d5d14372a20721e3695":[2,0,0,8,69],
@@ -247,7 +249,5 @@ var NAVTREEINDEX67 =
 "namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900":[2,0,0,21,10],
 "namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3":[2,0,0,21,3],
 "namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27":[2,0,0,21,5],
-"namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d":[2,0,0,21,1],
-"namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7":[2,0,0,21,2],
-"namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5":[2,0,0,21,8]
+"namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d":[2,0,0,21,1]
 };

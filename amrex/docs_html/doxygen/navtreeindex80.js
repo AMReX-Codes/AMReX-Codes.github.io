@@ -1,5 +1,7 @@
 var NAVTREEINDEX80 =
 {
+"structamrex_1_1ParticleCommData.html#a6f106a94f894a5236b1207f4f0862e67":[3,0,0,486,1],
+"structamrex_1_1ParticleCommData.html#ac8c0956840e85e64e1a2ff8d9bf1fa34":[3,0,0,486,4],
 "structamrex_1_1ParticleCopyOp.html":[3,0,0,483],
 "structamrex_1_1ParticleCopyOp.html#a050152eacb86c574850379b45a619750":[3,0,0,483,1],
 "structamrex_1_1ParticleCopyOp.html#a118f6ee0ff0a2b597f7465fbfa1ae3e2":[3,0,0,483,4],
@@ -164,12 +166,12 @@ var NAVTREEINDEX80 =
 "structamrex_1_1ParticleTile.html#af54fdaaae348f3ef6c4f9ec72ed5d7aa":[3,0,0,499,48],
 "structamrex_1_1ParticleTileData.html":[3,0,0,496],
 "structamrex_1_1ParticleTileData.html#a04ff698794721724f295d18738c5436b":[3,0,0,496,15],
-"structamrex_1_1ParticleTileData.html#a0af54ea0c3714956400e422787104bb4":[3,0,0,496,14],
 "structamrex_1_1ParticleTileData.html#a0af54ea0c3714956400e422787104bb4":[3,0,0,496,13],
+"structamrex_1_1ParticleTileData.html#a0af54ea0c3714956400e422787104bb4":[3,0,0,496,14],
 "structamrex_1_1ParticleTileData.html#a1f4aec471e58edd6d4c3bcbff0ff8182":[3,0,0,496,19],
 "structamrex_1_1ParticleTileData.html#a249e437162c17a56356c37d2d1a90306":[3,0,0,496,22],
-"structamrex_1_1ParticleTileData.html#a26340692c39099549a1fbba08b666ced":[3,0,0,496,5],
 "structamrex_1_1ParticleTileData.html#a26340692c39099549a1fbba08b666ced":[3,0,0,496,4],
+"structamrex_1_1ParticleTileData.html#a26340692c39099549a1fbba08b666ced":[3,0,0,496,5],
 "structamrex_1_1ParticleTileData.html#a28683f199083fef39cd0dde6aafb8859":[3,0,0,496,8],
 "structamrex_1_1ParticleTileData.html#a3905ca69e86570132f8d8b9a5b9d0f10":[3,0,0,496,11],
 "structamrex_1_1ParticleTileData.html#a3db02853f88b6daab07d024e148538d3":[3,0,0,496,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX80 =
 "structamrex_1_1STLtools_1_1Triangle.html#a6b301a1c15117340fbb999bfee7dd5a2":[3,0,0,380,0,1],
 "structamrex_1_1STLtools_1_1Triangle.html#ab4af12af8d6c359d4870d0d93a9d07b5":[3,0,0,380,0,2],
 "structamrex_1_1Same.html":[3,0,0,262],
-"structamrex_1_1Same.html#add56e437a7ffd8c0a9036d03d11b8771":[3,0,0,262,0],
-"structamrex_1_1Same_3_01T_00_01U_01_4.html":[3,0,0,263],
-"structamrex_1_1Same_3_01T_00_01U_01_4.html#af5ce978eccae099c3f92d21d1ede7ad4":[3,0,0,263,0]
+"structamrex_1_1Same.html#add56e437a7ffd8c0a9036d03d11b8771":[3,0,0,262,0]
 };

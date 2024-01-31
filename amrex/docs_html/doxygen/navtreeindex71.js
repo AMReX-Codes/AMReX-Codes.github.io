@@ -1,5 +1,7 @@
 var NAVTREEINDEX71 =
 {
+"namespaceamrex__ebcellflag__module.html#a34d542ffa101be3b08b45ad08a1aa41e":[2,0,5,22],
+"namespaceamrex__ebcellflag__module.html#a4060baeae84dd42b4c8941cde84ceaee":[2,0,5,6],
 "namespaceamrex__ebcellflag__module.html#a4734800da1613de79878005a47689862":[2,0,5,11],
 "namespaceamrex__ebcellflag__module.html#a4e837dbfa10cc1075d4c603eddcda32a":[2,0,5,3],
 "namespaceamrex__ebcellflag__module.html#a5f10bb6cffaf7551730ef8bd3e73b6f1":[2,0,5,5],
@@ -153,8 +155,8 @@ var NAVTREEINDEX71 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0],
 "namespacemembers.html":[2,1,0,0],
+"namespacemembers.html":[2,1,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -205,8 +207,8 @@ var NAVTREEINDEX71 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2,0],
 "namespacemembers_vars.html":[2,1,2],
+"namespacemembers_vars.html":[2,1,2,0],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX71 =
 "namespaceparticle__detail.html#afbe110320582b7ce557067081c94c949":[2,0,20,2],
 "namespaceparticle__detail.html#afbe88249b244a942b7d7d41b6b176abd":[2,0,20,9],
 "namespaces.html":[2,0],
-"namespacesdcquadrature__mod.html":[2,0,21],
-"namespacesdcquadrature__mod.html#a0ffbe7bf11e56b416c5631c0b38321b6":[2,0,21,5],
-"namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837":[2,0,21,12]
+"namespacesdcquadrature__mod.html":[2,0,21]
 };
