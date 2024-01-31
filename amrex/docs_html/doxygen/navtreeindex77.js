@@ -1,5 +1,7 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html":[3,0,0,255],
+"structamrex_1_1HasMultiComp.html":[3,0,0,77],
 "structamrex_1_1HasMultiComp_1_1type.html":[3,0,0,77,0],
 "structamrex_1_1IParserExeADD.html":[3,0,0,284],
 "structamrex_1_1IParserExeADD.html#ae0bff41668e0c1e5701209d61e4560a6":[3,0,0,284,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6":[3,0,0,7,1,0],
 "structamrex_1_1MFUtil_1_1SymmetricGhost.html":[3,0,0,7,0],
 "structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[3,0,0,7,0,0],
-"structamrex_1_1MLCellLinOpT_1_1BCTL.html":[3,0,0,422,0],
-"structamrex_1_1MLCellLinOpT_1_1BCTL.html#a3f55ba0ebdeb29d040727aeb9a5d9b62":[3,0,0,422,0,1],
-"structamrex_1_1MLCellLinOpT_1_1BCTL.html#ac85b3ff5c926739723021bf2d01254f7":[3,0,0,422,0,0]
+"structamrex_1_1MLCellLinOpT_1_1BCTL.html":[3,0,0,422,0]
 };

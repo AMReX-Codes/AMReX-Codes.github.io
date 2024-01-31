@@ -1,5 +1,7 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1MLCellLinOpT_1_1BCTL.html#a3f55ba0ebdeb29d040727aeb9a5d9b62":[3,0,0,422,0,1],
+"structamrex_1_1MLCellLinOpT_1_1BCTL.html#ac85b3ff5c926739723021bf2d01254f7":[3,0,0,422,0,0],
 "structamrex_1_1MLLinOpT_1_1CommContainer.html":[3,0,0,435,0],
 "structamrex_1_1MLLinOpT_1_1CommContainer.html#a09a4c464169281aeb1ea6e97b34087d5":[3,0,0,435,0,5],
 "structamrex_1_1MLLinOpT_1_1CommContainer.html#a42b220f522310f21612b93d2e06a3968":[3,0,0,435,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1PCData.html#ad7ca6cbcd2440f36bb0b02a9ffcfe6f5":[3,0,0,122,9],
 "structamrex_1_1PCData.html#af73fd2f1adac02a82df3907bec2f742c":[3,0,0,122,5],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html":[3,0,0,13,0],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a178254a5520c3ee1ea23f47987392468":[3,0,0,13,0,0],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[3,0,0,13,0,2],
-"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[3,0,0,13,0,3]
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a178254a5520c3ee1ea23f47987392468":[3,0,0,13,0,0]
 };
