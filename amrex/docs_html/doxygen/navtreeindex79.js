@@ -1,5 +1,6 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a178254a5520c3ee1ea23f47987392468":[3,0,0,13,0,0],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#a8200f24cfc6d6d4d77814c4095612c2f":[3,0,0,13,0,2],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ad2d00f03d307a91de38a715015a251ba":[3,0,0,13,0,3],
 "structamrex_1_1ParallelDescriptor_1_1Mpi__typemap.html#ae516333153a3f26f388eec71a73c1c2e":[3,0,0,13,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1ParticleCPUWrapper.html#aee3e19031ec6e1adbaaaf08c5da52186":[3,0,0,461,6],
 "structamrex_1_1ParticleCPUWrapper.html#af456e0632ceb42b240d4d2608325fa66":[3,0,0,461,1],
 "structamrex_1_1ParticleCPUWrapper.html#af9ef300a76f9e5e44bb0fbb67b0d715d":[3,0,0,461,4],
-"structamrex_1_1ParticleCommData.html":[3,0,0,486],
-"structamrex_1_1ParticleCommData.html#a0abfbcf524018c0ec719c5f4861823f5":[3,0,0,486,0]
+"structamrex_1_1ParticleCommData.html":[3,0,0,486]
 };

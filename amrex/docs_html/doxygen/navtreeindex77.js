@@ -1,5 +1,6 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html":[3,0,0,254],
 "structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html":[3,0,0,255],
 "structamrex_1_1HasMultiComp.html":[3,0,0,77],
 "structamrex_1_1HasMultiComp_1_1type.html":[3,0,0,77,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1MFUtil_1_1AsymmetricGhost.html":[3,0,0,7,1],
 "structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6":[3,0,0,7,1,0],
 "structamrex_1_1MFUtil_1_1SymmetricGhost.html":[3,0,0,7,0],
-"structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[3,0,0,7,0,0],
-"structamrex_1_1MLCellLinOpT_1_1BCTL.html":[3,0,0,422,0]
+"structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9":[3,0,0,7,0,0]
 };

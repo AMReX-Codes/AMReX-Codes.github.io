@@ -1,5 +1,9 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1parser__node.html#aeb2f3f6f5f90a7cc9843357edecb2538":[3,0,0,358,3],
+"structamrex_1_1parser__node.html#aee9093898e53fbeba75eb636c9ef99e1":[3,0,0,358,4],
+"structamrex_1_1parser__number.html":[3,0,0,359],
+"structamrex_1_1parser__number.html#a9b8b81a5486eb6114f80a5a40489fd92":[3,0,0,359,1],
 "structamrex_1_1parser__number.html#ab186dabf87779fb9b65fe0edc854e46c":[3,0,0,359,0],
 "structamrex_1_1parser__symbol.html":[3,0,0,360],
 "structamrex_1_1parser__symbol.html#a36d42d12dc34e9e1a3321c27539bb34d":[3,0,0,360,1],
