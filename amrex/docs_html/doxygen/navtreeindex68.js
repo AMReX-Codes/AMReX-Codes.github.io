@@ -1,8 +1,8 @@
 var NAVTREEINDEX68 =
 {
-"namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7":[2,0,0,21,2],
-"namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5":[2,0,0,21,8],
-"namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a":[2,0,0,21,7],
+"namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7":[2,0,0,21,3],
+"namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5":[2,0,0,21,9],
+"namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a":[2,0,0,21,8],
 "namespaceamrex_1_1Math_1_1detail.html":[2,0,0,21,0],
 "namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6":[2,0,0,21,0,0],
 "namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39":[2,0,0,21,0,1],

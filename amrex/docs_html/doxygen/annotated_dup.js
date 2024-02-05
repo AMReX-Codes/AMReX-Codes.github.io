@@ -152,6 +152,9 @@ var annotated_dup =
         [ "orOp", "structamrex_1_1InSituUtils_1_1orOp.html", "structamrex_1_1InSituUtils_1_1orOp" ],
         [ "StateMap", "classamrex_1_1InSituUtils_1_1StateMap.html", "classamrex_1_1InSituUtils_1_1StateMap" ]
       ] ],
+      [ "Math", "namespaceamrex_1_1Math.html", [
+        [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ]
+      ] ],
       [ "MFUtil", "namespaceamrex_1_1MFUtil.html", [
         [ "SymmetricGhost", "structamrex_1_1MFUtil_1_1SymmetricGhost.html", "structamrex_1_1MFUtil_1_1SymmetricGhost" ],
         [ "AsymmetricGhost", "structamrex_1_1MFUtil_1_1AsymmetricGhost.html", "structamrex_1_1MFUtil_1_1AsymmetricGhost" ]
@@ -307,6 +310,7 @@ var annotated_dup =
       [ "Box", "classamrex_1_1Box.html", "classamrex_1_1Box" ],
       [ "BoxCommHelper", "classamrex_1_1BoxCommHelper.html", "classamrex_1_1BoxCommHelper" ],
       [ "BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
+      [ "BoxIndexer", "structamrex_1_1BoxIndexer.html", "structamrex_1_1BoxIndexer" ],
       [ "BARef", "structamrex_1_1BARef.html", "structamrex_1_1BARef" ],
       [ "BATnull", "structamrex_1_1BATnull.html", "structamrex_1_1BATnull" ],
       [ "BATindexType", "structamrex_1_1BATindexType.html", "structamrex_1_1BATindexType" ],

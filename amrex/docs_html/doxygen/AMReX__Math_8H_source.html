@@ -105,227 +105,367 @@ $(document).ready(function(){initNavTree('AMReX__Math_8H_source.html',''); initR
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__Extension_8H.html">AMReX_Extension.H</a>&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#  include &lt;sycl/sycl.hpp&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> { <span class="keyword">inline</span> <span class="keyword">namespace </span>disabled {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// If it is inside namespace amrex, or amrex namespace is imported with using namespace amrex or</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// amrex::disabled, unqualified abs functions are disabled with a compile time error such as,</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// call of overload abs(int&amp;) is ambiguous, or a link time error such as, undefined reference to</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// `amrex::disabled::abs(double)&#39;.  To fix it, one can use `std::abs` or `amrex::Math::abs`.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// The latter works in both host and device functions, whereas `std::abs` does not currently</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// work on device with HIP and SYCL.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">   23</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723">   24</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96">   25</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span> <span class="keywordtype">double</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd">   26</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">int</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba">   27</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669">   28</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span> <span class="keywordtype">long</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html">   31</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1Math.html">amrex::Math</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Since Intel&#39;s SYCL compiler now supports the following std functions on device,</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// one no longer needs to use amrex::Math::abs, etc.  They are kept here for</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// backward compatibility.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using</span> <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using</span> std::ceil;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using</span> std::copysign;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">using</span> std::floor;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> std::round;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// However, since Intel&#39;s SYCL compiler is very aggressive with fast floating</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// point optimisations, the following must be kept, as using the std functions</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// always evaluates to false (even at -O1).</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">using</span> sycl::isfinite;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab">sycl::isinf</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">using</span> std::isfinite;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab">std::isinf</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3">   60</a></span>&#160;constexpr std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value,T&gt; <a class="code" href="namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3">pi</a> ()</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> T(3.1415926535897932384626433832795029L);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">   67</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">cospi</a> (<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">sycl::cospi</a>(x);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">return ::cospi</a>(x); ))</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::cos(pi&lt;double&gt;()*x); ))</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">   79</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">cospi</a> (<span class="keywordtype">float</span> x)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">sycl::cospi</a>(x);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( return ::cospif(x); ))</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::cos(pi&lt;float&gt;()*x); ))</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">   91</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">sinpi</a> (<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">sycl::sinpi</a>(x);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">return ::sinpi</a>(x); ))</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::sin(pi&lt;double&gt;()*x); ))</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">  103</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">sinpi</a> (<span class="keywordtype">float</span> x)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">sycl::sinpi</a>(x);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( return ::sinpif(x); ))</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::sin(pi&lt;float&gt;()*x); ))</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math_1_1detail.html">  113</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">  114</a></span>&#160;    <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">sincos</a> (<span class="keywordtype">double</span> x, <span class="keywordtype">double</span>* sinx, <span class="keywordtype">double</span>* cosx) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#if defined(_GNU_SOURCE) &amp;&amp; !defined(__APPLE__)</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">::sincos</a>(x, sinx, cosx);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        *sinx = std::sin(x);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        *cosx = std::cos(x);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">  123</a></span>&#160;    <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">sincosf</a> (<span class="keywordtype">float</span> x, <span class="keywordtype">float</span>* sinx, <span class="keywordtype">float</span>* cosx) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#if defined(_GNU_SOURCE) &amp;&amp; !defined(__APPLE__)</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">::sincosf</a>(x, sinx, cosx);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        *sinx = std::sin(x);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        *cosx = std::cos(x);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">  135</a></span>&#160;std::pair&lt;double,double&gt; <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a> (<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::pair&lt;double,double&gt; r;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, sycl::private_ptr&lt;double&gt;(&amp;r.second));</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::<a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(x, &amp;r.first, &amp;r.second); ))</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">detail::sincos</a>(x, &amp;r.first, &amp;r.second); ))</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">  149</a></span>&#160;std::pair&lt;float,float&gt; <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a> (<span class="keywordtype">float</span> x)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    std::pair&lt;float,float&gt; r;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, sycl::private_ptr&lt;float&gt;(&amp;r.second));</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::<a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">sincosf</a>(x, &amp;r.first, &amp;r.second); ))</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">detail::sincosf</a>(x, &amp;r.first, &amp;r.second); ))</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">  163</a></span>&#160;std::pair&lt;double,double&gt; <a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a> (<span class="keywordtype">double</span> x)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::pair&lt;double,double&gt; r;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;double&gt;()*x);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::<a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a>(x, &amp;r.first, &amp;r.second); ))</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;double&gt;()*x); ))</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5">  177</a></span>&#160;std::pair&lt;float,float&gt; <a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a> (<span class="keywordtype">float</span> x)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::pair&lt;float,float&gt; r;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;float&gt;()*x);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::sincospif(x, &amp;r.first, &amp;r.second); ))</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;float&gt;()*x); ))</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Power, <span class="keyword">typename</span> T,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">typename</span> = <span class="keyword">typename</span> std::enable_if&lt;!std::is_integral&lt;T&gt;() || Power&gt;=0&gt;::type&gt;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">  193</a></span>&#160;constexpr T <a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a> (T x) noexcept</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;{</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span> constexpr (Power &lt; 0) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">return</span> T(1)/<a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a>&lt;-Power&gt;(x);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 0) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="comment">//note: 0^0 is implementation-defined, but most compilers return 1</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">return</span> T(1);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 1) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> x;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 2) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> x*x;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power%2 == 0) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> powi&lt;2&gt;(powi&lt;Power/2&gt;(x));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">return</span> x*<a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a>&lt;Power-1&gt;(x);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__INT_8H.html">AMReX_INT.H</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#  include &lt;sycl/sycl.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> { <span class="keyword">inline</span> <span class="keyword">namespace </span>disabled {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// If it is inside namespace amrex, or amrex namespace is imported with using namespace amrex or</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// amrex::disabled, unqualified abs functions are disabled with a compile time error such as,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// call of overload abs(int&amp;) is ambiguous, or a link time error such as, undefined reference to</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// `amrex::disabled::abs(double)&#39;.  To fix it, one can use `std::abs` or `amrex::Math::abs`.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// The latter works in both host and device functions, whereas `std::abs` does not currently</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// work on device with HIP and SYCL.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">   24</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723">   25</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96">   26</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span> <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd">   27</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">int</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba">   28</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669">   29</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">abs</a> (<span class="keywordtype">long</span> <span class="keywordtype">long</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html">   32</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1Math.html">amrex::Math</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// Since Intel&#39;s SYCL compiler now supports the following std functions on device,</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// one no longer needs to use amrex::Math::abs, etc.  They are kept here for</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// backward compatibility.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">using</span> <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using</span> std::ceil;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">using</span> std::copysign;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> std::floor;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">using</span> std::round;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// However, since Intel&#39;s SYCL compiler is very aggressive with fast floating</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// point optimisations, the following must be kept, as using the std functions</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// always evaluates to false (even at -O1).</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_SYCL</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">using</span> sycl::isfinite;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab">sycl::isinf</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">using</span> std::isfinite;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab">std::isinf</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3">   61</a></span>&#160;constexpr std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value,T&gt; <a class="code" href="namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3">pi</a> ()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> T(3.1415926535897932384626433832795029L);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">   68</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">cospi</a> (<span class="keywordtype">double</span> x)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">sycl::cospi</a>(x);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">return ::cospi</a>(x); ))</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::cos(pi&lt;double&gt;()*x); ))</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">   80</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">cospi</a> (<span class="keywordtype">float</span> x)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">sycl::cospi</a>(x);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( return ::cospif(x); ))</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::cos(pi&lt;float&gt;()*x); ))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">   92</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">sinpi</a> (<span class="keywordtype">double</span> x)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">sycl::sinpi</a>(x);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">return ::sinpi</a>(x); ))</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::sin(pi&lt;double&gt;()*x); ))</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">  104</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">sinpi</a> (<span class="keywordtype">float</span> x)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">sycl::sinpi</a>(x);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( return ::sinpif(x); ))</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <span class="keywordflow">return</span> std::sin(pi&lt;float&gt;()*x); ))</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math_1_1detail.html">  114</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">  115</a></span>&#160;    <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">sincos</a> (<span class="keywordtype">double</span> x, <span class="keywordtype">double</span>* sinx, <span class="keywordtype">double</span>* cosx) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#if defined(_GNU_SOURCE) &amp;&amp; !defined(__APPLE__)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">::sincos</a>(x, sinx, cosx);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        *sinx = std::sin(x);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        *cosx = std::cos(x);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">  124</a></span>&#160;    <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">sincosf</a> (<span class="keywordtype">float</span> x, <span class="keywordtype">float</span>* sinx, <span class="keywordtype">float</span>* cosx) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#if defined(_GNU_SOURCE) &amp;&amp; !defined(__APPLE__)</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">::sincosf</a>(x, sinx, cosx);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        *sinx = std::sin(x);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        *cosx = std::cos(x);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">  136</a></span>&#160;std::pair&lt;double,double&gt; <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a> (<span class="keywordtype">double</span> x)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    std::pair&lt;double,double&gt; r;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, sycl::private_ptr&lt;double&gt;(&amp;r.second));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::<a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(x, &amp;r.first, &amp;r.second); ))</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">detail::sincos</a>(x, &amp;r.first, &amp;r.second); ))</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">  150</a></span>&#160;std::pair&lt;float,float&gt; <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a> (<span class="keywordtype">float</span> x)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::pair&lt;float,float&gt; r;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    r.first = <a class="code" href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">sycl::sincos</a>(x, sycl::private_ptr&lt;float&gt;(&amp;r.second));</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::<a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">sincosf</a>(x, &amp;r.first, &amp;r.second); ))</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( <a class="code" href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">detail::sincosf</a>(x, &amp;r.first, &amp;r.second); ))</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">  164</a></span>&#160;std::pair&lt;double,double&gt; <a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a> (<span class="keywordtype">double</span> x)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::pair&lt;double,double&gt; r;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;double&gt;()*x);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::<a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a>(x, &amp;r.first, &amp;r.second); ))</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;double&gt;()*x); ))</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#aecf367b723c8148d80df1abf95f5dfb5">  178</a></span>&#160;std::pair&lt;float,float&gt; <a class="code" href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">sincospi</a> (<span class="keywordtype">float</span> x)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    std::pair&lt;float,float&gt; r;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;float&gt;()*x);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( ::sincospif(x, &amp;r.first, &amp;r.second); ))</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>(( r = <a class="code" href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">sincos</a>(pi&lt;float&gt;()*x); ))</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> Power, <span class="keyword">typename</span> T,</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">typename</span> = <span class="keyword">typename</span> std::enable_if&lt;!std::is_integral&lt;T&gt;() || Power&gt;=0&gt;::type&gt;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">  194</a></span>&#160;constexpr T <a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a> (T x) noexcept</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">if</span> constexpr (Power &lt; 0) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> T(1)/<a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a>&lt;-Power&gt;(x);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 0) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="comment">//note: 0^0 is implementation-defined, but most compilers return 1</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> T(1);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 1) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power == 2) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">return</span> x*x;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr (Power%2 == 0) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> powi&lt;2&gt;(powi&lt;Power/2&gt;(x));</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> x*<a class="code" href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">powi</a>&lt;Power-1&gt;(x);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#if defined(AMREX_INT128_SUPPORTED)</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;std::uint64_t umulhi (std::uint64_t a, std::uint64_t b)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_SYCL)</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> sycl::mul_hi(a,b);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a>(( <span class="keywordflow">return</span> __umul64hi(a, b); ))</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keyword">auto</span> tmp = amrex::UInt128_t(a) * amrex::UInt128_t(b);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">return</span> std::uint64_t(tmp &gt;&gt; 64);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    ))</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">/***************************************************************************************************</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"> * Copyright (c) 2017 - 2024 NVIDIA CORPORATION &amp; AFFILIATES. All rights reserved.</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"> * SPDX-License-Identifier: BSD-3-Clause</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment"> * modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment"> * 1. Redistributions of source code must retain the above copyright notice, this</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment"> * list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice,</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment"> * this list of conditions and the following disclaimer in the documentation</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment"> * and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment"> * 3. Neither the name of the copyright holder nor the names of its</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment"> * contributors may be used to endorse or promote products derived from</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment"> * this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment"> * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment"> * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"> * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment"> * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"> * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"> * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment"> **************************************************************************************************/</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html">  275</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html">FastDivmodU64</a></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">  277</a></span>&#160;    std::uint64_t <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#ifdef AMREX_INT128_SUPPORTED</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    std::uint64_t multiplier = 1U;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> shift_right = 0;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> round_up = 0;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// Static methods</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">static</span> std::uint32_t integer_log2 (std::uint64_t x)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        std::uint32_t n = 0;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">while</span> (x &gt;&gt;= 1) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            ++n;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#abdfbdb0c4abcf0304526080d9febbf42">FastDivmodU64</a> (std::uint64_t divisor_)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        : <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>(divisor_)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            shift_right = integer_log2(<a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a> &amp; (<a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a> - 1)) == 0) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                multiplier = 0;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                std::uint64_t power_of_two = (std::uint64_t(1) &lt;&lt; shift_right);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                <span class="keyword">auto</span> n = amrex::UInt128_t(power_of_two) &lt;&lt; 64;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                std::uint64_t multiplier_lo = n / <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                n += power_of_two;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                multiplier = n / <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                round_up = (multiplier_lo == multiplier ? 1 : 0);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html#abdfbdb0c4abcf0304526080d9febbf42">  323</a></span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#abdfbdb0c4abcf0304526080d9febbf42">FastDivmodU64</a> (std::uint64_t divisor_) : <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>(divisor_) {}</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
+<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html#aabde614a5f0cb0b6d2b8aa8b4fe53b7d">  329</a></span>&#160;    std::uint64_t <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#aabde614a5f0cb0b6d2b8aa8b4fe53b7d">divide</a> (std::uint64_t dividend)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#if defined(AMREX_INT128_SUPPORTED)</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keyword">auto</span> x = dividend;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (multiplier) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            x = amrex::Math::umulhi(dividend + round_up, multiplier);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> (x &gt;&gt; shift_right);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span> dividend / <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html#a332163d06c70c367f3238af4fb3dc6fd">  344</a></span>&#160;    std::uint64_t <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a332163d06c70c367f3238af4fb3dc6fd">modulus</a> (std::uint64_t quotient, std::uint64_t dividend)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">return</span> dividend - quotient * <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">divisor</a>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
+<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html#a16dc01c31468084384ff41fcff7c2152">  351</a></span>&#160;    std::uint64_t <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a16dc01c31468084384ff41fcff7c2152">divmod</a> (std::uint64_t &amp;remainder, std::uint64_t dividend)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keyword">auto</span> quotient = <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#aabde614a5f0cb0b6d2b8aa8b4fe53b7d">divide</a>(dividend);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        remainder = <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a332163d06c70c367f3238af4fb3dc6fd">modulus</a>(quotient, dividend);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> quotient;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="structamrex_1_1Math_1_1FastDivmodU64.html#aaa477531586ad42032317fe1be5feb2d">  361</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#aaa477531586ad42032317fe1be5feb2d">operator() </a>(std::uint64_t &amp;quotient, std::uint64_t &amp;remainder, std::uint64_t dividend)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        quotient = <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html#a16dc01c31468084384ff41fcff7c2152">divmod</a>(remainder, dividend);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;};</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:116</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a2240a2bbfffe9904f04e11e37d5d3cc5"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a2240a2bbfffe9904f04e11e37d5d3cc5">AMREX_IF_ON_DEVICE</a></div><div class="ttdeci">#define AMREX_IF_ON_DEVICE(CODE)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:56</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a3db6d2559ac1bb79c7f2a6dfe25917c8"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a></div><div class="ttdeci">#define AMREX_IF_ON_HOST(CODE)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:58</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:20</div></div>
+<div class="ttc" id="aAMReX__INT_8H_html"><div class="ttname"><a href="AMReX__INT_8H.html">AMReX_INT.H</a></div></div>
 <div class="ttc" id="acomplex-type_8h_html_a3aa069ac3980707dae1e0530f50d59e4"><div class="ttname"><a href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">abs</a></div><div class="ttdeci">#define abs(x)</div><div class="ttdef"><b>Definition:</b> complex-type.h:85</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a0b47b234df50714368217dfb8703aaab"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a0b47b234df50714368217dfb8703aaab">amrex::Gpu::isinf</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool isinf(T m) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuUtility.H:161</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_1_1detail_html_a42f31885c8f93e816a142d0685715ad6"><div class="ttname"><a href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">amrex::Math::detail::sincos</a></div><div class="ttdeci">AMREX_FORCE_INLINE void sincos(double x, double *sinx, double *cosx)</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:114</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_1_1detail_html_a6040b705f14e2498baef550a8196fe39"><div class="ttname"><a href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">amrex::Math::detail::sincosf</a></div><div class="ttdeci">AMREX_FORCE_INLINE void sincosf(float x, float *sinx, float *cosx)</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:123</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html"><div class="ttname"><a href="namespaceamrex_1_1Math.html">amrex::Math</a></div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:31</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_a00c67f1c6607b0d93dea1f8ad5e913fe"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">amrex::Math::powi</a></div><div class="ttdeci">::type constexpr AMREX_FORCE_INLINE T powi(T x) noexcept</div><div class="ttdoc">Return pow(x, Power), where Power is an integer known at compile time.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:193</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_a0568425c35018cd1be09a3b08a245585"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">amrex::Math::sinpi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE double sinpi(double x)</div><div class="ttdoc">Return sin(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:91</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_a132a1933870ca2c349d598c1a634dd30"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">amrex::Math::sincos</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::pair&lt; float, float &gt; sincos(float x)</div><div class="ttdoc">Return sine and cosine of given number.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:149</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_a209b6bc6888f6b26a5337094aa3b5900"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">amrex::Math::sinpi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE float sinpi(float x)</div><div class="ttdoc">Return sin(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:103</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_ab79268d67f8a70c6e85ad3dfbbc622a3"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3">amrex::Math::pi</a></div><div class="ttdeci">constexpr std::enable_if_t&lt; std::is_floating_point&lt; T &gt;::value, T &gt; pi()</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:60</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_ac235809e73ad52f2d6b8c7cf324e9a27"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">amrex::Math::sincos</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::pair&lt; double, double &gt; sincos(double x)</div><div class="ttdoc">Return sine and cosine of given number.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:135</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_ada7d7d19433d7d59ac03689f8b55631d"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">amrex::Math::cospi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE double cospi(double x)</div><div class="ttdoc">Return cos(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:67</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_adbc23685ea37023206db656ff45973f7"><div class="ttname"><a href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">amrex::Math::cospi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE float cospi(float x)</div><div class="ttdoc">Return cos(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:79</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Math_html_af9868b2887bd7c4758a04d4603d10a5a"><div class="ttname"><a href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">amrex::Math::sincospi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::pair&lt; double, double &gt; sincospi(double x)</div><div class="ttdoc">Return sin(pi*x) and cos(pi*x) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:163</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_1_1detail_html_a42f31885c8f93e816a142d0685715ad6"><div class="ttname"><a href="namespaceamrex_1_1Math_1_1detail.html#a42f31885c8f93e816a142d0685715ad6">amrex::Math::detail::sincos</a></div><div class="ttdeci">AMREX_FORCE_INLINE void sincos(double x, double *sinx, double *cosx)</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:115</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_1_1detail_html_a6040b705f14e2498baef550a8196fe39"><div class="ttname"><a href="namespaceamrex_1_1Math_1_1detail.html#a6040b705f14e2498baef550a8196fe39">amrex::Math::detail::sincosf</a></div><div class="ttdeci">AMREX_FORCE_INLINE void sincosf(float x, float *sinx, float *cosx)</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:124</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html"><div class="ttname"><a href="namespaceamrex_1_1Math.html">amrex::Math</a></div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:32</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_a00c67f1c6607b0d93dea1f8ad5e913fe"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a00c67f1c6607b0d93dea1f8ad5e913fe">amrex::Math::powi</a></div><div class="ttdeci">::type constexpr AMREX_FORCE_INLINE T powi(T x) noexcept</div><div class="ttdoc">Return pow(x, Power), where Power is an integer known at compile time.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:194</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_a0568425c35018cd1be09a3b08a245585"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a0568425c35018cd1be09a3b08a245585">amrex::Math::sinpi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE double sinpi(double x)</div><div class="ttdoc">Return sin(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:92</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_a132a1933870ca2c349d598c1a634dd30"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a132a1933870ca2c349d598c1a634dd30">amrex::Math::sincos</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::pair&lt; float, float &gt; sincos(float x)</div><div class="ttdoc">Return sine and cosine of given number.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:150</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_a209b6bc6888f6b26a5337094aa3b5900"><div class="ttname"><a href="namespaceamrex_1_1Math.html#a209b6bc6888f6b26a5337094aa3b5900">amrex::Math::sinpi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE float sinpi(float x)</div><div class="ttdoc">Return sin(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:104</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_ab79268d67f8a70c6e85ad3dfbbc622a3"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ab79268d67f8a70c6e85ad3dfbbc622a3">amrex::Math::pi</a></div><div class="ttdeci">constexpr std::enable_if_t&lt; std::is_floating_point&lt; T &gt;::value, T &gt; pi()</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:61</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_ac235809e73ad52f2d6b8c7cf324e9a27"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ac235809e73ad52f2d6b8c7cf324e9a27">amrex::Math::sincos</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::pair&lt; double, double &gt; sincos(double x)</div><div class="ttdoc">Return sine and cosine of given number.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:136</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_ada7d7d19433d7d59ac03689f8b55631d"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ada7d7d19433d7d59ac03689f8b55631d">amrex::Math::cospi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE double cospi(double x)</div><div class="ttdoc">Return cos(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:68</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_adbc23685ea37023206db656ff45973f7"><div class="ttname"><a href="namespaceamrex_1_1Math.html#adbc23685ea37023206db656ff45973f7">amrex::Math::cospi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE float cospi(float x)</div><div class="ttdoc">Return cos(x*pi) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:80</div></div>
+<div class="ttc" id="anamespaceamrex_1_1Math_html_af9868b2887bd7c4758a04d4603d10a5a"><div class="ttname"><a href="namespaceamrex_1_1Math.html#af9868b2887bd7c4758a04d4603d10a5a">amrex::Math::sincospi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::pair&lt; double, double &gt; sincospi(double x)</div><div class="ttdoc">Return sin(pi*x) and cos(pi*x) given x.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:164</div></div>
 <div class="ttc" id="anamespaceamrex_1_1disabled_html_ab5317e33b0a4c8a91cefb704d2a60f6b"><div class="ttname"><a href="namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b">amrex::disabled::abs</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE double abs(double)</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayCommI.H:841</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html">amrex::Math::FastDivmodU64</a></div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:276</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html_a16dc01c31468084384ff41fcff7c2152"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html#a16dc01c31468084384ff41fcff7c2152">amrex::Math::FastDivmodU64::divmod</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE std::uint64_t divmod(std::uint64_t &amp;remainder, std::uint64_t dividend) const</div><div class="ttdoc">Returns the quotient of floor(dividend / divisor) and computes the remainder.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:351</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html_a332163d06c70c367f3238af4fb3dc6fd"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html#a332163d06c70c367f3238af4fb3dc6fd">amrex::Math::FastDivmodU64::modulus</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE std::uint64_t modulus(std::uint64_t quotient, std::uint64_t dividend) const</div><div class="ttdoc">Computes the remainder given a computed quotient and dividend.</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:344</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html_a7959b6f2f90d3b613e82c6ae4a22477c"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html#a7959b6f2f90d3b613e82c6ae4a22477c">amrex::Math::FastDivmodU64::divisor</a></div><div class="ttdeci">std::uint64_t divisor</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:277</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html_aaa477531586ad42032317fe1be5feb2d"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html#aaa477531586ad42032317fe1be5feb2d">amrex::Math::FastDivmodU64::operator()</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void operator()(std::uint64_t &amp;quotient, std::uint64_t &amp;remainder, std::uint64_t dividend) const</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:361</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html_aabde614a5f0cb0b6d2b8aa8b4fe53b7d"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html#aabde614a5f0cb0b6d2b8aa8b4fe53b7d">amrex::Math::FastDivmodU64::divide</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE std::uint64_t divide(std::uint64_t dividend) const</div><div class="ttdoc">Returns the quotient of floor(dividend / divisor)</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:329</div></div>
+<div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html_abdfbdb0c4abcf0304526080d9febbf42"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html#abdfbdb0c4abcf0304526080d9febbf42">amrex::Math::FastDivmodU64::FastDivmodU64</a></div><div class="ttdeci">FastDivmodU64(std::uint64_t divisor_)</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:323</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

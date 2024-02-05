@@ -1,5 +1,6 @@
 var AMReX__Math_8H =
 [
+    [ "FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", "structamrex_1_1Math_1_1FastDivmodU64" ],
     [ "abs", "AMReX__Math_8H.html#ab5317e33b0a4c8a91cefb704d2a60f6b", null ],
     [ "abs", "AMReX__Math_8H.html#aceb0a2fafed413cd99b5e79f954aa723", null ],
     [ "abs", "AMReX__Math_8H.html#a0d57b1b25d1b53052c080fe847e40acd", null ],

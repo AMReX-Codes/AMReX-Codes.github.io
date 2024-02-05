@@ -3,6 +3,7 @@ var AMReX__Box_8H =
     [ "Box", "classamrex_1_1Box.html", "classamrex_1_1Box" ],
     [ "BoxCommHelper", "classamrex_1_1BoxCommHelper.html", "classamrex_1_1BoxCommHelper" ],
     [ "BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
+    [ "BoxIndexer", "structamrex_1_1BoxIndexer.html", "structamrex_1_1BoxIndexer" ],
     [ "adjCell", "AMReX__Box_8H.html#a68db5764cbf67a29f9cd2cc91d291a82", null ],
     [ "adjCellHi", "AMReX__Box_8H.html#a6b84705b46b7a57e78bb865c63eacab9", null ],
     [ "adjCellLo", "AMReX__Box_8H.html#aae360b0fe88c8af72c293906e6e7d3c3", null ],

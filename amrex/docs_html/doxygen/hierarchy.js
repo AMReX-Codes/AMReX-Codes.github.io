@@ -213,6 +213,7 @@ var hierarchy =
     [ "amrex::BoxConverter", "classamrex_1_1BoxConverter.html", [
       [ "amrex::InterpolaterBoxCoarsener", "classamrex_1_1InterpolaterBoxCoarsener.html", null ]
     ] ],
+    [ "amrex::BoxIndexer", "structamrex_1_1BoxIndexer.html", null ],
     [ "amrex::BoxIterator", "classamrex_1_1BoxIterator.html", null ],
     [ "amrex::BoxList", "classamrex_1_1BoxList.html", [
       [ "amrex::BoxDomain", "classamrex_1_1BoxDomain.html", null ]
@@ -441,6 +442,7 @@ var hierarchy =
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
       [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ]
     ] ],
+    [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
     [ "amrex::FatPtr< T >", "structamrex_1_1FatPtr.html", null ],
     [ "amrex::FBData< FAB >", "structamrex_1_1FBData.html", null ],
     [ "amrex::FilccCell", "structamrex_1_1FilccCell.html", null ],

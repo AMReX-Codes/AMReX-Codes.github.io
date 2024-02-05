@@ -427,6 +427,7 @@ var namespaceamrex =
     [ "Box", "classamrex_1_1Box.html", "classamrex_1_1Box" ],
     [ "BoxCommHelper", "classamrex_1_1BoxCommHelper.html", "classamrex_1_1BoxCommHelper" ],
     [ "BoxConverter", "classamrex_1_1BoxConverter.html", "classamrex_1_1BoxConverter" ],
+    [ "BoxIndexer", "structamrex_1_1BoxIndexer.html", "structamrex_1_1BoxIndexer" ],
     [ "BARef", "structamrex_1_1BARef.html", "structamrex_1_1BARef" ],
     [ "BATnull", "structamrex_1_1BATnull.html", "structamrex_1_1BATnull" ],
     [ "BATindexType", "structamrex_1_1BATindexType.html", "structamrex_1_1BATindexType" ],
