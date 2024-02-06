@@ -102,6 +102,11 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_FabArrayUtility.H", "AMReX__FabArrayUtility_8H.html", "AMReX__FabArrayUtility_8H" ],
     [ "AMReX_FabConv.cpp", "AMReX__FabConv_8cpp.html", "AMReX__FabConv_8cpp" ],
     [ "AMReX_FabConv.H", "AMReX__FabConv_8H.html", "AMReX__FabConv_8H" ],
+    [ "AMReX_FabDataType.H", "AMReX__FabDataType_8H.html", [
+      [ "FabDataType", "structamrex_1_1FabDataType.html", null ],
+      [ "FabDataType< T, std::enable_if_t< IsMultiFabLike_v< T > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4.html", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4" ],
+      [ "FabDataType< T, std::enable_if_t< IsMultiFabLike_v< typename T::value_type > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4.html", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4" ]
+    ] ],
     [ "AMReX_FabFactory.H", "AMReX__FabFactory_8H.html", "AMReX__FabFactory_8H" ],
     [ "AMReX_FACopyDescriptor.H", "AMReX__FACopyDescriptor_8H.html", "AMReX__FACopyDescriptor_8H" ],
     [ "AMReX_FArrayBox.cpp", "AMReX__FArrayBox_8cpp.html", "AMReX__FArrayBox_8cpp" ],

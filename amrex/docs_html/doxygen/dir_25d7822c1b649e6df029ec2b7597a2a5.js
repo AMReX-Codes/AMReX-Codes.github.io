@@ -17,6 +17,13 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLCellABecLap_K.H", "AMReX__MLCellABecLap__K_8H.html", null ],
     [ "AMReX_MLCellLinOp.H", "AMReX__MLCellLinOp_8H.html", "AMReX__MLCellLinOp_8H" ],
     [ "AMReX_MLCGSolver.H", "AMReX__MLCGSolver_8H.html", "AMReX__MLCGSolver_8H" ],
+    [ "AMReX_MLCurlCurl.cpp", "AMReX__MLCurlCurl_8cpp.html", [
+      [ "MLCurlCurlBCTag", "structamrex_1_1MLCurlCurlBCTag.html", "structamrex_1_1MLCurlCurlBCTag" ]
+    ] ],
+    [ "AMReX_MLCurlCurl.H", "AMReX__MLCurlCurl_8H.html", [
+      [ "MLCurlCurl", "classamrex_1_1MLCurlCurl.html", "classamrex_1_1MLCurlCurl" ]
+    ] ],
+    [ "AMReX_MLCurlCurl_K.H", "AMReX__MLCurlCurl__K_8H.html", "AMReX__MLCurlCurl__K_8H" ],
     [ "AMReX_MLEBABecLap.cpp", "AMReX__MLEBABecLap_8cpp.html", null ],
     [ "AMReX_MLEBABecLap.H", "AMReX__MLEBABecLap_8H.html", [
       [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html", "classamrex_1_1MLEBABecLap" ]

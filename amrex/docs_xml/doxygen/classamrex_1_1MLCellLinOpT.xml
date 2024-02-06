@@ -747,7 +747,7 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::interpAssign</definition>
         <argsstring>(int amrlev, int fmglev, MF &amp;fine, MF &amp;crse) const override</argsstring>
         <name>interpAssign</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1ae3e6c0eaba362960b0c4292c92667ad4">interpAssign</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1a2f7c32a95d9e511ccee3f3f256341141">interpAssign</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>amrlev</declname>
@@ -812,7 +812,7 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::interpolationAmr</definition>
         <argsstring>(int famrlev, MF &amp;fine, const MF &amp;crse, IntVect const &amp;nghost) const override</argsstring>
         <name>interpolationAmr</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a1983bfc60c0de1f62e0d6f1747b030c8">interpolationAmr</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1add47eb9821c3b08db62d7f0f68554a4f">interpolationAmr</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>famrlev</declname>
@@ -877,7 +877,7 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::averageDownSolutionRHS</definition>
         <argsstring>(int camrlev, MF &amp;crse_sol, MF &amp;crse_rhs, const MF &amp;fine_sol, const MF &amp;fine_rhs) override</argsstring>
         <name>averageDownSolutionRHS</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1ad8919e9d2b5197ed2743008e28b76253">averageDownSolutionRHS</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1ac933a7f88c4daa600f3737080c18a09e">averageDownSolutionRHS</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>camrlev</declname>
@@ -1314,7 +1314,7 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::reflux</definition>
         <argsstring>(int crse_amrlev, MF &amp;res, const MF &amp;crse_sol, const MF &amp;, MF &amp;, MF &amp;fine_sol, const MF &amp;) const final</argsstring>
         <name>reflux</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a52cceb132c5de0aad73ee774d41b4d0d">reflux</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1a8b1c71665134af1b1ceccc4d17df2615">reflux</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>crse_amrlev</declname>
@@ -1415,22 +1415,18 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::compFlux</definition>
         <argsstring>(int amrlev, const Array&lt; MF *, AMREX_SPACEDIM &gt; &amp;fluxes, MF &amp;sol, Location loc) const override</argsstring>
         <name>compFlux</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a5461a389d02ccf6df7e36a583fada6fa">compFlux</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1a6f26e44f0e91bdfd3f6e9830c71a2ec6">compFlux</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>amrlev</declname>
         </param>
         <param>
           <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; MF *, AMREX_SPACEDIM &gt; &amp;</type>
-          <declname>fluxes</declname>
         </param>
         <param>
           <type>MF &amp;</type>
-          <declname>sol</declname>
         </param>
         <param>
           <type><ref refid="classamrex_1_1MLCellLinOpT_1ac93e5fc5cf3373e6711f1328b051b997" kindref="member">Location</ref></type>
-          <declname>loc</declname>
         </param>
         <briefdescription>
 <para>Compute fluxes. </para>
@@ -1480,22 +1476,18 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::compGrad</definition>
         <argsstring>(int amrlev, const Array&lt; MF *, AMREX_SPACEDIM &gt; &amp;grad, MF &amp;sol, Location loc) const override</argsstring>
         <name>compGrad</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a593b5b7825da6be93b4383ccf86654e6">compGrad</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1a1044f61a2f9270efa01fce0898988ec6">compGrad</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>amrlev</declname>
         </param>
         <param>
           <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; MF *, AMREX_SPACEDIM &gt; &amp;</type>
-          <declname>grad</declname>
         </param>
         <param>
           <type>MF &amp;</type>
-          <declname>sol</declname>
         </param>
         <param>
           <type><ref refid="classamrex_1_1MLCellLinOpT_1ac93e5fc5cf3373e6711f1328b051b997" kindref="member">Location</ref></type>
-          <declname>loc</declname>
         </param>
         <briefdescription>
 <para>Compute gradients of the solution. </para>
@@ -1545,18 +1537,15 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::applyMetricTerm</definition>
         <argsstring>(int amrlev, int mglev, MF &amp;rhs) const final</argsstring>
         <name>applyMetricTerm</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a776e1a7593f09fc231b80f3ce7e6468e">applyMetricTerm</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1a862b45e632c8fa045d0857e13843481d">applyMetricTerm</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>amrlev</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>mglev</declname>
         </param>
         <param>
           <type>MF &amp;</type>
-          <declname>rhs</declname>
         </param>
         <briefdescription>
 <para>apply metric terms if there are any </para>
@@ -1572,18 +1561,15 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::unapplyMetricTerm</definition>
         <argsstring>(int amrlev, int mglev, MF &amp;rhs) const final</argsstring>
         <name>unapplyMetricTerm</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1a53280186d7512080b4c6b42bc52c6f72">unapplyMetricTerm</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1a87aa267936bffcd4ed6387b3138bd9d5">unapplyMetricTerm</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>amrlev</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>mglev</declname>
         </param>
         <param>
           <type>MF &amp;</type>
-          <declname>rhs</declname>
         </param>
         <briefdescription>
 <para>unapply metric terms if there are any </para>
@@ -1884,7 +1870,7 @@
         <definition>void amrex::MLCellLinOpT&lt; MF &gt;::avgDownResAmr</definition>
         <argsstring>(int clev, MF &amp;cres, MF const &amp;fres) const override</argsstring>
         <name>avgDownResAmr</name>
-        <reimplements refid="classamrex_1_1MLLinOpT_1aef8fc9c922b0b1c599fa369eabec080c">avgDownResAmr</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOpT_1aab2a0d1464333955b58343210d15bbb8">avgDownResAmr</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>clev</declname>
@@ -2277,6 +2263,7 @@
       <member refid="classamrex_1_1MLLinOpT_1a4e2a07d995c0fc8d2dfe5be544501eea" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>getMaxOrder</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a4f45234f33332dbaf9406e4daa01b475" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>getNComp</name></member>
       <member refid="classamrex_1_1MLLinOpT_1afe8257f1157b08104c622bedb11b0d00" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>getNGrow</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1a8f0f9865915b5d7c47bbff26bc46d442" prot="protected" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>getNGrowVectRestriction</name></member>
       <member refid="classamrex_1_1MLCellLinOpT_1a08e68e2870cd7367dd09d2ef777261b3" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>getSolvabilityOffset</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a647cd4352c3719aa23545a8e0f88b562" prot="protected" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>hasBC</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a894d1f80e83452c32470d42e05947e13" prot="protected" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>hasHiddenDimension</name></member>
@@ -2346,7 +2333,7 @@
       <member refid="classamrex_1_1MLLinOpT_1a6574c3f3a840f96723f9a10ccb2eeb69" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>makeConsolidatedDMap</name></member>
       <member refid="classamrex_1_1MLLinOpT_1a46477d4e418960292da4f442741541b6" prot="protected" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>makeFactory</name></member>
       <member refid="classamrex_1_1MLCellLinOpT_1a1574dd8857314d9658c28c26adc6ce12" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>makeNGrids</name></member>
-      <member refid="classamrex_1_1MLLinOpT_1aa3a7b3b61770119955aca3fa6885a839" prot="public" virt="pure-virtual"><scope>amrex::MLCellLinOpT</scope><name>makeNLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOpT_1a1170a5be1e22a4168e341b9edff1ff76" prot="public" virt="virtual"><scope>amrex::MLCellLinOpT</scope><name>makeNLinOp</name></member>
       <member refid="classamrex_1_1MLLinOpT_1ad05360dc7ba30a94505918519dea299c" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>makeSubCommunicator</name></member>
       <member refid="classamrex_1_1MLLinOpT_1abddb56c317b794cc672b446046784d95" prot="protected" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>maxorder</name></member>
       <member refid="classamrex_1_1MLLinOpT_1ac42612ebc576bd674db633fd6d0363db" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOpT</scope><name>MFType</name></member>

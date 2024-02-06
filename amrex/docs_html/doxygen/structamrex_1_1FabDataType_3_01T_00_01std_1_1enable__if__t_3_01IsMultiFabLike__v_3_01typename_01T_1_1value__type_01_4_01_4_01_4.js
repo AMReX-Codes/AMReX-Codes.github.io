@@ -1,0 +1,5 @@
+var structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4 =
+[
+    [ "fab_type", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4.html#aaa30721497b0545071fbdf8538ec94a0", null ],
+    [ "value_type", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4.html#aa772ad381e04dcf6ffc6391b081e33eb", null ]
+];

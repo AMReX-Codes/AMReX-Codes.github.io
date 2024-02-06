@@ -2,8 +2,6 @@ var AMReX__MLLinOp_8H =
 [
     [ "LPInfo", "structamrex_1_1LPInfo.html", "structamrex_1_1LPInfo" ],
     [ "LinOpEnumType", "structamrex_1_1LinOpEnumType.html", "structamrex_1_1LinOpEnumType" ],
-    [ "LinOpData", "structamrex_1_1LinOpData.html", null ],
-    [ "LinOpData< T, std::enable_if_t< IsMultiFabLike_v< T > > >", "structamrex_1_1LinOpData_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4.html", "structamrex_1_1LinOpData_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4" ],
     [ "MLLinOpT", "classamrex_1_1MLLinOpT.html", "classamrex_1_1MLLinOpT" ],
     [ "CommContainer", "structamrex_1_1MLLinOpT_1_1CommContainer.html", "structamrex_1_1MLLinOpT_1_1CommContainer" ],
     [ "MLLinOp", "AMReX__MLLinOp_8H.html#a6cfa07a78393bb456aa7d33ced04fb46", null ],
