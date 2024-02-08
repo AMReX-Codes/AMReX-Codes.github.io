@@ -70899,7 +70899,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="604" declcolumn="9"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="677" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac6d35da48f520c8ae3f429aee03601c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -70920,7 +70920,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="606" declcolumn="8"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66" declfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" declline="679" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acad483c5f0e30f9cd471ad05e1920320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -71544,6 +71544,77 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="422" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="422" bodyend="457"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a4d993b6970c84ce2fdfc7fa8f43dd062" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PTile</type>
+          </param>
+          <param>
+            <type>typename ParFunc</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::partitionParticles</definition>
+        <argsstring>(PTile &amp;ptile, ParFunc &amp;&amp;is_left)</argsstring>
+        <name>partitionParticles</name>
+        <param>
+          <type>PTile &amp;</type>
+          <declname>ptile</declname>
+        </param>
+        <param>
+          <type>ParFunc &amp;&amp;</type>
+          <declname>is_left</declname>
+        </param>
+        <briefdescription>
+<para>Reorders the <ref refid="structamrex_1_1ParticleTile" kindref="compound">ParticleTile</ref> into two partitions left [0, num_left-1] and right [num_left, ptile.numParticles()-1] and returns the number of particles in the left partition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The functor is_left [(<ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref> ptd, int index) -&gt; bool] maps each particle to either the left [return true] or the right [return false] partition. It must return the same result if evaluated multiple times for the same particle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="structamrex_1_1ParticleTile" kindref="compound">ParticleTile</ref> to partition </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>is_left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>functor to map particles to a partition </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="473" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="473" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a57ef6a02e91160412bbfd6fdbba1b820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PTile</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::removeInvalidParticles</definition>
+        <argsstring>(PTile &amp;ptile)</argsstring>
+        <name>removeInvalidParticles</name>
+        <param>
+          <type>PTile &amp;</type>
+          <declname>ptile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="575" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="575" bodyend="582"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acc32428f7be3f26ac16d5089365ca7a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -71629,7 +71700,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="463" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="463" bodyend="578"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="588" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="588" bodyend="651"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac8512b687a529806d0f382cf7c9eee97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -71658,7 +71729,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="583" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="583" bodyend="592"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="656" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="656" bodyend="665"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2a6f51f01e9f0350a8b447ee451d0efb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -71680,7 +71751,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="595" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="595" bodyend="602"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="668" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="668" bodyend="675"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2e4af4bb3015a4534ca0efc19aba6dcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -71717,7 +71788,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="622" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="622" bodyend="702"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="695" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="695" bodyend="775"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad434592fa38d501d9db9bfb648bb9140" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -71762,7 +71833,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="705" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="705" bodyend="743"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="778" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="778" bodyend="816"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3f6c9273719cac9f85a15a3c6c89e7eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
