@@ -1,5 +1,11 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html#a9623ee960fbac28922dbd43ee186a71f":[3,0,0,3,5,2],
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html":[3,0,0,3,6],
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a138287a5f4ac861068205835ac07da5b":[3,0,0,3,6,1],
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a2a0e1d6ab3b7c9ea94631a06b23a3f12":[3,0,0,3,6,2],
+"structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html#a4f76c22f32d585f22f2a80704c97b693":[3,0,0,3,6,0],
+"structamrex_1_1detail_1_1invoke__result.html":[3,0,0,3,12],
 "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html":[3,0,0,3,13],
 "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a313ceedcd16a31e4c5f78f5269df80bb":[3,0,0,3,13,0],
 "structamrex_1_1detail_1_1tuple__cat__result.html":[3,0,0,3,9],

@@ -1,5 +1,11 @@
 var NAVTREEINDEX72 =
 {
+"namespacemembers_func_r.html":[2,1,1,17],
+"namespacemembers_func_s.html":[2,1,1,18],
+"namespacemembers_func_t.html":[2,1,1,19],
+"namespacemembers_func_u.html":[2,1,1,20],
+"namespacemembers_func_v.html":[2,1,1,21],
+"namespacemembers_func_w.html":[2,1,1,22],
 "namespacemembers_func_x.html":[2,1,1,23],
 "namespacemembers_func_y.html":[2,1,1,24],
 "namespacemembers_g.html":[2,1,0,7],
@@ -18,8 +24,8 @@ var NAVTREEINDEX72 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars.html":[2,1,2,0],
+"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX72 =
 "structamrex_1_1AMRErrorTag_1_1UserFunc.html#abce24ad35cd0f876678f1da42c95bce2":[3,0,0,42,0,2],
 "structamrex_1_1AMRErrorTag_1_1UserFunc.html#ad9442a6a9d9ad8c31272745a8593bb13":[3,0,0,42,0,4],
 "structamrex_1_1AmrAssignGrid.html":[3,0,0,497],
-"structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[3,0,0,497,3],
-"structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f":[3,0,0,497,0],
-"structamrex_1_1AmrAssignGrid.html#a89b80b8bcfbde11575362e5c6f6ea420":[3,0,0,497,2],
-"structamrex_1_1AmrAssignGrid.html#ad3a3cdbea65412db0766f9377e4f6662":[3,0,0,497,1],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html":[3,0,0,415,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a036873b2f2c1d06f877458c6e3369f13":[3,0,0,415,0,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a18e4c53a74f5623786c5dadbe087f209":[3,0,0,415,0,3]
+"structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[3,0,0,497,3]
 };
