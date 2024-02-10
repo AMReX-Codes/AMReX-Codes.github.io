@@ -1,13 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"AMReX__Conduit__Blueprint_8H.html#aecc3c40b87ae2ae19e6aac69ff910cf8":[4,0,0,5,2,1,1],
-"AMReX__Conduit__Blueprint_8H_source.html":[4,0,0,5,2,1],
-"AMReX__Conduit__Blueprint_8cpp.html":[4,0,0,5,2,0],
-"AMReX__Conduit__Blueprint_8cpp.html#a58624bde46f31353c6263dd50ec48bfd":[4,0,0,5,2,0,3],
-"AMReX__Conduit__Blueprint_8cpp.html#a807d001969408582d355a731cedac987":[4,0,0,5,2,0,2],
-"AMReX__Conduit__Blueprint_8cpp.html#ade93dfd6bf280f23f7f7baa47404e80b":[4,0,0,5,2,0,4],
-"AMReX__Conduit__Blueprint_8cpp.html#aec07a7132a048a1ab29b5a4b262eda8c":[4,0,0,5,2,0,6],
-"AMReX__Conduit__Blueprint_8cpp.html#aede6d4189f1d218b26880a44405df55e":[4,0,0,5,2,0,5],
 "AMReX__Conduit__Blueprint_8cpp.html#af70ff73cf1857e1a859a1fbac9ef10b0":[4,0,0,5,2,0,0],
 "AMReX__Conduit__Blueprint_8cpp.html#afd44b852de9a30f6417dfc233d76ef3a":[4,0,0,5,2,0,1],
 "AMReX__Conduit__Blueprint__ParticlesI_8H.html":[4,0,0,5,2,2],
@@ -249,5 +241,13 @@ var NAVTREEINDEX3 =
 "AMReX__EBFabFactory_8cpp.html":[4,0,0,4,77],
 "AMReX__EBFabFactory_8cpp.html#a734109fb8bb0358b898b2cafc191c8df":[4,0,0,4,77,1],
 "AMReX__EBFabFactory_8cpp.html#ad3c5c0681fda33ffa62120cefe254379":[4,0,0,4,77,2],
-"AMReX__EBFabFactory_8cpp.html#aeb1b764088e7533c8b78b4fea2170c51":[4,0,0,4,77,0]
+"AMReX__EBFabFactory_8cpp.html#aeb1b764088e7533c8b78b4fea2170c51":[4,0,0,4,77,0],
+"AMReX__EBFluxRegister_8H.html":[4,0,0,4,82],
+"AMReX__EBFluxRegister_8H.html#a08baa582a2186c5ae731539a5ea2c6c1":[4,0,0,4,82,1],
+"AMReX__EBFluxRegister_8H.html#a131eca9794e15ec06a249702720e7edf":[4,0,0,4,82,2],
+"AMReX__EBFluxRegister_8H_source.html":[4,0,0,4,82],
+"AMReX__EBFluxRegister_8cpp.html":[4,0,0,4,81],
+"AMReX__EBFluxRegister__2D__C_8H.html":[4,0,0,4,83],
+"AMReX__EBFluxRegister__2D__C_8H.html#a0c65969b354bed7478ab5716942fdbad":[4,0,0,4,83,7],
+"AMReX__EBFluxRegister__2D__C_8H.html#a15dc2901e84865ab7ca819e913967f1d":[4,0,0,4,83,3]
 };

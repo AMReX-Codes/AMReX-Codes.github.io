@@ -4,12 +4,6 @@
     <compoundname>AMReX_CONSTANTS.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <includes refid="AMReX__REAL_8H" local="no">AMReX_REAL.H</includes>
-    <includedby refid="AMReX__FABUTIL__1D_8F" local="yes">/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F</includedby>
-    <includedby refid="AMReX__FABUTIL__2D_8F" local="yes">/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_2D.F</includedby>
-    <includedby refid="AMReX__FABUTIL__3D_8F" local="yes">/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_3D.F</includedby>
-    <includedby refid="AMReX__AVGDOWN__1D_8F" local="yes">/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_1D.F</includedby>
-    <includedby refid="AMReX__AVGDOWN__2D_8F" local="yes">/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F</includedby>
-    <includedby refid="AMReX__AVGDOWN__3D_8F" local="yes">/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_3D.F</includedby>
     <incdepgraph>
       <node id="5">
         <label>float.h</label>
@@ -42,48 +36,6 @@
         <label>AMReX_Config.H</label>
       </node>
     </incdepgraph>
-    <invincdepgraph>
-      <node id="7">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_3D.F</label>
-        <link refid="AMReX__AVGDOWN__3D_8F"/>
-      </node>
-      <node id="6">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_2D.F</label>
-        <link refid="AMReX__AVGDOWN__2D_8F"/>
-      </node>
-      <node id="2">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F</label>
-        <link refid="AMReX__FABUTIL__1D_8F"/>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_CONSTANTS.H</label>
-        <link refid="AMReX__CONSTANTS_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_1D.F</label>
-        <link refid="AMReX__AVGDOWN__1D_8F"/>
-      </node>
-      <node id="3">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_2D.F</label>
-        <link refid="AMReX__FABUTIL__2D_8F"/>
-      </node>
-      <node id="4">
-        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_3D.F</label>
-        <link refid="AMReX__FABUTIL__3D_8F"/>
-      </node>
-    </invincdepgraph>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -95,44 +47,10 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__REAL_8H" kindref="compound">AMReX_REAL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_LANG_FORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Maybe<sp/>in<sp/>the<sp/>future<sp/>we<sp/>will<sp/>add<sp/>some<sp/>constants<sp/>here.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>we<sp/>do,<sp/>make<sp/>sure<sp/>this<sp/>file<sp/>is<sp/>Fortran<sp/>safe.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_XSDK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>bigreal<sp/>BL_REAL_E(1.0,30)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>zero<sp/><sp/><sp/><sp/>BL_REAL(0.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>one<sp/><sp/><sp/><sp/><sp/>BL_REAL(1.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>two<sp/><sp/><sp/><sp/><sp/>BL_REAL(2.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>three<sp/><sp/><sp/>BL_REAL(3.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>four<sp/><sp/><sp/><sp/>BL_REAL(4.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>five<sp/><sp/><sp/><sp/>BL_REAL(5.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>six<sp/><sp/><sp/><sp/><sp/>BL_REAL(6.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>seven<sp/><sp/><sp/>BL_REAL(7.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>eight<sp/><sp/><sp/>BL_REAL(8.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>nine<sp/><sp/><sp/><sp/>BL_REAL(9.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ten<sp/><sp/><sp/><sp/><sp/>BL_REAL(10.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>twelve<sp/><sp/>BL_REAL(12.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>fifteen<sp/>BL_REAL(15.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>sixteen<sp/>BL_REAL(16.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>twenty<sp/><sp/>BL_REAL(20.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>seventy<sp/>BL_REAL(70.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ninety<sp/><sp/>BL_REAL(90.0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>tenth<sp/><sp/><sp/>BL_REAL(0.1)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>eighth<sp/><sp/>BL_REAL(0.125)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>sixth<sp/><sp/><sp/>BL_REAL(0.16666666666666667)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>fifth<sp/><sp/><sp/>BL_REAL(0.2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>fourth<sp/><sp/>BL_REAL(0.25)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>third<sp/><sp/><sp/>BL_REAL(0.33333333333333333)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>half<sp/><sp/><sp/><sp/>BL_REAL(0.5)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>two3rd<sp/><sp/>BL_REAL(0.66666666666666667)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Pi<sp/><sp/><sp/><sp/><sp/><sp/>BL_REAL(3.1415926535897932)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ndef<sp/>AMREX_XSDK<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*BL_LANG_FORT*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*BL_CONSTANTS_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*BL_CONSTANTS_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_CONSTANTS.H"/>
   </compounddef>

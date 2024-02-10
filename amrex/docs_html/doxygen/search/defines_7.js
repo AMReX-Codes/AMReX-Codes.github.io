@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hoextrap_18821',['HOEXTRAP',['../AMReX__BC__TYPES_8H.html#ab3f2cb808193937a3651291078955292',1,'AMReX_BC_TYPES.H']]],
-  ['hoextrapcc_18822',['HOEXTRAPCC',['../AMReX__BC__TYPES_8H.html#a64b07b4a69819f26234681bd3d948681',1,'AMReX_BC_TYPES.H']]]
+  ['half_18778',['half',['../AMReX__FABUTIL__1D_8F.html#a143fa055fc894f4591a2715c96eaeb01',1,'half():&#160;AMReX_FABUTIL_1D.F'],['../AMReX__FABUTIL__2D_8F.html#a143fa055fc894f4591a2715c96eaeb01',1,'half():&#160;AMReX_FABUTIL_2D.F'],['../AMReX__FABUTIL__3D_8F.html#a143fa055fc894f4591a2715c96eaeb01',1,'half():&#160;AMReX_FABUTIL_3D.F']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vshowval_18875',['VSHOWVAL',['../AMReX__AmrData_8cpp.html#a527b668d58b090a517777607a82fa5b6',1,'AMReX_AmrData.cpp']]]
+  ['zero_18983',['zero',['../AMReX__FABUTIL__1D_8F.html#a361b1d0588e13a7b5994f24b40138ec0',1,'zero():&#160;AMReX_FABUTIL_1D.F'],['../AMReX__FABUTIL__2D_8F.html#a361b1d0588e13a7b5994f24b40138ec0',1,'zero():&#160;AMReX_FABUTIL_2D.F'],['../AMReX__FABUTIL__3D_8F.html#a361b1d0588e13a7b5994f24b40138ec0',1,'zero():&#160;AMReX_FABUTIL_3D.F'],['../AMReX__AVGDOWN__1D_8F.html#a361b1d0588e13a7b5994f24b40138ec0',1,'zero():&#160;AMReX_AVGDOWN_1D.F'],['../AMReX__AVGDOWN__2D_8F.html#a361b1d0588e13a7b5994f24b40138ec0',1,'zero():&#160;AMReX_AVGDOWN_2D.F'],['../AMReX__AVGDOWN__3D_8F.html#a361b1d0588e13a7b5994f24b40138ec0',1,'zero():&#160;AMReX_AVGDOWN_3D.F']]]
 ];

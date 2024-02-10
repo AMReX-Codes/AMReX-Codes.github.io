@@ -10,10 +10,5 @@ var AMReX__LO__BCTYPES_8H =
     [ "AMREX_LO_REFLECT_ODD", "AMReX__LO__BCTYPES_8H.html#a911e22551a8578fcc62588ad4232a1b1", null ],
     [ "AMREX_LO_ROBIN", "AMReX__LO__BCTYPES_8H.html#adad7113c509303a8c8da66ef2f1c786d", null ],
     [ "AMREX_LO_SANCHEZ_POMRANING", "AMReX__LO__BCTYPES_8H.html#acb24c91365aea47c8c5e66ef6a3d32be", null ],
-    [ "AMREX_LO_SYMMETRY", "AMReX__LO__BCTYPES_8H.html#aa49301ea0899710eb43fa5d992589166", null ],
-    [ "LO_DIRICHLET", "AMReX__LO__BCTYPES_8H.html#a11ab20bd8c610cdd8dc1fdebd567014e", null ],
-    [ "LO_MARSHAK", "AMReX__LO__BCTYPES_8H.html#afa6d04eb2ab33b824572ba1c6f7d4645", null ],
-    [ "LO_NEUMANN", "AMReX__LO__BCTYPES_8H.html#ab270099fef87d0005ee5404e8d0fa71b", null ],
-    [ "LO_REFLECT_ODD", "AMReX__LO__BCTYPES_8H.html#a59a082c854bdee12b1e8c1dba1d652d6", null ],
-    [ "LO_SANCHEZ_POMRANING", "AMReX__LO__BCTYPES_8H.html#a24791d6a87cf5ba73ce1550a50dc82e5", null ]
+    [ "AMREX_LO_SYMMETRY", "AMReX__LO__BCTYPES_8H.html#aa49301ea0899710eb43fa5d992589166", null ]
 ];
