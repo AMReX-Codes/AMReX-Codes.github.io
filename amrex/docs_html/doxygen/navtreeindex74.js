@@ -1,5 +1,9 @@
 var NAVTREEINDEX74 =
 {
+"structamrex_1_1BATcoarsenRatio.html#accb0f22d726742557c190e09002329bd":[3,0,0,102,6],
+"structamrex_1_1BATcoarsenRatio.html#acfcb2e2b086e18b7a8fc355d0179dbcf":[3,0,0,102,2],
+"structamrex_1_1BATindexType.html":[3,0,0,101],
+"structamrex_1_1BATindexType.html#a276c46d26f6db6df336883ccc6ada8db":[3,0,0,101,3],
 "structamrex_1_1BATindexType.html#a7e570ffae7114709f8cfc3647243629f":[3,0,0,101,6],
 "structamrex_1_1BATindexType.html#a94cc8c83f1dd9de4e2d1ab9a3d67e056":[3,0,0,101,5],
 "structamrex_1_1BATindexType.html#abed20ba596129232e392d40a5aafcfe9":[3,0,0,101,1],
@@ -141,8 +145,8 @@ var NAVTREEINDEX74 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[3,0,0,500,24],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[3,0,0,500,16],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[3,0,0,500,10],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,500,5],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,500,6],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,500,5],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[3,0,0,500,3],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[3,0,0,500,22],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[3,0,0,500,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX74 =
 "structamrex_1_1DestComp.html":[3,0,0,83],
 "structamrex_1_1DestComp.html#ab31802a9ed04a354ae054227b10ec7e0":[3,0,0,83,1],
 "structamrex_1_1DestComp.html#aec058b399a7b244f3d848d3c128358fd":[3,0,0,83,0],
-"structamrex_1_1DeviceArenaWrapper.html":[3,0,0,161],
-"structamrex_1_1DeviceArenaWrapper.html#a79326bc9b3b123fe8e90a4b32aef0d00":[3,0,0,161,0],
-"structamrex_1_1Dim3.html":[3,0,0,116],
-"structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1":[3,0,0,116,0],
-"structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90":[3,0,0,116,2]
+"structamrex_1_1DeviceArenaWrapper.html":[3,0,0,161]
 };

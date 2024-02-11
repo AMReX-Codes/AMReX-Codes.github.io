@@ -3019,6 +3019,152 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" line="252" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" bodystart="252" bodyend="408"/>
       </memberdef>
+      <memberdef kind="function" id="AMReX__TracerParticle__mod__K_8H_1a7a14fc30c9c8fbf0d7a1a19fda5a0268" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void particle_interp_decomp</definition>
+        <argsstring>(Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</argsstring>
+        <name>particle_interp_decomp</name>
+        <param>
+          <type>Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>Array1D&lt; int, 1, 7 &gt; &amp;</type>
+          <declname>ip</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>neq</declname>
+        </param>
+        <briefdescription>
+<para>Helper functions for 3D interpolation from values on nodes/vertices of arbitrary hexahedra to particle location. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" line="422" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" bodystart="422" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__TracerParticle__mod__K_8H_1a807477f2ebe1226bd0f53ff7537dfc1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void particle_interp_solve</definition>
+        <argsstring>(Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; Real, 1, 7 &gt; &amp;b, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</argsstring>
+        <name>particle_interp_solve</name>
+        <param>
+          <type>Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>Array1D&lt; Real, 1, 7 &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>Array1D&lt; int, 1, 7 &gt; &amp;</type>
+          <declname>ip</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>neq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" line="464" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" bodystart="464" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__TracerParticle__mod__K_8H_1a6f1846c127bd7588ddf3eec24c078c7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename P</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void cic_interpolate_nd_mapped</definition>
+        <argsstring>(const P &amp;p, const amrex::Array4&lt; amrex::Real const &gt; &amp;data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, int M=AMREX_SPACEDIM)</argsstring>
+        <name>cic_interpolate_nd_mapped</name>
+        <param>
+          <type>const P &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; amrex::Real const &gt; &amp;</type>
+          <declname>data_arr</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; amrex::Real const &gt; &amp;</type>
+          <declname>loc_arr</declname>
+        </param>
+        <param>
+          <type>amrex::ParticleReal *</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>M</declname>
+          <defval>AMREX_SPACEDIM</defval>
+        </param>
+        <briefdescription>
+<para>Linearly interpolates the mesh data to the particle position from node-centered data on a general mapped grid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" line="506" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" bodystart="506" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__TracerParticle__mod__K_8H_1ab7e58565a1c686ec9474f8a8d43af671" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename P</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void linear_interpolate_to_particle_mapped</definition>
+        <argsstring>(const P &amp;p, const Array4&lt; amrex::Real const &gt; *data_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, const IntVect *is_nodal, int start_comp, int ncomp, int num_arrays)</argsstring>
+        <name>linear_interpolate_to_particle_mapped</name>
+        <param>
+          <type>const P &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const Array4&lt; amrex::Real const &gt; *</type>
+          <declname>data_arr</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4</ref>&lt; amrex::Real const &gt; &amp;</type>
+          <declname>loc_arr</declname>
+        </param>
+        <param>
+          <type>amrex::ParticleReal *</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const IntVect *</type>
+          <declname>is_nodal</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_arrays</declname>
+        </param>
+        <briefdescription>
+<para>Linearly interpolates the mesh data to the particle position on a general mapped grid. Note that currently only node-centered data interpolation is supported in 2D and 3D. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" line="526" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H" bodystart="526" bodyend="666"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -3399,8 +3545,253 @@
 <codeline lineno="408"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="409"><highlight class="normal"></highlight></codeline>
 <codeline lineno="410"><highlight class="normal"></highlight></codeline>
-<codeline lineno="411"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="412"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>include<sp/>guard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight><highlight class="comment">//<sp/>**********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight><highlight class="comment">//<sp/>General<sp/>mapped<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="comment">//<sp/>**********************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="422" refid="AMReX__TracerParticle__mod__K_8H_1a7a14fc30c9c8fbf0d7a1a19fda5a0268" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1a7a14fc30c9c8fbf0d7a1a19fda5a0268" kindref="member">particle_interp_decomp</ref><sp/>(Array2D&lt;Real,1,7,1,7&gt;&amp;<sp/>a,<sp/>Array1D&lt;int,1,7&gt;&amp;<sp/>ip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>neq)</highlight></codeline>
+<codeline lineno="423"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>amult,apm,apn;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=1;<sp/>n&lt;neq+1;<sp/>n++)</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip(n)<sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;neq;<sp/>i++)</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ip1=i+1;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k=i;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ipi<sp/>=<sp/>ip(i);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apm<sp/><sp/>=<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(a(ipi,i));</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=ip1;<sp/>j&lt;neq+1;<sp/>j++)</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ipj<sp/>=<sp/>ip(j);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apn=<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(a(ipj,i));</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(apm<sp/>&lt;<sp/>apn){</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apm<sp/>=<sp/>apn;</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>k=j;</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=ip(k);</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip(k)=ip(i);</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip(i)=j;</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l=ip1;<sp/>l&lt;neq+1;<sp/>l++)</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=ip(l);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amult=a(n,i)/a(j,i);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,i)=amult;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kk<sp/>=<sp/>ip1;<sp/>kk<sp/>&lt;<sp/>neq+1;<sp/>kk++)</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,kk)<sp/>-=<sp/>amult*a(j,kk);</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="461"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="464" refid="AMReX__TracerParticle__mod__K_8H_1a807477f2ebe1226bd0f53ff7537dfc1b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1a807477f2ebe1226bd0f53ff7537dfc1b" kindref="member">particle_interp_solve</ref><sp/>(Array2D&lt;Real,1,7,1,7&gt;&amp;<sp/>a,<sp/>Array1D&lt;Real,1,7&gt;&amp;<sp/>b,<sp/>Array1D&lt;int,1,7&gt;&amp;<sp/>ip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>neq)</highlight></codeline>
+<codeline lineno="465"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::Real<sp/>scr;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l=2;<sp/>l&lt;neq+1;<sp/>l++)</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>ip(l);</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k=1;<sp/>k&lt;l;<sp/>k++){</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(n)<sp/>-=<sp/>a(n,k)<sp/>*<sp/>b(ip(k));</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>b(ip(neq))=b(ip(neq))/a(ip(neq),neq);</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l=1;<sp/>l&lt;neq;<sp/>l++)</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=neq-l;</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jp1=j+1;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=ip(j);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k=jp1;<sp/>k&lt;neq+1;<sp/>k++){</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(n)<sp/>-=<sp/>a(n,k<sp/><sp/>)<sp/>*<sp/>b(ip(k));</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(n)=b(n)/a(n,j);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=1;<sp/>n&lt;neq+1;<sp/>n++)</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(ip(n)<sp/>!=<sp/>n)<sp/>{</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=ip(n);</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scr=b(j);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip(n)=ip(j);</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(j)=b(ip(j));</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(ip(j))=scr;</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip(j)=j;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>P&gt;</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="506" refid="AMReX__TracerParticle__mod__K_8H_1a6f1846c127bd7588ddf3eec24c078c7b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1a6f1846c127bd7588ddf3eec24c078c7b" kindref="member">cic_interpolate_nd_mapped</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1openbc_1adde2e79c224bebd89be90830c87b7a74" kindref="member">P</ref>&amp;<sp/>p,</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4&lt;amrex::Real const&gt;</ref>&amp;<sp/>data_arr,</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4&lt;amrex::Real const&gt;</ref>&amp;<sp/><sp/>loc_arr,</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParticleReal<sp/>*<sp/>val,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref><sp/>=<sp/>AMREX_SPACEDIM)</highlight></codeline>
+<codeline lineno="510"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icomp<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp_per_array<sp/>=<sp/><ref refid="namespaceamrex_1_1openbc_1a80221e673408a11d8a35e40f5d819c0f" kindref="member">M</ref>;</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_arrays<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>is_nodal<sp/>=<sp/><ref refid="classamrex_1_1IntVect_1a5b5b7435eef0516b2313ad4894d63b1f" kindref="member">amrex::IntVect::TheUnitVector</ref>();</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1ab7e58565a1c686ec9474f8a8d43af671" kindref="member">linear_interpolate_to_particle_mapped</ref>(p,<sp/>&amp;data_arr,<sp/>loc_arr,</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val,<sp/>&amp;is_nodal,<sp/>icomp,<sp/>ncomp_per_array,<sp/>num_arrays);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>P&gt;</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="526" refid="AMReX__TracerParticle__mod__K_8H_1ab7e58565a1c686ec9474f8a8d43af671" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1ab7e58565a1c686ec9474f8a8d43af671" kindref="member">linear_interpolate_to_particle_mapped</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1openbc_1adde2e79c224bebd89be90830c87b7a74" kindref="member">P</ref>&amp;<sp/>p,</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array4&lt;amrex::Real<sp/>const&gt;*<sp/>data_arr,</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Array4" kindref="compound">amrex::Array4&lt;amrex::Real const&gt;</ref>&amp;<sp/><sp/>loc_arr,</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParticleReal<sp/>*<sp/>val,</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect*<sp/>is_nodal,</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start_comp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_arrays)</highlight></codeline>
+<codeline lineno="532"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(p,<sp/>data_arr,<sp/>loc_arr,<sp/>val,<sp/>is_nodal,<sp/>start_comp,<sp/>ncomp,<sp/>num_arrays);</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>General<sp/>mapped<sp/>interpolation<sp/>is<sp/>not<sp/>supported<sp/>in<sp/>1D\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(val<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(num_arrays<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d<sp/>=<sp/>0;<sp/>d<sp/>&lt;<sp/>num_arrays;<sp/>d++)</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assertion<sp/>to<sp/>ensure<sp/>that<sp/>only<sp/>nodal<sp/>data<sp/>is<sp/>supported</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>((is_nodal[d][0]<sp/>==<sp/>1),</highlight><highlight class="stringliteral">&quot;For<sp/>general<sp/>mapped<sp/>coordinates,<sp/>interpolation<sp/>is<sp/>supported<sp/>only<sp/>for<sp/>node-centered<sp/>data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>((is_nodal[d][1]<sp/>==<sp/>1),</highlight><highlight class="stringliteral">&quot;For<sp/>general<sp/>mapped<sp/>coordinates,<sp/>interpolation<sp/>is<sp/>supported<sp/>only<sp/>for<sp/>node-centered<sp/>data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a1defc2bb8023a3e2599bfb2fc637cb43" kindref="member">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</ref>((is_nodal[d][2]<sp/>==<sp/>1),</highlight><highlight class="stringliteral">&quot;For<sp/>general<sp/>mapped<sp/>coordinates,<sp/>interpolation<sp/>is<sp/>supported<sp/>only<sp/>for<sp/>node-centered<sp/>data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_of_data<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"></highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>p.idata(0);</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>p.idata(1);</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comp<sp/>=<sp/>start_comp;<sp/>comp<sp/>&lt;<sp/>ncomp;<sp/>++comp)<sp/>{</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Value<sp/>of<sp/>data<sp/>at<sp/>surrounding<sp/>nodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>f1<sp/>=<sp/>(data_arr[n_of_data])(i<sp/><sp/>,j<sp/><sp/>,0,comp);</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>f2<sp/>=<sp/>(data_arr[n_of_data])(i<sp/><sp/>,j+1,0,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>f3<sp/>=<sp/>(data_arr[n_of_data])(i+1,j<sp/><sp/>,0,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>f4<sp/>=<sp/>(data_arr[n_of_data])(i+1,j+1,0,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"></highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>locations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>x1<sp/>=<sp/><sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,0,0);</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>x2<sp/>=<sp/><sp/>loc_arr(i<sp/><sp/>,j+1,0,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>x3<sp/>=<sp/><sp/>loc_arr(i+1,j<sp/><sp/>,0,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>x4<sp/>=<sp/><sp/>loc_arr(i+1,j+1,0,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>y1<sp/>=<sp/><sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,0,1);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>y2<sp/>=<sp/><sp/>loc_arr(i<sp/><sp/>,j+1,0,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>y3<sp/>=<sp/><sp/>loc_arr(i+1,j<sp/><sp/>,0,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>y4<sp/>=<sp/><sp/>loc_arr(i+1,j+1,0,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Particle<sp/>location</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>x<sp/>=<sp/>p.pos(0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>y<sp/>=<sp/>p.pos(1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"></highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>det<sp/>=<sp/>x2*x4*y3*(y2<sp/>-<sp/>y4)<sp/>-<sp/>x3*x4*y2*(y3<sp/>-<sp/>y4)<sp/>-<sp/>x2*x3*(y2<sp/>-<sp/>y3)*y4;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>b<sp/>=<sp/>(<sp/><sp/>f4*(x2*y2*y3<sp/>-<sp/>x3*y2*y3)<sp/>+<sp/>(f2*(x3<sp/>-<sp/>x4)*y3)*y4<sp/>+<sp/>f3*(-(x2*y2*y4)<sp/>+<sp/>x4*y2*y4)<sp/>)<sp/>/<sp/>det;</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>c<sp/>=<sp/>(<sp/>-f2*x3*x4*y3<sp/>+<sp/>f4*x2*x3*(-y2<sp/>+<sp/>y3)<sp/>+<sp/>f3*x2*x4*(y2<sp/>-<sp/>y4)<sp/>+<sp/>f2*x3*x4*y4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>/<sp/>det;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>d<sp/>=<sp/>(<sp/><sp/>f2*x4*y3<sp/>+<sp/>f4*(x3*y2<sp/>-<sp/>x2*y3)<sp/>-<sp/>f2*x3*y4<sp/>+<sp/>f3*(-(x4*y2)<sp/>+<sp/>x2*y4)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>/<sp/>det;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"></highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref><sp/>=<sp/>b*x<sp/>+<sp/>c*y<sp/>+<sp/>d*x*y;</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val[comp-start_comp]<sp/>=<sp/>f1<sp/>+<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref>;</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>p.idata(2);</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ordering<sp/>of<sp/>particles<sp/>(lo,lo,lo)<sp/>(hi,lo,lo)<sp/>(lo,hi,lo)<sp/>(hi,hi,lo)<sp/>(lo,lo,hi)<sp/>(hi,lo,hi)<sp/>(lo,hi,hi)<sp/>(hi,hi,hi)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>All<sp/>locations<sp/>are<sp/>calculated<sp/>as<sp/>offsets<sp/>from<sp/>(lo,lo,lo),<sp/>which<sp/>is<sp/>only<sp/>need<sp/>7<sp/>values<sp/>are<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array1D&lt;Real,0,7&gt;<sp/>x_vals;</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array1D&lt;Real,0,7&gt;<sp/>y_vals;</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array1D&lt;Real,0,7&gt;<sp/>z_vals;</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array1D&lt;Real,1,7&gt;<sp/>b;</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>x1,<sp/>y1,<sp/>z1,<sp/>f1;</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,k<sp/><sp/>,0);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(1)<sp/>=<sp/>loc_arr(i+1,j<sp/><sp/>,k<sp/><sp/>,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(2)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j+1,k<sp/><sp/>,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(3)<sp/>=<sp/>loc_arr(i+1,j+1,k<sp/><sp/>,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(4)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,k+1,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(5)<sp/>=<sp/>loc_arr(i+1,j<sp/><sp/>,k+1,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(6)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j+1,k+1,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_vals(7)<sp/>=<sp/>loc_arr(i+1,j+1,k+1,0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,k<sp/><sp/>,1);</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(1)<sp/>=<sp/>loc_arr(i+1,j<sp/><sp/>,k<sp/><sp/>,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(2)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j+1,k<sp/><sp/>,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(3)<sp/>=<sp/>loc_arr(i+1,j+1,k<sp/><sp/>,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(4)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,k+1,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(5)<sp/>=<sp/>loc_arr(i+1,j<sp/><sp/>,k+1,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(6)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j+1,k+1,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_vals(7)<sp/>=<sp/>loc_arr(i+1,j+1,k+1,1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,k<sp/><sp/>,2);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(1)<sp/>=<sp/>loc_arr(i+1,j<sp/><sp/>,k<sp/><sp/>,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(2)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j+1,k<sp/><sp/>,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(3)<sp/>=<sp/>loc_arr(i+1,j+1,k<sp/><sp/>,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(4)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j<sp/><sp/>,k+1,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(5)<sp/>=<sp/>loc_arr(i+1,j<sp/><sp/>,k+1,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(6)<sp/>=<sp/>loc_arr(i<sp/><sp/>,j+1,k+1,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z_vals(7)<sp/>=<sp/>loc_arr(i+1,j+1,k+1,2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f1<sp/><sp/><sp/>=<sp/>(data_arr[n_of_data])(i<sp/><sp/>,j<sp/><sp/>,k<sp/><sp/>,comp);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(1)<sp/>=<sp/>(data_arr[n_of_data])(i+1,j<sp/><sp/>,k<sp/><sp/>,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(2)<sp/>=<sp/>(data_arr[n_of_data])(i<sp/><sp/>,j+1,k<sp/><sp/>,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(3)<sp/>=<sp/>(data_arr[n_of_data])(i+1,j+1,k<sp/><sp/>,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(4)<sp/>=<sp/>(data_arr[n_of_data])(i<sp/><sp/>,j<sp/><sp/>,k+1,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(5)<sp/>=<sp/>(data_arr[n_of_data])(i+1,j<sp/><sp/>,k+1,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(6)<sp/>=<sp/>(data_arr[n_of_data])(i<sp/><sp/>,j+1,k+1,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b(7)<sp/>=<sp/>(data_arr[n_of_data])(i+1,j+1,k+1,comp)<sp/>-<sp/>f1;</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array2D&lt;Real,1,7,1,7&gt;<sp/>a;</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array1D&lt;int,1,7&gt;<sp/>ip;</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>neq<sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"></highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=1;<sp/>n&lt;neq+1;<sp/>n++)<sp/>{</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,1)<sp/>=<sp/>x_vals(n);</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,2)<sp/>=<sp/>y_vals(n);</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,3)<sp/>=<sp/>z_vals(n);</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,4)<sp/>=<sp/>x_vals(n)*y_vals(n);</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,5)<sp/>=<sp/>x_vals(n)*z_vals(n);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,6)<sp/>=<sp/>z_vals(n)*y_vals(n);</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a(n,7)<sp/>=<sp/>x_vals(n)*y_vals(n)*z_vals(n);</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"></highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1a7a14fc30c9c8fbf0d7a1a19fda5a0268" kindref="member">particle_interp_decomp</ref>(a,ip,neq);</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__TracerParticle__mod__K_8H_1a807477f2ebe1226bd0f53ff7537dfc1b" kindref="member">particle_interp_solve</ref>(a,b,ip,neq);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"></highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/>px,<sp/>py,<sp/>pz;</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>px<sp/>=<sp/>p.pos(0)<sp/>-<sp/>x1;</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>py<sp/>=<sp/>p.pos(1)<sp/>-<sp/>y1;</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pz<sp/>=<sp/>p.pos(2)<sp/>-<sp/>z1;</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"></highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Real<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref><sp/>=<sp/>b(1)*px<sp/>+<sp/>b(2)*py<sp/>+<sp/>b(3)*pz<sp/>+<sp/>b(4)*px*py<sp/>+<sp/>b(5)*px*pz<sp/>+<sp/>b(6)*py*pz<sp/>+<sp/>b(7)*px*py*pz;</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val[comp-start_comp]<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">ParticleReal</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref><sp/>+<sp/>f1);</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>comp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="666"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>amrex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="669"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>include<sp/>guard</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H"/>
   </compounddef>

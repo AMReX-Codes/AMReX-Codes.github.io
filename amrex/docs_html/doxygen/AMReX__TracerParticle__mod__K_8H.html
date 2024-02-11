@@ -160,6 +160,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a143b08ea59c33c93218d26dd8e342a11"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__TracerParticle__mod__K_8H.html#a143b08ea59c33c93218d26dd8e342a11">linear_interpolate_to_particle_z</a> (const P &amp;p, <a class="el" href="structamrex_1_1GpuArray.html">amrex::GpuArray</a>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, <a class="el" href="structamrex_1_1GpuArray.html">amrex::GpuArray</a>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Array4&lt; amrex::Real const &gt; *data_arr, const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;height_arr, amrex::ParticleReal *val, const IntVect *is_nodal, int start_comp, int ncomp, int num_arrays)</td></tr>
 <tr class="memdesc:a143b08ea59c33c93218d26dd8e342a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolates the mesh data to the particle position from mesh data. This general form can handle an arbitrary number of Array4s, each with different staggerings on a terrain-fitted grid.  <a href="AMReX__TracerParticle__mod__K_8H.html#a143b08ea59c33c93218d26dd8e342a11">More...</a><br /></td></tr>
 <tr class="separator:a143b08ea59c33c93218d26dd8e342a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a14fc30c9c8fbf0d7a1a19fda5a0268"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">particle_interp_decomp</a> (Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</td></tr>
+<tr class="memdesc:a7a14fc30c9c8fbf0d7a1a19fda5a0268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper functions for 3D interpolation from values on nodes/vertices of arbitrary hexahedra to particle location.  <a href="AMReX__TracerParticle__mod__K_8H.html#a7a14fc30c9c8fbf0d7a1a19fda5a0268">More...</a><br /></td></tr>
+<tr class="separator:a7a14fc30c9c8fbf0d7a1a19fda5a0268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807477f2ebe1226bd0f53ff7537dfc1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__TracerParticle__mod__K_8H.html#a807477f2ebe1226bd0f53ff7537dfc1b">particle_interp_solve</a> (Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;a, Array1D&lt; Real, 1, 7 &gt; &amp;b, Array1D&lt; int, 1, 7 &gt; &amp;ip, int neq)</td></tr>
+<tr class="separator:a807477f2ebe1226bd0f53ff7537dfc1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1846c127bd7588ddf3eec24c078c7b"><td class="memTemplParams" colspan="2">template&lt;typename P &gt; </td></tr>
+<tr class="memitem:a6f1846c127bd7588ddf3eec24c078c7b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">cic_interpolate_nd_mapped</a> (const P &amp;p, const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;data_arr, const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, int M=AMREX_SPACEDIM)</td></tr>
+<tr class="memdesc:a6f1846c127bd7588ddf3eec24c078c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolates the mesh data to the particle position from node-centered data on a general mapped grid.  <a href="AMReX__TracerParticle__mod__K_8H.html#a6f1846c127bd7588ddf3eec24c078c7b">More...</a><br /></td></tr>
+<tr class="separator:a6f1846c127bd7588ddf3eec24c078c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e58565a1c686ec9474f8a8d43af671"><td class="memTemplParams" colspan="2">template&lt;typename P &gt; </td></tr>
+<tr class="memitem:ab7e58565a1c686ec9474f8a8d43af671"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">linear_interpolate_to_particle_mapped</a> (const P &amp;p, const Array4&lt; amrex::Real const &gt; *data_arr, const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;loc_arr, amrex::ParticleReal *val, const IntVect *is_nodal, int start_comp, int ncomp, int num_arrays)</td></tr>
+<tr class="memdesc:ab7e58565a1c686ec9474f8a8d43af671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolates the mesh data to the particle position on a general mapped grid. Note that currently only node-centered data interpolation is supported in 2D and 3D.  <a href="AMReX__TracerParticle__mod__K_8H.html#ab7e58565a1c686ec9474f8a8d43af671">More...</a><br /></td></tr>
+<tr class="separator:ab7e58565a1c686ec9474f8a8d43af671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa91339a18a1b77f30234f7717f882399"></a>
@@ -286,6 +299,56 @@ template&lt;typename P &gt; </div>
 
 </div>
 </div>
+<a id="a6f1846c127bd7588ddf3eec24c078c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1846c127bd7588ddf3eec24c078c7b">&#9670;&nbsp;</a></span>cic_interpolate_nd_mapped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename P &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void cic_interpolate_nd_mapped </td>
+          <td>(</td>
+          <td class="paramtype">const P &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;&#160;</td>
+          <td class="paramname"><em>loc_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::ParticleReal *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>M</em> = <code>AMREX_SPACEDIM</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Linearly interpolates the mesh data to the particle position from node-centered data on a general mapped grid. </p>
+
+</div>
+</div>
 <a id="a330fbbd269ed2705da8627df72097e82"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a330fbbd269ed2705da8627df72097e82">&#9670;&nbsp;</a></span>cic_interpolate_nd_mapped_z()</h2>
 
@@ -345,6 +408,74 @@ template&lt;typename P &gt; </div>
 </div><div class="memdoc">
 
 <p>Linearly interpolates the mesh data to the particle position from node-centered data. on a terrain-fitted grid. </p>
+
+</div>
+</div>
+<a id="ab7e58565a1c686ec9474f8a8d43af671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e58565a1c686ec9474f8a8d43af671">&#9670;&nbsp;</a></span>linear_interpolate_to_particle_mapped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename P &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void linear_interpolate_to_particle_mapped </td>
+          <td>(</td>
+          <td class="paramtype">const P &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Array4&lt; amrex::Real const &gt; *&#160;</td>
+          <td class="paramname"><em>data_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1Array4.html">amrex::Array4</a>&lt; amrex::Real const &gt; &amp;&#160;</td>
+          <td class="paramname"><em>loc_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::ParticleReal *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const IntVect *&#160;</td>
+          <td class="paramname"><em>is_nodal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_arrays</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Linearly interpolates the mesh data to the particle position on a general mapped grid. Note that currently only node-centered data interpolation is supported in 2D and 3D. </p>
 
 </div>
 </div>
@@ -481,6 +612,82 @@ template&lt;typename P &gt; </div>
 </div><div class="memdoc">
 
 <p>Linearly interpolates the mesh data to the particle position from face-centered data on a terrain-fitted grid. The nth component of the data_arr array is nodal in the nth direction, and cell-centered in the others. </p>
+
+</div>
+</div>
+<a id="a7a14fc30c9c8fbf0d7a1a19fda5a0268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a14fc30c9c8fbf0d7a1a19fda5a0268">&#9670;&nbsp;</a></span>particle_interp_decomp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void particle_interp_decomp </td>
+          <td>(</td>
+          <td class="paramtype">Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array1D&lt; int, 1, 7 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>neq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Helper functions for 3D interpolation from values on nodes/vertices of arbitrary hexahedra to particle location. </p>
+
+</div>
+</div>
+<a id="a807477f2ebe1226bd0f53ff7537dfc1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807477f2ebe1226bd0f53ff7537dfc1b">&#9670;&nbsp;</a></span>particle_interp_solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void particle_interp_solve </td>
+          <td>(</td>
+          <td class="paramtype">Array2D&lt; Real, 1, 7, 1, 7 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array1D&lt; Real, 1, 7 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array1D&lt; int, 1, 7 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>neq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

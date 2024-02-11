@@ -1,5 +1,9 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1FabArrayBase_1_1PolarB.html#a4728c08d238e8a553b30e672643776a2":[3,0,0,126,12,2],
+"structamrex_1_1FabArrayBase_1_1PolarB.html#ad805ea2e85456aeee7173714da9e0167":[3,0,0,126,12,0],
+"structamrex_1_1FabArrayBase_1_1PolarB.html#ae7d84e3daa0f3502f2ce6369dcb42f60":[3,0,0,126,12,3],
+"structamrex_1_1FabArrayBase_1_1RB180.html":[3,0,0,126,13],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a4360be0f4e9ec5c667242a08008f8fe6":[3,0,0,126,13,1],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[3,0,0,126,13,3],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a68398d2292a320dfdb73768136091c68":[3,0,0,126,13,2],
@@ -81,13 +85,13 @@ var NAVTREEINDEX76 =
 "structamrex_1_1FatPtr.html#acb61a285c530ab7badab8ba4c096eb4b":[3,0,0,158,2],
 "structamrex_1_1FatPtr.html#add0c4c063317604e14f8e37a5111afcd":[3,0,0,158,1],
 "structamrex_1_1FilccCell.html":[3,0,0,144],
-"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,0],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,1],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,2],
+"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,0],
 "structamrex_1_1FilfcFace.html":[3,0,0,145],
-"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,145,1],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,145,0],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,145,2],
+"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,145,1],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html":[3,0,0,146,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[3,0,0,146,0,3],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a5fc429dc522fa17e291bbdd8d8e42f89":[3,0,0,146,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html":[3,0,0,5,11],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#a1f41c945c1a3385ae229c7b64af2948c":[3,0,0,5,11,0],
 "structamrex_1_1Gpu_1_1LaunchSafeGuard.html#aa241ac23303cd06b4eb0b725e5815086":[3,0,0,5,11,2],
-"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[3,0,0,5,11,1],
-"structamrex_1_1Gpu_1_1Managed.html":[3,0,0,5,21],
-"structamrex_1_1Gpu_1_1Managed.html#ac55c26882c245ab3d4b27a99142407fe":[3,0,0,5,21,1],
-"structamrex_1_1Gpu_1_1Managed.html#ad7d60ecb610a604829583ba6bed29731":[3,0,0,5,21,0],
-"structamrex_1_1Gpu_1_1NoSyncRegion.html":[3,0,0,5,14]
+"structamrex_1_1Gpu_1_1LaunchSafeGuard.html#ac98ea424ff44cda617d46e9146702d95":[3,0,0,5,11,1]
 };

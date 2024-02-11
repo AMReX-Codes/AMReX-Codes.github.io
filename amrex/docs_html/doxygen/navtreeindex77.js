@@ -1,5 +1,9 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1Gpu_1_1Managed.html":[3,0,0,5,21],
+"structamrex_1_1Gpu_1_1Managed.html#ac55c26882c245ab3d4b27a99142407fe":[3,0,0,5,21,1],
+"structamrex_1_1Gpu_1_1Managed.html#ad7d60ecb610a604829583ba6bed29731":[3,0,0,5,21,0],
+"structamrex_1_1Gpu_1_1NoSyncRegion.html":[3,0,0,5,14],
 "structamrex_1_1Gpu_1_1NoSyncRegion.html#a145be1ff4432aa6033daa6e1bed33e89":[3,0,0,5,14,0],
 "structamrex_1_1Gpu_1_1NoSyncRegion.html#ab3c2ef6e1ce41acc4328659e78732084":[3,0,0,5,14,2],
 "structamrex_1_1Gpu_1_1NoSyncRegion.html#aea2fd359c6a46de880e023c2fec1d480":[3,0,0,5,14,1],
@@ -59,8 +63,8 @@ var NAVTREEINDEX77 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,256],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,262],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,261],
@@ -245,9 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1LPInfo.html#a5969085705dd33f4ed532326141d4c78":[3,0,0,436,3],
 "structamrex_1_1LPInfo.html#a5fc5c419284399b3b4536bab8a917f28":[3,0,0,436,17],
 "structamrex_1_1LPInfo.html#a60ea99c73f17852d0e41ea154b86841a":[3,0,0,436,20],
-"structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5":[3,0,0,436,16],
-"structamrex_1_1LPInfo.html#a92aabd4e7880bf08c8d9195ebf723512":[3,0,0,436,19],
-"structamrex_1_1LPInfo.html#a9c3339a35d018641c2d340cee364755e":[3,0,0,436,9],
-"structamrex_1_1LPInfo.html#aa03ac62b9591746b85f0591485a25335":[3,0,0,436,1],
-"structamrex_1_1LPInfo.html#aae20ea49f949562cc31d87eb8e02cec1":[3,0,0,436,5]
+"structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5":[3,0,0,436,16]
 };
