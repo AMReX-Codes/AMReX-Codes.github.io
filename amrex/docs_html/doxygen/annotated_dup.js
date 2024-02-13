@@ -586,6 +586,7 @@ var annotated_dup =
       [ "BndryDataT", "classamrex_1_1BndryDataT.html", "classamrex_1_1BndryDataT" ],
       [ "BndryRegisterT", "classamrex_1_1BndryRegisterT.html", "classamrex_1_1BndryRegisterT" ],
       [ "BoundCond", "classamrex_1_1BoundCond.html", "classamrex_1_1BoundCond" ],
+      [ "EdgeFluxRegister", "classamrex_1_1EdgeFluxRegister.html", "classamrex_1_1EdgeFluxRegister" ],
       [ "FabSetT", "classamrex_1_1FabSetT.html", "classamrex_1_1FabSetT" ],
       [ "FabSetIter", "classamrex_1_1FabSetIter.html", "classamrex_1_1FabSetIter" ],
       [ "InterpBndryDataT", "classamrex_1_1InterpBndryDataT.html", "classamrex_1_1InterpBndryDataT" ],

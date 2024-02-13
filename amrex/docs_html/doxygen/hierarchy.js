@@ -346,6 +346,7 @@ var hierarchy =
     [ "amrex::algoim::EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", null ],
     [ "amrex::EBToPVD", "classamrex_1_1EBToPVD.html", null ],
     [ "amrex::EB2::Edge", "structamrex_1_1EB2_1_1Edge.html", null ],
+    [ "amrex::EdgeFluxRegister", "classamrex_1_1EdgeFluxRegister.html", null ],
     [ "amrex::Gpu::Elixir", "classamrex_1_1Gpu_1_1Elixir.html", null ],
     [ "hacc::Error", "classhacc_1_1Error.html", null ],
     [ "amrex::ErrorRec::ErrorFunc", "classamrex_1_1ErrorRec_1_1ErrorFunc.html", null ],
@@ -383,6 +384,7 @@ var hierarchy =
       [ "amrex::LayoutData< HYPRE_Int >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::GpuArray< amrex::MLCellLinOpT::BCTL, 2 *AMREX_SPACEDIM > * >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< amrex::PODVector< int > >", "classamrex_1_1LayoutData.html", null ],
+      [ "amrex::LayoutData< int >", "classamrex_1_1LayoutData.html", null ],
       [ "amrex::LayoutData< GFab >", "classamrex_1_1LayoutData.html", [
         [ "amrex::EB2::MultiGFab", "classamrex_1_1EB2_1_1MultiGFab.html", null ]
       ] ],

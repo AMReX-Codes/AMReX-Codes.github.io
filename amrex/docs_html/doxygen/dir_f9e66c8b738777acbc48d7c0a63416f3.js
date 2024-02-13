@@ -6,6 +6,10 @@ var dir_f9e66c8b738777acbc48d7c0a63416f3 =
     [ "AMReX_BoundCond.H", "AMReX__BoundCond_8H.html", [
       [ "BoundCond", "classamrex_1_1BoundCond.html", "classamrex_1_1BoundCond" ]
     ] ],
+    [ "AMReX_EdgeFluxRegister.cpp", "AMReX__EdgeFluxRegister_8cpp.html", null ],
+    [ "AMReX_EdgeFluxRegister.H", "AMReX__EdgeFluxRegister_8H.html", [
+      [ "EdgeFluxRegister", "classamrex_1_1EdgeFluxRegister.html", "classamrex_1_1EdgeFluxRegister" ]
+    ] ],
     [ "AMReX_FabSet.H", "AMReX__FabSet_8H.html", "AMReX__FabSet_8H" ],
     [ "AMReX_InterpBndryData.H", "AMReX__InterpBndryData_8H.html", "AMReX__InterpBndryData_8H" ],
     [ "AMReX_InterpBndryData_1D_K.H", "AMReX__InterpBndryData__1D__K_8H.html", "AMReX__InterpBndryData__1D__K_8H" ],
