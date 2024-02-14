@@ -17,6 +17,7 @@ var AMReX__Algorithm_8H =
     [ "elemwiseMin", "AMReX__Algorithm_8H.html#a596c8bdb575a0bb55727422ca467ca83", null ],
     [ "elemwiseMin", "AMReX__Algorithm_8H.html#ae4bfe8e79990e6c03cf02379c2b883a8", null ],
     [ "linspace", "AMReX__Algorithm_8H.html#aac2545137f1cadac01321de2f527ecac", null ],
+    [ "logspace", "AMReX__Algorithm_8H.html#a0f466fdb5f5804263d0eb21d6737c866", null ],
     [ "lower_bound", "AMReX__Algorithm_8H.html#afe5f053f9083b72c3ba55354f2f30e71", null ],
     [ "max", "AMReX__Algorithm_8H.html#a38d942498aebd0b51855a9b85ed184f5", null ],
     [ "max", "AMReX__Algorithm_8H.html#a502847ea5923caf948bd07e02bad3a88", null ],

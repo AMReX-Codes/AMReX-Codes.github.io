@@ -1,5 +1,7 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1detail_1_1clz__tag.html":[3,0,0,3,2],
+"structamrex_1_1detail_1_1clzl__tag.html":[3,0,0,3,1],
 "structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,0],
 "structamrex_1_1detail_1_1gpu__tuple__element.html":[3,0,0,3,3],
 "structamrex_1_1detail_1_1gpu__tuple__element.html#a173fd40f6e1643b310b699177737307f":[3,0,0,3,3,2],

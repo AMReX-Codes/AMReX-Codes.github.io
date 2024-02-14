@@ -1785,6 +1785,7 @@ var namespaceamrex =
     [ "LocalCopy", "namespaceamrex.html#aafcaf9751e46f39c2698dadad34f0c71", null ],
     [ "LocalCopy", "namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd", null ],
     [ "log", "namespaceamrex.html#a377e86dc25bb181be031ad2f80cb2984", null ],
+    [ "logspace", "namespaceamrex.html#a0f466fdb5f5804263d0eb21d6737c866", null ],
     [ "Loop", "namespaceamrex.html#ab47a3b98bcd26d509fba9e831d218d33", null ],
     [ "Loop", "namespaceamrex.html#a0958f5bfc610a207d30ce2a5a8446f98", null ],
     [ "Loop", "namespaceamrex.html#afee333c49bcfdf12a3ccc051cd2f7406", null ],
