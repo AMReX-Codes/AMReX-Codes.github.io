@@ -2663,7 +2663,7 @@
 <codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>+=<sp/>cct.sbox.numPts()<sp/>*<sp/>ncomp<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(BUF);</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="668"><highlight class="normal"></highlight></codeline>
-<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>bytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="671"><highlight class="normal"></highlight></codeline>
 <codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
@@ -2754,7 +2754,7 @@
 <codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>+=<sp/>cct.dbox.numPts()<sp/>*<sp/>ncomp<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(BUF);</highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="759"><highlight class="normal"></highlight></codeline>
-<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>nbytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="762"><highlight class="normal"></highlight></codeline>
 <codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
@@ -2989,7 +2989,7 @@
 <codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="993"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="994"><highlight class="normal"></highlight></codeline>
-<codeline lineno="995"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="995"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>nbytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="997"><highlight class="normal"></highlight></codeline>
 <codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
@@ -3062,7 +3062,7 @@
 <codeline lineno="1065"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1066"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1067"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1068"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="1068"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="1069"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>bytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1070"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1071"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>

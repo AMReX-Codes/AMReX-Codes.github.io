@@ -1970,7 +1970,7 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>+=<sp/>cct.sbox.numPts()<sp/>*<sp/>ncomp<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FAB::value_type);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>bytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
@@ -2034,7 +2034,7 @@
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>+=<sp/>cct.dbox.numPts()<sp/>*<sp/>ncomp<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FAB::value_type);</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>nbytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>

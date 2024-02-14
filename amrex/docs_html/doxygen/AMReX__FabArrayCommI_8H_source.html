@@ -767,7 +767,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;            nbytes += cct.sbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        }</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        std::size_t acd = ParallelDescriptor::alignof_comm_data(nbytes);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        std::size_t acd = ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        nbytes = <a class="code" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a>(acd, nbytes); <span class="comment">// so that bytes are aligned</span></div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        <span class="comment">// Also need to align the offset properly</span></div>
@@ -858,7 +858,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            nbytes += cct.dbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF);</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        }</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        std::size_t acd = ParallelDescriptor::alignof_comm_data(nbytes);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        std::size_t acd = ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        nbytes = <a class="code" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a>(acd, nbytes);  <span class="comment">// so that nbytes are aligned</span></div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <span class="comment">// Also need to align the offset properly</span></div>
@@ -1093,7 +1093,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;                }</div>
 <div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;            }</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160; </div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;            std::size_t acd = ParallelDescriptor::alignof_comm_data(nbytes);</div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;            std::size_t acd = ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;            nbytes = <a class="code" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a>(acd, nbytes); <span class="comment">// so that nbytes are aligned</span></div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160; </div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;            <span class="comment">// Also need to align the offset properly</span></div>
@@ -1166,7 +1166,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;                }</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;            }</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;            std::size_t acd = ParallelDescriptor::alignof_comm_data(nbytes);</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;            std::size_t acd = ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</div>
 <div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;            nbytes = <a class="code" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a>(acd, nbytes); <span class="comment">// so that bytes are aligned</span></div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160; </div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;            <span class="comment">// Also need to align the offset properly</span></div>

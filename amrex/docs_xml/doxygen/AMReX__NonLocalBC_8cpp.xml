@@ -2000,7 +2000,7 @@
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>+=<sp/>cct.sbox.numPts()<sp/>*<sp/>object_size<sp/>*<sp/>n_components;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::sizeof_selected_comm_data_type(nbytes);</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);<sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>nbytes<sp/>are<sp/>aligned</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>need<sp/>to<sp/>align<sp/>the<sp/>offset<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
