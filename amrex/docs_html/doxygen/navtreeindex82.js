@@ -1,5 +1,9 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1Table3D.html#a2e7e42a20e96c42aed1e9815273da491":[3,0,0,230,2],
+"structamrex_1_1Table3D.html#a5c13d910c8414b61c7be14d7abe9059a":[3,0,0,230,0],
+"structamrex_1_1Table3D.html#a6e9e4da5ca33566ab2044f6dc97e0529":[3,0,0,230,5],
+"structamrex_1_1Table3D.html#a788aa8c49784bd976f6971cf2ec46d1e":[3,0,0,230,8],
 "structamrex_1_1Table3D.html#a88ecadecd7c520a4cf7045c622aa2806":[3,0,0,230,6],
 "structamrex_1_1Table3D.html#a9f045c21573d088af664ba4b5a350946":[3,0,0,230,9],
 "structamrex_1_1Table3D.html#ad0662d5da3d36662b4e8d603491de71a":[3,0,0,230,7],
@@ -161,8 +165,8 @@ var NAVTREEINDEX82 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[3,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[3,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[3,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[3,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[3,0,0,0,5,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[3,0,0,0,5,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX82 =
 "structamrex_1_1detail_1_1Nonesuch.html#ac31cc5ce552668f79bbc820c8d7998e0":[3,0,0,3,19,0],
 "structamrex_1_1detail_1_1TypeListGet.html":[3,0,0,3,16],
 "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,18],
-"structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#a493b7f549e96168aff72dae923b22bc7":[3,0,0,3,18,0],
-"structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,17],
-"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,14],
-"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,15],
-"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ab5002bf857e08f44d3cf3b47f40324b7":[3,0,0,3,15,0]
+"structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html#a493b7f549e96168aff72dae923b22bc7":[3,0,0,3,18,0]
 };

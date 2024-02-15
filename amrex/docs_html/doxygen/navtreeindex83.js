@@ -1,5 +1,9 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1detail_1_1TypeListGet_3_01I_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[3,0,0,3,17],
+"structamrex_1_1detail_1_1apply__result.html":[3,0,0,3,14],
+"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,0,3,15],
+"structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#ab5002bf857e08f44d3cf3b47f40324b7":[3,0,0,3,15,0],
 "structamrex_1_1detail_1_1clz__tag.html":[3,0,0,3,2],
 "structamrex_1_1detail_1_1clzl__tag.html":[3,0,0,3,1],
 "structamrex_1_1detail_1_1clzll__tag.html":[3,0,0,3,0],
