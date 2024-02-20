@@ -1647,87 +1647,95 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="line"><a name="l01842"></a><span class="lineno"> 1842</span>&#160; </div>
 <div class="line"><a name="l01843"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html"> 1843</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1BoxIndexer.html">BoxIndexer</a></div>
 <div class="line"><a name="l01844"></a><span class="lineno"> 1844</span>&#160;{</div>
-<div class="line"><a name="l01845"></a><span class="lineno"> 1845</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
-<div class="line"><a name="l01846"></a><span class="lineno"> 1846</span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> fdxy;</div>
-<div class="line"><a name="l01847"></a><span class="lineno"> 1847</span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> fdx;</div>
-<div class="line"><a name="l01848"></a><span class="lineno"> 1848</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> lo;</div>
-<div class="line"><a name="l01849"></a><span class="lineno"> 1849</span>&#160; </div>
-<div class="line"><a name="l01850"></a><span class="lineno"> 1850</span>&#160;    <a class="code" href="structamrex_1_1BoxIndexer.html">BoxIndexer</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box)</div>
-<div class="line"><a name="l01851"></a><span class="lineno"> 1851</span>&#160;        : fdxy(std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(0))*std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(1))),</div>
-<div class="line"><a name="l01852"></a><span class="lineno"> 1852</span>&#160;          fdx (std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(0))),</div>
-<div class="line"><a name="l01853"></a><span class="lineno"> 1853</span>&#160;          lo  (box.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>())</div>
-<div class="line"><a name="l01854"></a><span class="lineno"> 1854</span>&#160;        {}</div>
-<div class="line"><a name="l01855"></a><span class="lineno"> 1855</span>&#160; </div>
-<div class="line"><a name="l01856"></a><span class="lineno"> 1856</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l01857"></a><span class="lineno"> 1857</span>&#160;    <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01858"></a><span class="lineno"> 1858</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l01859"></a><span class="lineno"> 1859</span>&#160;        std::uint64_t x, y, z, rem;</div>
-<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160;        fdxy(z, rem, icell);</div>
-<div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;        fdx(y, x, rem);</div>
-<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(z)+lo[2]};</div>
-<div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;    }</div>
-<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160; </div>
-<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> intVect (std::uint64_t icell)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;        std::uint64_t x, y, z, rem;</div>
-<div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;        fdxy(z, rem, icell);</div>
-<div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;        fdx(y, x, rem);</div>
-<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(z)+lo[2]};</div>
-<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;    }</div>
-<div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160; </div>
-<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
-<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160; </div>
-<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> fdx;</div>
-<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> lo;</div>
+<div class="line"><a name="l01845"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#adc9eb7e4928f7a6f19a724ab210a1631"> 1845</a></span>&#160;    std::uint64_t <a class="code" href="structamrex_1_1BoxIndexer.html#adc9eb7e4928f7a6f19a724ab210a1631">npts</a>;</div>
+<div class="line"><a name="l01846"></a><span class="lineno"> 1846</span>&#160; </div>
+<div class="line"><a name="l01847"></a><span class="lineno"> 1847</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
+<div class="line"><a name="l01848"></a><span class="lineno"> 1848</span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> fdxy;</div>
+<div class="line"><a name="l01849"></a><span class="lineno"> 1849</span>&#160;    <a class="code" href="structamrex_1_1Math_1_1FastDivmodU64.html">Math::FastDivmodU64</a> fdx;</div>
+<div class="line"><a name="l01850"></a><span class="lineno"> 1850</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> lo;</div>
+<div class="line"><a name="l01851"></a><span class="lineno"> 1851</span>&#160; </div>
+<div class="line"><a name="l01852"></a><span class="lineno"> 1852</span>&#160;    <a class="code" href="structamrex_1_1BoxIndexer.html">BoxIndexer</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box)</div>
+<div class="line"><a name="l01853"></a><span class="lineno"> 1853</span>&#160;        : npts(box.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>()),</div>
+<div class="line"><a name="l01854"></a><span class="lineno"> 1854</span>&#160;          fdxy(std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(0))*std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(1))),</div>
+<div class="line"><a name="l01855"></a><span class="lineno"> 1855</span>&#160;          fdx (std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(0))),</div>
+<div class="line"><a name="l01856"></a><span class="lineno"> 1856</span>&#160;          lo  (box.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>())</div>
+<div class="line"><a name="l01857"></a><span class="lineno"> 1857</span>&#160;        {}</div>
+<div class="line"><a name="l01858"></a><span class="lineno"> 1858</span>&#160; </div>
+<div class="line"><a name="l01859"></a><span class="lineno"> 1859</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160;    <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160;        std::uint64_t x, y, z, rem;</div>
+<div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;        fdxy(z, rem, icell);</div>
+<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;        fdx(y, x, rem);</div>
+<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(z)+lo[2]};</div>
+<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;    }</div>
+<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160; </div>
+<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;    IntVect intVect (std::uint64_t icell)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;        std::uint64_t x, y, z, rem;</div>
+<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;        fdxy(z, rem, icell);</div>
+<div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;        fdx(y, x, rem);</div>
+<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(z)+lo[2]};</div>
+<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;    }</div>
+<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160; </div>
+<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
 <div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160; </div>
-<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;    <a class="code" href="structamrex_1_1BoxIndexer.html">BoxIndexer</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box)</div>
-<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;        : fdx (std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(0))),</div>
-<div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;          lo  (box.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>())</div>
-<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160;        {}</div>
-<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160; </div>
-<div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l01885"></a><span class="lineno"> 1885</span>&#160;    <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l01887"></a><span class="lineno"> 1887</span>&#160;        std::uint64_t x, y;</div>
-<div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;        fdx(y, x, icell);</div>
-<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1], 0};</div>
-<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;    }</div>
-<div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160; </div>
-<div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> intVect (std::uint64_t icell)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;        std::uint64_t x, y;</div>
-<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;        fdx(y, x, icell);</div>
-<div class="line"><a name="l01897"></a><span class="lineno"> 1897</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1]};</div>
-<div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;    }</div>
-<div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160; </div>
-<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 1)</span></div>
-<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160; </div>
-<div class="line"><a name="l01902"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#a2c8ae8d0c195a6a12b14d11e82a94a27"> 1902</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structamrex_1_1BoxIndexer.html#a2c8ae8d0c195a6a12b14d11e82a94a27">lo</a>;</div>
+<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;    Math::FastDivmodU64 fdx;</div>
+<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;    IntVect lo;</div>
+<div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160; </div>
+<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160;    BoxIndexer (<a class="code" href="classamrex_1_1Box.html#a7b7132bf22d2192fc74ca4eea1957908">Box</a> <span class="keyword">const</span>&amp; box)</div>
+<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;        : npts(box.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>()),</div>
+<div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160;          fdx (std::uint64_t(box.<a class="code" href="classamrex_1_1Box.html#a6a6733882a425dd6a062cce99c224421">length</a>(0))),</div>
+<div class="line"><a name="l01885"></a><span class="lineno"> 1885</span>&#160;          lo  (box.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>())</div>
+<div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;        {}</div>
+<div class="line"><a name="l01887"></a><span class="lineno"> 1887</span>&#160; </div>
+<div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;    Dim3 operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160;        std::uint64_t x, y;</div>
+<div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;        fdx(y, x, icell);</div>
+<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1], 0};</div>
+<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;    }</div>
+<div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160; </div>
+<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01897"></a><span class="lineno"> 1897</span>&#160;    IntVect intVect (std::uint64_t icell)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160;        std::uint64_t x, y;</div>
+<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;        fdx(y, x, icell);</div>
+<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(x)+lo[0], <a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(y)+lo[1]};</div>
+<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;    }</div>
 <div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160; </div>
-<div class="line"><a name="l01904"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#ad3f5842029b80a1f01921fa433c8443b"> 1904</a></span>&#160;    <a class="code" href="structamrex_1_1BoxIndexer.html#ad3f5842029b80a1f01921fa433c8443b">BoxIndexer</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box)</div>
-<div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160;        : lo(box.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>(0))</div>
-<div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;        {}</div>
+<div class="line"><a name="l01904"></a><span class="lineno"> 1904</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 1)</span></div>
+<div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160; </div>
+<div class="line"><a name="l01906"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#a2c8ae8d0c195a6a12b14d11e82a94a27"> 1906</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structamrex_1_1BoxIndexer.html#a2c8ae8d0c195a6a12b14d11e82a94a27">lo</a>;</div>
 <div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160; </div>
-<div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l01909"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#a56630e7a632a6c74c5d7e1fb0c1463eb"> 1909</a></span>&#160;    <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(icell)+lo, 0, 0};</div>
-<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;    }</div>
-<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160; </div>
-<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l01915"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#a5877907c723717f0fb2f9b68ce6e1d68"> 1915</a></span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <a class="code" href="structamrex_1_1BoxIndexer.html#a5877907c723717f0fb2f9b68ce6e1d68">intVect</a> (std::uint64_t icell)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>{<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(icell)+lo};</div>
-<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;    }</div>
-<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160; </div>
-<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160;};</div>
-<div class="line"><a name="l01922"></a><span class="lineno"> 1922</span>&#160; </div>
-<div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160;}</div>
+<div class="line"><a name="l01908"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#ad3f5842029b80a1f01921fa433c8443b"> 1908</a></span>&#160;    <a class="code" href="structamrex_1_1BoxIndexer.html#ad3f5842029b80a1f01921fa433c8443b">BoxIndexer</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box)</div>
+<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;        : npts(box.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>()),</div>
+<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;          lo(box.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>(0))</div>
+<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;        {}</div>
+<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160; </div>
+<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01914"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#a56630e7a632a6c74c5d7e1fb0c1463eb"> 1914</a></span>&#160;    <a class="code" href="structamrex_1_1Dim3.html">Dim3</a> operator() (std::uint64_t icell)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(icell)+lo, 0, 0};</div>
+<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;    }</div>
+<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160; </div>
+<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01920"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#a5877907c723717f0fb2f9b68ce6e1d68"> 1920</a></span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <a class="code" href="structamrex_1_1BoxIndexer.html#a5877907c723717f0fb2f9b68ce6e1d68">intVect</a> (std::uint64_t icell)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l01922"></a><span class="lineno"> 1922</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>{<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>(icell)+lo};</div>
+<div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160;    }</div>
 <div class="line"><a name="l01924"></a><span class="lineno"> 1924</span>&#160; </div>
-<div class="line"><a name="l01925"></a><span class="lineno"> 1925</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_BOX_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01925"></a><span class="lineno"> 1925</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01926"></a><span class="lineno"> 1926</span>&#160; </div>
+<div class="line"><a name="l01927"></a><span class="lineno"> 1927</span>&#160;    [[nodiscard]] <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l01928"></a><span class="lineno"><a class="line" href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f"> 1928</a></span>&#160;    std::uint64_t <a class="code" href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">numPts</a> ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> npts; }</div>
+<div class="line"><a name="l01929"></a><span class="lineno"> 1929</span>&#160;};</div>
+<div class="line"><a name="l01930"></a><span class="lineno"> 1930</span>&#160; </div>
+<div class="line"><a name="l01931"></a><span class="lineno"> 1931</span>&#160;}</div>
+<div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160; </div>
+<div class="line"><a name="l01933"></a><span class="lineno"> 1933</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_BOX_H*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aAMReX__Algorithm_8H_html"><div class="ttname"><a href="AMReX__Algorithm_8H.html">AMReX_Algorithm.H</a></div></div>
 <div class="ttc" id="aAMReX__Array4_8H_html"><div class="ttname"><a href="AMReX__Array4_8H.html">AMReX_Array4.H</a></div></div>
 <div class="ttc" id="aAMReX__ArrayLim_8H_html"><div class="ttname"><a href="AMReX__ArrayLim_8H.html">AMReX_ArrayLim.H</a></div></div>
@@ -1913,9 +1921,11 @@ $(document).ready(function(){initNavTree('AMReX__Box_8H_source.html',''); initRe
 <div class="ttc" id="anamespaceamrex_html_af60a35bfa44b2339838f41313bdd0611"><div class="ttname"><a href="namespaceamrex.html#af60a35bfa44b2339838f41313bdd0611">amrex::bdryHi</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box bdryHi(const Box &amp;b, int dir, int len=1) noexcept</div><div class="ttdoc">Returns the edge-centered Box (in direction dir) defining the high side of Box b.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1441</div></div>
 <div class="ttc" id="astructamrex_1_1Array4_html"><div class="ttname"><a href="structamrex_1_1Array4.html">amrex::Array4</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:61</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexer_html"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html">amrex::BoxIndexer</a></div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1844</div></div>
-<div class="ttc" id="astructamrex_1_1BoxIndexer_html_a2c8ae8d0c195a6a12b14d11e82a94a27"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#a2c8ae8d0c195a6a12b14d11e82a94a27">amrex::BoxIndexer::lo</a></div><div class="ttdeci">int lo</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1902</div></div>
-<div class="ttc" id="astructamrex_1_1BoxIndexer_html_a5877907c723717f0fb2f9b68ce6e1d68"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#a5877907c723717f0fb2f9b68ce6e1d68">amrex::BoxIndexer::intVect</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect intVect(std::uint64_t icell) const</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1915</div></div>
-<div class="ttc" id="astructamrex_1_1BoxIndexer_html_ad3f5842029b80a1f01921fa433c8443b"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#ad3f5842029b80a1f01921fa433c8443b">amrex::BoxIndexer::BoxIndexer</a></div><div class="ttdeci">BoxIndexer(Box const &amp;box)</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1904</div></div>
+<div class="ttc" id="astructamrex_1_1BoxIndexer_html_a2c8ae8d0c195a6a12b14d11e82a94a27"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#a2c8ae8d0c195a6a12b14d11e82a94a27">amrex::BoxIndexer::lo</a></div><div class="ttdeci">int lo</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1906</div></div>
+<div class="ttc" id="astructamrex_1_1BoxIndexer_html_a5877907c723717f0fb2f9b68ce6e1d68"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#a5877907c723717f0fb2f9b68ce6e1d68">amrex::BoxIndexer::intVect</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect intVect(std::uint64_t icell) const</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1920</div></div>
+<div class="ttc" id="astructamrex_1_1BoxIndexer_html_ad3f5842029b80a1f01921fa433c8443b"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#ad3f5842029b80a1f01921fa433c8443b">amrex::BoxIndexer::BoxIndexer</a></div><div class="ttdeci">BoxIndexer(Box const &amp;box)</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1908</div></div>
+<div class="ttc" id="astructamrex_1_1BoxIndexer_html_ad91dc07409240a379b5f1219117f804f"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">amrex::BoxIndexer::numPts</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint64_t numPts() const</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1928</div></div>
+<div class="ttc" id="astructamrex_1_1BoxIndexer_html_adc9eb7e4928f7a6f19a724ab210a1631"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#adc9eb7e4928f7a6f19a724ab210a1631">amrex::BoxIndexer::npts</a></div><div class="ttdeci">std::uint64_t npts</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1845</div></div>
 <div class="ttc" id="astructamrex_1_1Dim3_html"><div class="ttname"><a href="structamrex_1_1Dim3.html">amrex::Dim3</a></div><div class="ttdef"><b>Definition:</b> AMReX_Dim3.H:12</div></div>
 <div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt; int, 3 &gt;</a></div></div>
 <div class="ttc" id="astructamrex_1_1Math_1_1FastDivmodU64_html"><div class="ttname"><a href="structamrex_1_1Math_1_1FastDivmodU64.html">amrex::Math::FastDivmodU64</a></div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:276</div></div>

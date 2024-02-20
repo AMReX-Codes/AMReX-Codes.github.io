@@ -154,14 +154,14 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::uint64_t <span class="keyword">const</span> threadIdxx = handler.threadIdx();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            std::uint64_t <span class="keyword">const</span> blockIdxx = handler.blockIdx();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span> shared = (T*)handler.sharedMemory();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (icell &lt; ntotcells) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (icell &lt; indexer.<a class="code" href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">numPts</a>()) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keyword">auto</span> ga = <span class="keyword">new</span>(shared+threadIdxx*STRUCTSIZE) STRUCT;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">auto</span> [i, j, k] = indexer(icell);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(*ga, i, j, k);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            handler.sharedBarrier();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span> (std::uint64_t m = threadIdxx,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     mend = amrex::min&lt;std::uint64_t&gt;(blockDimx, ntotcells-blockDimx*blockIdxx) * STRUCTSIZE;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     mend = amrex::min&lt;std::uint64_t&gt;(blockDimx, indexer.<a class="code" href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">numPts</a>()-blockDimx*blockIdxx) * STRUCTSIZE;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                 m &lt; mend; m += blockDimx) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                p[blockDimx*blockIdxx*STRUCTSIZE+m] = shared[m];</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
@@ -173,14 +173,14 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            std::uint64_t <span class="keyword">const</span> icell = std::uint64_t(blockDim.x)*blockIdx.x+threadIdx.x;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html">Gpu::SharedMemory&lt;T&gt;</a> gsm;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            T* <span class="keyword">const</span> shared = gsm.<a class="code" href="structamrex_1_1Gpu_1_1SharedMemory.html#a15f96d78196939452c41efcf8889420c">dataPtr</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (icell &lt; ntotcells) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (icell &lt; indexer.<a class="code" href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">numPts</a>()) {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">auto</span> ga = <span class="keyword">new</span>(shared+std::uint64_t(threadIdx.x)*STRUCTSIZE) STRUCT;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keyword">auto</span> [i, j, k] = indexer(icell);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(*ga, i, j, k);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            __syncthreads();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">for</span> (std::uint64_t m = threadIdx.x,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                     mend = amrex::min&lt;std::uint64_t&gt;(blockDim.x, ntotcells-std::uint64_t(blockDim.x)*blockIdx.x) * STRUCTSIZE;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                     mend = amrex::min&lt;std::uint64_t&gt;(blockDim.x, indexer.<a class="code" href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">numPts</a>()-std::uint64_t(blockDim.x)*blockIdx.x) * STRUCTSIZE;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                 m &lt; mend; m += blockDim.x) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                p[std::uint64_t(blockDim.x)*blockIdx.x*STRUCTSIZE+m] = shared[m];</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
@@ -223,6 +223,7 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="ttc" id="anamespaceamrex_html_aa7261f50da60e78a42e700384710cd47"><div class="ttname"><a href="namespaceamrex.html#aa7261f50da60e78a42e700384710cd47">amrex::cast</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void cast(BaseFab&lt; Tto &gt; &amp;tofab, BaseFab&lt; Tfrom &gt; const &amp;fromfab, Box const &amp;bx, SrcComp scomp, DestComp dcomp, NumComps ncomp) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFabUtility.H:13</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="astructamrex_1_1BoxIndexer_html"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html">amrex::BoxIndexer</a></div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1844</div></div>
+<div class="ttc" id="astructamrex_1_1BoxIndexer_html_ad91dc07409240a379b5f1219117f804f"><div class="ttname"><a href="structamrex_1_1BoxIndexer.html#ad91dc07409240a379b5f1219117f804f">amrex::BoxIndexer::numPts</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint64_t numPts() const</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1928</div></div>
 <div class="ttc" id="astructamrex_1_1DestComp_html"><div class="ttname"><a href="structamrex_1_1DestComp.html">amrex::DestComp</a></div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:72</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html">amrex::Gpu::Handler</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:86</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1SharedMemory_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1SharedMemory.html">amrex::Gpu::SharedMemory</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuMemory.H:125</div></div>

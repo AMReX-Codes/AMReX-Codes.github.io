@@ -6494,87 +6494,95 @@
 <codeline lineno="1842"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1843" refid="structamrex_1_1BoxIndexer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1BoxIndexer" kindref="compound">BoxIndexer</ref></highlight></codeline>
 <codeline lineno="1844"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1845"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1846"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64" kindref="compound">Math::FastDivmodU64</ref><sp/>fdxy;</highlight></codeline>
-<codeline lineno="1847"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64" kindref="compound">Math::FastDivmodU64</ref><sp/>fdx;</highlight></codeline>
-<codeline lineno="1848"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>lo;</highlight></codeline>
-<codeline lineno="1849"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1850"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BoxIndexer" kindref="compound">BoxIndexer</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box)</highlight></codeline>
-<codeline lineno="1851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>fdxy(std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(0))*std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(1))),</highlight></codeline>
-<codeline lineno="1852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx<sp/>(std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(0))),</highlight></codeline>
-<codeline lineno="1853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo<sp/><sp/>(box.<ref refid="classamrex_1_1Box_1a04e076a4688ca383aeaccfcb0bceef60" kindref="member">smallEnd</ref>())</highlight></codeline>
-<codeline lineno="1854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
-<codeline lineno="1855"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1856"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1857"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/>operator()<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1858"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y,<sp/>z,<sp/>rem;</highlight></codeline>
-<codeline lineno="1860"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdxy(z,<sp/>rem,<sp/>icell);</highlight></codeline>
-<codeline lineno="1861"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>rem);</highlight></codeline>
-<codeline lineno="1862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(z)+lo[2]};</highlight></codeline>
-<codeline lineno="1863"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1864"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1865"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1866"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>intVect<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1867"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y,<sp/>z,<sp/>rem;</highlight></codeline>
-<codeline lineno="1869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdxy(z,<sp/>rem,<sp/>icell);</highlight></codeline>
-<codeline lineno="1870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>rem);</highlight></codeline>
-<codeline lineno="1871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(z)+lo[2]};</highlight></codeline>
-<codeline lineno="1872"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1873"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1874"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1875"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1876"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64" kindref="compound">Math::FastDivmodU64</ref><sp/>fdx;</highlight></codeline>
-<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>lo;</highlight></codeline>
+<codeline lineno="1845" refid="structamrex_1_1BoxIndexer_1adc9eb7e4928f7a6f19a724ab210a1631" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1BoxIndexer_1adc9eb7e4928f7a6f19a724ab210a1631" kindref="member">npts</ref>;</highlight></codeline>
+<codeline lineno="1846"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1847"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1848"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64" kindref="compound">Math::FastDivmodU64</ref><sp/>fdxy;</highlight></codeline>
+<codeline lineno="1849"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Math_1_1FastDivmodU64" kindref="compound">Math::FastDivmodU64</ref><sp/>fdx;</highlight></codeline>
+<codeline lineno="1850"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>lo;</highlight></codeline>
+<codeline lineno="1851"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1852"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BoxIndexer" kindref="compound">BoxIndexer</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box)</highlight></codeline>
+<codeline lineno="1853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>npts(box.<ref refid="classamrex_1_1Box_1a74b39c8b70837cdb61ade61a834997ff" kindref="member">numPts</ref>()),</highlight></codeline>
+<codeline lineno="1854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdxy(std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(0))*std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(1))),</highlight></codeline>
+<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx<sp/>(std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(0))),</highlight></codeline>
+<codeline lineno="1856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo<sp/><sp/>(box.<ref refid="classamrex_1_1Box_1a04e076a4688ca383aeaccfcb0bceef60" kindref="member">smallEnd</ref>())</highlight></codeline>
+<codeline lineno="1857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="1858"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1859"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1860"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/>operator()<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1861"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y,<sp/>z,<sp/>rem;</highlight></codeline>
+<codeline lineno="1863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdxy(z,<sp/>rem,<sp/>icell);</highlight></codeline>
+<codeline lineno="1864"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>rem);</highlight></codeline>
+<codeline lineno="1865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(z)+lo[2]};</highlight></codeline>
+<codeline lineno="1866"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1867"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1868"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1869"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>intVect<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1870"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y,<sp/>z,<sp/>rem;</highlight></codeline>
+<codeline lineno="1872"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdxy(z,<sp/>rem,<sp/>icell);</highlight></codeline>
+<codeline lineno="1873"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>rem);</highlight></codeline>
+<codeline lineno="1874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(z)+lo[2]};</highlight></codeline>
+<codeline lineno="1875"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1876"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1877"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1878"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BoxIndexer" kindref="compound">BoxIndexer</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box)</highlight></codeline>
-<codeline lineno="1880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>fdx<sp/>(std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(0))),</highlight></codeline>
-<codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo<sp/><sp/>(box.<ref refid="classamrex_1_1Box_1a04e076a4688ca383aeaccfcb0bceef60" kindref="member">smallEnd</ref>())</highlight></codeline>
-<codeline lineno="1882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
-<codeline lineno="1883"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1885"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/>operator()<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1886"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y;</highlight></codeline>
-<codeline lineno="1888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>icell);</highlight></codeline>
-<codeline lineno="1889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1],<sp/>0};</highlight></codeline>
-<codeline lineno="1890"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1891"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1892"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1893"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>intVect<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1894"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y;</highlight></codeline>
-<codeline lineno="1896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>icell);</highlight></codeline>
-<codeline lineno="1897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1]};</highlight></codeline>
-<codeline lineno="1898"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1899"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1900"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1901"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1902" refid="structamrex_1_1BoxIndexer_1a2c8ae8d0c195a6a12b14d11e82a94a27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BoxIndexer_1a2c8ae8d0c195a6a12b14d11e82a94a27" kindref="member">lo</ref>;</highlight></codeline>
+<codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/>Math::FastDivmodU64<sp/>fdx;</highlight></codeline>
+<codeline lineno="1880"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>lo;</highlight></codeline>
+<codeline lineno="1881"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1882"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxIndexer<sp/>(<ref refid="classamrex_1_1Box_1a7b7132bf22d2192fc74ca4eea1957908" kindref="member">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box)</highlight></codeline>
+<codeline lineno="1883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>npts(box.<ref refid="classamrex_1_1Box_1a74b39c8b70837cdb61ade61a834997ff" kindref="member">numPts</ref>()),</highlight></codeline>
+<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx<sp/>(std::uint64_t(box.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(0))),</highlight></codeline>
+<codeline lineno="1885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo<sp/><sp/>(box.<ref refid="classamrex_1_1Box_1a04e076a4688ca383aeaccfcb0bceef60" kindref="member">smallEnd</ref>())</highlight></codeline>
+<codeline lineno="1886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="1887"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1888"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1889"><highlight class="normal"><sp/><sp/><sp/><sp/>Dim3<sp/>operator()<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1890"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y;</highlight></codeline>
+<codeline lineno="1892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>icell);</highlight></codeline>
+<codeline lineno="1893"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1],<sp/>0};</highlight></codeline>
+<codeline lineno="1894"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1895"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1896"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1897"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>intVect<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1898"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::uint64_t<sp/>x,<sp/>y;</highlight></codeline>
+<codeline lineno="1900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdx(y,<sp/>x,<sp/>icell);</highlight></codeline>
+<codeline lineno="1901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(x)+lo[0],<sp/><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(y)+lo[1]};</highlight></codeline>
+<codeline lineno="1902"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1903"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1904" refid="structamrex_1_1BoxIndexer_1ad3f5842029b80a1f01921fa433c8443b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BoxIndexer_1ad3f5842029b80a1f01921fa433c8443b" kindref="member">BoxIndexer</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box)</highlight></codeline>
-<codeline lineno="1905"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>lo(box.<ref refid="classamrex_1_1Box_1a04e076a4688ca383aeaccfcb0bceef60" kindref="member">smallEnd</ref>(0))</highlight></codeline>
-<codeline lineno="1906"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="1904"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1905"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1906" refid="structamrex_1_1BoxIndexer_1a2c8ae8d0c195a6a12b14d11e82a94a27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BoxIndexer_1a2c8ae8d0c195a6a12b14d11e82a94a27" kindref="member">lo</ref>;</highlight></codeline>
 <codeline lineno="1907"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1908"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1909" refid="structamrex_1_1BoxIndexer_1a56630e7a632a6c74c5d7e1fb0c1463eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/>operator()<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1910"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1911"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(icell)+lo,<sp/>0,<sp/>0};</highlight></codeline>
-<codeline lineno="1912"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1913"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1914"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="1915" refid="structamrex_1_1BoxIndexer_1a5877907c723717f0fb2f9b68ce6e1d68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/><ref refid="structamrex_1_1BoxIndexer_1a5877907c723717f0fb2f9b68ce6e1d68" kindref="member">intVect</ref><sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1916"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(icell)+lo};</highlight></codeline>
-<codeline lineno="1918"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1919"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1920"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1921"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="1922"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1923"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1908" refid="structamrex_1_1BoxIndexer_1ad3f5842029b80a1f01921fa433c8443b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BoxIndexer_1ad3f5842029b80a1f01921fa433c8443b" kindref="member">BoxIndexer</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box)</highlight></codeline>
+<codeline lineno="1909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>npts(box.<ref refid="classamrex_1_1Box_1a74b39c8b70837cdb61ade61a834997ff" kindref="member">numPts</ref>()),</highlight></codeline>
+<codeline lineno="1910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo(box.<ref refid="classamrex_1_1Box_1a04e076a4688ca383aeaccfcb0bceef60" kindref="member">smallEnd</ref>(0))</highlight></codeline>
+<codeline lineno="1911"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="1912"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1914" refid="structamrex_1_1BoxIndexer_1a56630e7a632a6c74c5d7e1fb0c1463eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/>operator()<sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1915"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(icell)+lo,<sp/>0,<sp/>0};</highlight></codeline>
+<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1918"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1919"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1920" refid="structamrex_1_1BoxIndexer_1a5877907c723717f0fb2f9b68ce6e1d68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/><ref refid="structamrex_1_1BoxIndexer_1a5877907c723717f0fb2f9b68ce6e1d68" kindref="member">intVect</ref><sp/>(std::uint64_t<sp/>icell)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1921"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1922"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>{<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>(icell)+lo};</highlight></codeline>
+<codeline lineno="1923"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1924"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1925"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_BOX_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="1925"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1926"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1927"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="1928" refid="structamrex_1_1BoxIndexer_1ad91dc07409240a379b5f1219117f804f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structamrex_1_1BoxIndexer_1ad91dc07409240a379b5f1219117f804f" kindref="member">numPts</ref><sp/>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>npts;<sp/>}</highlight></codeline>
+<codeline lineno="1929"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1930"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1931"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1932"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1933"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_BOX_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H"/>
   </compounddef>
