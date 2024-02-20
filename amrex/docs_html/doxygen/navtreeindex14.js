@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"AMReX__MultiCutFab_8H.html":[4,0,0,4,100],
 "AMReX__MultiCutFab_8H_source.html":[4,0,0,4,100],
 "AMReX__MultiCutFab_8cpp.html":[4,0,0,4,99],
 "AMReX__MultiFabUtilI_8H.html":[4,0,0,2,190],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "AMReX__NeighborParticles_8H.html":[4,0,0,7,5],
 "AMReX__NeighborParticles_8H_source.html":[4,0,0,7,5],
 "AMReX__NonLocalBCImpl_8H.html":[4,0,0,2,195],
-"AMReX__NonLocalBCImpl_8H_source.html":[4,0,0,2,195],
-"AMReX__NonLocalBC_8H.html":[4,0,0,2,194]
+"AMReX__NonLocalBCImpl_8H_source.html":[4,0,0,2,195]
 };

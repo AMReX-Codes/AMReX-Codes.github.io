@@ -1,5 +1,6 @@
 var AMReX__Extension_8H =
 [
+    [ "AMREX_ASSUME", "AMReX__Extension_8H.html#a3b797bf3e928ddc913e2121bee17aef5", null ],
     [ "AMREX_ATTRIBUTE_WEAK", "AMReX__Extension_8H.html#aca0e371f8327722548a19e84acabea8e", null ],
     [ "AMREX_EXPORT", "AMReX__Extension_8H.html#ac05fa35b3db13c4599d7ad5fc51bef47", null ],
     [ "AMREX_FALLTHROUGH", "AMReX__Extension_8H.html#a8c2a4f7808c3093eb46278654b309fe3", null ],
