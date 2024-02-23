@@ -1897,6 +1897,7 @@ var namespaceamrex =
     [ "mlcurlcurl_gsrb_y", "namespaceamrex.html#aef79c8a862b5ef69ef200ddb5d389cc3", null ],
     [ "mlcurlcurl_gsrb_z", "namespaceamrex.html#ad4cf96007aab23ec80e92812822397c1", null ],
     [ "mlcurlcurl_interpadd", "namespaceamrex.html#a46f754596e0c0d977d970818bbec1dd2", null ],
+    [ "mlcurlcurl_restriction", "namespaceamrex.html#a21ec6d770f7f3ec5d7044cbca1e9167b", null ],
     [ "mlebabeclap_adotx", "namespaceamrex.html#a4b562b00cd47b22ceabc8f4f68251cde", null ],
     [ "mlebabeclap_adotx", "namespaceamrex.html#aff3db9e0a6ad08f9e98ff966faeb1244", null ],
     [ "mlebabeclap_adotx_centroid", "namespaceamrex.html#a43d8afe61435d9bd570425c4ff63056a", null ],

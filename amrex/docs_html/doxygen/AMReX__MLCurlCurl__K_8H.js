@@ -7,5 +7,6 @@ var AMReX__MLCurlCurl__K_8H =
     [ "mlcurlcurl_gsrb_x", "AMReX__MLCurlCurl__K_8H.html#a15131387911a098d4d005d5253dba372", null ],
     [ "mlcurlcurl_gsrb_y", "AMReX__MLCurlCurl__K_8H.html#aef79c8a862b5ef69ef200ddb5d389cc3", null ],
     [ "mlcurlcurl_gsrb_z", "AMReX__MLCurlCurl__K_8H.html#ad4cf96007aab23ec80e92812822397c1", null ],
-    [ "mlcurlcurl_interpadd", "AMReX__MLCurlCurl__K_8H.html#a46f754596e0c0d977d970818bbec1dd2", null ]
+    [ "mlcurlcurl_interpadd", "AMReX__MLCurlCurl__K_8H.html#a46f754596e0c0d977d970818bbec1dd2", null ],
+    [ "mlcurlcurl_restriction", "AMReX__MLCurlCurl__K_8H.html#a21ec6d770f7f3ec5d7044cbca1e9167b", null ]
 ];

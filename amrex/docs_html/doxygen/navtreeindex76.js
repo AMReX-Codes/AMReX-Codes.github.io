@@ -1,5 +1,8 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1FabArrayBase_1_1FabComTag.html#a5c3201e1c74a8355f405987ac3c77678":[3,0,0,126,7,2],
+"structamrex_1_1FabArrayBase_1_1FabComTag.html#a5ded8154e0acf04de6c1d60f985a7069":[3,0,0,126,7,9],
+"structamrex_1_1FabArrayBase_1_1FabComTag.html#a6ad0d4aaa97b3aeba9ad7663cc974563":[3,0,0,126,7,10],
 "structamrex_1_1FabArrayBase_1_1FabComTag.html#a727cd5fc638afd570a51cec1ba21db89":[3,0,0,126,7,1],
 "structamrex_1_1FabArrayBase_1_1FabComTag.html#a736f4b09115efedb46eb2ddcb802417f":[3,0,0,126,7,4],
 "structamrex_1_1FabArrayBase_1_1FabComTag.html#a88162269ca5cd1c4e7ffe7259f526b92":[3,0,0,126,7,0],
@@ -112,8 +115,8 @@ var NAVTREEINDEX76 =
 "structamrex_1_1FatPtr.html#add0c4c063317604e14f8e37a5111afcd":[3,0,0,158,1],
 "structamrex_1_1FilccCell.html":[3,0,0,144],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,2],
-"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,1],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,0],
+"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,144,1],
 "structamrex_1_1FilfcFace.html":[3,0,0,145],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,145,2],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,145,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[3,0,0,5,24,1],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ac7995253d4db738ff6283ab41aaf67c8":[3,0,0,5,24,6],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[3,0,0,5,24,3],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[3,0,0,5,24,4],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[3,0,0,5,24,10],
-"structamrex_1_1Gpu_1_1DeviceToDevice.html":[3,0,0,5,10],
-"structamrex_1_1Gpu_1_1DeviceToHost.html":[3,0,0,5,9]
+"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[3,0,0,5,24,4]
 };

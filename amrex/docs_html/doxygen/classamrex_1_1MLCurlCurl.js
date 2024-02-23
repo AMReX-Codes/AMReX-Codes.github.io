@@ -39,6 +39,7 @@ var classamrex_1_1MLCurlCurl =
     [ "xdoty", "classamrex_1_1MLCurlCurl.html#aafe03e36ef3a7d8c99466b3762358794", null ],
     [ "m_alpha", "classamrex_1_1MLCurlCurl.html#a8e3436cc293f45df20b351de804af2fd", null ],
     [ "m_beta", "classamrex_1_1MLCurlCurl.html#a7b83a2461e9903530a1903a12ddec15b", null ],
+    [ "m_dirichlet_mask", "classamrex_1_1MLCurlCurl.html#a3b2be852bfd0bfd87e0dc8d4f0c86847", null ],
     [ "m_dotmask", "classamrex_1_1MLCurlCurl.html#a5e1b51f776e54426d9a92e0101b75066", null ],
     [ "m_etype", "classamrex_1_1MLCurlCurl.html#ae73e6c0e2000bd5397e42f8fd8e42cba", null ],
     [ "m_ncomp", "classamrex_1_1MLCurlCurl.html#a85d721f72de7a13036fb1ce5bc77d452", null ]
