@@ -137,15 +137,15 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Spline_8H_source.html'
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classamrex_1_1distFcnElement2d.html">distFcnElement2d</a> * closesetGeomElement = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    amrex::Real dist;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dist = 1.0e29_rt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classamrex_1_1RealVect.html">amrex::RealVect</a> x(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(p[0], p[1], p[2]));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classamrex_1_1RealVect.html">amrex::RealVect</a> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(p[0], p[1], p[2]));</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> * geom : <a class="code" href="classamrex_1_1EB2_1_1SplineIF.html#aa2fa17ff2ba083371845090960b56abc">geomElements</a> ) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      amrex::Real d = geom-&gt;cpdist(x, cp);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      amrex::Real d = geom-&gt;cpdist(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>, cp);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">if</span> (d &lt; dist) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        dist = d;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        closesetGeomElement = geom;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    amrex::Real side = closesetGeomElement ? closesetGeomElement-&gt;<a class="code" href="classamrex_1_1distFcnElement2d.html#adf53d0ff573fc7bb5d59ede162b78efd">cpside</a>(x,cp) : Real(0.0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    amrex::Real side = closesetGeomElement ? closesetGeomElement-&gt;<a class="code" href="classamrex_1_1distFcnElement2d.html#adf53d0ff573fc7bb5d59ede162b78efd">cpside</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>,cp) : Real(0.0);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> dist*side;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -173,6 +173,7 @@ $(document).ready(function(){initNavTree('AMReX__EB2__IF__Spline_8H_source.html'
 <div class="ttc" id="aclassamrex_1_1distFcnElement2d_html"><div class="ttname"><a href="classamrex_1_1distFcnElement2d.html">amrex::distFcnElement2d</a></div><div class="ttdef"><b>Definition:</b> AMReX_distFcnElement.H:11</div></div>
 <div class="ttc" id="aclassamrex_1_1distFcnElement2d_html_adf53d0ff573fc7bb5d59ede162b78efd"><div class="ttname"><a href="classamrex_1_1distFcnElement2d.html#adf53d0ff573fc7bb5d59ede162b78efd">amrex::distFcnElement2d::cpside</a></div><div class="ttdeci">virtual amrex::Real cpside(amrex::RealVect pt, amrex::RealVect &amp;cp) const =0</div></div>
 <div class="ttc" id="anamespaceamrex_1_1EB2_html"><div class="ttname"><a href="namespaceamrex_1_1EB2.html">amrex::EB2</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayBase.H:29</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9de48c04056551924746c42f9eda3c8f"><div class="ttname"><a href="namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f">amrex::RealArray</a></div><div class="ttdeci">Array&lt; Real, AMREX_SPACEDIM &gt; RealArray</div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

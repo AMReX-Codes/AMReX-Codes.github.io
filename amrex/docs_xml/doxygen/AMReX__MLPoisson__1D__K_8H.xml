@@ -77,7 +77,7 @@
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;T const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>x,</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>dhx)<sp/>noexcept</highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>dhx<sp/>*<sp/>(x(i-1,0,0)<sp/>-<sp/>T(2.0)*x(i,0,0)<sp/>+<sp/>x(i+1,0,0));</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>dhx<sp/>*<sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i-1,0,0)<sp/>-<sp/>T(2.0)*<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,0,0)<sp/>+<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i+1,0,0));</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
@@ -90,7 +90,7 @@
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(osm(i,0,0)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>T(0.0);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>dhx<sp/>*<sp/>(x(i-1,0,0)<sp/>-<sp/>T(2.0)*x(i,0,0)<sp/>+<sp/>x(i+1,0,0));</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>dhx<sp/>*<sp/>(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i-1,0,0)<sp/>-<sp/>T(2.0)*<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,0,0)<sp/>+<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i+1,0,0));</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
@@ -102,7 +102,7 @@
 <codeline lineno="35"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>rel<sp/>=<sp/>(probxlo<sp/>+<sp/>i<sp/><sp/><sp/>*dx)<sp/>*<sp/>(probxlo<sp/>+<sp/>i<sp/><sp/><sp/>*dx);</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>rer<sp/>=<sp/>(probxlo<sp/>+(i+1)*dx)<sp/>*<sp/>(probxlo<sp/>+(i+1)*dx);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>dhx<sp/>*<sp/>(rel*x(i-1,0,0)<sp/>-<sp/>(rel+rer)*x(i,0,0)<sp/>+<sp/>rer*x(i+1,0,0));</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>y(i,0,0)<sp/>=<sp/>dhx<sp/>*<sp/>(rel*<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i-1,0,0)<sp/>-<sp/>(rel+rer)*<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,0,0)<sp/>+<sp/>rer*<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i+1,0,0));</highlight></codeline>
 <codeline lineno="39"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
@@ -262,7 +262,7 @@
 <codeline lineno="195"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>rel<sp/>=<sp/>(probxlo<sp/>+<sp/>i<sp/><sp/><sp/>*dx)<sp/>*<sp/>(probxlo<sp/>+<sp/>i<sp/><sp/><sp/>*dx);</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>rer<sp/>=<sp/>(probxlo<sp/>+(i+1)*dx)<sp/>*<sp/>(probxlo<sp/>+(i+1)*dx);</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>x(i,0,0)<sp/>/=<sp/>(-dhx*(rel+rer));</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,0,0)<sp/>/=<sp/>(-dhx*(rel+rer));</highlight></codeline>
 <codeline lineno="199"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
 <codeline lineno="201"><highlight class="normal">}</highlight></codeline>

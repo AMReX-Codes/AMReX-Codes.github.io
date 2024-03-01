@@ -128,7 +128,9 @@ var hierarchy =
     [ "amrex::ArenaInfo", "structamrex_1_1ArenaInfo.html", null ],
     [ "amrex::ArenaWrapper", "structamrex_1_1ArenaWrapper.html", null ],
     [ "amrex::Array1D< T, XLO, XHI >", "structamrex_1_1Array1D.html", null ],
+    [ "amrex::Array1D< int, 0, N-1 >", "structamrex_1_1Array1D.html", null ],
     [ "amrex::Array2D< T, XLO, XHI, YLO, YHI, ORDER >", "structamrex_1_1Array2D.html", null ],
+    [ "amrex::Array2D< T, 0, N-1, 0, N-1, amrex::Order::C >", "structamrex_1_1Array2D.html", null ],
     [ "amrex::Array3D< T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER >", "structamrex_1_1Array3D.html", null ],
     [ "amrex::Array4< T >", "structamrex_1_1Array4.html", [
       [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
@@ -274,6 +276,8 @@ var hierarchy =
     [ "amrex::MPMD::Copier", "classamrex_1_1MPMD_1_1Copier.html", null ],
     [ "amrex::FabArrayBase::CopyComTag", "structamrex_1_1FabArrayBase_1_1CopyComTag.html", null ],
     [ "amrex::CpuBndryFuncFab", "classamrex_1_1CpuBndryFuncFab.html", null ],
+    [ "amrex::CurlCurlDirichletInfo", "structamrex_1_1CurlCurlDirichletInfo.html", null ],
+    [ "amrex::CurlCurlSymmetryInfo", "structamrex_1_1CurlCurlSymmetryInfo.html", null ],
     [ "amrex::IParser::Data", "structamrex_1_1IParser_1_1Data.html", null ],
     [ "amrex::Parser::Data", "structamrex_1_1Parser_1_1Data.html", null ],
     [ "amrex::Scan::detail::BlockStatus< T, true >::Data< U >", "unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html", null ],
@@ -691,6 +695,7 @@ var hierarchy =
     [ "amrex::LogicalAnd< T >", "structamrex_1_1LogicalAnd.html", null ],
     [ "amrex::LogicalOr< T >", "structamrex_1_1LogicalOr.html", null ],
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", null ],
+    [ "amrex::LUSolver< N, T >", "classamrex_1_1LUSolver.html", null ],
     [ "make_particle< T_ParticleType, Enable >", "structmake__particle.html", null ],
     [ "make_particle< T_ParticleType, typename std::enable_if< is_soa_particle< T_ParticleType >::value >::type >", "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html", null ],
     [ "amrex::Gpu::Managed", "structamrex_1_1Gpu_1_1Managed.html", null ],
@@ -724,6 +729,7 @@ var hierarchy =
     [ "amrex::Minus< T >", "structamrex_1_1Minus.html", null ],
     [ "amrex::MLCGSolverT< MF >", "classamrex_1_1MLCGSolverT.html", null ],
     [ "amrex::MLCurlCurlBCTag", "structamrex_1_1MLCurlCurlBCTag.html", null ],
+    [ "amrex::MLCurlCurlEdgeBCTag", "structamrex_1_1MLCurlCurlEdgeBCTag.html", null ],
     [ "amrex::MLLinOpT< MF >", "classamrex_1_1MLLinOpT.html", [
       [ "amrex::MLCellLinOpT< MF >", "classamrex_1_1MLCellLinOpT.html", [
         [ "amrex::MLCellABecLapT< MF >", "classamrex_1_1MLCellABecLapT.html", [
@@ -1123,6 +1129,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::VisMF::FabOnDisk >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< int, amrex::PODVector< int > > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::Gpu::DeviceScalar< amrex::LUSolver< AMREX_SPACEDIM *2, RT > > > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< V >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::EB2::PolyTerm >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vector< Real > >", "classamrex_1_1Vector.html", null ],

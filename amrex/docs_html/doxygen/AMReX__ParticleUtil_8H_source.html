@@ -745,17 +745,17 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                sdata[threadIdx.x] = index_type(current_idx != llist_guard);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                index_type x = 0;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                index_type <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                <span class="comment">// simple block wide prefix sum</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <span class="keywordflow">for</span> (index_type i = 1; i&lt;gpu_block_size; i*=2) {</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                    __syncthreads();</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                    <span class="keywordflow">if</span> (threadIdx.x &gt;= i) {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                        x = sdata[threadIdx.x - i];</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = sdata[threadIdx.x - i];</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    }</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                    __syncthreads();</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    <span class="keywordflow">if</span> (threadIdx.x &gt;= i) {</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                        sdata[threadIdx.x] += x;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                        sdata[threadIdx.x] += <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                    }</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                }</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                __syncthreads();</div>
@@ -764,8 +764,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                }</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                __syncthreads();</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x == gpu_block_size_m1) {</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    x = sdata[gpu_block_size_m1];</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    sdata[gpu_block_size_m1] = <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">Gpu::Atomic::Add</a>(pglobal_idx, x);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = sdata[gpu_block_size_m1];</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    sdata[gpu_block_size_m1] = <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">Gpu::Atomic::Add</a>(pglobal_idx, <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                }</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                __syncthreads();</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x &lt; gpu_block_size_m1) {</div>
@@ -773,7 +773,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                }</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                __syncthreads();</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x == gpu_block_size_m1) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    sdata[gpu_block_size_m1] += x;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    sdata[gpu_block_size_m1] += <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                __syncthreads();</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
@@ -911,6 +911,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a1f0884436c0e9c45901b834761379595"><div class="ttname"><a href="namespaceamrex.html#a1f0884436c0e9c45901b834761379595">amrex::swapParticle</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void swapParticle(const ParticleTileData&lt; T_ParticleType, NAR, NAI &gt; &amp;dst, const ParticleTileData&lt; T_ParticleType, NAR, NAI &gt; &amp;src, int src_i, int dst_i) noexcept</div><div class="ttdoc">A general single particle swapping routine that can run on the GPU.</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:119</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2a6f51f01e9f0350a8b447ee451d0efb"><div class="ttname"><a href="namespaceamrex.html#a2a6f51f01e9f0350a8b447ee451d0efb">amrex::EnsureThreadSafeTiles</a></div><div class="ttdeci">void EnsureThreadSafeTiles(PC &amp;pc)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:668</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_a38d942498aebd0b51855a9b85ed184f5"><div class="ttname"><a href="namespaceamrex.html#a38d942498aebd0b51855a9b85ed184f5">amrex::max</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE const T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:35</div></div>
 <div class="ttc" id="anamespaceamrex_html_a475e2bc71e3ca92b6b016fcb70af95bd"><div class="ttname"><a href="namespaceamrex.html#a475e2bc71e3ca92b6b016fcb70af95bd">amrex::min</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE const T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:21</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4d993b6970c84ce2fdfc7fa8f43dd062"><div class="ttname"><a href="namespaceamrex.html#a4d993b6970c84ce2fdfc7fa8f43dd062">amrex::partitionParticles</a></div><div class="ttdeci">int partitionParticles(PTile &amp;ptile, ParFunc &amp;&amp;is_left)</div><div class="ttdoc">Reorders the ParticleTile into two partitions left [0, num_left-1] and right [num_left,...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:473</div></div>

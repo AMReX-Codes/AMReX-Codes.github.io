@@ -748,11 +748,11 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBCImpl_8H_source.html',
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;Vector&lt;std::pair&lt;Box,Box&gt;&gt;</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;get_src_dst_boxes (DTOS <span class="keyword">const</span>&amp; dtos, Box <span class="keyword">const</span>&amp; dstbox, Box <span class="keyword">const</span>&amp; domain)</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;{</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    Vector&lt;std::pair&lt;Box,Box&gt;&gt; r;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    Vector&lt;std::pair&lt;Box,Box&gt;&gt; <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    IntVect mapped_smallend(dtos(<a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(dstbox)));</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    IntVect mapped_bigend  (dtos(<a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(dstbox)));</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keywordflow">if</span> (!domain.contains(mapped_smallend) || !domain.contains(mapped_bigend)) {</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    }</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keyword">auto</span> sign = dtos.sign(<a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(dstbox));</div>
@@ -796,7 +796,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBCImpl_8H_source.html',
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        }</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    }</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    r.reserve(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(nboxes[0],*nboxes[1],*nboxes[2]));</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>.reserve(<a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(nboxes[0],*nboxes[1],*nboxes[2]));</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 3)</span></div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kbox = 0; kbox &lt; nboxes[2]; ++kbox) {</div>
@@ -808,7 +808,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBCImpl_8H_source.html',
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    {</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        IntVect siv(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(ibox,jbox,kbox));</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        IntVect div(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(siv[perm[0]],siv[perm[1]],siv[perm[2]]));</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        r.emplace_back(Box(IntVect(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(ends[0][ibox].first,</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>.emplace_back(Box(IntVect(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(ends[0][ibox].first,</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                                                ends[1][jbox].first,</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                                ends[2][kbox].first)),</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                           IntVect(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(ends[0][ibox].<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">second</a>,</div>
@@ -1027,25 +1027,25 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBCImpl_8H_source.html',
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> i = ijk.x;</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> j = ijk.y;</div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> k = ijk.z;</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        <span class="keyword">auto</span> r = a(i,j,k,n);</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        <span class="keyword">auto</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = a(i,j,k,n);</div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;        <span class="keywordflow">if</span> (n == scomp) {</div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;            <span class="keywordflow">if</span> ((i &gt;= 0 &amp;&amp; i &lt;  nx) &amp;&amp;</div>
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                (j &lt;  0 || j &gt;= ny) &amp;&amp;</div>
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                (k &gt;= 0 &amp;&amp; k &lt;  nz)) {</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                <span class="comment">// We do not need to worry about the theta-lo/r-lo edge,</span></div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                <span class="comment">// theta-hi/r-lo edge, and r &gt; r-hi.</span></div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                <span class="keywordflow">return</span> -r;</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                <span class="keywordflow">return</span> -<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;            }</div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n == scomp+2) {</div>
 <div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;            <span class="keywordflow">if</span> (k &lt; 0) {</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;                <span class="keywordflow">return</span> -r;</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;                <span class="keywordflow">return</span> -<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;            }</div>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;            <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        }</div>
 <div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;    }</div>
 <div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;<span class="keyword">private</span>:</div>
@@ -1101,6 +1101,7 @@ $(document).ready(function(){initNavTree('AMReX__NonLocalBCImpl_8H_source.html',
 <div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_ac5028f0e53837bb92fcf49d087aeee88"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#ac5028f0e53837bb92fcf49d087aeee88">amrex::ParallelDescriptor::second</a></div><div class="ttdeci">double second() noexcept</div><div class="ttdoc">Returns wall-clock seconds since start of execution.</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.cpp:1285</div></div>
 <div class="ttc" id="anamespaceamrex_html_a0789b1c22e6f47037f987b73cf2b898b"><div class="ttname"><a href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">amrex::DistributionMap</a></div><div class="ttdeci">DistributionMapping const  &amp; DistributionMap(FabArrayBase const &amp;fa)</div></div>
 <div class="ttc" id="anamespaceamrex_html_a23fa77892c9168a73ef0d653ddd550a0"><div class="ttname"><a href="namespaceamrex.html#a23fa77892c9168a73ef0d653ddd550a0">amrex::makeArray4</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Array4&lt; T &gt; makeArray4(T *p, Box const &amp;bx, int ncomp) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFab.H:87</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">amrex::CurlCurlStateType::r</a></div><div class="ttdeci">@ r</div></div>
 <div class="ttc" id="anamespaceamrex_html_a314545dbd77212eb64c3a248c754eda6"><div class="ttname"><a href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box convert(const Box &amp;b, const IntVect &amp;typ) noexcept</div><div class="ttdoc">Returns a Box with different type.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1357</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6ce6b4176121c2c23327903a8139af0c"><div class="ttname"><a href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:279</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6d0e162407f49aab99ec9a1bcddf0f21"><div class="ttname"><a href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">amrex::boxArray</a></div><div class="ttdeci">BoxArray const  &amp; boxArray(FabArrayBase const &amp;fa)</div></div>

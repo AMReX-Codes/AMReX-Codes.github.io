@@ -254,6 +254,9 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_Lazy.H", "AMReX__Lazy_8H.html", "AMReX__Lazy_8H" ],
     [ "AMReX_Loop.H", "AMReX__Loop_8H.html", "AMReX__Loop_8H" ],
     [ "AMReX_Loop.nolint.H", "AMReX__Loop_8nolint_8H.html", "AMReX__Loop_8nolint_8H" ],
+    [ "AMReX_LUSolver.H", "AMReX__LUSolver_8H.html", [
+      [ "LUSolver", "classamrex_1_1LUSolver.html", "classamrex_1_1LUSolver" ]
+    ] ],
     [ "AMReX_Machine.cpp", "AMReX__Machine_8cpp.html", "AMReX__Machine_8cpp" ],
     [ "AMReX_Machine.H", "AMReX__Machine_8H.html", "AMReX__Machine_8H" ],
     [ "AMReX_MakeType.H", "AMReX__MakeType_8H.html", "AMReX__MakeType_8H" ],

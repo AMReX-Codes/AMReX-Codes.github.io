@@ -2446,8 +2446,8 @@
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>nworkers;<sp/>++j)</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>globalrank<sp/>=<sp/>offset+j;</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>b<sp/>=<sp/>bytes[globalrank];</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>teambytes<sp/>+=<sp/>b;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref><sp/>=<sp/>bytes[globalrank];</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>teambytes<sp/>+=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>;</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LIworker[j]<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a8bc191492d7a25e16f586ef1e625649c" kindref="member">LIpair</ref>(b,j);</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight></codeline>
@@ -2706,7 +2706,7 @@
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>m_boxid;</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>m_weight;</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1WeightedBox" kindref="compound">WeightedBox</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b,<sp/>Long<sp/>w)<sp/>:<sp/>m_boxid(b),<sp/>m_weight(w)<sp/>{}</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1WeightedBox" kindref="compound">WeightedBox</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>,<sp/>Long<sp/>w)<sp/>:<sp/>m_boxid(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>),<sp/>m_weight(w)<sp/>{}</highlight></codeline>
 <codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>Long<sp/>weight<sp/>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_weight;<sp/>}</highlight></codeline>
 <codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>boxid<sp/>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_boxid;<sp/><sp/>}</highlight></codeline>
 <codeline lineno="533"><highlight class="normal"></highlight></codeline>
@@ -2928,7 +2928,7 @@
 <codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>ni<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vec.size());<sp/>i<sp/>&lt;<sp/>ni;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Print()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>Bucket<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>contains<sp/>boxes:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>:<sp/>vec[i])<sp/>{</highlight></codeline>
-<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Print()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Print()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3298,20 +3298,20 @@
 <codeline lineno="1119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>iv[1]<sp/>&gt;=<sp/>imin<sp/>&amp;&amp;<sp/>iv[1]<sp/>&lt;<sp/>-imin,</highlight></codeline>
 <codeline lineno="1120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>iv[2]<sp/>&gt;=<sp/>imin<sp/>&amp;&amp;<sp/>iv[2]<sp/>&lt;<sp/>-imin),</highlight></codeline>
 <codeline lineno="1121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SFCToken:<sp/>index<sp/>out<sp/>of<sp/>range&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>x<sp/>=<sp/>iv[0]<sp/>-<sp/>imin;</highlight></codeline>
+<codeline lineno="1122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/>iv[0]<sp/>-<sp/>imin;</highlight></codeline>
 <codeline lineno="1123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>y<sp/>=<sp/>iv[1]<sp/>-<sp/>imin;</highlight></codeline>
 <codeline lineno="1124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>z<sp/>=<sp/>iv[2]<sp/>-<sp/>imin;</highlight></codeline>
 <codeline lineno="1125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>extract<sp/>lowest<sp/>10<sp/>bits<sp/>and<sp/>make<sp/>space<sp/>for<sp/>interleaving</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token.m_morton[0]<sp/>=<sp/><ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(x<sp/>&amp;<sp/>0x3FF)</highlight></codeline>
 <codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(<ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(y<sp/>&amp;<sp/>0x3FF)<sp/>&lt;&lt;<sp/>1)</highlight></codeline>
 <codeline lineno="1128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(<ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(z<sp/>&amp;<sp/>0x3FF)<sp/>&lt;&lt;<sp/>2);</highlight></codeline>
-<codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&gt;&gt;<sp/>10;</highlight></codeline>
+<codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>&gt;&gt;<sp/>10;</highlight></codeline>
 <codeline lineno="1130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>y<sp/>&gt;&gt;<sp/>10;</highlight></codeline>
 <codeline lineno="1131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>z<sp/>&gt;&gt;<sp/>10;</highlight></codeline>
 <codeline lineno="1132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token.m_morton[1]<sp/>=<sp/><ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(x<sp/>&amp;<sp/>0x3FF)</highlight></codeline>
 <codeline lineno="1133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(<ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(y<sp/>&amp;<sp/>0x3FF)<sp/>&lt;&lt;<sp/>1)</highlight></codeline>
 <codeline lineno="1134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(<ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(z<sp/>&amp;<sp/>0x3FF)<sp/>&lt;&lt;<sp/>2);</highlight></codeline>
-<codeline lineno="1135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&gt;&gt;<sp/>10;</highlight></codeline>
+<codeline lineno="1135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>&gt;&gt;<sp/>10;</highlight></codeline>
 <codeline lineno="1136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>y<sp/>&gt;&gt;<sp/>10;</highlight></codeline>
 <codeline lineno="1137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>z<sp/>&gt;&gt;<sp/>10;</highlight></codeline>
 <codeline lineno="1138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token.m_morton[2]<sp/>=<sp/><ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(x<sp/>&amp;<sp/>0x3FF)</highlight></codeline>
@@ -3323,14 +3323,14 @@
 <codeline lineno="1144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32_t<sp/>offset<sp/>=<sp/>1U<sp/>&lt;&lt;<sp/>31;</highlight></codeline>
 <codeline lineno="1145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_assert(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>())+1<sp/>==<sp/>offset,</highlight></codeline>
 <codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;INT_MAX<sp/>!=<sp/>(1&lt;&lt;31)-1&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>x<sp/>=<sp/>(iv[0]<sp/>&gt;=<sp/>0)<sp/>?<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(iv[0])<sp/>+<sp/>offset</highlight></codeline>
+<codeline lineno="1147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/>(iv[0]<sp/>&gt;=<sp/>0)<sp/>?<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(iv[0])<sp/>+<sp/>offset</highlight></codeline>
 <codeline lineno="1148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(iv[0]-std::numeric_limits&lt;int&gt;::lowest());</highlight></codeline>
 <codeline lineno="1149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>y<sp/>=<sp/>(iv[1]<sp/>&gt;=<sp/>0)<sp/>?<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(iv[1])<sp/>+<sp/>offset</highlight></codeline>
 <codeline lineno="1150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(iv[1]-std::numeric_limits&lt;int&gt;::lowest());</highlight></codeline>
 <codeline lineno="1151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>extract<sp/>lowest<sp/>16<sp/>bits<sp/>and<sp/>make<sp/>sapce<sp/>for<sp/>interleaving</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token.m_morton[0]<sp/>=<sp/><ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(x<sp/>&amp;<sp/>0xFFFF)</highlight></codeline>
 <codeline lineno="1153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>(<ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(y<sp/>&amp;<sp/>0xFFFF)<sp/>&lt;&lt;<sp/>1);</highlight></codeline>
-<codeline lineno="1154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>&gt;&gt;<sp/>16;</highlight></codeline>
+<codeline lineno="1154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref><sp/>&gt;&gt;<sp/>16;</highlight></codeline>
 <codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>y<sp/>&gt;&gt;<sp/>16;</highlight></codeline>
 <codeline lineno="1156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token.m_morton[1]<sp/>=<sp/><ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(x)<sp/>|<sp/>(<ref refid="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" kindref="member">Morton::makeSpace</ref>(y)<sp/>&lt;&lt;<sp/>1);</highlight></codeline>
 <codeline lineno="1157"><highlight class="normal"></highlight></codeline>
@@ -3755,7 +3755,7 @@
 <codeline lineno="1576"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1577"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1578"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1579"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1579"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1580"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1581"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
 <codeline lineno="1582"><highlight class="normal"></highlight></codeline>
@@ -3769,9 +3769,9 @@
 <codeline lineno="1590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
 <codeline lineno="1591"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>eff;</highlight></codeline>
 <codeline lineno="1592"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1593"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
+<codeline lineno="1593"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
 <codeline lineno="1594"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1595"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1595"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1596"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1597"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1598"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3779,7 +3779,7 @@
 <codeline lineno="1600"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1601"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1602"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1603"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1603"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1604"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1605"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
 <codeline lineno="1606"><highlight class="normal"></highlight></codeline>
@@ -3792,9 +3792,9 @@
 <codeline lineno="1613"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1614"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
 <codeline lineno="1615"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1616"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax,<sp/>sort);</highlight></codeline>
+<codeline lineno="1616"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax,<sp/>sort);</highlight></codeline>
 <codeline lineno="1617"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1618"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1618"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1619"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1620"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1621"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3817,7 +3817,7 @@
 <codeline lineno="1638"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector&lt;Real&gt;(rcost_local,<sp/>rcost,<sp/>root);</highlight></codeline>
 <codeline lineno="1639"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rcost<sp/>is<sp/>now<sp/>filled<sp/>out<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1640"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1641"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1641"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1642"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>==<sp/>root)</highlight></codeline>
 <codeline lineno="1643"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
@@ -3830,13 +3830,13 @@
 <codeline lineno="1651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1652"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keep_ratio<sp/>&gt;<sp/>Real(0.0))<sp/>{</highlight></codeline>
-<codeline lineno="1654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(rcost_local.DistributionMap(),<sp/>cost,<sp/>keep_ratio,</highlight></codeline>
+<codeline lineno="1654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.KnapSackProcessorMap(rcost_local.DistributionMap(),<sp/>cost,<sp/>keep_ratio,</highlight></codeline>
 <codeline lineno="1655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentEfficiency,<sp/>proposedEfficiency,<sp/>nmax);</highlight></codeline>
 <codeline lineno="1656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
 <codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`sort`<sp/>needs<sp/>to<sp/>be<sp/>false<sp/>here<sp/>since<sp/>there&apos;s<sp/>a<sp/>parallel<sp/>reduce<sp/>function</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>processor<sp/>map<sp/>function,<sp/>but<sp/>we<sp/>are<sp/>executing<sp/>only<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,nprocs,&amp;proposedEfficiency,</highlight><highlight class="keyword">true</highlight><highlight class="normal">,nmax,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.KnapSackProcessorMap(cost,nprocs,&amp;proposedEfficiency,</highlight><highlight class="keyword">true</highlight><highlight class="normal">,nmax,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ComputeDistributionMappingEfficiency(rcost_local.DistributionMap(),</highlight></codeline>
 <codeline lineno="1662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcost,<sp/>&amp;currentEfficiency);</highlight></codeline>
 <codeline lineno="1663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3849,21 +3849,21 @@
 <codeline lineno="1670"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>==<sp/>root)</highlight></codeline>
 <codeline lineno="1672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>r.ProcessorMap();</highlight></codeline>
+<codeline lineno="1673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.ProcessorMap();</highlight></codeline>
 <codeline lineno="1674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(pmap.data()),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
 <codeline lineno="1675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(rcost_local.DistributionMap().size());</highlight></codeline>
 <codeline lineno="1679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(pmap.data(),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
-<codeline lineno="1680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>DistributionMapping(std::move(pmap));</highlight></codeline>
+<codeline lineno="1680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref><sp/>=<sp/>DistributionMapping(std::move(pmap));</highlight></codeline>
 <codeline lineno="1681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1682"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1683"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1684"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(broadcastToAll);</highlight></codeline>
 <codeline lineno="1685"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1686"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1687"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1687"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1688"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1689"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1690"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
@@ -3902,9 +3902,9 @@
 <codeline lineno="1723"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
 <codeline lineno="1724"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
 <codeline lineno="1725"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>eff;</highlight></codeline>
-<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
-<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
+<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1729"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1730"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1731"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3913,9 +3913,9 @@
 <codeline lineno="1734"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeKnapSack&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1735"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
 <codeline lineno="1736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
-<codeline lineno="1737"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1738"><highlight class="normal"><sp/><sp/><sp/><sp/>r.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
-<codeline lineno="1739"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1737"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="1738"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.KnapSackProcessorMap(cost,<sp/>nprocs,<sp/>&amp;eff,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>nmax);</highlight></codeline>
+<codeline lineno="1739"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1740"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1741"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1742"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3924,9 +3924,9 @@
 <codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeRoundRobin&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
 <codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
-<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/>r.RoundRobinProcessorMap(cost,<sp/>nprocs);</highlight></codeline>
-<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.RoundRobinProcessorMap(cost,<sp/>nprocs);</highlight></codeline>
+<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1751"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1752"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1753"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3935,9 +3935,9 @@
 <codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1757"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
 <codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
-<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
-<codeline lineno="1761"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
+<codeline lineno="1761"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1762"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1763"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1764"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3946,9 +3946,9 @@
 <codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost<sp/>=<sp/>gather_weights(weight);</highlight></codeline>
 <codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
-<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
-<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.SFCProcessorMap(weight.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1773"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1774"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1775"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3956,7 +3956,7 @@
 <codeline lineno="1777"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1778"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1779"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1780"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1780"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1781"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1782"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
 <codeline lineno="1783"><highlight class="normal"></highlight></codeline>
@@ -3969,9 +3969,9 @@
 <codeline lineno="1790"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1791"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
 <codeline lineno="1792"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1793"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
+<codeline lineno="1793"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>sort);</highlight></codeline>
 <codeline lineno="1794"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1795"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1795"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1796"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1797"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1798"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -3979,7 +3979,7 @@
 <codeline lineno="1800"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1801"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1802"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1803"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1803"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1804"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1805"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
 <codeline lineno="1806"><highlight class="normal"></highlight></codeline>
@@ -3992,9 +3992,9 @@
 <codeline lineno="1813"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1814"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
 <codeline lineno="1815"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/>r.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
+<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.SFCProcessorMap(ba,<sp/>cost,<sp/>nprocs,<sp/>eff,<sp/>sort);</highlight></codeline>
 <codeline lineno="1817"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1818"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1818"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1819"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1820"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1821"><highlight class="normal">DistributionMapping</highlight></codeline>
@@ -4016,7 +4016,7 @@
 <codeline lineno="1837"><highlight class="normal"><sp/><sp/><sp/><sp/>ParallelDescriptor::GatherLayoutDataToVector&lt;Real&gt;(rcost_local,<sp/>rcost,<sp/>root);</highlight></codeline>
 <codeline lineno="1838"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rcost<sp/>is<sp/>now<sp/>filled<sp/>out<sp/>on<sp/>root;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1839"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1840"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/>r;</highlight></codeline>
+<codeline lineno="1840"><highlight class="normal"><sp/><sp/><sp/><sp/>DistributionMapping<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1841"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>==<sp/>root)</highlight></codeline>
 <codeline lineno="1842"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1843"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>cost(rcost.size());</highlight></codeline>
@@ -4031,7 +4031,7 @@
 <codeline lineno="1852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>`sort`<sp/>needs<sp/>to<sp/>be<sp/>false<sp/>here<sp/>since<sp/>there&apos;s<sp/>a<sp/>parallel<sp/>reduce<sp/>function</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>the<sp/>processor<sp/>map<sp/>function,<sp/>but<sp/>we<sp/>are<sp/>executing<sp/>only<sp/>on<sp/>root</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1MPMD_1a3df5e063f2b14481feae8cea0d6d44d1" kindref="member">ParallelDescriptor::NProcs</ref>();</highlight></codeline>
-<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.SFCProcessorMap(rcost_local.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>proposedEfficiency,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.SFCProcessorMap(rcost_local.boxArray(),<sp/>cost,<sp/>nprocs,<sp/>proposedEfficiency,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1856"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ComputeDistributionMappingEfficiency(rcost_local.DistributionMap(),</highlight></codeline>
 <codeline lineno="1858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcost,</highlight></codeline>
@@ -4046,21 +4046,21 @@
 <codeline lineno="1867"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>pmap(rcost_local.DistributionMap().size());</highlight></codeline>
 <codeline lineno="1868"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>==<sp/>root)</highlight></codeline>
 <codeline lineno="1869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap<sp/>=<sp/>r.ProcessorMap();</highlight></codeline>
+<codeline lineno="1870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pmap<sp/>=<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>.ProcessorMap();</highlight></codeline>
 <codeline lineno="1871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1872"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1873"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Broadcast<sp/>vector<sp/>from<sp/>which<sp/>to<sp/>construct<sp/>new<sp/>distribution<sp/>mapping</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(pmap.data(),<sp/>pmap.size(),<sp/>root);</highlight></codeline>
 <codeline lineno="1875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1MPMD_1a61222da774be88a4ba57947bce9b0847" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>!=<sp/>root)</highlight></codeline>
 <codeline lineno="1876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>DistributionMapping(pmap);</highlight></codeline>
+<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref><sp/>=<sp/>DistributionMapping(pmap);</highlight></codeline>
 <codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1880"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(broadcastToAll);</highlight></codeline>
 <codeline lineno="1882"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1883"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1885"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1886"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1887"><highlight class="normal">std::vector&lt;std::vector&lt;int&gt;<sp/>&gt;</highlight></codeline>
@@ -4089,11 +4089,11 @@
 <codeline lineno="1910"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1911"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>volper<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vol_sum)<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(nprocs);</highlight></codeline>
 <codeline lineno="1912"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::vector&lt;int&gt;<sp/>&gt;<sp/>r(nprocs);</highlight></codeline>
+<codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::vector&lt;int&gt;<sp/>&gt;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>(nprocs);</highlight></codeline>
 <codeline lineno="1914"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1915"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac6467048b1487ee7b78edf0bbcbfd2bb" kindref="member">Distribute</ref>(tokens,<sp/>wgts,<sp/>nprocs,<sp/>volper,<sp/>r);</highlight></codeline>
 <codeline lineno="1916"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>;</highlight></codeline>
 <codeline lineno="1918"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1919"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1920"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;</highlight></codeline>
@@ -4173,7 +4173,7 @@
 <codeline lineno="1994"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(n<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>());</highlight></codeline>
 <codeline lineno="1995"><highlight class="normal"><sp/><sp/><sp/><sp/>pmap.resize(n);</highlight></codeline>
 <codeline lineno="1996"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/>pmap)<sp/>{</highlight></codeline>
-<codeline lineno="1997"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>x;</highlight></codeline>
+<codeline lineno="1997"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>;</highlight></codeline>
 <codeline lineno="1998"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1999"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="2000"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>

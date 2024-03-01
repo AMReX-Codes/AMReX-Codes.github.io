@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('AMReX__MLPoisson__1D__K_8H_source.html
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                      <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T const&gt;</a> <span class="keyword">const</span>&amp; x,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                      T dhx) noexcept</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    y(i,0,0) = dhx * (x(i-1,0,0) - T(2.0)*x(i,0,0) + x(i+1,0,0));</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    y(i,0,0) = dhx * (<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,0,0) - T(2.0)*<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,0,0) + <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,0,0));</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('AMReX__MLPoisson__1D__K_8H_source.html
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (osm(i,0,0) == 0) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        y(i,0,0) = T(0.0);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        y(i,0,0) = dhx * (x(i-1,0,0) - T(2.0)*x(i,0,0) + x(i+1,0,0));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        y(i,0,0) = dhx * (<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,0,0) - T(2.0)*<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,0,0) + <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,0,0));</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('AMReX__MLPoisson__1D__K_8H_source.html
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    T rel = (probxlo + i   *dx) * (probxlo + i   *dx);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    T rer = (probxlo +(i+1)*dx) * (probxlo +(i+1)*dx);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    y(i,0,0) = dhx * (rel*x(i-1,0,0) - (rel+rer)*x(i,0,0) + rer*x(i+1,0,0));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    y(i,0,0) = dhx * (rel*<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i-1,0,0) - (rel+rer)*<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,0,0) + rer*<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i+1,0,0));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -296,7 +296,7 @@ $(document).ready(function(){initNavTree('AMReX__MLPoisson__1D__K_8H_source.html
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    T rel = (probxlo + i   *dx) * (probxlo + i   *dx);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    T rer = (probxlo +(i+1)*dx) * (probxlo +(i+1)*dx);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    x(i,0,0) /= (-dhx*(rel+rer));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>(i,0,0) /= (-dhx*(rel+rer));</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
@@ -310,6 +310,7 @@ $(document).ready(function(){initNavTree('AMReX__MLPoisson__1D__K_8H_source.html
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a26b52402d10757144862537c196db625"><div class="ttname"><a href="namespaceamrex.html#a26b52402d10757144862537c196db625">amrex::mlpoisson_adotx_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlpoisson_adotx_m(int i, Array4&lt; T &gt; const &amp;y, Array4&lt; T const &gt; const &amp;x, T dhx, T dx, T probxlo) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLPoisson_1D_K.H:32</div></div>
 <div class="ttc" id="anamespaceamrex_html_a27345dc98593d14eb2b32570007ef86f"><div class="ttname"><a href="namespaceamrex.html#a27345dc98593d14eb2b32570007ef86f">amrex::mlpoisson_gsrb_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlpoisson_gsrb_m(int i, int, int, Array4&lt; T &gt; const &amp;phi, Array4&lt; T const &gt; const &amp;rhs, T dhx, Array4&lt; T const &gt; const &amp;f0, Array4&lt; int const &gt; const &amp;m0, Array4&lt; T const &gt; const &amp;f1, Array4&lt; int const &gt; const &amp;m1, Box const &amp;vbox, int redblack, T dx, T probxlo) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLPoisson_1D_K.H:162</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3171a013d5989b5e9851658aca2b7a15"><div class="ttname"><a href="namespaceamrex.html#a3171a013d5989b5e9851658aca2b7a15">amrex::mlpoisson_flux_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlpoisson_flux_x(Box const &amp;box, Array4&lt; T &gt; const &amp;fx, Array4&lt; T const &gt; const &amp;sol, T dxinv) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLPoisson_1D_K.H:43</div></div>
 <div class="ttc" id="anamespaceamrex_html_a4ba0b0f34245585ce4164f57e03e6d14"><div class="ttname"><a href="namespaceamrex.html#a4ba0b0f34245585ce4164f57e03e6d14">amrex::mlpoisson_adotx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlpoisson_adotx(int i, Array4&lt; T &gt; const &amp;y, Array4&lt; T const &gt; const &amp;x, T dhx) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLPoisson_1D_K.H:9</div></div>
 <div class="ttc" id="anamespaceamrex_html_a569ce08aa34785c55e309b897931f64c"><div class="ttname"><a href="namespaceamrex.html#a569ce08aa34785c55e309b897931f64c">amrex::mlpoisson_flux_xface_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlpoisson_flux_xface_m(Box const &amp;box, Array4&lt; T &gt; const &amp;fx, Array4&lt; T const &gt; const &amp;sol, T dxinv, int xlen, T dx, T probxlo) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLPoisson_1D_K.H:86</div></div>

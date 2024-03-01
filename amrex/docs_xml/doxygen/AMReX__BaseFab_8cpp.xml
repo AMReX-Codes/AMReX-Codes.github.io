@@ -1678,12 +1678,12 @@
 <codeline lineno="64"><highlight class="normal"><ref refid="namespaceamrex_1a587a3cb57cff4b7fa72c7c1d4d98900b" kindref="member">TotalBytesAllocatedInFabs</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>r=0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>=0;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>reduction(+:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>+=<sp/><ref refid="namespaceamrex_1ad888998563a26e9b66682405b749228d" kindref="member">private_total_bytes_allocated_in_fabs</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref><sp/>+=<sp/><ref refid="namespaceamrex_1ad888998563a26e9b66682405b749228d" kindref="member">private_total_bytes_allocated_in_fabs</ref>;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1a9a502210430a0780c1ee189758385a60" kindref="member">atomic_total_bytes_allocated_in_fabs</ref>.load(std::memory_order_relaxed);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad888998563a26e9b66682405b749228d" kindref="member">private_total_bytes_allocated_in_fabs</ref></highlight></codeline>
@@ -1695,12 +1695,12 @@
 <codeline lineno="81"><highlight class="normal"><ref refid="namespaceamrex_1a95a2c5251b0bc8cc9f28f6384738404a" kindref="member">TotalBytesAllocatedInFabsHWM</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="82"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>r=0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>=0;</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>reduction(+:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>+=<sp/><ref refid="namespaceamrex_1a62aee7a0bdbb6a783868e48a7c5c5750" kindref="member">private_total_bytes_allocated_in_fabs_hwm</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref><sp/>+=<sp/><ref refid="namespaceamrex_1a62aee7a0bdbb6a783868e48a7c5c5750" kindref="member">private_total_bytes_allocated_in_fabs_hwm</ref>;</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1a05893af4b8f7c472a5f0d5afe9fddcde" kindref="member">atomic_total_bytes_allocated_in_fabs_hwm</ref>.load(std::memory_order_relaxed);</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a62aee7a0bdbb6a783868e48a7c5c5750" kindref="member">private_total_bytes_allocated_in_fabs_hwm</ref></highlight></codeline>
@@ -1712,12 +1712,12 @@
 <codeline lineno="98"><highlight class="normal"><ref refid="namespaceamrex_1aa9ed510cedd140658efd18542d9479c7" kindref="member">TotalCellsAllocatedInFabs</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="99"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>r=0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>=0;</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>reduction(+:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>+=<sp/><ref refid="namespaceamrex_1a404655e80fc045d69ad6aab7c2e67aed" kindref="member">private_total_cells_allocated_in_fabs</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref><sp/>+=<sp/><ref refid="namespaceamrex_1a404655e80fc045d69ad6aab7c2e67aed" kindref="member">private_total_cells_allocated_in_fabs</ref>;</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref></highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1aaff9d22bb4535133682d1608e85655e0" kindref="member">atomic_total_cells_allocated_in_fabs</ref>.load(std::memory_order_relaxed);</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a404655e80fc045d69ad6aab7c2e67aed" kindref="member">private_total_cells_allocated_in_fabs</ref></highlight></codeline>
@@ -1729,12 +1729,12 @@
 <codeline lineno="115"><highlight class="normal"><ref refid="namespaceamrex_1aa85143ea71ce835e3a64ce8551b726b4" kindref="member">TotalCellsAllocatedInFabsHWM</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="116"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>r=0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref>=0;</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>reduction(+:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>+=<sp/><ref refid="namespaceamrex_1a0d15e184f35001014b0941ed211b16ad" kindref="member">private_total_cells_allocated_in_fabs_hwm</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref><sp/>+=<sp/><ref refid="namespaceamrex_1a0d15e184f35001014b0941ed211b16ad" kindref="member">private_total_cells_allocated_in_fabs_hwm</ref>;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" kindref="member">r</ref></highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="namespaceamrex_1adc54dbf8448fdb9207beb1761e07b80d" kindref="member">atomic_total_cells_allocated_in_fabs_hwm</ref>.load(std::memory_order_relaxed);</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a0d15e184f35001014b0941ed211b16ad" kindref="member">private_total_cells_allocated_in_fabs_hwm</ref></highlight></codeline>

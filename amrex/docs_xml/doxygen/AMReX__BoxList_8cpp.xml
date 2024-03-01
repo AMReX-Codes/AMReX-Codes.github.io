@@ -787,7 +787,7 @@
 <codeline lineno="101"><highlight class="normal">BoxList</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><ref refid="namespaceamrex_1a31f38031bc51519297d88d3234115277" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>bl,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b)</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bl.ixType()<sp/>==<sp/>b.ixType());</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bl.ixType()<sp/>==<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.ixType());</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newbl(bl);</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>newbl.intersect(b);</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newbl;</highlight></codeline>
@@ -923,7 +923,7 @@
 <codeline lineno="237"><highlight class="normal">BoxList::ok<sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
 <codeline lineno="238"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::all_of(this-&gt;cbegin(),<sp/>this-&gt;cend(),</highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[]<sp/>(Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>b.ok();<sp/>});</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[]<sp/>(Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.ok();<sp/>});</highlight></codeline>
 <codeline lineno="241"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"></highlight></codeline>
 <codeline lineno="243"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
@@ -952,11 +952,11 @@
 <codeline lineno="266"><highlight class="normal">BoxList&amp;</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><ref refid="namespaceamrex_1a31f38031bc51519297d88d3234115277" kindref="member">BoxList::intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b)</highlight></codeline>
 <codeline lineno="268"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ixType()<sp/>==<sp/>b.ixType());</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ixType()<sp/>==<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.ixType());</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Box&amp;<sp/>bx<sp/>:<sp/>m_lbox)</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/>b;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>;</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/>isect;</highlight></codeline>
@@ -983,8 +983,8 @@
 <codeline lineno="297"><highlight class="normal">BoxList</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">complementIn</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>bl)</highlight></codeline>
 <codeline lineno="299"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bl.ixType()<sp/>==<sp/>b.ixType());</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newb(b.ixType());</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bl.ixType()<sp/>==<sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.ixType());</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newb(<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" kindref="member">b</ref>.ixType());</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>newb.complementIn(b,bl);</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newb;</highlight></codeline>
 <codeline lineno="304"><highlight class="normal">}</highlight></codeline>

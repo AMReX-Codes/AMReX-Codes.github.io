@@ -239,7 +239,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">using</span> value_type = decltype(<a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, <span class="keyword">typename</span> PC::ParticleTileType::ConstParticleTileDataType(), <span class="keywordtype">int</span>()));</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    constexpr value_type value_lowest = std::numeric_limits&lt;value_type&gt;::lowest();</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    value_type r = value_lowest;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    value_type <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = value_lowest;</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
@@ -264,7 +264,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        ReduceTuple hv = reduce_data.<a class="code" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        r = amrex::get&lt;0&gt;(hv);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = amrex::get&lt;0&gt;(hv);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    }</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -288,13 +288,13 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> ptd = tile.getConstParticleTileData();</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; np; ++i) {</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    r = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(r, <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i));</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>, <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i));</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    }</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;}</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;template &lt;class PC, class F, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
@@ -320,7 +320,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;{</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="keyword">using</span> value_type = decltype(<a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, <span class="keyword">typename</span> PC::ParticleTileType::ConstParticleTileDataType(), <span class="keywordtype">int</span>()));</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    constexpr value_type value_max = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;value_type&gt;::max</a>();</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    value_type r = value_max;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    value_type <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = value_max;</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
@@ -345,7 +345,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        }</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        ReduceTuple hv = reduce_data.<a class="code" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        r = amrex::get&lt;0&gt;(hv);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = amrex::get&lt;0&gt;(hv);</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    }</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -369,13 +369,13 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> ptd = tile.getConstParticleTileData();</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; np; ++i) {</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    r = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(r, <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i));</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>, <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i));</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                }</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            }</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        }</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    }</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;}</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;template &lt;class PC, class F, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
@@ -396,7 +396,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00776"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a14d08a69d1ad19e5499277055d469400">  776</a></span>&#160;<a class="code" href="namespaceamrex.html#a3866c459fc8c798d5a19fa747a3500b5">ReduceLogicalAnd</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>)</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;{</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="keywordtype">int</span> r = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
@@ -421,7 +421,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        }</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        ReduceTuple hv = reduce_data.<a class="code" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op);</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        r = amrex::get&lt;0&gt;(hv);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = amrex::get&lt;0&gt;(hv);</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    }</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -445,13 +445,13 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> ptd = tile.getConstParticleTileData();</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; np; ++i) {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                    r = r &amp;&amp; <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> &amp;&amp; <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i);</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                }</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            }</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        }</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    }</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;}</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160; </div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;template &lt;class PC, class F, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; foo = 0&gt;</div>
@@ -472,7 +472,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;<span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00972"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4045ba476918bce64dc92d94e4cda26d">  972</a></span>&#160;<a class="code" href="namespaceamrex.html#a86ff43c965c29ca6c76704135c773345">ReduceLogicalOr</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, F&amp;&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>)</div>
 <div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;{</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    <span class="keywordtype">int</span> r = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160; </div>
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
@@ -498,7 +498,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;        }</div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160; </div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        ReduceTuple hv = reduce_data.<a class="code" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>(reduce_op);</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        r = amrex::get&lt;0&gt;(hv);</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = amrex::get&lt;0&gt;(hv);</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    }</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -522,13 +522,13 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> ptd = tile.getConstParticleTileData();</div>
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; np; ++i) {</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;                    r = r || <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i);</div>
+<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;                    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> = <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a> || <a class="code" href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">particle_detail::call_f</a>(<a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>, ptd, i);</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;                }</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;            }</div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;        }</div>
 <div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;    }</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160; </div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">r</a>;</div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;}</div>
 <div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160; </div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>RD, <span class="keyword">class </span>PC, <span class="keyword">class </span>F, <span class="keyword">class </span>ReduceOps,</div>
@@ -605,6 +605,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleReduce_8H_source.html',
 <div class="ttc" id="anamespaceamrex_1_1particle__detail_html_af72f8c4ec6c858d83f59c48034851294"><div class="ttname"><a href="namespaceamrex_1_1particle__detail.html#af72f8c4ec6c858d83f59c48034851294">amrex::particle_detail::call_f</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto call_f(F const &amp;f, const PTDType&lt; T_ParticleType, NAR, NAI &gt; &amp;p, const int i, Array4&lt; T &gt; const &amp;fabarr, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;plo, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxi) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleMesh.H:16</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a157fdc4ac63d7f4d21a5df4b4151eb28"><div class="ttname"><a href="namespaceamrex.html#a157fdc4ac63d7f4d21a5df4b4151eb28">amrex::ReduceMax</a></div><div class="ttdeci">FAB::value_type ReduceMax(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:531</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231">amrex::CurlCurlStateType::r</a></div><div class="ttdeci">@ r</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3866c459fc8c798d5a19fa747a3500b5"><div class="ttname"><a href="namespaceamrex.html#a3866c459fc8c798d5a19fa747a3500b5">amrex::ReduceLogicalAnd</a></div><div class="ttdeci">bool ReduceLogicalAnd(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:758</div></div>
 <div class="ttc" id="anamespaceamrex_html_a86ff43c965c29ca6c76704135c773345"><div class="ttname"><a href="namespaceamrex.html#a86ff43c965c29ca6c76704135c773345">amrex::ReduceLogicalOr</a></div><div class="ttdeci">bool ReduceLogicalOr(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:905</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8d32380d1bccbedf1b24bd2c1bb7a1da"><div class="ttname"><a href="namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da">amrex::ParticleReduce</a></div><div class="ttdeci">RD::Type ParticleReduce(PC const &amp;pc, F &amp;&amp;f, ReduceOps &amp;reduce_ops)</div><div class="ttdoc">A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleReduce.H:1097</div></div>

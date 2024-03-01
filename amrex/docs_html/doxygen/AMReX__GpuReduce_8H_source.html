@@ -160,9 +160,9 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset = warpSize/2; offset &gt; 0; offset /= 2) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            T y = sycl::shift_group_left(sg, x, offset);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            x = F()(x,y);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = F()(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>,y);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
@@ -176,18 +176,18 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> lane = sg.get_local_id()[0];</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> wid = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> numwarps = sg.get_group_range()[0];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    x = warp_reduce(x, sg);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(x, sg);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// and since we don&#39;t know how many times the user is calling it,</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// we do it always to be safe.</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    h.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (lane == 0) { shared[wid] = x; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (lane == 0) { shared[wid] = <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>; }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    h.item-&gt;barrier(sycl::access::fence_space::local_space);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> b = (tid == 0) || (tid &lt; numwarps);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    x =  b ? shared[lane] : x0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (wid == 0) { x = warp_reduce(x, sg); }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = (tid == 0) || (tid &lt; numwarps);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> =  <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? shared[lane] : x0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (wid == 0) { <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(x, sg); }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> warpSize, <span class="keyword">typename</span> T, <span class="keyword">typename</span> WARPREDUCE, <span class="keyword">typename</span> ATOMICOP&gt;</div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   sycl::sub_group <span class="keyword">const</span>&amp; sg = handler.item-&gt;get_sub_group();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   <span class="keywordtype">int</span> wid = sg.get_group_id()[0];</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <span class="keywordflow">if</span> ((wid+1)*warpSize &lt;= handler.numActiveThreads) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;       x = warp_reduce(x, sg); <span class="comment">// full warp</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;       <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(x, sg); <span class="comment">// full warp</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;       <span class="keywordflow">if</span> (sg.get_local_id()[0] == 0) { <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>(dest, x); }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;       <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>(dest, x);</div>
@@ -357,8 +357,8 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Gpu_1_1detail.html#a70672ccc3c84750b04061d9750d7d6bd">  257</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Gpu_1_1detail.html#a70672ccc3c84750b04061d9750d7d6bd">shuffle_down</a> (T x, <span class="keywordtype">int</span> offset) noexcept</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941">AMREX_HIP_OR_CUDA</a>(__shfl_down(x, offset),</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                             __shfl_down_sync(0xffffffff, x, offset));</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941">AMREX_HIP_OR_CUDA</a>(__shfl_down(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>, offset),</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                             __shfl_down_sync(0xffffffff, <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>, offset));</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">// If other sizeof is needed, we can implement it later.</span></div>
@@ -369,7 +369,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    constexpr <span class="keywordtype">int</span> nwords = (<span class="keyword">sizeof</span>(T) + <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) - 1) / <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    T y;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">auto</span> py = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(&amp;y);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">auto</span> px = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(&amp;x);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">auto</span> px = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(&amp;<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nwords; ++i) {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        py[i] = <a class="code" href="namespaceamrex_1_1Gpu_1_1detail.html#a70672ccc3c84750b04061d9750d7d6bd">shuffle_down</a>(px[i],offset);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
@@ -387,10 +387,10 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">  286</a></span>&#160;    T <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">operator() </a>(T x) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    {</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset = warpSize/2; offset &gt; 0; offset /= 2) {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            T y = <a class="code" href="namespaceamrex_1_1Gpu_1_1detail.html#a70672ccc3c84750b04061d9750d7d6bd">detail::shuffle_down</a>(x, offset);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            x = F()(x,y);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            T y = <a class="code" href="namespaceamrex_1_1Gpu_1_1detail.html#a70672ccc3c84750b04061d9750d7d6bd">detail::shuffle_down</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>, offset);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = F()(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>,y);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    template &lt;class U=T, std::enable_if_t&lt;!std::is_arithmetic&lt;U&gt;::value,<span class="keywordtype">int</span>&gt; = 0&gt;</div>
@@ -398,10 +398,10 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">  297</a></span>&#160;    T <a class="code" href="structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d">operator() </a>(T x) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset = warpSize/2; offset &gt; 0; offset /= 2) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            T y = <a class="code" href="namespaceamrex_1_1Gpu_1_1detail.html#a287d2faf92608b095d6ae9eb9f97f22b">detail::multi_shuffle_down</a>(x, offset);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            x = F()(x,y);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            T y = <a class="code" href="namespaceamrex_1_1Gpu_1_1detail.html#a287d2faf92608b095d6ae9eb9f97f22b">detail::multi_shuffle_down</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>, offset);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = F()(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>,y);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;};</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
@@ -412,18 +412,18 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    __shared__ T shared[warpSize];</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">int</span> lane = threadIdx.x % warpSize;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordtype">int</span> wid = threadIdx.x / warpSize;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    x = warp_reduce(x);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">// __syncthreads() prior to writing to shared memory is necessary</span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="comment">// if this reduction call is occurring multiple times in a kernel,</span></div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="comment">// and since we don&#39;t know how many times the user is calling it,</span></div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="comment">// we do it always to be safe.</span></div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    __syncthreads();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (lane == 0) { shared[wid] = x; }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (lane == 0) { shared[wid] = <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>; }</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    __syncthreads();</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">bool</span> b = (threadIdx.x == 0) || (threadIdx.x &lt; blockDim.x / warpSize);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    x =  b ? shared[lane] : x0;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (wid == 0) { x = warp_reduce(x); }</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> = (threadIdx.x == 0) || (threadIdx.x &lt; blockDim.x / warpSize);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> =  <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? shared[lane] : x0;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (wid == 0) { <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>); }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> warpSize, <span class="keyword">typename</span> T, <span class="keyword">typename</span> WARPREDUCE, <span class="keyword">typename</span> ATOMICOP&gt;</div>
@@ -433,10 +433,10 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">int</span> warp = (<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>)threadIdx.x / warpSize;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="amrex__iparser_8lex_8nolint_8H.html#ad4a65b873df5c05570846b5413b41dfd">if</a> ((warp+1)*warpSize &lt;= handler.<a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a>) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        x = warp_reduce(x); <span class="comment">// full warp</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (threadIdx.x % warpSize == 0) { <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>(dest, x); }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = warp_reduce(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>); <span class="comment">// full warp</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (threadIdx.x % warpSize == 0) { <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>(dest, <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>); }</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>(dest,x);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail.html#a2819a77a9810eefb910390f23d2a698f">atomic_op</a>(dest,<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
@@ -906,6 +906,8 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_afcf7e4c0387e3a7e0552b832fe587303"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#afcf7e4c0387e3a7e0552b832fe587303">amrex::Gpu::deviceReduceMin</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void deviceReduceMin(T *dest, T source, Gpu::Handler const &amp;h) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuReduce.H:613</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">amrex::detail::min</a></div><div class="ttdeci">@ min</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:18</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">amrex::detail::max</a></div><div class="ttdeci">@ max</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:17</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">amrex::CurlCurlStateType::b</a></div><div class="ttdeci">@ b</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayCommI.H:841</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1AtomicAdd_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1AtomicAdd.html">amrex::Gpu::AtomicAdd</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuAtomic.H:632</div></div>

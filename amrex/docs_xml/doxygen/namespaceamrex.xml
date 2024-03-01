@@ -173,6 +173,7 @@
     <innerclass refid="structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511" prot="public">amrex::IntegratorOps&lt; T, typename std::enable_if&lt; std::is_same&lt; amrex::MultiFab, T &gt;::value &gt;::type &gt;</innerclass>
     <innerclass refid="classamrex_1_1IntegratorBase" prot="public">amrex::IntegratorBase</innerclass>
     <innerclass refid="classamrex_1_1IntVect" prot="public">amrex::IntVect</innerclass>
+    <innerclass refid="classamrex_1_1LUSolver" prot="public">amrex::LUSolver</innerclass>
     <innerclass refid="classamrex_1_1MemProfiler" prot="public">amrex::MemProfiler</innerclass>
     <innerclass refid="classamrex_1_1MultiFabCopyDescriptor" prot="public">amrex::MultiFabCopyDescriptor</innerclass>
     <innerclass refid="structamrex_1_1MFItInfo" prot="public">amrex::MFItInfo</innerclass>
@@ -415,7 +416,10 @@
     <innerclass refid="structamrex_1_1MLMGPSTag" prot="public">amrex::MLMGPSTag</innerclass>
     <innerclass refid="classamrex_1_1MLCGSolverT" prot="public">amrex::MLCGSolverT</innerclass>
     <innerclass refid="structamrex_1_1MLCurlCurlBCTag" prot="public">amrex::MLCurlCurlBCTag</innerclass>
+    <innerclass refid="structamrex_1_1MLCurlCurlEdgeBCTag" prot="public">amrex::MLCurlCurlEdgeBCTag</innerclass>
     <innerclass refid="classamrex_1_1MLCurlCurl" prot="public">amrex::MLCurlCurl</innerclass>
+    <innerclass refid="structamrex_1_1CurlCurlDirichletInfo" prot="public">amrex::CurlCurlDirichletInfo</innerclass>
+    <innerclass refid="structamrex_1_1CurlCurlSymmetryInfo" prot="public">amrex::CurlCurlSymmetryInfo</innerclass>
     <innerclass refid="classamrex_1_1MLEBABecLap" prot="public">amrex::MLEBABecLap</innerclass>
     <innerclass refid="classamrex_1_1MLEBNodeFDLaplacian" prot="public">amrex::MLEBNodeFDLaplacian</innerclass>
     <innerclass refid="classamrex_1_1MLEBTensorOp" prot="public">amrex::MLEBTensorOp</innerclass>
@@ -2033,6 +2037,38 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBSupport.H" line="7" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EBSupport.H" bodystart="7" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CurlCurlStateType</name>
+        <enumvalue id="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" prot="public">
+          <name>x</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f" prot="public">
+          <name>b</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a4b43b0aee35624cd95b910189b3dc231" prot="public">
+          <name>r</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="309" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="309" bodyend="309"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1a9303c93b47b7839de8ce552cb7cb21c4" prot="public" static="no" strong="yes">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -50315,10 +50351,10 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_1D_K.H" line="27" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_1D_K.H" bodystart="27" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1abf401996da80a54beef75f8fbc649888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1acfd5c8bd3612ac3d3079dc0189308d6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_adotx_x</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;Ax, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Real alpha, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv)</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;Ax, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;adxinv)</argsstring>
         <name>mlcurlcurl_adotx_x</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -50350,15 +50386,11 @@ Returns the index of the first element for which f is 0. </para>
         </param>
         <param>
           <type>Real</type>
-          <declname>alpha</declname>
-        </param>
-        <param>
-          <type>Real</type>
           <declname>beta</declname>
         </param>
         <param>
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
-          <declname>dxinv</declname>
+          <declname>adxinv</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -50366,12 +50398,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="19" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="19" bodyend="57"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="312" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="312" bodyend="349"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a9dd66708ad976d715c20b9858b407e5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a806290e2106cf167ce88e28aa9fb2daf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_adotx_y</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;Ay, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Real alpha, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv)</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;Ay, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;adxinv)</argsstring>
         <name>mlcurlcurl_adotx_y</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -50403,15 +50435,11 @@ Returns the index of the first element for which f is 0. </para>
         </param>
         <param>
           <type>Real</type>
-          <declname>alpha</declname>
-        </param>
-        <param>
-          <type>Real</type>
           <declname>beta</declname>
         </param>
         <param>
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
-          <declname>dxinv</declname>
+          <declname>adxinv</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -50419,12 +50447,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="60" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="60" bodyend="98"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="352" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="352" bodyend="389"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3359c8c963e4dd05b038553684cf83d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa37948c1ee6507a42652fe71d9e8d262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_adotx_z</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;Az, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Real alpha, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv)</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;Az, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;adxinv)</argsstring>
         <name>mlcurlcurl_adotx_z</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -50456,15 +50484,11 @@ Returns the index of the first element for which f is 0. </para>
         </param>
         <param>
           <type>Real</type>
-          <declname>alpha</declname>
-        </param>
-        <param>
-          <type>Real</type>
           <declname>beta</declname>
         </param>
         <param>
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
-          <declname>dxinv</declname>
+          <declname>adxinv</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -50472,13 +50496,13 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="101" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="101" bodyend="137"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="392" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="392" bodyend="427"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a15131387911a098d4d005d5253dba372" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a89a933e8c38b0aabf604401542acabc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_gsrb_x</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Array4&lt; Real const &gt; const &amp;rhs, Real alpha, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, int redblack)</argsstring>
-        <name>mlcurlcurl_gsrb_x</name>
+        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_gs4</definition>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;ex, Array4&lt; Real &gt; const &amp;ey, Array4&lt; Real &gt; const &amp;ez, Array4&lt; Real const &gt; const &amp;rhsx, Array4&lt; Real const &gt; const &amp;rhsy, Array4&lt; Real const &gt; const &amp;rhsz, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;adxinv, int color, LUSolver&lt; AMREX_SPACEDIM *2, Real &gt; const &amp;lusolver, CurlCurlDirichletInfo const &amp;dinfo, CurlCurlSymmetryInfo const &amp;sinfo)</argsstring>
+        <name>mlcurlcurl_gs4</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
@@ -50496,121 +50520,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ex</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>ey</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>ez</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>rhs</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>alpha</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>beta</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
-          <declname>dxinv</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>redblack</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="140" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="140" bodyend="186"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aef79c8a862b5ef69ef200ddb5d389cc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_gsrb_y</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real &gt; const &amp;ey, Array4&lt; Real const &gt; const &amp;ez, Array4&lt; Real const &gt; const &amp;rhs, Real alpha, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, int redblack)</argsstring>
-        <name>mlcurlcurl_gsrb_y</name>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>i</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>j</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>k</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>ex</declname>
-        </param>
-        <param>
           <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
-          <declname>ey</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>ez</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>rhs</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>alpha</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>beta</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
-          <declname>dxinv</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>redblack</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="189" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="189" bodyend="235"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad4cf96007aab23ec80e92812822397c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_gsrb_z</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real const &gt; const &amp;ex, Array4&lt; Real const &gt; const &amp;ey, Array4&lt; Real &gt; const &amp;ez, Array4&lt; Real const &gt; const &amp;rhs, Real alpha, Real beta, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, int redblack)</argsstring>
-        <name>mlcurlcurl_gsrb_z</name>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>i</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>j</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>k</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>ex</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
           <declname>ey</declname>
         </param>
         <param>
@@ -50619,23 +50529,35 @@ Returns the index of the first element for which f is 0. </para>
         </param>
         <param>
           <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>rhs</declname>
+          <declname>rhsx</declname>
         </param>
         <param>
-          <type>Real</type>
-          <declname>alpha</declname>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <declname>rhsy</declname>
         </param>
         <param>
-          <type>Real</type>
-          <declname>beta</declname>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <declname>rhsz</declname>
         </param>
         <param>
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
-          <declname>dxinv</declname>
+          <declname>adxinv</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>redblack</declname>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1LUSolver" kindref="compound">LUSolver</ref>&lt; AMREX_SPACEDIM *2, Real &gt; const &amp;</type>
+          <declname>lusolver</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CurlCurlDirichletInfo" kindref="compound">CurlCurlDirichletInfo</ref> const &amp;</type>
+          <declname>dinfo</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1CurlCurlSymmetryInfo" kindref="compound">CurlCurlSymmetryInfo</ref> const &amp;</type>
+          <declname>sinfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -50643,7 +50565,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="238" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="238" bodyend="282"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="430" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="430" bodyend="599"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a46f754596e0c0d977d970818bbec1dd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -50680,12 +50602,12 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="285" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="285" bodyend="335"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="602" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="602" bodyend="652"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a21ec6d770f7f3ec5d7044cbca1e9167b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aeb03681c5a1705809b2f860ece2cad66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_DEVICE AMREX_FORCE_INLINE void amrex::mlcurlcurl_restriction</definition>
-        <argsstring>(int dir, int i, int j, int k, Array4&lt; Real &gt; const &amp;crse, Array4&lt; Real const &gt; const &amp;fine, Array4&lt; int const &gt; const &amp;dmsk)</argsstring>
+        <argsstring>(int dir, int i, int j, int k, Array4&lt; Real &gt; const &amp;crse, Array4&lt; Real const &gt; const &amp;fine, CurlCurlDirichletInfo const &amp;dinfo)</argsstring>
         <name>mlcurlcurl_restriction</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -50712,8 +50634,8 @@ Returns the index of the first element for which f is 0. </para>
           <declname>fine</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> const &gt; const &amp;</type>
-          <declname>dmsk</declname>
+          <type><ref refid="structamrex_1_1CurlCurlDirichletInfo" kindref="compound">CurlCurlDirichletInfo</ref> const &amp;</type>
+          <declname>dinfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -50721,7 +50643,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="338" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="338" bodyend="433"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="655" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="655" bodyend="750"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a95c9cd2dabd9a907c9d7124f9a4ae0f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -50758,7 +50680,7 @@ Returns the index of the first element for which f is 0. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="436" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="436" bodyend="456"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" line="753" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl_K.H" bodystart="753" bodyend="773"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a43d8afe61435d9bd570425c4ff63056a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
