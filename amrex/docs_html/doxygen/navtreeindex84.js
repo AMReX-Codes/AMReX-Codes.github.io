@@ -1,5 +1,17 @@
 var NAVTREEINDEX84 =
 {
+"structyy__trans__info.html":[3,0,34],
+"structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,34,1],
+"structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[3,0,34,0],
+"unionAMREX__IPARSERSTYPE.html":[3,0,12],
+"unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac":[3,0,12,3],
+"unionAMREX__IPARSERSTYPE.html#a8105da3c7746493ffd665cd25bb19ca8":[3,0,12,5],
+"unionAMREX__IPARSERSTYPE.html#a99cdaa1f0d3cc968417ed03723f93d44":[3,0,12,1],
+"unionAMREX__IPARSERSTYPE.html#ac48b057f41120f01148091d4dabe428f":[3,0,12,0],
+"unionAMREX__IPARSERSTYPE.html#ad9dcbf264629390633902acf208145ba":[3,0,12,2],
+"unionAMREX__IPARSERSTYPE.html#ae2a7dce34011a9267540c9717a5cb125":[3,0,12,4],
+"unionAMREX__PARSERSTYPE.html":[3,0,13],
+"unionAMREX__PARSERSTYPE.html#a45b983ef388900bd6a62165ed8c9564a":[3,0,13,5],
 "unionAMREX__PARSERSTYPE.html#a75d477cdab0c70b4d8bb6e949274b5f2":[3,0,13,3],
 "unionAMREX__PARSERSTYPE.html#a9d33634c4393856708a688f9cdae7052":[3,0,13,0],
 "unionAMREX__PARSERSTYPE.html#ab225ec03a4bab39df7f50dbb3928842e":[3,0,13,4],

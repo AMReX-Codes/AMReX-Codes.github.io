@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['xdim3_10348',['XDim3',['../structamrex_1_1XDim3.html',1,'amrex']]],
-  ['xyplotdatalist_10349',['XYPlotDataList',['../classamrex_1_1XYPlotDataList.html',1,'amrex']]],
-  ['xyplotdatalistlink_10350',['XYPlotDataListLink',['../classamrex_1_1XYPlotDataListLink.html',1,'amrex']]]
+  ['xdim3_10355',['XDim3',['../structamrex_1_1XDim3.html',1,'amrex']]],
+  ['xyplotdatalist_10356',['XYPlotDataList',['../classamrex_1_1XYPlotDataList.html',1,'amrex']]],
+  ['xyplotdatalistlink_10357',['XYPlotDataListLink',['../classamrex_1_1XYPlotDataListLink.html',1,'amrex']]]
 ];

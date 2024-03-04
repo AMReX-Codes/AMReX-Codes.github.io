@@ -161,6 +161,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9d94e9fa0d0ed2ebadf1428023d95809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ec4dbd1f4658dc7cd6ef708b3968c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a6ec4dbd1f4658dc7cd6ef708b3968c4c">setScalars</a> (<a class="el" href="classamrex_1_1MLCurlCurl.html#a4771d48d0bafc31e4a8273b1e06da376">RT</a> a_alpha, <a class="el" href="classamrex_1_1MLCurlCurl.html#a4771d48d0bafc31e4a8273b1e06da376">RT</a> a_beta) noexcept</td></tr>
 <tr class="separator:a6ec4dbd1f4658dc7cd6ef708b3968c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc4efc38bffb2ceab5d5bf004cf6dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#acbc4efc38bffb2ceab5d5bf004cf6dc6">prepareRHS</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> * &gt; const &amp;rhs) const</td></tr>
+<tr class="separator:acbc4efc38bffb2ceab5d5bf004cf6dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ed4bd36cb7bb9fc00d6080ff823d64"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a90ed4bd36cb7bb9fc00d6080ff823d64">name</a> () const override</td></tr>
 <tr class="separator:a90ed4bd36cb7bb9fc00d6080ff823d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06eca5d2d85df13a44bec68fb491e02d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCurlCurl.html#a06eca5d2d85df13a44bec68fb491e02d">setLevelBC</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev, const <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> *levelbcdata, const <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> *robinbc_a=nullptr, const <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> *robinbc_b=nullptr, const <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> *robinbc_f=nullptr) override</td></tr>
@@ -537,9 +539,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>curl (alpha curl E) + beta E = rhs </p>
 <p>Here E is an Array of 3 MultiFabs on staggered grid, alpha is a positive scalar, and beta is a non-negative scalar.</p>
-<p>It's the caller's responsibility to make sure rhs has consistent nodal data. If needed, one could use <a class="el" href="classamrex_1_1FabArray.html#a37eadd5f219d50c8f1c3422f2fa81eb2" title="Synchronize nodal data. The synchronization will override valid regions by the intersecting valid reg...">FabArray::OverrideSync</a> to synchronize nodal data.</p>
-<p>The smoother is based on the 4-color Gauss-Seidel smoother of Li et. al. 2020. "An Efficient Preconditioner for 3-D Finite Difference Modeling of the Electromagnetic Diffusion Process in the Frequency Domain", IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509.</p>
-<p>TODO: If beta is zero, the system could be singular. </p>
+<p>It's the caller's responsibility to make sure rhs has consistent nodal data. If needed, one could call prepareRHS for this.</p>
+<p>The smoother is based on the 4-color Gauss-Seidel smoother of Li et. al. 2020. "An Efficient Preconditioner for 3-D Finite Difference Modeling of the Electromagnetic Diffusion Process in the Frequency Domain", IEEE Transactions on Geoscience and Remote Sensing, 58, 500-509. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac9899bfb41cbcbf7f462d272047552e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9899bfb41cbcbf7f462d272047552e0">&#9670;&nbsp;</a></span>BCMode</h2>
@@ -1547,6 +1548,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classamrex_1_1MLLinOpT.html#af8740f5bcf25e80b3e074a99be681c47">amrex::MLLinOpT&lt; Array&lt; MultiFab, 3 &gt; &gt;</a>.</p>
+
+</div>
+</div>
+<a id="acbc4efc38bffb2ceab5d5bf004cf6dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc4efc38bffb2ceab5d5bf004cf6dc6">&#9670;&nbsp;</a></span>prepareRHS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLCurlCurl::prepareRHS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCurlCurl.html#ad3b325a1dc81c636a9d7bca822aabe05">MF</a> * &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Synchronize RHS on nodal points and set to zero on Dirichlet boundaries. If the user can guarantee these requirements on RHS, this function does not need to be called. If this is called, it should only be called after setDomainBC is called. </p>
 
 </div>
 </div>
