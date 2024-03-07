@@ -291,6 +291,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9b6ac2fe55b5951ef0aee9cfdf3e56c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8740f5bcf25e80b3e074a99be681c47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af8740f5bcf25e80b3e074a99be681c47">prepareForSolve</a> ()=0</td></tr>
 <tr class="separator:af8740f5bcf25e80b3e074a99be681c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79ba1ae9377062bdcdfc68884529865"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#af79ba1ae9377062bdcdfc68884529865">prepareForGMRES</a> ()</td></tr>
+<tr class="separator:af79ba1ae9377062bdcdfc68884529865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c105d805c87469e86c653692af55428"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#a3c105d805c87469e86c653692af55428">setDirichletNodesToZero</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, MF &amp;) const</td></tr>
+<tr class="separator:a3c105d805c87469e86c653692af55428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4208159e7121c341be4c40f148563ad"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOpT.html#ae4208159e7121c341be4c40f148563ad">isSingular</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> amrlev) const =0</td></tr>
 <tr class="memdesc:ae4208159e7121c341be4c40f148563ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it singular on given AMR level?  <a href="classamrex_1_1MLLinOpT.html#ae4208159e7121c341be4c40f148563ad">More...</a><br /></td></tr>
 <tr class="separator:ae4208159e7121c341be4c40f148563ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3598,6 +3602,35 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="af79ba1ae9377062bdcdfc68884529865"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79ba1ae9377062bdcdfc68884529865">&#9670;&nbsp;</a></span>prepareForGMRES()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::prepareForGMRES </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a895ca1ca69778b53dcf5ca86b366d4f7">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
 <a id="af8740f5bcf25e80b3e074a99be681c47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8740f5bcf25e80b3e074a99be681c47">&#9670;&nbsp;</a></span>prepareForSolve()</h2>
 
@@ -3957,6 +3990,53 @@ template&lt;typename MF &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c105d805c87469e86c653692af55428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c105d805c87469e86c653692af55428">&#9670;&nbsp;</a></span>setDirichletNodesToZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classamrex_1_1MLLinOpT.html">amrex::MLLinOpT</a>&lt; MF &gt;::setDirichletNodesToZero </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> to work, this might need to be implemented to mask out Dirichlet nodes or cells (e.g., EB covered cells or overset cells) </p>
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLCellABecLapT.html#a76c83a76bea9715006d1c962471346aa">amrex::MLCellABecLapT&lt; MF &gt;</a>.</p>
 
 </div>
 </div>

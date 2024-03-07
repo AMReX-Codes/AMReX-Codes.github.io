@@ -7065,6 +7065,7 @@
     <member refid="classamrex_1_1MLCellABecLapT_1a972b0c17208b96e3bc1c41d688ebf5d2" kind="function"><name>needsUpdate</name></member>
     <member refid="classamrex_1_1MLCellABecLapT_1ae9730b505209a9fc2f255dd6cf9ea177" kind="function"><name>update</name></member>
     <member refid="classamrex_1_1MLCellABecLapT_1acff16f567dc8c5c30be1337318235e45" kind="function"><name>prepareForSolve</name></member>
+    <member refid="classamrex_1_1MLCellABecLapT_1a76c83a76bea9715006d1c962471346aa" kind="function"><name>setDirichletNodesToZero</name></member>
     <member refid="classamrex_1_1MLCellABecLapT_1a47c09599ba7bee546dfb637ac8962fa0" kind="function"><name>getFluxes</name></member>
     <member refid="classamrex_1_1MLCellABecLapT_1ad86670e0d6ce7f6cdc72e456fad67faf" kind="function"><name>getFluxes</name></member>
     <member refid="classamrex_1_1MLCellABecLapT_1ae138125310f7e77c24bfc57fc2435a96" kind="function"><name>getAScalar</name></member>
@@ -7197,6 +7198,7 @@
     <member refid="classamrex_1_1MLCurlCurl_1a9d94e9fa0d0ed2ebadf1428023d95809" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a6ec4dbd1f4658dc7cd6ef708b3968c4c" kind="function"><name>setScalars</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1acbc4efc38bffb2ceab5d5bf004cf6dc6" kind="function"><name>prepareRHS</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a1e1cf60387fbaec37d15c01e9f074ee5" kind="function"><name>setDirichletNodesToZero</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a90ed4bd36cb7bb9fc00d6080ff823d64" kind="function"><name>name</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a06eca5d2d85df13a44bec68fb491e02d" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a169c302d0fe1a37135eb60b015b25c95" kind="function"><name>restriction</name></member>
@@ -7475,6 +7477,8 @@
     <member refid="classamrex_1_1MLLinOpT_1a94c2f24c3e40ca7b09e7757d94d009af" kind="function"><name>getSolvabilityOffset</name></member>
     <member refid="classamrex_1_1MLLinOpT_1a9b6ac2fe55b5951ef0aee9cfdf3e56c0" kind="function"><name>fixSolvabilityByOffset</name></member>
     <member refid="classamrex_1_1MLLinOpT_1af8740f5bcf25e80b3e074a99be681c47" kind="function"><name>prepareForSolve</name></member>
+    <member refid="classamrex_1_1MLLinOpT_1af79ba1ae9377062bdcdfc68884529865" kind="function"><name>prepareForGMRES</name></member>
+    <member refid="classamrex_1_1MLLinOpT_1a3c105d805c87469e86c653692af55428" kind="function"><name>setDirichletNodesToZero</name></member>
     <member refid="classamrex_1_1MLLinOpT_1ae4208159e7121c341be4c40f148563ad" kind="function"><name>isSingular</name></member>
     <member refid="classamrex_1_1MLLinOpT_1a8a5fce59ba5bb0e9eb9d65e8615050ea" kind="function"><name>isBottomSingular</name></member>
     <member refid="classamrex_1_1MLLinOpT_1adc521ed02a450f7efc4d24f18d8ee7aa" kind="function"><name>xdoty</name></member>
@@ -7678,6 +7682,7 @@
     <member refid="classamrex_1_1MLMGT_1a69cb002038ef5460b92042d6921396b1" kind="function"><name>prepareForNSolve</name></member>
     <member refid="classamrex_1_1MLMGT_1a929a91b1f9969e79f186bb7a1a073f69" kind="function"><name>prepareLinOp</name></member>
     <member refid="classamrex_1_1MLMGT_1ad13058d5dffd2c90824cd1a1d5db3085" kind="function"><name>prepareMGcycle</name></member>
+    <member refid="classamrex_1_1MLMGT_1ae4ea921d48b5a556bd78ddcdd41a4455" kind="function"><name>prepareForGMRES</name></member>
     <member refid="classamrex_1_1MLMGT_1afe44c08a7965ecfe62b862e3d37ac7a0" kind="function"><name>oneIter</name></member>
     <member refid="classamrex_1_1MLMGT_1aa16032dd96f94f55d248e8aa34195f9c" kind="function"><name>miniCycle</name></member>
     <member refid="classamrex_1_1MLMGT_1a66029bb749136c53cc6fabe82b6b2783" kind="function"><name>mgVcycle</name></member>
@@ -7839,6 +7844,8 @@
     <member refid="classamrex_1_1MLNodeLinOp_1a7cdf303d65cabf9d64d4279622ca4fad" kind="function"><name>getSolvabilityOffset</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a8f7f76427fa0ea163014406f3d923933" kind="function"><name>fixSolvabilityByOffset</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a997cf1a004e76b021a262f35a834da32" kind="function"><name>prepareForSolve</name></member>
+    <member refid="classamrex_1_1MLNodeLinOp_1a895ca1ca69778b53dcf5ca86b366d4f7" kind="function"><name>prepareForGMRES</name></member>
+    <member refid="classamrex_1_1MLNodeLinOp_1ad08f58adbfad6d97a54eec4261b8ce46" kind="function"><name>setDirichletNodesToZero</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1ae961a84e4d91aa6ff69bbfcd65f22e9c" kind="function"><name>isSingular</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a24c4a3663f7c10dfe3b70fdf6f815809" kind="function"><name>isBottomSingular</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a949d0c22ae1cd96ffa1961b06edee5d9" kind="function"><name>xdoty</name></member>

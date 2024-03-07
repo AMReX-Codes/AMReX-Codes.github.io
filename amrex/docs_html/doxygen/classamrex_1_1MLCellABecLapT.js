@@ -23,6 +23,7 @@ var classamrex_1_1MLCellABecLapT =
     [ "operator=", "classamrex_1_1MLCellABecLapT.html#ab5b785aa902dc8bd312b0545966bb36a", null ],
     [ "operator=", "classamrex_1_1MLCellABecLapT.html#a53ae18ac5de6900a4a30e6de3385e25b", null ],
     [ "prepareForSolve", "classamrex_1_1MLCellABecLapT.html#acff16f567dc8c5c30be1337318235e45", null ],
+    [ "setDirichletNodesToZero", "classamrex_1_1MLCellABecLapT.html#a76c83a76bea9715006d1c962471346aa", null ],
     [ "supportInhomogNeumannBC", "classamrex_1_1MLCellABecLapT.html#ac7b687cd9603d112b33b92f2047f663f", null ],
     [ "update", "classamrex_1_1MLCellABecLapT.html#ae9730b505209a9fc2f255dd6cf9ea177", null ],
     [ "m_lpinfo_arg", "classamrex_1_1MLCellABecLapT.html#a2a4ce226902dbe904fa45173845d4cac", null ],

@@ -1,5 +1,12 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#ac95794690d4fb50c8e149a55ade09fb8":[3,0,0,0,5,3],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#aca80bffdcf736a33a21c70582d2182bf":[3,0,0,0,5,7],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#acca11ab4048cabd364f8e25012b416ba":[3,0,0,0,5,4],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#ad7a1d13d438479b184c871b0dec86a66":[3,0,0,0,5,10],
+"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html":[3,0,0,0,6],
+"structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_00_01S_01_4.html#ab942f7d12d8564d8cdc739a1b904df4d":[3,0,0,0,6,0],
+"structamrex_1_1algoim_1_1Interval.html":[3,0,0,0,4],
 "structamrex_1_1algoim_1_1Interval.html#a017e3af95c08cb7c803eb4717bc2da14":[3,0,0,0,4,0],
 "structamrex_1_1algoim_1_1PsiCode.html":[3,0,0,0,2],
 "structamrex_1_1algoim_1_1PsiCode.html#a079589b947e48000160801106e65d2fe":[3,0,0,0,2,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX83 =
 "structmake__particle.html#a8f0911901c0819ea99040d1974667ded":[3,0,23,0],
 "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html":[3,0,24],
 "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html#a1528572e442f0232130d8cf002d985cc":[3,0,24,0],
-"structprocess__topology__t.html":[3,0,27],
-"structprocess__topology__t.html#a17cda1536be174c164b9d442fcf354af":[3,0,27,4],
-"structprocess__topology__t.html#a34fd641ec3073c157da173359feb99e6":[3,0,27,1],
-"structprocess__topology__t.html#a5fa8fdbcfe943816e8c19862dffddeaa":[3,0,27,2],
-"structprocess__topology__t.html#ad76559fb8c453075eeb9fa02032160b3":[3,0,27,3],
-"structprocess__topology__t.html#adba2e61f59319e9965761531fd4e9535":[3,0,27,0],
-"structyy__buffer__state.html":[3,0,33],
-"structyy__buffer__state.html#a06406208824817acfec2183b79080945":[3,0,33,11]
+"structprocess__topology__t.html":[3,0,27]
 };

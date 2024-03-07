@@ -32,6 +32,7 @@ var classamrex_1_1MLCurlCurl =
     [ "prepareForSolve", "classamrex_1_1MLCurlCurl.html#a5c54cb4e1ea4c2b1818db0cf82741c30", null ],
     [ "prepareRHS", "classamrex_1_1MLCurlCurl.html#acbc4efc38bffb2ceab5d5bf004cf6dc6", null ],
     [ "restriction", "classamrex_1_1MLCurlCurl.html#a169c302d0fe1a37135eb60b015b25c95", null ],
+    [ "setDirichletNodesToZero", "classamrex_1_1MLCurlCurl.html#a1e1cf60387fbaec37d15c01e9f074ee5", null ],
     [ "setLevelBC", "classamrex_1_1MLCurlCurl.html#a06eca5d2d85df13a44bec68fb491e02d", null ],
     [ "setScalars", "classamrex_1_1MLCurlCurl.html#a6ec4dbd1f4658dc7cd6ef708b3968c4c", null ],
     [ "smooth", "classamrex_1_1MLCurlCurl.html#a11d08332baaab14e6c7cd45597aef245", null ],

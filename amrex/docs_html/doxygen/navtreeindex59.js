@@ -1,5 +1,12 @@
 var NAVTREEINDEX59 =
 {
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#aa4c809c38414c0a2b7f35b7c80db61fe":[3,0,5,0,0],
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#ac14432cf9370f7e0e02f0417b5baffce":[3,0,5,0,1],
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#ac6bcf5d23b46095d0cfe4b81ee378058":[3,0,5,0,14],
+"interfaceamrex__mempool__module_1_1amrex__allocate.html#af37026fa3f140bb0de1fdbabf1098d41":[3,0,5,0,5],
+"interfaceamrex__mempool__module_1_1amrex__deallocate.html":[3,0,5,1],
+"interfaceamrex__mempool__module_1_1amrex__deallocate.html#a2530dd0d3b54cee4edb6921760f45905":[3,0,5,1,5],
+"interfaceamrex__mempool__module_1_1amrex__deallocate.html#a6003d603a35f9dd4fa8fd70b24a9080b":[3,0,5,1,1],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a63349895d61a0ecb96305b8daa5e2ee0":[3,0,5,1,3],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a7d734565739c8ecaab264c90cbd189bc":[3,0,5,1,0],
 "interfaceamrex__mempool__module_1_1amrex__deallocate.html#a838877fb568c97e993ab5d0a0d61ff54":[3,0,5,1,6],
@@ -242,12 +249,5 @@ var NAVTREEINDEX59 =
 "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49a9421625896cd614f365853bcfcec5253":[2,0,0,627,22],
 "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49a9bf6fa5b900a096eaace0643ea2fc87d":[2,0,0,627,24],
 "namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49aa72fde98c22155ba9b55510fec6f7afe":[2,0,0,627,31],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49aad4ecfa4d8942ee7bc7ce33e479f0aaa":[2,0,0,627,16],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49aba0e4205769e25aed168c5b5b7af3426":[2,0,0,627,26],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ac2d587754eccf536e1195395dd760613":[2,0,0,627,6],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49aca265050303407847584f241e18cd70d":[2,0,0,627,14],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ad128e6d075eb69fd93126e2e25a97256":[2,0,0,627,5],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ad164042843bc5d3219c38304422dda7f":[2,0,0,627,0],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ad2a0a201913529696e77ea9584318f7b":[2,0,0,627,9],
-"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49ad3a5a5721de497d1bc95f49759f05a08":[2,0,0,627,7]
+"namespaceamrex.html#a0f600e600176e6bc4444aaea08ca1c49aad4ecfa4d8942ee7bc7ce33e479f0aaa":[2,0,0,627,16]
 };
