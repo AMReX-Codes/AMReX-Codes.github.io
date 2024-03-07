@@ -481,7 +481,8 @@ var hierarchy =
     [ "amrex::GetSendBufferOffset", "structamrex_1_1GetSendBufferOffset.html", null ],
     [ "amrex::EB2::GFab", "classamrex_1_1EB2_1_1GFab.html", null ],
     [ "amrex::GMRES< V, M >", "classamrex_1_1GMRES.html", null ],
-    [ "amrex::GMRESMLMGT< M >", "classamrex_1_1GMRESMLMGT.html", null ],
+    [ "amrex::GMRES< MF, GMRESMLMGT< MF > >", "classamrex_1_1GMRES.html", null ],
+    [ "amrex::GMRESMLMGT< MF >", "classamrex_1_1GMRESMLMGT.html", null ],
     [ "amrex::detail::gpu_tuple_element< I, T >", "structamrex_1_1detail_1_1gpu__tuple__element.html", null ],
     [ "amrex::detail::gpu_tuple_element< I, Head >", "structamrex_1_1detail_1_1gpu__tuple__element.html", [
       [ "amrex::detail::gpu_tuple_impl< I, Head >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4.html", null ],

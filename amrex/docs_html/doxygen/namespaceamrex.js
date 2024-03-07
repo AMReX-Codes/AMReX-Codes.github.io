@@ -872,7 +872,7 @@ var namespaceamrex =
     [ "fFabSet", "namespaceamrex.html#a25f205ddb2e9488505c2db83a92a5434", null ],
     [ "fInterpBndryData", "namespaceamrex.html#a56136e9147b36f3e7fcdf12c22760b58", null ],
     [ "fMultiFab", "namespaceamrex.html#a1df3d6c5876d88132d2b3793984a6b7d", null ],
-    [ "GMRESMLMG", "namespaceamrex.html#a0c1c5a8f4207ad0b30a097cb19e09055", null ],
+    [ "GMRESMLMG", "namespaceamrex.html#a9fb859eb850cc164b1a83c9e4c7d53bb", null ],
     [ "gpuDeviceProp_t", "namespaceamrex.html#a2235406f46755fe4275db8b042b0da92", null ],
     [ "gpuError_t", "namespaceamrex.html#a98a85f350a96eb36272d756d5a9c9a05", null ],
     [ "gpuStream_t", "namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19", null ],

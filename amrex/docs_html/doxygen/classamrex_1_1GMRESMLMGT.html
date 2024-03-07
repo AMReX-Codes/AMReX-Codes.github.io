@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!--title>AMReX: amrex::GMRESMLMGT&lt; M &gt; Class Template Reference</title-->
+<!--title>AMReX: amrex::GMRESMLMGT&lt; MF &gt; Class Template Reference</title-->
 <title>AMReX: Block-Structured AMR Software Framework</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -102,102 +102,146 @@ $(document).ready(function(){initNavTree('classamrex_1_1GMRESMLMGT.html',''); in
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classamrex_1_1GMRESMLMGT-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">amrex::GMRESMLMGT&lt; M &gt; Class Template Reference</div>  </div>
+<div class="title">amrex::GMRESMLMGT&lt; MF &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Wrapping MLMG as a matrix operator for <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a>.  
+<p>Solve using <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> with multigrid as preconditioner.  
  <a href="classamrex_1_1GMRESMLMGT.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AMReX__GMRES__MLMG_8H_source.html">AMReX_GMRES_MLMG.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a912c1d0087f2e931e0968756a27a9ad4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> = typename M::MFType</td></tr>
-<tr class="separator:a912c1d0087f2e931e0968756a27a9ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a530d128b68f55300e7ef8413deec2cb1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a> = typename M::RT</td></tr>
-<tr class="separator:a530d128b68f55300e7ef8413deec2cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a0ba608c9adab93befd5acebdc63bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a> = <a class="el" href="classamrex_1_1MLMGT.html">MLMGT</a>&lt; MF &gt;</td></tr>
+<tr class="separator:a93a0ba608c9adab93befd5acebdc63bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58326c59efaee01db3f1d4c798d4e238"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> = typename <a class="el" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">MG::RT</a></td></tr>
+<tr class="separator:a58326c59efaee01db3f1d4c798d4e238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c8616f7458eb2f29532e5bc34a715c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82c8616f7458eb2f29532e5bc34a715c">GM</a> = <a class="el" href="classamrex_1_1GMRES.html">GMRES</a>&lt; MF, <a class="el" href="classamrex_1_1GMRESMLMGT.html">GMRESMLMGT</a>&lt; MF &gt; &gt;</td></tr>
+<tr class="separator:a82c8616f7458eb2f29532e5bc34a715c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a82f8eb26907bc1bd17f32ee7ab04b734"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82f8eb26907bc1bd17f32ee7ab04b734">GMRESMLMGT</a> (M &amp;mlmg)</td></tr>
-<tr class="separator:a82f8eb26907bc1bd17f32ee7ab04b734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16ed462ee1411539399da0873e7c8b4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a16ed462ee1411539399da0873e7c8b4d">makeVecRHS</a> () const</td></tr>
-<tr class="memdesc:a16ed462ee1411539399da0873e7c8b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> without ghost cells.  <a href="classamrex_1_1GMRESMLMGT.html#a16ed462ee1411539399da0873e7c8b4d">More...</a><br /></td></tr>
-<tr class="separator:a16ed462ee1411539399da0873e7c8b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0315cbcfc479f053bdd5c61706fb7d4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a0315cbcfc479f053bdd5c61706fb7d4c">makeVecLHS</a> () const</td></tr>
-<tr class="memdesc:a0315cbcfc479f053bdd5c61706fb7d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> with ghost cells and set ghost cells to zero.  <a href="classamrex_1_1GMRESMLMGT.html#a0315cbcfc479f053bdd5c61706fb7d4c">More...</a><br /></td></tr>
-<tr class="separator:a0315cbcfc479f053bdd5c61706fb7d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6dbb36de29d26303c643d2acc90dac0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#af6dbb36de29d26303c643d2acc90dac0">norm2</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;mf) const</td></tr>
-<tr class="separator:af6dbb36de29d26303c643d2acc90dac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c56016b01ce8b09fcd88f73d054b238"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a5c56016b01ce8b09fcd88f73d054b238">dotProduct</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;mf1, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;mf2) const</td></tr>
-<tr class="separator:a5c56016b01ce8b09fcd88f73d054b238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2fd7378757ffc2f79d27e54ceffc95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#abf2fd7378757ffc2f79d27e54ceffc95">apply</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;rhs) const</td></tr>
-<tr class="memdesc:abf2fd7378757ffc2f79d27e54ceffc95"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = L(rhs)  <a href="classamrex_1_1GMRESMLMGT.html#abf2fd7378757ffc2f79d27e54ceffc95">More...</a><br /></td></tr>
-<tr class="separator:abf2fd7378757ffc2f79d27e54ceffc95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9fad14cb29b7a6f3011b20e24177057"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ab9fad14cb29b7a6f3011b20e24177057">precond</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;rhs) const</td></tr>
-<tr class="separator:ab9fad14cb29b7a6f3011b20e24177057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246bb81358ceefacd1fb9121cab2338c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a246bb81358ceefacd1fb9121cab2338c">usePrecond</a> (bool new_flag)</td></tr>
-<tr class="separator:a246bb81358ceefacd1fb9121cab2338c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23db5527f7bcd75ba78997016648b906"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a23db5527f7bcd75ba78997016648b906">GMRESMLMGT</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a> &amp;mlmg)</td></tr>
+<tr class="separator:a23db5527f7bcd75ba78997016648b906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b1b279c8233ed99af1f9765a46d502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502">solve</a> (MF &amp;a_sol, MF const &amp;a_rhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a_tol_rel, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a_tol_abs)</td></tr>
+<tr class="memdesc:a12b1b279c8233ed99af1f9765a46d502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the linear system.  <a href="classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502">More...</a><br /></td></tr>
+<tr class="separator:a12b1b279c8233ed99af1f9765a46d502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b0cd328dd0bb2bf71ff67d266b673b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a51b0cd328dd0bb2bf71ff67d266b673b">setVerbose</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> v)</td></tr>
+<tr class="memdesc:a51b0cd328dd0bb2bf71ff67d266b673b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets verbosity.  <a href="classamrex_1_1GMRESMLMGT.html#a51b0cd328dd0bb2bf71ff67d266b673b">More...</a><br /></td></tr>
+<tr class="separator:a51b0cd328dd0bb2bf71ff67d266b673b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47a754ba15bd25bcb9b10f95b590364"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ae47a754ba15bd25bcb9b10f95b590364">setMaxIters</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> niters)</td></tr>
+<tr class="memdesc:ae47a754ba15bd25bcb9b10f95b590364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the max number of iterations.  <a href="classamrex_1_1GMRESMLMGT.html#ae47a754ba15bd25bcb9b10f95b590364">More...</a><br /></td></tr>
+<tr class="separator:ae47a754ba15bd25bcb9b10f95b590364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3584e996a150386dbf8ee7b731ee3ffa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3584e996a150386dbf8ee7b731ee3ffa">getNumIters</a> () const</td></tr>
+<tr class="memdesc:a3584e996a150386dbf8ee7b731ee3ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of iterations.  <a href="classamrex_1_1GMRESMLMGT.html#a3584e996a150386dbf8ee7b731ee3ffa">More...</a><br /></td></tr>
+<tr class="separator:a3584e996a150386dbf8ee7b731ee3ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca83734d854ed846c8c16e8cba18ab0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#aca83734d854ed846c8c16e8cba18ab0a">getResidualNorm</a> () const</td></tr>
+<tr class="memdesc:aca83734d854ed846c8c16e8cba18ab0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the 2-norm of the residual.  <a href="classamrex_1_1GMRESMLMGT.html#aca83734d854ed846c8c16e8cba18ab0a">More...</a><br /></td></tr>
+<tr class="separator:aca83734d854ed846c8c16e8cba18ab0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501781e1e1e7c61244eed962066f1419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82c8616f7458eb2f29532e5bc34a715c">GM</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a501781e1e1e7c61244eed962066f1419">getGMRES</a> ()</td></tr>
+<tr class="memdesc:a501781e1e1e7c61244eed962066f1419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> object.  <a href="classamrex_1_1GMRESMLMGT.html#a501781e1e1e7c61244eed962066f1419">More...</a><br /></td></tr>
+<tr class="separator:a501781e1e1e7c61244eed962066f1419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56349014c0d985e20f66cb789fc37d9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a56349014c0d985e20f66cb789fc37d9f">setPropertyOfZero</a> (bool b)</td></tr>
+<tr class="memdesc:a56349014c0d985e20f66cb789fc37d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set MLMG's multiplicative property of zero.  <a href="classamrex_1_1GMRESMLMGT.html#a56349014c0d985e20f66cb789fc37d9f">More...</a><br /></td></tr>
+<tr class="separator:a56349014c0d985e20f66cb789fc37d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149cc7245fa38541199e133b4ba3ecfc"><td class="memItemLeft" align="right" valign="top">MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a149cc7245fa38541199e133b4ba3ecfc">makeVecRHS</a> () const</td></tr>
+<tr class="memdesc:a149cc7245fa38541199e133b4ba3ecfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> without ghost cells.  <a href="classamrex_1_1GMRESMLMGT.html#a149cc7245fa38541199e133b4ba3ecfc">More...</a><br /></td></tr>
+<tr class="separator:a149cc7245fa38541199e133b4ba3ecfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757525ba6bbe0f037464b6bea3769300"><td class="memItemLeft" align="right" valign="top">MF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a757525ba6bbe0f037464b6bea3769300">makeVecLHS</a> () const</td></tr>
+<tr class="memdesc:a757525ba6bbe0f037464b6bea3769300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> with ghost cells and set ghost cells to zero.  <a href="classamrex_1_1GMRESMLMGT.html#a757525ba6bbe0f037464b6bea3769300">More...</a><br /></td></tr>
+<tr class="separator:a757525ba6bbe0f037464b6bea3769300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac83213b50387ae52458f8f43473f72db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ac83213b50387ae52458f8f43473f72db">norm2</a> (MF const &amp;mf) const</td></tr>
+<tr class="separator:ac83213b50387ae52458f8f43473f72db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3784c11ec581a1ab5edb0e2d2308e86f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3784c11ec581a1ab5edb0e2d2308e86f">dotProduct</a> (MF const &amp;mf1, MF const &amp;mf2) const</td></tr>
+<tr class="separator:a3784c11ec581a1ab5edb0e2d2308e86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ba35dbecc64670348ed8611260dfd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a69ba35dbecc64670348ed8611260dfd9">apply</a> (MF &amp;lhs, MF const &amp;rhs) const</td></tr>
+<tr class="memdesc:a69ba35dbecc64670348ed8611260dfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = L(rhs)  <a href="classamrex_1_1GMRESMLMGT.html#a69ba35dbecc64670348ed8611260dfd9">More...</a><br /></td></tr>
+<tr class="separator:a69ba35dbecc64670348ed8611260dfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe3c1ec699c60ebc52f1a4d8554a4889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#afe3c1ec699c60ebc52f1a4d8554a4889">precond</a> (MF &amp;lhs, MF const &amp;rhs) const</td></tr>
+<tr class="separator:afe3c1ec699c60ebc52f1a4d8554a4889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba210ae4c73c6e484ba27502baafbed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed">usePrecond</a> (bool new_flag)</td></tr>
+<tr class="separator:acba210ae4c73c6e484ba27502baafbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a595601f271b12bf1999e4f2280afa600"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a595601f271b12bf1999e4f2280afa600">scale</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;mf, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a> scale_factor)</td></tr>
-<tr class="separator:a595601f271b12bf1999e4f2280afa600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d0d6b9ebbda5bc21a87acc1686df9b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a2d0d6b9ebbda5bc21a87acc1686df9b8">setToZero</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;lhs)</td></tr>
-<tr class="memdesc:a2d0d6b9ebbda5bc21a87acc1686df9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = 0  <a href="classamrex_1_1GMRESMLMGT.html#a2d0d6b9ebbda5bc21a87acc1686df9b8">More...</a><br /></td></tr>
-<tr class="separator:a2d0d6b9ebbda5bc21a87acc1686df9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a548cda1266ef70290d15e186468149f4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a548cda1266ef70290d15e186468149f4">assign</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;rhs)</td></tr>
-<tr class="memdesc:a548cda1266ef70290d15e186468149f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = rhs  <a href="classamrex_1_1GMRESMLMGT.html#a548cda1266ef70290d15e186468149f4">More...</a><br /></td></tr>
-<tr class="separator:a548cda1266ef70290d15e186468149f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbd15ede7c1e928a96db089dd19ed082"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#abbd15ede7c1e928a96db089dd19ed082">increment</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;rhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a> a)</td></tr>
-<tr class="memdesc:abbd15ede7c1e928a96db089dd19ed082"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs += a*rhs  <a href="classamrex_1_1GMRESMLMGT.html#abbd15ede7c1e928a96db089dd19ed082">More...</a><br /></td></tr>
-<tr class="separator:abbd15ede7c1e928a96db089dd19ed082"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c92dac5128b9bce019e3f2d6dc3a94b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a4c92dac5128b9bce019e3f2d6dc3a94b">linComb</a> (<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a> a, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;rhs_a, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a> b, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;rhs_b)</td></tr>
-<tr class="memdesc:a4c92dac5128b9bce019e3f2d6dc3a94b"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = a*rhs_a + b*rhs_b  <a href="classamrex_1_1GMRESMLMGT.html#a4c92dac5128b9bce019e3f2d6dc3a94b">More...</a><br /></td></tr>
-<tr class="separator:a4c92dac5128b9bce019e3f2d6dc3a94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b6fa6cf559c595468bf5e24e6e6f0c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ab8b6fa6cf559c595468bf5e24e6e6f0c">scale</a> (MF &amp;mf, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> scale_factor)</td></tr>
+<tr class="separator:ab8b6fa6cf559c595468bf5e24e6e6f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7abf628225cd94e5163b1400f549417"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#aa7abf628225cd94e5163b1400f549417">setToZero</a> (MF &amp;lhs)</td></tr>
+<tr class="memdesc:aa7abf628225cd94e5163b1400f549417"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = 0  <a href="classamrex_1_1GMRESMLMGT.html#aa7abf628225cd94e5163b1400f549417">More...</a><br /></td></tr>
+<tr class="separator:aa7abf628225cd94e5163b1400f549417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c36428a18730eb564b0b11000f5088d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3c36428a18730eb564b0b11000f5088d">assign</a> (MF &amp;lhs, MF const &amp;rhs)</td></tr>
+<tr class="memdesc:a3c36428a18730eb564b0b11000f5088d"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = rhs  <a href="classamrex_1_1GMRESMLMGT.html#a3c36428a18730eb564b0b11000f5088d">More...</a><br /></td></tr>
+<tr class="separator:a3c36428a18730eb564b0b11000f5088d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334579fbf27c137837e3860305636d65"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a334579fbf27c137837e3860305636d65">increment</a> (MF &amp;lhs, MF const &amp;rhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a)</td></tr>
+<tr class="memdesc:a334579fbf27c137837e3860305636d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs += a*rhs  <a href="classamrex_1_1GMRESMLMGT.html#a334579fbf27c137837e3860305636d65">More...</a><br /></td></tr>
+<tr class="separator:a334579fbf27c137837e3860305636d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a6bdfd44b64400a631d7cee6c25cb2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a71a6bdfd44b64400a631d7cee6c25cb2">linComb</a> (MF &amp;lhs, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> a, MF const &amp;rhs_a, <a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> b, MF const &amp;rhs_b)</td></tr>
+<tr class="memdesc:a71a6bdfd44b64400a631d7cee6c25cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">lhs = a*rhs_a + b*rhs_b  <a href="classamrex_1_1GMRESMLMGT.html#a71a6bdfd44b64400a631d7cee6c25cb2">More...</a><br /></td></tr>
+<tr class="separator:a71a6bdfd44b64400a631d7cee6c25cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:adef71e99122427dd31646d6bec646e90"><td class="memItemLeft" align="right" valign="top">M &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#adef71e99122427dd31646d6bec646e90">m_mlmg</a></td></tr>
-<tr class="separator:adef71e99122427dd31646d6bec646e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c1796715f8f2361a4609e3fbfa7ecb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; <a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a0c1796715f8f2361a4609e3fbfa7ecb3">m_linop</a></td></tr>
-<tr class="separator:a0c1796715f8f2361a4609e3fbfa7ecb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d7b870748c93d57d4836b9540d5f95d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a5d7b870748c93d57d4836b9540d5f95d">m_use_precond</a> = false</td></tr>
-<tr class="separator:a5d7b870748c93d57d4836b9540d5f95d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ef8424897f89206ea72f7f3affbdd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82c8616f7458eb2f29532e5bc34a715c">GM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a32ef8424897f89206ea72f7f3affbdd0">m_gmres</a></td></tr>
+<tr class="separator:a32ef8424897f89206ea72f7f3affbdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ec7ead138ca2c0e79f0801f44bd1e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a53ec7ead138ca2c0e79f0801f44bd1e6">m_mlmg</a></td></tr>
+<tr class="separator:a53ec7ead138ca2c0e79f0801f44bd1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f967c79809e51f55b8abefadc3cdd1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt; MF &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3f967c79809e51f55b8abefadc3cdd1d">m_linop</a></td></tr>
+<tr class="separator:a3f967c79809e51f55b8abefadc3cdd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab701de7cf398139b6f8804adb3eddd55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ab701de7cf398139b6f8804adb3eddd55">m_use_precond</a> = false</td></tr>
+<tr class="separator:ab701de7cf398139b6f8804adb3eddd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad478296de575a072a91d73b9f8b0332e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ad478296de575a072a91d73b9f8b0332e">m_prop_zero</a> = false</td></tr>
+<tr class="separator:ad478296de575a072a91d73b9f8b0332e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename M&gt;<br />
-class amrex::GMRESMLMGT&lt; M &gt;</h3>
+<div class="textblock"><h3>template&lt;typename MF&gt;<br />
+class amrex::GMRESMLMGT&lt; MF &gt;</h3>
 
-<p>Wrapping MLMG as a matrix operator for <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a>. </p>
+<p>Solve using <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> with multigrid as preconditioner. </p>
+<p>The linear system to solve is provided by MLMG, which is also being used as the preconditioner. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a912c1d0087f2e931e0968756a27a9ad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a912c1d0087f2e931e0968756a27a9ad4">&#9670;&nbsp;</a></span>MF</h2>
+<a id="a82c8616f7458eb2f29532e5bc34a715c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c8616f7458eb2f29532e5bc34a715c">&#9670;&nbsp;</a></span>GM</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> =  typename M::MFType</td>
+          <td class="memname">using <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html#a82c8616f7458eb2f29532e5bc34a715c">GM</a> =  <a class="el" href="classamrex_1_1GMRES.html">GMRES</a>&lt;MF,<a class="el" href="classamrex_1_1GMRESMLMGT.html">GMRESMLMGT</a>&lt;MF&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a530d128b68f55300e7ef8413deec2cb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a530d128b68f55300e7ef8413deec2cb1">&#9670;&nbsp;</a></span>RT</h2>
+<a id="a93a0ba608c9adab93befd5acebdc63bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a0ba608c9adab93befd5acebdc63bc">&#9670;&nbsp;</a></span>MG</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a> =  typename M::RT</td>
+          <td class="memname">using <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a> =  <a class="el" href="classamrex_1_1MLMGT.html">MLMGT</a>&lt;MF&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58326c59efaee01db3f1d4c798d4e238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58326c59efaee01db3f1d4c798d4e238">&#9670;&nbsp;</a></span>RT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> =  typename <a class="el" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">MG::RT</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -205,21 +249,21 @@ template&lt;typename M &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a82f8eb26907bc1bd17f32ee7ab04b734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82f8eb26907bc1bd17f32ee7ab04b734">&#9670;&nbsp;</a></span>GMRESMLMGT()</h2>
+<a id="a23db5527f7bcd75ba78997016648b906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23db5527f7bcd75ba78997016648b906">&#9670;&nbsp;</a></span>GMRESMLMGT()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html">GMRESMLMGT</a> </td>
+          <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::<a class="el" href="classamrex_1_1GMRESMLMGT.html">GMRESMLMGT</a> </td>
           <td>(</td>
-          <td class="paramtype">M &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a> &amp;&#160;</td>
           <td class="paramname"><em>mlmg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -234,24 +278,24 @@ template&lt;typename M &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abf2fd7378757ffc2f79d27e54ceffc95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf2fd7378757ffc2f79d27e54ceffc95">&#9670;&nbsp;</a></span>apply()</h2>
+<a id="a69ba35dbecc64670348ed8611260dfd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ba35dbecc64670348ed8611260dfd9">&#9670;&nbsp;</a></span>apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::apply </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::apply </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
@@ -266,27 +310,27 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a548cda1266ef70290d15e186468149f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a548cda1266ef70290d15e186468149f4">&#9670;&nbsp;</a></span>assign()</h2>
+<a id="a3c36428a18730eb564b0b11000f5088d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c36428a18730eb564b0b11000f5088d">&#9670;&nbsp;</a></span>assign()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::assign </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::assign </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
@@ -306,24 +350,24 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a5c56016b01ce8b09fcd88f73d054b238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c56016b01ce8b09fcd88f73d054b238">&#9670;&nbsp;</a></span>dotProduct()</h2>
+<a id="a3784c11ec581a1ab5edb0e2d2308e86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3784c11ec581a1ab5edb0e2d2308e86f">&#9670;&nbsp;</a></span>dotProduct()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::dotProduct </td>
+          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::dotProduct </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>mf1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>mf2</em>&#160;</td>
         </tr>
         <tr>
@@ -336,33 +380,120 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="abbd15ede7c1e928a96db089dd19ed082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbd15ede7c1e928a96db089dd19ed082">&#9670;&nbsp;</a></span>increment()</h2>
+<a id="a501781e1e1e7c61244eed962066f1419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a501781e1e1e7c61244eed962066f1419">&#9670;&nbsp;</a></span>getGMRES()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::increment </td>
+          <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82c8616f7458eb2f29532e5bc34a715c">GM</a>&amp; <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::getGMRES </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> object. </p>
+
+</div>
+</div>
+<a id="a3584e996a150386dbf8ee7b731ee3ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3584e996a150386dbf8ee7b731ee3ffa">&#9670;&nbsp;</a></span>getNumIters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::getNumIters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of iterations. </p>
+
+</div>
+</div>
+<a id="aca83734d854ed846c8c16e8cba18ab0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca83734d854ed846c8c16e8cba18ab0a">&#9670;&nbsp;</a></span>getResidualNorm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a> <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::getResidualNorm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the 2-norm of the residual. </p>
+
+</div>
+</div>
+<a id="a334579fbf27c137837e3860305636d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334579fbf27c137837e3860305636d65">&#9670;&nbsp;</a></span>increment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::increment </td>
+          <td>(</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td>
           <td class="paramname"><em>a</em>&#160;</td>
         </tr>
         <tr>
@@ -382,45 +513,45 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a4c92dac5128b9bce019e3f2d6dc3a94b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c92dac5128b9bce019e3f2d6dc3a94b">&#9670;&nbsp;</a></span>linComb()</h2>
+<a id="a71a6bdfd44b64400a631d7cee6c25cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a6bdfd44b64400a631d7cee6c25cb2">&#9670;&nbsp;</a></span>linComb()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::linComb </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::linComb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>rhs_a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>rhs_b</em>&#160;</td>
         </tr>
         <tr>
@@ -440,16 +571,16 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a0315cbcfc479f053bdd5c61706fb7d4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0315cbcfc479f053bdd5c61706fb7d4c">&#9670;&nbsp;</a></span>makeVecLHS()</h2>
+<a id="a757525ba6bbe0f037464b6bea3769300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757525ba6bbe0f037464b6bea3769300">&#9670;&nbsp;</a></span>makeVecLHS()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::makeVecLHS</td>
+          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::makeVecLHS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -458,16 +589,16 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a16ed462ee1411539399da0873e7c8b4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16ed462ee1411539399da0873e7c8b4d">&#9670;&nbsp;</a></span>makeVecRHS()</h2>
+<a id="a149cc7245fa38541199e133b4ba3ecfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149cc7245fa38541199e133b4ba3ecfc">&#9670;&nbsp;</a></span>makeVecRHS()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::makeVecRHS</td>
+          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::makeVecRHS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -476,18 +607,18 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="af6dbb36de29d26303c643d2acc90dac0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6dbb36de29d26303c643d2acc90dac0">&#9670;&nbsp;</a></span>norm2()</h2>
+<a id="ac83213b50387ae52458f8f43473f72db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac83213b50387ae52458f8f43473f72db">&#9670;&nbsp;</a></span>norm2()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::norm2 </td>
+          <td class="memname">auto <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::norm2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>mf</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -496,24 +627,24 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="ab9fad14cb29b7a6f3011b20e24177057"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9fad14cb29b7a6f3011b20e24177057">&#9670;&nbsp;</a></span>precond()</h2>
+<a id="afe3c1ec699c60ebc52f1a4d8554a4889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe3c1ec699c60ebc52f1a4d8554a4889">&#9670;&nbsp;</a></span>precond()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::precond </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::precond </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> const &amp;&#160;</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
@@ -526,27 +657,27 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a595601f271b12bf1999e4f2280afa600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a595601f271b12bf1999e4f2280afa600">&#9670;&nbsp;</a></span>scale()</h2>
+<a id="ab8b6fa6cf559c595468bf5e24e6e6f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b6fa6cf559c595468bf5e24e6e6f0c">&#9670;&nbsp;</a></span>scale()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::scale </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::scale </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>mf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a530d128b68f55300e7ef8413deec2cb1">RT</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td>
           <td class="paramname"><em>scale_factor</em>&#160;</td>
         </tr>
         <tr>
@@ -564,21 +695,82 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a2d0d6b9ebbda5bc21a87acc1686df9b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d0d6b9ebbda5bc21a87acc1686df9b8">&#9670;&nbsp;</a></span>setToZero()</h2>
+<a id="ae47a754ba15bd25bcb9b10f95b590364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47a754ba15bd25bcb9b10f95b590364">&#9670;&nbsp;</a></span>setMaxIters()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::setToZero </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::setMaxIters </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>niters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the max number of iterations. </p>
+
+</div>
+</div>
+<a id="a56349014c0d985e20f66cb789fc37d9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56349014c0d985e20f66cb789fc37d9f">&#9670;&nbsp;</a></span>setPropertyOfZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::setPropertyOfZero </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set MLMG's multiplicative property of zero. </p>
+<p>This should NOT be called unless MLMG has the multiplicative property of zero. MLMG is not a matrix, and usually does not have the properties of a matrix such as the multiplicative property of zero (i.e., M*0=0) because how domain boundary conditions are handled. However, if MLMG has the property of zero, calling this function with true can have a small performance benefit. </p>
+
+</div>
+</div>
+<a id="aa7abf628225cd94e5163b1400f549417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7abf628225cd94e5163b1400f549417">&#9670;&nbsp;</a></span>setToZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::setToZero </td>
+          <td>(</td>
+          <td class="paramtype">MF &amp;&#160;</td>
           <td class="paramname"><em>lhs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -594,19 +786,102 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a246bb81358ceefacd1fb9121cab2338c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a246bb81358ceefacd1fb9121cab2338c">&#9670;&nbsp;</a></span>usePrecond()</h2>
+<a id="a51b0cd328dd0bb2bf71ff67d266b673b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b0cd328dd0bb2bf71ff67d266b673b">&#9670;&nbsp;</a></span>setVerbose()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::usePrecond </td>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::setVerbose </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets verbosity. </p>
+
+</div>
+</div>
+<a id="a12b1b279c8233ed99af1f9765a46d502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12b1b279c8233ed99af1f9765a46d502">&#9670;&nbsp;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::solve </td>
+          <td>(</td>
+          <td class="paramtype">MF &amp;&#160;</td>
+          <td class="paramname"><em>a_sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MF const &amp;&#160;</td>
+          <td class="paramname"><em>a_rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td>
+          <td class="paramname"><em>a_tol_rel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a58326c59efaee01db3f1d4c798d4e238">RT</a>&#160;</td>
+          <td class="paramname"><em>a_tol_abs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Solve the linear system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_sol</td><td>unknowns, i.e., x in A x = b. </td></tr>
+    <tr><td class="paramname">a_rhs</td><td>RHS, i.e., b in A x = b. </td></tr>
+    <tr><td class="paramname">a_tol_rel</td><td>relative tolerance. </td></tr>
+    <tr><td class="paramname">a_tol_abs</td><td>absolute tolerance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acba210ae4c73c6e484ba27502baafbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba210ae4c73c6e484ba27502baafbed">&#9670;&nbsp;</a></span>usePrecond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::usePrecond </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>new_flag</em></td><td>)</td>
@@ -623,19 +898,19 @@ template&lt;typename M &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0c1796715f8f2361a4609e3fbfa7ecb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c1796715f8f2361a4609e3fbfa7ecb3">&#9670;&nbsp;</a></span>m_linop</h2>
+<a id="a32ef8424897f89206ea72f7f3affbdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ef8424897f89206ea72f7f3affbdd0">&#9670;&nbsp;</a></span>m_gmres</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt;<a class="el" href="classamrex_1_1GMRESMLMGT.html#a912c1d0087f2e931e0968756a27a9ad4">MF</a>&gt;&amp; <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::m_linop</td>
+          <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a82c8616f7458eb2f29532e5bc34a715c">GM</a> <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_gmres</td>
         </tr>
       </table>
   </td>
@@ -647,19 +922,19 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="adef71e99122427dd31646d6bec646e90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adef71e99122427dd31646d6bec646e90">&#9670;&nbsp;</a></span>m_mlmg</h2>
+<a id="a3f967c79809e51f55b8abefadc3cdd1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f967c79809e51f55b8abefadc3cdd1d">&#9670;&nbsp;</a></span>m_linop</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">M&amp; <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::m_mlmg</td>
+          <td class="memname"><a class="el" href="classamrex_1_1MLLinOpT.html">MLLinOpT</a>&lt;MF&gt;&amp; <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_linop</td>
         </tr>
       </table>
   </td>
@@ -671,19 +946,67 @@ template&lt;typename M &gt; </div>
 
 </div>
 </div>
-<a id="a5d7b870748c93d57d4836b9540d5f95d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d7b870748c93d57d4836b9540d5f95d">&#9670;&nbsp;</a></span>m_use_precond</h2>
+<a id="a53ec7ead138ca2c0e79f0801f44bd1e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ec7ead138ca2c0e79f0801f44bd1e6">&#9670;&nbsp;</a></span>m_mlmg</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename M &gt; </div>
+template&lt;typename MF &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; M &gt;::m_use_precond = false</td>
+          <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a>&amp; <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_mlmg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad478296de575a072a91d73b9f8b0332e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad478296de575a072a91d73b9f8b0332e">&#9670;&nbsp;</a></span>m_prop_zero</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_prop_zero = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab701de7cf398139b6f8804adb3eddd55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab701de7cf398139b6f8804adb3eddd55">&#9670;&nbsp;</a></span>m_use_precond</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_use_precond = false</td>
         </tr>
       </table>
   </td>

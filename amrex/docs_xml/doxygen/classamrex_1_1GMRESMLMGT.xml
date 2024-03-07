@@ -5,26 +5,26 @@
     <includes refid="AMReX__GMRES__MLMG_8H" local="no">AMReX_GMRES_MLMG.H</includes>
     <templateparamlist>
       <param>
-        <type>typename M</type>
+        <type>typename MF</type>
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" prot="public" static="no">
-        <type>typename M::MFType</type>
-        <definition>using amrex::GMRESMLMGT&lt; M &gt;::MF =  typename M::MFType</definition>
+      <memberdef kind="typedef" id="classamrex_1_1GMRESMLMGT_1a93a0ba608c9adab93befd5acebdc63bc" prot="public" static="no">
+        <type><ref refid="classamrex_1_1MLMGT" kindref="compound">MLMGT</ref>&lt; MF &gt;</type>
+        <definition>using amrex::GMRESMLMGT&lt; MF &gt;::MG =  MLMGT&lt;MF&gt;</definition>
         <argsstring></argsstring>
-        <name>MF</name>
+        <name>MG</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="15" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="15" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="22" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="22" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" prot="public" static="no">
-        <type>typename M::RT</type>
-        <definition>using amrex::GMRESMLMGT&lt; M &gt;::RT =  typename M::RT</definition>
+      <memberdef kind="typedef" id="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" prot="public" static="no">
+        <type>typename <ref refid="classamrex_1_1MLMGT_1a85f49a7b9118115595f428e8c87693cd" kindref="member">MG::RT</ref></type>
+        <definition>using amrex::GMRESMLMGT&lt; MF &gt;::RT =  typename MG::RT</definition>
         <argsstring></argsstring>
         <name>RT</name>
         <briefdescription>
@@ -33,13 +33,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="16" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="16" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="23" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1GMRESMLMGT_1a82c8616f7458eb2f29532e5bc34a715c" prot="public" static="no">
+        <type><ref refid="classamrex_1_1GMRES" kindref="compound">GMRES</ref>&lt; MF, <ref refid="classamrex_1_1GMRESMLMGT" kindref="compound">GMRESMLMGT</ref>&lt; MF &gt; &gt;</type>
+        <definition>using amrex::GMRESMLMGT&lt; MF &gt;::GM =  GMRES&lt;MF,GMRESMLMGT&lt;MF&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>GM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="24" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="24" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1adef71e99122427dd31646d6bec646e90" prot="private" static="no" mutable="no">
-        <type>M &amp;</type>
-        <definition>M&amp; amrex::GMRESMLMGT&lt; M &gt;::m_mlmg</definition>
+      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1a32ef8424897f89206ea72f7f3affbdd0" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1GMRESMLMGT_1a82c8616f7458eb2f29532e5bc34a715c" kindref="member">GM</ref></type>
+        <definition>GM amrex::GMRESMLMGT&lt; MF &gt;::m_gmres</definition>
+        <argsstring></argsstring>
+        <name>m_gmres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="97" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1a53ec7ead138ca2c0e79f0801f44bd1e6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1GMRESMLMGT_1a93a0ba608c9adab93befd5acebdc63bc" kindref="member">MG</ref> &amp;</type>
+        <definition>MG&amp; amrex::GMRESMLMGT&lt; MF &gt;::m_mlmg</definition>
         <argsstring></argsstring>
         <name>m_mlmg</name>
         <briefdescription>
@@ -48,11 +74,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="52" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="52" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="98" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="98" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1a0c1796715f8f2361a4609e3fbfa7ecb3" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1MLLinOpT" kindref="compound">MLLinOpT</ref>&lt; <ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &gt; &amp;</type>
-        <definition>MLLinOpT&lt;MF&gt;&amp; amrex::GMRESMLMGT&lt; M &gt;::m_linop</definition>
+      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1a3f967c79809e51f55b8abefadc3cdd1d" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1MLLinOpT" kindref="compound">MLLinOpT</ref>&lt; MF &gt; &amp;</type>
+        <definition>MLLinOpT&lt;MF&gt;&amp; amrex::GMRESMLMGT&lt; MF &gt;::m_linop</definition>
         <argsstring></argsstring>
         <name>m_linop</name>
         <briefdescription>
@@ -61,11 +87,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="53" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="53" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="99" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="99" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1a5d7b870748c93d57d4836b9540d5f95d" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1ab701de7cf398139b6f8804adb3eddd55" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::GMRESMLMGT&lt; M &gt;::m_use_precond</definition>
+        <definition>bool amrex::GMRESMLMGT&lt; MF &gt;::m_use_precond</definition>
         <argsstring></argsstring>
         <name>m_use_precond</name>
         <initializer>= false</initializer>
@@ -75,17 +101,31 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="54" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="54" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1GMRESMLMGT_1ad478296de575a072a91d73b9f8b0332e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::GMRESMLMGT&lt; MF &gt;::m_prop_zero</definition>
+        <argsstring></argsstring>
+        <name>m_prop_zero</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="101" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="101" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a82f8eb26907bc1bd17f32ee7ab04b734" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a23db5527f7bcd75ba78997016648b906" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::GMRESMLMGT&lt; M &gt;::GMRESMLMGT</definition>
-        <argsstring>(M &amp;mlmg)</argsstring>
+        <definition>amrex::GMRESMLMGT&lt; MF &gt;::GMRESMLMGT</definition>
+        <argsstring>(MG &amp;mlmg)</argsstring>
         <name>GMRESMLMGT</name>
         <param>
-          <type>M &amp;</type>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a93a0ba608c9adab93befd5acebdc63bc" kindref="member">MG</ref> &amp;</type>
           <declname>mlmg</declname>
         </param>
         <briefdescription>
@@ -94,11 +134,172 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="18" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="58" bodyend="64"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="26" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="105" bodyend="114"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a16ed462ee1411539399da0873e7c8b4d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref></type>
-        <definition>auto amrex::GMRESMLMGT&lt; M &gt;::makeVecRHS</definition>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a12b1b279c8233ed99af1f9765a46d502" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::solve</definition>
+        <argsstring>(MF &amp;a_sol, MF const &amp;a_rhs, RT a_tol_rel, RT a_tol_abs)</argsstring>
+        <name>solve</name>
+        <param>
+          <type>MF &amp;</type>
+          <declname>a_sol</declname>
+        </param>
+        <param>
+          <type>MF const &amp;</type>
+          <declname>a_rhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
+          <declname>a_tol_rel</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
+          <declname>a_tol_abs</declname>
+        </param>
+        <briefdescription>
+<para>Solve the linear system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_sol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unknowns, i.e., x in A x = b. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RHS, i.e., b in A x = b. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_tol_rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relative tolerance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a_tol_abs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>absolute tolerance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="36" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="199" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a51b0cd328dd0bb2bf71ff67d266b673b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::setVerbose</definition>
+        <argsstring>(int v)</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Sets verbosity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="39" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1ae47a754ba15bd25bcb9b10f95b590364" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::setMaxIters</definition>
+        <argsstring>(int niters)</argsstring>
+        <name>setMaxIters</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>niters</declname>
+        </param>
+        <briefdescription>
+<para>Sets the max number of iterations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="42" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a3584e996a150386dbf8ee7b731ee3ffa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::GMRESMLMGT&lt; MF &gt;::getNumIters</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumIters</name>
+        <briefdescription>
+<para>Gets the number of iterations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="45" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1aca83734d854ed846c8c16e8cba18ab0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
+        <definition>RT amrex::GMRESMLMGT&lt; MF &gt;::getResidualNorm</definition>
+        <argsstring>() const</argsstring>
+        <name>getResidualNorm</name>
+        <briefdescription>
+<para>Gets the 2-norm of the residual. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="48" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a501781e1e1e7c61244eed962066f1419" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRESMLMGT_1a82c8616f7458eb2f29532e5bc34a715c" kindref="member">GM</ref> &amp;</type>
+        <definition>GM&amp; amrex::GMRESMLMGT&lt; MF &gt;::getGMRES</definition>
+        <argsstring>()</argsstring>
+        <name>getGMRES</name>
+        <briefdescription>
+<para>Get the <ref refid="classamrex_1_1GMRES" kindref="compound">GMRES</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="51" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a56349014c0d985e20f66cb789fc37d9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::setPropertyOfZero</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>setPropertyOfZero</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Set MLMG&apos;s multiplicative property of zero. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should NOT be called unless MLMG has the multiplicative property of zero. MLMG is not a matrix, and usually does not have the properties of a matrix such as the multiplicative property of zero (i.e., M*0=0) because how domain boundary conditions are handled. However, if MLMG has the property of zero, calling this function with true can have a small performance benefit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="63" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a149cc7245fa38541199e133b4ba3ecfc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>MF</type>
+        <definition>auto amrex::GMRESMLMGT&lt; MF &gt;::makeVecRHS</definition>
         <argsstring>() const</argsstring>
         <name>makeVecRHS</name>
         <briefdescription>
@@ -108,11 +309,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="21" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="67" bodyend="70"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="66" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="117" bodyend="120"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a0315cbcfc479f053bdd5c61706fb7d4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref></type>
-        <definition>auto amrex::GMRESMLMGT&lt; M &gt;::makeVecLHS</definition>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a757525ba6bbe0f037464b6bea3769300" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>MF</type>
+        <definition>auto amrex::GMRESMLMGT&lt; MF &gt;::makeVecLHS</definition>
         <argsstring>() const</argsstring>
         <name>makeVecLHS</name>
         <briefdescription>
@@ -122,15 +323,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="24" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="73" bodyend="78"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="69" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="123" bodyend="128"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1af6dbb36de29d26303c643d2acc90dac0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kindref="member">RT</ref></type>
-        <definition>auto amrex::GMRESMLMGT&lt; M &gt;::norm2</definition>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1ac83213b50387ae52458f8f43473f72db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
+        <definition>auto amrex::GMRESMLMGT&lt; MF &gt;::norm2</definition>
         <argsstring>(MF const &amp;mf) const</argsstring>
         <name>norm2</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>mf</declname>
         </param>
         <briefdescription>
@@ -139,19 +340,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="26" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="81" bodyend="85"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="71" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="131" bodyend="135"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a5c56016b01ce8b09fcd88f73d054b238" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kindref="member">RT</ref></type>
-        <definition>auto amrex::GMRESMLMGT&lt; M &gt;::dotProduct</definition>
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a3784c11ec581a1ab5edb0e2d2308e86f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
+        <definition>auto amrex::GMRESMLMGT&lt; MF &gt;::dotProduct</definition>
         <argsstring>(MF const &amp;mf1, MF const &amp;mf2) const</argsstring>
         <name>dotProduct</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>mf1</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>mf2</declname>
         </param>
         <briefdescription>
@@ -160,19 +361,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="30" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="94" bodyend="97"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="75" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="144" bodyend="147"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1abf2fd7378757ffc2f79d27e54ceffc95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a69ba35dbecc64670348ed8611260dfd9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::apply</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::apply</definition>
         <argsstring>(MF &amp;lhs, MF const &amp;rhs) const</argsstring>
         <name>apply</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -182,19 +383,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="45" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="124" bodyend="129"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="90" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="174" bodyend="179"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1ab9fad14cb29b7a6f3011b20e24177057" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1afe3c1ec699c60ebc52f1a4d8554a4889" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::precond</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::precond</definition>
         <argsstring>(MF &amp;lhs, MF const &amp;rhs) const</argsstring>
         <name>precond</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -203,11 +404,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="47" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="132" bodyend="148"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="92" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="182" bodyend="196"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a246bb81358ceefacd1fb9121cab2338c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1acba210ae4c73c6e484ba27502baafbed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool amrex::GMRESMLMGT&lt; M &gt;::usePrecond</definition>
+        <definition>bool amrex::GMRESMLMGT&lt; MF &gt;::usePrecond</definition>
         <argsstring>(bool new_flag)</argsstring>
         <name>usePrecond</name>
         <param>
@@ -220,21 +421,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="49" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="49" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="94" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="94" bodyend="94"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a595601f271b12bf1999e4f2280afa600" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1ab8b6fa6cf559c595468bf5e24e6e6f0c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::scale</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::scale</definition>
         <argsstring>(MF &amp;mf, RT scale_factor)</argsstring>
         <name>scale</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kindref="member">RT</ref></type>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
           <declname>scale_factor</declname>
         </param>
         <briefdescription>
@@ -243,15 +444,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="28" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="88" bodyend="91"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="73" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="138" bodyend="141"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a2d0d6b9ebbda5bc21a87acc1686df9b8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1aa7abf628225cd94e5163b1400f549417" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::setToZero</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::setToZero</definition>
         <argsstring>(MF &amp;lhs)</argsstring>
         <name>setToZero</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>lhs</declname>
         </param>
         <briefdescription>
@@ -261,19 +462,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="33" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="100" bodyend="103"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="78" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="150" bodyend="153"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a548cda1266ef70290d15e186468149f4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a3c36428a18730eb564b0b11000f5088d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::assign</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::assign</definition>
         <argsstring>(MF &amp;lhs, MF const &amp;rhs)</argsstring>
         <name>assign</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -283,23 +484,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="36" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="106" bodyend="109"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="81" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="156" bodyend="159"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1abbd15ede7c1e928a96db089dd19ed082" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a334579fbf27c137837e3860305636d65" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::increment</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::increment</definition>
         <argsstring>(MF &amp;lhs, MF const &amp;rhs, RT a)</argsstring>
         <name>increment</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>rhs</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kindref="member">RT</ref></type>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -309,31 +510,31 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="39" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="112" bodyend="115"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="84" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="162" bodyend="165"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a4c92dac5128b9bce019e3f2d6dc3a94b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1GMRESMLMGT_1a71a6bdfd44b64400a631d7cee6c25cb2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::GMRESMLMGT&lt; M &gt;::linComb</definition>
+        <definition>void amrex::GMRESMLMGT&lt; MF &gt;::linComb</definition>
         <argsstring>(MF &amp;lhs, RT a, MF const &amp;rhs_a, RT b, MF const &amp;rhs_b)</argsstring>
         <name>linComb</name>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> &amp;</type>
+          <type>MF &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kindref="member">RT</ref></type>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>rhs_a</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kindref="member">RT</ref></type>
+          <type><ref refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kindref="member">RT</ref></type>
           <declname>b</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kindref="member">MF</ref> const &amp;</type>
+          <type>MF const &amp;</type>
           <declname>rhs_b</declname>
         </param>
         <briefdescription>
@@ -343,34 +544,143 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="42" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="118" bodyend="121"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="87" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="168" bodyend="171"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Wrapping MLMG as a matrix operator for <ref refid="classamrex_1_1GMRES" kindref="compound">GMRES</ref>. </para>
+<para>Solve using <ref refid="classamrex_1_1GMRES" kindref="compound">GMRES</ref> with multigrid as preconditioner. </para>
     </briefdescription>
     <detaileddescription>
+<para>The linear system to solve is provided by MLMG, which is also being used as the preconditioner. </para>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="13" bodyend="55"/>
+    <collaborationgraph>
+      <node id="11">
+        <label>amrex::Vector&lt; double &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::unique_ptr&lt; amrex::MLMGT&lt; MF &gt; &gt;</label>
+      </node>
+      <node id="7">
+        <label>T</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>amrex::Vector&lt; MF &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::unique_ptr&lt; MF &gt;</label>
+      </node>
+      <node id="8">
+        <label>amrex::Vector&lt; amrex::Vector&lt; MF &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>amrex::GMRES&lt; MF, GMRESMLMGT&lt; MF &gt; &gt;</label>
+        <link refid="classamrex_1_1GMRES"/>
+      </node>
+      <node id="5">
+        <label>amrex::Vector&lt; RT &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::MLMGT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1MLMGT"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ns_mlmg</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ns_linop</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_iter_fine_resnorm0</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>cor</edgelabel>
+          <edgelabel>cor_hold</edgelabel>
+          <edgelabel>res</edgelabel>
+          <edgelabel>rescor</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>ns_rhs</edgelabel>
+          <edgelabel>ns_sol</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_niters_cg</edgelabel>
+          <edgelabel>sol_is_alias</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>rhs</edgelabel>
+          <edgelabel>sol</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::GMRESMLMGT&lt; MF &gt;</label>
+        <link refid="classamrex_1_1GMRESMLMGT"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_mlmg</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_gmres</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unique_ptr&lt; amrex::MLLinOpT&lt; MF &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" line="19" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/AMReX_GMRES_MLMG.H" bodystart="20" bodyend="102"/>
     <listofallmembers>
-      <member refid="classamrex_1_1GMRESMLMGT_1abf2fd7378757ffc2f79d27e54ceffc95" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>apply</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a548cda1266ef70290d15e186468149f4" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>assign</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a5c56016b01ce8b09fcd88f73d054b238" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>dotProduct</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a82f8eb26907bc1bd17f32ee7ab04b734" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>GMRESMLMGT</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1abbd15ede7c1e928a96db089dd19ed082" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>increment</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a4c92dac5128b9bce019e3f2d6dc3a94b" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>linComb</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a0c1796715f8f2361a4609e3fbfa7ecb3" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_linop</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1adef71e99122427dd31646d6bec646e90" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_mlmg</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a5d7b870748c93d57d4836b9540d5f95d" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_use_precond</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a0315cbcfc479f053bdd5c61706fb7d4c" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>makeVecLHS</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a16ed462ee1411539399da0873e7c8b4d" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>makeVecRHS</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>MF</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1af6dbb36de29d26303c643d2acc90dac0" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>norm2</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1ab9fad14cb29b7a6f3011b20e24177057" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>precond</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>RT</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a595601f271b12bf1999e4f2280afa600" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>scale</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a2d0d6b9ebbda5bc21a87acc1686df9b8" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>setToZero</name></member>
-      <member refid="classamrex_1_1GMRESMLMGT_1a246bb81358ceefacd1fb9121cab2338c" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>usePrecond</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a69ba35dbecc64670348ed8611260dfd9" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>apply</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a3c36428a18730eb564b0b11000f5088d" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>assign</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a3784c11ec581a1ab5edb0e2d2308e86f" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>dotProduct</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a501781e1e1e7c61244eed962066f1419" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>getGMRES</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a3584e996a150386dbf8ee7b731ee3ffa" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>getNumIters</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1aca83734d854ed846c8c16e8cba18ab0a" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>getResidualNorm</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a82c8616f7458eb2f29532e5bc34a715c" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>GM</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a23db5527f7bcd75ba78997016648b906" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>GMRESMLMGT</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a334579fbf27c137837e3860305636d65" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>increment</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a71a6bdfd44b64400a631d7cee6c25cb2" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>linComb</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a32ef8424897f89206ea72f7f3affbdd0" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_gmres</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a3f967c79809e51f55b8abefadc3cdd1d" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_linop</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a53ec7ead138ca2c0e79f0801f44bd1e6" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_mlmg</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1ad478296de575a072a91d73b9f8b0332e" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_prop_zero</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1ab701de7cf398139b6f8804adb3eddd55" prot="private" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>m_use_precond</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a757525ba6bbe0f037464b6bea3769300" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>makeVecLHS</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a149cc7245fa38541199e133b4ba3ecfc" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>makeVecRHS</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a93a0ba608c9adab93befd5acebdc63bc" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>MG</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1ac83213b50387ae52458f8f43473f72db" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>norm2</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1afe3c1ec699c60ebc52f1a4d8554a4889" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>precond</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>RT</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1ab8b6fa6cf559c595468bf5e24e6e6f0c" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>scale</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1ae47a754ba15bd25bcb9b10f95b590364" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>setMaxIters</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a56349014c0d985e20f66cb789fc37d9f" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>setPropertyOfZero</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1aa7abf628225cd94e5163b1400f549417" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>setToZero</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a51b0cd328dd0bb2bf71ff67d266b673b" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>setVerbose</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1a12b1b279c8233ed99af1f9765a46d502" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>solve</name></member>
+      <member refid="classamrex_1_1GMRESMLMGT_1acba210ae4c73c6e484ba27502baafbed" prot="public" virt="non-virtual"><scope>amrex::GMRESMLMGT</scope><name>usePrecond</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -5252,7 +5252,7 @@
     <member refid="classamrex_1_1GMRES_1a0eea5870312b5aead3f187cee44cda18" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1GMRES_1a7366bf0061b5d2feb8bff0f8e10c5dfa" kind="function"><name>setVerbose</name></member>
     <member refid="classamrex_1_1GMRES_1aafa45161777f122515985aab18d51328" kind="function"><name>setRestartLength</name></member>
-    <member refid="classamrex_1_1GMRES_1a46997a49b69cf5d6607b0a37c524e695" kind="function"><name>setNumIters</name></member>
+    <member refid="classamrex_1_1GMRES_1a8dc2651f6ba5a851cd4f1fd3e00d670e" kind="function"><name>setMaxIters</name></member>
     <member refid="classamrex_1_1GMRES_1a0e06adae47932cbfeb075dad9a3504b5" kind="function"><name>getNumIters</name></member>
     <member refid="classamrex_1_1GMRES_1ae3b04d357f2d34f4c13eae2f87a85e36" kind="function"><name>getStatus</name></member>
     <member refid="classamrex_1_1GMRES_1ac75b9399941beef86512010face51879" kind="function"><name>getResidualNorm</name></member>
@@ -5266,24 +5266,34 @@
     <member refid="classamrex_1_1GMRES_1ab5c227d648d01f4870f5083500d29d32" kind="function"><name>update_hessenberg</name></member>
   </compound>
   <compound refid="classamrex_1_1GMRESMLMGT" kind="class"><name>amrex::GMRESMLMGT</name>
-    <member refid="classamrex_1_1GMRESMLMGT_1a912c1d0087f2e931e0968756a27a9ad4" kind="typedef"><name>MF</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a530d128b68f55300e7ef8413deec2cb1" kind="typedef"><name>RT</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1adef71e99122427dd31646d6bec646e90" kind="variable"><name>m_mlmg</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a0c1796715f8f2361a4609e3fbfa7ecb3" kind="variable"><name>m_linop</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a5d7b870748c93d57d4836b9540d5f95d" kind="variable"><name>m_use_precond</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a82f8eb26907bc1bd17f32ee7ab04b734" kind="function"><name>GMRESMLMGT</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a16ed462ee1411539399da0873e7c8b4d" kind="function"><name>makeVecRHS</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a0315cbcfc479f053bdd5c61706fb7d4c" kind="function"><name>makeVecLHS</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1af6dbb36de29d26303c643d2acc90dac0" kind="function"><name>norm2</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a5c56016b01ce8b09fcd88f73d054b238" kind="function"><name>dotProduct</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1abf2fd7378757ffc2f79d27e54ceffc95" kind="function"><name>apply</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1ab9fad14cb29b7a6f3011b20e24177057" kind="function"><name>precond</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a246bb81358ceefacd1fb9121cab2338c" kind="function"><name>usePrecond</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a595601f271b12bf1999e4f2280afa600" kind="function"><name>scale</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a2d0d6b9ebbda5bc21a87acc1686df9b8" kind="function"><name>setToZero</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a548cda1266ef70290d15e186468149f4" kind="function"><name>assign</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1abbd15ede7c1e928a96db089dd19ed082" kind="function"><name>increment</name></member>
-    <member refid="classamrex_1_1GMRESMLMGT_1a4c92dac5128b9bce019e3f2d6dc3a94b" kind="function"><name>linComb</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a93a0ba608c9adab93befd5acebdc63bc" kind="typedef"><name>MG</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a58326c59efaee01db3f1d4c798d4e238" kind="typedef"><name>RT</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a82c8616f7458eb2f29532e5bc34a715c" kind="typedef"><name>GM</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a32ef8424897f89206ea72f7f3affbdd0" kind="variable"><name>m_gmres</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a53ec7ead138ca2c0e79f0801f44bd1e6" kind="variable"><name>m_mlmg</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a3f967c79809e51f55b8abefadc3cdd1d" kind="variable"><name>m_linop</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1ab701de7cf398139b6f8804adb3eddd55" kind="variable"><name>m_use_precond</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1ad478296de575a072a91d73b9f8b0332e" kind="variable"><name>m_prop_zero</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a23db5527f7bcd75ba78997016648b906" kind="function"><name>GMRESMLMGT</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a12b1b279c8233ed99af1f9765a46d502" kind="function"><name>solve</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a51b0cd328dd0bb2bf71ff67d266b673b" kind="function"><name>setVerbose</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1ae47a754ba15bd25bcb9b10f95b590364" kind="function"><name>setMaxIters</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a3584e996a150386dbf8ee7b731ee3ffa" kind="function"><name>getNumIters</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1aca83734d854ed846c8c16e8cba18ab0a" kind="function"><name>getResidualNorm</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a501781e1e1e7c61244eed962066f1419" kind="function"><name>getGMRES</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a56349014c0d985e20f66cb789fc37d9f" kind="function"><name>setPropertyOfZero</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a149cc7245fa38541199e133b4ba3ecfc" kind="function"><name>makeVecRHS</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a757525ba6bbe0f037464b6bea3769300" kind="function"><name>makeVecLHS</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1ac83213b50387ae52458f8f43473f72db" kind="function"><name>norm2</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a3784c11ec581a1ab5edb0e2d2308e86f" kind="function"><name>dotProduct</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a69ba35dbecc64670348ed8611260dfd9" kind="function"><name>apply</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1afe3c1ec699c60ebc52f1a4d8554a4889" kind="function"><name>precond</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1acba210ae4c73c6e484ba27502baafbed" kind="function"><name>usePrecond</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1ab8b6fa6cf559c595468bf5e24e6e6f0c" kind="function"><name>scale</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1aa7abf628225cd94e5163b1400f549417" kind="function"><name>setToZero</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a3c36428a18730eb564b0b11000f5088d" kind="function"><name>assign</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a334579fbf27c137837e3860305636d65" kind="function"><name>increment</name></member>
+    <member refid="classamrex_1_1GMRESMLMGT_1a71a6bdfd44b64400a631d7cee6c25cb2" kind="function"><name>linComb</name></member>
   </compound>
   <compound refid="structamrex_1_1detail_1_1gpu__tuple__element" kind="struct"><name>amrex::detail::gpu_tuple_element</name>
     <member refid="structamrex_1_1detail_1_1gpu__tuple__element_1a33dfcf0ade1a0d7f43ce7a1249a48c54" kind="variable"><name>m_value</name></member>
@@ -11455,8 +11465,8 @@
   </compound>
   <compound refid="structamrex_1_1VectorTag" kind="struct"><name>amrex::VectorTag</name>
     <member refid="structamrex_1_1VectorTag_1a3769fec569be6c2c4379be5bdd1329b6" kind="variable"><name>p</name></member>
-    <member refid="structamrex_1_1VectorTag_1ad0d6dc44218f3617cbd739d953ea577d" kind="variable"><name>m_size</name></member>
-    <member refid="structamrex_1_1VectorTag_1a39f4b6f8eff085cdbe1c56f1c637f932" kind="function"><name>size</name></member>
+    <member refid="structamrex_1_1VectorTag_1a86498b7a5078e5d717d9208721216af7" kind="variable"><name>m_size</name></member>
+    <member refid="structamrex_1_1VectorTag_1aee7d2fdc93ce371ec5059e473dc4a546" kind="function"><name>size</name></member>
   </compound>
   <compound refid="structamrex_1_1EB2_1_1Vertex" kind="struct"><name>amrex::EB2::Vertex</name>
     <member refid="structamrex_1_1EB2_1_1Vertex_1a6b846c1c1abd86195353d49a275f6356" kind="variable"><name>m_cell</name></member>
@@ -12018,7 +12028,7 @@
     <member refid="namespaceamrex_1a3d926e5fad46a5fd2da4b495b16f449d" kind="typedef"><name>InterpBndryData</name></member>
     <member refid="namespaceamrex_1a56136e9147b36f3e7fcdf12c22760b58" kind="typedef"><name>fInterpBndryData</name></member>
     <member refid="namespaceamrex_1a9418cfdd8457daebb1c971d4e38ceb17" kind="typedef"><name>YAFluxRegister</name></member>
-    <member refid="namespaceamrex_1a0c1c5a8f4207ad0b30a097cb19e09055" kind="typedef"><name>GMRESMLMG</name></member>
+    <member refid="namespaceamrex_1a9fb859eb850cc164b1a83c9e4c7d53bb" kind="typedef"><name>GMRESMLMG</name></member>
     <member refid="namespaceamrex_1aa9c032480d2659c266fb23d70800f6a5" kind="typedef"><name>MLABecLaplacian</name></member>
     <member refid="namespaceamrex_1afd71b3eea629ca099ace90909350cc56" kind="typedef"><name>MLALaplacian</name></member>
     <member refid="namespaceamrex_1a2116fd8f117dd8ebb01e6a3b99c7947e" kind="typedef"><name>MLCellABecLap</name></member>
@@ -13932,8 +13942,8 @@
     <member refid="namespaceamrex_1_1detail_1a250b5d3b18b57c96185794d45778bceb" kind="function"><name>make_table</name></member>
     <member refid="namespaceamrex_1_1detail_1a6b718ebf3b92d82b916b98499609bd05" kind="function"><name>make_table</name></member>
     <member refid="namespaceamrex_1_1detail_1a43212bf61bae286b64089dccda5c6c32" kind="function"><name>make_table</name></member>
-    <member refid="namespaceamrex_1_1detail_1aeb2ce09d5dbb669cf1fb1216def865d7" kind="function"><name>get_tag_size</name></member>
-    <member refid="namespaceamrex_1_1detail_1ab20bfe53fcf934af65a29c91ab35e764" kind="function"><name>get_tag_size</name></member>
+    <member refid="namespaceamrex_1_1detail_1a76f10e7b0bf11c2e90199e2ec1d964e6" kind="function"><name>get_tag_size</name></member>
+    <member refid="namespaceamrex_1_1detail_1a2e2c7166d29e28f726289f6ca33b326a" kind="function"><name>get_tag_size</name></member>
     <member refid="namespaceamrex_1_1detail_1a926fe273db7aaa817471c44983bf42e4" kind="function"><name>tagparfor_call_f</name></member>
     <member refid="namespaceamrex_1_1detail_1a759738bf4cd5871bbdf8f7317043dd90" kind="function"><name>tagparfor_call_f</name></member>
     <member refid="namespaceamrex_1_1detail_1a3f8fddb521eea2e91972e8a665d0e1cc" kind="function"><name>ParallelFor_doit</name></member>
