@@ -54,6 +54,7 @@ var classamrex_1_1MLEBABecLap =
     [ "update", "classamrex_1_1MLEBABecLap.html#ad6b4be6cef1783fdb223e5aa7eb50343", null ],
     [ "m_a_coeffs", "classamrex_1_1MLEBABecLap.html#a48c0efb6e525e5c901c1ee34fa5119ca", null ],
     [ "m_a_scalar", "classamrex_1_1MLEBABecLap.html#ac43a9c8728bb7861415d80283d41e064", null ],
+    [ "m_acoef_set", "classamrex_1_1MLEBABecLap.html#a148d4b95cd52c3e753735aadaeeb7bb5", null ],
     [ "m_b_coeffs", "classamrex_1_1MLEBABecLap.html#ad631dff72b03c8a0d629bd735a63078e", null ],
     [ "m_b_scalar", "classamrex_1_1MLEBABecLap.html#a1fb977f5a6b0c8682e5f658a4dc9db0c", null ],
     [ "m_beta_loc", "classamrex_1_1MLEBABecLap.html#afc12bcb23ed82f37ceae7da2d6f44eea", null ],
@@ -64,5 +65,6 @@ var classamrex_1_1MLEBABecLap =
     [ "m_is_singular", "classamrex_1_1MLEBABecLap.html#a69f0aa528f3437aed6e5fbc26d3f1820", null ],
     [ "m_ncomp", "classamrex_1_1MLEBABecLap.html#a85df3961f7b0ad04d0ad1463ea1e24da", null ],
     [ "m_needs_update", "classamrex_1_1MLEBABecLap.html#aadf975aed65ffe24b230421d1366de50", null ],
-    [ "m_phi_loc", "classamrex_1_1MLEBABecLap.html#ae0ea21faa4cc1aeadf8641b37d8cf59f", null ]
+    [ "m_phi_loc", "classamrex_1_1MLEBABecLap.html#ae0ea21faa4cc1aeadf8641b37d8cf59f", null ],
+    [ "m_scalars_set", "classamrex_1_1MLEBABecLap.html#aeef8369bc805a494e2be105d59873c66", null ]
 ];

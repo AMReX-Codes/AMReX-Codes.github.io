@@ -1,5 +1,9 @@
 var NAVTREEINDEX84 =
 {
+"structmake__particle.html#a8f0911901c0819ea99040d1974667ded":[3,0,23,0],
+"structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html":[3,0,24],
+"structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html#a1528572e442f0232130d8cf002d985cc":[3,0,24,0],
+"structprocess__topology__t.html":[3,0,27],
 "structprocess__topology__t.html#a17cda1536be174c164b9d442fcf354af":[3,0,27,4],
 "structprocess__topology__t.html#a34fd641ec3073c157da173359feb99e6":[3,0,27,1],
 "structprocess__topology__t.html#a5fa8fdbcfe943816e8c19862dffddeaa":[3,0,27,2],

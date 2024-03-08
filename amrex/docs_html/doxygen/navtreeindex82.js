@@ -1,5 +1,9 @@
 var NAVTREEINDEX82 =
 {
+"structamrex_1_1SparseBinIteratorFactory.html#a1bba7f1d49bf6b695d5a3bb7986a371a":[3,0,0,513,3],
+"structamrex_1_1SparseBinIteratorFactory.html#a3f84a41c582546501b263369e4d13ef1":[3,0,0,513,11],
+"structamrex_1_1SparseBinIteratorFactory.html#a7bbba0567292af76a5b3d7937dcadd76":[3,0,0,513,8],
+"structamrex_1_1SparseBinIteratorFactory.html#a82d5a524da2caca7c59de106ff74d3d8":[3,0,0,513,0],
 "structamrex_1_1SparseBinIteratorFactory.html#acef0290944c045ddf3c3b5e0e8a457bb":[3,0,0,513,1],
 "structamrex_1_1SparseBinIteratorFactory.html#ade6704bbc963e4c3734bd2348e79847b":[3,0,0,513,10],
 "structamrex_1_1SparseBinIteratorFactory.html#aeb4fc11d76183b0156cbeb8d8c0862af":[3,0,0,513,5],
@@ -241,13 +245,9 @@ var NAVTREEINDEX82 =
 "structamrex_1_1algoim_1_1EBPlane.html#af7a978343150dd58b5d75114ad774fbe":[3,0,0,0,0,7],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html":[3,0,0,0,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a07854fea58e09b2b7f36b91fcd1dccf1":[3,0,0,0,5,8],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,1],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a41e2ad2b70c3c0a29ae6027216bdf737":[3,0,0,0,5,0],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a4a5d0a66ecd91a77f268b082f6f7470c":[3,0,0,0,5,5],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a5c48af2773f18e16fb2667b334e85bef":[3,0,0,0,5,13],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[3,0,0,0,5,2],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a6f02ffa4e9e64c01721321d5a3b7e44b":[3,0,0,0,5,9],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#a9352b5694ad95664dce6d6214668eb05":[3,0,0,0,5,11],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#aa84aea4f19fd97919030c7bc2b2bce52":[3,0,0,0,5,12],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#abcda5211e966062bd42285a7a9427467":[3,0,0,0,5,6]
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#a68bfd20ce2cfe059f08d82bcc99c268c":[3,0,0,0,5,2]
 };
