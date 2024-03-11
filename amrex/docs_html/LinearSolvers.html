@@ -332,6 +332,14 @@ a cell-centered array is a convenience of implementation.</p>
 <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">robinbc_a</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">robinbc_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">robinbc_f</span></code>
 store the numerical values in the condition,
 <span class="math notranslate nohighlight">\(a\phi + b\frac{\partial\phi}{\partial n} = f\)</span>.</p>
+<ol class="arabic simple" start="4">
+<li><p>Nodal solver provides the option to use an overset mask:</p></li>
+</ol>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// omask is either 0 or 1. 1 means the node is an unknown. 0 means it&#39;s known.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setOversetMask</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">amrlev</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">iMultiFab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_dmask</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note this is an integer (not bool) MultiFab, so the values must be only either 0 or 1.</p>
 </section>
 <section id="parameters">
 <span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h1>
