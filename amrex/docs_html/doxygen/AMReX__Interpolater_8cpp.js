@@ -3,6 +3,7 @@ var AMReX__Interpolater_8cpp =
     [ "cell_bilinear_interp", "AMReX__Interpolater_8cpp.html#aa4a112132159dbe65a15461c50f001e5", null ],
     [ "cell_cons_interp", "AMReX__Interpolater_8cpp.html#aacee8b90ed4ac329d2aaef7fcbc8ef22", null ],
     [ "cell_quartic_interp", "AMReX__Interpolater_8cpp.html#abac483ba9c2744a548a0fbd09c679165", null ],
+    [ "face_cons_linear_interp", "AMReX__Interpolater_8cpp.html#aef04bbef497235eff84bbe005d2dd5dc", null ],
     [ "face_divfree_interp", "AMReX__Interpolater_8cpp.html#ac63805de43a5687215fb203dc3495abc", null ],
     [ "face_linear_interp", "AMReX__Interpolater_8cpp.html#a2079e72d4d0c28adef63dabe23fc630e", null ],
     [ "lincc_interp", "AMReX__Interpolater_8cpp.html#aeb0ce1e79e29c10f31e875b21b47405f", null ],

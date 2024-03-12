@@ -596,6 +596,7 @@ var hierarchy =
         [ "amrex::CellConservativeQuartic", "classamrex_1_1CellConservativeQuartic.html", null ],
         [ "amrex::CellQuadratic", "classamrex_1_1CellQuadratic.html", null ],
         [ "amrex::CellQuartic", "classamrex_1_1CellQuartic.html", null ],
+        [ "amrex::FaceConservativeLinear", "classamrex_1_1FaceConservativeLinear.html", null ],
         [ "amrex::FaceDivFree", "classamrex_1_1FaceDivFree.html", null ],
         [ "amrex::FaceLinear", "classamrex_1_1FaceLinear.html", null ],
         [ "amrex::NodeBilinear", "classamrex_1_1NodeBilinear.html", null ],

@@ -269,6 +269,7 @@ var annotated_dup =
       [ "CellConservativeQuartic", "classamrex_1_1CellConservativeQuartic.html", "classamrex_1_1CellConservativeQuartic" ],
       [ "FaceDivFree", "classamrex_1_1FaceDivFree.html", "classamrex_1_1FaceDivFree" ],
       [ "FaceLinear", "classamrex_1_1FaceLinear.html", "classamrex_1_1FaceLinear" ],
+      [ "FaceConservativeLinear", "classamrex_1_1FaceConservativeLinear.html", "classamrex_1_1FaceConservativeLinear" ],
       [ "CellQuartic", "classamrex_1_1CellQuartic.html", "classamrex_1_1CellQuartic" ],
       [ "MFInterpolater", "classamrex_1_1MFInterpolater.html", "classamrex_1_1MFInterpolater" ],
       [ "MFPCInterp", "classamrex_1_1MFPCInterp.html", "classamrex_1_1MFPCInterp" ],

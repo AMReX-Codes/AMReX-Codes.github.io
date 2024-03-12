@@ -1,5 +1,7 @@
 var NAVTREEINDEX17 =
 {
+"AMReX__ParallelReduce_8H_source.html":[4,0,0,2,207],
+"AMReX__ParmParse_8H.html":[4,0,0,2,211],
 "AMReX__ParmParse_8H.html#a99b5e66ea694e5ca5a50ee2c335e8678":[4,0,0,2,211,4],
 "AMReX__ParmParse_8H_source.html":[4,0,0,2,211],
 "AMReX__ParmParse_8cpp.html":[4,0,0,2,210],
@@ -247,7 +249,5 @@ var NAVTREEINDEX17 =
 "AMReX__ParticleInSituBridge_8H_source.html":[4,0,0,5,8,20],
 "AMReX__ParticleInit_8H.html":[4,0,0,7,22],
 "AMReX__ParticleInit_8H_source.html":[4,0,0,7,22],
-"AMReX__ParticleInterpolators_8H.html":[4,0,0,7,23],
-"AMReX__ParticleInterpolators_8H_source.html":[4,0,0,7,23],
-"AMReX__ParticleLocator_8H.html":[4,0,0,7,25]
+"AMReX__ParticleInterpolators_8H.html":[4,0,0,7,23]
 };
