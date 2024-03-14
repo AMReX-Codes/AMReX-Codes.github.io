@@ -1,5 +1,6 @@
 var NAVTREEINDEX70 =
 {
+"namespaceamrex_1_1Scan_1_1Type.html":[2,0,0,40,1],
 "namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc":[2,0,0,40,1,2],
 "namespaceamrex_1_1Scan_1_1Type.html#adc276b3550668e305c5bc5b482db0c4f":[2,0,0,40,1,3],
 "namespaceamrex_1_1Scan_1_1detail.html":[2,0,0,40,0],
@@ -162,14 +163,14 @@ var NAVTREEINDEX70 =
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,659],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,658],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
-"namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,660],
+"namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,654],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,657],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,7,1],
-"namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,7,5],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,661],
+"namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,7,5],
 "namespaceamrex_1_1experimental.html":[2,0,0,9],
 "namespaceamrex_1_1experimental.html#a0057b5ee6f8da3859c3b1c74b38c7537":[2,0,0,9,10],
 "namespaceamrex_1_1experimental.html#a0de1a6f8c5b59164435a7c9eb908d225":[2,0,0,9,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX70 =
 "namespaceamrex_1_1openbc.html#a8233d38e6789cbe1cd5dc3138f4bd389":[2,0,0,26,6],
 "namespaceamrex_1_1openbc.html#a9fe6fda4f0515c834002a49cba04cc2e":[2,0,0,26,4],
 "namespaceamrex_1_1openbc.html#acc33b913d7ecfb81353190b3ce2e95df":[2,0,0,26,2],
-"namespaceamrex_1_1openbc.html#acce74b37bc2ee4518cb6bd2d058f2b53":[2,0,0,26,3],
-"namespaceamrex_1_1openbc.html#adde2e79c224bebd89be90830c87b7a74":[2,0,0,26,10]
+"namespaceamrex_1_1openbc.html#acce74b37bc2ee4518cb6bd2d058f2b53":[2,0,0,26,3]
 };
