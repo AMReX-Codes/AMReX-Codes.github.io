@@ -72,7 +72,7 @@ var classamrex_1_1BoxList =
     [ "size", "classamrex_1_1BoxList.html#ac4030d4780cc8ca926857c82819c1c42", null ],
     [ "surroundingNodes", "classamrex_1_1BoxList.html#a1407ab0108776da8d7fe9a05381f5041", null ],
     [ "surroundingNodes", "classamrex_1_1BoxList.html#acececbf6a71ec11bf660a2843192d6ad", null ],
-    [ "swap", "classamrex_1_1BoxList.html#a2d15815fbdd75a908fc1b5363a73b189", null ],
+    [ "swap", "classamrex_1_1BoxList.html#a9d63414afae1383f87a0fa6bda4c3cc7", null ],
     [ "BoxDomain", "classamrex_1_1BoxList.html#ad02d5a19433d5484dee5fb260bbc9f06", null ],
     [ "btype", "classamrex_1_1BoxList.html#a70df1b0aadeb1c7f0360299f0e2b2fc4", null ],
     [ "m_lbox", "classamrex_1_1BoxList.html#adeadcf55bf1de6d0a14007817795bfbf", null ]
