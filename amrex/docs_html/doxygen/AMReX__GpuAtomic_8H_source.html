@@ -339,8 +339,8 @@ $(document).ready(function(){initNavTree('AMReX__GpuAtomic_8H_source.html',''); 
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        ))</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="AMReX__GpuQualifiers_8H.html#a3db6d2559ac1bb79c7f2a6dfe25917c8">AMREX_IF_ON_HOST</a>((</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            T old = *add;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            T <span class="keyword">const</span> tmp = op(old, value);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> (cond(tmp)) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            T <span class="keyword">const</span> tmp = std::forward&lt;Op&gt;(op)(old, value);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> (std::forward&lt;Cond&gt;(cond)(tmp)) {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                *add = tmp;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            } <span class="keywordflow">else</span> {</div>

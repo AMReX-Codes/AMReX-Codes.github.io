@@ -11,7 +11,7 @@ var classamrex_1_1StreamRetry =
     [ "maxTries", "classamrex_1_1StreamRetry.html#a19edc2eb7f1dc9251a5de7ff754e12d0", null ],
     [ "nStreamErrors", "classamrex_1_1StreamRetry.html#a56fbf590918f701816c5567f4869c6de", null ],
     [ "spos", "classamrex_1_1StreamRetry.html#a0a9ed9969064cb80a76c99f89d3bf4f2", null ],
-    [ "sros", "classamrex_1_1StreamRetry.html#a3c6ead4d87a1a0d6a05e894e17f72104", null ],
+    [ "sros", "classamrex_1_1StreamRetry.html#af59c34dc9c7f3ff811de893776f96ea1", null ],
     [ "suffix", "classamrex_1_1StreamRetry.html#a87fb6f4eaeaa1e62c31a3f1b4c451a87", null ],
     [ "tries", "classamrex_1_1StreamRetry.html#ade275d3bbc75ea3549c7249d97e74f33", null ]
 ];

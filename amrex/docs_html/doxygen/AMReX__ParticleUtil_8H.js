@@ -19,10 +19,10 @@ var AMReX__ParticleUtil_8H =
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a9624cde7b9ad11a1692714a8a2cf4d5c", null ],
     [ "numParticlesOutOfRange", "AMReX__ParticleUtil_8H.html#a16b2ad610aeda065996254dcb64e1210", null ],
     [ "numTilesInBox", "AMReX__ParticleUtil_8H.html#a77b016483c8263c1a67e93d79d31da4c", null ],
-    [ "partitionParticles", "AMReX__ParticleUtil_8H.html#a4d993b6970c84ce2fdfc7fa8f43dd062", null ],
-    [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#acc32428f7be3f26ac16d5089365ca7a8", null ],
+    [ "partitionParticles", "AMReX__ParticleUtil_8H.html#ac8c341f9e253720288265d6112c4ab9e", null ],
+    [ "partitionParticlesByDest", "AMReX__ParticleUtil_8H.html#a2808a58ab833a933f7909baf632466b7", null ],
     [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ad434592fa38d501d9db9bfb648bb9140", null ],
-    [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#a2e4af4bb3015a4534ca0efc19aba6dcf", null ],
+    [ "PermutationForDeposition", "AMReX__ParticleUtil_8H.html#ac67c5b805cea20326010666416cd773f", null ],
     [ "removeInvalidParticles", "AMReX__ParticleUtil_8H.html#a57ef6a02e91160412bbfd6fdbba1b820", null ],
     [ "SameIteratorsOK", "AMReX__ParticleUtil_8H.html#ac8512b687a529806d0f382cf7c9eee97", null ]
 ];

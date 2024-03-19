@@ -5,7 +5,7 @@
     <innerclass refid="structamrex_1_1RungeKutta_1_1PostStageNoOp" prot="public">amrex::RungeKutta::PostStageNoOp</innerclass>
     <innernamespace refid="namespaceamrex_1_1RungeKutta_1_1detail">amrex::RungeKutta::detail</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1a107281bb7995f80eb6db6fb405809ea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1a7b3a5cb61b6d1f82313a73e66fb218ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -23,7 +23,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::RungeKutta::RK2</definition>
-        <argsstring>(MF &amp;Uold, MF &amp;Unew, Real time, Real dt, F &amp;&amp;frhs, FB &amp;&amp;fillbndry, P &amp;&amp;post_stage=PostStageNoOp())</argsstring>
+        <argsstring>(MF &amp;Uold, MF &amp;Unew, Real time, Real dt, F const &amp;frhs, FB const &amp;fillbndry, P const &amp;post_stage=PostStageNoOp())</argsstring>
         <name>RK2</name>
         <param>
           <type>MF &amp;</type>
@@ -42,15 +42,15 @@
           <declname>dt</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type>F const &amp;</type>
           <declname>frhs</declname>
         </param>
         <param>
-          <type>FB &amp;&amp;</type>
+          <type>FB const &amp;</type>
           <declname>fillbndry</declname>
         </param>
         <param>
-          <type>P &amp;&amp;</type>
+          <type>P const &amp;</type>
           <declname>post_stage</declname>
           <defval><ref refid="structamrex_1_1RungeKutta_1_1PostStageNoOp" kindref="compound">PostStageNoOp</ref>()</defval>
         </param>
@@ -121,7 +121,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="158" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="158" bodyend="180"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1a8375e990286224b1183ba166695978e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1ae717fc5f1594b2062a5178d495ae0edd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -142,7 +142,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::RungeKutta::RK3</definition>
-        <argsstring>(MF &amp;Uold, MF &amp;Unew, Real time, Real dt, F &amp;&amp;frhs, FB &amp;&amp;fillbndry, R &amp;&amp;store_crse_data, P &amp;&amp;post_stage=PostStageNoOp())</argsstring>
+        <argsstring>(MF &amp;Uold, MF &amp;Unew, Real time, Real dt, F const &amp;frhs, FB const &amp;fillbndry, R const &amp;store_crse_data, P const &amp;post_stage=PostStageNoOp())</argsstring>
         <name>RK3</name>
         <param>
           <type>MF &amp;</type>
@@ -161,19 +161,19 @@
           <declname>dt</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type>F const &amp;</type>
           <declname>frhs</declname>
         </param>
         <param>
-          <type>FB &amp;&amp;</type>
+          <type>FB const &amp;</type>
           <declname>fillbndry</declname>
         </param>
         <param>
-          <type>R &amp;&amp;</type>
+          <type>R const &amp;</type>
           <declname>store_crse_data</declname>
         </param>
         <param>
-          <type>P &amp;&amp;</type>
+          <type>P const &amp;</type>
           <declname>post_stage</declname>
           <defval><ref refid="structamrex_1_1RungeKutta_1_1PostStageNoOp" kindref="compound">PostStageNoOp</ref>()</defval>
         </param>
@@ -252,7 +252,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" line="196" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_RungeKutta.H" bodystart="196" bodyend="230"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1af07c90c5bce95ed34b87a09e4d45f7b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1RungeKutta_1adafe95f71429898362d5c7d0f9e0ccd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -273,7 +273,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::RungeKutta::RK4</definition>
-        <argsstring>(MF &amp;Uold, MF &amp;Unew, Real time, Real dt, F &amp;&amp;frhs, FB &amp;&amp;fillbndry, R &amp;&amp;store_crse_data, P &amp;&amp;post_stage=PostStageNoOp())</argsstring>
+        <argsstring>(MF &amp;Uold, MF &amp;Unew, Real time, Real dt, F const &amp;frhs, FB const &amp;fillbndry, R const &amp;store_crse_data, P const &amp;post_stage=PostStageNoOp())</argsstring>
         <name>RK4</name>
         <param>
           <type>MF &amp;</type>
@@ -292,19 +292,19 @@
           <declname>dt</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type>F const &amp;</type>
           <declname>frhs</declname>
         </param>
         <param>
-          <type>FB &amp;&amp;</type>
+          <type>FB const &amp;</type>
           <declname>fillbndry</declname>
         </param>
         <param>
-          <type>R &amp;&amp;</type>
+          <type>R const &amp;</type>
           <declname>store_crse_data</declname>
         </param>
         <param>
-          <type>P &amp;&amp;</type>
+          <type>P const &amp;</type>
           <declname>post_stage</declname>
           <defval><ref refid="structamrex_1_1RungeKutta_1_1PostStageNoOp" kindref="compound">PostStageNoOp</ref>()</defval>
         </param>

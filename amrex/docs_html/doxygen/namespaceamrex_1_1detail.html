@@ -293,21 +293,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a796da28b12c3448559ad1af823e855af"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </td></tr>
 <tr class="memitem:a796da28b12c3448559ad1af823e855af"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> std::enable_if_t&lt; I==N-1, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a796da28b12c3448559ad1af823e855af">tuple_copy</a> (TP1 &amp;a, TP2 &amp;&amp;b)</td></tr>
 <tr class="separator:a796da28b12c3448559ad1af823e855af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa989894bc9a9c24c61dfb1b56a38fb4a"><td class="memTemplParams" colspan="2">template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </td></tr>
-<tr class="memitem:aa989894bc9a9c24c61dfb1b56a38fb4a"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aa989894bc9a9c24c61dfb1b56a38fb4a">make_tuple</a> (TP1 &amp;&amp;a, TP2 &amp;&amp;b, std::index_sequence&lt; N1... &gt; const &amp;, std::index_sequence&lt; N2... &gt; const &amp;)</td></tr>
-<tr class="separator:aa989894bc9a9c24c61dfb1b56a38fb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d441e7b18bae347c4ed240bcb0b4eaa"><td class="memTemplParams" colspan="2">template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </td></tr>
+<tr class="memitem:a1d441e7b18bae347c4ed240bcb0b4eaa"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a1d441e7b18bae347c4ed240bcb0b4eaa">make_tuple</a> (TP1 const &amp;a, TP2 const &amp;b, std::index_sequence&lt; N1... &gt; const &amp;, std::index_sequence&lt; N2... &gt; const &amp;)</td></tr>
+<tr class="separator:a1d441e7b18bae347c4ed240bcb0b4eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args&gt; </td></tr>
 <tr class="memitem:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af2dd4ad4f928e269d1bc2dce24f48b92">INVOKE</a> (F &amp;&amp;f, Args &amp;&amp;... args) -&gt; decltype(f(std::forward&lt; Args &gt;(args)...))</td></tr>
 <tr class="separator:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplParams" colspan="2">template&lt;typename F , typename TP , std::size_t... N&gt; </td></tr>
 <tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676">apply_impl</a> (F &amp;&amp;f, TP &amp;&amp;t, std::index_sequence&lt; N... &gt;) -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt; F, <a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">detail::tuple_decay_t</a>&lt; TP &gt; &gt;::type</td></tr>
 <tr class="separator:ac60a1b88f1421c5113c694d9460de676"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e0b92826e807152f4d649b33c45336"><td class="memTemplParams" colspan="2">template&lt;typename TL , typename F , std::size_t... N&gt; </td></tr>
-<tr class="memitem:a25e0b92826e807152f4d649b33c45336"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a25e0b92826e807152f4d649b33c45336">for_each_impl</a> (F &amp;&amp;f, std::index_sequence&lt; N... &gt;)</td></tr>
-<tr class="separator:a25e0b92826e807152f4d649b33c45336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7429fb649928d40cf1893f949dd3ba0b"><td class="memTemplParams" colspan="2">template&lt;typename TL , typename F , std::size_t... N&gt; </td></tr>
-<tr class="memitem:a7429fb649928d40cf1893f949dd3ba0b"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a7429fb649928d40cf1893f949dd3ba0b">for_each_until_impl</a> (F &amp;&amp;f, std::index_sequence&lt; N... &gt;)</td></tr>
-<tr class="separator:a7429fb649928d40cf1893f949dd3ba0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af378b35270a3e9fbab911a6fe0058eb5"><td class="memTemplParams" colspan="2">template&lt;typename TL , typename F , std::size_t... N&gt; </td></tr>
+<tr class="memitem:af378b35270a3e9fbab911a6fe0058eb5"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af378b35270a3e9fbab911a6fe0058eb5">for_each_impl</a> (F const &amp;f, std::index_sequence&lt; N... &gt;)</td></tr>
+<tr class="separator:af378b35270a3e9fbab911a6fe0058eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e84dd049acffc06333882e476f741ce"><td class="memTemplParams" colspan="2">template&lt;typename TL , typename F , std::size_t... N&gt; </td></tr>
+<tr class="memitem:a8e84dd049acffc06333882e476f741ce"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a8e84dd049acffc06333882e476f741ce">for_each_until_impl</a> (F const &amp;f, std::index_sequence&lt; N... &gt;)</td></tr>
+<tr class="separator:a8e84dd049acffc06333882e476f741ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad867a3bb23fa15988044c68bf1266b7c"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t N&gt; </td></tr>
 <tr class="memitem:ad867a3bb23fa15988044c68bf1266b7c"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ad867a3bb23fa15988044c68bf1266b7c">SingleTypeMultiplier_impl</a> ()</td></tr>
 <tr class="separator:ad867a3bb23fa15988044c68bf1266b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1318,8 +1318,8 @@ template&lt;typename T , typename Size , template&lt; class &gt; class Allocator
 
 </div>
 </div>
-<a id="a25e0b92826e807152f4d649b33c45336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25e0b92826e807152f4d649b33c45336">&#9670;&nbsp;</a></span>for_each_impl()</h2>
+<a id="af378b35270a3e9fbab911a6fe0058eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af378b35270a3e9fbab911a6fe0058eb5">&#9670;&nbsp;</a></span>for_each_impl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1332,7 +1332,7 @@ template&lt;typename TL , typename F , std::size_t... N&gt; </div>
         <tr>
           <td class="memname">constexpr void amrex::detail::for_each_impl </td>
           <td>(</td>
-          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramtype">F const &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -1356,8 +1356,8 @@ template&lt;typename TL , typename F , std::size_t... N&gt; </div>
 
 </div>
 </div>
-<a id="a7429fb649928d40cf1893f949dd3ba0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7429fb649928d40cf1893f949dd3ba0b">&#9670;&nbsp;</a></span>for_each_until_impl()</h2>
+<a id="a8e84dd049acffc06333882e476f741ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e84dd049acffc06333882e476f741ce">&#9670;&nbsp;</a></span>for_each_until_impl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1370,7 +1370,7 @@ template&lt;typename TL , typename F , std::size_t... N&gt; </div>
         <tr>
           <td class="memname">constexpr bool amrex::detail::for_each_until_impl </td>
           <td>(</td>
-          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramtype">F const &amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -1834,8 +1834,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aa989894bc9a9c24c61dfb1b56a38fb4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa989894bc9a9c24c61dfb1b56a38fb4a">&#9670;&nbsp;</a></span>make_tuple()</h2>
+<a id="a1d441e7b18bae347c4ed240bcb0b4eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d441e7b18bae347c4ed240bcb0b4eaa">&#9670;&nbsp;</a></span>make_tuple()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1848,13 +1848,13 @@ template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::s
         <tr>
           <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> R amrex::detail::make_tuple </td>
           <td>(</td>
-          <td class="paramtype">TP1 &amp;&amp;&#160;</td>
+          <td class="paramtype">TP1 const &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">TP2 &amp;&amp;&#160;</td>
+          <td class="paramtype">TP2 const &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>

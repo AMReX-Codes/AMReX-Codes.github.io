@@ -5,7 +5,7 @@ var classamrex_1_1SparseBins =
     [ "const_pointer_input_type", "classamrex_1_1SparseBins.html#adb3621945c7da83b77356b3d629e1ced", null ],
     [ "const_pointer_type", "classamrex_1_1SparseBins.html#ae5fc65b5907d0cf7667835697dabd08c", null ],
     [ "index_type", "classamrex_1_1SparseBins.html#acd6d4073c186417cb25f04de695363d0", null ],
-    [ "build", "classamrex_1_1SparseBins.html#aeeb518b1960f502e56d36ce33fd36cec", null ],
+    [ "build", "classamrex_1_1SparseBins.html#acf01a3502124d40b6f58035020394573", null ],
     [ "getBinIteratorFactory", "classamrex_1_1SparseBins.html#a475590b909390bc33d62c299008f46b0", null ],
     [ "getNonZeroBinsPtr", "classamrex_1_1SparseBins.html#a54c4ce654739bc4d76a7e8c4859a7be6", null ],
     [ "getNonZeroBinsPtr", "classamrex_1_1SparseBins.html#a20ea0ea6dcb1b42a55b691060c1cffaa", null ],

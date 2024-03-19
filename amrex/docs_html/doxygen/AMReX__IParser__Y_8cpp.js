@@ -8,16 +8,11 @@ var AMReX__IParser__Y_8cpp =
     [ "amrex_iparser_delete", "AMReX__IParser__Y_8cpp.html#a79e084d7248e50fe5cd9f6037db2b2e1", null ],
     [ "amrex_iparser_new", "AMReX__IParser__Y_8cpp.html#a414ba7de5a008178d4fa0953a6e69073", null ],
     [ "amrex_iparsererror", "AMReX__IParser__Y_8cpp.html#accf7d387e26ee1deb890279fca0ca9b4", null ],
-    [ "iparser_aligned_size", "AMReX__IParser__Y_8cpp.html#aafbda5cdacdfa15125b507b013b19c4b", null ],
-    [ "iparser_allocate", "AMReX__IParser__Y_8cpp.html#a9abdf6259c081b4f3b80eea3e8e2d45c", null ],
     [ "iparser_ast_depth", "AMReX__IParser__Y_8cpp.html#a5632af39a73771c9c4131e718495680f", null ],
     [ "iparser_ast_dup", "AMReX__IParser__Y_8cpp.html#a6d20135c80c410cae70ceca17c5fd7bf", null ],
     [ "iparser_ast_get_symbols", "AMReX__IParser__Y_8cpp.html#a8b3a32551ba0090abf9e5bf7578dbd3b", null ],
     [ "iparser_ast_optimize", "AMReX__IParser__Y_8cpp.html#a86b9b9521f3dd1de76b9815dcdc7b9d0", null ],
     [ "iparser_ast_print", "AMReX__IParser__Y_8cpp.html#a2e832571b607617664a8a588c69a0dc4", null ],
-    [ "iparser_ast_print_f1", "AMReX__IParser__Y_8cpp.html#a89edeb0208499eb17f8a7842afc94262", null ],
-    [ "iparser_ast_print_f2", "AMReX__IParser__Y_8cpp.html#a3fbb4b53a6ebe72b571623661c8b11e9", null ],
-    [ "iparser_ast_print_f3", "AMReX__IParser__Y_8cpp.html#a8b36d58ea6031ba8b4629507349f4c0d", null ],
     [ "iparser_ast_regvar", "AMReX__IParser__Y_8cpp.html#acaf77a8dc997257b02f28ac1bebe36e2", null ],
     [ "iparser_ast_setconst", "AMReX__IParser__Y_8cpp.html#a3e859475342dc12d24219ccd9ff56ed0", null ],
     [ "iparser_ast_size", "AMReX__IParser__Y_8cpp.html#a88284344fbc21e1fad73e0f2e4280394", null ],
@@ -36,6 +31,5 @@ var AMReX__IParser__Y_8cpp =
     [ "iparser_newsymbol", "AMReX__IParser__Y_8cpp.html#ae9552f2b805ddfac6a62dba634f5bcb8", null ],
     [ "iparser_print", "AMReX__IParser__Y_8cpp.html#a28e7f8ece961d58ec22229b2396fbc65", null ],
     [ "iparser_regvar", "AMReX__IParser__Y_8cpp.html#aa6886a6d87a263d5db6152fe44c96c82", null ],
-    [ "iparser_setconst", "AMReX__IParser__Y_8cpp.html#a8352463db302787dc5251fbaac3ad1bd", null ],
-    [ "iparser_root", "AMReX__IParser__Y_8cpp.html#ae412136d889e7eeca62b7f23375e8718", null ]
+    [ "iparser_setconst", "AMReX__IParser__Y_8cpp.html#a8352463db302787dc5251fbaac3ad1bd", null ]
 ];

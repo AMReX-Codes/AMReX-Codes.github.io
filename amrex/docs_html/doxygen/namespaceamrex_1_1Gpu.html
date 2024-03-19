@@ -269,10 +269,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af50ec082ab16407059545feed99d648f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">prefetchToDevice</a> (Iter <a class="el" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, Iter <a class="el" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>) noexcept</td></tr>
 <tr class="memdesc:af50ec082ab16407059545feed99d648f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Migrate elements of a container from host to device. This is a no-op for host-only code.  <a href="namespaceamrex_1_1Gpu.html#af50ec082ab16407059545feed99d648f">More...</a><br /></td></tr>
 <tr class="separator:af50ec082ab16407059545feed99d648f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplParams" colspan="2">template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;amrex::IsCallable&lt; F, T &amp;, Long &gt;::value, int &gt; FOO = 0&gt; </td></tr>
-<tr class="memitem:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">fillAsync</a> (IT first, IT last, F &amp;&amp;f) noexcept</td></tr>
-<tr class="memdesc:ade7455f3a0bbcde938577dc2cb8295d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the elements in the given range using the given calllable.  <a href="namespaceamrex_1_1Gpu.html#ade7455f3a0bbcde938577dc2cb8295d0">More...</a><br /></td></tr>
-<tr class="separator:ade7455f3a0bbcde938577dc2cb8295d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2569c007a55f5619e6242794f066e6"><td class="memTemplParams" colspan="2">template&lt;typename IT , typename F , typename T  = typename std::iterator_traits&lt;IT&gt;::value_type, std::enable_if_t&lt;(sizeof(T)&lt;=36 *8) &amp;&amp;std::is_trivially_copyable_v&lt; T &gt; &amp;&amp;amrex::IsCallable&lt; F, T &amp;, Long &gt;::value, int &gt; FOO = 0&gt; </td></tr>
+<tr class="memitem:a0c2569c007a55f5619e6242794f066e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a0c2569c007a55f5619e6242794f066e6">fillAsync</a> (IT first, IT last, F const &amp;f) noexcept</td></tr>
+<tr class="memdesc:a0c2569c007a55f5619e6242794f066e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the elements in the given range using the given calllable.  <a href="namespaceamrex_1_1Gpu.html#a0c2569c007a55f5619e6242794f066e6">More...</a><br /></td></tr>
+<tr class="separator:a0c2569c007a55f5619e6242794f066e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a05369cacb826ba5546b4dd507c49dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">inLaunchRegion</a> () noexcept</td></tr>
 <tr class="separator:a7a05369cacb826ba5546b4dd507c49dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6abda3339e4295716d7e2ff78e9603"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8e6abda3339e4295716d7e2ff78e9603">notInLaunchRegion</a> () noexcept</td></tr>
@@ -317,8 +317,8 @@ Functions</h2></td></tr>
 <tr class="separator:ab695bddeb3cc727225d95a1826472ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e72d3661b320758c41e4a548b80beec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a8e72d3661b320758c41e4a548b80beec">ErrorCheck</a> (const char *file, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> line) noexcept</td></tr>
 <tr class="separator:a8e72d3661b320758c41e4a548b80beec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac3f1c6e71f0842b8f152fce7e4a7fb"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a9ac3f1c6e71f0842b8f152fce7e4a7fb">numThreadsPerBlockParallelFor</a> ()</td></tr>
-<tr class="separator:a9ac3f1c6e71f0842b8f152fce7e4a7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d3039071c1009b16e08b63b63013db"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a99d3039071c1009b16e08b63b63013db">numThreadsPerBlockParallelFor</a> ()</td></tr>
+<tr class="separator:a99d3039071c1009b16e08b63b63013db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2cf1d72cec1f6929ea0405c70ce2f45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ae2cf1d72cec1f6929ea0405c70ce2f45">getThreadBox</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, Long offset) noexcept</td></tr>
 <tr class="separator:ae2cf1d72cec1f6929ea0405c70ce2f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac21b6d1625e2f56c27d364434a5c49f4"><td class="memTemplParams" colspan="2">template&lt;int MT&gt; </td></tr>
@@ -1921,8 +1921,8 @@ template&lt;class InIter , class OutIter &gt; </div>
 
 </div>
 </div>
-<a id="ade7455f3a0bbcde938577dc2cb8295d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade7455f3a0bbcde938577dc2cb8295d0">&#9670;&nbsp;</a></span>fillAsync()</h2>
+<a id="a0c2569c007a55f5619e6242794f066e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2569c007a55f5619e6242794f066e6">&#9670;&nbsp;</a></span>fillAsync()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1947,7 +1947,7 @@ template&lt;typename IT , typename F , typename T  = typename std::iterator_trai
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramtype">F const &amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -2695,8 +2695,8 @@ template&lt;int MT&gt; </div>
 
 </div>
 </div>
-<a id="a9ac3f1c6e71f0842b8f152fce7e4a7fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ac3f1c6e71f0842b8f152fce7e4a7fb">&#9670;&nbsp;</a></span>numThreadsPerBlockParallelFor()</h2>
+<a id="a99d3039071c1009b16e08b63b63013db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d3039071c1009b16e08b63b63013db">&#9670;&nbsp;</a></span>numThreadsPerBlockParallelFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2705,7 +2705,7 @@ template&lt;int MT&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr std::size_t amrex::Gpu::numThreadsPerBlockParallelFor </td>
+          <td class="memname">constexpr std::size_t amrex::Gpu::numThreadsPerBlockParallelFor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2713,7 +2713,7 @@ template&lt;int MT&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

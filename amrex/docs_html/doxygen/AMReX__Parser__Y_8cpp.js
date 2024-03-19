@@ -3,16 +3,11 @@ var AMReX__Parser__Y_8cpp =
     [ "amrex_parser_delete", "AMReX__Parser__Y_8cpp.html#a2f20d75c59ef143705ccaeaef9897c17", null ],
     [ "amrex_parser_new", "AMReX__Parser__Y_8cpp.html#ae66dc6e64e2bbaeb5e33f845f1021f4f", null ],
     [ "amrex_parsererror", "AMReX__Parser__Y_8cpp.html#ab76fb0f384d4c8daa7bda6aa6f55aba9", null ],
-    [ "parser_aligned_size", "AMReX__Parser__Y_8cpp.html#aa04d33642e47699eedfa904aa011b199", null ],
-    [ "parser_allocate", "AMReX__Parser__Y_8cpp.html#a9ec644ecf6ca85c38caddcdca5543c99", null ],
     [ "parser_ast_depth", "AMReX__Parser__Y_8cpp.html#a6815d583f941a297bbef6d77214829c8", null ],
     [ "parser_ast_dup", "AMReX__Parser__Y_8cpp.html#ad3b98b9aec198e9456f562949577675c", null ],
     [ "parser_ast_get_symbols", "AMReX__Parser__Y_8cpp.html#ae1d40846503356e1e1201c614163ea54", null ],
     [ "parser_ast_optimize", "AMReX__Parser__Y_8cpp.html#a5f9cf029d313196bd5c43c1d272ea9fe", null ],
     [ "parser_ast_print", "AMReX__Parser__Y_8cpp.html#a87c0a8afac2fbe12cb2ac48e663ed0d6", null ],
-    [ "parser_ast_print_f1", "AMReX__Parser__Y_8cpp.html#ae464cacf2815f9d735eeb2038c4540dd", null ],
-    [ "parser_ast_print_f2", "AMReX__Parser__Y_8cpp.html#a948dd1dfa6da8d14fab0077d80396882", null ],
-    [ "parser_ast_print_f3", "AMReX__Parser__Y_8cpp.html#a002ad6e06c5affc234b5bc1bfb2a4c09", null ],
     [ "parser_ast_regvar", "AMReX__Parser__Y_8cpp.html#aee105e6b691d9fa51fef6e50c7ebb155", null ],
     [ "parser_ast_setconst", "AMReX__Parser__Y_8cpp.html#a406674d4bafc2a2a465b8127fa8f9f5e", null ],
     [ "parser_ast_size", "AMReX__Parser__Y_8cpp.html#a70b4e8ec482471a9d5c1a2b17c2420b2", null ],
@@ -36,6 +31,5 @@ var AMReX__Parser__Y_8cpp =
     [ "parser_print", "AMReX__Parser__Y_8cpp.html#a53d306308d380a6d874ad24396fa7673", null ],
     [ "parser_regvar", "AMReX__Parser__Y_8cpp.html#a2287c28084a10ac6a9cfb4b2a50892fc", null ],
     [ "parser_set_number", "AMReX__Parser__Y_8cpp.html#a031546532f5b81bd867039b219562b95", null ],
-    [ "parser_setconst", "AMReX__Parser__Y_8cpp.html#a4051597b502fed03ea3b07d5f6cbb042", null ],
-    [ "parser_root", "AMReX__Parser__Y_8cpp.html#a9fe4a92c659abb78e4d7fec74ac8952c", null ]
+    [ "parser_setconst", "AMReX__Parser__Y_8cpp.html#a4051597b502fed03ea3b07d5f6cbb042", null ]
 ];

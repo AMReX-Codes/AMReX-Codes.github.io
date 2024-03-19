@@ -1,8 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"AMReX__AmrvisConstants_8H.html#a980486554a98baf8ebf8e560734f2bf9ae30e7b84e8b143de05b852dde1174bb3":[4,0,0,5,0,2,4,3],
-"AMReX__AmrvisConstants_8H.html#aa01b8e847a081049f09f214fb191f372":[4,0,0,5,0,2,13],
-"AMReX__AmrvisConstants_8H.html#aa48460f2fc5e49659b1494852de45964":[4,0,0,5,0,2,11],
 "AMReX__AmrvisConstants_8H.html#abfcccc9773d8b5535441ca5b3cc4f0cf":[4,0,0,5,0,2,2],
 "AMReX__AmrvisConstants_8H.html#abfcccc9773d8b5535441ca5b3cc4f0cfa57bb6b57ab317541bed026109325dcea":[4,0,0,5,0,2,2,3],
 "AMReX__AmrvisConstants_8H.html#abfcccc9773d8b5535441ca5b3cc4f0cfa99e213ce9d7f8ea555072b09cc955a30":[4,0,0,5,0,2,2,2],
@@ -249,5 +246,8 @@ var NAVTREEINDEX1 =
 "AMReX__BLutil__F_8F90.html#a98b9d6b75a6d264b95da602f2d79e7ea":[4,0,0,2,37,1],
 "AMReX__BackgroundThread_8H.html":[4,0,0,2,15],
 "AMReX__BackgroundThread_8H_source.html":[4,0,0,2,15],
-"AMReX__BackgroundThread_8cpp.html":[4,0,0,2,14]
+"AMReX__BackgroundThread_8cpp.html":[4,0,0,2,14],
+"AMReX__BaseFabUtility_8H.html":[4,0,0,2,20],
+"AMReX__BaseFabUtility_8H.html#a7b3c5a372f37d8bb9aa21a76a5129a95":[4,0,0,2,20,1],
+"AMReX__BaseFabUtility_8H.html#aa7261f50da60e78a42e700384710cd47":[4,0,0,2,20,0]
 };
