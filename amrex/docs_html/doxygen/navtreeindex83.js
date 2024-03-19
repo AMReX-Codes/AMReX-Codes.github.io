@@ -1,5 +1,10 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1algoim_1_1EBPlane.html":[3,0,0,0,0],
+"structamrex_1_1algoim_1_1EBPlane.html#a289724cd28f09eb3d384c5a9f432c082":[3,0,0,0,0,4],
+"structamrex_1_1algoim_1_1EBPlane.html#a3ae6123f45aee26c756d2105c8c903ab":[3,0,0,0,0,6],
+"structamrex_1_1algoim_1_1EBPlane.html#a6a73bedd66de0d9db79f8af959ad72d3":[3,0,0,0,0,2],
+"structamrex_1_1algoim_1_1EBPlane.html#a99b33ff9062162a71e2f1533c76c3a3e":[3,0,0,0,0,0],
 "structamrex_1_1algoim_1_1EBPlane.html#aa39038dcf72fcf8a8b57513432875bf2":[3,0,0,0,0,3],
 "structamrex_1_1algoim_1_1EBPlane.html#aa5637df03e164faf757177e7333e5d0b":[3,0,0,0,0,1],
 "structamrex_1_1algoim_1_1EBPlane.html#ac56d4e24891fdae19c88f32f77305ced":[3,0,0,0,0,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX83 =
 "structdetail_1_1CellAtomicAdd.html#ac853cb6b9adde1eadba8396c59b028dc":[3,0,9,2,0],
 "structdetail_1_1CellStore.html":[3,0,9,0],
 "structdetail_1_1CellStore.html#ac63b24fe49bc64231c37773eddf61e8d":[3,0,9,0,0],
-"structdistribution__t.html":[3,0,17],
-"structdistribution__t.html#a00fcc37760762bee9052ff654398aaee":[3,0,17,8],
-"structdistribution__t.html#a2958e45305ae7bd3d1077348c2f30f1e":[3,0,17,6],
-"structdistribution__t.html#a48496ef186f85b7d82d83592b366c03f":[3,0,17,9],
-"structdistribution__t.html#a65f303dfbdd0d1dbe148507bb0a48386":[3,0,17,11],
-"structdistribution__t.html#a82ebfa634d9c07052140242ec82559e5":[3,0,17,5]
+"structdistribution__t.html":[3,0,17]
 };
