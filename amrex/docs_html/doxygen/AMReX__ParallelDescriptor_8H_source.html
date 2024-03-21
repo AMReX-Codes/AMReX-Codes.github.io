@@ -1020,9 +1020,9 @@ $(document).ready(function(){initNavTree('AMReX__ParallelDescriptor_8H_source.ht
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    Vector&lt;int&gt; recvcount(nprocs, 0);</div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;    recvbuf.resize(sendbuf.size());</div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;    <span class="keyword">const</span> Vector&lt;int&gt;&amp; old_pmap = sendbuf.DistributionMap().ProcessorMap();</div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;old_pmap.size(); ++i)</div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i : old_pmap)</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    {</div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;        ++recvcount[old_pmap[i]];</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;        ++recvcount[i];</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    }</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160; </div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;    <span class="comment">// Make a map from post-gather to pre-gather index</span></div>

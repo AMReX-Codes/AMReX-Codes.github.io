@@ -5663,9 +5663,9 @@
 <codeline lineno="996"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>recvcount(nprocs,<sp/>0);</highlight></codeline>
 <codeline lineno="997"><highlight class="normal"><sp/><sp/><sp/><sp/>recvbuf.resize(sendbuf.size());</highlight></codeline>
 <codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;&amp;<sp/>old_pmap<sp/>=<sp/>sendbuf.DistributionMap().ProcessorMap();</highlight></codeline>
-<codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;old_pmap.size();<sp/>++i)</highlight></codeline>
+<codeline lineno="999"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>:<sp/>old_pmap)</highlight></codeline>
 <codeline lineno="1000"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1001"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++recvcount[old_pmap[i]];</highlight></codeline>
+<codeline lineno="1001"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++recvcount[i];</highlight></codeline>
 <codeline lineno="1002"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1003"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1004"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>a<sp/>map<sp/>from<sp/>post-gather<sp/>to<sp/>pre-gather<sp/>index</highlight><highlight class="normal"></highlight></codeline>
