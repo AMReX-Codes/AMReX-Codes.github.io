@@ -1,8 +1,8 @@
 var structamrex_1_1BinIterator =
 [
     [ "iterator", "structamrex_1_1BinIterator_1_1iterator.html", "structamrex_1_1BinIterator_1_1iterator" ],
-    [ "const_pointer_input_type", "structamrex_1_1BinIterator.html#a7d633360c707d8344a685e4b7b5140a6", null ],
-    [ "const_pointer_type", "structamrex_1_1BinIterator.html#ab8dc92b0ec328c31a5191c85e03eb1af", null ],
+    [ "const_pointer_input_type", "structamrex_1_1BinIterator.html#abbf265c86b24517508b4453324ac6c2d", null ],
+    [ "const_pointer_type", "structamrex_1_1BinIterator.html#a76d6114c50a91bfd1a233715ec5ec60a", null ],
     [ "index_type", "structamrex_1_1BinIterator.html#a9e55017514e250d49f7eccb1d03caca4", null ],
     [ "BinIterator", "structamrex_1_1BinIterator.html#a693ebae70056bdc07944d7a8a7aa1b4e", null ],
     [ "begin", "structamrex_1_1BinIterator.html#aa39708cce4724ecb5eedffb2d91ddf1c", null ],

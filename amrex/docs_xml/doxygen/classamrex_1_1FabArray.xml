@@ -12,9 +12,9 @@
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value, FAB, <ref refid="structamrex_1_1FabArray_1_1FABType" kindref="compound">FABType</ref> &gt;::type::value_type</type>
-        <definition>using amrex::FabArray&lt; FAB &gt;::value_type =  typename std::conditional&lt;IsBaseFab&lt;FAB&gt;::value, FAB, FABType&gt;::type::value_type</definition>
+      <memberdef kind="typedef" id="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" prot="public" static="no">
+        <type>typename std::conditional_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value, FAB, <ref refid="structamrex_1_1FabArray_1_1FABType" kindref="compound">FABType</ref> &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
+        <definition>using amrex::FabArray&lt; FAB &gt;::value_type =  typename std::conditional_t&lt;IsBaseFab&lt;FAB&gt;::value, FAB, FABType&gt;::value_type</definition>
         <argsstring></argsstring>
         <name>value_type</name>
         <briefdescription>
@@ -139,7 +139,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1247" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="1247" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1FabArray_1ab4bfa4857f5d074015204b6caa0cfcf7" prot="protected" static="no" mutable="yes">
-        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> &gt;</type>
+        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt;</type>
         <definition>MultiArray4&lt;value_type&gt; amrex::FabArray&lt; FAB &gt;::m_arrays</definition>
         <argsstring></argsstring>
         <name>m_arrays</name>
@@ -152,7 +152,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" line="1248" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArray.H" bodystart="1248" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1FabArray_1ac30f73f6b587c175fdc34bab68294613" prot="protected" static="no" mutable="yes">
-        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; <ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>MultiArray4&lt;value_type const&gt; amrex::FabArray&lt; FAB &gt;::m_const_arrays</definition>
         <argsstring></argsstring>
         <name>m_const_arrays</name>
@@ -886,7 +886,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -913,7 +913,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -940,11 +940,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
         <name>array</name>
@@ -967,11 +967,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(const MFIter &amp;mfi) noexcept</argsstring>
         <name>array</name>
@@ -994,11 +994,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(int K) const noexcept</argsstring>
         <name>array</name>
@@ -1021,11 +1021,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(int K) noexcept</argsstring>
         <name>array</name>
@@ -1048,11 +1048,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::const_array</definition>
         <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
         <name>const_array</name>
@@ -1075,11 +1075,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::const_array</definition>
         <argsstring>(int K) const noexcept</argsstring>
         <name>const_array</name>
@@ -1102,11 +1102,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(const MFIter &amp;mfi, int start_comp) const noexcept</argsstring>
         <name>array</name>
@@ -1133,11 +1133,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(const MFIter &amp;mfi, int start_comp) noexcept</argsstring>
         <name>array</name>
@@ -1164,11 +1164,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(int K, int start_comp) const noexcept</argsstring>
         <name>array</name>
@@ -1195,11 +1195,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type &gt; amrex::FabArray&lt; FAB &gt;::array</definition>
         <argsstring>(int K, int start_comp) noexcept</argsstring>
         <name>array</name>
@@ -1226,11 +1226,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::const_array</definition>
         <argsstring>(const MFIter &amp;mfi, int start_comp) const noexcept</argsstring>
         <name>const_array</name>
@@ -1257,11 +1257,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>Array4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::const_array</definition>
         <argsstring>(int K, int start_comp) const noexcept</argsstring>
         <name>const_array</name>
@@ -1288,11 +1288,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> &gt;</type>
+        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> &gt;</type>
         <definition>MultiArray4&lt; typename FabArray&lt; FAB &gt;::value_type &gt; amrex::FabArray&lt; FAB &gt;::arrays</definition>
         <argsstring>() noexcept</argsstring>
         <name>arrays</name>
@@ -1311,11 +1311,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>MultiArray4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::arrays</definition>
         <argsstring>() const noexcept</argsstring>
         <name>arrays</name>
@@ -1334,11 +1334,11 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref> const  &gt;</type>
+        <type><ref refid="structamrex_1_1MultiArray4" kindref="compound">MultiArray4</ref>&lt; typename <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt;::<ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref> const  &gt;</type>
         <definition>MultiArray4&lt; typename FabArray&lt; FAB &gt;::value_type const  &gt; amrex::FabArray&lt; FAB &gt;::const_arrays</definition>
         <argsstring>() const noexcept</argsstring>
         <name>const_arrays</name>
@@ -1379,7 +1379,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; std::is_move_constructible&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; std::is_move_constructible_v&lt; F &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1433,7 +1433,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; std::is_move_constructible&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; std::is_move_constructible_v&lt; F &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1693,7 +1693,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1702,7 +1702,7 @@
         <argsstring>(value_type val)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <briefdescription>
@@ -1721,7 +1721,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1730,7 +1730,7 @@
         <argsstring>(value_type val)</argsstring>
         <name>operator=</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <briefdescription>
@@ -1749,7 +1749,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1758,7 +1758,7 @@
         <argsstring>(value_type val, int comp, int ncomp, int nghost=0)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -1790,7 +1790,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1799,7 +1799,7 @@
         <argsstring>(value_type val, int comp, int ncomp, const IntVect &amp;nghost)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -1829,7 +1829,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1838,7 +1838,7 @@
         <argsstring>(value_type val, const Box &amp;region, int comp, int ncomp, int nghost=0)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -1874,7 +1874,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1883,7 +1883,7 @@
         <argsstring>(value_type val, const Box &amp;region, int comp, int ncomp, const IntVect &amp;nghost)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -1917,7 +1917,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1926,7 +1926,7 @@
         <argsstring>(value_type val, int nghost)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -1949,7 +1949,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1958,7 +1958,7 @@
         <argsstring>(value_type val, const IntVect &amp;nghost)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -1980,7 +1980,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -1989,7 +1989,7 @@
         <argsstring>(value_type val, const Box &amp;region, int nghost)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2016,7 +2016,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2025,7 +2025,7 @@
         <argsstring>(value_type val, const Box &amp;region, const IntVect &amp;nghost)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2051,7 +2051,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2087,7 +2087,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2122,7 +2122,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2131,7 +2131,7 @@
         <argsstring>(value_type val, int comp, int num_comp, int nghost=0)</argsstring>
         <name>plus</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2162,7 +2162,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2171,7 +2171,7 @@
         <argsstring>(value_type val, const Box &amp;region, int comp, int num_comp, int nghost=0)</argsstring>
         <name>plus</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2206,7 +2206,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2215,7 +2215,7 @@
         <argsstring>(value_type val, int comp, int num_comp, int nghost=0)</argsstring>
         <name>mult</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2246,7 +2246,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2255,7 +2255,7 @@
         <argsstring>(value_type val, const Box &amp;region, int comp, int num_comp, int nghost=0)</argsstring>
         <name>mult</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2290,7 +2290,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2299,7 +2299,7 @@
         <argsstring>(value_type numerator, int comp, int num_comp, int nghost=0)</argsstring>
         <name>invert</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>numerator</declname>
         </param>
         <param>
@@ -2330,7 +2330,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2339,7 +2339,7 @@
         <argsstring>(value_type numerator, const Box &amp;region, int comp, int num_comp, int nghost=0)</argsstring>
         <name>invert</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>numerator</declname>
         </param>
         <param>
@@ -2374,7 +2374,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2383,7 +2383,7 @@
         <argsstring>(value_type val)</argsstring>
         <name>setBndry</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <briefdescription>
@@ -2402,7 +2402,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2411,7 +2411,7 @@
         <argsstring>(value_type val, int strt_comp, int ncomp)</argsstring>
         <name>setBndry</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2438,7 +2438,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2447,7 +2447,7 @@
         <argsstring>(value_type val, const Geometry &amp;geom)</argsstring>
         <name>setDomainBndry</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -2470,7 +2470,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -2479,7 +2479,7 @@
         <argsstring>(value_type val, int strt_comp, int ncomp, const Geometry &amp;geom)</argsstring>
         <name>setDomainBndry</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -3602,7 +3602,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3627,7 +3627,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3655,7 +3655,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3687,7 +3687,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3720,7 +3720,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3756,7 +3756,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3796,7 +3796,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3820,7 +3820,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3848,7 +3848,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3880,7 +3880,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3912,7 +3912,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3948,7 +3948,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -3988,14 +3988,14 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
           <param>
             <type>class F</type>
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -4633,7 +4633,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -4650,19 +4650,19 @@
           <declname>period</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>covered</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>notcovered</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>physbnd</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>interior</declname>
         </param>
         <briefdescription>
@@ -4677,14 +4677,14 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
           <param>
             <type>class F</type>
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -4799,7 +4799,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -4808,7 +4808,7 @@
         <argsstring>(value_type val, const CommMetaData &amp;thecmd, int scomp, int ncomp)</argsstring>
         <name>setVal</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>val</declname>
         </param>
         <param>
@@ -4838,7 +4838,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -4926,7 +4926,7 @@
         <argsstring>(value_type x, const CommMetaData &amp;thecmd, int scomp, int ncomp)</argsstring>
         <name>CMD_local_setVal_gpu</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>x</declname>
         </param>
         <param>
@@ -4955,7 +4955,7 @@
         <argsstring>(value_type x, const CommMetaData &amp;thecmd, int scomp, int ncomp)</argsstring>
         <name>CMD_remote_setVal_gpu</name>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>x</declname>
         </param>
         <param>
@@ -5166,7 +5166,7 @@
             <type>class F</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <declname>Z</declname>
             <defname>Z</defname>
           </param>
@@ -5220,7 +5220,7 @@
             <type>class F</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <declname>Z</declname>
             <defname>Z</defname>
           </param>
@@ -5427,7 +5427,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -5470,7 +5470,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -5521,7 +5521,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -5564,7 +5564,7 @@
         <templateparamlist>
           <param>
             <type>typename BUF</type>
-            <defval><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></defval>
+            <defval><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -5631,7 +5631,7 @@
           <declname>y</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>a</declname>
         </param>
         <param>
@@ -5741,7 +5741,7 @@
           <declname>y</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>a</declname>
         </param>
         <param>
@@ -5851,7 +5851,7 @@
           <declname>dst</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>a</declname>
         </param>
         <param>
@@ -5863,7 +5863,7 @@
           <declname>xcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" kindref="member">value_type</ref></type>
+          <type><ref refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" kindref="member">value_type</ref></type>
           <declname>b</declname>
         </param>
         <param>
@@ -6047,7 +6047,7 @@
             <defval>FAB</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -6883,7 +6883,7 @@
       <member refid="classamrex_1_1FabArray_1a34105be3fcf0be0cc074081b0667441f" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>unpack_recv_buffer_gpu</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a3918d10004ca8f4494fd9e6099bdabc3" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>updateBDKey</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a7022fe872e97df24058250928b3d84b6" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>updateMemUsage</name></member>
-      <member refid="classamrex_1_1FabArray_1a2b04c30bcb209306838ed6a01bd7816a" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>value_type</name></member>
+      <member refid="classamrex_1_1FabArray_1a10cae7bd6a702d1909a7801f53d990cd" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>value_type</name></member>
       <member refid="classamrex_1_1FabArray_1a742793255ff2aed0213773f989cc8394" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>Xpay</name></member>
       <member refid="classamrex_1_1FabArray_1af9762647ad8ae52d39f2c51f51c06813" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>~FabArray</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a58a43e40ea0bcd02334490f1126c6d7f" prot="public" virt="non-virtual"><scope>amrex::FabArray</scope><name>~FabArrayBase</name></member>

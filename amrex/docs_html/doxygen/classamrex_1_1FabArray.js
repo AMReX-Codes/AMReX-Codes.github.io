@@ -4,7 +4,7 @@ var classamrex_1_1FabArray =
     [ "ShMem", "structamrex_1_1FabArray_1_1ShMem.html", "structamrex_1_1FabArray_1_1ShMem" ],
     [ "fab_type", "classamrex_1_1FabArray.html#a4ea567a25f13cd931b2b1e9433eeda5e", null ],
     [ "Iterator", "classamrex_1_1FabArray.html#a958d272c39f50f1157029d5a0c6ade1c", null ],
-    [ "value_type", "classamrex_1_1FabArray.html#a2b04c30bcb209306838ed6a01bd7816a", null ],
+    [ "value_type", "classamrex_1_1FabArray.html#a10cae7bd6a702d1909a7801f53d990cd", null ],
     [ "FabArray", "classamrex_1_1FabArray.html#a8ab865aabcf79bbf6a6f529cfd8da96a", null ],
     [ "FabArray", "classamrex_1_1FabArray.html#a657ae8bca91f3f4f77ed6592af1f50c4", null ],
     [ "FabArray", "classamrex_1_1FabArray.html#a7ab314f12326cda647aa1fe94644653e", null ],

@@ -438,10 +438,10 @@ var hierarchy =
     [ "amrex::EB2::Face", "structamrex_1_1EB2_1_1Face.html", null ],
     [ "std::false_type", null, [
       [ "amrex::EB2::IsGPUable< IntersectionIF< Tail... > >", "structamrex_1_1EB2_1_1IsGPUable.html", [
-        [ "amrex::EB2::IsGPUable< IntersectionIF< Head, Tail... >, typename std::enable_if< IsGPUable< Head >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01typename_0aa6c0e2bc9cf84a2cc942d5a159f7839.html", null ]
+        [ "amrex::EB2::IsGPUable< IntersectionIF< Head, Tail... >, std::enable_if_t< IsGPUable< Head >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01std_1_1ena0c37219ffe6b39871c91221e9d798d75.html", null ]
       ] ],
       [ "amrex::EB2::IsGPUable< UnionIF< Tail... > >", "structamrex_1_1EB2_1_1IsGPUable.html", [
-        [ "amrex::EB2::IsGPUable< UnionIF< Head, Tail... >, typename std::enable_if< IsGPUable< Head >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01typename_01std_1_0106a99ebe3263da4342cdd68c621473.html", null ]
+        [ "amrex::EB2::IsGPUable< UnionIF< Head, Tail... >, std::enable_if_t< IsGPUable< Head >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01std_1_1enable__if6eb1e381bbe58b34365e2ea43c9dd797.html", null ]
       ] ],
       [ "amrex::DefinitelyNotHostRunnable< T, Enable >", "structamrex_1_1DefinitelyNotHostRunnable.html", null ],
       [ "amrex::Disjunction<... >", "structamrex_1_1Disjunction.html", null ],
@@ -582,8 +582,8 @@ var hierarchy =
       [ "amrex::SundialsIntegrator< T >", "classamrex_1_1SundialsIntegrator.html", null ]
     ] ],
     [ "amrex::IntegratorOps< T, Tv >", "structamrex_1_1IntegratorOps.html", null ],
-    [ "amrex::IntegratorOps< T, typename std::enable_if< std::is_same< amrex::MultiFab, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr09a2cac7fed17a511fab4f6be5ebe511.html", null ],
-    [ "amrex::IntegratorOps< T, typename std::enable_if< std::is_same< amrex::Vector< amrex::MultiFab >, T >::value >::type >", "structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html", null ],
+    [ "amrex::IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::MultiFab, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html", null ],
+    [ "amrex::IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::Vector< amrex::MultiFab >, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047.html", null ],
     [ "amrex::AmrDataAdaptor::InternalsType", "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html", null ],
     [ "amrex::AmrMeshDataAdaptor::InternalsType", "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html", null ],
     [ "amrex::InterpBase", "classamrex_1_1InterpBase.html", [
@@ -699,7 +699,7 @@ var hierarchy =
     [ "amrex::LPInfo", "structamrex_1_1LPInfo.html", null ],
     [ "amrex::LUSolver< N, T >", "classamrex_1_1LUSolver.html", null ],
     [ "make_particle< T_ParticleType, Enable >", "structmake__particle.html", null ],
-    [ "make_particle< T_ParticleType, typename std::enable_if< is_soa_particle< T_ParticleType >::value >::type >", "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html", null ],
+    [ "make_particle< T_ParticleType, std::enable_if_t< is_soa_particle< T_ParticleType >::value > >", "structmake__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particle_3_01T__1f90e92c71ca21b280b67400a4dbce7d.html", null ],
     [ "amrex::Gpu::Managed", "structamrex_1_1Gpu_1_1Managed.html", null ],
     [ "amrex::ManagedArenaWrapper", "structamrex_1_1ManagedArenaWrapper.html", null ],
     [ "amrex::NonLocalBC::MapComponents< Base, Map >", "structamrex_1_1NonLocalBC_1_1MapComponents.html", null ],
@@ -1019,26 +1019,26 @@ var hierarchy =
         [ "amrex::NonLocalBC::IsDataPacking< DP, FAB >", "structamrex_1_1NonLocalBC_1_1IsDataPacking.html", null ]
       ] ],
       [ "amrex::Conjunction<... >", "structamrex_1_1Conjunction.html", null ],
-      [ "amrex::EB2::IsGPUable< ComplementIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_439214b16f92fe663637b42c0a5a5552.html", null ],
-      [ "amrex::EB2::IsGPUable< D, typename std::enable_if< std::is_base_of< GPUable, D >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_e7975428109c6f3d89c9f8ba8c25626f.html", null ],
-      [ "amrex::EB2::IsGPUable< DifferenceIF< F, G >, typename std::enable_if< IsGPUable< F >::value &&IsGPUable< G >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01typename_01std_1_1enableac26215ba9e0277ee7231118dc9a8a74.html", null ],
-      [ "amrex::EB2::IsGPUable< ExtrusionIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_09ce565cdabb0194a6744226a21d9e2e3.html", null ],
-      [ "amrex::EB2::IsGPUable< IntersectionIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01F_01_4_00_01typename_01std_1_1enable__if_f70fe5a0af601f73704d1e7de99c14ec.html", null ],
-      [ "amrex::EB2::IsGPUable< LatheIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG870c79fcc93b5ecb25be1ee2def9f2cf.html", null ],
-      [ "amrex::EB2::IsGPUable< RotationIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01RotationIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01b6ccedc39c7ac77911bc5f24c7580486.html", null ],
-      [ "amrex::EB2::IsGPUable< ScaleIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01ScaleIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsGb66e057f4b07510742d8ce2847c0a0a3.html", null ],
-      [ "amrex::EB2::IsGPUable< TranslationIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01TranslationIF_3_01F_01_4_00_01typename_01std_1_1enable__if_399859b540a9f6f2c562d54bd4e0f45b9.html", null ],
-      [ "amrex::EB2::IsGPUable< UnionIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG689753bc6f6f97a7132aea5fbd359250.html", null ],
+      [ "amrex::EB2::IsGPUable< ComplementIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01ComplementIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUae5a3ecdbbe2872ad1fcb116fcced2fba.html", null ],
+      [ "amrex::EB2::IsGPUable< D, std::enable_if_t< std::is_base_of_v< GPUable, D > > >", "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01GPUable_00_01D_01_4_01_4_01_4.html", null ],
+      [ "amrex::EB2::IsGPUable< DifferenceIF< F, G >, std::enable_if_t< IsGPUable< F >::value &&IsGPUable< G >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01DifferenceIF_3_01F_00_01G_01_4_00_01std_1_1enable__if__t_3_0b8f5d460277f1d91a5423c29613f5d25.html", null ],
+      [ "amrex::EB2::IsGPUable< ExtrusionIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01ExtrusionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUabf062b6fd2701f97c86146ed02bddaa9e.html", null ],
+      [ "amrex::EB2::IsGPUable< IntersectionIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01IntersectionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPf9c8a061c673452f35713630afd9be10.html", null ],
+      [ "amrex::EB2::IsGPUable< LatheIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html", null ],
+      [ "amrex::EB2::IsGPUable< RotationIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01RotationIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html", null ],
+      [ "amrex::EB2::IsGPUable< ScaleIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01ScaleIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html", null ],
+      [ "amrex::EB2::IsGPUable< TranslationIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01TranslationIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUdd6f125157b8f676e3869d8d3fbaabf1.html", null ],
+      [ "amrex::EB2::IsGPUable< UnionIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html", null ],
       [ "amrex::HasAtomicAdd< double >", "structamrex_1_1HasAtomicAdd_3_01double_01_4.html", null ],
       [ "amrex::HasAtomicAdd< float >", "structamrex_1_1HasAtomicAdd_3_01float_01_4.html", null ],
       [ "amrex::HasAtomicAdd< int >", "structamrex_1_1HasAtomicAdd_3_01int_01_4.html", null ],
       [ "amrex::HasAtomicAdd< long >", "structamrex_1_1HasAtomicAdd_3_01long_01_4.html", null ],
       [ "amrex::HasAtomicAdd< unsigned int >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01int_01_4.html", null ],
       [ "amrex::HasAtomicAdd< unsigned long long >", "structamrex_1_1HasAtomicAdd_3_01unsigned_01long_01long_01_4.html", null ],
-      [ "amrex::HasMultiComp< A, Enable >::type", "structamrex_1_1HasMultiComp_1_1type.html", null ],
-      [ "amrex::IsArenaAllocator< T, std::enable_if_t< std::is_base_of< ArenaAllocatorBase< typename T::value_type, typename T::arena_wrapper_type >, T >::value > >", "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01Arenf7a529952ff72724d9f0c41e12d355f1.html", null ],
-      [ "amrex::IsBaseFab< D, typename std::enable_if< std::is_base_of< BaseFab< typename D::value_type >, D >::value >::type >", "structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html", null ],
-      [ "amrex::IsFabArray< D, typename std::enable_if< std::is_base_of< FabArray< typename D::FABType::value_type >, D >::value >::type >", "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html", null ],
+      [ "amrex::HasMultiComp< B, std::enable_if_t< B().size() >=1 >", "structamrex_1_1HasMultiComp_3_01B_00_01std_1_1enable__if__t_3_01B_07_08_8size_07_08_01_4_0a1_01_4.html", null ],
+      [ "amrex::IsArenaAllocator< T, std::enable_if_t< std::is_base_of_v< ArenaAllocatorBase< typename T::value_type, typename T::arena_wrapper_type >, T > > >", "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01A3a0553dd1fe92c460e3e2edf71ec41f7.html", null ],
+      [ "amrex::IsBaseFab< D, std::enable_if_t< std::is_base_of_v< BaseFab< typename D::value_type >, D > > >", "structamrex_1_1IsBaseFab_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01BaseFab_e919207a96f4ea216943219981685bdd.html", null ],
+      [ "amrex::IsFabArray< D, std::enable_if_t< std::is_base_of_v< FabArray< typename D::FABType::value_type >, D > > >", "structamrex_1_1IsFabArray_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01FabArrae7a3c5405f8dbf92bbb678a85384720d.html", null ],
       [ "amrex::IsMultiFabLike< M, std::enable_if_t< IsFabArray_v< M > &&IsBaseFab_v< typename M::fab_type > > >", "structamrex_1_1IsMultiFabLike_3_01M_00_01std_1_1enable__if__t_3_01IsFabArray__v_3_01M_01_4_01_6_1b79f12933d87e47a77b2c36839b7d8d.html", null ],
       [ "amrex::IsPolymorphicArenaAllocator< PolymorphicArenaAllocator< T > >", "structamrex_1_1IsPolymorphicArenaAllocator_3_01PolymorphicArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::IsStoreAtomic< EBCellFlag >", "structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html", null ],

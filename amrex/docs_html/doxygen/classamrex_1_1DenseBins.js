@@ -1,8 +1,8 @@
 var classamrex_1_1DenseBins =
 [
     [ "BinIteratorFactory", "classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924", null ],
-    [ "const_pointer_input_type", "classamrex_1_1DenseBins.html#ac722ec5978e2fac3d0ee189cfb88183b", null ],
-    [ "const_pointer_type", "classamrex_1_1DenseBins.html#a9032b455d0cb43380c6c41a0975d7a70", null ],
+    [ "const_pointer_input_type", "classamrex_1_1DenseBins.html#a4062eff06ceb0fa9549e15e421659d1e", null ],
+    [ "const_pointer_type", "classamrex_1_1DenseBins.html#a00f8a0b96ddd821e95305346715cc7f0", null ],
     [ "index_type", "classamrex_1_1DenseBins.html#ace91724777a08f267ca7515117ebe620", null ],
     [ "binsPtr", "classamrex_1_1DenseBins.html#abf1111e33d2e88edb6bb0654024b33df", null ],
     [ "binsPtr", "classamrex_1_1DenseBins.html#a1c13238822cee328b27603d0a467f981", null ],

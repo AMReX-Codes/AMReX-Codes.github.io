@@ -22,9 +22,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" line="17" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" bodystart="17" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1SparseBinIteratorFactory_1acef0290944c045ddf3c3b5e0e8a457bb" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;::type</type>
-        <definition>using amrex::SparseBinIteratorFactory&lt; T &gt;::const_pointer_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="structamrex_1_1SparseBinIteratorFactory_1a86334130cedc69862b6792c768c85de1" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;</type>
+        <definition>using amrex::SparseBinIteratorFactory&lt; T &gt;::const_pointer_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_type</name>
         <briefdescription>
@@ -35,9 +35,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" line="19" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" bodystart="22" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1SparseBinIteratorFactory_1a82d5a524da2caca7c59de106ff74d3d8" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), const T &amp;, const T * &gt;::type</type>
-        <definition>using amrex::SparseBinIteratorFactory&lt; T &gt;::const_pointer_input_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="structamrex_1_1SparseBinIteratorFactory_1acca687be381dba2ad85a4ccf9ef67765" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), const T &amp;, const T * &gt;</type>
+        <definition>using amrex::SparseBinIteratorFactory&lt; T &gt;::const_pointer_input_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_input_type</name>
         <briefdescription>
@@ -90,7 +90,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" line="70" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1SparseBinIteratorFactory_1a0e425a63d9c75b2d31eb2f05e775e83c" prot="public" static="no" mutable="no">
-        <type><ref refid="structamrex_1_1SparseBinIteratorFactory_1acef0290944c045ddf3c3b5e0e8a457bb" kindref="member">const_pointer_type</ref></type>
+        <type><ref refid="structamrex_1_1SparseBinIteratorFactory_1a86334130cedc69862b6792c768c85de1" kindref="member">const_pointer_type</ref></type>
         <definition>const_pointer_type amrex::SparseBinIteratorFactory&lt; T &gt;::m_items</definition>
         <argsstring></argsstring>
         <name>m_items</name>
@@ -151,7 +151,7 @@
           <declname>permutation</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1SparseBinIteratorFactory_1a82d5a524da2caca7c59de106ff74d3d8" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="structamrex_1_1SparseBinIteratorFactory_1acca687be381dba2ad85a4ccf9ef67765" kindref="member">const_pointer_input_type</ref></type>
           <declname>items</declname>
         </param>
         <briefdescription>
@@ -203,8 +203,8 @@
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" line="14" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" bodystart="15" bodyend="75"/>
     <listofallmembers>
-      <member refid="structamrex_1_1SparseBinIteratorFactory_1a82d5a524da2caca7c59de106ff74d3d8" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>const_pointer_input_type</name></member>
-      <member refid="structamrex_1_1SparseBinIteratorFactory_1acef0290944c045ddf3c3b5e0e8a457bb" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>const_pointer_type</name></member>
+      <member refid="structamrex_1_1SparseBinIteratorFactory_1acca687be381dba2ad85a4ccf9ef67765" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>const_pointer_input_type</name></member>
+      <member refid="structamrex_1_1SparseBinIteratorFactory_1a86334130cedc69862b6792c768c85de1" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>const_pointer_type</name></member>
       <member refid="structamrex_1_1SparseBinIteratorFactory_1afd23c4f2b4f25cec986300221b0f03d3" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>getBinIterator</name></member>
       <member refid="structamrex_1_1SparseBinIteratorFactory_1aeb4fc11d76183b0156cbeb8d8c0862af" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>getIndex</name></member>
       <member refid="structamrex_1_1SparseBinIteratorFactory_1af3b2075ffb37148df43247481a6acf79" prot="public" virt="non-virtual"><scope>amrex::SparseBinIteratorFactory</scope><name>index_type</name></member>

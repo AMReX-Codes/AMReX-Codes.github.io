@@ -3489,10 +3489,10 @@
         <param><defname>n</defname></param>
         <param><defname>i</defname></param>
         <param><defname>block</defname></param>
-        <initializer>    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \
+        <initializer>    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \
     <ref refid="amrex__parser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \
     { \
-        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(n, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept \
+        <ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(n, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept \
             block \
         ); \
     } \
@@ -3520,7 +3520,7 @@
         <param><defname>block</defname></param>
         <initializer>    <ref refid="amrex__parser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \
     { \
-        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(box, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept \
+        <ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(box, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept \
             block \
         ); \
     } \
@@ -3549,7 +3549,7 @@
         <param><defname>block</defname></param>
         <initializer>    <ref refid="amrex__parser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \
     { \
-        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(box, nc, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept \
+        <ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(box, nc, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept \
             block \
         ); \
     } \
@@ -3572,10 +3572,10 @@
         <param><defname>n</defname></param>
         <param><defname>i</defname></param>
         <param><defname>block</defname></param>
-        <initializer>    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \
+        <initializer>    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \
     <ref refid="amrex__parser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \
     { \
-        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(n, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept \
+        <ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(n, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (amrex_i_inttype i) noexcept \
             block \
         ); \
     } \
@@ -3602,7 +3602,7 @@
         <param><defname>block</defname></param>
         <initializer>    <ref refid="amrex__parser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \
     { \
-        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(box, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept \
+        <ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(box, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept \
             block \
         ); \
     } \
@@ -3631,7 +3631,7 @@
         <param><defname>block</defname></param>
         <initializer>    <ref refid="amrex__parser_8lex_8nolint_8H_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \
     { \
-        <ref refid="namespaceamrex_1a7c4d4d9ce4fe6fe6b1fcbbf297893347" kindref="member">amrex::ParallelFor</ref>(box, nc, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept \
+        <ref refid="namespaceamrex_1add9c441e051b2f701d97e5e505556fa3" kindref="member">amrex::ParallelFor</ref>(box, nc, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k, int n) noexcept \
             block \
         ); \
     } \
@@ -3815,7 +3815,7 @@
 <codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_USE_SYCL</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62" refid="AMReX__GpuLaunch_8nolint_8H_1a1bb4109b1b472fbcfb59fc4111460564" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block)<sp/>\</highlight></codeline>
-<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>typename<sp/>std::remove_const&lt;decltype(n)&gt;::type;<sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>std::remove_const_t&lt;decltype(n)&gt;;<sp/>\</highlight></codeline>
 <codeline lineno="64"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((where_to_run<sp/>==<sp/>RunOn::Device)<sp/>&amp;&amp;<sp/>(Gpu::inLaunchRegion()))<sp/>\</highlight></codeline>
 <codeline lineno="65"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="66"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(n,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(amrex_i_inttype<sp/>i)<sp/>noexcept<sp/>\</highlight></codeline>
@@ -3856,7 +3856,7 @@
 <codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
 <codeline lineno="103" refid="AMReX__GpuLaunch_8nolint_8H_1afd9e772ffd425c7e87ff315cab8afa6c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_1D_FLAG(where_to_run,n,i,block)<sp/>\</highlight></codeline>
-<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>typename<sp/>std::remove_const&lt;decltype(n)&gt;::type;<sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>std::remove_const_t&lt;decltype(n)&gt;;<sp/>\</highlight></codeline>
 <codeline lineno="105"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((where_to_run<sp/>==<sp/>RunOn::Device)<sp/>&amp;&amp;<sp/>(Gpu::inLaunchRegion()))<sp/>\</highlight></codeline>
 <codeline lineno="106"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(n,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(amrex_i_inttype<sp/>i)<sp/>noexcept<sp/>\</highlight></codeline>
@@ -3941,7 +3941,7 @@
 <codeline lineno="186"><highlight class="normal"></highlight><highlight class="comment">//<sp/>xxxxx<sp/>SYCL<sp/>todo:<sp/>host<sp/>disabled<sp/>in<sp/>host<sp/>device</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="187"><highlight class="normal"></highlight></codeline>
 <codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block)<sp/>\</highlight></codeline>
-<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>typename<sp/>std::remove_const&lt;decltype(n)&gt;::type;<sp/>\</highlight></codeline>
+<codeline lineno="189"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>std::remove_const_t&lt;decltype(n)&gt;;<sp/>\</highlight></codeline>
 <codeline lineno="190"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((where_to_run<sp/>==<sp/>RunOn::Device)<sp/>&amp;&amp;<sp/>(Gpu::inLaunchRegion()))<sp/>\</highlight></codeline>
 <codeline lineno="191"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="192"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(n,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(amrex_i_inttype<sp/>i)<sp/>noexcept<sp/>\</highlight></codeline>
@@ -3975,7 +3975,7 @@
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_1D_FLAG(where_to_run,n,i,block)<sp/>\</highlight></codeline>
-<codeline lineno="223"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>typename<sp/>std::remove_const&lt;decltype(n)&gt;::type;<sp/>\</highlight></codeline>
+<codeline lineno="223"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>std::remove_const_t&lt;decltype(n)&gt;;<sp/>\</highlight></codeline>
 <codeline lineno="224"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((where_to_run<sp/>==<sp/>RunOn::Device)<sp/>&amp;&amp;<sp/>(Gpu::inLaunchRegion()))<sp/>\</highlight></codeline>
 <codeline lineno="225"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="226"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(n,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(amrex_i_inttype<sp/>i)<sp/>noexcept<sp/>\</highlight></codeline>
@@ -4045,7 +4045,7 @@
 <codeline lineno="290"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="291"><highlight class="normal"></highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block)<sp/>\</highlight></codeline>
-<codeline lineno="293"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>typename<sp/>std::remove_const&lt;decltype(n)&gt;::type;<sp/>\</highlight></codeline>
+<codeline lineno="293"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>std::remove_const_t&lt;decltype(n)&gt;;<sp/>\</highlight></codeline>
 <codeline lineno="294"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::ignore_unused(where_to_run);<sp/>\</highlight></codeline>
 <codeline lineno="295"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>AMREX_PRAGMA_SIMD<sp/>\</highlight></codeline>
 <codeline lineno="296"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(amrex_i_inttype<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{<sp/>\</highlight></codeline>
@@ -4065,7 +4065,7 @@
 <codeline lineno="310"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="311"><highlight class="normal"></highlight></codeline>
 <codeline lineno="312"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_1D_FLAG(where_to_run,n,i,block)<sp/>\</highlight></codeline>
-<codeline lineno="313"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>typename<sp/>std::remove_const&lt;decltype(n)&gt;::type;<sp/>\</highlight></codeline>
+<codeline lineno="313"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/>using<sp/>amrex_i_inttype<sp/>=<sp/>std::remove_const_t&lt;decltype(n)&gt;;<sp/>\</highlight></codeline>
 <codeline lineno="314"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::ignore_unused(where_to_run);<sp/>\</highlight></codeline>
 <codeline lineno="315"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(amrex_i_inttype<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="316"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>

@@ -119,10 +119,10 @@ Public Types</h2></td></tr>
 <tr class="separator:a043db0d4cd2205027b4308f459496b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdece46bb48b940977bf9efe198779c4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#acdece46bb48b940977bf9efe198779c4">SuperParticleType</a> = <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt; <a class="el" href="structamrex_1_1ParticleTile.html#af37f9208b1b9908daad6789415d20f81">NStructReal</a>+NArrayReal, <a class="el" href="structamrex_1_1ParticleTile.html#a2e52440bc21e01affff077fff37edb44">NStructInt</a>+NArrayInt &gt;</td></tr>
 <tr class="separator:acdece46bb48b940977bf9efe198779c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a005c5af9405588898aadeb4fd23a60"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a> = typename std::conditional&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1ThisParticleTileHasNoAoS.html">ThisParticleTileHasNoAoS</a>, <a class="el" href="classamrex_1_1ArrayOfStructs.html">ArrayOfStructs</a>&lt; <a class="el" href="structamrex_1_1ParticleTile.html#a806d428c54ec86cc7e61edf954105f6f">ParticleType</a>, Allocator &gt; &gt;::type</td></tr>
-<tr class="separator:a1a005c5af9405588898aadeb4fd23a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a> = typename std::conditional&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt; NArrayReal, NArrayInt, Allocator, true &gt;, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt; NArrayReal, NArrayInt, Allocator, false &gt; &gt;::type</td></tr>
-<tr class="separator:ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecc824f28d4d4735eb5ca3cb0d763216"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a> = std::conditional_t&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1ThisParticleTileHasNoAoS.html">ThisParticleTileHasNoAoS</a>, <a class="el" href="classamrex_1_1ArrayOfStructs.html">ArrayOfStructs</a>&lt; <a class="el" href="structamrex_1_1ParticleTile.html#a806d428c54ec86cc7e61edf954105f6f">ParticleType</a>, Allocator &gt; &gt;</td></tr>
+<tr class="separator:aecc824f28d4d4735eb5ca3cb0d763216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d017997751335e72bad98b42931cfc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a> = std::conditional_t&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt; NArrayReal, NArrayInt, Allocator, true &gt;, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt; NArrayReal, NArrayInt, Allocator, false &gt; &gt;</td></tr>
+<tr class="separator:a22d017997751335e72bad98b42931cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf1dfc735a7f9d3508e434da7e87b632"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#adf1dfc735a7f9d3508e434da7e87b632">RealVector</a> = typename SoA::RealVector</td></tr>
 <tr class="separator:adf1dfc735a7f9d3508e434da7e87b632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab198bf3467e469c8c1bfa13f1c53799a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#ab198bf3467e469c8c1bfa13f1c53799a">IntVector</a> = typename SoA::IntVector</td></tr>
@@ -152,13 +152,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa4be6533a7b9987c6f0c73ffe3c4cbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca412a3b97db15ba5e39f02b97d079c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#a043db0d4cd2205027b4308f459496b79">RealType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#acca412a3b97db15ba5e39f02b97d079c">pos</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> position_index) const &amp;</td></tr>
 <tr class="separator:acca412a3b97db15ba5e39f02b97d079c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15a5c73d1aaced5789c24576eabe384d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a15a5c73d1aaced5789c24576eabe384d">GetArrayOfStructs</a> ()</td></tr>
+<tr class="memitem:a15a5c73d1aaced5789c24576eabe384d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a15a5c73d1aaced5789c24576eabe384d">GetArrayOfStructs</a> ()</td></tr>
 <tr class="separator:a15a5c73d1aaced5789c24576eabe384d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01fa9d2a9c7ad522f53a96ba6aa770a8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a01fa9d2a9c7ad522f53a96ba6aa770a8">GetArrayOfStructs</a> () const</td></tr>
+<tr class="memitem:a01fa9d2a9c7ad522f53a96ba6aa770a8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a01fa9d2a9c7ad522f53a96ba6aa770a8">GetArrayOfStructs</a> () const</td></tr>
 <tr class="separator:a01fa9d2a9c7ad522f53a96ba6aa770a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bc22bda551e1d2089c81b93c2b0d794"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a9bc22bda551e1d2089c81b93c2b0d794">GetStructOfArrays</a> ()</td></tr>
+<tr class="memitem:a9bc22bda551e1d2089c81b93c2b0d794"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a9bc22bda551e1d2089c81b93c2b0d794">GetStructOfArrays</a> ()</td></tr>
 <tr class="separator:a9bc22bda551e1d2089c81b93c2b0d794"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a865f181bef3a750aaae3437c4e91dd33"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a865f181bef3a750aaae3437c4e91dd33">GetStructOfArrays</a> () const</td></tr>
+<tr class="memitem:a865f181bef3a750aaae3437c4e91dd33"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a865f181bef3a750aaae3437c4e91dd33">GetStructOfArrays</a> () const</td></tr>
 <tr class="separator:a865f181bef3a750aaae3437c4e91dd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe6aa2080bb4a68eaded92e7e3e6efd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#abe6aa2080bb4a68eaded92e7e3e6efd6">empty</a> () const</td></tr>
 <tr class="separator:abe6aa2080bb4a68eaded92e7e3e6efd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,7 +183,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0af47b01f2f8e3b42701af71a08ed2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad932266bb874a93f00fc2920ff69548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#aad932266bb874a93f00fc2920ff69548">resize</a> (std::size_t count)</td></tr>
 <tr class="separator:aad932266bb874a93f00fc2920ff69548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c3596011f3532785e35f93767dac146"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, typename std::enable_if&lt;!T::is_soa_particle, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:a1c3596011f3532785e35f93767dac146"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a1c3596011f3532785e35f93767dac146"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a1c3596011f3532785e35f93767dac146">push_back</a> (const <a class="el" href="structamrex_1_1ParticleTile.html#a806d428c54ec86cc7e61edf954105f6f">ParticleType</a> &amp;p)</td></tr>
 <tr class="separator:a1c3596011f3532785e35f93767dac146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58ff9d1415aa8e4eee3fd76955d36429"><td class="memTemplParams" colspan="2">template&lt;int NR = NArrayReal, int NI = NArrayInt, std::enable_if_t&lt; NR !=0||NI !=0, int &gt; foo = 0&gt; </td></tr>
@@ -245,9 +245,9 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a434377380cf9f4dd45362080837b6ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a434377380cf9f4dd45362080837b6ec4">m_aos_tile</a></td></tr>
+<tr class="memitem:a434377380cf9f4dd45362080837b6ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#a434377380cf9f4dd45362080837b6ec4">m_aos_tile</a></td></tr>
 <tr class="separator:a434377380cf9f4dd45362080837b6ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfdbf84efe0aae5266a28545a2e45480"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#acfdbf84efe0aae5266a28545a2e45480">m_soa_tile</a></td></tr>
+<tr class="memitem:acfdbf84efe0aae5266a28545a2e45480"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#acfdbf84efe0aae5266a28545a2e45480">m_soa_tile</a></td></tr>
 <tr class="separator:acfdbf84efe0aae5266a28545a2e45480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4a6e09ba4f2ef496ba35c3dac4c19b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleTile.html#ad4a6e09ba4f2ef496ba35c3dac4c19b4">m_defined</a> = false</td></tr>
 <tr class="separator:ad4a6e09ba4f2ef496ba35c3dac4c19b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -287,8 +287,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a1a005c5af9405588898aadeb4fd23a60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a005c5af9405588898aadeb4fd23a60">&#9670;&nbsp;</a></span>AoS</h2>
+<a id="aecc824f28d4d4735eb5ca3cb0d763216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecc824f28d4d4735eb5ca3cb0d763216">&#9670;&nbsp;</a></span>AoS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +296,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::<a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a> =  typename std::conditional&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1ThisParticleTileHasNoAoS.html">ThisParticleTileHasNoAoS</a>, <a class="el" href="classamrex_1_1ArrayOfStructs.html">ArrayOfStructs</a>&lt;<a class="el" href="structamrex_1_1ParticleTile.html#a806d428c54ec86cc7e61edf954105f6f">ParticleType</a>, Allocator&gt; &gt;::type</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::<a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a> =  std::conditional_t&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1ThisParticleTileHasNoAoS.html">ThisParticleTileHasNoAoS</a>, <a class="el" href="classamrex_1_1ArrayOfStructs.html">ArrayOfStructs</a>&lt;<a class="el" href="structamrex_1_1ParticleTile.html#a806d428c54ec86cc7e61edf954105f6f">ParticleType</a>, Allocator&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -399,8 +399,8 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
 
 </div>
 </div>
-<a id="ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">&#9670;&nbsp;</a></span>SoA</h2>
+<a id="a22d017997751335e72bad98b42931cfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d017997751335e72bad98b42931cfc">&#9670;&nbsp;</a></span>SoA</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +408,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
 template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::<a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a> =  typename std::conditional&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt;NArrayReal, NArrayInt, Allocator, true&gt;, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt;NArrayReal, NArrayInt, Allocator, false&gt; &gt;::type</td>
+          <td class="memname">using <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::<a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a> =  std::conditional_t&lt; ParticleType::is_soa_particle, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt;NArrayReal, NArrayInt, Allocator, true&gt;, <a class="el" href="structamrex_1_1StructOfArrays.html">StructOfArrays</a>&lt;NArrayReal, NArrayInt, Allocator, false&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -636,7 +636,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs </td>
+          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -663,7 +663,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs </td>
+          <td class="memname">const <a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetArrayOfStructs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -771,7 +771,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays </td>
+          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -798,7 +798,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays </td>
+          <td class="memname">const <a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a>&amp; <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::GetStructOfArrays </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1177,7 +1177,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, typename std::enable_if&lt;!T::is_soa_particle, int &gt;::type  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1868,7 +1868,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">AoS</a> <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_aos_tile</td>
+          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">AoS</a> <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_aos_tile</td>
         </tr>
       </table>
   </td>
@@ -2108,7 +2108,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt, template&lt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">SoA</a> <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_soa_tile</td>
+          <td class="memname"><a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">SoA</a> <a class="el" href="structamrex_1_1ParticleTile.html">amrex::ParticleTile</a>&lt; T_ParticleType, NArrayReal, NArrayInt, Allocator &gt;::m_soa_tile</td>
         </tr>
       </table>
   </td>

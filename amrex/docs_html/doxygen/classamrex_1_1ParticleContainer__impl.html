@@ -154,9 +154,9 @@ Public Types</h2></td></tr>
 <tr class="separator:a39f3dad374127876863b7888ac53b465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a95432c01c58984730881db4e162f02"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a2a95432c01c58984730881db4e162f02">ParticleLevel</a> = std::map&lt; std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;, <a class="el" href="classamrex_1_1ParticleContainer__impl.html#aad727cb5c9b392a0ec2c7bbabdf22576">ParticleTileType</a> &gt;</td></tr>
 <tr class="separator:a2a95432c01c58984730881db4e162f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3995a8f437ce88e5a973f4f2f97501bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3995a8f437ce88e5a973f4f2f97501bf">AoS</a> = typename <a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">ParticleTileType::AoS</a></td></tr>
+<tr class="memitem:a3995a8f437ce88e5a973f4f2f97501bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3995a8f437ce88e5a973f4f2f97501bf">AoS</a> = typename <a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">ParticleTileType::AoS</a></td></tr>
 <tr class="separator:a3995a8f437ce88e5a973f4f2f97501bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ff052875e307b7cb9ca774912b4003"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a69ff052875e307b7cb9ca774912b4003">SoA</a> = typename <a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">ParticleTileType::SoA</a></td></tr>
+<tr class="memitem:a69ff052875e307b7cb9ca774912b4003"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a69ff052875e307b7cb9ca774912b4003">SoA</a> = typename <a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">ParticleTileType::SoA</a></td></tr>
 <tr class="separator:a69ff052875e307b7cb9ca774912b4003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c635ec7175b9f6f28bce938ea801423"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3c635ec7175b9f6f28bce938ea801423">RealVector</a> = typename SoA::RealVector</td></tr>
 <tr class="separator:a3c635ec7175b9f6f28bce938ea801423"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -309,11 +309,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27f7bd611c04c7075881cae3500a5f04"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a27f7bd611c04c7075881cae3500a5f04">addParticles</a> (const PCType &amp;other, bool local=false)</td></tr>
 <tr class="memdesc:a27f7bd611c04c7075881cae3500a5f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add particles from other to this ParticleContainer. local controls whether or not to call Redistribute after adding the particles.  <a href="classamrex_1_1ParticleContainer__impl.html#a27f7bd611c04c7075881cae3500a5f04">More...</a><br /></td></tr>
 <tr class="separator:a27f7bd611c04c7075881cae3500a5f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9825bb7c6eea753c2e98f5ce5fe546c4"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </td></tr>
+<tr class="memitem:a9825bb7c6eea753c2e98f5ce5fe546c4"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar = 0&gt; </td></tr>
 <tr class="memitem:a9825bb7c6eea753c2e98f5ce5fe546c4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a9825bb7c6eea753c2e98f5ce5fe546c4">copyParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local=false)</td></tr>
 <tr class="memdesc:a9825bb7c6eea753c2e98f5ce5fe546c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from other to this ParticleContainer. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer__impl.html#ae715cfb21e499fce29f8aee5a01feac1" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles.  <a href="classamrex_1_1ParticleContainer__impl.html#a9825bb7c6eea753c2e98f5ce5fe546c4">More...</a><br /></td></tr>
 <tr class="separator:a9825bb7c6eea753c2e98f5ce5fe546c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac525d32e717e0df2d0e806cd1694f879"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </td></tr>
+<tr class="memitem:ac525d32e717e0df2d0e806cd1694f879"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar = 0&gt; </td></tr>
 <tr class="memitem:ac525d32e717e0df2d0e806cd1694f879"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#ac525d32e717e0df2d0e806cd1694f879">addParticles</a> (const PCType &amp;other, F const &amp;f, bool local=false)</td></tr>
 <tr class="memdesc:ac525d32e717e0df2d0e806cd1694f879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add particles from other to this ParticleContainer. local controls whether or not to call Redistribute after adding the particles.  <a href="classamrex_1_1ParticleContainer__impl.html#ac525d32e717e0df2d0e806cd1694f879">More...</a><br /></td></tr>
 <tr class="separator:ac525d32e717e0df2d0e806cd1694f879"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -346,7 +346,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a96a9fec76eb6b686013708fd5e2823d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a96a9fec76eb6b686013708fd5e2823d9">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name) const</td></tr>
 <tr class="memdesc:a96a9fec76eb6b686013708fd5e2823d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and assigns component names.  <a href="classamrex_1_1ParticleContainer__impl.html#a96a9fec76eb6b686013708fd5e2823d9">More...</a><br /></td></tr>
 <tr class="separator:a96a9fec76eb6b686013708fd5e2823d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c0d796f13eb181c4dedb1e818830fa"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt; &amp; &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a26c0d796f13eb181c4dedb1e818830fa"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt; &amp; &gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a26c0d796f13eb181c4dedb1e818830fa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a26c0d796f13eb181c4dedb1e818830fa">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:a26c0d796f13eb181c4dedb1e818830fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and assigns component names.  <a href="classamrex_1_1ParticleContainer__impl.html#a26c0d796f13eb181c4dedb1e818830fa">More...</a><br /></td></tr>
 <tr class="separator:a26c0d796f13eb181c4dedb1e818830fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -360,7 +360,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a494bfdd72e01ade7f2373c7db60ead52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a494bfdd72e01ade7f2373c7db60ead52">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names) const</td></tr>
 <tr class="memdesc:a494bfdd72e01ade7f2373c7db60ead52"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="classamrex_1_1ParticleContainer__impl.html#a494bfdd72e01ade7f2373c7db60ead52">More...</a><br /></td></tr>
 <tr class="separator:a494bfdd72e01ade7f2373c7db60ead52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a2c4cdcc779530b056bd23affb0665f"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a1a2c4cdcc779530b056bd23affb0665f"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:a1a2c4cdcc779530b056bd23affb0665f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a1a2c4cdcc779530b056bd23affb0665f">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:a1a2c4cdcc779530b056bd23affb0665f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="classamrex_1_1ParticleContainer__impl.html#a1a2c4cdcc779530b056bd23affb0665f">More...</a><br /></td></tr>
 <tr class="separator:a1a2c4cdcc779530b056bd23affb0665f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,10 +454,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa0b3b069a1dee1a10ea57cc8e8bbde14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc0e05b69f7bc04b034f32697edd73f3"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#acc0e05b69f7bc04b034f32697edd73f3">superParticleSize</a> () const</td></tr>
 <tr class="separator:acc0e05b69f7bc04b034f32697edd73f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca62924612315ccf7f935690dac1d673"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:aca62924612315ccf7f935690dac1d673"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:aca62924612315ccf7f935690dac1d673"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#aca62924612315ccf7f935690dac1d673">AddRealComp</a> (T communicate=true)</td></tr>
 <tr class="separator:aca62924612315ccf7f935690dac1d673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac00b6f4f7bf0bda59d9284d81345ef6e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:ac00b6f4f7bf0bda59d9284d81345ef6e"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:ac00b6f4f7bf0bda59d9284d81345ef6e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#ac00b6f4f7bf0bda59d9284d81345ef6e">AddIntComp</a> (T communicate=true)</td></tr>
 <tr class="separator:ac00b6f4f7bf0bda59d9284d81345ef6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a926b41920a7dd2ca180db0717f726faa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a926b41920a7dd2ca180db0717f726faa">NumRuntimeRealComps</a> () const</td></tr>
@@ -498,22 +498,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20cee5315ade79318243b96dc7294c83"><td class="memTemplParams" colspan="2">template&lt;class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo&gt; </td></tr>
 <tr class="memitem:a20cee5315ade79318243b96dc7294c83"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a20cee5315ade79318243b96dc7294c83">addParticles</a> (const PCType &amp;other, bool local)</td></tr>
 <tr class="separator:a20cee5315ade79318243b96dc7294c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cf0ef88b46798899920b74f79a4905"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </td></tr>
+<tr class="memitem:a58cf0ef88b46798899920b74f79a4905"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar&gt; </td></tr>
 <tr class="memitem:a58cf0ef88b46798899920b74f79a4905"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a58cf0ef88b46798899920b74f79a4905">copyParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local)</td></tr>
 <tr class="separator:a58cf0ef88b46798899920b74f79a4905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a956db7caae43ab5d1de9c9e96e8df1ab"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </td></tr>
+<tr class="memitem:a956db7caae43ab5d1de9c9e96e8df1ab"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar&gt; </td></tr>
 <tr class="memitem:a956db7caae43ab5d1de9c9e96e8df1ab"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a956db7caae43ab5d1de9c9e96e8df1ab">addParticles</a> (const PCType &amp;other, F const &amp;f, bool local)</td></tr>
 <tr class="separator:a956db7caae43ab5d1de9c9e96e8df1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a549364cc9372899941b77e63d953ce51"><td class="memTemplParams" colspan="2">template&lt;class index_type &gt; </td></tr>
 <tr class="memitem:a549364cc9372899941b77e63d953ce51"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a549364cc9372899941b77e63d953ce51">ReorderParticles</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, const index_type *permutations)</td></tr>
 <tr class="separator:a549364cc9372899941b77e63d953ce51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c0d796f13eb181c4dedb1e818830fa"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt; &amp; &gt;::value &gt;::type * &gt; </td></tr>
+<tr class="memitem:a26c0d796f13eb181c4dedb1e818830fa"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt; &amp; &gt;&gt; * &gt; </td></tr>
 <tr class="memitem:a26c0d796f13eb181c4dedb1e818830fa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a26c0d796f13eb181c4dedb1e818830fa">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a26c0d796f13eb181c4dedb1e818830fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b432e4ca1dd792af8b37d6734500926"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
 <tr class="memitem:a6b432e4ca1dd792af8b37d6734500926"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a6b432e4ca1dd792af8b37d6734500926">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a6b432e4ca1dd792af8b37d6734500926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a2c4cdcc779530b056bd23affb0665f"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type * &gt; </td></tr>
+<tr class="memitem:a1a2c4cdcc779530b056bd23affb0665f"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; * &gt; </td></tr>
 <tr class="memitem:a1a2c4cdcc779530b056bd23affb0665f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer__impl.html#a1a2c4cdcc779530b056bd23affb0665f">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a1a2c4cdcc779530b056bd23affb0665f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9713da99f5e44b64758ad2feac9a62d0"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
@@ -830,7 +830,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::<a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3995a8f437ce88e5a973f4f2f97501bf">AoS</a> =  typename <a class="el" href="structamrex_1_1ParticleTile.html#a1a005c5af9405588898aadeb4fd23a60">ParticleTileType::AoS</a></td>
+          <td class="memname">using <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::<a class="el" href="classamrex_1_1ParticleContainer__impl.html#a3995a8f437ce88e5a973f4f2f97501bf">AoS</a> =  typename <a class="el" href="structamrex_1_1ParticleTile.html#aecc824f28d4d4735eb5ca3cb0d763216">ParticleTileType::AoS</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1092,7 +1092,7 @@ template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, templat
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::<a class="el" href="classamrex_1_1ParticleContainer__impl.html#a69ff052875e307b7cb9ca774912b4003">SoA</a> =  typename <a class="el" href="structamrex_1_1ParticleTile.html#ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b">ParticleTileType::SoA</a></td>
+          <td class="memname">using <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::<a class="el" href="classamrex_1_1ParticleContainer__impl.html#a69ff052875e307b7cb9ca774912b4003">SoA</a> =  typename <a class="el" href="structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc">ParticleTileType::SoA</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1451,7 +1451,7 @@ template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, templat
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, int &gt;::type  = 0&gt; </div>
+template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1554,7 +1554,7 @@ template&lt;class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </div>
+template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::addParticles </td>
@@ -1592,7 +1592,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </div>
+template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::addParticles </td>
@@ -1739,7 +1739,7 @@ template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, templat
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, int &gt;::type  = 0&gt; </div>
+template&lt;typename T , std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2146,7 +2146,7 @@ template&lt;class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </div>
+template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::copyParticles </td>
@@ -2184,7 +2184,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </div>
+template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, int &gt; bar = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::copyParticles </td>
@@ -6575,7 +6575,7 @@ template&lt;class F &gt; </div>
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile </td>
@@ -6637,7 +6637,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type * &gt; </div>
+template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; * &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile </td>
@@ -6681,7 +6681,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt; &amp; &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt; &amp; &gt;&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile </td>
@@ -6736,7 +6736,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int T_NArrayReal, int T_NArrayInt, template&lt; class &gt; class Allocator = DefaultAllocator, class T_CellAssignor  = DefaultAssignor&gt; </div>
 <div class="memtemplate">
-template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt; &amp; &gt;::value &gt;::type * &gt; </div>
+template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt; &amp; &gt;&gt; * &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer__impl.html">amrex::ParticleContainer_impl</a>&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::WritePlotFile </td>

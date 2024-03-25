@@ -25,7 +25,7 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_EB2_IF_Base.H", "AMReX__EB2__IF__Base_8H.html", [
       [ "GPUable", "structamrex_1_1GPUable.html", null ],
       [ "IsGPUable", "structamrex_1_1EB2_1_1IsGPUable.html", null ],
-      [ "IsGPUable< D, typename std::enable_if< std::is_base_of< GPUable, D >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_e7975428109c6f3d89c9f8ba8c25626f.html", null ]
+      [ "IsGPUable< D, std::enable_if_t< std::is_base_of_v< GPUable, D > > >", "structamrex_1_1EB2_1_1IsGPUable_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01GPUable_00_01D_01_4_01_4_01_4.html", null ]
     ] ],
     [ "AMReX_EB2_IF_Box.H", "AMReX__EB2__IF__Box_8H.html", [
       [ "BoxIF", "classamrex_1_1EB2_1_1BoxIF.html", "classamrex_1_1EB2_1_1BoxIF" ]

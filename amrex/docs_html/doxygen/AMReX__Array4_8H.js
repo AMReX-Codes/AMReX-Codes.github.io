@@ -2,10 +2,8 @@ var AMReX__Array4_8H =
 [
     [ "CellData", "structamrex_1_1CellData.html", "structamrex_1_1CellData" ],
     [ "Array4", "structamrex_1_1Array4.html", "structamrex_1_1Array4" ],
-    [ "HasMultiComp", "structamrex_1_1HasMultiComp.html", [
-      [ "type", "structamrex_1_1HasMultiComp_1_1type.html", null ]
-    ] ],
-    [ "type", "structamrex_1_1HasMultiComp_1_1type.html", null ],
+    [ "HasMultiComp", "structamrex_1_1HasMultiComp.html", null ],
+    [ "HasMultiComp< B, std::enable_if_t< B().size() >=1 >", "structamrex_1_1HasMultiComp_3_01B_00_01std_1_1enable__if__t_3_01B_07_08_8size_07_08_01_4_0a1_01_4.html", null ],
     [ "PolymorphicArray4", "structamrex_1_1PolymorphicArray4.html", "structamrex_1_1PolymorphicArray4" ],
     [ "lbound", "AMReX__Array4_8H.html#a71600c8a528e0f1863154e4cf0183cbc", null ],
     [ "length", "AMReX__Array4_8H.html#ab8f44b56e5ac2f53bcfe742891c1c79c", null ],

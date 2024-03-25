@@ -29,7 +29,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="22" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="22" bodyend="27"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a3343bcd3f86dca79c4100a2ff9894ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a1180158d9e9623e55d3d94563e5d078e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>template&lt; class, class &gt; class</type>
@@ -46,8 +46,8 @@
             <type>class F</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value&gt;::type particle_detail::fillFlags</definition>
+        <type>std::enable_if_t&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value&gt; particle_detail::fillFlags</definition>
         <argsstring>(Container&lt; int, Allocator &gt; &amp;pflags, const PTile &amp;ptile, F const &amp;f)</argsstring>
         <name>fillFlags</name>
         <param>
@@ -70,7 +70,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="34" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a0f7aa55dd769bd07922abe307af8b281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a19ab2be6594d991c46cc919e1e56d1a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>template&lt; class, class &gt; class</type>
@@ -87,8 +87,8 @@
             <type>class F</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value&gt;::type particle_detail::fillFlags</definition>
+        <type>std::enable_if_t&lt;!RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value&gt; particle_detail::fillFlags</definition>
         <argsstring>(Container&lt; int, Allocator &gt; &amp;pflags, const PTile &amp;ptile, F const &amp;f)</argsstring>
         <name>fillFlags</name>
         <param>
@@ -111,7 +111,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="58" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="58" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1afbe110320582b7ce557067081c94c949" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a70c1557a3408750fc36e511153e30df9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>template&lt; class, class &gt; class</type>
@@ -125,8 +125,8 @@
             <type>class PC</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, amrex::Long &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, amrex::Long&gt;::type particle_detail::countFlags</definition>
+        <type>std::enable_if_t&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, amrex::Long &gt;</type>
+        <definition>std::enable_if_t&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, amrex::Long&gt; particle_detail::countFlags</definition>
         <argsstring>(const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, Container&lt; int, Allocator &gt;&gt;&gt; &amp;particle_io_flags, const PC &amp;pc)</argsstring>
         <name>countFlags</name>
         <param>
@@ -145,7 +145,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="76" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="76" bodyend="98"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1ac1b1478c3d38493071ade6e6ac307806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1ab03ce227854d1babaf5747264c7895a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>template&lt; class, class &gt; class</type>
@@ -156,8 +156,8 @@
             <type>class Allocator</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, int &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, int&gt;::type particle_detail::countFlags</definition>
+        <type>std::enable_if_t&lt; RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, int &gt;</type>
+        <definition>std::enable_if_t&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, int&gt; particle_detail::countFlags</definition>
         <argsstring>(const Container&lt; int, Allocator &gt; &amp;pflags)</argsstring>
         <name>countFlags</name>
         <param>
@@ -172,7 +172,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="102" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="102" bodyend="116"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a2a43b6df160cae87f7c97c45c1f750d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1ac6d9fbdd693695e41223a867d37d47c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>template&lt; class, class &gt; class</type>
@@ -186,8 +186,8 @@
             <type>class PC</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, amrex::Long &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, amrex::Long&gt;::type particle_detail::countFlags</definition>
+        <type>std::enable_if_t&lt;!RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, amrex::Long &gt;</type>
+        <definition>std::enable_if_t&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, amrex::Long&gt; particle_detail::countFlags</definition>
         <argsstring>(const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, Container&lt; int, Allocator &gt;&gt;&gt; &amp;particle_io_flags, const PC &amp;pc)</argsstring>
         <name>countFlags</name>
         <param>
@@ -206,7 +206,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="120" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="120" bodyend="136"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a22e1685e4b065657f4bdd7dbe71d34d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a7857fe2157c0bbcd736ec5ff69b25bc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>template&lt; class, class &gt; class</type>
@@ -217,8 +217,8 @@
             <type>class Allocator</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, int &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, int&gt;::type particle_detail::countFlags</definition>
+        <type>std::enable_if_t&lt;!RunOnGpu&lt; typename Container&lt; int, Allocator &gt;::allocator_type &gt;::value, int &gt;</type>
+        <definition>std::enable_if_t&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value, int&gt; particle_detail::countFlags</definition>
         <argsstring>(const Container&lt; int, Allocator &gt; &amp;pflags)</argsstring>
         <name>countFlags</name>
         <param>
@@ -266,14 +266,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="152" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="152" bodyend="167"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a32c79228797f0b67784cf06d5767df2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a6fd1074ab53b322e0c0dbe45c3c31747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;RunOnGpu&lt;typename PC::template AllocatorType&lt;int&gt; &gt;::value&gt;::type particle_detail::packIOData</definition>
+        <type>std::enable_if_t&lt; RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;RunOnGpu&lt;typename PC::template AllocatorType&lt;int&gt; &gt;::value&gt; particle_detail::packIOData</definition>
         <argsstring>(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np, bool is_checkpoint)</argsstring>
         <name>packIOData</name>
         <param>
@@ -328,14 +328,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" line="171" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H" bodystart="171" bodyend="276"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceparticle__detail_1a037d69b06fff9ac32219c2a17886a88b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceparticle__detail_1a689cb58670e56b21d1fa937e8772c992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt;!RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;::type</type>
-        <definition>std::enable_if&lt;!RunOnGpu&lt;typename PC::template AllocatorType&lt;int&gt; &gt;::value&gt;::type particle_detail::packIOData</definition>
+        <type>std::enable_if_t&lt;!RunOnGpu&lt; typename PC::template AllocatorType&lt; int &gt; &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;!RunOnGpu&lt;typename PC::template AllocatorType&lt;int&gt; &gt;::value&gt; particle_detail::packIOData</definition>
         <argsstring>(Vector&lt; int &gt; &amp;idata, Vector&lt; ParticleReal &gt; &amp;rdata, const PC &amp;pc, int lev, int grid, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, typename PC::IntVector &gt;&gt; &amp;particle_io_flags, const Vector&lt; int &gt; &amp;tiles, int np, bool is_checkpoint)</argsstring>
         <name>packIOData</name>
         <param>

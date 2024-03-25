@@ -1,6 +1,6 @@
 var AMReX__EB2__IF__Lathe_8H =
 [
     [ "LatheIF", "classamrex_1_1EB2_1_1LatheIF.html", "classamrex_1_1EB2_1_1LatheIF" ],
-    [ "IsGPUable< LatheIF< F >, typename std::enable_if< IsGPUable< F >::value >::type >", "structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG870c79fcc93b5ecb25be1ee2def9f2cf.html", null ],
-    [ "lathe", "AMReX__EB2__IF__Lathe_8H.html#a06fb3c21b6b807e82950c9483152d4cc", null ]
+    [ "IsGPUable< LatheIF< F >, std::enable_if_t< IsGPUable< F >::value > >", "structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4.html", null ],
+    [ "lathe", "AMReX__EB2__IF__Lathe_8H.html#a1e6eedbf6131d4d1c9a33e7c3165e630", null ]
 ];

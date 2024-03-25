@@ -3,7 +3,7 @@ var AMReX__Algorithm_8H =
     [ "clzll_tag", "structamrex_1_1detail_1_1clzll__tag.html", null ],
     [ "clzl_tag", "structamrex_1_1detail_1_1clzl__tag.html", null ],
     [ "clz_tag", "structamrex_1_1detail_1_1clz__tag.html", null ],
-    [ "almostEqual", "AMReX__Algorithm_8H.html#a9314c1849b946e44ddd246d9c0562e72", null ],
+    [ "almostEqual", "AMReX__Algorithm_8H.html#aa90c9ff8ea429232ddb2573bddacdac6", null ],
     [ "bisect", "AMReX__Algorithm_8H.html#ae028ac7f5c3bea125e9525c505ceefd2", null ],
     [ "bisect", "AMReX__Algorithm_8H.html#a6d6b1086f3f7b77f820cac8d8005ac38", null ],
     [ "Clamp", "AMReX__Algorithm_8H.html#ac7da8611787662eeb7b9e4a098ceac22", null ],

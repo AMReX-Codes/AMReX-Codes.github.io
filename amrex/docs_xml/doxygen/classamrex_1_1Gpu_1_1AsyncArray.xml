@@ -8,7 +8,7 @@
         <type>typename T</type>
       </param>
       <param>
-        <type>std::enable_if_t&lt; std::is_trivially_copyable&lt; T &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+        <type>std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
         <defval>0</defval>
       </param>
     </templateparamlist>
@@ -71,7 +71,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_standard_layout&lt; U &gt;::value &amp;&amp;std::is_trivial&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_standard_layout_v&lt; U &gt; &amp;&amp;std::is_trivial_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>

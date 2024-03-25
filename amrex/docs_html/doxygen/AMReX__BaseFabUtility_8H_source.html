@@ -123,10 +123,10 @@ $(document).ready(function(){initNavTree('AMReX__BaseFabUtility_8H_source.html',
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> STRUCT, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;          <span class="keyword">typename</span> std::enable_if&lt;(<span class="keyword">sizeof</span>(STRUCT)&lt;=36*8) &amp;&amp;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;          std::enable_if_t&lt;(<span class="keyword">sizeof</span>(STRUCT)&lt;=36*8) &amp;&amp;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                  <a class="code" href="AMReX__TypeTraits_8H.html#adc50ea9983407ec975c6c594c92bae5d">AMREX_IS_TRIVIALLY_COPYABLE</a>(STRUCT) &amp;&amp;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                  std::is_trivially_destructible&lt;STRUCT&gt;::value,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                  <span class="keywordtype">int</span>&gt;::type FOO = 0&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                  std::is_trivially_destructible_v&lt;STRUCT&gt;,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                  <span class="keywordtype">int</span>&gt;FOO = 0&gt;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a7b3c5a372f37d8bb9aa21a76a5129a95">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a7b3c5a372f37d8bb9aa21a76a5129a95">fill</a> (<a class="code" href="classamrex_1_1BaseFab.html">BaseFab&lt;STRUCT&gt;</a>&amp; aos_fab, F <span class="keyword">const</span>&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box = aos_fab.<a class="code" href="classamrex_1_1BaseFab.html#aa288a917ca5613e3e984c58a7975a89d">box</a>();</div>

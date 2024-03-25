@@ -1,9 +1,9 @@
 var AMReX__TypeTraits_8H =
 [
     [ "IsBaseFab", "structamrex_1_1IsBaseFab.html", null ],
-    [ "IsBaseFab< D, typename std::enable_if< std::is_base_of< BaseFab< typename D::value_type >, D >::value >::type >", "structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html", null ],
+    [ "IsBaseFab< D, std::enable_if_t< std::is_base_of_v< BaseFab< typename D::value_type >, D > > >", "structamrex_1_1IsBaseFab_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01BaseFab_e919207a96f4ea216943219981685bdd.html", null ],
     [ "IsFabArray", "structamrex_1_1IsFabArray.html", null ],
-    [ "IsFabArray< D, typename std::enable_if< std::is_base_of< FabArray< typename D::FABType::value_type >, D >::value >::type >", "structamrex_1_1IsFabArray_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Fa50eb808c2316c63b70b55cab20dbec23.html", null ],
+    [ "IsFabArray< D, std::enable_if_t< std::is_base_of_v< FabArray< typename D::FABType::value_type >, D > > >", "structamrex_1_1IsFabArray_3_01D_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01FabArrae7a3c5405f8dbf92bbb678a85384720d.html", null ],
     [ "IsMultiFabLike", "structamrex_1_1IsMultiFabLike.html", null ],
     [ "IsMultiFabLike< M, std::enable_if_t< IsFabArray_v< M > &&IsBaseFab_v< typename M::fab_type > > >", "structamrex_1_1IsMultiFabLike_3_01M_00_01std_1_1enable__if__t_3_01IsFabArray__v_3_01M_01_4_01_6_1b79f12933d87e47a77b2c36839b7d8d.html", null ],
     [ "HasAtomicAdd", "structamrex_1_1HasAtomicAdd.html", null ],
@@ -36,7 +36,7 @@ var AMReX__TypeTraits_8H =
     [ "call_result_t", "AMReX__TypeTraits_8H.html#ad9ffd55042a6573c492b8fc107951d12", null ],
     [ "Detected_t", "AMReX__TypeTraits_8H.html#a4c98b791b1f6442671e5cfa546a3df4f", null ],
     [ "DetectedOr", "AMReX__TypeTraits_8H.html#abe72f840d81a1ce49a3811fe8295b222", null ],
-    [ "EnableIf_t", "AMReX__TypeTraits_8H.html#a8690d4c6386d001b328b07257fe628a0", null ],
+    [ "EnableIf_t", "AMReX__TypeTraits_8H.html#ae456dccc30b99d38aeeecd21adc7acfe", null ],
     [ "IsDetected", "AMReX__TypeTraits_8H.html#af199566bf00a390cb47c2a0140b3fc67", null ],
     [ "IsDetectedExact", "AMReX__TypeTraits_8H.html#afcea7cdc6e03361f56c401b56d66a870", null ],
     [ "Negation", "AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa", null ],

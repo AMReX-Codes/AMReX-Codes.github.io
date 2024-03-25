@@ -1,7 +1,7 @@
 var structamrex_1_1Table2D =
 [
     [ "Table2D", "structamrex_1_1Table2D.html#a43581fee1f166e735b7684c24dfe1c48", null ],
-    [ "Table2D", "structamrex_1_1Table2D.html#aea5eb7caff5592e25bb9aaf4be6d69d6", null ],
+    [ "Table2D", "structamrex_1_1Table2D.html#af3e6fe538ef1028ffc92facd2feb13cf", null ],
     [ "Table2D", "structamrex_1_1Table2D.html#a8fb13a53cc27a040127c5e8c53b46358", null ],
     [ "operator bool", "structamrex_1_1Table2D.html#a3321f4fffb790dae3463f25bbb7d307e", null ],
     [ "operator()", "structamrex_1_1Table2D.html#aabd52214675192e193727de480166de3", null ],

@@ -137,10 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a105b772528c0a4ab1ddd6970c04e1456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac72dd343efcb41ccea96af50686e1dad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ConstParticleTileData.html#ac72dd343efcb41ccea96af50686e1dad">packParticleData</a> (char *buffer, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> src_index, Long dst_offset, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *comm_real, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *comm_int) const noexcept</td></tr>
 <tr class="separator:ac72dd343efcb41ccea96af50686e1dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a4e750961bea9387e82b31eb85c071"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, typename std::enable_if&lt;!T::is_soa_particle, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:a13a4e750961bea9387e82b31eb85c071"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a13a4e750961bea9387e82b31eb85c071"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d">SuperParticleType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071">getSuperParticle</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="separator:a13a4e750961bea9387e82b31eb85c071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a4e750961bea9387e82b31eb85c071"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, typename std::enable_if&lt; T::is_soa_particle, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:a13a4e750961bea9387e82b31eb85c071"><td class="memTemplParams" colspan="2">template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:a13a4e750961bea9387e82b31eb85c071"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d">SuperParticleType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071">getSuperParticle</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> index) const noexcept</td></tr>
 <tr class="separator:a13a4e750961bea9387e82b31eb85c071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -280,7 +280,7 @@ template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, typename std::enable_if&lt;!T::is_soa_particle, int &gt;::type  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt;!T::is_soa_particle, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -310,7 +310,7 @@ template&lt;typename T  = ParticleType, typename std::enable_if&lt;!T::is_soa_pa
 <div class="memtemplate">
 template&lt;typename T_ParticleType , int NArrayReal, int NArrayInt&gt; </div>
 <div class="memtemplate">
-template&lt;typename T  = ParticleType, typename std::enable_if&lt; T::is_soa_particle, int &gt;::type  = 0&gt; </div>
+template&lt;typename T  = ParticleType, std::enable_if_t&lt; T::is_soa_particle, int &gt;  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

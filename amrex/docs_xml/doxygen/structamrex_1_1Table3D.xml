@@ -94,23 +94,23 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="148" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table3D_1a2d27806f0990b4d583cb638abbc59f3c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1a03684bf3054b7a40d2c00dc5c2a30ed2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_const&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
         <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T &gt;::Table3D</definition>
-        <argsstring>(Table3D&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;rhs) noexcept</argsstring>
+        <argsstring>(Table3D&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</argsstring>
         <name>Table3D</name>
         <param>
-          <type><ref refid="structamrex_1_1Table3D" kindref="compound">Table3D</ref>&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Table3D" kindref="compound">Table3D</ref>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -166,7 +166,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -223,7 +223,7 @@
       <member refid="structamrex_1_1Table3D_1a1384a98918c367d6798a0630b92e3a21" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>operator()</name></member>
       <member refid="structamrex_1_1Table3D_1a9f045c21573d088af664ba4b5a350946" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>p</name></member>
       <member refid="structamrex_1_1Table3D_1a5c13d910c8414b61c7be14d7abe9059a" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
-      <member refid="structamrex_1_1Table3D_1a2d27806f0990b4d583cb638abbc59f3c" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
+      <member refid="structamrex_1_1Table3D_1a03684bf3054b7a40d2c00dc5c2a30ed2" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
       <member refid="structamrex_1_1Table3D_1a2e7e42a20e96c42aed1e9815273da491" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
     </listofallmembers>
   </compounddef>

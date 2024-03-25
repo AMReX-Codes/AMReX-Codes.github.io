@@ -5,14 +5,14 @@
     <innerclass refid="structamrex_1_1Math_1_1FastDivmodU64" prot="public">amrex::Math::FastDivmodU64</innerclass>
     <innernamespace refid="namespaceamrex_1_1Math_1_1detail">amrex::Math::detail</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1Math_1ab79268d67f8a70c6e85ad3dfbbc622a3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Math_1ae119edbc36d72d7e0287e015330974c5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>constexpr std::enable_if_t&lt; std::is_floating_point&lt; T &gt;::value, T &gt;</type>
-        <definition>constexpr std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::value,T&gt; amrex::Math::pi</definition>
+        <type>constexpr std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, T &gt;</type>
+        <definition>constexpr std::enable_if_t&lt;std::is_floating_point_v&lt;T&gt;,T&gt; amrex::Math::pi</definition>
         <argsstring>()</argsstring>
         <name>pi</name>
         <briefdescription>
@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H" line="61" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H" bodystart="61" bodyend="64"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H" line="61" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H" bodystart="61" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Math_1ada7d7d19433d7d59ac03689f8b55631d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> double</type>
@@ -167,7 +167,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H" line="178" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Math.H" bodystart="178" bodyend="188"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Math_1a00c67f1c6607b0d93dea1f8ad5e913fe" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Math_1a8f2602163bf297a5c5342e6b9425e626" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -179,11 +179,11 @@
           </param>
           <param>
             <type>typename</type>
-            <defval>typename std::enable_if&lt;!std::is_integral&lt;T&gt;() || Power&gt;=0</defval>
+            <defval>std::enable_if_t&lt;!std::is_integral&lt;T&gt;() || Power&gt;=0</defval>
           </param>
         </templateparamlist>
-        <type>::type constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
-        <definition>::type constexpr AMREX_FORCE_INLINE T amrex::Math::powi</definition>
+        <type>constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>constexpr AMREX_FORCE_INLINE T amrex::Math::powi</definition>
         <argsstring>(T x) noexcept</argsstring>
         <name>powi</name>
         <param>

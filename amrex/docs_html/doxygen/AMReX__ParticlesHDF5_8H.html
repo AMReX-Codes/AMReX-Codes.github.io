@@ -135,7 +135,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a96116bf2f35b8cfe4962282557504f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#a96116bf2f35b8cfe4962282557504f80">WritePlotFileHDF5</a> (const std::string &amp;dir, const std::string &amp;name, const std::string &amp;compression) const</td></tr>
 <tr class="memdesc:a96116bf2f35b8cfe4962282557504f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and assigns component names.  <a href="AMReX__ParticlesHDF5_8H.html#a96116bf2f35b8cfe4962282557504f80">More...</a><br /></td></tr>
 <tr class="separator:a96116bf2f35b8cfe4962282557504f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb19e6a2b78618c69515d3278bd25f6e"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:afb19e6a2b78618c69515d3278bd25f6e"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:afb19e6a2b78618c69515d3278bd25f6e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#afb19e6a2b78618c69515d3278bd25f6e">WritePlotFileHDF5</a> (const std::string &amp;dir, const std::string &amp;name, const std::string &amp;compression, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:afb19e6a2b78618c69515d3278bd25f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and assigns component names.  <a href="AMReX__ParticlesHDF5_8H.html#afb19e6a2b78618c69515d3278bd25f6e">More...</a><br /></td></tr>
 <tr class="separator:afb19e6a2b78618c69515d3278bd25f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,7 +149,7 @@ Functions</h2></td></tr>
 <tr class="memitem:aa34c49ed39d7e6b75add4c4b13582646"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#aa34c49ed39d7e6b75add4c4b13582646">WritePlotFileHDF5</a> (const std::string &amp;dir, const std::string &amp;name, const Vector&lt; std::string &gt; &amp;real_comp_names, const std::string &amp;compression) const</td></tr>
 <tr class="memdesc:aa34c49ed39d7e6b75add4c4b13582646"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="AMReX__ParticlesHDF5_8H.html#aa34c49ed39d7e6b75add4c4b13582646">More...</a><br /></td></tr>
 <tr class="separator:aa34c49ed39d7e6b75add4c4b13582646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc7bdab9df4e855ff8994599de50dd7f"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:abc7bdab9df4e855ff8994599de50dd7f"><td class="memTemplParams" colspan="2">template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:abc7bdab9df4e855ff8994599de50dd7f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__ParticlesHDF5_8H.html#abc7bdab9df4e855ff8994599de50dd7f">WritePlotFileHDF5</a> (const std::string &amp;dir, const std::string &amp;name, const Vector&lt; std::string &gt; &amp;real_comp_names, const std::string &amp;compression, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:abc7bdab9df4e855ff8994599de50dd7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="AMReX__ParticlesHDF5_8H.html#abc7bdab9df4e855ff8994599de50dd7f">More...</a><br /></td></tr>
 <tr class="separator:abc7bdab9df4e855ff8994599de50dd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -773,7 +773,7 @@ template&lt;class F &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void WritePlotFileHDF5 </td>
@@ -1170,7 +1170,7 @@ template&lt;class F &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;class F , std::enable_if_t&lt;!std::is_same_v&lt; F, Vector&lt; std::string &gt;&gt;&gt; *  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void WritePlotFileHDF5 </td>

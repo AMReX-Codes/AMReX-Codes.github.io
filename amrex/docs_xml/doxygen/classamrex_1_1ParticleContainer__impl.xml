@@ -172,7 +172,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="185" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classamrex_1_1ParticleContainer__impl_1a3995a8f437ce88e5a973f4f2f97501bf" prot="public" static="no">
-        <type>typename <ref refid="structamrex_1_1ParticleTile_1a1a005c5af9405588898aadeb4fd23a60" kindref="member">ParticleTileType::AoS</ref></type>
+        <type>typename <ref refid="structamrex_1_1ParticleTile_1aecc824f28d4d4735eb5ca3cb0d763216" kindref="member">ParticleTileType::AoS</ref></type>
         <definition>using amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::AoS =  typename ParticleTileType::AoS</definition>
         <argsstring></argsstring>
         <name>AoS</name>
@@ -185,7 +185,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" line="186" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainer.H" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classamrex_1_1ParticleContainer__impl_1a69ff052875e307b7cb9ca774912b4003" prot="public" static="no">
-        <type>typename <ref refid="structamrex_1_1ParticleTile_1ae67e73a46a2a1e1f5ba4c4fd6e1fbb7b" kindref="member">ParticleTileType::SoA</ref></type>
+        <type>typename <ref refid="structamrex_1_1ParticleTile_1a22d017997751335e72bad98b42931cfc" kindref="member">ParticleTileType::SoA</ref></type>
         <definition>using amrex::ParticleContainer_impl&lt; T_ParticleType, T_NArrayReal, T_NArrayInt, Allocator, T_CellAssignor &gt;::SoA =  typename ParticleTileType::SoA</definition>
         <argsstring></argsstring>
         <name>SoA</name>
@@ -2506,7 +2506,7 @@
             <defval>0</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <declname>bar</declname>
             <defname>bar</defname>
             <defval>0</defval>
@@ -2589,7 +2589,7 @@
             <defval>0</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <declname>bar</declname>
             <defname>bar</defname>
             <defval>0</defval>
@@ -3162,7 +3162,7 @@
             <type>class F</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_same&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt; &amp; &gt;::value &gt;::type *</type>
+            <type>std::enable_if_t&lt;!std::is_same_v&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt; &amp; &gt;&gt; *</type>
             <defval>nullptr</defval>
           </param>
         </templateparamlist>
@@ -3440,7 +3440,7 @@
             <type>class F</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_same&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt;&gt;::value &gt;::type *</type>
+            <type>std::enable_if_t&lt;!std::is_same_v&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt;&gt;&gt; *</type>
             <defval>nullptr</defval>
           </param>
         </templateparamlist>
@@ -4766,7 +4766,7 @@
             <type>typename T</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -4793,7 +4793,7 @@
             <type>typename T</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; T, bool &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -5245,7 +5245,7 @@
             <defname>foo</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <declname>bar</declname>
             <defname>bar</defname>
           </param>
@@ -5288,7 +5288,7 @@
             <defname>foo</defname>
           </param>
           <param>
-            <type>std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;! std::is_integral_v&lt; F &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <declname>bar</declname>
             <defname>bar</defname>
           </param>
@@ -5353,7 +5353,7 @@
             <type>class F</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_same&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt; &amp; &gt;::value &gt;::type *</type>
+            <type>std::enable_if_t&lt;!std::is_same_v&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt; &amp; &gt;&gt; *</type>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -5424,7 +5424,7 @@
             <type>class F</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_same&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt;&gt;::value &gt;::type *</type>
+            <type>std::enable_if_t&lt;!std::is_same_v&lt; F, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt;&gt;&gt; *</type>
           </param>
         </templateparamlist>
         <type>void</type>

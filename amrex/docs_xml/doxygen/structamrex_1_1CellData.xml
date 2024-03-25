@@ -78,23 +78,23 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="22" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="22" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1CellData_1a30fd56464f125bf8f2839f5ba4e21ae6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1CellData_1a96af7ce615384f42e11db33a16e36b05" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt; std::is_const&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
         <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::CellData&lt; T &gt;::CellData</definition>
-        <argsstring>(CellData&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;rhs) noexcept</argsstring>
+        <argsstring>(CellData&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</argsstring>
         <name>CellData</name>
         <param>
-          <type><ref refid="structamrex_1_1CellData" kindref="compound">CellData</ref>&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1CellData" kindref="compound">CellData</ref>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -138,7 +138,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>std::enable_if_t&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -166,7 +166,7 @@
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="15" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="16" bodyend="57"/>
     <listofallmembers>
       <member refid="structamrex_1_1CellData_1accb987397fdc10a704d4e42d4e5c5d31" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
-      <member refid="structamrex_1_1CellData_1a30fd56464f125bf8f2839f5ba4e21ae6" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
+      <member refid="structamrex_1_1CellData_1a96af7ce615384f42e11db33a16e36b05" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>CellData</name></member>
       <member refid="structamrex_1_1CellData_1a327facaefaef9c16772d8b9f5647848e" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>ncomp</name></member>
       <member refid="structamrex_1_1CellData_1a47ea706bedc5e03c2a5556da50801cf3" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>nComp</name></member>
       <member refid="structamrex_1_1CellData_1a379f80fbf920e73f6b6f19c7c659da35" prot="public" virt="non-virtual"><scope>amrex::CellData</scope><name>operator bool</name></member>

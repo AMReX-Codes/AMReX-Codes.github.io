@@ -17,7 +17,7 @@ var AMReX__Tuple_8H =
     [ "apply_result", "structamrex_1_1detail_1_1apply__result.html", null ],
     [ "apply_result< F, GpuTuple< Ts... > >", "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
     [ "Tuple", "AMReX__Tuple_8H.html#a00604a127d1bcc6545bea88e8aa906c8", null ],
-    [ "tuple_decay_t", "AMReX__Tuple_8H.html#a4dabd168440a362478e0d2887dfdfe23", null ],
+    [ "tuple_decay_t", "AMReX__Tuple_8H.html#aca8ebce069c1d3ef5f89482a9e96bb6d", null ],
     [ "Apply", "AMReX__Tuple_8H.html#a72ba0f3bd5880d4218b4bfe93373edf6", null ],
     [ "apply_impl", "AMReX__Tuple_8H.html#ac60a1b88f1421c5113c694d9460de676", null ],
     [ "ForwardAsTuple", "AMReX__Tuple_8H.html#ad8cc1e47b11f22cfe944555f6e833cc8", null ],

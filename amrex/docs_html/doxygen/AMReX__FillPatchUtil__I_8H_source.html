@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        dfab(i,j,k,n+destcomp) = sfab1(i,j,k,n+scomp);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    });</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (! <a class="code" href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a>(t0,t1))</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (! <a class="code" href="namespaceamrex.html#aa90c9ff8ea429232ddb2573bddacdac6">amrex::almostEqual</a>(t0,t1))</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    Real alpha = (t1-time)/(t1-t0);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    Real beta = (time-t0)/(t1-t0);</div>
@@ -290,8 +290,8 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                      MFInterpolater* mapper, <span class="keyword">const</span> Vector&lt;BCRec&gt;&amp; bcs, <span class="keywordtype">int</span> bcscomp);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> Interp&gt;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value &amp;&amp; !std::is_same&lt;Interp,MFInterpolater&gt;::value&gt;</div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa7b080c701e9889b9761ea6e211918a8">  193</a></span>&#160;<a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a> (MF&amp; mf_fine_patch, <span class="keywordtype">int</span> fcomp, MF <span class="keyword">const</span>&amp; mf_crse_patch, <span class="keywordtype">int</span> ccomp,</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value &amp;&amp; !std::is_same_v&lt;Interp,MFInterpolater&gt;&gt;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a1f0353526b2fbde7e376453d034d052e">  193</a></span>&#160;<a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a> (MF&amp; mf_fine_patch, <span class="keywordtype">int</span> fcomp, MF <span class="keyword">const</span>&amp; mf_crse_patch, <span class="keywordtype">int</span> ccomp,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                 <span class="keywordtype">int</span> ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> <span class="keyword">const</span>&amp; ng, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; cgeom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Geometry.html">Geometry</a>&amp; fgeom,</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                 <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; dest_domain, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; ratio,</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                 Interp* mapper, <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs, <span class="keywordtype">int</span> bcscomp)</div>
@@ -341,8 +341,8 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> iMF, <span class="keyword">typename</span> Interp&gt;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value  &amp;&amp; !std::is_same&lt;Interp,MFInterpolater&gt;::value&gt;</div>
-<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">  244</a></span>&#160;<a class="code" href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">InterpFace</a> (Interp *interp,</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value  &amp;&amp; !std::is_same_v&lt;Interp,MFInterpolater&gt;&gt;</div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">  244</a></span>&#160;<a class="code" href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">InterpFace</a> (Interp *interp,</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            MF <span class="keyword">const</span>&amp; mf_crse_patch,    <span class="keywordtype">int</span> crse_comp,</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            MF&amp;       mf_refined_patch, <span class="keywordtype">int</span> fine_comp,</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp;   ratio,</div>
@@ -368,7 +368,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF, <span class="keyword">typename</span> iMF&gt;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</div>
-<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4262e98515dcf57af2a075ccc914dba8">  270</a></span>&#160;<a class="code" href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">InterpFace</a> (<a class="code" href="classamrex_1_1InterpBase.html">InterpBase</a> *interp,</div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4262e98515dcf57af2a075ccc914dba8">  270</a></span>&#160;<a class="code" href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">InterpFace</a> (<a class="code" href="classamrex_1_1InterpBase.html">InterpBase</a> *interp,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            MF <span class="keyword">const</span>&amp; mf_crse_patch,    <span class="keywordtype">int</span> crse_comp,</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            MF&amp;       mf_refined_patch, <span class="keywordtype">int</span> fine_comp,</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp;   ratio,</div>
@@ -377,13 +377,13 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a>&amp; bcs)</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classamrex_1_1MFInterpolater.html">MFInterpolater</a>*<span class="keyword">&gt;</span>(interp)){</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <a class="code" href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">InterpFace</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1MFInterpolater.html">MFInterpolater</a>*<span class="keyword">&gt;</span>(interp),</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <a class="code" href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">InterpFace</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1MFInterpolater.html">MFInterpolater</a>*<span class="keyword">&gt;</span>(interp),</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    mf_crse_patch, crse_comp,mf_refined_patch, fine_comp,</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    ncomp, ratio, solve_mask, crse_geom, fine_geom, bccomp,</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    gpu_or_cpu, bcs);</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classamrex_1_1Interpolater.html">Interpolater</a>*<span class="keyword">&gt;</span>(interp)){</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">InterpFace</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1Interpolater.html">Interpolater</a>*<span class="keyword">&gt;</span>(interp),</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">InterpFace</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1Interpolater.html">Interpolater</a>*<span class="keyword">&gt;</span>(interp),</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                    mf_crse_patch, crse_comp,mf_refined_patch, fine_comp,</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    ncomp, ratio, solve_mask, crse_geom, fine_geom, bccomp,</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    gpu_or_cpu, bcs);</div>
@@ -399,9 +399,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">// ======== FArrayBox</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    MF make_mf_crse_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        MF mf_crse_patch(fpc.ba_crse_patch, fpc.dm_patch, ncomp, 0, MFInfo(),</div>
@@ -410,9 +410,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    MF make_mf_crse_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        MF mf_crse_patch(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fpc.ba_crse_patch, idx_type), fpc.dm_patch,</div>
@@ -421,9 +421,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    }</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    MF make_mf_fine_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp)</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    {</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        MF mf_fine_patch(fpc.ba_fine_patch, fpc.dm_patch, ncomp, 0, MFInfo(),</div>
@@ -432,9 +432,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    MF make_mf_fine_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type)</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    {</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        MF mf_fine_patch(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fpc.ba_fine_patch, idx_type), fpc.dm_patch,</div>
@@ -443,9 +443,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    MF make_mf_refined_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type, IntVect ratio)</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        MF mf_refined_patch(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>( <a class="code" href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a>( <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(fpc.ba_fine_patch, ratio), ratio), idx_type),</div>
@@ -454,9 +454,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    MF make_mf_crse_mask (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type, IntVect ratio)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    {</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        MF mf_crse_mask(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(<a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(fpc.ba_fine_patch, ratio), idx_type),</div>
@@ -465,9 +465,9 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              std::enable_if_t&lt;std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">void</span> mf_set_domain_bndry (MF &amp;mf, Geometry <span class="keyword">const</span> &amp; geom)</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    {</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        mf.setDomainBndry(std::numeric_limits&lt;Real&gt;::quiet_NaN(), geom);</div>
@@ -477,63 +477,63 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">// ======== Not FArrayBox</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                                    FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                                    FArrayBox&gt;,</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    MF make_mf_crse_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp)</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    {</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">return</span> MF(fpc.ba_crse_patch, fpc.dm_patch, ncomp, 0);</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                                    FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                                    FArrayBox&gt;,</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    MF make_mf_crse_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type)</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    {</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> MF(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fpc.ba_crse_patch, idx_type), fpc.dm_patch, ncomp, 0);</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                                                    FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                                                    FArrayBox&gt;,</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    MF make_mf_fine_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp)</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    {</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">return</span> MF(fpc.ba_fine_patch, fpc.dm_patch, ncomp, 0);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                                    FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                                    FArrayBox&gt;,</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    MF make_mf_fine_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type)</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    {</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">return</span> MF(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fpc.ba_fine_patch, idx_type), fpc.dm_patch, ncomp, 0);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    MF make_mf_refined_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type, IntVect ratio)</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    {</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">return</span> MF(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>( <a class="code" href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a>( <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(fpc.ba_fine_patch, ratio), ratio), idx_type), fpc.dm_patch, ncomp, 0);</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    }</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                                                   FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                                                   FArrayBox&gt;,</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    MF make_mf_crse_mask (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type, IntVect ratio)</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    {</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">return</span> MF(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(<a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(fpc.ba_fine_patch, ratio), idx_type), fpc.dm_patch, ncomp, 0);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF,</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;              <span class="keyword">typename</span> std::enable_if&lt;!std::is_same&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                                    FArrayBox&gt;::value,</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;              std::enable_if_t&lt;!std::is_same_v&lt;<span class="keyword">typename</span> MF::FABType::value_type,</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                                    FArrayBox&gt;,</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                      <span class="keywordtype">int</span>&gt; = 0&gt;</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordtype">void</span> mf_set_domain_bndry (MF &amp;<span class="comment">/*mf*/</span>, Geometry <span class="keyword">const</span> &amp; <span class="comment">/*geom*/</span>)</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="comment">// nothing</span></div>
@@ -616,7 +616,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                    <a class="code" href="namespaceamrex_1_1detail.html#aaa2f442d8ea72f80f2d543e12c5f8a1a">detail::call_interp_hook</a>(pre_interp, mf_crse_patch, 0, ncomp);</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    <a class="code" href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">InterpFace</a>(mapper, mf_crse_patch, 0, mf_refined_patch, 0, ncomp,</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    <a class="code" href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">InterpFace</a>(mapper, mf_crse_patch, 0, mf_refined_patch, 0, ncomp,</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                               ratio, solve_mask, cgeom, fgeom, bcscomp, <a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">RunOn::Gpu</a>, bcs);</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    <a class="code" href="namespaceamrex_1_1detail.html#aaa2f442d8ea72f80f2d543e12c5f8a1a">detail::call_interp_hook</a>(post_interp, mf_refined_patch, 0, ncomp);</div>
@@ -1349,14 +1349,14 @@ $(document).ready(function(){initNavTree('AMReX__FillPatchUtil__I_8H_source.html
 <div class="ttc" id="anamespaceamrex_html_a36b10976708081700c810d70417da8c9"><div class="ttname"><a href="namespaceamrex.html#a36b10976708081700c810d70417da8c9">amrex::ProperlyNested</a></div><div class="ttdeci">bool ProperlyNested(const IntVect &amp;ratio, const IntVect &amp;blocking_factor, int ngrow, const IndexType &amp;boxType, Interp *mapper)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3cf973090fa613c635340a08df7ecd38"><div class="ttname"><a href="namespaceamrex.html#a3cf973090fa613c635340a08df7ecd38">amrex::FillPatchSingleLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillPatchSingleLevel(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:73</div></div>
 <div class="ttc" id="anamespaceamrex_html_a449d5cd7d3d778be0440141f9272d6bd"><div class="ttname"><a href="namespaceamrex.html#a449d5cd7d3d778be0440141f9272d6bd">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; DFAB &gt; &amp;dst, FabArray&lt; SFAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:169</div></div>
-<div class="ttc" id="anamespaceamrex_html_a4ae68fc36a1f38a32c74b2d2764a8f59"><div class="ttname"><a href="namespaceamrex.html#a4ae68fc36a1f38a32c74b2d2764a8f59">amrex::InterpFace</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp;!std::is_same&lt; Interp, MFInterpolater &gt;::value &gt; InterpFace(Interp *interp, MF const &amp;mf_crse_patch, int crse_comp, MF &amp;mf_refined_patch, int fine_comp, int ncomp, const IntVect &amp;ratio, const iMF &amp;solve_mask, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, int bcscomp, RunOn gpu_or_cpu, const Vector&lt; BCRec &gt; &amp;bcs)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:244</div></div>
+<div class="ttc" id="anamespaceamrex_html_a47d6d2c059c23fce19a769d7c1256fd3"><div class="ttname"><a href="namespaceamrex.html#a47d6d2c059c23fce19a769d7c1256fd3">amrex::InterpFace</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &amp;&amp;!std::is_same_v&lt; Interp, MFInterpolater &gt; &gt; InterpFace(Interp *interp, MF const &amp;mf_crse_patch, int crse_comp, MF &amp;mf_refined_patch, int fine_comp, int ncomp, const IntVect &amp;ratio, const iMF &amp;solve_mask, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, int bcscomp, RunOn gpu_or_cpu, const Vector&lt; BCRec &gt; &amp;bcs)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:244</div></div>
 <div class="ttc" id="anamespaceamrex_html_a5b5440802e0895fcba37e6b295116585"><div class="ttname"><a href="namespaceamrex.html#a5b5440802e0895fcba37e6b295116585">amrex::FillPatchTwoLevels</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; FillPatchTwoLevels(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:746</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6d0e162407f49aab99ec9a1bcddf0f21"><div class="ttname"><a href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">amrex::boxArray</a></div><div class="ttdeci">BoxArray const  &amp; boxArray(FabArrayBase const &amp;fa)</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6fa430e1648835f9dea38b7568d79506"><div class="ttname"><a href="namespaceamrex.html#a6fa430e1648835f9dea38b7568d79506">amrex::InterpFromCoarseLevel</a></div><div class="ttdeci">std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; InterpFromCoarseLevel(MF &amp;mf, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil_I.H:934</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2"><div class="ttname"><a href="namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebcaf17aaabc20bfe045075927934fed52d2">amrex::EBSupport::basic</a></div><div class="ttdeci">@ basic</div><div class="ttdoc">EBCellFlag.</div></div>
-<div class="ttc" id="anamespaceamrex_html_a9314c1849b946e44ddd246d9c0562e72"><div class="ttname"><a href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, bool &gt;::type almostEqual(T x, T y, int ulp=2)</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:93</div></div>
 <div class="ttc" id="anamespaceamrex_html_a93b8e270e0c8360ed35815598a5b7f46"><div class="ttname"><a href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">amrex::FillPatchInterp</a></div><div class="ttdeci">void FillPatchInterp(MultiFab &amp;mf_fine_patch, int fcomp, MultiFab const &amp;mf_crse_patch, int ccomp, int ncomp, IntVect const &amp;ng, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Box const &amp;dest_domain, const IntVect &amp;ratio, MFInterpolater *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FillPatchUtil.cpp:140</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9fb6c36ab72dfe92709f0ea89baa4824"><div class="ttname"><a href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box coarsen(const Box &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Coarsen Box by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo/ratio ...</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1235</div></div>
+<div class="ttc" id="anamespaceamrex_html_aa90c9ff8ea429232ddb2573bddacdac6"><div class="ttname"><a href="namespaceamrex.html#aa90c9ff8ea429232ddb2573bddacdac6">amrex::almostEqual</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, bool &gt; almostEqual(T x, T y, int ulp=2)</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:93</div></div>
 <div class="ttc" id="anamespaceamrex_html_ab482b500359e03b77389d42f968c46fe"><div class="ttname"><a href="namespaceamrex.html#ab482b500359e03b77389d42f968c46fe">amrex::TilingIfNotGPU</a></div><div class="ttdeci">bool TilingIfNotGPU() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:12</div></div>
 <div class="ttc" id="anamespaceamrex_html_abb7cbdfb8c8ec3d94bec38fcf10b92db"><div class="ttname"><a href="namespaceamrex.html#abb7cbdfb8c8ec3d94bec38fcf10b92db">amrex::refine</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box refine(const Box &amp;b, int ref_ratio) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1271</div></div>
 <div class="ttc" id="anamespaceamrex_html_ac58ae562e33ec29796418c84ad3d07dc"><div class="ttname"><a href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a></div><div class="ttdeci">void setBC(const Box &amp;bx, const Box &amp;domain, int src_comp, int dest_comp, int ncomp, const Vector&lt; BCRec &gt; &amp;bc_dom, Vector&lt; BCRec &gt; &amp;bcr) noexcept</div><div class="ttdoc">Function for setting array of BCs.</div><div class="ttdef"><b>Definition:</b> AMReX_BCRec.cpp:8</div></div>

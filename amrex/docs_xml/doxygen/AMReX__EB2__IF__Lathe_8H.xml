@@ -1364,7 +1364,7 @@
       </node>
     </invincdepgraph>
     <innerclass refid="classamrex_1_1EB2_1_1LatheIF" prot="public">amrex::EB2::LatheIF</innerclass>
-    <innerclass refid="structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG870c79fcc93b5ecb25be1ee2def9f2cf" prot="public">amrex::EB2::IsGPUable&lt; LatheIF&lt; F &gt;, typename std::enable_if&lt; IsGPUable&lt; F &gt;::value &gt;::type &gt;</innerclass>
+    <innerclass refid="structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4" prot="public">amrex::EB2::IsGPUable&lt; LatheIF&lt; F &gt;, std::enable_if_t&lt; IsGPUable&lt; F &gt;::value &gt; &gt;</innerclass>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <innernamespace refid="namespaceamrex_1_1EB2">amrex::EB2</innernamespace>
     <briefdescription>
@@ -1403,7 +1403,7 @@
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>template<sp/>&lt;class<sp/>U=F,<sp/>typename<sp/>std::enable_if&lt;IsGPUable&lt;U&gt;::value,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;::type<sp/>=<sp/>0&gt;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>template<sp/>&lt;class<sp/>U=F,<sp/>std::enable_if_t&lt;IsGPUable&lt;U&gt;::value,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;<sp/>=<sp/>0&gt;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34" refid="classamrex_1_1EB2_1_1LatheIF_1a2f28fcb7590a82bba0f77f9a1d30054b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><ref refid="classamrex_1_1EB2_1_1LatheIF_1aae1fa2d9ba2bc75c3299f62b6cd7f587" kindref="member">operator() </ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(Real<sp/>x,<sp/>Real<sp/>y,<sp/>Real<sp/>z))<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -1421,14 +1421,14 @@
 <codeline lineno="47"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
-<codeline lineno="50" refid="structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG870c79fcc93b5ecb25be1ee2def9f2cf" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1EB2_1_1IsGPUable" kindref="compound">IsGPUable</ref>&lt;<ref refid="classamrex_1_1EB2_1_1LatheIF" kindref="compound">LatheIF</ref>&lt;F&gt;,<sp/>typename<sp/>std::enable_if&lt;IsGPUable&lt;F&gt;::value&gt;::type&gt;</highlight></codeline>
+<codeline lineno="50" refid="structamrex_1_1EB2_1_1IsGPUable_3_01LatheIF_3_01F_01_4_00_01std_1_1enable__if__t_3_01IsGPUable_3_01F_01_4_1_1value_01_4_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1EB2_1_1IsGPUable" kindref="compound">IsGPUable</ref>&lt;<ref refid="classamrex_1_1EB2_1_1LatheIF" kindref="compound">LatheIF</ref>&lt;F&gt;,<sp/>std::enable_if_t&lt;IsGPUable&lt;F&gt;::value&gt;&gt;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>std::true_type<sp/>{};</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal">constexpr<sp/><ref refid="classamrex_1_1EB2_1_1LatheIF" kindref="compound">LatheIF&lt;typename std::decay&lt;F&gt;::type</ref>&gt;</highlight></codeline>
-<codeline lineno="55" refid="namespaceamrex_1_1EB2_1a06fb3c21b6b807e82950c9483152d4cc" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1EB2_1a06fb3c21b6b807e82950c9483152d4cc" kindref="member">lathe</ref><sp/>(F&amp;&amp;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">constexpr<sp/><ref refid="classamrex_1_1EB2_1_1LatheIF" kindref="compound">LatheIF&lt;std::decay_t&lt;F&gt;</ref>&gt;</highlight></codeline>
+<codeline lineno="55" refid="namespaceamrex_1_1EB2_1a1e6eedbf6131d4d1c9a33e7c3165e630" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1EB2_1a1e6eedbf6131d4d1c9a33e7c3165e630" kindref="member">lathe</ref><sp/>(F&amp;&amp;<sp/><ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref>)</highlight></codeline>
 <codeline lineno="56"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EB2_1_1LatheIF" kindref="compound">LatheIF&lt;typename std::decay&lt;F&gt;::type</ref>&gt;(std::forward&lt;F&gt;(<ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref>));</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EB2_1_1LatheIF" kindref="compound">LatheIF&lt;std::decay_t&lt;F&gt;</ref>&gt;(std::forward&lt;F&gt;(<ref refid="namespaceamrex_1_1SundialsUserFun_1a192b851aaf774703482c2ec82d9b4cf4" kindref="member">f</ref>));</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal">}</highlight></codeline>

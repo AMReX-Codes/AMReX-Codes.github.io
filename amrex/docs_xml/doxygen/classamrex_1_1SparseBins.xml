@@ -48,9 +48,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" line="100" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" bodystart="100" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1SparseBins_1ae5fc65b5907d0cf7667835697dabd08c" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;::type</type>
-        <definition>using amrex::SparseBins&lt; T &gt;::const_pointer_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="classamrex_1_1SparseBins_1a2f7e4c5293f3d7c172cb3d2c5c2f610f" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;</type>
+        <definition>using amrex::SparseBins&lt; T &gt;::const_pointer_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_type</name>
         <briefdescription>
@@ -61,9 +61,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" line="102" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_SparseBins.H" bodystart="105" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1SparseBins_1adb3621945c7da83b77356b3d629e1ced" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), const T &amp;, const T * &gt;::type</type>
-        <definition>using amrex::SparseBins&lt; T &gt;::const_pointer_input_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="classamrex_1_1SparseBins_1ab753f27ad971425c4ecece259e8fa6f1" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), const T &amp;, const T * &gt;</type>
+        <definition>using amrex::SparseBins&lt; T &gt;::const_pointer_input_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_input_type</name>
         <briefdescription>
@@ -77,7 +77,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1SparseBins_1aed3575613242ea883eda555b4cdedb83" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1SparseBins_1ae5fc65b5907d0cf7667835697dabd08c" kindref="member">const_pointer_type</ref></type>
+        <type><ref refid="classamrex_1_1SparseBins_1a2f7e4c5293f3d7c172cb3d2c5c2f610f" kindref="member">const_pointer_type</ref></type>
         <definition>const_pointer_type amrex::SparseBins&lt; T &gt;::m_items</definition>
         <argsstring></argsstring>
         <name>m_items</name>
@@ -148,7 +148,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1SparseBins_1adb3621945c7da83b77356b3d629e1ced" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1SparseBins_1ab753f27ad971425c4ecece259e8fa6f1" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -394,8 +394,8 @@
       <member refid="classamrex_1_1SparseBins_1a3bea2b14d8950423ccd43ff1c81b8baf" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>bin_type</name></member>
       <member refid="classamrex_1_1SparseBins_1a015439d37e7fd4c3ded33837a8b502bc" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>BinIteratorFactory</name></member>
       <member refid="classamrex_1_1SparseBins_1acf01a3502124d40b6f58035020394573" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>build</name></member>
-      <member refid="classamrex_1_1SparseBins_1adb3621945c7da83b77356b3d629e1ced" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>const_pointer_input_type</name></member>
-      <member refid="classamrex_1_1SparseBins_1ae5fc65b5907d0cf7667835697dabd08c" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>const_pointer_type</name></member>
+      <member refid="classamrex_1_1SparseBins_1ab753f27ad971425c4ecece259e8fa6f1" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>const_pointer_input_type</name></member>
+      <member refid="classamrex_1_1SparseBins_1a2f7e4c5293f3d7c172cb3d2c5c2f610f" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>const_pointer_type</name></member>
       <member refid="classamrex_1_1SparseBins_1a475590b909390bc33d62c299008f46b0" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>getBinIteratorFactory</name></member>
       <member refid="classamrex_1_1SparseBins_1a20ea0ea6dcb1b42a55b691060c1cffaa" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>getNonZeroBinsPtr</name></member>
       <member refid="classamrex_1_1SparseBins_1a54c4ce654739bc4d76a7e8c4859a7be6" prot="public" virt="non-virtual"><scope>amrex::SparseBins</scope><name>getNonZeroBinsPtr</name></member>

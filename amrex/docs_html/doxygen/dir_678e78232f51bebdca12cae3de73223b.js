@@ -8,7 +8,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
     [ "AMReX_MakeParticle.H", "AMReX__MakeParticle_8H.html", [
       [ "is_soa_particle", "structis__soa__particle.html", null ],
       [ "make_particle", "structmake__particle.html", "structmake__particle" ],
-      [ "make_particle< T_ParticleType, typename std::enable_if< is_soa_particle< T_ParticleType >::value >::type >", "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69.html", "structmake__particle_3_01T__ParticleType_00_01typename_01std_1_1enable__if_3_01is__soa__particle401bcac1977f2447fff91e6e4aa57b69" ]
+      [ "make_particle< T_ParticleType, std::enable_if_t< is_soa_particle< T_ParticleType >::value > >", "structmake__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particle_3_01T__1f90e92c71ca21b280b67400a4dbce7d.html", "structmake__particle_3_01T__ParticleType_00_01std_1_1enable__if__t_3_01is__soa__particle_3_01T__1f90e92c71ca21b280b67400a4dbce7d" ]
     ] ],
     [ "AMReX_NeighborList.H", "AMReX__NeighborList_8H.html", "AMReX__NeighborList_8H" ],
     [ "AMReX_NeighborParticles.H", "AMReX__NeighborParticles_8H.html", [

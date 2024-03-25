@@ -23,7 +23,7 @@ var namespaceamrex_1_1detail =
     [ "Detector", "structamrex_1_1detail_1_1Detector.html", "structamrex_1_1detail_1_1Detector" ],
     [ "Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" ],
     [ "call_result_t", "namespaceamrex_1_1detail.html#ad9ffd55042a6573c492b8fc107951d12", null ],
-    [ "tuple_decay_t", "namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23", null ],
+    [ "tuple_decay_t", "namespaceamrex_1_1detail.html#aca8ebce069c1d3ef5f89482a9e96bb6d", null ],
     [ "Void_t", "namespaceamrex_1_1detail.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94", null ],
     [ "ReduceOp", "namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569d", [
       [ "max", "namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265", null ],

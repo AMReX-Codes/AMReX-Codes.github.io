@@ -16,7 +16,7 @@ var AMReX__GpuAllocators_8H =
     [ "PolymorphicArenaAllocator", "classamrex_1_1PolymorphicArenaAllocator.html", "classamrex_1_1PolymorphicArenaAllocator" ],
     [ "RunOnGpu", "structamrex_1_1RunOnGpu.html", null ],
     [ "IsArenaAllocator", "structamrex_1_1IsArenaAllocator.html", null ],
-    [ "IsArenaAllocator< T, std::enable_if_t< std::is_base_of< ArenaAllocatorBase< typename T::value_type, typename T::arena_wrapper_type >, T >::value > >", "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01Arenf7a529952ff72724d9f0c41e12d355f1.html", null ],
+    [ "IsArenaAllocator< T, std::enable_if_t< std::is_base_of_v< ArenaAllocatorBase< typename T::value_type, typename T::arena_wrapper_type >, T > > >", "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of__v_3_01A3a0553dd1fe92c460e3e2edf71ec41f7.html", null ],
     [ "IsPolymorphicArenaAllocator", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
     [ "RunOnGpu< ArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html", null ],
     [ "RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],

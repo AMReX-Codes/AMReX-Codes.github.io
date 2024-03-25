@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8nolint_8H_source.htm
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_SYCL</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="AMReX__GpuLaunch_8nolint_8H.html#a1bb4109b1b472fbcfb59fc4111460564">   62</a></span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">    { \</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">        amrex::ParallelFor(n, [=] AMREX_GPU_DEVICE (amrex_i_inttype i) noexcept \</span></div>
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8nolint_8H_source.htm
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">    }</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="AMReX__GpuLaunch_8nolint_8H.html#afd9e772ffd425c7e87ff315cab8afa6c">  103</a></span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">    { \</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">        amrex::ParallelFor(n, [=] AMREX_GPU_DEVICE (amrex_i_inttype i) noexcept \</span></div>
@@ -287,7 +287,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8nolint_8H_source.htm
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">// xxxxx SYCL todo: host disabled in host device</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">    { \</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">        amrex::ParallelFor(n, [=] AMREX_GPU_DEVICE (amrex_i_inttype i) noexcept \</span></div>
@@ -321,7 +321,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8nolint_8H_source.htm
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">    if ((where_to_run == RunOn::Device) &amp;&amp; (Gpu::inLaunchRegion())) \</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">    { \</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">        amrex::ParallelFor(n, [=] AMREX_GPU_DEVICE (amrex_i_inttype i) noexcept \</span></div>
@@ -391,7 +391,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8nolint_8H_source.htm
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">    amrex::ignore_unused(where_to_run); \</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">    AMREX_PRAGMA_SIMD \</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">    for (amrex_i_inttype i = 0; i &lt; n; ++i) { \</span></div>
@@ -411,7 +411,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuLaunch_8nolint_8H_source.htm
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">    );</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#define AMREX_HOST_DEVICE_FOR_1D_FLAG(where_to_run,n,i,block) \</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = typename std::remove_const&lt;decltype(n)&gt;::type; \</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">    {  using amrex_i_inttype = std::remove_const_t&lt;decltype(n)&gt;; \</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">    amrex::ignore_unused(where_to_run); \</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">    for (amrex_i_inttype i = 0; i &lt; n; ++i) { \</span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">        block \</span></div>

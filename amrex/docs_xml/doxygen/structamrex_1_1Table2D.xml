@@ -80,23 +80,23 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="83" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table2D_1aea5eb7caff5592e25bb9aaf4be6d69d6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table2D_1af3e6fe538ef1028ffc92facd2feb13cf" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_const&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
         <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Table2D&lt; T &gt;::Table2D</definition>
-        <argsstring>(Table2D&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;rhs) noexcept</argsstring>
+        <argsstring>(Table2D&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</argsstring>
         <name>Table2D</name>
         <param>
-          <type><ref refid="structamrex_1_1Table2D" kindref="compound">Table2D</ref>&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Table2D" kindref="compound">Table2D</ref>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -152,7 +152,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -204,7 +204,7 @@
       <member refid="structamrex_1_1Table2D_1aabd52214675192e193727de480166de3" prot="public" virt="non-virtual"><scope>amrex::Table2D</scope><name>operator()</name></member>
       <member refid="structamrex_1_1Table2D_1aa6bcd94db80e727b33cb98cac7c2916b" prot="public" virt="non-virtual"><scope>amrex::Table2D</scope><name>p</name></member>
       <member refid="structamrex_1_1Table2D_1a43581fee1f166e735b7684c24dfe1c48" prot="public" virt="non-virtual"><scope>amrex::Table2D</scope><name>Table2D</name></member>
-      <member refid="structamrex_1_1Table2D_1aea5eb7caff5592e25bb9aaf4be6d69d6" prot="public" virt="non-virtual"><scope>amrex::Table2D</scope><name>Table2D</name></member>
+      <member refid="structamrex_1_1Table2D_1af3e6fe538ef1028ffc92facd2feb13cf" prot="public" virt="non-virtual"><scope>amrex::Table2D</scope><name>Table2D</name></member>
       <member refid="structamrex_1_1Table2D_1a8fb13a53cc27a040127c5e8c53b46358" prot="public" virt="non-virtual"><scope>amrex::Table2D</scope><name>Table2D</name></member>
     </listofallmembers>
   </compounddef>

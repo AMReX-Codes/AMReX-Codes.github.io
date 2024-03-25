@@ -122,23 +122,23 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="71" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="71" bodyend="71"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Array4_1a68895c23f542effc10e2a36ef80fcf37" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Array4_1afd133fb01abbd5a62b447d3d18672d10" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_const&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_const_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
         <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Array4&lt; T &gt;::Array4</definition>
-        <argsstring>(Array4&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;rhs) noexcept</argsstring>
+        <argsstring>(Array4&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</argsstring>
         <name>Array4</name>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; typename std::remove_const&lt; T &gt;::type &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -184,7 +184,7 @@
             <type>class U</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_same&lt; typename std::remove_const&lt; T &gt;::type, typename std::remove_const&lt; U &gt;::type &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; std::remove_const_t&lt; T &gt;, std::remove_const_t&lt; U &gt;&gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -214,7 +214,7 @@
             <type>class U</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_same&lt; typename std::remove_const&lt; T &gt;::type, typename std::remove_const&lt; U &gt;::type &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; std::remove_const_t&lt; T &gt;, std::remove_const_t&lt; U &gt;&gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -262,7 +262,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -297,7 +297,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -336,7 +336,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -371,7 +371,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -410,7 +410,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -437,7 +437,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -468,7 +468,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -495,7 +495,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <type>std::enable_if_t&lt;!std::is_void_v&lt; U &gt;, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -642,7 +642,7 @@
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" line="60" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array4.H" bodystart="61" bodyend="261"/>
     <listofallmembers>
       <member refid="structamrex_1_1Array4_1aa9104074135ab3db54cf3224f7dcc4aa" prot="public" virt="non-virtual"><scope>amrex::Array4</scope><name>Array4</name></member>
-      <member refid="structamrex_1_1Array4_1a68895c23f542effc10e2a36ef80fcf37" prot="public" virt="non-virtual"><scope>amrex::Array4</scope><name>Array4</name></member>
+      <member refid="structamrex_1_1Array4_1afd133fb01abbd5a62b447d3d18672d10" prot="public" virt="non-virtual"><scope>amrex::Array4</scope><name>Array4</name></member>
       <member refid="structamrex_1_1Array4_1aadaa817898bc6aaee36f54e294c94d6d" prot="public" virt="non-virtual"><scope>amrex::Array4</scope><name>Array4</name></member>
       <member refid="structamrex_1_1Array4_1a8ce3c58d917a4c14dce99d84097756cd" prot="public" virt="non-virtual"><scope>amrex::Array4</scope><name>Array4</name></member>
       <member refid="structamrex_1_1Array4_1addc632464912cc3a4db197cb3eb831b1" prot="public" virt="non-virtual"><scope>amrex::Array4</scope><name>Array4</name></member>

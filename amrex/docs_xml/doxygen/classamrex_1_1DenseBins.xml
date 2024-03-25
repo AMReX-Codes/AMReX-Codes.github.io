@@ -35,9 +35,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="81" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="81" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1DenseBins_1a9032b455d0cb43380c6c41a0975d7a70" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;::type</type>
-        <definition>using amrex::DenseBins&lt; T &gt;::const_pointer_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="classamrex_1_1DenseBins_1a00f8a0b96ddd821e95305346715cc7f0" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;</type>
+        <definition>using amrex::DenseBins&lt; T &gt;::const_pointer_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_type</name>
         <briefdescription>
@@ -48,9 +48,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="83" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="86" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), const T &amp;, const T * &gt;::type</type>
-        <definition>using amrex::DenseBins&lt; T &gt;::const_pointer_input_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), const T &amp;, const T * &gt;</type>
+        <definition>using amrex::DenseBins&lt; T &gt;::const_pointer_input_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), const T&amp;, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_input_type</name>
         <briefdescription>
@@ -64,7 +64,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1DenseBins_1a2bb6a0e5dc6b40b73fd0221f633a1f84" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1DenseBins_1a9032b455d0cb43380c6c41a0975d7a70" kindref="member">const_pointer_type</ref></type>
+        <type><ref refid="classamrex_1_1DenseBins_1a00f8a0b96ddd821e95305346715cc7f0" kindref="member">const_pointer_type</ref></type>
         <definition>const_pointer_type amrex::DenseBins&lt; T &gt;::m_items</definition>
         <argsstring></argsstring>
         <name>m_items</name>
@@ -161,7 +161,7 @@
           <declname>f</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -196,7 +196,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -288,7 +288,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -383,7 +383,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -478,7 +478,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -573,7 +573,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -668,7 +668,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -763,7 +763,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -858,7 +858,7 @@
           <declname>nitems</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" kindref="member">const_pointer_input_type</ref></type>
+          <type><ref refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" kindref="member">const_pointer_input_type</ref></type>
           <declname>v</declname>
         </param>
         <param>
@@ -1118,8 +1118,8 @@
       <member refid="classamrex_1_1DenseBins_1aad8c281e39e21d3bc66aed7f19e27640" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>build</name></member>
       <member refid="classamrex_1_1DenseBins_1ae473c8e815b04d40ff93bff59c3513d5" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>build</name></member>
       <member refid="classamrex_1_1DenseBins_1a4f613d720a8f01968e54a2b6fc820dc3" prot="private" virt="non-virtual"><scope>amrex::DenseBins</scope><name>call_f</name></member>
-      <member refid="classamrex_1_1DenseBins_1ac722ec5978e2fac3d0ee189cfb88183b" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>const_pointer_input_type</name></member>
-      <member refid="classamrex_1_1DenseBins_1a9032b455d0cb43380c6c41a0975d7a70" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>const_pointer_type</name></member>
+      <member refid="classamrex_1_1DenseBins_1a4062eff06ceb0fa9549e15e421659d1e" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>const_pointer_input_type</name></member>
+      <member refid="classamrex_1_1DenseBins_1a00f8a0b96ddd821e95305346715cc7f0" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>const_pointer_type</name></member>
       <member refid="classamrex_1_1DenseBins_1a8c1a462b3aaa2193672c14d26a56601a" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>getBinIteratorFactory</name></member>
       <member refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>index_type</name></member>
       <member refid="classamrex_1_1DenseBins_1af1561b37e307d49631e3fc2ee1b68212" prot="private" virt="non-virtual"><scope>amrex::DenseBins</scope><name>m_bins</name></member>

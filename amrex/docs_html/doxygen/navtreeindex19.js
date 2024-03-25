@@ -207,7 +207,6 @@ var NAVTREEINDEX19 =
 "AMReX__Tuple_8H.html#a366e33622f264a58b5ceae6cd79e3b64":[4,0,0,2,251,24],
 "AMReX__Tuple_8H.html#a38e3e5431e2c612ce6e6b4aac3ededf2":[4,0,0,2,251,31],
 "AMReX__Tuple_8H.html#a4d3a6a5ee4fec4f89030624c3bfa4ae6":[4,0,0,2,251,26],
-"AMReX__Tuple_8H.html#a4dabd168440a362478e0d2887dfdfe23":[4,0,0,2,251,17],
 "AMReX__Tuple_8H.html#a546f82ad84c1f122bb9bf89dcaa2b7a3":[4,0,0,2,251,29],
 "AMReX__Tuple_8H.html#a55b45d61c6e18c31d787042cf9169385":[4,0,0,2,251,22],
 "AMReX__Tuple_8H.html#a72ba0f3bd5880d4218b4bfe93373edf6":[4,0,0,2,251,18],
@@ -217,6 +216,7 @@ var NAVTREEINDEX19 =
 "AMReX__Tuple_8H.html#ac058d02c07c2b74e83e50b33b90197e5":[4,0,0,2,251,25],
 "AMReX__Tuple_8H.html#ac60a1b88f1421c5113c694d9460de676":[4,0,0,2,251,19],
 "AMReX__Tuple_8H.html#aca24c318d20f5354a5f74cf0eb32cce8":[4,0,0,2,251,30],
+"AMReX__Tuple_8H.html#aca8ebce069c1d3ef5f89482a9e96bb6d":[4,0,0,2,251,17],
 "AMReX__Tuple_8H.html#ad8cc1e47b11f22cfe944555f6e833cc8":[4,0,0,2,251,20],
 "AMReX__Tuple_8H.html#af2cf176de6238efb234749dec71b4a0f":[4,0,0,2,251,35],
 "AMReX__Tuple_8H.html#af2dd4ad4f928e269d1bc2dce24f48b92":[4,0,0,2,251,27],
@@ -246,8 +246,8 @@ var NAVTREEINDEX19 =
 "AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa":[4,0,0,2,253,39],
 "AMReX__TypeTraits_8H.html#a4a4cee24cf2ff5e02dd18fbf39bc33ce":[4,0,0,2,253,43],
 "AMReX__TypeTraits_8H.html#a4c98b791b1f6442671e5cfa546a3df4f":[4,0,0,2,253,34],
-"AMReX__TypeTraits_8H.html#a8690d4c6386d001b328b07257fe628a0":[4,0,0,2,253,36],
 "AMReX__TypeTraits_8H.html#aa264b7308102fabb2a7356eea1800644":[4,0,0,2,253,41],
 "AMReX__TypeTraits_8H.html#abe72f840d81a1ce49a3811fe8295b222":[4,0,0,2,253,35],
-"AMReX__TypeTraits_8H.html#ad9ffd55042a6573c492b8fc107951d12":[4,0,0,2,253,33]
+"AMReX__TypeTraits_8H.html#ad9ffd55042a6573c492b8fc107951d12":[4,0,0,2,253,33],
+"AMReX__TypeTraits_8H.html#adc50ea9983407ec975c6c594c92bae5d":[4,0,0,2,253,31]
 };

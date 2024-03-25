@@ -22,9 +22,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="33" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="33" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1DenseBinIteratorFactory_1a7a3c874d8fe6985c716cf458a47af87d" prot="public" static="no">
-        <type>typename std::conditional&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;::type</type>
-        <definition>using amrex::DenseBinIteratorFactory&lt; T &gt;::const_pointer_type =  typename std::conditional&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;::type</definition>
+      <memberdef kind="typedef" id="structamrex_1_1DenseBinIteratorFactory_1afde549427d2c1a8e6c85f5d363a32810" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="namespaceamrex_1a29b0aae252a7a287f7975fa1995b0298" kindref="member">IsParticleTileData</ref>&lt; T &gt;(), T, const T * &gt;</type>
+        <definition>using amrex::DenseBinIteratorFactory&lt; T &gt;::const_pointer_type =  std::conditional_t&lt;IsParticleTileData&lt;T&gt;(), T, const T* &gt;</definition>
         <argsstring></argsstring>
         <name>const_pointer_type</name>
         <briefdescription>
@@ -64,7 +64,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="55" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1DenseBinIteratorFactory_1a86bd9751f73a297822528a06e967334a" prot="public" static="no" mutable="no">
-        <type><ref refid="structamrex_1_1DenseBinIteratorFactory_1a7a3c874d8fe6985c716cf458a47af87d" kindref="member">const_pointer_type</ref></type>
+        <type><ref refid="structamrex_1_1DenseBinIteratorFactory_1afde549427d2c1a8e6c85f5d363a32810" kindref="member">const_pointer_type</ref></type>
         <definition>const_pointer_type amrex::DenseBinIteratorFactory&lt; T &gt;::m_items</definition>
         <argsstring></argsstring>
         <name>m_items</name>
@@ -127,7 +127,7 @@
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="32" bodyend="57"/>
     <listofallmembers>
-      <member refid="structamrex_1_1DenseBinIteratorFactory_1a7a3c874d8fe6985c716cf458a47af87d" prot="public" virt="non-virtual"><scope>amrex::DenseBinIteratorFactory</scope><name>const_pointer_type</name></member>
+      <member refid="structamrex_1_1DenseBinIteratorFactory_1afde549427d2c1a8e6c85f5d363a32810" prot="public" virt="non-virtual"><scope>amrex::DenseBinIteratorFactory</scope><name>const_pointer_type</name></member>
       <member refid="structamrex_1_1DenseBinIteratorFactory_1a02de02765bed7f5fbd756501ce1f9625" prot="public" virt="non-virtual"><scope>amrex::DenseBinIteratorFactory</scope><name>DenseBinIteratorFactory</name></member>
       <member refid="structamrex_1_1DenseBinIteratorFactory_1a484b45fe28140ce6f64c77687981ac81" prot="public" virt="non-virtual"><scope>amrex::DenseBinIteratorFactory</scope><name>getBinIterator</name></member>
       <member refid="structamrex_1_1DenseBinIteratorFactory_1aee679b2caba1e5933d98f87d51ee2dbe" prot="public" virt="non-virtual"><scope>amrex::DenseBinIteratorFactory</scope><name>index_type</name></member>

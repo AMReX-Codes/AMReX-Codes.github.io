@@ -154,9 +154,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4dabd168440a362478e0d2887dfdfe23"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4dabd168440a362478e0d2887dfdfe23"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">tuple_decay_t</a> = typename <a class="el" href="structamrex_1_1detail_1_1unwrap.html">unwrap</a>&lt; typename std::decay&lt; T &gt;::type &gt;::type</td></tr>
-<tr class="separator:a4dabd168440a362478e0d2887dfdfe23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca8ebce069c1d3ef5f89482a9e96bb6d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aca8ebce069c1d3ef5f89482a9e96bb6d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aca8ebce069c1d3ef5f89482a9e96bb6d">tuple_decay_t</a> = typename <a class="el" href="structamrex_1_1detail_1_1unwrap.html">unwrap</a>&lt; std::decay_t&lt; T &gt; &gt;::type</td></tr>
+<tr class="separator:aca8ebce069c1d3ef5f89482a9e96bb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fbad5ff9cc23fcc37c363d9d3bc0d94"><td class="memTemplParams" colspan="2">template&lt;class... &gt; </td></tr>
 <tr class="memitem:a1fbad5ff9cc23fcc37c363d9d3bc0d94"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94">Void_t</a> = void</td></tr>
 <tr class="separator:a1fbad5ff9cc23fcc37c363d9d3bc0d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -300,7 +300,7 @@ Functions</h2></td></tr>
 <tr class="memitem:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af2dd4ad4f928e269d1bc2dce24f48b92">INVOKE</a> (F &amp;&amp;f, Args &amp;&amp;... args) -&gt; decltype(f(std::forward&lt; Args &gt;(args)...))</td></tr>
 <tr class="separator:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplParams" colspan="2">template&lt;typename F , typename TP , std::size_t... N&gt; </td></tr>
-<tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676">apply_impl</a> (F &amp;&amp;f, TP &amp;&amp;t, std::index_sequence&lt; N... &gt;) -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt; F, <a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">detail::tuple_decay_t</a>&lt; TP &gt; &gt;::type</td></tr>
+<tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676">apply_impl</a> (F &amp;&amp;f, TP &amp;&amp;t, std::index_sequence&lt; N... &gt;) -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt; F, <a class="el" href="namespaceamrex_1_1detail.html#aca8ebce069c1d3ef5f89482a9e96bb6d">detail::tuple_decay_t</a>&lt; TP &gt; &gt;::type</td></tr>
 <tr class="separator:ac60a1b88f1421c5113c694d9460de676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af378b35270a3e9fbab911a6fe0058eb5"><td class="memTemplParams" colspan="2">template&lt;typename TL , typename F , std::size_t... N&gt; </td></tr>
 <tr class="memitem:af378b35270a3e9fbab911a6fe0058eb5"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af378b35270a3e9fbab911a6fe0058eb5">for_each_impl</a> (F const &amp;f, std::index_sequence&lt; N... &gt;)</td></tr>
@@ -356,8 +356,8 @@ template&lt;typename T , typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="a4dabd168440a362478e0d2887dfdfe23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dabd168440a362478e0d2887dfdfe23">&#9670;&nbsp;</a></span>tuple_decay_t</h2>
+<a id="aca8ebce069c1d3ef5f89482a9e96bb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca8ebce069c1d3ef5f89482a9e96bb6d">&#9670;&nbsp;</a></span>tuple_decay_t</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +365,7 @@ template&lt;typename T , typename... Args&gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">amrex::detail::tuple_decay_t</a> = typedef typename <a class="el" href="structamrex_1_1detail_1_1unwrap.html">unwrap</a>&lt;typename std::decay&lt;T&gt;::type&gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceamrex_1_1detail.html#aca8ebce069c1d3ef5f89482a9e96bb6d">amrex::detail::tuple_decay_t</a> = typedef typename <a class="el" href="structamrex_1_1detail_1_1unwrap.html">unwrap</a>&lt;std::decay_t&lt;T&gt; &gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -557,7 +557,7 @@ template&lt;typename F , typename TP , std::size_t... N&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt;F,<a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">detail::tuple_decay_t</a>&lt;TP&gt; &gt;::type
+          <td></td><td> -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt;F,<a class="el" href="namespaceamrex_1_1detail.html#aca8ebce069c1d3ef5f89482a9e96bb6d">detail::tuple_decay_t</a>&lt;TP&gt; &gt;::type
     </td>
         </tr>
       </table>
