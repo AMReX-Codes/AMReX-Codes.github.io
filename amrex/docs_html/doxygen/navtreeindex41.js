@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"classamrex_1_1Gpu_1_1AsyncArray.html#a7daf60c1b5ef8f273684eaa098048746":[3,0,0,5,1,4],
 "classamrex_1_1Gpu_1_1AsyncArray.html#a7eb7385d681e311fe42ad728f45ed316":[3,0,0,5,1,7],
 "classamrex_1_1Gpu_1_1AsyncArray.html#a8b192b54f34ecf9a231c4877a5625a6d":[3,0,0,5,1,6],
 "classamrex_1_1Gpu_1_1AsyncArray.html#a8faf9b9425340e64e8849fad230ca590":[3,0,0,5,1,11],
@@ -83,7 +84,6 @@ var NAVTREEINDEX41 =
 "classamrex_1_1Gpu_1_1Device.html#aff182b0690355fc54cde1842964fc7db":[3,0,0,5,15,5],
 "classamrex_1_1Gpu_1_1Device.html#affe1c34bea3aec80c5dabd98aea542d4":[3,0,0,5,15,41],
 "classamrex_1_1Gpu_1_1Elixir.html":[3,0,0,5,16],
-"classamrex_1_1Gpu_1_1Elixir.html#a310bb8d80cc54cfd15e1d7dfca67dd66":[3,0,0,5,16,5],
 "classamrex_1_1Gpu_1_1Elixir.html#a62d8be14e66b536bcadc7689658054db":[3,0,0,5,16,1],
 "classamrex_1_1Gpu_1_1Elixir.html#a6b4d08e1329afbce2ced6dd65acd9bec":[3,0,0,5,16,6],
 "classamrex_1_1Gpu_1_1Elixir.html#a73116015261623afc75de5846c536d60":[3,0,0,5,16,3],
@@ -92,6 +92,7 @@ var NAVTREEINDEX41 =
 "classamrex_1_1Gpu_1_1Elixir.html#a9a11ead76662a1fb2d86201dea17a33f":[3,0,0,5,16,0],
 "classamrex_1_1Gpu_1_1Elixir.html#aae00416a34911aa8fb06363e668ea8b4":[3,0,0,5,16,7],
 "classamrex_1_1Gpu_1_1Elixir.html#aaf8c50c534f3c06f0b7adf47ca0944f3":[3,0,0,5,16,4],
+"classamrex_1_1Gpu_1_1Elixir.html#ac00b940669dee9267e5483a43a9b8b7e":[3,0,0,5,16,5],
 "classamrex_1_1Gpu_1_1Elixir.html#afbafbee2ae0733e7b642416a6c0e1d95":[3,0,0,5,16,2],
 "classamrex_1_1Gpu_1_1KernelInfo.html":[3,0,0,5,17],
 "classamrex_1_1Gpu_1_1KernelInfo.html#a04a95c0948c5e2da94c3236ae7668edb":[3,0,0,5,17,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "classamrex_1_1HypreIJIface.html#a83da26622ba6d3465b95ca419d86586c":[3,0,0,411,62],
 "classamrex_1_1HypreIJIface.html#a8586f98cdc225f4e2a60cc42046b0504":[3,0,0,411,40],
 "classamrex_1_1HypreIJIface.html#a85e587afbba4ce7f0733ae56c4ee177c":[3,0,0,411,0],
-"classamrex_1_1HypreIJIface.html#a8b1cf6f83cb8e3c65a01f11ff4003041":[3,0,0,411,46],
-"classamrex_1_1HypreIJIface.html#a8b576bcb75a14d303f4737994eac2b93":[3,0,0,411,5]
+"classamrex_1_1HypreIJIface.html#a8b1cf6f83cb8e3c65a01f11ff4003041":[3,0,0,411,46]
 };

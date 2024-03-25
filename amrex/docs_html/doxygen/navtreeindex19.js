@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"AMReX__RealVect_8H.html#aad23797e3ede2065dcdc613ef5999603":[4,0,0,2,237,4],
 "AMReX__RealVect_8H.html#ab2f47c183037880adec6de44fcbb0344":[4,0,0,2,237,3],
 "AMReX__RealVect_8H.html#ae04516f228abbaedeb3e57c4acd79a47":[4,0,0,2,237,8],
 "AMReX__RealVect_8H.html#af8def61d771b914af3de1bf3095d30d8":[4,0,0,2,237,11],
@@ -34,8 +35,8 @@ var NAVTREEINDEX19 =
 "AMReX__RegionsProfStats_8cpp.html":[4,0,0,5,7,13],
 "AMReX__RegionsProfStats_8cpp.html#a02b76a92a17338752cdd29335caaa60d":[4,0,0,5,7,13,9],
 "AMReX__RegionsProfStats_8cpp.html#a0b54508652b2932ee5c008a007ac1b1d":[4,0,0,5,7,13,10],
-"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,7,13,2],
 "AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,7,13,1],
+"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[4,0,0,5,7,13,2],
 "AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3":[4,0,0,5,7,13,7],
 "AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf":[4,0,0,5,7,13,5],
 "AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12":[4,0,0,5,7,13,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "AMReX__TypeTraits_8H.html#a8690d4c6386d001b328b07257fe628a0":[4,0,0,2,253,36],
 "AMReX__TypeTraits_8H.html#aa264b7308102fabb2a7356eea1800644":[4,0,0,2,253,41],
 "AMReX__TypeTraits_8H.html#abe72f840d81a1ce49a3811fe8295b222":[4,0,0,2,253,35],
-"AMReX__TypeTraits_8H.html#ad9ffd55042a6573c492b8fc107951d12":[4,0,0,2,253,33],
-"AMReX__TypeTraits_8H.html#adc50ea9983407ec975c6c594c92bae5d":[4,0,0,2,253,31]
+"AMReX__TypeTraits_8H.html#ad9ffd55042a6573c492b8fc107951d12":[4,0,0,2,253,33]
 };

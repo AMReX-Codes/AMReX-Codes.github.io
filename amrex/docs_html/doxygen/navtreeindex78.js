@@ -1,5 +1,6 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1IntegratorOps_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__same_3_01amr6a366de993e1749d95c6327fd001f089.html#aa2956bcbc0e2ccbdb4ac624927e96de5":[3,0,0,188,0],
 "structamrex_1_1IsArenaAllocator.html":[3,0,0,174],
 "structamrex_1_1IsArenaAllocator_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01Arenf7a529952ff72724d9f0c41e12d355f1.html":[3,0,0,175],
 "structamrex_1_1IsBaseFab.html":[3,0,0,252],
@@ -248,6 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1Neighbors.html#a42794840b7f30c436e3f1a6616d2e28b":[3,0,0,458,3],
 "structamrex_1_1Neighbors.html#a4b3fbe9ad7a9534399391d67b192eed1":[3,0,0,458,12],
 "structamrex_1_1Neighbors.html#a751da08025303cf00592fbcd84911acb":[3,0,0,458,9],
-"structamrex_1_1Neighbors.html#a78add4fa0c929801818ea1db168eb81c":[3,0,0,458,2],
-"structamrex_1_1Neighbors.html#a7a63898f3093bbbdecb31a1c7ad5955e":[3,0,0,458,5]
+"structamrex_1_1Neighbors.html#a78add4fa0c929801818ea1db168eb81c":[3,0,0,458,2]
 };

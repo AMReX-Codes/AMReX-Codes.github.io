@@ -1678,7 +1678,7 @@
 <codeline lineno="61"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal">BARef::BARef<sp/>(BoxList&amp;&amp;<sp/>bl)<sp/>noexcept</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_abox(std::move(bl.data()))</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_abox(std::move(std::move(bl).data()))</highlight></codeline>
 <codeline lineno="65"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>updateMemoryUsage_box(1);</highlight></codeline>
@@ -1787,7 +1787,7 @@
 <codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>updateMemoryUsage_box(-1);</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>m_abox<sp/>=<sp/>std::move(bl.data());</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>m_abox<sp/>=<sp/>std::move(std::move(bl).data());</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>updateMemoryUsage_box(1);</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
