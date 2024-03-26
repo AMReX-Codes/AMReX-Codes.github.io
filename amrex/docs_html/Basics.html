@@ -1698,7 +1698,8 @@ tiling flag is on. One can change the default size using <code class="code highl
 </tr>
 </tbody>
 </table>
-<p>Dynamic tiling, which runs one box per OpenMP thread, is also available.
+<p>Dynamic tiling, which runs one box per OpenMP thread, either with or without
+tiling the box, is also available.
 This is useful when the underlying work cannot benefit from thread
 parallelization.  Dynamic tiling is implemented using the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFItInfo</span><span class="w"></span></code>
 object and requires the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> loop to be defined in an OpenMP
@@ -1729,9 +1730,12 @@ parallel region:</p>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Usually <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> is used for accessing multiple MultiFabs like the second
-example, in which two MultiFabs, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">U</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">F</span><span class="w"></span></code>, use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> via
-<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="k">operator</span><span class="p">[]</span><span class="w"></span></code>. These different MultiFabs may have different BoxArrays. For
+<p>Note that <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">EnableTiling</span><span class="p">()</span><span class="w"></span></code>, with no argument, will use the default tile size.</p>
+<p>Usually <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> is used for accessing multiple MultiFabs, like
+the second example in the previous section on <a class="reference internal" href="#sec-basics-mfiter-notiling"><span class="std std-ref">MFIter without Tiling</span></a>
+in which two MultiFabs, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">U</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">F</span><span class="w"></span></code>, use <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="w"></span></code> via
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">array</span><span class="p">()</span><span class="w"></span></code> and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">const_array</span><span class="p">()</span><span class="w"></span></code> functions. These different MultiFabs
+may have different BoxArrays. For
 example, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">U</span><span class="w"></span></code> might be cell-centered, whereas <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">F</span><span class="w"></span></code> might be nodal in
 <span class="math notranslate nohighlight">\(x\)</span>-direction and cell in other directions. The <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFIter</span><span class="o">::</span><span class="n">validbox</span><span class="w"></span></code>
 and <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">tilebox</span><span class="w"></span></code> functions return Boxes of the same type as the
