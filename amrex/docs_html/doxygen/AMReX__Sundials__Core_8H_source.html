@@ -104,19 +104,25 @@ $(document).ready(function(){initNavTree('AMReX__Sundials__Core_8H_source.html',
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX_8H.html">AMReX.H</a>&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__OpenMP_8H.html">AMReX_OpenMP.H</a>&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;sundials/sundials_context.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1sundials.html">amrex::sundials</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d">Initialize</a>(<span class="keywordtype">int</span> nthreads);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18">Finalize</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;::sundials::Context* <a class="code" href="namespaceamrex_1_1sundials.html#a9073bde66b70bda0c4d46655775c684d">The_Sundials_Context</a>(<span class="keywordtype">int</span> i = <a class="code" href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a>());</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;sundials/sundials_config.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#if defined(SUNDIALS_VERSION_MAJOR) &amp;&amp; (SUNDIALS_VERSION_MAJOR &lt; 7)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#  include &lt;sundials/sundials_context.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#  include &lt;sundials/sundials_context.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1sundials.html">amrex::sundials</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1sundials.html#ab2ee62c0a1b082b5f9438f56b0146c9d">Initialize</a>(<span class="keywordtype">int</span> nthreads);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1sundials.html#abf6b47f72923c8ef9f360c6a93289a18">Finalize</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;::sundials::Context* <a class="code" href="namespaceamrex_1_1sundials.html#a9073bde66b70bda0c4d46655775c684d">The_Sundials_Context</a>(<span class="keywordtype">int</span> i = <a class="code" href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a>());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__OpenMP_8H_html"><div class="ttname"><a href="AMReX__OpenMP_8H.html">AMReX_OpenMP.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_1_1OpenMP_html_a27ed6354b68b2bd8721658a8779af032"><div class="ttname"><a href="namespaceamrex_1_1OpenMP.html#a27ed6354b68b2bd8721658a8779af032">amrex::OpenMP::get_thread_num</a></div><div class="ttdeci">constexpr int get_thread_num()</div><div class="ttdef"><b>Definition:</b> AMReX_OpenMP.H:29</div></div>

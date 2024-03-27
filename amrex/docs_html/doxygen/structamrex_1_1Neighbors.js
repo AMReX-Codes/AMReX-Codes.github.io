@@ -9,7 +9,7 @@ var structamrex_1_1Neighbors =
     [ "cend", "structamrex_1_1Neighbors.html#ac860fea0fdcf7e2beca183df77e7eed0", null ],
     [ "end", "structamrex_1_1Neighbors.html#a90e48fc334e395d5342ca85558949e95", null ],
     [ "end", "structamrex_1_1Neighbors.html#a2d37e953b78d6106dbd29c8cb8775270", null ],
-    [ "m_i", "structamrex_1_1Neighbors.html#a751da08025303cf00592fbcd84911acb", null ],
+    [ "m_i", "structamrex_1_1Neighbors.html#a5e4fbd0434728a17409c80f498acb9af", null ],
     [ "m_nbor_list_ptr", "structamrex_1_1Neighbors.html#ad9f5e91117e760e1bc3ad9d78d2052a6", null ],
     [ "m_nbor_offsets_ptr", "structamrex_1_1Neighbors.html#aa9ff8703b2a5f6683425a7a9a9f46792", null ],
     [ "m_pstruct", "structamrex_1_1Neighbors.html#a4b3fbe9ad7a9534399391d67b192eed1", null ]

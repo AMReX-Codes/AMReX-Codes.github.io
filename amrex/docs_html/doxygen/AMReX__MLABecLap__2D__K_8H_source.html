@@ -348,142 +348,140 @@ $(document).ready(function(){initNavTree('AMReX__MLABecLap__2D__K_8H_source.html
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> vlo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(vbox);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> vhi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(vbox);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// amrex::Print() &lt;&lt; &quot;GSRB LS &quot; &lt;&lt; box &lt;&lt; &quot; &quot; &lt;&lt; dhx &lt;&lt; &quot; &quot; &lt;&lt; dhy &lt;&lt; &quot; &quot; &lt;&lt; dhz &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// idir is the direction in which we will do the tridiagonal solve --</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">// it should be the direction in which the mesh spacing is much larger</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// than in the other directions</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">// int idir = 1;</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// This should be moved outside the kernel!</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (dhy &lt;= dhx) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;dhy is supposed to be much larger than dhx&quot;</span>); }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// idir is the direction in which we will do the tridiagonal solve --</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// it should be the direction in which the mesh spacing is much larger</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// than in the other directions</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">// int idir = 1;</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">// This should be moved outside the kernel!</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (dhy &lt;= dhx) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;dhy is supposed to be much larger than dhx&quot;</span>); }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">int</span> ilen = hi.y - lo.y + 1;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">int</span> ilen = hi.y - lo.y + 1;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// This should be moved outside the kernel!</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span> (ilen &gt; 32) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;abec_gsrb_with_line_solve is hard-wired to be no longer than 32&quot;</span>); }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> a_ls;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> b_ls;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> c_ls;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> r_ls;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> u_ls;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> gam;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nc; ++n) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">if</span> ((i+redblack)%2 == 0) {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    T gamma = alpha*a(i,j,0)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                        +   dhx*(bX(i,j,0,n)+bX(i+1,j,0,n))</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        +   dhy*(bY(i,j,0,n)+bY(i,j+1,0,n));</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    T cf0 = (i == vlo.x &amp;&amp; m0(vlo.x-1,j,0) &gt; 0)</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        ? <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746">f0</a>(vlo.x,j,0,n) : T(0.0);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                    T cf1 = (j == vlo.y &amp;&amp; m1(i,vlo.y-1,0) &gt; 0)</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        ? f1(i,vlo.y,0,n) : T(0.0);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    T cf2 = (i == vhi.x &amp;&amp; m2(vhi.x+1,j,0) &gt; 0)</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        ? f2(vhi.x,j,0,n) : T(0.0);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    T cf3 = (j == vhi.y &amp;&amp; m3(i,vhi.y+1,0) &gt; 0)</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                        ? f3(i,vhi.y,0,n) : T(0.0);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    T g_m_d = gamma</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                        - (dhx*(bX(i,j,0,n)*cf0 + bX(i+1,j,0,n)*cf2)</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                        +  dhy*(bY(i,j,0,n)*cf1 + bY(i,j+1,0,n)*cf3));</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    T rho =  dhx*( bX(i  ,j,0,n)*phi(i-1,j,0,n)</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                           +       bX(i+1,j,0,n)*phi(i+1,j,0,n) );</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="comment">// We have already accounted for this external boundary in the coefficient of phi(i,j,k,n)</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <span class="keywordflow">if</span> (i == vlo.x &amp;&amp; m0(vlo.x-1,j,0) &gt; 0) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                        rho -= dhx*bX(i  ,j,0,n)*phi(i-1,j,0,n);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <span class="keywordflow">if</span> (i == vhi.x &amp;&amp; m3(vhi.x+1,j,0) &gt; 0) {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        rho -= dhx*bX(i+1,j,0,n)*phi(i+1,j,0,n);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    a_ls(j-lo.y) = -dhy*bY(i,j,0,n);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    b_ls(j-lo.y) =  g_m_d;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    c_ls(j-lo.y) = -dhy*bY(i,j+1,0,n);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    u_ls(j-lo.y) = T(0.);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    r_ls(j-lo.y) = rhs(i,j,0,n) + rho;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <span class="keywordflow">if</span> (j == lo.y) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                        a_ls(j-lo.y) = T(0.);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        <span class="keywordflow">if</span> (!(m1(i,vlo.y-1,0) &gt; 0)) { r_ls(j-lo.y) += dhy*bY(i,j,0,n)*phi(i,j-1,0,n); }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    }</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    <span class="keywordflow">if</span> (j == hi.y) {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                        c_ls(j-lo.y) = T(0.);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        <span class="keywordflow">if</span> (!(m3(i,vhi.y+1,0) &gt; 0)) { r_ls(j-lo.y) += dhy*bY(i,j+1,0,n)*phi(i,j+1,0,n); }</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">//                      This is the tridiagonal solve</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    T bet = b_ls(0);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    u_ls(0) = r_ls(0) / bet;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 1; jj &lt;= ilen-1; jj++) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        gam(jj) = c_ls(jj-1) / bet;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                        bet = b_ls(jj) - a_ls(jj)*gam(jj);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        <span class="keywordflow">if</span> (bet == 0) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;&gt;&gt;&gt;TRIDIAG FAILED&quot;</span>); }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                        u_ls(jj) = (r_ls(jj)-a_ls(jj)*u_ls(jj-1)) / bet;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = ilen-2; jj &gt;= 0; jj--) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                u_ls(jj) = u_ls(jj) - gam(jj+1)*u_ls(jj+1);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                            phi(i,j,0,n) = u_ls(j-lo.y);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a040b31bdb9951876d8277049591cfe51">overset_rescale_bcoef_x</a> (Box <span class="keyword">const</span>&amp; box, Array4&lt;T&gt; <span class="keyword">const</span>&amp; bX, Array4&lt;int const&gt; <span class="keyword">const</span>&amp; osm,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                              <span class="keywordtype">int</span> ncomp, T osfac) noexcept</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;{</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordflow">if</span> ((osm(i-1,j,0)+osm(i,j,0)) == 1) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                bX(i,j,0,n) *= osfac;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        }}</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a756bd05a03228632b5dfc9323d9440fa">  364</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a756bd05a03228632b5dfc9323d9440fa">overset_rescale_bcoef_y</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; bY, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; osm,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                              <span class="keywordtype">int</span> ncomp, T osfac) noexcept</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">if</span> ((osm(i,j-1,0)+osm(i,j,0)) == 1) {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                bY(i,j,0,n) *= osfac;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }}</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// This should be moved outside the kernel!</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (ilen &gt; 32) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;abec_gsrb_with_line_solve is hard-wired to be no longer than 32&quot;</span>); }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> a_ls;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> b_ls;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> c_ls;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> r_ls;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> u_ls;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;T,0,31&gt;</a> gam;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; nc; ++n) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> ((i+redblack)%2 == 0) {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    T gamma = alpha*a(i,j,0)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                        +   dhx*(bX(i,j,0,n)+bX(i+1,j,0,n))</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        +   dhy*(bY(i,j,0,n)+bY(i,j+1,0,n));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    T cf0 = (i == vlo.x &amp;&amp; m0(vlo.x-1,j,0) &gt; 0)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        ? <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746">f0</a>(vlo.x,j,0,n) : T(0.0);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    T cf1 = (j == vlo.y &amp;&amp; m1(i,vlo.y-1,0) &gt; 0)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        ? f1(i,vlo.y,0,n) : T(0.0);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                    T cf2 = (i == vhi.x &amp;&amp; m2(vhi.x+1,j,0) &gt; 0)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        ? f2(vhi.x,j,0,n) : T(0.0);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    T cf3 = (j == vhi.y &amp;&amp; m3(i,vhi.y+1,0) &gt; 0)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        ? f3(i,vhi.y,0,n) : T(0.0);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    T g_m_d = gamma</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                        - (dhx*(bX(i,j,0,n)*cf0 + bX(i+1,j,0,n)*cf2)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                        +  dhy*(bY(i,j,0,n)*cf1 + bY(i,j+1,0,n)*cf3));</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    T rho =  dhx*( bX(i  ,j,0,n)*phi(i-1,j,0,n)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                           +       bX(i+1,j,0,n)*phi(i+1,j,0,n) );</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    <span class="comment">// We have already accounted for this external boundary in the coefficient of phi(i,j,k,n)</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                    <span class="keywordflow">if</span> (i == vlo.x &amp;&amp; m0(vlo.x-1,j,0) &gt; 0) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                        rho -= dhx*bX(i  ,j,0,n)*phi(i-1,j,0,n);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    <span class="keywordflow">if</span> (i == vhi.x &amp;&amp; m3(vhi.x+1,j,0) &gt; 0) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                        rho -= dhx*bX(i+1,j,0,n)*phi(i+1,j,0,n);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    a_ls(j-lo.y) = -dhy*bY(i,j,0,n);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    b_ls(j-lo.y) =  g_m_d;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    c_ls(j-lo.y) = -dhy*bY(i,j+1,0,n);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    u_ls(j-lo.y) = T(0.);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    r_ls(j-lo.y) = rhs(i,j,0,n) + rho;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    <span class="keywordflow">if</span> (j == lo.y) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                        a_ls(j-lo.y) = T(0.);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                        <span class="keywordflow">if</span> (!(m1(i,vlo.y-1,0) &gt; 0)) { r_ls(j-lo.y) += dhy*bY(i,j,0,n)*phi(i,j-1,0,n); }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    <span class="keywordflow">if</span> (j == hi.y) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        c_ls(j-lo.y) = T(0.);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                        <span class="keywordflow">if</span> (!(m3(i,vhi.y+1,0) &gt; 0)) { r_ls(j-lo.y) += dhy*bY(i,j+1,0,n)*phi(i,j+1,0,n); }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">//                      This is the tridiagonal solve</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    T bet = b_ls(0);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    u_ls(0) = r_ls(0) / bet;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 1; jj &lt;= ilen-1; jj++) {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                        gam(jj) = c_ls(jj-1) / bet;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        bet = b_ls(jj) - a_ls(jj)*gam(jj);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        <span class="keywordflow">if</span> (bet == 0) { <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;&gt;&gt;&gt;TRIDIAG FAILED&quot;</span>); }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                        u_ls(jj) = (r_ls(jj)-a_ls(jj)*u_ls(jj-1)) / bet;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = ilen-2; jj &gt;= 0; jj--) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                u_ls(jj) = u_ls(jj) - gam(jj+1)*u_ls(jj+1);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                            phi(i,j,0,n) = u_ls(j-lo.y);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a040b31bdb9951876d8277049591cfe51">overset_rescale_bcoef_x</a> (Box <span class="keyword">const</span>&amp; box, Array4&lt;T&gt; <span class="keyword">const</span>&amp; bX, Array4&lt;int const&gt; <span class="keyword">const</span>&amp; osm,</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                              <span class="keywordtype">int</span> ncomp, T osfac) noexcept</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">if</span> ((osm(i-1,j,0)+osm(i,j,0)) == 1) {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                bX(i,j,0,n) *= osfac;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }}</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a756bd05a03228632b5dfc9323d9440fa">  362</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a756bd05a03228632b5dfc9323d9440fa">overset_rescale_bcoef_y</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;T&gt;</a> <span class="keyword">const</span>&amp; bY, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; osm,</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                              <span class="keywordtype">int</span> ncomp, T osfac) noexcept</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; ++n) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">if</span> ((osm(i,j-1,0)+osm(i,j,0)) == 1) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                bY(i,j,0,n) *= osfac;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }}</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a8c414106ab987031039a0ad05bb2519b"><div class="ttname"><a href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div><div class="ttdeci">#define AMREX_PRAGMA_SIMD</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:80</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:119</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:20</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html"><div class="ttname"><a href="classamrex_1_1Box.html">amrex::Box</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:39</div></div>
-<div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_a7e573c10b9a6e12f89bb52a5ef35b746"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746">amrex::SundialsUserFun::f0</a></div><div class="ttdeci">static int f0(sunrealtype t, N_Vector y, N_Vector ydot, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:32</div></div>
+<div class="ttc" id="anamespaceamrex_1_1SundialsUserFun_html_a7e573c10b9a6e12f89bb52a5ef35b746"><div class="ttname"><a href="namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746">amrex::SundialsUserFun::f0</a></div><div class="ttdeci">static int f0(sunrealtype t, N_Vector y, N_Vector ydot, void *user_data)</div><div class="ttdef"><b>Definition:</b> AMReX_SundialsIntegrator.H:33</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a040b31bdb9951876d8277049591cfe51"><div class="ttname"><a href="namespaceamrex.html#a040b31bdb9951876d8277049591cfe51">amrex::overset_rescale_bcoef_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void overset_rescale_bcoef_x(Box const &amp;box, Array4&lt; T &gt; const &amp;bX, Array4&lt; int const &gt; const &amp;osm, int ncomp, T osfac) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_1D_K.H:176</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">amrex::CurlCurlStateType::x</a></div><div class="ttdeci">@ x</div></div>
@@ -493,7 +491,7 @@ $(document).ready(function(){initNavTree('AMReX__MLABecLap__2D__K_8H_source.html
 <div class="ttc" id="anamespaceamrex_html_a69bee84824fdeec94ff8ae48596594f6"><div class="ttname"><a href="namespaceamrex.html#a69bee84824fdeec94ff8ae48596594f6">amrex::abec_gsrb_os</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void abec_gsrb_os(int i, int, int, int n, Array4&lt; T &gt; const &amp;phi, Array4&lt; T const &gt; const &amp;rhs, T alpha, Array4&lt; T const &gt; const &amp;a, T dhx, Array4&lt; T const &gt; const &amp;bX, Array4&lt; int const &gt; const &amp;m0, Array4&lt; int const &gt; const &amp;m1, Array4&lt; T const &gt; const &amp;f0, Array4&lt; T const &gt; const &amp;f1, Array4&lt; int const &gt; const &amp;osm, Box const &amp;vbox, int redblack) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_1D_K.H:121</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6ce6b4176121c2c23327903a8139af0c"><div class="ttname"><a href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 ubound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:279</div></div>
 <div class="ttc" id="anamespaceamrex_html_a71600c8a528e0f1863154e4cf0183cbc"><div class="ttname"><a href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 lbound(Array4&lt; T &gt; const &amp;a) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:272</div></div>
-<div class="ttc" id="anamespaceamrex_html_a756bd05a03228632b5dfc9323d9440fa"><div class="ttname"><a href="namespaceamrex.html#a756bd05a03228632b5dfc9323d9440fa">amrex::overset_rescale_bcoef_y</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void overset_rescale_bcoef_y(Box const &amp;box, Array4&lt; T &gt; const &amp;bY, Array4&lt; int const &gt; const &amp;osm, int ncomp, T osfac) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_2D_K.H:364</div></div>
+<div class="ttc" id="anamespaceamrex_html_a756bd05a03228632b5dfc9323d9440fa"><div class="ttname"><a href="namespaceamrex.html#a756bd05a03228632b5dfc9323d9440fa">amrex::overset_rescale_bcoef_y</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void overset_rescale_bcoef_y(Box const &amp;box, Array4&lt; T &gt; const &amp;bY, Array4&lt; int const &gt; const &amp;osm, int ncomp, T osfac) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_2D_K.H:362</div></div>
 <div class="ttc" id="anamespaceamrex_html_a87228025264a2ecce51b2645576a432b"><div class="ttname"><a href="namespaceamrex.html#a87228025264a2ecce51b2645576a432b">amrex::abec_gsrb_with_line_solve</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void abec_gsrb_with_line_solve(Box const &amp;, Array4&lt; T &gt; const &amp;, Array4&lt; T const &gt; const &amp;, T, Array4&lt; T const &gt; const &amp;, T, Array4&lt; T const &gt; const &amp;, Array4&lt; int const &gt; const &amp;, Array4&lt; int const &gt; const &amp;, Array4&lt; T const &gt; const &amp;, Array4&lt; T const &gt; const &amp;, Box const &amp;, int, int) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_1D_K.H:160</div></div>
 <div class="ttc" id="anamespaceamrex_html_a8ec73e9321cbfd5d28374107ef24d4a5"><div class="ttname"><a href="namespaceamrex.html#a8ec73e9321cbfd5d28374107ef24d4a5">amrex::abec_gsrb</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void abec_gsrb(int i, int, int, int n, Array4&lt; T &gt; const &amp;phi, Array4&lt; T const &gt; const &amp;rhs, T alpha, Array4&lt; T const &gt; const &amp;a, T dhx, Array4&lt; T const &gt; const &amp;bX, Array4&lt; int const &gt; const &amp;m0, Array4&lt; int const &gt; const &amp;m1, Array4&lt; T const &gt; const &amp;f0, Array4&lt; T const &gt; const &amp;f1, Box const &amp;vbox, int redblack) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_1D_K.H:87</div></div>
 <div class="ttc" id="anamespaceamrex_html_ac6918b5f6341c2be9032719f0f065ed4"><div class="ttname"><a href="namespaceamrex.html#ac6918b5f6341c2be9032719f0f065ed4">amrex::mlabeclap_flux_yface</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mlabeclap_flux_yface(Box const &amp;box, Array4&lt; T &gt; const &amp;fy, Array4&lt; T const &gt; const &amp;sol, Array4&lt; T const &gt; const &amp;by, T fac, int ylen, int ncomp) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLABecLap_2D_K.H:122</div></div>

@@ -24,8 +24,8 @@ var classamrex_1_1GMRESMLMGT =
     [ "solve", "classamrex_1_1GMRESMLMGT.html#a12b1b279c8233ed99af1f9765a46d502", null ],
     [ "usePrecond", "classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed", null ],
     [ "m_gmres", "classamrex_1_1GMRESMLMGT.html#a32ef8424897f89206ea72f7f3affbdd0", null ],
-    [ "m_linop", "classamrex_1_1GMRESMLMGT.html#a3f967c79809e51f55b8abefadc3cdd1d", null ],
-    [ "m_mlmg", "classamrex_1_1GMRESMLMGT.html#a53ec7ead138ca2c0e79f0801f44bd1e6", null ],
+    [ "m_linop", "classamrex_1_1GMRESMLMGT.html#aade37c46d216449063107a555d33010e", null ],
+    [ "m_mlmg", "classamrex_1_1GMRESMLMGT.html#ac6bdd073a8562762729e78088cf2bbb9", null ],
     [ "m_prop_zero", "classamrex_1_1GMRESMLMGT.html#ad478296de575a072a91d73b9f8b0332e", null ],
     [ "m_use_precond", "classamrex_1_1GMRESMLMGT.html#ab701de7cf398139b6f8804adb3eddd55", null ]
 ];

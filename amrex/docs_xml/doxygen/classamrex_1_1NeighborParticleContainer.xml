@@ -219,20 +219,6 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="403" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="403" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a36651cd2e655c49f9d9c57c865223fa2" prot="protected" static="no" mutable="no">
-        <type>const size_t</type>
-        <definition>const size_t amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::pdata_size</definition>
-        <argsstring></argsstring>
-        <name>pdata_size</name>
-        <initializer>= sizeof(<ref refid="classamrex_1_1NeighborParticleContainer_1ab9497648313d317adc40bc7bebb5ca2d" kindref="member">ParticleType</ref>)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="404" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="404" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a0bc1ebc16494317aa1ee91983ac667e4" prot="protected" static="no" mutable="no">
         <type>size_t</type>
         <definition>size_t amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::cdata_size</definition>
@@ -589,6 +575,20 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a94f1d1574b0fb4f340d088480ee5fbc1" prot="protected" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::pdata_size</definition>
+        <argsstring></argsstring>
+        <name>pdata_size</name>
+        <initializer>= sizeof(<ref refid="classamrex_1_1NeighborParticleContainer_1ab9497648313d317adc40bc7bebb5ca2d" kindref="member">ParticleType</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="404" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="404" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1aebe05d83866295fa66cd195bfd2ccc44" prot="protected" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>constexpr int amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::num_mask_comps</definition>
@@ -962,7 +962,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="251" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" bodystart="679" bodyend="687"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ab3f15c1b66190b5ff6d895d6ab0b63e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a6fb1047fc993b216cf8b7976cb589c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -970,10 +970,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::buildNeighborList</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, bool sort=false)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, bool sort=false)</argsstring>
         <name>buildNeighborList</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -990,7 +990,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="257" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a5253547af8cc34bf092433fff36ccddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a8478ecacf0444af88ada9f65324c8c91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1001,10 +1001,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::buildNeighborList</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, OtherPCType &amp;other, Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; typename OtherPCType::ParticleType &gt; &gt; &gt; &amp;neighbor_lists, bool sort=false)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, OtherPCType &amp;other, Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; typename OtherPCType::ParticleType &gt; &gt; &gt; &amp;neighbor_lists, bool sort=false)</argsstring>
         <name>buildNeighborList</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -1029,7 +1029,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="263" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a40a368b467857849693e220ba19b0de8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ad443f88f36ee577341e3ffcffda8a539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1037,10 +1037,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::buildNeighborList</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, int type_ind, int *ref_ratio, int num_bin_types=1, bool sort=false)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, int type_ind, int *ref_ratio, int num_bin_types=1, bool sort=false)</argsstring>
         <name>buildNeighborList</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -1070,7 +1070,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="271" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ac12ee34811362ffe3b5419d304b1204a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a12039aca5af54df4ee587db2ea95c857" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1078,10 +1078,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::selectActualNeighbors</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, int num_cells=1)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, int num_cells=1)</argsstring>
         <name>selectActualNeighbors</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -1407,7 +1407,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="351" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H" bodystart="120" bodyend="220"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a099c7b4442243afbac09ed42e80e9774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1aad163ac3bbb3deda0b715ce7e97f6de0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1415,10 +1415,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::buildNeighborList</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, bool)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, bool)</argsstring>
         <name>buildNeighborList</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -1432,7 +1432,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" line="692" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" bodystart="693" bodyend="772"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a28c398b503c3b86556754980e739cd0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1abb69f08cf3677fa93e6b3793e1ef3403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1443,10 +1443,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::buildNeighborList</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, OtherPCType &amp;other, Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; typename OtherPCType::ParticleType &gt; &gt; &gt; &amp;neighbor_lists, bool)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, OtherPCType &amp;other, Vector&lt; std::map&lt; std::pair&lt; int, int &gt;, amrex::NeighborList&lt; typename OtherPCType::ParticleType &gt; &gt; &gt; &amp;neighbor_lists, bool)</argsstring>
         <name>buildNeighborList</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -1468,7 +1468,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" line="777" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" bodystart="778" bodyend="841"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ae44cef4c455236f99ad17c53758172ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ac168ec3279fb7f55564901b2f98dfeeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1476,10 +1476,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::buildNeighborList</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, int type_ind, int *ref_ratio, int num_bin_types, bool)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, int type_ind, int *ref_ratio, int num_bin_types, bool)</argsstring>
         <name>buildNeighborList</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -1505,7 +1505,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" line="846" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesI.H" bodystart="847" bodyend="977"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a273b3dd3de4a9be9b3fed863080d9ad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a29c7b740a3afe04a5fb93281fc0d75ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -1513,10 +1513,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::selectActualNeighbors</definition>
-        <argsstring>(CheckPair &amp;&amp;check_pair, int num_cells)</argsstring>
+        <argsstring>(CheckPair const &amp;check_pair, int num_cells)</argsstring>
         <name>selectActualNeighbors</name>
         <param>
-          <type>CheckPair &amp;&amp;</type>
+          <type>CheckPair const &amp;</type>
           <declname>check_pair</declname>
         </param>
         <param>
@@ -2380,12 +2380,12 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1ParticleContainerBase_1ae8cc9df742fa642c6289916de788afa5" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>BufferMap</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1af79112d043b45868fb00cf720d61b0a5" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>BuildMasks</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a429842d84ae93439634d8953d71b63bf" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborCopyOp</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1ab3f15c1b66190b5ff6d895d6ab0b63e2" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a5253547af8cc34bf092433fff36ccddb" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a40a368b467857849693e220ba19b0de8" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a099c7b4442243afbac09ed42e80e9774" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a28c398b503c3b86556754980e739cd0f" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1ae44cef4c455236f99ad17c53758172ce" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a6fb1047fc993b216cf8b7976cb589c45" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a8478ecacf0444af88ada9f65324c8c91" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1ad443f88f36ee577341e3ffcffda8a539" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1aad163ac3bbb3deda0b715ce7e97f6de0" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1abb69f08cf3677fa93e6b3793e1ef3403" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1ac168ec3279fb7f55564901b2f98dfeeb" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborList</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1ad01b79b58df596f16982763a74e34d70" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>buildNeighborMask</name></member>
       <member refid="classamrex_1_1ParticleContainerBase_1a96b76ab915415e7891655d0910880636" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>BuildRedistributeMask</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a10bdd9f80e7698acb45b1dec24db3a72" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ByteSpread</name></member>
@@ -2587,7 +2587,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1ParticleContainer__impl_1aad727cb5c9b392a0ec2c7bbabdf22576" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ParticleTileType</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1ab9497648313d317adc40bc7bebb5ca2d" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ParticleType</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1ade2385ed6d6005f38a31d3709b55fc4c" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ParticleVector</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a36651cd2e655c49f9d9c57c865223fa2" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>pdata_size</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a94f1d1574b0fb4f340d088480ee5fbc1" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>pdata_size</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a37bfe23bdf8f5b0a9e38f5459ec4a42e" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>PeriodicShift</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a37bfe23bdf8f5b0a9e38f5459ec4a42e" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>PeriodicShift</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a57f27a8f270653d1a738490e32dffe4b" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>pinned_rcv_buffer</name></member>
@@ -2626,8 +2626,8 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1ParticleContainer__impl_1a7aa82330403064a8174b9b6acc5357d3" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ResizeRuntimeRealComp</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1a8c3b7e935c8e51c676870ef1845da343" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>Restart</name></member>
       <member refid="classamrex_1_1ParticleContainer__impl_1ac94e2cfc39b00353c4f5c589ca0d9840" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>Restart</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1ac12ee34811362ffe3b5419d304b1204a" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>selectActualNeighbors</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a273b3dd3de4a9be9b3fed863080d9ad3" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>selectActualNeighbors</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a12039aca5af54df4ee587db2ea95c857" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>selectActualNeighbors</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a29c7b740a3afe04a5fb93281fc0d75ac" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>selectActualNeighbors</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a5ba336738781f2d529bbb68a7f297e17" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>send_data</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a9fd86ef6591da68553312d8cc6321034" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>setEnableInverse</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a63cbb0b5b6c81df9e4321148bc960f32" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>setIntCommComp</name></member>
