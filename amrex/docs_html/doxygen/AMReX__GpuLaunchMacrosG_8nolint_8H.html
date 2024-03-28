@@ -441,11 +441,11 @@ Macros</h2></td></tr>
 <div class="line">    auto <span class="keyword">const</span>&amp; amrex_i_box = box; \</div>
 <div class="line">    if (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">amrex::Gpu::inLaunchRegion</a>()) { <a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">\</a></div>
 <div class="line"><a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">        amrex::ParallelFor</a>(amrex_i_box,[=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept block); \</div>
-<div class="line">    } <span class="keywordflow">else</span> { <a class="code" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">\</a></div>
-<div class="line"><a class="code" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">        amrex::LoopConcurrentOnCpu</a>(amrex_i_box,[=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept block); \</div>
+<div class="line">    } <span class="keywordflow">else</span> { <a class="code" href="namespaceamrex.html#a2852f915700a8c5c4f638d5d9c64acc4">\</a></div>
+<div class="line"><a class="code" href="namespaceamrex.html#a2852f915700a8c5c4f638d5d9c64acc4">        amrex::LoopConcurrentOnCpu</a>(amrex_i_box,[=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept block); \</div>
 <div class="line">    } \</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespaceamrex_html_ac8ac637100c5c3e84d9c8c9e6747a695"><div class="ttname"><a href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">amrex::LoopConcurrentOnCpu</a></div><div class="ttdeci">void LoopConcurrentOnCpu(Dim3 lo, Dim3 hi, F const &amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:140</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2852f915700a8c5c4f638d5d9c64acc4"><div class="ttname"><a href="namespaceamrex.html#a2852f915700a8c5c4f638d5d9c64acc4">amrex::LoopConcurrentOnCpu</a></div><div class="ttdeci">AMREX_ATTRIBUTE_FLATTEN_FOR void LoopConcurrentOnCpu(Dim3 lo, Dim3 hi, F const &amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:152</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -509,8 +509,8 @@ Macros</h2></td></tr>
 <div class="line">    auto <span class="keyword">const</span>&amp; amrex_i_ncomp = ncomp; \</div>
 <div class="line">    if (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">amrex::Gpu::inLaunchRegion</a>()) { <a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">\</a></div>
 <div class="line"><a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">        amrex::ParallelFor</a>(amrex_i_box,amrex_i_ncomp,[=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept block); \</div>
-<div class="line">    } <span class="keywordflow">else</span> { <a class="code" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">\</a></div>
-<div class="line"><a class="code" href="namespaceamrex.html#ac8ac637100c5c3e84d9c8c9e6747a695">        amrex::LoopConcurrentOnCpu</a>(amrex_i_box,amrex_i_ncomp,[=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept block); \</div>
+<div class="line">    } <span class="keywordflow">else</span> { <a class="code" href="namespaceamrex.html#a2852f915700a8c5c4f638d5d9c64acc4">\</a></div>
+<div class="line"><a class="code" href="namespaceamrex.html#a2852f915700a8c5c4f638d5d9c64acc4">        amrex::LoopConcurrentOnCpu</a>(amrex_i_box,amrex_i_ncomp,[=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept block); \</div>
 <div class="line">    } \</div>
 <div class="line">}</div>
 </div><!-- fragment -->

@@ -74,6 +74,7 @@ var NAVTREEINDEX61 =
 "namespaceamrex.html#a3f0f44b09d21b49d00d3d1b12e9e2489":[2,0,0,654],
 "namespaceamrex.html#a3f36471bf6b32ec7460e70b9e4a1f91d":[2,0,0,1977],
 "namespaceamrex.html#a3f6c9273719cac9f85a15a3c6c89e7eb":[2,0,0,796],
+"namespaceamrex.html#a3f8518382186436012e8d327c7122fd6":[2,0,0,1275],
 "namespaceamrex.html#a3f8f5f13146586dfaa0fb8d082132f12":[2,0,0,974],
 "namespaceamrex.html#a3f948e8f69355439c8e408405d24eb05":[2,0,0,1267],
 "namespaceamrex.html#a3fa033d5f7e81438c45cc3b5f6af3443":[2,0,0,1758],
@@ -144,7 +145,6 @@ var NAVTREEINDEX61 =
 "namespaceamrex.html#a48fd69edf0706c07faf10f17de423873":[2,0,0,765],
 "namespaceamrex.html#a49077d5108dc85db1db7938f039a778b":[2,0,0,1144],
 "namespaceamrex.html#a4979a24456c6009e315e62d0f0d1ee66":[2,0,0,698],
-"namespaceamrex.html#a49f00c264b4fd1a1259b492dc5063c62":[2,0,0,1842],
 "namespaceamrex.html#a49f9066a9cfe5af5ae7b757267fb685c":[2,0,0,644],
 "namespaceamrex.html#a4a0821339541d218cee0577a42279d6d":[2,0,0,1351],
 "namespaceamrex.html#a4a0d7f39455f1fad5de147aa8cbf45a4":[2,0,0,2002],
@@ -188,7 +188,6 @@ var NAVTREEINDEX61 =
 "namespaceamrex.html#a502847ea5923caf948bd07e02bad3a88":[2,0,0,1320],
 "namespaceamrex.html#a503e7a0c62d731776b177f78bd6cc61a":[2,0,0,874],
 "namespaceamrex.html#a506e37aa50bae292445a1b892b61bf2c":[2,0,0,1650],
-"namespaceamrex.html#a508526251deb73929dd01af02162cdf7":[2,0,0,999],
 "namespaceamrex.html#a5086c850dfa16df677225c8c1139e466":[2,0,0,1757],
 "namespaceamrex.html#a511dc2f5222b878782000339b1858f3c":[2,0,0,1865],
 "namespaceamrex.html#a51791a9a04ee140c71cee50d3615ed35":[2,0,0,957],
@@ -249,5 +248,6 @@ var NAVTREEINDEX61 =
 "namespaceamrex.html#a58f6305adbac638674782f274ce8bb80":[2,0,0,1023],
 "namespaceamrex.html#a591f0270c546f1ece0504803e064d8d3":[2,0,0,2073],
 "namespaceamrex.html#a5926a5d20c4f511675c02ec18cc7c87a":[2,0,0,2104],
-"namespaceamrex.html#a592727ba0dc1149c659488f962afcad7":[2,0,0,1161]
+"namespaceamrex.html#a592727ba0dc1149c659488f962afcad7":[2,0,0,1161],
+"namespaceamrex.html#a596c8bdb575a0bb55727422ca467ca83":[2,0,0,925]
 };

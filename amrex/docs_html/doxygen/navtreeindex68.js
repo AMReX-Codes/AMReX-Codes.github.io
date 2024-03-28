@@ -1,5 +1,6 @@
 var NAVTREEINDEX68 =
 {
+"namespaceamrex_1_1Gpu_1_1Atomic.html#aa2cd0bf29a9ed71679b41a3e54765d39":[2,0,0,15,0,3],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#ab69d18587a5c75ca3ce1f48708e865b1":[2,0,0,15,0,4],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#ac8138a7c3dfae65f72813c07b8e5e856":[2,0,0,15,0,9],
 "namespaceamrex_1_1Gpu_1_1Atomic.html#ad60dc3c4771055fc434211d284769767":[2,0,0,15,0,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX68 =
 "namespaceamrex_1_1ParallelDescriptor.html#a42ee71c485b816027db498df7b566a90":[2,0,0,32,107],
 "namespaceamrex_1_1ParallelDescriptor.html#a450001e6c4813cc1a122428e5f8c56f8":[2,0,0,32,144],
 "namespaceamrex_1_1ParallelDescriptor.html#a45569b295bf42f447fac8a9610790ff0":[2,0,0,32,74],
-"namespaceamrex_1_1ParallelDescriptor.html#a45ff8728249b5e214f520e284c04143b":[2,0,0,32,76],
-"namespaceamrex_1_1ParallelDescriptor.html#a4736dec48acb46827a04cdca7b4045d7":[2,0,0,32,69]
+"namespaceamrex_1_1ParallelDescriptor.html#a45ff8728249b5e214f520e284c04143b":[2,0,0,32,76]
 };

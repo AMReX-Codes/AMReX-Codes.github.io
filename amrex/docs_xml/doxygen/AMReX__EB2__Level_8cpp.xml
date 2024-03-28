@@ -1290,6 +1290,8 @@
         </childnode>
         <childnode refid="50" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
         <childnode refid="90" relation="include">
         </childnode>
       </node>
@@ -2379,14 +2381,14 @@
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a952c6efe16374645210c3308f3b335f6" kindref="member">crse</ref><sp/>=<sp/><ref refid="classamrex_1_1EB2_1_1Level_1a999ca961f5c742f5d61cbace2d88535d" kindref="member">m_levelset</ref>.<ref refid="classamrex_1_1FabArray_1a6484b86e240ddcddbe0d68e9408e1d94" kindref="member">array</ref>(mfi);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref><sp/>=<sp/>f_levelset.const_array(mfi);</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac8ac637100c5c3e84d9c8c9e6747a695" kindref="member">amrex::LoopConcurrentOnCpu</ref>(ndbx,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2852f915700a8c5c4f638d5d9c64acc4" kindref="member">amrex::LoopConcurrentOnCpu</ref>(ndbx,</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>noexcept</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a952c6efe16374645210c3308f3b335f6" kindref="member">crse</ref>(i,j,k)<sp/>=<sp/><ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>(2*i,2*j,2*k);</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tile_error<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1adcfb36df4559fd8ffb462f4b4b4cebaa" kindref="member">amrex::LoopOnCpu</ref>(ccbx,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a11ae51dc854ba8fbb5f79bdaf11976df" kindref="member">amrex::LoopOnCpu</ref>(ccbx,</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=,&amp;tile_error]<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>noexcept</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ierror<sp/>=<sp/><ref refid="namespaceamrex_1_1EB2_1af82727cbe02923f0e85c79498083ac33" kindref="member">check_mvmc</ref>(i,j,k,<ref refid="AMReX__InterpFaceRegister_8cpp_1a34fe8aaa018dd660e1e0cedd75ae040b" kindref="member">fine</ref>);</highlight></codeline>
@@ -2565,7 +2567,7 @@
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ndgbx<sp/>=<sp/>mfi.grownnodaltilebox(-1,2);</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tile_error<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1adcfb36df4559fd8ffb462f4b4b4cebaa" kindref="member">amrex::LoopOnCpu</ref>(ndgbx,</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a11ae51dc854ba8fbb5f79bdaf11976df" kindref="member">amrex::LoopOnCpu</ref>(ndgbx,</highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=,&amp;tile_error]<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>noexcept</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(j,k);</highlight></codeline>
