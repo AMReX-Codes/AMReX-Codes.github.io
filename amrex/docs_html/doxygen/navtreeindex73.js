@@ -1,5 +1,6 @@
 var NAVTREEINDEX73 =
 {
+"structamrex_1_1AMRErrorTag_1_1UserFunc.html#ad9442a6a9d9ad8c31272745a8593bb13":[3,0,0,42,0,4],
 "structamrex_1_1AmrAssignGrid.html":[3,0,0,504],
 "structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[3,0,0,504,3],
 "structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f":[3,0,0,504,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX73 =
 "structamrex_1_1BATbndryReg.html#a7285c09a1d6f9dee7aea847d412e7edf":[3,0,0,106,4],
 "structamrex_1_1BATbndryReg.html#a742f179bd6167bd80a9f9aa9e561bb41":[3,0,0,106,11],
 "structamrex_1_1BATbndryReg.html#a8076201cf94e0e9145160b6aa522ba26":[3,0,0,106,13],
-"structamrex_1_1BATbndryReg.html#a8e3247c949b2224196c82ab300bbfbb4":[3,0,0,106,14],
-"structamrex_1_1BATbndryReg.html#acab83ae65cddf401ab88e355cf63fcf2":[3,0,0,106,1]
+"structamrex_1_1BATbndryReg.html#a8e3247c949b2224196c82ab300bbfbb4":[3,0,0,106,14]
 };

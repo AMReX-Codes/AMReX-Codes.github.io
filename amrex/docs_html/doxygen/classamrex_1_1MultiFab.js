@@ -23,6 +23,7 @@ var classamrex_1_1MultiFab =
     [ "contains_nan", "classamrex_1_1MultiFab.html#a77d980f51c794347641c653d5f88aefd", null ],
     [ "Copy", "classamrex_1_1MultiFab.html#af5fd05a65f284f6e96a1deba5ef423bb", null ],
     [ "Copy", "classamrex_1_1MultiFab.html#ab70ce65ff46ae21b8cc4e0584fe26ffa", null ],
+    [ "deepCopy", "classamrex_1_1MultiFab.html#ad5b7a343ec15251dc975d0b6f0570e33", null ],
     [ "define", "classamrex_1_1MultiFab.html#ab92b4725094cc3ffaf0b9969a0edc934", null ],
     [ "define", "classamrex_1_1MultiFab.html#a08cbe2b2bf9887d4971bd9270c3aa734", null ],
     [ "divide", "classamrex_1_1MultiFab.html#aca202d20f39f94aabb5ffd1581a535f2", null ],

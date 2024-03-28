@@ -266,6 +266,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aca202d20f39f94aabb5ffd1581a535f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#aca202d20f39f94aabb5ffd1581a535f2">divide</a> (const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> strt_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost)</td></tr>
 <tr class="memdesc:aca202d20f39f94aabb5ffd1581a535f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function divides the values of the cells in mf from the corresponding cells of this <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. mf is required to have the same <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a> or "valid region" as this <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>. The division is done only to num_comp components, starting with component number strt_comp. The parameter nghost specifies the number of boundary cells that will be modified. If nghost == 0, only the valid region of each <a class="el" href="classamrex_1_1FArrayBox.html" title="A Fortran Array of REALs.">FArrayBox</a> will be modified. Note, nothing is done to protect against divide by zero.  <a href="classamrex_1_1MultiFab.html#aca202d20f39f94aabb5ffd1581a535f2">More...</a><br /></td></tr>
 <tr class="separator:aca202d20f39f94aabb5ffd1581a535f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b7a343ec15251dc975d0b6f0570e33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#ad5b7a343ec15251dc975d0b6f0570e33">deepCopy</a> () const</td></tr>
+<tr class="separator:ad5b7a343ec15251dc975d0b6f0570e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b718093de8d413ed21f372b9f65761f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a4b718093de8d413ed21f372b9f65761f">contains_nan</a> (bool local=false) const</td></tr>
 <tr class="memdesc:a4b718093de8d413ed21f372b9f65761f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are there any NaNs in the MF? This may return false, even if the MF contains NaNs, if the machine doesn't support the appropriate NaN testing functions.  <a href="classamrex_1_1MultiFab.html#a4b718093de8d413ed21f372b9f65761f">More...</a><br /></td></tr>
 <tr class="separator:a4b718093de8d413ed21f372b9f65761f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2050,6 +2052,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy from src to dst including nghost ghost cells. The two MultiFabs MUST have the same underlying <a class="el" href="classamrex_1_1BoxArray.html" title="A collection of Boxes stored in an Array.">BoxArray</a>. The copy is local. The parallel copy function is in FabArray.H. </p>
+
+</div>
+</div>
+<a id="ad5b7a343ec15251dc975d0b6f0570e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b7a343ec15251dc975d0b6f0570e33">&#9670;&nbsp;</a></span>deepCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> amrex::MultiFab::deepCopy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a deep copy of this <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> and its data.</p>
+<p>This uses the same arena and factory in the copy and copies all data. </p>
 
 </div>
 </div>
