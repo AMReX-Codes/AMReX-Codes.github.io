@@ -51,5 +51,6 @@ var searchData=
   ['curlcurldirichletinfo_9492',['CurlCurlDirichletInfo',['../structamrex_1_1CurlCurlDirichletInfo.html',1,'amrex']]],
   ['curlcurlsymmetryinfo_9493',['CurlCurlSymmetryInfo',['../structamrex_1_1CurlCurlSymmetryInfo.html',1,'amrex']]],
   ['cutfab_9494',['CutFab',['../classamrex_1_1CutFab.html',1,'amrex']]],
-  ['cylinderif_9495',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html',1,'amrex::EB2']]]
+  ['cutfabfactory_9495',['CutFabFactory',['../classamrex_1_1detail_1_1CutFabFactory.html',1,'amrex::detail']]],
+  ['cylinderif_9496',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html',1,'amrex::EB2']]]
 ];

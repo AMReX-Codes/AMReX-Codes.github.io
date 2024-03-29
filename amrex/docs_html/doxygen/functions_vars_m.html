@@ -129,6 +129,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_alloc
 : <a class="el" href="classamrex_1_1CArena.html#ad1b240a0437cfcaee6788096d93a1674">amrex::CArena</a>
 </li>
+<li>m_alloc_single_chunk
+: <a class="el" href="classamrex_1_1FabArrayBase.html#a12b9e0ac23fbfa55a6ae4d6bf2d97ba8">amrex::FabArrayBase</a>
+</li>
 <li>m_allregular
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#a16651c9d026bf4c7876a890be6e85253">amrex::EB2::Level</a>
 </li>
@@ -228,6 +231,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 </li>
 <li>m_bat_type
 : <a class="el" href="structamrex_1_1BATransformer.html#addbc01e0e2621532efa04d4f28e3f305">amrex::BATransformer</a>
+</li>
+<li>m_bcoefs
+: <a class="el" href="classamrex_1_1MLCurlCurl.html#a5ffc86d6c741f71d676a5834deba92a6">amrex::MLCurlCurl</a>
 </li>
 <li>m_bcondloc
 : <a class="el" href="classamrex_1_1MLCellLinOpT.html#a8ea2fb547b5b9b37d88880948073e00c">amrex::MLCellLinOpT&lt; MF &gt;</a>
@@ -430,7 +436,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#a2e1c74b0f09c3f6a15a7024dd30be4ef">amrex::EB2::Level</a>
 </li>
 <li>m_cellflags
-: <a class="el" href="classamrex_1_1EBDataCollection.html#a3f3aed898f6ec10c9f141be194499cac">amrex::EBDataCollection</a>
+: <a class="el" href="classamrex_1_1detail_1_1CutFabFactory.html#ad27d27c26c11acfd58b8fc629b4f2c1b">amrex::detail::CutFabFactory</a>
+, <a class="el" href="classamrex_1_1EBDataCollection.html#a3f3aed898f6ec10c9f141be194499cac">amrex::EBDataCollection</a>
 , <a class="el" href="classamrex_1_1MultiCutFab.html#acf458e03eaefec6d963a0b0e3b0453da">amrex::MultiCutFab</a>
 </li>
 <li>m_center
@@ -602,7 +609,8 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 : <a class="el" href="classhacc_1_1Distribution.html#aa381914659691d811714d279f927972f">hacc::Distribution</a>
 </li>
 <li>m_dallocator
-: <a class="el" href="classamrex_1_1FabArray.html#a6a2a60d3af361dde9463f2d586d0e358">amrex::FabArray&lt; FAB &gt;</a>
+: <a class="el" href="classamrex_1_1detail_1_1SingleChunkArena.html#ae08344e2c33c31605edbc0b4635c8730">amrex::detail::SingleChunkArena</a>
+, <a class="el" href="classamrex_1_1FabArray.html#a6a2a60d3af361dde9463f2d586d0e358">amrex::FabArray&lt; FAB &gt;</a>
 </li>
 <li>m_data
 : <a class="el" href="classamrex_1_1ArrayOfStructs.html#aa4b53535c25e645281539b7b5b4f9194">amrex::ArrayOfStructs&lt; T_ParticleType, Allocator &gt;</a>
@@ -976,6 +984,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 </li>
 <li>m_FPinfo_stats
 : <a class="el" href="classamrex_1_1FabArrayBase.html#a34cc63703ab4e2492a4444199def31d2">amrex::FabArrayBase</a>
+</li>
+<li>m_free
+: <a class="el" href="classamrex_1_1detail_1_1SingleChunkArena.html#add916ed06ebf8c1ae3ada3caad5a6f08">amrex::detail::SingleChunkArena</a>
 </li>
 <li>m_freelist
 : <a class="el" href="classamrex_1_1CArena.html#a000d9e231672c9a28a72a05abec379fb">amrex::CArena</a>
@@ -2164,6 +2175,9 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_rOffset
 : <a class="el" href="structamrex_1_1ParticleCopyPlan.html#a860eec9b2f5d15e91706d6feb2fa2134">amrex::ParticleCopyPlan</a>
 </li>
+<li>m_root
+: <a class="el" href="classamrex_1_1detail_1_1SingleChunkArena.html#a933d2d3cd77f3b584a5247341fb7c92e">amrex::detail::SingleChunkArena</a>
+</li>
 <li>m_rr
 : <a class="el" href="classamrex_1_1ParGDB.html#ac72693b156f64de61d874f43d5d15443">amrex::ParGDB</a>
 </li>
@@ -2245,10 +2259,17 @@ $(document).ready(function(){initNavTree('functions_vars_m.html',''); initResiza
 <li>m_sin_angle
 : <a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">amrex::EB2::RotationIF&lt; F &gt;</a>
 </li>
+<li>m_single_chunk_arena
+: <a class="el" href="classamrex_1_1FabArray.html#a4d42668928f56c18d43d24f673ebd2ce">amrex::FabArray&lt; FAB &gt;</a>
+</li>
+<li>m_single_chunk_size
+: <a class="el" href="classamrex_1_1FabArray.html#a406dbcd37d688080e340c80a34ed2807">amrex::FabArray&lt; FAB &gt;</a>
+</li>
 <li>m_size
 : <a class="el" href="structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38">amrex::AmrAssignGrid&lt; BinIteratorFactory &gt;</a>
 , <a class="el" href="classamrex_1_1CArena_1_1Node.html#a3eefad51a3f5c77dfba6bfa8f42e8909">amrex::CArena::Node</a>
 , <a class="el" href="structamrex_1_1ConstParticleTileData.html#a4981ac43889bbde5f5d254c7fd5b3dee">amrex::ConstParticleTileData&lt; T_ParticleType, NArrayReal, NArrayInt &gt;</a>
+, <a class="el" href="classamrex_1_1detail_1_1SingleChunkArena.html#a2ab5bb610d1b9c02e9a9d0d7a75138ad">amrex::detail::SingleChunkArena</a>
 , <a class="el" href="classamrex_1_1EB2_1_1PolynomialIF.html#a1a226866e5efa7580c4f117e1c45e386">amrex::EB2::PolynomialIF</a>
 , <a class="el" href="structamrex_1_1FatPtr.html#a686115184123b7683f8ecfeda3cec126">amrex::FatPtr&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1Gpu_1_1Buffer.html#aeec4be8fd894735d9acaa7de8c62d63a">amrex::Gpu::Buffer&lt; T, &gt;</a>

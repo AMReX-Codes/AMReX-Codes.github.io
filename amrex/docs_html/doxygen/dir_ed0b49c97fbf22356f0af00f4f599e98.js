@@ -158,7 +158,9 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_EBToPVD.H", "AMReX__EBToPVD_8H.html", [
       [ "EBToPVD", "classamrex_1_1EBToPVD.html", "classamrex_1_1EBToPVD" ]
     ] ],
-    [ "AMReX_MultiCutFab.cpp", "AMReX__MultiCutFab_8cpp.html", null ],
+    [ "AMReX_MultiCutFab.cpp", "AMReX__MultiCutFab_8cpp.html", [
+      [ "CutFabFactory", "classamrex_1_1detail_1_1CutFabFactory.html", "classamrex_1_1detail_1_1CutFabFactory" ]
+    ] ],
     [ "AMReX_MultiCutFab.H", "AMReX__MultiCutFab_8H.html", [
       [ "CutFab", "classamrex_1_1CutFab.html", "classamrex_1_1CutFab" ],
       [ "MultiCutFab", "classamrex_1_1MultiCutFab.html", "classamrex_1_1MultiCutFab" ]

@@ -95,7 +95,8 @@ var hierarchy =
     [ "amrex::Arena", "classamrex_1_1Arena.html", [
       [ "amrex::BArena", "classamrex_1_1BArena.html", null ],
       [ "amrex::CArena", "classamrex_1_1CArena.html", null ],
-      [ "amrex::PArena", "classamrex_1_1PArena.html", null ]
+      [ "amrex::PArena", "classamrex_1_1PArena.html", null ],
+      [ "amrex::detail::SingleChunkArena", "classamrex_1_1detail_1_1SingleChunkArena.html", null ]
     ] ],
     [ "amrex::ArenaAllocatorBase< T, AR >", "structamrex_1_1ArenaAllocatorBase.html", null ],
     [ "amrex::ArenaAllocatorBase< T, ArenaWrapper >", "structamrex_1_1ArenaAllocatorBase.html", [
@@ -137,11 +138,12 @@ var hierarchy =
     ] ],
     [ "amrex::Array4< int >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< int const >", "structamrex_1_1Array4.html", null ],
-    [ "amrex::Array4< Real >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< Real const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< T const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< T0 >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< T0 const >", "structamrex_1_1Array4.html", null ],
+    [ "amrex::Array4BoxOffsetTag< T >", "structamrex_1_1Array4BoxOffsetTag.html", null ],
+    [ "amrex::Array4BoxOrientationTag< T >", "structamrex_1_1Array4BoxOrientationTag.html", null ],
     [ "amrex::Array4BoxTag< T >", "structamrex_1_1Array4BoxTag.html", null ],
     [ "amrex::Array4BoxValTag< T >", "structamrex_1_1Array4BoxValTag.html", null ],
     [ "amrex::Array4CopyTag< T0, T1 >", "structamrex_1_1Array4CopyTag.html", null ],
@@ -418,6 +420,9 @@ var hierarchy =
     [ "amrex::FabDataType< T, std::enable_if_t< IsMultiFabLike_v< T > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01T_01_4_01_4_01_4.html", null ],
     [ "amrex::FabDataType< T, std::enable_if_t< IsMultiFabLike_v< typename T::value_type > > >", "structamrex_1_1FabDataType_3_01T_00_01std_1_1enable__if__t_3_01IsMultiFabLike__v_3_01typename_01T_1_1value__type_01_4_01_4_01_4.html", null ],
     [ "amrex::FabFactory< FAB >", "classamrex_1_1FabFactory.html", [
+      [ "amrex::DefaultFabFactory< CutFab >", "classamrex_1_1DefaultFabFactory.html", [
+        [ "amrex::detail::CutFabFactory", "classamrex_1_1detail_1_1CutFabFactory.html", null ]
+      ] ],
       [ "amrex::DefaultFabFactory< FAB >", "classamrex_1_1DefaultFabFactory.html", null ]
     ] ],
     [ "amrex::FabFactory< amrex::FArrayBox >", "classamrex_1_1FabFactory.html", null ],
@@ -730,8 +735,6 @@ var hierarchy =
     [ "amrex::Minimum< T >", "structamrex_1_1Minimum.html", null ],
     [ "amrex::Minus< T >", "structamrex_1_1Minus.html", null ],
     [ "amrex::MLCGSolverT< MF >", "classamrex_1_1MLCGSolverT.html", null ],
-    [ "amrex::MLCurlCurlBCTag", "structamrex_1_1MLCurlCurlBCTag.html", null ],
-    [ "amrex::MLCurlCurlEdgeBCTag", "structamrex_1_1MLCurlCurlEdgeBCTag.html", null ],
     [ "amrex::MLLinOpT< MF >", "classamrex_1_1MLLinOpT.html", [
       [ "amrex::MLCellLinOpT< MF >", "classamrex_1_1MLCellLinOpT.html", [
         [ "amrex::MLCellABecLapT< MF >", "classamrex_1_1MLCellABecLapT.html", [
@@ -1069,6 +1072,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< FAB * > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::WeightedBox >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Array< Real, AMREX_SPACEDIM > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::Vector< Array< std::unique_ptr< amrex::MultiFab >, 3 > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::IndexType >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::size_t >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< MultiFab >", "classamrex_1_1Vector.html", null ],

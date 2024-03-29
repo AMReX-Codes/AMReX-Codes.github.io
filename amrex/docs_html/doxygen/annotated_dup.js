@@ -22,6 +22,7 @@ var annotated_dup =
         [ "clzll_tag", "structamrex_1_1detail_1_1clzll__tag.html", null ],
         [ "clzl_tag", "structamrex_1_1detail_1_1clzl__tag.html", null ],
         [ "clz_tag", "structamrex_1_1detail_1_1clz__tag.html", null ],
+        [ "SingleChunkArena", "classamrex_1_1detail_1_1SingleChunkArena.html", "classamrex_1_1detail_1_1SingleChunkArena" ],
         [ "gpu_tuple_element", "structamrex_1_1detail_1_1gpu__tuple__element.html", "structamrex_1_1detail_1_1gpu__tuple__element" ],
         [ "gpu_tuple_impl", "structamrex_1_1detail_1_1gpu__tuple__impl.html", null ],
         [ "gpu_tuple_impl< I, Head, Tail... >", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html", "structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4" ],
@@ -40,7 +41,8 @@ var annotated_dup =
         [ "TypeListGet< 0, TypeList< Head, Tail... > >", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1TypeListGet_3_010_00_01TypeList_3_01Head_00_01Tail_8_8_8_01_4_01_4" ],
         [ "Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", "structamrex_1_1detail_1_1Nonesuch" ],
         [ "Detector", "structamrex_1_1detail_1_1Detector.html", "structamrex_1_1detail_1_1Detector" ],
-        [ "Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" ]
+        [ "Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" ],
+        [ "CutFabFactory", "classamrex_1_1detail_1_1CutFabFactory.html", "classamrex_1_1detail_1_1CutFabFactory" ]
       ] ],
       [ "EB2", "namespaceamrex_1_1EB2.html", [
         [ "IndexSpace", "classamrex_1_1EB2_1_1IndexSpace.html", "classamrex_1_1EB2_1_1IndexSpace" ],
@@ -452,6 +454,8 @@ var annotated_dup =
       [ "Array4Tag", "structamrex_1_1Array4Tag.html", "structamrex_1_1Array4Tag" ],
       [ "Array4BoxTag", "structamrex_1_1Array4BoxTag.html", "structamrex_1_1Array4BoxTag" ],
       [ "Array4BoxValTag", "structamrex_1_1Array4BoxValTag.html", "structamrex_1_1Array4BoxValTag" ],
+      [ "Array4BoxOrientationTag", "structamrex_1_1Array4BoxOrientationTag.html", "structamrex_1_1Array4BoxOrientationTag" ],
+      [ "Array4BoxOffsetTag", "structamrex_1_1Array4BoxOffsetTag.html", "structamrex_1_1Array4BoxOffsetTag" ],
       [ "VectorTag", "structamrex_1_1VectorTag.html", "structamrex_1_1VectorTag" ],
       [ "TimeIntegrator", "classamrex_1_1TimeIntegrator.html", "classamrex_1_1TimeIntegrator" ],
       [ "TinyProfiler", "classamrex_1_1TinyProfiler.html", "classamrex_1_1TinyProfiler" ],
@@ -645,8 +649,6 @@ var annotated_dup =
       [ "MLMGABCTag", "structamrex_1_1MLMGABCTag.html", "structamrex_1_1MLMGABCTag" ],
       [ "MLMGPSTag", "structamrex_1_1MLMGPSTag.html", "structamrex_1_1MLMGPSTag" ],
       [ "MLCGSolverT", "classamrex_1_1MLCGSolverT.html", "classamrex_1_1MLCGSolverT" ],
-      [ "MLCurlCurlBCTag", "structamrex_1_1MLCurlCurlBCTag.html", "structamrex_1_1MLCurlCurlBCTag" ],
-      [ "MLCurlCurlEdgeBCTag", "structamrex_1_1MLCurlCurlEdgeBCTag.html", "structamrex_1_1MLCurlCurlEdgeBCTag" ],
       [ "MLCurlCurl", "classamrex_1_1MLCurlCurl.html", "classamrex_1_1MLCurlCurl" ],
       [ "CurlCurlDirichletInfo", "structamrex_1_1CurlCurlDirichletInfo.html", "structamrex_1_1CurlCurlDirichletInfo" ],
       [ "CurlCurlSymmetryInfo", "structamrex_1_1CurlCurlSymmetryInfo.html", "structamrex_1_1CurlCurlSymmetryInfo" ],

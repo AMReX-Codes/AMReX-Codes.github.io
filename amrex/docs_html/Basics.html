@@ -2349,10 +2349,25 @@ covered by fine level grids.</p>
 </section>
 <section id="memory-allocation">
 <h1>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this heading"></a></h1>
-<p>Some constructors of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>, etc. can take
-an <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Arena</span><span class="w"></span></code> argument for memory allocation.  This is usually not
-important for CPU codes, but very important for GPU codes.  We will
-present more details in <a class="reference internal" href="GPU.html#sec-gpu-memory"><span class="std std-ref">Memory Allocation</span></a> in Chapter GPU.</p>
+<p>Some constructors of <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>, <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>, etc. can take an
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">Arena</span><span class="w"></span></code> argument for memory allocation.  Some constructors of
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> can take an optional argument <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFInfo</span><span class="w"></span></code>, which can be
+used to set the arena.  This is usually not important for CPU codes, but
+very important for GPU codes.  We will present more details about memory
+arenas in <a class="reference internal" href="GPU.html#sec-gpu-memory"><span class="std std-ref">Memory Allocation</span></a> in Chapter GPU.</p>
+<p>Every <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code> in a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> has a contiguous chunk of memory
+for floating point data, whereas by default <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> as a collection
+of multiple <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">FArrayBox</span><span class="w"></span></code>s does not store all floating point data in
+contiguous chunk of memory. This behavior can be changed for all
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>s with the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">ParmParse</span><span class="w"></span></code> parameter,
+<code class="docutils literal notranslate"><span class="pre">amrex.mf.alloc_single_chunk=1</span></code>, or for a specific <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code> by
+passing a <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MFInfo</span><span class="w"></span></code> object (e.g.,
+<code class="docutils literal notranslate"><span class="pre">MFInfo().SetAllocSingleChunk(true)</span></code>) to the constructor. One can call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">singleChunkPtr</span><span class="p">()</span><span class="w"></span></code> to obtain a pointer to the single chunk
+memory. Note that the function returns a null pointer if the <code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="w"></span></code>
+does not use a single contiguous chunk of memory. One can also call
+<code class="code highlight cpp c++ docutils literal highlight-c++"><span class="n">MultiFab</span><span class="o">::</span><span class="n">singleChunkSize</span><span class="p">()</span><span class="w"></span></code> to obtain the size in bytes of the single
+chunk memory.</p>
 <p>AMReX has a Fortran module, <code class="code highlight fortran docutils literal highlight-fortran"><span class="n">amrex_mempool_module</span><span class="w"></span></code> that can be used to
 allocate memory for Fortran pointers. The reason that such a module exists in
 AMReX is that memory allocation is often very slow in multi-threaded OpenMP

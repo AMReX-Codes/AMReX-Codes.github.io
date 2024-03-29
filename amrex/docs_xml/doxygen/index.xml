@@ -1189,6 +1189,18 @@
     <member refid="structamrex_1_1Array4_1afffb83a576c2e90e22fa03b27057ac49" kind="function"><name>contains</name></member>
     <member refid="structamrex_1_1Array4_1af169992bc482ac1cd44d5a5a034ab23a" kind="function"><name>cellData</name></member>
   </compound>
+  <compound refid="structamrex_1_1Array4BoxOffsetTag" kind="struct"><name>amrex::Array4BoxOffsetTag</name>
+    <member refid="structamrex_1_1Array4BoxOffsetTag_1a4b6ca8c08233ae7d5f9168c8e603dc96" kind="variable"><name>fab</name></member>
+    <member refid="structamrex_1_1Array4BoxOffsetTag_1a2754c8e7cbd174d92c5d0ec4bd58583c" kind="variable"><name>bx</name></member>
+    <member refid="structamrex_1_1Array4BoxOffsetTag_1af5878f0f6935800abc18aaffe34e50d6" kind="variable"><name>offset</name></member>
+    <member refid="structamrex_1_1Array4BoxOffsetTag_1a99cb5993e1573b609e2d93659b6a2fd9" kind="function"><name>box</name></member>
+  </compound>
+  <compound refid="structamrex_1_1Array4BoxOrientationTag" kind="struct"><name>amrex::Array4BoxOrientationTag</name>
+    <member refid="structamrex_1_1Array4BoxOrientationTag_1a0c8b2a3bc498849b8dae53d94f86a685" kind="variable"><name>fab</name></member>
+    <member refid="structamrex_1_1Array4BoxOrientationTag_1a983b146fa22d1ed852dc07bfd52f2158" kind="variable"><name>bx</name></member>
+    <member refid="structamrex_1_1Array4BoxOrientationTag_1ac3ccee3ad382def594bbe1cc44d22464" kind="variable"><name>face</name></member>
+    <member refid="structamrex_1_1Array4BoxOrientationTag_1ab7f1f2e37f5bd1405f40d0133ff588d3" kind="function"><name>box</name></member>
+  </compound>
   <compound refid="structamrex_1_1Array4BoxTag" kind="struct"><name>amrex::Array4BoxTag</name>
     <member refid="structamrex_1_1Array4BoxTag_1a0a4d3f31679a1d0edccfb7d2699763f4" kind="variable"><name>dfab</name></member>
     <member refid="structamrex_1_1Array4BoxTag_1ac1daa183e9ca45128ea93a5b81e60c89" kind="variable"><name>dbox</name></member>
@@ -3071,6 +3083,13 @@
     <member refid="classamrex_1_1CutFab_1a8098a70c5216794093f4c5a2a7031465" kind="function"><name>copy</name></member>
     <member refid="classamrex_1_1CutFab_1a51bceac102ef6fa83de179298fd79d21" kind="function"><name>copy</name></member>
   </compound>
+  <compound refid="classamrex_1_1detail_1_1CutFabFactory" kind="class"><name>amrex::detail::CutFabFactory</name>
+    <member refid="classamrex_1_1detail_1_1CutFabFactory_1ad27d27c26c11acfd58b8fc629b4f2c1b" kind="variable"><name>m_cellflags</name></member>
+    <member refid="classamrex_1_1detail_1_1CutFabFactory_1a0a50ba4364dedc1acc91cfd0a63efcd9" kind="function"><name>CutFabFactory</name></member>
+    <member refid="classamrex_1_1detail_1_1CutFabFactory_1ae3d56a71c86dbe880bbf89a7ef19301f" kind="function"><name>create</name></member>
+    <member refid="classamrex_1_1detail_1_1CutFabFactory_1a3878a01f18a952246def135c389d0a9c" kind="function"><name>clone</name></member>
+    <member refid="classamrex_1_1detail_1_1CutFabFactory_1aef5ff6c3751771217568c9dbe50c4880" kind="function"><name>nBytes</name></member>
+  </compound>
   <compound refid="classamrex_1_1EB2_1_1CylinderIF" kind="class"><name>amrex::EB2::CylinderIF</name>
     <member refid="classamrex_1_1EB2_1_1CylinderIF_1a7c5b05498e0dbdf86a65e6fc719e12ad" kind="variable"><name>m_radius</name></member>
     <member refid="classamrex_1_1EB2_1_1CylinderIF_1ac76b57e5f88b041a0369fc7a8c5026f7" kind="variable"><name>m_height</name></member>
@@ -4116,6 +4135,8 @@
     <member refid="classamrex_1_1FabArray_1a958d272c39f50f1157029d5a0c6ade1c" kind="typedef"><name>Iterator</name></member>
     <member refid="classamrex_1_1FabArray_1a9172b400e374666d6100fa61ccc586db" kind="variable"><name>m_factory</name></member>
     <member refid="classamrex_1_1FabArray_1a6a2a60d3af361dde9463f2d586d0e358" kind="variable"><name>m_dallocator</name></member>
+    <member refid="classamrex_1_1FabArray_1a4d42668928f56c18d43d24f673ebd2ce" kind="variable"><name>m_single_chunk_arena</name></member>
+    <member refid="classamrex_1_1FabArray_1a406dbcd37d688080e340c80a34ed2807" kind="variable"><name>m_single_chunk_size</name></member>
     <member refid="classamrex_1_1FabArray_1a8a547f660eb49f5b25df2a1eddcd7eef" kind="variable"><name>define_function_called</name></member>
     <member refid="classamrex_1_1FabArray_1a7ecd52e23e86db0f9e8e99166900e63c" kind="variable"><name>m_fabs_v</name></member>
     <member refid="classamrex_1_1FabArray_1a0deadb1f742a4e911d7ea64ea80c1292" kind="variable"><name>m_dp_arrays</name></member>
@@ -4143,6 +4164,9 @@
     <member refid="classamrex_1_1FabArray_1acfab6e1a9aaaffd0c875021c5f10c0bb" kind="function"><name>arena</name></member>
     <member refid="classamrex_1_1FabArray_1acb7546f9b065a866641075708c3484ae" kind="function"><name>tags</name></member>
     <member refid="classamrex_1_1FabArray_1ac696f139b6cf56e02828264b09a48636" kind="function"><name>hasEBFabFactory</name></member>
+    <member refid="classamrex_1_1FabArray_1a223a9902c0f816a42304e047e86b8928" kind="function"><name>singleChunkPtr</name></member>
+    <member refid="classamrex_1_1FabArray_1a5641f9e3a5b649c9bd89f57c1c2f8597" kind="function"><name>singleChunkPtr</name></member>
+    <member refid="classamrex_1_1FabArray_1aaab9b29e3c145dfb90616774d6954afa" kind="function"><name>singleChunkSize</name></member>
     <member refid="classamrex_1_1FabArray_1acf745741e899a140f64afeefbb903f5c" kind="function"><name>isAllRegular</name></member>
     <member refid="classamrex_1_1FabArray_1a1d7f20697c473d1186b4b3c290f5eb1f" kind="function"><name>ok</name></member>
     <member refid="classamrex_1_1FabArray_1af5d3da506729e946bd90678a06d09dc2" kind="function"><name>isDefined</name></member>
@@ -4301,7 +4325,7 @@
     <member refid="classamrex_1_1FabArray_1a742793255ff2aed0213773f989cc8394" kind="function"><name>Xpay</name></member>
     <member refid="classamrex_1_1FabArray_1a424d30f07a7374d3620c454f8e3c5ae7" kind="function"><name>LinComb</name></member>
     <member refid="classamrex_1_1FabArray_1a551575e2734ddbb455ce7d7ebd53cd9f" kind="function"><name>SharedMemory</name></member>
-    <member refid="classamrex_1_1FabArray_1ab7135858e136a96334d492724c02f2f1" kind="function"><name>AllocFabs</name></member>
+    <member refid="classamrex_1_1FabArray_1ab5c7582edb11b88faec8de4ccdc1e120" kind="function"><name>AllocFabs</name></member>
     <member refid="classamrex_1_1FabArray_1a693754f4ec64472c486d1d4431d71d8c" kind="function"><name>setFab_assert</name></member>
     <member refid="classamrex_1_1FabArray_1ad37c52d123770b902efbb42a7ba56578" kind="function"><name>build_arrays</name></member>
     <member refid="classamrex_1_1FabArray_1a3d078863cd6f3c8fc6ee8929573be274" kind="function"><name>clear_arrays</name></member>
@@ -4351,6 +4375,7 @@
     <member refid="classamrex_1_1FabArrayBase_1a3ac3a9247a9551f551256c6a1043e002" kind="variable"><name>m_TheParForCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1af3d0b759e5fa01a885c95e93e0e9f7b1" kind="variable"><name>m_BD_count</name></member>
     <member refid="classamrex_1_1FabArrayBase_1aef73f8365f2afd099a2293d8f94c7b3e" kind="variable"><name>m_FA_stats</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a12b9e0ac23fbfa55a6ae4d6bf2d97ba8" kind="variable"><name>m_alloc_single_chunk</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ae63b22ccabe6c5af01dd0779c60740c8" kind="variable"><name>boxarray</name></member>
     <member refid="classamrex_1_1FabArrayBase_1adcb92e864340876da67df2fc64d8bdd7" kind="variable"><name>distributionMap</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a15c2b54df8386a9d38216410edce884c" kind="variable"><name>indexArray</name></member>
@@ -4434,6 +4459,7 @@
     <member refid="classamrex_1_1FabArrayBase_1a44faf0f19d9f24cacd58d8396b2c1610" kind="function"><name>flushRB180Cache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a70b561d2ca803ef3488983323339bac6" kind="function"><name>flushPolarBCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1af1e359a059abb783d093f29cc1c84693" kind="function"><name>flushParForCache</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a26c57d9e401fcc56f720c50f5bfdeb06" kind="function"><name>getAllocSingleChunk</name></member>
   </compound>
   <compound refid="classamrex_1_1FabArrayCopyDescriptor" kind="class"><name>amrex::FabArrayCopyDescriptor</name>
     <member refid="classamrex_1_1FabArrayCopyDescriptor_1ae36897cf35128c6ce6dc895169977b36" kind="typedef"><name>FCDMap</name></member>
@@ -4546,6 +4572,7 @@
     <member refid="classamrex_1_1FabFactory_1a1bd32f3a086db8bbe58333cf02e72db9" kind="function"><name>create_alias</name></member>
     <member refid="classamrex_1_1FabFactory_1a62e57972e3054a6f7ed1cdb9c0426c09" kind="function"><name>destroy</name></member>
     <member refid="classamrex_1_1FabFactory_1a52360a49a6595822520416ba2fa3b9c0" kind="function"><name>clone</name></member>
+    <member refid="classamrex_1_1FabFactory_1a60945306ed69d287f22245f05ed65858" kind="function"><name>nBytes</name></member>
   </compound>
   <compound refid="structamrex_1_1FabFillNoOp" kind="struct"><name>amrex::FabFillNoOp</name>
     <member refid="structamrex_1_1FabFillNoOp_1a1bbaa2223dbb23569372c9eb456c2bfb" kind="function"><name>operator()</name></member>
@@ -6676,12 +6703,12 @@
     <member refid="classamrex_1_1LUSolver_1aaceb7a501559fdef423b5e60f493d4fd" kind="variable"><name>m_piv</name></member>
     <member refid="classamrex_1_1LUSolver_1a27b3efefb425391025f69a103f062dc0" kind="variable"><name>m_npivs</name></member>
     <member refid="classamrex_1_1LUSolver_1afdbcba9c8adb9f87e26470604e85e5d0" kind="function"><name>LUSolver</name></member>
-    <member refid="classamrex_1_1LUSolver_1a3c7d9874d2ff4efd5ef05421dda81b20" kind="function"><name>LUSolver</name></member>
+    <member refid="classamrex_1_1LUSolver_1a39bf746e19e32ff8a3b2e37f0288b791" kind="function"><name>LUSolver</name></member>
     <member refid="classamrex_1_1LUSolver_1ac140887d397e31e0b3e3d827b09a7429" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1LUSolver_1aaf960814958b6c90e2d7e7a8f49a1243" kind="function"><name>operator()</name></member>
     <member refid="classamrex_1_1LUSolver_1ab502cb4515069d22b59a459377d947d1" kind="function"><name>invert</name></member>
     <member refid="classamrex_1_1LUSolver_1a4f37e841ada15630a76680aae4e88eb5" kind="function"><name>determinant</name></member>
-    <member refid="classamrex_1_1LUSolver_1a1a2f904f780991f5da650050efdd98d3" kind="function"><name>define_innard</name></member>
+    <member refid="classamrex_1_1LUSolver_1a57e2853a78e56b34a4af4547590b1702" kind="function"><name>define_innard</name></member>
   </compound>
   <compound refid="structmake__particle" kind="struct"><name>make_particle</name>
     <member refid="structmake__particle_1a8f0911901c0819ea99040d1974667ded" kind="function"><name>operator()</name></member>
@@ -6862,9 +6889,11 @@
   </compound>
   <compound refid="structamrex_1_1MFInfo" kind="struct"><name>amrex::MFInfo</name>
     <member refid="structamrex_1_1MFInfo_1a61ae5fd154086ea2849fe236e1dce794" kind="variable"><name>alloc</name></member>
+    <member refid="structamrex_1_1MFInfo_1a9c2c1c22be713eb697b304968e90eff5" kind="variable"><name>alloc_single_chunk</name></member>
     <member refid="structamrex_1_1MFInfo_1a343c7c4fcab4a05e69b24156ea271ed2" kind="variable"><name>arena</name></member>
     <member refid="structamrex_1_1MFInfo_1ad0f86517b8114fbc3cfd3c5ef532a592" kind="variable"><name>tags</name></member>
     <member refid="structamrex_1_1MFInfo_1a983cd10420d59f361b7420da90de5066" kind="function"><name>SetAlloc</name></member>
+    <member refid="structamrex_1_1MFInfo_1a8d61953b8663e6cbbcbb0f4669d81f77" kind="function"><name>SetAllocSingleChunk</name></member>
     <member refid="structamrex_1_1MFInfo_1a8d77528f27f99ad698aa26c78da7e979" kind="function"><name>SetArena</name></member>
     <member refid="structamrex_1_1MFInfo_1a810a0fb9b39d3a0d313f44d2b4d09ef2" kind="function"><name>SetTag</name></member>
     <member refid="structamrex_1_1MFInfo_1addb772907b0ba233d79468968d823b80" kind="function"><name>SetTag</name></member>
@@ -7209,11 +7238,13 @@
     <member refid="classamrex_1_1MLCurlCurl_1ae73e6c0e2000bd5397e42f8fd8e42cba" kind="variable"><name>m_etype</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a5e1b51f776e54426d9a92e0101b75066" kind="variable"><name>m_dotmask</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a194ba25b27e4f357966eb10f008566d2" kind="variable"><name>m_lusolver</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1a5ffc86d6c741f71d676a5834deba92a6" kind="variable"><name>m_bcoefs</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a85d721f72de7a13036fb1ce5bc77d452" kind="variable"><name>m_ncomp</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a890a339d109993f9e6b102a61af0a2da" kind="function"><name>MLCurlCurl</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1ad41266ab9f9d45383b54320911ac53fe" kind="function"><name>MLCurlCurl</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a9d94e9fa0d0ed2ebadf1428023d95809" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a6ec4dbd1f4658dc7cd6ef708b3968c4c" kind="function"><name>setScalars</name></member>
+    <member refid="classamrex_1_1MLCurlCurl_1adc4a60ef542a4e9f2ab766ab1a85a262" kind="function"><name>setBeta</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1acbc4efc38bffb2ceab5d5bf004cf6dc6" kind="function"><name>prepareRHS</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a1e1cf60387fbaec37d15c01e9f074ee5" kind="function"><name>setDirichletNodesToZero</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a90ed4bd36cb7bb9fc00d6080ff823d64" kind="function"><name>name</name></member>
@@ -7243,18 +7274,6 @@
     <member refid="classamrex_1_1MLCurlCurl_1a9811ec018bd16f4e6d09709a539c576c" kind="function"><name>getDotMask</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a3c262e8635218f88ca186c613bdc9c9c" kind="function"><name>getDirichletInfo</name></member>
     <member refid="classamrex_1_1MLCurlCurl_1a32545ca23bf840257ec3ff0321f0cc28" kind="function"><name>getSymmetryInfo</name></member>
-  </compound>
-  <compound refid="structamrex_1_1MLCurlCurlBCTag" kind="struct"><name>amrex::MLCurlCurlBCTag</name>
-    <member refid="structamrex_1_1MLCurlCurlBCTag_1a221046b2e1776f8b01054cba371343b9" kind="variable"><name>fab</name></member>
-    <member refid="structamrex_1_1MLCurlCurlBCTag_1ab7d5daf2f56c750fdcc0b2e94b9ec5e1" kind="variable"><name>bx</name></member>
-    <member refid="structamrex_1_1MLCurlCurlBCTag_1aa0a5fd9ea7ab11930afb878e5a51fef0" kind="variable"><name>face</name></member>
-    <member refid="structamrex_1_1MLCurlCurlBCTag_1a8b5dad23579fe5bbbc2e6ee72ed1690b" kind="function"><name>box</name></member>
-  </compound>
-  <compound refid="structamrex_1_1MLCurlCurlEdgeBCTag" kind="struct"><name>amrex::MLCurlCurlEdgeBCTag</name>
-    <member refid="structamrex_1_1MLCurlCurlEdgeBCTag_1a04fecb8d1dbd092aa3ef87b009c9e84a" kind="variable"><name>fab</name></member>
-    <member refid="structamrex_1_1MLCurlCurlEdgeBCTag_1af2d4245976d3a15b2bc680154fa61063" kind="variable"><name>bx</name></member>
-    <member refid="structamrex_1_1MLCurlCurlEdgeBCTag_1ae0968226d3088df18aa52eb16deb5188" kind="variable"><name>offset</name></member>
-    <member refid="structamrex_1_1MLCurlCurlEdgeBCTag_1a20f117dbc7cf0e45aa2a56a368562453" kind="function"><name>box</name></member>
   </compound>
   <compound refid="classamrex_1_1MLEBABecLap" kind="class"><name>amrex::MLEBABecLap</name>
     <member refid="classamrex_1_1MLEBABecLap_1ac43a9c8728bb7861415d80283d41e064" kind="variable"><name>m_a_scalar</name></member>
@@ -8053,7 +8072,6 @@
     <member refid="classamrex_1_1MultiCutFab_1ae8d90e43fe323739131b52c834c46dd7" kind="function"><name>nGrow</name></member>
     <member refid="classamrex_1_1MultiCutFab_1a212f1455dd8018d3cd773107db0df62d" kind="function"><name>ParallelCopy</name></member>
     <member refid="classamrex_1_1MultiCutFab_1ac5f3026221c3cafbcb0e19f6583cfd9d" kind="function"><name>ToMultiFab</name></member>
-    <member refid="classamrex_1_1MultiCutFab_1abc1b348b3856266730d542e9148a6b31" kind="function"><name>remove</name></member>
   </compound>
   <compound refid="classamrex_1_1MultiFab" kind="class"><name>amrex::MultiFab</name>
     <member refid="classamrex_1_1MultiFab_1a1124d24928511321f4381ebd60b0c15b" kind="typedef"><name>CopyComTagsContainer</name></member>
@@ -10702,6 +10720,27 @@
     <member refid="structamrex_1_1FabArray_1_1ShMem_1aec97898947982708e087ae84c0efc3d0" kind="function"><name>ShMem</name></member>
     <member refid="structamrex_1_1FabArray_1_1ShMem_1a533a8b63b14ecc361ea9805251c10e6c" kind="function"><name>operator=</name></member>
   </compound>
+  <compound refid="classamrex_1_1detail_1_1SingleChunkArena" kind="class"><name>amrex::detail::SingleChunkArena</name>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1ae08344e2c33c31605edbc0b4635c8730" kind="variable"><name>m_dallocator</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a933d2d3cd77f3b584a5247341fb7c92e" kind="variable"><name>m_root</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1add916ed06ebf8c1ae3ada3caad5a6f08" kind="variable"><name>m_free</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a2ab5bb610d1b9c02e9a9d0d7a75138ad" kind="variable"><name>m_size</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a2e3657b0ceda0efbd0b6457aec18480b" kind="function"><name>SingleChunkArena</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a5ebc7dfc5b1874f13bf2496e363f77fb" kind="function"><name>~SingleChunkArena</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a5d44b33a34400e117bf1fb885c295f41" kind="function"><name>SingleChunkArena</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a9429dc85f6e1b449f8e4b8daa984129e" kind="function"><name>SingleChunkArena</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1acbc5848d9c62c383f3e5019dfb905435" kind="function"><name>SingleChunkArena</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1af96a10bb06acc64b2267b55b43024de2" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a62aa1fb076b9be08b30bc598f0a84217" kind="function"><name>operator=</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a1a40bc13e5fda7545591fa3b7cc50a04" kind="function"><name>alloc</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1abd7291506933a08740bb9b2abbc5ef98" kind="function"><name>free</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a7f18c58c24d1b6966057125c4758a2a4" kind="function"><name>isDeviceAccessible</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a1c7a6c7a2a82e1c705442baa09e84560" kind="function"><name>isHostAccessible</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1ae6b2985298ea93f8412c8a21da3443ec" kind="function"><name>isManaged</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1acdc9d343c34ebda8c4c0a78e0e6924d1" kind="function"><name>isDevice</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a08324a9f9d1c2b9e7d81b3ef8e8d4ad5" kind="function"><name>isPinned</name></member>
+    <member refid="classamrex_1_1detail_1_1SingleChunkArena_1a206ec1ef64bc03efcea7eb01a0c8c9e7" kind="function"><name>data</name></member>
+  </compound>
   <compound refid="structamrex_1_1Gpu_1_1SingleStreamRegion" kind="struct"><name>amrex::Gpu::SingleStreamRegion</name>
     <member refid="structamrex_1_1Gpu_1_1SingleStreamRegion_1a4950c95e43281815ad532ba7f6fa16b7" kind="variable"><name>m_prev_flag</name></member>
     <member refid="structamrex_1_1Gpu_1_1SingleStreamRegion_1a1f4b981603f787eaf5882d2a74d73bf8" kind="function"><name>SingleStreamRegion</name></member>
@@ -13313,6 +13352,7 @@
     <member refid="namespaceamrex_1a806290e2106cf167ce88e28aa9fb2daf" kind="function"><name>mlcurlcurl_adotx_y</name></member>
     <member refid="namespaceamrex_1aa37948c1ee6507a42652fe71d9e8d262" kind="function"><name>mlcurlcurl_adotx_z</name></member>
     <member refid="namespaceamrex_1a89a933e8c38b0aabf604401542acabc6" kind="function"><name>mlcurlcurl_gs4</name></member>
+    <member refid="namespaceamrex_1a406ce9623715d0b18657c4cfe60cf747" kind="function"><name>mlcurlcurl_gs4</name></member>
     <member refid="namespaceamrex_1a46f754596e0c0d977d970818bbec1dd2" kind="function"><name>mlcurlcurl_interpadd</name></member>
     <member refid="namespaceamrex_1aeb03681c5a1705809b2f860ece2cad66" kind="function"><name>mlcurlcurl_restriction</name></member>
     <member refid="namespaceamrex_1a95c9cd2dabd9a907c9d7124f9a4ae0f9" kind="function"><name>mlcurlcurl_bc_symmetry</name></member>

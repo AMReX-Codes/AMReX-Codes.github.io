@@ -5,6 +5,7 @@
     <derivedcompoundref refid="classamrex_1_1BArena" prot="public" virt="non-virtual">amrex::BArena</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1CArena" prot="public" virt="non-virtual">amrex::CArena</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1PArena" prot="public" virt="non-virtual">amrex::PArena</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1detail_1_1SingleChunkArena" prot="public" virt="non-virtual">amrex::detail::SingleChunkArena</derivedcompoundref>
     <includes refid="AMReX__Arena_8H" local="no">AMReX_Arena.H</includes>
       <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classamrex_1_1Arena_1a4b2f3b31e81e52426aef615cb2aaa7b7" prot="public" static="yes" mutable="no">
@@ -140,6 +141,7 @@
         <reimplementedby refid="classamrex_1_1CArena_1a8d55773acd31606b385f0a524587bd1d">alloc</reimplementedby>
         <reimplementedby refid="classamrex_1_1PArena_1a221d8a8dd30da0cd6500d91d6c48742f">alloc</reimplementedby>
         <reimplementedby refid="classamrex_1_1BArena_1ac5b992935b798555e12f3ed280420c5b">alloc</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1a1a40bc13e5fda7545591fa3b7cc50a04">alloc</reimplementedby>
         <param>
           <type>std::size_t</type>
           <declname>sz</declname>
@@ -218,6 +220,7 @@
         <name>free</name>
         <reimplementedby refid="classamrex_1_1PArena_1a6ac9509d9d473110db4f19a62d958b3b">free</reimplementedby>
         <reimplementedby refid="classamrex_1_1BArena_1a423a57e61bf30c0dd08c5b03042306ff">free</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1abd7291506933a08740bb9b2abbc5ef98">free</reimplementedby>
         <reimplementedby refid="classamrex_1_1CArena_1a92c318e660a559a2c8d4dc75ba2bc658">free</reimplementedby>
         <param>
           <type>void *</type>
@@ -254,6 +257,7 @@
         <name>isDeviceAccessible</name>
         <reimplementedby refid="classamrex_1_1BArena_1ad0656effeaa29bac32c44198b8922f0f">isDeviceAccessible</reimplementedby>
         <reimplementedby refid="classamrex_1_1PArena_1a97ff3b21f09c80a942c96176b5507b46">isDeviceAccessible</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1a7f18c58c24d1b6966057125c4758a2a4">isDeviceAccessible</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -269,6 +273,7 @@
         <name>isHostAccessible</name>
         <reimplementedby refid="classamrex_1_1BArena_1a84fc546372485495fe7eca80c08764e6">isHostAccessible</reimplementedby>
         <reimplementedby refid="classamrex_1_1PArena_1ac052582015bfe8bc0e29565fb901f238">isHostAccessible</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1a1c7a6c7a2a82e1c705442baa09e84560">isHostAccessible</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -284,6 +289,7 @@
         <name>isManaged</name>
         <reimplementedby refid="classamrex_1_1BArena_1a56c8b6538282b4a56466b9053065b3e0">isManaged</reimplementedby>
         <reimplementedby refid="classamrex_1_1PArena_1a5bc7b26bd1f96e5d87de04034e23a4bb">isManaged</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1ae6b2985298ea93f8412c8a21da3443ec">isManaged</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -299,6 +305,7 @@
         <name>isDevice</name>
         <reimplementedby refid="classamrex_1_1BArena_1abf63d084f8e220d01d53b543f7f93bc6">isDevice</reimplementedby>
         <reimplementedby refid="classamrex_1_1PArena_1afed5d46f95e13e00cb4c268007d0a8ed">isDevice</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1acdc9d343c34ebda8c4c0a78e0e6924d1">isDevice</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -314,6 +321,7 @@
         <name>isPinned</name>
         <reimplementedby refid="classamrex_1_1BArena_1a4089e5008457c5f04ee4acfc430b3f37">isPinned</reimplementedby>
         <reimplementedby refid="classamrex_1_1PArena_1a8edd3549a2cf5e689d5078e5f355b8a1">isPinned</reimplementedby>
+        <reimplementedby refid="classamrex_1_1detail_1_1SingleChunkArena_1a08324a9f9d1c2b9e7d81b3ef8e8d4ad5">isPinned</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -543,6 +551,12 @@
       <node id="1">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
+      </node>
+      <node id="5">
+        <label>amrex::detail::SingleChunkArena</label>
+        <link refid="classamrex_1_1detail_1_1SingleChunkArena"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="2">
         <label>amrex::BArena</label>

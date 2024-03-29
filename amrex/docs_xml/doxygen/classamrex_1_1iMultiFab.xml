@@ -2073,7 +2073,7 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="59">
+      <node id="60">
         <label>amrex::BaseFab&lt; int &gt;</label>
         <link refid="classamrex_1_1BaseFab"/>
         <childnode refid="49" relation="public-inheritance">
@@ -2123,7 +2123,7 @@
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="60">
+      <node id="61">
         <label>std::unique_ptr&lt; amrex::IFABio &gt;</label>
       </node>
       <node id="5">
@@ -2144,9 +2144,9 @@
       <node id="6">
         <label>T</label>
       </node>
-      <node id="57">
+      <node id="58">
         <label>std::vector&lt; IArrayBox * &gt;</label>
-        <childnode refid="58" relation="usage">
+        <childnode refid="59" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -2156,11 +2156,11 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="56">
+      <node id="57">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
         <link refid="structamrex_1_1MultiArray4"/>
       </node>
-      <node id="55">
+      <node id="56">
         <label>std::unique_ptr&lt; amrex::FBData&lt; IArrayBox &gt; &gt;</label>
       </node>
       <node id="49">
@@ -2251,7 +2251,7 @@
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
       </node>
-      <node id="54">
+      <node id="55">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
@@ -2298,18 +2298,21 @@
           <edgelabel>pcd</edgelabel>
         </childnode>
         <childnode refid="53" relation="usage">
-          <edgelabel>m_tags</edgelabel>
+          <edgelabel>m_single_chunk_arena</edgelabel>
         </childnode>
         <childnode refid="54" relation="usage">
-          <edgelabel>shmem</edgelabel>
+          <edgelabel>m_tags</edgelabel>
         </childnode>
         <childnode refid="55" relation="usage">
-          <edgelabel>fbd</edgelabel>
+          <edgelabel>shmem</edgelabel>
         </childnode>
         <childnode refid="56" relation="usage">
-          <edgelabel>m_arrays</edgelabel>
+          <edgelabel>fbd</edgelabel>
         </childnode>
         <childnode refid="57" relation="usage">
+          <edgelabel>m_arrays</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
           <edgelabel>m_fabs_v</edgelabel>
         </childnode>
       </node>
@@ -2341,6 +2344,9 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
+      <node id="53">
+        <label>std::unique_ptr&lt; amrex::detail::SingleChunkArena &gt;</label>
+      </node>
       <node id="27">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
@@ -2352,12 +2358,12 @@
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="58">
+      <node id="59">
         <label>amrex::IArrayBox</label>
         <link refid="classamrex_1_1IArrayBox"/>
-        <childnode refid="59" relation="public-inheritance">
+        <childnode refid="60" relation="public-inheritance">
         </childnode>
-        <childnode refid="60" relation="usage">
+        <childnode refid="61" relation="usage">
           <edgelabel>ifabio</edgelabel>
         </childnode>
       </node>
@@ -2422,7 +2428,7 @@
           <edgelabel>m_ownership</edgelabel>
         </childnode>
       </node>
-      <node id="53">
+      <node id="54">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="26" relation="public-inheritance">
@@ -2556,10 +2562,10 @@
     <listofallmembers>
       <member refid="classamrex_1_1FabArray_1a0966955f0937e0119cb942c5968ddb15" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>abs</name></member>
       <member refid="classamrex_1_1FabArray_1a3c57732914fe734955ae11ab8561f3b4" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>abs</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1ac86e93bfc13df1bdcfb0ebbafb6a1cffa10289ce78187f199681fabf1c9956399" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>ADD</name></member>
       <member refid="classamrex_1_1iMultiFab_1a96632d65de11e9c8a5b941a615803fb0" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Add</name></member>
+      <member refid="classamrex_1_1FabArrayBase_1ac86e93bfc13df1bdcfb0ebbafb6a1cffa10289ce78187f199681fabf1c9956399" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>ADD</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a294641949d2f4dd2161ba42a6b10d570" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>addThisBD</name></member>
-      <member refid="classamrex_1_1FabArray_1ab7135858e136a96334d492724c02f2f1" prot="private" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>AllocFabs</name></member>
+      <member refid="classamrex_1_1FabArray_1ab5c7582edb11b88faec8de4ccdc1e120" prot="private" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>AllocFabs</name></member>
       <member refid="classamrex_1_1FabArray_1acfab6e1a9aaaffd0c875021c5f10c0bb" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>arena</name></member>
       <member refid="classamrex_1_1FabArray_1a6484b86e240ddcddbe0d68e9408e1d94" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>array</name></member>
       <member refid="classamrex_1_1FabArray_1a7d3d77aaf852452dd793e107eb784925" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>array</name></member>
@@ -2593,13 +2599,13 @@
       <member refid="classamrex_1_1FabArray_1acf86ed0530ed660096a54e699b402940" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>const_array</name></member>
       <member refid="classamrex_1_1FabArray_1ab9b3285ee8d8f8d97703a9e997bbd8ec" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>const_array</name></member>
       <member refid="classamrex_1_1FabArray_1ae2c5db543d1317f228503a98b47ed796" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>const_arrays</name></member>
-      <member refid="classamrex_1_1iMultiFab_1afb9206f65daae6fa0d08e59a51b7ea8a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Copy</name></member>
-      <member refid="classamrex_1_1iMultiFab_1a0ad4af39181a230c528e27398980ba5a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Copy</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>COPY</name></member>
       <member refid="classamrex_1_1FabArray_1a6b28e002648520d4d0349bf94ab3a576" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>copy</name></member>
       <member refid="classamrex_1_1FabArray_1a960ecb1ed695a7e13cbc7c3cff3f934a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>copy</name></member>
       <member refid="classamrex_1_1FabArray_1a0194c55a13a8695b863eec146146335c" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>copy</name></member>
       <member refid="classamrex_1_1FabArray_1a097eb48c84133dcf0c0cb0fa40ca5f50" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>copy</name></member>
+      <member refid="classamrex_1_1FabArrayBase_1ac86e93bfc13df1bdcfb0ebbafb6a1cffa30d7d89f4f6df2117a0c88fcec1a65cb" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>COPY</name></member>
+      <member refid="classamrex_1_1iMultiFab_1afb9206f65daae6fa0d08e59a51b7ea8a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Copy</name></member>
+      <member refid="classamrex_1_1iMultiFab_1a0ad4af39181a230c528e27398980ba5a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Copy</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a9bdd65ce61ce9ee5ca52c6b387dd4800" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>CopyComTagsContainer</name></member>
       <member refid="classamrex_1_1FabArray_1a9d247d17dd40dc29f57f87556b50b62a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>copyTo</name></member>
       <member refid="classamrex_1_1FabArray_1adb1c4e9d6b9a2f607e18cc7426bbcef6" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>copyTo</name></member>
@@ -2618,8 +2624,8 @@
       <member refid="classamrex_1_1FabArray_1a27dbf4d9c26df790485a219856f9d2e5" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>defined</name></member>
       <member refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>DistributionMap</name></member>
       <member refid="classamrex_1_1FabArrayBase_1adcb92e864340876da67df2fc64d8bdd7" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>distributionMap</name></member>
-      <member refid="classamrex_1_1iMultiFab_1ad9722d52a2bd88a4c6f5bbe7f71dd747" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>divide</name></member>
       <member refid="classamrex_1_1iMultiFab_1a9aa5acb6b1a4d4701d4d35cc2a21f2c6" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Divide</name></member>
+      <member refid="classamrex_1_1iMultiFab_1ad9722d52a2bd88a4c6f5bbe7f71dd747" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>divide</name></member>
       <member refid="classamrex_1_1FabArrayBase_1ab96a1c213fe6e5f402c4e006608564f5" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>empty</name></member>
       <member refid="classamrex_1_1FabArray_1adb282b42c0eb97cbb55037bc7bdea04a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>EnforcePeriodicity</name></member>
       <member refid="classamrex_1_1FabArray_1aecf0e342dcbe19b9bb23e73c326155ff" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>EnforcePeriodicity</name></member>
@@ -2693,6 +2699,7 @@
       <member refid="classamrex_1_1FabArray_1ac9c35f9ba5d6042bc5fff01e5d5e295b" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>get</name></member>
       <member refid="classamrex_1_1FabArray_1a427dc42c638a674461f8b98f16875114" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>get</name></member>
       <member refid="classamrex_1_1FabArray_1a40ad454f948a86047a3c9887f18eb2b2" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>get</name></member>
+      <member refid="classamrex_1_1FabArrayBase_1a26c57d9e401fcc56f720c50f5bfdeb06" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>getAllocSingleChunk</name></member>
       <member refid="classamrex_1_1FabArrayBase_1aa0cb5039380dc0545d40ac5ac6589943" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>getBDKey</name></member>
       <member refid="classamrex_1_1FabArrayBase_1aaeb133e861baa561ecdcb23aa91ea48a" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>getCPC</name></member>
       <member refid="classamrex_1_1FabArrayBase_1af08e453541172e394dd9c710f5fc132f" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>getFB</name></member>
@@ -2728,6 +2735,7 @@
       <member refid="classamrex_1_1FabArray_1abd6dc24319471bcd6406fa9da2145197" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>LocalAdd</name></member>
       <member refid="classamrex_1_1FabArray_1a5086d98e3a63866d87afcd150a8170ef" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>LocalCopy</name></member>
       <member refid="classamrex_1_1FabArrayBase_1aa848db21ec5426fab2c86d441cd0a314" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>localindex</name></member>
+      <member refid="classamrex_1_1FabArrayBase_1a12b9e0ac23fbfa55a6ae4d6bf2d97ba8" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_alloc_single_chunk</name></member>
       <member refid="classamrex_1_1FabArray_1ab4bfa4857f5d074015204b6caa0cfcf7" prot="protected" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_arrays</name></member>
       <member refid="classamrex_1_1FabArrayBase_1af3d0b759e5fa01a885c95e93e0e9f7b1" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_BD_count</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a2865ec7ad6d6f09cf1a3a891b603144c" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_bdkey</name></member>
@@ -2745,6 +2753,8 @@
       <member refid="classamrex_1_1FabArrayBase_1a1cba13cd9d7009299774b13eb2f49484" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_mem_usage</name></member>
       <member refid="classamrex_1_1FabArrayBase_1ac8c10e1b5a28a55c6dc388f7df101a97" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_multi_ghost</name></member>
       <member refid="classamrex_1_1FabArrayBase_1ad2c72c01911307129e1f6124db9cdf36" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_region_tag</name></member>
+      <member refid="classamrex_1_1FabArray_1a4d42668928f56c18d43d24f673ebd2ce" prot="protected" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_single_chunk_arena</name></member>
+      <member refid="classamrex_1_1FabArray_1a406dbcd37d688080e340c80a34ed2807" prot="protected" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_single_chunk_size</name></member>
       <member refid="classamrex_1_1FabArrayBase_1aa5ab85a3018faa2b983936fa4116cd4f" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_TAC_stats</name></member>
       <member refid="classamrex_1_1FabArray_1a5ea249e7b897909f9d01b4fed851d7af" prot="protected" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_tags</name></member>
       <member refid="classamrex_1_1FabArrayBase_1aa2a265ca0b7ce27ee0f3d66c86fe929d" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>m_TheCPCache</name></member>
@@ -2805,8 +2815,8 @@
       <member refid="classamrex_1_1FabArray_1adbc8db61cee190b8779c871001f78057" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>OverrideSync_finish</name></member>
       <member refid="classamrex_1_1FabArray_1a4528c1a098c945ff4f1cef3a812b1af5" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>OverrideSync_nowait</name></member>
       <member refid="classamrex_1_1FabArray_1a2f1b5bd6a26a0ed12733e9a6ce8b0eb9" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>OverrideSync_nowait</name></member>
-      <member refid="classamrex_1_1FabArrayBase_1a8e414f069d04091245f3e9e94a3aa237" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>OwnerShip</name></member>
       <member refid="classamrex_1_1FabArrayBase_1ab4d5df57a6eaa1d785d131b059b43e18" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>ownership</name></member>
+      <member refid="classamrex_1_1FabArrayBase_1a8e414f069d04091245f3e9e94a3aa237" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>OwnerShip</name></member>
       <member refid="classamrex_1_1FabArray_1ad369c044980014877a2affbed7e266dd" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>pack_send_buffer_cpu</name></member>
       <member refid="classamrex_1_1FabArray_1abf79f429c979d93fb8a204aae9851054" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>pack_send_buffer_cpu</name></member>
       <member refid="classamrex_1_1FabArray_1a0ec0671737732f4a925a56eb1f138d16" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>pack_send_buffer_gpu</name></member>
@@ -2884,6 +2894,9 @@
       <member refid="classamrex_1_1FabArray_1a551575e2734ddbb455ce7d7ebd53cd9f" prot="protected" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>SharedMemory</name></member>
       <member refid="classamrex_1_1FabArray_1a1c267db3c144871fd12170f3c81d6562" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>shift</name></member>
       <member refid="classamrex_1_1FabArray_1abc3985ed98ddaf530bde81076c0295de" prot="protected" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>shmem</name></member>
+      <member refid="classamrex_1_1FabArray_1a223a9902c0f816a42304e047e86b8928" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>singleChunkPtr</name></member>
+      <member refid="classamrex_1_1FabArray_1a5641f9e3a5b649c9bd89f57c1c2f8597" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>singleChunkPtr</name></member>
+      <member refid="classamrex_1_1FabArray_1aaab9b29e3c145dfb90616774d6954afa" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>singleChunkSize</name></member>
       <member refid="classamrex_1_1FabArrayBase_1a713a78056e395c21e855dcc1ed56525c" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>size</name></member>
       <member refid="classamrex_1_1iMultiFab_1a66a3302f803afd696dff628cf4c61e3b" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>Subtract</name></member>
       <member refid="classamrex_1_1iMultiFab_1a2a2a37f4066af411d73b297946a62a34" prot="public" virt="non-virtual"><scope>amrex::iMultiFab</scope><name>sum</name></member>
