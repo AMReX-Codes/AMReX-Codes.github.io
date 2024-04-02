@@ -1,5 +1,6 @@
 var NAVTREEINDEX83 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[3,0,0,0,1,0,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a5f9f48bbbd30d20b1b08061b621b46e6":[3,0,0,0,1,0,3],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[3,0,0,0,1,0,2],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[3,0,0,0,1,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX83 =
 "structyy__trans__info.html":[3,0,34],
 "structyy__trans__info.html#a5c9f61e770deef50bd4e697310342fe9":[3,0,34,1],
 "structyy__trans__info.html#ae0715250c2bef261e596e77e0030f13e":[3,0,34,0],
-"unionAMREX__IPARSERSTYPE.html":[3,0,12],
-"unionAMREX__IPARSERSTYPE.html#a78165ca492adb6e8ef5c8653e5b6b7ac":[3,0,12,3]
+"unionAMREX__IPARSERSTYPE.html":[3,0,12]
 };

@@ -22,6 +22,7 @@ var classamrex_1_1PODVector =
     [ "~PODVector", "classamrex_1_1PODVector.html#acc9a13384ea6afdf5c637b9f11b091ba", null ],
     [ "AllocateBufferForInsert", "classamrex_1_1PODVector.html#af6fc3e8635c3829330db263343ab6f59", null ],
     [ "AllocateBufferForPush", "classamrex_1_1PODVector.html#a5e58adad8e3a9824ae172c4beeaa3b76", null ],
+    [ "assign", "classamrex_1_1PODVector.html#a3ddec04bd145211bbd1fefac3e005211", null ],
     [ "assign", "classamrex_1_1PODVector.html#aa0537d2b1d3afed5553c0b871f177de4", null ],
     [ "assign", "classamrex_1_1PODVector.html#a8d2722278ba3ee0ec060e4a0c26fd1dc", null ],
     [ "assign", "classamrex_1_1PODVector.html#a7fd3f892debb6d633f30864aac18d858", null ],

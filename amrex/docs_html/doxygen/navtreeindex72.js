@@ -1,5 +1,6 @@
 var NAVTREEINDEX72 =
 {
+"namespaceamrex__string__module.html":[2,0,17],
 "namespaceamrex__string__module.html#a0bf8f20010cb63d36d70475cce439c7d":[2,0,17,3],
 "namespaceamrex__string__module.html#a4c4d4d30474688b40ff24d73c6d93073":[2,0,17,4],
 "namespaceamrex__string__module.html#a624a8f56ebfb3afaeb6658ef1c343616":[2,0,17,5],
@@ -64,8 +65,8 @@ var NAVTREEINDEX72 =
 "namespacemembers_type.html":[2,1,3],
 "namespacemembers_u.html":[2,1,0,20],
 "namespacemembers_v.html":[2,1,0,21],
-"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars.html":[2,1,2,0],
+"namespacemembers_vars.html":[2,1,2],
 "namespacemembers_vars_b.html":[2,1,2,1],
 "namespacemembers_vars_c.html":[2,1,2,2],
 "namespacemembers_vars_d.html":[2,1,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX72 =
 "structN__VectorContent__MultiFab__notptr.html#a3930a0d9ef7c3da19db85349319d0cc6":[3,0,26,1],
 "structN__VectorContent__MultiFab__notptr.html#a7a833bea16a8f29bab8bc283d5eb4c23":[3,0,26,0],
 "structRegionsProfStats_1_1DataBlock.html":[3,0,28,0],
-"structRegionsProfStats_1_1DataBlock.html#a40b142a9ce325e063b6f8003c5d3cc9d":[3,0,28,0,12],
-"structRegionsProfStats_1_1DataBlock.html#a69a7603f195974cae55c552c05b3ba32":[3,0,28,0,2]
+"structRegionsProfStats_1_1DataBlock.html#a40b142a9ce325e063b6f8003c5d3cc9d":[3,0,28,0,12]
 };
