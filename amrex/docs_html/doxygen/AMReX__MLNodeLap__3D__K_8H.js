@@ -1,5 +1,14 @@
 var AMReX__MLNodeLap__3D__K_8H =
 [
+    [ "aa_interp_face_xy", "AMReX__MLNodeLap__3D__K_8H.html#a51dfe87d4f076fe5792f33ef87b5971b", null ],
+    [ "aa_interp_face_xz", "AMReX__MLNodeLap__3D__K_8H.html#af9ef869615acf45a999fd11b2eaaf5aa", null ],
+    [ "aa_interp_face_yz", "AMReX__MLNodeLap__3D__K_8H.html#abf9f8b432ebfa85af976286c9521162a", null ],
+    [ "aa_interp_line_x", "AMReX__MLNodeLap__3D__K_8H.html#ad0ad097849bfd82e8a164fe778927745", null ],
+    [ "aa_interp_line_y", "AMReX__MLNodeLap__3D__K_8H.html#a3187e96a31c0714188a93ffcbe539e16", null ],
+    [ "aa_interp_line_z", "AMReX__MLNodeLap__3D__K_8H.html#a2bb1e1edb331cd70bdce6ffc2860781f", null ],
+    [ "ha_interp_face_xy", "AMReX__MLNodeLap__3D__K_8H.html#a0f3ccac5d1142db6eb1763ff08137b57", null ],
+    [ "ha_interp_face_xz", "AMReX__MLNodeLap__3D__K_8H.html#a0f91cae3a5cbaddf8a473a3f0349ed21", null ],
+    [ "ha_interp_face_yz", "AMReX__MLNodeLap__3D__K_8H.html#a3014c15a6e3e1b3ecefed42399dece4e", null ],
     [ "mlndlap_adotx_aa", "AMReX__MLNodeLap__3D__K_8H.html#a010d8fce8129d1003ad1f45512b89b15", null ],
     [ "mlndlap_adotx_c", "AMReX__MLNodeLap__3D__K_8H.html#af366c6fa856da068a397a0b94662c04a", null ],
     [ "mlndlap_adotx_ha", "AMReX__MLNodeLap__3D__K_8H.html#a4f492bb83254cf07e228b963154da5e4", null ],
@@ -9,6 +18,7 @@ var AMReX__MLNodeLap__3D__K_8H =
     [ "mlndlap_avgdown_coeff_z", "AMReX__MLNodeLap__3D__K_8H.html#a1dee48540dad573effdb346154f1da0c", null ],
     [ "mlndlap_Ax_fine_contrib", "AMReX__MLNodeLap__3D__K_8H.html#aa426c74701cc4a171c54210ede1212cd", null ],
     [ "mlndlap_Ax_fine_contrib_cs", "AMReX__MLNodeLap__3D__K_8H.html#a7ebf2548096900974be75be23948782a", null ],
+    [ "mlndlap_Ax_fine_contrib_doit", "AMReX__MLNodeLap__3D__K_8H.html#a79e83c8456e84fbbcc1427138b588e94", null ],
     [ "mlndlap_bc_doit", "AMReX__MLNodeLap__3D__K_8H.html#a28652d78e48d1f39d99d4bca42861d95", null ],
     [ "mlndlap_crse_resid", "AMReX__MLNodeLap__3D__K_8H.html#ad31ca7c577662afe5ea03ed3d21d8a57", null ],
     [ "mlndlap_divu", "AMReX__MLNodeLap__3D__K_8H.html#a02a91b419a391c582861d06aab7bbb90", null ],
@@ -49,6 +59,19 @@ var AMReX__MLNodeLap__3D__K_8H =
     [ "mlndlap_set_stencil", "AMReX__MLNodeLap__3D__K_8H.html#a77743280efb0c02d3c4301b87b272f7c", null ],
     [ "mlndlap_set_stencil_s0", "AMReX__MLNodeLap__3D__K_8H.html#a4b20346156e62bf392b0e5870b142762", null ],
     [ "mlndlap_stencil_rap", "AMReX__MLNodeLap__3D__K_8H.html#aee965ec1adf090525e207867611b1635", null ],
+    [ "mlndlap_sum_Ax", "AMReX__MLNodeLap__3D__K_8H.html#a42aaca205bd13f32ec341723911ffbbb", null ],
+    [ "mlndlap_sum_Df", "AMReX__MLNodeLap__3D__K_8H.html#adece5dd292d5a4abe007029002b1a48b", null ],
     [ "mlndlap_zero_fine", "AMReX__MLNodeLap__3D__K_8H.html#aea6fbee6638a575caec8ac30d8a177d8", null ],
-    [ "tridiagonal_solve", "AMReX__MLNodeLap__3D__K_8H.html#a018951602c1fef6c43136b743a0a3a2a", null ]
+    [ "neumann_scale", "AMReX__MLNodeLap__3D__K_8H.html#a4a6366961f450336e2d75eed8a09573d", null ],
+    [ "tridiagonal_solve", "AMReX__MLNodeLap__3D__K_8H.html#a018951602c1fef6c43136b743a0a3a2a", null ],
+    [ "ist_000", "AMReX__MLNodeLap__3D__K_8H.html#a03f0847605ea5f82a7c9ef414fd51d25", null ],
+    [ "ist_00p", "AMReX__MLNodeLap__3D__K_8H.html#a71584fa39f2889850e6c23438442a327", null ],
+    [ "ist_0p0", "AMReX__MLNodeLap__3D__K_8H.html#ac2f5d825128f2d4a9580fbeb8a916408", null ],
+    [ "ist_0pp", "AMReX__MLNodeLap__3D__K_8H.html#aea160434bbdf72ba661f86d3aaeeff10", null ],
+    [ "ist_inv", "AMReX__MLNodeLap__3D__K_8H.html#ac2906db9bb7d75cad814e8c9fac22b2c", null ],
+    [ "ist_p00", "AMReX__MLNodeLap__3D__K_8H.html#a336e8b5c43142a459dc8a1352eeade20", null ],
+    [ "ist_p0p", "AMReX__MLNodeLap__3D__K_8H.html#ab458eec5937d357a4d7ca75dc87c84bc", null ],
+    [ "ist_pp0", "AMReX__MLNodeLap__3D__K_8H.html#a215a4d7df0ec09193cac1faf4a8ba1e3", null ],
+    [ "ist_ppp", "AMReX__MLNodeLap__3D__K_8H.html#a60c9afb0fe3420da868984513ad96bd0", null ],
+    [ "n_sten", "AMReX__MLNodeLap__3D__K_8H.html#ad9408790b2173c0287493d687303ad01", null ]
 ];

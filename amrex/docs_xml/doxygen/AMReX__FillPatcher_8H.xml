@@ -2382,7 +2382,7 @@
 <codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_cf_fine_data<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_cf_fine_data<sp/>=<sp/>std::make_unique&lt;MF&gt;</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(make_mf_fine_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(detail::make_mf_fine_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"></highlight></codeline>
 <codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncmfs<sp/>=<sp/>cmf.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>();</highlight></codeline>
@@ -2394,7 +2394,7 @@
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="321"><highlight class="normal"></highlight></codeline>
 <codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(m_cf_crse_data))<sp/>{</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MF<sp/>mf_crse_patch<sp/>=<sp/>make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MF<sp/>mf_crse_patch<sp/>=<sp/>detail::make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp);</highlight></codeline>
 <codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf_crse_patch.ParallelCopy(*cmf[icmf],<sp/>m_cgeom.periodicity());</highlight></codeline>
 <codeline lineno="325"><highlight class="normal"></highlight></codeline>
 <codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;Real,std::unique_ptr&lt;MF&gt;&gt;<sp/>tmp;</highlight></codeline>
@@ -2406,7 +2406,7 @@
 <codeline lineno="332"><highlight class="normal"></highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_cf_crse_data_tmp<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_cf_crse_data_tmp<sp/>=<sp/>std::make_unique&lt;MF&gt;</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(detail::make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="337"><highlight class="normal"></highlight></codeline>
 <codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ng_space_interp<sp/>=<sp/>8;<sp/></highlight><highlight class="comment">//<sp/>Need<sp/>to<sp/>be<sp/>big<sp/>enough</highlight><highlight class="normal"></highlight></codeline>
@@ -2493,7 +2493,7 @@
 <codeline lineno="419"><highlight class="normal"></highlight></codeline>
 <codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>tmf<sp/>:<sp/>m_cf_crse_data)<sp/>{</highlight></codeline>
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmf.first<sp/>=<sp/>std::numeric_limits&lt;Real&gt;::lowest();<sp/></highlight><highlight class="comment">//<sp/>because<sp/>we<sp/>don&apos;t<sp/>need<sp/>it</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmf.second<sp/>=<sp/>std::make_unique&lt;MF&gt;(make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmf.second<sp/>=<sp/>std::make_unique&lt;MF&gt;(detail::make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
 <codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cf_crse_data[0].second-&gt;ParallelCopy(S_old,<sp/>m_cgeom.periodicity());</highlight></codeline>
 <codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>order;<sp/>++i)<sp/>{</highlight></codeline>
@@ -2518,7 +2518,7 @@
 <codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fpc<sp/>=<sp/>getFPinfo();</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_cf_crse_data_tmp<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_cf_crse_data_tmp<sp/>=<sp/>std::make_unique&lt;MF&gt;</highlight></codeline>
-<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(detail::make_mf_crse_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"></highlight></codeline>
 <codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>u<sp/>=<sp/>m_cf_crse_data_tmp-&gt;arrays();</highlight></codeline>
@@ -2670,7 +2670,7 @@
 <codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>cbc(*m_cf_crse_data_tmp,<sp/>0,<sp/>m_ncomp,<sp/>m_nghost,<sp/>time,<sp/>0);</highlight></codeline>
 <codeline lineno="597"><highlight class="normal"></highlight></codeline>
 <codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_cf_fine_data<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_cf_fine_data<sp/>=<sp/>std::make_unique&lt;MF&gt;(make_mf_fine_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_cf_fine_data<sp/>=<sp/>std::make_unique&lt;MF&gt;(detail::make_mf_fine_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>
 <codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="601"><highlight class="normal"></highlight></codeline>
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a93b8e270e0c8360ed35815598a5b7f46" kindref="member">FillPatchInterp</ref>(*m_cf_fine_data,<sp/>0,<sp/>*m_cf_crse_data_tmp,<sp/>0,</highlight></codeline>

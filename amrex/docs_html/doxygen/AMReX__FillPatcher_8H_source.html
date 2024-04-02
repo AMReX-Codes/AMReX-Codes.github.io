@@ -269,7 +269,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    {</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">if</span> (m_cf_fine_data == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            m_cf_fine_data = std::make_unique&lt;MF&gt;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                (make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                (detail::make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordtype">int</span> ncmfs = cmf.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
@@ -281,7 +281,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                   });</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">if</span> (it == <a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">std::end</a>(m_cf_crse_data)) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                MF mf_crse_patch = make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                MF mf_crse_patch = detail::make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                mf_crse_patch.ParallelCopy(*cmf[icmf], m_cgeom.periodicity());</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                std::pair&lt;Real,std::unique_ptr&lt;MF&gt;&gt; tmp;</div>
@@ -293,7 +293,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> (m_cf_crse_data_tmp == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            m_cf_crse_data_tmp = std::make_unique&lt;MF&gt;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                (make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                (detail::make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        }</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span> ng_space_interp = 8; <span class="comment">// Need to be big enough</span></div>
@@ -380,7 +380,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; tmf : m_cf_crse_data) {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        tmf.first = std::numeric_limits&lt;Real&gt;::lowest(); <span class="comment">// because we don&#39;t need it</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        tmf.second = std::make_unique&lt;MF&gt;(make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        tmf.second = std::make_unique&lt;MF&gt;(detail::make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    m_cf_crse_data[0].second-&gt;ParallelCopy(S_old, m_cgeom.periodicity());</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; order; ++i) {</div>
@@ -405,7 +405,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; fpc = getFPinfo();</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">if</span> (m_cf_crse_data_tmp == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        m_cf_crse_data_tmp = std::make_unique&lt;MF&gt;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            (make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            (detail::make_mf_crse_patch&lt;MF&gt;(fpc, m_ncomp));</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    }</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u = m_cf_crse_data_tmp-&gt;arrays();</div>
@@ -557,7 +557,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    cbc(*m_cf_crse_data_tmp, 0, m_ncomp, m_nghost, time, 0);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordflow">if</span> (m_cf_fine_data == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        m_cf_fine_data = std::make_unique&lt;MF&gt;(make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        m_cf_fine_data = std::make_unique&lt;MF&gt;(detail::make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    }</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <a class="code" href="namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46">FillPatchInterp</a>(*m_cf_fine_data, 0, *m_cf_crse_data_tmp, 0,</div>

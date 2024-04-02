@@ -1,5 +1,9 @@
 var namespaceamrex_1_1EB2 =
 [
+    [ "detail", "namespaceamrex_1_1EB2_1_1detail.html", [
+      [ "coarsen_edge_cent", "namespaceamrex_1_1EB2_1_1detail.html#ad283835a3b06a13137f260b1be1d2f6e", null ],
+      [ "num_cuts", "namespaceamrex_1_1EB2_1_1detail.html#a76809ed0a10c6280707ab5537db08545", null ]
+    ] ],
     [ "IIF_detail", "namespaceamrex_1_1EB2_1_1IIF__detail.html", [
       [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a1225d3d0c40e87671ca59b99ab2a1ad9", null ],
       [ "do_min", "namespaceamrex_1_1EB2_1_1IIF__detail.html#a98384a091e8bcbad296ebdb24482eae9", null ],

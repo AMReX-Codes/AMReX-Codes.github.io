@@ -481,6 +481,8 @@ var hierarchy =
     [ "amrex::EB2::GeometryShop< F, R >", "classamrex_1_1EB2_1_1GeometryShop.html", null ],
     [ "amrex_ebcellflag_module::get_neighbor_cells", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html", null ],
     [ "amrex::GetBucket", "structamrex_1_1GetBucket.html", null ],
+    [ "amrex::nodelap_detail::GetNode", "structamrex_1_1nodelap__detail_1_1GetNode.html", null ],
+    [ "amrex::nodelap_detail::GetNode2", "structamrex_1_1nodelap__detail_1_1GetNode2.html", null ],
     [ "amrex::GetParticleBin", "structamrex_1_1GetParticleBin.html", null ],
     [ "amrex::GetPID", "structamrex_1_1GetPID.html", null ],
     [ "amrex::GetSendBufferOffset", "structamrex_1_1GetSendBufferOffset.html", null ],

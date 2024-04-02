@@ -14,5 +14,11 @@ var AMReX__Particle_8H =
     [ "operator<<", "AMReX__Particle_8H.html#ab4ab9b3e6200e633cbf452f97880f267", null ],
     [ "operator<<", "AMReX__Particle_8H.html#a637e0edc81c99a33f11e048fa4f7fc09", null ],
     [ "operator<<", "AMReX__Particle_8H.html#ab612cdff7b506fd2884de82a842e95b8", null ],
-    [ "SetParticleIDandCPU", "AMReX__Particle_8H.html#a6076dc93e17aef13f76bd835e89ce265", null ]
+    [ "SetParticleIDandCPU", "AMReX__Particle_8H.html#a6076dc93e17aef13f76bd835e89ce265", null ],
+    [ "DoSplitParticleID", "AMReX__Particle_8H.html#a57a04adbe182d509a89869d06f668b31", null ],
+    [ "GhostParticleID", "AMReX__Particle_8H.html#a24df8a9162e3ff47d7bffbdbc04d660b", null ],
+    [ "Invalid", "AMReX__Particle_8H.html#a7dade82513033963b539558d0d2d5e0c", null ],
+    [ "LastParticleID", "AMReX__Particle_8H.html#ae79136bdcc97d46650c8098fe7c9334d", null ],
+    [ "NoSplitParticleID", "AMReX__Particle_8H.html#a29090f4da18aa07dbb136347df3a0e52", null ],
+    [ "VirtualParticleID", "AMReX__Particle_8H.html#a4338aa4cab572b2f577754ade0252083", null ]
 ];

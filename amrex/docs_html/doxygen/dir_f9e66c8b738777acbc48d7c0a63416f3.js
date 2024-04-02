@@ -34,5 +34,5 @@ var dir_f9e66c8b738777acbc48d7c0a63416f3 =
     [ "AMReX_YAFluxRegister_1D_K.H", "AMReX__YAFluxRegister__1D__K_8H.html", "AMReX__YAFluxRegister__1D__K_8H" ],
     [ "AMReX_YAFluxRegister_2D_K.H", "AMReX__YAFluxRegister__2D__K_8H.html", "AMReX__YAFluxRegister__2D__K_8H" ],
     [ "AMReX_YAFluxRegister_3D_K.H", "AMReX__YAFluxRegister__3D__K_8H.html", "AMReX__YAFluxRegister__3D__K_8H" ],
-    [ "AMReX_YAFluxRegister_K.H", "AMReX__YAFluxRegister__K_8H.html", null ]
+    [ "AMReX_YAFluxRegister_K.H", "AMReX__YAFluxRegister__K_8H.html", "AMReX__YAFluxRegister__K_8H" ]
 ];

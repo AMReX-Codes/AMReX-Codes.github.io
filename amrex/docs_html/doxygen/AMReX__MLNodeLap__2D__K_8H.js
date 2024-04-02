@@ -1,5 +1,9 @@
 var AMReX__MLNodeLap__2D__K_8H =
 [
+    [ "aa_interp_face_xy", "AMReX__MLNodeLap__2D__K_8H.html#ace72940652dec767bf17b4f92c7017b0", null ],
+    [ "aa_interp_line_x", "AMReX__MLNodeLap__2D__K_8H.html#aec4258a011e9260a7b6b3a86a6f51c9a", null ],
+    [ "aa_interp_line_y", "AMReX__MLNodeLap__2D__K_8H.html#a77d95c55170743c08e673c1066c28ca3", null ],
+    [ "ha_interp_face_xy", "AMReX__MLNodeLap__2D__K_8H.html#a8435e617376aca0d21759979f518e160", null ],
     [ "mlndlap_adotx_aa", "AMReX__MLNodeLap__2D__K_8H.html#a43272fd95bc7e0d7912daa2c0a642862", null ],
     [ "mlndlap_adotx_c", "AMReX__MLNodeLap__2D__K_8H.html#ad2144182834ce73b21ddad5461a14814", null ],
     [ "mlndlap_adotx_ha", "AMReX__MLNodeLap__2D__K_8H.html#a8b0a3b042ac35788ad8dddead4253d19", null ],
@@ -8,6 +12,7 @@ var AMReX__MLNodeLap__2D__K_8H =
     [ "mlndlap_avgdown_coeff_y", "AMReX__MLNodeLap__2D__K_8H.html#a344bb80d4a06ecf958781bdef59b351d", null ],
     [ "mlndlap_Ax_fine_contrib", "AMReX__MLNodeLap__2D__K_8H.html#aec133744a63e94005ef481cb3a34c759", null ],
     [ "mlndlap_Ax_fine_contrib_cs", "AMReX__MLNodeLap__2D__K_8H.html#a1be11befaad780d29152b9e45595fde0", null ],
+    [ "mlndlap_Ax_fine_contrib_doit", "AMReX__MLNodeLap__2D__K_8H.html#ac5f85aca190f7e60aef6b90195d64995", null ],
     [ "mlndlap_bc_doit", "AMReX__MLNodeLap__2D__K_8H.html#a28652d78e48d1f39d99d4bca42861d95", null ],
     [ "mlndlap_crse_resid", "AMReX__MLNodeLap__2D__K_8H.html#ad31ca7c577662afe5ea03ed3d21d8a57", null ],
     [ "mlndlap_divu", "AMReX__MLNodeLap__2D__K_8H.html#ac5ffed68b31da08687142195b804a767", null ],
@@ -48,6 +53,9 @@ var AMReX__MLNodeLap__2D__K_8H =
     [ "mlndlap_set_stencil", "AMReX__MLNodeLap__2D__K_8H.html#a77743280efb0c02d3c4301b87b272f7c", null ],
     [ "mlndlap_set_stencil_s0", "AMReX__MLNodeLap__2D__K_8H.html#a4b20346156e62bf392b0e5870b142762", null ],
     [ "mlndlap_stencil_rap", "AMReX__MLNodeLap__2D__K_8H.html#aee965ec1adf090525e207867611b1635", null ],
+    [ "mlndlap_sum_Ax", "AMReX__MLNodeLap__2D__K_8H.html#a61b78515271a4b17e9548045e93c2ef5", null ],
+    [ "mlndlap_sum_Df", "AMReX__MLNodeLap__2D__K_8H.html#ac3aa4c26949852604ab5e27065f452bf", null ],
     [ "mlndlap_zero_fine", "AMReX__MLNodeLap__2D__K_8H.html#aea6fbee6638a575caec8ac30d8a177d8", null ],
+    [ "neumann_scale", "AMReX__MLNodeLap__2D__K_8H.html#afeb47b1ddabe421a74790b1ef812b908", null ],
     [ "tridiagonal_solve", "AMReX__MLNodeLap__2D__K_8H.html#a018951602c1fef6c43136b743a0a3a2a", null ]
 ];
