@@ -2448,7 +2448,7 @@
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>options_namespace(std::move(options_namespace_))</highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(AMREX_SPACEDIM<sp/>&gt;<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;HypreNodeLap:<sp/>1D<sp/>not<sp/>supported&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(std::is_same&lt;Real,<sp/>HYPRE_Real&gt;::value,<sp/></highlight><highlight class="stringliteral">&quot;amrex::Real<sp/>!=<sp/>HYPRE_Real&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(std::is_same_v&lt;Real,<sp/>HYPRE_Real&gt;,<sp/></highlight><highlight class="stringliteral">&quot;amrex::Real<sp/>!=<sp/>HYPRE_Real&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_procs,<sp/>myid;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Comm_size(comm,<sp/>&amp;num_procs);</highlight></codeline>
