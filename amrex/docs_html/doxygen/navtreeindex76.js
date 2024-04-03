@@ -1,5 +1,9 @@
 var NAVTREEINDEX76 =
 {
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a20054ec96a4caf67051d57e923579a8e":[3,0,0,486,5],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a530916a537dcc4b424694411b430833e":[3,0,0,486,3],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a59c2843f59e6ba99661a6d26958b6f08":[3,0,0,486,4],
+"structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a7bdcc3eb6bbb219b65280bd41b97b774":[3,0,0,486,0],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ab6759853d755a1a01624618efeb177b0":[3,0,0,486,1],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ac8950252d5f3400022f97669a5ae9f66":[3,0,0,486,6],
 "structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#acf82f34218d15ed26f163a36979c5a30":[3,0,0,486,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX76 =
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a117c2d4187d31c7a6e0c6da477e381d0":[3,0,0,129,6,2],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a159bccfe74905a8132cf6ce5754ca2f0":[3,0,0,129,6,6],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a6fc4a42952792e21c6af56f1b7d38799":[3,0,0,129,6,3],
-"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a79668291012755d981986b35942faa12":[3,0,0,129,6,4],
-"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a84cad9d66ad27523679ae8c2b6b5d37e":[3,0,0,129,6,0],
-"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a9a1d9e2356ae17aa8cd2d85b437207b0":[3,0,0,129,6,7],
-"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#aa60994fa1062be2345b9e12a9eaa63c3":[3,0,0,129,6,5],
-"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ab4b3c50d480036fa2cd0506f9e8f96ff":[3,0,0,129,6,9]
+"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a79668291012755d981986b35942faa12":[3,0,0,129,6,4]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"classamrex_1_1TagBox.html#adc981d8086ea65ef19383c04acacace3":[3,0,0,68,8],
+"classamrex_1_1TagBox.html#af03179052f9fb5a076f95d2bb33e94e2":[3,0,0,68,18],
 "classamrex_1_1TagBox.html#af103bf562a87e04ba76cd763005c2539":[3,0,0,68,10],
 "classamrex_1_1TagBox.html#af21d06fbdc2ccecc175efd767684610b":[3,0,0,68,14],
 "classamrex_1_1TagBoxArray.html":[3,0,0,69],
@@ -247,7 +249,5 @@ var NAVTREEINDEX56 =
 "classamrex_1_1XYPlotDataList.html#a58dbc137c88f33a60c950b1a399e7ec2":[3,0,0,409,1],
 "classamrex_1_1XYPlotDataList.html#a613fe181c09a5abcd497c827b17c3bbb":[3,0,0,409,15],
 "classamrex_1_1XYPlotDataList.html#a6fb006c80650854a70d3f1dc2c3c4655":[3,0,0,409,12],
-"classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16":[3,0,0,409,29],
-"classamrex_1_1XYPlotDataList.html#a88ab515d361ad0b1fdd14ec20b572969":[3,0,0,409,36],
-"classamrex_1_1XYPlotDataList.html#a8f0d43baff2b628b18a538011a6dac4f":[3,0,0,409,19]
+"classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16":[3,0,0,409,29]
 };

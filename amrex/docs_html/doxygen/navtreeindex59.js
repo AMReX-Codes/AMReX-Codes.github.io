@@ -1,5 +1,7 @@
 var NAVTREEINDEX59 =
 {
+"functions_vars_t.html":[3,3,2,20],
+"functions_vars_u.html":[3,3,2,21],
 "functions_vars_v.html":[3,3,2,22],
 "functions_vars_w.html":[3,3,2,23],
 "functions_vars_x.html":[3,3,2,24],
@@ -15,8 +17,8 @@ var NAVTREEINDEX59 =
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6],
 "globals_defs.html":[4,1,6,0],
+"globals_defs.html":[4,1,6],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -39,8 +41,8 @@ var NAVTREEINDEX59 =
 "globals_enum.html":[4,1,4],
 "globals_eval.html":[4,1,5],
 "globals_f.html":[4,1,0,5],
-"globals_func.html":[4,1,1,0],
 "globals_func.html":[4,1,1],
+"globals_func.html":[4,1,1,0],
 "globals_func_b.html":[4,1,1,1],
 "globals_func_c.html":[4,1,1,2],
 "globals_func_d.html":[4,1,1,3],
@@ -240,14 +242,12 @@ var NAVTREEINDEX59 =
 "interfacesdcquadrature__mod_1_1poly__eval.html#ab38d996c6f957cb170aa2ca9fa135a74":[3,0,11,0,0],
 "modules.html":[1],
 "namespaceamrex.html":[2,0,0],
-"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2168],
+"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2169],
 "namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8":[2,0,0,611],
 "namespaceamrex.html#a006c22eb1e141a0784faa415c00a49c4":[2,0,0,1273],
 "namespaceamrex.html#a0075507273391e5967b9d869daed98bc":[2,0,0,634],
 "namespaceamrex.html#a0075507273391e5967b9d869daed98bca27a45d5e1783028fbc362d8e4f35d752":[2,0,0,634,3],
 "namespaceamrex.html#a0075507273391e5967b9d869daed98bca2d8f7fc88d138e332180438e1171ee57":[2,0,0,634,8],
 "namespaceamrex.html#a0075507273391e5967b9d869daed98bca3a1729e1b576ae7d414ae6ba76c3b194":[2,0,0,634,7],
-"namespaceamrex.html#a0075507273391e5967b9d869daed98bca3b65381fef1e4a480813955566ac6224":[2,0,0,634,9],
-"namespaceamrex.html#a0075507273391e5967b9d869daed98bca4426cecc68dbdc158b088f0cebfb79a7":[2,0,0,634,1],
-"namespaceamrex.html#a0075507273391e5967b9d869daed98bca4d0e5b2b972b4bf0ffa84bb373ec9c77":[2,0,0,634,5]
+"namespaceamrex.html#a0075507273391e5967b9d869daed98bca3b65381fef1e4a480813955566ac6224":[2,0,0,634,9]
 };

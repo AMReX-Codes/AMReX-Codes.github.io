@@ -1,5 +1,9 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a09ce14e97aa618c00bcc778e9337fd4f":[3,0,0,5,24,8],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989":[3,0,0,5,24,7],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178":[3,0,0,5,24,9],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[3,0,0,5,24,0],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504":[3,0,0,5,24,5],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[3,0,0,5,24,1],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ac7995253d4db738ff6283ab41aaf67c8":[3,0,0,5,24,6],
@@ -97,8 +101,8 @@ var NAVTREEINDEX78 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,262],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,268],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,267],
@@ -245,9 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1InSituUtils_1_1assignOp.html":[3,0,0,6,3],
 "structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[3,0,0,6,3,0],
 "structamrex_1_1InSituUtils_1_1orOp.html":[3,0,0,6,4],
-"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[3,0,0,6,4,0],
-"structamrex_1_1IntegratorOps.html":[3,0,0,189],
-"structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html":[3,0,0,191],
-"structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html#a3351ed5aa40298f6eabb05de52e6290b":[3,0,0,191,1],
-"structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html#a8ee342eb7ac3a9d13cc4ec493dce493d":[3,0,0,191,2]
+"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[3,0,0,6,4,0]
 };
