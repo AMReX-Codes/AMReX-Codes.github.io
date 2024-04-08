@@ -1,5 +1,7 @@
 var NAVTREEINDEX68 =
 {
+"namespaceamrex_1_1EB2.html#a1e6eedbf6131d4d1c9a33e7c3165e630":[2,0,0,8,82],
+"namespaceamrex_1_1EB2.html#a1f2e881daa9ff0a537137a2e09129db9":[2,0,0,8,74],
 "namespaceamrex_1_1EB2.html#a202c73f9ebfcb787c75aad17804f9490":[2,0,0,8,62],
 "namespaceamrex_1_1EB2.html#a205e1c682e35e298ad6a5499e1c308b0":[2,0,0,8,87],
 "namespaceamrex_1_1EB2.html#a2258b3042676370ae01a2968e6962765":[2,0,0,8,76],
@@ -247,7 +249,5 @@ var NAVTREEINDEX68 =
 "namespaceamrex_1_1LongParticleIds.html#a29090f4da18aa07dbb136347df3a0e52":[2,0,0,20,3],
 "namespaceamrex_1_1LongParticleIds.html#a4338aa4cab572b2f577754ade0252083":[2,0,0,20,4],
 "namespaceamrex_1_1LongParticleIds.html#a57a04adbe182d509a89869d06f668b31":[2,0,0,20,0],
-"namespaceamrex_1_1LongParticleIds.html#ae79136bdcc97d46650c8098fe7c9334d":[2,0,0,20,2],
-"namespaceamrex_1_1MFUtil.html":[2,0,0,23],
-"namespaceamrex_1_1MFUtil.html#a0d2b028d5b4be5e38a0e4f8fc778c523":[2,0,0,23,5]
+"namespaceamrex_1_1LongParticleIds.html#ae79136bdcc97d46650c8098fe7c9334d":[2,0,0,20,2]
 };

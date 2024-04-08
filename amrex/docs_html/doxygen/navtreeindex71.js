@@ -1,5 +1,7 @@
 var NAVTREEINDEX71 =
 {
+"namespaceamrex_1_1detail.html#a552276d715b5fb007fa8045a2f8dc713":[2,0,0,6,43],
+"namespaceamrex_1_1detail.html#a58cd3a1197191b66f72a97cbd1d11544":[2,0,0,6,38],
 "namespaceamrex_1_1detail.html#a59bb763ea3df042d86d6906cc9ccfc77":[2,0,0,6,82],
 "namespaceamrex_1_1detail.html#a62fb7ba72f05b354995dd98f6152d3fd":[2,0,0,6,50],
 "namespaceamrex_1_1detail.html#a63f67f333c651c923c2d3eaf7b0a15aa":[2,0,0,6,44],
@@ -46,12 +48,12 @@ var NAVTREEINDEX71 =
 "namespaceamrex_1_1disabled.html":[2,0,0,7],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,669],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,7,3],
-"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,668],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
+"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,668],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,670],
-"namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,664],
+"namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,7,0],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,7,1],
 "namespaceamrex_1_1disabled.html#aceb0a2fafed413cd99b5e79f954aa723":[2,0,0,667],
 "namespaceamrex_1_1disabled.html#ae4f20d81eb8a87b5fdcfd50bfd6ef6ba":[2,0,0,7,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX71 =
 "namespaceamrex_1_1tri__geom__ops.html#a8f07c2c62d9cf319ba1d6d35f810e859":[2,0,0,47,6],
 "namespaceamrex_1_1tri__geom__ops.html#aae5e185d12b364ca4a81628b175432bb":[2,0,0,47,9],
 "namespaceamrex_1_1tri__geom__ops.html#ab51690f01621516b9e79005a32943d02":[2,0,0,47,1],
-"namespaceamrex_1_1tri__geom__ops.html#ac418863153dc7bdeb127001e47877175":[2,0,0,47,10],
-"namespaceamrex_1_1tri__geom__ops.html#ac4a987e664e5b08e291676b2ba5802c7":[2,0,0,47,5],
-"namespaceamrex__acc__module.html":[2,0,1]
+"namespaceamrex_1_1tri__geom__ops.html#ac418863153dc7bdeb127001e47877175":[2,0,0,47,10]
 };

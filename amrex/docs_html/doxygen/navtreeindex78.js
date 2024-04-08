@@ -1,5 +1,7 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1Gpu_1_1DeviceScalar.html":[3,0,0,5,24],
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a041e21c03012c74793a6baf0d916e587":[3,0,0,5,24,2],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a09ce14e97aa618c00bcc778e9337fd4f":[3,0,0,5,24,8],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989":[3,0,0,5,24,7],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178":[3,0,0,5,24,9],
@@ -101,8 +103,8 @@ var NAVTREEINDEX78 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,262],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,268],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,267],
@@ -247,7 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1IParser_1_1Data.html#af818dd603aeab55c75fd4caab36606e4":[3,0,0,291,0,5],
 "structamrex_1_1InSituUtils_1_1amrex__tt.html":[3,0,0,6,2],
 "structamrex_1_1InSituUtils_1_1assignOp.html":[3,0,0,6,3],
-"structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[3,0,0,6,3,0],
-"structamrex_1_1InSituUtils_1_1orOp.html":[3,0,0,6,4],
-"structamrex_1_1InSituUtils_1_1orOp.html#a6ce96ff1cc7c06f5d9ffbf9535b0248b":[3,0,0,6,4,0]
+"structamrex_1_1InSituUtils_1_1assignOp.html#a8c0f2e9f6f2220131085f615354e83de":[3,0,0,6,3,0]
 };

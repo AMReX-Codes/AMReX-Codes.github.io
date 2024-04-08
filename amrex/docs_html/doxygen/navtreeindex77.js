@@ -1,5 +1,7 @@
 var NAVTREEINDEX77 =
 {
+"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a6fc4a42952792e21c6af56f1b7d38799":[3,0,0,129,6,3],
+"structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a79668291012755d981986b35942faa12":[3,0,0,129,6,4],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a84cad9d66ad27523679ae8c2b6b5d37e":[3,0,0,129,6,0],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a9a1d9e2356ae17aa8cd2d85b437207b0":[3,0,0,129,6,7],
 "structamrex_1_1FabArrayBase_1_1FabArrayStats.html#aa60994fa1062be2345b9e12a9eaa63c3":[3,0,0,129,6,5],
@@ -124,12 +126,12 @@ var NAVTREEINDEX77 =
 "structamrex_1_1FatPtr.html#add0c4c063317604e14f8e37a5111afcd":[3,0,0,161,1],
 "structamrex_1_1FilccCell.html":[3,0,0,147],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,147,2],
-"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,147,1],
 "structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,147,0],
+"structamrex_1_1FilccCell.html#a61e51420f94e3f8dcd17cf8fc6ad5543":[3,0,0,147,1],
 "structamrex_1_1FilfcFace.html":[3,0,0,148],
+"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,148,0],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,148,2],
 "structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,148,1],
-"structamrex_1_1FilfcFace.html#ad645b5fbef61bf27e55c948d95ee2634":[3,0,0,148,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html":[3,0,0,149,0],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a12a2ef93337b59b9371db5f9bc43be69":[3,0,0,149,0,3],
 "structamrex_1_1ForkJoin_1_1ComponentSet.html#a5fc429dc522fa17e291bbdd8d8e42f89":[3,0,0,149,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX77 =
 "structamrex_1_1Gpu_1_1Deleter.html":[3,0,0,5,23],
 "structamrex_1_1Gpu_1_1Deleter.html#a14473dbba9ee1812b7e99149ab261b7e":[3,0,0,5,23,0],
 "structamrex_1_1Gpu_1_1Deleter.html#ac4f3ac6493013249d257776e80cd2c18":[3,0,0,5,23,1],
-"structamrex_1_1Gpu_1_1Deleter.html#ae9df9a5aa76b646a0d8fb039033289f0":[3,0,0,5,23,2],
-"structamrex_1_1Gpu_1_1DeviceScalar.html":[3,0,0,5,24],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#a041e21c03012c74793a6baf0d916e587":[3,0,0,5,24,2]
+"structamrex_1_1Gpu_1_1Deleter.html#ae9df9a5aa76b646a0d8fb039033289f0":[3,0,0,5,23,2]
 };
