@@ -4,9 +4,9 @@ var classamrex_1_1TinyProfiler =
     [ "ProcStats", "structamrex_1_1TinyProfiler_1_1ProcStats.html", "structamrex_1_1TinyProfiler_1_1ProcStats" ],
     [ "Stats", "structamrex_1_1TinyProfiler_1_1Stats.html", "structamrex_1_1TinyProfiler_1_1Stats" ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a8e1cc274bc1e92cc8466ea9b44911c33", null ],
-    [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a819886aa4cc0f3a883d6ab4c565609a1", null ],
+    [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a238dc16dd99da96e07b526f5cd90f4fa", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a0969b8312bde020f9c99c051dc51eeb5", null ],
-    [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a83e63db1d35e00d968d6db1c0691f190", null ],
+    [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a5689250282f22646ec14959dc491f748", null ],
     [ "~TinyProfiler", "classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#a63cae02a5e649724bfc02c528e84ca18", null ],
     [ "TinyProfiler", "classamrex_1_1TinyProfiler.html#aee36686bda9cf58b62055dca5818af46", null ],
@@ -42,6 +42,5 @@ var classamrex_1_1TinyProfiler =
     [ "statsmap", "classamrex_1_1TinyProfiler.html#ac803023249064c812474a5aa120ef397", null ],
     [ "t_init", "classamrex_1_1TinyProfiler.html#abcb523d4f35aced1936bf2f559577201", null ],
     [ "ttstack", "classamrex_1_1TinyProfiler.html#a55b136d8859480b76a1311cff89009a0", null ],
-    [ "uCUPTI", "classamrex_1_1TinyProfiler.html#a2d71911d753130ad6223f9c82ec5c1fe", null ],
     [ "verbose", "classamrex_1_1TinyProfiler.html#a42fc975e27a744624c255b0fad3f8cd7", null ]
 ];

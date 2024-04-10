@@ -11,6 +11,5 @@ var structamrex_1_1TinyProfiler_1_1ProcStats =
     [ "fname", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a38621bfbdcc37e8e877df3a96bf3c5e3", null ],
     [ "navg", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a072e3cbbf26527a9f54155ce1140e45c", null ],
     [ "nmax", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a601e3d46b6b378292f6861605af53b55", null ],
-    [ "nmin", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a4712cf4e60cf2801bc15d5a4555cd80b", null ],
-    [ "usesCUPTI", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a5ae2fb0d7dc957422344b2f12f35e43c", null ]
+    [ "nmin", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a4712cf4e60cf2801bc15d5a4555cd80b", null ]
 ];
