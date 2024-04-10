@@ -99,5 +99,6 @@ var namespaceamrex_1_1detail =
     [ "TApply", "namespaceamrex_1_1detail.html#ad5568d6d500edc6ee5938dca76c1caa8", null ],
     [ "tuple_copy", "namespaceamrex_1_1detail.html#a813577e3d9b0ad5b7795dd9351160f9a", null ],
     [ "tuple_copy", "namespaceamrex_1_1detail.html#a796da28b12c3448559ad1af823e855af", null ],
+    [ "tuple_to_array_helper", "namespaceamrex_1_1detail.html#ab2c6743d76d5a23ac34993bdb64765a1", null ],
     [ "uninitializedFillNImpl", "namespaceamrex_1_1detail.html#a1ec1f5b314ec018aecc0e091949ff60e", null ]
 ];

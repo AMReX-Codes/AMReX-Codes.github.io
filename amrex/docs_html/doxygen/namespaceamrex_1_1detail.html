@@ -333,6 +333,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplParams" colspan="2">template&lt;typename F , typename TP , std::size_t... N&gt; </td></tr>
 <tr class="memitem:ac60a1b88f1421c5113c694d9460de676"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac60a1b88f1421c5113c694d9460de676">apply_impl</a> (F &amp;&amp;f, TP &amp;&amp;t, std::index_sequence&lt; N... &gt;) -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt; F, <a class="el" href="namespaceamrex_1_1detail.html#aca8ebce069c1d3ef5f89482a9e96bb6d">detail::tuple_decay_t</a>&lt; TP &gt; &gt;::type</td></tr>
 <tr class="separator:ac60a1b88f1421c5113c694d9460de676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c6743d76d5a23ac34993bdb64765a1"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t... I&gt; </td></tr>
+<tr class="memitem:ab2c6743d76d5a23ac34993bdb64765a1"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ab2c6743d76d5a23ac34993bdb64765a1">tuple_to_array_helper</a> (T const &amp;tup, std::index_sequence&lt; I... &gt;)</td></tr>
+<tr class="separator:ab2c6743d76d5a23ac34993bdb64765a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af378b35270a3e9fbab911a6fe0058eb5"><td class="memTemplParams" colspan="2">template&lt;typename TL , typename F , std::size_t... N&gt; </td></tr>
 <tr class="memitem:af378b35270a3e9fbab911a6fe0058eb5"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af378b35270a3e9fbab911a6fe0058eb5">for_each_impl</a> (F const &amp;f, std::index_sequence&lt; N... &gt;)</td></tr>
 <tr class="separator:af378b35270a3e9fbab911a6fe0058eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3274,6 +3277,44 @@ template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </div
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2c6743d76d5a23ac34993bdb64765a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c6743d76d5a23ac34993bdb64765a1">&#9670;&nbsp;</a></span>tuple_to_array_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t... I&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto amrex::detail::tuple_to_array_helper </td>
+          <td>(</td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>tup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::index_sequence&lt; I... &gt;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

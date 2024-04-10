@@ -1,5 +1,8 @@
 var NAVTREEINDEX59 =
 {
+"functions_vars_o.html":[3,3,2,15],
+"functions_vars_p.html":[3,3,2,16],
+"functions_vars_q.html":[3,3,2,17],
 "functions_vars_r.html":[3,3,2,18],
 "functions_vars_s.html":[3,3,2,19],
 "functions_vars_t.html":[3,3,2,20],
@@ -19,8 +22,8 @@ var NAVTREEINDEX59 =
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
-"globals_defs.html":[4,1,6],
 "globals_defs.html":[4,1,6,0],
+"globals_defs.html":[4,1,6],
 "globals_defs_b.html":[4,1,6,1],
 "globals_defs_c.html":[4,1,6,2],
 "globals_defs_d.html":[4,1,6,3],
@@ -86,8 +89,8 @@ var NAVTREEINDEX59 =
 "globals_z.html":[4,1,0,24],
 "group__HYPRE.html":[1,0],
 "hierarchy.html":[3,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Overview":[0,0,0],
 "index.html#amrex_explained":[0,0,4],
 "index.html#contribute":[0,0,2],
@@ -244,10 +247,7 @@ var NAVTREEINDEX59 =
 "interfacesdcquadrature__mod_1_1poly__eval.html#ab38d996c6f957cb170aa2ca9fa135a74":[3,0,11,0,0],
 "modules.html":[1],
 "namespaceamrex.html":[2,0,0],
-"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2169],
+"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2171],
 "namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8":[2,0,0,611],
-"namespaceamrex.html#a006c22eb1e141a0784faa415c00a49c4":[2,0,0,1273],
-"namespaceamrex.html#a0075507273391e5967b9d869daed98bc":[2,0,0,634],
-"namespaceamrex.html#a0075507273391e5967b9d869daed98bca27a45d5e1783028fbc362d8e4f35d752":[2,0,0,634,3],
-"namespaceamrex.html#a0075507273391e5967b9d869daed98bca2d8f7fc88d138e332180438e1171ee57":[2,0,0,634,8]
+"namespaceamrex.html#a006c22eb1e141a0784faa415c00a49c4":[2,0,0,1273]
 };

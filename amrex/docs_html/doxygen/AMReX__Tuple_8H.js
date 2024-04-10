@@ -34,7 +34,10 @@ var AMReX__Tuple_8H =
     [ "Tie", "AMReX__Tuple_8H.html#a38e3e5431e2c612ce6e6b4aac3ededf2", null ],
     [ "tuple_copy", "AMReX__Tuple_8H.html#a813577e3d9b0ad5b7795dd9351160f9a", null ],
     [ "tuple_copy", "AMReX__Tuple_8H.html#a796da28b12c3448559ad1af823e855af", null ],
+    [ "tuple_to_array_helper", "AMReX__Tuple_8H.html#ab2c6743d76d5a23ac34993bdb64765a1", null ],
     [ "TupleCat", "AMReX__Tuple_8H.html#afdc7b3879a8b9ccc7982c0781deb74ea", null ],
     [ "TupleCat", "AMReX__Tuple_8H.html#af2cf176de6238efb234749dec71b4a0f", null ],
-    [ "TupleCat", "AMReX__Tuple_8H.html#a241b30447206d0b8029fac3bd5c9d1c6", null ]
+    [ "TupleCat", "AMReX__Tuple_8H.html#a241b30447206d0b8029fac3bd5c9d1c6", null ],
+    [ "tupleToArray", "AMReX__Tuple_8H.html#a04644ea7c1c675a7ea4d19c4435e4907", null ],
+    [ "tupleToArray", "AMReX__Tuple_8H.html#a4a123217da9caf30ef3cf63f4125fd11", null ]
 ];

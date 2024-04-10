@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('AMReX__Tuple_8H.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Array_8H_source.html">AMReX_Array.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Functional_8H_source.html">AMReX_Functional.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuQualifiers_8H_source.html">AMReX_GpuQualifiers.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__TypeList_8H_source.html">AMReX_TypeList.H</a>&gt;</code><br />
@@ -226,6 +227,16 @@ Functions</h2></td></tr>
 <tr class="memitem:aca24c318d20f5354a5f74cf0eb32cce8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> GpuTuple&lt; Ts... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aca24c318d20f5354a5f74cf0eb32cce8">amrex::MakeZeroTuple</a> (GpuTuple&lt; Ts... &gt;) noexcept</td></tr>
 <tr class="memdesc:aca24c318d20f5354a5f74cf0eb32cce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a> containing all zeros. Note that a default-constructed <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a> can have uninitialized values.  <a href="namespaceamrex.html#aca24c318d20f5354a5f74cf0eb32cce8">More...</a><br /></td></tr>
 <tr class="separator:aca24c318d20f5354a5f74cf0eb32cce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c6743d76d5a23ac34993bdb64765a1"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t... I&gt; </td></tr>
+<tr class="memitem:ab2c6743d76d5a23ac34993bdb64765a1"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ab2c6743d76d5a23ac34993bdb64765a1">amrex::detail::tuple_to_array_helper</a> (T const &amp;tup, std::index_sequence&lt; I... &gt;)</td></tr>
+<tr class="separator:ab2c6743d76d5a23ac34993bdb64765a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04644ea7c1c675a7ea4d19c4435e4907"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a04644ea7c1c675a7ea4d19c4435e4907"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a04644ea7c1c675a7ea4d19c4435e4907">amrex::tupleToArray</a> (GpuTuple&lt; T &gt; const &amp;tup)</td></tr>
+<tr class="separator:a04644ea7c1c675a7ea4d19c4435e4907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a123217da9caf30ef3cf63f4125fd11"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Ts, std::enable_if_t&lt; Same&lt; T, Ts... &gt;::value, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a4a123217da9caf30ef3cf63f4125fd11"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4a123217da9caf30ef3cf63f4125fd11">amrex::tupleToArray</a> (GpuTuple&lt; T, Ts... &gt; const &amp;tup)</td></tr>
+<tr class="memdesc:a4a123217da9caf30ef3cf63f4125fd11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert GpuTuple&lt;T,Ts...&gt; to <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>.  <a href="namespaceamrex.html#a4a123217da9caf30ef3cf63f4125fd11">More...</a><br /></td></tr>
+<tr class="separator:a4a123217da9caf30ef3cf63f4125fd11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
