@@ -202,9 +202,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a62669a27ec4a577f0bef72dc2a1243aa"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a62669a27ec4a577f0bef72dc2a1243aa">sum</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp=0, bool local=false) const</td></tr>
 <tr class="memdesc:a62669a27ec4a577f0bef72dc2a1243aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of component "comp" over the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> &ndash; no ghost cells are included.  <a href="classamrex_1_1MultiFab.html#a62669a27ec4a577f0bef72dc2a1243aa">More...</a><br /></td></tr>
 <tr class="separator:a62669a27ec4a577f0bef72dc2a1243aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a623e2f01e2a7695e835d258d1a8067b7"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a623e2f01e2a7695e835d258d1a8067b7">sum</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;region, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp=0, bool local=false) const</td></tr>
+<tr class="memdesc:a623e2f01e2a7695e835d258d1a8067b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of component "comp" in the given "region". &ndash; no ghost cells are included.  <a href="classamrex_1_1MultiFab.html#a623e2f01e2a7695e835d258d1a8067b7">More...</a><br /></td></tr>
+<tr class="separator:a623e2f01e2a7695e835d258d1a8067b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#afe7c47dff8cf8e0fb550d0e78c7b5375">sum_unique</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp=0, bool local=false, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period=<a class="el" href="classamrex_1_1Periodicity.html#a194e779bf59d1700830a35cecb5271a5">Periodicity::NonPeriodic</a>()) const</td></tr>
-<tr class="memdesc:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as sum with <code>local</code> =false, but for non-cell-centered data, this skips non-unique points that are owned by multiple boxes.  <a href="classamrex_1_1MultiFab.html#afe7c47dff8cf8e0fb550d0e78c7b5375">More...</a><br /></td></tr>
+<tr class="memdesc:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structamrex_1_1Same.html">Same</a> as sum with <code>local</code> =false, but for non-cell-centered data, this only adds non-unique points that are owned by multiple boxes once.  <a href="classamrex_1_1MultiFab.html#afe7c47dff8cf8e0fb550d0e78c7b5375">More...</a><br /></td></tr>
 <tr class="separator:afe7c47dff8cf8e0fb550d0e78c7b5375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6f3136fca76d4f0f827c45420ca7ab"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a7c6f3136fca76d4f0f827c45420ca7ab">sum_unique</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;region, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp=0, bool local=false) const</td></tr>
+<tr class="memdesc:a7c6f3136fca76d4f0f827c45420ca7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique sum of component "comp" in the given region. Non-unique points owned by multiple boxes in the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> are only added once. No ghost cells are included. This function does not take periodicity into account in the determination of uniqueness of points.  <a href="classamrex_1_1MultiFab.html#a7c6f3136fca76d4f0f827c45420ca7ab">More...</a><br /></td></tr>
+<tr class="separator:a7c6f3136fca76d4f0f827c45420ca7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafbc29a68d3c0c000fee414f76f7b79c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#aafbc29a68d3c0c000fee414f76f7b79c">plus</a> (Real val, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> num_comp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nghost=0)</td></tr>
 <tr class="memdesc:aafbc29a68d3c0c000fee414f76f7b79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the scalar value <code>val</code> to the value of each cell in the specified subregion of the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a>.  <a href="classamrex_1_1MultiFab.html#aafbc29a68d3c0c000fee414f76f7b79c">More...</a><br /></td></tr>
 <tr class="separator:aafbc29a68d3c0c000fee414f76f7b79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4553,8 +4559,44 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a623e2f01e2a7695e835d258d1a8067b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a623e2f01e2a7695e835d258d1a8067b7">&#9670;&nbsp;</a></span>sum() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real amrex::MultiFab::sum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>comp</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the sum of component "comp" in the given "region". &ndash; no ghost cells are included. </p>
+
+</div>
+</div>
 <a id="a62669a27ec4a577f0bef72dc2a1243aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62669a27ec4a577f0bef72dc2a1243aa">&#9670;&nbsp;</a></span>sum()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a62669a27ec4a577f0bef72dc2a1243aa">&#9670;&nbsp;</a></span>sum() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4583,8 +4625,44 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a7c6f3136fca76d4f0f827c45420ca7ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6f3136fca76d4f0f827c45420ca7ab">&#9670;&nbsp;</a></span>sum_unique() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real amrex::MultiFab::sum_unique </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>comp</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the unique sum of component "comp" in the given region. Non-unique points owned by multiple boxes in the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> are only added once. No ghost cells are included. This function does not take periodicity into account in the determination of uniqueness of points. </p>
+
+</div>
+</div>
 <a id="afe7c47dff8cf8e0fb550d0e78c7b5375"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe7c47dff8cf8e0fb550d0e78c7b5375">&#9670;&nbsp;</a></span>sum_unique()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7c47dff8cf8e0fb550d0e78c7b5375">&#9670;&nbsp;</a></span>sum_unique() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4615,7 +4693,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structamrex_1_1Same.html">Same</a> as sum with <code>local</code> =false, but for non-cell-centered data, this skips non-unique points that are owned by multiple boxes. </p>
+<p><a class="el" href="structamrex_1_1Same.html">Same</a> as sum with <code>local</code> =false, but for non-cell-centered data, this only adds non-unique points that are owned by multiple boxes once. </p>
 
 </div>
 </div>

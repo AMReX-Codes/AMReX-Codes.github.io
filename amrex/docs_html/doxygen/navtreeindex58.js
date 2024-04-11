@@ -1,5 +1,7 @@
 var NAVTREEINDEX58 =
 {
+"classhacc_1_1Dfft.html#ae07650ba6c341261fcff1963c992145f":[3,0,10,1,37],
+"classhacc_1_1Dfft.html#ae48de8e54139379a38236176c624ecc3":[3,0,10,1,27],
 "classhacc_1_1Dfft.html#ae54bac8976186442b13938414aa4825b":[3,0,10,1,29],
 "classhacc_1_1Dfft.html#aea6a617a07fcd8f6806f4436fdbb0d73":[3,0,10,1,17],
 "classhacc_1_1Dfft.html#aeb8a724d27d545ef62b8a17cf721ff8d":[3,0,10,1,41],
@@ -247,7 +249,5 @@ var NAVTREEINDEX58 =
 "functions_vars_j.html":[3,3,2,10],
 "functions_vars_k.html":[3,3,2,11],
 "functions_vars_l.html":[3,3,2,12],
-"functions_vars_m.html":[3,3,2,13],
-"functions_vars_n.html":[3,3,2,14],
-"functions_vars_o.html":[3,3,2,15]
+"functions_vars_m.html":[3,3,2,13]
 };

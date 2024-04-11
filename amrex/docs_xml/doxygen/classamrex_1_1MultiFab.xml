@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="691" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="691" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="702" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="702" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classamrex_1_1MultiFab_1a26137d0a3c8a4a024bf811fbaac6208d" prot="private" static="no">
         <type><ref refid="classamrex_1_1FabArrayBase_1aa36883196eb7b1d039fd1941966a4310" kindref="member">FabArrayBase::MapOfCopyComTagContainers</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="692" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="692" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="703" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="703" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -918,6 +918,34 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="240" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1207" bodyend="1210"/>
       </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MultiFab_1a623e2f01e2a7695e835d258d1a8067b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::sum</definition>
+        <argsstring>(Box const &amp;region, int comp=0, bool local=false) const</argsstring>
+        <name>sum</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the sum of component &quot;comp&quot; in the given &quot;region&quot;. <ndash/> no ghost cells are included. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="244" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1213" bodyend="1252"/>
+      </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1afe7c47dff8cf8e0fb550d0e78c7b5375" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
         <definition>Real amrex::MultiFab::sum_unique</definition>
@@ -939,13 +967,41 @@
           <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
         </param>
         <briefdescription>
-<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as sum with <computeroutput>local</computeroutput> =false, but for non-cell-centered data, this skips non-unique points that are owned by multiple boxes. </para>
+<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as sum with <computeroutput>local</computeroutput> =false, but for non-cell-centered data, this only adds non-unique points that are owned by multiple boxes once. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="248" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1213" bodyend="1263"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="252" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1255" bodyend="1305"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MultiFab_1a7c6f3136fca76d4f0f827c45420ca7ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::MultiFab::sum_unique</definition>
+        <argsstring>(Box const &amp;region, int comp=0, bool local=false) const</argsstring>
+        <name>sum_unique</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>comp</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Returns the unique sum of component &quot;comp&quot; in the given region. Non-unique points owned by multiple boxes in the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> are only added once. No ghost cells are included. This function does not take periodicity into account in the determination of uniqueness of points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="261" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1308" bodyend="1359"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aafbc29a68d3c0c000fee414f76f7b79c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -977,7 +1033,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="260" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1278" bodyend="1286"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="271" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1374" bodyend="1382"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a9d8ec2a7197f373ce88a43a2adaf1da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1012,7 +1068,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="269" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1289" bodyend="1296"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="280" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1385" bodyend="1392"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a0b410a02ca211c74033d77fac9b8a40b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1034,7 +1090,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="280" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="427" bodyend="430"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="291" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="427" bodyend="430"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a38506771a271ef8a5d4b6c3065815566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1060,7 +1116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="289" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="433" bodyend="436"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="300" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="433" bodyend="436"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aa9158374809b83cfd40a8092d4e63bdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1091,7 +1147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="300" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1305" bodyend="1312"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="311" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1401" bodyend="1408"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a75e0a3256784cedf410454d5bd9674e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1126,7 +1182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="311" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1315" bodyend="1322"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="322" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1411" bodyend="1418"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a3f3d92f9f07cf43431b03744b50edbdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1149,7 +1205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="322" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="439" bodyend="442"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="333" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="439" bodyend="442"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aa872fb55fa5e6dc2008584d6d6e927b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1176,7 +1232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="331" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="445" bodyend="448"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="342" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="445" bodyend="448"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a1151850ade9c29c2c657b173ad4a29c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1207,7 +1263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="342" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1325" bodyend="1332"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="353" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1421" bodyend="1428"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a773e797a62924f1a23e4774c11b97f6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1242,7 +1298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="353" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1335" bodyend="1342"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="364" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1431" bodyend="1438"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ad7883de5b1bd515c4714e434e2a98547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1264,7 +1320,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="364" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="451" bodyend="454"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="375" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="451" bodyend="454"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1abc88cd9b7b451baaea2d53b97d20368a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1290,7 +1346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="373" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="457" bodyend="460"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="384" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="457" bodyend="460"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1acaf881689685c3fa82ed65829f6be4c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1317,7 +1373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="383" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1345" bodyend="1351"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="394" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1441" bodyend="1447"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ad7cd1360a57300fc2e5eb5afdf6ff1dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1348,7 +1404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="391" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1354" bodyend="1360"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="402" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1450" bodyend="1456"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a9939b447c0dc1a130c6952d2b376f8ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1367,7 +1423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="400" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="463" bodyend="466"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="411" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="463" bodyend="466"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ae4ff818a86f791cca374edbe34bb6830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1390,7 +1446,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="407" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="469" bodyend="472"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="418" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="469" bodyend="472"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ab351d9250414508cf086635f54e2e2ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
@@ -1412,7 +1468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="410" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1007" bodyend="1012"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="421" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1007" bodyend="1012"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a642f844c834d6fb714e3e0fc6eb75e56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
@@ -1434,7 +1490,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="413" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1015" bodyend="1020"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="424" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1015" bodyend="1020"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a6679e5d7843de95ca2245f599715b4f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1464,7 +1520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="424" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1299" bodyend="1302"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="435" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1395" bodyend="1398"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a1bc09d7836dcd4500472fa853a8fcd22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1494,7 +1550,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="437" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1266" bodyend="1269"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="448" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1362" bodyend="1365"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aca202d20f39f94aabb5ffd1581a535f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1524,7 +1580,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="451" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1272" bodyend="1275"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="462" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1368" bodyend="1371"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ad5b7a343ec15251dc975d0b6f0570e33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
@@ -1539,7 +1595,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="495" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="171" bodyend="190"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="506" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="171" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a4b718093de8d413ed21f372b9f65761f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1559,7 +1615,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="656" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="658" bodyend="661"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="667" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="658" bodyend="661"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a77d980f51c794347641c653d5f88aefd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1590,7 +1646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="657" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="609" bodyend="612"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="668" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="609" bodyend="612"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aed2689ad22160cb7a93e6b26aabd2972" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1620,7 +1676,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="658" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="615" bodyend="655"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="669" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="615" bodyend="655"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a95abf28111fc5c1a4bfe5f24bf7a6d05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1639,7 +1695,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="665" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="713" bodyend="716"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="676" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="713" bodyend="716"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a47a5806c8cffcf0f40ba72a7af2e8ac7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1670,7 +1726,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="666" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="707" bodyend="710"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="677" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="707" bodyend="710"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a08e85daea7a8ba20067cd15af3725cd6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1700,7 +1756,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="667" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="664" bodyend="704"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="678" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="664" bodyend="704"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1afbd6dab928640c74eb1d7a28e8f36afa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
@@ -1719,7 +1775,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="672" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1363" bodyend="1426"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="683" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1459" bodyend="1522"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a3c8c9bf8723fcfac9b8d410485e7ed4a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::unique_ptr&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt;</type>
@@ -1738,7 +1794,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="674" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1429" bodyend="1432"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="685" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1525" bodyend="1528"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a7e5a1ca37cf868e20311541187b08216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1757,7 +1813,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="677" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1435" bodyend="1443"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="688" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1531" bodyend="1539"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ad80a338735a5addaa47a0726cb24c8c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1780,7 +1836,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="679" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1446" bodyend="1463"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="690" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1542" bodyend="1559"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1afc2840698e1cec5a44ebeb9d34783327" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1803,7 +1859,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="681" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1466" bodyend="1469"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="692" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1562" bodyend="1565"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1848,7 +1904,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="458" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="37" bodyend="42"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="469" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="37" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a87437456f64f8610e6d34d17929fdb4f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -1883,7 +1939,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="465" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="45" bodyend="87"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="476" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="45" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a115acdf454f3e0732ee54de9d5ff2057" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -1929,7 +1985,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="468" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="91" bodyend="148"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="479" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="91" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1967,7 +2023,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="476" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="151" bodyend="155"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="487" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="151" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1adda7ad2b1b845b959488fd19acdd335b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2004,7 +2060,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="483" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="158" bodyend="168"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="494" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="158" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2042,7 +2098,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="502" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="193" bodyend="197"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="513" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="193" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1af5fd05a65f284f6e96a1deba5ef423bb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2079,7 +2135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="509" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="200" bodyend="210"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="520" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="200" bodyend="210"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a2e29e28afce0aa520da5cd068cb5e96b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2117,7 +2173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="521" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="213" bodyend="217"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="532" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="213" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ac259813cd54d52b5c20cad7c0f24c246" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2154,7 +2210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="528" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="220" bodyend="281"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="539" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="220" bodyend="281"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a5f37af40303a10e8d54e15c1931a5b8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2192,7 +2248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="539" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="285" bodyend="289"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="550" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="285" bodyend="289"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a4f2c04ea9d0f7a551bc2263b9a63d324" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2229,7 +2285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="546" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="292" bodyend="302"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="557" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="292" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a62db3405e4e92a2a5bd5d3d9d19698ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2267,7 +2323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="556" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="305" bodyend="309"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="567" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="305" bodyend="309"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a1782d5eefcdae9512c4d9ece50a2253b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2304,7 +2360,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="563" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="312" bodyend="322"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="574" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="312" bodyend="322"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aa87b51ae98f171c3624b5f6cbdfffac0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2342,7 +2398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="573" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="325" bodyend="329"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="584" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="325" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ac5e5a2510a046eb1e6567c06c71a55ad" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2379,7 +2435,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="580" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="332" bodyend="342"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="591" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="332" bodyend="342"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a505eb471a78f4e0f8791b10cbb1bbd75" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2421,7 +2477,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="589" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="345" bodyend="349"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="600" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="345" bodyend="349"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1aa06c264011c21bb5a97070ae7cf250d3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2463,7 +2519,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="602" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="352" bodyend="356"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="613" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="352" bodyend="356"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a0486c02587ea11cc9a30e9da8d7cf957" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2517,7 +2573,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="615" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="359" bodyend="365"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="626" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="359" bodyend="365"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a71038d97e0e66d46a0a45388b7614ce1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2563,7 +2619,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="631" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="368" bodyend="374"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="642" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="368" bodyend="374"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ad85e43bc90758c5976c72acd8cfdb033" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2608,7 +2664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="640" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="377" bodyend="424"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="651" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="377" bodyend="424"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1a7d869f54f3d6f4e3ede7eb0103954a9e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2621,7 +2677,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="685" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="475" bodyend="488"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="696" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="475" bodyend="488"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MultiFab_1ae7a5398061b1bffdd1679a3a78f8b741" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2634,7 +2690,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="686" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="491" bodyend="494"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="697" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="491" bodyend="494"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -2649,7 +2705,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="694" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="596" bodyend="606"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="705" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="596" bodyend="606"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -3170,7 +3226,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="38" bodyend="695"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFab.H" bodystart="38" bodyend="706"/>
     <listofallmembers>
       <member refid="classamrex_1_1FabArray_1a0966955f0937e0119cb942c5968ddb15" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>abs</name></member>
       <member refid="classamrex_1_1FabArray_1a3c57732914fe734955ae11ab8561f3b4" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>abs</name></member>
@@ -3552,8 +3608,10 @@
       <member refid="classamrex_1_1MultiFab_1a5f37af40303a10e8d54e15c1931a5b8e" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>Subtract</name></member>
       <member refid="classamrex_1_1MultiFab_1a4f2c04ea9d0f7a551bc2263b9a63d324" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>Subtract</name></member>
       <member refid="classamrex_1_1MultiFab_1a62669a27ec4a577f0bef72dc2a1243aa" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>sum</name></member>
+      <member refid="classamrex_1_1MultiFab_1a623e2f01e2a7695e835d258d1a8067b7" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>sum</name></member>
       <member refid="classamrex_1_1FabArray_1a025b813208a188552aba514a69a3b480" prot="public" virt="non-virtual" ambiguityscope="FabArray&lt; FArrayBox &gt;::"><scope>amrex::MultiFab</scope><name>sum</name></member>
       <member refid="classamrex_1_1MultiFab_1afe7c47dff8cf8e0fb550d0e78c7b5375" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>sum_unique</name></member>
+      <member refid="classamrex_1_1MultiFab_1a7c6f3136fca76d4f0f827c45420ca7ab" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>sum_unique</name></member>
       <member refid="classamrex_1_1FabArray_1a3df70423b7ec841f351f1e2b1b9cd8d4" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>SumBoundary</name></member>
       <member refid="classamrex_1_1FabArray_1a8e4f13e3c2e640f401ef8a191feafe91" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>SumBoundary</name></member>
       <member refid="classamrex_1_1FabArray_1a836ec3561b05f2151a8b299a4bacbec7" prot="public" virt="non-virtual"><scope>amrex::MultiFab</scope><name>SumBoundary</name></member>
