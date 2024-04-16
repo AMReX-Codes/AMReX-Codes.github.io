@@ -2,6 +2,7 @@ var structamrex_1_1TinyProfiler_1_1ProcStats =
 [
     [ "compex", "structamrex_1_1TinyProfiler_1_1ProcStats.html#ae641e60af08fa4f6e33d79a5f03db53a", null ],
     [ "compin", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a3e930047fc2ea18c08f936b6020c28ef", null ],
+    [ "do_print", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a94c0f899273eecb5387f06f7ea455a5b", null ],
     [ "dtexavg", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a23387ec0b0dd45815da72c13541e68de", null ],
     [ "dtexmax", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a65dee4854dfd2baf26af6b16812090e3", null ],
     [ "dtexmin", "structamrex_1_1TinyProfiler_1_1ProcStats.html#a01cbf389132c01e2971cb1723fa846cd", null ],

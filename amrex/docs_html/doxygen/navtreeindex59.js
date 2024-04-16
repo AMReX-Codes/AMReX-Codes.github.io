@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"functions_vars_m.html":[3,3,2,13],
 "functions_vars_n.html":[3,3,2,14],
 "functions_vars_o.html":[3,3,2,15],
 "functions_vars_p.html":[3,3,2,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "interfacesdcquadrature__mod_1_1poly__eval.html#ab38d996c6f957cb170aa2ca9fa135a74":[3,0,11,0,0],
 "modules.html":[1],
 "namespaceamrex.html":[2,0,0],
-"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2171],
-"namespaceamrex.html#a00604a127d1bcc6545bea88e8aa906c8":[2,0,0,611]
+"namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33":[2,0,0,2171]
 };

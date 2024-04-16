@@ -37,6 +37,7 @@ var classamrex_1_1TinyProfiler =
     [ "in_parallel_region", "classamrex_1_1TinyProfiler.html#a9949d2a62ee0e670c89942b622ef9ebb", null ],
     [ "mem_stack", "classamrex_1_1TinyProfiler.html#a175f44d41236b9cd4b6268fc0488ac5e", null ],
     [ "n_print_tabs", "classamrex_1_1TinyProfiler.html#af5020b8e813ceea3418f07d2529ae2cd", null ],
+    [ "print_threshold", "classamrex_1_1TinyProfiler.html#a4de3ee9387602dc09ef0f134c9826c13", null ],
     [ "regionstack", "classamrex_1_1TinyProfiler.html#a03febcd85f7ea80790cac0181b9c2b1b", null ],
     [ "stats", "classamrex_1_1TinyProfiler.html#a5205c680d2a8d3fd69195aab83ce3b7a", null ],
     [ "statsmap", "classamrex_1_1TinyProfiler.html#ac803023249064c812474a5aa120ef397", null ],
