@@ -165,33 +165,34 @@ $(document).ready(function(){initNavTree('AMReX__EB2__C_8H_source.html',''); ini
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                  Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; fcx, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; fcy,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                  Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; fcz, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; m2x,</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                  Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; m2y, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; m2z,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; vfrac, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; vcent,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; barea, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; bcent,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; bnorm, Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; ctmp,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; levset, Real small_volfrac, Geometry <span class="keyword">const</span>&amp; geom,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                  <span class="keywordtype">bool</span> <a class="code" href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">extend_domain_face</a>, <span class="keywordtype">bool</span> cover_multiple_cuts,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  <span class="keywordtype">int</span>&amp; nsmallcells, <span class="keywordtype">int</span>&amp; nmulticuts) noexcept;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1EB2.html#a82d4783a176cefd7ff69a7d61215a8c9">set_connection_flags</a>(Box <span class="keyword">const</span>&amp; bx, Box <span class="keyword">const</span>&amp; bxg1,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                          Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; cell, Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; ctmp,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                          Array4&lt;Type_t&gt; <span class="keyword">const</span>&amp; fx, Array4&lt;Type_t&gt; <span class="keyword">const</span>&amp; fy,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                          Array4&lt;Type_t&gt; <span class="keyword">const</span>&amp; fz) noexcept;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1EB2.html#ae800250c2c38174f8c7e09534afa8f72">intercept_to_edge_centroid</a> (<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(Array4&lt;Real&gt; <span class="keyword">const</span>&amp; excent,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                              Array4&lt;Real&gt; <span class="keyword">const</span>&amp; eycent,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                              Array4&lt;Real&gt; <span class="keyword">const</span>&amp; ezcent),</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                 <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(Array4&lt;Type_t const&gt; <span class="keyword">const</span>&amp; fx,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                              Array4&lt;Type_t const&gt; <span class="keyword">const</span>&amp; fy,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                              Array4&lt;Type_t const&gt; <span class="keyword">const</span>&amp; fz),</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                 Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; levset,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                 GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; dx,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                 GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; problo) noexcept;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; dx,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; vfrac, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; vcent,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; barea, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; bcent,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; bnorm, Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; ctmp,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                  Array4&lt;Real&gt; <span class="keyword">const</span>&amp; levset, Real small_volfrac, Geometry <span class="keyword">const</span>&amp; geom,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  <span class="keywordtype">bool</span> <a class="code" href="namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7">extend_domain_face</a>, <span class="keywordtype">bool</span> cover_multiple_cuts,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                  <span class="keywordtype">int</span>&amp; nsmallcells, <span class="keywordtype">int</span>&amp; nmulticuts) noexcept;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1EB2.html#a82d4783a176cefd7ff69a7d61215a8c9">set_connection_flags</a>(Box <span class="keyword">const</span>&amp; bx, Box <span class="keyword">const</span>&amp; bxg1,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                          Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; cell, Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; ctmp,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                          Array4&lt;Type_t&gt; <span class="keyword">const</span>&amp; fx, Array4&lt;Type_t&gt; <span class="keyword">const</span>&amp; fy,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                          Array4&lt;Type_t&gt; <span class="keyword">const</span>&amp; fz) noexcept;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex_1_1EB2.html#ae800250c2c38174f8c7e09534afa8f72">intercept_to_edge_centroid</a> (<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(Array4&lt;Real&gt; <span class="keyword">const</span>&amp; excent,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                              Array4&lt;Real&gt; <span class="keyword">const</span>&amp; eycent,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                              Array4&lt;Real&gt; <span class="keyword">const</span>&amp; ezcent),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                 <a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(Array4&lt;Type_t const&gt; <span class="keyword">const</span>&amp; fx,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                              Array4&lt;Type_t const&gt; <span class="keyword">const</span>&amp; fy,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                              Array4&lt;Type_t const&gt; <span class="keyword">const</span>&amp; fz),</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                 Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; levset,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                 GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; dx,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                 GpuArray&lt;Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; problo) noexcept;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__EB2__2D__C_8H_html"><div class="ttname"><a href="AMReX__EB2__2D__C_8H.html">AMReX_EB2_2D_C.H</a></div></div>
 <div class="ttc" id="aAMReX__EB2__3D__C_8H_html"><div class="ttname"><a href="AMReX__EB2__3D__C_8H.html">AMReX_EB2_3D_C.H</a></div></div>
 <div class="ttc" id="aAMReX__EB2__Graph_8H_html"><div class="ttname"><a href="AMReX__EB2__Graph_8H.html">AMReX_EB2_Graph.H</a></div></div>

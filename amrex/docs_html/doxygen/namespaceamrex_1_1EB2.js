@@ -87,7 +87,7 @@ var namespaceamrex_1_1EB2 =
     [ "build_cellflag_from_ap", "namespaceamrex_1_1EB2.html#a97bb46ef943ca61f6c69345a636c8f91", null ],
     [ "build_cellflag_from_ap", "namespaceamrex_1_1EB2.html#ad4baf361d00889173d59e758d4db781a", null ],
     [ "build_cells", "namespaceamrex_1_1EB2.html#ab93166de851db0edebb5ae2569b88cc1", null ],
-    [ "build_cells", "namespaceamrex_1_1EB2.html#a59797158a927c845d25e376431b795ee", null ],
+    [ "build_cells", "namespaceamrex_1_1EB2.html#a679c49e19ddd76e1b5193718e37bf6c1", null ],
     [ "build_faces", "namespaceamrex_1_1EB2.html#a8791492ceba31d5d14372a20721e3695", null ],
     [ "build_faces", "namespaceamrex_1_1EB2.html#aceb9b2336e3a1251dca7ab15420dbfcd", null ],
     [ "BuildFromChkptFile", "namespaceamrex_1_1EB2.html#afb0afb98a8713d8031d524dd41ef94de", null ],
