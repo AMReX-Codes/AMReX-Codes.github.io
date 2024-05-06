@@ -1,5 +1,9 @@
 var NAVTREEINDEX72 =
 {
+"namespaceamrex_1_1tri__geom__ops.html":[2,0,0,47],
+"namespaceamrex_1_1tri__geom__ops.html#a2220cd5ad225611142968a7e52fce6b8":[2,0,0,47,8],
+"namespaceamrex_1_1tri__geom__ops.html#a3ab1370ee2778b840c9976bec576a66e":[2,0,0,47,7],
+"namespaceamrex_1_1tri__geom__ops.html#a3edc0f443bee6abb9c7d78a434156465":[2,0,0,47,2],
 "namespaceamrex_1_1tri__geom__ops.html#a63072500ceb751c5d908ebf2edf627e1":[2,0,0,47,0],
 "namespaceamrex_1_1tri__geom__ops.html#a70a3555a7869b306a0efd22a29fcb570":[2,0,0,47,11],
 "namespaceamrex_1_1tri__geom__ops.html#a713485f892bf13f6879fcd8a1ccf5b6e":[2,0,0,47,3],
@@ -234,8 +238,8 @@ var NAVTREEINDEX72 =
 "namespacedetail.html#afbc4fb91adabe79223cea83ef23e4020":[2,0,18,8],
 "namespacedetail.html#afc1b915037c4dab142f1df60d412713e":[2,0,18,6],
 "namespacehacc.html":[2,0,19],
-"namespacemembers.html":[2,1,0],
 "namespacemembers.html":[2,1,0,0],
+"namespacemembers.html":[2,1,0],
 "namespacemembers_a.html":[2,1,0,1],
 "namespacemembers_b.html":[2,1,0,2],
 "namespacemembers_c.html":[2,1,0,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX72 =
 "namespacemembers_eval.html":[2,1,5],
 "namespacemembers_f.html":[2,1,0,6],
 "namespacemembers_func.html":[2,1,1],
-"namespacemembers_func.html":[2,1,1,0],
-"namespacemembers_func_a.html":[2,1,1,1],
-"namespacemembers_func_b.html":[2,1,1,2],
-"namespacemembers_func_c.html":[2,1,1,3],
-"namespacemembers_func_d.html":[2,1,1,4]
+"namespacemembers_func.html":[2,1,1,0]
 };

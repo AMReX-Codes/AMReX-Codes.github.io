@@ -2176,7 +2176,7 @@
 <codeline lineno="31"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.boxArray()<sp/>==<sp/>src.boxArray());</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.distributionMap<sp/>==<sp/>src.distributionMap);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrow()<sp/>&gt;=<sp/>nghost<sp/>&amp;&amp;<sp/>src.nGrow()<sp/>&gt;=<sp/>nghost);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrowVect().allGE(nghost)<sp/>&amp;&amp;<sp/>src.nGrowVect().allGE(nghost));</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ab72e53672887ede3d7ddc5f65002700e" kindref="member">amrex::Add</ref>(dst,src,srccomp,dstcomp,numcomp,IntVect(nghost));</highlight></codeline>
 <codeline lineno="37"><highlight class="normal">}</highlight></codeline>
@@ -2191,7 +2191,7 @@
 <codeline lineno="46"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.boxArray()<sp/>==<sp/>src.boxArray());</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.distributionMap<sp/>==<sp/>src.distributionMap);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrow()<sp/>&gt;=<sp/>nghost<sp/>&amp;&amp;<sp/>src.nGrow()<sp/>&gt;=<sp/>nghost);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrowVect().allGE(nghost)<sp/>&amp;&amp;<sp/>src.nGrowVect().allGE(nghost));</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a449d5cd7d3d778be0440141f9272d6bd" kindref="member">amrex::Copy</ref>(dst,src,srccomp,dstcomp,numcomp,IntVect(nghost));</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">}</highlight></codeline>
@@ -2219,7 +2219,7 @@
 <codeline lineno="74"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.boxArray()<sp/>==<sp/>src.boxArray());</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.distributionMap<sp/>==<sp/>src.distributionMap);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrow()<sp/>&gt;=<sp/>nghost<sp/>&amp;&amp;<sp/>src.nGrow()<sp/>&gt;=<sp/>nghost);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrowVect().allGE(nghost)<sp/>&amp;&amp;<sp/>src.nGrowVect().allGE(nghost));</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a54b8b46deca518b441b849bbd1ceda02" kindref="member">amrex::Subtract</ref>(dst,src,srccomp,dstcomp,numcomp,IntVect(nghost));</highlight></codeline>
 <codeline lineno="80"><highlight class="normal">}</highlight></codeline>
@@ -2234,7 +2234,7 @@
 <codeline lineno="89"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.boxArray()<sp/>==<sp/>src.boxArray());</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.distributionMap<sp/>==<sp/>src.distributionMap);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrow()<sp/>&gt;=<sp/>nghost<sp/>&amp;&amp;<sp/>src.nGrow()<sp/>&gt;=<sp/>nghost);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrowVect().allGE(nghost)<sp/>&amp;&amp;<sp/>src.nGrowVect().allGE(nghost));</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aec148f53c2d7fcc3b00c9e91999d4058" kindref="member">amrex::Multiply</ref>(dst,src,srccomp,dstcomp,numcomp,IntVect(nghost));</highlight></codeline>
 <codeline lineno="95"><highlight class="normal">}</highlight></codeline>
@@ -2249,7 +2249,7 @@
 <codeline lineno="104"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.boxArray()<sp/>==<sp/>src.boxArray());</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.distributionMap<sp/>==<sp/>src.distributionMap);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrow()<sp/>&gt;=<sp/>nghost<sp/>&amp;&amp;<sp/>src.nGrow()<sp/>&gt;=<sp/>nghost);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst.nGrowVect().allGE(nghost)<sp/>&amp;&amp;<sp/>src.nGrowVect().allGE(nghost));</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"></highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa9f3bb9afb6e1fdfc272654ee6923492" kindref="member">amrex::Divide</ref>(dst,src,srccomp,dstcomp,numcomp,IntVect(nghost));</highlight></codeline>
 <codeline lineno="110"><highlight class="normal">}</highlight></codeline>
@@ -2371,7 +2371,7 @@
 <codeline lineno="226"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;iMultiFab::min()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"></highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"></highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mn<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>();</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"></highlight></codeline>
@@ -2411,7 +2411,7 @@
 <codeline lineno="266"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;iMultiFab::min(region)&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"></highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="270"><highlight class="normal"></highlight></codeline>
 <codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mn<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>();</highlight></codeline>
 <codeline lineno="272"><highlight class="normal"></highlight></codeline>
@@ -2455,7 +2455,7 @@
 <codeline lineno="310"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;iMultiFab::max()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"></highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"></highlight></codeline>
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mx<sp/>=<sp/>std::numeric_limits&lt;int&gt;::lowest();</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"></highlight></codeline>
@@ -2495,7 +2495,7 @@
 <codeline lineno="350"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;iMultiFab::max(region)&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="352"><highlight class="normal"></highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"></highlight></codeline>
 <codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mx<sp/>=<sp/>std::numeric_limits&lt;int&gt;::lowest();</highlight></codeline>
 <codeline lineno="356"><highlight class="normal"></highlight></codeline>
@@ -2539,7 +2539,7 @@
 <codeline lineno="394"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;iMultiFab::sum()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="396"><highlight class="normal"></highlight></codeline>
-<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="398"><highlight class="normal"></highlight></codeline>
 <codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>sm<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="400"><highlight class="normal"></highlight></codeline>
@@ -2611,7 +2611,7 @@
 <codeline lineno="466"><highlight class="normal">IntVect</highlight></codeline>
 <codeline lineno="467"><highlight class="normal">iMultiFab::minIndex<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nghost)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="468"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mn<sp/>=<sp/>this-&gt;<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">min</ref>(comp,<sp/>nghost,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1af1fe8dd7d2e436cf2e4e696b9b5ae006" kindref="member">indexFromValue</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>comp,<sp/>nghost,<sp/>mn,<sp/><ref refid="AMReX__ccse-mpi_8H_1af962cc14617bd3f58eda263b3e814246" kindref="member">MPI_MINLOC</ref>);</highlight></codeline>
 <codeline lineno="472"><highlight class="normal">}</highlight></codeline>
@@ -2619,7 +2619,7 @@
 <codeline lineno="474"><highlight class="normal">IntVect</highlight></codeline>
 <codeline lineno="475"><highlight class="normal">iMultiFab::maxIndex<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nghost)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="476"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mx<sp/>=<sp/>this-&gt;<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">max</ref>(comp,<sp/>nghost,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1af1fe8dd7d2e436cf2e4e696b9b5ae006" kindref="member">indexFromValue</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>comp,<sp/>nghost,<sp/>mx,<sp/><ref refid="AMReX__ccse-mpi_8H_1aa6813ed87f5aaa7177f47a5c70d787b1" kindref="member">MPI_MAXLOC</ref>);</highlight></codeline>
 <codeline lineno="480"><highlight class="normal">}</highlight></codeline>
@@ -2648,7 +2648,7 @@
 <codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>num_comp,</highlight></codeline>
 <codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>nghost)</highlight></codeline>
 <codeline lineno="505"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp+num_comp<sp/>&lt;=<sp/>n_comp);</highlight></codeline>
 <codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(num_comp<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"></highlight></codeline>
@@ -2662,7 +2662,7 @@
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp,</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nghost)</highlight></codeline>
 <codeline lineno="519"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp+num_comp<sp/>&lt;=<sp/>n_comp);</highlight></codeline>
 <codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(num_comp<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="523"><highlight class="normal"></highlight></codeline>
@@ -2679,7 +2679,7 @@
 <codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(strt_comp<sp/>&gt;=<sp/>0);</highlight></codeline>
 <codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(num_comp<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(strt_comp<sp/>+<sp/>num_comp<sp/>-<sp/>1<sp/>&lt;<sp/>n_comp<sp/>&amp;&amp;<sp/>strt_comp<sp/>+<sp/>num_comp<sp/>-<sp/>1<sp/>&lt;<sp/>mf.n_comp);</highlight></codeline>
-<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&lt;=<sp/>n_grow.min()<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>mf.n_grow.min());</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(n_grow.allGE(nghost)<sp/>&amp;&amp;<sp/>mf.n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="538"><highlight class="normal"></highlight></codeline>
 <codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ab72e53672887ede3d7ddc5f65002700e" kindref="member">amrex::Add</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>mf,<sp/>strt_comp,<sp/>strt_comp,<sp/>num_comp,<sp/>nghost);</highlight></codeline>
 <codeline lineno="540"><highlight class="normal">}</highlight></codeline>
@@ -2690,7 +2690,7 @@
 <codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>num_comp,</highlight></codeline>
 <codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>nghost)</highlight></codeline>
 <codeline lineno="547"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp+num_comp<sp/>&lt;=<sp/>n_comp);</highlight></codeline>
 <codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(num_comp<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="551"><highlight class="normal"></highlight></codeline>
@@ -2704,7 +2704,7 @@
 <codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp,</highlight></codeline>
 <codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nghost)</highlight></codeline>
 <codeline lineno="561"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp+num_comp<sp/>&lt;=<sp/>n_comp);</highlight></codeline>
 <codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(num_comp<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="565"><highlight class="normal"></highlight></codeline>
@@ -2716,7 +2716,7 @@
 <codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_comp,</highlight></codeline>
 <codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nghost)</highlight></codeline>
 <codeline lineno="573"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp+num_comp<sp/>&lt;=<sp/>n_comp);</highlight></codeline>
 <codeline lineno="576"><highlight class="normal"></highlight></codeline>
 <codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArray_1aabc2fcb2d3b6c12974d49d5aff23ef5d" kindref="member">FabArray&lt;IArrayBox&gt;::mult</ref>(-1,comp,num_comp,nghost);</highlight></codeline>
@@ -2728,7 +2728,7 @@
 <codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp,</highlight></codeline>
 <codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nghost)</highlight></codeline>
 <codeline lineno="585"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>nghost<sp/>&lt;=<sp/>n_grow.min());</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nghost<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>n_grow.allGE(nghost));</highlight></codeline>
 <codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(comp+num_comp<sp/>&lt;=<sp/>n_comp);</highlight></codeline>
 <codeline lineno="588"><highlight class="normal"></highlight></codeline>
 <codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArray_1aabc2fcb2d3b6c12974d49d5aff23ef5d" kindref="member">FabArray&lt;IArrayBox&gt;::mult</ref>(-1,region,comp,num_comp,nghost);</highlight></codeline>

@@ -1,5 +1,9 @@
 var NAVTREEINDEX71 =
 {
+"namespaceamrex_1_1detail.html#a291f4a64951d7b0faabda32ef45084f0":[2,0,0,6,32],
+"namespaceamrex_1_1detail.html#a2b92d0ed9f799213702e12a02f9585d7":[2,0,0,6,67],
+"namespaceamrex_1_1detail.html#a2d9a622392a0eee879ac8180cb2371e6":[2,0,0,6,81],
+"namespaceamrex_1_1detail.html#a2e2c7166d29e28f726289f6ca33b326a":[2,0,0,6,60],
 "namespaceamrex_1_1detail.html#a34617f70eaffc9dd42ef30e75602e4e3":[2,0,0,6,63],
 "namespaceamrex_1_1detail.html#a34a42876ed5cec17cb6852ce43b710b7":[2,0,0,6,65],
 "namespaceamrex_1_1detail.html#a366e33622f264a58b5ceae6cd79e3b64":[2,0,0,6,56],
@@ -56,8 +60,8 @@ var NAVTREEINDEX71 =
 "namespaceamrex_1_1disabled.html":[2,0,0,7],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,669],
 "namespaceamrex_1_1disabled.html#a06556adef1343823eb8f3add01f1dc96":[2,0,0,7,3],
-"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,668],
 "namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,7,2],
+"namespaceamrex_1_1disabled.html#a0d57b1b25d1b53052c080fe847e40acd":[2,0,0,668],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,7,4],
 "namespaceamrex_1_1disabled.html#a8b565c4d58a622a606eb0db1276b6669":[2,0,0,670],
 "namespaceamrex_1_1disabled.html#ab5317e33b0a4c8a91cefb704d2a60f6b":[2,0,0,664],
@@ -245,9 +249,5 @@ var NAVTREEINDEX71 =
 "namespaceamrex_1_1system.html#ad45524f2293e6c912869fda4bc83d3d9":[2,0,0,46,7],
 "namespaceamrex_1_1system.html#ae1d6711c50c87572893a9c863cbaa2e2":[2,0,0,46,11],
 "namespaceamrex_1_1system.html#ae936d602185921239af1aa72bdec1cbd":[2,0,0,46,17],
-"namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95":[2,0,0,46,2],
-"namespaceamrex_1_1tri__geom__ops.html":[2,0,0,47],
-"namespaceamrex_1_1tri__geom__ops.html#a2220cd5ad225611142968a7e52fce6b8":[2,0,0,47,8],
-"namespaceamrex_1_1tri__geom__ops.html#a3ab1370ee2778b840c9976bec576a66e":[2,0,0,47,7],
-"namespaceamrex_1_1tri__geom__ops.html#a3edc0f443bee6abb9c7d78a434156465":[2,0,0,47,2]
+"namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95":[2,0,0,46,2]
 };

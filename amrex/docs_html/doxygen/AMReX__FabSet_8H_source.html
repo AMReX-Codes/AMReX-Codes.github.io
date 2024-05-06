@@ -387,100 +387,99 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                      <span class="keywordtype">int</span> dcomp, <span class="keywordtype">int</span> ncomp, <span class="keywordtype">int</span> ngrow)</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FabSetT&lt;MF&gt;::linComb()&quot;</span>);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(ngrow &lt;= mfa.nGrow());</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(ngrow &lt;= mfb.nGrow());</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(mfa.boxArray() == mfb.boxArray());</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>() != mfa.boxArray());</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    MF bdrya(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(),<a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(),ncomp,0,<a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>());</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    MF bdryb(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(),<a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(),ncomp,0,<a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>());</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> huge = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1FabSetT.html#ab235947bfbdf6abe588b53f05300b5b7">value_type</a><span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(<a class="code" href="classamrex_1_1FabSetT.html#ab235947bfbdf6abe588b53f05300b5b7">value_type</a>) == 8 ? 1.e200 : 1.e30);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(bdrya); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) <span class="comment">// tiling is not safe for this BoxArray</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keyword">auto</span> afab = bdrya.array(mfi);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keyword">auto</span> bfab = bdryb.array(mfi);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            afab(i,j,k,n) = huge;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            bfab(i,j,k,n) = huge;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        });</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    bdrya.ParallelCopy(mfa,a_comp,0,ncomp,ngrow,0);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    bdryb.ParallelCopy(mfb,b_comp,0,ncomp,ngrow,0);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1FabSetIter.html">FabSetIter</a> fsi(*<span class="keyword">this</span>); fsi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++fsi)</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = fsi.validbox();</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> afab = bdrya.array(fsi);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> bfab = bdryb.array(fsi);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keyword">auto</span>       dfab = this-&gt;array(fsi);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            dfab(i,j,k,n+dcomp) = a*afab(i,j,k,n) + <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>*bfab(i,j,k,n);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        });</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;}</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2">  369</a></span>&#160;<a class="code" href="classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2">FabSetT&lt;MF&gt;::write</a> (<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1AsyncOut.html#adbc79ec1aacd0106757683aea46b43ce">AsyncOut::UseAsyncOut</a>()) {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <a class="code" href="classamrex_1_1VisMF.html#aa912ecd1d879bd8fc207f4a1a5772bed">VisMF::AsyncWrite</a>(m_mf,name);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <a class="code" href="classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932">VisMF::Write</a>(m_mf,name);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno"><a class="line" href="classamrex_1_1FabSetT.html#a36867dedd480c7d07877c1cc65aa40bf">  380</a></span>&#160;<a class="code" href="classamrex_1_1FabSetT.html#a36867dedd480c7d07877c1cc65aa40bf">FabSetT&lt;MF&gt;::read</a> (<span class="keyword">const</span> std::string&amp; name)</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;{</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">if</span> (m_mf.empty()) {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FabSetT&lt;MF&gt;::read: not predefined&quot;</span>);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <a class="code" href="classamrex_1_1VisMF.html#a36dca41f0d001fce65deea4ec9e3ea1d">VisMF::Read</a>(m_mf,name);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno"><a class="line" href="classamrex_1_1FabSetT.html#a26c68b445998a0f5d87f9cc19420c4e1">  390</a></span>&#160;<a class="code" href="classamrex_1_1FabSetT.html#a26c68b445998a0f5d87f9cc19420c4e1">FabSetT&lt;MF&gt;::Copy</a> (<a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;MF&gt;</a>&amp; dst, <span class="keyword">const</span> <a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;MF&gt;</a>&amp; src)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;{</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code" href="namespaceamrex.html#a89eb9459b4109c4f9a9b3225abae29f8">amrex::match</a>(dst.<a class="code" href="classamrex_1_1FabSetT.html#a7d5164bf48c1d9aad40cf48e53d1f9b8">boxArray</a>(), src.<a class="code" href="classamrex_1_1FabSetT.html#a7d5164bf48c1d9aad40cf48e53d1f9b8">boxArray</a>()));</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dst.<a class="code" href="classamrex_1_1FabSetT.html#a4d7e5f67da4157aff9d446dad8c5271d">DistributionMap</a>() == src.<a class="code" href="classamrex_1_1FabSetT.html#a4d7e5f67da4157aff9d446dad8c5271d">DistributionMap</a>());</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordtype">int</span> ncomp = dst.<a class="code" href="classamrex_1_1FabSetT.html#a1b171b05c525c1833805b9c1e71f8368">nComp</a>();</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1FabSetIter.html">FabSetIter</a> fsi(dst); fsi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++fsi) {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = fsi.validbox();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> srcfab = src.<a class="code" href="classamrex_1_1FabSetT.html#a0f61186e6e172be849e3061374e1a889">array</a>(fsi);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keyword">auto</span>       dstfab = dst.<a class="code" href="classamrex_1_1FabSetT.html#a0f61186e6e172be849e3061374e1a889">array</a>(fsi);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            dstfab(i,j,k,n) = srcfab(i,j,k,n);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        });</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a15203068a5d8d4de2f3ff93e5e0f21d2">  409</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1FabSetT.html">FabSet</a> = <a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;MultiFab&gt;</a>;</div>
-<div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a25f205ddb2e9488505c2db83a92a5434">  410</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1FabSetT.html">fFabSet</a> = <a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;fMultiFab&gt;</a>;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*_FABSET_H_*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(mfa.nGrowVect().allGE(ngrow) &amp;&amp; mfb.nGrowVect().allGE(ngrow));</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(mfa.boxArray() == mfb.boxArray());</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>() != mfa.boxArray());</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    MF bdrya(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(),<a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(),ncomp,0,<a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>());</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    MF bdryb(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(),<a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(),ncomp,0,<a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>());</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> huge = <span class="keyword">static_cast&lt;</span><a class="code" href="classamrex_1_1FabSetT.html#ab235947bfbdf6abe588b53f05300b5b7">value_type</a><span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(<a class="code" href="classamrex_1_1FabSetT.html#ab235947bfbdf6abe588b53f05300b5b7">value_type</a>) == 8 ? 1.e200 : 1.e30);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(bdrya); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi) <span class="comment">// tiling is not safe for this BoxArray</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">auto</span> afab = bdrya.array(mfi);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keyword">auto</span> bfab = bdryb.array(mfi);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            afab(i,j,k,n) = huge;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            bfab(i,j,k,n) = huge;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        });</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    bdrya.ParallelCopy(mfa,a_comp,0,ncomp,ngrow,0);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    bdryb.ParallelCopy(mfb,b_comp,0,ncomp,ngrow,0);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1FabSetIter.html">FabSetIter</a> fsi(*<span class="keyword">this</span>); fsi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++fsi)</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = fsi.validbox();</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> afab = bdrya.array(fsi);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> bfab = bdryb.array(fsi);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keyword">auto</span>       dfab = this-&gt;array(fsi);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            dfab(i,j,k,n+dcomp) = a*afab(i,j,k,n) + <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>*bfab(i,j,k,n);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        });</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2">  368</a></span>&#160;<a class="code" href="classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2">FabSetT&lt;MF&gt;::write</a> (<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1AsyncOut.html#adbc79ec1aacd0106757683aea46b43ce">AsyncOut::UseAsyncOut</a>()) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <a class="code" href="classamrex_1_1VisMF.html#aa912ecd1d879bd8fc207f4a1a5772bed">VisMF::AsyncWrite</a>(m_mf,name);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <a class="code" href="classamrex_1_1VisMF.html#a6e5f6020891d546ab4ce2c0c6a012932">VisMF::Write</a>(m_mf,name);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="classamrex_1_1FabSetT.html#a36867dedd480c7d07877c1cc65aa40bf">  379</a></span>&#160;<a class="code" href="classamrex_1_1FabSetT.html#a36867dedd480c7d07877c1cc65aa40bf">FabSetT&lt;MF&gt;::read</a> (<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;{</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">if</span> (m_mf.empty()) {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;FabSetT&lt;MF&gt;::read: not predefined&quot;</span>);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <a class="code" href="classamrex_1_1VisMF.html#a36dca41f0d001fce65deea4ec9e3ea1d">VisMF::Read</a>(m_mf,name);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> MF&gt;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno"><a class="line" href="classamrex_1_1FabSetT.html#a26c68b445998a0f5d87f9cc19420c4e1">  389</a></span>&#160;<a class="code" href="classamrex_1_1FabSetT.html#a26c68b445998a0f5d87f9cc19420c4e1">FabSetT&lt;MF&gt;::Copy</a> (<a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;MF&gt;</a>&amp; dst, <span class="keyword">const</span> <a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;MF&gt;</a>&amp; src)</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;{</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code" href="namespaceamrex.html#a89eb9459b4109c4f9a9b3225abae29f8">amrex::match</a>(dst.<a class="code" href="classamrex_1_1FabSetT.html#a7d5164bf48c1d9aad40cf48e53d1f9b8">boxArray</a>(), src.<a class="code" href="classamrex_1_1FabSetT.html#a7d5164bf48c1d9aad40cf48e53d1f9b8">boxArray</a>()));</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dst.<a class="code" href="classamrex_1_1FabSetT.html#a4d7e5f67da4157aff9d446dad8c5271d">DistributionMap</a>() == src.<a class="code" href="classamrex_1_1FabSetT.html#a4d7e5f67da4157aff9d446dad8c5271d">DistributionMap</a>());</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordtype">int</span> ncomp = dst.<a class="code" href="classamrex_1_1FabSetT.html#a1b171b05c525c1833805b9c1e71f8368">nComp</a>();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1FabSetIter.html">FabSetIter</a> fsi(dst); fsi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++fsi) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = fsi.validbox();</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> srcfab = src.<a class="code" href="classamrex_1_1FabSetT.html#a0f61186e6e172be849e3061374e1a889">array</a>(fsi);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keyword">auto</span>       dstfab = dst.<a class="code" href="classamrex_1_1FabSetT.html#a0f61186e6e172be849e3061374e1a889">array</a>(fsi);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        {</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            dstfab(i,j,k,n) = srcfab(i,j,k,n);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        });</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a15203068a5d8d4de2f3ff93e5e0f21d2">  408</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1FabSetT.html">FabSet</a> = <a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;MultiFab&gt;</a>;</div>
+<div class="line"><a name="l00409"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a25f205ddb2e9488505c2db83a92a5434">  409</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classamrex_1_1FabSetT.html">fFabSet</a> = <a class="code" href="classamrex_1_1FabSetT.html">FabSetT&lt;fMultiFab&gt;</a>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*_FABSET_H_*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html"><div class="ttname"><a href="AMReX__BLProfiler_8H.html">AMReX_BLProfiler.H</a></div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_a53ebc8b227de416f458800faa44c619e"><div class="ttname"><a href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a></div><div class="ttdeci">#define BL_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:39</div></div>
@@ -501,11 +500,11 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a0f61186e6e172be849e3061374e1a889"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a0f61186e6e172be849e3061374e1a889">amrex::FabSetT::array</a></div><div class="ttdeci">Array4&lt; value_type const  &gt; array(const MFIter &amp;mfi) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:77</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a1b171b05c525c1833805b9c1e71f8368"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a1b171b05c525c1833805b9c1e71f8368">amrex::FabSetT::nComp</a></div><div class="ttdeci">int nComp() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:100</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a1c27985ab724a1cacaa41a9f4cc5fc25"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a1c27985ab724a1cacaa41a9f4cc5fc25">amrex::FabSetT::operator[]</a></div><div class="ttdeci">FAB const  &amp; operator[](const MFIter &amp;mfi) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:72</div></div>
-<div class="ttc" id="aclassamrex_1_1FabSetT_html_a26c68b445998a0f5d87f9cc19420c4e1"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a26c68b445998a0f5d87f9cc19420c4e1">amrex::FabSetT::Copy</a></div><div class="ttdeci">static void Copy(FabSetT&lt; MF &gt; &amp;dst, const FabSetT&lt; MF &gt; &amp;src)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:390</div></div>
+<div class="ttc" id="aclassamrex_1_1FabSetT_html_a26c68b445998a0f5d87f9cc19420c4e1"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a26c68b445998a0f5d87f9cc19420c4e1">amrex::FabSetT::Copy</a></div><div class="ttdeci">static void Copy(FabSetT&lt; MF &gt; &amp;dst, const FabSetT&lt; MF &gt; &amp;src)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:389</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a27291157c97ac716012d1f3469b37484"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a27291157c97ac716012d1f3469b37484">amrex::FabSetT::array</a></div><div class="ttdeci">Array4&lt; value_type &gt; array(int i) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:80</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a2d2f6ad459f54ab22683f32d5b641d75"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a2d2f6ad459f54ab22683f32d5b641d75">amrex::FabSetT::copyFrom</a></div><div class="ttdeci">FabSetT&lt; MF &gt; &amp; copyFrom(const FabSetT&lt; MF &gt; &amp;src, int scomp, int dcomp, int ncomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:170</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a2d88ae6162badc6e58949b21e959bc80"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a2d88ae6162badc6e58949b21e959bc80">amrex::FabSetT::plusFrom</a></div><div class="ttdeci">FabSetT&lt; MF &gt; &amp; plusFrom(const FabSetT&lt; MF &gt; &amp;src, int scomp, int dcomp, int ncomp)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:203</div></div>
-<div class="ttc" id="aclassamrex_1_1FabSetT_html_a36867dedd480c7d07877c1cc65aa40bf"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a36867dedd480c7d07877c1cc65aa40bf">amrex::FabSetT::read</a></div><div class="ttdeci">void read(const std::string &amp;name)</div><div class="ttdoc">Read (used for reading from checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:380</div></div>
+<div class="ttc" id="aclassamrex_1_1FabSetT_html_a36867dedd480c7d07877c1cc65aa40bf"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a36867dedd480c7d07877c1cc65aa40bf">amrex::FabSetT::read</a></div><div class="ttdeci">void read(const std::string &amp;name)</div><div class="ttdoc">Read (used for reading from checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:379</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a46811f4dbfb739f8bdb85b466e5256b2"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a46811f4dbfb739f8bdb85b466e5256b2">amrex::FabSetT::const_arrays</a></div><div class="ttdeci">MultiArray4&lt; value_type const  &gt; const_arrays() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:86</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a4a723de952c4a193086c47d5f374356b"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a4a723de952c4a193086c47d5f374356b">amrex::FabSetT::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:102</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a4d7e5f67da4157aff9d446dad8c5271d"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a4d7e5f67da4157aff9d446dad8c5271d">amrex::FabSetT::DistributionMap</a></div><div class="ttdeci">const DistributionMapping &amp; DistributionMap() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:94</div></div>
@@ -515,7 +514,7 @@ $(document).ready(function(){initNavTree('AMReX__FabSet_8H_source.html',''); ini
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a713e5ea61895380c2c6c036297ecc865"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a713e5ea61895380c2c6c036297ecc865">amrex::FabSetT::fabbox</a></div><div class="ttdeci">Box fabbox(int K) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:88</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a7d5164bf48c1d9aad40cf48e53d1f9b8"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a7d5164bf48c1d9aad40cf48e53d1f9b8">amrex::FabSetT::boxArray</a></div><div class="ttdeci">const BoxArray &amp; boxArray() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:92</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_a8b03f36aa484c3096470892346337619"><div class="ttname"><a href="classamrex_1_1FabSetT.html#a8b03f36aa484c3096470892346337619">amrex::FabSetT::m_mf</a></div><div class="ttdeci">MF m_mf</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:144</div></div>
-<div class="ttc" id="aclassamrex_1_1FabSetT_html_aa6ffee464cd67617c540f751360e05c2"><div class="ttname"><a href="classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2">amrex::FabSetT::write</a></div><div class="ttdeci">void write(const std::string &amp;name) const</div><div class="ttdoc">Write (used for writing to checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:369</div></div>
+<div class="ttc" id="aclassamrex_1_1FabSetT_html_aa6ffee464cd67617c540f751360e05c2"><div class="ttname"><a href="classamrex_1_1FabSetT.html#aa6ffee464cd67617c540f751360e05c2">amrex::FabSetT::write</a></div><div class="ttdeci">void write(const std::string &amp;name) const</div><div class="ttdoc">Write (used for writing to checkpoint)</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:368</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_aa9a230d3eb8b231296f22ab79f19837d"><div class="ttname"><a href="classamrex_1_1FabSetT.html#aa9a230d3eb8b231296f22ab79f19837d">amrex::FabSetT::FabSetT</a></div><div class="ttdeci">FabSetT() noexcept=default</div><div class="ttdoc">The default constructor – you must later call define().</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_aaf12adc6f28b696da9085672a5507a83"><div class="ttname"><a href="classamrex_1_1FabSetT.html#aaf12adc6f28b696da9085672a5507a83">amrex::FabSetT::multiFab</a></div><div class="ttdeci">MF &amp; multiFab() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:97</div></div>
 <div class="ttc" id="aclassamrex_1_1FabSetT_html_ab235947bfbdf6abe588b53f05300b5b7"><div class="ttname"><a href="classamrex_1_1FabSetT.html#ab235947bfbdf6abe588b53f05300b5b7">amrex::FabSetT::value_type</a></div><div class="ttdeci">typename FabDataType&lt; MF &gt;::value_type value_type</div><div class="ttdef"><b>Definition:</b> AMReX_FabSet.H:50</div></div>
