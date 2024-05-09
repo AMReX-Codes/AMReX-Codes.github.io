@@ -1,5 +1,9 @@
 var NAVTREEINDEX85 =
 {
+"unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360":[3,0,0,108,0,8],
+"unionamrex_1_1BATransformer_1_1BATOp.html#a8a638320a3eff1eddadce618e107e535":[3,0,0,108,0,4],
+"unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814":[3,0,0,108,0,6],
+"unionamrex_1_1BATransformer_1_1BATOp.html#afd4493c8028cd11dab3a11c1b5d7f906":[3,0,0,108,0,3],
 "unionamrex_1_1BlockMutex_1_1state__t.html":[3,0,0,96,0],
 "unionamrex_1_1BlockMutex_1_1state__t.html#a1fc8a94950a5b3c74bdec9d150db4811":[3,0,0,96,0,1],
 "unionamrex_1_1BlockMutex_1_1state__t.html#a505b61ba175140a3250ef8e473575813":[3,0,0,96,0,2],

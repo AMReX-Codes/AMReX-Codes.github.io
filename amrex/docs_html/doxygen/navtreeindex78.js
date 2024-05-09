@@ -1,5 +1,9 @@
 var NAVTREEINDEX78 =
 {
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[3,0,0,5,5],
+"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[3,0,0,5,5,0],
+"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[3,0,0,5,6],
+"structamrex_1_1Gpu_1_1AtomicLogicalOr.html#ac07d5f44c06a1cc91aaadf6182504ffc":[3,0,0,5,6,0],
 "structamrex_1_1Gpu_1_1AtomicMax.html":[3,0,0,5,4],
 "structamrex_1_1Gpu_1_1AtomicMax.html#a3652266a0f587ab6652566b40ce86a2f":[3,0,0,5,4,0],
 "structamrex_1_1Gpu_1_1AtomicMin.html":[3,0,0,5,3],
@@ -115,8 +119,8 @@ var NAVTREEINDEX78 =
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a8aabc0941165754bb046bcde35674e46":[3,0,0,5,0,0,0,1],
 "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873":[3,0,0,5,0,0,0,6],
 "structamrex_1_1Gpu_1_1warpReduce.html":[3,0,0,5,39],
-"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,1],
+"structamrex_1_1Gpu_1_1warpReduce.html#a0ca3eeb7048c8c5fc37db73aa3b3376d":[3,0,0,5,39,0],
 "structamrex_1_1HasAtomicAdd.html":[3,0,0,262],
 "structamrex_1_1HasAtomicAdd_3_01double_01_4.html":[3,0,0,268],
 "structamrex_1_1HasAtomicAdd_3_01float_01_4.html":[3,0,0,267],
@@ -245,9 +249,5 @@ var NAVTREEINDEX78 =
 "structamrex_1_1IParserStack.html#aa6f45ea78886ea7b34d6151a8514008c":[3,0,0,325,4],
 "structamrex_1_1IParserStack.html#accdd1fb9c87fe33046d566ee6f8aab56":[3,0,0,325,3],
 "structamrex_1_1IParserStack.html#af48a7aa2e427fa54e5aca98aca113111":[3,0,0,325,2],
-"structamrex_1_1IParser_1_1Data.html":[3,0,0,291,0],
-"structamrex_1_1IParser_1_1Data.html#a1c4d044550c8a47002f221aeead2c6a4":[3,0,0,291,0,7],
-"structamrex_1_1IParser_1_1Data.html#a2e9b325c1dff6d61148fc39ac8e05be9":[3,0,0,291,0,3],
-"structamrex_1_1IParser_1_1Data.html#a3a7c71fc152cee485f33789b17cfc208":[3,0,0,291,0,0],
-"structamrex_1_1IParser_1_1Data.html#a676502acc05b77e3154b305f6880a0c0":[3,0,0,291,0,4]
+"structamrex_1_1IParser_1_1Data.html":[3,0,0,291,0]
 };

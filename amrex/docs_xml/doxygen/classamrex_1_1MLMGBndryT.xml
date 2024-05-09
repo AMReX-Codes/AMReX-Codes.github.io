@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="18" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="44" bodyend="47"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="18" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLMGBndryT_1a5be1bbaf9ed18dc6066dba2cfd41c105" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -148,10 +148,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="26" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLMGBndryT_1a5bbc49856950306b611947cac8a5867a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1MLMGBndryT_1a4968262312aabecee36bc2bde40ab80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::MLMGBndryT&lt; MF &gt;::setLOBndryConds</definition>
-        <argsstring>(const Vector&lt; Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;lo, const Vector&lt; Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;hi, int ratio, const RealVect &amp;a_loc)</argsstring>
+        <argsstring>(const Vector&lt; Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;lo, const Vector&lt; Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;hi, int ratio, const RealVect &amp;a_loc, LinOpBCType a_crse_fine_bc_type=LinOpBCType::Dirichlet)</argsstring>
         <name>setLOBndryConds</name>
         <param>
           <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;</type>
@@ -169,20 +169,59 @@
           <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
           <declname>a_loc</declname>
         </param>
+        <param>
+          <type>LinOpBCType</type>
+          <declname>a_crse_fine_bc_type</declname>
+          <defval>LinOpBCType::Dirichlet</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="28" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="51" bodyend="81"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="28" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLMGBndryT_1ab6609bf57c735a9ebbf08bd4944dffef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLMGBndryT&lt; MF &gt;::setLOBndryConds</definition>
+        <argsstring>(const Vector&lt; Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;lo, const Vector&lt; Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;hi, IntVect const &amp;ratio, const RealVect &amp;a_loc, LinOpBCType a_crse_fine_bc_type=LinOpBCType::Dirichlet)</argsstring>
+        <name>setLOBndryConds</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>ratio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
+          <declname>a_loc</declname>
+        </param>
+        <param>
+          <type>LinOpBCType</type>
+          <declname>a_crse_fine_bc_type</declname>
+          <defval>LinOpBCType::Dirichlet</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="33" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="68" bodyend="103"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classamrex_1_1MLMGBndryT_1a2cd0153d78d66eedbefd62318389cd73" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1MLMGBndryT_1a5240bdd727e4e8b7ed90b3438ffb82df" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::MLMGBndryT&lt; MF &gt;::setBoxBC</definition>
-        <argsstring>(RealTuple &amp;bloc, BCTuple &amp;bctag, const Box &amp;bx, const Box &amp;domain, const Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;lo, const Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;hi, const Real *dx, int ratio, const RealVect &amp;interior_bloc, const Array&lt; Real, AMREX_SPACEDIM &gt; &amp;domain_bloc_lo, const Array&lt; Real, AMREX_SPACEDIM &gt; &amp;domain_bloc_hi, const GpuArray&lt; int, AMREX_SPACEDIM &gt; &amp;is_periodic)</argsstring>
+        <argsstring>(RealTuple &amp;bloc, BCTuple &amp;bctag, const Box &amp;bx, const Box &amp;domain, const Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;lo, const Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;hi, const Real *dx, IntVect const &amp;ratio, const RealVect &amp;interior_bloc, const Array&lt; Real, AMREX_SPACEDIM &gt; &amp;domain_bloc_lo, const Array&lt; Real, AMREX_SPACEDIM &gt; &amp;domain_bloc_hi, const GpuArray&lt; int, AMREX_SPACEDIM &gt; &amp;is_periodic, LinOpBCType a_crse_fine_bc_type)</argsstring>
         <name>setBoxBC</name>
         <param>
           <type><ref refid="classamrex_1_1BndryDataT_1a635d69fddbe9b8785a9f16e6874273d0" kindref="member">RealTuple</ref> &amp;</type>
@@ -213,7 +252,7 @@
           <declname>dx</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -232,13 +271,17 @@
           <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>is_periodic</declname>
         </param>
+        <param>
+          <type>LinOpBCType</type>
+          <declname>a_crse_fine_bc_type</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="32" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="85" bodyend="130"/>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="38" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="107" bodyend="153"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -730,7 +773,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="12" bodyend="41"/>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" line="10" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMGBndry.H" bodystart="12" bodyend="48"/>
     <listofallmembers>
       <member refid="classamrex_1_1BndryDataT_1af7bb1a70a4e8bb07247e07f9de03c3ab" prot="protected" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>bcloc</name></member>
       <member refid="classamrex_1_1BndryDataT_1a043be8a7bc1486ff3e42dde8d785023c" prot="protected" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>bcond</name></member>
@@ -801,10 +844,11 @@
       <member refid="classamrex_1_1BndryDataT_1afd3fdc202fd316dff91863242679263f" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setBoundCond</name></member>
       <member refid="classamrex_1_1BndryDataT_1ac308c460f9c083f2fd2326ca62cd1811" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setBoundLoc</name></member>
       <member refid="classamrex_1_1BndryDataT_1a85f08d239e69b27930ba8ba4e4c163c1" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setBoundLoc</name></member>
-      <member refid="classamrex_1_1MLMGBndryT_1a2cd0153d78d66eedbefd62318389cd73" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setBoxBC</name></member>
+      <member refid="classamrex_1_1MLMGBndryT_1a5240bdd727e4e8b7ed90b3438ffb82df" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setBoxBC</name></member>
       <member refid="classamrex_1_1BndryRegisterT_1a31f3e491669d858c7c73e04d2ad6cb00" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setBoxes</name></member>
       <member refid="classamrex_1_1InterpBndryDataT_1a772640cb8d0030c7b6e69714d055d8e3" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setHomogValues</name></member>
-      <member refid="classamrex_1_1MLMGBndryT_1a5bbc49856950306b611947cac8a5867a" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setLOBndryConds</name></member>
+      <member refid="classamrex_1_1MLMGBndryT_1a4968262312aabecee36bc2bde40ab80c" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setLOBndryConds</name></member>
+      <member refid="classamrex_1_1MLMGBndryT_1ab6609bf57c735a9ebbf08bd4944dffef" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setLOBndryConds</name></member>
       <member refid="classamrex_1_1InterpBndryDataT_1a24af38cde0573af0a4557b5e165690ff" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setPhysBndryValues</name></member>
       <member refid="classamrex_1_1BndryRegisterT_1a005714dcfffa4635a7261f525892ac37" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setVal</name></member>
       <member refid="classamrex_1_1BndryDataT_1acf8b7ee0ecbe4e7a753b470251c106d0" prot="public" virt="non-virtual"><scope>amrex::MLMGBndryT</scope><name>setValue</name></member>
