@@ -161,7 +161,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe3c1ec699c60ebc52f1a4d8554a4889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#afe3c1ec699c60ebc52f1a4d8554a4889">precond</a> (MF &amp;lhs, MF const &amp;rhs) const</td></tr>
 <tr class="separator:afe3c1ec699c60ebc52f1a4d8554a4889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba210ae4c73c6e484ba27502baafbed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed">usePrecond</a> (bool new_flag)</td></tr>
+<tr class="memdesc:acba210ae4c73c6e484ba27502baafbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether or not to use MLMG as preconditioner.  <a href="classamrex_1_1GMRESMLMGT.html#acba210ae4c73c6e484ba27502baafbed">More...</a><br /></td></tr>
 <tr class="separator:acba210ae4c73c6e484ba27502baafbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4c31b46aeea964f7e6bf8798c3adea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a3e4c31b46aeea964f7e6bf8798c3adea">setPrecondNumIters</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> precond_niters)</td></tr>
+<tr class="memdesc:a3e4c31b46aeea964f7e6bf8798c3adea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of MLMG preconditioner iterations per <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration.  <a href="classamrex_1_1GMRESMLMGT.html#a3e4c31b46aeea964f7e6bf8798c3adea">More...</a><br /></td></tr>
+<tr class="separator:a3e4c31b46aeea964f7e6bf8798c3adea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -192,6 +196,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ab701de7cf398139b6f8804adb3eddd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad478296de575a072a91d73b9f8b0332e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#ad478296de575a072a91d73b9f8b0332e">m_prop_zero</a> = false</td></tr>
 <tr class="separator:ad478296de575a072a91d73b9f8b0332e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199c70c91ab83732cc2982f3712411e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a199c70c91ab83732cc2982f3712411e1">m_precond_niters</a> = 1</td></tr>
+<tr class="separator:a199c70c91ab83732cc2982f3712411e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename MF&gt;<br />
@@ -725,6 +731,36 @@ template&lt;typename MF &gt; </div>
 
 </div>
 </div>
+<a id="a3e4c31b46aeea964f7e6bf8798c3adea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e4c31b46aeea964f7e6bf8798c3adea">&#9670;&nbsp;</a></span>setPrecondNumIters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::setPrecondNumIters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>precond_niters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the number of MLMG preconditioner iterations per <a class="el" href="classamrex_1_1GMRES.html" title="GMRES.">GMRES</a> iteration. </p>
+
+</div>
+</div>
 <a id="a56349014c0d985e20f66cb789fc37d9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56349014c0d985e20f66cb789fc37d9f">&#9670;&nbsp;</a></span>setPropertyOfZero()</h2>
 
@@ -895,6 +931,8 @@ template&lt;typename MF &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Control whether or not to use MLMG as preconditioner. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -959,6 +997,30 @@ template&lt;typename MF &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1GMRESMLMGT.html#a93a0ba608c9adab93befd5acebdc63bc">MG</a>* <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_mlmg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a199c70c91ab83732cc2982f3712411e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a199c70c91ab83732cc2982f3712411e1">&#9670;&nbsp;</a></span>m_precond_niters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> <a class="el" href="classamrex_1_1GMRESMLMGT.html">amrex::GMRESMLMGT</a>&lt; MF &gt;::m_precond_niters = 1</td>
         </tr>
       </table>
   </td>

@@ -18,6 +18,7 @@ var classamrex_1_1GMRESMLMGT =
     [ "precond", "classamrex_1_1GMRESMLMGT.html#afe3c1ec699c60ebc52f1a4d8554a4889", null ],
     [ "scale", "classamrex_1_1GMRESMLMGT.html#ab8b6fa6cf559c595468bf5e24e6e6f0c", null ],
     [ "setMaxIters", "classamrex_1_1GMRESMLMGT.html#ae47a754ba15bd25bcb9b10f95b590364", null ],
+    [ "setPrecondNumIters", "classamrex_1_1GMRESMLMGT.html#a3e4c31b46aeea964f7e6bf8798c3adea", null ],
     [ "setPropertyOfZero", "classamrex_1_1GMRESMLMGT.html#a56349014c0d985e20f66cb789fc37d9f", null ],
     [ "setToZero", "classamrex_1_1GMRESMLMGT.html#aa7abf628225cd94e5163b1400f549417", null ],
     [ "setVerbose", "classamrex_1_1GMRESMLMGT.html#a51b0cd328dd0bb2bf71ff67d266b673b", null ],
@@ -26,6 +27,7 @@ var classamrex_1_1GMRESMLMGT =
     [ "m_gmres", "classamrex_1_1GMRESMLMGT.html#a32ef8424897f89206ea72f7f3affbdd0", null ],
     [ "m_linop", "classamrex_1_1GMRESMLMGT.html#aade37c46d216449063107a555d33010e", null ],
     [ "m_mlmg", "classamrex_1_1GMRESMLMGT.html#ac6bdd073a8562762729e78088cf2bbb9", null ],
+    [ "m_precond_niters", "classamrex_1_1GMRESMLMGT.html#a199c70c91ab83732cc2982f3712411e1", null ],
     [ "m_prop_zero", "classamrex_1_1GMRESMLMGT.html#ad478296de575a072a91d73b9f8b0332e", null ],
     [ "m_use_precond", "classamrex_1_1GMRESMLMGT.html#ab701de7cf398139b6f8804adb3eddd55", null ]
 ];
