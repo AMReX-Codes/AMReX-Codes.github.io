@@ -1301,319 +1301,320 @@ $(document).ready(function(){initNavTree('AMReX__ParticleHDF5_8H_source.html',''
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;        <span class="comment">/* particle_box_arrays[lev].readFrom(phdr_file); */</span></div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;        particle_box_arrays[lev] = ParticleBoxArray(lev);</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (<a class="code" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>)ngrid; i++) {</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;            Box tmp ({<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(boxes[i*AMREX_SPACEDIM], boxes[i*AMREX_SPACEDIM+1], boxes[i*AMREX_SPACEDIM+2])}, {<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(boxes[i*AMREX_SPACEDIM*2], boxes[i*AMREX_SPACEDIM*2+1], boxes[i*AMREX_SPACEDIM*2+2])});</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;            particle_box_arrays[lev][i] = tmp;</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;        }</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160; </div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;        <span class="keywordflow">if</span> (! particle_box_arrays[lev].CellEqual(ParticleBoxArray(lev)))</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;            dual_grid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;    }</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160; </div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    <span class="keywordflow">if</span> (dual_grid) {</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finestLevel(); lev++) {</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;            SetParticleBoxArray(lev, particle_box_arrays[lev]);</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            DistributionMapping pdm(particle_box_arrays[lev]);</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            SetParticleDistributionMap(lev, pdm);</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;        }</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    }</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160; </div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    Vector&lt;int&gt; ngrids(finest_level_in_file+1);</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level_in_file; lev++) {</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;        gname = <span class="stringliteral">&quot;level_&quot;</span> + std::to_string(lev);</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;        grp = H5Gopen(fid, gname.c_str(), H5P_DEFAULT);</div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        <span class="keywordflow">if</span> (grp &lt; 0) {</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open group &quot;</span>);</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;            msg += gname;</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        }</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        aname = <span class="stringliteral">&quot;ngrids&quot;</span>;</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;        ret = <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#aad63ab7770ca222d4e42f2cd5ddcf0bb">ReadHDF5Attr</a>(grp, aname.c_str(), &amp;ngrids[lev], H5T_NATIVE_INT);</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        <span class="keywordflow">if</span> (ret &lt; 0) {</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to read attribute &quot;</span>);</div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;            msg += aname;</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        }</div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160; </div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(ngrids[lev] &gt; 0);</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        <span class="keywordflow">if</span> (lev &lt;= finestLevel()) {</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(ngrids[lev] == <span class="keywordtype">int</span>(ParticleBoxArray(lev).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>()));</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;        }</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160; </div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;        H5Gclose(grp);</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;    }</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160; </div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    resizeData();</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    <span class="keywordflow">if</span> (finest_level_in_file &gt; finestLevel()) {</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;        m_particles.resize(finest_level_in_file+1);</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;    }</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160; </div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level_in_file; lev++) {</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160; </div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;        gname = <span class="stringliteral">&quot;level_&quot;</span> + std::to_string(lev);</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        grp = H5Gopen(fid, gname.c_str(), H5P_DEFAULT);</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;        <span class="keywordflow">if</span> (grp &lt; 0) {</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open group &quot;</span>);</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;            msg += gname;</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;        }</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        dset = H5Dopen(grp, <span class="stringliteral">&quot;nparticles_grid&quot;</span>, H5P_DEFAULT);</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        Vector&lt;int&gt; count(ngrids[lev]);</div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;        ret = H5Dread(dset, H5T_NATIVE_INT, H5S_ALL, H5S_ALL, H5P_DEFAULT, &amp;(count[0]));</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        <span class="keywordflow">if</span> (ret &lt; 0) {</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to read nparticles_grid dataset&quot;</span>);</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;        }</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        H5Dclose(dset);</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160; </div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;        Vector&lt;hsize_t&gt;  offset(ngrids[lev]);</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;        offset[0] = 0;</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; ngrids[lev]; i++) {</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;            offset[i] = offset[i-1] + count[i-1];</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;        }</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160; </div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;        int_dset  = H5Dopen(grp, <span class="stringliteral">&quot;data:datatype=0&quot;</span>, H5P_DEFAULT);</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;        <span class="keywordflow">if</span> (int_dset &lt; 0) {</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open int dataset&quot;</span>);</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;        }</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;        real_dset = H5Dopen(grp, <span class="stringliteral">&quot;data:datatype=1&quot;</span>, H5P_DEFAULT);</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;        <span class="keywordflow">if</span> (real_dset &lt; 0) {</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open int dataset&quot;</span>);</div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;        }</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160; </div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;        Vector&lt;int&gt; grids_to_read;</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;        <span class="keywordflow">if</span> (lev &lt;= finestLevel()) {</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(*m_dummy_mf[lev]); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;                grids_to_read.push_back(mfi.index());</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;            }</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160; </div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;            <span class="comment">// we lost a level on restart. we still need to read in particles</span></div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;            <span class="comment">// on finer levels, and put them in the right place via Redistribute()</span></div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160; </div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> rank = <a class="code" href="namespaceamrex_1_1MPMD.html#a61222da774be88a4ba57947bce9b0847">ParallelDescriptor::MyProc</a>();</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> NReaders = MaxReaders();</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            <span class="keywordflow">if</span> (rank &gt;= NReaders) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160; </div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Navg = ngrids[lev] / NReaders;</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Nleft = ngrids[lev] - Navg * NReaders;</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160; </div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;            <span class="keywordtype">int</span> lo, hi;</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;            <span class="keywordflow">if</span> (rank &lt; Nleft) {</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;                lo = rank*(Navg + 1);</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;                hi = lo + Navg + 1;</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;            }</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;                lo = rank * Navg + Nleft;</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                hi = lo + Navg;</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;            }</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160; </div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo; i &lt; hi; ++i) {</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;                grids_to_read.push_back(i);</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;            }</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;        }</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> igrid = 0; igrid &lt; static_cast&lt;int&gt;(grids_to_read.size()); ++igrid) {</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> grid = grids_to_read[igrid];</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160; </div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;            <span class="keywordflow">if</span> (how == <span class="stringliteral">&quot;single&quot;</span>) {</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;                ReadParticlesHDF5&lt;float&gt;(offset[grid], count[grid], grid, lev, int_dset, real_dset, finest_level_in_file, convert_ids);</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            }</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (how == <span class="stringliteral">&quot;double&quot;</span>) {</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;                ReadParticlesHDF5&lt;double&gt;(offset[grid], count[grid], grid, lev, int_dset, real_dset, finest_level_in_file, convert_ids);</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;            }</div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                std::string msg(<span class="stringliteral">&quot;ParticleContainer::Restart(): bad parameter: &quot;</span>);</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;                msg += how;</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;                <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(msg.c_str());</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            }</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;        }</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160; </div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;        H5Dclose(int_dset);</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;        H5Dclose(real_dset);</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;        H5Gclose(grp);</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;    } <span class="comment">// end for level</span></div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160; </div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;    H5Fclose(fid);</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160; </div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;    Redistribute();</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160; </div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(OK());</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160; </div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;    <span class="keywordflow">if</span> (m_verbose &gt; 1) {</div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;        <span class="keyword">auto</span> stoptime = <a class="code" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a>() - strttime;</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aff6bc74ed06d830d1db5d24040838e14">ParallelDescriptor::ReduceRealMax</a>(stoptime, <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a">ParallelDescriptor::IOProcessorNumber</a>());</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;ParticleContainer::Restart() time: &quot;</span> &lt;&lt; stoptime &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    }</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;}</div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160; </div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;<span class="comment">// Read a batch of particles from the checkpoint file</span></div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> RTYPE&gt;</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a8c7ba0d4cc37b8af14a09f1b3be39242">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</a></div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a8c7ba0d4cc37b8af14a09f1b3be39242">::ReadParticlesHDF5</a> (hsize_t offset, hsize_t cnt, <span class="keywordtype">int</span> grd, <span class="keywordtype">int</span> lev,</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;                     hid_t int_dset, hid_t real_dset, <span class="keywordtype">int</span> finest_level_in_file,</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;                     <span class="keywordtype">bool</span> convert_ids)</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;{</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::ReadParticlesHDF5()&quot;</span>);</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(cnt &gt; 0);</div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(lev &lt; <span class="keywordtype">int</span>(m_particles.size()));</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160; </div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    hid_t int_dspace, int_fspace, real_dspace, real_fspace;</div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160; </div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    <span class="comment">// First read in the integer data in binary.  We do not store</span></div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    <span class="comment">// the m_lev and m_grid data on disk.  We can easily recreate</span></div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="comment">// that given the structure of the checkpoint file.</span></div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> iChunkSize = 2 + NStructInt + NumIntComps();</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;    Vector&lt;int&gt; istuff(cnt*iChunkSize);</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    int_fspace = H5Dget_space(int_dset);</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    hsize_t int_cnt = cnt*iChunkSize;</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    hsize_t int_offset = offset*iChunkSize;</div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;    int_dspace = H5Screate_simple(1, &amp;int_cnt, NULL);</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    H5Sselect_hyperslab (int_fspace, H5S_SELECT_SET, &amp;int_offset, NULL, &amp;int_cnt, NULL);</div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    H5Dread(int_dset, H5T_NATIVE_INT, int_dspace, int_fspace, H5P_DEFAULT, istuff.dataPtr());</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160; </div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    H5Sclose(int_fspace);</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    H5Sclose(int_dspace);</div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    <span class="comment">// Then the real data in binary.</span></div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rChunkSize = AMREX_SPACEDIM + NStructReal + NumRealComps();</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    Vector&lt;RTYPE&gt; rstuff(cnt*rChunkSize);</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    real_fspace = H5Dget_space(real_dset);</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    hsize_t real_cnt = cnt*rChunkSize;</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    hsize_t real_offset = offset*rChunkSize;</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    real_dspace = H5Screate_simple(1, &amp;real_cnt, NULL);</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    H5Sselect_hyperslab (real_fspace, H5S_SELECT_SET, &amp;real_offset, NULL, &amp;real_cnt, NULL);</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(RTYPE) == 4) {</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        H5Dread(real_dset, H5T_NATIVE_FLOAT, real_dspace, real_fspace, H5P_DEFAULT, rstuff.dataPtr());</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;        H5Dread(real_dset, H5T_NATIVE_DOUBLE, real_dspace, real_fspace, H5P_DEFAULT, rstuff.dataPtr());</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;    }</div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160; </div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;    H5Sclose(real_fspace);</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;    H5Sclose(real_dspace);</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160; </div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;    <span class="comment">// Now reassemble the particles.</span></div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;    <span class="keywordtype">int</span>*   iptr = istuff.dataPtr();</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;    RTYPE* rptr = rstuff.dataPtr();</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160; </div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;    ParticleType p;</div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;    ParticleLocData pld;</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160; </div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;, Gpu::HostVector&lt;ParticleType&gt; &gt; &gt; host_particles;</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    host_particles.reserve(15);</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    host_particles.resize(finest_level_in_file+1);</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160; </div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;,</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;                    std::vector&lt;Gpu::HostVector&lt;ParticleReal&gt; &gt; &gt; &gt; host_real_attribs;</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;    host_real_attribs.reserve(15);</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    host_real_attribs.resize(finest_level_in_file+1);</div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160; </div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;,</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                    std::vector&lt;Gpu::HostVector&lt;int&gt; &gt; &gt; &gt; host_int_attribs;</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    host_int_attribs.reserve(15);</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    host_int_attribs.resize(finest_level_in_file+1);</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160; </div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    <span class="keywordflow">for</span> (hsize_t i = 0; i &lt; cnt; i++) {</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;        <span class="keywordflow">if</span> (convert_ids) {</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;            std::int32_t  xi, yi;</div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;            std::uint32_t xu, yu;</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;            xi = iptr[0];</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;            yi = iptr[1];</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(&amp;xu, &amp;xi, <span class="keyword">sizeof</span>(xi));</div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(&amp;yu, &amp;yi, <span class="keyword">sizeof</span>(yi));</div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            p.m_idcpu = ((std::uint64_t)xu) &lt;&lt; 32 | yu;</div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;            p.id()   = iptr[0];</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;            p.cpu()  = iptr[1];</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;        }</div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;        iptr += 2;</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160; </div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; NStructInt; j++)</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;        {</div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;            p.idata(j) = *iptr;</div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;            ++iptr;</div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;        }</div>
-<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160; </div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(p.id() &gt; 0);</div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160; </div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;        <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(p.pos(0) = ParticleReal(rptr[0]);,</div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;                     p.pos(1) = ParticleReal(rptr[1]);,</div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;                     p.pos(2) = ParticleReal(rptr[2]););</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160; </div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;        rptr += AMREX_SPACEDIM;</div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160; </div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; NStructReal; j++)</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;        {</div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;            p.rdata(j) = ParticleReal(*rptr);</div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;            ++rptr;</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;        }</div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160; </div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;        locateParticle(p, pld, 0, finestLevel(), 0);</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160; </div>
-<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;        std::pair&lt;int, int&gt; ind(grd, pld.m_tile);</div>
-<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160; </div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;        host_real_attribs[lev][ind].resize(NumRealComps());</div>
-<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        host_int_attribs[lev][ind].resize(NumIntComps());</div>
-<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160; </div>
-<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;        <span class="comment">// add the struct</span></div>
-<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        host_particles[lev][ind].push_back(p);</div>
-<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160; </div>
-<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;        <span class="comment">// add the real...</span></div>
-<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumRealComps(); icomp++) {</div>
-<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;            host_real_attribs[lev][ind][icomp].push_back(ParticleReal(*rptr));</div>
-<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;            ++rptr;</div>
-<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;        }</div>
-<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160; </div>
-<div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;        <span class="comment">// ... and int array data</span></div>
-<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumIntComps(); icomp++) {</div>
-<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;            host_int_attribs[lev][ind][icomp].push_back(*iptr);</div>
-<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;            ++iptr;</div>
-<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        }</div>
-<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;    }</div>
-<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160; </div>
-<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> host_lev = 0; host_lev &lt; static_cast&lt;int&gt;(host_particles.size()); ++host_lev)</div>
-<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;      {</div>
-<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; kv : host_particles[host_lev]) {</div>
-<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;          <span class="keyword">auto</span> grid = kv.first.first;</div>
-<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;          <span class="keyword">auto</span> tile = kv.first.second;</div>
-<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_tile = kv.second;</div>
-<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160; </div>
-<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;          <span class="keyword">auto</span>&amp; dst_tile = DefineAndReturnParticleTile(host_lev, grid, tile);</div>
-<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;          <span class="keyword">auto</span> old_size = dst_tile.GetArrayOfStructs().size();</div>
-<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;          <span class="keyword">auto</span> new_size = old_size + src_tile.size();</div>
-<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;          dst_tile.resize(new_size);</div>
-<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160; </div>
-<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;          <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>, src_tile.begin(), src_tile.end(),</div>
-<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;                         dst_tile.GetArrayOfStructs().begin() + old_size);</div>
-<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160; </div>
-<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumRealComps(); ++i) {</div>
-<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
-<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;                             host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
-<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;                             host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
-<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;                             dst_tile.GetStructOfArrays().GetRealData(i).begin() + old_size);</div>
-<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;          }</div>
-<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160; </div>
-<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumIntComps(); ++i) {</div>
-<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
-<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;                             host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
-<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;                             host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
-<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;                             dst_tile.GetStructOfArrays().GetIntData(i).begin() + old_size);</div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;          }</div>
-<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;        }</div>
-<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;      }</div>
-<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160; </div>
-<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
-<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;}</div>
-<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160; </div>
-<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_USE_HDF5*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_PARTICLEHDF5_H*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;            Box tmp (IntVect{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(boxes[i*AMREX_SPACEDIM], boxes[i*AMREX_SPACEDIM+1], boxes[i*AMREX_SPACEDIM+2])},</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                     IntVect{<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(boxes[i*AMREX_SPACEDIM*2], boxes[i*AMREX_SPACEDIM*2+1], boxes[i*AMREX_SPACEDIM*2+2])});</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;            particle_box_arrays[lev][i] = tmp;</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;        }</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160; </div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;        <span class="keywordflow">if</span> (! particle_box_arrays[lev].CellEqual(ParticleBoxArray(lev)))</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;            dual_grid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;    }</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160; </div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;    <span class="keywordflow">if</span> (dual_grid) {</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finestLevel(); lev++) {</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            SetParticleBoxArray(lev, particle_box_arrays[lev]);</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            DistributionMapping pdm(particle_box_arrays[lev]);</div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;            SetParticleDistributionMap(lev, pdm);</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;        }</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;    }</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160; </div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    Vector&lt;int&gt; ngrids(finest_level_in_file+1);</div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level_in_file; lev++) {</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;        gname = <span class="stringliteral">&quot;level_&quot;</span> + std::to_string(lev);</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        grp = H5Gopen(fid, gname.c_str(), H5P_DEFAULT);</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;        <span class="keywordflow">if</span> (grp &lt; 0) {</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open group &quot;</span>);</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;            msg += gname;</div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        }</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160; </div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;        aname = <span class="stringliteral">&quot;ngrids&quot;</span>;</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;        ret = <a class="code" href="AMReX__WriteBinaryParticleDataHDF5_8H.html#aad63ab7770ca222d4e42f2cd5ddcf0bb">ReadHDF5Attr</a>(grp, aname.c_str(), &amp;ngrids[lev], H5T_NATIVE_INT);</div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to read attribute &quot;</span>);</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;            msg += aname;</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        }</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160; </div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(ngrids[lev] &gt; 0);</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        <span class="keywordflow">if</span> (lev &lt;= finestLevel()) {</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(ngrids[lev] == <span class="keywordtype">int</span>(ParticleBoxArray(lev).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>()));</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        }</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160; </div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        H5Gclose(grp);</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    }</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160; </div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;    resizeData();</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160; </div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;    <span class="keywordflow">if</span> (finest_level_in_file &gt; finestLevel()) {</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;        m_particles.resize(finest_level_in_file+1);</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;    }</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160; </div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level_in_file; lev++) {</div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        gname = <span class="stringliteral">&quot;level_&quot;</span> + std::to_string(lev);</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;        grp = H5Gopen(fid, gname.c_str(), H5P_DEFAULT);</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        <span class="keywordflow">if</span> (grp &lt; 0) {</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open group &quot;</span>);</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;            msg += gname;</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;        }</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160; </div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        dset = H5Dopen(grp, <span class="stringliteral">&quot;nparticles_grid&quot;</span>, H5P_DEFAULT);</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;        Vector&lt;int&gt; count(ngrids[lev]);</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        ret = H5Dread(dset, H5T_NATIVE_INT, H5S_ALL, H5S_ALL, H5P_DEFAULT, &amp;(count[0]));</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to read nparticles_grid dataset&quot;</span>);</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        }</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;        H5Dclose(dset);</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160; </div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;        Vector&lt;hsize_t&gt;  offset(ngrids[lev]);</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        offset[0] = 0;</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; ngrids[lev]; i++) {</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;            offset[i] = offset[i-1] + count[i-1];</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;        }</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160; </div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;        int_dset  = H5Dopen(grp, <span class="stringliteral">&quot;data:datatype=0&quot;</span>, H5P_DEFAULT);</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;        <span class="keywordflow">if</span> (int_dset &lt; 0) {</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open int dataset&quot;</span>);</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;        }</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;        real_dset = H5Dopen(grp, <span class="stringliteral">&quot;data:datatype=1&quot;</span>, H5P_DEFAULT);</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;        <span class="keywordflow">if</span> (real_dset &lt; 0) {</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;            std::string msg(<span class="stringliteral">&quot;ParticleContainer::RestartHDF5(): unable to open int dataset&quot;</span>);</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;            <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(msg.c_str());</div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;        }</div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160; </div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;        Vector&lt;int&gt; grids_to_read;</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;        <span class="keywordflow">if</span> (lev &lt;= finestLevel()) {</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(*m_dummy_mf[lev]); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                grids_to_read.push_back(mfi.index());</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;            }</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;            <span class="comment">// we lost a level on restart. we still need to read in particles</span></div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;            <span class="comment">// on finer levels, and put them in the right place via Redistribute()</span></div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> rank = <a class="code" href="namespaceamrex_1_1MPMD.html#a61222da774be88a4ba57947bce9b0847">ParallelDescriptor::MyProc</a>();</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> NReaders = MaxReaders();</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;            <span class="keywordflow">if</span> (rank &gt;= NReaders) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160; </div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Navg = ngrids[lev] / NReaders;</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> Nleft = ngrids[lev] - Navg * NReaders;</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;            <span class="keywordtype">int</span> lo, hi;</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;            <span class="keywordflow">if</span> (rank &lt; Nleft) {</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;                lo = rank*(Navg + 1);</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;                hi = lo + Navg + 1;</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            }</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                lo = rank * Navg + Nleft;</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;                hi = lo + Navg;</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;            }</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160; </div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo; i &lt; hi; ++i) {</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                grids_to_read.push_back(i);</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;            }</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;        }</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160; </div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> igrid = 0; igrid &lt; static_cast&lt;int&gt;(grids_to_read.size()); ++igrid) {</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> grid = grids_to_read[igrid];</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160; </div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;            <span class="keywordflow">if</span> (how == <span class="stringliteral">&quot;single&quot;</span>) {</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;                ReadParticlesHDF5&lt;float&gt;(offset[grid], count[grid], grid, lev, int_dset, real_dset, finest_level_in_file, convert_ids);</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            }</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (how == <span class="stringliteral">&quot;double&quot;</span>) {</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                ReadParticlesHDF5&lt;double&gt;(offset[grid], count[grid], grid, lev, int_dset, real_dset, finest_level_in_file, convert_ids);</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;            }</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;                std::string msg(<span class="stringliteral">&quot;ParticleContainer::Restart(): bad parameter: &quot;</span>);</div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;                msg += how;</div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                <a class="code" href="namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4">amrex::Error</a>(msg.c_str());</div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            }</div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;        }</div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160; </div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;        H5Dclose(int_dset);</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;        H5Dclose(real_dset);</div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;        H5Gclose(grp);</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;    } <span class="comment">// end for level</span></div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160; </div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;    H5Fclose(fid);</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160; </div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;    Redistribute();</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160; </div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(OK());</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160; </div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    <span class="keywordflow">if</span> (m_verbose &gt; 1) {</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;        <span class="keyword">auto</span> stoptime = <a class="code" href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a>() - strttime;</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aff6bc74ed06d830d1db5d24040838e14">ParallelDescriptor::ReduceRealMax</a>(stoptime, <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a">ParallelDescriptor::IOProcessorNumber</a>());</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;        <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;ParticleContainer::Restart() time: &quot;</span> &lt;&lt; stoptime &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    }</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;}</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160; </div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;<span class="comment">// Read a batch of particles from the checkpoint file</span></div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt,</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;          <span class="keyword">template</span>&lt;<span class="keyword">class</span>&gt; <span class="keyword">class </span>Allocator, <span class="keyword">class </span>CellAssignor&gt;</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> RTYPE&gt;</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a8c7ba0d4cc37b8af14a09f1b3be39242">ParticleContainer_impl&lt;ParticleType, NArrayReal, NArrayInt, Allocator, CellAssignor&gt;</a></div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;<a class="code" href="AMReX__ParticlesHDF5_8H.html#a8c7ba0d4cc37b8af14a09f1b3be39242">::ReadParticlesHDF5</a> (hsize_t offset, hsize_t cnt, <span class="keywordtype">int</span> grd, <span class="keywordtype">int</span> lev,</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;                     hid_t int_dset, hid_t real_dset, <span class="keywordtype">int</span> finest_level_in_file,</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;                     <span class="keywordtype">bool</span> convert_ids)</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;{</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainer::ReadParticlesHDF5()&quot;</span>);</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(cnt &gt; 0);</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(lev &lt; <span class="keywordtype">int</span>(m_particles.size()));</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160; </div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    hid_t int_dspace, int_fspace, real_dspace, real_fspace;</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160; </div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    <span class="comment">// First read in the integer data in binary.  We do not store</span></div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="comment">// the m_lev and m_grid data on disk.  We can easily recreate</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    <span class="comment">// that given the structure of the checkpoint file.</span></div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> iChunkSize = 2 + NStructInt + NumIntComps();</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;    Vector&lt;int&gt; istuff(cnt*iChunkSize);</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    int_fspace = H5Dget_space(int_dset);</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    hsize_t int_cnt = cnt*iChunkSize;</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;    hsize_t int_offset = offset*iChunkSize;</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;    int_dspace = H5Screate_simple(1, &amp;int_cnt, NULL);</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    H5Sselect_hyperslab (int_fspace, H5S_SELECT_SET, &amp;int_offset, NULL, &amp;int_cnt, NULL);</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    H5Dread(int_dset, H5T_NATIVE_INT, int_dspace, int_fspace, H5P_DEFAULT, istuff.dataPtr());</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160; </div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    H5Sclose(int_fspace);</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    H5Sclose(int_dspace);</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160; </div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="comment">// Then the real data in binary.</span></div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rChunkSize = AMREX_SPACEDIM + NStructReal + NumRealComps();</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    Vector&lt;RTYPE&gt; rstuff(cnt*rChunkSize);</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    real_fspace = H5Dget_space(real_dset);</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    hsize_t real_cnt = cnt*rChunkSize;</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    hsize_t real_offset = offset*rChunkSize;</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    real_dspace = H5Screate_simple(1, &amp;real_cnt, NULL);</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    H5Sselect_hyperslab (real_fspace, H5S_SELECT_SET, &amp;real_offset, NULL, &amp;real_cnt, NULL);</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>(RTYPE) == 4) {</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;        H5Dread(real_dset, H5T_NATIVE_FLOAT, real_dspace, real_fspace, H5P_DEFAULT, rstuff.dataPtr());</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;        H5Dread(real_dset, H5T_NATIVE_DOUBLE, real_dspace, real_fspace, H5P_DEFAULT, rstuff.dataPtr());</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;    }</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160; </div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;    H5Sclose(real_fspace);</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    H5Sclose(real_dspace);</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160; </div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;    <span class="comment">// Now reassemble the particles.</span></div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;    <span class="keywordtype">int</span>*   iptr = istuff.dataPtr();</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;    RTYPE* rptr = rstuff.dataPtr();</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160; </div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;    ParticleType p;</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;    ParticleLocData pld;</div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160; </div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;, Gpu::HostVector&lt;ParticleType&gt; &gt; &gt; host_particles;</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    host_particles.reserve(15);</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;    host_particles.resize(finest_level_in_file+1);</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160; </div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;,</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;                    std::vector&lt;Gpu::HostVector&lt;ParticleReal&gt; &gt; &gt; &gt; host_real_attribs;</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    host_real_attribs.reserve(15);</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;    host_real_attribs.resize(finest_level_in_file+1);</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160; </div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;    Vector&lt;std::map&lt;std::pair&lt;int, int&gt;,</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;                    std::vector&lt;Gpu::HostVector&lt;int&gt; &gt; &gt; &gt; host_int_attribs;</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    host_int_attribs.reserve(15);</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;    host_int_attribs.resize(finest_level_in_file+1);</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160; </div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;    <span class="keywordflow">for</span> (hsize_t i = 0; i &lt; cnt; i++) {</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;        <span class="keywordflow">if</span> (convert_ids) {</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;            std::int32_t  xi, yi;</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;            std::uint32_t xu, yu;</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;            xi = iptr[0];</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;            yi = iptr[1];</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(&amp;xu, &amp;xi, <span class="keyword">sizeof</span>(xi));</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083">std::memcpy</a>(&amp;yu, &amp;yi, <span class="keyword">sizeof</span>(yi));</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;            p.m_idcpu = ((std::uint64_t)xu) &lt;&lt; 32 | yu;</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;            p.id()   = iptr[0];</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;            p.cpu()  = iptr[1];</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;        }</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;        iptr += 2;</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160; </div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; NStructInt; j++)</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;        {</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;            p.idata(j) = *iptr;</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;            ++iptr;</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;        }</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160; </div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(p.id() &gt; 0);</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160; </div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;        <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(p.pos(0) = ParticleReal(rptr[0]);,</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;                     p.pos(1) = ParticleReal(rptr[1]);,</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;                     p.pos(2) = ParticleReal(rptr[2]););</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160; </div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;        rptr += AMREX_SPACEDIM;</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160; </div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; NStructReal; j++)</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;        {</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;            p.rdata(j) = ParticleReal(*rptr);</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;            ++rptr;</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;        }</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160; </div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        locateParticle(p, pld, 0, finestLevel(), 0);</div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160; </div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;        std::pair&lt;int, int&gt; ind(grd, pld.m_tile);</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160; </div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        host_real_attribs[lev][ind].resize(NumRealComps());</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;        host_int_attribs[lev][ind].resize(NumIntComps());</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160; </div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        <span class="comment">// add the struct</span></div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;        host_particles[lev][ind].push_back(p);</div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160; </div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        <span class="comment">// add the real...</span></div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumRealComps(); icomp++) {</div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;            host_real_attribs[lev][ind][icomp].push_back(ParticleReal(*rptr));</div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;            ++rptr;</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;        }</div>
+<div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160; </div>
+<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;        <span class="comment">// ... and int array data</span></div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumIntComps(); icomp++) {</div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;            host_int_attribs[lev][ind][icomp].push_back(*iptr);</div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;            ++iptr;</div>
+<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;        }</div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    }</div>
+<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160; </div>
+<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> host_lev = 0; host_lev &lt; static_cast&lt;int&gt;(host_particles.size()); ++host_lev)</div>
+<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;      {</div>
+<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; kv : host_particles[host_lev]) {</div>
+<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;          <span class="keyword">auto</span> grid = kv.first.first;</div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;          <span class="keyword">auto</span> tile = kv.first.second;</div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_tile = kv.second;</div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160; </div>
+<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;          <span class="keyword">auto</span>&amp; dst_tile = DefineAndReturnParticleTile(host_lev, grid, tile);</div>
+<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;          <span class="keyword">auto</span> old_size = dst_tile.GetArrayOfStructs().size();</div>
+<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;          <span class="keyword">auto</span> new_size = old_size + src_tile.size();</div>
+<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;          dst_tile.resize(new_size);</div>
+<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160; </div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;          <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>, src_tile.begin(), src_tile.end(),</div>
+<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;                         dst_tile.GetArrayOfStructs().begin() + old_size);</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160; </div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumRealComps(); ++i) {</div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;                             host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
+<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;                             host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;                             dst_tile.GetStructOfArrays().GetRealData(i).begin() + old_size);</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;          }</div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160; </div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumIntComps(); ++i) {</div>
+<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
+<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;                             host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
+<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;                             host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;                             dst_tile.GetStructOfArrays().GetIntData(i).begin() + old_size);</div>
+<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;          }</div>
+<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;        }</div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;      }</div>
+<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160; </div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
+<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;}</div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160; </div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_USE_HDF5*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*AMREX_PARTICLEHDF5_H*/</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aAMReX_8H_html"><div class="ttname"><a href="AMReX_8H.html">AMReX.H</a></div></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
