@@ -2466,7 +2466,7 @@
 <codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="392"><highlight class="normal"></highlight></codeline>
-<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(*m_cf_crse_data_tmp,<sp/>0,<sp/>ncomp,<sp/>nghost,<sp/>time,<sp/>cbccomp);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(*m_cf_crse_data_tmp,<sp/>0,<sp/>ncomp,<sp/>m_cf_crse_data_tmp-&gt;nGrowVect(),<sp/>time,<sp/>cbccomp);</highlight></codeline>
 <codeline lineno="394"><highlight class="normal"></highlight></codeline>
 <codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1detail_1aaa2f442d8ea72f80f2d543e12c5f8a1a" kindref="member">detail::call_interp_hook</ref>(pre_interp,<sp/>*m_cf_crse_data_tmp,<sp/>0,<sp/>ncomp);</highlight></codeline>
 <codeline lineno="396"><highlight class="normal"></highlight></codeline>
@@ -2669,7 +2669,7 @@
 <codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();</highlight></codeline>
 <codeline lineno="595"><highlight class="normal"></highlight></codeline>
-<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>cbc(*m_cf_crse_data_tmp,<sp/>0,<sp/>m_ncomp,<sp/>m_nghost,<sp/>time,<sp/>0);</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>cbc(*m_cf_crse_data_tmp,<sp/>0,<sp/>m_ncomp,<sp/>m_cf_crse_data_tmp-&gt;nGrowVect(),<sp/>time,<sp/>0);</highlight></codeline>
 <codeline lineno="597"><highlight class="normal"></highlight></codeline>
 <codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_cf_fine_data<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_cf_fine_data<sp/>=<sp/>std::make_unique&lt;MF&gt;(detail::make_mf_fine_patch&lt;MF&gt;(fpc,<sp/>m_ncomp));</highlight></codeline>

@@ -351,7 +351,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        cbc(*m_cf_crse_data_tmp, 0, ncomp, nghost, time, cbccomp);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        cbc(*m_cf_crse_data_tmp, 0, ncomp, m_cf_crse_data_tmp-&gt;nGrowVect(), time, cbccomp);</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <a class="code" href="namespaceamrex_1_1detail.html#aaa2f442d8ea72f80f2d543e12c5f8a1a">detail::call_interp_hook</a>(pre_interp, *m_cf_crse_data_tmp, 0, ncomp);</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
@@ -554,7 +554,7 @@ $(document).ready(function(){initNavTree('AMReX__FillPatcher_8H_source.html','')
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    }</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    cbc(*m_cf_crse_data_tmp, 0, m_ncomp, m_nghost, time, 0);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    cbc(*m_cf_crse_data_tmp, 0, m_ncomp, m_cf_crse_data_tmp-&gt;nGrowVect(), time, 0);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordflow">if</span> (m_cf_fine_data == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        m_cf_fine_data = std::make_unique&lt;MF&gt;(detail::make_mf_fine_patch&lt;MF&gt;(fpc, m_ncomp));</div>
