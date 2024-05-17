@@ -160,10 +160,10 @@ var NAVTREEINDEX =
 "structamrex_1_1IParserStack.html#af48a7aa2e427fa54e5aca98aca113111",
 "structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a6fead2902da1385e8caf89e7befdc5eb",
 "structamrex_1_1ParserExeSUB__PN.html#a400fca37b7f78f9e6b1f04cd1de6976e",
-"structamrex_1_1ParticleTile.html#a27974d2d46e3698a69b1997e905072e8",
-"structamrex_1_1StructOfArrays.html#ac6d3cee84ea6fbae0bf95bcd36c536fa",
-"structamrex_1_1amrex__Vec.html#ac480727670bb025eb2c56a44281074d1",
-"unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39"
+"structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc",
+"structamrex_1_1StructOfArrays.html#aaf532986a54772ea640a2ab38b7cff9e",
+"structamrex_1_1amrex__Mat.html#a781cc06ce703efa959aec101c847e2ed",
+"unionamrex_1_1BATransformer_1_1BATOp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
