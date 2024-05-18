@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMReX-MPMD &mdash; amrex 24.06-dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=681a4282" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=c492da40"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MUI" href="MUI_Tutorial.html" />
+    <link rel="prev" title="ML/PYTORCH" href="ML_Tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            amrex
+          </a>
+              <div class="version">
+                24.06-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GuidedTutorials.html">Guided Tutorials</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FFTW_Tutorial.html">FFTW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heFFTe_Tutorial.html">heFFTe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_Tutorial.html">ML/PYTORCH</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AMReX-MPMD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#case-1">Case-1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contents">Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile">Compile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-on-perlmutter-nersc">Running on Perlmutter (NERSC)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#case-2">Case-2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-and-running-on-a-local-system">Compiling and Running on a local system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-cpp-compile">main.cpp compile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-and-running-on-perlmutter-nersc">Compiling and Running on Perlmutter (NERSC)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-virtual-environment">Creating a virtual environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python_Tutorial.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS_Tutorial.html">SUNDIALS and Time Integrators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">SWFFT</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">AMReX-MPMD</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/MPMD_Tutorials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="amrex-mpmd">
+<span id="tutorials-mpmd"></span><h1>AMReX-MPMD<a class="headerlink" href="#amrex-mpmd" title="Link to this heading"></a></h1>
+<p>AMReX-MPMD utilizes the Multiple Program Multiple Data (MPMD) feature of MPI to provide cross-functionality for AMReX-based codes.
+The framework enables data transfer across two different applications through <strong>MPMD::Copier</strong> class, which typically takes <strong>BoxArray</strong> of its application as an argument.
+<strong>Copier</strong> instances created in both the applications together identify the overlapping cells for which the data transfer must occur.
+<strong>Copier::send</strong> &amp; <strong>Copier::recv</strong> functions, which take a <strong>MultiFab</strong> as an argument, are used to transfer the desired data of overlapping regions.</p>
+<section id="case-1">
+<h2>Case-1<a class="headerlink" href="#case-1" title="Link to this heading"></a></h2>
+<p>The current case demonstrates the MPMD capability across two C++ applications.</p>
+<section id="contents">
+<h3>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h3>
+<p><strong>Source_1</strong> subfolder contains <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> which will be treated as the first application.
+Similarly, <strong>Source_2</strong> subfolder contains <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code> that will be treated as the second application.</p>
+</section>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>The domain in <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> is set to <code class="docutils literal notranslate"><span class="pre">lo</span> <span class="pre">=</span> <span class="pre">{0,</span> <span class="pre">0,</span> <span class="pre">0}</span></code> and <code class="docutils literal notranslate"><span class="pre">hi</span> <span class="pre">=</span> <span class="pre">{31,</span> <span class="pre">31,</span> <span class="pre">31}</span></code>, while the domain in <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code> is set to <code class="docutils literal notranslate"><span class="pre">lo</span> <span class="pre">=</span> <span class="pre">{16,</span> <span class="pre">16,</span> <span class="pre">16}</span></code> and <code class="docutils literal notranslate"><span class="pre">hi</span> <span class="pre">=</span> <span class="pre">{31,</span> <span class="pre">31,</span> <span class="pre">31}</span></code>.
+Hence, the data transfer will occur for the region <code class="docutils literal notranslate"><span class="pre">lo</span> <span class="pre">=</span> <span class="pre">{16,</span> <span class="pre">16,</span> <span class="pre">16}</span></code> and <code class="docutils literal notranslate"><span class="pre">hi</span> <span class="pre">=</span> <span class="pre">{31,</span> <span class="pre">31,</span> <span class="pre">31}</span></code>.
+Furthermore, the domain in <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> is split into boxes using <code class="docutils literal notranslate"><span class="pre">max_grid_size=16</span></code>, while the domain in <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code> is split using <code class="docutils literal notranslate"><span class="pre">max_grid_size=8</span></code>.
+Therefore, the <strong>BoxArray</strong>, and moreover, the number of boxes for the overlapping region are different across the two applications.
+The data transfer demonstration is performed using a two component <em>MultiFab</em>.
+The first component is populated in <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> before it is transferred to <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code>.
+The second component is populated in <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code> based on the received first component.
+Finally, the second component is transferred from <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code> to <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code>.
+It can be seen from the plotfile generated by <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> that the second component is non-zero only for the overlapping region.</p>
+</section>
+<section id="compile">
+<h3>Compile<a class="headerlink" href="#compile" title="Link to this heading"></a></h3>
+<p>The compile process here assumes that the current working directory is <code class="docutils literal notranslate"><span class="pre">ExampleCodes/MPMD/Case-1/</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># cd into Source_1 to compile the first application</span>
+<span class="nb">cd</span><span class="w"> </span>Source_1/
+<span class="c1"># Include USE_CUDA=TRUE for CUDA GPUs</span>
+make<span class="w"> </span><span class="nv">USE_MPI</span><span class="o">=</span>TRUE
+
+<span class="c1"># cd into Source_2 to compile the second application</span>
+<span class="nb">cd</span><span class="w"> </span>../Source_2/
+<span class="c1"># Include USE_CUDA=TRUE for CUDA GPUs</span>
+make<span class="w"> </span><span class="nv">USE_MPI</span><span class="o">=</span>TRUE
+</pre></div>
+</div>
+</section>
+<section id="run">
+<h3>Run<a class="headerlink" href="#run" title="Link to this heading"></a></h3>
+<p>Here, the current case is being run using a total of 12 MPI ranks with 8 allocated to <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> and the rest for <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code>.
+Please note that MPI ranks attributed to each application/code need to be continuous, i.e., MPI ranks 0-7 are for <code class="docutils literal notranslate"><span class="pre">main_1.cpp</span></code> and 8-11 are for <code class="docutils literal notranslate"><span class="pre">main_2.cpp</span></code>.
+This may be default behaviour on several systems.
+Furthermore, the run process here assumes that the current working directory is <code class="docutils literal notranslate"><span class="pre">ExampleCodes/MPMD/Case-1/</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running the MPMD process with 12 ranks</span>
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">8</span><span class="w"> </span>Source_1/main3d.gnu.DEBUG.MPI.ex<span class="w"> </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>Source_2/main3d.gnu.DEBUG.MPI.ex
+</pre></div>
+</div>
+</section>
+<section id="running-on-perlmutter-nersc">
+<h3>Running on Perlmutter (NERSC)<a class="headerlink" href="#running-on-perlmutter-nersc" title="Link to this heading"></a></h3>
+<p>This section presents information regarding sample scripts that can be used to run this case on <a class="reference external" href="https://docs.nersc.gov/systems/perlmutter/">Perlmutter (NERSC)</a>.
+The scripts <code class="docutils literal notranslate"><span class="pre">mpmd_cpu.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">mpmd_cpu.conf</span></code> can be used to run the CPU version.
+Similarly, <code class="docutils literal notranslate"><span class="pre">mpmd_gpu.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">mpmd_gpu.conf</span></code> can be used to run the GPU version.
+Please note that <code class="docutils literal notranslate"><span class="pre">perlmutter_gpu.profile</span></code> must be leveraged to compile the GPU version of the applications.</p>
+<p>The content presented here is based on the following references:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://docs.nersc.gov/jobs/examples/#mpmd-multiple-program-multiple-data-jobs">NERSC documentation</a></p></li>
+<li><p><a class="reference external" href="https://warpx.readthedocs.io/en/latest/install/hpc/perlmutter.html">WarpX documentation</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="case-2">
+<h2>Case-2<a class="headerlink" href="#case-2" title="Link to this heading"></a></h2>
+<p>The current case demonstrates the MPMD capability across C++ and python applications.
+This language interoperability is achieved through the python bindings of AMReX, <a class="reference external" href="https://github.com/AMReX-Codes/pyamrex">pyAMReX</a>.</p>
+<section id="id1">
+<h3>Contents<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> will be the C++ application and <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will be the python application.</p>
+</section>
+<section id="id2">
+<h3>Overview<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>In the previous case (Case-1) of MPMD each application has its own domain, and therefore, different <strong>BoxArray</strong>.
+However, there exist scenarios where both applications deal with the same <strong>BoxArray</strong>.
+The current case presents such a scenario where the <strong>BoxArray</strong> is defined only in the <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> application, but this information is relayed to <code class="docutils literal notranslate"><span class="pre">main.py</span></code> application through the <strong>MPMD::Copier</strong>.</p>
+<p><strong>Please ensure that the same AMReX source code is used to compile both the applications.</strong></p>
+</section>
+<section id="compiling-and-running-on-a-local-system">
+<h3>Compiling and Running on a local system<a class="headerlink" href="#compiling-and-running-on-a-local-system" title="Link to this heading"></a></h3>
+<p>The compile process for pyAMReX is only briefly described here.
+Please refer to the <a class="reference external" href="https://pyamrex.readthedocs.io/en/latest/install/cmake.html#">pyAMReX documentation</a> for more details.
+<strong>It must be mentioned that mpi4py is an important dependency that should exist in the utilized environment</strong>.
+For pyAMReX conda environment, it can be installed using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">mpi4py</span></code>, <a class="reference external" href="https://mpi4py.readthedocs.io/en/latest/install.html#using-conda">resource</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># find dependencies &amp; configure</span>
+<span class="c1"># Include -DAMReX_GPU_BACKEND=CUDA for gpu version</span>
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DAMReX_SPACEDIM<span class="o">=</span><span class="s2">&quot;1;2;3&quot;</span><span class="w"> </span>-DAMReX_MPI<span class="o">=</span>ON<span class="w"> </span>-DpyAMReX_amrex_src<span class="o">=</span>/path/to/amrex
+
+<span class="c1"># compile &amp; install, here we use four threads</span>
+cmake<span class="w"> </span>--build<span class="w"> </span>build<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span>--target<span class="w"> </span>pip_install
+</pre></div>
+</div>
+</section>
+<section id="main-cpp-compile">
+<h3>main.cpp compile<a class="headerlink" href="#main-cpp-compile" title="Link to this heading"></a></h3>
+<p>The compile process here assumes that the current working directory is <code class="docutils literal notranslate"><span class="pre">ExampleCodes/MPMD/Case-2/</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Include USE_CUDA=TRUE for CUDA GPUs</span>
+make<span class="w"> </span><span class="nv">USE_MPI</span><span class="o">=</span>TRUE
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Run<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>Here, the current case is being run using a total of 12 MPI ranks with 8 allocated to <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> and the rest for <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.
+As mentioned earlier, the MPI ranks attributed to each application/code need to be continuous, i.e., MPI ranks 0-7 are for <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> and 8-11 are for <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.
+This may be default behaviour on several systems.
+Furthermore, the run process here assumes that the current working directory is <code class="docutils literal notranslate"><span class="pre">ExampleCodes/MPMD/Case-2/</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running the MPMD process with 12 ranks</span>
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">8</span><span class="w"> </span>./main3d.gnu.DEBUG.MPI.ex<span class="w"> </span>:<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>python<span class="w"> </span>main.py
+</pre></div>
+</div>
+</section>
+<section id="compiling-and-running-on-perlmutter-nersc">
+<h3>Compiling and Running on Perlmutter (NERSC)<a class="headerlink" href="#compiling-and-running-on-perlmutter-nersc" title="Link to this heading"></a></h3>
+<p>Running this case on perlmutter involves creating a python virtual environment.
+pyAMReX must be compiled and installed into this virtual environment after its creation.
+Similar to the previous case, this case also has supporting scripts to run on CPUs and GPUs.</p>
+<p>The process detailed below assumes that the current working directory is <code class="docutils literal notranslate"><span class="pre">ExampleCodes/MPMD/Case-2/</span></code>.</p>
+<section id="creating-a-virtual-environment">
+<h4>Creating a virtual environment<a class="headerlink" href="#creating-a-virtual-environment" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup the required environment variables</span>
+<span class="nb">source</span><span class="w"> </span>perlmutter_gpu.profile
+
+<span class="c1"># BEFORE PERFORMING THE FOLLOWING COMMANDS</span>
+<span class="c1"># MOVE TO A DIRECTORY WHERE THE PYTHON VIRTUAL ENVIRONMENT MUST EXIST</span>
+
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>virtualenv
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>cache<span class="w"> </span>purge
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>pyamrex-gpu
+<span class="nb">source</span><span class="w"> </span>pyamrex-gpu/bin/activate
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>build
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>packaging
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>wheel
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>cython
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>numpy
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pandas
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>scipy
+<span class="nv">MPICC</span><span class="o">=</span><span class="s2">&quot;cc -target-accel=nvidia80 -shared&quot;</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>mpi4py<span class="w"> </span>--no-cache-dir<span class="w"> </span>--no-build-isolation<span class="w"> </span>--no-binary<span class="w"> </span>mpi4py
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>openpmd-api
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>matplotlib
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>yt
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>cupy-cuda12x<span class="w">  </span><span class="c1"># CUDA 12 compatible wheel</span>
+</pre></div>
+</div>
+<p>The content presented here is based on the following reference:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://warpx.readthedocs.io/en/latest/install/hpc/perlmutter.html">WarpX documentation</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ML_Tutorial.html" class="btn btn-neutral float-left" title="ML/PYTORCH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MUI_Tutorial.html" class="btn btn-neutral float-right" title="MUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017-2018, AMReX Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
