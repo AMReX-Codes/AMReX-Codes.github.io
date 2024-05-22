@@ -714,132 +714,163 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;{</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;PermutationForDeposition()&quot;</span>);</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    constexpr index_type gpu_block_size = 1024;</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    constexpr index_type gpu_block_size_m1 = gpu_block_size - 1;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    constexpr index_type llist_guard = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;index_type&gt;::max</a>();</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="comment">// round up to gpu_block_size</span></div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    nbins = (nbins + gpu_block_size_m1) / gpu_block_size * gpu_block_size;</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a> llist_start(nbins, llist_guard);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a> llist_next(nitems);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    perm.<a class="code" href="classamrex_1_1PODVector.html#ac5114811535bc90b00c115260f83b20c">resize</a>(nitems);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html">Gpu::DeviceScalar&lt;index_type&gt;</a> global_idx(0);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_HIP)</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// MI250X has a small L2 cache and is more tolerant of atomic add contention,</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="comment">// so we use a small block size of 64 and the compressed layout.</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keyword">static</span> constexpr index_type gpu_block_size = 64;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> compressed_layout = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="comment">// A100 has a larger L2 cache and is very sensitive to atomic add contention,</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="comment">// so we use a large bock size of 1024 and not the compressed layout.</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keyword">static</span> constexpr index_type gpu_block_size = 1014;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> compressed_layout = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    index_type* pllist_start = llist_start.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    index_type* pllist_next = llist_next.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    index_type* pperm = perm.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    index_type* pglobal_idx = global_idx.<a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504">dataPtr</a>();</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">amrex::ParallelFor</a>(nitems, [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (index_type i) noexcept</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        i = nitems - i - 1;</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        pllist_next[i] = <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a170f55f8b9bd412d07a2ab2e825a4ee8">Gpu::Atomic::Exch</a>(pllist_start + <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(i), i);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    });</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keyword">static</span> constexpr index_type gpu_block_size_m1 = gpu_block_size - 1;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keyword">static</span> constexpr index_type llist_guard = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;index_type&gt;::max</a>();</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="comment">// round up to gpu_block_size</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    nbins = (nbins + gpu_block_size_m1) / gpu_block_size * gpu_block_size;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a> llist_start(nbins, llist_guard);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a> llist_next(nitems);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    perm.<a class="code" href="classamrex_1_1PODVector.html#ac5114811535bc90b00c115260f83b20c">resize</a>(nitems);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html">Gpu::DeviceScalar&lt;index_type&gt;</a> global_idx(0);</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    amrex::launch&lt;gpu_block_size&gt;(nbins / gpu_block_size, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            __shared__ index_type sdata[gpu_block_size];</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            index_type current_idx = pllist_start[threadIdx.x + gpu_block_size * blockIdx.x];</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                sdata[threadIdx.x] = index_type(current_idx != llist_guard);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                index_type <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                <span class="comment">// simple block wide prefix sum</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <span class="keywordflow">for</span> (index_type i = 1; i&lt;gpu_block_size; i*=2) {</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                    __syncthreads();</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                    <span class="keywordflow">if</span> (threadIdx.x &gt;= i) {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = sdata[threadIdx.x - i];</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    }</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                    __syncthreads();</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    <span class="keywordflow">if</span> (threadIdx.x &gt;= i) {</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                        sdata[threadIdx.x] += <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                    }</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                }</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                __syncthreads();</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                <span class="keywordflow">if</span> (sdata[gpu_block_size_m1] == 0) {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                }</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                __syncthreads();</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x == gpu_block_size_m1) {</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = sdata[gpu_block_size_m1];</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    sdata[gpu_block_size_m1] = <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">Gpu::Atomic::Add</a>(pglobal_idx, <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                }</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                __syncthreads();</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x &lt; gpu_block_size_m1) {</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    sdata[threadIdx.x] += sdata[gpu_block_size_m1];</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                }</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                __syncthreads();</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x == gpu_block_size_m1) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    sdata[gpu_block_size_m1] += <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    index_type* pllist_start = llist_start.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    index_type* pllist_next = llist_next.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    index_type* pperm = perm.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    index_type* pglobal_idx = global_idx.<a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504">dataPtr</a>();</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160; </div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">amrex::ParallelFor</a>(nitems, [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (index_type i) noexcept</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        i = nitems - i - 1;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        pllist_next[i] = <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a170f55f8b9bd412d07a2ab2e825a4ee8">Gpu::Atomic::Exch</a>(pllist_start + <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>(i), i);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    });</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || defined(AMREX_USE_HIP)</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    amrex::launch&lt;gpu_block_size&gt;(nbins / gpu_block_size, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        [pllist_start,pllist_next,pperm,pglobal_idx] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () {</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            __shared__ index_type sdata[gpu_block_size];</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            __shared__ index_type global_idx_start;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            __shared__ index_type idx_start;</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            index_type current_idx = 0;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <span class="keywordflow">if</span> constexpr (compressed_layout) {</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                <span class="comment">// Compressed layout: subsequent sweeps of up to gpu_block_size contiguous particles</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                <span class="comment">// are put right next to each other, while without the compressed layout,</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                <span class="comment">// there can be other particle sweeps from different locations between them.</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                current_idx = pllist_start[threadIdx.x + gpu_block_size * blockIdx.x];</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                index_type num_particles_thread = 0;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <span class="keywordflow">while</span> (current_idx != llist_guard) {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    ++num_particles_thread;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                    current_idx = pllist_next[current_idx];</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                }</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                index_type num_particles_block =</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                    Gpu::blockReduceSum&lt;gpu_block_size&gt;(num_particles_thread);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160; </div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x == 0) {</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    global_idx_start = <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">Gpu::Atomic::Add</a>(pglobal_idx, num_particles_block);</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                __syncthreads();</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            }</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                <span class="keywordflow">if</span> (current_idx != llist_guard) {</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                    pperm[sdata[threadIdx.x] - 1] = current_idx;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    current_idx = pllist_next[current_idx];</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                }</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            }</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        });</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(pperm, pglobal_idx);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">Abort</a>(<span class="stringliteral">&quot;Not implemented&quot;</span>);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::Device::streamSynchronize</a>();</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;}</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> index_type, <span class="keyword">class</span> PTile&gt;</div>
-<div class="line"><a name="l00778"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">  778</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">PermutationForDeposition</a> (<a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a>&amp; perm, index_type nitems,</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                               <span class="keyword">const</span> PTile&amp; ptile, <a class="code" href="classamrex_1_1Box.html">Box</a> bx, <a class="code" href="classamrex_1_1Geometry.html">Geometry</a> geom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> idx_type)</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;{</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(idx_type.<a class="code" href="classamrex_1_1IntVect.html#ae3c7940850b880ae2d83dab12e73434a">allGE</a>(0) &amp;&amp; idx_type.<a class="code" href="classamrex_1_1IntVect.html#a9bfc5b4da499c3d53789bd0a3ceb2eda">allLE</a>(2));</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> refine_vect = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>(idx_type, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(1)).min(<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(2));</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> type_vect = idx_type - idx_type / 2 * 2;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    geom.<a class="code" href="classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3">refine</a>(refine_vect);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> domain = geom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>();</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    bx.<a class="code" href="classamrex_1_1Box.html#a5499f2bb3ff92ef3951332fa6b390b73">convert</a>(type_vect);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    domain.<a class="code" href="classamrex_1_1Box.html#a5499f2bb3ff92ef3951332fa6b390b73">convert</a>(type_vect);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1RealVect.html">RealVect</a> dxi(geom.<a class="code" href="classamrex_1_1CoordSys.html#ad195c96d818c1331428e90a727745304">InvCellSize</a>());</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1RealVect.html">RealVect</a> pos_offset = Real(0.5) * (<a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(geom.<a class="code" href="classamrex_1_1Geometry.html#a02ef0d522174b99ca75e569def4c091c">ProbLo</a>()) + <a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(geom.<a class="code" href="classamrex_1_1Geometry.html#a9a8ebe29bfbb66ffa7d2ac47d2fb255b">ProbHi</a>())</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        - <a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(geom.<a class="code" href="classamrex_1_1CoordSys.html#ade9815d7413549b5bb09000f1c9ede76">CellSize</a>()) * <a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(domain.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>() + domain.<a class="code" href="classamrex_1_1Box.html#aa2ebf79e721706ee01738c9bb1cc13e7">bigEnd</a>()));</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ref_product = <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(refine_vect[0], * refine_vect[1], * refine_vect[2]);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ref_offset(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(1, refine_vect[0], refine_vect[0] * refine_vect[1]));</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keyword">auto</span> ptd = ptile.getConstParticleTileData();</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="keyword">using</span> ParticleType = <span class="keyword">typename</span> PTile::ParticleType::ConstType;</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    PermutationForDeposition&lt;index_type&gt;(perm, nitems, bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * ref_product,</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (index_type idx) noexcept</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            {</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,idx);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv = ((p.pos() - pos_offset) * dxi).round();</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_coarse = iv / refine_vect;</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_remainder = iv - iv_coarse * refine_vect;</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>(bx.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>());</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#ad903f958ca90c11bcf4e67941cb3e66a">min</a>(bx.<a class="code" href="classamrex_1_1Box.html#aa2ebf79e721706ee01738c9bb1cc13e7">bigEnd</a>());</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                <span class="keywordflow">return</span> bx.<a class="code" href="classamrex_1_1Box.html#a25e69da739e85d34b6788ddb21955c86">index</a>(iv_coarse) + bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * (iv_remainder * ref_offset).<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>();</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        });</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160; </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            current_idx = pllist_start[threadIdx.x + gpu_block_size * blockIdx.x];</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                sdata[threadIdx.x] = index_type(current_idx != llist_guard);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                index_type <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160; </div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                <span class="comment">// simple block wide prefix sum</span></div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                <span class="keywordflow">for</span> (index_type i = 1; i&lt;gpu_block_size; i*=2) {</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                    __syncthreads();</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                    <span class="keywordflow">if</span> (threadIdx.x &gt;= i) {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                        <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a> = sdata[threadIdx.x - i];</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                    }</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    __syncthreads();</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    <span class="keywordflow">if</span> (threadIdx.x &gt;= i) {</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                        sdata[threadIdx.x] += <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                    }</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                }</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                __syncthreads();</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                <span class="keywordflow">if</span> (sdata[gpu_block_size_m1] == 0) {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                }</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                <span class="keywordflow">if</span> (threadIdx.x == gpu_block_size_m1) {</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                    <span class="keywordflow">if</span> constexpr (compressed_layout) {</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                        idx_start = global_idx_start;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                        global_idx_start += sdata[gpu_block_size_m1];</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                        idx_start = <a class="code" href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">Gpu::Atomic::Add</a>(pglobal_idx, sdata[gpu_block_size_m1]);</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                    }</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                }</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                __syncthreads();</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                sdata[threadIdx.x] += idx_start;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                <span class="keywordflow">if</span> (current_idx != llist_guard) {</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                    pperm[sdata[threadIdx.x] - 1] = current_idx;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                    current_idx = pllist_next[current_idx];</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                }</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            }</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        });</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(pperm, pglobal_idx, compressed_layout);</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">Abort</a>(<span class="stringliteral">&quot;PermutationForDeposition only implemented for CUDA and HIP&quot;</span>);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160; </div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::Device::streamSynchronize</a>();</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;}</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> index_type, <span class="keyword">class</span> PTile&gt;</div>
+<div class="line"><a name="l00809"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">  809</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">PermutationForDeposition</a> (<a class="code" href="classamrex_1_1PODVector.html">Gpu::DeviceVector&lt;index_type&gt;</a>&amp; perm, index_type nitems,</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                               <span class="keyword">const</span> PTile&amp; ptile, <a class="code" href="classamrex_1_1Box.html">Box</a> bx, <a class="code" href="classamrex_1_1Geometry.html">Geometry</a> geom, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> idx_type)</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;{</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(idx_type.<a class="code" href="classamrex_1_1IntVect.html#ae3c7940850b880ae2d83dab12e73434a">allGE</a>(0) &amp;&amp; idx_type.<a class="code" href="classamrex_1_1IntVect.html#a9bfc5b4da499c3d53789bd0a3ceb2eda">allLE</a>(2));</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> refine_vect = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">max</a>(idx_type, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(1)).min(<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(2));</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> type_vect = idx_type - idx_type / 2 * 2;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    geom.<a class="code" href="classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3">refine</a>(refine_vect);</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;}</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// include guard</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <a class="code" href="classamrex_1_1Box.html">Box</a> domain = geom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>();</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    bx.<a class="code" href="classamrex_1_1Box.html#a5499f2bb3ff92ef3951332fa6b390b73">convert</a>(type_vect);</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    domain.<a class="code" href="classamrex_1_1Box.html#a5499f2bb3ff92ef3951332fa6b390b73">convert</a>(type_vect);</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160; </div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1RealVect.html">RealVect</a> dxi(geom.<a class="code" href="classamrex_1_1CoordSys.html#ad195c96d818c1331428e90a727745304">InvCellSize</a>());</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1RealVect.html">RealVect</a> pos_offset = Real(0.5) * (<a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(geom.<a class="code" href="classamrex_1_1Geometry.html#a02ef0d522174b99ca75e569def4c091c">ProbLo</a>()) + <a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(geom.<a class="code" href="classamrex_1_1Geometry.html#a9a8ebe29bfbb66ffa7d2ac47d2fb255b">ProbHi</a>())</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        - <a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(geom.<a class="code" href="classamrex_1_1CoordSys.html#ade9815d7413549b5bb09000f1c9ede76">CellSize</a>()) * <a class="code" href="classamrex_1_1RealVect.html">RealVect</a>(domain.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>() + domain.<a class="code" href="classamrex_1_1Box.html#aa2ebf79e721706ee01738c9bb1cc13e7">bigEnd</a>()));</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ref_product = <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(refine_vect[0], * refine_vect[1], * refine_vect[2]);</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ref_offset(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(1, refine_vect[0], refine_vect[0] * refine_vect[1]));</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="keyword">auto</span> ptd = ptile.getConstParticleTileData();</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="keyword">using</span> ParticleType = <span class="keyword">typename</span> PTile::ParticleType::ConstType;</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    PermutationForDeposition&lt;index_type&gt;(perm, nitems, bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * ref_product,</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (index_type idx) noexcept</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            {</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; p = <a class="code" href="structmake__particle.html">make_particle&lt;ParticleType&gt;</a>{}(ptd,idx);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv = ((p.pos() - pos_offset) * dxi).round();</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_coarse = iv / refine_vect;</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> iv_remainder = iv - iv_coarse * refine_vect;</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>(bx.<a class="code" href="classamrex_1_1Box.html#a04e076a4688ca383aeaccfcb0bceef60">smallEnd</a>());</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                iv_coarse = iv_coarse.<a class="code" href="classamrex_1_1IntVect.html#ad903f958ca90c11bcf4e67941cb3e66a">min</a>(bx.<a class="code" href="classamrex_1_1Box.html#aa2ebf79e721706ee01738c9bb1cc13e7">bigEnd</a>());</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                <span class="keywordflow">return</span> bx.<a class="code" href="classamrex_1_1Box.html#a25e69da739e85d34b6788ddb21955c86">index</a>(iv_coarse) + bx.<a class="code" href="classamrex_1_1Box.html#a74b39c8b70837cdb61ade61a834997ff">numPts</a>() * (iv_remainder * ref_offset).<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a>();</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        });</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;}</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160; </div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HDF5_ASYNC</span></div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_particle();</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="keywordtype">void</span> async_vol_es_wait_close_particle();</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;}</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160; </div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// include guard</span></div>
 <div class="ttc" id="aAMReX__BLProfiler_8H_html_a548fbd9b2cd72a927f463003f4adb0b1"><div class="ttname"><a href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a></div><div class="ttdeci">#define BL_PROFILE(a)</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.H:551</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
@@ -929,7 +960,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleUtil_8H_source.html',''
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition:</b> AMReX.cpp:212</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad2e8127753e9be0ebf531435c6511937"><div class="ttname"><a href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">amrex::int</a></div><div class="ttdeci">const int[]</div><div class="ttdef"><b>Definition:</b> AMReX_BLProfiler.cpp:1664</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad2e9cbb8f28bbbba7378ec7bf4654b89"><div class="ttname"><a href="namespaceamrex.html#ad2e9cbb8f28bbbba7378ec7bf4654b89">amrex::computeRefFac</a></div><div class="ttdeci">IntVect computeRefFac(const ParGDBBase *a_gdb, int src_lev, int lev)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.cpp:6</div></div>
-<div class="ttc" id="anamespaceamrex_html_ad434592fa38d501d9db9bfb648bb9140"><div class="ttname"><a href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">amrex::PermutationForDeposition</a></div><div class="ttdeci">void PermutationForDeposition(Gpu::DeviceVector&lt; index_type &gt; &amp;perm, index_type nitems, const PTile &amp;ptile, Box bx, Geometry geom, const IntVect idx_type)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:778</div></div>
+<div class="ttc" id="anamespaceamrex_html_ad434592fa38d501d9db9bfb648bb9140"><div class="ttname"><a href="namespaceamrex.html#ad434592fa38d501d9db9bfb648bb9140">amrex::PermutationForDeposition</a></div><div class="ttdeci">void PermutationForDeposition(Gpu::DeviceVector&lt; index_type &gt; &amp;perm, index_type nitems, const PTile &amp;ptile, Box bx, Geometry geom, const IntVect idx_type)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:809</div></div>
 <div class="ttc" id="anamespaceamrex_html_add9c441e051b2f701d97e5e505556fa3"><div class="ttname"><a href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">amrex::ParallelFor</a></div><div class="ttdeci">std::enable_if_t&lt; std::is_integral_v&lt; T &gt; &gt; ParallelFor(TypeList&lt; CTOs... &gt;, std::array&lt; int, sizeof...(CTOs)&gt; const &amp;runtime_options, T N, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_CTOParallelForImpl.H:97</div></div>
 <div class="ttc" id="anamespaceamrex_html_aede00a5fe66df6418eb44590a33296a2"><div class="ttname"><a href="namespaceamrex.html#aede00a5fe66df6418eb44590a33296a2">amrex::getTileIndex</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int getTileIndex(const IntVect &amp;iv, const Box &amp;box, const bool a_do_tiling, const IntVect &amp;a_tile_size, Box &amp;tbx)</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleUtil.H:222</div></div>
 <div class="ttc" id="anamespaceparticle__detail_html"><div class="ttname"><a href="namespaceparticle__detail.html">particle_detail</a></div><div class="ttdef"><b>Definition:</b> AMReX_WriteBinaryParticleData.H:19</div></div>
