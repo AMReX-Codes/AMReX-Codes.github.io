@@ -1046,13 +1046,13 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160; </div>
 <div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    <span class="keywordtype">char</span>* the_recv_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    Vector&lt;int&gt; recv_from;</div>
-<div class="line"><a name="l00948"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a91d4e639cd2eca22c25e9625de833b3a">  948</a></span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> recv_size;</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MPI_Request&gt;</a> recv_reqs;</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MPI_Status&gt;</a> recv_stat;</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagT&gt;</a> recv_tags;</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    Vector&lt;std::size_t&gt; recv_size;</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    Vector&lt;MPI_Request&gt; recv_reqs;</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    Vector&lt;MPI_Status&gt; recv_stat;</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    Vector&lt;TagT&gt; recv_tags;</div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160; </div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;    <span class="keywordflow">if</span> (N_rcvs &gt; 0) {</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160; </div>
+<div class="line"><a name="l00954"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a91d4e639cd2eca22c25e9625de833b3a">  954</a></span>&#160; </div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> imf = 0; imf &lt; nmfs; ++imf) {</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            <span class="keywordflow">if</span> (cmds[imf]) {</div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tags = *(cmds[imf]-&gt;m_RcvTags);</div>
@@ -1120,30 +1120,30 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;    }</div>
 <div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160; </div>
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;    <span class="keywordtype">char</span>* the_send_data = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a> send_rank;</div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;char*&gt;</a> send_data;</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> send_size;</div>
-<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MPI_Request&gt;</a> send_reqs;</div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;    Vector&lt;int&gt; send_rank;</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    Vector&lt;char*&gt; send_data;</div>
+<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    Vector&lt;std::size_t&gt; send_size;</div>
+<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;    Vector&lt;MPI_Request&gt; send_reqs;</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <span class="keywordflow">if</span> (N_snds &gt; 0) {</div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> imf = 0; imf &lt; nmfs; ++imf) {</div>
-<div class="line"><a name="l01028"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a31ac8478feaa72ab3960bb08c69b082b"> 1028</a></span>&#160;            <span class="keywordflow">if</span> (cmds[imf]) {</div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;            <span class="keywordflow">if</span> (cmds[imf]) {</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tags = *(cmds[imf]-&gt;m_SndTags);</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; kv : tags) {</div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;                    send_rank.push_back(kv.first);</div>
 <div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;                }</div>
 <div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;            }</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;        }</div>
+<div class="line"><a name="l01034"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a31ac8478feaa72ab3960bb08c69b082b"> 1034</a></span>&#160;        }</div>
 <div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;        <a class="code" href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">amrex::RemoveDuplicates</a>(send_rank);</div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nsend = send_rank.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>();</div>
+<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nsend = send_rank.size();</div>
 <div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160; </div>
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;        send_data.resize(nsend, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        send_reqs.resize(nsend, <a class="code" href="AMReX__ccse-mpi_8H.html#af21740106a5c90305be33f95b09f37eb">MPI_REQUEST_NULL</a>);</div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160; </div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        Vector&lt;TagT&gt; send_tags;</div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;TagT&gt;</a> send_tags;</div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;        send_tags.reserve(N_snds);</div>
 <div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160; </div>
-<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;        Vector&lt;Vector&lt;std::size_t&gt; &gt; send_offset(nsend);</div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;        Vector&lt;std::size_t&gt; offset;</div>
+<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;Vector&lt;std::size_t&gt;</a> &gt; send_offset(nsend);</div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> offset;</div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        send_size.reserve(nsend);</div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;        offset.reserve(nsend);</div>
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;        std::size_t TotalSndsVolume = 0;</div>
@@ -1159,7 +1159,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;                            send_offset[i].push_back(nbytes);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;                            send_tags.push_back({amrex::makeArray4&lt;T&gt;(<span class="keyword">nullptr</span>,cct.sbox,ncomp[imf]),</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;                                                 sfab.const_array(scomp[imf],ncomp[imf]),</div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;                                                 cct.sbox, Dim3{0,0,0}});</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;                                                 cct.sbox, <a class="code" href="structamrex_1_1Dim3.html">Dim3</a>{0,0,0}});</div>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;                            nbytes += sfab.nBytes(cct.sbox,ncomp[imf]);</div>
 <div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;                        }</div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;                    }</div>
@@ -1218,7 +1218,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    }</div>
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160; </div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keywordflow">if</span> (N_snds &gt; 0) {</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        Vector&lt;MPI_Status&gt; stats(send_reqs.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>());</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        Vector&lt;MPI_Status&gt; stats(send_reqs.size());</div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(send_reqs, stats);</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;        <a class="code" href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(the_send_data);</div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    }</div>
@@ -1263,7 +1263,7 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="ttc" id="aclassamrex_1_1BoxArray_html_a0005742d49b95bea045b6f46edb75714"><div class="ttname"><a href="classamrex_1_1BoxArray.html#a0005742d49b95bea045b6f46edb75714">amrex::BoxArray::ixType</a></div><div class="ttdeci">IndexType ixType() const noexcept</div><div class="ttdoc">Return index type of this BoxArray.</div><div class="ttdef"><b>Definition:</b> AMReX_BoxArray.H:801</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_a4bb7e999eee8c04f07573269b54e39d0"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#a4bb7e999eee8c04f07573269b54e39d0">amrex::FabArrayBase::boxArray</a></div><div class="ttdeci">const BoxArray &amp; boxArray() const noexcept</div><div class="ttdoc">Return a constant reference to the BoxArray that defines the valid region associated with this FabArr...</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayBase.H:94</div></div>
 <div class="ttc" id="aclassamrex_1_1FabArrayBase_html_abd59469241abaab18e1c2db8b7ceb4ed"><div class="ttname"><a href="classamrex_1_1FabArrayBase.html#abd59469241abaab18e1c2db8b7ceb4ed">amrex::FabArrayBase::DistributionMap</a></div><div class="ttdeci">const DistributionMapping &amp; DistributionMap() const noexcept</div><div class="ttdoc">Return constant reference to associated DistributionMapping.</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayBase.H:130</div></div>
-<div class="ttc" id="aclassamrex_1_1FabArray_html"><div class="ttname"><a href="classamrex_1_1FabArray.html">amrex::FabArray</a></div><div class="ttdoc">An Array of FortranArrayBox(FAB)-like Objects.</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:328</div></div>
+<div class="ttc" id="aclassamrex_1_1FabArray_html"><div class="ttname"><a href="classamrex_1_1FabArray.html">amrex::FabArray</a></div><div class="ttdoc">An Array of FortranArrayBox(FAB)-like Objects.</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:334</div></div>
 <div class="ttc" id="aclassamrex_1_1IntVect_html"><div class="ttname"><a href="classamrex_1_1IntVect.html">amrex::IntVect</a></div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:46</div></div>
 <div class="ttc" id="aclassamrex_1_1IntVect_html_afc4d5734d3a85d47e406637bfdc4573d"><div class="ttname"><a href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">amrex::IntVect::max</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int max() const noexcept</div><div class="ttdoc">maximum (no absolute values) value</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:163</div></div>
 <div class="ttc" id="aclassamrex_1_1ParallelDescriptor_1_1Message_html_a3dd73a745e975beb885a19b708190cbe"><div class="ttname"><a href="classamrex_1_1ParallelDescriptor_1_1Message.html#a3dd73a745e975beb885a19b708190cbe">amrex::ParallelDescriptor::Message::req</a></div><div class="ttdeci">MPI_Request req() const</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:74</div></div>
@@ -1300,10 +1300,10 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="ttc" id="anamespaceamrex_html_a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba"><div class="ttname"><a href="namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a1477998364b5f02d6ce68e3da29be1ba">amrex::make_alias</a></div><div class="ttdeci">@ make_alias</div><div class="ttdef"><b>Definition:</b> AMReX_MakeType.H:7</div></div>
 <div class="ttc" id="anamespaceamrex_html_a2081a3d338ad899832ab632c44a12eb5"><div class="ttname"><a href="namespaceamrex.html#a2081a3d338ad899832ab632c44a12eb5">amrex::TheFaArenaPointer</a></div><div class="ttdeci">std::unique_ptr&lt; char, TheFaArenaDeleter &gt; TheFaArenaPointer</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:103</div></div>
 <div class="ttc" id="anamespaceamrex_html_a28fbc0acd8368951bb043d23d5c0727e"><div class="ttname"><a href="namespaceamrex.html#a28fbc0acd8368951bb043d23d5c0727e">amrex::nGrowVect</a></div><div class="ttdeci">IntVect nGrowVect(FabArrayBase const &amp;fa)</div></div>
-<div class="ttc" id="anamespaceamrex_html_a449d5cd7d3d778be0440141f9272d6bd"><div class="ttname"><a href="namespaceamrex.html#a449d5cd7d3d778be0440141f9272d6bd">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; DFAB &gt; &amp;dst, FabArray&lt; SFAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:172</div></div>
+<div class="ttc" id="anamespaceamrex_html_a449d5cd7d3d778be0440141f9272d6bd"><div class="ttname"><a href="namespaceamrex.html#a449d5cd7d3d778be0440141f9272d6bd">amrex::Copy</a></div><div class="ttdeci">void Copy(FabArray&lt; DFAB &gt; &amp;dst, FabArray&lt; SFAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:178</div></div>
 <div class="ttc" id="anamespaceamrex_html_a6d0e162407f49aab99ec9a1bcddf0f21"><div class="ttname"><a href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">amrex::boxArray</a></div><div class="ttdeci">BoxArray const  &amp; boxArray(FabArrayBase const &amp;fa)</div></div>
 <div class="ttc" id="anamespaceamrex_html_a867372a2ed191bd458e5e487ae3e6fa1"><div class="ttname"><a href="namespaceamrex.html#a867372a2ed191bd458e5e487ae3e6fa1">amrex::The_Comms_Arena</a></div><div class="ttdeci">Arena * The_Comms_Arena()</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.cpp:648</div></div>
-<div class="ttc" id="anamespaceamrex_html_ab72e53672887ede3d7ddc5f65002700e"><div class="ttname"><a href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a></div><div class="ttdeci">void Add(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:224</div></div>
+<div class="ttc" id="anamespaceamrex_html_ab72e53672887ede3d7ddc5f65002700e"><div class="ttname"><a href="namespaceamrex.html#ab72e53672887ede3d7ddc5f65002700e">amrex::Add</a></div><div class="ttdeci">void Add(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArray.H:230</div></div>
 <div class="ttc" id="anamespaceamrex_html_aba0258410952c3ccfe405a462ef2d887"><div class="ttname"><a href="namespaceamrex.html#aba0258410952c3ccfe405a462ef2d887">amrex::The_Pinned_Arena</a></div><div class="ttdeci">Arena * The_Pinned_Arena()</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.cpp:628</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad26f2328bf66aa9678347a6055a25431"><div class="ttname"><a href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a></div><div class="ttdeci">void Abort(const std::string &amp;msg)</div><div class="ttdoc">Print out message to cerr and exit via abort().</div><div class="ttdef"><b>Definition:</b> AMReX.cpp:212</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad7bef6630afa8a2109d2a242cc2d7591"><div class="ttname"><a href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a></div><div class="ttdeci">std::size_t aligned_size(std::size_t align_requirement, std::size_t size) noexcept</div><div class="ttdoc">Given a minimum required size of size bytes, this returns the next largest arena size that will align...</div><div class="ttdef"><b>Definition:</b> AMReX_Arena.H:18</div></div>

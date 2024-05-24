@@ -158,12 +158,12 @@ var NAVTREEINDEX =
 "structamrex_1_1FabArrayBase_1_1FB.html#a80294b3b23ece6729eca66ec2b75dcad",
 "structamrex_1_1GpuTupleElement.html",
 "structamrex_1_1IParserStack.html#a3951bf73fe4dbac7f4c1ccef7bbbcb34",
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html",
-"structamrex_1_1ParserExePOWI.html#a592be1db09332edbb17adf31e1db35e6",
-"structamrex_1_1ParticleTile.html#a0aeb55b6a15d10428c88a314412914c5",
-"structamrex_1_1StructOfArrays.html#a6b104504a3540a44182a1ad408d5cfa7",
-"structamrex_1_1amrex__KSP.html#af771c8008f6416c6155ae99f73c77362",
-"unionAMREX__PARSERSTYPE.html#a45b983ef388900bd6a62165ed8c9564a"
+"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#af6a0f9df0a06e03eeb147712461332e7",
+"structamrex_1_1ParserExePOWI.html#a17bdde21b0a5bb170322a52d31f1a7c4",
+"structamrex_1_1ParticleTile.html#a070fcef33e908cba36039a6fdf1d1c53",
+"structamrex_1_1StructOfArrays.html#a62679baf18972e398b3c6f5148fc9087",
+"structamrex_1_1amrex__KSP.html#af015143ffd55290b73715c48339f38f0",
+"unionAMREX__PARSERSTYPE.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
