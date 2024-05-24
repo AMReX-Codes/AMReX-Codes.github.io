@@ -3954,13 +3954,13 @@
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>handler.mpi_tag<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9fa50b376ee8c97f8d84852e244fd916" kindref="member">SeqNum</ref>;</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"></highlight></codeline>
 <codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N_rcvs<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handler.recv.the_data<sp/>=<sp/>mf.PostRcvs(*cmd.m_RcvTags,<sp/>handler.recv.data,<sp/>handler.recv.size,</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handler.recv.the_data<sp/>=<sp/>FabArray&lt;FAB&gt;::PostRcvs(*cmd.m_RcvTags,<sp/>handler.recv.data,<sp/>handler.recv.size,</highlight></codeline>
 <codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handler.recv.rank,<sp/>handler.recv.request,<sp/>ncomp,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9fa50b376ee8c97f8d84852e244fd916" kindref="member">SeqNum</ref>);</highlight></codeline>
 <codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"></highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N_snds<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handler.send.the_data<sp/>=</highlight></codeline>
-<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf.PrepareSendBuffers(*cmd.m_SndTags,<sp/>handler.send.data,<sp/>handler.send.size,</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a5e37435a999c0eb51e29139501d7ca49" kindref="member">FabArray&lt;FAB&gt;::PrepareSendBuffers</ref>(*cmd.m_SndTags,<sp/>handler.send.data,<sp/>handler.send.size,</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handler.send.rank,<sp/>handler.send.request,<sp/>handler.send.cctc,<sp/>ncomp);</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"></highlight></codeline>
 <codeline lineno="451"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>

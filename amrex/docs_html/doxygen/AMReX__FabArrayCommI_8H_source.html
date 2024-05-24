@@ -723,8 +723,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                                   Vector&lt;int&gt;&amp;                         send_rank,</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                                   Vector&lt;MPI_Request&gt;&amp;                 send_reqs,</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                                   Vector&lt;const CopyComTagsContainer*&gt;&amp; send_cctc,</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                                   <span class="keywordtype">int</span>                                  ncomp)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                                   <span class="keywordtype">int</span>                                  ncomp)</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;{</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <span class="keywordtype">char</span>* pointer = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    PrepareSendBuffers&lt;BUF&gt;(SndTags, pointer, send_data, send_size, send_rank, send_reqs, send_cctc, ncomp);</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2081a3d338ad899832ab632c44a12eb5">TheFaArenaPointer</a>(pointer);</div>
@@ -740,8 +740,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                                   Vector&lt;int&gt;&amp;                         send_rank,</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                                   Vector&lt;MPI_Request&gt;&amp;                 send_reqs,</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                                   Vector&lt;const CopyComTagsContainer*&gt;&amp; send_cctc,</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                   <span class="keywordtype">int</span>                                  ncomp)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                   <span class="keywordtype">int</span>                                  ncomp)</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;{</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    send_data.clear();</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    send_size.clear();</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    send_rank.clear();</div>
@@ -824,8 +824,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                   Vector&lt;int&gt;&amp;                           recv_from,</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                   Vector&lt;MPI_Request&gt;&amp;                   recv_reqs,</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                   <span class="keywordtype">int</span>                                    ncomp,</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                   <span class="keywordtype">int</span>                                    <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a>)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                   <span class="keywordtype">int</span>                                    <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a>)</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;{</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordtype">char</span>* pointer = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    PostRcvs(RcvTags, pointer, recv_data, recv_size, recv_from, recv_reqs, ncomp, <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a>);</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a2081a3d338ad899832ab632c44a12eb5">TheFaArenaPointer</a>(pointer);</div>
@@ -841,8 +841,8 @@ $(document).ready(function(){initNavTree('AMReX__FabArrayCommI_8H_source.html','
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                         Vector&lt;int&gt;&amp;                      recv_from,</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                         Vector&lt;MPI_Request&gt;&amp;              recv_reqs,</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                         <span class="keywordtype">int</span>                               ncomp,</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                         <span class="keywordtype">int</span>                               <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a>)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                         <span class="keywordtype">int</span>                               <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916">SeqNum</a>)</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;{</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    recv_data.clear();</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    recv_size.clear();</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    recv_from.clear();</div>
