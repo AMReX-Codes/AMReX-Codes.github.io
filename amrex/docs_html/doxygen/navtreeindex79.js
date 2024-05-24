@@ -1,5 +1,11 @@
 var NAVTREEINDEX79 =
 {
+"structamrex_1_1IParserStack.html#a3951bf73fe4dbac7f4c1ccef7bbbcb34":[3,0,0,325,1],
+"structamrex_1_1IParserStack.html#a40f7519b4e3633b56bf1b8e222dc3d28":[3,0,0,325,5],
+"structamrex_1_1IParserStack.html#a61b50c1e4b1a9ae178034bf0bb29f5b8":[3,0,0,325,6],
+"structamrex_1_1IParserStack.html#a8f2d6b01186dda49d525b32b50fb0a54":[3,0,0,325,0],
+"structamrex_1_1IParserStack.html#aa6f45ea78886ea7b34d6151a8514008c":[3,0,0,325,4],
+"structamrex_1_1IParserStack.html#accdd1fb9c87fe33046d566ee6f8aab56":[3,0,0,325,3],
 "structamrex_1_1IParserStack.html#af48a7aa2e427fa54e5aca98aca113111":[3,0,0,325,2],
 "structamrex_1_1IParser_1_1Data.html":[3,0,0,291,0],
 "structamrex_1_1IParser_1_1Data.html#a1c4d044550c8a47002f221aeead2c6a4":[3,0,0,291,0,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX79 =
 "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#aa54365274c737f11f87f1e2ae2cf7344":[3,0,0,464,3,2],
 "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ab55ece948b6a78f3ac9ece3db8abea57":[3,0,0,464,3,7],
 "structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#ae72224f4b411313148d1db9fc0572bd5":[3,0,0,464,3,8],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#af6a0f9df0a06e03eeb147712461332e7":[3,0,0,464,3,9],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html":[3,0,0,464,4],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a100e99344660cb60ef107223acdd752e":[3,0,0,464,4,1],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a123477aaf6e887c71714158dece38727":[3,0,0,464,4,10],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a40b53edfb8a608ea7034a66f0cb371cb":[3,0,0,464,4,8],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a50153a66460c821e4fd0097b5517d799":[3,0,0,464,4,7],
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a6934b79f725b578ab2bb11f3a6401c41":[3,0,0,464,4,5]
+"structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#af6a0f9df0a06e03eeb147712461332e7":[3,0,0,464,3,9]
 };

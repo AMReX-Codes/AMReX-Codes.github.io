@@ -153,17 +153,17 @@ var NAVTREEINDEX =
 "namespaceamrex_1_1system.html#ab2bbc5f6bf5d703bf0762b24b3c6f36e",
 "namespacemembers_e.html",
 "structamrex_1_1AMRErrorTagInfo.html#a2a4305e6d904d38980905de01195f7db",
-"structamrex_1_1BARef.html#a85cb1fd1c58fbc88dad28f9336d6245f",
-"structamrex_1_1DataAllocator.html#ad2f91458d09a1484857061ff235e73bd",
-"structamrex_1_1FabArrayBase_1_1FPinfo.html",
-"structamrex_1_1Gpu_1_1AtomicAdd.html",
-"structamrex_1_1IParserStack.html#af48a7aa2e427fa54e5aca98aca113111",
-"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html#a6fead2902da1385e8caf89e7befdc5eb",
-"structamrex_1_1ParserExeSUB__PN.html#a400fca37b7f78f9e6b1f04cd1de6976e",
-"structamrex_1_1ParticleTile.html#a22d017997751335e72bad98b42931cfc",
-"structamrex_1_1StructOfArrays.html#aaf532986a54772ea640a2ab38b7cff9e",
-"structamrex_1_1amrex__Mat.html#a781cc06ce703efa959aec101c847e2ed",
-"unionamrex_1_1BATransformer_1_1BATOp.html"
+"structamrex_1_1BARef.html#a6d54f5af3411a20df87cec16abf974f8",
+"structamrex_1_1CurlCurlSymmetryInfo.html#af4a4621aa274c45d4d00c5d9618e0ad1",
+"structamrex_1_1FabArrayBase_1_1FB.html#a80294b3b23ece6729eca66ec2b75dcad",
+"structamrex_1_1GpuTupleElement.html",
+"structamrex_1_1IParserStack.html#a3951bf73fe4dbac7f4c1ccef7bbbcb34",
+"structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap.html",
+"structamrex_1_1ParserExePOWI.html#a592be1db09332edbb17adf31e1db35e6",
+"structamrex_1_1ParticleTile.html#a0aeb55b6a15d10428c88a314412914c5",
+"structamrex_1_1StructOfArrays.html#a6b104504a3540a44182a1ad408d5cfa7",
+"structamrex_1_1amrex__KSP.html#af771c8008f6416c6155ae99f73c77362",
+"unionAMREX__PARSERSTYPE.html#a45b983ef388900bd6a62165ed8c9564a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
