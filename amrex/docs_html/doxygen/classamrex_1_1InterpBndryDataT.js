@@ -8,7 +8,7 @@ var classamrex_1_1InterpBndryDataT =
     [ "InterpBndryDataT", "classamrex_1_1InterpBndryDataT.html#a58930dee10ca630b2f499dc6f20aa0ac", null ],
     [ "operator=", "classamrex_1_1InterpBndryDataT.html#a86e3caeebf11d0a7786aedf4c4e2281b", null ],
     [ "operator=", "classamrex_1_1InterpBndryDataT.html#ac8f05912699e2607b569431b1c608d36", null ],
-    [ "setBndryValues", "classamrex_1_1InterpBndryDataT.html#a2bcedbc8be8b49fe6678c2d2d2127d42", null ],
+    [ "setBndryValues", "classamrex_1_1InterpBndryDataT.html#accdac636c68436e7163d72917cba76c6", null ],
     [ "setHomogValues", "classamrex_1_1InterpBndryDataT.html#a772640cb8d0030c7b6e69714d055d8e3", null ],
     [ "setPhysBndryValues", "classamrex_1_1InterpBndryDataT.html#a24af38cde0573af0a4557b5e165690ff", null ],
     [ "updateBndryValues", "classamrex_1_1InterpBndryDataT.html#a961ddc9421552e67d0397b7523e6280e", null ],
