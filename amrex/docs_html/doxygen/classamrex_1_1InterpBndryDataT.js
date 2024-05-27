@@ -11,6 +11,6 @@ var classamrex_1_1InterpBndryDataT =
     [ "setBndryValues", "classamrex_1_1InterpBndryDataT.html#accdac636c68436e7163d72917cba76c6", null ],
     [ "setHomogValues", "classamrex_1_1InterpBndryDataT.html#a772640cb8d0030c7b6e69714d055d8e3", null ],
     [ "setPhysBndryValues", "classamrex_1_1InterpBndryDataT.html#a24af38cde0573af0a4557b5e165690ff", null ],
-    [ "updateBndryValues", "classamrex_1_1InterpBndryDataT.html#a961ddc9421552e67d0397b7523e6280e", null ],
+    [ "updateBndryValues", "classamrex_1_1InterpBndryDataT.html#a46045099a99335613063cba938a27623", null ],
     [ "IBD_max_order_DEF", "classamrex_1_1InterpBndryDataT.html#a258eb38558243a71923bbc3fc82990ba", null ]
 ];
