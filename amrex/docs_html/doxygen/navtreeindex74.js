@@ -1,7 +1,5 @@
 var NAVTREEINDEX74 =
 {
-"structamrex_1_1AMRErrorTagInfo.html#a2a4305e6d904d38980905de01195f7db":[3,0,0,42,9],
-"structamrex_1_1AMRErrorTagInfo.html#a3dc671430b63a9d4a3acde3473987d37":[3,0,0,42,4],
 "structamrex_1_1AMRErrorTagInfo.html#a53b6a8de32e2ca45e830037a5024de24":[3,0,0,42,8],
 "structamrex_1_1AMRErrorTagInfo.html#a7804b1aaad0f9423c2bd6505d4582845":[3,0,0,42,2],
 "structamrex_1_1AMRErrorTagInfo.html#a780852cad4ac22553f8cdbda0ff107a4":[3,0,0,42,10],
@@ -140,13 +138,13 @@ var NAVTREEINDEX74 =
 "structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0":[3,0,0,77,22],
 "structamrex_1_1Array3D.html#a95521eae522931f98cbb29c0daba5b35":[3,0,0,77,1],
 "structamrex_1_1Array3D.html#ab58dde651cfad3f07ffdfb42d66e1c3b":[3,0,0,77,8],
-"structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[3,0,0,77,7],
 "structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[3,0,0,77,6],
+"structamrex_1_1Array3D.html#abf54e64537c495cc45a1be3d73982a4a":[3,0,0,77,7],
 "structamrex_1_1Array3D.html#ace0391dec6f0b2c90c125db136ad86b0":[3,0,0,77,18],
 "structamrex_1_1Array3D.html#adfb237ca22c5441c5f708a1f8470ba5b":[3,0,0,77,21],
 "structamrex_1_1Array3D.html#ae7c4e83776aa2f4f136bd43d5e7ba4f5":[3,0,0,77,11],
-"structamrex_1_1Array3D.html#aee1539b552b20a4bead8cd53a99d4f02":[3,0,0,77,4],
 "structamrex_1_1Array3D.html#aee1539b552b20a4bead8cd53a99d4f02":[3,0,0,77,5],
+"structamrex_1_1Array3D.html#aee1539b552b20a4bead8cd53a99d4f02":[3,0,0,77,4],
 "structamrex_1_1Array3D.html#afb7b8e1395bf02084ad9013d41ac4148":[3,0,0,77,15],
 "structamrex_1_1Array4.html":[3,0,0,79],
 "structamrex_1_1Array4.html#a0951dd1a1e6d5b4f5a41c4cae335f6f1":[3,0,0,79,20],
@@ -249,5 +247,7 @@ var NAVTREEINDEX74 =
 "structamrex_1_1BARef.html#a299f5f87c10a06d86f32289928792d07":[3,0,0,102,8],
 "structamrex_1_1BARef.html#a5944e840877ab3c3a9aa28d2bd5d1399":[3,0,0,102,21],
 "structamrex_1_1BARef.html#a59cc4e634f9108fb676919f94f8ff55f":[3,0,0,102,0],
-"structamrex_1_1BARef.html#a65dc0d94878bc8772f54d69c57430979":[3,0,0,102,31]
+"structamrex_1_1BARef.html#a65dc0d94878bc8772f54d69c57430979":[3,0,0,102,31],
+"structamrex_1_1BARef.html#a6d54f5af3411a20df87cec16abf974f8":[3,0,0,102,19],
+"structamrex_1_1BARef.html#a706eeeb8f176a08d3774dd488715bfc1":[3,0,0,102,24]
 };

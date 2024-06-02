@@ -1126,7 +1126,6 @@ var hierarchy =
       [ "amrex::Vector< amrex::BoxList >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::StateDescriptor::BndryFunc > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Real >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< ParticleTilePtr >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::NeighborParticleContainer::NeighborCommTag >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< RT > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::iMultiFab > > >", "classamrex_1_1Vector.html", null ],

@@ -1894,7 +1894,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;            <span class="comment">// we need to create any missing map entries in serial here</span></div>
 <div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;            <span class="keywordflow">for</span> (pmap_it=tmp_local[lev].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(); pmap_it != tmp_local[lev].end(); pmap_it++)</div>
 <div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;            {</div>
-<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;                m_particles[lev][pmap_it-&gt;first];</div>
+<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;                DefineAndReturnParticleTile(lev, pmap_it-&gt;first.first, pmap_it-&gt;first.second);</div>
 <div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;                grid_tile_ids.push_back(pmap_it-&gt;first);</div>
 <div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160;                pvec_ptrs.push_back(&amp;(pmap_it-&gt;second));</div>
 <div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;            }</div>
@@ -1905,7 +1905,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01814"></a><span class="lineno"> 1814</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pit = 0; pit &lt; static_cast&lt;int&gt;(pvec_ptrs.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()); ++pit)</div>
 <div class="line"><a name="l01815"></a><span class="lineno"> 1815</span>&#160;            {</div>
 <div class="line"><a name="l01816"></a><span class="lineno"> 1816</span>&#160;                <span class="keyword">auto</span> index = grid_tile_ids[pit];</div>
-<div class="line"><a name="l01817"></a><span class="lineno"> 1817</span>&#160;                <span class="keyword">auto</span>&amp; ptile = DefineAndReturnParticleTile(lev, index.first, index.second);</div>
+<div class="line"><a name="l01817"></a><span class="lineno"> 1817</span>&#160;                <span class="keyword">auto</span>&amp; ptile = ParticlesAt(lev, index.first, index.second);</div>
 <div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;                <span class="keyword">auto</span>&amp; aos = ptile.GetArrayOfStructs();</div>
 <div class="line"><a name="l01819"></a><span class="lineno"> 1819</span>&#160;                <span class="keyword">auto</span>&amp; soa = ptile.GetStructOfArrays();</div>
 <div class="line"><a name="l01820"></a><span class="lineno"> 1820</span>&#160;                <span class="keyword">auto</span>&amp; aos_tmp = *(pvec_ptrs[pit]);</div>
@@ -1933,7 +1933,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01842"></a><span class="lineno"> 1842</span>&#160;            <span class="comment">// we need to create any missing map entries in serial here</span></div>
 <div class="line"><a name="l01843"></a><span class="lineno"> 1843</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> soa_map_it=soa_local[lev].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(); soa_map_it != soa_local[lev].end(); soa_map_it++)</div>
 <div class="line"><a name="l01844"></a><span class="lineno"> 1844</span>&#160;            {</div>
-<div class="line"><a name="l01845"></a><span class="lineno"> 1845</span>&#160;                m_particles[lev][soa_map_it-&gt;first];</div>
+<div class="line"><a name="l01845"></a><span class="lineno"> 1845</span>&#160;                DefineAndReturnParticleTile(lev, soa_map_it-&gt;first.first, soa_map_it-&gt;first.second);</div>
 <div class="line"><a name="l01846"></a><span class="lineno"> 1846</span>&#160;                grid_tile_ids.push_back(soa_map_it-&gt;first);</div>
 <div class="line"><a name="l01847"></a><span class="lineno"> 1847</span>&#160;            }</div>
 <div class="line"><a name="l01848"></a><span class="lineno"> 1848</span>&#160; </div>
@@ -1943,7 +1943,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="line"><a name="l01852"></a><span class="lineno"> 1852</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pit = 0; pit &lt; static_cast&lt;int&gt;(grid_tile_ids.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()); ++pit) <span class="comment">// NOLINT(modernize-loop-convert)</span></div>
 <div class="line"><a name="l01853"></a><span class="lineno"> 1853</span>&#160;            {</div>
 <div class="line"><a name="l01854"></a><span class="lineno"> 1854</span>&#160;                <span class="keyword">auto</span> index = grid_tile_ids[pit];</div>
-<div class="line"><a name="l01855"></a><span class="lineno"> 1855</span>&#160;                <span class="keyword">auto</span>&amp; ptile = DefineAndReturnParticleTile(lev, index.first, index.second);</div>
+<div class="line"><a name="l01855"></a><span class="lineno"> 1855</span>&#160;                <span class="keyword">auto</span>&amp; ptile = ParticlesAt(lev, index.first, index.second);</div>
 <div class="line"><a name="l01856"></a><span class="lineno"> 1856</span>&#160;                <span class="keyword">auto</span>&amp; soa = ptile.GetStructOfArrays();</div>
 <div class="line"><a name="l01857"></a><span class="lineno"> 1857</span>&#160;                <span class="keyword">auto</span>&amp; soa_tmp = soa_local[lev][index];</div>
 <div class="line"><a name="l01858"></a><span class="lineno"> 1858</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_threads; ++i) {</div>
@@ -2690,8 +2690,8 @@ $(document).ready(function(){initNavTree('AMReX__ParticleContainerI_8H_source.ht
 <div class="ttc" id="aclassamrex_1_1PODVector_html_a1cdc3c767875be38aa4e622280597347"><div class="ttname"><a href="classamrex_1_1PODVector.html#a1cdc3c767875be38aa4e622280597347">amrex::PODVector::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_PODVector.H:545</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html_a52a678e008fab2346394fcad18bc90c4"><div class="ttname"><a href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">amrex::PODVector::data</a></div><div class="ttdeci">T * data() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_PODVector.H:563</div></div>
 <div class="ttc" id="aclassamrex_1_1PODVector_html_aed3e37de016bb3a5bdeef31fe0f8b4e0"><div class="ttname"><a href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">amrex::PODVector::dataPtr</a></div><div class="ttdeci">T * dataPtr() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_PODVector.H:567</div></div>
-<div class="ttc" id="aclassamrex_1_1ParConstIter__impl_html"><div class="ttname"><a href="classamrex_1_1ParConstIter__impl.html">amrex::ParConstIter_impl</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:147</div></div>
-<div class="ttc" id="aclassamrex_1_1ParIter__impl_html"><div class="ttname"><a href="classamrex_1_1ParIter__impl.html">amrex::ParIter_impl</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:118</div></div>
+<div class="ttc" id="aclassamrex_1_1ParConstIter__impl_html"><div class="ttname"><a href="classamrex_1_1ParConstIter__impl.html">amrex::ParConstIter_impl</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:142</div></div>
+<div class="ttc" id="aclassamrex_1_1ParIter__impl_html"><div class="ttname"><a href="classamrex_1_1ParIter__impl.html">amrex::ParIter_impl</a></div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:113</div></div>
 <div class="ttc" id="aclassamrex_1_1ParallelDescriptor_1_1Message_html_a3dd73a745e975beb885a19b708190cbe"><div class="ttname"><a href="classamrex_1_1ParallelDescriptor_1_1Message.html#a3dd73a745e975beb885a19b708190cbe">amrex::ParallelDescriptor::Message::req</a></div><div class="ttdeci">MPI_Request req() const</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:74</div></div>
 <div class="ttc" id="aclassamrex_1_1ParmParse_html"><div class="ttname"><a href="classamrex_1_1ParmParse.html">amrex::ParmParse</a></div><div class="ttdoc">Parse Parameters From Command Line and Input Files.</div><div class="ttdef"><b>Definition:</b> AMReX_ParmParse.H:271</div></div>
 <div class="ttc" id="aclassamrex_1_1ParmParse_html_a54307dd658a96ac490ce75a3f74defe2"><div class="ttname"><a href="classamrex_1_1ParmParse.html#a54307dd658a96ac490ce75a3f74defe2">amrex::ParmParse::queryarr</a></div><div class="ttdeci">int queryarr(const char *name, std::vector&lt; int &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const</div><div class="ttdoc">Same as queryktharr() but searches for last occurrence of name.</div><div class="ttdef"><b>Definition:</b> AMReX_ParmParse.cpp:1477</div></div>

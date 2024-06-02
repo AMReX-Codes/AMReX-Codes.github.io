@@ -28,10 +28,8 @@ var classamrex_1_1ParIterBase__impl =
     [ "numRealParticles", "classamrex_1_1ParIterBase__impl.html#a75904e997d78e7e39e52dfc84e291f51", null ],
     [ "operator++", "classamrex_1_1ParIterBase__impl.html#a30d5373e2129c7e4b5a63b992ca91d97", null ],
     [ "m_level", "classamrex_1_1ParIterBase__impl.html#aa75db5075753c9accd5e3445b474bad0", null ],
-    [ "m_pariter_index", "classamrex_1_1ParIterBase__impl.html#a2210a26c33553386bac6d5f55166581c", null ],
-    [ "m_particle_tiles", "classamrex_1_1ParIterBase__impl.html#a5957bb55897e4d4e021424bf9a326210", null ],
+    [ "m_particle_current_tile", "classamrex_1_1ParIterBase__impl.html#abedcbfd256a529f1b411014efb0dfd31", null ],
     [ "m_pc", "classamrex_1_1ParIterBase__impl.html#a1161bc07e1265c1be89ccc12e7a11221", null ],
-    [ "m_valid_index", "classamrex_1_1ParIterBase__impl.html#a5032376fb8af44f3a1de729aa00b598e", null ],
     [ "NStructInt", "classamrex_1_1ParIterBase__impl.html#a609d37238c417b72763dad7069d494a1", null ],
     [ "NStructReal", "classamrex_1_1ParIterBase__impl.html#a3d4602354f3ccaa1ad78ebd1c4921d1b", null ]
 ];
