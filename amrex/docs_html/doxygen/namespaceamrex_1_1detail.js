@@ -56,7 +56,7 @@ var namespaceamrex_1_1detail =
     [ "destroy_par_for_nblocks", "namespaceamrex_1_1detail.html#ad7264c9be2687016a1fb029841f127e4", null ],
     [ "facets_nearest_pt", "namespaceamrex_1_1detail.html#aa62287d7ded7d4e0e10300835ed32d35", null ],
     [ "FillPatchTwoLevels_doit", "namespaceamrex_1_1detail.html#a18925ecee560b7b62b2434f643b8a2d1", null ],
-    [ "FillPatchTwoLevels_doit", "namespaceamrex_1_1detail.html#a62fb7ba72f05b354995dd98f6152d3fd", null ],
+    [ "FillPatchTwoLevels_doit", "namespaceamrex_1_1detail.html#a8ef6805e58fc39ad6e68f3d513b6cac2", null ],
     [ "fillValuesImpl", "namespaceamrex_1_1detail.html#ad4cc090e4556da716349ad4577feaff6", null ],
     [ "for_each_impl", "namespaceamrex_1_1detail.html#af378b35270a3e9fbab911a6fe0058eb5", null ],
     [ "for_each_until_impl", "namespaceamrex_1_1detail.html#a8e84dd049acffc06333882e476f741ce", null ],

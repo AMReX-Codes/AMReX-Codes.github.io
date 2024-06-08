@@ -1523,6 +1523,7 @@ var namespaceamrex =
     [ "FillPatchInterp", "namespaceamrex.html#a1f0353526b2fbde7e376453d034d052e", null ],
     [ "FillPatchInterp", "namespaceamrex.html#a4389e0cf21b4c230ab10e9eeed5a4f8e", null ],
     [ "FillPatchInterp", "namespaceamrex.html#a93b8e270e0c8360ed35815598a5b7f46", null ],
+    [ "FillPatchNLevels", "namespaceamrex.html#a886f36aeb28a74726d439caf38872073", null ],
     [ "FillPatchSingleLevel", "namespaceamrex.html#a3cf973090fa613c635340a08df7ecd38", null ],
     [ "FillPatchSingleLevel", "namespaceamrex.html#a05934ee478017afcd9908667de64a79c", null ],
     [ "FillPatchTwoLevels", "namespaceamrex.html#a3b2f67cfdffeeea1442daa3174a8ad7c", null ],

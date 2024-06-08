@@ -133,5 +133,10 @@ var namespaces_dup =
       [ "packParticleIDs", "namespaceparticle__detail.html#a30a6f3594be5d404180737352c8c375d", null ],
       [ "PSizeInFile", "namespaceparticle__detail.html#afbe88249b244a942b7d7d41b6b176abd", null ]
     ] ],
-    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ]
+    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ],
+    [ "std", null, [
+      [ "tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
+      [ "tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ],
+      [ "tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ]
+    ] ]
 ];

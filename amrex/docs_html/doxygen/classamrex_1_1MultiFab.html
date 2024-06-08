@@ -274,6 +274,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aca202d20f39f94aabb5ffd1581a535f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5b7a343ec15251dc975d0b6f0570e33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#ad5b7a343ec15251dc975d0b6f0570e33">deepCopy</a> () const</td></tr>
 <tr class="separator:ad5b7a343ec15251dc975d0b6f0570e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75549e7a0cca84c56b4aaa49ae1033dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a75549e7a0cca84c56b4aaa49ae1033dd">is_finite</a> (bool local=false) const</td></tr>
+<tr class="memdesc:a75549e7a0cca84c56b4aaa49ae1033dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are the numbers in the MF finite (i.e., neither nan nor inf)? This may return true, even if the MF contains NaNs or Infs, if the machine doesn't support the appropriate NaN and Inf testing functions.  <a href="classamrex_1_1MultiFab.html#a75549e7a0cca84c56b4aaa49ae1033dd">More...</a><br /></td></tr>
+<tr class="separator:a75549e7a0cca84c56b4aaa49ae1033dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7734de6ff243e0c08bc48ffad46546a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a7734de6ff243e0c08bc48ffad46546a6">is_finite</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow=0, bool local=false) const</td></tr>
+<tr class="separator:a7734de6ff243e0c08bc48ffad46546a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5abf993e76edbab3fa5cc090fcfa9b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#ae5abf993e76edbab3fa5cc090fcfa9b4">is_finite</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ngrow, bool local=false) const</td></tr>
+<tr class="separator:ae5abf993e76edbab3fa5cc090fcfa9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b718093de8d413ed21f372b9f65761f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a4b718093de8d413ed21f372b9f65761f">contains_nan</a> (bool local=false) const</td></tr>
 <tr class="memdesc:a4b718093de8d413ed21f372b9f65761f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Are there any NaNs in the MF? This may return false, even if the MF contains NaNs, if the machine doesn't support the appropriate NaN testing functions.  <a href="classamrex_1_1MultiFab.html#a4b718093de8d413ed21f372b9f65761f">More...</a><br /></td></tr>
 <tr class="separator:a4b718093de8d413ed21f372b9f65761f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2786,6 +2793,107 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Replaces the value of each cell in the specified subregion of the <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects.">MultiFab</a> with its reciprocal multiplied by the value of numerator. The value of nghost specifies the number of cells in the boundary region that should be modified. </p>
+
+</div>
+</div>
+<a id="a75549e7a0cca84c56b4aaa49ae1033dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75549e7a0cca84c56b4aaa49ae1033dd">&#9670;&nbsp;</a></span>is_finite() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MultiFab::is_finite </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Are the numbers in the MF finite (i.e., neither nan nor inf)? This may return true, even if the MF contains NaNs or Infs, if the machine doesn't support the appropriate NaN and Inf testing functions. </p>
+<p>This version checks all components and grow cells. </p>
+
+</div>
+</div>
+<a id="ae5abf993e76edbab3fa5cc090fcfa9b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5abf993e76edbab3fa5cc090fcfa9b4">&#9670;&nbsp;</a></span>is_finite() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MultiFab::is_finite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ngrow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7734de6ff243e0c08bc48ffad46546a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7734de6ff243e0c08bc48ffad46546a6">&#9670;&nbsp;</a></span>is_finite() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MultiFab::is_finite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ngrow</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

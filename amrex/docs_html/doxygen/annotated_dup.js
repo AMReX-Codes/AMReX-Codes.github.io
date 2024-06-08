@@ -814,6 +814,11 @@ var annotated_dup =
     [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", [
       [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ]
     ] ],
+    [ "std", null, [
+      [ "tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
+      [ "tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ],
+      [ "tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ]
+    ] ],
     [ "AMREX_IPARSERSTYPE", "unionAMREX__IPARSERSTYPE.html", "unionAMREX__IPARSERSTYPE" ],
     [ "AMREX_PARSERSTYPE", "unionAMREX__PARSERSTYPE.html", "unionAMREX__PARSERSTYPE" ],
     [ "AssignGridFilter", "structAssignGridFilter.html", "structAssignGridFilter" ],

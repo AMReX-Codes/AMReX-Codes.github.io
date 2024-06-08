@@ -1,5 +1,12 @@
 var NAVTREEINDEX70 =
 {
+"namespaceamrex_1_1ParallelDescriptor.html#a83bd00b0f4fc52881764bcf3e23e7a3f":[2,0,0,35,58],
+"namespaceamrex_1_1ParallelDescriptor.html#a84c9d7d438ae259036461c6db6100a27":[2,0,0,35,38],
+"namespaceamrex_1_1ParallelDescriptor.html#a84e047e8a88180ba003ae2f94734d733":[2,0,0,35,128],
+"namespaceamrex_1_1ParallelDescriptor.html#a85f79f28c8cb6cc5762e3edd80c57fc0":[2,0,0,35,73],
+"namespaceamrex_1_1ParallelDescriptor.html#a8780ee1130870c2cd65de891c71b9b76":[2,0,0,35,45],
+"namespaceamrex_1_1ParallelDescriptor.html#a888b64c6c10ac205e70f5627921668ef":[2,0,0,35,17],
+"namespaceamrex_1_1ParallelDescriptor.html#a89ca8639338d64c25ee28faf1b829701":[2,0,0,35,148],
 "namespaceamrex_1_1ParallelDescriptor.html#a8b000ab4b491f860c3b4ff0c27810e0e":[2,0,0,35,168],
 "namespaceamrex_1_1ParallelDescriptor.html#a8c531d59e55cd4b449b7b1918a6c0980":[2,0,0,35,84],
 "namespaceamrex_1_1ParallelDescriptor.html#a8e74f51d2321b7e827baae5d86a83824":[2,0,0,35,75],
@@ -242,12 +249,5 @@ var NAVTREEINDEX70 =
 "namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da9409354542db34fb149ecb3c91ebb8bd":[2,0,0,6,27,3],
 "namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52":[2,0,0,6,27,2],
 "namespaceamrex_1_1detail.html#a0ffdf10b9c0154b69807f717fb71ff71":[2,0,0,6,28],
-"namespaceamrex_1_1detail.html#a10de83755b69f93f5403c69c1de02300":[2,0,0,6,66],
-"namespaceamrex_1_1detail.html#a10e8c484da7d2f2f5bbd223b6b92dc87":[2,0,0,6,45],
-"namespaceamrex_1_1detail.html#a11b496ac41b8e46fe7f1adf74392dcfb":[2,0,0,6,80],
-"namespaceamrex_1_1detail.html#a12a52d34749a2924b4dc8f3d82f7f94d":[2,0,0,6,76],
-"namespaceamrex_1_1detail.html#a18788233897dcea378a821f83c7dd90a":[2,0,0,6,68],
-"namespaceamrex_1_1detail.html#a18925ecee560b7b62b2434f643b8a2d1":[2,0,0,6,49],
-"namespaceamrex_1_1detail.html#a1d441e7b18bae347c4ed240bcb0b4eaa":[2,0,0,6,73],
-"namespaceamrex_1_1detail.html#a1e539d8b07d742d0950e675a66ce56b5":[2,0,0,6,74]
+"namespaceamrex_1_1detail.html#a10de83755b69f93f5403c69c1de02300":[2,0,0,6,66]
 };

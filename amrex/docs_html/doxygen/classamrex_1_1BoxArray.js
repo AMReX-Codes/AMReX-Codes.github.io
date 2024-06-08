@@ -26,6 +26,7 @@ var classamrex_1_1BoxArray =
     [ "complementIn", "classamrex_1_1BoxArray.html#a9cfc3c2251e61eb1f1defb1e57badeb1", null ],
     [ "contains", "classamrex_1_1BoxArray.html#a23ba905888437090a2fc1cfd8e578c4d", null ],
     [ "contains", "classamrex_1_1BoxArray.html#a27b3133e35f0dbae139aebf7769d86b3", null ],
+    [ "contains", "classamrex_1_1BoxArray.html#a5535d8c27dece816a8ef7bf022777040", null ],
     [ "contains", "classamrex_1_1BoxArray.html#a258cd3a2a8c608f7cc0068e0ddd08d3f", null ],
     [ "convert", "classamrex_1_1BoxArray.html#a7c550a5e0396c503e3465da2c28f8db9", null ],
     [ "convert", "classamrex_1_1BoxArray.html#a8e396fcc6af0ac6314069413e9815f7c", null ],
