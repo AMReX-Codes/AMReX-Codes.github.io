@@ -32,6 +32,7 @@ var annotated_dup =
         [ "tuple_cat_result", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
         [ "tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
         [ "tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802" ],
+        [ "SplitIndexList", "structamrex_1_1detail_1_1SplitIndexList.html", "structamrex_1_1detail_1_1SplitIndexList" ],
         [ "invoke_result", "structamrex_1_1detail_1_1invoke__result.html", null ],
         [ "invoke_result< decltype(void(INVOKE(std::declval< F >(), std::declval< Args >()...))), F, Args... >", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b" ],
         [ "apply_result", "structamrex_1_1detail_1_1apply__result.html", null ],

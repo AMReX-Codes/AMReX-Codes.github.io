@@ -15,6 +15,7 @@
     <innerclass refid="structamrex_1_1detail_1_1tuple__cat__result" prot="public">amrex::detail::tuple_cat_result</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" prot="public">amrex::detail::tuple_cat_result&lt; GpuTuple&lt; Ts... &gt; &gt;</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802" prot="public">amrex::detail::tuple_cat_result&lt; GpuTuple&lt; T1s... &gt;, GpuTuple&lt; T2s... &gt;, TPs... &gt;</innerclass>
+    <innerclass refid="structamrex_1_1detail_1_1SplitIndexList" prot="public">amrex::detail::SplitIndexList</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1invoke__result" prot="public">amrex::detail::invoke_result</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b" prot="public">amrex::detail::invoke_result&lt; decltype(void(INVOKE(std::declval&lt; F &gt;(), std::declval&lt; Args &gt;()...))), F, Args... &gt;</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1apply__result" prot="public">amrex::detail::apply_result</innerclass>
@@ -1955,6 +1956,81 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="274" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="274" bodyend="278"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a30bb4b7ea38ee03a56f7e33647b53846" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>start</declname>
+            <defname>start</defname>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Is</declname>
+            <defname>Is</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> auto</type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE auto amrex::detail::GetSubTuple</definition>
+        <argsstring>(const GpuTuple&lt; Args... &gt; &amp;tup, std::index_sequence&lt; Is... &gt;) noexcept</argsstring>
+        <name>GetSubTuple</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Args... &gt; &amp;</type>
+          <declname>tup</declname>
+        </param>
+        <param>
+          <type>std::index_sequence&lt; Is... &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="346" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="346" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a71f402d1250f215a129e6a9950c9ad35" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>std::size_t...</type>
+            <declname>Is</declname>
+            <defname>Is</defname>
+          </param>
+          <param>
+            <type>typename SIL</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> auto</type>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE auto amrex::detail::TupleSplitImp</definition>
+        <argsstring>(const GpuTuple&lt; Args... &gt; &amp;tup, std::index_sequence&lt; Is... &gt;, SIL) noexcept</argsstring>
+        <name>TupleSplitImp</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; Args... &gt; &amp;</type>
+          <declname>tup</declname>
+        </param>
+        <param>
+          <type>std::index_sequence&lt; Is... &gt;</type>
+        </param>
+        <param>
+          <type>SIL</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="354" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="354" bodyend="362"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1af2dd4ad4f928e269d1bc2dce24f48b92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -1984,7 +2060,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="324" column="10" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" declline="324" declcolumn="10"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="388" column="10" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" declline="388" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1ac60a1b88f1421c5113c694d9460de676" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2021,7 +2097,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="346" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="346" bodyend="350"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="410" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="410" bodyend="414"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1ab2c6743d76d5a23ac34993bdb64765a1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -2051,7 +2127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="399" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="399" bodyend="401"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="463" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="463" bodyend="465"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1af378b35270a3e9fbab911a6fe0058eb5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

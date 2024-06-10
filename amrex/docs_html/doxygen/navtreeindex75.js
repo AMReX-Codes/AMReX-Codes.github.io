@@ -1,5 +1,11 @@
 var NAVTREEINDEX75 =
 {
+"structamrex_1_1AsyncOut_1_1WriteInfo.html#a7b4c2237a0af579e8cf791ac296aa6fc":[3,0,0,1,0,1],
+"structamrex_1_1BARef.html":[3,0,0,102],
+"structamrex_1_1BARef.html#a04d3d344f8124f6c49b5d0ab984a642b":[3,0,0,102,29],
+"structamrex_1_1BARef.html#a1b8ba3959e98109e86948f5cde5109c1":[3,0,0,102,9],
+"structamrex_1_1BARef.html#a220d49c6e54825fb9753f389bc247ea8":[3,0,0,102,18],
+"structamrex_1_1BARef.html#a221b256184f09f24c7e7a835d6cf4a9e":[3,0,0,102,26],
 "structamrex_1_1BARef.html#a2252a59c60e4bc7ad886663a4ebc32b0":[3,0,0,102,30],
 "structamrex_1_1BARef.html#a299f5f87c10a06d86f32289928792d07":[3,0,0,102,8],
 "structamrex_1_1BARef.html#a5944e840877ab3c3a9aa28d2bd5d1399":[3,0,0,102,21],
@@ -198,8 +204,8 @@ var NAVTREEINDEX75 =
 "structamrex_1_1ConstParticleTileData.html#a06d45e3facca70a0951cbccddc01c804":[3,0,0,508,24],
 "structamrex_1_1ConstParticleTileData.html#a09a5202b7c3b1227e67bf4ba69a3acb1":[3,0,0,508,16],
 "structamrex_1_1ConstParticleTileData.html#a105b772528c0a4ab1ddd6970c04e1456":[3,0,0,508,10],
-"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,508,5],
 "structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,508,6],
+"structamrex_1_1ConstParticleTileData.html#a13a4e750961bea9387e82b31eb85c071":[3,0,0,508,5],
 "structamrex_1_1ConstParticleTileData.html#a26342fe95b550a7e29d72d3292ceab0d":[3,0,0,508,3],
 "structamrex_1_1ConstParticleTileData.html#a36375e824fc8bc51653e49929843701b":[3,0,0,508,22],
 "structamrex_1_1ConstParticleTileData.html#a364ed62398854b15640406fd8c833064":[3,0,0,508,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX75 =
 "structamrex_1_1CurlCurlDirichletInfo.html":[3,0,0,439],
 "structamrex_1_1CurlCurlDirichletInfo.html#a43c18defca914c519e773fdf104c4956":[3,0,0,439,1],
 "structamrex_1_1CurlCurlDirichletInfo.html#a462be2c962cc7ba2efdf8003b1192e61":[3,0,0,439,0],
-"structamrex_1_1CurlCurlDirichletInfo.html#a734cfa013c0578c158c64cd8bb22691d":[3,0,0,439,4],
-"structamrex_1_1CurlCurlDirichletInfo.html#aa1322afdd0c679a263cb5637732121f5":[3,0,0,439,5],
-"structamrex_1_1CurlCurlDirichletInfo.html#aa9beb0253ffa199754255b047cce7409":[3,0,0,439,3],
-"structamrex_1_1CurlCurlDirichletInfo.html#ab41d14427ee6aa987dec1a6777f089c9":[3,0,0,439,6],
-"structamrex_1_1CurlCurlDirichletInfo.html#ac36b247b6a7baf4f880d55225615223f":[3,0,0,439,2],
-"structamrex_1_1CurlCurlSymmetryInfo.html":[3,0,0,440],
-"structamrex_1_1CurlCurlSymmetryInfo.html#a1b09fbb6b677ae735a81688cbf575615":[3,0,0,440,2]
+"structamrex_1_1CurlCurlDirichletInfo.html#a734cfa013c0578c158c64cd8bb22691d":[3,0,0,439,4]
 };

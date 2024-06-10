@@ -972,6 +972,7 @@ var hierarchy =
     [ "amrex::SparseBinIteratorFactory< T >", "structamrex_1_1SparseBinIteratorFactory.html", null ],
     [ "amrex::SparseBins< T >", "classamrex_1_1SparseBins.html", null ],
     [ "amrex::EB2::SplineIF", "classamrex_1_1EB2_1_1SplineIF.html", null ],
+    [ "amrex::detail::SplitIndexList< Is >", "structamrex_1_1detail_1_1SplitIndexList.html", null ],
     [ "amrex::SrcComp", "structamrex_1_1SrcComp.html", null ],
     [ "amrex::BlockMutex::state_t", "unionamrex_1_1BlockMutex_1_1state__t.html", null ],
     [ "amrex::StateData", "classamrex_1_1StateData.html", null ],

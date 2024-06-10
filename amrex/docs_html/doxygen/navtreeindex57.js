@@ -1,5 +1,8 @@
 var NAVTREEINDEX57 =
 {
+"classamrex_1_1WeightedBox.html#a881623a58303364995413ce41b090c0d":[3,0,0,121,0],
+"classamrex_1_1WeightedBox.html#ac8ca6a64321140bc39bd7458da778941":[3,0,0,121,3],
+"classamrex_1_1WeightedBox.html#afafaad5f1bf1628a4beb4550bbb8a89b":[3,0,0,121,2],
 "classamrex_1_1XYPlotDataList.html":[3,0,0,409],
 "classamrex_1_1XYPlotDataList.html#a0eed5ea2a8a29466eef5434f09752ebf":[3,0,0,409,30],
 "classamrex_1_1XYPlotDataList.html#a125baf2c0f7e2e1eb89ddf07bac7d743":[3,0,0,409,22],
@@ -101,12 +104,12 @@ var NAVTREEINDEX57 =
 "classamrex_1_1btUnit.html#ab675fdeb13c05c43e2a9e3c0447047bf":[3,0,0,410,0],
 "classamrex_1_1btUnit.html#ae3e9b0a13f4b632c5adeeabc63428574":[3,0,0,410,1],
 "classamrex_1_1btUnit.html#afee26b96ee0312524bf04696bf32a142":[3,0,0,410,3],
-"classamrex_1_1detail_1_1CutFabFactory.html":[3,0,0,3,23],
-"classamrex_1_1detail_1_1CutFabFactory.html#a0a50ba4364dedc1acc91cfd0a63efcd9":[3,0,0,3,23,0],
-"classamrex_1_1detail_1_1CutFabFactory.html#a3878a01f18a952246def135c389d0a9c":[3,0,0,3,23,1],
-"classamrex_1_1detail_1_1CutFabFactory.html#ad27d27c26c11acfd58b8fc629b4f2c1b":[3,0,0,3,23,4],
-"classamrex_1_1detail_1_1CutFabFactory.html#ae3d56a71c86dbe880bbf89a7ef19301f":[3,0,0,3,23,2],
-"classamrex_1_1detail_1_1CutFabFactory.html#aef5ff6c3751771217568c9dbe50c4880":[3,0,0,3,23,3],
+"classamrex_1_1detail_1_1CutFabFactory.html":[3,0,0,3,24],
+"classamrex_1_1detail_1_1CutFabFactory.html#a0a50ba4364dedc1acc91cfd0a63efcd9":[3,0,0,3,24,0],
+"classamrex_1_1detail_1_1CutFabFactory.html#a3878a01f18a952246def135c389d0a9c":[3,0,0,3,24,1],
+"classamrex_1_1detail_1_1CutFabFactory.html#ad27d27c26c11acfd58b8fc629b4f2c1b":[3,0,0,3,24,4],
+"classamrex_1_1detail_1_1CutFabFactory.html#ae3d56a71c86dbe880bbf89a7ef19301f":[3,0,0,3,24,2],
+"classamrex_1_1detail_1_1CutFabFactory.html#aef5ff6c3751771217568c9dbe50c4880":[3,0,0,3,24,3],
 "classamrex_1_1detail_1_1SingleChunkArena.html":[3,0,0,3,3],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a08324a9f9d1c2b9e7d81b3ef8e8d4ad5":[3,0,0,3,3,12],
 "classamrex_1_1detail_1_1SingleChunkArena.html#a1a40bc13e5fda7545591fa3b7cc50a04":[3,0,0,3,3,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX57 =
 "classhacc_1_1Dfft.html#a652ffd252711fcce9a5cc65d32da877e":[3,0,10,1,8],
 "classhacc_1_1Dfft.html#a6aead4d24eb32ff0f26282de9e0434d6":[3,0,10,1,40],
 "classhacc_1_1Dfft.html#a74dd1b872a7f137e6d55d69b1444d2ba":[3,0,10,1,3],
-"classhacc_1_1Dfft.html#a78de684b4a4634ef87e4421b8bf26db2":[3,0,10,1,0],
-"classhacc_1_1Dfft.html#a7acb4a231d8f4ac7cebe7290e154e32c":[3,0,10,1,22],
-"classhacc_1_1Dfft.html#a80cda3f267109eace9820179fea3028b":[3,0,10,1,18],
-"classhacc_1_1Dfft.html#a80ed718b7bc25881cb073e957f1aea5e":[3,0,10,1,4]
+"classhacc_1_1Dfft.html#a78de684b4a4634ef87e4421b8bf26db2":[3,0,10,1,0]
 };

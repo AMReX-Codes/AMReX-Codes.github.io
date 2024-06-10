@@ -13,6 +13,7 @@ var namespaceamrex_1_1detail =
     [ "tuple_cat_result", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
     [ "tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
     [ "tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802" ],
+    [ "SplitIndexList", "structamrex_1_1detail_1_1SplitIndexList.html", "structamrex_1_1detail_1_1SplitIndexList" ],
     [ "invoke_result", "structamrex_1_1detail_1_1invoke__result.html", null ],
     [ "invoke_result< decltype(void(INVOKE(std::declval< F >(), std::declval< Args >()...))), F, Args... >", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b" ],
     [ "apply_result", "structamrex_1_1detail_1_1apply__result.html", null ],
@@ -67,6 +68,7 @@ var namespaceamrex_1_1detail =
     [ "get_impl", "namespaceamrex_1_1detail.html#a4d3a6a5ee4fec4f89030624c3bfa4ae6", null ],
     [ "get_tag_size", "namespaceamrex_1_1detail.html#a76f10e7b0bf11c2e90199e2ec1d964e6", null ],
     [ "get_tag_size", "namespaceamrex_1_1detail.html#a2e2c7166d29e28f726289f6ca33b326a", null ],
+    [ "GetSubTuple", "namespaceamrex_1_1detail.html#a30bb4b7ea38ee03a56f7e33647b53846", null ],
     [ "initFromListImpl", "namespaceamrex_1_1detail.html#a9caf05d151123306105799d4a99cbf30", null ],
     [ "INVOKE", "namespaceamrex_1_1detail.html#af2dd4ad4f928e269d1bc2dce24f48b92", null ],
     [ "make_mf_crse_mask", "namespaceamrex_1_1detail.html#a34617f70eaffc9dd42ef30e75602e4e3", null ],
@@ -100,5 +102,6 @@ var namespaceamrex_1_1detail =
     [ "tuple_copy", "namespaceamrex_1_1detail.html#a813577e3d9b0ad5b7795dd9351160f9a", null ],
     [ "tuple_copy", "namespaceamrex_1_1detail.html#a796da28b12c3448559ad1af823e855af", null ],
     [ "tuple_to_array_helper", "namespaceamrex_1_1detail.html#ab2c6743d76d5a23ac34993bdb64765a1", null ],
+    [ "TupleSplitImp", "namespaceamrex_1_1detail.html#a71f402d1250f215a129e6a9950c9ad35", null ],
     [ "uninitializedFillNImpl", "namespaceamrex_1_1detail.html#a1ec1f5b314ec018aecc0e091949ff60e", null ]
 ];

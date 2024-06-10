@@ -133,6 +133,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html">tuple_cat_result&lt; GpuTuple&lt; T1s... &gt;, GpuTuple&lt; T2s... &gt;, TPs... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1SplitIndexList.html">SplitIndexList</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1invoke__result.html">invoke_result</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html">invoke_result&lt; decltype(void(INVOKE(std::declval&lt; F &gt;(), std::declval&lt; Args &gt;()...))), F, Args... &gt;</a></td></tr>
@@ -327,6 +329,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a1d441e7b18bae347c4ed240bcb0b4eaa"><td class="memTemplParams" colspan="2">template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </td></tr>
 <tr class="memitem:a1d441e7b18bae347c4ed240bcb0b4eaa"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a1d441e7b18bae347c4ed240bcb0b4eaa">make_tuple</a> (TP1 const &amp;a, TP2 const &amp;b, std::index_sequence&lt; N1... &gt; const &amp;, std::index_sequence&lt; N2... &gt; const &amp;)</td></tr>
 <tr class="separator:a1d441e7b18bae347c4ed240bcb0b4eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30bb4b7ea38ee03a56f7e33647b53846"><td class="memTemplParams" colspan="2">template&lt;std::size_t start, typename... Args, std::size_t... Is&gt; </td></tr>
+<tr class="memitem:a30bb4b7ea38ee03a56f7e33647b53846"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a30bb4b7ea38ee03a56f7e33647b53846">GetSubTuple</a> (const <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Args... &gt; &amp;tup, std::index_sequence&lt; Is... &gt;) noexcept</td></tr>
+<tr class="separator:a30bb4b7ea38ee03a56f7e33647b53846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f402d1250f215a129e6a9950c9ad35"><td class="memTemplParams" colspan="2">template&lt;typename... Args, std::size_t... Is, typename SIL &gt; </td></tr>
+<tr class="memitem:a71f402d1250f215a129e6a9950c9ad35"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a71f402d1250f215a129e6a9950c9ad35">TupleSplitImp</a> (const <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Args... &gt; &amp;tup, std::index_sequence&lt; Is... &gt;, SIL) noexcept</td></tr>
+<tr class="separator:a71f402d1250f215a129e6a9950c9ad35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args&gt; </td></tr>
 <tr class="memitem:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#af2dd4ad4f928e269d1bc2dce24f48b92">INVOKE</a> (F &amp;&amp;f, Args &amp;&amp;... args) -&gt; decltype(f(std::forward&lt; Args &gt;(args)...))</td></tr>
 <tr class="separator:af2dd4ad4f928e269d1bc2dce24f48b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2114,6 +2122,44 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a30bb4b7ea38ee03a56f7e33647b53846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30bb4b7ea38ee03a56f7e33647b53846">&#9670;&nbsp;</a></span>GetSubTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t start, typename... Args, std::size_t... Is&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto amrex::detail::GetSubTuple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Args... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::index_sequence&lt; Is... &gt;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9caf05d151123306105799d4a99cbf30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9caf05d151123306105799d4a99cbf30">&#9670;&nbsp;</a></span>initFromListImpl()</h2>
 
@@ -3319,6 +3365,50 @@ template&lt;typename T , std::size_t... I&gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71f402d1250f215a129e6a9950c9ad35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f402d1250f215a129e6a9950c9ad35">&#9670;&nbsp;</a></span>TupleSplitImp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args, std::size_t... Is, typename SIL &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> auto amrex::detail::TupleSplitImp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Args... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::index_sequence&lt; Is... &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SIL&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

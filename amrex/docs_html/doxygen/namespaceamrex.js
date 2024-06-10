@@ -2693,6 +2693,7 @@ var namespaceamrex =
     [ "TupleCat", "namespaceamrex.html#afdc7b3879a8b9ccc7982c0781deb74ea", null ],
     [ "TupleCat", "namespaceamrex.html#af2cf176de6238efb234749dec71b4a0f", null ],
     [ "TupleCat", "namespaceamrex.html#a241b30447206d0b8029fac3bd5c9d1c6", null ],
+    [ "TupleSplit", "namespaceamrex.html#a578cd6446e7f5c2a1c47ea01cd2267a4", null ],
     [ "tupleToArray", "namespaceamrex.html#a04644ea7c1c675a7ea4d19c4435e4907", null ],
     [ "tupleToArray", "namespaceamrex.html#a4a123217da9caf30ef3cf63f4125fd11", null ],
     [ "ubound", "namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c", null ],

@@ -148,6 +148,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 , <a class="el" href="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#aa6b9cce8542740cec857772417d67dd5">amrex::DataLayoutPolicyRaw&lt; ParticleType&lt; Types... &gt;, DataLayout::AoS &gt;</a>
 , <a class="el" href="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html#a46cff55b388d9aaefe81cd3a8a6d7648">amrex::DataLayoutPolicyRaw&lt; ParticleType&lt; Types... &gt;, DataLayout::SoA &gt;</a>
 , <a class="el" href="classamrex_1_1DeriveList.html#a6ff8692064ee148c07daeec4c5f2620b">amrex::DeriveList</a>
+, <a class="el" href="structamrex_1_1detail_1_1SplitIndexList.html#aa0974cb46a5b57ae7678cfeeff813a2e">amrex::detail::SplitIndexList&lt; Is &gt;</a>
 , <a class="el" href="classamrex_1_1FabArray.html#a0776aa41d2309534c3d0792320eb6763">amrex::FabArray&lt; FAB &gt;</a>
 , <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a5f44b55b81dc4217e138a7f78d95a1db">amrex::ParallelDescriptor::ProcessTeam</a>
 , <a class="el" href="classamrex_1_1ParmParse.html#ac246c039fd27b9a2bdccfc99d68062a6">amrex::ParmParse</a>
@@ -189,6 +190,9 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 </li>
 <li>get_dpdn_on_domain_faces()
 : <a class="el" href="classamrex_1_1MLPoissonT.html#ac6a0e027881bd8d0314ab054afb5dbc9">amrex::MLPoissonT&lt; MF &gt;</a>
+</li>
+<li>get_exclusive_sum()
+: <a class="el" href="structamrex_1_1detail_1_1SplitIndexList.html#a7c22d5e09fb1b959f3ce7703caa5a5ac">amrex::detail::SplitIndexList&lt; Is &gt;</a>
 </li>
 <li>get_fast_rhs()
 : <a class="el" href="classamrex_1_1IntegratorBase.html#af028b7c14d3958dcb6563442aa2ab5ad">amrex::IntegratorBase&lt; T &gt;</a>
@@ -433,7 +437,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="structamrex_1_1FabArrayBase_1_1ParForInfo.html#afbef7a6e6ec6924b7ea37855908c0524">amrex::FabArrayBase::ParForInfo</a>
 </li>
 <li>getBoxType()
-: <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#afe2e9993f74d508cf7aeb7150b610fd5">amrex::EB2::GeometryShop&lt; F, R &gt;</a>
+: <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a510e90f5d3a5db5b5614d225a372529c">amrex::EB2::GeometryShop&lt; F, R &gt;</a>
 , <a class="el" href="classamrex_1_1STLtools.html#a6f8e64bd2b4c7935903ce0d5daa44f70">amrex::STLtools</a>
 </li>
 <li>getBoxType_Cpu()
@@ -637,7 +641,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classamrex_1_1MLCellABecLapT.html#a47c09599ba7bee546dfb637ac8962fa0">amrex::MLCellABecLapT&lt; MF &gt;</a>
 , <a class="el" href="classamrex_1_1MLLinOpT.html#a2ae10763b783ce6190c161927125dd63">amrex::MLLinOpT&lt; MF &gt;</a>
 , <a class="el" href="classamrex_1_1MLMGT.html#ae9426156a59e3e4fa7f4024eedfb3c22">amrex::MLMGT&lt; MF &gt;</a>
-, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#ad4e503d0e8fdafa03b110427b5e31a21">amrex::MLNodeLaplacian</a>
+, <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a41218de46f27ecce58fb0a60bf925936">amrex::MLNodeLaplacian</a>
 </li>
 <li>getFormat()
 : <a class="el" href="classamrex_1_1FArrayBox.html#aba9fe48668a79af0c5805d77472c467d">amrex::FArrayBox</a>
@@ -658,7 +662,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classamrex_1_1GMRESMLMGT.html#a501781e1e1e7c61244eed962066f1419">amrex::GMRESMLMGT&lt; MF &gt;</a>
 </li>
 <li>getGradSolution()
-: <a class="el" href="classamrex_1_1MLMGT.html#a0c8c8fa9cab0b1b68c896ae1de53f5dd">amrex::MLMGT&lt; MF &gt;</a>
+: <a class="el" href="classamrex_1_1MLMGT.html#a9184fd07b228cf04426d35dc27563711">amrex::MLMGT&lt; MF &gt;</a>
 </li>
 <li>getGraph()
 : <a class="el" href="classamrex_1_1EB2_1_1GFab.html#a2896574b578bc56288ba3e848c877bd8">amrex::EB2::GFab</a>
@@ -720,10 +724,10 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classamrex_1_1MemProfiler.html#a4de3370fe39ada9432b7c7736f00fd90">amrex::MemProfiler</a>
 </li>
 <li>GetIntData()
-: <a class="el" href="structamrex_1_1StructOfArrays.html#a2086bc5faf11d372ebcbe728e46c19d9">amrex::StructOfArrays&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;</a>
+: <a class="el" href="structamrex_1_1StructOfArrays.html#a296f7ff58cbcaa84b993ba66b8374e07">amrex::StructOfArrays&lt; NReal, NInt, Allocator, use64BitIdCpu &gt;</a>
 </li>
 <li>getIntercept()
-: <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a43abec2c9a7a8d648c282bcbb5ad27e0">amrex::EB2::GeometryShop&lt; F, R &gt;</a>
+: <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#ae9474b98c5ee963422d44bfbefa0864f">amrex::EB2::GeometryShop&lt; F, R &gt;</a>
 , <a class="el" href="classamrex_1_1STLtools.html#addae911a258f776f2bf862da19290953">amrex::STLtools</a>
 </li>
 <li>getIntercept_Cpu()
@@ -854,7 +858,7 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 : <a class="el" href="classamrex_1_1NeighborParticleContainer.html#a662f2650bebba90cebfd2f314bce4585">amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</a>
 </li>
 <li>getNeighborTags()
-: <a class="el" href="classamrex_1_1NeighborParticleContainer.html#a98b93307f7df6a29e8e1b84bfdcda458">amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</a>
+: <a class="el" href="classamrex_1_1NeighborParticleContainer.html#a991d920470b2aead6fd0f8f19a26b7c9">amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</a>
 </li>
 <li>GetNewCapacityForPush()
 : <a class="el" href="classamrex_1_1PODVector.html#a60bd0f3726b18f1015e6bebece37f679">amrex::PODVector&lt; T, Allocator &gt;</a>
@@ -1255,11 +1259,11 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>gridEff()
 : <a class="el" href="classamrex_1_1AmrMesh.html#a7bc5798a6ef2a0c27b0141112104e087">amrex::AmrMesh</a>
 </li>
-<li>Gridline()
-: <a class="el" href="classamrex_1_1XYPlotDataList.html#ab77bccba000ad381fed7aa4a3c7b7b6e">amrex::XYPlotDataList</a>
-</li>
 <li>gridline
 : <a class="el" href="classamrex_1_1XYPlotDataList.html#abd0ed1322eaf065f16a171081fb46668">amrex::XYPlotDataList</a>
+</li>
+<li>Gridline()
+: <a class="el" href="classamrex_1_1XYPlotDataList.html#ab77bccba000ad381fed7aa4a3c7b7b6e">amrex::XYPlotDataList</a>
 </li>
 <li>GridLocHi()
 : <a class="el" href="classamrex_1_1AmrData.html#a06732eabff2d761d63404d048d57d130">amrex::AmrData</a>
@@ -1267,11 +1271,11 @@ $(document).ready(function(){initNavTree('functions_g.html',''); initResizable()
 <li>gridLocHi
 : <a class="el" href="classamrex_1_1AmrData.html#a7d683070bd9df75f69f1f11257baff26">amrex::AmrData</a>
 </li>
-<li>GridLocLo()
-: <a class="el" href="classamrex_1_1AmrData.html#a26585c76f370219e547cc9c018faead7">amrex::AmrData</a>
-</li>
 <li>gridLocLo
 : <a class="el" href="classamrex_1_1AmrData.html#a28d407574c4e864763d7e30c5374a5f7">amrex::AmrData</a>
+</li>
+<li>GridLocLo()
+: <a class="el" href="classamrex_1_1AmrData.html#a26585c76f370219e547cc9c018faead7">amrex::AmrData</a>
 </li>
 <li>gridlog
 : <a class="el" href="classamrex_1_1Amr.html#a8faf7f22cccf4da975ca761f1920f5e8">amrex::Amr</a>
