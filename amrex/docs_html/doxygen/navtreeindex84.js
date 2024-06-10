@@ -1,6 +1,5 @@
 var NAVTREEINDEX84 =
 {
-"structamrex_1_1algoim_1_1QuadratureRule.html#aff9ac4f971a67e107e2cf55dd95fad21":[3,0,0,0,1,5],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html":[3,0,0,0,1,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[3,0,0,0,1,0,0],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a5f9f48bbbd30d20b1b08061b621b46e6":[3,0,0,0,1,0,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX84 =
 "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[3,0,12,0],
 "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html#a5d5a37198c314fd454c6d5a11303f8dc":[3,0,12,0,0],
 "structyy__buffer__state.html":[3,0,34],
-"structyy__buffer__state.html#a06406208824817acfec2183b79080945":[3,0,34,11]
+"structyy__buffer__state.html#a06406208824817acfec2183b79080945":[3,0,34,11],
+"structyy__buffer__state.html#a0d25458e69eb22207fc633a1255d099d":[3,0,34,6]
 };

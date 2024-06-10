@@ -1,6 +1,5 @@
 var NAVTREEINDEX34 =
 {
-"classamrex_1_1CellConservativeLinear.html#aeec138a1454f98de65aa6ec019a1cdc4":[3,0,0,53,2],
 "classamrex_1_1CellConservativeProtected.html":[3,0,0,54],
 "classamrex_1_1CellConservativeProtected.html#aa6ed48dc9ce058bd1d1804c800ea0691":[3,0,0,54,1],
 "classamrex_1_1CellConservativeProtected.html#aced526a1e706c7fce0c1b715639f2270":[3,0,0,54,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX34 =
 "classamrex_1_1DeriveList.html#a9054e6ec3c0a6023bce28684ff08e266":[3,0,0,26,7],
 "classamrex_1_1DeriveList.html#aca9fade63e5fd3aeda71e2c7d58f933d":[3,0,0,26,13],
 "classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a":[3,0,0,26,18],
-"classamrex_1_1DeriveList.html#ae2bbc9a653c1a437f677755dc5e31ced":[3,0,0,26,12]
+"classamrex_1_1DeriveList.html#ae2bbc9a653c1a437f677755dc5e31ced":[3,0,0,26,12],
+"classamrex_1_1DeriveList.html#ae3d1c1aaf168221dbb217d20f23d4868":[3,0,0,26,2]
 };

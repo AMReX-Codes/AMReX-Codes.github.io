@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;std::enable_if_t&lt;RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value&gt;</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespaceparticle__detail.html#a1180158d9e9623e55d3d94563e5d078e">   34</a></span>&#160;<a class="code" href="namespaceparticle__detail.html#a1180158d9e9623e55d3d94563e5d078e">fillFlags</a> (Container&lt;int, Allocator&gt;&amp; pflags, <span class="keyword">const</span> PTile&amp; ptile, F <span class="keyword">const</span>&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ptd = ptile.getConstParticleTileData();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = ptile.getConstParticleTileData();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> np = ptile.numParticles();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    pflags.resize(np, 0);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> flag_ptr = pflags.data();</div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;std::enable_if_t&lt;!RunOnGpu&lt;typename Container&lt;int, Allocator&gt;::allocator_type&gt;::value&gt;</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespaceparticle__detail.html#a19ab2be6594d991c46cc919e1e56d1a0">   58</a></span>&#160;<a class="code" href="namespaceparticle__detail.html#a1180158d9e9623e55d3d94563e5d078e">fillFlags</a> (Container&lt;int, Allocator&gt;&amp; pflags, <span class="keyword">const</span> PTile&amp; ptile, F <span class="keyword">const</span>&amp; <a class="code" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">f</a>)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> ptd = ptile.getConstParticleTileData();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = ptile.getConstParticleTileData();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> np = ptile.numParticles();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    pflags.resize(np, 0);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">auto</span> flag_ptr = pflags.data();</div>
@@ -316,7 +316,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">auto</span> idata_d_ptr = idata_d.data();</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keyword">auto</span> rdata_d_ptr = rdata_d.data();</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> ptd = ptile.getConstParticleTileData();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = ptile.getConstParticleTileData();</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="namespaceamrex.html#add9c441e051b2f701d97e5e505556fa3">amrex::ParallelFor</a>(num_copies,</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keywordtype">int</span> pindex) noexcept</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {</div>
@@ -1120,7 +1120,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; tile_map[grid].size(); i++) {</div>
 <div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;                    <span class="keyword">auto</span> ptile_index = std::make_pair(grid, tile_map[grid][i]);</div>
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pbox = (*myptiles)[lev][ptile_index];</div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> ptd = pbox.getConstParticleTileData();</div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = pbox.getConstParticleTileData();</div>
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pindex = 0; pindex &lt; pbox.numParticles(); ++pindex)</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;                    {</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;                        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; soa  = pbox.GetStructOfArrays();</div>
@@ -1197,7 +1197,7 @@ $(document).ready(function(){initNavTree('AMReX__WriteBinaryParticleData_8H_sour
 <div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; tile_map[grid].size(); i++) {</div>
 <div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;                    <span class="keyword">auto</span> ptile_index = std::make_pair(grid, tile_map[grid][i]);</div>
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pbox = (*myptiles)[lev][ptile_index];</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> ptd = pbox.getConstParticleTileData();</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ptd = pbox.getConstParticleTileData();</div>
 <div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pindex = 0;</div>
 <div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;                         pindex &lt; pbox.numParticles(); ++pindex)</div>
 <div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;                    {</div>
