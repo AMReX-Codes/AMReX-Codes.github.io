@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classBLProfStats.html#a863b8a020da35bf11daf6c34ea5b55a0":[3,0,16,64],
 "classBLProfStats.html#a8d64e6e8f6ee3fe3f22896536ca5e05a":[3,0,16,50],
 "classBLProfStats.html#a8d64f39f91d28ff7c34e8a5337f71b27":[3,0,16,86],
 "classBLProfStats.html#a8e7882478f8a6a74ec3ca89d32d95096":[3,0,16,43],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "classamrex_1_1AMReX.html#a5b73d42e9a3382fdbdf48691f1ca541f":[3,0,0,70,2],
 "classamrex_1_1AMReX.html#a723c404098736351072f4a99daf9bddb":[3,0,0,70,12],
 "classamrex_1_1AMReX.html#a745d2d5f1157d1c3cb6b620f5544e01d":[3,0,0,70,5],
-"classamrex_1_1AMReX.html#a77b2c8844d06a8456a0532c7ec154884":[3,0,0,70,7],
-"classamrex_1_1AMReX.html#a961f4d4e88be70b0f922d93122c5f0ca":[3,0,0,70,11]
+"classamrex_1_1AMReX.html#a77b2c8844d06a8456a0532c7ec154884":[3,0,0,70,7]
 };
