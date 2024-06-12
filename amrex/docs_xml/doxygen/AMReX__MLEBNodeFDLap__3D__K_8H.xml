@@ -43,7 +43,7 @@
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y(i,j,k)<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>tmp;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>hp,<sp/>hm,<sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>,<sp/>out;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>hp,<sp/>hm,<sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>,<sp/>out;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hp<sp/>=<sp/>(ecx(i,j,k)<sp/>==<sp/>Real(1.0))<sp/>?<sp/>Real(1.0)<sp/>:<sp/>(Real(1.0)+Real(2.)*ecx(i,j,k));</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(levset(i+1,j,k)<sp/>&lt;<sp/>Real(0.0))<sp/>{<sp/></highlight><highlight class="comment">//<sp/>regular</highlight><highlight class="normal"></highlight></codeline>
@@ -60,7 +60,7 @@
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>=<sp/>tmp<sp/>*<sp/>bx<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(hm,<sp/>hp);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(hm,<sp/>hp);</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hp<sp/>=<sp/>(ecy(i,j,k)<sp/>==<sp/>Real(1.0))<sp/>?<sp/>Real(1.0)<sp/>:<sp/>(Real(1.0)+Real(2.)*ecy(i,j,k));</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(levset(i,j+1,k)<sp/>&lt;<sp/>Real(0.0))<sp/>{</highlight></codeline>
@@ -77,7 +77,7 @@
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>+=<sp/>tmp<sp/>*<sp/>by<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hp<sp/>=<sp/>(ecz(i,j,k)<sp/>==<sp/>Real(1.0))<sp/>?<sp/>Real(1.0)<sp/>:<sp/>(Real(1.0)+Real(2.0)*ecz(i,j,k));</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(levset(i,j,k+1)<sp/>&lt;<sp/>Real(0.0))<sp/>{</highlight></codeline>
@@ -94,9 +94,9 @@
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>+=<sp/>tmp<sp/>*<sp/>bz<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y(i,j,k)<sp/>=<sp/>out*<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y(i,j,k)<sp/>=<sp/>out*<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>;</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
@@ -155,7 +155,7 @@
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,j,k)<sp/>=<sp/>Real(0.);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>tmp0,<sp/>tmp1;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>hp,<sp/>hm,<sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>hp,<sp/>hm,<sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hp<sp/>=<sp/>(ecx(i,j,k)<sp/>==<sp/>Real(1.0))<sp/>?<sp/>Real(1.0)<sp/>:<sp/>(Real(1.0)+Real(2.)*ecx(i,j,k));</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(levset(i+1,j,k)<sp/>&lt;<sp/>Real(0.0))<sp/>{<sp/></highlight><highlight class="comment">//<sp/>regular</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp0<sp/>=<sp/>Real(-1.0);</highlight></codeline>
@@ -175,7 +175,7 @@
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>gamma<sp/>=<sp/>tmp0<sp/>*<sp/>(bx<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm));</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rho<sp/><sp/><sp/>=<sp/>tmp1<sp/>*<sp/>(bx<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm));</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(hm,<sp/>hp);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(hm,<sp/>hp);</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hp<sp/>=<sp/>(ecy(i,j,k)<sp/>==<sp/>Real(1.0))<sp/>?<sp/>Real(1.0)<sp/>:<sp/>(Real(1.0)+Real(2.)*ecy(i,j,k));</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(levset(i,j+1,k)<sp/>&lt;<sp/>Real(0.0))<sp/>{</highlight></codeline>
@@ -196,7 +196,7 @@
 <codeline lineno="186"><highlight class="normal"></highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamma<sp/>+=<sp/>tmp0<sp/>*<sp/>(by<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm));</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rho<sp/><sp/><sp/>+=<sp/>tmp1<sp/>*<sp/>(by<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm));</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hp<sp/>=<sp/>(ecz(i,j,k)<sp/>==<sp/>Real(1.0))<sp/>?<sp/>Real(1.0)<sp/>:<sp/>(Real(1.0)+Real(2.0)*ecz(i,j,k));</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(levset(i,j,k+1)<sp/>&lt;<sp/>Real(0.0))<sp/>{</highlight></codeline>
@@ -217,11 +217,11 @@
 <codeline lineno="207"><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamma<sp/>+=<sp/>tmp0<sp/>*<sp/>(bz<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm));</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rho<sp/><sp/><sp/>+=<sp/>tmp1<sp/>*<sp/>(bz<sp/>*<sp/>Real(2.0)<sp/>/<sp/>(hp+hm));</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref><sp/>=<sp/><ref refid="namespaceamrex_1a475e2bc71e3ca92b6b016fcb70af95bd" kindref="member">amrex::min</ref>(<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>,<sp/>hm,<sp/>hp);</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>Ax<sp/>=<sp/>rho<sp/>+<sp/>gamma*<ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,j,k);</highlight></codeline>
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>Real<sp/>omega<sp/>=<sp/>Real(1.25);</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,j,k)<sp/>+=<sp/>(rhs(i,j,k)<sp/>-<sp/>Ax*<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>)<sp/>*<sp/>(omega<sp/>/<sp/>(gamma*<ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>));</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a2b273526dd4d27047e455ab7a5a8dcd3a9dd4e461268c8034f5c8564e155c67a6" kindref="member">x</ref>(i,j,k)<sp/>+=<sp/>(rhs(i,j,k)<sp/>-<sp/>Ax*<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>)<sp/>*<sp/>(omega<sp/>/<sp/>(gamma*<ref refid="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" kindref="member">scale</ref>));</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="217"><highlight class="normal">}</highlight></codeline>

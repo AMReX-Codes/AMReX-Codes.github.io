@@ -459,7 +459,8 @@ var hierarchy =
       [ "amrex::IsMultiFabLike< M, Enable >", "structamrex_1_1IsMultiFabLike.html", null ],
       [ "amrex::IsPolymorphicArenaAllocator< T >", "structamrex_1_1IsPolymorphicArenaAllocator.html", null ],
       [ "amrex::IsStoreAtomic< T, Enable >", "structamrex_1_1IsStoreAtomic.html", null ],
-      [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ]
+      [ "amrex::RunOnGpu< T >", "structamrex_1_1RunOnGpu.html", null ],
+      [ "amrex::detail::IsConvertibleImp< T, U, Enable >", "structamrex_1_1detail_1_1IsConvertibleImp.html", null ]
     ] ],
     [ "amrex::Math::FastDivmodU64", "structamrex_1_1Math_1_1FastDivmodU64.html", null ],
     [ "amrex::FatPtr< T >", "structamrex_1_1FatPtr.html", null ],
@@ -621,7 +622,8 @@ var hierarchy =
     ] ],
     [ "amrex::InterpFaceRegister", "classamrex_1_1InterpFaceRegister.html", null ],
     [ "amrex::algoim::Interval", "structamrex_1_1algoim_1_1Interval.html", null ],
-    [ "amrex::IntVect", "classamrex_1_1IntVect.html", null ],
+    [ "amrex::IntVectND< dim >", "classamrex_1_1IntVectND.html", null ],
+    [ "amrex::IntVectND< AMREX_SPACEDIM >", "classamrex_1_1IntVectND.html", null ],
     [ "amrex::NeighborParticleContainer< NStructReal, NStructInt, NArrayReal, NArrayInt >::InverseCopyTag", "structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html", null ],
     [ "amrex::detail::invoke_result< V, F, Args >", "structamrex_1_1detail_1_1invoke__result.html", null ],
     [ "amrex::detail::invoke_result< decltype(void(INVOKE(std::declval< F >(), std::declval< Args >()...))), F, Args... >", "structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html", null ],
@@ -669,6 +671,7 @@ var hierarchy =
     [ "amrex::IParserExeSUB_VP", "structamrex_1_1IParserExeSUB__VP.html", null ],
     [ "amrex::IParserExeSymbol", "structamrex_1_1IParserExeSymbol.html", null ],
     [ "amrex::IParserStack< N >", "structamrex_1_1IParserStack.html", null ],
+    [ "amrex::IsConvertible< T, Args >", "structamrex_1_1IsConvertible.html", null ],
     [ "IsDetected", null, [
       [ "amrex::IsCallable< T, Args >", "structamrex_1_1IsCallable.html", null ]
     ] ],
@@ -962,7 +965,7 @@ var hierarchy =
     [ "amrex::Gpu::SharedMemory< unsigned long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01_4.html", null ],
     [ "amrex::Gpu::SharedMemory< unsigned long long >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01long_01long_01_4.html", null ],
     [ "amrex::Gpu::SharedMemory< unsigned short >", "structamrex_1_1Gpu_1_1SharedMemory_3_01unsigned_01short_01_4.html", null ],
-    [ "amrex::IntVect::shift_hasher", "classamrex_1_1IntVect_1_1shift__hasher.html", null ],
+    [ "amrex::IntVectND< dim >::shift_hasher", "structamrex_1_1IntVectND_1_1shift__hasher.html", null ],
     [ "amrex::FabArray< FAB >::ShMem", "structamrex_1_1FabArray_1_1ShMem.html", null ],
     [ "amrex::Gpu::SingleStreamRegion", "structamrex_1_1Gpu_1_1SingleStreamRegion.html", null ],
     [ "amrex::SoAParticleBase", "structamrex_1_1SoAParticleBase.html", [
@@ -1053,14 +1056,17 @@ var hierarchy =
       [ "amrex::RunOnGpu< ArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::RunOnGpu< AsyncArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],
-      [ "amrex::RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ]
+      [ "amrex::RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
+      [ "amrex::detail::IsConvertibleImp< T, U, std::enable_if_t< is_convertible< T >(U{})> >", "structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html", null ]
     ] ],
     [ "amrex::detail::tuple_cat_result<... >", "structamrex_1_1detail_1_1tuple__cat__result.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< T1s... >, GpuTuple< T2s... >, TPs... >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802.html", null ],
     [ "amrex::detail::tuple_cat_result< GpuTuple< Ts... > >", "structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "std::tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", null ],
     [ "std::tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "std::tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", null ],
     [ "std::is_base_of::type", null, [
       [ "amrex::IsMultiFabIterator< T >", "structamrex_1_1IsMultiFabIterator.html", null ]
     ] ],
@@ -1101,6 +1107,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::Vector< Array< std::unique_ptr< amrex::iMultiFab >, 3 > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< std::unique_ptr< amrex::MLCellLinOpT::BndryCondLoc > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::string >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::map< int, amrex::PODVector< amrex::IntVectND > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::LayoutData< int > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< RT >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< amrex::FillBoxId > > >", "classamrex_1_1Vector.html", null ],
@@ -1119,7 +1126,6 @@ var hierarchy =
       [ "amrex::Vector< amrex::BLProfiler::RStartStop >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BoxArray > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< int >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::map< int, amrex::PODVector< amrex::IntVect > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, amrex::Vector< amrex::Vector< amrex::NeighborParticleContainer::NeighborCopyTag > > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::iMultiFab >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Box > >", "classamrex_1_1Vector.html", null ],
@@ -1136,7 +1142,6 @@ var hierarchy =
       [ "amrex::Vector< amrex::LayoutData< HYPRE_Int > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::ForkJoin::ComponentSet >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vertex >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< std::map< int, amrex::IntVect > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::VisMF::FabOnDisk >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< int, amrex::PODVector< int > > >", "classamrex_1_1Vector.html", null ],
@@ -1145,6 +1150,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::EB2::PolyTerm >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vector< Real > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::BLProfiler::CallStats >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< std::map< int, amrex::IntVectND > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< double > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< Array< amrex::MultiMask, 2 *AMREX_SPACEDIM > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::BndryRegisterT< MF > > >", "classamrex_1_1Vector.html", null ],
@@ -1180,7 +1186,6 @@ var hierarchy =
       [ "amrex::Vector< RegionsProfStats::DataBlock >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< CommProfStats::BarrierEntry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Vector< BLProfStats::TimeRange > > >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::IntVect >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::map< PairIndex, amrex::Vector< amrex::NeighborParticleContainer::InverseCopyTag > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< std::unique_ptr< amrex::MLMGBndryT< MF > > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Setbuf_Char_Type >", "classamrex_1_1Vector.html", null ],
@@ -1208,6 +1213,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::DistributionMapping >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Geometry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Vector< amrex::Geometry > >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::IntVectND >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< T, Allocator >", "classamrex_1_1Vector.html", null ]
     ] ],
     [ "amrex::VectorTag< T >", "structamrex_1_1VectorTag.html", null ],

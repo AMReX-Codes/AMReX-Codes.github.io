@@ -72,6 +72,7 @@
     <innerclass refid="classamrex_1_1BaseFab" prot="public">amrex::BaseFab</innerclass>
     <innerclass refid="classamrex_1_1FabArray" prot="public">amrex::FabArray</innerclass>
     <innerclass refid="classamrex_1_1LayoutData" prot="public">amrex::LayoutData</innerclass>
+    <innerclass refid="classamrex_1_1IntVectND" prot="public">amrex::IntVectND</innerclass>
     <innerclass refid="classamrex_1_1FabFactory" prot="public">amrex::FabFactory</innerclass>
     <innerclass refid="structamrex_1_1ParserExecutor" prot="public">amrex::ParserExecutor</innerclass>
     <innerclass refid="classamrex_1_1BCRec" prot="public">amrex::BCRec</innerclass>
@@ -174,7 +175,6 @@
     <innerclass refid="structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047" prot="public">amrex::IntegratorOps&lt; T, std::enable_if_t&lt; std::is_same_v&lt; amrex::Vector&lt; amrex::MultiFab &gt;, T &gt; &gt; &gt;</innerclass>
     <innerclass refid="structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4" prot="public">amrex::IntegratorOps&lt; T, std::enable_if_t&lt; std::is_same_v&lt; amrex::MultiFab, T &gt; &gt; &gt;</innerclass>
     <innerclass refid="classamrex_1_1IntegratorBase" prot="public">amrex::IntegratorBase</innerclass>
-    <innerclass refid="classamrex_1_1IntVect" prot="public">amrex::IntVect</innerclass>
     <innerclass refid="classamrex_1_1LUSolver" prot="public">amrex::LUSolver</innerclass>
     <innerclass refid="classamrex_1_1MemProfiler" prot="public">amrex::MemProfiler</innerclass>
     <innerclass refid="classamrex_1_1MultiFabCopyDescriptor" prot="public">amrex::MultiFabCopyDescriptor</innerclass>
@@ -264,6 +264,7 @@
     <innerclass refid="structamrex_1_1Disjunction" prot="public">amrex::Disjunction</innerclass>
     <innerclass refid="structamrex_1_1Disjunction_3_01B1_01_4" prot="public">amrex::Disjunction&lt; B1 &gt;</innerclass>
     <innerclass refid="structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4" prot="public">amrex::Disjunction&lt; B1, Bn... &gt;</innerclass>
+    <innerclass refid="structamrex_1_1IsConvertible" prot="public">amrex::IsConvertible</innerclass>
     <innerclass refid="structamrex_1_1IsStoreAtomic" prot="public">amrex::IsStoreAtomic</innerclass>
     <innerclass refid="classamrex_1_1expect" prot="public">amrex::expect</innerclass>
     <innerclass refid="classamrex_1_1StreamRetry" prot="public">amrex::StreamRetry</innerclass>
@@ -2997,6 +2998,19 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="26" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="26" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1a8792201c856a367dda275e09047daa33" prot="public" static="no">
+        <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; AMREX_SPACEDIM &gt;</type>
+        <definition>typedef IntVectND&lt; AMREX_SPACEDIM &gt; amrex::IntVect</definition>
+        <argsstring></argsstring>
+        <name>IntVect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" line="27" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseFwd.H" bodystart="27" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1af2ed2dc1168064ab4409c918ad0dfce6" prot="public" static="no">
         <type><ref refid="structamrex_1_1BATransformer" kindref="compound">BATransformer</ref></type>
         <definition>using amrex::BndryBATransformer = typedef BATransformer</definition>
@@ -4640,6 +4654,30 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="49" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="49" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a6c0ad9de6dc5e0ca9324f19210bd62b9" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool amrex::IsConvertible_v</definition>
+        <argsstring></argsstring>
+        <name>IsConvertible_v</name>
+        <initializer>= <ref refid="structamrex_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;T, Args...&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="262" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="262" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1ae9f4a54b51971f15803c95c7f677c1b8" prot="public" static="yes" mutable="no">
         <type>const Long</type>
         <definition>const Long amrex::gcc_map_node_extra_bytes</definition>
@@ -5146,7 +5184,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <param>
@@ -5162,7 +5200,7 @@
           <declname>dest_domain</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -5196,11 +5234,11 @@
         <argsstring>(const IntVect &amp;ratio, const IntVect &amp;blocking_factor, int ngrow, const IndexType &amp;boxType, Interp *mapper)</argsstring>
         <name>ProperlyNested</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>blocking_factor</declname>
         </param>
         <param>
@@ -5294,7 +5332,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -5641,7 +5679,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -5701,7 +5739,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -6040,7 +6078,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -6315,7 +6353,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -6375,7 +6413,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -6658,7 +6696,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -6718,7 +6756,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -7057,7 +7095,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -7376,7 +7414,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -7627,7 +7665,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -7675,7 +7713,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -7977,7 +8015,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -8227,7 +8265,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -8275,7 +8313,7 @@
           <declname>fbccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -8529,7 +8567,7 @@
           <declname>level</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -8569,7 +8607,7 @@
           <declname>bccomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -8783,7 +8821,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <param>
@@ -8799,7 +8837,7 @@
           <declname>dest_domain</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -8853,7 +8891,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <param>
@@ -8869,7 +8907,7 @@
           <declname>dest_domain</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -8933,7 +8971,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -9006,7 +9044,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -9512,7 +9550,7 @@
           <declname>ccomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -9554,7 +9592,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -9604,7 +9642,7 @@
           <declname>ccomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -9662,7 +9700,7 @@
           <defname>mask</defname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <defname>ratio</defname>
         </param>
         <briefdescription>
@@ -9704,7 +9742,7 @@
           <defname>fine</defname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <defname>ratio</defname>
         </param>
         <param>
@@ -9754,7 +9792,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -9837,7 +9875,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -9878,7 +9916,7 @@
           <declname>fine_bx</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -9940,7 +9978,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -9982,7 +10020,7 @@
           <declname>fine_bx</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -10040,7 +10078,7 @@
           <declname>mask</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10090,7 +10128,7 @@
           <declname>mask</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10140,7 +10178,7 @@
           <declname>mask</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10190,7 +10228,7 @@
           <declname>mask</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -10235,7 +10273,7 @@
           <declname>fine</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10272,7 +10310,7 @@
           <declname>fine</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10309,7 +10347,7 @@
           <declname>fine</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10445,7 +10483,7 @@
           <declname>j</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>rr</declname>
         </param>
         <param>
@@ -10502,7 +10540,7 @@
           <declname>k</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>rr</declname>
         </param>
         <param>
@@ -10579,7 +10617,7 @@
           <declname>domain</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -10632,7 +10670,7 @@
           <declname>domain</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <defname>ratio</defname>
         </param>
         <param>
@@ -10689,7 +10727,7 @@
           <declname>domain</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -10750,7 +10788,7 @@
           <defname>ncomp</defname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10794,7 +10832,7 @@
           <declname>domain</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -10854,7 +10892,7 @@
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -10916,7 +10954,7 @@
           <declname>ccomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -10965,7 +11003,7 @@
           <declname>ccomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -11014,7 +11052,7 @@
           <declname>domain</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -11079,7 +11117,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -11189,7 +11227,7 @@
           <declname>slope</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -11241,7 +11279,7 @@
           <declname>slope</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -13847,7 +13885,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>v</declname>
         </param>
         <briefdescription>
@@ -14042,7 +14080,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <briefdescription>
@@ -14086,7 +14124,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <briefdescription>
@@ -14134,7 +14172,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nzones</declname>
         </param>
         <briefdescription>
@@ -14216,7 +14254,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>typ</declname>
         </param>
         <briefdescription>
@@ -14762,7 +14800,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="1795" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1795" bodyend="1798"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acaf1644c0e71ab419cdf9495cd29a030" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::getCell</definition>
         <argsstring>(Box const *boxes, int nboxes, Long icell) noexcept</argsstring>
         <name>getCell</name>
@@ -14947,7 +14985,7 @@
           <declname>b</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -15033,7 +15071,7 @@
           <declname>ba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>typ</declname>
         </param>
         <briefdescription>
@@ -15075,7 +15113,7 @@
           <declname>ba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -15117,7 +15155,7 @@
           <declname>ba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -16403,7 +16441,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -16462,7 +16500,7 @@
           <declname>src_dm</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -16649,7 +16687,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -16741,7 +16779,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -16770,7 +16808,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="765" column="6" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" declline="765" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a28fbc0acd8368951bb043d23d5c0727e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::nGrowVect</definition>
         <argsstring>(FabArrayBase const &amp;fa)</argsstring>
         <name>nGrowVect</name>
@@ -16900,7 +16938,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -16988,7 +17026,7 @@
           <declname>fa2</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17090,7 +17128,7 @@
           <declname>fa3</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17164,7 +17202,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17252,7 +17290,7 @@
           <declname>fa2</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17354,7 +17392,7 @@
           <declname>fa3</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17428,7 +17466,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17516,7 +17554,7 @@
           <declname>fa2</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17618,7 +17656,7 @@
           <declname>fa3</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17692,7 +17730,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17780,7 +17818,7 @@
           <declname>fa2</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17854,7 +17892,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17942,7 +17980,7 @@
           <declname>fa2</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -17976,7 +18014,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>cell</declname>
         </param>
         <param>
@@ -17985,9 +18023,9 @@
           <defval>-1</defval>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ng</declname>
-          <defval><ref refid="classamrex_1_1IntVect_1ac4331f56298c56a0ff01a011c3702c3a" kindref="member">IntVect::TheZeroVector</ref>()</defval>
+          <defval><ref refid="classamrex_1_1IntVectND_1ad951ec911e62f76bf25ac82c3952878e" kindref="member">IntVect::TheZeroVector</ref>()</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -18078,7 +18116,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -18170,7 +18208,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -18262,7 +18300,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -18338,7 +18376,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -18665,7 +18703,7 @@
             <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::indexFromValue</definition>
         <argsstring>(FabArray&lt; FAB &gt; const &amp;mf, int comp, IntVect const &amp;nghost, typename FAB::value_type value)</argsstring>
         <name>indexFromValue</name>
@@ -18678,7 +18716,7 @@
           <declname>comp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -18730,7 +18768,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -18956,7 +18994,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19003,7 +19041,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19054,7 +19092,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19105,7 +19143,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19168,7 +19206,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19215,14 +19253,14 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng_src</declname>
-          <defval><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(0)</defval>
+          <defval><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0)</defval>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng_dst</declname>
-          <defval><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(0)</defval>
+          <defval><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0)</defval>
         </param>
         <param>
           <type><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> const &amp;</type>
@@ -19265,7 +19303,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -19452,7 +19490,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19504,7 +19542,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19560,7 +19598,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19616,7 +19654,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19684,7 +19722,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <briefdescription>
@@ -19736,14 +19774,14 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng_src</declname>
-          <defval><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(0)</defval>
+          <defval><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0)</defval>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng_dst</declname>
-          <defval><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(0)</defval>
+          <defval><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0)</defval>
         </param>
         <param>
           <type><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> const &amp;</type>
@@ -19791,7 +19829,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -19853,7 +19891,7 @@
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::nGrowVect</definition>
         <argsstring>(Array&lt; MF, N &gt; const &amp;mf)</argsstring>
         <name>nGrowVect</name>
@@ -20350,7 +20388,7 @@
           <declname>fine</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>rr</declname>
         </param>
         <briefdescription>
@@ -20392,7 +20430,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>rr</declname>
         </param>
         <briefdescription>
@@ -29210,7 +29248,7 @@
           <declname>period</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ngrow</declname>
         </param>
         <briefdescription>
@@ -29441,48 +29479,6 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntConv.H" line="36" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntConv.H" bodystart="36" bodyend="46"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a4f9c65b78aaf05a5c0b1ac8f27b668c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::ostream &amp;</type>
-        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
-        <argsstring>(std::ostream &amp;os, const IntVect &amp;iv)</argsstring>
-        <name>operator&lt;&lt;</name>
-        <param>
-          <type>std::ostream &amp;</type>
-          <declname>os</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>iv</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.cpp" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.cpp" bodystart="16" bodyend="25"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae3b2b2af01369829d3b37006cd625fe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::istream &amp;</type>
-        <definition>std::istream&amp; amrex::operator&gt;&gt;</definition>
-        <argsstring>(std::istream &amp;is, IntVect &amp;iv)</argsstring>
-        <name>operator&gt;&gt;</name>
-        <param>
-          <type>std::istream &amp;</type>
-          <declname>is</declname>
-        </param>
-        <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>iv</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.cpp" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.cpp" bodystart="30" bodyend="69"/>
-      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aff7e1eb998059fdb9cbc90a22c2d01d5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::coarsen</definition>
@@ -29502,19 +29498,82 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="26" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="26" bodyend="34"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="27" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="27" bodyend="35"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a1da87e164dc6afd9cd39bc5b1bc6920c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::operator+</definition>
-        <argsstring>(int s, const IntVect &amp;p) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1aa9719760172e84e7b1e03642131c04fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::IntVectND</definition>
+        <argsstring>(const Array&lt; int, dim &gt; &amp;) -&gt; IntVectND&lt; dim &gt;</argsstring>
+        <name>IntVectND</name>
+        <param>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, dim &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="785" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" declline="785" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a35b24379da72639d59e6a6ae6b65fcc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; IsConvertible_v&lt; int, Args... &gt;, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::IntVectND</definition>
+        <argsstring>(int, int, Args...) -&gt; IntVectND&lt; sizeof...(Args)+2 &gt;</argsstring>
+        <name>IntVectND</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        </param>
+        <param>
+          <type>Args...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="793" column="1" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" declline="793" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a296f8f3f92fd7941ff277896653950b9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::operator+</definition>
+        <argsstring>(int s, const IntVectND&lt; dim &gt; &amp;p) noexcept</argsstring>
         <name>operator+</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>s</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -29524,19 +29583,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="660" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="660" bodyend="663"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="878" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="878" bodyend="885"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aab9309e1642f8394f6a3c95dbc98755d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE IntVect amrex::operator-</definition>
-        <argsstring>(int s, const IntVect &amp;p) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a5a647fe61578d7dc940eb4d0e899e252" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE IntVectND&lt;dim&gt; amrex::operator-</definition>
+        <argsstring>(int s, const IntVectND&lt; dim &gt; &amp;p) noexcept</argsstring>
         <name>operator-</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>s</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -29546,19 +29612,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="668" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="668" bodyend="671"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="892" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="892" bodyend="899"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a38ef4bb6aa5d316bafa475400152a048" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::operator*</definition>
-        <argsstring>(int s, const IntVect &amp;p) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a49f574fffa24f9734a8e405d2a299bd0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::operator*</definition>
+        <argsstring>(int s, const IntVectND&lt; dim &gt; &amp;p) noexcept</argsstring>
         <name>operator*</name>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>s</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -29568,41 +29641,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="675" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="675" bodyend="678"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="905" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="905" bodyend="912"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1adda43c394af96b55fd44923cbd4a3774" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::min</definition>
-        <argsstring>(const IntVect &amp;p1, const IntVect &amp;p2) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a4cee45529d3d4df425cb5f3f9bfc0b08" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::min</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p1, const IntVectND&lt; dim &gt; &amp;p2) noexcept</argsstring>
         <name>min</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p1</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p2</declname>
         </param>
         <briefdescription>
-<para>Returns the <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> that is the component-wise minimum of two argument IntVects. </para>
+<para>Returns the <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> that is the component-wise minimum of two argument IntVectNDs. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="687" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="687" bodyend="692"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="922" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="922" bodyend="927"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa8f4106a3b37e5bcbb8f8a45dfb69598" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::elemwiseMin</definition>
-        <argsstring>(const IntVect &amp;p1, const IntVect &amp;p2) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a4d1d3dbaf7cb3e6b36c6151d59228362" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::elemwiseMin</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p1, const IntVectND&lt; dim &gt; &amp;p2) noexcept</argsstring>
         <name>elemwiseMin</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p1</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p2</declname>
         </param>
         <briefdescription>
@@ -29611,41 +29698,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="697" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="697" bodyend="702"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="933" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="933" bodyend="938"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a13b3121d972f873fb930fafd6a3318f6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::max</definition>
-        <argsstring>(const IntVect &amp;p1, const IntVect &amp;p2) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a4f9512ae69adf74db692c8041c5d17e4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::max</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p1, const IntVectND&lt; dim &gt; &amp;p2) noexcept</argsstring>
         <name>max</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p1</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p2</declname>
         </param>
         <briefdescription>
-<para>Returns the <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> that is the component-wise maximum of two argument IntVects. </para>
+<para>Returns the <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> that is the component-wise maximum of two argument IntVectNDs. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="711" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="711" bodyend="716"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="948" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="948" bodyend="953"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1afb0a9dea764f55669bba38551e3e5bb8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::elemwiseMax</definition>
-        <argsstring>(const IntVect &amp;p1, const IntVect &amp;p2) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a0998756a313c73e425a7e2b4b96d02dd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::elemwiseMax</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p1, const IntVectND&lt; dim &gt; &amp;p2) noexcept</argsstring>
         <name>elemwiseMax</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p1</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p2</declname>
         </param>
         <briefdescription>
@@ -29654,11 +29755,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="721" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="721" bodyend="726"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="959" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="959" bodyend="964"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a86199655298470c716a068f36731ae9d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::BASISV</definition>
+      <memberdef kind="function" id="namespaceamrex_1a07a69c2450c2f09ae8c1afbfb394a8d8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+            <defval>AMREX_SPACEDIM</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::BASISV</definition>
         <argsstring>(int dir) noexcept</argsstring>
         <name>BASISV</name>
         <param>
@@ -29666,21 +29775,28 @@
           <declname>dir</declname>
         </param>
         <briefdescription>
-<para>Returns a basis vector in the given coordinate direction; eg. <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> BASISV(1) == (0,1,0). Note that the coordinate directions are zero based. </para>
+<para>Returns a basis vector in the given coordinate direction; eg. IntVectND&lt;3&gt; BASISV&lt;3&gt;(1) == (0,1,0). Note that the coordinate directions are zero based. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="736" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="736" bodyend="742"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="975" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="975" bodyend="981"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::scale</definition>
-        <argsstring>(const IntVect &amp;p, int s) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1aa6b7ca16fdf8fb25e6d086e416ad8322" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::scale</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p, int s) noexcept</argsstring>
         <name>scale</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -29688,21 +29804,28 @@
           <declname>s</declname>
         </param>
         <briefdescription>
-<para>Returns a <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> obtained by multiplying each of the components of this <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> by s. </para>
+<para>Returns a <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> obtained by multiplying each of the components of this <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> by s. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="751" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="751" bodyend="754"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="991" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="991" bodyend="994"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae06284bc2bd3bee6426c654371490514" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::reflect</definition>
-        <argsstring>(const IntVect &amp;a, int ref_ix, int idir) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a97c8e0d133dd148a203927fee1eaae6f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::reflect</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;a, int ref_ix, int idir) noexcept</argsstring>
         <name>reflect</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>a</declname>
         </param>
         <param>
@@ -29714,21 +29837,28 @@
           <declname>idir</declname>
         </param>
         <briefdescription>
-<para>Returns an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> that is the reflection of input in the plane which passes through ref_ix and normal to the coordinate direction idir. </para>
+<para>Returns an <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> that is the reflection of input in the plane which passes through ref_ix and normal to the coordinate direction idir. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="764" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="764" bodyend="770"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1005" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1005" bodyend="1008"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a9a81bac0694ac99fbe8dae5d321ac9ca" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::diagShift</definition>
-        <argsstring>(const IntVect &amp;p, int s) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a93a8be24c79571d43593ab6b4cb1b9a9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::diagShift</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p, int s) noexcept</argsstring>
         <name>diagShift</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -29736,21 +29866,28 @@
           <declname>s</declname>
         </param>
         <briefdescription>
-<para>Returns <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> obtained by adding s to each of the components of this <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>. </para>
+<para>Returns <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> obtained by adding s to each of the components of this <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="779" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="779" bodyend="782"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1018" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1018" bodyend="1021"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a4599a590d5a29a6f59ccdb2447d01c56" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::coarsen</definition>
-        <argsstring>(const IntVect &amp;p, int s) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1adda82809057e2dd50044b4d4936bc5d6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::coarsen</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p, int s) noexcept</argsstring>
         <name>coarsen</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -29758,47 +29895,65 @@
           <declname>s</declname>
         </param>
         <briefdescription>
-<para>Returns an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> that is the component-wise integer projection of p by s. </para>
+<para>Returns an <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> that is the component-wise integer projection of p by s. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="791" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="791" bodyend="797"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1031" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1031" bodyend="1037"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab40c08462a3a929ed2c8025f49302aeb" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::coarsen</definition>
-        <argsstring>(const IntVect &amp;p1, const IntVect &amp;p2) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1ae2b0820771e1588022b7209ee5d46538" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt;dim&gt; amrex::coarsen</definition>
+        <argsstring>(const IntVectND&lt; dim &gt; &amp;p1, const IntVectND&lt; dim &gt; &amp;p2) noexcept</argsstring>
         <name>coarsen</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p1</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
           <declname>p2</declname>
         </param>
         <briefdescription>
-<para>Returns an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> which is the component-wise integer projection of <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> p1 by <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> p2. </para>
+<para>Returns an <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> which is the component-wise integer projection of <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> p1 by <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> p2. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="806" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="806" bodyend="811"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1047" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1047" bodyend="1052"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1adfc791fe29b7108a57b8af1f44a0c7f5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a891e143331ef3de0742dfb5022e05909" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=dim &amp;&amp;dim&lt;=3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 amrex::refine</definition>
-        <argsstring>(Dim3 const &amp;coarse, IntVect const &amp;ratio) noexcept</argsstring>
+        <argsstring>(Dim3 const &amp;coarse, IntVectND&lt; dim &gt; const &amp;ratio) noexcept</argsstring>
         <name>refine</name>
         <param>
           <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
           <declname>coarse</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -29807,19 +29962,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="814" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="814" bodyend="823"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1056" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1056" bodyend="1065"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a41d0c56a7f130f1ccbbd99e593c06cd5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a63590a994f689e9e836a2069ab19e00f" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt;(1&lt;=dim &amp;&amp;dim&lt;=3), int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Dim3 amrex::coarsen</definition>
-        <argsstring>(Dim3 const &amp;fine, IntVect const &amp;ratio) noexcept</argsstring>
+        <argsstring>(Dim3 const &amp;fine, IntVectND&lt; dim &gt; const &amp;ratio) noexcept</argsstring>
         <name>coarsen</name>
         <param>
           <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
           <declname>fine</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -29828,7 +29994,227 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="826" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="826" bodyend="837"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1069" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1069" bodyend="1084"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a72ad7e141edec869dd289efe6e4f0696" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const IntVectND&lt; dim &gt; &amp;iv)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1123" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1124" bodyend="1127"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a86c00adba06b7bcd4670f9d5bc989dae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>dim</declname>
+            <defname>dim</defname>
+          </param>
+        </templateparamlist>
+        <type>std::istream &amp;</type>
+        <definition>std::istream&amp; amrex::operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;is, IntVectND&lt; dim &gt; &amp;iv)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1131" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1131" bodyend="1134"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae32a41a77c57301f9a393a6481c82ced" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>d</declname>
+            <defname>d</defname>
+          </param>
+          <param>
+            <type>int...</type>
+            <declname>dims</declname>
+            <defname>dims</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; <ref refid="namespaceamrex_1_1detail_1a7e41ce07653e68c00c8370a43ac2afed" kindref="member">detail::get_sum</ref>&lt; d, dims... &gt;)&gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IntVectND&lt;detail::get_sum&lt;d, dims...&gt;)&gt; amrex::IntVectCat</definition>
+        <argsstring>(const IntVectND&lt; d &gt; &amp;v, const IntVectND&lt; dims &gt; &amp;...vects) noexcept</argsstring>
+        <name>IntVectCat</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; d &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dims &gt; &amp;...</type>
+          <declname>vects</declname>
+        </param>
+        <briefdescription>
+<para>Returns a <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> obtained by concatenating the input IntVectNDs. The dimension of the return value equals the sum of the dimensions of the inputted IntVectNDs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1144" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1144" bodyend="1150"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a532032fa30b7c3646fb07a579df8e837" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>d</declname>
+            <defname>d</defname>
+          </param>
+          <param>
+            <type>int...</type>
+            <declname>dims</declname>
+            <defname>dims</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; d &gt;, <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; dims &gt;... &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE GpuTuple&lt;IntVectND&lt;d&gt;, IntVectND&lt;dims&gt;...&gt; amrex::IntVectSplit</definition>
+        <argsstring>(const IntVectND&lt; detail::get_sum&lt; d, dims... &gt;()&gt; &amp;v) noexcept</argsstring>
+        <name>IntVectSplit</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; <ref refid="namespaceamrex_1_1detail_1a7e41ce07653e68c00c8370a43ac2afed" kindref="member">detail::get_sum</ref>&lt; d, dims... &gt;()&gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Returns a tuple of <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> obtained by splitting the input <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> according to the dimensions specified by the template arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1160" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1160" bodyend="1165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aa3a1876c6b74db44950b0f9e6ef3bf6d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>old_dim</declname>
+            <defname>old_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IntVectND&lt;new_dim&gt; amrex::IntVectShrink</definition>
+        <argsstring>(const IntVectND&lt; old_dim &gt; &amp;iv) noexcept</argsstring>
+        <name>IntVectShrink</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; old_dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> of size new_dim and assigns the first new_dim values of iv to it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1175" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1175" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ab36de94c4a35bff95ce39e8cd0322807" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>old_dim</declname>
+            <defname>old_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IntVectND&lt;new_dim&gt; amrex::IntVectExpand</definition>
+        <argsstring>(const IntVectND&lt; old_dim &gt; &amp;iv, int fill_extra=0) noexcept</argsstring>
+        <name>IntVectExpand</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; old_dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>fill_extra</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> of size new_dim and assigns all values of iv to it and<nonbreakablespace/>fill_extra to the remaining elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1187" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1187" bodyend="1189"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae3711adbeb61448ada32e53fbdc06d75" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>new_dim</declname>
+            <defname>new_dim</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>old_dim</declname>
+            <defname>old_dim</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; new_dim &gt;</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE IntVectND&lt;new_dim&gt; amrex::IntVectResize</definition>
+        <argsstring>(const IntVectND&lt; old_dim &gt; &amp;iv, int fill_extra=0) noexcept</argsstring>
+        <name>IntVectResize</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref>&lt; old_dim &gt; &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>fill_extra</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns a new <ref refid="classamrex_1_1IntVectND" kindref="compound">IntVectND</ref> of size new_dim by either shrinking or expanding iv. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="1199" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="1199" bodyend="1201"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afee414511118e5074a62b89cb88f0f5a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -30945,7 +31331,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -30980,7 +31366,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31014,7 +31400,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31045,7 +31431,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31074,7 +31460,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31101,7 +31487,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>cell</declname>
         </param>
         <param>
@@ -31109,7 +31495,7 @@
           <declname>n</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -31269,7 +31655,7 @@
           <declname>fba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31307,7 +31693,7 @@
           <declname>fba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31344,7 +31730,7 @@
           <declname>cdm</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>cnghost</declname>
         </param>
         <param>
@@ -31352,7 +31738,7 @@
           <declname>fba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31393,7 +31779,7 @@
           <declname>fba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31474,7 +31860,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>offset</declname>
         </param>
         <param>
@@ -31598,7 +31984,7 @@
           <declname>geom</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; const &amp;</type>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31638,7 +32024,7 @@
           <declname>fmf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -31889,7 +32275,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -31969,7 +32355,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32045,7 +32431,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32086,7 +32472,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32120,7 +32506,7 @@
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32156,7 +32542,7 @@
           <defname>crse</defname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32206,7 +32592,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -32277,7 +32663,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>cell</declname>
         </param>
         <briefdescription>
@@ -32315,7 +32701,7 @@
           <declname>dir</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>cell</declname>
         </param>
         <briefdescription>
@@ -32347,7 +32733,7 @@
           <declname>fba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32388,7 +32774,7 @@
           <declname>fba</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32430,11 +32816,11 @@
           <declname>fmf</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>cnghost</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32476,11 +32862,11 @@
           <declname>fmf</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>cnghost</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -32711,7 +33097,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -32777,7 +33163,7 @@
           <declname>numcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -33003,7 +33389,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -33061,7 +33447,7 @@
           <declname>fcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -33106,7 +33492,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -33159,7 +33545,7 @@
           <declname>fcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -33209,7 +33595,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -33263,7 +33649,7 @@
           <declname>fcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -33319,7 +33705,7 @@
           <declname>fcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -33365,7 +33751,7 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -33419,7 +33805,7 @@
           <declname>fcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -33670,7 +34056,7 @@
           <declname>fcomp</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -34277,7 +34663,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="116" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="117" bodyend="133" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" declline="1133" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="116" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="117" bodyend="133" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" declline="1135" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7537acc612797ae28b7a2f0afd2c9da1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -34319,7 +34705,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -34459,7 +34845,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -34606,7 +34992,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -34758,7 +35144,7 @@
           <declname>fa</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>nghost</declname>
         </param>
         <param>
@@ -35864,7 +36250,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -35925,7 +36311,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -36038,7 +36424,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -45980,7 +46366,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -46046,7 +46432,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <briefdescription>
@@ -46100,7 +46486,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -46129,7 +46515,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -46187,7 +46573,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
         <param>
@@ -47873,7 +48259,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>geom</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>refRatio</declname>
         </param>
         <param>
@@ -47910,7 +48296,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>geom</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>refRatio</declname>
         </param>
         <param>
@@ -48017,7 +48403,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>geom</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">amrex::IntVect</ref> &amp;</type>
           <declname>refRatio</declname>
         </param>
         <param>
@@ -48058,7 +48444,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>box_arrays</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -48219,7 +48605,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -48330,7 +48716,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -48583,7 +48969,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -48644,7 +49030,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -48709,7 +49095,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -48945,7 +49331,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>level_steps</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &amp;</type>
           <declname>ref_ratio</declname>
         </param>
         <param>
@@ -49412,11 +49798,11 @@ Returns the index of the first element for which f is 0. </para>
           <declname>tbox</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ivfrom</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>ivto</declname>
         </param>
         <briefdescription>
@@ -74449,7 +74835,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="696" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="696" bodyend="707"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad2e9cbb8f28bbbba7378ec7bf4654b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::computeRefFac</definition>
         <argsstring>(const ParGDBBase *a_gdb, int src_lev, int lev)</argsstring>
         <name>computeRefFac</name>
@@ -74575,7 +74961,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>pti</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
           <declname>nGrow</declname>
         </param>
         <briefdescription>
@@ -74696,7 +75082,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>pc</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
           <declname>nGrow</declname>
         </param>
         <briefdescription>
@@ -74850,7 +75236,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>lev_max</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
           <declname>nGrow</declname>
         </param>
         <briefdescription>
@@ -74912,7 +75298,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
         <argsstring>(const IntVect &amp;iv, const Box &amp;box, const bool a_do_tiling, const IntVect &amp;a_tile_size, Box &amp;tbx)</argsstring>
         <name>getTileIndex</name>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>iv</declname>
         </param>
         <param>
@@ -74924,7 +75310,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>a_do_tiling</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>a_tile_size</declname>
         </param>
         <param>
@@ -74953,7 +75339,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>a_do_tiling</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &amp;</type>
           <declname>a_tile_size</declname>
         </param>
         <briefdescription>
@@ -74970,7 +75356,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
             <type>typename P</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::getParticleCell</definition>
         <argsstring>(P const &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Box &amp;domain) noexcept</argsstring>
         <name>getParticleCell</name>
@@ -75004,7 +75390,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
             <type>typename PTD</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::getParticleCell</definition>
         <argsstring>(PTD const &amp;ptd, int i, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Box &amp;domain) noexcept</argsstring>
         <name>getParticleCell</name>
@@ -75396,7 +75782,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>geom</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
           <declname>idx_type</declname>
         </param>
         <briefdescription>
@@ -75608,7 +75994,7 @@ Example usage: using PType = typename PC::ParticleType; amrex::ReduceOps&lt;Redu
           <declname>val</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> *</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> *</type>
           <declname>is_nodal</declname>
         </param>
         <param>

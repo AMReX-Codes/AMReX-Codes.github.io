@@ -43,6 +43,8 @@ var annotated_dup =
         [ "Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", "structamrex_1_1detail_1_1Nonesuch" ],
         [ "Detector", "structamrex_1_1detail_1_1Detector.html", "structamrex_1_1detail_1_1Detector" ],
         [ "Detector< Default, Void_t< Op< Args... > >, Op, Args... >", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html", "structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" ],
+        [ "IsConvertibleImp", "structamrex_1_1detail_1_1IsConvertibleImp.html", null ],
+        [ "IsConvertibleImp< T, U, std::enable_if_t< is_convertible< T >(U{})> >", "structamrex_1_1detail_1_1IsConvertibleImp_3_01T_00_01U_00_01std_1_1enable__if__t_3_01is__convert835250fd1ee22d7499b01af822c5df97.html", null ],
         [ "CutFabFactory", "classamrex_1_1detail_1_1CutFabFactory.html", "classamrex_1_1detail_1_1CutFabFactory" ]
       ] ],
       [ "EB2", "namespaceamrex_1_1EB2.html", [
@@ -307,6 +309,7 @@ var annotated_dup =
       [ "BaseFab", "classamrex_1_1BaseFab.html", "classamrex_1_1BaseFab" ],
       [ "FabArray", "classamrex_1_1FabArray.html", "classamrex_1_1FabArray" ],
       [ "LayoutData", "classamrex_1_1LayoutData.html", "classamrex_1_1LayoutData" ],
+      [ "IntVectND", "classamrex_1_1IntVectND.html", "classamrex_1_1IntVectND" ],
       [ "FabFactory", "classamrex_1_1FabFactory.html", "classamrex_1_1FabFactory" ],
       [ "ParserExecutor", "structamrex_1_1ParserExecutor.html", "structamrex_1_1ParserExecutor" ],
       [ "BCRec", "classamrex_1_1BCRec.html", "classamrex_1_1BCRec" ],
@@ -409,7 +412,6 @@ var annotated_dup =
       [ "IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::Vector< amrex::MultiFab >, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_ad28940895bb617a00768ed755461047" ],
       [ "IntegratorOps< T, std::enable_if_t< std::is_same_v< amrex::MultiFab, T > > >", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4.html", "structamrex_1_1IntegratorOps_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01amrex_1_1MultiFab_00_01T_01_4_01_4_01_4" ],
       [ "IntegratorBase", "classamrex_1_1IntegratorBase.html", "classamrex_1_1IntegratorBase" ],
-      [ "IntVect", "classamrex_1_1IntVect.html", "classamrex_1_1IntVect" ],
       [ "LUSolver", "classamrex_1_1LUSolver.html", "classamrex_1_1LUSolver" ],
       [ "MemProfiler", "classamrex_1_1MemProfiler.html", "classamrex_1_1MemProfiler" ],
       [ "MultiFabCopyDescriptor", "classamrex_1_1MultiFabCopyDescriptor.html", "classamrex_1_1MultiFabCopyDescriptor" ],
@@ -499,6 +501,7 @@ var annotated_dup =
       [ "Disjunction", "structamrex_1_1Disjunction.html", null ],
       [ "Disjunction< B1 >", "structamrex_1_1Disjunction_3_01B1_01_4.html", null ],
       [ "Disjunction< B1, Bn... >", "structamrex_1_1Disjunction_3_01B1_00_01Bn_8_8_8_01_4.html", null ],
+      [ "IsConvertible", "structamrex_1_1IsConvertible.html", "structamrex_1_1IsConvertible" ],
       [ "IsStoreAtomic", "structamrex_1_1IsStoreAtomic.html", null ],
       [ "expect", "classamrex_1_1expect.html", "classamrex_1_1expect" ],
       [ "StreamRetry", "classamrex_1_1StreamRetry.html", "classamrex_1_1StreamRetry" ],
@@ -816,6 +819,8 @@ var annotated_dup =
       [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ]
     ] ],
     [ "std", null, [
+      [ "tuple_size< amrex::IntVectND< dim > >", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],
+      [ "tuple_element< s, amrex::IntVectND< dim > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1IntVectND_3_01dim_01_4_01_4" ],
       [ "tuple_size< amrex::GpuTuple< Ts... > >", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__size_3_01amrex_1_1GpuTuple_3_01Ts_8_8_8_01_4_01_4" ],
       [ "tuple_element< std::size_t{0}, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01std_1_1size__t_020_03_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ],
       [ "tuple_element< s, amrex::GpuTuple< T, Ts... > >", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4.html", "structstd_1_1tuple__element_3_01s_00_01amrex_1_1GpuTuple_3_01T_00_01Ts_8_8_8_01_4_01_4" ]

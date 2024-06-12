@@ -589,7 +589,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    linop.postSolve(sol);</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng_back = final_fill_bc ? <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(1) : <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng_back = final_fill_bc ? <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(1) : <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0);</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keywordflow">if</span> (linop.hasHiddenDimension()) {</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        ng_back[linop.hiddenDirection()] = 0;</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    }</div>
@@ -634,7 +634,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            }</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            linop.compGrad(alev, <a class="code" href="namespaceamrex.html#a3d178420751d1cce6bd2661d614fbb33">GetArrOfPtrs</a>(grad_sol), sol[alev], a_loc);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_grad_sol[alev][idim], grad_sol[idim], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_grad_sol[alev][idim], grad_sol[idim], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            }</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        }</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    }</div>
@@ -673,7 +673,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        getFluxes(<a class="code" href="namespaceamrex.html#ab2d0c11a4714995352cd0eeaddd46a83">GetVecOfArrOfPtrs</a>(fluxes), <a class="code" href="namespaceamrex.html#a4ad8b7a21907586ee3a86bda5163cd2d">GetVecOfPtrs</a>(sol), a_loc);</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; namrlevs; ++ilev) {</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev][idim], fluxes[ilev][idim], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev][idim], fluxes[ilev][idim], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            }</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        }</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    }</div>
@@ -714,7 +714,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        linop.getFluxes(<a class="code" href="namespaceamrex.html#ab2d0c11a4714995352cd0eeaddd46a83">GetVecOfArrOfPtrs</a>(fluxes), <a class="code" href="namespaceamrex.html#a4ad8b7a21907586ee3a86bda5163cd2d">GetVecOfPtrs</a>(sol), a_loc);</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; namrlevs; ++ilev) {</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev][idim], fluxes[ilev][idim], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev][idim], fluxes[ilev][idim], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            }</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        }</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    }</div>
@@ -746,7 +746,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        }</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        getFluxes(<a class="code" href="namespaceamrex.html#a4ad8b7a21907586ee3a86bda5163cd2d">GetVecOfPtrs</a>(fluxes), <a class="code" href="namespaceamrex.html#a4ad8b7a21907586ee3a86bda5163cd2d">GetVecOfPtrs</a>(sol), a_loc);</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; namrlevs; ++ilev) {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev], fluxes[ilev], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev], fluxes[ilev], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        }</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    }</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;}</div>
@@ -782,7 +782,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                <span class="keywordtype">int</span> nghost = 0;</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = linop.getNGrow(alev); }</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                ffluxes[alev][idim].define(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(linop.m_grids[alev][mglev],</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                                                          <a class="code" href="classamrex_1_1IntVect.html#af53e6b9cce7d60edaaf9a8bf721f0eaa">IntVect::TheDimensionVector</a>(idim)),</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                                                          <a class="code" href="classamrex_1_1IntVectND.html#af92483859d2386b4c222fb3f09a09d1b">IntVect::TheDimensionVector</a>(idim)),</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                                           linop.m_dmap[alev][mglev], ncomp, nghost, <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(),</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                                           *linop.m_factory[alev][mglev]);</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            }</div>
@@ -811,7 +811,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            }</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            linop.getFluxes(<a class="code" href="namespaceamrex.html#a4ad8b7a21907586ee3a86bda5163cd2d">GetVecOfPtrs</a>(fluxes), <a class="code" href="namespaceamrex.html#a4ad8b7a21907586ee3a86bda5163cd2d">GetVecOfPtrs</a>(sol));</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev = 0; ilev &lt; namrlevs; ++ilev) {</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev], fluxes[ilev], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(*a_flux[ilev], fluxes[ilev], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            }</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        }</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    }</div>
@@ -861,10 +861,10 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;{</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;MLMG::compResidual()&quot;</span>);</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng_sol(1);</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng_sol(1);</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    <span class="keywordflow">if</span> (linop.hasHiddenDimension()) { ng_sol[linop.hiddenDirection()] = 0; }</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    sol.resize(namrlevs);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    sol.<a class="code" href="classamrex_1_1IntVectND.html#a48e4ff4a1f1d9c19a95891621607d527">resize</a>(namrlevs);</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    sol_is_alias.resize(namrlevs,<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alev = 0; alev &lt; namrlevs; ++alev)</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    {</div>
@@ -879,7 +879,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            {</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                sol[alev] = linop.make(alev, 0, ng_sol);</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            }</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(sol[alev], *a_sol[alev], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(sol[alev], *a_sol[alev], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        }</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    }</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
@@ -894,7 +894,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="keywordtype">int</span> nghost = (cf_strategy == CFStrategy::ghostnodes) ? linop.getNGrow(alev) : 0;</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        MF rhstmp(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(*prhs), <a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(*prhs), ncomp, nghost,</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                  <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(), *linop.Factory(alev));</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(rhstmp, *prhs, 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(nghost));</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(rhstmp, *prhs, 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(nghost));</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        linop.applyMetricTerm(alev, 0, rhstmp);</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        linop.unimposeNeumannBC(alev, rhstmp);</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        linop.applyInhomogNeumannTerm(alev, rhstmp);</div>
@@ -932,7 +932,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF&gt;</a> in_raii(namrlevs);</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MF&gt;</a> rh(namrlevs);</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    <span class="keywordtype">int</span> nghost = 0;</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng_sol(1);</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng_sol(1);</div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    <span class="keywordflow">if</span> (linop.hasHiddenDimension()) { ng_sol[linop.hiddenDirection()] = 0; }</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alev = 0; alev &lt; namrlevs; ++alev)</div>
@@ -948,13 +948,13 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        }</div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        {</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng = ng_sol;</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;            <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { ng = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(nghost); }</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng = ng_sol;</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;            <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { ng = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(nghost); }</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            in_raii[alev] = linop.make(alev, 0, ng);</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(in_raii[alev], *a_in[alev], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(nghost));</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(in_raii[alev], *a_in[alev], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(nghost));</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            in[alev] = &amp;(in_raii[alev]);</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        }</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        rh[alev] = linop.make(alev, 0, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(nghost));</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        rh[alev] = linop.make(alev, 0, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(nghost));</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        <a class="code" href="namespaceamrex.html#ae26f96532b61a1b39722a6125552c74c">setVal</a>(rh[alev], <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0));</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    }</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
@@ -1010,8 +1010,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160; </div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    timer.assign(ntimers, 0.0);</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng_rhs(0);</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng_sol(1);</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng_rhs(0);</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng_sol(1);</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <span class="keywordflow">if</span> (linop.hasHiddenDimension()) { ng_sol[linop.hiddenDirection()] = 0; }</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160; </div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="keywordflow">if</span> (!linop_prepared) {</div>
@@ -1032,7 +1032,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;    }</div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    sol.resize(namrlevs);</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    sol.<a class="code" href="classamrex_1_1IntVectND.html#a48e4ff4a1f1d9c19a95891621607d527">resize</a>(namrlevs);</div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    sol_is_alias.resize(namrlevs,<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alev = 0; alev &lt; namrlevs; ++alev)</div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    {</div>
@@ -1058,7 +1058,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;                <span class="keywordflow">if</span> (!solve_called) {</div>
 <div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;                    sol[alev] = linop.make(alev, 0, ng_sol);</div>
 <div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;                }</div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(sol[alev], *a_sol[alev], 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;                <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(sol[alev], *a_sol[alev], 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;                <a class="code" href="namespaceamrex.html#a9e2396222f45dde47fc1cbf4fb45f162">setBndry</a>(sol[alev], <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0), 0, ncomp);</div>
 <div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;            }</div>
 <div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        }</div>
@@ -1067,7 +1067,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;    rhs.resize(namrlevs);</div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alev = 0; alev &lt; namrlevs; ++alev)</div>
 <div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    {</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { ng_rhs = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev)); }</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { ng_rhs = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev)); }</div>
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        <span class="keywordflow">if</span> (!solve_called) {</div>
 <div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;            rhs[alev] = linop.make(alev, 0, ng_rhs);</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;        }</div>
@@ -1102,7 +1102,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        makeSolvable();</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    }</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160; </div>
-<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng = linop.getNGrowVectRestriction();</div>
+<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng = linop.getNGrowVectRestriction();</div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;    <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { ng = ng_rhs; }</div>
 <div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;    <span class="keywordflow">if</span> (!solve_called) {</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;        linop.make(res, ng);</div>
@@ -1119,7 +1119,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;    }</div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160; </div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;    <span class="keywordflow">if</span> (cf_strategy != CFStrategy::ghostnodes) { ng = ng_sol; }</div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    cor.resize(namrlevs);</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    cor.<a class="code" href="classamrex_1_1IntVectND.html#a48e4ff4a1f1d9c19a95891621607d527">resize</a>(namrlevs);</div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alev = 0; alev &lt;= finest_amr_lev; ++alev)</div>
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;    {</div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> nmglevs = linop.NMGLevels(alev);</div>
@@ -1127,8 +1127,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> mglev = 0; mglev &lt; nmglevs; ++mglev)</div>
 <div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        {</div>
 <div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;            <span class="keywordflow">if</span> (!solve_called) {</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> _ng = ng;</div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;                <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { _ng=<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev,mglev)); }</div>
+<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;                <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> _ng = ng;</div>
+<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;                <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { _ng=<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev,mglev)); }</div>
 <div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;                cor[alev][mglev] = linop.make(alev, mglev, _ng);</div>
 <div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            }</div>
 <div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;            <a class="code" href="namespaceamrex.html#ae26f96532b61a1b39722a6125552c74c">setVal</a>(cor[alev][mglev], <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0));</div>
@@ -1143,8 +1143,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> mglev = 0; mglev &lt; nmglevs-1; ++mglev)</div>
 <div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        {</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;            <span class="keywordflow">if</span> (!solve_called) {</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;                <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> _ng = ng;</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;                <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { _ng=<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev,mglev)); }</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;                <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> _ng = ng;</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;                <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { _ng=<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev,mglev)); }</div>
 <div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;                cor_hold[alev][mglev] = linop.make(alev, mglev, _ng);</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;            }</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;            <a class="code" href="namespaceamrex.html#ae26f96532b61a1b39722a6125552c74c">setVal</a>(cor_hold[alev][mglev], <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0));</div>
@@ -1154,8 +1154,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    {</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;        cor_hold[alev].resize(1);</div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;        <span class="keywordflow">if</span> (!solve_called) {</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;            <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> _ng = ng;</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;            <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { _ng=<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev)); }</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;            <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> _ng = ng;</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;            <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { _ng=<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev)); }</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;            cor_hold[alev][0] = linop.make(alev, 0, _ng);</div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        }</div>
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;        <a class="code" href="namespaceamrex.html#ae26f96532b61a1b39722a6125552c74c">setVal</a>(cor_hold[alev][0], <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0));</div>
@@ -1208,7 +1208,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01129"></a><span class="lineno"><a class="line" href="classamrex_1_1MLMGT.html#ad13058d5dffd2c90824cd1a1d5db3085"> 1129</a></span>&#160;<a class="code" href="classamrex_1_1MLMGT.html#ad13058d5dffd2c90824cd1a1d5db3085">MLMGT&lt;MF&gt;::prepareMGcycle</a> ()</div>
 <div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;{</div>
 <div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    <span class="keywordflow">if</span> (res.empty()) {</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;        <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng = linop.getNGrowVectRestriction();</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;        <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng = linop.getNGrowVectRestriction();</div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;        linop.make(res, ng);</div>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;        linop.make(rescor, ng);</div>
 <div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160; </div>
@@ -1222,11 +1222,11 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;            }</div>
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;        }</div>
 <div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160; </div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng_sol(1);</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng_sol(1);</div>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;        <span class="keywordflow">if</span> (linop.hasHiddenDimension()) { ng_sol[linop.hiddenDirection()] = 0; }</div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        ng = ng_sol;</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160; </div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        cor.resize(namrlevs);</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        cor.<a class="code" href="classamrex_1_1IntVectND.html#a48e4ff4a1f1d9c19a95891621607d527">resize</a>(namrlevs);</div>
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alev = 0; alev &lt;= finest_amr_lev; ++alev)</div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;        {</div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> nmglevs = linop.NMGLevels(alev);</div>
@@ -1301,8 +1301,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;    {</div>
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        miniCycle(alev);</div>
 <div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160; </div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;        <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev)); }</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;        <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev)); }</div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        <a class="code" href="namespaceamrex.html#a3f948e8f69355439c8e408405d24eb05">LocalAdd</a>(sol[alev], cor[alev][0], 0, 0, ncomp, nghost);</div>
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
 <div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        <span class="comment">// compute residual for the coarse AMR level</span></div>
@@ -1327,8 +1327,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;            mgVcycle(0, 0);</div>
 <div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;        }</div>
 <div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160; </div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;        <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(0)); }</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;        <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(0)); }</div>
 <div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;        <a class="code" href="namespaceamrex.html#a3f948e8f69355439c8e408405d24eb05">LocalAdd</a>(sol[0], cor[0][0], 0, 0, ncomp, nghost);</div>
 <div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;    }</div>
 <div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160; </div>
@@ -1337,8 +1337,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;        <span class="comment">// (Fine AMR correction) = I(Coarse AMR correction)</span></div>
 <div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;        interpCorrection(alev);</div>
 <div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev)); }</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev)); }</div>
 <div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;        <a class="code" href="namespaceamrex.html#a3f948e8f69355439c8e408405d24eb05">LocalAdd</a>(sol[alev], cor[alev][0], 0, 0, ncomp, nghost);</div>
 <div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160; </div>
 <div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keywordflow">if</span> (alev != finest_amr_lev) {</div>
@@ -1385,7 +1385,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160; </div>
 <div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;        {</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(res[amrlev][mglev],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(res[amrlev][mglev],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev</div>
 <div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;   DN: Norm before smooth &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;        }</div>
@@ -1402,7 +1402,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160; </div>
 <div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        {</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev</div>
 <div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;   DN: Norm after  smooth &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;        }</div>
@@ -1416,7 +1416,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;    {</div>
 <div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;        {</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(res[amrlev][mglev_bottom],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(res[amrlev][mglev_bottom],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev_bottom</div>
 <div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;   DN: Norm before bottom &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        }</div>
@@ -1424,7 +1424,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;        {</div>
 <div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;            computeResOfCorrection(amrlev, mglev_bottom);</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev_bottom],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev_bottom],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev_bottom</div>
 <div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;   UP: Norm after  bottom &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;        }</div>
@@ -1433,7 +1433,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    {</div>
 <div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        {</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(res[amrlev][mglev_bottom],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(res[amrlev][mglev_bottom],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev_bottom</div>
 <div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;       Norm before smooth &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;        }</div>
@@ -1447,7 +1447,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        {</div>
 <div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;            computeResOfCorrection(amrlev, mglev_bottom);</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev_bottom],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev_bottom],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev  &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev_bottom</div>
 <div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;       Norm after  smooth &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;        }</div>
@@ -1462,7 +1462,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;        {</div>
 <div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;            computeResOfCorrection(amrlev, mglev);</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev</div>
 <div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;   UP: Norm before smooth &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;        }</div>
@@ -1475,7 +1475,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a> &gt;= 4)</div>
 <div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;        {</div>
 <div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            computeResOfCorrection(amrlev, mglev);</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev],0,ncomp,<a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a> <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> = <a class="code" href="namespaceamrex.html#a02870cc0ddaa25fae3bd252bb65da3a4">norminf</a>(rescor[amrlev][mglev],0,ncomp,<a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;            <a class="code" href="classamrex_1_1Print.html">amrex::Print</a>() &lt;&lt; <span class="stringliteral">&quot;AT LEVEL &quot;</span>  &lt;&lt; amrlev &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mglev</div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot;   UP: Norm after  smooth &quot;</span> &lt;&lt; <a class="code" href="namespaceamrex.html#a9a4cb25adc75b070b5ab1cb6c24b4023">norm</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        }</div>
@@ -1497,8 +1497,8 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160; </div>
 <div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> amrlev = 0;</div>
 <div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mg_bottom_lev = linop.NMGLevels(amrlev) - 1;</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(amrlev)); }</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) { nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(amrlev)); }</div>
 <div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160; </div>
 <div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> mglev = 1; mglev &lt;= mg_bottom_lev; ++mglev)</div>
 <div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;    {</div>
@@ -1553,7 +1553,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classamrex_1_1BoxArray.html#a93718ee84062758c5256a2792939c6f7">BoxArray::SameRefs</a>(<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(a_rhs),<a class="code" href="namespaceamrex.html#a6d0e162407f49aab99ec9a1bcddf0f21">boxArray</a>(res_bottom)) &amp;&amp;</div>
 <div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;        <a class="code" href="classamrex_1_1DistributionMapping.html#a1c20460d2e7b2eaec474e933113575d9">DistributionMapping::SameRefs</a>(<a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(a_rhs),<a class="code" href="namespaceamrex.html#a0789b1c22e6f47037f987b73cf2b898b">DistributionMap</a>(res_bottom)))</div>
 <div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    {</div>
-<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(a_rhs, res_bottom, 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(a_rhs, res_bottom, 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;        <a class="code" href="namespaceamrex.html#ae26f96532b61a1b39722a6125552c74c">setVal</a>(a_rhs, <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0));</div>
 <div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;        <a class="code" href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">ParallelCopy</a>(a_rhs, res_bottom, 0, 0, ncomp);</div>
@@ -1598,7 +1598,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;        MF raii_b;</div>
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;        <span class="keywordflow">if</span> (linop.isBottomSingular() &amp;&amp; linop.getEnforceSingularSolvable())</div>
 <div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;        {</div>
-<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> ng = <a class="code" href="namespaceamrex.html#a28fbc0acd8368951bb043d23d5c0727e">nGrowVect</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>);</div>
+<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> ng = <a class="code" href="namespaceamrex.html#a28fbc0acd8368951bb043d23d5c0727e">nGrowVect</a>(<a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>);</div>
 <div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;            raii_b = linop.make(amrlev, mglev, ng);</div>
 <div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;            <a class="code" href="namespaceamrex.html#a3659f85fe1cf3635a62a6d417f9978bd">LocalCopy</a>(raii_b, <a class="code" href="namespaceamrex.html#a2b273526dd4d27047e455ab7a5a8dcd3a92eb5ffee6ae2fec3ad71c777531578f">b</a>, 0, 0, ncomp, ng);</div>
 <div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;            bottom_b = &amp;raii_b;</div>
@@ -1728,9 +1728,9 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;{</div>
 <div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;MLMG::computeResWithCrseSolFineCor()&quot;</span>);</div>
 <div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160; </div>
-<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
 <div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;    <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) {</div>
-<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(linop.getNGrow(falev),linop.getNGrow(calev)));</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(linop.getNGrow(falev),linop.getNGrow(calev)));</div>
 <div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;    }</div>
 <div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160; </div>
 <div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;    MF&amp;       crse_sol = sol[calev];</div>
@@ -1761,9 +1761,9 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;{</div>
 <div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;MLMG::computeResWithCrseCorFineCor()&quot;</span>);</div>
 <div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160; </div>
-<div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
 <div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;    <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) {</div>
-<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;        nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(falev));</div>
+<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;        nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(falev));</div>
 <div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;    }</div>
 <div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160; </div>
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;    <span class="keyword">const</span> MF&amp; crse_cor = cor[falev-1][0];</div>
@@ -1785,9 +1785,9 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160;{</div>
 <div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;MLMG::interpCorrection_1&quot;</span>);</div>
 <div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160; </div>
-<div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;    <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nghost(0);</div>
+<div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;    <a class="code" href="classamrex_1_1IntVectND.html">IntVect</a> nghost(0);</div>
 <div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;    <span class="keywordflow">if</span> (cf_strategy == CFStrategy::ghostnodes) {</div>
-<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;        nghost = <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(linop.getNGrow(alev));</div>
+<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;        nghost = <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(linop.getNGrow(alev));</div>
 <div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;    }</div>
 <div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160; </div>
 <div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;    MF <span class="keyword">const</span>&amp; crse_cor = cor[alev-1][0];</div>
@@ -1803,9 +1803,9 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;        ng_dst = linop.getNGrow(alev-1);</div>
 <div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;    }</div>
 <div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160; </div>
-<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;    MF cfine = linop.makeCoarseAmr(alev, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(ng_dst));</div>
+<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;    MF cfine = linop.makeCoarseAmr(alev, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(ng_dst));</div>
 <div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160;    <a class="code" href="namespaceamrex.html#ae26f96532b61a1b39722a6125552c74c">setVal</a>(cfine, <a class="code" href="classamrex_1_1MLMGT.html#a85f49a7b9118115595f428e8c87693cd">RT</a>(0.0));</div>
-<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;    <a class="code" href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">ParallelCopy</a>(cfine, crse_cor, 0, 0, ncomp, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(ng_src), <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(ng_dst),</div>
+<div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;    <a class="code" href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">ParallelCopy</a>(cfine, crse_cor, 0, 0, ncomp, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(ng_src), <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(ng_dst),</div>
 <div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;                 crse_geom.<a class="code" href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">periodicity</a>());</div>
 <div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160; </div>
 <div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;    linop.interpolationAmr(alev, fine_cor, cfine, nghost); <span class="comment">// NOLINT(readability-suspicious-call-argument)</span></div>
@@ -1844,7 +1844,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01765"></a><span class="lineno"> 1765</span>&#160;    }</div>
 <div class="line"><a name="l01766"></a><span class="lineno"> 1766</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;    {</div>
-<div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;        cfine = linop.makeCoarseMG(alev, mglev, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(0));</div>
+<div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;        cfine = linop.makeCoarseMG(alev, mglev, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(0));</div>
 <div class="line"><a name="l01769"></a><span class="lineno"> 1769</span>&#160;        <a class="code" href="namespaceamrex.html#adadc145305be656128ae5ce4406166a0">ParallelCopy</a>(cfine, crse_cor, 0, 0, ncomp);</div>
 <div class="line"><a name="l01770"></a><span class="lineno"> 1770</span>&#160;        cmf = &amp;cfine;</div>
 <div class="line"><a name="l01771"></a><span class="lineno"> 1771</span>&#160;    }</div>
@@ -1972,11 +1972,11 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;            hypre_bndry = std::make_unique&lt;MLMGBndryT&lt;MF&gt;&gt;(ba, dm, ncomp, geom);</div>
 <div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;            hypre_bndry-&gt;setHomogValues();</div>
 <div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;            <span class="keyword">const</span> Real* dx = linop.m_geom[0][0].CellSize();</div>
-<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;            IntVect crse_ratio = linop.m_coarse_data_crse_ratio.allGT(0) ? linop.m_coarse_data_crse_ratio : IntVect(1);</div>
+<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;            <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a> crse_ratio = linop.m_coarse_data_crse_ratio.<a class="code" href="classamrex_1_1IntVectND.html#a56205fba9553a4019081e7dfda8e23c8">allGT</a>(0) ? linop.m_coarse_data_crse_ratio : <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(1);</div>
 <div class="line"><a name="l01897"></a><span class="lineno"> 1897</span>&#160;            RealVect bclocation(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(0.5*dx[0]*crse_ratio[0],</div>
 <div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;                                             0.5*dx[1]*crse_ratio[1],</div>
 <div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160;                                             0.5*dx[2]*crse_ratio[2]));</div>
-<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;            hypre_bndry-&gt;setLOBndryConds(linop.m_lobc, linop.m_hibc, IntVect(-1), bclocation,</div>
+<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;            hypre_bndry-&gt;setLOBndryConds(linop.m_lobc, linop.m_hibc, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(-1), bclocation,</div>
 <div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;                                         linop.m_coarse_fine_bc_type);</div>
 <div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;        }</div>
 <div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160; </div>
@@ -2027,11 +2027,11 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="line"><a name="l01948"></a><span class="lineno"> 1948</span>&#160;        petsc_bndry = std::make_unique&lt;MLMGBndryT&lt;MF&gt;&gt;(ba, dm, ncomp, geom);</div>
 <div class="line"><a name="l01949"></a><span class="lineno"> 1949</span>&#160;        petsc_bndry-&gt;setHomogValues();</div>
 <div class="line"><a name="l01950"></a><span class="lineno"> 1950</span>&#160;        <span class="keyword">const</span> Real* dx = linop.m_geom[0][0].CellSize();</div>
-<div class="line"><a name="l01951"></a><span class="lineno"> 1951</span>&#160;        <span class="keyword">auto</span> crse_ratio = linop.m_coarse_data_crse_ratio.allGT(0) ? linop.m_coarse_data_crse_ratio : IntVect(1);</div>
+<div class="line"><a name="l01951"></a><span class="lineno"> 1951</span>&#160;        <span class="keyword">auto</span> crse_ratio = linop.m_coarse_data_crse_ratio.allGT(0) ? linop.m_coarse_data_crse_ratio : <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(1);</div>
 <div class="line"><a name="l01952"></a><span class="lineno"> 1952</span>&#160;        RealVect bclocation(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(0.5*dx[0]*crse_ratio[0],</div>
 <div class="line"><a name="l01953"></a><span class="lineno"> 1953</span>&#160;                                         0.5*dx[1]*crse_ratio[1],</div>
 <div class="line"><a name="l01954"></a><span class="lineno"> 1954</span>&#160;                                         0.5*dx[2]*crse_ratio[2]));</div>
-<div class="line"><a name="l01955"></a><span class="lineno"> 1955</span>&#160;        petsc_bndry-&gt;setLOBndryConds(linop.m_lobc, linop.m_hibc, IntVect(-1), bclocation,</div>
+<div class="line"><a name="l01955"></a><span class="lineno"> 1955</span>&#160;        petsc_bndry-&gt;setLOBndryConds(linop.m_lobc, linop.m_hibc, <a class="code" href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">IntVect</a>(-1), bclocation,</div>
 <div class="line"><a name="l01956"></a><span class="lineno"> 1956</span>&#160;                                     linop.m_coarse_fine_bc_type);</div>
 <div class="line"><a name="l01957"></a><span class="lineno"> 1957</span>&#160;    }</div>
 <div class="line"><a name="l01958"></a><span class="lineno"> 1958</span>&#160;    petsc_solver-&gt;solve(x, b, bottom_reltol, Real(-1.), bottom_maxiter, *petsc_bndry,</div>
@@ -2122,8 +2122,10 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="ttc" id="aclassamrex_1_1Geometry_html_a7b365b1560bb9a31cf49cd55668085cf"><div class="ttname"><a href="classamrex_1_1Geometry.html#a7b365b1560bb9a31cf49cd55668085cf">amrex::Geometry::periodicity</a></div><div class="ttdeci">Periodicity periodicity() const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Geometry.H:342</div></div>
 <div class="ttc" id="aclassamrex_1_1Hypre_html_af08fbb42b4509a32e7f20a6101dfd13f"><div class="ttname"><a href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13f">amrex::Hypre::Interface</a></div><div class="ttdeci">Interface</div><div class="ttdef"><b>Definition:</b> AMReX_Hypre.H:21</div></div>
 <div class="ttc" id="aclassamrex_1_1Hypre_html_af08fbb42b4509a32e7f20a6101dfd13fa7bed657a775c37c2570786d0cbeefd88"><div class="ttname"><a href="classamrex_1_1Hypre.html#af08fbb42b4509a32e7f20a6101dfd13fa7bed657a775c37c2570786d0cbeefd88">amrex::Hypre::Interface::ij</a></div><div class="ttdeci">@ ij</div></div>
-<div class="ttc" id="aclassamrex_1_1IntVect_html"><div class="ttname"><a href="classamrex_1_1IntVect.html">amrex::IntVect</a></div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:46</div></div>
-<div class="ttc" id="aclassamrex_1_1IntVect_html_af53e6b9cce7d60edaaf9a8bf721f0eaa"><div class="ttname"><a href="classamrex_1_1IntVect.html#af53e6b9cce7d60edaaf9a8bf721f0eaa">amrex::IntVect::TheDimensionVector</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static constexpr AMREX_FORCE_INLINE IntVect TheDimensionVector(int d) noexcept</div><div class="ttdoc">This static member function returns a reference to a constant IntVect object, all of whose AMREX_SPAC...</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:542</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html"><div class="ttname"><a href="classamrex_1_1IntVectND.html">amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</a></div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html_a48e4ff4a1f1d9c19a95891621607d527"><div class="ttname"><a href="classamrex_1_1IntVectND.html#a48e4ff4a1f1d9c19a95891621607d527">amrex::IntVectND::resize</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVectND&lt; new_dim &gt; resize(int fill_extra=0) const noexcept</div><div class="ttdoc">Returns a new IntVectND of size new_dim by either shrinking or expanding this IntVectND.</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:753</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html_a56205fba9553a4019081e7dfda8e23c8"><div class="ttname"><a href="classamrex_1_1IntVectND.html#a56205fba9553a4019081e7dfda8e23c8">amrex::IntVectND::allGT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool allGT(const IntVectND&lt; dim &gt; &amp;rhs) const noexcept</div><div class="ttdoc">Returns true if this is greater than argument for all components. NOTE: This is NOT a strict weak ord...</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:403</div></div>
+<div class="ttc" id="aclassamrex_1_1IntVectND_html_af92483859d2386b4c222fb3f09a09d1b"><div class="ttname"><a href="classamrex_1_1IntVectND.html#af92483859d2386b4c222fb3f09a09d1b">amrex::IntVectND&lt; AMREX_SPACEDIM &gt;::TheDimensionVector</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static constexpr AMREX_FORCE_INLINE IntVectND&lt; dim &gt; TheDimensionVector(int d) noexcept</div><div class="ttdoc">This static member function returns a reference to a constant IntVectND object, all of whose dim argu...</div><div class="ttdef"><b>Definition:</b> AMReX_IntVect.H:676</div></div>
 <div class="ttc" id="aclassamrex_1_1MLCGSolverT_html"><div class="ttname"><a href="classamrex_1_1MLCGSolverT.html">amrex::MLCGSolverT</a></div><div class="ttdef"><b>Definition:</b> AMReX_MLCGSolver.H:12</div></div>
 <div class="ttc" id="aclassamrex_1_1MLCGSolverT_html_a1e6d43c5befb02185a364de58415471b"><div class="ttname"><a href="classamrex_1_1MLCGSolverT.html#a1e6d43c5befb02185a364de58415471b">amrex::MLCGSolverT::setSolver</a></div><div class="ttdeci">void setSolver(Type _typ) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLCGSolver.H:28</div></div>
 <div class="ttc" id="aclassamrex_1_1MLCGSolverT_html_a2579b4ef8718da67e5d5e499b4c484c1"><div class="ttname"><a href="classamrex_1_1MLCGSolverT.html#a2579b4ef8718da67e5d5e499b4c484c1">amrex::MLCGSolverT::setVerbose</a></div><div class="ttdeci">void setVerbose(int _verbose)</div><div class="ttdef"><b>Definition:</b> AMReX_MLCGSolver.H:39</div></div>
@@ -2295,6 +2297,7 @@ $(document).ready(function(){initNavTree('AMReX__MLMG_8H_source.html',''); initR
 <div class="ttc" id="anamespaceamrex_html_a6f975f843338c8eada684f0e8e2c0cb7"><div class="ttname"><a href="namespaceamrex.html#a6f975f843338c8eada684f0e8e2c0cb7">amrex::second</a></div><div class="ttdeci">double second() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Utility.cpp:961</div></div>
 <div class="ttc" id="anamespaceamrex_html_a832f4ad883cbc470d76cde70a099e912"><div class="ttname"><a href="namespaceamrex.html#a832f4ad883cbc470d76cde70a099e912">amrex::UtilCreateCleanDirectory</a></div><div class="ttdeci">void UtilCreateCleanDirectory(const std::string &amp;path, bool callbarrier=true)</div><div class="ttdoc">Create a new directory, renaming the old one if it exists.</div><div class="ttdef"><b>Definition:</b> AMReX_Utility.cpp:200</div></div>
 <div class="ttc" id="anamespaceamrex_html_a83baea24aee17c98e8771fa6eea0822f"><div class="ttname"><a href="namespaceamrex.html#a83baea24aee17c98e8771fa6eea0822f">amrex::EB_average_down</a></div><div class="ttdeci">void EB_average_down(const MultiFab &amp;S_fine, MultiFab &amp;S_crse, const MultiFab &amp;vol_fine, const MultiFab &amp;vfrac_fine, int scomp, int ncomp, const IntVect &amp;ratio)</div><div class="ttdef"><b>Definition:</b> AMReX_EBMultiFabUtil.cpp:336</div></div>
+<div class="ttc" id="anamespaceamrex_html_a8792201c856a367dda275e09047daa33"><div class="ttname"><a href="namespaceamrex.html#a8792201c856a367dda275e09047daa33">amrex::IntVect</a></div><div class="ttdeci">IntVectND&lt; AMREX_SPACEDIM &gt; IntVect</div><div class="ttdef"><b>Definition:</b> AMReX_BaseFwd.H:27</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9303c93b47b7839de8ce552cb7cb21c4"><div class="ttname"><a href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">amrex::BottomSolver</a></div><div class="ttdeci">BottomSolver</div><div class="ttdef"><b>Definition:</b> AMReX_MLLinOp.H:30</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9303c93b47b7839de8ce552cb7cb21c4a17ae71b06faf01831e130c5f94157064"><div class="ttname"><a href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a17ae71b06faf01831e130c5f94157064">amrex::BottomSolver::bicgcg</a></div><div class="ttdeci">@ bicgcg</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f"><div class="ttname"><a href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a1c626ad40ecbe4497cfe809fbc98f31f">amrex::BottomSolver::petsc</a></div><div class="ttdeci">@ petsc</div></div>

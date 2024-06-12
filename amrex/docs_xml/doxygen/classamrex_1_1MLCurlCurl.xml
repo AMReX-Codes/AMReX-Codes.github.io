@@ -114,11 +114,11 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.H" line="126" column="8" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.H" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLCurlCurl_1ae73e6c0e2000bd5397e42f8fd8e42cba" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>, 3 &gt;</type>
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>, 3 &gt;</type>
         <definition>Array&lt;IntVect,3&gt; amrex::MLCurlCurl::m_etype</definition>
         <argsstring></argsstring>
         <name>m_etype</name>
-        <initializer>{<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(0,1), <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(1,0), <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(1,1)}</initializer>
+        <initializer>{<ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0,1), <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(1,0), <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(1,1)}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -723,7 +723,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.H" line="92" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.cpp" bodystart="547" bodyend="557"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLCurlCurl_1a808d167add048ec3c4c1d299468777b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
-        <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref></type>
         <definition>IntVect amrex::MLCurlCurl::getNGrowVectRestriction</definition>
         <argsstring>() const override</argsstring>
         <name>getNGrowVectRestriction</name>
@@ -746,7 +746,7 @@
           <declname>mf</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -772,7 +772,7 @@
           <declname>mglev</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -815,7 +815,7 @@
           <declname>mglev</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -837,7 +837,7 @@
           <declname>famrlev</declname>
         </param>
         <param>
-          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <type><ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> const &amp;</type>
           <declname>ng</declname>
         </param>
         <briefdescription>
@@ -1059,14 +1059,6 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="9">
-        <label>amrex::IntVect</label>
-        <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="9" relation="usage">
-          <edgelabel>Unit</edgelabel>
-          <edgelabel>Zero</edgelabel>
-        </childnode>
-      </node>
       <node id="5">
         <label>T</label>
       </node>
@@ -1096,6 +1088,12 @@
       </node>
       <node id="11">
         <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>amrex::Vector&lt; amrex::IntVectND &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
@@ -1148,13 +1146,13 @@
           <edgelabel>m_dmap</edgelabel>
         </childnode>
         <childnode refid="13" relation="usage">
+          <edgelabel>mg_coarsen_ratio_vec</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
           <edgelabel>m_hibc</edgelabel>
           <edgelabel>m_hibc_orig</edgelabel>
           <edgelabel>m_lobc</edgelabel>
           <edgelabel>m_lobc_orig</edgelabel>
-        </childnode>
-        <childnode refid="14" relation="usage">
-          <edgelabel>mg_coarsen_ratio_vec</edgelabel>
         </childnode>
         <childnode refid="15" relation="usage">
           <edgelabel>levelbc_raii</edgelabel>
@@ -1203,12 +1201,6 @@
         </childnode>
       </node>
       <node id="14">
-        <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
         <label>amrex::Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="4" relation="public-inheritance">
@@ -1229,6 +1221,10 @@
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="9">
+        <label>amrex::IntVectND&lt; AMREX_SPACEDIM &gt;</label>
+        <link refid="classamrex_1_1IntVectND"/>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCurlCurl.H" bodystart="26" bodyend="140"/>

@@ -103,7 +103,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="253" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="253" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classCommProfStats_1abfb633bdb2ee1411565556f31c867a32" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::map&lt; int, <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt; &gt;</type>
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::map&lt; int, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">amrex::IntVect</ref> &gt; &gt;</type>
         <definition>amrex::Vector&lt;std::map&lt;int, amrex::IntVect&gt; &gt; CommProfStats::TopoMap</definition>
         <argsstring></argsstring>
         <name>TopoMap</name>
@@ -248,7 +248,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="248" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="248" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classCommProfStats_1a71a0a4c9fbfae52c4da448c6ac832319" prot="private" static="yes" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt;</type>
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">amrex::IntVect</ref> &gt;</type>
         <definition>Vector&lt; IntVect &gt; CommProfStats::calcRefRatios</definition>
         <argsstring></argsstring>
         <name>calcRefRatios</name>
@@ -1103,7 +1103,7 @@
           <declname>lev</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">amrex::IntVect</ref> &amp;</type>
           <declname>rr</declname>
         </param>
         <briefdescription>
@@ -1120,7 +1120,7 @@
         <argsstring>(const amrex::Vector&lt; amrex::IntVect &gt; &amp;rr)</argsstring>
         <name>SetRefRatio</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">amrex::IntVect</ref> &gt; &amp;</type>
           <declname>rr</declname>
         </param>
         <briefdescription>
@@ -1132,7 +1132,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="214" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="214" bodyend="214"/>
       </memberdef>
       <memberdef kind="function" id="classCommProfStats_1a771ce95fb2ff799f85eaaba8917b8256" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt; &amp;</type>
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">amrex::IntVect</ref> &gt; &amp;</type>
         <definition>const amrex::Vector&lt;amrex::IntVect&gt;&amp; CommProfStats::GetRefRatio</definition>
         <argsstring>() const</argsstring>
         <name>GetRefRatio</name>
@@ -1731,17 +1731,17 @@
           <edgelabel>commDataFileNames</edgelabel>
         </childnode>
         <childnode refid="17" relation="usage">
-          <edgelabel>edisonNodeXYZ</edgelabel>
+          <edgelabel>TopoMap</edgelabel>
         </childnode>
         <childnode refid="18" relation="usage">
+          <edgelabel>edisonNodeXYZ</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
           <edgelabel>edisonCPUFab</edgelabel>
           <edgelabel>edisonNodeFab</edgelabel>
         </childnode>
-        <childnode refid="19" relation="usage">
-          <edgelabel>glSizeMap</edgelabel>
-        </childnode>
         <childnode refid="20" relation="usage">
-          <edgelabel>TopoMap</edgelabel>
+          <edgelabel>glSizeMap</edgelabel>
         </childnode>
         <childnode refid="21" relation="usage">
           <edgelabel>glMap</edgelabel>
@@ -1762,10 +1762,16 @@
           <edgelabel>commDataStreams</edgelabel>
         </childnode>
         <childnode refid="24" relation="usage">
-          <edgelabel>dataBlocks</edgelabel>
+          <edgelabel>calcRefRatios</edgelabel>
         </childnode>
         <childnode refid="25" relation="usage">
-          <edgelabel>calcRefRatios</edgelabel>
+          <edgelabel>dataBlocks</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>amrex::Vector&lt; std::map&lt; int, amrex::IntVectND &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
       <node id="15">
@@ -1801,7 +1807,13 @@
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="17">
+      <node id="24">
+        <label>amrex::Vector&lt; amrex::IntVectND &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="7" relation="public-inheritance">
@@ -1816,20 +1828,8 @@
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="19">
-        <label>std::map&lt; int, int &gt;</label>
-      </node>
       <node id="20">
-        <label>amrex::Vector&lt; std::map&lt; int, amrex::IntVect &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
+        <label>std::map&lt; int, int &gt;</label>
       </node>
       <node id="13">
         <label>amrex::Vector&lt; std::ifstream * &gt;</label>
@@ -1846,13 +1846,13 @@
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="18">
+      <node id="19">
         <label>amrex::Vector&lt; Real &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="24">
+      <node id="25">
         <label>amrex::Vector&lt; CommProfStats::DataBlock &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="7" relation="public-inheritance">
