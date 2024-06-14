@@ -152,7 +152,7 @@ var searchData=
   ['_7estatedata_15747',['~StateData',['../classamrex_1_1StateData.html#a3d5f27474f7f24ed6995b4735150be55',1,'amrex::StateData']]],
   ['_7estreamiter_15748',['~StreamIter',['../classamrex_1_1Gpu_1_1StreamIter.html#a08fc187035cb7994ed7b74652d1ae60a',1,'amrex::Gpu::StreamIter']]],
   ['_7esundialsintegrator_15749',['~SundialsIntegrator',['../classamrex_1_1SundialsIntegrator.html#a8d368e32b7b9d20965c609d459d1e498',1,'amrex::SundialsIntegrator']]],
-  ['_7etabledata_15750',['~TableData',['../classamrex_1_1TableData.html#a6f49fd724bfcf6b45238e510ab344254',1,'amrex::TableData']]],
+  ['_7etabledata_15750',['~TableData',['../classamrex_1_1TableData.html#af6ca594ff322e1da97e1b6c1096dc183',1,'amrex::TableData']]],
   ['_7etagbox_15751',['~TagBox',['../classamrex_1_1TagBox.html#a46499df9c37906b8d12c9561945e1671',1,'amrex::TagBox']]],
   ['_7etagboxarray_15752',['~TagBoxArray',['../classamrex_1_1TagBoxArray.html#a64e4bff8da8d8c89a2e893b483161910',1,'amrex::TagBoxArray']]],
   ['_7etimeintegrator_15753',['~TimeIntegrator',['../classamrex_1_1TimeIntegrator.html#acff5bb21bb84fea124f333d6f951c452',1,'amrex::TimeIntegrator']]],

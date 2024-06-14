@@ -7,11 +7,15 @@
       <param>
         <type>typename T</type>
       </param>
+      <param>
+        <type>typename ORDER</type>
+        <defval><ref refid="structamrex_1_1Order_1_1F" kindref="compound">Order::F</ref></defval>
+      </param>
     </templateparamlist>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1Table3D_1a9f045c21573d088af664ba4b5a350946" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1Table3D_1abb854fca4c9b2a1dd92ef8fee112ec2e" prot="public" static="no" mutable="no">
         <type>T *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref></type>
-        <definition>T* AMREX_RESTRICT amrex::Table3D&lt; T &gt;::p</definition>
+        <definition>T* AMREX_RESTRICT amrex::Table3D&lt; T, ORDER &gt;::p</definition>
         <argsstring></argsstring>
         <name>p</name>
         <initializer>= nullptr</initializer>
@@ -21,13 +25,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="142" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="142" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="160" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="160" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1Table3D_1ad0662d5da3d36662b4e8d603491de71a" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1Table3D_1a2364337755de91dfe210ddb6e13d9917" prot="public" static="no" mutable="no">
         <type>Long</type>
-        <definition>Long amrex::Table3D&lt; T &gt;::jstride</definition>
+        <definition>Long amrex::Table3D&lt; T, ORDER &gt;::stride1</definition>
         <argsstring></argsstring>
-        <name>jstride</name>
+        <name>stride1</name>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -35,13 +39,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="143" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="143" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="161" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="161" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1Table3D_1a788aa8c49784bd976f6971cf2ec46d1e" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1Table3D_1a3fd3906154fd716964cdd75b4694c9b2" prot="public" static="no" mutable="no">
         <type>Long</type>
-        <definition>Long amrex::Table3D&lt; T &gt;::kstride</definition>
+        <definition>Long amrex::Table3D&lt; T, ORDER &gt;::stride2</definition>
         <argsstring></argsstring>
-        <name>kstride</name>
+        <name>stride2</name>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -49,11 +53,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="144" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="144" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="162" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="162" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1Table3D_1a6e9e4da5ca33566ab2044f6dc97e0529" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1Table3D_1ae6e3b01db1692caf20dae041275adec0" prot="public" static="no" mutable="no">
         <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
-        <definition>GpuArray&lt;int,3&gt; amrex::Table3D&lt; T &gt;::begin</definition>
+        <definition>GpuArray&lt;int,3&gt; amrex::Table3D&lt; T, ORDER &gt;::begin</definition>
         <argsstring></argsstring>
         <name>begin</name>
         <initializer>{{1,1,1}}</initializer>
@@ -63,11 +67,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="145" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="145" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="163" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="163" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1Table3D_1a88ecadecd7c520a4cf7045c622aa2806" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1Table3D_1a99916092c93df93da10a0bb582222174" prot="public" static="no" mutable="no">
         <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
-        <definition>GpuArray&lt;int,3&gt; amrex::Table3D&lt; T &gt;::end</definition>
+        <definition>GpuArray&lt;int,3&gt; amrex::Table3D&lt; T, ORDER &gt;::end</definition>
         <argsstring></argsstring>
         <name>end</name>
         <initializer>{{0,0,0}}</initializer>
@@ -77,13 +81,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="146" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="146" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="164" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="164" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1Table3D_1a5c13d910c8414b61c7be14d7abe9059a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1a994877eb9b7819106bd25c3fb2932398" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
-        <definition>constexpr amrex::Table3D&lt; T &gt;::Table3D</definition>
+        <definition>constexpr amrex::Table3D&lt; T, ORDER &gt;::Table3D</definition>
         <argsstring>() noexcept=default</argsstring>
         <name>Table3D</name>
         <briefdescription>
@@ -92,9 +96,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="148" column="15"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="166" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table3D_1a03684bf3054b7a40d2c00dc5c2a30ed2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1aa5f0858c6996a581a0ab1b3507e901b9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -106,11 +110,11 @@
           </param>
         </templateparamlist>
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T &gt;::Table3D</definition>
-        <argsstring>(Table3D&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;rhs) noexcept</argsstring>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T, ORDER &gt;::Table3D</definition>
+        <argsstring>(Table3D&lt; std::remove_const_t&lt; T &gt;, ORDER &gt; const &amp;rhs) noexcept</argsstring>
         <name>Table3D</name>
         <param>
-          <type><ref refid="structamrex_1_1Table3D" kindref="compound">Table3D</ref>&lt; std::remove_const_t&lt; T &gt;&gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Table3D" kindref="compound">Table3D</ref>&lt; std::remove_const_t&lt; T &gt;, ORDER &gt; const &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
@@ -119,11 +123,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="152" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="152" bodyend="158"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="170" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="170" bodyend="176"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table3D_1a2e7e42a20e96c42aed1e9815273da491" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1aec998d64bb74540871c46479ebb740b1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T &gt;::Table3D</definition>
+        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T, ORDER &gt;::Table3D</definition>
         <argsstring>(T *a_p, GpuArray&lt; int, 3 &gt; const &amp;a_begin, GpuArray&lt; int, 3 &gt; const &amp;a_end) noexcept</argsstring>
         <name>Table3D</name>
         <param>
@@ -144,11 +148,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="161" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="161" bodyend="169"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="179" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="179" bodyend="187"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table3D_1af4179c98b0242d4cf2387d1c4458de6d" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1af5ee2df60cd5d9e513b645794478457b" prot="public" static="no" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T &gt;::operator bool</definition>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::Table3D&lt; T, ORDER &gt;::operator bool</definition>
         <argsstring>() const noexcept</argsstring>
         <name>operator bool</name>
         <briefdescription>
@@ -157,9 +161,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="172" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="172" bodyend="172"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="190" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="190" bodyend="190"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Table3D_1a1384a98918c367d6798a0630b92e3a21" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1a105b73e0e4a15d5df58f3543af1e1a63" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class U</type>
@@ -171,7 +175,7 @@
           </param>
         </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> U &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE U&amp; amrex::Table3D&lt; T &gt;::operator()</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE U&amp; amrex::Table3D&lt; T, ORDER &gt;::operator()</definition>
         <argsstring>(int i, int j, int k) const noexcept</argsstring>
         <name>operator()</name>
         <param>
@@ -192,7 +196,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="176" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="176" bodyend="181"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="194" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="194" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="structamrex_1_1Table3D_1accb55d2deb7abdb2c5fe9afd0f27046c" prot="private" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static constexpr int amrex::Table3D&lt; T, ORDER &gt;::len0</definition>
+        <argsstring>(GpuArray&lt; int, 3 &gt; const &amp;a_begin, GpuArray&lt; int, 3 &gt; const &amp;a_end) noexcept</argsstring>
+        <name>len0</name>
+        <param>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
+          <declname>a_begin</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
+          <declname>a_end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="234" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="234" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Table3D_1a8da09138b8d2468cc9898ba75700cdd1" prot="private" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static constexpr int amrex::Table3D&lt; T, ORDER &gt;::len1</definition>
+        <argsstring>(GpuArray&lt; int, 3 &gt; const &amp;a_begin, GpuArray&lt; int, 3 &gt; const &amp;a_end) noexcept</argsstring>
+        <name>len1</name>
+        <param>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
+          <declname>a_begin</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
+          <declname>a_end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="244" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="244" bodyend="248"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -205,7 +253,7 @@
         <link refid="structamrex_1_1GpuArray"/>
       </node>
       <node id="1">
-        <label>amrex::Table3D&lt; T &gt;</label>
+        <label>amrex::Table3D&lt; T, ORDER &gt;</label>
         <link refid="structamrex_1_1Table3D"/>
         <childnode refid="2" relation="usage">
           <edgelabel>begin</edgelabel>
@@ -213,18 +261,20 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="140" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="141" bodyend="207"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" line="158" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TableData.H" bodystart="159" bodyend="249"/>
     <listofallmembers>
-      <member refid="structamrex_1_1Table3D_1a6e9e4da5ca33566ab2044f6dc97e0529" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>begin</name></member>
-      <member refid="structamrex_1_1Table3D_1a88ecadecd7c520a4cf7045c622aa2806" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>end</name></member>
-      <member refid="structamrex_1_1Table3D_1ad0662d5da3d36662b4e8d603491de71a" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>jstride</name></member>
-      <member refid="structamrex_1_1Table3D_1a788aa8c49784bd976f6971cf2ec46d1e" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>kstride</name></member>
-      <member refid="structamrex_1_1Table3D_1af4179c98b0242d4cf2387d1c4458de6d" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>operator bool</name></member>
-      <member refid="structamrex_1_1Table3D_1a1384a98918c367d6798a0630b92e3a21" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1Table3D_1a9f045c21573d088af664ba4b5a350946" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>p</name></member>
-      <member refid="structamrex_1_1Table3D_1a5c13d910c8414b61c7be14d7abe9059a" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
-      <member refid="structamrex_1_1Table3D_1a03684bf3054b7a40d2c00dc5c2a30ed2" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
-      <member refid="structamrex_1_1Table3D_1a2e7e42a20e96c42aed1e9815273da491" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
+      <member refid="structamrex_1_1Table3D_1ae6e3b01db1692caf20dae041275adec0" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>begin</name></member>
+      <member refid="structamrex_1_1Table3D_1a99916092c93df93da10a0bb582222174" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>end</name></member>
+      <member refid="structamrex_1_1Table3D_1accb55d2deb7abdb2c5fe9afd0f27046c" prot="private" virt="non-virtual"><scope>amrex::Table3D</scope><name>len0</name></member>
+      <member refid="structamrex_1_1Table3D_1a8da09138b8d2468cc9898ba75700cdd1" prot="private" virt="non-virtual"><scope>amrex::Table3D</scope><name>len1</name></member>
+      <member refid="structamrex_1_1Table3D_1af5ee2df60cd5d9e513b645794478457b" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>operator bool</name></member>
+      <member refid="structamrex_1_1Table3D_1a105b73e0e4a15d5df58f3543af1e1a63" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1Table3D_1abb854fca4c9b2a1dd92ef8fee112ec2e" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>p</name></member>
+      <member refid="structamrex_1_1Table3D_1a2364337755de91dfe210ddb6e13d9917" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>stride1</name></member>
+      <member refid="structamrex_1_1Table3D_1a3fd3906154fd716964cdd75b4694c9b2" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>stride2</name></member>
+      <member refid="structamrex_1_1Table3D_1a994877eb9b7819106bd25c3fb2932398" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
+      <member refid="structamrex_1_1Table3D_1aa5f0858c6996a581a0ab1b3507e901b9" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
+      <member refid="structamrex_1_1Table3D_1aec998d64bb74540871c46479ebb740b1" prot="public" virt="non-virtual"><scope>amrex::Table3D</scope><name>Table3D</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

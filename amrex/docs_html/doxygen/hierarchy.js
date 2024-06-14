@@ -308,7 +308,7 @@ var hierarchy =
         ] ]
       ] ],
       [ "amrex::BaseFab< T >", "classamrex_1_1BaseFab.html", null ],
-      [ "amrex::TableData< T, N >", "classamrex_1_1TableData.html", null ]
+      [ "amrex::TableData< T, N, ORDER >", "classamrex_1_1TableData.html", null ]
     ] ],
     [ "CommProfStats::DataBlock", "structCommProfStats_1_1DataBlock.html", null ],
     [ "RegionsProfStats::DataBlock", "structRegionsProfStats_1_1DataBlock.html", null ],
@@ -1001,10 +1001,10 @@ var hierarchy =
     [ "amrex::NonLocalBC::SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", null ],
     [ "amrex::MFUtil::SymmetricGhost< T >", "structamrex_1_1MFUtil_1_1SymmetricGhost.html", null ],
     [ "amrex::Table1D< T >", "structamrex_1_1Table1D.html", null ],
-    [ "amrex::Table2D< T >", "structamrex_1_1Table2D.html", null ],
+    [ "amrex::Table2D< T, ORDER >", "structamrex_1_1Table2D.html", null ],
     [ "amrex::Table2D< RT >", "structamrex_1_1Table2D.html", null ],
-    [ "amrex::Table3D< T >", "structamrex_1_1Table3D.html", null ],
-    [ "amrex::Table4D< T >", "structamrex_1_1Table4D.html", null ],
+    [ "amrex::Table3D< T, ORDER >", "structamrex_1_1Table3D.html", null ],
+    [ "amrex::Table4D< T, ORDER >", "structamrex_1_1Table4D.html", null ],
     [ "amrex::TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", null ],
     [ "amrex::ThisParticleTileHasNoAoS", "structamrex_1_1ThisParticleTileHasNoAoS.html", null ],
     [ "amrex::ThisParticleTileHasNoParticleVector", "structamrex_1_1ThisParticleTileHasNoParticleVector.html", null ],

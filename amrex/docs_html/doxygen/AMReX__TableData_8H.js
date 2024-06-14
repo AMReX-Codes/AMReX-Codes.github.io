@@ -5,8 +5,8 @@ var AMReX__TableData_8H =
     [ "Table3D", "structamrex_1_1Table3D.html", "structamrex_1_1Table3D" ],
     [ "Table4D", "structamrex_1_1Table4D.html", "structamrex_1_1Table4D" ],
     [ "TableData", "classamrex_1_1TableData.html", "classamrex_1_1TableData" ],
-    [ "make_table", "AMReX__TableData_8H.html#a4029184a4112d69c3caea45d6b375f65", null ],
-    [ "make_table", "AMReX__TableData_8H.html#a250b5d3b18b57c96185794d45778bceb", null ],
-    [ "make_table", "AMReX__TableData_8H.html#a6b718ebf3b92d82b916b98499609bd05", null ],
-    [ "make_table", "AMReX__TableData_8H.html#a43212bf61bae286b64089dccda5c6c32", null ]
+    [ "make_table", "AMReX__TableData_8H.html#aea7d44c9cd549d72b1f3fa48c6c627c9", null ],
+    [ "make_table", "AMReX__TableData_8H.html#a7cc30cb3974fb2a7e882c016a4b81e3c", null ],
+    [ "make_table", "AMReX__TableData_8H.html#acafe50ccedfa64e02c41ae675f646a53", null ],
+    [ "make_table", "AMReX__TableData_8H.html#a951cc75933e6ea9338ea3365ec337fb2", null ]
 ];
