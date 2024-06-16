@@ -782,7 +782,7 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>chop_boxes_dir<sp/>(Box*<sp/>bxv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>chop_boxes_dir<sp/>(Box*<sp/>bxv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>)</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nboxes<sp/>==<sp/>1)</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -790,15 +790,15 @@
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chop_pnt<sp/>=<sp/>bx.smallEnd(idir)<sp/>+<sp/>bx.length(idir)/2;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chop_pnt<sp/>=<sp/>bx.smallEnd(<ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>)<sp/>+<sp/>bx.length(<ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>)/2;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxleft<sp/>=<sp/>bx;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxright<sp/>=<sp/>bxleft.chop(idir,<sp/>chop_pnt);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bxright<sp/>=<sp/>bxleft.chop(<ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>,<sp/>chop_pnt);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nleft<sp/>=<sp/>nboxes<sp/>/<sp/>2;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chop_boxes_dir(bxv,<sp/>bxleft,<sp/>nleft,<sp/>idir);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chop_boxes_dir(bxv,<sp/>bxleft,<sp/>nleft,<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>);</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nright<sp/>=<sp/>nboxes<sp/>-<sp/>nleft;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chop_boxes_dir(bxv+nleft,<sp/>bxright,<sp/>nright,<sp/>idir);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chop_boxes_dir(bxv+nleft,<sp/>bxright,<sp/>nright,<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
@@ -967,13 +967,13 @@
 <codeline lineno="224"><highlight class="normal">BoxList::BoxList<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nboxes,<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69" kindref="member">Direction</ref><sp/>dir)</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>btype(bx.ixType())</highlight></codeline>
 <codeline lineno="226"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dir);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dir);</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"></highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nboxes<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(bx.length(idir)<sp/>&gt;=<sp/>nboxes);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(bx.length(<ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>)<sp/>&gt;=<sp/>nboxes);</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lbox.resize(nboxes);</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>chop_boxes_dir(m_lbox.data(),<sp/>bx,<sp/>nboxes,<sp/>idir);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>chop_boxes_dir(m_lbox.data(),<sp/>bx,<sp/>nboxes,<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1a6b7ca8dda4be247e0125ec73c01cde01" kindref="member">idir</ref>);</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>

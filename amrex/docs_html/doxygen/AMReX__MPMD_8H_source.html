@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MPI_Request&gt;</a> send_reqs;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;FabArrayBase::CopyComTagsContainer const*&gt;</a> send_cctc;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> offset;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::size_t total_volume = 0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; kv : <a class="code" href="classamrex_1_1MPMD_1_1Copier.html#ac8a7a8cb167be835313951319df1a7c0">m_SndTags</a>) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = kv.second;</div>
@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        total_volume = <a class="code" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(<span class="keyword">alignof</span>(<span class="keyword">typename</span> FAB::value_type),</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                    acd), total_volume);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        offset.push_back(total_volume);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>.push_back(total_volume);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        total_volume += nbytes;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        send_data.push_back(<span class="keyword">nullptr</span>);</div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classamrex_1_1PODVector.html">Gpu::PinnedVector&lt;char&gt;</a> send_buffer(total_volume);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">char</span>* the_send_data = send_buffer.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N_snds; ++i) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        send_data[i] = the_send_data + offset[i];</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        send_data[i] = the_send_data + <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[i];</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Pack buffer</span></div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;int&gt;</a>         recv_from;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MPI_Request&gt;</a> recv_reqs;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> offset;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::size_t&gt;</a> <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::size_t TotalRcvsVolume = 0;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; kv : <a class="code" href="classamrex_1_1MPMD_1_1Copier.html#ace340f0f6a72f7ab1c028ea49d783ba3">m_RcvTags</a>) {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        std::size_t nbytes = 0;</div>
@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        TotalRcvsVolume = <a class="code" href="namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591">amrex::aligned_size</a>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(<span class="keyword">alignof</span>(<span class="keyword">typename</span> FAB::value_type),</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                       acd), TotalRcvsVolume);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        offset.push_back(TotalRcvsVolume);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>.push_back(TotalRcvsVolume);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        TotalRcvsVolume += nbytes;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        recv_data.push_back(<span class="keyword">nullptr</span>);</div>
@@ -260,7 +260,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// Recv</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N_rcvs; ++i) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        recv_data[i] = the_recv_data + offset[i];</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        recv_data[i] = the_recv_data + <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[i];</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        recv_reqs[i] = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#af5ed8a597f21464e9f2803f0e2afc0be">ParallelDescriptor::Arecv</a></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            (recv_data[i], recv_size[i], recv_from[i], 100, <a class="code" href="AMReX__ccse-mpi_8H.html#a649b08b1c31a7d849bc410586ac94320">MPI_COMM_WORLD</a>).<a class="code" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a3dd73a745e975beb885a19b708190cbe">req</a>();</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
@@ -292,6 +292,7 @@ $(document).ready(function(){initNavTree('AMReX__MPMD_8H_source.html',''); initR
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAMReX__FabArray_8H_html"><div class="ttname"><a href="AMReX__FabArray_8H.html">AMReX_FabArray.H</a></div></div>
+<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition:</b> AMReX_HypreMLABecLap.cpp:1046</div></div>
 <div class="ttc" id="aAMReX__ccse-mpi_8H_html_a161d2f0d69c09838316e4ea9a74f02d7"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#a161d2f0d69c09838316e4ea9a74f02d7">MPI_Comm</a></div><div class="ttdeci">int MPI_Comm</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:47</div></div>
 <div class="ttc" id="aAMReX__ccse-mpi_8H_html_a649b08b1c31a7d849bc410586ac94320"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#a649b08b1c31a7d849bc410586ac94320">MPI_COMM_WORLD</a></div><div class="ttdeci">static constexpr int MPI_COMM_WORLD</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:54</div></div>
 <div class="ttc" id="aAMReX__ccse-mpi_8H_html_af21740106a5c90305be33f95b09f37eb"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#af21740106a5c90305be33f95b09f37eb">MPI_REQUEST_NULL</a></div><div class="ttdeci">static constexpr int MPI_REQUEST_NULL</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:53</div></div>

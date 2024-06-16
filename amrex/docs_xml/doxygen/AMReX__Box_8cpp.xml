@@ -809,10 +809,10 @@
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>countvec(<ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>());</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgather(&amp;count,<sp/>1,<sp/>MPI_INT,<sp/>countvec.data(),<sp/>1,<sp/>MPI_INT,<sp/>comm);</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>offset(countvec.size(),0);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>(countvec.size(),0);</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>count_tot<sp/>=<sp/>countvec[0];</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/>offset.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>[i]<sp/>=<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>+=<sp/>countvec[i];</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
@@ -826,7 +826,7 @@
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.reserve(count_tot+n_extra_reserve);</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.resize(count_tot);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgatherv(bxs.data(),<sp/>count,<sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_buffer.data(),<sp/>countvec.data(),<sp/>offset.data(),</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_buffer.data(),<sp/>countvec.data(),<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>.data(),</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),<sp/>comm);</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(bxs,recv_buffer);</highlight></codeline>
@@ -840,11 +840,11 @@
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Gather(&amp;count,<sp/>1,<sp/>MPI_INT,<sp/>countvec.data(),<sp/>1,<sp/>MPI_INT,<sp/>root,<sp/>comm);</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>count_tot<sp/>=<sp/>0L;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>offset(countvec.size(),0);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>(countvec.size(),0);</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myproc<sp/>==<sp/>root)<sp/>{</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>=<sp/>countvec[0];</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(offset.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>[i]<sp/>=<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>+=<sp/>countvec[i];</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -861,7 +861,7 @@
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.reserve(count_tot+n_extra_reserve);</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.resize(count_tot);</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Gatherv(bxs.data(),<sp/>count,<sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_buffer.data(),<sp/>countvec.data(),<sp/>offset.data(),</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_buffer.data(),<sp/>countvec.data(),<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>.data(),</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),<sp/>root,<sp/>comm);</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Bcast(recv_buffer.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(count_tot),<sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root,<sp/>comm);</highlight></codeline>

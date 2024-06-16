@@ -355,7 +355,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : tags)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            {</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> sfab = tag.sfab-&gt;array();</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> offset = tag.offset.dim3();</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = tag.offset.dim3();</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <a class="code" href="namespaceamrex.html#a2852f915700a8c5c4f638d5d9c64acc4">amrex::LoopConcurrentOnCpu</a>(tag.dbox, ncomp,</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                {</div>
@@ -521,7 +521,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tags = loc_copy_tags[mfi];</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : tags)</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> offset = tag.offset.dim3();</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = tag.offset.dim3();</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                CopyMemory* cmem = TheFB.m_localCopy.getDevicePtr(idx++);</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMREX_HOST_DEVICE_FOR_3D</a> (tag.dbox, i, j, k,</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                {</div>
@@ -605,7 +605,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                                                         std::size_t(<span class="keyword">sizeof</span>(CopyMemory)*launches) );</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tag = tags[t];</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="keyword">const</span> Dim3 offset = tag.offset.dim3();</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="keyword">const</span> Dim3 <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = tag.offset.dim3();</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                CopyMemory* cmem = TheFB.m_localCopy.getDevicePtr(idx++);</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMREX_HOST_DEVICE_FOR_3D</a>(tag.dbox, i, j, k,</div>
@@ -856,8 +856,8 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    {</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="keywordflow">if</span> (send_size[j] &gt; 0)</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            std::size_t offset = send_data[j]-send_data[0];</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            <span class="keywordtype">char</span>* dptr = pbuffer + offset;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            std::size_t <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = send_data[j]-send_data[0];</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;            <span class="keywordtype">char</span>* dptr = pbuffer + <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *send_cctc[j];</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            {</div>
@@ -869,7 +869,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                });</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                dptr += (tag.sbox.numPts() * ncomp * <span class="keyword">sizeof</span>(BUF));</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            }</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= pbuffer + offset + send_size[j]);</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= pbuffer + <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> + send_size[j]);</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        }</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    }</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
@@ -932,8 +932,8 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    {</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        <span class="keywordflow">if</span> (recv_size[k] &gt; 0)</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        {</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            std::size_t offset = recv_data[k]-recv_data[0];</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = pbuffer + offset;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            std::size_t <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> = recv_data[k]-recv_data[0];</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = pbuffer + <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>;</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cctc = *recv_cctc[k];</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; tag : cctc)</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            {</div>
@@ -953,7 +953,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                    masks.emplace_back(<a class="code" href="structamrex_1_1Array4Tag.html">Array4Tag&lt;int&gt;</a>{maskfabs[li].array()});</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                }</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            }</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= pbuffer + offset + recv_size[k]);</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= pbuffer + <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a> + recv_size[k]);</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        }</div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    }</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
@@ -1135,6 +1135,7 @@ $(document).ready(function(){initNavTree('AMReX__FBI_8H_source.html',''); initRe
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:119</div></div>
 <div class="ttc" id="aAMReX__GpuLaunch_8nolint_8H_html_af98b03b7b3a87691d2e944fcd96c5a84"><div class="ttname"><a href="AMReX__GpuLaunch_8nolint_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMREX_HOST_DEVICE_FOR_3D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_FOR_3D(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.nolint.H:51</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:18</div></div>
+<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition:</b> AMReX_HypreMLABecLap.cpp:1046</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a0c7e0730574c98febb6ddca2712cb515"><div class="ttname"><a href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">amrex::Arena::free</a></div><div class="ttdeci">virtual void free(void *pt)=0</div><div class="ttdoc">A pure virtual function for deleting the arena pointed to by pt.</div></div>
 <div class="ttc" id="aclassamrex_1_1Arena_html_a46ce2cd5cfc039cec64548b031fbde2e"><div class="ttname"><a href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">amrex::Arena::alloc</a></div><div class="ttdeci">virtual void * alloc(std::size_t sz)=0</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html"><div class="ttname"><a href="classamrex_1_1Box.html">amrex::Box</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:39</div></div>

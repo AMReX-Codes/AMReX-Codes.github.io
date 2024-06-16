@@ -635,6 +635,7 @@ var annotated_dup =
       [ "HypreABecLap2", "classamrex_1_1HypreABecLap2.html", "classamrex_1_1HypreABecLap2" ],
       [ "HypreABecLap3", "classamrex_1_1HypreABecLap3.html", "classamrex_1_1HypreABecLap3" ],
       [ "HypreIJIface", "classamrex_1_1HypreIJIface.html", "classamrex_1_1HypreIJIface" ],
+      [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html", "classamrex_1_1HypreMLABecLap" ],
       [ "HypreNodeLap", "classamrex_1_1HypreNodeLap.html", "classamrex_1_1HypreNodeLap" ],
       [ "HypreSolver", "classamrex_1_1HypreSolver.html", "classamrex_1_1HypreSolver" ],
       [ "amrex_KSP", "structamrex_1_1amrex__KSP.html", "structamrex_1_1amrex__KSP" ],

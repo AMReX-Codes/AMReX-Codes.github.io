@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">inline</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a5be48241dfac16941f5f4c66fdd7d584">   15</a></span>&#160;<a class="code" href="namespaceamrex.html#a5be48241dfac16941f5f4c66fdd7d584">amrex_setvol</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; bx, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; vol,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; offset,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; dx, <span class="keyword">const</span> <span class="keywordtype">int</span> coord) noexcept</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(bx);</div>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a> = Real(3.1415926535897932);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            Real ri = offset[0] + dx[0]*i;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            Real ri = <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] + dx[0]*i;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            Real ro = ri + dx[0];</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Real v = <a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a>*(ro-ri)*(ro + ri);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            vol(i,0,0) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(v);</div>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a> = Real(3.1415926535897932);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real ri = offset[0] + dx[0]*i;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real ri = <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] + dx[0]*i;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Real ro = ri + dx[0];</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Real v = (Real(4./3.)*<a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a>)*(ro-ri)*(ro*ro+ro*ri+ri*ri);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            vol(i,0,0) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(v);</div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">inline</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a5e3145837cdc69bc378ae3e7751aeafe">   57</a></span>&#160;<a class="code" href="namespaceamrex.html#a5e3145837cdc69bc378ae3e7751aeafe">amrex_setarea</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; bx, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; area,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;               <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; offset,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;               <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; dx, <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/*dir*/</span>, <span class="keyword">const</span> <span class="keywordtype">int</span> coord) noexcept</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(bx);</div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a> = Real(3.1415926535897932);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            Real ri = offset[0] + dx[0]*i;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            Real ri = <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] + dx[0]*i;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            Real a = (Real(2.)*<a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a>)*ri;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            area(i,0,0) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a> = Real(3.1415926535897932);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            Real ri = offset[0] + dx[0]*i;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            Real ri = <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] + dx[0]*i;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            Real a = (Real(4.0)*<a class="code" href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">pi</a>)*ri*ri;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            area(i,0,0) = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">std::abs</a>(a);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">inline</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ad42f89d350fa1e06dfc8594fe3021a64">   96</a></span>&#160;<a class="code" href="namespaceamrex.html#ad42f89d350fa1e06dfc8594fe3021a64">amrex_setdloga</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; bx, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; dloga,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; offset,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>,</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,1&gt;</a> <span class="keyword">const</span>&amp; dx, <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/*dir*/</span>, <span class="keyword">const</span> <span class="keywordtype">int</span> coord) noexcept</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(bx);</div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            Real rc = offset[0] + dx[0]*(i+Real(0.5));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            Real rc = <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] + dx[0]*(i+Real(0.5));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            dloga(i,0,0) = Real(1.0)/rc;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
@@ -220,7 +220,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            Real ri = offset[0] + dx[0]*(i+Real(0.5));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            Real ri = <a class="code" href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a>[0] + dx[0]*(i+Real(0.5));</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            dloga(i,0,0) = Real(2.0)/ri;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
@@ -234,6 +234,7 @@ $(document).ready(function(){initNavTree('AMReX__COORDSYS__1D__C_8H_source.html'
 <div class="ttc" id="aAMReX__FArrayBox_8H_html"><div class="ttname"><a href="AMReX__FArrayBox_8H.html">AMReX_FArrayBox.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:20</div></div>
 <div class="ttc" id="aAMReX__Gpu_8H_html"><div class="ttname"><a href="AMReX__Gpu_8H.html">AMReX_Gpu.H</a></div></div>
+<div class="ttc" id="aAMReX__HypreMLABecLap_8cpp_html_aca578ec8d09db95559009d91bca7779e"><div class="ttname"><a href="AMReX__HypreMLABecLap_8cpp.html#aca578ec8d09db95559009d91bca7779e">offset</a></div><div class="ttdeci">Array4&lt; int const  &gt; offset</div><div class="ttdef"><b>Definition:</b> AMReX_HypreMLABecLap.cpp:1046</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html"><div class="ttname"><a href="classamrex_1_1Box.html">amrex::Box</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:39</div></div>
 <div class="ttc" id="acomplex-type_8h_html_a3aa069ac3980707dae1e0530f50d59e4"><div class="ttname"><a href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">abs</a></div><div class="ttdeci">#define abs(x)</div><div class="ttdef"><b>Definition:</b> complex-type.h:85</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Math_html_ae119edbc36d72d7e0287e015330974c5"><div class="ttname"><a href="namespaceamrex_1_1Math.html#ae119edbc36d72d7e0287e015330974c5">amrex::Math::pi</a></div><div class="ttdeci">constexpr std::enable_if_t&lt; std::is_floating_point_v&lt; T &gt;, T &gt; pi()</div><div class="ttdef"><b>Definition:</b> AMReX_Math.H:61</div></div>

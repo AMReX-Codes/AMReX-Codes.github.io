@@ -772,6 +772,7 @@ var namespaceamrex =
     [ "HypreABecLap2", "classamrex_1_1HypreABecLap2.html", "classamrex_1_1HypreABecLap2" ],
     [ "HypreABecLap3", "classamrex_1_1HypreABecLap3.html", "classamrex_1_1HypreABecLap3" ],
     [ "HypreIJIface", "classamrex_1_1HypreIJIface.html", "classamrex_1_1HypreIJIface" ],
+    [ "HypreMLABecLap", "classamrex_1_1HypreMLABecLap.html", "classamrex_1_1HypreMLABecLap" ],
     [ "HypreNodeLap", "classamrex_1_1HypreNodeLap.html", "classamrex_1_1HypreNodeLap" ],
     [ "HypreSolver", "classamrex_1_1HypreSolver.html", "classamrex_1_1HypreSolver" ],
     [ "amrex_KSP", "structamrex_1_1amrex__KSP.html", "structamrex_1_1amrex__KSP" ],
@@ -991,6 +992,10 @@ var namespaceamrex =
       [ "FillLocally", "namespaceamrex.html#a9f13be15ca764e94680df68d8b9505d6a3de07fb14bde47411225509d67e0bda1", null ],
       [ "FillRemotely", "namespaceamrex.html#a9f13be15ca764e94680df68d8b9505d6a8d7828a9196bfb084013996640e84bd4", null ],
       [ "Unfillable", "namespaceamrex.html#a9f13be15ca764e94680df68d8b9505d6a86e193c43ac00a14b0943baf3433c6d0", null ]
+    ] ],
+    [ "HypreSolverID", "namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16eb", [
+      [ "BoomerAMG", "namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16eba811f4c4b8bd73ca4249517d43fc1bfac", null ],
+      [ "SSAMG", "namespaceamrex.html#aefdd734c936908c2f841c65ee3bd16ebaedb458d93d1aa8663ae63f153d911a81", null ]
     ] ],
     [ "IntegratorTypes", "namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599e", [
       [ "ForwardEuler", "namespaceamrex.html#aad80b9cf2bc799f2905cc9a77e3a599ea779b3131986acb907c287cdaf371d578", null ],
@@ -1736,6 +1741,11 @@ var namespaceamrex =
     [ "HostDeviceParallelFor", "namespaceamrex.html#a724425a241882a0f87afc3365acaa7e0", null ],
     [ "htod_memcpy", "namespaceamrex.html#aa9df7c449e875ece24add0d826c4f133", null ],
     [ "htod_memcpy", "namespaceamrex.html#ae243b10c65516ed7dfeaf9aed7e75aa3", null ],
+    [ "hypmlabeclap_c2f", "namespaceamrex.html#a6d551c1420bc538dd69a51fcb2588e37", null ],
+    [ "hypmlabeclap_c2f", "namespaceamrex.html#a73f46b40f3067508b56f20bdf56901ff", null ],
+    [ "hypmlabeclap_f2c_set_values", "namespaceamrex.html#abb8b44e8d365f59bb8a07c0656996621", null ],
+    [ "hypmlabeclap_mat", "namespaceamrex.html#ade1a82c5ad126664aa13ec77fc5262e3", null ],
+    [ "hypmlabeclap_rhs", "namespaceamrex.html#a521683c9d457c13174b9ee3cab8922ae", null ],
     [ "IdentityTuple", "namespaceamrex.html#a2d133ef4334729455eef75bfa196dca9", null ],
     [ "IdentityTuple", "namespaceamrex.html#a055961d372c3be97281e3a40c7f6bf25", null ],
     [ "ignore_unused", "namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf", null ],

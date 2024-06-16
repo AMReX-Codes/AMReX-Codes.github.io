@@ -1,0 +1,1074 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classamrex_1_1HypreMLABecLap" kind="class" language="C++" prot="public">
+    <compoundname>amrex::HypreMLABecLap</compoundname>
+    <includes refid="AMReX__HypreMLABecLap_8H" local="no">AMReX_HypreMLABecLap.H</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" prot="private" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::HypreMLABecLap::HostVector =  Gpu::PinnedVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>HostVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="104" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a98523c0ee725e9b867ac7d056430a98e" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::HypreMLABecLap::m_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="66" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1afe4c13918588f999571c9b8ff61458eb" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::HypreMLABecLap::m_maxiter</definition>
+        <argsstring></argsstring>
+        <name>m_maxiter</name>
+        <initializer>= 200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="67" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1aa6642b5952fc1a28a72c7fbed7a5a540" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt;</type>
+        <definition>Vector&lt;Geometry&gt; amrex::HypreMLABecLap::m_geom</definition>
+        <argsstring></argsstring>
+        <name>m_geom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="69" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1ad777b3fad5c1f17ebcd1419f66f3c672" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt;</type>
+        <definition>Vector&lt;BoxArray&gt; amrex::HypreMLABecLap::m_grids</definition>
+        <argsstring></argsstring>
+        <name>m_grids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="70" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a521405f480fb9aade08961ffa6198870" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt;</type>
+        <definition>Vector&lt;DistributionMapping&gt; amrex::HypreMLABecLap::m_dmap</definition>
+        <argsstring></argsstring>
+        <name>m_dmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="71" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a605594e57a93565ba4561e922fc237d4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::HypreMLABecLap::m_parmparse_prefix</definition>
+        <argsstring></argsstring>
+        <name>m_parmparse_prefix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="72" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a73bf18da48973ca4cc293bf50410a031" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::HypreMLABecLap::m_nlevels</definition>
+        <argsstring></argsstring>
+        <name>m_nlevels</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="73" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1aacab4da9034ef08e23a12cf30d78c8ad" prot="private" static="no" mutable="no">
+        <type><ref refid="AMReX__ccse-mpi_8H_1a161d2f0d69c09838316e4ea9a74f02d7" kindref="member">MPI_Comm</ref></type>
+        <definition>MPI_Comm amrex::HypreMLABecLap::m_comm</definition>
+        <argsstring></argsstring>
+        <name>m_comm</name>
+        <initializer>= <ref refid="AMReX__ccse-mpi_8H_1a9eb867d9cda6acfce33985d67a31d5fc" kindref="member">MPI_COMM_NULL</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="74" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a6ca733ac26d20abcd182611ba7869be4" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt;</type>
+        <definition>Vector&lt;IntVect&gt; amrex::HypreMLABecLap::m_ref_ratio</definition>
+        <argsstring></argsstring>
+        <name>m_ref_ratio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="76" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a5c3c993e3774ba9f2663dbba34f82596" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::HypreMLABecLap::m_ascalar</definition>
+        <argsstring></argsstring>
+        <name>m_ascalar</name>
+        <initializer>= std::numeric_limits&lt;Real&gt;::<ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">max</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="78" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a9f02135c08e099121a1e35c8216c1417" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::HypreMLABecLap::m_bscalar</definition>
+        <argsstring></argsstring>
+        <name>m_bscalar</name>
+        <initializer>= std::numeric_limits&lt;Real&gt;::<ref refid="namespaceamrex_1a38d942498aebd0b51855a9b85ed184f5" kindref="member">max</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="79" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1ad5a3ca519f25c6a41cea565dd7e9dc23" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+        <definition>Array&lt;LinOpBCType,AMREX_SPACEDIM&gt; amrex::HypreMLABecLap::m_lobc</definition>
+        <argsstring></argsstring>
+        <name>m_lobc</name>
+        <initializer>{AMREX_D_DECL(LinOpBCType::bogus,
+                                                          LinOpBCType::bogus,
+                                                          LinOpBCType::bogus)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="80" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a22567436af78d852be2635bd9c046735" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+        <definition>Array&lt;LinOpBCType,AMREX_SPACEDIM&gt; amrex::HypreMLABecLap::m_hibc</definition>
+        <argsstring></argsstring>
+        <name>m_hibc</name>
+        <initializer>{AMREX_D_DECL(LinOpBCType::bogus,
+                                                          LinOpBCType::bogus,
+                                                          LinOpBCType::bogus)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="83" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a6aa5787a3fc3a0c58eb3453158f99123" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="namespaceamrex_1a9214b7c07d9c296122f7418f73f798e9" kindref="member">MLMGBndry</ref> &gt; &gt;</type>
+        <definition>Vector&lt;std::unique_ptr&lt;MLMGBndry&gt; &gt; amrex::HypreMLABecLap::m_bndry</definition>
+        <argsstring></argsstring>
+        <name>m_bndry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="87" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a1f047d4669c1be7925f1e95315129858" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="namespaceamrex_1a51a3951b54ca3db6bf891ebc2f867168" kindref="member">BndryRegister</ref> &gt; &gt;</type>
+        <definition>Vector&lt;std::unique_ptr&lt;BndryRegister&gt; &gt; amrex::HypreMLABecLap::m_bndry_rhs</definition>
+        <argsstring></argsstring>
+        <name>m_bndry_rhs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="88" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1af22af9473b24ca2b90cc6f930f7ab7df" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt;</type>
+        <definition>Vector&lt;iMultiFab&gt; amrex::HypreMLABecLap::m_fine_masks</definition>
+        <argsstring></argsstring>
+        <name>m_fine_masks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="89" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a4617f3ef7bf223a44b7f2730609138af" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt;</type>
+        <definition>Vector&lt;iMultiFab&gt; amrex::HypreMLABecLap::m_c2f_offset_from</definition>
+        <argsstring></argsstring>
+        <name>m_c2f_offset_from</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="93" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a7ecee59c4f754dd88bd3d9d524b9a7cd" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &gt;</type>
+        <definition>Vector&lt;LayoutData&lt;int&gt; &gt; amrex::HypreMLABecLap::m_c2f_total_from</definition>
+        <argsstring></argsstring>
+        <name>m_c2f_total_from</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="94" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1ae35db1670d830f2b1f8bd8b60152d291" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt;</type>
+        <definition>Vector&lt;iMultiFab&gt; amrex::HypreMLABecLap::m_c2f_nentries</definition>
+        <argsstring></argsstring>
+        <name>m_c2f_nentries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="95" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a5ff9efa1034c0a9291d6240ff89ca008" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt;</type>
+        <definition>Vector&lt;iMultiFab&gt; amrex::HypreMLABecLap::m_c2f_offset_to</definition>
+        <argsstring></argsstring>
+        <name>m_c2f_offset_to</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="96" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a031255c891aa6b3a410ac5f24003c1cb" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &gt;</type>
+        <definition>Vector&lt;LayoutData&lt;int&gt; &gt; amrex::HypreMLABecLap::m_c2f_total_to</definition>
+        <argsstring></argsstring>
+        <name>m_c2f_total_to</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="97" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a6a33ca51865b1c9f828b5d53187ede6c" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref>, AMREX_SPACEDIM &gt; &gt;</type>
+        <definition>Vector&lt;Array&lt;iMultiFab,AMREX_SPACEDIM&gt; &gt; amrex::HypreMLABecLap::m_offset_cf_bcoefs</definition>
+        <argsstring></argsstring>
+        <name>m_offset_cf_bcoefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="100" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1ac05a891fdcd184a2d55e9150dc8226d1" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; std::unique_ptr&lt; <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; Real &gt; &gt; &gt;, AMREX_SPACEDIM &gt; &gt;</type>
+        <definition>Vector&lt;Array&lt;LayoutData&lt;std::unique_ptr&lt;Gpu::DeviceVector&lt;Real&gt; &gt; &gt;,AMREX_SPACEDIM&gt; &gt; amrex::HypreMLABecLap::m_cf_bcoefs</definition>
+        <argsstring></argsstring>
+        <name>m_cf_bcoefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="101" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1ab144aa971543222c30856319a467ea10" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" kindref="member">HostVector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &gt;</type>
+        <definition>Vector&lt;HostVector&lt;int&gt; &gt; amrex::HypreMLABecLap::m_f2c_bno</definition>
+        <argsstring></argsstring>
+        <name>m_f2c_bno</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="111" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a7bf5b67f6ea086cafa52c0ffe2782b4f" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" kindref="member">HostVector</ref>&lt; <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; &gt;</type>
+        <definition>Vector&lt;HostVector&lt;IntVect&gt; &gt; amrex::HypreMLABecLap::m_f2c_cell</definition>
+        <argsstring></argsstring>
+        <name>m_f2c_cell</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="112" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1ab4ebe994485ed9535fe0159f5ae2fca5" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; HYPRE_Int &gt; &gt;</type>
+        <definition>Vector&lt;Vector&lt;HYPRE_Int&gt; &gt; amrex::HypreMLABecLap::m_f2c_nentries</definition>
+        <argsstring></argsstring>
+        <name>m_f2c_nentries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="113" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a8938d44cca92d62b2df5e43c18bdb7d0" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" kindref="member">HostVector</ref>&lt; std::size_t &gt; &gt;</type>
+        <definition>Vector&lt;HostVector&lt;std::size_t&gt; &gt; amrex::HypreMLABecLap::m_f2c_offset</definition>
+        <argsstring></argsstring>
+        <name>m_f2c_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="114" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a59c610afea3fd46adedf738506caaa8c" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" kindref="member">HostVector</ref>&lt; Real &gt; &gt;</type>
+        <definition>Vector&lt;HostVector&lt;Real&gt; &gt; amrex::HypreMLABecLap::m_f2c_values</definition>
+        <argsstring></argsstring>
+        <name>m_f2c_values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="115" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a6e1dd0ab2281b23542bdf3e612a88053" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructGrid</type>
+        <definition>HYPRE_SStructGrid amrex::HypreMLABecLap::m_ss_grid</definition>
+        <argsstring></argsstring>
+        <name>m_ss_grid</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="117" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a244b3cf6e6d1fab88dbccbb1a8a65512" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructStencil</type>
+        <definition>HYPRE_SStructStencil amrex::HypreMLABecLap::m_ss_stencil</definition>
+        <argsstring></argsstring>
+        <name>m_ss_stencil</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="118" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a3abcd57ae0d4187a40ee256bdd8f29f7" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructGraph</type>
+        <definition>HYPRE_SStructGraph amrex::HypreMLABecLap::m_ss_graph</definition>
+        <argsstring></argsstring>
+        <name>m_ss_graph</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="119" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a610b6ca3b2fef67292ed1d0d1fbaddfa" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructSolver</type>
+        <definition>HYPRE_SStructSolver amrex::HypreMLABecLap::m_ss_solver</definition>
+        <argsstring></argsstring>
+        <name>m_ss_solver</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="120" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a7d02613d6773cec7b61dca2d4e1b5615" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructSolver</type>
+        <definition>HYPRE_SStructSolver amrex::HypreMLABecLap::m_ss_precond</definition>
+        <argsstring></argsstring>
+        <name>m_ss_precond</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="121" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1afce3813ade7df97da4e139f475916f05" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructMatrix</type>
+        <definition>HYPRE_SStructMatrix amrex::HypreMLABecLap::m_ss_A</definition>
+        <argsstring></argsstring>
+        <name>m_ss_A</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="122" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1abc03d365cbc2f1a3791aa6f4bff1fd5f" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructVector</type>
+        <definition>HYPRE_SStructVector amrex::HypreMLABecLap::m_ss_x</definition>
+        <argsstring></argsstring>
+        <name>m_ss_x</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="123" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1af2f93bf32b6d1799e7bd2a3027b48853" prot="private" static="no" mutable="no">
+        <type>HYPRE_SStructVector</type>
+        <definition>HYPRE_SStructVector amrex::HypreMLABecLap::m_ss_b</definition>
+        <argsstring></argsstring>
+        <name>m_ss_b</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="124" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a4bde944cac23810adbcae8586a29fce4" prot="private" static="no" mutable="no">
+        <type>HYPRE_Solver</type>
+        <definition>HYPRE_Solver amrex::HypreMLABecLap::m_solver</definition>
+        <argsstring></argsstring>
+        <name>m_solver</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="126" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1adaa1de14576861c282ef98849361cff2" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1aefdd734c936908c2f841c65ee3bd16eb" kindref="member">HypreSolverID</ref></type>
+        <definition>HypreSolverID amrex::HypreMLABecLap::m_hypre_solver_id</definition>
+        <argsstring></argsstring>
+        <name>m_hypre_solver_id</name>
+        <initializer>= <ref refid="namespaceamrex_1aefdd734c936908c2f841c65ee3bd16eba811f4c4b8bd73ca4249517d43fc1bfac" kindref="member">HypreSolverID::BoomerAMG</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="128" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreMLABecLap_1a5ed51028a078ac94de993687b7411103" prot="private" static="no" mutable="no">
+        <type>HYPRE_Int</type>
+        <definition>HYPRE_Int amrex::HypreMLABecLap::m_hypre_object_type</definition>
+        <argsstring></argsstring>
+        <name>m_hypre_object_type</name>
+        <initializer>= HYPRE_PARCSR</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="129" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a3f78a976f617cab402f099b159d76790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::HypreMLABecLap::HypreMLABecLap</definition>
+        <argsstring>(HypreMLABecLap const &amp;)=delete</argsstring>
+        <name>HypreMLABecLap</name>
+        <param>
+          <type><ref refid="classamrex_1_1HypreMLABecLap" kindref="compound">HypreMLABecLap</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1abc231f950129aa61917ee4608a7795aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::HypreMLABecLap::HypreMLABecLap</definition>
+        <argsstring>(HypreMLABecLap &amp;&amp;)=delete</argsstring>
+        <name>HypreMLABecLap</name>
+        <param>
+          <type><ref refid="classamrex_1_1HypreMLABecLap" kindref="compound">HypreMLABecLap</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="28" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a00ba8003e627089b12616d549302a48d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1HypreMLABecLap" kindref="compound">HypreMLABecLap</ref> &amp;</type>
+        <definition>HypreMLABecLap&amp; amrex::HypreMLABecLap::operator=</definition>
+        <argsstring>(HypreMLABecLap const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1HypreMLABecLap" kindref="compound">HypreMLABecLap</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="29" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a1ed176484530d5f9a35195c968b7f886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1HypreMLABecLap" kindref="compound">HypreMLABecLap</ref> &amp;</type>
+        <definition>HypreMLABecLap&amp; amrex::HypreMLABecLap::operator=</definition>
+        <argsstring>(HypreMLABecLap &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1HypreMLABecLap" kindref="compound">HypreMLABecLap</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="30" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a42a73f2525c154156add80dae776f07c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::HypreMLABecLap::HypreMLABecLap</definition>
+        <argsstring>(Vector&lt; Geometry &gt; a_geom, Vector&lt; BoxArray &gt; a_grids, Vector&lt; DistributionMapping &gt; a_dmap, HypreSolverID a_hypre_solver_id, std::string a_parmparse_prefix=&quot;hypre_mlabeclap&quot;)</argsstring>
+        <name>HypreMLABecLap</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt;</type>
+          <declname>a_grids</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt;</type>
+          <declname>a_dmap</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1aefdd734c936908c2f841c65ee3bd16eb" kindref="member">HypreSolverID</ref></type>
+          <declname>a_hypre_solver_id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>a_parmparse_prefix</declname>
+          <defval>&quot;hypre_mlabeclap&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="32" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="11" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a66105677b66e5acc22e81f49c1fbf640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::HypreMLABecLap::~HypreMLABecLap</definition>
+        <argsstring>()</argsstring>
+        <name>~HypreMLABecLap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="38" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="162" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a5e66262b6c3958c576c2f3cd6c3a08e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::setVerbose</definition>
+        <argsstring>(int v)</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="40" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a2eca9fbfceb38d605125d13abdf96b44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::setMaxIter</definition>
+        <argsstring>(int v)</argsstring>
+        <name>setMaxIter</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="41" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1abb5bbeb49ef28654739d90718147285c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::setup</definition>
+        <argsstring>(Real a_ascalar, Real a_bscalar, Vector&lt; MultiFab const * &gt; const &amp;a_acoefs, Vector&lt; Array&lt; MultiFab const *, AMREX_SPACEDIM &gt;&gt; const &amp;a_bcoefs, Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;a_lobc, Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;a_hibc, Vector&lt; MultiFab const * &gt; const &amp;a_levelbcdata, std::pair&lt; MultiFab const *, IntVect &gt; const &amp;a_coarse_bc={nullptr, IntVect(0)})</argsstring>
+        <name>setup</name>
+        <param>
+          <type>Real</type>
+          <declname>a_ascalar</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>a_bscalar</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const * &gt; const &amp;</type>
+          <declname>a_acoefs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, AMREX_SPACEDIM &gt;&gt; const &amp;</type>
+          <declname>a_bcoefs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>a_lobc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>a_hibc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const * &gt; const &amp;</type>
+          <declname>a_levelbcdata</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref> &gt; const &amp;</type>
+          <declname>a_coarse_bc</declname>
+          <defval>{nullptr, <ref refid="namespaceamrex_1a8792201c856a367dda275e09047daa33" kindref="member">IntVect</ref>(0)}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="43" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="454" bodyend="864"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a25842c55bb17593f8f71cacd5d79b5a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::solve</definition>
+        <argsstring>(Vector&lt; MultiFab * &gt; const &amp;a_sol, Vector&lt; MultiFab const * &gt; const &amp;a_rhs, Real a_reltol, Real a_abstol)</argsstring>
+        <name>solve</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; const &amp;</type>
+          <declname>a_sol</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const * &gt; const &amp;</type>
+          <declname>a_rhs</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>a_reltol</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>a_abstol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="51" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="866" bodyend="1039"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1aa13ba9175919d4b934c7da2830c70921" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::commBCoefs</definition>
+        <argsstring>(int flev, Array&lt; MultiFab const *, AMREX_SPACEDIM &gt; const &amp;a_bcoefs)</argsstring>
+        <name>commBCoefs</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>flev</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>a_bcoefs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="58" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="1084" bodyend="1395"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a4be2b84f4159ef25db82f02e7553056c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::commBCoefs_local</definition>
+        <argsstring>(int flev, Array&lt; MultiFab const *, AMREX_SPACEDIM &gt; const &amp;a_bcoefs, Vector&lt; FabArrayBase::CopyComTag &gt; const &amp;tags)</argsstring>
+        <name>commBCoefs_local</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>flev</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>a_bcoefs</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="structamrex_1_1FabArrayBase_1_1CopyComTag" kindref="compound">FabArrayBase::CopyComTag</ref> &gt; const &amp;</type>
+          <declname>tags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="59" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="1397" bodyend="1462"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1HypreMLABecLap_1a0d7858745aeaa487d64746b3fbf23ab2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreMLABecLap::addNonStencilEntriesToGraph</definition>
+        <argsstring>()</argsstring>
+        <name>addNonStencilEntriesToGraph</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="64" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.cpp" bodystart="195" bodyend="452"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="19">
+        <label>amrex::Vector&lt; amrex::PODVector&lt; Real &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>T</label>
+      </node>
+      <node id="10">
+        <label>amrex::Vector&lt; amrex::PODVector&lt; std::size_t &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::Vector&lt; amrex::PODVector&lt; amrex::IntVectND &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>amrex::Vector&lt; amrex::iMultiFab &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Real</label>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; T &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>amrex::Vector&lt; amrex::PODVector&lt; int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>amrex::Vector&lt; amrex::IntVectND &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::MLMGBndryT &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="11">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::BndryRegisterT &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::HypreMLABecLap</label>
+        <link refid="classamrex_1_1HypreMLABecLap"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_c2f_total_from</edgelabel>
+          <edgelabel>m_c2f_total_to</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_f2c_cell</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_dmap</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_f2c_bno</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_cf_bcoefs</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_offset_cf_bcoefs</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_f2c_offset</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_bndry_rhs</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_c2f_nentries</edgelabel>
+          <edgelabel>m_c2f_offset_from</edgelabel>
+          <edgelabel>m_c2f_offset_to</edgelabel>
+          <edgelabel>m_fine_masks</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_parmparse_prefix</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>m_bndry</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>m_ref_ratio</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_f2c_nentries</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>m_grids</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_f2c_values</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>m_ascalar</edgelabel>
+          <edgelabel>m_bscalar</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>amrex::Vector&lt; Array&lt; amrex::iMultiFab, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::Vector&lt; amrex::LayoutData&lt; int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>amrex::Vector&lt; Array&lt; amrex::LayoutData&lt; std::unique_ptr&lt; amrex::PODVector&lt; Real &gt; &gt; &gt;, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>amrex::Vector&lt; amrex::Vector&lt; HYPRE_Int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::string</label>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreMLABecLap.H" bodystart="25" bodyend="130"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1HypreMLABecLap_1a0d7858745aeaa487d64746b3fbf23ab2" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>addNonStencilEntriesToGraph</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1aa13ba9175919d4b934c7da2830c70921" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>commBCoefs</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a4be2b84f4159ef25db82f02e7553056c" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>commBCoefs_local</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ab11d5fd05bf6f0b1f824c31341aec467" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>HostVector</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a3f78a976f617cab402f099b159d76790" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>HypreMLABecLap</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1abc231f950129aa61917ee4608a7795aa" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>HypreMLABecLap</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a42a73f2525c154156add80dae776f07c" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>HypreMLABecLap</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a5c3c993e3774ba9f2663dbba34f82596" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ascalar</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a6aa5787a3fc3a0c58eb3453158f99123" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_bndry</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a1f047d4669c1be7925f1e95315129858" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_bndry_rhs</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a9f02135c08e099121a1e35c8216c1417" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_bscalar</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ae35db1670d830f2b1f8bd8b60152d291" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_c2f_nentries</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a4617f3ef7bf223a44b7f2730609138af" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_c2f_offset_from</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a5ff9efa1034c0a9291d6240ff89ca008" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_c2f_offset_to</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a7ecee59c4f754dd88bd3d9d524b9a7cd" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_c2f_total_from</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a031255c891aa6b3a410ac5f24003c1cb" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_c2f_total_to</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ac05a891fdcd184a2d55e9150dc8226d1" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_cf_bcoefs</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1aacab4da9034ef08e23a12cf30d78c8ad" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_comm</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a521405f480fb9aade08961ffa6198870" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_dmap</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ab144aa971543222c30856319a467ea10" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_f2c_bno</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a7bf5b67f6ea086cafa52c0ffe2782b4f" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_f2c_cell</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ab4ebe994485ed9535fe0159f5ae2fca5" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_f2c_nentries</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a8938d44cca92d62b2df5e43c18bdb7d0" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_f2c_offset</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a59c610afea3fd46adedf738506caaa8c" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_f2c_values</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1af22af9473b24ca2b90cc6f930f7ab7df" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_fine_masks</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1aa6642b5952fc1a28a72c7fbed7a5a540" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_geom</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ad777b3fad5c1f17ebcd1419f66f3c672" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_grids</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a22567436af78d852be2635bd9c046735" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_hibc</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a5ed51028a078ac94de993687b7411103" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_hypre_object_type</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1adaa1de14576861c282ef98849361cff2" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_hypre_solver_id</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1ad5a3ca519f25c6a41cea565dd7e9dc23" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_lobc</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1afe4c13918588f999571c9b8ff61458eb" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_maxiter</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a73bf18da48973ca4cc293bf50410a031" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_nlevels</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a6a33ca51865b1c9f828b5d53187ede6c" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_offset_cf_bcoefs</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a605594e57a93565ba4561e922fc237d4" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_parmparse_prefix</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a6ca733ac26d20abcd182611ba7869be4" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ref_ratio</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a4bde944cac23810adbcae8586a29fce4" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_solver</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1afce3813ade7df97da4e139f475916f05" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_A</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1af2f93bf32b6d1799e7bd2a3027b48853" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_b</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a3abcd57ae0d4187a40ee256bdd8f29f7" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_graph</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a6e1dd0ab2281b23542bdf3e612a88053" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_grid</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a7d02613d6773cec7b61dca2d4e1b5615" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_precond</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a610b6ca3b2fef67292ed1d0d1fbaddfa" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_solver</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a244b3cf6e6d1fab88dbccbb1a8a65512" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_stencil</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1abc03d365cbc2f1a3791aa6f4bff1fd5f" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_ss_x</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a98523c0ee725e9b867ac7d056430a98e" prot="private" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>m_verbose</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a00ba8003e627089b12616d549302a48d" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a1ed176484530d5f9a35195c968b7f886" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a2eca9fbfceb38d605125d13abdf96b44" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>setMaxIter</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1abb5bbeb49ef28654739d90718147285c" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>setup</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a5e66262b6c3958c576c2f3cd6c3a08e3" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>setVerbose</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a25842c55bb17593f8f71cacd5d79b5a9" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>solve</name></member>
+      <member refid="classamrex_1_1HypreMLABecLap_1a66105677b66e5acc22e81f49c1fbf640" prot="public" virt="non-virtual"><scope>amrex::HypreMLABecLap</scope><name>~HypreMLABecLap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

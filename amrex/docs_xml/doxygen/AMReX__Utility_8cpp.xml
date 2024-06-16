@@ -1813,7 +1813,7 @@
 <codeline lineno="804"><highlight class="normal"></highlight></codeline>
 <codeline lineno="805"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalChars(0);</highlight></codeline>
 <codeline lineno="806"><highlight class="normal"><sp/><sp/>Vector&lt;char&gt;<sp/>recvStrings(1);</highlight></codeline>
-<codeline lineno="807"><highlight class="normal"><sp/><sp/>Vector&lt;int&gt;<sp/>offset(nProcs,<sp/>0);</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"><sp/><sp/>Vector&lt;int&gt;<sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>(nProcs,<sp/>0);</highlight></codeline>
 <codeline lineno="808"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nChar<sp/>:<sp/>nChars)<sp/>{</highlight></codeline>
 <codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>totalChars<sp/>+=<sp/>nChar;</highlight></codeline>
@@ -1823,7 +1823,7 @@
 <codeline lineno="814"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iOffset(0);</highlight></codeline>
 <codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(1);<sp/>i<sp/>&lt;<sp/>nChars.size();<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>iOffset<sp/>+=<sp/>nChars[i-1];</highlight></codeline>
-<codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>iOffset;</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>[i]<sp/>=<sp/>iOffset;</highlight></codeline>
 <codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="819"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="820"><highlight class="normal"></highlight></codeline>
@@ -1832,7 +1832,7 @@
 <codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">ParallelDescriptor::Mpi_typemap&lt;char&gt;::type</ref>(),</highlight></codeline>
 <codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recvStrings.dataPtr(),</highlight></codeline>
 <codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nChars.dataPtr(),</highlight></codeline>
-<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset.dataPtr(),</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreMLABecLap_8cpp_1aca578ec8d09db95559009d91bca7779e" kindref="member">offset</ref>.<ref refid="structamrex_1_1Array4_1a92996beac4532d45d7ac4be41b1ff439" kindref="member">dataPtr</ref>(),</highlight></codeline>
 <codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">ParallelDescriptor::Mpi_typemap&lt;char&gt;::type</ref>(),</highlight></codeline>
 <codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ioProcNumber,</highlight></codeline>
 <codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>())<sp/>);</highlight></codeline>
