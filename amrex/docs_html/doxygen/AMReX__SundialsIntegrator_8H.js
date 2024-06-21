@@ -2,9 +2,12 @@ var AMReX__SundialsIntegrator_8H =
 [
     [ "SundialsUserData", "structamrex_1_1SundialsUserData.html", "structamrex_1_1SundialsUserData" ],
     [ "SundialsIntegrator", "classamrex_1_1SundialsIntegrator.html", "classamrex_1_1SundialsIntegrator" ],
-    [ "f", "AMReX__SundialsIntegrator_8H.html#a192b851aaf774703482c2ec82d9b4cf4", null ],
-    [ "f0", "AMReX__SundialsIntegrator_8H.html#a7e573c10b9a6e12f89bb52a5ef35b746", null ],
-    [ "f_fast", "AMReX__SundialsIntegrator_8H.html#adb78c084cdaae955251f38e7baf92231", null ],
-    [ "PostStoreStage", "AMReX__SundialsIntegrator_8H.html#ac9b6c103cf1410b3700b2f02c30a70e6", null ],
-    [ "ProcessStage", "AMReX__SundialsIntegrator_8H.html#afb63918874e856006233ab3ba806b8b8", null ]
+    [ "f", "AMReX__SundialsIntegrator_8H.html#a7c64e1c30110b537ab4c7acbc9a3900a", null ],
+    [ "fe", "AMReX__SundialsIntegrator_8H.html#a02348b7a96859e23b5351689a19934cc", null ],
+    [ "ff", "AMReX__SundialsIntegrator_8H.html#ad1d78ede572643bbe56e2def255268c1", null ],
+    [ "fi", "AMReX__SundialsIntegrator_8H.html#a00e74312e8da536a962f7c1e4bdbed90", null ],
+    [ "post_fast_stage", "AMReX__SundialsIntegrator_8H.html#ae3b2f58d112a3625cc54a690938b7cc1", null ],
+    [ "post_fast_step", "AMReX__SundialsIntegrator_8H.html#a6bf9b12bbaf5f970438e11c23e752128", null ],
+    [ "post_stage", "AMReX__SundialsIntegrator_8H.html#ad585d7830e4fc12e89decd117f010a56", null ],
+    [ "post_step", "AMReX__SundialsIntegrator_8H.html#a8a07d2a186a600d4436d4be0c8b1b82d", null ]
 ];

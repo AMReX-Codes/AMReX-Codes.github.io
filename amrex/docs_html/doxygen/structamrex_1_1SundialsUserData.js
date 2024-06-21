@@ -1,8 +1,11 @@
 var structamrex_1_1SundialsUserData =
 [
-    [ "f", "structamrex_1_1SundialsUserData.html#a61b88d4a6c8c392c9517b753193dcded", null ],
-    [ "f0", "structamrex_1_1SundialsUserData.html#a5d5293a622af824bd4b2b5878b689a4a", null ],
-    [ "f_fast", "structamrex_1_1SundialsUserData.html#a39073e8c6edea33ac31d4e5f210f3b98", null ],
-    [ "PostStoreStage", "structamrex_1_1SundialsUserData.html#a8ef3cdbf25f20b1e5c230bf330200db4", null ],
-    [ "ProcessStage", "structamrex_1_1SundialsUserData.html#a0bf7c650f1bfddc500dc9268d7fa76fd", null ]
+    [ "f", "structamrex_1_1SundialsUserData.html#a237d44393a5be90579b5c179defbe8f0", null ],
+    [ "fe", "structamrex_1_1SundialsUserData.html#ac6bd65791ecd3832597283141221f47e", null ],
+    [ "ff", "structamrex_1_1SundialsUserData.html#a7804a845e951d54af75e92d34adc2930", null ],
+    [ "fi", "structamrex_1_1SundialsUserData.html#a040d572683a6b4367f39248d36e2cb13", null ],
+    [ "post_fast_stage", "structamrex_1_1SundialsUserData.html#a115ec6a6570eb39b2342d5255be0b7aa", null ],
+    [ "post_fast_step", "structamrex_1_1SundialsUserData.html#aaa3a49f84edbfa7ed218d163afd66e21", null ],
+    [ "post_stage", "structamrex_1_1SundialsUserData.html#a5e9dcabb348c811741090871b6c3783b", null ],
+    [ "post_step", "structamrex_1_1SundialsUserData.html#a1ce697e52c0b9947aa2425b4b8b592fb", null ]
 ];

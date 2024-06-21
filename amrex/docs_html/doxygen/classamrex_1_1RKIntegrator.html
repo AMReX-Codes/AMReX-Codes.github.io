@@ -121,14 +121,18 @@ Inheritance diagram for amrex::RKIntegrator&lt; T &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aff544c0ff17bffff837a639774d02cc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#aff544c0ff17bffff837a639774d02cc4">RKIntegrator</a> ()</td></tr>
 <tr class="separator:aff544c0ff17bffff837a639774d02cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a711c6b3a5a83bd51320791e66fa107a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a711c6b3a5a83bd51320791e66fa107a4">RKIntegrator</a> (const T &amp;S_data)</td></tr>
-<tr class="separator:a711c6b3a5a83bd51320791e66fa107a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a070decd98b9fe765121a44a15f5a1da0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a070decd98b9fe765121a44a15f5a1da0">initialize</a> (const T &amp;S_data) override</td></tr>
-<tr class="separator:a070decd98b9fe765121a44a15f5a1da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9053a3951e9866cd83b20f2f50612825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a9053a3951e9866cd83b20f2f50612825">RKIntegrator</a> (const T &amp;S_data, const amrex::Real time=0.0)</td></tr>
+<tr class="separator:a9053a3951e9866cd83b20f2f50612825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af326e29a8c0b145ec35cfab0011a7f91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#af326e29a8c0b145ec35cfab0011a7f91">initialize</a> (const T &amp;S_data, const amrex::Real time=0.0)</td></tr>
+<tr class="separator:af326e29a8c0b145ec35cfab0011a7f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08eaaf01ad8b70caf0f561edb42114b4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a08eaaf01ad8b70caf0f561edb42114b4">~RKIntegrator</a> ()</td></tr>
 <tr class="separator:a08eaaf01ad8b70caf0f561edb42114b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44928e3c5ce841acae5e2fe9305a75e"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#af44928e3c5ce841acae5e2fe9305a75e">advance</a> (T &amp;S_old, T &amp;S_new, amrex::Real time, const amrex::Real time_step) override</td></tr>
-<tr class="separator:af44928e3c5ce841acae5e2fe9305a75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5e46fb855c0ec424f31edd25bc953a"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#ada5e46fb855c0ec424f31edd25bc953a">advance</a> (T &amp;S_old, T &amp;S_new, amrex::Real time, const amrex::Real dt) override</td></tr>
+<tr class="memdesc:ada5e46fb855c0ec424f31edd25bc953a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a single time step from (time, S_old) to (time + dt, S_new) with the given step size.  <a href="classamrex_1_1RKIntegrator.html#ada5e46fb855c0ec424f31edd25bc953a">More...</a><br /></td></tr>
+<tr class="separator:ada5e46fb855c0ec424f31edd25bc953a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0eddcd4e42f2e70d706c84108c812e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#af0eddcd4e42f2e70d706c84108c812e7">evolve</a> (T &amp;S_out, const amrex::Real time_out) override</td></tr>
+<tr class="memdesc:af0eddcd4e42f2e70d706c84108c812e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve the current (internal) integrator state to time_out.  <a href="classamrex_1_1RKIntegrator.html#af0eddcd4e42f2e70d706c84108c812e7">More...</a><br /></td></tr>
+<tr class="separator:af0eddcd4e42f2e70d706c84108c812e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2372340230301693e973e404c12618fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a2372340230301693e973e404c12618fa">time_interpolate</a> (const T &amp;, const T &amp;S_old, amrex::Real timestep_fraction, T &amp;data) override</td></tr>
 <tr class="separator:a2372340230301693e973e404c12618fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc1277598adc82e186fef0b44c86e603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#acc1277598adc82e186fef0b44c86e603">map_data</a> (std::function&lt; void(T &amp;)&gt; Map) override</td></tr>
@@ -142,28 +146,38 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab552abbdc6f529d492e5912b8af6f3a3 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6bd9eb8cc13ac9e2a120c9018f529aa inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ad6bd9eb8cc13ac9e2a120c9018f529aa">set_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt; F)</td></tr>
 <tr class="separator:ad6bd9eb8cc13ac9e2a120c9018f529aa inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a1755cd66c91ef2d57cefb32ce90b1f inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a8a1755cd66c91ef2d57cefb32ce90b1f">set_fast_rhs</a> (std::function&lt; void(T &amp;, T &amp;, const T &amp;, const amrex::Real)&gt; F)</td></tr>
-<tr class="separator:a8a1755cd66c91ef2d57cefb32ce90b1f inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c28fc76c5cdf2fceab4b2c06b07074c inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a2c28fc76c5cdf2fceab4b2c06b07074c">set_slow_fast_timestep_ratio</a> (const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> timestep_ratio=1)</td></tr>
-<tr class="separator:a2c28fc76c5cdf2fceab4b2c06b07074c inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5003ee30c98dff34007cf2738599392 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ac5003ee30c98dff34007cf2738599392">set_fast_timestep</a> (const Real fast_dt=1.0)</td></tr>
-<tr class="separator:ac5003ee30c98dff34007cf2738599392 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab844bc357c2ad282e111b0f3e965864e inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ab844bc357c2ad282e111b0f3e965864e">set_post_update</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; F)</td></tr>
-<tr class="separator:ab844bc357c2ad282e111b0f3e965864e inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af961f09393e62d6a09749da90d0b9016 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#af961f09393e62d6a09749da90d0b9016">get_post_update</a> ()</td></tr>
-<tr class="separator:af961f09393e62d6a09749da90d0b9016 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a273aca91ddf7ee9e5de270e7f6c02a21 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a273aca91ddf7ee9e5de270e7f6c02a21">get_rhs</a> ()</td></tr>
-<tr class="separator:a273aca91ddf7ee9e5de270e7f6c02a21 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af028b7c14d3958dcb6563442aa2ab5ad inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, T &amp;, const T &amp;, const amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#af028b7c14d3958dcb6563442aa2ab5ad">get_fast_rhs</a> ()</td></tr>
-<tr class="separator:af028b7c14d3958dcb6563442aa2ab5ad inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedf790cb6391c0861069d8c358f65ddf inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#aedf790cb6391c0861069d8c358f65ddf">get_slow_fast_timestep_ratio</a> ()</td></tr>
-<tr class="separator:aedf790cb6391c0861069d8c358f65ddf inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b6d214905b360f23d3a162eb4aa8f99 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a1b6d214905b360f23d3a162eb4aa8f99">get_fast_timestep</a> ()</td></tr>
-<tr class="separator:a1b6d214905b360f23d3a162eb4aa8f99 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae03ee5e425bef0111005514d81fdf5e4 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ae03ee5e425bef0111005514d81fdf5e4">rhs</a> (T &amp;S_rhs, const T &amp;S_data, const amrex::Real time)</td></tr>
-<tr class="separator:ae03ee5e425bef0111005514d81fdf5e4 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a350b00b806650cf615625b20a5814925 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a350b00b806650cf615625b20a5814925">fast_rhs</a> (T &amp;S_rhs, T &amp;S_extra, const T &amp;S_data, const amrex::Real time)</td></tr>
-<tr class="separator:a350b00b806650cf615625b20a5814925 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9a713593758d783d8e8e0b0693e09a inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a3f9a713593758d783d8e8e0b0693e09a">set_imex_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt; Fi, std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt; Fe)</td></tr>
+<tr class="separator:a3f9a713593758d783d8e8e0b0693e09a inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae970829d1dd7eb3d3bdfc2aed49cdf90 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ae970829d1dd7eb3d3bdfc2aed49cdf90">set_fast_rhs</a> (std::function&lt; void(T &amp;, const T &amp;, const amrex::Real)&gt; F)</td></tr>
+<tr class="separator:ae970829d1dd7eb3d3bdfc2aed49cdf90 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef74d0e351992265fb1aa438b6cab83 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a8ef74d0e351992265fb1aa438b6cab83">set_pre_rhs_action</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; A)</td></tr>
+<tr class="separator:a8ef74d0e351992265fb1aa438b6cab83 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a694555275ea4407fe6132ebb1a2f09c3 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a694555275ea4407fe6132ebb1a2f09c3">set_post_stage_action</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; A)</td></tr>
+<tr class="separator:a694555275ea4407fe6132ebb1a2f09c3 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4804fed689d7335e3b404e4a67c37d inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a0d4804fed689d7335e3b404e4a67c37d">set_post_step_action</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; A)</td></tr>
+<tr class="separator:a0d4804fed689d7335e3b404e4a67c37d inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378df79907ae53d5eef652341833ab77 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a378df79907ae53d5eef652341833ab77">set_post_fast_stage_action</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; A)</td></tr>
+<tr class="separator:a378df79907ae53d5eef652341833ab77 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2a23791bed8871f255633f141f0444 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a9a2a23791bed8871f255633f141f0444">set_post_fast_step_action</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; A)</td></tr>
+<tr class="separator:a9a2a23791bed8871f255633f141f0444 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb47576a3ff6810caeb56386103dec7 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a2eb47576a3ff6810caeb56386103dec7">set_post_update</a> (std::function&lt; void(T &amp;, amrex::Real)&gt; A)</td></tr>
+<tr class="separator:a2eb47576a3ff6810caeb56386103dec7 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e271bb0dfa0e7bee049e3b8dfcbfec4 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a4e271bb0dfa0e7bee049e3b8dfcbfec4">get_time_step</a> ()</td></tr>
+<tr class="separator:a4e271bb0dfa0e7bee049e3b8dfcbfec4 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2dfdf9011fe5398e3aef23edc39d76a inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#aa2dfdf9011fe5398e3aef23edc39d76a">set_time_step</a> (amrex::Real dt)</td></tr>
+<tr class="separator:aa2dfdf9011fe5398e3aef23edc39d76a inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100f797cb82abd1ec8563c591ebe823a inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a100f797cb82abd1ec8563c591ebe823a">set_adaptive_step</a> ()</td></tr>
+<tr class="separator:a100f797cb82abd1ec8563c591ebe823a inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad59a858ee7ee2d3267dff6c2f085a4dd inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ad59a858ee7ee2d3267dff6c2f085a4dd">set_fast_time_step</a> (amrex::Real dt)</td></tr>
+<tr class="separator:ad59a858ee7ee2d3267dff6c2f085a4dd inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c90c36c565d4499bd64662416f4d0d inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a49c90c36c565d4499bd64662416f4d0d">set_adaptive_fast_step</a> ()</td></tr>
+<tr class="separator:a49c90c36c565d4499bd64662416f4d0d inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fe529e314e46e719aec6150281858a3 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a9fe529e314e46e719aec6150281858a3">set_max_steps</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> steps)</td></tr>
+<tr class="separator:a9fe529e314e46e719aec6150281858a3 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a9eaa0e52db6d40074bfc02b9cacd0 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#aa6a9eaa0e52db6d40074bfc02b9cacd0">set_tolerances</a> (amrex::Real rtol, amrex::Real atol)</td></tr>
+<tr class="separator:aa6a9eaa0e52db6d40074bfc02b9cacd0 inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338b71036c6b6ddcc8e887518376152f inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a338b71036c6b6ddcc8e887518376152f">set_fast_tolerances</a> (amrex::Real rtol, amrex::Real atol)</td></tr>
+<tr class="separator:a338b71036c6b6ddcc8e887518376152f inherit pub_methods_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -176,8 +190,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:acff4fc41929210da23d8245c17bdb874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2e6499b53e139edf43e385cdcef27cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#ac2e6499b53e139edf43e385cdcef27cf">initialize_parameters</a> ()</td></tr>
 <tr class="separator:ac2e6499b53e139edf43e385cdcef27cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf310468008fc20ecec9ebfa0e1e01c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#abf310468008fc20ecec9ebfa0e1e01c7">initialize_stages</a> (const T &amp;S_data)</td></tr>
-<tr class="separator:abf310468008fc20ecec9ebfa0e1e01c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada4db7ea06e188ae4ab827a213cf35ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#ada4db7ea06e188ae4ab827a213cf35ce">initialize_stages</a> (const T &amp;S_data, const amrex::Real time)</td></tr>
+<tr class="separator:ada4db7ea06e188ae4ab827a213cf35ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -185,34 +199,84 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5a3126356b83a10727fc86bccf672d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb24e2eb4c7cd3f6f46ac8ce656fde5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#aeb24e2eb4c7cd3f6f46ac8ce656fde5c">number_nodes</a></td></tr>
 <tr class="separator:aeb24e2eb4c7cd3f6f46ac8ce656fde5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18107a2be2d334a62c073cc656fea8d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a18107a2be2d334a62c073cc656fea8d0">use_adaptive_timestep</a></td></tr>
-<tr class="separator:a18107a2be2d334a62c073cc656fea8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71b3d620a58461d753803014c39b0c20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; std::unique_ptr&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a71b3d620a58461d753803014c39b0c20">F_nodes</a></td></tr>
-<tr class="separator:a71b3d620a58461d753803014c39b0c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae967ca14edea4b4436eb438da434e081"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; amrex::Real &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#ae967ca14edea4b4436eb438da434e081">tableau</a></td></tr>
 <tr class="separator:ae967ca14edea4b4436eb438da434e081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd571d996d1adea0300fb76372fce6bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#abd571d996d1adea0300fb76372fce6bf">weights</a></td></tr>
 <tr class="separator:abd571d996d1adea0300fb76372fce6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41e0f57f4b5dac966a3beb173e3d6286"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a41e0f57f4b5dac966a3beb173e3d6286">extended_weights</a></td></tr>
-<tr class="separator:a41e0f57f4b5dac966a3beb173e3d6286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bab0ce1edbe67e4fbe18249f39cbe76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a6bab0ce1edbe67e4fbe18249f39cbe76">nodes</a></td></tr>
 <tr class="separator:a6bab0ce1edbe67e4fbe18249f39cbe76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e0f57f4b5dac966a3beb173e3d6286"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; amrex::Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a41e0f57f4b5dac966a3beb173e3d6286">extended_weights</a></td></tr>
+<tr class="separator:a41e0f57f4b5dac966a3beb173e3d6286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b3d620a58461d753803014c39b0c20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; std::unique_ptr&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a71b3d620a58461d753803014c39b0c20">F_nodes</a></td></tr>
+<tr class="separator:a71b3d620a58461d753803014c39b0c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9619066e96c1ff5ad635c2597744192e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt; std::unique_ptr&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#a9619066e96c1ff5ad635c2597744192e">S_current</a></td></tr>
+<tr class="separator:a9619066e96c1ff5ad635c2597744192e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbdcf1854980555893e338cbb0c30534"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1RKIntegrator.html#afbdcf1854980555893e338cbb0c30534">time_current</a></td></tr>
+<tr class="separator:afbdcf1854980555893e338cbb0c30534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1IntegratorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1IntegratorBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1IntegratorBase.html">amrex::IntegratorBase&lt; T &gt;</a></td></tr>
-<tr class="memitem:ae09b7963b36e9cba661e6e64c3d67159 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ae09b7963b36e9cba661e6e64c3d67159">timestep</a></td></tr>
-<tr class="memdesc:ae09b7963b36e9cba661e6e64c3d67159 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integrator timestep size (Real)  <a href="classamrex_1_1IntegratorBase.html#ae09b7963b36e9cba661e6e64c3d67159">More...</a><br /></td></tr>
-<tr class="separator:ae09b7963b36e9cba661e6e64c3d67159 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8b9b0ced6670ce184422a8223b57b63 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#af8b9b0ced6670ce184422a8223b57b63">slow_fast_timestep_ratio</a> = 0</td></tr>
-<tr class="memdesc:af8b9b0ced6670ce184422a8223b57b63 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">For multirate problems, the ratio of slow timestep size / fast timestep size (int)  <a href="classamrex_1_1IntegratorBase.html#af8b9b0ced6670ce184422a8223b57b63">More...</a><br /></td></tr>
-<tr class="separator:af8b9b0ced6670ce184422a8223b57b63 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a020d8e83bf55dd069e374403d4ff1f7a inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a020d8e83bf55dd069e374403d4ff1f7a">fast_timestep</a> = 0.0</td></tr>
-<tr class="memdesc:a020d8e83bf55dd069e374403d4ff1f7a inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">For multirate problems, the fast timestep size (Real)  <a href="classamrex_1_1IntegratorBase.html#a020d8e83bf55dd069e374403d4ff1f7a">More...</a><br /></td></tr>
-<tr class="separator:a020d8e83bf55dd069e374403d4ff1f7a inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a093f10915c880670f78fcc8cbc763dd6 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a093f10915c880670f78fcc8cbc763dd6">post_update</a></td></tr>
-<tr class="memdesc:a093f10915c880670f78fcc8cbc763dd6 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post_update function is called by the integrator on state data before using it to evaluate a right-hand side.  <a href="classamrex_1_1IntegratorBase.html#a093f10915c880670f78fcc8cbc763dd6">More...</a><br /></td></tr>
-<tr class="separator:a093f10915c880670f78fcc8cbc763dd6 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f629ede3bfbcc4923118754e102e89d inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;rhs, const T &amp;state, const amrex::Real time)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a3f629ede3bfbcc4923118754e102e89d">Rhs</a></td></tr>
+<tr class="memdesc:a3f629ede3bfbcc4923118754e102e89d inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rhs is the right-hand-side function the integrator will use.  <a href="classamrex_1_1IntegratorBase.html#a3f629ede3bfbcc4923118754e102e89d">More...</a><br /></td></tr>
+<tr class="separator:a3f629ede3bfbcc4923118754e102e89d inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c65fc7b72754a354624e2ea0164490f inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;rhs, const T &amp;state, const amrex::Real time)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a2c65fc7b72754a354624e2ea0164490f">RhsIm</a></td></tr>
+<tr class="memdesc:a2c65fc7b72754a354624e2ea0164490f inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">RhsIm is the implicit right-hand-side function an ImEx integrator will use.  <a href="classamrex_1_1IntegratorBase.html#a2c65fc7b72754a354624e2ea0164490f">More...</a><br /></td></tr>
+<tr class="separator:a2c65fc7b72754a354624e2ea0164490f inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218f7804d79adf83d620313d51b35820 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;rhs, const T &amp;state, const amrex::Real time)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a218f7804d79adf83d620313d51b35820">RhsEx</a></td></tr>
+<tr class="memdesc:a218f7804d79adf83d620313d51b35820 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">RhsEx is the explicit right-hand-side function an ImEx integrator will use.  <a href="classamrex_1_1IntegratorBase.html#a218f7804d79adf83d620313d51b35820">More...</a><br /></td></tr>
+<tr class="separator:a218f7804d79adf83d620313d51b35820 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b5987f38133e93018dec0eeb325602 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;rhs, const T &amp;state, const amrex::Real time)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#af8b5987f38133e93018dec0eeb325602">RhsFast</a></td></tr>
+<tr class="memdesc:af8b5987f38133e93018dec0eeb325602 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">RhsFast is the fast timescale right-hand-side function a multirate integrator will use.  <a href="classamrex_1_1IntegratorBase.html#af8b5987f38133e93018dec0eeb325602">More...</a><br /></td></tr>
+<tr class="separator:af8b5987f38133e93018dec0eeb325602 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae825c800d3886fc154b5339ad0ff518d inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ae825c800d3886fc154b5339ad0ff518d">pre_rhs_action</a></td></tr>
+<tr class="memdesc:ae825c800d3886fc154b5339ad0ff518d inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pre_rhs_action function is called by the integrator on state data before using it to evaluate a right-hand side.  <a href="classamrex_1_1IntegratorBase.html#ae825c800d3886fc154b5339ad0ff518d">More...</a><br /></td></tr>
+<tr class="separator:ae825c800d3886fc154b5339ad0ff518d inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51e1ada5e5a2f2956bea509831a43e3 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ad51e1ada5e5a2f2956bea509831a43e3">post_stage_action</a></td></tr>
+<tr class="memdesc:ad51e1ada5e5a2f2956bea509831a43e3 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post_stage_action function is called by the integrator on the computed stage just after it is computed.  <a href="classamrex_1_1IntegratorBase.html#ad51e1ada5e5a2f2956bea509831a43e3">More...</a><br /></td></tr>
+<tr class="separator:ad51e1ada5e5a2f2956bea509831a43e3 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6edee80e051ee491f30b7e2668cea1 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a5e6edee80e051ee491f30b7e2668cea1">post_step_action</a></td></tr>
+<tr class="memdesc:a5e6edee80e051ee491f30b7e2668cea1 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post_step_action function is called by the integrator on the computed state just after it is computed.  <a href="classamrex_1_1IntegratorBase.html#a5e6edee80e051ee491f30b7e2668cea1">More...</a><br /></td></tr>
+<tr class="separator:a5e6edee80e051ee491f30b7e2668cea1 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3898e71d3b76c181fe8826e3c1c8e23e inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a3898e71d3b76c181fe8826e3c1c8e23e">post_fast_stage_action</a></td></tr>
+<tr class="memdesc:a3898e71d3b76c181fe8826e3c1c8e23e inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post_stage_action function is called by the integrator on the computed stage just after it is computed.  <a href="classamrex_1_1IntegratorBase.html#a3898e71d3b76c181fe8826e3c1c8e23e">More...</a><br /></td></tr>
+<tr class="separator:a3898e71d3b76c181fe8826e3c1c8e23e inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a54ccfa6d203a9d2f8efe66130ae468 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(T &amp;, amrex::Real)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a8a54ccfa6d203a9d2f8efe66130ae468">post_fast_step_action</a></td></tr>
+<tr class="memdesc:a8a54ccfa6d203a9d2f8efe66130ae468 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post_step_action function is called by the integrator on the computed state just after it is computed.  <a href="classamrex_1_1IntegratorBase.html#a8a54ccfa6d203a9d2f8efe66130ae468">More...</a><br /></td></tr>
+<tr class="separator:a8a54ccfa6d203a9d2f8efe66130ae468 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac912e7cd93ce1edbebd7af47bd90f7c2 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ac912e7cd93ce1edbebd7af47bd90f7c2">use_adaptive_time_step</a> = false</td></tr>
+<tr class="memdesc:ac912e7cd93ce1edbebd7af47bd90f7c2 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to enable/disable adaptive time stepping in single rate methods or at the slow time scale in multirate methods (bool)  <a href="classamrex_1_1IntegratorBase.html#ac912e7cd93ce1edbebd7af47bd90f7c2">More...</a><br /></td></tr>
+<tr class="separator:ac912e7cd93ce1edbebd7af47bd90f7c2 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9211fc29fd1cd9a03025959738c90d4 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ad9211fc29fd1cd9a03025959738c90d4">time_step</a></td></tr>
+<tr class="memdesc:ad9211fc29fd1cd9a03025959738c90d4 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current integrator time step size (Real)  <a href="classamrex_1_1IntegratorBase.html#ad9211fc29fd1cd9a03025959738c90d4">More...</a><br /></td></tr>
+<tr class="separator:ad9211fc29fd1cd9a03025959738c90d4 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea34558a8595abbdc1f9a5f3635fb4c2 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#aea34558a8595abbdc1f9a5f3635fb4c2">previous_time_step</a></td></tr>
+<tr class="memdesc:aea34558a8595abbdc1f9a5f3635fb4c2 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step size of the last completed step (Real)  <a href="classamrex_1_1IntegratorBase.html#aea34558a8595abbdc1f9a5f3635fb4c2">More...</a><br /></td></tr>
+<tr class="separator:aea34558a8595abbdc1f9a5f3635fb4c2 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19edbb14c5dbad6c2550d6fb59ab3860 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a19edbb14c5dbad6c2550d6fb59ab3860">use_adaptive_fast_time_step</a> = false</td></tr>
+<tr class="memdesc:a19edbb14c5dbad6c2550d6fb59ab3860 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to enable/disable adaptive time stepping at the fast time scale in multirate methods (bool)  <a href="classamrex_1_1IntegratorBase.html#a19edbb14c5dbad6c2550d6fb59ab3860">More...</a><br /></td></tr>
+<tr class="separator:a19edbb14c5dbad6c2550d6fb59ab3860 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe63921d4507e1af5f2df9fdbe66047 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a4fe63921d4507e1af5f2df9fdbe66047">fast_time_step</a></td></tr>
+<tr class="memdesc:a4fe63921d4507e1af5f2df9fdbe66047 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current integrator fast time scale time step size with multirate methods (Real)  <a href="classamrex_1_1IntegratorBase.html#a4fe63921d4507e1af5f2df9fdbe66047">More...</a><br /></td></tr>
+<tr class="separator:a4fe63921d4507e1af5f2df9fdbe66047 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab68545bb3877ccbb5beef755501e6e51 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#ab68545bb3877ccbb5beef755501e6e51">num_steps</a> = 0</td></tr>
+<tr class="memdesc:ab68545bb3877ccbb5beef755501e6e51 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of integrator time steps (Long)  <a href="classamrex_1_1IntegratorBase.html#ab68545bb3877ccbb5beef755501e6e51">More...</a><br /></td></tr>
+<tr class="separator:ab68545bb3877ccbb5beef755501e6e51 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9686cea17de48c6ffb49d0288146fc03 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a9686cea17de48c6ffb49d0288146fc03">max_steps</a> = 500</td></tr>
+<tr class="memdesc:a9686cea17de48c6ffb49d0288146fc03 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max number of internal steps before an error is returned (Long)  <a href="classamrex_1_1IntegratorBase.html#a9686cea17de48c6ffb49d0288146fc03">More...</a><br /></td></tr>
+<tr class="separator:a9686cea17de48c6ffb49d0288146fc03 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260c250d0a39818e4d4f9ef808b82239 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a260c250d0a39818e4d4f9ef808b82239">rel_tol</a> = 1.0e-4</td></tr>
+<tr class="memdesc:a260c250d0a39818e4d4f9ef808b82239 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative tolerance for adaptive time stepping (Real)  <a href="classamrex_1_1IntegratorBase.html#a260c250d0a39818e4d4f9ef808b82239">More...</a><br /></td></tr>
+<tr class="separator:a260c250d0a39818e4d4f9ef808b82239 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad6554d52e651fc45b533d34a96c135 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#afad6554d52e651fc45b533d34a96c135">abs_tol</a> = 1.0e-9</td></tr>
+<tr class="memdesc:afad6554d52e651fc45b533d34a96c135 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute tolerance for adaptive time stepping (Real)  <a href="classamrex_1_1IntegratorBase.html#afad6554d52e651fc45b533d34a96c135">More...</a><br /></td></tr>
+<tr class="separator:afad6554d52e651fc45b533d34a96c135 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be9f819915ff16d7883d0ebd8009e66 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a1be9f819915ff16d7883d0ebd8009e66">fast_rel_tol</a> = 1.0e-4</td></tr>
+<tr class="memdesc:a1be9f819915ff16d7883d0ebd8009e66 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative tolerance for adaptive time stepping at the fast time scale (Real)  <a href="classamrex_1_1IntegratorBase.html#a1be9f819915ff16d7883d0ebd8009e66">More...</a><br /></td></tr>
+<tr class="separator:a1be9f819915ff16d7883d0ebd8009e66 inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec1caa1e60f0282b7a8e76dffe856ee inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1IntegratorBase.html#a4ec1caa1e60f0282b7a8e76dffe856ee">fast_abs_tol</a> = 1.0e-9</td></tr>
+<tr class="memdesc:a4ec1caa1e60f0282b7a8e76dffe856ee inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute tolerance for adaptive time stepping at the fast time scale (Real)  <a href="classamrex_1_1IntegratorBase.html#a4ec1caa1e60f0282b7a8e76dffe856ee">More...</a><br /></td></tr>
+<tr class="separator:a4ec1caa1e60f0282b7a8e76dffe856ee inherit pro_attribs_classamrex_1_1IntegratorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a61b0efc2ba701e047e29f92ed1204b52"></a>
@@ -267,8 +331,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a711c6b3a5a83bd51320791e66fa107a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a711c6b3a5a83bd51320791e66fa107a4">&#9670;&nbsp;</a></span>RKIntegrator() <span class="overload">[2/2]</span></h2>
+<a id="a9053a3951e9866cd83b20f2f50612825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9053a3951e9866cd83b20f2f50612825">&#9670;&nbsp;</a></span>RKIntegrator() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,8 +346,18 @@ template&lt;class T &gt; </div>
           <td class="memname"><a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::<a class="el" href="classamrex_1_1RKIntegrator.html">RKIntegrator</a> </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>S_data</em></td><td>)</td>
+          <td class="paramname"><em>S_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -323,8 +397,8 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af44928e3c5ce841acae5e2fe9305a75e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af44928e3c5ce841acae5e2fe9305a75e">&#9670;&nbsp;</a></span>advance()</h2>
+<a id="ada5e46fb855c0ec424f31edd25bc953a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada5e46fb855c0ec424f31edd25bc953a">&#9670;&nbsp;</a></span>advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +430,7 @@ template&lt;class T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>time_step</em>&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -371,12 +445,56 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Take a single time step from (time, S_old) to (time + dt, S_new) with the given step size. </p>
+
 <p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a4d714675069097ce07c843145e45d465">amrex::IntegratorBase&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a070decd98b9fe765121a44a15f5a1da0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a070decd98b9fe765121a44a15f5a1da0">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="af0eddcd4e42f2e70d706c84108c812e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0eddcd4e42f2e70d706c84108c812e7">&#9670;&nbsp;</a></span>evolve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::evolve </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>S_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time_out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evolve the current (internal) integrator state to time_out. </p>
+
+<p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a97d9851462a6592d58c42ced9cb266a9">amrex::IntegratorBase&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="af326e29a8c0b145ec35cfab0011a7f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af326e29a8c0b145ec35cfab0011a7f91">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,18 +508,26 @@ template&lt;class T &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::initialize </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>S_data</em></td><td>)</td>
+          <td class="paramname"><em>S_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Implements <a class="el" href="classamrex_1_1IntegratorBase.html#a776b334c903b6275ea792b4e7cca5a88">amrex::IntegratorBase&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -459,8 +585,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="abf310468008fc20ecec9ebfa0e1e01c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf310468008fc20ecec9ebfa0e1e01c7">&#9670;&nbsp;</a></span>initialize_stages()</h2>
+<a id="ada4db7ea06e188ae4ab827a213cf35ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4db7ea06e188ae4ab827a213cf35ce">&#9670;&nbsp;</a></span>initialize_stages()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,8 +600,18 @@ template&lt;class T &gt; </div>
           <td class="memname">void <a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::initialize_stages </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>S_data</em></td><td>)</td>
+          <td class="paramname"><em>S_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -666,6 +802,30 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a9619066e96c1ff5ad635c2597744192e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9619066e96c1ff5ad635c2597744192e">&#9670;&nbsp;</a></span>S_current</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">amrex::Vector</a>&lt;std::unique_ptr&lt;T&gt; &gt; <a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::S_current</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae967ca14edea4b4436eb438da434e081"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae967ca14edea4b4436eb438da434e081">&#9670;&nbsp;</a></span>tableau</h2>
 
@@ -714,8 +874,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a18107a2be2d334a62c073cc656fea8d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18107a2be2d334a62c073cc656fea8d0">&#9670;&nbsp;</a></span>use_adaptive_timestep</h2>
+<a id="afbdcf1854980555893e338cbb0c30534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbdcf1854980555893e338cbb0c30534">&#9670;&nbsp;</a></span>time_current</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -726,7 +886,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::use_adaptive_timestep</td>
+          <td class="memname">amrex::Real <a class="el" href="classamrex_1_1RKIntegrator.html">amrex::RKIntegrator</a>&lt; T &gt;::time_current</td>
         </tr>
       </table>
   </td>

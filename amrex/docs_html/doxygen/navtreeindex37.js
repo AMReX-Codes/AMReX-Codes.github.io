@@ -1,5 +1,14 @@
 var NAVTREEINDEX37 =
 {
+"classamrex_1_1EB2_1_1SphereIF.html#a3824095808843e69354b448ae713aabb":[3,0,0,4,35,1],
+"classamrex_1_1EB2_1_1SphereIF.html#a3de3a558f56392c6c36976d0a8f21813":[3,0,0,4,35,4],
+"classamrex_1_1EB2_1_1SphereIF.html#a43d80b03741314b72b14c9be08206eed":[3,0,0,4,35,3],
+"classamrex_1_1EB2_1_1SphereIF.html#a5e743f7fb6209bbcc44381ac15588528":[3,0,0,4,35,2],
+"classamrex_1_1EB2_1_1SphereIF.html#a638528a2c99f2f26bd56c03a9b8fec21":[3,0,0,4,35,0],
+"classamrex_1_1EB2_1_1SphereIF.html#a729f1a7c0e893a62bde14d9ce2aac7e5":[3,0,0,4,35,5],
+"classamrex_1_1EB2_1_1SplineIF.html":[3,0,0,4,36],
+"classamrex_1_1EB2_1_1SplineIF.html#a3835fb1f6868bd2b3c62cf93342f05e9":[3,0,0,4,36,1],
+"classamrex_1_1EB2_1_1SplineIF.html#a8b9fba933cd7578056dfcc8b320d62f2":[3,0,0,4,36,0],
 "classamrex_1_1EB2_1_1SplineIF.html#aa2fa17ff2ba083371845090960b56abc":[3,0,0,4,36,3],
 "classamrex_1_1EB2_1_1SplineIF.html#aef6edefbdd33552d70ce613e418b468d":[3,0,0,4,36,2],
 "classamrex_1_1EB2_1_1TorusIF.html":[3,0,0,4,37],
@@ -240,14 +249,5 @@ var NAVTREEINDEX37 =
 "classamrex_1_1EdgeFluxRegister.html#a89a4c8560bbedddef433d4467a8dcfd4":[3,0,0,381,0],
 "classamrex_1_1EdgeFluxRegister.html#aaef7f034b3fd9195583d14f1ea408039":[3,0,0,381,2],
 "classamrex_1_1EdgeFluxRegister.html#aafc2526c524b219fe69770bde17fc9af":[3,0,0,381,3],
-"classamrex_1_1EdgeFluxRegister.html#abd26799d7889db8005b39a33cf1065ad":[3,0,0,381,9],
-"classamrex_1_1EdgeFluxRegister.html#ad5422062aa267d4ec336630342c1b9d6":[3,0,0,381,10],
-"classamrex_1_1EdgeFluxRegister.html#ae7dab32dce79ee2932c74b0bf746d945":[3,0,0,381,4],
-"classamrex_1_1ErrorList.html":[3,0,0,41],
-"classamrex_1_1ErrorList.html#a147954f74bf8c13090b0f243209c3c5f":[3,0,0,41,5],
-"classamrex_1_1ErrorList.html#a24cc461edabec719824a554000b4506b":[3,0,0,41,1],
-"classamrex_1_1ErrorList.html#a4c7fb1c88f200101a80a1e254e7d446e":[3,0,0,41,6],
-"classamrex_1_1ErrorList.html#aa0fc2d7a254ee23a1275a5f70148e283":[3,0,0,41,0],
-"classamrex_1_1ErrorList.html#ab6e092af66fad6472ea4b6b7b273be26":[3,0,0,41,3],
-"classamrex_1_1ErrorList.html#abdfed9e915c0fec995a85a86a8c8627e":[3,0,0,41,4]
+"classamrex_1_1EdgeFluxRegister.html#abd26799d7889db8005b39a33cf1065ad":[3,0,0,381,9]
 };

@@ -103,23 +103,18 @@ $(document).ready(function(){initNavTree('AMReX__SundialsIntegrator_8H.html','')
 <div class="title">AMReX_SundialsIntegrator.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
+<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;AMReX_Config.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__REAL_8H_source.html">AMReX_REAL.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__ParmParse_8H_source.html">AMReX_ParmParse.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__IntegratorBase_8H_source.html">AMReX_IntegratorBase.H</a>&gt;</code><br />
-<code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;arkode/arkode_erkstep.h&gt;</code><br />
-<code>#include &lt;arkode/arkode_arkstep.h&gt;</code><br />
-<code>#include &lt;arkode/arkode_mristep.h&gt;</code><br />
-<code>#include &lt;cvode/cvode.h&gt;</code><br />
-<code>#include &lt;nvector/nvector_manyvector.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__NVector__MultiFab_8H_source.html">AMReX_NVector_MultiFab.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Sundials_8H_source.html">AMReX_Sundials.H</a>&gt;</code><br />
+<code>#include &lt;nvector/nvector_manyvector.h&gt;</code><br />
 <code>#include &lt;sunlinsol/sunlinsol_spgmr.h&gt;</code><br />
-<code>#include &lt;sunlinsol/sunlinsol_spfgmr.h&gt;</code><br />
-<code>#include &lt;sunnonlinsol/sunnonlinsol_fixedpoint.h&gt;</code><br />
-<code>#include &lt;sundials/sundials_types.h&gt;</code><br />
+<code>#include &lt;arkode/arkode_arkstep.h&gt;</code><br />
+<code>#include &lt;arkode/arkode_mristep.h&gt;</code><br />
 </div>
 <p><a href="AMReX__SundialsIntegrator_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -139,16 +134,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7e573c10b9a6e12f89bb52a5ef35b746"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a7e573c10b9a6e12f89bb52a5ef35b746">amrex::SundialsUserFun::f0</a> (sunrealtype t, N_Vector y, N_Vector ydot, void *user_data)</td></tr>
-<tr class="separator:a7e573c10b9a6e12f89bb52a5ef35b746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb78c084cdaae955251f38e7baf92231"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#adb78c084cdaae955251f38e7baf92231">amrex::SundialsUserFun::f_fast</a> (sunrealtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</td></tr>
-<tr class="separator:adb78c084cdaae955251f38e7baf92231"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a192b851aaf774703482c2ec82d9b4cf4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a192b851aaf774703482c2ec82d9b4cf4">amrex::SundialsUserFun::f</a> (sunrealtype t, N_Vector y_data, N_Vector y_rhs, void *user_data)</td></tr>
-<tr class="separator:a192b851aaf774703482c2ec82d9b4cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb63918874e856006233ab3ba806b8b8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#afb63918874e856006233ab3ba806b8b8">amrex::SundialsUserFun::ProcessStage</a> (sunrealtype t, N_Vector y_data, void *user_data)</td></tr>
-<tr class="separator:afb63918874e856006233ab3ba806b8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9b6c103cf1410b3700b2f02c30a70e6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#ac9b6c103cf1410b3700b2f02c30a70e6">amrex::SundialsUserFun::PostStoreStage</a> (sunrealtype t, N_Vector y_data, void *user_data)</td></tr>
-<tr class="separator:ac9b6c103cf1410b3700b2f02c30a70e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c64e1c30110b537ab4c7acbc9a3900a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a7c64e1c30110b537ab4c7acbc9a3900a">amrex::SundialsUserFun::f</a> (amrex::Real t, N_Vector y_data, N_Vector y_rhs, void *user_data)</td></tr>
+<tr class="separator:a7c64e1c30110b537ab4c7acbc9a3900a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00e74312e8da536a962f7c1e4bdbed90"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a00e74312e8da536a962f7c1e4bdbed90">amrex::SundialsUserFun::fi</a> (amrex::Real t, N_Vector y_data, N_Vector y_rhs, void *user_data)</td></tr>
+<tr class="separator:a00e74312e8da536a962f7c1e4bdbed90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02348b7a96859e23b5351689a19934cc"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a02348b7a96859e23b5351689a19934cc">amrex::SundialsUserFun::fe</a> (amrex::Real t, N_Vector y_data, N_Vector y_rhs, void *user_data)</td></tr>
+<tr class="separator:a02348b7a96859e23b5351689a19934cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d78ede572643bbe56e2def255268c1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#ad1d78ede572643bbe56e2def255268c1">amrex::SundialsUserFun::ff</a> (amrex::Real t, N_Vector y_data, N_Vector y_rhs, void *user_data)</td></tr>
+<tr class="separator:ad1d78ede572643bbe56e2def255268c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad585d7830e4fc12e89decd117f010a56"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#ad585d7830e4fc12e89decd117f010a56">amrex::SundialsUserFun::post_stage</a> (amrex::Real t, N_Vector y_data, void *user_data)</td></tr>
+<tr class="separator:ad585d7830e4fc12e89decd117f010a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a07d2a186a600d4436d4be0c8b1b82d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a8a07d2a186a600d4436d4be0c8b1b82d">amrex::SundialsUserFun::post_step</a> (amrex::Real t, N_Vector y_data, void *user_data)</td></tr>
+<tr class="separator:a8a07d2a186a600d4436d4be0c8b1b82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b2f58d112a3625cc54a690938b7cc1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#ae3b2f58d112a3625cc54a690938b7cc1">amrex::SundialsUserFun::post_fast_stage</a> (amrex::Real t, N_Vector y_data, void *user_data)</td></tr>
+<tr class="separator:ae3b2f58d112a3625cc54a690938b7cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf9b12bbaf5f970438e11c23e752128"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1SundialsUserFun.html#a6bf9b12bbaf5f970438e11c23e752128">amrex::SundialsUserFun::post_fast_step</a> (amrex::Real t, N_Vector y_data, void *user_data)</td></tr>
+<tr class="separator:a6bf9b12bbaf5f970438e11c23e752128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
