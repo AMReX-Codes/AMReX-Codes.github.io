@@ -1,5 +1,6 @@
 var NAVTREEINDEX35 =
 {
+"classamrex_1_1DenseBins.html#a00f8a0b96ddd821e95305346715cc7f0":[3,0,0,461,2],
 "classamrex_1_1DenseBins.html#a1c13238822cee328b27603d0a467f981":[3,0,0,461,5],
 "classamrex_1_1DenseBins.html#a2bb6a0e5dc6b40b73fd0221f633a1f84":[3,0,0,461,24],
 "classamrex_1_1DenseBins.html#a3448e9a533b211d486f42f06f9736218":[3,0,0,461,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX35 =
 "classamrex_1_1EB2_1_1EllipsoidIF.html":[3,0,0,4,18],
 "classamrex_1_1EB2_1_1EllipsoidIF.html#a12391461b3aaeda3b88f48f56bd7a38c":[3,0,0,4,18,0],
 "classamrex_1_1EB2_1_1EllipsoidIF.html#a1ba71f374b287b623a388dd3c3080135":[3,0,0,4,18,4],
-"classamrex_1_1EB2_1_1EllipsoidIF.html#a3b6e4a2ba4e86b1b2857488b3453e37d":[3,0,0,4,18,5],
-"classamrex_1_1EB2_1_1EllipsoidIF.html#a473ae4749d679793645566fc4f345bd0":[3,0,0,4,18,2]
+"classamrex_1_1EB2_1_1EllipsoidIF.html#a3b6e4a2ba4e86b1b2857488b3453e37d":[3,0,0,4,18,5]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX36 =
 {
+"classamrex_1_1EB2_1_1EllipsoidIF.html#a473ae4749d679793645566fc4f345bd0":[3,0,0,4,18,2],
 "classamrex_1_1EB2_1_1EllipsoidIF.html#a5778e3c639570e5f9e9f3ab7c1c1a417":[3,0,0,4,18,3],
 "classamrex_1_1EB2_1_1EllipsoidIF.html#a873e22e55b07270d2825c521584bc5b0":[3,0,0,4,18,1],
 "classamrex_1_1EB2_1_1ExtrusionIF.html":[3,0,0,4,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX36 =
 "classamrex_1_1EB2_1_1ScaleIF.html#a75449443ced2fffa1c0071c8d272f5d4":[3,0,0,4,33,0],
 "classamrex_1_1EB2_1_1ScaleIF.html#a7921ac823d8efefb9c4f3dc9d9451965":[3,0,0,4,33,1],
 "classamrex_1_1EB2_1_1ScaleIF.html#a89e22c870d98d7461aae4c027815fb35":[3,0,0,4,33,2],
-"classamrex_1_1EB2_1_1ScaleIF.html#a932ebe41c20dbea7dbe43d208f1dc71d":[3,0,0,4,33,4],
-"classamrex_1_1EB2_1_1SphereIF.html":[3,0,0,4,35]
+"classamrex_1_1EB2_1_1ScaleIF.html#a932ebe41c20dbea7dbe43d208f1dc71d":[3,0,0,4,33,4]
 };
